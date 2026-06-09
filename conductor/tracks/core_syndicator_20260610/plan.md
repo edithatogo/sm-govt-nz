@@ -3,7 +3,7 @@
 ## Phase 1: Project Setup & Ingestion Configuration
 - [x] Task: Initialize configurations (`config.json` and `conductor/state.json`) and write loading logic.
 - [x] Task: Write tests for configuration and state loader utilities.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Project Setup & Ingestion Configuration' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Project Setup & Ingestion Configuration' (Protocol in workflow.md)
 
 ## Phase 2: Bluesky Ingestion Engine
 - [ ] Task: Implement Bluesky AT Protocol client fetcher to retrieve posts.
