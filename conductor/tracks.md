@@ -9,3 +9,9 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [ ] Track: Map NZ agencies social media profiles, gap analysis registry, and self-improving agent workflow
 *Link: [./conductor/tracks/agency_mapping_20260610/](./conductor/tracks/agency_mapping_20260610/)*
+
+## [ ] Track: Create post archiver, edit-history tracker, and Zenodo/Hugging Face publisher
+*Link: [./conductor/tracks/archiver_zenodo_20260610/](./conductor/tracks/archiver_zenodo_20260610/)*
+
+## [ ] Track: Setup platform developer onboarding, secrets setup, and bleeding-edge GitHub integrations
+*Link: [./conductor/tracks/github_integrations_20260610/](./conductor/tracks/github_integrations_20260610/)*
