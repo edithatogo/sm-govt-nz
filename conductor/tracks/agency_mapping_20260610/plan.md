@@ -1,9 +1,9 @@
 # Plan - NZ Agency Social Registry & Self-Improving Agent Framework
 
 ## Phase 1: Registry Schema & Initial Data Seeding
-- [ ] Task: Define the data schema for the agency registry (`registry/agencies.json`).
-- [ ] Task: Seed the initial data for Courts of NZ, Ministry of Health, Health NZ, Parliament, and Beehive NZ.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Registry Schema & Initial Data Seeding' (Protocol in workflow.md)
+- [x] Task: Define the data schema for the agency registry (`registry/agencies.json`).
+- [x] Task: Seed the initial data for Courts of NZ, Ministry of Health, Health NZ, Parliament, and Beehive NZ.
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Registry Schema & Initial Data Seeding' (Protocol in workflow.md)
 
 ## Phase 2: Gap Analysis & Reporting Engine
 - [ ] Task: Implement `scripts/gap_analyzer.py` to calculate social platform coverage metrics.
