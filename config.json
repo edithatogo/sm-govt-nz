@@ -1,0 +1,33 @@
+{
+  "monitored_accounts": [
+    {
+      "handle": "courtsofnz.bsky.social",
+      "did": "did:plc:vtoa673xlou45zcsj6inyeis",
+      "name": "Courts of New Zealand",
+      "syndicate_to": ["x", "threads", "mastodon", "discord", "linkedin"]
+    },
+    {
+      "handle": "health.govt.nz",
+      "did": "",
+      "name": "Ministry of Health",
+      "syndicate_to": ["x", "threads", "mastodon", "discord", "linkedin"]
+    }
+  ],
+  "syndication_targets": {
+    "x": {
+      "enabled": true
+    },
+    "threads": {
+      "enabled": true
+    },
+    "mastodon": {
+      "enabled": true
+    },
+    "discord": {
+      "enabled": true
+    },
+    "linkedin": {
+      "enabled": true
+    }
+  }
+}
