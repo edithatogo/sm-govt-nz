@@ -1,8 +1,8 @@
 # Plan - Core Syndicator and Transparency Website (MVP)
 
 ## Phase 1: Project Setup & Ingestion Configuration
-- [ ] Task: Initialize configurations (`config.json` and `conductor/state.json`) and write loading logic.
-- [ ] Task: Write tests for configuration and state loader utilities.
+- [x] Task: Initialize configurations (`config.json` and `conductor/state.json`) and write loading logic.
+- [x] Task: Write tests for configuration and state loader utilities.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Project Setup & Ingestion Configuration' (Protocol in workflow.md)
 
 ## Phase 2: Bluesky Ingestion Engine
