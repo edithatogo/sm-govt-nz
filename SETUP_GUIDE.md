@@ -114,6 +114,10 @@ secrets directly.
 
 The syndication workflow runs the validator before posting.
 
+The `Syndicate` workflow is intentionally manual-only until the posting path has
+passed a controlled live test. Dispatch it with `confirm_live_posting=true` only
+when you intend to publish new mirrored posts.
+
 ## 8. Local Quality Gate
 
 ```powershell

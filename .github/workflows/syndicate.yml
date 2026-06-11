@@ -1,15 +1,23 @@
 name: Syndicate
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
   workflow_dispatch:
+    inputs:
+      confirm_live_posting:
+        description: "Type true to run live syndication."
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write
 
 jobs:
   syndicate:
+    if: ${{ inputs.confirm_live_posting == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
