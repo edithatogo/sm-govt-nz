@@ -12,8 +12,12 @@
 - [x] Task: Apply minimally modified mirror profile text that identifies the account as unofficial and links back to the Bluesky source.
 
 ## Phase 3: Controlled Launch
+- [ ] Task: Wait for CI to pass on the Courts mirror PR after profile archive and roadmap updates.
+- [ ] Task: Merge the Courts mirror PR into `master`.
+- [ ] Task: Confirm repository secrets validate for X-only syndication in GitHub Actions.
 - [ ] Task: Run a controlled single-account, X-only live synchronization test.
 - [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test passes.
+- [ ] Task: Monitor the first scheduled run and confirm `conductor/state.json` advances without duplicate posts.
 
 ## Phase 4: Later Historical Archive
 - [ ] Task: Archive historical `@courtsofnz` Twitter/X posts into the GitHub repository without triggering syndication.

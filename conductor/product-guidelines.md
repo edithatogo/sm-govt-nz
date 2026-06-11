@@ -7,9 +7,17 @@ The tone of this project (both in syndicated posts and on the GitHub Pages websi
 
 ## Content & Syndication Guidelines
 
+### MVP Identity Design
+*   **Display name:** `Mirror: Courts of New Zealand`.
+*   **Handle:** `@MirNZCourts`.
+*   **Bio posture:** Use the source account's public-information scope, but replace any official-account claim with an explicit unofficial-mirror statement.
+*   **Source link:** The profile text must include `courtsofnz.bsky.social` or an equivalent Bluesky source link.
+*   **Images:** Use the Courts of New Zealand source profile image and banner as mirror identity assets, with repository snapshots archived under `profile_archive/courts-nz/2026-06-11/`.
+
 ### 1. Transparency & Attribution
 *   **Original Source Links:** All syndicated posts on target platforms (X, Threads, Mastodon) should include a consistent link or attribution back to the original Bluesky post (e.g., `[Original: bsky.app/...]`).
 *   **Syndication Notice:** A subtle marker or standard prefix/suffix should clearly identify that the post is automated and syndicated for accessibility (e.g., `🤖 Mirror:` or similar identifier if space allows).
+*   **MVP Attribution:** Courts of New Zealand mirror posts must preserve the public record content without commentary and include enough source attribution to identify the originating Bluesky post.
 
 ### 2. Character Limit & Thread Management
 *   **Thread Mapping:** If a Bluesky post exceeds the character limit of the target platform (specifically X at 280 characters), the engine should split the post into a structured thread.
