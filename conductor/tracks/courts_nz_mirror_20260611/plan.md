@@ -17,8 +17,13 @@
 - [x] Task: Confirm required GitHub X secret names exist for `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, and `X_ACCESS_TOKEN_SECRET`.
 - [x] Task: Run an Actions-level X-only secret validation before any live syndication run.
 - [x] Task: Run a controlled single-account, X-only live synchronization test.
-- [ ] Task: Verify the resulting X post on `@MirNZCourts` preserves source attribution and does not duplicate historical content.
-- [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test passes.
+- [x] Task: Verify the resulting X post on `@MirNZCourts` preserves source attribution and does not duplicate historical content.
+  - Verified seed post: https://x.com/MirNZCourts/status/2065081275925557496
+  - Note: the automated Tweepy path reached X but returned `401 Unauthorized`; the visible seed post was submitted through the logged-in X session after switching Chrome to `@MirNZCourts`.
+- [ ] Task: Fix unattended X posting authentication before enabling the scheduled workflow.
+  - Current direct X credentials are present but not post-capable (`401 Unauthorized` from Tweepy).
+  - Current Zernio API key is valid, but `zernio accounts:list` returns no connected social accounts.
+- [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test and unattended credential check pass.
 - [ ] Task: Monitor the first scheduled run and confirm `conductor/state.json` advances without duplicate posts.
 
 ## Phase 4: Later Historical Archive
