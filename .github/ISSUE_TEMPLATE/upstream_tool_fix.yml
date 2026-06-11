@@ -1,0 +1,31 @@
+name: Upstream tool fix
+description: Track a needed fix for an external upstream tool.
+title: "Upstream fix: "
+labels: ["upstream", "tooling"]
+body:
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Tool
+      options:
+        - yt-dlp
+        - social-analyzer
+        - newsboat
+        - feediverse
+        - gofeed
+        - zernio-cli
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: upstream_plan
+    attributes:
+      label: Upstream issue and fork plan
+      description: Link issue, fork branch, or proposed pull request when available.
+    validations:
+      required: false

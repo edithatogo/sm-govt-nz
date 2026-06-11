@@ -1,0 +1,59 @@
+name: Syndicate
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Set up Python
+        run: uv python install 3.11
+      - name: Install runtime dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Install Zernio CLI
+        run: npm install -g @zernio/cli
+      - name: Validate syndication secrets
+        env:
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          ZERNIO_ACCOUNT_IDS_JSON: ${{ secrets.ZERNIO_ACCOUNT_IDS_JSON }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          THREADS_API_ENDPOINT: ${{ secrets.THREADS_API_ENDPOINT }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          LINKEDIN_API_ENDPOINT: ${{ secrets.LINKEDIN_API_ENDPOINT }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: python scripts/validate_secrets.py --mode syndicate
+      - name: Run syndicator
+        env:
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          ZERNIO_ACCOUNT_IDS_JSON: ${{ secrets.ZERNIO_ACCOUNT_IDS_JSON }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          THREADS_API_ENDPOINT: ${{ secrets.THREADS_API_ENDPOINT }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          LINKEDIN_API_ENDPOINT: ${{ secrets.LINKEDIN_API_ENDPOINT }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: python -m src.runner
+      - name: Commit state updates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update syndication state
+          file_pattern: conductor/state.json historical_archive/**

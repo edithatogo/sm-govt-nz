@@ -1,0 +1,38 @@
+{
+  "feed_parser": {
+    "tool": "feedparser",
+    "purpose": "Ingest RSS and Atom feeds from agency websites and media-release feeds",
+    "mode": "library",
+    "required_for_ci": true
+  },
+  "yt_dlp": {
+    "tool": "yt-dlp",
+    "purpose": "Capture metadata for public video and embedded media URLs without downloading by default",
+    "mode": "cli",
+    "required_for_ci": true
+  },
+  "social_analyzer": {
+    "tool": "qeeqbox/social-analyzer",
+    "purpose": "Optional registry discovery probe for candidate public social profiles",
+    "mode": "operator-installed-cli",
+    "required_for_ci": false
+  },
+  "newsboat": {
+    "tool": "newsboat",
+    "purpose": "Optional human/operator RSS review, not scheduled automation",
+    "mode": "manual",
+    "required_for_ci": false
+  },
+  "feediverse": {
+    "tool": "feediverse",
+    "purpose": "Reference pattern for RSS-to-Mastodon templates and de-duplication",
+    "mode": "reference",
+    "required_for_ci": false
+  },
+  "gofeed": {
+    "tool": "mmcdole/gofeed",
+    "purpose": "Alternative if feed ingestion is later moved to Go",
+    "mode": "reference",
+    "required_for_ci": false
+  }
+}

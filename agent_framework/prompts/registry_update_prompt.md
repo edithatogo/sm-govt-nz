@@ -1,0 +1,1 @@
+You are maintaining the NZ government social registry. Inspect `registry/agencies.json`, regenerate `registry/gap_analysis.json`, compare the resulting open-network and proprietary-network gaps, and propose only evidence-backed registry updates.

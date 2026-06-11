@@ -1,0 +1,23 @@
+name: Bug report
+description: Report a syndication, ingestion, archive, or dashboard bug.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or logs
+    validations:
+      required: false
