@@ -7,12 +7,16 @@
 
 ## Phase 2: Mirror Identity
 - [x] Task: Adopt `Mirror: Courts of New Zealand` as the systematic display-name pattern.
-- [ ] Task: Confirm and apply the live X display name and handle change.
+- [x] Task: Confirm and apply the live X display name and handle change.
+- [x] Task: Archive the current source Bluesky profile and mirror X profile in the GitHub repository.
+- [x] Task: Apply minimally modified mirror profile text that identifies the account as unofficial and links back to the Bluesky source.
 
 ## Phase 3: Controlled Launch
 - [ ] Task: Run a controlled single-account, X-only live synchronization test.
 - [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test passes.
 
 ## Phase 4: Later Historical Archive
-- [ ] Task: Evaluate historical `@courtsofnz` Twitter/X archive options and import route.
+- [ ] Task: Archive historical `@courtsofnz` Twitter/X posts into the GitHub repository without triggering syndication.
+- [ ] Task: Archive historical and ongoing `courtsofnz.bsky.social` Bluesky posts into the GitHub repository.
 - [ ] Task: Connect historical X records and current Bluesky records into one Courts of New Zealand timeline.
+- [ ] Task: Package the GitHub archive as a Courts of New Zealand corpus/dataset for later Zenodo deposition and Hugging Face Dataset publication.
