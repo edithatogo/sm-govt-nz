@@ -1,3 +1,4 @@
+import json
 import os
 import subprocess
 from dataclasses import dataclass
@@ -266,6 +267,7 @@ def _platform_limit(target: str) -> int:
         "linkedin": 3000,
         "discord": 1900,
     }.get(target, 3000)
+
 
 def _build_tweepy_client(
     api_key: str,

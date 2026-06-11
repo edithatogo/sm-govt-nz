@@ -21,9 +21,12 @@
   - Verified seed post: https://x.com/MirNZCourts/status/2065081275925557496
   - Note: the automated Tweepy path reached X but returned `401 Unauthorized`; the visible seed post was submitted through the logged-in X session after switching Chrome to `@MirNZCourts`.
 - [ ] Task: Fix unattended X posting authentication before enabling the scheduled workflow.
-  - Current direct X credentials are present but not post-capable (`401 Unauthorized` from Tweepy).
+  - OAuth 1.0 API key/secret and access token/secret were rotated for `@MirNZCourts`.
+  - Local identity checks now authenticate as `@MirNZCourts`.
+  - API write probe now reaches the posting endpoint but fails with `402 Payment Required`: the enrolled X developer account has no credits.
   - Zernio is archived for this MVP and is no longer an active fallback path.
-- [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test and unattended credential check pass.
+- [ ] Task: Add usable X developer API credits or billing for account `2064702174668767232`.
+- [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test and X credits check pass.
 - [ ] Task: Monitor the first scheduled run and confirm `conductor/state.json` advances without duplicate posts.
 
 ## Phase 4: Later Historical Archive
