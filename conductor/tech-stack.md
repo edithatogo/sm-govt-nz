@@ -23,9 +23,16 @@
 ## State & Registry Management
 *   **State Store:** Git-backed local `conductor/state.json`.
 *   **Local Archive Store:** Flat-file directory structure (`/historical_archive/<agency>/<post_id>.json`).
+*   **Profile Archive Store:** Date-stamped profile evidence under `/profile_archive/<agency>/<yyyy-mm-dd>/`.
 *   **External Archive Repositories:**
     *   **Zenodo:** Long-term preservation of JSON datasets with DOI citation.
     *   **Hugging Face Datasets:** Live repository of syndicated public records.
+
+## MVP Runtime Configuration
+*   **Active source account:** `courtsofnz.bsky.social`.
+*   **Active target:** X only, via Tweepy/OAuth credentials.
+*   **Remote workflow state:** `Syndicate` remains manually disabled until the controlled launch gate passes.
+*   **Non-MVP targets:** Threads, Mastodon, Discord, and LinkedIn remain disabled in `config.json`.
 
 ## Frontend / Public Web Stack
 *   **Hosting Platform:** GitHub Pages

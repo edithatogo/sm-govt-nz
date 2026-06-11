@@ -44,6 +44,12 @@ def run_syndication(
         if target_config.get("enabled", False)
     ]
     available_adapters = adapters if adapters is not None else build_adapters_from_env(active_targets)
+    missing_adapters = [
+        target for target in active_targets if target not in available_adapters
+    ]
+    if missing_adapters and not dry_run:
+        formatted = ", ".join(sorted(missing_adapters))
+        raise RuntimeError(f"Missing syndication adapter configuration for: {formatted}")
     next_state: AppState = {"last_seen_post_ids": dict(state["last_seen_post_ids"])}
     account_results: list[AccountRunResult] = []
     archived_any = False

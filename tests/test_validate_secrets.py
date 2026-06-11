@@ -27,6 +27,30 @@ def test_validate_environment_accepts_satisfied_any_group() -> None:
     assert result["satisfied_groups"] == ["zernio"]
 
 
+def test_validate_environment_accepts_zernio_x_target_mapping() -> None:
+    result = validate_environment(
+        "syndicate",
+        schema=SCHEMA,
+        env={"ZERNIO_API_KEY": "key", "ZERNIO_ACCOUNT_IDS_JSON": '{"x":["acct"]}'},
+        target="x",
+    )
+
+    assert result["valid"] is True
+    assert result["target_errors"] == []
+
+
+def test_validate_environment_rejects_x_target_without_x_credentials() -> None:
+    result = validate_environment(
+        "syndicate",
+        schema=SCHEMA,
+        env={"DISCORD_WEBHOOK_URL": "https://example.test/webhook"},
+        target="x",
+    )
+
+    assert result["valid"] is False
+    assert result["target_errors"]
+
+
 def test_validate_environment_rejects_missing_any_group() -> None:
     result = validate_environment("syndicate", schema=SCHEMA, env={})
 

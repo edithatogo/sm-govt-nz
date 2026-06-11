@@ -35,7 +35,7 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           LINKEDIN_API_ENDPOINT: ${{ secrets.LINKEDIN_API_ENDPOINT }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
-        run: python scripts/validate_secrets.py --mode syndicate
+        run: python scripts/validate_secrets.py --mode syndicate --target x
       - name: Run syndicator
         env:
           ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}

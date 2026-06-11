@@ -49,6 +49,24 @@ def test_runner_dry_run_does_not_advance_state() -> None:
     assert next_state == state
 
 
+def test_runner_rejects_enabled_target_without_adapter() -> None:
+    config = make_config()
+    config["syndication_targets"]["x"] = {"enabled": True}
+    state: AppState = {"last_seen_post_ids": {"agency.bsky.social": ""}}
+
+    try:
+        run_syndication(
+            config,
+            state,
+            feed_client=FakeFeedClient(),
+            adapters={"discord": DryRunAdapter("discord"), "mastodon": DryRunAdapter("mastodon")},
+        )
+    except RuntimeError as error:
+        assert "x" in str(error)
+    else:
+        raise AssertionError("Expected missing X adapter to fail before state can advance")
+
+
 def make_config() -> AppConfig:
     return {
         "monitored_accounts": [

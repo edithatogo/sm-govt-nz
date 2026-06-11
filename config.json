@@ -3,32 +3,8 @@
     {
       "handle": "courtsofnz.bsky.social",
       "did": "did:plc:vtoa673xlou45zcsj6inyeis",
-      "name": "Courts of New Zealand",
-      "syndicate_to": ["x", "threads", "mastodon", "discord", "linkedin"]
-    },
-    {
-      "handle": "health.govt.nz",
-      "did": "",
-      "name": "Ministry of Health",
-      "syndicate_to": ["x", "threads", "mastodon", "discord", "linkedin"]
-    },
-    {
-      "handle": "healthnz.govt.nz",
-      "did": "",
-      "name": "Health New Zealand | Te Whatu Ora",
-      "syndicate_to": ["x", "threads", "mastodon", "discord", "linkedin"]
-    },
-    {
-      "handle": "herengaanuku.govt.nz",
-      "did": "",
-      "name": "Herenga ā Nuku Aotearoa",
-      "syndicate_to": ["x", "threads", "mastodon", "discord", "linkedin"]
-    },
-    {
-      "handle": "beehivenz.bsky.social",
-      "did": "",
-      "name": "Beehive NZ",
-      "syndicate_to": ["x", "threads", "mastodon", "discord", "linkedin"]
+      "name": "Mirror: Courts of New Zealand",
+      "syndicate_to": ["x"]
     }
   ],
   "syndication_targets": {
@@ -36,16 +12,16 @@
       "enabled": true
     },
     "threads": {
-      "enabled": true
+      "enabled": false
     },
     "mastodon": {
-      "enabled": true
+      "enabled": false
     },
     "discord": {
-      "enabled": true
+      "enabled": false
     },
     "linkedin": {
-      "enabled": true
+      "enabled": false
     }
   }
 }

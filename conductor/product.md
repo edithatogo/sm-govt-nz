@@ -9,6 +9,15 @@ What I'm wanting to do is to identify NZ government social media posts which are
 ## Product Vision & Goal
 This project automatically syndicates social media updates from NZ Government agencies that publish on Bluesky to other platforms (such as X/Twitter, Threads, Mastodon, Discord, and potentially LinkedIn) to ensure public information is freely and widely accessible. In addition, it hosts a public GitHub Pages site to provide transparency, background context, and advocacy for open government communication.
 
+## Current MVP Launch Scope
+The immediate MVP is intentionally narrower than the long-term product:
+*   **Source:** `courtsofnz.bsky.social`.
+*   **Mirror:** X account `@MirNZCourts`, display name `Mirror: Courts of New Zealand`.
+*   **Posting direction:** Bluesky to X only.
+*   **Identity:** The X account must be presented as an unofficial mirror and link back to the source Bluesky profile.
+*   **Safety:** The first live run must be manual or tightly controlled so the seeded `conductor/state.json` prevents historical backlog reposting.
+*   **Archive:** Current source and mirror profile snapshots live under `profile_archive/courts-nz/2026-06-11/`. Historical X and Bluesky post archives are roadmap work before Zenodo and Hugging Face publication.
+
 ## Core Features
 
 ### 1. Multi-Platform Syndication Engine
@@ -20,6 +29,7 @@ This project automatically syndicates social media updates from NZ Government ag
     *   **Discord** (Webhooks / Bot channels)
     *   **LinkedIn** (optional/extension)
 *   **Format Integrity:** Handle character limits (X is 280 characters, Bluesky is 300) with thread-splitting or truncation. Keep rich formatting, embedded links, and image alt-text.
+*   **MVP Constraint:** Multi-platform posting remains disabled until the Courts of New Zealand Bluesky-to-X mirror is proven in production.
 
 ### 2. Monitoring & Account Discovery
 *   Maintain a primary whitelist of target agency handles in a simple repository configuration file (e.g., `config.json`).
