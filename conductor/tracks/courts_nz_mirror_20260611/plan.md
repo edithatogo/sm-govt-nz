@@ -26,6 +26,7 @@
   - API write probe now reaches the posting endpoint but fails with `402 Payment Required`: the enrolled X developer account has no credits.
   - Zernio is archived for this MVP and is no longer an active fallback path.
 - [ ] Task: Add usable X developer API credits or billing for account `2064702174668767232`.
+  - After credits are available, run `python scripts/x_api_probe.py --write-probe` locally or dispatch `Validate Syndication Secrets` with `write_probe=true`.
 - [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test and X credits check pass.
 - [ ] Task: Monitor the first scheduled run and confirm `conductor/state.json` advances without duplicate posts.
 

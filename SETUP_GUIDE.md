@@ -31,6 +31,18 @@ The X app must have write permissions and the access token must be regenerated
 after write permissions are enabled. A browser-submitted post proves the account
 can post manually, but it does not prove the unattended API workflow can post.
 
+Validate the API path locally:
+
+```powershell
+python scripts/x_api_probe.py
+python scripts/x_api_probe.py --write-probe
+```
+
+The write probe creates and immediately deletes a probe post. It requires X API
+credits. A `402 Payment Required` response means the credentials work but the X
+developer account needs usable credits or billing before scheduled syndication
+can be enabled.
+
 ## 3. Additional Platform Targets
 
 - Discord: `DISCORD_WEBHOOK_URL`
