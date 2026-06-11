@@ -53,6 +53,24 @@ def validate_environment(
     }
 
 
+def load_env_file(path: str | Path) -> dict[str, str]:
+    env: dict[str, str] = {}
+    env_path = Path(path)
+    if not env_path.exists():
+        return env
+
+    for line in env_path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+        name, value = stripped.split("=", 1)
+        name = name.strip()
+        value = value.strip().strip('"').strip("'")
+        if name:
+            env[name] = value
+    return env
+
+
 def _validate_json_vars(names: list[str], env: dict[str, str]) -> list[str]:
     errors = []
     for name in names:
@@ -70,15 +88,16 @@ def _validate_target(target: str | None, env: dict[str, str]) -> list[str]:
     if target != "x":
         return []
 
+    has_buffer_x = bool(env.get("BUFFER_API_KEY")) and bool(env.get("BUFFER_X_CHANNEL_ID"))
     has_direct_x = all(
         env.get(name)
         for name in ["X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET"]
     )
-    if has_direct_x:
+    if has_buffer_x or has_direct_x:
         return []
     return [
-        "x: require X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, and "
-        "X_ACCESS_TOKEN_SECRET"
+        "x: require BUFFER_API_KEY and BUFFER_X_CHANNEL_ID, or X_API_KEY, "
+        "X_API_SECRET, X_ACCESS_TOKEN, and X_ACCESS_TOKEN_SECRET"
     ]
 
 
@@ -87,10 +106,17 @@ def main() -> None:
     parser.add_argument("--mode", default="ci", choices=["ci", "syndicate", "archive", "upstream"])
     parser.add_argument("--schema", default="config/secrets.schema.json")
     parser.add_argument("--target", choices=["x", "discord", "mastodon", "threads", "linkedin"])
+    parser.add_argument(
+        "--env-file",
+        default=".env.local",
+        help="Optional local env file to merge before process environment.",
+    )
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
-    result = validate_environment(args.mode, schema=load_schema(args.schema), target=args.target)
+    env = load_env_file(args.env_file)
+    env.update(os.environ)
+    result = validate_environment(args.mode, schema=load_schema(args.schema), env=env, target=args.target)
     if args.json:
         print(json.dumps(result, indent=2, sort_keys=True))
     elif result["valid"]:

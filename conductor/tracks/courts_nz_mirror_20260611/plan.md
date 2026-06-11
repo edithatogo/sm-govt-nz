@@ -31,6 +31,8 @@
   - At current X API rates, URL-attributed mirroring would have cost about $2.20-$2.60/month for recent Courts of NZ volume.
 - [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test and X credits check pass.
 - [ ] Task: Monitor the first scheduled run and confirm `conductor/state.json` advances without duplicate posts.
+- [ ] Task: Pilot Buffer CLI as the preferred no-direct-X-credits posting path.
+  - Install `@bufferapp/cli`, connect `@MirNZCourts` in Buffer, set `BUFFER_API_KEY` and `BUFFER_X_CHANNEL_ID`, then run a controlled Buffer-backed post.
 
 ## Phase 4: Later Historical Archive
 - [ ] Task: Archive historical `@courtsofnz` Twitter/X posts into the GitHub repository without triggering syndication.

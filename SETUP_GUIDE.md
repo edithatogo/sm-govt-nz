@@ -15,10 +15,33 @@ Required repository settings:
 - Optional project routing: create a GitHub Project and set repository variables
   `PROJECT_NUMBER` and `PROJECT_OWNER`.
 
-## 2. Outbound Posting: X API
+## 2. Preferred Outbound Posting: Buffer
 
-The MVP syndicates Courts of New Zealand Bluesky posts to X through direct X
-API v2 posting with Tweepy.
+The MVP can syndicate Courts of New Zealand Bluesky posts to X through Buffer's
+official CLI. This avoids direct X API credits when Buffer's connected X channel
+supports automatic publishing.
+
+Required GitHub secrets:
+
+- `BUFFER_API_KEY`
+- `BUFFER_X_CHANNEL_ID`
+
+Local setup:
+
+```powershell
+npm install -g @bufferapp/cli
+buffer doctor --output json
+buffer channels list --organization-id <organization-id> --output json
+```
+
+Generate a Buffer API key at `https://publish.buffer.com/settings/api`, connect
+`@MirNZCourts` as an X channel in Buffer, then set `BUFFER_X_CHANNEL_ID` to that
+channel ID.
+
+## 3. Direct X API Fallback
+
+Direct X API posting through Tweepy remains available as a fallback, but it
+requires X developer API credits.
 
 Required GitHub secrets:
 
@@ -43,14 +66,14 @@ credits. A `402 Payment Required` response means the credentials work but the X
 developer account needs usable credits or billing before scheduled syndication
 can be enabled.
 
-## 3. Additional Platform Targets
+## 4. Additional Platform Targets
 
 - Discord: `DISCORD_WEBHOOK_URL`
 - Mastodon: `MASTODON_BASE_URL`, `MASTODON_ACCESS_TOKEN`
 - Threads: `THREADS_API_ENDPOINT`, `THREADS_ACCESS_TOKEN`
 - LinkedIn: `LINKEDIN_API_ENDPOINT`, `LINKEDIN_ACCESS_TOKEN`
 
-## 4. Archive Publishing
+## 5. Archive Publishing
 
 For external archive publishing, configure:
 
@@ -60,19 +83,19 @@ For external archive publishing, configure:
 The Pages workflow builds a local archive bundle. Publishing to external archive
 services is controlled by the publishing script and environment credentials.
 
-## 5. Source Discovery and Ingestion Tools
+## 6. Source Discovery and Ingestion Tools
 
 Runtime dependencies are in `requirements.txt`.
 
 - RSS/Atom: `feedparser`
 - Video metadata: `yt-dlp`
 - Optional social profile probing: `social-analyzer`
-- Outbound posting: Tweepy/X API v2
+- Outbound posting: Buffer CLI, with Tweepy/X API v2 as fallback
 
 Candidate profile discoveries must be reviewed before editing
 `registry/agencies.json`.
 
-## 6. Validate Secrets
+## 7. Validate Secrets
 
 Run the validator locally:
 
@@ -81,9 +104,13 @@ python scripts/validate_secrets.py --mode syndicate
 python scripts/validate_secrets.py --mode archive
 ```
 
+Local validation reads `.env.local` when present, then lets exported process
+environment variables override those values. GitHub Actions uses repository
+secrets directly.
+
 The syndication workflow runs the validator before posting.
 
-## 7. Local Quality Gate
+## 8. Local Quality Gate
 
 ```powershell
 ruff check --no-cache src tests scripts
@@ -92,7 +119,7 @@ python scripts/gap_analyzer.py --registry registry/agencies.json --output regist
 python scripts/publish_archives.py --archive-dir historical_archive --output-dir dist --manifest dist/archive_manifest.json
 ```
 
-## 8. Upstream Fixes
+## 9. Upstream Fixes
 
 If an external tool needs a fix, use `scripts/upstream_contribution.py` and the
 upstream manifest in `config/upstream_tools.json`. Open an upstream issue, fork

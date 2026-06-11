@@ -181,6 +181,51 @@ class ZernioCliAdapter:
         return SyndicationResult(self.name, success=True, detail=completed.stdout.strip())
 
 
+class BufferCliAdapter:
+    """Outbound adapter backed by Buffer's official CLI."""
+
+    def __init__(
+        self,
+        channel_id: str,
+        *,
+        command: str = "buffer",
+        text_limit: int = 280,
+    ) -> None:
+        self.name = "x"
+        self.channel_id = channel_id
+        self.command = command
+        self.text_limit = text_limit
+
+    def send(self, post: BlueskyPost) -> SyndicationResult:
+        args = [
+            self.command,
+            "posts",
+            "create",
+            "--scheduling-type",
+            "automatic",
+            "--mode",
+            "shareNow",
+            "--channel-id",
+            self.channel_id,
+            "--text",
+            format_post_text(post, limit=self.text_limit),
+            "--source",
+            "sm-govt-nz",
+            "--output",
+            "json",
+            "--quiet",
+        ]
+
+        completed = subprocess.run(args, capture_output=True, text=True, check=False)
+        if completed.returncode != 0:
+            return SyndicationResult(
+                self.name,
+                success=False,
+                detail=(completed.stderr or completed.stdout).strip(),
+            )
+        return SyndicationResult(self.name, success=True, detail=completed.stdout.strip())
+
+
 class TweepyXAdapter:
     name = "x"
 
@@ -237,6 +282,12 @@ def _build_adapter_from_env(target: str) -> SyndicationAdapter | None:
             return MastodonAdapter(base_url, token)
         return None
     if target == "x":
+        buffer_channel_id = os.getenv("BUFFER_X_CHANNEL_ID")
+        if buffer_channel_id and os.getenv("BUFFER_API_KEY"):
+            return BufferCliAdapter(
+                buffer_channel_id,
+                command=os.getenv("BUFFER_CLI_COMMAND", "buffer"),
+            )
         api_key = os.getenv("X_API_KEY")
         api_secret = os.getenv("X_API_SECRET")
         access_token = os.getenv("X_ACCESS_TOKEN")

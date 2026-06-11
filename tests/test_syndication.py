@@ -1,5 +1,6 @@
 from src.bluesky import BlueskyPost
 from src.syndication import (
+    BufferCliAdapter,
     DiscordWebhookAdapter,
     DryRunAdapter,
     MastodonAdapter,
@@ -90,6 +91,45 @@ def test_zernio_adapter_invokes_posts_create(monkeypatch) -> None:
     assert args[:2] == ["zernio-test", "posts:create"]
     assert args[args.index("--accounts") + 1] == "acct-1"
     assert "--media" in args
+
+
+def test_buffer_adapter_invokes_posts_create(monkeypatch) -> None:
+    calls = []
+
+    def fake_run(args, capture_output, text, check):
+        calls.append((args, capture_output, text, check))
+
+        class Completed:
+            returncode = 0
+            stdout = '{"post":{"id":"buffer-post-1"}}'
+            stderr = ""
+
+        return Completed()
+
+    monkeypatch.setattr("src.syndication.subprocess.run", fake_run)
+
+    result = BufferCliAdapter("channel-x", command="buffer-test").send(make_post())
+
+    assert result.success is True
+    args = calls[0][0]
+    assert args[:3] == ["buffer-test", "posts", "create"]
+    assert args[args.index("--channel-id") + 1] == "channel-x"
+    assert args[args.index("--mode") + 1] == "shareNow"
+    assert args[args.index("--scheduling-type") + 1] == "automatic"
+    assert "Original:" in args[args.index("--text") + 1]
+
+
+def test_build_adapters_prefers_buffer_for_x(monkeypatch) -> None:
+    monkeypatch.setenv("BUFFER_API_KEY", "buffer-key")
+    monkeypatch.setenv("BUFFER_X_CHANNEL_ID", "channel-x")
+    monkeypatch.setenv("X_API_KEY", "key")
+    monkeypatch.setenv("X_API_SECRET", "secret")
+    monkeypatch.setenv("X_ACCESS_TOKEN", "token")
+    monkeypatch.setenv("X_ACCESS_TOKEN_SECRET", "token-secret")
+
+    adapters = build_adapters_from_env(["x"])
+
+    assert isinstance(adapters["x"], BufferCliAdapter)
 
 
 def test_build_adapters_does_not_select_archived_zernio_mapping(monkeypatch) -> None:
