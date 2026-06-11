@@ -74,33 +74,12 @@ def _validate_target(target: str | None, env: dict[str, str]) -> list[str]:
         env.get(name)
         for name in ["X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET"]
     )
-    has_zernio_x = bool(env.get("ZERNIO_API_KEY")) and _zernio_has_target(env, "x")
-    if has_direct_x or has_zernio_x:
+    if has_direct_x:
         return []
     return [
         "x: require X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, and "
-        "X_ACCESS_TOKEN_SECRET, or ZERNIO_API_KEY with an x entry in "
-        "ZERNIO_ACCOUNT_IDS_JSON/ZERNIO_ACCOUNT_IDS_X"
+        "X_ACCESS_TOKEN_SECRET"
     ]
-
-
-def _zernio_has_target(env: dict[str, str], target: str) -> bool:
-    if env.get(f"ZERNIO_ACCOUNT_IDS_{target.upper()}"):
-        return True
-
-    mapping_json = env.get("ZERNIO_ACCOUNT_IDS_JSON")
-    if not mapping_json:
-        return False
-    try:
-        mapping = json.loads(mapping_json)
-    except json.JSONDecodeError:
-        return False
-    values = mapping.get(target)
-    if isinstance(values, str):
-        return bool(values.strip())
-    if isinstance(values, list):
-        return any(str(value).strip() for value in values)
-    return False
 
 
 def main() -> None:

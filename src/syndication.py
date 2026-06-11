@@ -1,4 +1,3 @@
-import json
 import os
 import subprocess
 from dataclasses import dataclass
@@ -227,14 +226,6 @@ def build_adapters_from_env(targets: list[str]) -> dict[str, SyndicationAdapter]
 
 
 def _build_adapter_from_env(target: str) -> SyndicationAdapter | None:
-    zernio_accounts = _zernio_account_ids_for_target(target)
-    if zernio_accounts:
-        return ZernioCliAdapter(
-            target,
-            zernio_accounts,
-            command=os.getenv("ZERNIO_CLI_COMMAND", "zernio"),
-            text_limit=_platform_limit(target),
-        )
     if target == "discord":
         webhook = os.getenv("DISCORD_WEBHOOK_URL")
         return DiscordWebhookAdapter(webhook) if webhook else None
@@ -275,31 +266,6 @@ def _platform_limit(target: str) -> int:
         "linkedin": 3000,
         "discord": 1900,
     }.get(target, 3000)
-
-
-def _zernio_account_ids_for_target(target: str) -> list[str]:
-    per_platform = os.getenv(f"ZERNIO_ACCOUNT_IDS_{target.upper()}", "")
-    if per_platform:
-        return _split_account_ids(per_platform)
-
-    mapping_json = os.getenv("ZERNIO_ACCOUNT_IDS_JSON", "")
-    if not mapping_json:
-        return []
-    try:
-        mapping = json.loads(mapping_json)
-    except json.JSONDecodeError:
-        return []
-    values = mapping.get(target, [])
-    if isinstance(values, str):
-        return _split_account_ids(values)
-    if isinstance(values, list):
-        return [str(value) for value in values if str(value).strip()]
-    return []
-
-
-def _split_account_ids(value: str) -> list[str]:
-    return [item.strip() for item in value.split(",") if item.strip()]
-
 
 def _build_tweepy_client(
     api_key: str,

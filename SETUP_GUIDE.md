@@ -15,45 +15,26 @@ Required repository settings:
 - Optional project routing: create a GitHub Project and set repository variables
   `PROJECT_NUMBER` and `PROJECT_OWNER`.
 
-## 2. Preferred Outbound Posting: Zernio
+## 2. Outbound Posting: X API
 
-Use Zernio for outbound syndication when connected accounts are available.
+The MVP syndicates Courts of New Zealand Bluesky posts to X through direct X
+API v2 posting with Tweepy.
 
-1. Install and authenticate locally:
+Required GitHub secrets:
 
-   ```powershell
-   npm install -g @zernio/cli
-   zernio auth:login
-   zernio accounts:list --pretty
-   ```
+- `X_API_KEY`
+- `X_API_SECRET`
+- `X_ACCESS_TOKEN`
+- `X_ACCESS_TOKEN_SECRET`
 
-2. Create GitHub secrets:
+The X app must have write permissions and the access token must be regenerated
+after write permissions are enabled. A browser-submitted post proves the account
+can post manually, but it does not prove the unattended API workflow can post.
 
-   - `ZERNIO_API_KEY`
-   - `ZERNIO_ACCOUNT_IDS_JSON`
-
-Example `ZERNIO_ACCOUNT_IDS_JSON`:
-
-```json
-{
-  "x": ["acct_x"],
-  "threads": ["acct_threads"],
-  "linkedin": ["acct_linkedin"],
-  "facebook": ["acct_facebook"]
-}
-```
-
-When Zernio account IDs are present for a platform, the runner prefers
-`zernio posts:create` over direct API adapters.
-
-## 3. Direct Platform Fallbacks
-
-Use these only when Zernio cannot cover a destination.
+## 3. Additional Platform Targets
 
 - Discord: `DISCORD_WEBHOOK_URL`
 - Mastodon: `MASTODON_BASE_URL`, `MASTODON_ACCESS_TOKEN`
-- X via Tweepy: `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`,
-  `X_ACCESS_TOKEN_SECRET`
 - Threads: `THREADS_API_ENDPOINT`, `THREADS_ACCESS_TOKEN`
 - LinkedIn: `LINKEDIN_API_ENDPOINT`, `LINKEDIN_ACCESS_TOKEN`
 
@@ -74,7 +55,7 @@ Runtime dependencies are in `requirements.txt`.
 - RSS/Atom: `feedparser`
 - Video metadata: `yt-dlp`
 - Optional social profile probing: `social-analyzer`
-- Outbound posting: `zernio-cli`
+- Outbound posting: Tweepy/X API v2
 
 Candidate profile discoveries must be reviewed before editing
 `registry/agencies.json`.

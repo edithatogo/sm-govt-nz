@@ -22,7 +22,7 @@
   - Note: the automated Tweepy path reached X but returned `401 Unauthorized`; the visible seed post was submitted through the logged-in X session after switching Chrome to `@MirNZCourts`.
 - [ ] Task: Fix unattended X posting authentication before enabling the scheduled workflow.
   - Current direct X credentials are present but not post-capable (`401 Unauthorized` from Tweepy).
-  - Current Zernio API key is valid, but `zernio accounts:list` returns no connected social accounts.
+  - Zernio is archived for this MVP and is no longer an active fallback path.
 - [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test and unattended credential check pass.
 - [ ] Task: Monitor the first scheduled run and confirm `conductor/state.json` advances without duplicate posts.
 

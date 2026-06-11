@@ -92,15 +92,23 @@ def test_zernio_adapter_invokes_posts_create(monkeypatch) -> None:
     assert "--media" in args
 
 
-def test_build_adapters_prefers_zernio_account_mapping(monkeypatch) -> None:
+def test_build_adapters_does_not_select_archived_zernio_mapping(monkeypatch) -> None:
     monkeypatch.setenv("ZERNIO_ACCOUNT_IDS_JSON", '{"x":["acct-x"],"linkedin":"acct-link"}')
-    monkeypatch.setenv("X_API_ENDPOINT", "https://x.example/api")
-    monkeypatch.setenv("X_BEARER_TOKEN", "token")
+    monkeypatch.setenv("X_API_KEY", "key")
+    monkeypatch.setenv("X_API_SECRET", "secret")
+    monkeypatch.setenv("X_ACCESS_TOKEN", "token")
+    monkeypatch.setenv("X_ACCESS_TOKEN_SECRET", "token-secret")
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            self.kwargs = kwargs
+
+    monkeypatch.setattr("src.syndication._build_tweepy_client", lambda *args: FakeClient(args=args))
 
     adapters = build_adapters_from_env(["x", "linkedin"])
 
-    assert isinstance(adapters["x"], ZernioCliAdapter)
-    assert isinstance(adapters["linkedin"], ZernioCliAdapter)
+    assert isinstance(adapters["x"], TweepyXAdapter)
+    assert "linkedin" not in adapters
 
 
 def test_tweepy_x_adapter_posts_with_create_tweet() -> None:

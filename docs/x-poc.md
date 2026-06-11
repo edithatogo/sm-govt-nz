@@ -1,23 +1,6 @@
-# X Proof of Concept
+# X Proof Of Concept
 
-The X proof of concept has two supported outbound paths.
-
-## Preferred: Zernio
-
-Use Zernio when the X account is connected in Zernio:
-
-```json
-{
-  "x": ["acct_x"]
-}
-```
-
-Configure GitHub secrets:
-
-- `ZERNIO_API_KEY`
-- `ZERNIO_ACCOUNT_IDS_JSON`
-
-## Direct fallback: Tweepy
+The X proof of concept uses direct X API v2 posting through Tweepy.
 
 Use Tweepy when posting directly through X API v2. The app must have write
 permissions, and the access token must be regenerated after write permissions
@@ -31,6 +14,12 @@ Configure GitHub secrets:
 - `X_ACCESS_TOKEN_SECRET`
 
 The runner uses OAuth 1.0a user context through `tweepy.Client.create_tweet`.
+
+## Archived: Zernio
+
+Zernio is no longer part of the active MVP launch path. Historical integration
+notes remain in `docs/zernio.md`, but the syndication workflow does not install
+or prefer `zernio-cli`.
 
 ## Local validation
 
