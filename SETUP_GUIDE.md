@@ -38,6 +38,10 @@ Generate a Buffer API key at `https://publish.buffer.com/settings/api`, connect
 `@MirNZCourts` as an X channel in Buffer, then set `BUFFER_X_CHANNEL_ID` to that
 channel ID.
 
+After adding both secrets, run the `Validate Buffer Syndication` workflow. It
+checks the Buffer account and dry-runs the exact X post command without
+publishing.
+
 ## 3. Direct X API Fallback
 
 Direct X API posting through Tweepy remains available as a fallback, but it

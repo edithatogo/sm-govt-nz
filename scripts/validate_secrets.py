@@ -55,8 +55,10 @@ def validate_environment(
 
 def load_env_file(path: str | Path) -> dict[str, str]:
     env: dict[str, str] = {}
+    if not path:
+        return env
     env_path = Path(path)
-    if not env_path.exists():
+    if not env_path.exists() or env_path.is_dir():
         return env
 
     for line in env_path.read_text(encoding="utf-8").splitlines():

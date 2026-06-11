@@ -112,3 +112,7 @@ def test_load_env_file_reads_simple_key_values(tmp_path) -> None:
         "BUFFER_X_CHANNEL_ID": "channel-x",
         "EMPTY": "",
     }
+
+
+def test_load_env_file_ignores_empty_path() -> None:
+    assert load_env_file("") == {}
