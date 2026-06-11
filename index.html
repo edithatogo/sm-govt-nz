@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NZ Government Bluesky Syndicator</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --ink: #17202a;
+      --muted: #5d6d7e;
+      --line: #d7dde5;
+      --accent: #0b6b5e;
+      --panel: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+    header, main, footer { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header { padding-top: 42px; }
+    h1 { margin: 0 0 8px; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.05; }
+    h2 { margin: 0 0 16px; font-size: 1.2rem; }
+    p { margin: 0; color: var(--muted); max-width: 780px; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .metric, .agency {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .metric strong { display: block; font-size: 2rem; color: var(--accent); }
+    .agency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .agency h3 { margin: 0 0 6px; font-size: 1rem; }
+    .targets { margin-top: 10px; color: var(--muted); font-size: 0.9rem; }
+    footer { color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NZ Government Bluesky Syndicator</h1>
+    <p>Public-interest monitoring of selected official Bluesky accounts, with transparent configuration and syndicated public updates across configured channels.</p>
+  </header>
+  <main>
+    <section class="summary" aria-label="Syndication summary">
+      <div class="metric"><strong id="agency-count">0</strong><span>monitored agencies</span></div>
+      <div class="metric"><strong id="target-count">0</strong><span>enabled targets</span></div>
+      <div class="metric"><strong id="state-count">0</strong><span>state entries</span></div>
+      <div class="metric"><strong id="open-count">0</strong><span>open-network coverage</span></div>
+    </section>
+    <section>
+      <h2>Open Network Gaps</h2>
+      <div id="gaps" class="agency-grid"></div>
+    </section>
+    <section>
+      <h2>Monitored Agencies</h2>
+      <div id="agencies" class="agency-grid"></div>
+    </section>
+    <section>
+      <h2>Archive Timeline</h2>
+      <div id="timeline" class="agency-grid"></div>
+    </section>
+  </main>
+  <footer>
+    This site mirrors public posts for accessibility, resilience, and public-sector transparency. Source accounts remain authoritative.
+  </footer>
+  <script>
+    const loadJson = async (path) => {
+      const response = await fetch(path, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Failed to load ${path}`);
+      return response.json();
+    };
+
+    const render = async () => {
+      try {
+        const [config, state, gaps] = await Promise.all([
+          loadJson('config.json'),
+          loadJson('conductor/state.json'),
+          loadJson('registry/gap_analysis.json'),
+        ]);
+        const enabledTargets = Object.entries(config.syndication_targets || {})
+          .filter(([, value]) => value.enabled)
+          .map(([name]) => name);
+        document.querySelector('#agency-count').textContent = config.monitored_accounts.length;
+        document.querySelector('#target-count').textContent = enabledTargets.length;
+        document.querySelector('#state-count').textContent = Object.keys(state.last_seen_post_ids || {}).length;
+        document.querySelector('#open-count').textContent = gaps.open_network_coverage;
+        document.querySelector('#gaps').innerHTML = gaps.open_missing.length === 0
+          ? '<p>No open-network gaps in the current registry.</p>'
+          : gaps.open_missing.map((agency) => `
+            <article class="agency">
+              <h3>${agency.name}</h3>
+              <p>${agency.portfolio} · ${agency.type}</p>
+              <div class="targets">Active proprietary: ${agency.active_proprietary.join(', ') || 'none'}</div>
+            </article>
+          `).join('');
+        document.querySelector('#agencies').innerHTML = config.monitored_accounts.map((agency) => `
+          <article class="agency">
+            <h3>${agency.name}</h3>
+            <p>${agency.handle}</p>
+            <div class="targets">Targets: ${agency.syndicate_to.join(', ')}</div>
+          </article>
+        `).join('');
+        try {
+          const timeline = await loadJson('historical_archive/timeline.json');
+          document.querySelector('#timeline').innerHTML = timeline.slice(0, 12).map((post) => `
+            <article class="agency">
+              <h3>${post.agency}</h3>
+              <p>${post.content}</p>
+              <div class="targets">${post.created_at}</div>
+            </article>
+          `).join('');
+        } catch {
+          document.querySelector('#timeline').innerHTML = '<p>No archived posts have been published yet.</p>';
+        }
+      } catch (error) {
+        document.querySelector('#agencies').innerHTML = `<p>${error.message}</p>`;
+      }
+    };
+
+    render();
+  </script>
+</body>
+</html>

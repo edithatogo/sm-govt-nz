@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "dependencyDashboard": true,
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": ["pip_requirements"],
+      "groupName": "python dependencies"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions"
+    },
+    {
+      "matchPackageNames": ["@zernio/cli"],
+      "groupName": "zernio cli"
+    }
+  ]
+}

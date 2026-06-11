@@ -1,0 +1,43 @@
+name: Government handle request
+description: Suggest or correct an official agency profile.
+title: "Handle request: "
+labels: ["registry", "handle-request"]
+body:
+  - type: input
+    id: agency
+    attributes:
+      label: Agency
+      description: Official agency name.
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - bluesky
+        - mastodon
+        - rss
+        - x
+        - threads
+        - linkedin
+        - facebook
+        - instagram
+        - youtube
+        - tiktok
+        - other
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official URL
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Explain why this profile is official.
+    validations:
+      required: true
