@@ -15,3 +15,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [x] Track: Setup platform developer onboarding, secrets setup, and bleeding-edge GitHub integrations
 *Link: [./conductor/tracks/github_integrations_20260610/](./conductor/tracks/github_integrations_20260610/)*
+
+## [ ] Track: Prioritize Courts of New Zealand mirror synchronization
+*Link: [./conductor/tracks/courts_nz_mirror_20260611/](./conductor/tracks/courts_nz_mirror_20260611/)*
