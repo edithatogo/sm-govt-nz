@@ -36,13 +36,13 @@ Two automated processes run on GitHub Actions:
     7.  Update `conductor/state.json` with the new last-seen post IDs and telemetry logs.
     8.  Commit and push the updated state and archive files back to the repository.
 
-### MVP Launch Gate - Courts of New Zealand to X
+### MVP Launch Gate - Courts of New Zealand to Bluesky Mirror
 Before enabling the scheduled syndicator for the MVP:
 1.  Merge the Courts of New Zealand mirror scope PR after CI passes.
-2.  Confirm GitHub repository secrets for X posting validate with `scripts/validate_secrets.py --mode syndicate`.
-3.  Keep `config.json` scoped to `courtsofnz.bsky.social` with `syndicate_to: ["x"]`.
+2.  Confirm GitHub repository secrets for Bluesky mirror posting validate with `scripts/validate_secrets.py --mode syndicate --target bluesky`.
+3.  Keep `config.json` scoped to `courtsofnz.bsky.social` with `syndicate_to: ["bluesky"]` and `max_posts_per_run: 1`.
 4.  Confirm `conductor/state.json` is seeded to the latest known Bluesky post so historical posts are not reposted.
-5.  Run one controlled `workflow_dispatch` or local dry/live test and verify the resulting X post links back to the source Bluesky post.
+5.  Run one controlled `workflow_dispatch` or local dry/live test and verify the resulting mirror post links back to the source Bluesky post.
 6.  Re-enable the GitHub `Syndicate` workflow only after the controlled test passes. The remote workflow is currently disabled manually as a safety gate.
 7.  Monitor the first scheduled run and confirm `conductor/state.json` advances without duplicating posts.
 

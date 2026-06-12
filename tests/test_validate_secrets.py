@@ -9,6 +9,7 @@ SCHEMA = {
                 {"name": "buffer", "vars": ["BUFFER_API_KEY", "BUFFER_X_CHANNEL_ID"]},
                 {"name": "discord", "vars": ["DISCORD_WEBHOOK_URL"]},
                 {"name": "x", "vars": ["X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET"]},
+                {"name": "bluesky", "vars": ["BLUESKY_MIRROR_HANDLE", "BLUESKY_MIRROR_APP_PASSWORD"]},
             ],
         },
         "upstream": {"required": ["GH_TOKEN"], "anyOf": []},
@@ -69,11 +70,38 @@ def test_validate_environment_rejects_x_target_without_x_credentials() -> None:
     assert result["target_errors"]
 
 
+def test_validate_environment_accepts_bluesky_target_credentials() -> None:
+    result = validate_environment(
+        "syndicate",
+        schema=SCHEMA,
+        env={
+            "BLUESKY_MIRROR_HANDLE": "mirnzcourts.bsky.social",
+            "BLUESKY_MIRROR_APP_PASSWORD": "app-password",
+        },
+        target="bluesky",
+    )
+
+    assert result["valid"] is True
+    assert result["target_errors"] == []
+
+
+def test_validate_environment_rejects_bluesky_target_without_credentials() -> None:
+    result = validate_environment(
+        "syndicate",
+        schema=SCHEMA,
+        env={"DISCORD_WEBHOOK_URL": "https://example.test/webhook"},
+        target="bluesky",
+    )
+
+    assert result["valid"] is False
+    assert result["target_errors"]
+
+
 def test_validate_environment_rejects_missing_any_group() -> None:
     result = validate_environment("syndicate", schema=SCHEMA, env={})
 
     assert result["valid"] is False
-    assert result["requires_one_of"] == ["buffer", "discord", "x"]
+    assert result["requires_one_of"] == ["buffer", "discord", "x", "bluesky"]
 
 
 def test_validate_environment_rejects_zernio_only_for_x_target() -> None:

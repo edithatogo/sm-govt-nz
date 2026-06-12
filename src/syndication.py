@@ -251,6 +251,37 @@ class TweepyXAdapter:
         return SyndicationResult(self.name, success=True, detail=tweet_id)
 
 
+class BlueskyMirrorAdapter:
+    """Outbound adapter for a dedicated Bluesky mirror account."""
+
+    name = "bluesky"
+
+    def __init__(
+        self,
+        handle: str,
+        app_password: str,
+        *,
+        client: Any | None = None,
+        text_limit: int = 300,
+    ) -> None:
+        self.handle = handle
+        self.app_password = app_password
+        self.client = client or _build_atproto_client()
+        self.text_limit = text_limit
+        self._logged_in = False
+
+    def send(self, post: BlueskyPost) -> SyndicationResult:
+        if not self._logged_in:
+            self.client.login(self.handle, self.app_password)
+            self._logged_in = True
+        response = self.client.send_post(format_post_text(post, limit=self.text_limit))
+        return SyndicationResult(
+            self.name,
+            success=True,
+            detail=_atproto_post_uri_from_response(response),
+        )
+
+
 def format_post_text(post: BlueskyPost, *, limit: int) -> str:
     suffix = f"\n\nOriginal: {post['url']}"
     text = post["text"].strip()
@@ -301,6 +332,12 @@ def _build_adapter_from_env(target: str) -> SyndicationAdapter | None:
         if endpoint and token:
             return GenericApiAdapter("threads", endpoint, token, limit=500)
         return None
+    if target == "bluesky":
+        handle = os.getenv("BLUESKY_MIRROR_HANDLE")
+        app_password = os.getenv("BLUESKY_MIRROR_APP_PASSWORD")
+        if handle and app_password:
+            return BlueskyMirrorAdapter(handle, app_password)
+        return None
     if target == "linkedin":
         endpoint = os.getenv("LINKEDIN_API_ENDPOINT")
         token = os.getenv("LINKEDIN_ACCESS_TOKEN")
@@ -317,6 +354,7 @@ def _platform_limit(target: str) -> int:
         "threads": 500,
         "linkedin": 3000,
         "discord": 1900,
+        "bluesky": 300,
     }.get(target, 3000)
 
 
@@ -338,6 +376,14 @@ def _build_tweepy_client(
     )
 
 
+def _build_atproto_client() -> Any:
+    try:
+        from atproto import Client
+    except ImportError as error:
+        raise RuntimeError("Install atproto to use Bluesky mirror posting.") from error
+    return Client()
+
+
 def _tweet_id_from_response(response: Any) -> str:
     data = getattr(response, "data", None)
     if isinstance(data, dict):
@@ -346,4 +392,13 @@ def _tweet_id_from_response(response: Any) -> str:
         response_data = response.get("data", {})
         if isinstance(response_data, dict):
             return str(response_data.get("id", ""))
+    return ""
+
+
+def _atproto_post_uri_from_response(response: Any) -> str:
+    uri = getattr(response, "uri", None)
+    if uri:
+        return str(uri)
+    if isinstance(response, dict):
+        return str(response.get("uri", ""))
     return ""

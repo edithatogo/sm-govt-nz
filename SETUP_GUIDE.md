@@ -15,39 +15,47 @@ Required repository settings:
 - Optional project routing: create a GitHub Project and set repository variables
   `PROJECT_NUMBER` and `PROJECT_OWNER`.
 
-## 2. Preferred Outbound Posting: Buffer
+## 2. Current MVP Outbound Posting: Bluesky Mirror
 
-The MVP can syndicate Courts of New Zealand Bluesky posts to X through Buffer's
-official CLI. This avoids direct X API credits when Buffer's connected X channel
-supports automatic publishing.
+The current MVP is scoped to mirroring Courts of New Zealand Bluesky posts to a
+dedicated Bluesky mirror account before any additional platforms are enabled.
+`config.json` enables only the `bluesky` target and sets
+`max_posts_per_run` to `1` for the controlled launch period.
 
 Required GitHub secrets:
 
-- `BUFFER_API_KEY`
-- `BUFFER_X_CHANNEL_ID`
+- `BLUESKY_MIRROR_HANDLE`
+- `BLUESKY_MIRROR_APP_PASSWORD`
 
 Local setup:
 
 ```powershell
-npm install -g @bufferapp/cli
-buffer doctor --output json
-buffer channels list --organization-id <organization-id> --output json
+python scripts/validate_secrets.py --mode syndicate --target bluesky
+python scripts/bluesky_api_probe.py
 ```
 
-Generate a Buffer API key at `https://publish.buffer.com/settings/api`, connect
-`@MirNZCourts` as an X channel in Buffer, then set `BUFFER_X_CHANNEL_ID` to that
-channel ID.
+Generate the app password from the dedicated Bluesky mirror account. The probe
+creates an authenticated session and prints only the handle/DID; it does not
+publish content.
 
-After adding both secrets, run the `Validate Buffer Syndication` workflow. It
-checks the Buffer account and dry-runs the exact X post command without
-publishing.
+After adding both secrets, run the `Validate Syndication Secrets` workflow. It
+checks the Bluesky credential path without posting.
 
-## 3. Direct X API Fallback
+## 3. Deferred X Posting: Buffer or Direct API
+
+X posting is deferred while the Bluesky mirror MVP is implemented. When reopened,
+the preferred X route is Buffer's official CLI because it may avoid direct X API
+credits when Buffer's connected X channel supports automatic publishing.
+
+Buffer secrets:
+
+- `BUFFER_API_KEY`
+- `BUFFER_X_CHANNEL_ID`
 
 Direct X API posting through Tweepy remains available as a fallback, but it
 requires X developer API credits.
 
-Required GitHub secrets:
+Direct X secrets:
 
 - `X_API_KEY`
 - `X_API_SECRET`
@@ -74,7 +82,6 @@ can be enabled.
 
 - Discord: `DISCORD_WEBHOOK_URL`
 - Mastodon: `MASTODON_BASE_URL`, `MASTODON_ACCESS_TOKEN`
-- Bluesky mirror: `BLUESKY_MIRROR_HANDLE`, `BLUESKY_MIRROR_APP_PASSWORD`
 - Threads mirror: `THREADS_API_ENDPOINT`, `THREADS_ACCESS_TOKEN`,
   `THREADS_MIRROR_ACCOUNT_ID`
 
@@ -163,9 +170,10 @@ reviews, and explicit posting contracts.
 Runtime dependencies are in `requirements.txt`.
 
 - RSS/Atom: `feedparser`
+- Bluesky/AT Protocol posting: `atproto`
 - Video metadata: `yt-dlp`
 - Optional social profile probing: `social-analyzer`
-- Outbound posting: Buffer CLI, with Tweepy/X API v2 as fallback
+- Deferred X outbound posting: Buffer CLI, with Tweepy/X API v2 as fallback
 - Future archive adapters: AT Protocol/Bluesky, LinkedIn export/API, X archive
   capture, inbound email parsing, and Hugging Face dataset publishing
 

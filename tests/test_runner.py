@@ -67,6 +67,29 @@ def test_runner_rejects_enabled_target_without_adapter() -> None:
         raise AssertionError("Expected missing X adapter to fail before state can advance")
 
 
+def test_runner_limits_posts_before_advancing_state(tmp_path) -> None:
+    config = make_config()
+    config["monitored_accounts"][0]["syndicate_to"] = ["bluesky"]
+    config["syndication_targets"] = {
+        "bluesky": {"enabled": True, "max_posts_per_run": 1},
+    }
+    state: AppState = {"last_seen_post_ids": {"agency.bsky.social": ""}}
+    adapter = DryRunAdapter("bluesky")
+
+    summary, next_state = run_syndication(
+        config,
+        state,
+        feed_client=FakeFeedClient(),
+        adapters={"bluesky": adapter},
+        archive_dir=str(tmp_path / "archive"),
+    )
+
+    assert summary.fetched == 1
+    assert [post["post_id"] for post in adapter.sent_posts] == ["post-1"]
+    assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-1"
+    assert not (tmp_path / "archive" / "agency.bsky.social" / "post-2.json").exists()
+
+
 def make_config() -> AppConfig:
     return {
         "monitored_accounts": [

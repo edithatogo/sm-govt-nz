@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import Iterable
 
 from src.archiver import archive_bluesky_post, write_timeline
-from src.bluesky import AuthorFeedClient, fetch_new_posts_for_account
+from src.bluesky import AuthorFeedClient, BlueskyPost, fetch_new_posts_for_account
 from src.config import AppConfig, AppState, load_config, load_state, save_state
 from src.syndication import SyndicationAdapter, SyndicationResult, build_adapters_from_env
 
@@ -58,6 +58,7 @@ def run_syndication(
         handle = account["handle"]
         last_seen = state["last_seen_post_ids"].get(handle, "")
         posts = fetch_new_posts_for_account(account, last_seen, client=feed_client)
+        posts = _limit_posts_for_enabled_targets(posts, account["syndicate_to"], config)
         result_items: list[SyndicationResult] = []
         syndicated_count = 0
 
@@ -114,6 +115,29 @@ def main(
 def _enabled_account_targets(account_targets: Iterable[str], active_targets: Iterable[str]) -> list[str]:
     active = set(active_targets)
     return [target for target in account_targets if target in active]
+
+
+def _limit_posts_for_enabled_targets(
+    posts: list[BlueskyPost],
+    account_targets: Iterable[str],
+    config: AppConfig,
+) -> list[BlueskyPost]:
+    limits = []
+    active_targets = {
+        name
+        for name, target_config in config["syndication_targets"].items()
+        if target_config.get("enabled", False)
+    }
+    for target in account_targets:
+        if target not in active_targets:
+            continue
+        limit = config["syndication_targets"].get(target, {}).get("max_posts_per_run")
+        if isinstance(limit, int) and limit > 0:
+            limits.append(limit)
+
+    if not limits:
+        return posts
+    return posts[: min(limits)]
 
 
 if __name__ == "__main__":

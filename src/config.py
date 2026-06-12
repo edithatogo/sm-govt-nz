@@ -1,6 +1,6 @@
 import json
 import os
-from typing import Dict, List, TypedDict, cast
+from typing import Dict, List, NotRequired, TypedDict, cast
 
 class MonitoredAccount(TypedDict):
     handle: str
@@ -10,6 +10,7 @@ class MonitoredAccount(TypedDict):
 
 class SyndicationTargetConfig(TypedDict):
     enabled: bool
+    max_posts_per_run: NotRequired[int]
 
 class AppConfig(TypedDict):
     monitored_accounts: List[MonitoredAccount]

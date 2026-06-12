@@ -1,5 +1,6 @@
 from src.bluesky import BlueskyPost
 from src.syndication import (
+    BlueskyMirrorAdapter,
     BufferCliAdapter,
     DiscordWebhookAdapter,
     DryRunAdapter,
@@ -119,6 +120,36 @@ def test_buffer_adapter_invokes_posts_create(monkeypatch) -> None:
     assert "Original:" in args[args.index("--text") + 1]
 
 
+def test_bluesky_mirror_adapter_logs_in_and_posts_with_limit() -> None:
+    class FakeBlueskyClient:
+        def __init__(self) -> None:
+            self.login_args = None
+            self.posted_text = ""
+
+        def login(self, handle, app_password):
+            self.login_args = (handle, app_password)
+
+        def send_post(self, text):
+            self.posted_text = text
+            return {"uri": "at://did:plc:mirror/app.bsky.feed.post/mirror-1"}
+
+    client = FakeBlueskyClient()
+    adapter = BlueskyMirrorAdapter(
+        "mirnzcourts.bsky.social",
+        "app-password",
+        client=client,
+        text_limit=300,
+    )
+
+    result = adapter.send(make_post(text="A" * 400))
+
+    assert result.success is True
+    assert result.detail.endswith("/mirror-1")
+    assert client.login_args == ("mirnzcourts.bsky.social", "app-password")
+    assert len(client.posted_text) <= 300
+    assert "Original:" in client.posted_text
+
+
 def test_build_adapters_prefers_buffer_for_x(monkeypatch) -> None:
     monkeypatch.setenv("BUFFER_API_KEY", "buffer-key")
     monkeypatch.setenv("BUFFER_X_CHANNEL_ID", "channel-x")
@@ -130,6 +161,20 @@ def test_build_adapters_prefers_buffer_for_x(monkeypatch) -> None:
     adapters = build_adapters_from_env(["x"])
 
     assert isinstance(adapters["x"], BufferCliAdapter)
+
+
+def test_build_adapters_uses_bluesky_mirror_credentials(monkeypatch) -> None:
+    monkeypatch.setenv("BLUESKY_MIRROR_HANDLE", "mirnzcourts.bsky.social")
+    monkeypatch.setenv("BLUESKY_MIRROR_APP_PASSWORD", "app-password")
+
+    class FakeClient:
+        pass
+
+    monkeypatch.setattr("src.syndication._build_atproto_client", lambda: FakeClient())
+
+    adapters = build_adapters_from_env(["bluesky"])
+
+    assert isinstance(adapters["bluesky"], BlueskyMirrorAdapter)
 
 
 def test_build_adapters_does_not_select_archived_zernio_mapping(monkeypatch) -> None:

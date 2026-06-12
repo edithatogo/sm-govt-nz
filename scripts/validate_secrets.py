@@ -87,6 +87,16 @@ def _validate_json_vars(names: list[str], env: dict[str, str]) -> list[str]:
 
 
 def _validate_target(target: str | None, env: dict[str, str]) -> list[str]:
+    if target == "bluesky":
+        has_bluesky = bool(env.get("BLUESKY_MIRROR_HANDLE")) and bool(
+            env.get("BLUESKY_MIRROR_APP_PASSWORD")
+        )
+        if has_bluesky:
+            return []
+        return [
+            "bluesky: require BLUESKY_MIRROR_HANDLE and BLUESKY_MIRROR_APP_PASSWORD"
+        ]
+
     if target != "x":
         return []
 
@@ -107,7 +117,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Validate GitHub Actions secrets.")
     parser.add_argument("--mode", default="ci", choices=["ci", "syndicate", "archive", "upstream"])
     parser.add_argument("--schema", default="config/secrets.schema.json")
-    parser.add_argument("--target", choices=["x", "discord", "mastodon", "threads", "linkedin"])
+    parser.add_argument("--target", choices=["x", "discord", "mastodon", "threads", "linkedin", "bluesky"])
     parser.add_argument(
         "--env-file",
         default=".env.local",

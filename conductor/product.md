@@ -12,10 +12,10 @@ This project automatically syndicates social media updates from NZ Government ag
 ## Current MVP Launch Scope
 The immediate MVP is intentionally narrower than the long-term product:
 *   **Source:** `courtsofnz.bsky.social`.
-*   **Mirror:** X account `@MirNZCourts`, display name `Mirror: Courts of New Zealand`.
+*   **Mirror:** Bluesky account `mirnzcourts.bsky.social`, display name `Mirror: Courts of New Zealand`.
 *   **Posting direction:** Source public records to approved mirror accounts only.
 *   **Identity:** Mirror accounts must be presented as unofficial mirrors and link back to the source profile. Posts must never be made under Dylan Mordaunt, `edithatogo`, or any other personal identity.
-*   **Safety:** The first live run must be manual or tightly controlled so the seeded `conductor/state.json` prevents historical backlog reposting.
+*   **Safety:** The first live run must be manual or tightly controlled, with `max_posts_per_run: 1`, so the seeded `conductor/state.json` prevents historical backlog reposting.
 *   **Archive:** Current source and mirror profile snapshots live under `profile_archive/courts-nz/2026-06-11/`. Historical and ongoing X, Bluesky, LinkedIn, RSS, website, and email-subscription capture is tracked in `courts_nz_multisource_archive_20260612` before Hugging Face and Zenodo dataset publication. LinkedIn is source-only and archive-only for now.
 
 ## Core Features

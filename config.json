@@ -4,12 +4,16 @@
       "handle": "courtsofnz.bsky.social",
       "did": "did:plc:vtoa673xlou45zcsj6inyeis",
       "name": "Mirror: Courts of New Zealand",
-      "syndicate_to": ["x"]
+      "syndicate_to": ["bluesky"]
     }
   ],
   "syndication_targets": {
+    "bluesky": {
+      "enabled": true,
+      "max_posts_per_run": 1
+    },
     "x": {
-      "enabled": true
+      "enabled": false
     },
     "threads": {
       "enabled": false

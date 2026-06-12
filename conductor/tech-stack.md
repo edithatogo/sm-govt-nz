@@ -11,7 +11,7 @@
 *   **Prose Linter:** **Vale** (for markdown validation)
 *   **Profiler:** **Scalene** (high-precision CPU, GPU, and memory profiling)
 *   **Key Dependencies:**
-    *   `atproto`: Official Python SDK for the AT Protocol (Bluesky integration).
+    *   `atproto`: Python SDK for the AT Protocol (Bluesky integration).
     *   `requests` / `requests-oauthlib`: HTTP client and OAuth authentication wrappers.
     *   `huggingface_hub`: SDK for committing structured datasets to Hugging Face.
 *   **Testing Frameworks:**
@@ -34,9 +34,10 @@
 
 ## MVP Runtime Configuration
 *   **Active source account:** `courtsofnz.bsky.social`.
-*   **Active target:** X only, via Tweepy/OAuth credentials.
+*   **Active target:** Bluesky mirror only, via `BLUESKY_MIRROR_HANDLE` and `BLUESKY_MIRROR_APP_PASSWORD`.
 *   **Remote workflow state:** `Syndicate` remains manually disabled until the controlled launch gate passes.
-*   **Non-MVP targets:** Threads, Mastodon, Discord, and LinkedIn remain disabled in `config.json`.
+*   **Launch throttle:** `max_posts_per_run` is `1` for the active Bluesky target.
+*   **Non-MVP targets:** X, Threads, Mastodon, Discord, and LinkedIn remain disabled in `config.json`.
 
 ## Frontend / Public Web Stack
 *   **Hosting Platform:** GitHub Pages
