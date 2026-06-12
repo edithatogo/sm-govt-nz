@@ -21,3 +21,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [ ] Track: Archive Courts of New Zealand multi-source records and publish datasets
 *Link: [./tracks/courts_nz_multisource_archive_20260612/](./tracks/courts_nz_multisource_archive_20260612/)*
+
+Deferred outbound platform mirrors must be created as separate conductor tracks
+after the Courts of New Zealand archive and corpus pipeline is stable.

@@ -104,13 +104,27 @@ Planned source lanes:
 - Email: judgments of public interest subscription messages.
 
 GitHub does not provide a native inbound mailbox for repository workflows. To
-capture subscription emails, use an email-to-webhook bridge such as Cloudflare
-Email Routing Workers or Mailgun inbound parse, then call GitHub
-`repository_dispatch` or commit raw email payloads through the GitHub API. If no
-webhook bridge is available, use scheduled mailbox polling as a fallback.
+capture subscription emails, use an email-to-webhook bridge, then call GitHub
+`repository_dispatch` or commit raw email payloads through the GitHub API.
+
+Recommended email ingress order:
+
+1. Cloudflare Email Routing Worker. This is the default because Cloudflare
+   documents Email Routing as available on Free and Paid plans, and Workers Free
+   has enough request capacity for low-volume judgment notification capture.
+2. Mailgun inbound parse. Use this only if its parsing/routing features are
+   needed and a trial or paid plan is acceptable.
+3. Scheduled mailbox polling through Gmail or IMAP. Use this only if webhook
+   ingress is unavailable.
 
 Historical and fallback-source captures must be archive-only. They must not
 advance outbound syndication state or repost old material to X.
+
+The archive track publishes normalized corpus artifacts to Hugging Face Datasets
+and citable release snapshots to Zenodo. Additional outbound syndication
+accounts must be created as separate conductor tracks after the archive pipeline
+is stable, with one platform/account per track, task-level commits, phase
+reviews, and explicit posting contracts.
 
 ## 7. Source Discovery and Ingestion Tools
 
