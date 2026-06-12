@@ -49,3 +49,9 @@ Before enabling the scheduled syndicator for the MVP:
 ### 2. GitHub Pages & External Archiving
 *   **Trigger:** Runs on merges to `main` or scheduled weekly sweeps.
 *   **Action:** Deploys the static root files to the public GitHub Pages site and packages/publishes historical datasets to external research repositories (Zenodo and Hugging Face).
+
+### 3. Courts of New Zealand Multi-Source Archive Capture
+*   **Trigger:** Runs alongside scheduled syndication, plus manual historical backfills.
+*   **Action:** Captures archive-only records from current Bluesky, official LinkedIn, inactive historical X, Courts of NZ website/RSS feeds, and the judgments of public interest email subscription.
+*   **Safety:** Archive-only records maintain separate state from outbound syndication so historical X, LinkedIn, RSS, and email backfills cannot be reposted.
+*   **Dataset Publishing:** Normalized shards and raw-source bundles are prepared for Hugging Face Datasets, with Zenodo publication retained as a preservation lane.

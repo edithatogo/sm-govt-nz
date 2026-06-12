@@ -23,9 +23,13 @@
 ## State & Registry Management
 *   **State Store:** Git-backed local `conductor/state.json`.
 *   **Local Archive Store:** Flat-file directory structure (`/historical_archive/<agency>/<post_id>.json`).
+*   **Raw Multi-Source Archive Store:** Planned source/month sharded raw payloads under `/historical_archive_raw/<source>/<yyyy-mm>/`.
+*   **Normalized Dataset Store:** Planned source/month JSONL or Parquet shards under `/historical_archive_normalized/<source>/`.
 *   **Profile Archive Store:** Date-stamped profile evidence under `/profile_archive/<agency>/<yyyy-mm-dd>/`.
 *   **External Archive Repositories:**
     *   **Zenodo:** Long-term preservation of JSON datasets with DOI citation.
+    *   **Hugging Face Datasets:** Public research dataset publication from normalized archive shards.
+    *   **Cloudflare Email Routing / Mailgun Inbound Parse:** Candidate inbound email bridges for Courts of NZ judgments subscription messages, because GitHub does not provide a native mailbox.
     *   **Hugging Face Datasets:** Live repository of syndicated public records.
 
 ## MVP Runtime Configuration

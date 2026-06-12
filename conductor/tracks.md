@@ -18,3 +18,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [~] Track: Prioritize Courts of New Zealand mirror synchronization
 *Link: [./tracks/courts_nz_mirror_20260611/](./tracks/courts_nz_mirror_20260611/)*
+
+## [ ] Track: Archive Courts of New Zealand multi-source records and publish datasets
+*Link: [./tracks/courts_nz_multisource_archive_20260612/](./tracks/courts_nz_multisource_archive_20260612/)*

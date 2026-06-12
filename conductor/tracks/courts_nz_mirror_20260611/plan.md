@@ -37,7 +37,11 @@
   - Installed `@bufferapp/cli`, connected `@MirNZCourts` in Buffer, set `BUFFER_API_KEY` and `BUFFER_X_CHANNEL_ID`, dispatched `Validate Buffer Syndication`, and completed a controlled Buffer-backed live run.
 
 ## Phase 4: Later Historical Archive
-- [ ] Task: Archive historical `@courtsofnz` Twitter/X posts into the GitHub repository without triggering syndication.
-- [ ] Task: Archive historical and ongoing `courtsofnz.bsky.social` Bluesky posts into the GitHub repository.
-- [ ] Task: Connect historical X records and current Bluesky records into one Courts of New Zealand timeline.
-- [ ] Task: Package the GitHub archive as a Courts of New Zealand corpus/dataset for later Zenodo deposition and Hugging Face Dataset publication.
+- [~] Task: Archive historical `@courtsofnz` Twitter/X posts into the GitHub repository without triggering syndication.
+  - Moved to dedicated track `courts_nz_multisource_archive_20260612` so X, Bluesky, LinkedIn, RSS, email ingress, and Hugging Face publishing are handled together.
+- [~] Task: Archive historical and ongoing `courtsofnz.bsky.social` Bluesky posts into the GitHub repository.
+  - Historical Bluesky seed exists; ongoing multi-source capture is tracked in `courts_nz_multisource_archive_20260612`.
+- [~] Task: Connect historical X records and current Bluesky records into one Courts of New Zealand timeline.
+  - Moved to the multi-source archive track with canonical dedupe across sources.
+- [~] Task: Package the GitHub archive as a Courts of New Zealand corpus/dataset for later Zenodo deposition and Hugging Face Dataset publication.
+  - Moved to the multi-source archive track with Hugging Face dataset publication tasks.

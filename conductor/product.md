@@ -16,7 +16,7 @@ The immediate MVP is intentionally narrower than the long-term product:
 *   **Posting direction:** Bluesky to X only.
 *   **Identity:** The X account must be presented as an unofficial mirror and link back to the source Bluesky profile.
 *   **Safety:** The first live run must be manual or tightly controlled so the seeded `conductor/state.json` prevents historical backlog reposting.
-*   **Archive:** Current source and mirror profile snapshots live under `profile_archive/courts-nz/2026-06-11/`. Historical X and Bluesky post archives are roadmap work before Zenodo and Hugging Face publication.
+*   **Archive:** Current source and mirror profile snapshots live under `profile_archive/courts-nz/2026-06-11/`. Historical and ongoing X, Bluesky, LinkedIn, RSS, website, and email-subscription capture is tracked in `courts_nz_multisource_archive_20260612` before Hugging Face and Zenodo dataset publication.
 
 ## Core Features
 

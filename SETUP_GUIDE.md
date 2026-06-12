@@ -87,7 +87,32 @@ For external archive publishing, configure:
 The Pages workflow builds a local archive bundle. Publishing to external archive
 services is controlled by the publishing script and environment credentials.
 
-## 6. Source Discovery and Ingestion Tools
+## 6. Courts of New Zealand Multi-Source Archive
+
+The Courts of New Zealand archive expansion is tracked in
+`conductor/tracks/courts_nz_multisource_archive_20260612/`.
+
+Planned source lanes:
+
+- Bluesky: `courtsofnz.bsky.social` via public AT Protocol feed capture.
+- LinkedIn: official Courts of New Zealand page, using an approved API/export or
+  user-authorized capture path.
+- Historical X: inactive `@courtsofnz` public archive, limited to posts before
+  23 March 2025.
+- RSS/website: Courts of New Zealand page-level RSS feeds and canonical website
+  pages for judgments, announcements, speeches, reports, and daily lists.
+- Email: judgments of public interest subscription messages.
+
+GitHub does not provide a native inbound mailbox for repository workflows. To
+capture subscription emails, use an email-to-webhook bridge such as Cloudflare
+Email Routing Workers or Mailgun inbound parse, then call GitHub
+`repository_dispatch` or commit raw email payloads through the GitHub API. If no
+webhook bridge is available, use scheduled mailbox polling as a fallback.
+
+Historical and fallback-source captures must be archive-only. They must not
+advance outbound syndication state or repost old material to X.
+
+## 7. Source Discovery and Ingestion Tools
 
 Runtime dependencies are in `requirements.txt`.
 
@@ -95,11 +120,13 @@ Runtime dependencies are in `requirements.txt`.
 - Video metadata: `yt-dlp`
 - Optional social profile probing: `social-analyzer`
 - Outbound posting: Buffer CLI, with Tweepy/X API v2 as fallback
+- Future archive adapters: AT Protocol/Bluesky, LinkedIn export/API, X archive
+  capture, inbound email parsing, and Hugging Face dataset publishing
 
 Candidate profile discoveries must be reviewed before editing
 `registry/agencies.json`.
 
-## 7. Validate Secrets
+## 8. Validate Secrets
 
 Run the validator locally:
 
@@ -114,11 +141,10 @@ secrets directly.
 
 The syndication workflow runs the validator before posting.
 
-The `Syndicate` workflow is intentionally manual-only until the posting path has
-passed a controlled live test. Dispatch it with `confirm_live_posting=true` only
-when you intend to publish new mirrored posts.
+The `Syndicate` workflow runs on schedule. Manual dispatch still requires
+`confirm_live_posting=true` when you intend to publish new mirrored posts.
 
-## 8. Local Quality Gate
+## 9. Local Quality Gate
 
 ```powershell
 ruff check --no-cache src tests scripts
@@ -127,7 +153,7 @@ python scripts/gap_analyzer.py --registry registry/agencies.json --output regist
 python scripts/publish_archives.py --archive-dir historical_archive --output-dir dist --manifest dist/archive_manifest.json
 ```
 
-## 9. Upstream Fixes
+## 10. Upstream Fixes
 
 If an external tool needs a fix, use `scripts/upstream_contribution.py` and the
 upstream manifest in `config/upstream_tools.json`. Open an upstream issue, fork
