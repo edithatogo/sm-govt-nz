@@ -19,6 +19,10 @@
   flag.
 - [ ] Task: Add duplicate-prevention state that is separate from archive state.
 - [ ] Task: Add tests for attribution, media handling, and no-backlog posting.
+- [ ] Task: Add a guardrail test proving historical archive records are not
+  replayed to Threads by default.
+- [ ] Task: Document Threads historical replay as deferred because it would post
+  archival records as current posts rather than preserving original timestamps.
 
 ## Phase 4: Controlled Launch
 - [ ] Task: Run dry-run mapping for the latest Courts of New Zealand source
@@ -26,3 +30,9 @@
 - [ ] Task: Review the generated payload before any live post.
 - [ ] Task: Run one controlled live post only after review approval.
 - [ ] Task: Verify the live URL and commit updated state.
+
+## Deferred: Historical Replay Review
+- [ ] Task: Estimate API limits, user-facing noise, and attribution impact of a
+  Threads historical replay.
+- [ ] Task: Proceed only if a separate review approves publishing archived
+  records as current Threads posts.

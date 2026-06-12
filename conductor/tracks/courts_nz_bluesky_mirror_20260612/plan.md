@@ -19,6 +19,10 @@
   flag.
 - [ ] Task: Add duplicate-prevention state that is separate from archive state.
 - [ ] Task: Add tests for attribution, character limits, and no-backlog posting.
+- [ ] Task: Add historical corpus sync dry-run mode that maps archived records
+  to mirror posts without publishing by default.
+- [ ] Task: Add an explicit review/confirmation gate before any historical
+  backfill is posted.
 
 ## Phase 4: Controlled Launch
 - [ ] Task: Run dry-run mapping for the latest Courts of New Zealand source
@@ -26,3 +30,10 @@
 - [ ] Task: Review the generated payload before any live post.
 - [ ] Task: Run one controlled live post only after review approval.
 - [ ] Task: Verify the live URL and commit updated state.
+
+## Phase 5: Historical Corpus Sync
+- [ ] Task: Generate a complete historical sync plan from the normalized Courts
+  archive.
+- [ ] Task: Review ordering, attribution, source links, and platform limits.
+- [ ] Task: Publish in bounded batches only after explicit approval.
+- [ ] Task: Record every posted historical mirror URL in the corpus manifest.

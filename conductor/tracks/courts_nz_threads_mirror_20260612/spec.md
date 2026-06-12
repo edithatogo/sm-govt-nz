@@ -18,10 +18,15 @@ personal Instagram/Threads identity or LinkedIn credentials.
      duplicate-prevention guarantees.
    - Do not use browser automation for unattended posting unless a later review
      explicitly approves that risk.
+   - Treat Threads as ongoing-forward mirroring by default. The current official
+     Threads API supports publishing posts but does not provide a true
+     historical import/backdate route for a mirror corpus.
 3. Guardrails:
    - No live posting until account identity, credentials, dry run, and review
      gates are complete.
-   - Historical records must not be posted as a backlog.
+   - Historical records must not be posted as a backlog. Any historical replay
+     to Threads must be a separate reviewed batch job because it would publish
+     records as current Threads posts.
    - LinkedIn remains source-only and must not influence this posting track.
 
 ## Acceptance Criteria
@@ -30,4 +35,6 @@ personal Instagram/Threads identity or LinkedIn credentials.
   secrets in Git.
 - A dry-run plan demonstrates one source post mapping to one Threads post or
   thread.
+- Historical corpus replay is explicitly marked unsupported for default launch
+  and deferred unless a later reviewed batch-replay plan is approved.
 - A controlled live test posts only new content and records the resulting URL.

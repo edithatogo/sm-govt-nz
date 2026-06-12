@@ -18,10 +18,14 @@ archive-only capture state.
    - Mirror posts must preserve source text and attribution without commentary.
    - Duplicate-prevention state must be separate from archive state and any X
      posting state.
+   - Historical corpus sync is allowed as a dedicated reviewed mode because
+     Bluesky/AT Protocol can represent posts as repository records and the
+     source corpus can be read through public AT Protocol archive paths.
 3. Guardrails:
    - No live posting until account identity, credentials, dry run, and review
      gates are complete.
-   - Historical records must not be posted as a backlog.
+   - Historical records must not be posted as a backlog unless the historical
+     corpus sync mode is explicitly enabled after review.
    - LinkedIn remains source-only and must not influence this posting track.
 
 ## Acceptance Criteria
@@ -29,4 +33,6 @@ archive-only capture state.
 - Required credentials are documented in `config/secrets.schema.json` and setup
   docs without storing secrets in Git.
 - A dry-run plan demonstrates one source post mapping to one mirror post.
+- A historical-sync dry run can map the archived Courts corpus without posting
+  until a separate review approves the batch.
 - A controlled live test posts only new content and records the resulting URL.

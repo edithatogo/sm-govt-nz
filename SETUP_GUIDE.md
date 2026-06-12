@@ -74,8 +74,38 @@ can be enabled.
 
 - Discord: `DISCORD_WEBHOOK_URL`
 - Mastodon: `MASTODON_BASE_URL`, `MASTODON_ACCESS_TOKEN`
-- Threads: `THREADS_API_ENDPOINT`, `THREADS_ACCESS_TOKEN`
-- LinkedIn: `LINKEDIN_API_ENDPOINT`, `LINKEDIN_ACCESS_TOKEN`
+- Bluesky mirror: `BLUESKY_MIRROR_HANDLE`, `BLUESKY_MIRROR_APP_PASSWORD`
+- Threads mirror: `THREADS_API_ENDPOINT`, `THREADS_ACCESS_TOKEN`,
+  `THREADS_MIRROR_ACCOUNT_ID`
+
+LinkedIn is not an outbound posting target in the current roadmap. It is a
+source/archive lane only, and no repository workflow should use a personal
+LinkedIn profile or token to post.
+
+### Bluesky Mirror Account
+
+Create a dedicated account under the systematic mirror identity, administered
+through `edithatogo@gmail.com` where practical. The expected handle pattern is
+`mirnzcourts.bsky.social` unless a better available handle is selected during
+account creation.
+
+Bluesky supports a more complete historical mirror mode than Threads because
+AT Protocol posts are repository records and the public source corpus can be
+read through public AT Protocol APIs. Historical backfill still requires a
+separate review gate because replayed records can appear as new activity to
+followers even when the post text preserves original source attribution.
+
+### Threads Mirror Account
+
+Create a dedicated Threads account under the systematic mirror identity,
+administered through `edithatogo@gmail.com` where practical. Do not use a
+personal Instagram or Threads identity.
+
+Threads can publish posts through the Threads API, but the current official API
+does not provide a true historical import/backdate route for a mirror corpus.
+Treat Threads as ongoing-forward mirroring by default. Any historical replay to
+Threads must be a separate reviewed batch job because it would publish records
+as current Threads posts and is subject to platform limits.
 
 ## 5. Archive Publishing
 
