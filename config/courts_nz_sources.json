@@ -54,6 +54,16 @@
       "auth": "operator_authorized_if_browser_capture",
       "status": "degraded",
       "historical_cutoff": "2025-03-23",
+      "archive_requirements": {
+        "preferred_owner_export": "X account data archive from the account owner, if Courts of New Zealand provides it",
+        "primary_public_method": "Internet Archive CDX query over twitter.com/CourtsofNZ/status/*",
+        "secondary_public_method": "Internet Archive CDX query over x.com/CourtsofNZ/status/*",
+        "observed_cdx_status_capture_counts": {
+          "twitter.com/CourtsofNZ/status/*": 937,
+          "x.com/CourtsofNZ/status/*": 18
+        },
+        "fallback": "bounded user-authorized browser capture from the public X profile"
+      },
       "dedupe_keys": ["tweet_id", "canonical_url", "content_hash"],
       "raw_path_template": "historical_archive_raw/x/{yyyy_mm}/{record_id}.json",
       "normalized_path_template": "historical_archive_normalized/x/{yyyy_mm}.jsonl",

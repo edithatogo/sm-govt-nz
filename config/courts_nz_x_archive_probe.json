@@ -1,0 +1,33 @@
+{
+  "agency_id": "courts-nz",
+  "generated_at": "2026-06-12T05:43:00+00:00",
+  "method": "internet_archive_cdx_probe",
+  "queries": [
+    {
+      "capture_count": 937,
+      "pattern": "twitter.com/CourtsofNZ/status/*",
+      "url": "https://web.archive.org/cdx/search/cdx?url=twitter.com/CourtsofNZ/status/*&output=json&fl=timestamp,original,statuscode,mimetype,digest&filter=statuscode:200&collapse=urlkey&limit=10000"
+    },
+    {
+      "capture_count": 18,
+      "pattern": "x.com/CourtsofNZ/status/*",
+      "url": "https://web.archive.org/cdx/search/cdx?url=x.com/CourtsofNZ/status/*&output=json&fl=timestamp,original,statuscode,mimetype,digest&filter=statuscode:200&collapse=urlkey&limit=10000"
+    },
+    {
+      "capture_count": 937,
+      "pattern": "twitter.com/courtsofnz/status/*",
+      "url": "https://web.archive.org/cdx/search/cdx?url=twitter.com/courtsofnz/status/*&output=json&fl=timestamp,original,statuscode,mimetype,digest&filter=statuscode:200&collapse=urlkey&limit=10000"
+    },
+    {
+      "capture_count": 18,
+      "pattern": "x.com/courtsofnz/status/*",
+      "url": "https://web.archive.org/cdx/search/cdx?url=x.com/courtsofnz/status/*&output=json&fl=timestamp,original,statuscode,mimetype,digest&filter=statuscode:200&collapse=urlkey&limit=10000"
+    }
+  ],
+  "recommended_access_order": [
+    "Use an account-owner X data archive if Courts of New Zealand provides one.",
+    "Use Internet Archive CDX over twitter.com/CourtsofNZ/status/* as the first public backfill source.",
+    "Use Internet Archive CDX over x.com/CourtsofNZ/status/* as a supplementary public backfill source.",
+    "Use bounded user-authorized browser capture only for gap filling."
+  ]
+}
