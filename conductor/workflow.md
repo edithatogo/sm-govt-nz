@@ -41,10 +41,10 @@ Before enabling the scheduled syndicator for the MVP:
 1.  Merge the Courts of New Zealand mirror scope PR after CI passes.
 2.  Confirm GitHub repository secrets for Bluesky mirror posting validate with `scripts/validate_secrets.py --mode syndicate --target bluesky`.
 3.  Keep `config.json` scoped to `courtsofnz.bsky.social` with `syndicate_to: ["bluesky"]` and `max_posts_per_run: 1`.
-4.  Confirm `conductor/state.json` is seeded to the latest known Bluesky post so historical posts are not reposted.
+4.  Confirm `conductor/state.json` remains seeded for live posts, and use `conductor/bluesky_backlog_state.json` for intentional historical backlog batches.
 5.  Run one controlled `workflow_dispatch` or local dry/live test and verify the resulting mirror post links back to the source Bluesky post.
 6.  Re-enable the GitHub `Syndicate` workflow only after the controlled test passes. The remote workflow is currently disabled manually as a safety gate.
-7.  Monitor the first scheduled run and confirm `conductor/state.json` advances without duplicating posts.
+7.  Monitor the first scheduled run and confirm `conductor/state.json` and `conductor/bluesky_backlog_state.json` advance without duplicating posts.
 
 ### 2. GitHub Pages & External Archiving
 *   **Trigger:** Runs on merges to `main` or scheduled weekly sweeps.

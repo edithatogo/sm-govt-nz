@@ -22,6 +22,11 @@ dedicated Bluesky mirror account before any additional platforms are enabled.
 `config.json` enables only the `bluesky` target and sets
 `max_posts_per_run` to `1` for the controlled launch period.
 
+Historical backlog posting is also enabled for the Bluesky mirror. It is
+bounded separately with `backlog_max_posts_per_run: 1`, ordered
+`oldest_first`, and tracked in `conductor/bluesky_backlog_state.json` so it does
+not rewind or interfere with live `conductor/state.json` processing.
+
 Required GitHub secrets:
 
 - `BLUESKY_MIRROR_HANDLE`
@@ -32,6 +37,7 @@ Local setup:
 ```powershell
 python scripts/validate_secrets.py --mode syndicate --target bluesky
 python scripts/bluesky_api_probe.py
+python scripts/post_bluesky_backlog.py --dry-run
 ```
 
 Generate the app password from the dedicated Bluesky mirror account. The probe

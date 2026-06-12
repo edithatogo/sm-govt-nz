@@ -1,6 +1,6 @@
 import json
 import os
-from typing import Dict, List, NotRequired, TypedDict, cast
+from typing import Dict, List, Literal, NotRequired, TypedDict, cast
 
 class MonitoredAccount(TypedDict):
     handle: str
@@ -11,6 +11,9 @@ class MonitoredAccount(TypedDict):
 class SyndicationTargetConfig(TypedDict):
     enabled: bool
     max_posts_per_run: NotRequired[int]
+    backlog_enabled: NotRequired[bool]
+    backlog_max_posts_per_run: NotRequired[int]
+    backlog_order: NotRequired[Literal["oldest_first", "newest_first"]]
 
 class AppConfig(TypedDict):
     monitored_accounts: List[MonitoredAccount]
@@ -18,6 +21,9 @@ class AppConfig(TypedDict):
 
 class AppState(TypedDict):
     last_seen_post_ids: Dict[str, str]
+
+class BacklogState(TypedDict):
+    posted_post_ids: Dict[str, List[str]]
 
 def load_config(config_path: str = "config.json") -> AppConfig:
     """Loads and returns the main application configuration from config.json."""
@@ -49,6 +55,28 @@ def load_state(state_path: str = "conductor/state.json") -> AppState:
 
 def save_state(state: AppState, state_path: str = "conductor/state.json") -> None:
     """Saves the application state back to state.json."""
+    os.makedirs(os.path.dirname(state_path), exist_ok=True)
+    with open(state_path, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
+
+def load_backlog_state(state_path: str = "conductor/bluesky_backlog_state.json") -> BacklogState:
+    """Loads backlog posting state for historical mirror batches."""
+    if not os.path.exists(state_path):
+        return {"posted_post_ids": {}}
+
+    with open(state_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if "posted_post_ids" not in data:
+        raise ValueError("Invalid backlog state: Must contain 'posted_post_ids'.")
+
+    return cast(BacklogState, data)
+
+def save_backlog_state(
+    state: BacklogState,
+    state_path: str = "conductor/bluesky_backlog_state.json",
+) -> None:
+    """Saves historical backlog posting state."""
     os.makedirs(os.path.dirname(state_path), exist_ok=True)
     with open(state_path, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2, ensure_ascii=False)

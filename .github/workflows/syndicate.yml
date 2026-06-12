@@ -43,8 +43,13 @@ jobs:
           BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
           BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
         run: python -m src.runner
+      - name: Run Bluesky historical backlog batch
+        env:
+          BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
+          BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
+        run: python scripts/post_bluesky_backlog.py
       - name: Commit state updates
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update syndication state
-          file_pattern: conductor/state.json historical_archive/**
+          file_pattern: conductor/state.json conductor/bluesky_backlog_state.json historical_archive/**

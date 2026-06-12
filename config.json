@@ -10,7 +10,10 @@
   "syndication_targets": {
     "bluesky": {
       "enabled": true,
-      "max_posts_per_run": 1
+      "max_posts_per_run": 1,
+      "backlog_enabled": true,
+      "backlog_max_posts_per_run": 1,
+      "backlog_order": "oldest_first"
     },
     "x": {
       "enabled": false

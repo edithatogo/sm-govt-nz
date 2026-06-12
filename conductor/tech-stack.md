@@ -36,7 +36,8 @@
 *   **Active source account:** `courtsofnz.bsky.social`.
 *   **Active target:** Bluesky mirror only, via `BLUESKY_MIRROR_HANDLE` and `BLUESKY_MIRROR_APP_PASSWORD`.
 *   **Remote workflow state:** `Syndicate` remains manually disabled until the controlled launch gate passes.
-*   **Launch throttle:** `max_posts_per_run` is `1` for the active Bluesky target.
+*   **Launch throttle:** `max_posts_per_run` is `1` for live posts and `backlog_max_posts_per_run` is `1` for historical Bluesky backlog batches.
+*   **Backlog State Store:** Git-backed local `conductor/bluesky_backlog_state.json`, separate from live `conductor/state.json`.
 *   **Non-MVP targets:** X, Threads, Mastodon, Discord, and LinkedIn remain disabled in `config.json`.
 
 ## Frontend / Public Web Stack

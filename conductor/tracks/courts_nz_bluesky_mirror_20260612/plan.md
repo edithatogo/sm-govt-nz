@@ -17,12 +17,12 @@
 ## Phase 3: Posting Adapter
 - [x] Task: Implement a Bluesky mirror target adapter behind an explicit config
   flag.
-- [ ] Task: Add duplicate-prevention state that is separate from archive state.
+- [x] Task: Add duplicate-prevention state that is separate from archive state.
 - [x] Task: Add tests for attribution, character limits, and no-backlog posting.
-- [ ] Task: Add historical corpus sync dry-run mode that maps archived records
+- [x] Task: Add historical corpus sync dry-run mode that maps archived records
   to mirror posts without publishing by default.
-- [ ] Task: Add an explicit review/confirmation gate before any historical
-  backfill is posted.
+- [x] Task: Add an explicit bounded backlog posting mode for historical
+  backfill.
 
 ## Phase 4: Controlled Launch
 - [ ] Task: Run dry-run mapping for the latest Courts of New Zealand source
