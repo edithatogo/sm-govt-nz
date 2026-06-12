@@ -1,0 +1,31 @@
+{
+  "statuses": [
+    {
+      "id": "healthy",
+      "description": "Source was reachable and returned records or a valid empty result."
+    },
+    {
+      "id": "degraded",
+      "description": "Source is reachable but partial, stale, incomplete, or dependent on secondary archive coverage."
+    },
+    {
+      "id": "auth_required",
+      "description": "Source requires operator authentication, OAuth setup, or a provider token before capture can run."
+    },
+    {
+      "id": "rate_limited",
+      "description": "Source refused or delayed capture because of rate limits or quota pressure."
+    },
+    {
+      "id": "blocked",
+      "description": "Source access is technically or policy blocked for the current adapter."
+    },
+    {
+      "id": "unavailable",
+      "description": "Source endpoint is down, removed, or cannot be reached after bounded retry."
+    }
+  ],
+  "default_failure_status": "degraded",
+  "blocking_statuses": ["auth_required", "blocked", "unavailable"],
+  "retryable_statuses": ["degraded", "rate_limited", "unavailable"]
+}

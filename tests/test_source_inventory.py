@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from src.source_inventory import load_source_inventory
+from src.source_inventory import ALLOWED_HEALTH, load_source_inventory
 
 
 def test_load_courts_nz_source_inventory():
@@ -48,3 +48,11 @@ def test_source_inventory_rejects_invalid_health_status(tmp_path):
 
     with pytest.raises(ValueError, match="Invalid source health status"):
         load_source_inventory(inventory_path)
+
+
+def test_allowed_health_statuses_match_config():
+    payload = json.loads(open("config/source_health_statuses.json", encoding="utf-8").read())
+
+    assert {status["id"] for status in payload["statuses"]} == ALLOWED_HEALTH
+    assert set(payload["blocking_statuses"]).issubset(ALLOWED_HEALTH)
+    assert set(payload["retryable_statuses"]).issubset(ALLOWED_HEALTH)
