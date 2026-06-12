@@ -17,7 +17,7 @@
 
 ## Phase 3: Historical Backfills
 - [x] Task: Re-run Bluesky historical archive as an idempotent backfill and write a gap report.
-- [ ] Task: Archive inactive historical X posts for `@courtsofnz` and write a provenance/access report.
+- [x] Task: Archive inactive historical X posts for `@courtsofnz` and write a provenance/access report.
 - [ ] Task: Archive historical LinkedIn posts and write a provenance/access report.
 - [ ] Task: Archive available RSS histories and write per-feed reports.
 - [ ] Task: Keep all historical backfills out of live syndication targets.
