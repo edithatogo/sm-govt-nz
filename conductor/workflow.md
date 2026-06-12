@@ -31,7 +31,7 @@ Two automated processes run on GitHub Actions:
     2.  Set up Python environment and cache using `uv`.
     3.  Load the monitored account configuration and state file (`conductor/state.json`).
     4.  Fetch new posts and historical edits from Bluesky API.
-    5.  Syndicate posts to X, Threads, Mastodon, Discord, and LinkedIn.
+    5.  Syndicate posts only to explicitly enabled mirror targets with completed platform contracts.
     6.  Archive posts and edits locally under `/historical_archive/`.
     7.  Update `conductor/state.json` with the new last-seen post IDs and telemetry logs.
     8.  Commit and push the updated state and archive files back to the repository.
@@ -53,5 +53,11 @@ Before enabling the scheduled syndicator for the MVP:
 ### 3. Courts of New Zealand Multi-Source Archive Capture
 *   **Trigger:** Runs alongside scheduled syndication, plus manual historical backfills.
 *   **Action:** Captures archive-only records from current Bluesky, official LinkedIn, inactive historical X, Courts of NZ website/RSS feeds, and the judgments of public interest email subscription.
-*   **Safety:** Archive-only records maintain separate state from outbound syndication so historical X, LinkedIn, RSS, and email backfills cannot be reposted.
+*   **Safety:** Archive-only records maintain separate state from outbound syndication so historical X, LinkedIn, RSS, and email backfills cannot be reposted. LinkedIn is source-only and must not be used for posting in the current roadmap.
 *   **Dataset Publishing:** Normalized shards and raw-source bundles are prepared for Hugging Face Datasets, with Zenodo publication retained as a preservation lane.
+
+### 4. New Mirror Platform Tracks
+*   **Bluesky mirror:** Establish an unofficial mirror account under the systematic Courts of New Zealand mirror identity, separate from any personal Bluesky account.
+*   **Threads mirror:** Establish an unofficial mirror account under the systematic Courts of New Zealand mirror identity, separate from any personal Instagram/Threads identity.
+*   **Credential ownership:** Use `edithatogo@gmail.com` for account administration where practical, but never post under Dylan Mordaunt, `edithatogo`, or any personal identity.
+*   **LinkedIn boundary:** LinkedIn remains an archive/source-ingestion lane only until a later explicit track reopens posting with separate risk review.

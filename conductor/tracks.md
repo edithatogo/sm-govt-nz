@@ -22,5 +22,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [ ] Track: Archive Courts of New Zealand multi-source records and publish datasets
 *Link: [./tracks/courts_nz_multisource_archive_20260612/](./tracks/courts_nz_multisource_archive_20260612/)*
 
-Deferred outbound platform mirrors must be created as separate conductor tracks
-after the Courts of New Zealand archive and corpus pipeline is stable.
+## [ ] Track: Establish Courts of New Zealand Bluesky mirror account
+*Link: [./tracks/courts_nz_bluesky_mirror_20260612/](./tracks/courts_nz_bluesky_mirror_20260612/)*
+
+## [ ] Track: Establish Courts of New Zealand Threads mirror account
+*Link: [./tracks/courts_nz_threads_mirror_20260612/](./tracks/courts_nz_threads_mirror_20260612/)*
+
+LinkedIn is source-only and archive-only for now. Deferred outbound platform
+mirrors must be created as separate conductor tracks after the Courts of New
+Zealand archive and corpus pipeline is stable, with no posting under Dylan
+Mordaunt, `edithatogo`, or other personal identities.

@@ -5,6 +5,19 @@ The LinkedIn archive adapter should treat official API access as the preferred
 method, but it must start in `auth_required` until the operator can provide an
 approved LinkedIn developer app and organization-access token.
 
+LinkedIn is source-only for the current roadmap. Do not implement or run
+LinkedIn posting from this repository, and do not post through a personal
+LinkedIn profile. Any future LinkedIn outbound work requires a separate
+conductor track, explicit risk review, and a dedicated mirror/organization
+identity.
+
+Any LinkedIn developer app or OAuth work performed during exploratory setup is
+not approved as an outbound posting route. If LinkedIn posting is reopened, the
+account/app setup must be recreated or reviewed under the agreed non-personal
+mirror structure, with administration under `edithatogo@gmail.com` where
+practical and no posting authority for Dylan Mordaunt or `edithatogo` personal
+profiles.
+
 ## Rationale
 LinkedIn does not expose the Courts of New Zealand company posts as a stable
 first-party RSS feed. The official API route is the LinkedIn Community
@@ -24,6 +37,9 @@ access through the authenticated member.
 ## Guardrails
 - LinkedIn records are archive-only inputs in this track.
 - LinkedIn records must not advance Bluesky-to-X syndication state.
+- LinkedIn must not be used as an outbound posting target in the current MVP.
+- Do not create or use tokens that post as Dylan Mordaunt, `edithatogo`, or any
+  personal identity.
 - Browser capture must be bounded, operator-authorized, and produce a
   provenance report.
 - Raw records should be stored under

@@ -7,29 +7,31 @@ What I'm wanting to do is to identify NZ government social media posts which are
 # Product Guide - NZ Government Bluesky Syndicator & Transparency Hub
 
 ## Product Vision & Goal
-This project automatically syndicates social media updates from NZ Government agencies that publish on Bluesky to other platforms (such as X/Twitter, Threads, Mastodon, Discord, and potentially LinkedIn) to ensure public information is freely and widely accessible. In addition, it hosts a public GitHub Pages site to provide transparency, background context, and advocacy for open government communication.
+This project automatically syndicates social media updates from NZ Government agencies that publish on Bluesky to clearly identified mirror accounts on other platforms (such as X/Twitter, Threads, Mastodon, and Discord) to ensure public information is freely and widely accessible. In addition, it hosts a public GitHub Pages site to provide transparency, background context, and advocacy for open government communication.
 
 ## Current MVP Launch Scope
 The immediate MVP is intentionally narrower than the long-term product:
 *   **Source:** `courtsofnz.bsky.social`.
 *   **Mirror:** X account `@MirNZCourts`, display name `Mirror: Courts of New Zealand`.
-*   **Posting direction:** Bluesky to X only.
-*   **Identity:** The X account must be presented as an unofficial mirror and link back to the source Bluesky profile.
+*   **Posting direction:** Source public records to approved mirror accounts only.
+*   **Identity:** Mirror accounts must be presented as unofficial mirrors and link back to the source profile. Posts must never be made under Dylan Mordaunt, `edithatogo`, or any other personal identity.
 *   **Safety:** The first live run must be manual or tightly controlled so the seeded `conductor/state.json` prevents historical backlog reposting.
-*   **Archive:** Current source and mirror profile snapshots live under `profile_archive/courts-nz/2026-06-11/`. Historical and ongoing X, Bluesky, LinkedIn, RSS, website, and email-subscription capture is tracked in `courts_nz_multisource_archive_20260612` before Hugging Face and Zenodo dataset publication.
+*   **Archive:** Current source and mirror profile snapshots live under `profile_archive/courts-nz/2026-06-11/`. Historical and ongoing X, Bluesky, LinkedIn, RSS, website, and email-subscription capture is tracked in `courts_nz_multisource_archive_20260612` before Hugging Face and Zenodo dataset publication. LinkedIn is source-only and archive-only for now.
 
 ## Core Features
 
 ### 1. Multi-Platform Syndication Engine
 *   **Source:** Monitor selected NZ government/public sector Bluesky accounts.
-*   **Targets:** Automate cross-posting of 100% of posts to:
+*   **Targets:** Automate cross-posting of approved posts to:
     *   **X (formerly Twitter)**
     *   **Threads**
+    *   **Bluesky mirror accounts**
     *   **Mastodon**
     *   **Discord** (Webhooks / Bot channels)
-    *   **LinkedIn** (optional/extension)
+    *   **LinkedIn source capture only** (posting deferred because it is a higher-risk environment)
 *   **Format Integrity:** Handle character limits (X is 280 characters, Bluesky is 300) with thread-splitting or truncation. Keep rich formatting, embedded links, and image alt-text.
-*   **MVP Constraint:** Multi-platform posting remains disabled until the Courts of New Zealand Bluesky-to-X mirror is proven in production.
+*   **MVP Constraint:** Platform posting remains disabled until the relevant mirror account, credential owner, posting contract, duplicate-prevention state, and review gates are complete for that platform.
+*   **Account Ownership:** New mirror accounts should be created under `edithatogo@gmail.com` for administration where practical, but the public account identity and all posts must use the systematic mirror naming pattern, not a personal identity.
 
 ### 2. Monitoring & Account Discovery
 *   Maintain a primary whitelist of target agency handles in a simple repository configuration file (e.g., `config.json`).
