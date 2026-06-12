@@ -13,7 +13,7 @@
 - [x] Task: Add source-specific raw archive directories under `historical_archive_raw/<source>/<yyyy-mm>/`.
 - [x] Task: Add normalized monthly shards under `historical_archive_normalized/<source>/<yyyy-mm>.jsonl`.
 - [x] Task: Implement canonical dedupe across Bluesky, LinkedIn, RSS, email, and website pages using canonical URL plus text/media hash fallback.
-- [ ] Task: Ensure archive-only backfill state cannot advance `conductor/state.json` for outbound syndication.
+- [x] Task: Ensure archive-only backfill state cannot advance `conductor/state.json` for outbound syndication.
 
 ## Phase 3: Historical Backfills
 - [ ] Task: Re-run Bluesky historical archive as an idempotent backfill and write a gap report.
