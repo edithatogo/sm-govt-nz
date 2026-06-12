@@ -9,7 +9,7 @@
 - [x] Task: Document one adapter contract per source, including input credentials, output paths, dedupe keys, rate-limit handling, archive-only guarantee, and phase review checklist.
 
 ## Phase 2: Archive Schema and Deduplication
-- [ ] Task: Extend archive schema to include `source_platform`, `source_account`, `source_kind`, `captured_at`, `raw_path`, `canonical_url`, `content_hash`, and `cross_source_ids`.
+- [x] Task: Extend archive schema to include `source_platform`, `source_account`, `source_kind`, `captured_at`, `raw_path`, `canonical_url`, `content_hash`, and `cross_source_ids`.
 - [ ] Task: Add source-specific raw archive directories under `historical_archive_raw/<source>/<yyyy-mm>/`.
 - [ ] Task: Add normalized monthly shards under `historical_archive_normalized/<source>/<yyyy-mm>.jsonl`.
 - [ ] Task: Implement canonical dedupe across Bluesky, LinkedIn, RSS, email, and website pages using canonical URL plus text/media hash fallback.
