@@ -1,7 +1,7 @@
 # Plan - Courts of New Zealand Multi-Source Archive and Dataset Pipeline
 
 ## Phase 1: Source Inventory and Access Contracts
-- [ ] Task: Record official Courts of New Zealand source surfaces in repo config: Bluesky, LinkedIn, inactive X archive, website/RSS, and judgments email subscription.
+- [x] Task: Record official Courts of New Zealand source surfaces in repo config: Bluesky, LinkedIn, inactive X archive, website/RSS, and judgments email subscription.
 - [ ] Task: Discover all Courts of New Zealand RSS feed URLs by parsing page-level RSS links and site sections for judgments, announcements, speeches, reports, and daily lists.
 - [ ] Task: Confirm LinkedIn access method and constraints: official API if admin access exists, otherwise user-authorized browser export/capture or no-code manual seed.
 - [ ] Task: Confirm historical X archive method for pre-23-March-2025 `@courtsofnz` posts: public X archive, Internet Archive/CDX, browser capture, or another lawful export path.
