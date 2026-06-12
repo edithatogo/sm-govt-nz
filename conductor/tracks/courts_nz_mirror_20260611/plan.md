@@ -29,12 +29,12 @@
   - After credits are available, run `python scripts/x_api_probe.py --write-probe` locally or dispatch `Validate Syndication Secrets` with `write_probe=true`.
   - Current Bluesky archive has 47 posts from 2026-03-23 to 2026-06-11, averaging 0.58 posts/day.
   - At current X API rates, URL-attributed mirroring would have cost about $2.20-$2.60/month for recent Courts of NZ volume.
-- [ ] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test and X credits check pass.
-  - Current workflow is manual-only and requires `confirm_live_posting=true` until the posting path is validated.
+- [x] Task: Re-enable the scheduled `Syndicate` workflow after the controlled test and X credits check pass.
+  - Buffer-backed posting validated and a controlled live run posted the two new Courts of New Zealand Bluesky posts to `@MirNZCourts`.
+  - Direct X API credits remain unnecessary for the MVP while Buffer posting is healthy.
 - [ ] Task: Monitor the first scheduled run and confirm `conductor/state.json` advances without duplicate posts.
-- [ ] Task: Pilot Buffer CLI as the preferred no-direct-X-credits posting path.
-  - Install `@bufferapp/cli`, connect `@MirNZCourts` in Buffer, set `BUFFER_API_KEY` and `BUFFER_X_CHANNEL_ID`, then dispatch `Validate Buffer Syndication`.
-  - After Buffer validation passes, run a controlled Buffer-backed post before enabling scheduled syndication.
+- [x] Task: Pilot Buffer CLI as the preferred no-direct-X-credits posting path.
+  - Installed `@bufferapp/cli`, connected `@MirNZCourts` in Buffer, set `BUFFER_API_KEY` and `BUFFER_X_CHANNEL_ID`, dispatched `Validate Buffer Syndication`, and completed a controlled Buffer-backed live run.
 
 ## Phase 4: Later Historical Archive
 - [ ] Task: Archive historical `@courtsofnz` Twitter/X posts into the GitHub repository without triggering syndication.

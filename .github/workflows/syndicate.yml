@@ -1,6 +1,8 @@
 name: Syndicate
 
 on:
+  schedule:
+    - cron: "*/15 * * * *"
   workflow_dispatch:
     inputs:
       confirm_live_posting:
@@ -17,7 +19,7 @@ permissions:
 
 jobs:
   syndicate:
-    if: ${{ inputs.confirm_live_posting == 'true' }}
+    if: ${{ github.event_name == 'schedule' || inputs.confirm_live_posting == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
