@@ -30,6 +30,12 @@
       "access_method": "approved_api_or_user_authorized_capture",
       "auth": "operator_authorized",
       "status": "auth_required",
+      "api_requirements": {
+        "preferred_api": "LinkedIn Community Management Posts API",
+        "required_permissions": ["r_organization_social"],
+        "role_requirement": "authenticated member must have access to the organization page",
+        "fallback": "user-authorized browser capture or manually exported seed records"
+      },
       "dedupe_keys": ["linkedin_post_url", "canonical_url", "content_hash"],
       "raw_path_template": "historical_archive_raw/linkedin/{yyyy_mm}/{record_id}.json",
       "normalized_path_template": "historical_archive_normalized/linkedin/{yyyy_mm}.jsonl",
