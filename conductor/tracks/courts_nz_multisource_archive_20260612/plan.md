@@ -12,7 +12,7 @@
 - [x] Task: Extend archive schema to include `source_platform`, `source_account`, `source_kind`, `captured_at`, `raw_path`, `canonical_url`, `content_hash`, and `cross_source_ids`.
 - [x] Task: Add source-specific raw archive directories under `historical_archive_raw/<source>/<yyyy-mm>/`.
 - [x] Task: Add normalized monthly shards under `historical_archive_normalized/<source>/<yyyy-mm>.jsonl`.
-- [ ] Task: Implement canonical dedupe across Bluesky, LinkedIn, RSS, email, and website pages using canonical URL plus text/media hash fallback.
+- [x] Task: Implement canonical dedupe across Bluesky, LinkedIn, RSS, email, and website pages using canonical URL plus text/media hash fallback.
 - [ ] Task: Ensure archive-only backfill state cannot advance `conductor/state.json` for outbound syndication.
 
 ## Phase 3: Historical Backfills
