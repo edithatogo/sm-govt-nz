@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.archiver import archive_bluesky_post, write_timeline
+from src.archiver import archive_bluesky_post, get_archive_path, write_timeline
 from src.bluesky import normalize_feed_item
 
 
@@ -78,12 +78,46 @@ def build_frequency_report(posts: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def build_gap_report(
+    posts: list[dict[str, Any]],
+    *,
+    handle: str,
+    archive_dir: str,
+) -> dict[str, Any]:
+    post_ids = sorted(str(post.get("post_id", "")) for post in posts if post.get("post_id"))
+    missing_post_ids = [
+        post_id
+        for post_id in post_ids
+        if not Path(get_archive_path(handle, post_id, archive_dir)).exists()
+    ]
+    dates = [_parse_date(post.get("created_at", "")) for post in posts]
+    dates = [date for date in dates if date is not None]
+    return {
+        "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "source": {
+            "platform": "bluesky",
+            "handle": handle,
+            "archive_dir": archive_dir,
+            "access_method": "public_at_protocol",
+        },
+        "fetched_count": len(post_ids),
+        "archived_count": len(post_ids) - len(missing_post_ids),
+        "missing_count": len(missing_post_ids),
+        "missing_post_ids": missing_post_ids,
+        "date_range": {
+            "start": min((date.isoformat() for date in dates), default=""),
+            "end": max((date.isoformat() for date in dates), default=""),
+        },
+    }
+
+
 def archive_history(
     actor: str,
     *,
     handle: str,
     archive_dir: str,
     report_path: str,
+    gap_report_path: str,
     max_pages: int,
 ) -> dict[str, Any]:
     posts = fetch_author_history(actor, handle=handle, max_pages=max_pages)
@@ -99,6 +133,12 @@ def archive_history(
     }
     Path(report_path).parent.mkdir(parents=True, exist_ok=True)
     Path(report_path).write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    gap_report = build_gap_report(posts, handle=handle, archive_dir=archive_dir)
+    Path(gap_report_path).parent.mkdir(parents=True, exist_ok=True)
+    Path(gap_report_path).write_text(
+        json.dumps(gap_report, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     return report
 
 
@@ -131,6 +171,7 @@ def main() -> None:
     parser.add_argument("--handle", default="courtsofnz.bsky.social")
     parser.add_argument("--archive-dir", default="historical_archive")
     parser.add_argument("--report", default="historical_archive/courtsofnz.bsky.social/frequency_report.json")
+    parser.add_argument("--gap-report", default="historical_archive/courtsofnz.bsky.social/gap_report.json")
     parser.add_argument("--max-pages", type=int, default=100)
     args = parser.parse_args()
 
@@ -139,6 +180,7 @@ def main() -> None:
         handle=args.handle,
         archive_dir=args.archive_dir,
         report_path=args.report,
+        gap_report_path=args.gap_report,
         max_pages=args.max_pages,
     )
     print(json.dumps(report, indent=2, sort_keys=True))
