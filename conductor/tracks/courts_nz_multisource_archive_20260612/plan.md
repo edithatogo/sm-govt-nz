@@ -6,7 +6,7 @@
 - [x] Task: Confirm LinkedIn access method and constraints: official API if admin access exists, otherwise user-authorized browser export/capture or no-code manual seed.
 - [x] Task: Confirm historical X archive method for pre-23-March-2025 `@courtsofnz` posts: public X archive, Internet Archive/CDX, browser capture, or another lawful export path.
 - [x] Task: Define source health status values: healthy, degraded, auth_required, rate_limited, blocked, and unavailable.
-- [ ] Task: Document one adapter contract per source, including input credentials, output paths, dedupe keys, rate-limit handling, archive-only guarantee, and phase review checklist.
+- [x] Task: Document one adapter contract per source, including input credentials, output paths, dedupe keys, rate-limit handling, archive-only guarantee, and phase review checklist.
 
 ## Phase 2: Archive Schema and Deduplication
 - [ ] Task: Extend archive schema to include `source_platform`, `source_account`, `source_kind`, `captured_at`, `raw_path`, `canonical_url`, `content_hash`, and `cross_source_ids`.
