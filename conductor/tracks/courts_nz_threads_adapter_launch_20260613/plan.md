@@ -27,6 +27,10 @@
   `syndicate_to` list and sets `threads.enabled` to true.
 - [x] `.github/workflows/syndicate.yml` validates and probes
   `THREADS_ACCESS_TOKEN` and `THREADS_USER_ID` before the syndicator runs.
+- [x] Scheduled runs now skip live new-post syndication if Threads
+  validation/probing fails, while allowing archive/backlog tasks to continue.
+  This avoids advancing source state without a healthy Threads path. Manual
+  live dispatches still fail hard.
 - [x] `conductor/target_delivery_state.json` is committed as the separate
   per-target duplicate-prevention state file.
 - [x] Manual `Syndicate` workflow run

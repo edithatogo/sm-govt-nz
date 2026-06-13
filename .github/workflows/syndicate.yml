@@ -40,16 +40,39 @@ jobs:
           BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
         run: python scripts/bluesky_api_probe.py
       - name: Validate Threads syndication secrets
+        id: validate_threads
+        continue-on-error: ${{ github.event_name == 'schedule' }}
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
         run: python scripts/validate_secrets.py --mode syndicate --target threads
       - name: Probe Threads credentials
+        id: probe_threads
+        continue-on-error: ${{ github.event_name == 'schedule' }}
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
         run: python scripts/threads_api_probe.py
+      - name: Report skipped live syndication
+        if: >-
+          ${{
+            github.event_name == 'schedule' &&
+            (
+              steps.validate_threads.outcome != 'success' ||
+              steps.probe_threads.outcome != 'success'
+            )
+          }}
+        run: |
+          echo "::warning::Skipping live new-post syndication because Threads credentials did not validate. Historical backlog/archive tasks will continue."
       - name: Run syndicator
+        if: >-
+          ${{
+            github.event_name != 'schedule' ||
+            (
+              steps.validate_threads.outcome == 'success' &&
+              steps.probe_threads.outcome == 'success'
+            )
+          }}
         env:
           BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
           BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
