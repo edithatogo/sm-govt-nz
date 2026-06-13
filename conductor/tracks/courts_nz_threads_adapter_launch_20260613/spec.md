@@ -22,3 +22,12 @@ Threads API credential track is complete.
   Threads payload without publishing.
 - A controlled live test publishes one post only after credentials validate.
 - The live Threads URL is recorded in state and conductor notes.
+
+## Current Launch State
+- Forward-only Threads mirroring is enabled for new Courts of New Zealand
+  Bluesky posts.
+- Threads historical replay remains disabled under the separate historical
+  replay policy.
+- The first Threads-enabled `Syndicate` workflow run passed credential
+  validation and probing but found zero new source posts, so public Threads URL
+  verification remains pending.

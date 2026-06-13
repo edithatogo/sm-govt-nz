@@ -6,9 +6,9 @@
 - [x] Task: Keep the adapter unreachable unless `threads.enabled` is true.
 
 ## Phase 2: State and Tests
-- [ ] Task: Add Threads duplicate-prevention state.
+- [x] Task: Add Threads duplicate-prevention state.
 - [x] Task: Add unit tests for formatting, attribution, state, and API errors.
-- [ ] Task: Add guardrail tests proving archive replay is not used by default.
+- [x] Task: Add guardrail tests proving archive replay is not used by default.
 
 ## Phase 3: Dry Run
 - [ ] Task: Add a dry-run command for the latest source post.
@@ -16,6 +16,20 @@
 - [ ] Task: Confirm no LinkedIn or personal identity data enters the payload.
 
 ## Phase 4: Controlled Live Launch
-- [ ] Task: Enable Threads for a one-post manual workflow dispatch.
-- [ ] Task: Verify public Threads URL and commit state.
+- [x] Task: Enable Threads for a one-post manual workflow dispatch.
+- [ ] Task: Verify public Threads URL and commit state. Pending the next new
+  Courts of New Zealand source post; the first Threads-enabled workflow found
+  no new source posts to publish.
 - [ ] Task: Disable or retain scheduling according to launch review.
+
+## Launch Evidence
+- [x] `config.json` now includes `threads` in the Courts of New Zealand
+  `syndicate_to` list and sets `threads.enabled` to true.
+- [x] `.github/workflows/syndicate.yml` validates and probes
+  `THREADS_ACCESS_TOKEN` and `THREADS_USER_ID` before the syndicator runs.
+- [x] `conductor/target_delivery_state.json` is committed as the separate
+  per-target duplicate-prevention state file.
+- [x] Manual `Syndicate` workflow run
+  `https://github.com/edithatogo/sm-govt-nz/actions/runs/27459100624` passed
+  with Threads enabled; it fetched zero new source posts and therefore did not
+  publish a Threads post.
