@@ -40,7 +40,12 @@
 *   **Backlog State Store:** Git-backed local `conductor/bluesky_backlog_state.json`, separate from live `conductor/state.json`.
 *   **Archive Replay State Store:** Git-backed local `conductor/archive_mirror_state.json`, separate from live and Bluesky-source backlog state, for recovered historical X archive replay to Bluesky.
 *   **Archive Coverage Report:** `conductor/archive_mirror_coverage.json` records source counts, target counts, remaining records, and backdating support.
-*   **Non-MVP targets:** X, Threads, Mastodon, Discord, and LinkedIn remain disabled in `config.json`; Threads has a no-posting readiness gate only.
+*   **Non-MVP targets:** X, Threads, Instagram, Facebook Pages, Mastodon,
+    Discord, and LinkedIn remain disabled in `config.json`; Threads has a
+    no-posting readiness gate only.
+*   **Future Meta Targets:** Instagram and Facebook Page publishing should use
+    official Meta APIs, sharing account administration where practical but not
+    sharing state or assuming identical permission scopes.
 
 ## Frontend / Public Web Stack
 *   **Hosting Platform:** GitHub Pages

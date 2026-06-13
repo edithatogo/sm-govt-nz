@@ -60,6 +60,12 @@ Before enabling the scheduled syndicator for the MVP:
 ### 4. New Mirror Platform Tracks
 *   **Bluesky mirror:** Establish an unofficial mirror account under the systematic Courts of New Zealand mirror identity, separate from any personal Bluesky account.
 *   **Threads mirror:** Establish an unofficial mirror account under the systematic Courts of New Zealand mirror identity, separate from any personal Instagram/Threads identity.
+*   **Instagram mirror:** After Threads credentials and adapter work are stable,
+  add Instagram through a separate Meta API track. Do not assume Threads tokens
+  are sufficient for Instagram publishing.
+*   **Facebook Page mirror:** After Threads credentials and adapter work are
+  stable, add Facebook Page posting through a separate Meta API track. Do not
+  publish from a personal Facebook profile.
 *   **Credential ownership:** Use `edithatogo@gmail.com` for account administration where practical, but never post under Dylan Mordaunt, `edithatogo`, or any personal identity.
 *   **LinkedIn boundary:** LinkedIn remains an archive/source-ingestion lane only until a later explicit track reopens posting with separate risk review.
 *   **Granular remaining work:** Bluesky profile evidence, Bluesky archive replay completion, Bluesky launch operations, Threads API credentials, Threads adapter launch, and Threads historical replay policy are tracked in separate conductor tracks.

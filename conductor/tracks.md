@@ -46,6 +46,12 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [ ] Track: Decide Courts of New Zealand Threads historical replay policy
 *Link: [./tracks/courts_nz_threads_historical_replay_policy_20260613/](./tracks/courts_nz_threads_historical_replay_policy_20260613/)*
 
+## [ ] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs
+*Link: [./tracks/courts_nz_instagram_meta_api_20260613/](./tracks/courts_nz_instagram_meta_api_20260613/)*
+
+## [ ] Track: Implement Courts of New Zealand Facebook Page mirror via Meta APIs
+*Link: [./tracks/courts_nz_facebook_meta_api_20260613/](./tracks/courts_nz_facebook_meta_api_20260613/)*
+
 LinkedIn is source-only and archive-only for now. Deferred outbound platform
 mirrors must be created as separate conductor tracks after the Courts of New
 Zealand archive and corpus pipeline is stable, with no posting under Dylan

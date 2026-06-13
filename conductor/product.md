@@ -26,6 +26,8 @@ The immediate MVP is intentionally narrower than the long-term product:
 *   **Targets:** Automate cross-posting of approved posts to:
     *   **X (formerly Twitter)**
     *   **Threads**
+    *   **Instagram**
+    *   **Facebook Pages**
     *   **Bluesky mirror accounts**
     *   **Mastodon**
     *   **Discord** (Webhooks / Bot channels)
@@ -34,6 +36,10 @@ The immediate MVP is intentionally narrower than the long-term product:
 *   **MVP Constraint:** Platform posting remains disabled until the relevant mirror account, credential owner, posting contract, duplicate-prevention state, and review gates are complete for that platform.
 *   **Backlog Posting:** Bluesky mirror backlog posting is enabled as a bounded oldest-first batch process because the user wants the historical Courts of New Zealand Bluesky corpus mirrored there before expanding to other platforms. Historical X archive replay to Bluesky is also enabled in a separate bounded batch with independent state.
 *   **Account Ownership:** New mirror accounts should be created under `edithatogo@gmail.com` for administration where practical, but the public account identity and all posts must use the systematic mirror naming pattern, not a personal identity.
+*   **Meta Account Grouping:** Threads, Instagram, and Facebook may share the
+    same Meta account/admin ownership where practical, but each platform must
+    keep separate profile/page IDs, permission reviews, tokens, duplicate state,
+    adapter tests, and launch gates.
 
 ### 2. Monitoring & Account Discovery
 *   Maintain a primary whitelist of target agency handles in a simple repository configuration file (e.g., `config.json`).
