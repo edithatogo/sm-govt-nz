@@ -118,6 +118,16 @@ def _validate_target(target: str | None, env: dict[str, str]) -> list[str]:
             "instagram: require INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID"
         ]
 
+    if target == "facebook":
+        has_facebook_page = bool(env.get("FACEBOOK_PAGE_ACCESS_TOKEN")) and bool(
+            env.get("FACEBOOK_PAGE_ID")
+        )
+        if has_facebook_page:
+            return []
+        return [
+            "facebook: require FACEBOOK_PAGE_ACCESS_TOKEN and FACEBOOK_PAGE_ID"
+        ]
+
     if target != "x":
         return []
 
@@ -140,7 +150,16 @@ def main() -> None:
     parser.add_argument("--schema", default="config/secrets.schema.json")
     parser.add_argument(
         "--target",
-        choices=["x", "discord", "mastodon", "threads", "instagram", "linkedin", "bluesky"],
+        choices=[
+            "x",
+            "discord",
+            "mastodon",
+            "threads",
+            "instagram",
+            "facebook",
+            "linkedin",
+            "bluesky",
+        ],
     )
     parser.add_argument(
         "--env-file",

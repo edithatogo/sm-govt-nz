@@ -27,7 +27,7 @@ as the mirror Page, not a personal Facebook profile.
 ## Acceptance Criteria
 - A non-posting credential probe validates Page identity and posting permission
   shape.
-- Secret schema and setup docs list Facebook-specific secrets.
+- Secret schema and validation workflow list Facebook-specific secrets.
 - A dry-run payload builder handles text, links, and media constraints.
 - A controlled live post is possible only after explicit config enablement and
   review.

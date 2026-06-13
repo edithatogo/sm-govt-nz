@@ -10,11 +10,18 @@
   using a personal posting identity.
 
 ## Phase 2: Secret and Probe Contract
-- [ ] Task: Add Facebook Page secret names to `config/secrets.schema.json`.
-- [ ] Task: Extend secret validation for `--target facebook`.
-- [ ] Task: Add a non-posting Facebook Page identity/permission probe.
-- [ ] Task: Add a manual GitHub validation workflow or extend Meta validation
+- [x] Task: Add Facebook Page secret names to `config/secrets.schema.json`.
+- [x] Task: Extend secret validation for `--target facebook`.
+- [x] Task: Add a non-posting Facebook Page identity/permission probe.
+- [x] Task: Add a manual GitHub validation workflow or extend Meta validation
   without enabling posting.
+
+Evidence:
+- `scripts/validate_secrets.py --mode syndicate --target facebook` now requires
+  `FACEBOOK_PAGE_ACCESS_TOKEN` and `FACEBOOK_PAGE_ID`.
+- `scripts/facebook_page_probe.py` reads Page `id`, `name`, `link`, `tasks`, and
+  token presence without creating a post.
+- `.github/workflows/validate_facebook.yml` provides a manual validation gate.
 
 ## Phase 3: Adapter and State
 - [ ] Task: Implement a Facebook Page adapter behind `facebook.enabled`.
