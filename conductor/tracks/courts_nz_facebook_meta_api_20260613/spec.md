@@ -28,6 +28,7 @@ as the mirror Page, not a personal Facebook profile.
 - A non-posting credential probe validates Page identity and posting permission
   shape.
 - Secret schema and validation workflow list Facebook-specific secrets.
-- A dry-run payload builder handles text, links, and media constraints.
+- A dry-run payload builder handles text, attribution, and first-image Page
+  publishing constraints.
 - A controlled live post is possible only after explicit config enablement and
   review.

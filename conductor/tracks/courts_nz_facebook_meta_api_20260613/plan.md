@@ -24,13 +24,28 @@ Evidence:
 - `.github/workflows/validate_facebook.yml` provides a manual validation gate.
 
 ## Phase 3: Adapter and State
-- [ ] Task: Implement a Facebook Page adapter behind `facebook.enabled`.
-- [ ] Task: Add separate duplicate-prevention state.
-- [ ] Task: Add tests for page post payloads, attribution, errors, and disabled
+- [x] Task: Implement a Facebook Page adapter behind `facebook.enabled`.
+- [x] Task: Reuse separate per-target duplicate-prevention state.
+- [x] Task: Add tests for page post payloads, attribution, errors, and disabled
   default behavior.
 
+Evidence:
+- `src.syndication.FacebookPageAdapter` builds Meta Page `/feed` requests for
+  text posts and `/photos` requests when a source image is available.
+- The adapter is only constructed when `FACEBOOK_PAGE_ID` and
+  `FACEBOOK_PAGE_ACCESS_TOKEN` exist and the runner targets `facebook`.
+- The existing `conductor/target_delivery_state.json` records deliveries by
+  target, so Facebook will not share duplicate-prevention state with Bluesky,
+  Threads, or X.
+
 ## Phase 4: Controlled Launch
-- [ ] Task: Run a dry-run mapping for the latest Courts source post.
+- [x] Task: Run a dry-run mapping for the latest Courts source post.
 - [ ] Task: Review payload and Page identity.
 - [ ] Task: Run one controlled live post only after approval.
 - [ ] Task: Verify public URL and commit state.
+
+Evidence:
+- `scripts/facebook_dry_run_latest.py` emits the latest source post's planned
+  Facebook Page request with the access token redacted and without posting.
+- `config.json` keeps `facebook.enabled` false and does not add `facebook` to
+  the Courts of New Zealand `syndicate_to` list.

@@ -4,6 +4,7 @@ from src.syndication import (
     BufferCliAdapter,
     DiscordWebhookAdapter,
     DryRunAdapter,
+    FacebookPageAdapter,
     MastodonAdapter,
     ThreadsApiAdapter,
     TweepyXAdapter,
@@ -191,6 +192,32 @@ def test_threads_adapter_uses_first_image_when_present() -> None:
     assert payload["image_url"] == "https://cdn.example/full.jpg"
 
 
+def test_facebook_page_adapter_posts_text_to_page_feed() -> None:
+    client = FakeHttpClient()
+    adapter = FacebookPageAdapter("page-id", "token", client=client)
+
+    result = adapter.send({**make_post(), "images": []})
+
+    assert result.success is True
+    url, payload, _headers = client.form_calls[0]
+    assert url == "https://graph.facebook.com/v20.0/page-id/feed"
+    assert payload["access_token"] == "token"
+    assert "Original:" in payload["message"]
+
+
+def test_facebook_page_adapter_posts_first_image_to_page_photos() -> None:
+    client = FakeHttpClient()
+    adapter = FacebookPageAdapter("page-id", "token", client=client)
+
+    result = adapter.send(make_post())
+
+    assert result.success is True
+    url, payload, _headers = client.form_calls[0]
+    assert url == "https://graph.facebook.com/v20.0/page-id/photos"
+    assert payload["url"] == "https://cdn.example/full.jpg"
+    assert payload["caption"].startswith("Official update")
+
+
 def test_build_adapters_prefers_buffer_for_x(monkeypatch) -> None:
     monkeypatch.setenv("BUFFER_API_KEY", "buffer-key")
     monkeypatch.setenv("BUFFER_X_CHANNEL_ID", "channel-x")
@@ -225,6 +252,15 @@ def test_build_adapters_uses_threads_official_api_credentials(monkeypatch) -> No
     adapters = build_adapters_from_env(["threads"])
 
     assert isinstance(adapters["threads"], ThreadsApiAdapter)
+
+
+def test_build_adapters_uses_facebook_page_credentials(monkeypatch) -> None:
+    monkeypatch.setenv("FACEBOOK_PAGE_ID", "page-id")
+    monkeypatch.setenv("FACEBOOK_PAGE_ACCESS_TOKEN", "token")
+
+    adapters = build_adapters_from_env(["facebook"])
+
+    assert isinstance(adapters["facebook"], FacebookPageAdapter)
 
 
 def test_build_adapters_does_not_select_archived_zernio_mapping(monkeypatch) -> None:

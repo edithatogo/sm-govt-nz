@@ -211,6 +211,56 @@ class ThreadsApiAdapter:
         return payload
 
 
+class FacebookPageAdapter:
+    """Outbound adapter for Meta's official Facebook Page publishing flow."""
+
+    name = "facebook"
+
+    def __init__(
+        self,
+        page_id: str,
+        page_access_token: str,
+        *,
+        api_base_url: str = "https://graph.facebook.com/v20.0",
+        client: JsonHttpClient | None = None,
+        text_limit: int = 63206,
+    ) -> None:
+        self.page_id = page_id
+        self.page_access_token = page_access_token
+        self.api_base_url = api_base_url.rstrip("/")
+        self.client = client or JsonHttpClient()
+        self.text_limit = text_limit
+
+    def send(self, post: BlueskyPost) -> SyndicationResult:
+        endpoint, payload = self.publish_request(post)
+        published = self.client.post_form(endpoint, payload)
+        return SyndicationResult(
+            self.name,
+            success=True,
+            detail=str(published.get("id", "") or published.get("post_id", "")),
+        )
+
+    def publish_request(self, post: BlueskyPost) -> tuple[str, dict[str, str]]:
+        message = format_post_text(post, limit=self.text_limit)
+        image_url = _first_image_url(post)
+        if image_url:
+            return (
+                f"{self.api_base_url}/{self.page_id}/photos",
+                {
+                    "url": image_url,
+                    "caption": message,
+                    "access_token": self.page_access_token,
+                },
+            )
+        return (
+            f"{self.api_base_url}/{self.page_id}/feed",
+            {
+                "message": message,
+                "access_token": self.page_access_token,
+            },
+        )
+
+
 class ZernioCliAdapter:
     """Outbound adapter backed by zernio-cli connected social accounts."""
 
@@ -405,6 +455,16 @@ def _build_adapter_from_env(target: str) -> SyndicationAdapter | None:
                 api_base_url=os.getenv("THREADS_API_BASE_URL", "https://graph.threads.net/v1.0"),
             )
         return None
+    if target == "facebook":
+        page_id = os.getenv("FACEBOOK_PAGE_ID")
+        token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN")
+        if page_id and token:
+            return FacebookPageAdapter(
+                page_id,
+                token,
+                api_base_url=os.getenv("FACEBOOK_API_BASE_URL", "https://graph.facebook.com/v20.0"),
+            )
+        return None
     if target == "bluesky":
         handle = os.getenv("BLUESKY_MIRROR_HANDLE")
         app_password = os.getenv("BLUESKY_MIRROR_APP_PASSWORD")
@@ -425,6 +485,7 @@ def _platform_limit(target: str) -> int:
         "x": 280,
         "mastodon": 500,
         "threads": 500,
+        "facebook": 63206,
         "linkedin": 3000,
         "discord": 1900,
         "bluesky": 300,
