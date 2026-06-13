@@ -3,8 +3,16 @@ from typing import Iterable
 
 from src.archiver import archive_bluesky_post, write_timeline
 from src.bluesky import AuthorFeedClient, BlueskyPost, fetch_new_posts_for_account
-from src.config import AppConfig, AppState, load_config, load_state, save_state
+from src.config import (
+    AppConfig,
+    AppState,
+    load_backlog_state,
+    load_config,
+    load_state,
+    save_state,
+)
 from src.syndication import SyndicationAdapter, SyndicationResult, build_adapters_from_env
+from src.threads_pipeline import get_threads_pipeline_status
 
 
 @dataclass
@@ -37,12 +45,14 @@ def run_syndication(
     adapters: dict[str, SyndicationAdapter] | None = None,
     dry_run: bool = False,
     archive_dir: str = "historical_archive",
+    backlog_state_path: str = "conductor/bluesky_backlog_state.json",
+    backlog_archive_dir: str = "historical_archive",
 ) -> tuple[RunSummary, AppState]:
-    active_targets = [
-        name
-        for name, target_config in config["syndication_targets"].items()
-        if target_config.get("enabled", False)
-    ]
+    active_targets = _active_targets(
+        config,
+        backlog_state_path=backlog_state_path,
+        backlog_archive_dir=backlog_archive_dir,
+    )
     available_adapters = adapters if adapters is not None else build_adapters_from_env(active_targets)
     missing_adapters = [
         target for target in active_targets if target not in available_adapters
@@ -57,8 +67,25 @@ def run_syndication(
     for account in config["monitored_accounts"]:
         handle = account["handle"]
         last_seen = state["last_seen_post_ids"].get(handle, "")
+        account_targets = _enabled_account_targets(account["syndicate_to"], active_targets)
+        if not account_targets:
+            account_results.append(
+                AccountRunResult(
+                    handle=handle,
+                    fetched=0,
+                    syndicated=0,
+                    latest_post_id=last_seen,
+                    results=[],
+                )
+            )
+            continue
         posts = fetch_new_posts_for_account(account, last_seen, client=feed_client)
-        posts = _limit_posts_for_enabled_targets(posts, account["syndicate_to"], config)
+        posts = _limit_posts_for_enabled_targets(
+            posts,
+            account["syndicate_to"],
+            config,
+            active_targets=active_targets,
+        )
         result_items: list[SyndicationResult] = []
         syndicated_count = 0
 
@@ -66,7 +93,7 @@ def run_syndication(
             if not dry_run:
                 archive_bluesky_post(post, archive_dir=archive_dir)
                 archived_any = True
-            for target in _enabled_account_targets(account["syndicate_to"], active_targets):
+            for target in account_targets:
                 adapter = available_adapters.get(target)
                 if adapter is None:
                     result_items.append(
@@ -117,19 +144,51 @@ def _enabled_account_targets(account_targets: Iterable[str], active_targets: Ite
     return [target for target in account_targets if target in active]
 
 
+def _active_targets(
+    config: AppConfig,
+    *,
+    backlog_state_path: str,
+    backlog_archive_dir: str,
+) -> list[str]:
+    active_targets: list[str] = []
+    backlog_state = None
+    for name, target_config in config["syndication_targets"].items():
+        if not target_config.get("enabled", False):
+            continue
+        if target_config.get("gated_by") == "bluesky_backlog_complete":
+            if backlog_state is None:
+                backlog_state = load_backlog_state(backlog_state_path)
+            status = get_threads_pipeline_status(
+                config,
+                backlog_state,
+                archive_dir=backlog_archive_dir,
+                source_handle=config["monitored_accounts"][0]["handle"],
+            )
+            if not status.ready_for_threads_posting:
+                continue
+        active_targets.append(name)
+    return active_targets
+
+
 def _limit_posts_for_enabled_targets(
     posts: list[BlueskyPost],
     account_targets: Iterable[str],
     config: AppConfig,
+    *,
+    active_targets: Iterable[str] | None = None,
 ) -> list[BlueskyPost]:
     limits = []
-    active_targets = {
-        name
-        for name, target_config in config["syndication_targets"].items()
-        if target_config.get("enabled", False)
-    }
+    active_target_set = (
+        set(active_targets)
+        if active_targets is not None
+        else {
+            name
+            for name, target_config in config["syndication_targets"].items()
+            if target_config.get("enabled", False)
+        }
+    )
     for target in account_targets:
-        if target not in active_targets:
+        if target not in active_target_set:
             continue
         limit = config["syndication_targets"].get(target, {}).get("max_posts_per_run")
         if isinstance(limit, int) and limit > 0:
