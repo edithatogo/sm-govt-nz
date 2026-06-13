@@ -1,6 +1,6 @@
 import json
 
-from src.config import AppConfig, BacklogState
+from src.config import AppConfig
 from src.threads_pipeline import get_threads_pipeline_status
 
 
