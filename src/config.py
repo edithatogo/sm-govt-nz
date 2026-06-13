@@ -14,6 +14,10 @@ class SyndicationTargetConfig(TypedDict):
     backlog_enabled: NotRequired[bool]
     backlog_max_posts_per_run: NotRequired[int]
     backlog_order: NotRequired[Literal["oldest_first", "newest_first"]]
+    pipeline_stage_enabled: NotRequired[bool]
+    account_handle: NotRequired[str]
+    profile_url: NotRequired[str]
+    gated_by: NotRequired[str]
 
 class AppConfig(TypedDict):
     monitored_accounts: List[MonitoredAccount]

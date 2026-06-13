@@ -122,6 +122,11 @@ Prepared account:
 - Status: account/profile prepared, outbound posting disabled until the
   Bluesky backlog has completed or is explicitly paused.
 
+The scheduled `Syndicate` workflow includes a Threads pipeline gate. It does not
+post to Threads yet; it reports the configured Threads account and waits for the
+Bluesky backlog to finish before the Threads API credential and posting adapter
+work is enabled.
+
 Threads can publish posts through the Threads API, but the current official API
 does not provide a true historical import/backdate route for a mirror corpus.
 Treat Threads as ongoing-forward mirroring by default. Any historical replay to

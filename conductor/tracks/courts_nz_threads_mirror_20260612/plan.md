@@ -10,6 +10,8 @@
 ## Phase 2: API and Secrets
 - [x] Task: Confirm the preferred Threads posting route: official Threads API
   first, Buffer second, browser automation deferred.
+- [x] Task: Add Threads to the scheduled pipeline as a no-posting readiness gate
+  while Bluesky backlog mirroring is still in progress.
 - [ ] Task: Add secret schema entries for the selected route.
 - [ ] Task: Add a read/write credential validation command that cannot post
   content.

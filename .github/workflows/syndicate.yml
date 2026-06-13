@@ -48,6 +48,8 @@ jobs:
           BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
           BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
         run: python scripts/post_bluesky_backlog.py
+      - name: Check Threads pipeline gate
+        run: python scripts/check_threads_pipeline.py
       - name: Commit state updates
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

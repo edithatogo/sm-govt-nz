@@ -30,6 +30,8 @@ personal Instagram/Threads identity or LinkedIn credentials.
      gates are complete.
    - Do not enable Threads posting until the Bluesky backlog mirroring run is
      complete or explicitly paused.
+   - The scheduled pipeline may include a no-posting Threads readiness gate so
+     the next platform is visible without creating side effects.
    - Historical records must not be posted as a backlog. Any historical replay
      to Threads must be a separate reviewed batch job because it would publish
      records as current Threads posts.
