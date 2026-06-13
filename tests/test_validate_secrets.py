@@ -12,6 +12,7 @@ SCHEMA = {
                 {"name": "bluesky", "vars": ["BLUESKY_MIRROR_HANDLE", "BLUESKY_MIRROR_APP_PASSWORD"]},
                 {"name": "threads", "vars": ["THREADS_ACCESS_TOKEN", "THREADS_USER_ID"]},
                 {"name": "threads legacy alias", "vars": ["THREADS_ACCESS_TOKEN", "THREADS_MIRROR_ACCOUNT_ID"]},
+                {"name": "instagram", "vars": ["INSTAGRAM_ACCESS_TOKEN", "INSTAGRAM_USER_ID"]},
             ],
         },
         "upstream": {"required": ["GH_TOKEN"], "anyOf": []},
@@ -141,6 +142,33 @@ def test_validate_environment_rejects_threads_target_without_credentials() -> No
     assert result["target_errors"]
 
 
+def test_validate_environment_accepts_instagram_target_credentials() -> None:
+    result = validate_environment(
+        "syndicate",
+        schema=SCHEMA,
+        env={
+            "INSTAGRAM_ACCESS_TOKEN": "token",
+            "INSTAGRAM_USER_ID": "ig-user",
+        },
+        target="instagram",
+    )
+
+    assert result["valid"] is True
+    assert result["target_errors"] == []
+
+
+def test_validate_environment_rejects_instagram_target_without_credentials() -> None:
+    result = validate_environment(
+        "syndicate",
+        schema=SCHEMA,
+        env={"INSTAGRAM_ACCESS_TOKEN": "token"},
+        target="instagram",
+    )
+
+    assert result["valid"] is False
+    assert result["target_errors"]
+
+
 def test_validate_environment_rejects_missing_any_group() -> None:
     result = validate_environment("syndicate", schema=SCHEMA, env={})
 
@@ -152,6 +180,7 @@ def test_validate_environment_rejects_missing_any_group() -> None:
         "bluesky",
         "threads",
         "threads legacy alias",
+        "instagram",
     ]
 
 

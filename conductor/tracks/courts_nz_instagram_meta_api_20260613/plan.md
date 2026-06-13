@@ -1,17 +1,19 @@
 # Plan - Courts of New Zealand Instagram Meta API Mirror
 
 ## Phase 1: Account and API Readiness
+- [x] Task: Record that the Instagram mirror account has been created and keep
+  posting disabled until API validation completes.
 - [ ] Task: Confirm Instagram account type, profile ID, and Meta app
   permissions required for publishing.
-- [ ] Task: Confirm whether the Threads Meta account/admin can own the
+- [x] Task: Confirm whether the Threads Meta account/admin can own the
   Instagram mirror without using a personal posting identity.
 - [ ] Task: Document token lifetime, refresh, and app-review requirements.
 
 ## Phase 2: Secret and Probe Contract
-- [ ] Task: Add Instagram secret names to `config/secrets.schema.json`.
-- [ ] Task: Extend secret validation for `--target instagram`.
-- [ ] Task: Add a non-posting Instagram profile probe.
-- [ ] Task: Add a manual GitHub validation workflow or extend Meta validation
+- [x] Task: Add Instagram secret names to `config/secrets.schema.json`.
+- [x] Task: Extend secret validation for `--target instagram`.
+- [x] Task: Add a non-posting Instagram profile probe.
+- [x] Task: Add a manual GitHub validation workflow or extend Meta validation
   without enabling posting.
 
 ## Phase 3: Adapter and State

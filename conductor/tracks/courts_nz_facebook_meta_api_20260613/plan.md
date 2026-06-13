@@ -2,6 +2,8 @@
 
 ## Phase 1: Page and API Readiness
 - [ ] Task: Create or confirm the dedicated Facebook Page mirror identity.
+- [ ] Task: Record the Facebook Page URL, handle, and admin ownership once the
+  Page exists.
 - [ ] Task: Confirm Page ID, page access token, app permissions, and app-review
   requirements for publishing.
 - [ ] Task: Confirm the same Meta account/admin can manage the Page without

@@ -90,6 +90,7 @@ can be enabled.
 - Mastodon: `MASTODON_BASE_URL`, `MASTODON_ACCESS_TOKEN`
 - Threads mirror: `THREADS_ACCESS_TOKEN`, `THREADS_USER_ID`
   (`THREADS_MIRROR_ACCOUNT_ID` remains accepted as a legacy local alias)
+- Instagram mirror: `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID`
 
 LinkedIn is not an outbound posting target in the current roadmap. It is a
 source/archive lane only, and no repository workflow should use a personal
@@ -148,6 +149,41 @@ GitHub validation:
 - Add `THREADS_ACCESS_TOKEN` and `THREADS_USER_ID` as repository secrets.
 - Run the manual `Validate Threads` workflow. It validates secret shape and
   probes the Threads profile identity without publishing.
+
+### Instagram Mirror Account
+
+The Instagram account is prepared under the same Meta account/admin structure as
+Threads. It remains disabled in `config.json` until the Threads launch is stable
+and the Instagram API route validates.
+
+Expected mirror profile:
+
+- URL: `https://www.instagram.com/mirnzcourts/`
+- Handle: `mirnzcourts`
+- Status: account/profile prepared, outbound posting disabled.
+
+Non-posting validation:
+
+```powershell
+python scripts/validate_secrets.py --mode syndicate --target instagram
+python scripts/instagram_api_probe.py
+```
+
+GitHub validation:
+
+- Add `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID` as repository secrets.
+- Run the manual `Validate Instagram` workflow. It validates secret shape and
+  probes the Instagram profile identity without publishing.
+
+Instagram publishing is a separate track from Threads. The same Meta account may
+administer both, but Instagram needs its own user ID, permissions, token
+validation, posting adapter, duplicate state, and launch review.
+
+### Facebook Page Mirror
+
+The Facebook Page mirror is not set up yet. Do not add Facebook Page secrets or
+enable Facebook posting until the dedicated Page exists and the Facebook track
+has completed the account-readiness phase.
 
 ## 5. Archive Publishing
 

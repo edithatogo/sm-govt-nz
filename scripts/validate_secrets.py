@@ -108,6 +108,16 @@ def _validate_target(target: str | None, env: dict[str, str]) -> list[str]:
             "(THREADS_MIRROR_ACCOUNT_ID is accepted as a legacy alias)"
         ]
 
+    if target == "instagram":
+        has_instagram = bool(env.get("INSTAGRAM_ACCESS_TOKEN")) and bool(
+            env.get("INSTAGRAM_USER_ID")
+        )
+        if has_instagram:
+            return []
+        return [
+            "instagram: require INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID"
+        ]
+
     if target != "x":
         return []
 
@@ -128,7 +138,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Validate GitHub Actions secrets.")
     parser.add_argument("--mode", default="ci", choices=["ci", "syndicate", "archive", "upstream"])
     parser.add_argument("--schema", default="config/secrets.schema.json")
-    parser.add_argument("--target", choices=["x", "discord", "mastodon", "threads", "linkedin", "bluesky"])
+    parser.add_argument(
+        "--target",
+        choices=["x", "discord", "mastodon", "threads", "instagram", "linkedin", "bluesky"],
+    )
     parser.add_argument(
         "--env-file",
         default=".env.local",
