@@ -19,3 +19,8 @@ only.
   required environment shape.
 - A probe command can verify credentials without publishing content.
 - Docs explain how to rotate/revoke the Threads credentials.
+
+## Validation
+- 2026-06-13: GitHub Actions `Validate Threads` run
+  `27458588485` passed using GitHub secrets for `@mirnzcourts`; the probe read
+  profile identity only and did not publish content.
