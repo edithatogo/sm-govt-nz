@@ -1,0 +1,36 @@
+[project]
+name = "sm-govt-nz"
+version = "0.1.0"
+description = "Social media archiving for New Zealand government accounts (Bluesky, Threads, etc.)"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E4",
+    "E7",
+    "E9",
+    "F",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["*/tests/*"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 60
+show_missing = true
