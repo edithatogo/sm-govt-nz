@@ -48,10 +48,17 @@ jobs:
           BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
           BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
         run: python scripts/post_bluesky_backlog.py
+      - name: Run X archive replay batch to Bluesky
+        env:
+          BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
+          BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
+        run: python scripts/post_archive_mirror_backlog.py --target bluesky
       - name: Check Threads pipeline gate
         run: python scripts/check_threads_pipeline.py
+      - name: Report archive mirror coverage
+        run: python scripts/check_archive_mirror_coverage.py
       - name: Commit state updates
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update syndication state
-          file_pattern: conductor/state.json conductor/bluesky_backlog_state.json historical_archive/**
+          file_pattern: conductor/state.json conductor/bluesky_backlog_state.json conductor/archive_mirror_state.json conductor/archive_mirror_coverage.json historical_archive/**

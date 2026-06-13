@@ -13,13 +13,17 @@
       "max_posts_per_run": 1,
       "backlog_enabled": true,
       "backlog_max_posts_per_run": 1,
-      "backlog_order": "oldest_first"
+      "backlog_order": "oldest_first",
+      "archive_replay_enabled": true,
+      "archive_replay_max_posts_per_run": 1,
+      "archive_replay_sources": ["x"]
     },
     "x": {
       "enabled": false
     },
     "threads": {
       "enabled": false,
+      "archive_replay_enabled": false,
       "pipeline_stage_enabled": true,
       "account_handle": "mirnzcourts",
       "profile_url": "https://www.threads.com/@mirnzcourts",
