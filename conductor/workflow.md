@@ -42,9 +42,10 @@ Before enabling the scheduled syndicator for the MVP:
 2.  Confirm GitHub repository secrets for Bluesky mirror posting validate with `scripts/validate_secrets.py --mode syndicate --target bluesky`.
 3.  Keep `config.json` scoped to `courtsofnz.bsky.social` with `syndicate_to: ["bluesky"]` and `max_posts_per_run: 1`.
 4.  Confirm `conductor/state.json` remains seeded for live posts, and use `conductor/bluesky_backlog_state.json` for intentional historical backlog batches.
-5.  Run one controlled `workflow_dispatch` or local dry/live test and verify the resulting mirror post links back to the source Bluesky post.
-6.  Re-enable the GitHub `Syndicate` workflow only after the controlled test passes. The remote workflow is currently disabled manually as a safety gate.
-7.  Monitor the first scheduled run and confirm `conductor/state.json` and `conductor/bluesky_backlog_state.json` advance without duplicating posts.
+5.  Use `conductor/archive_mirror_state.json` for recovered X archive replay to Bluesky, and keep it separate from live post state and Bluesky-source backlog state.
+6.  Run controlled `workflow_dispatch` tests and verify resulting mirror posts link back to the source Bluesky or historical X URL.
+7.  Keep archive replay bounded by `archive_replay_max_posts_per_run: 1` until coverage reporting and corpus-manifest telemetry prove duplicate prevention.
+8.  Monitor scheduled runs and confirm `conductor/state.json`, `conductor/bluesky_backlog_state.json`, `conductor/archive_mirror_state.json`, and `conductor/archive_mirror_coverage.json` advance without duplicating posts.
 
 ### 2. GitHub Pages & External Archiving
 *   **Trigger:** Runs on merges to `main` or scheduled weekly sweeps.
@@ -61,3 +62,4 @@ Before enabling the scheduled syndicator for the MVP:
 *   **Threads mirror:** Establish an unofficial mirror account under the systematic Courts of New Zealand mirror identity, separate from any personal Instagram/Threads identity.
 *   **Credential ownership:** Use `edithatogo@gmail.com` for account administration where practical, but never post under Dylan Mordaunt, `edithatogo`, or any personal identity.
 *   **LinkedIn boundary:** LinkedIn remains an archive/source-ingestion lane only until a later explicit track reopens posting with separate risk review.
+*   **Granular remaining work:** Bluesky profile evidence, Bluesky archive replay completion, Bluesky launch operations, Threads API credentials, Threads adapter launch, and Threads historical replay policy are tracked in separate conductor tracks.

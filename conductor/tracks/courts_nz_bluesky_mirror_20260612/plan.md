@@ -35,6 +35,8 @@
 - [x] Task: Add archive mirror coverage reporting for both the current Bluesky
   archive and the recovered historical X archive.
 - [x] Task: Add a bounded X archive replay batch to the Bluesky mirror pipeline.
+- [x] Task: Split remaining Bluesky work into granular conductor tracks for
+  profile evidence, archive replay completion, and launch operations.
 - [ ] Task: Generate a complete historical sync plan from the normalized Courts
   archive.
 - [ ] Task: Review ordering, attribution, source links, and platform limits.

@@ -35,10 +35,12 @@
 ## MVP Runtime Configuration
 *   **Active source account:** `courtsofnz.bsky.social`.
 *   **Active target:** Bluesky mirror only, via `BLUESKY_MIRROR_HANDLE` and `BLUESKY_MIRROR_APP_PASSWORD`.
-*   **Remote workflow state:** `Syndicate` remains manually disabled until the controlled launch gate passes.
+*   **Remote workflow state:** `Syndicate` is available for controlled manual dispatch and scheduled bounded runs once credentials validate.
 *   **Launch throttle:** `max_posts_per_run` is `1` for live posts and `backlog_max_posts_per_run` is `1` for historical Bluesky backlog batches.
 *   **Backlog State Store:** Git-backed local `conductor/bluesky_backlog_state.json`, separate from live `conductor/state.json`.
-*   **Non-MVP targets:** X, Threads, Mastodon, Discord, and LinkedIn remain disabled in `config.json`.
+*   **Archive Replay State Store:** Git-backed local `conductor/archive_mirror_state.json`, separate from live and Bluesky-source backlog state, for recovered historical X archive replay to Bluesky.
+*   **Archive Coverage Report:** `conductor/archive_mirror_coverage.json` records source counts, target counts, remaining records, and backdating support.
+*   **Non-MVP targets:** X, Threads, Mastodon, Discord, and LinkedIn remain disabled in `config.json`; Threads has a no-posting readiness gate only.
 
 ## Frontend / Public Web Stack
 *   **Hosting Platform:** GitHub Pages

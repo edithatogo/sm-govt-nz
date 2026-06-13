@@ -28,6 +28,24 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [~] Track: Establish Courts of New Zealand Threads mirror account
 *Link: [./tracks/courts_nz_threads_mirror_20260612/](./tracks/courts_nz_threads_mirror_20260612/)*
 
+## [ ] Track: Complete Courts of New Zealand Bluesky profile evidence and identity archive
+*Link: [./tracks/courts_nz_bluesky_profile_archive_20260613/](./tracks/courts_nz_bluesky_profile_archive_20260613/)*
+
+## [~] Track: Complete Courts of New Zealand Bluesky archive replay and manifest telemetry
+*Link: [./tracks/courts_nz_bluesky_archive_replay_20260613/](./tracks/courts_nz_bluesky_archive_replay_20260613/)*
+
+## [ ] Track: Harden Courts of New Zealand Bluesky mirror launch operations
+*Link: [./tracks/courts_nz_bluesky_launch_ops_20260613/](./tracks/courts_nz_bluesky_launch_ops_20260613/)*
+
+## [ ] Track: Implement Courts of New Zealand Threads API credentials and validation
+*Link: [./tracks/courts_nz_threads_api_credentials_20260613/](./tracks/courts_nz_threads_api_credentials_20260613/)*
+
+## [ ] Track: Implement Courts of New Zealand Threads adapter and controlled launch
+*Link: [./tracks/courts_nz_threads_adapter_launch_20260613/](./tracks/courts_nz_threads_adapter_launch_20260613/)*
+
+## [ ] Track: Decide Courts of New Zealand Threads historical replay policy
+*Link: [./tracks/courts_nz_threads_historical_replay_policy_20260613/](./tracks/courts_nz_threads_historical_replay_policy_20260613/)*
+
 LinkedIn is source-only and archive-only for now. Deferred outbound platform
 mirrors must be created as separate conductor tracks after the Courts of New
 Zealand archive and corpus pipeline is stable, with no posting under Dylan

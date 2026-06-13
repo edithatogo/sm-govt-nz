@@ -16,7 +16,8 @@ The immediate MVP is intentionally narrower than the long-term product:
 *   **Posting direction:** Source public records to approved mirror accounts only.
 *   **Identity:** Mirror accounts must be presented as unofficial mirrors and link back to the source profile. Posts must never be made under Dylan Mordaunt, `edithatogo`, or any other personal identity.
 *   **Safety:** The first live run must be manual or tightly controlled, with `max_posts_per_run: 1` for new posts and `backlog_max_posts_per_run: 1` for historical Bluesky backlog batches.
-*   **Archive:** Current source and mirror profile snapshots live under `profile_archive/courts-nz/2026-06-11/`. Historical and ongoing X, Bluesky, LinkedIn, RSS, website, and email-subscription capture is tracked in `courts_nz_multisource_archive_20260612` before Hugging Face and Zenodo dataset publication. LinkedIn is source-only and archive-only for now.
+*   **Archive:** Current source and mirror profile snapshots live under `profile_archive/courts-nz/2026-06-11/` and `profile_archive/courts-nz/2026-06-13/`. Historical and ongoing X, Bluesky, LinkedIn, RSS, website, and email-subscription capture is tracked in `courts_nz_multisource_archive_20260612` before Hugging Face and Zenodo dataset publication. LinkedIn is source-only and archive-only for now.
+*   **Archive replay:** The Bluesky mirror now has bounded archive replay coverage for the current Bluesky source archive and recovered historical X archive. Threads archive replay is deferred because Threads publishes historical records as current posts and does not provide a supported backdate flow in the current posting contract.
 
 ## Core Features
 
@@ -31,7 +32,7 @@ The immediate MVP is intentionally narrower than the long-term product:
     *   **LinkedIn source capture only** (posting deferred because it is a higher-risk environment)
 *   **Format Integrity:** Handle character limits (X is 280 characters, Bluesky is 300) with thread-splitting or truncation. Keep rich formatting, embedded links, and image alt-text.
 *   **MVP Constraint:** Platform posting remains disabled until the relevant mirror account, credential owner, posting contract, duplicate-prevention state, and review gates are complete for that platform.
-*   **Backlog Posting:** Bluesky mirror backlog posting is enabled as a bounded oldest-first batch process because the user wants the historical Courts of New Zealand Bluesky corpus mirrored there before expanding to other platforms.
+*   **Backlog Posting:** Bluesky mirror backlog posting is enabled as a bounded oldest-first batch process because the user wants the historical Courts of New Zealand Bluesky corpus mirrored there before expanding to other platforms. Historical X archive replay to Bluesky is also enabled in a separate bounded batch with independent state.
 *   **Account Ownership:** New mirror accounts should be created under `edithatogo@gmail.com` for administration where practical, but the public account identity and all posts must use the systematic mirror naming pattern, not a personal identity.
 
 ### 2. Monitoring & Account Discovery

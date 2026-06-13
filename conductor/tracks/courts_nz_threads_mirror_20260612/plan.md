@@ -37,6 +37,8 @@
 - [x] Task: Record that Threads historical replay cannot be treated as
   backdated publishing; original timestamps must remain in archive metadata
   and/or mirror text.
+- [x] Task: Split remaining Threads work into granular conductor tracks for API
+  credentials, adapter launch, and historical replay policy.
 - [ ] Task: Estimate API limits, user-facing noise, and attribution impact of a
   Threads historical replay.
 - [ ] Task: Proceed only if a separate review approves publishing archived
