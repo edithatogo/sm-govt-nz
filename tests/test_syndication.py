@@ -5,6 +5,7 @@ from src.syndication import (
     DiscordWebhookAdapter,
     DryRunAdapter,
     MastodonAdapter,
+    ThreadsApiAdapter,
     TweepyXAdapter,
     ZernioCliAdapter,
     build_adapters_from_env,
@@ -150,6 +151,36 @@ def test_bluesky_mirror_adapter_logs_in_and_posts_with_limit() -> None:
     assert "Original:" in client.posted_text
 
 
+def test_threads_adapter_creates_and_publishes_text_container() -> None:
+    client = FakeHttpClient()
+    adapter = ThreadsApiAdapter("threads-user", "token", client=client)
+
+    result = adapter.send({**make_post(), "images": []})
+
+    assert result.success is True
+    assert result.detail == "remote-1"
+    create_url, create_payload, _create_headers = client.form_calls[0]
+    publish_url, publish_payload, _publish_headers = client.form_calls[1]
+    assert create_url == "https://graph.threads.net/v1.0/threads-user/threads"
+    assert create_payload["media_type"] == "TEXT"
+    assert create_payload["access_token"] == "token"
+    assert "Original:" in create_payload["text"]
+    assert publish_url == "https://graph.threads.net/v1.0/threads-user/threads_publish"
+    assert publish_payload == {"creation_id": "remote-1", "access_token": "token"}
+
+
+def test_threads_adapter_uses_first_image_when_present() -> None:
+    client = FakeHttpClient()
+    adapter = ThreadsApiAdapter("threads-user", "token", client=client)
+
+    result = adapter.send(make_post())
+
+    assert result.success is True
+    payload = client.form_calls[0][1]
+    assert payload["media_type"] == "IMAGE"
+    assert payload["image_url"] == "https://cdn.example/full.jpg"
+
+
 def test_build_adapters_prefers_buffer_for_x(monkeypatch) -> None:
     monkeypatch.setenv("BUFFER_API_KEY", "buffer-key")
     monkeypatch.setenv("BUFFER_X_CHANNEL_ID", "channel-x")
@@ -175,6 +206,15 @@ def test_build_adapters_uses_bluesky_mirror_credentials(monkeypatch) -> None:
     adapters = build_adapters_from_env(["bluesky"])
 
     assert isinstance(adapters["bluesky"], BlueskyMirrorAdapter)
+
+
+def test_build_adapters_uses_threads_official_api_credentials(monkeypatch) -> None:
+    monkeypatch.setenv("THREADS_USER_ID", "threads-user")
+    monkeypatch.setenv("THREADS_ACCESS_TOKEN", "token")
+
+    adapters = build_adapters_from_env(["threads"])
+
+    assert isinstance(adapters["threads"], ThreadsApiAdapter)
 
 
 def test_build_adapters_does_not_select_archived_zernio_mapping(monkeypatch) -> None:

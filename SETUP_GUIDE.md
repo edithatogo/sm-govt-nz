@@ -88,8 +88,8 @@ can be enabled.
 
 - Discord: `DISCORD_WEBHOOK_URL`
 - Mastodon: `MASTODON_BASE_URL`, `MASTODON_ACCESS_TOKEN`
-- Threads mirror: `THREADS_API_ENDPOINT`, `THREADS_ACCESS_TOKEN`,
-  `THREADS_MIRROR_ACCOUNT_ID`
+- Threads mirror: `THREADS_ACCESS_TOKEN`, `THREADS_USER_ID`
+  (`THREADS_MIRROR_ACCOUNT_ID` remains accepted as a legacy local alias)
 
 LinkedIn is not an outbound posting target in the current roadmap. It is a
 source/archive lane only, and no repository workflow should use a personal
@@ -127,11 +127,27 @@ post to Threads yet; it reports the configured Threads account and waits for the
 Bluesky backlog to finish before the Threads API credential and posting adapter
 work is enabled.
 
-Threads can publish posts through the Threads API, but the current official API
-does not provide a true historical import/backdate route for a mirror corpus.
-Treat Threads as ongoing-forward mirroring by default. Any historical replay to
-Threads must be a separate reviewed batch job because it would publish records
-as current Threads posts and is subject to platform limits.
+Threads can publish posts through the official Threads API using a two-step
+container and publish flow. Use a long-lived Threads user token where practical;
+Meta documents long-lived tokens as valid for 60 days and refreshable before
+expiry. The current official API does not provide a true historical
+import/backdate route for a mirror corpus. Treat Threads as ongoing-forward
+mirroring by default. Any historical replay to Threads must be a separate
+reviewed batch job because it would publish records as current Threads posts and
+is subject to platform limits.
+
+Non-posting validation:
+
+```powershell
+python scripts/validate_secrets.py --mode syndicate --target threads
+python scripts/threads_api_probe.py
+```
+
+GitHub validation:
+
+- Add `THREADS_ACCESS_TOKEN` and `THREADS_USER_ID` as repository secrets.
+- Run the manual `Validate Threads` workflow. It validates secret shape and
+  probes the Threads profile identity without publishing.
 
 ## 5. Archive Publishing
 

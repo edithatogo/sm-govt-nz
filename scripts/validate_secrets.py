@@ -97,6 +97,17 @@ def _validate_target(target: str | None, env: dict[str, str]) -> list[str]:
             "bluesky: require BLUESKY_MIRROR_HANDLE and BLUESKY_MIRROR_APP_PASSWORD"
         ]
 
+    if target == "threads":
+        has_threads = bool(env.get("THREADS_ACCESS_TOKEN")) and (
+            bool(env.get("THREADS_USER_ID")) or bool(env.get("THREADS_MIRROR_ACCOUNT_ID"))
+        )
+        if has_threads:
+            return []
+        return [
+            "threads: require THREADS_ACCESS_TOKEN and THREADS_USER_ID "
+            "(THREADS_MIRROR_ACCOUNT_ID is accepted as a legacy alias)"
+        ]
+
     if target != "x":
         return []
 

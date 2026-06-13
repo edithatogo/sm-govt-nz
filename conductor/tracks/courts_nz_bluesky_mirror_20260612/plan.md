@@ -5,7 +5,7 @@
   `edithatogo@gmail.com` for administration where practical.
 - [ ] Task: Configure display name, handle, bio, avatar, banner, and source link
   using the mirror identity contract.
-- [ ] Task: Archive the source and mirror profile snapshots in the repository.
+- [x] Task: Archive the source and mirror profile snapshots in the repository.
 
 ## Phase 2: API and Secrets
 - [x] Task: Identify the Bluesky posting library/API path and document token

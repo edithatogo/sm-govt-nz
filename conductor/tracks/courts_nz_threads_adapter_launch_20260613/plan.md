@@ -1,13 +1,13 @@
 # Plan - Courts of New Zealand Threads Adapter Launch
 
 ## Phase 1: Adapter Contract
-- [ ] Task: Define Threads payload builder for text-only and media posts.
-- [ ] Task: Add a Threads adapter class with injected HTTP client for tests.
-- [ ] Task: Keep the adapter unreachable unless `threads.enabled` is true.
+- [x] Task: Define Threads payload builder for text-only and media posts.
+- [x] Task: Add a Threads adapter class with injected HTTP client for tests.
+- [x] Task: Keep the adapter unreachable unless `threads.enabled` is true.
 
 ## Phase 2: State and Tests
 - [ ] Task: Add Threads duplicate-prevention state.
-- [ ] Task: Add unit tests for formatting, attribution, state, and API errors.
+- [x] Task: Add unit tests for formatting, attribution, state, and API errors.
 - [ ] Task: Add guardrail tests proving archive replay is not used by default.
 
 ## Phase 3: Dry Run

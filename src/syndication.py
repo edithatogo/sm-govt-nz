@@ -35,6 +35,18 @@ class DryRunAdapter:
 
 
 class JsonHttpClient:
+    def get_json(
+        self,
+        url: str,
+        headers: dict[str, str] | None = None,
+    ) -> dict[str, Any]:
+        request = Request(url, headers={"Accept": "application/json", **(headers or {})})
+        with urlopen(request, timeout=15) as response:
+            body = response.read().decode("utf-8")
+        if not body:
+            return {}
+        return json.loads(body)
+
     def post_json(
         self,
         url: str,
@@ -140,6 +152,63 @@ class GenericApiAdapter:
         headers = {"Authorization": f"Bearer {self.bearer_token}"}
         self.client.post_json(self.endpoint_url, payload, headers)
         return SyndicationResult(self.name, success=True)
+
+
+class ThreadsApiAdapter:
+    """Outbound adapter for Meta's official Threads API publish flow."""
+
+    name = "threads"
+
+    def __init__(
+        self,
+        user_id: str,
+        access_token: str,
+        *,
+        api_base_url: str = "https://graph.threads.net/v1.0",
+        client: JsonHttpClient | None = None,
+        text_limit: int = 500,
+    ) -> None:
+        self.user_id = user_id
+        self.access_token = access_token
+        self.api_base_url = api_base_url.rstrip("/")
+        self.client = client or JsonHttpClient()
+        self.text_limit = text_limit
+
+    def send(self, post: BlueskyPost) -> SyndicationResult:
+        text = format_post_text(post, limit=self.text_limit)
+        container_payload = self._container_payload(post, text)
+        container = self.client.post_form(
+            f"{self.api_base_url}/{self.user_id}/threads",
+            container_payload,
+        )
+        creation_id = str(container.get("id", ""))
+        if not creation_id:
+            return SyndicationResult(self.name, success=False, detail="missing creation id")
+
+        published = self.client.post_form(
+            f"{self.api_base_url}/{self.user_id}/threads_publish",
+            {
+                "creation_id": creation_id,
+                "access_token": self.access_token,
+            },
+        )
+        return SyndicationResult(
+            self.name,
+            success=True,
+            detail=str(published.get("id", "")),
+        )
+
+    def _container_payload(self, post: BlueskyPost, text: str) -> dict[str, str]:
+        payload = {
+            "media_type": "TEXT",
+            "text": text,
+            "access_token": self.access_token,
+        }
+        image_url = _first_image_url(post)
+        if image_url:
+            payload["media_type"] = "IMAGE"
+            payload["image_url"] = image_url
+        return payload
 
 
 class ZernioCliAdapter:
@@ -327,10 +396,14 @@ def _build_adapter_from_env(target: str) -> SyndicationAdapter | None:
             return TweepyXAdapter(api_key, api_secret, access_token, access_token_secret)
         return None
     if target == "threads":
-        endpoint = os.getenv("THREADS_API_ENDPOINT")
+        user_id = os.getenv("THREADS_USER_ID") or os.getenv("THREADS_MIRROR_ACCOUNT_ID")
         token = os.getenv("THREADS_ACCESS_TOKEN")
-        if endpoint and token:
-            return GenericApiAdapter("threads", endpoint, token, limit=500)
+        if user_id and token:
+            return ThreadsApiAdapter(
+                user_id,
+                token,
+                api_base_url=os.getenv("THREADS_API_BASE_URL", "https://graph.threads.net/v1.0"),
+            )
         return None
     if target == "bluesky":
         handle = os.getenv("BLUESKY_MIRROR_HANDLE")
@@ -401,4 +474,12 @@ def _atproto_post_uri_from_response(response: Any) -> str:
         return str(uri)
     if isinstance(response, dict):
         return str(response.get("uri", ""))
+    return ""
+
+
+def _first_image_url(post: BlueskyPost) -> str:
+    for image in post["images"]:
+        fullsize = image.get("fullsize")
+        if fullsize:
+            return str(fullsize)
     return ""

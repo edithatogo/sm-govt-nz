@@ -10,6 +10,8 @@ SCHEMA = {
                 {"name": "discord", "vars": ["DISCORD_WEBHOOK_URL"]},
                 {"name": "x", "vars": ["X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET"]},
                 {"name": "bluesky", "vars": ["BLUESKY_MIRROR_HANDLE", "BLUESKY_MIRROR_APP_PASSWORD"]},
+                {"name": "threads", "vars": ["THREADS_ACCESS_TOKEN", "THREADS_USER_ID"]},
+                {"name": "threads legacy alias", "vars": ["THREADS_ACCESS_TOKEN", "THREADS_MIRROR_ACCOUNT_ID"]},
             ],
         },
         "upstream": {"required": ["GH_TOKEN"], "anyOf": []},
@@ -97,11 +99,60 @@ def test_validate_environment_rejects_bluesky_target_without_credentials() -> No
     assert result["target_errors"]
 
 
+def test_validate_environment_accepts_threads_target_credentials() -> None:
+    result = validate_environment(
+        "syndicate",
+        schema=SCHEMA,
+        env={
+            "THREADS_ACCESS_TOKEN": "token",
+            "THREADS_USER_ID": "threads-user",
+        },
+        target="threads",
+    )
+
+    assert result["valid"] is True
+    assert result["target_errors"] == []
+
+
+def test_validate_environment_accepts_threads_legacy_account_id_alias() -> None:
+    result = validate_environment(
+        "syndicate",
+        schema=SCHEMA,
+        env={
+            "THREADS_ACCESS_TOKEN": "token",
+            "THREADS_MIRROR_ACCOUNT_ID": "threads-user",
+        },
+        target="threads",
+    )
+
+    assert result["valid"] is True
+    assert result["target_errors"] == []
+
+
+def test_validate_environment_rejects_threads_target_without_credentials() -> None:
+    result = validate_environment(
+        "syndicate",
+        schema=SCHEMA,
+        env={"THREADS_ACCESS_TOKEN": "token"},
+        target="threads",
+    )
+
+    assert result["valid"] is False
+    assert result["target_errors"]
+
+
 def test_validate_environment_rejects_missing_any_group() -> None:
     result = validate_environment("syndicate", schema=SCHEMA, env={})
 
     assert result["valid"] is False
-    assert result["requires_one_of"] == ["buffer", "discord", "x", "bluesky"]
+    assert result["requires_one_of"] == [
+        "buffer",
+        "discord",
+        "x",
+        "bluesky",
+        "threads",
+        "threads legacy alias",
+    ]
 
 
 def test_validate_environment_rejects_zernio_only_for_x_target() -> None:
