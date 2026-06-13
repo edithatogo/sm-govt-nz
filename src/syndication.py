@@ -175,7 +175,6 @@ class ThreadsApiAdapter:
         self.text_limit = text_limit
 
     def send(self, post: BlueskyPost) -> SyndicationResult:
-        text = format_post_text(post, limit=self.text_limit)
         container_payload = self.container_payload(post)
         container = self.client.post_form(
             f"{self.api_base_url}/{self.user_id}/threads",
