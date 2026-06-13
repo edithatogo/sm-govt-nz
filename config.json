@@ -4,7 +4,7 @@
       "handle": "courtsofnz.bsky.social",
       "did": "did:plc:vtoa673xlou45zcsj6inyeis",
       "name": "Mirror: Courts of New Zealand",
-      "syndicate_to": ["bluesky"]
+      "syndicate_to": ["bluesky", "threads"]
     }
   ],
   "syndication_targets": {
@@ -22,7 +22,7 @@
       "enabled": false
     },
     "threads": {
-      "enabled": false,
+      "enabled": true,
       "archive_replay_enabled": false,
       "pipeline_stage_enabled": true,
       "account_handle": "mirnzcourts",

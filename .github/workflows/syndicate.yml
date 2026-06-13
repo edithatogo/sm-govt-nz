@@ -39,10 +39,22 @@ jobs:
           BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
           BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
         run: python scripts/bluesky_api_probe.py
+      - name: Validate Threads syndication secrets
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+        run: python scripts/validate_secrets.py --mode syndicate --target threads
+      - name: Probe Threads credentials
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+        run: python scripts/threads_api_probe.py
       - name: Run syndicator
         env:
           BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
           BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
         run: python -m src.runner
       - name: Run Bluesky historical backlog batch
         env:
@@ -64,4 +76,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Update syndication state
-          file_pattern: conductor/state.json conductor/bluesky_backlog_state.json conductor/archive_mirror_state.json conductor/archive_mirror_coverage.json historical_archive/**
+          file_pattern: conductor/state.json conductor/target_delivery_state.json conductor/bluesky_backlog_state.json conductor/archive_mirror_state.json conductor/archive_mirror_coverage.json historical_archive/**

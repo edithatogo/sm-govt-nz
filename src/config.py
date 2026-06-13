@@ -32,6 +32,9 @@ class AppState(TypedDict):
 class BacklogState(TypedDict):
     posted_post_ids: Dict[str, List[str]]
 
+class TargetDeliveryState(TypedDict):
+    delivered_post_ids: Dict[str, Dict[str, List[str]]]
+
 def load_config(config_path: str = "config.json") -> AppConfig:
     """Loads and returns the main application configuration from config.json."""
     if not os.path.exists(config_path):
@@ -84,6 +87,30 @@ def save_backlog_state(
     state_path: str = "conductor/bluesky_backlog_state.json",
 ) -> None:
     """Saves historical backlog posting state."""
+    os.makedirs(os.path.dirname(state_path), exist_ok=True)
+    with open(state_path, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
+
+def load_target_delivery_state(
+    state_path: str = "conductor/target_delivery_state.json",
+) -> TargetDeliveryState:
+    """Loads per-target delivery state for duplicate prevention."""
+    if not os.path.exists(state_path):
+        return {"delivered_post_ids": {}}
+
+    with open(state_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if "delivered_post_ids" not in data:
+        raise ValueError("Invalid target delivery state: Must contain 'delivered_post_ids'.")
+
+    return cast(TargetDeliveryState, data)
+
+def save_target_delivery_state(
+    state: TargetDeliveryState,
+    state_path: str = "conductor/target_delivery_state.json",
+) -> None:
+    """Saves per-target delivery state for duplicate prevention."""
     os.makedirs(os.path.dirname(state_path), exist_ok=True)
     with open(state_path, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2, ensure_ascii=False)

@@ -6,10 +6,13 @@ from src.bluesky import AuthorFeedClient, BlueskyPost, fetch_new_posts_for_accou
 from src.config import (
     AppConfig,
     AppState,
+    TargetDeliveryState,
     load_backlog_state,
     load_config,
     load_state,
+    load_target_delivery_state,
     save_state,
+    save_target_delivery_state,
 )
 from src.syndication import SyndicationAdapter, SyndicationResult, build_adapters_from_env
 from src.threads_pipeline import get_threads_pipeline_status
@@ -47,6 +50,7 @@ def run_syndication(
     archive_dir: str = "historical_archive",
     backlog_state_path: str = "conductor/bluesky_backlog_state.json",
     backlog_archive_dir: str = "historical_archive",
+    delivery_state: TargetDeliveryState | None = None,
 ) -> tuple[RunSummary, AppState]:
     active_targets = _active_targets(
         config,
@@ -61,6 +65,7 @@ def run_syndication(
         formatted = ", ".join(sorted(missing_adapters))
         raise RuntimeError(f"Missing syndication adapter configuration for: {formatted}")
     next_state: AppState = {"last_seen_post_ids": dict(state["last_seen_post_ids"])}
+    target_delivery_state = delivery_state if delivery_state is not None else {"delivered_post_ids": {}}
     account_results: list[AccountRunResult] = []
     archived_any = False
 
@@ -88,12 +93,18 @@ def run_syndication(
         )
         result_items: list[SyndicationResult] = []
         syndicated_count = 0
+        failed_delivery = False
 
         for post in posts:
             if not dry_run:
                 archive_bluesky_post(post, archive_dir=archive_dir)
                 archived_any = True
             for target in account_targets:
+                if _already_delivered(target_delivery_state, target, handle, post["post_id"]):
+                    result_items.append(
+                        SyndicationResult(target, success=True, skipped=True, detail="duplicate")
+                    )
+                    continue
                 adapter = available_adapters.get(target)
                 if adapter is None:
                     result_items.append(
@@ -104,9 +115,13 @@ def run_syndication(
                 result_items.append(result)
                 if result.success and not result.skipped:
                     syndicated_count += 1
+                    if not dry_run:
+                        _mark_delivered(target_delivery_state, target, handle, post["post_id"])
+                if not result.success:
+                    failed_delivery = True
 
         latest_post_id = posts[-1]["post_id"] if posts else last_seen
-        if posts and not dry_run:
+        if posts and not dry_run and not failed_delivery:
             next_state["last_seen_post_ids"][handle] = latest_post_id
 
         account_results.append(
@@ -130,18 +145,48 @@ def main(
     state_path: str = "conductor/state.json",
     *,
     dry_run: bool = False,
+    delivery_state_path: str = "conductor/target_delivery_state.json",
 ) -> RunSummary:
     config = load_config(config_path)
     state = load_state(state_path)
-    summary, next_state = run_syndication(config, state, dry_run=dry_run)
+    delivery_state = load_target_delivery_state(delivery_state_path)
+    summary, next_state = run_syndication(
+        config,
+        state,
+        dry_run=dry_run,
+        delivery_state=delivery_state,
+    )
     if not dry_run:
         save_state(next_state, state_path)
+        save_target_delivery_state(delivery_state, delivery_state_path)
     return summary
 
 
 def _enabled_account_targets(account_targets: Iterable[str], active_targets: Iterable[str]) -> list[str]:
     active = set(active_targets)
     return [target for target in account_targets if target in active]
+
+
+def _already_delivered(
+    state: TargetDeliveryState,
+    target: str,
+    handle: str,
+    post_id: str,
+) -> bool:
+    return post_id in set(state.get("delivered_post_ids", {}).get(target, {}).get(handle, []))
+
+
+def _mark_delivered(
+    state: TargetDeliveryState,
+    target: str,
+    handle: str,
+    post_id: str,
+) -> None:
+    delivered_by_target = state.setdefault("delivered_post_ids", {})
+    delivered_by_handle = delivered_by_target.setdefault(target, {})
+    delivered_posts = delivered_by_handle.setdefault(handle, [])
+    if post_id not in delivered_posts:
+        delivered_posts.append(post_id)
 
 
 def _active_targets(
