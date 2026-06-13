@@ -8,12 +8,16 @@ personal Instagram/Threads identity or LinkedIn credentials.
 ## Requirements
 1. Account identity:
    - Use an unofficial mirror name based on `Mirror: Courts of New Zealand`.
+   - The prepared account is `https://www.threads.com/@mirnzcourts`.
    - Do not post under Dylan Mordaunt, `edithatogo`, or any personal identity.
    - Use `edithatogo@gmail.com` for account administration where practical.
    - Include source attribution to `courtsofnz.bsky.social`.
 2. Posting route:
    - Prefer official Meta/Threads API routes if free and suitable for the
      mirror account.
+   - Meta documents a 250 API-published-posts-per-rolling-24-hour limit for
+     Threads profiles; configure any launch/backlog rate below that platform
+     ceiling.
    - Use Buffer only if it preserves account identity, attribution, and
      duplicate-prevention guarantees.
    - Do not use browser automation for unattended posting unless a later review
@@ -24,6 +28,8 @@ personal Instagram/Threads identity or LinkedIn credentials.
 3. Guardrails:
    - No live posting until account identity, credentials, dry run, and review
      gates are complete.
+   - Do not enable Threads posting until the Bluesky backlog mirroring run is
+     complete or explicitly paused.
    - Historical records must not be posted as a backlog. Any historical replay
      to Threads must be a separate reviewed batch job because it would publish
      records as current Threads posts.

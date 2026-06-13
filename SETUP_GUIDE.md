@@ -114,6 +114,14 @@ Create a dedicated Threads account under the systematic mirror identity,
 administered through `edithatogo@gmail.com` where practical. Do not use a
 personal Instagram or Threads identity.
 
+Prepared account:
+
+- URL: `https://www.threads.com/@mirnzcourts`
+- Handle: `mirnzcourts`
+- Display name: `Mirror: Courts of New Zealand`
+- Status: account/profile prepared, outbound posting disabled until the
+  Bluesky backlog has completed or is explicitly paused.
+
 Threads can publish posts through the Threads API, but the current official API
 does not provide a true historical import/backdate route for a mirror corpus.
 Treat Threads as ongoing-forward mirroring by default. Any historical replay to

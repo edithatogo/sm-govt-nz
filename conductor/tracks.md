@@ -25,7 +25,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [~] Track: Establish Courts of New Zealand Bluesky mirror account
 *Link: [./tracks/courts_nz_bluesky_mirror_20260612/](./tracks/courts_nz_bluesky_mirror_20260612/)*
 
-## [ ] Track: Establish Courts of New Zealand Threads mirror account
+## [~] Track: Establish Courts of New Zealand Threads mirror account
 *Link: [./tracks/courts_nz_threads_mirror_20260612/](./tracks/courts_nz_threads_mirror_20260612/)*
 
 LinkedIn is source-only and archive-only for now. Deferred outbound platform

@@ -1,14 +1,14 @@
 # Plan - Courts of New Zealand Threads Mirror Account
 
 ## Phase 1: Account Onboarding
-- [ ] Task: Create the dedicated Threads mirror account using
+- [x] Task: Create the dedicated Threads mirror account using
   `edithatogo@gmail.com` for administration where practical.
-- [ ] Task: Configure display name, handle, bio, avatar, banner, and source link
+- [x] Task: Configure display name, handle, bio, avatar, banner, and source link
   using the mirror identity contract.
-- [ ] Task: Archive the source and mirror profile snapshots in the repository.
+- [x] Task: Archive the source and mirror profile snapshots in the repository.
 
 ## Phase 2: API and Secrets
-- [ ] Task: Confirm the preferred Threads posting route: official Threads API
+- [x] Task: Confirm the preferred Threads posting route: official Threads API
   first, Buffer second, browser automation deferred.
 - [ ] Task: Add secret schema entries for the selected route.
 - [ ] Task: Add a read/write credential validation command that cannot post
