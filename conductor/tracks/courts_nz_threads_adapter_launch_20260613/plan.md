@@ -11,9 +11,9 @@
 - [x] Task: Add guardrail tests proving archive replay is not used by default.
 
 ## Phase 3: Dry Run
-- [ ] Task: Add a dry-run command for the latest source post.
-- [ ] Task: Review generated payload against Threads limits and identity rules.
-- [ ] Task: Confirm no LinkedIn or personal identity data enters the payload.
+- [x] Task: Add a dry-run command for the latest source post.
+- [x] Task: Review generated payload against Threads limits and identity rules.
+- [x] Task: Confirm no LinkedIn or personal identity data enters the payload.
 
 ## Phase 4: Controlled Live Launch
 - [x] Task: Enable Threads for a one-post manual workflow dispatch.
@@ -33,3 +33,6 @@
   `https://github.com/edithatogo/sm-govt-nz/actions/runs/27459100624` passed
   with Threads enabled; it fetched zero new source posts and therefore did not
   publish a Threads post.
+- [x] `python scripts/threads_dry_run_latest.py` emits the latest source post's
+  intended Threads create/publish requests with access tokens redacted and
+  historical replay disabled.

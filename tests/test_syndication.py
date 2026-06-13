@@ -169,6 +169,16 @@ def test_threads_adapter_creates_and_publishes_text_container() -> None:
     assert publish_payload == {"creation_id": "remote-1", "access_token": "token"}
 
 
+def test_threads_adapter_exposes_container_payload_without_posting() -> None:
+    adapter = ThreadsApiAdapter("threads-user", "token")
+
+    payload = adapter.container_payload({**make_post(), "images": []})
+
+    assert payload["media_type"] == "TEXT"
+    assert payload["access_token"] == "token"
+    assert "Original:" in payload["text"]
+
+
 def test_threads_adapter_uses_first_image_when_present() -> None:
     client = FakeHttpClient()
     adapter = ThreadsApiAdapter("threads-user", "token", client=client)

@@ -176,7 +176,7 @@ class ThreadsApiAdapter:
 
     def send(self, post: BlueskyPost) -> SyndicationResult:
         text = format_post_text(post, limit=self.text_limit)
-        container_payload = self._container_payload(post, text)
+        container_payload = self.container_payload(post)
         container = self.client.post_form(
             f"{self.api_base_url}/{self.user_id}/threads",
             container_payload,
@@ -198,7 +198,8 @@ class ThreadsApiAdapter:
             detail=str(published.get("id", "")),
         )
 
-    def _container_payload(self, post: BlueskyPost, text: str) -> dict[str, str]:
+    def container_payload(self, post: BlueskyPost) -> dict[str, str]:
+        text = format_post_text(post, limit=self.text_limit)
         payload = {
             "media_type": "TEXT",
             "text": text,

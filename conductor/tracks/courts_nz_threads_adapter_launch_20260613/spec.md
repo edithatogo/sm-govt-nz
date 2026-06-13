@@ -31,3 +31,5 @@ Threads API credential track is complete.
 - The first Threads-enabled `Syndicate` workflow run passed credential
   validation and probing but found zero new source posts, so public Threads URL
   verification remains pending.
+- `scripts/threads_dry_run_latest.py` provides the non-posting launch review
+  payload for the latest source post.
