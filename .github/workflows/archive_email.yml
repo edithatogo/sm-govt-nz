@@ -1,0 +1,43 @@
+name: Archive Email
+
+on:
+  repository_dispatch:
+    types: [courts_nz_email_received]
+  workflow_dispatch:
+    inputs:
+      payload_json:
+        description: Email payload JSON for manual testing.
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  archive-email:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        run: python --version
+      - name: Write dispatch payload
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          CLIENT_PAYLOAD: ${{ toJson(github.event.client_payload) }}
+          MANUAL_PAYLOAD: ${{ inputs.payload_json }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            printf '%s' "$MANUAL_PAYLOAD" > email_payload.json
+          else
+            printf '%s' "$CLIENT_PAYLOAD" > email_payload.json
+          fi
+      - name: Archive email payload
+        run: python scripts/archive_email_payload.py --payload-file email_payload.json
+      - name: Commit email archive updates
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: Update email archive captures
+          file_pattern: historical_archive_raw/email/** historical_archive_normalized/email/**

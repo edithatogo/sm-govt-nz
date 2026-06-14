@@ -31,13 +31,13 @@
 - [x] Task: Commit archive state and source health reports back to GitHub.
 
 ## Phase 5: Judgments Email Subscription Ingress
-- [ ] Task: Use Cloudflare Email Routing Worker as the default email ingress bridge because it has a free routing path and enough free Worker request capacity for low-volume notification capture.
+- [x] Task: Use Cloudflare Email Routing Worker as the default email ingress bridge because it has a free routing path and enough free Worker request capacity for low-volume notification capture.
 - [ ] Task: Keep Mailgun inbound parse as a fallback only if Cloudflare parsing/routing is insufficient and a trial or paid plan is acceptable.
 - [ ] Task: Keep scheduled mailbox polling through Gmail or IMAP as the final fallback if webhook-style inbound delivery is unavailable.
 - [ ] Task: Create a dedicated subscription address for Courts of NZ judgments of public interest notifications.
-- [ ] Task: Store raw email payloads under `historical_archive_raw/email/<yyyy-mm>/`.
-- [ ] Task: Normalize email subject/body/link records into the shared archive schema.
-- [ ] Task: Trigger GitHub Actions with `repository_dispatch` or a scheduled polling workflow after email receipt.
+- [x] Task: Store raw email payloads under `historical_archive_raw/email/<yyyy-mm>/`.
+- [x] Task: Normalize email subject/body/link records into the shared archive schema.
+- [x] Task: Trigger GitHub Actions with `repository_dispatch` or a scheduled polling workflow after email receipt.
 
 ## Phase 6: Hugging Face and Zenodo Corpus Publication
 - [x] Task: Define the Hugging Face dataset name, license/readme, citation, and provenance statement.

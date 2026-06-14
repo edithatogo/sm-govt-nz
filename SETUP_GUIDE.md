@@ -230,6 +230,13 @@ Recommended email ingress order:
 Historical and fallback-source captures must be archive-only. They must not
 advance outbound syndication state or repost old material to X.
 
+The GitHub-side receiver is the `Archive Email` workflow. It accepts
+`repository_dispatch` events of type `courts_nz_email_received`, stores raw email
+evidence under `historical_archive_raw/email/`, and writes normalized monthly
+JSONL shards under `historical_archive_normalized/email/`. See
+`docs/courts-nz-email-ingress.md` for the dispatch payload contract and
+Cloudflare Worker handoff.
+
 The archive track publishes normalized corpus artifacts to Hugging Face Datasets
 and citable release snapshots to Zenodo. Additional outbound syndication
 accounts must be created as separate conductor tracks after the archive pipeline
