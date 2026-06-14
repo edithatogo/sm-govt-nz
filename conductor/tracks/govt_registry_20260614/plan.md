@@ -34,8 +34,10 @@
   - [x] Added runner integration coverage proving the disabled-by-default
     `unified` target wraps its configured base adapter and records delivery
     state under `delivered_post_ids.unified`.
-- [ ] Task: Conduct a controlled dry-run and live-post test for the unified mirror feed.
+- [~] Task: Conduct a controlled dry-run and live-post test for the unified mirror feed.
   - Current status: adapter-level tests exist, but the unified transparency feed
-    is now wired behind explicit config and remains disabled by default. It has
-    not had a controlled dry-run or live-post verification.
+    is now wired behind explicit config and remains disabled by default.
+  - [x] Controlled dry-run passed on 15 June 2026 using the public Courts of NZ
+    Bluesky feed; see `conductor/unified_transparency_dry_run_20260615.json`.
+  - [ ] Reviewed live-post verification remains pending launch approval.
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Syndication & Mirroring Implementation' (Protocol in workflow.md)
