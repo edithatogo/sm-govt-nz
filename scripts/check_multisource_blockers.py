@@ -9,6 +9,7 @@ EMAIL_CONFIG_PATH = Path("config/courts_nz_email_ingress.json")
 LINKEDIN_DEFAULT_SEED = Path("imports/linkedin/courts-nz-linkedin-seed.json")
 LINKEDIN_REPORT_PATH = Path("conductor/linkedin_archive_report.json")
 LINKEDIN_NORMALIZED_ROOT = Path("historical_archive_normalized/linkedin")
+PUBLICATION_REPORT_PATH = Path("conductor/archive_publication_report_20260614.json")
 
 
 def check_multisource_blockers(env: dict[str, str] | None = None) -> dict[str, Any]:
@@ -51,13 +52,22 @@ def _check_email_ingress(env: dict[str, str]) -> dict[str, Any]:
 def _check_corpus_publication(env: dict[str, str]) -> dict[str, Any]:
     hf_missing = [name for name in ["HF_TOKEN"] if not env.get(name)]
     zenodo_missing = [name for name in ["ZENODO_TOKEN"] if not env.get(name)]
-    complete = not hf_missing and not zenodo_missing
+    report = _load_json(PUBLICATION_REPORT_PATH)
+    hugging_face = report.get("hugging_face", {})
+    zenodo = report.get("zenodo", {})
+    hf_published = hugging_face.get("verified_status") == "200 OK"
+    zenodo_status = str(zenodo.get("status") or "")
+    zenodo_published = zenodo_status in {"published", "published_with_doi"}
+    complete = hf_published and zenodo_published
     return {
         "id": "issue-6-corpus-publication",
         "issue": "https://github.com/edithatogo/sm-govt-nz/issues/6",
         "status": "complete" if complete else "blocked",
         "hugging_face_ready": not hf_missing,
+        "hugging_face_published": hf_published,
         "zenodo_ready": not zenodo_missing,
+        "zenodo_published": zenodo_published,
+        "zenodo_status": zenodo_status or "missing_publication_report",
         "missing_hugging_face_secrets": hf_missing,
         "missing_zenodo_secrets": zenodo_missing,
         "hugging_face_repo_id": env.get("HF_DATASET_REPO_ID") or "inferred from token",
@@ -66,8 +76,8 @@ def _check_corpus_publication(env: dict[str, str]) -> dict[str, Any]:
         or "created from default depositions API",
         "sandbox_token_present": bool(env.get("ZENODO_SANDBOX_TOKEN")),
         "next_action": (
-            "Run Publish Archives manually with publish=true, then verify the Hugging Face "
-            "dataset and Zenodo draft deposition outputs."
+            "Review and publish the Zenodo draft deposition, then update the publication "
+            "report with the final Zenodo DOI/status."
         ),
     }
 

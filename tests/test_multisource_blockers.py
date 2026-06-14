@@ -15,6 +15,14 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
         },
     )
 
+    write_json(
+        tmp_path / "conductor" / "archive_publication_report_20260614.json",
+        {
+            "hugging_face": {"verified_status": "200 OK"},
+            "zenodo": {"status": "draft_uploaded_pending_review_and_publish"},
+        },
+    )
+
     report = blockers.check_multisource_blockers(env={"HF_TOKEN": "hf", "ZENODO_TOKEN": "zen"})
 
     assert report["complete"] is False
@@ -24,9 +32,15 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
         "CLOUDFLARE_ACCOUNT_ID",
         "EMAIL_WORKER_GITHUB_TOKEN",
     ]
-    assert checks["issue-6-corpus-publication"]["status"] == "complete"
+    assert checks["issue-6-corpus-publication"]["status"] == "blocked"
     assert checks["issue-6-corpus-publication"]["missing_hugging_face_secrets"] == []
     assert checks["issue-6-corpus-publication"]["missing_zenodo_secrets"] == []
+    assert checks["issue-6-corpus-publication"]["hugging_face_published"] is True
+    assert checks["issue-6-corpus-publication"]["zenodo_published"] is False
+    assert (
+        checks["issue-6-corpus-publication"]["zenodo_status"]
+        == "draft_uploaded_pending_review_and_publish"
+    )
     assert checks["issue-6-corpus-publication"]["hugging_face_repo_id"] == "inferred from token"
     assert (
         checks["issue-6-corpus-publication"]["zenodo_endpoint"]
@@ -50,6 +64,13 @@ def test_check_multisource_blockers_reports_complete_when_inputs_are_present(
         },
     )
     write_json(tmp_path / "conductor" / "linkedin_archive_report.json", {"record_count": 1})
+    write_json(
+        tmp_path / "conductor" / "archive_publication_report_20260614.json",
+        {
+            "hugging_face": {"verified_status": "200 OK"},
+            "zenodo": {"status": "published_with_doi", "doi": "10.5281/zenodo.123"},
+        },
+    )
     normalized = tmp_path / "historical_archive_normalized" / "linkedin" / "2026-06.jsonl"
     normalized.parent.mkdir(parents=True)
     normalized.write_text('{"record_id": "linkedin:1"}\n', encoding="utf-8")
