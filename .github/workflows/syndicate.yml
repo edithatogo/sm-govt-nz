@@ -65,14 +65,6 @@ jobs:
         run: |
           echo "::warning::Skipping live new-post syndication because Threads credentials did not validate. Historical backlog/archive tasks will continue."
       - name: Run syndicator
-        if: >-
-          ${{
-            github.event_name != 'schedule' ||
-            (
-              steps.validate_threads.outcome == 'success' &&
-              steps.probe_threads.outcome == 'success'
-            )
-          }}
         env:
           BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
           BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}

@@ -26,6 +26,13 @@ class FailingAdapter:
         return SyndicationResult("threads", success=False, detail="remote failure")
 
 
+class RaisingAdapter:
+    name = "threads"
+
+    def send(self, post):
+        raise RuntimeError("remote unavailable")
+
+
 class RecordingSuccessAdapter:
     def __init__(self, name: str) -> None:
         self.name = name
@@ -72,22 +79,24 @@ def test_runner_dry_run_does_not_advance_state() -> None:
     assert next_state == state
 
 
-def test_runner_rejects_enabled_target_without_adapter() -> None:
+def test_runner_isolates_enabled_target_without_adapter(tmp_path) -> None:
     config = make_config()
     config["syndication_targets"]["x"] = {"enabled": True}
     state: AppState = {"last_seen_post_ids": {"agency.bsky.social": ""}}
 
-    try:
-        run_syndication(
-            config,
-            state,
-            feed_client=FakeFeedClient(),
-            adapters={"discord": DryRunAdapter("discord"), "mastodon": DryRunAdapter("mastodon")},
-        )
-    except RuntimeError as error:
-        assert "x" in str(error)
-    else:
-        raise AssertionError("Expected missing X adapter to fail before state can advance")
+    summary, next_state = run_syndication(
+        config,
+        state,
+        feed_client=FakeFeedClient(),
+        adapters={"discord": DryRunAdapter("discord"), "mastodon": DryRunAdapter("mastodon")},
+        archive_dir=str(tmp_path / "archive"),
+    )
+
+    missing_target_results = [result for result in summary.accounts[0].results if result.platform == "x"]
+    assert missing_target_results
+    assert all(not result.success for result in missing_target_results)
+    assert all(result.skipped for result in missing_target_results)
+    assert next_state == state
 
 
 def test_runner_limits_posts_before_advancing_state(tmp_path) -> None:
@@ -206,6 +215,35 @@ def test_runner_does_not_advance_source_state_when_target_delivery_fails(tmp_pat
     assert delivery_state["delivered_post_ids"]["bluesky"]["agency.bsky.social"] == ["post-1"]
     assert "threads" not in delivery_state["delivered_post_ids"]
     assert next_state == state
+
+
+def test_runner_isolates_target_adapter_exceptions(tmp_path) -> None:
+    config = make_config()
+    config["monitored_accounts"][0]["syndicate_to"] = ["bluesky", "threads"]
+    config["syndication_targets"] = {
+        "bluesky": {"enabled": True, "max_posts_per_run": 1},
+        "threads": {"enabled": True, "max_posts_per_run": 1},
+    }
+    state: AppState = {"last_seen_post_ids": {"agency.bsky.social": ""}}
+    delivery_state = {"delivered_post_ids": {}}
+    bluesky = RecordingSuccessAdapter("bluesky")
+
+    summary, next_state = run_syndication(
+        config,
+        state,
+        feed_client=FakeFeedClient(),
+        adapters={"bluesky": bluesky, "threads": RaisingAdapter()},
+        archive_dir=str(tmp_path / "archive"),
+        delivery_state=delivery_state,
+    )
+
+    assert [post["post_id"] for post in bluesky.sent_posts] == ["post-1"]
+    assert delivery_state["delivered_post_ids"]["bluesky"]["agency.bsky.social"] == ["post-1"]
+    assert "threads" not in delivery_state["delivered_post_ids"]
+    assert next_state == state
+    assert summary.accounts[0].results[-1].platform == "threads"
+    assert summary.accounts[0].results[-1].success is False
+    assert "RuntimeError: remote unavailable" in summary.accounts[0].results[-1].detail
 
 
 def make_config() -> AppConfig:

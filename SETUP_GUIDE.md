@@ -308,6 +308,10 @@ The syndication workflow runs the validator before posting.
 
 The `Syndicate` workflow runs on schedule. Manual dispatch still requires
 `confirm_live_posting=true` when you intend to publish new mirrored posts.
+Scheduled runs isolate target failures: a missing or failing target is recorded
+as an unsuccessful skipped delivery, other configured targets can still post,
+and the source cursor is not advanced until all active targets for the selected
+post have either delivered or been explicitly disabled.
 
 ## 9. Local Quality Gate
 

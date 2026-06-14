@@ -58,12 +58,6 @@ def run_syndication(
         backlog_archive_dir=backlog_archive_dir,
     )
     available_adapters = adapters if adapters is not None else build_adapters_from_env(active_targets)
-    missing_adapters = [
-        target for target in active_targets if target not in available_adapters
-    ]
-    if missing_adapters and not dry_run:
-        formatted = ", ".join(sorted(missing_adapters))
-        raise RuntimeError(f"Missing syndication adapter configuration for: {formatted}")
     next_state: AppState = {"last_seen_post_ids": dict(state["last_seen_post_ids"])}
     target_delivery_state = delivery_state if delivery_state is not None else {"delivered_post_ids": {}}
     account_results: list[AccountRunResult] = []
@@ -85,6 +79,21 @@ def run_syndication(
             )
             continue
         posts = fetch_new_posts_for_account(account, last_seen, client=feed_client)
+
+        # Registry-aware opt-out check
+        agency_id = account.get("agency_id")
+        if agency_id and not _should_syndicate(agency_id, config):
+            account_results.append(
+                AccountRunResult(
+                    handle=handle,
+                    fetched=len(posts),
+                    syndicated=0,
+                    latest_post_id=last_seen,
+                    results=[SyndicationResult("all", success=True, skipped=True, detail="opted-out")],
+                )
+            )
+            continue
+
         posts = _limit_posts_for_enabled_targets(
             posts,
             account["syndicate_to"],
@@ -108,10 +117,11 @@ def run_syndication(
                 adapter = available_adapters.get(target)
                 if adapter is None:
                     result_items.append(
-                        SyndicationResult(target, success=True, skipped=True, detail="not configured")
+                        SyndicationResult(target, success=False, skipped=True, detail="not configured")
                     )
+                    failed_delivery = True
                     continue
-                result = adapter.send(post)
+                result = _send_with_isolation(adapter, target, post)
                 result_items.append(result)
                 if result.success and not result.skipped:
                     syndicated_count += 1
@@ -140,6 +150,21 @@ def run_syndication(
     return RunSummary(account_results), next_state
 
 
+def _send_with_isolation(
+    adapter: SyndicationAdapter,
+    target: str,
+    post: BlueskyPost,
+) -> SyndicationResult:
+    try:
+        return adapter.send(post)
+    except Exception as error:
+        return SyndicationResult(
+            target,
+            success=False,
+            detail=f"{type(error).__name__}: {error}",
+        )
+
+
 def main(
     config_path: str = "config.json",
     state_path: str = "conductor/state.json",
@@ -165,6 +190,11 @@ def main(
 def _enabled_account_targets(account_targets: Iterable[str], active_targets: Iterable[str]) -> list[str]:
     active = set(active_targets)
     return [target for target in account_targets if target in active]
+
+
+def _should_syndicate(agency_id: str, config: AppConfig) -> bool:
+    opt_outs = config.get("syndication_opt_outs", [])
+    return agency_id not in set(str(item) for item in opt_outs)
 
 
 def _already_delivered(
