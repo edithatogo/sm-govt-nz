@@ -231,6 +231,13 @@ Recommended email ingress order:
 3. Scheduled mailbox polling through Gmail or IMAP. Use this only if webhook
    ingress is unavailable.
 
+The email ingress contract and fallback decision are tracked in
+`config/courts_nz_email_ingress.json` and
+`docs/courts-nz-email-ingress-fallbacks.md`. The planned subscription address
+is `courts-nz-judgments@archive.edithatogo.com`; it remains pending until the
+Cloudflare routing rule exists and the address is subscribed to the Courts of
+New Zealand judgments of public interest email list.
+
 Historical and fallback-source captures must be archive-only. They must not
 advance outbound syndication state or repost old material to X.
 
@@ -298,6 +305,7 @@ Run the validator locally:
 python scripts/validate_secrets.py --mode syndicate
 python scripts/validate_secrets.py --mode archive
 python scripts/check_buffer_key_rotation.py --expires-on 2026-07-12
+python -m pytest tests/test_email_ingress_config.py -q
 ```
 
 Local validation reads `.env.local` when present, then lets exported process

@@ -1,0 +1,46 @@
+{
+  "agency_id": "courts-nz",
+  "contract_id": "courts-nz-email-judgments",
+  "archive_only": true,
+  "dedicated_subscription_address": {
+    "status": "pending_external_setup",
+    "address": "courts-nz-judgments@archive.edithatogo.com",
+    "purpose": "Courts of New Zealand judgments of public interest subscription capture",
+    "provider": "cloudflare_email_routing",
+    "worker_name": "courts-nz-email-archive",
+    "allowed_recipients": [
+      "courts-nz-judgments@archive.edithatogo.com"
+    ]
+  },
+  "default_route": {
+    "provider": "cloudflare_email_routing_worker",
+    "workflow": "Archive Email",
+    "repository_dispatch_event_type": "courts_nz_email_received",
+    "raw_output_root": "historical_archive_raw/email",
+    "normalized_output_root": "historical_archive_normalized/email"
+  },
+  "fallback_routes": [
+    {
+      "provider": "mailgun_inbound_parse",
+      "status": "deferred",
+      "activation_condition": "Use only if Cloudflare Email Routing cannot reliably parse or route the Courts of NZ subscription messages.",
+      "receiver_contract": "Forward provider payloads to the same GitHub repository_dispatch event type after preserving the raw MIME or provider JSON payload."
+    },
+    {
+      "provider": "scheduled_mailbox_polling",
+      "status": "last_resort",
+      "activation_condition": "Use only if webhook-style inbound delivery is unavailable.",
+      "receiver_contract": "Poll a dedicated mailbox through Gmail or IMAP, archive unseen messages through scripts/archive_email_payload.py, and never advance outbound syndication state."
+    }
+  ],
+  "guardrails": {
+    "must_not_post_to_mirrors": true,
+    "must_not_advance_outbound_state": true,
+    "must_store_raw_before_normalized": true,
+    "dedupe_keys": [
+      "message_id",
+      "canonical_url",
+      "content_hash"
+    ]
+  }
+}

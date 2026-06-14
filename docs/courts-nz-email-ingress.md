@@ -5,6 +5,10 @@
 The `Archive Email` workflow receives email notifications through GitHub
 `repository_dispatch` events of type `courts_nz_email_received`.
 
+The default route, fallback order, planned dedicated address, and archive-only
+guardrails are recorded in `config/courts_nz_email_ingress.json`. The fallback
+decision note is `docs/courts-nz-email-ingress-fallbacks.md`.
+
 The dispatch `client_payload` should be a JSON object with these fields:
 
 - `message_id`: source email message ID.
@@ -70,6 +74,10 @@ Setup outline:
    address in `allowed_recipients`.
 3. In Cloudflare Email Routing, create a routing rule from the dedicated
    subscription address to the deployed Worker.
+4. Subscribe the dedicated address to the Courts of New Zealand judgments of
+   public interest notification list, then update
+   `config/courts_nz_email_ingress.json` from `pending_external_setup` to
+   `active`.
 
 For local deployment, copy `cloudflare/wrangler.courts-nz-email.toml.example`
 to `cloudflare/wrangler.toml`, replace `ALLOWED_RECIPIENTS`, and set

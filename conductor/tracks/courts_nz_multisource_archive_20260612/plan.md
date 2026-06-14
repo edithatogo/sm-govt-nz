@@ -32,8 +32,8 @@
 
 ## Phase 5: Judgments Email Subscription Ingress
 - [x] Task: Use Cloudflare Email Routing Worker as the default email ingress bridge because it has a free routing path and enough free Worker request capacity for low-volume notification capture.
-- [ ] Task: Keep Mailgun inbound parse as a fallback only if Cloudflare parsing/routing is insufficient and a trial or paid plan is acceptable.
-- [ ] Task: Keep scheduled mailbox polling through Gmail or IMAP as the final fallback if webhook-style inbound delivery is unavailable.
+- [x] Task: Keep Mailgun inbound parse as a fallback only if Cloudflare parsing/routing is insufficient and a trial or paid plan is acceptable.
+- [x] Task: Keep scheduled mailbox polling through Gmail or IMAP as the final fallback if webhook-style inbound delivery is unavailable.
 - [ ] Task: Create a dedicated subscription address for Courts of NZ judgments of public interest notifications.
 - [x] Task: Store raw email payloads under `historical_archive_raw/email/<yyyy-mm>/`.
 - [x] Task: Normalize email subject/body/link records into the shared archive schema.
