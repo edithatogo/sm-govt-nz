@@ -44,7 +44,7 @@ Before enabling the scheduled syndicator for the MVP:
 4.  Confirm `conductor/state.json` remains seeded for live posts, and use `conductor/bluesky_backlog_state.json` for intentional historical backlog batches.
 5.  Use `conductor/archive_mirror_state.json` for recovered X archive replay to Bluesky, and keep it separate from live post state and Bluesky-source backlog state.
 6.  Run controlled `workflow_dispatch` tests and verify resulting mirror posts link back to the source Bluesky or historical X URL.
-7.  Keep archive replay bounded by `archive_replay_max_posts_per_run: 5` unless a separate review approves a higher batch size.
+7.  Keep scheduled archive replay bounded by `archive_replay_max_posts_per_run: 5`. Use the manual-only `Archive Replay` workflow for reviewed X archive replay batches of 10 or 20 records, with delivery URL verification before state is committed.
 8.  Monitor scheduled runs and confirm `conductor/state.json`, `conductor/bluesky_backlog_state.json`, `conductor/archive_mirror_state.json`, and `conductor/archive_mirror_coverage.json` advance without duplicating posts.
 
 ### 2. GitHub Pages & External Archiving

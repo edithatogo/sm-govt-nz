@@ -20,10 +20,16 @@
     5, 10, or 20 records without increasing the scheduled `Syndicate` throttle.
   - Manual `Archive Replay` run `27502031465` posted 20 X archive records,
     verified delivery URLs, and committed state update `be1eac4`.
-- [ ] Task: Increase or tune batch size only after reviewing account-rate,
+- [x] Task: Increase or tune batch size only after reviewing account-rate,
   platform-noise, and duplicate-prevention behavior.
   - Retained scheduled replay at 5 records and moved larger reviewed batches to
     the manual-only `Archive Replay` workflow.
+  - Decision: do not raise `archive_replay_max_posts_per_run` for scheduled
+    `Syndicate` runs. Use manual `Archive Replay` batches of up to 20 records
+    after reviewing recent run success, account activity volume, and public-feed
+    noise.
+  - Evidence: reviewed 20-record run `27502031465` succeeded, verified delivery
+    URLs, and did not require a scheduled throttle increase.
 - [x] Task: Re-run coverage reporting after each phase and commit state.
   - Latest coverage shows Bluesky target at 202/738 total source records, with
     0 remaining Bluesky-source records and 536 remaining X archive records.
