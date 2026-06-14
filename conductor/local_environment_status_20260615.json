@@ -1,0 +1,18 @@
+{
+  "generated_at_local_date": "2026-06-15",
+  "notes": [
+    {
+      "area": "worktree",
+      "status": "dirty_user_owned_change",
+      "path": "pyproject.toml",
+      "summary": "Uncommitted change adds loguru dependency and tool.legal_nz metadata.",
+      "handling": "Do not stage, commit, revert, or edit unless explicitly requested."
+    },
+    {
+      "area": "shell",
+      "status": "use_cmd_for_repo_checks",
+      "summary": "PowerShell has been unreliable because a OneDrive-backed powershell.config.json is unavailable in the user profile.",
+      "handling": "Use cmd.exe for repo checks and GitHub CLI commands until the PowerShell profile/config issue is resolved."
+    }
+  ]
+}
