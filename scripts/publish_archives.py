@@ -21,6 +21,8 @@ class BundleManifest:
     raw_file_count: int = 0
     manifest_path: str = ""
     dataset_card_path: str = ""
+    normalized_jsonl_path: str = ""
+    normalized_parquet_path: str = ""
 
 
 class HttpUploader(Protocol):
@@ -78,6 +80,7 @@ def create_archive_bundle(
     output_root.mkdir(parents=True, exist_ok=True)
     jsonl_path = output_root / "historical_archive.jsonl.gz"
     normalized_jsonl_path = output_root / "normalized_archive.jsonl.gz"
+    normalized_parquet_path = output_root / "normalized_archive.parquet"
     tar_path = output_root / "historical_archive.tar.gz"
     corpus_manifest_path = output_root / "corpus_manifest.json"
     dataset_card_path = output_root / "README.md"
@@ -103,6 +106,7 @@ def create_archive_bundle(
             line = json.dumps(record, ensure_ascii=False, sort_keys=True)
             uncompressed_bytes += len(line.encode("utf-8"))
             normalized_jsonl_file.write(line + "\n")
+    _write_normalized_parquet(normalized_records, normalized_parquet_path)
 
     corpus_manifest = _build_corpus_manifest(
         legacy_json_files=legacy_json_files,
@@ -111,6 +115,7 @@ def create_archive_bundle(
         normalized_records=normalized_records,
         jsonl_path=jsonl_path,
         normalized_jsonl_path=normalized_jsonl_path,
+        normalized_parquet_path=normalized_parquet_path,
     )
     corpus_manifest_path.write_text(
         json.dumps(corpus_manifest, indent=2, sort_keys=True) + "\n",
@@ -121,6 +126,7 @@ def create_archive_bundle(
     with tarfile.open(tar_path, "w:gz") as tar_file:
         tar_file.add(jsonl_path, arcname=jsonl_path.name)
         tar_file.add(normalized_jsonl_path, arcname=normalized_jsonl_path.name)
+        tar_file.add(normalized_parquet_path, arcname=normalized_parquet_path.name)
         tar_file.add(corpus_manifest_path, arcname=corpus_manifest_path.name)
         tar_file.add(dataset_card_path, arcname=dataset_card_path.name)
         for path in legacy_json_files:
@@ -139,6 +145,8 @@ def create_archive_bundle(
         raw_file_count=len(raw_files),
         manifest_path=str(corpus_manifest_path),
         dataset_card_path=str(dataset_card_path),
+        normalized_jsonl_path=str(normalized_jsonl_path),
+        normalized_parquet_path=str(normalized_parquet_path),
     )
 
 
@@ -193,14 +201,17 @@ def publish_to_hugging_face(
     except ImportError:
         return UrlLibUploader().upload_file(endpoint, token, Path(bundle.bundle_path), metadata)
     api = HfApi(token=token)
-    path_in_repo = Path(bundle.bundle_path).name
-    api.upload_file(
-        path_or_fileobj=bundle.bundle_path,
-        path_in_repo=path_in_repo,
-        repo_id=repo_id,
-        repo_type="dataset",
-    )
-    return {**metadata, "path_in_repo": path_in_repo}
+    uploaded_paths = []
+    for local_path in _hugging_face_upload_paths(bundle):
+        path_in_repo = _hugging_face_repo_path(local_path)
+        api.upload_file(
+            path_or_fileobj=str(local_path),
+            path_in_repo=path_in_repo,
+            repo_id=repo_id,
+            repo_type="dataset",
+        )
+        uploaded_paths.append(path_in_repo)
+    return {**metadata, "paths_in_repo": uploaded_paths}
 
 
 def publish_from_env(bundle: BundleManifest) -> dict[str, Any]:
@@ -245,6 +256,7 @@ def _build_corpus_manifest(
     normalized_records: list[dict[str, Any]],
     jsonl_path: Path,
     normalized_jsonl_path: Path,
+    normalized_parquet_path: Path,
 ) -> dict[str, Any]:
     source_counts: dict[str, int] = {}
     date_ranges: dict[str, dict[str, str]] = {}
@@ -266,6 +278,7 @@ def _build_corpus_manifest(
         "generated_artifacts": {
             jsonl_path.name: _artifact_summary(jsonl_path),
             normalized_jsonl_path.name: _artifact_summary(normalized_jsonl_path),
+            normalized_parquet_path.name: _artifact_summary(normalized_parquet_path),
         },
         "source_counts": dict(sorted(source_counts.items())),
         "source_date_ranges": dict(sorted(date_ranges.items())),
@@ -276,7 +289,7 @@ def _build_corpus_manifest(
         "known_gaps": [
             "LinkedIn capture is pending approved access and remains archive-only.",
             "Judgments email subscription ingress is pending Cloudflare Email Routing setup.",
-            "Parquet conversion is planned after the JSONL corpus is stable in CI.",
+            "Raw-source bundles are included in the Actions artifact and full archive tarball; separate gated raw publication can be added if source terms require it.",
         ],
         "provenance": (
             "Records are derived from public Courts of New Zealand source surfaces and preserve "
@@ -317,6 +330,7 @@ def _build_dataset_card(manifest: dict[str, Any]) -> str:
         "evidence captured for the Courts of New Zealand archive and mirror project.\n\n"
         "## Contents\n\n"
         "- `normalized_archive.jsonl.gz`: combined normalized records from source/month shards.\n"
+        "- `normalized_archive.parquet`: combined normalized records in Parquet format.\n"
         "- `normalized/`: source/month normalized JSONL shards.\n"
         "- `raw/`: raw source payloads captured before normalization.\n"
         "- `corpus_manifest.json`: checksums, coverage counts, date ranges, and known gaps.\n\n"
@@ -327,6 +341,56 @@ def _build_dataset_card(manifest: dict[str, Any]) -> str:
         "## Known Gaps\n\n"
         f"{gap_lines}\n"
     )
+
+
+def _write_normalized_parquet(records: list[dict[str, Any]], path: Path) -> None:
+    try:
+        import pyarrow as pa
+        import pyarrow.parquet as pq
+    except ImportError as error:
+        raise RuntimeError("Install pyarrow to build normalized Parquet artifacts.") from error
+
+    if records:
+        rows = [_flatten_record_for_parquet(record) for record in records]
+        field_names = sorted({field for row in rows for field in row})
+        normalized_rows = [{field: row.get(field, "") for field in field_names} for row in rows]
+        table = pa.Table.from_pylist(normalized_rows)
+    else:
+        table = pa.table({"record_id": pa.array([], type=pa.string())})
+    pq.write_table(table, path)
+
+
+def _flatten_record_for_parquet(record: dict[str, Any]) -> dict[str, str]:
+    row: dict[str, str] = {}
+    for key, value in record.items():
+        if isinstance(value, (dict, list)):
+            row[key] = json.dumps(value, ensure_ascii=False, sort_keys=True)
+        elif value is None:
+            row[key] = ""
+        else:
+            row[key] = str(value)
+    return row
+
+
+def _hugging_face_upload_paths(bundle: BundleManifest) -> list[Path]:
+    candidates = [
+        bundle.dataset_card_path,
+        bundle.manifest_path,
+        bundle.normalized_jsonl_path,
+        bundle.normalized_parquet_path,
+        bundle.bundle_path,
+    ]
+    return [Path(path) for path in candidates if path and Path(path).exists()]
+
+
+def _hugging_face_repo_path(path: Path) -> str:
+    if path.name == "README.md":
+        return "README.md"
+    if path.name.startswith("normalized_archive."):
+        return f"data/{path.name}"
+    if path.name == "corpus_manifest.json":
+        return "metadata/corpus_manifest.json"
+    return f"bundles/{path.name}"
 
 
 def _sha256(path: Path) -> str:

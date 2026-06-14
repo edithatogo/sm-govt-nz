@@ -1,5 +1,7 @@
 import tarfile
 
+import pyarrow.parquet as pq
+
 from scripts.publish_archives import (
     BundleManifest,
     create_archive_bundle,
@@ -54,9 +56,11 @@ def test_create_archive_bundle_includes_normalized_raw_and_dataset_metadata(tmp_
 
     assert bundle.normalized_record_count == 1
     assert bundle.raw_file_count == 1
+    assert pq.read_table(bundle.normalized_parquet_path).num_rows == 1
     with tarfile.open(bundle.bundle_path, "r:gz") as tar_file:
         names = tar_file.getnames()
     assert "normalized_archive.jsonl.gz" in names
+    assert "normalized_archive.parquet" in names
     assert "corpus_manifest.json" in names
     assert "README.md" in names
     assert "normalized/bluesky/2026-06.jsonl" in names

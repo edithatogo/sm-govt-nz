@@ -268,6 +268,9 @@ corpus manifest into a downloadable Actions artifact. If `HF_TOKEN` and
 `HF_DATASET_REPO_ID` are configured, the same workflow uploads the bundle to
 Hugging Face Datasets. If `ZENODO_TOKEN` and `ZENODO_DEPOSIT_ENDPOINT` are
 configured, it also uploads the same bundle to Zenodo.
+The Hugging Face upload path includes the dataset card, corpus manifest,
+combined normalized JSONL, combined normalized Parquet, and the full raw-source
+archive bundle.
 
 The `Archive No-Op Monitor` workflow replays a known email archive payload and
 fails if the duplicate capture changes `historical_archive_raw/email/` or
