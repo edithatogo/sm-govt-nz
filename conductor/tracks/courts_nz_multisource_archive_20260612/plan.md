@@ -57,7 +57,7 @@
 - [x] Task: Add monthly compaction so Git commits stay small while Hugging Face receives dataset-friendly shards.
 - [x] Task: Add Buffer API key rotation reminder before the current key expiry on 12 July 2026.
 - [x] Task: Add failure isolation so one blocked source does not stop other archive sources or live Bluesky-to-X mirroring.
-- [ ] Task: Commit after each completed implementation task and run a review after each phase before starting the next phase.
+- [x] Task: Commit after each completed implementation task and run a review after each phase before starting the next phase.
 
 ## Deferred Tracks: Additional Syndication Accounts
 - [ ] Task: Create one separate conductor track per future outbound platform account after the archive pipeline is stable.
