@@ -34,15 +34,14 @@
 
 ## MVP Runtime Configuration
 *   **Active source account:** `courtsofnz.bsky.social`.
-*   **Active target:** Bluesky mirror only, via `BLUESKY_MIRROR_HANDLE` and `BLUESKY_MIRROR_APP_PASSWORD`.
+*   **Active targets:** Bluesky mirror via `BLUESKY_MIRROR_HANDLE` and `BLUESKY_MIRROR_APP_PASSWORD`, plus Threads mirror via `THREADS_ACCESS_TOKEN` and `THREADS_USER_ID`.
 *   **Remote workflow state:** `Syndicate` is available for controlled manual dispatch and scheduled bounded runs once credentials validate.
-*   **Launch throttle:** `max_posts_per_run` is `1` for live posts and `backlog_max_posts_per_run` is `1` for historical Bluesky backlog batches.
+*   **Launch throttle:** `max_posts_per_run` is `1` for live posts. Historical Bluesky-source backlog is complete, and recovered X archive replay to Bluesky is bounded by `archive_replay_max_posts_per_run: 5`.
 *   **Backlog State Store:** Git-backed local `conductor/bluesky_backlog_state.json`, separate from live `conductor/state.json`.
 *   **Archive Replay State Store:** Git-backed local `conductor/archive_mirror_state.json`, separate from live and Bluesky-source backlog state, for recovered historical X archive replay to Bluesky.
 *   **Archive Coverage Report:** `conductor/archive_mirror_coverage.json` records source counts, target counts, remaining records, and backdating support.
-*   **Non-MVP targets:** X, Threads, Instagram, Facebook Pages, Mastodon,
-    Discord, and LinkedIn remain disabled in `config.json`; Threads has a
-    no-posting readiness gate only.
+*   **Non-MVP targets:** X, Instagram, Facebook Pages, Mastodon, Discord, and
+    LinkedIn remain disabled in `config.json`; LinkedIn remains source-only.
 *   **Future Meta Targets:** Instagram and Facebook Page publishing should use
     official Meta APIs, sharing account administration where practical but not
     sharing state or assuming identical permission scopes.

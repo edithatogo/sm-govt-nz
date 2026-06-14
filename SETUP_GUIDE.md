@@ -15,22 +15,28 @@ Required repository settings:
 - Optional project routing: create a GitHub Project and set repository variables
   `PROJECT_NUMBER` and `PROJECT_OWNER`.
 
-## 2. Current MVP Outbound Posting: Bluesky Mirror
+## 2. Current MVP Outbound Posting: Bluesky and Threads Mirrors
 
-The current MVP is scoped to mirroring Courts of New Zealand Bluesky posts to a
-dedicated Bluesky mirror account before any additional platforms are enabled.
-`config.json` enables only the `bluesky` target and sets
-`max_posts_per_run` to `1` for the controlled launch period.
+The current MVP is scoped to mirroring Courts of New Zealand Bluesky posts to
+dedicated Bluesky and Threads mirror accounts before any higher-risk platforms
+are enabled. `config.json` enables the `bluesky` and `threads` targets and keeps
+`max_posts_per_run` at `1` for new-post syndication during the controlled launch
+period.
 
 Historical backlog posting is also enabled for the Bluesky mirror. It is
-bounded separately with `backlog_max_posts_per_run: 1`, ordered
-`oldest_first`, and tracked in `conductor/bluesky_backlog_state.json` so it does
-not rewind or interfere with live `conductor/state.json` processing.
+bounded separately with `backlog_max_posts_per_run: 5`, ordered `oldest_first`,
+and tracked in `conductor/bluesky_backlog_state.json` so it does not rewind or
+interfere with live `conductor/state.json` processing. Recovered X archive
+replay to the Bluesky mirror is bounded separately with
+`archive_replay_max_posts_per_run: 5` and tracked in
+`conductor/archive_mirror_state.json`.
 
 Required GitHub secrets:
 
 - `BLUESKY_MIRROR_HANDLE`
 - `BLUESKY_MIRROR_APP_PASSWORD`
+- `THREADS_ACCESS_TOKEN`
+- `THREADS_USER_ID`
 
 Local setup:
 
@@ -124,13 +130,13 @@ Prepared account:
 - URL: `https://www.threads.com/@mirnzcourts`
 - Handle: `mirnzcourts`
 - Display name: `Mirror: Courts of New Zealand`
-- Status: account/profile prepared, outbound posting disabled until the
-  Bluesky backlog has completed or is explicitly paused.
+- Status: account/profile prepared; ongoing-forward posting is enabled after
+  the Bluesky backlog gate completed.
 
-The scheduled `Syndicate` workflow includes a Threads pipeline gate. It does not
-post to Threads yet; it reports the configured Threads account and waits for the
-Bluesky backlog to finish before the Threads API credential and posting adapter
-work is enabled.
+The scheduled `Syndicate` workflow validates and probes Threads credentials
+before running the syndicator. Scheduled runs skip live new-post syndication if
+Threads validation fails, while still allowing archive/backlog tasks to continue.
+Manual live dispatches fail hard if Threads credentials do not validate.
 
 Threads can publish posts through the official Threads API using a two-step
 container and publish flow. Use a long-lived Threads user token where practical;

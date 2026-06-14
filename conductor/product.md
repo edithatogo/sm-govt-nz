@@ -12,10 +12,10 @@ This project automatically syndicates social media updates from NZ Government ag
 ## Current MVP Launch Scope
 The immediate MVP is intentionally narrower than the long-term product:
 *   **Source:** `courtsofnz.bsky.social`.
-*   **Mirror:** Bluesky account `mirnzcourts.bsky.social`, display name `Mirror: Courts of New Zealand`.
+*   **Mirrors:** Bluesky account `mirnzcourts.bsky.social` and Threads account `mirnzcourts`, both using the display name `Mirror: Courts of New Zealand`.
 *   **Posting direction:** Source public records to approved mirror accounts only.
 *   **Identity:** Mirror accounts must be presented as unofficial mirrors and link back to the source profile. Posts must never be made under Dylan Mordaunt, `edithatogo`, or any other personal identity.
-*   **Safety:** The first live run must be manual or tightly controlled, with `max_posts_per_run: 1` for new posts and `backlog_max_posts_per_run: 1` for historical Bluesky backlog batches.
+*   **Safety:** New-post syndication remains tightly controlled with `max_posts_per_run: 1`. Historical Bluesky-source backlog is complete; recovered X archive replay to Bluesky remains bounded at `archive_replay_max_posts_per_run: 5`.
 *   **Archive:** Current source and mirror profile snapshots live under `profile_archive/courts-nz/2026-06-11/` and `profile_archive/courts-nz/2026-06-13/`. Historical and ongoing X, Bluesky, LinkedIn, RSS, website, and email-subscription capture is tracked in `courts_nz_multisource_archive_20260612` before Hugging Face and Zenodo dataset publication. LinkedIn is source-only and archive-only for now.
 *   **Archive replay:** The Bluesky mirror now has bounded archive replay coverage for the current Bluesky source archive and recovered historical X archive. Threads archive replay is deferred because Threads publishes historical records as current posts and does not provide a supported backdate flow in the current posting contract.
 

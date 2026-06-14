@@ -17,9 +17,9 @@
 
 ## Phase 4: Controlled Live Launch
 - [x] Task: Enable Threads for a one-post manual workflow dispatch.
-- [x] Task: Verify public Threads URL and commit state. Pending the next new
-  Courts of New Zealand source post; the first Threads-enabled workflow found
-  no new source posts to publish.
+- [x] Task: Verify public Threads delivery state and commit state. Threads
+  duplicate-prevention state now records one delivered Courts of New Zealand
+  source post for `courtsofnz.bsky.social`.
 - [x] Task: Disable or retain scheduling according to launch review.
 
 ## Launch Evidence
@@ -37,6 +37,11 @@
   `https://github.com/edithatogo/sm-govt-nz/actions/runs/27459100624` passed
   with Threads enabled; it fetched zero new source posts and therefore did not
   publish a Threads post.
+- [x] Manual `Syndicate` workflow run
+  `https://github.com/edithatogo/sm-govt-nz/actions/runs/27500249516` passed
+  with Threads credentials validating and probing successfully.
+- [x] `conductor/target_delivery_state.json` records Threads delivery for source
+  post `3mo2b6w4u522m`.
 - [x] `python scripts/threads_dry_run_latest.py` emits the latest source post's
   intended Threads create/publish requests with access tokens redacted and
   historical replay disabled.

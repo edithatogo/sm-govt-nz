@@ -40,11 +40,11 @@ Two automated processes run on GitHub Actions:
 Before enabling the scheduled syndicator for the MVP:
 1.  Merge the Courts of New Zealand mirror scope PR after CI passes.
 2.  Confirm GitHub repository secrets for Bluesky mirror posting validate with `scripts/validate_secrets.py --mode syndicate --target bluesky`.
-3.  Keep `config.json` scoped to `courtsofnz.bsky.social` with `syndicate_to: ["bluesky"]` and `max_posts_per_run: 1`.
+3.  Keep `config.json` scoped to `courtsofnz.bsky.social` with approved mirror targets only and `max_posts_per_run: 1`.
 4.  Confirm `conductor/state.json` remains seeded for live posts, and use `conductor/bluesky_backlog_state.json` for intentional historical backlog batches.
 5.  Use `conductor/archive_mirror_state.json` for recovered X archive replay to Bluesky, and keep it separate from live post state and Bluesky-source backlog state.
 6.  Run controlled `workflow_dispatch` tests and verify resulting mirror posts link back to the source Bluesky or historical X URL.
-7.  Keep archive replay bounded by `archive_replay_max_posts_per_run: 1` until coverage reporting and corpus-manifest telemetry prove duplicate prevention.
+7.  Keep archive replay bounded by `archive_replay_max_posts_per_run: 5` unless a separate review approves a higher batch size.
 8.  Monitor scheduled runs and confirm `conductor/state.json`, `conductor/bluesky_backlog_state.json`, `conductor/archive_mirror_state.json`, and `conductor/archive_mirror_coverage.json` advance without duplicating posts.
 
 ### 2. GitHub Pages & External Archiving
