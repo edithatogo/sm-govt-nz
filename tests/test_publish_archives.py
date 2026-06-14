@@ -1,4 +1,6 @@
 import tarfile
+import json
+from pathlib import Path
 
 import pyarrow.parquet as pq
 
@@ -36,16 +38,28 @@ def test_create_archive_bundle_writes_tar_gz_and_manifest(tmp_path) -> None:
 def test_create_archive_bundle_includes_normalized_raw_and_dataset_metadata(tmp_path) -> None:
     normalized_dir = tmp_path / "historical_archive_normalized" / "bluesky"
     raw_dir = tmp_path / "historical_archive_raw" / "bluesky" / "2026-06"
+    state_dir = tmp_path / "conductor"
     normalized_dir.mkdir(parents=True)
     raw_dir.mkdir(parents=True)
+    state_dir.mkdir(parents=True)
     (normalized_dir / "2026-06.jsonl").write_text(
-        (
-            '{"record_id": "post-1", "source_platform": "bluesky", '
-            '"original_created_at": "2026-06-01T00:00:00Z"}\n'
-        ),
+        json.dumps(
+            {
+                "record_id": "post-1",
+                "source_platform": "bluesky",
+                "source_account": "courtsofnz.bsky.social",
+                "source_url": "https://bsky.app/profile/courtsofnz.bsky.social/post/post-1",
+                "original_created_at": "2026-06-01T00:00:00Z",
+            }
+        )
+        + "\n",
         encoding="utf-8",
     )
     (raw_dir / "post-1.json").write_text('{"raw": true}', encoding="utf-8")
+    (state_dir / "bluesky_backlog_state.json").write_text(
+        json.dumps({"posted_post_ids": {"courtsofnz.bsky.social": ["post-1"]}}),
+        encoding="utf-8",
+    )
 
     bundle = create_archive_bundle(
         tmp_path / "historical_archive",
@@ -65,6 +79,25 @@ def test_create_archive_bundle_includes_normalized_raw_and_dataset_metadata(tmp_
     assert "README.md" in names
     assert "normalized/bluesky/2026-06.jsonl" in names
     assert "raw/bluesky/2026-06/post-1.json" in names
+
+    corpus_manifest = json.loads(Path(bundle.manifest_path).read_text(encoding="utf-8"))
+    assert corpus_manifest["record_index"] == [
+        {
+            "mirror_targets": [
+                {
+                    "mirror_url": "",
+                    "status": "posted",
+                    "target": "bluesky",
+                }
+            ],
+            "original_timestamp": "2026-06-01T00:00:00Z",
+            "source_account": "courtsofnz.bsky.social",
+            "source_key": "bluesky:courtsofnz.bsky.social",
+            "source_platform": "bluesky",
+            "source_record_id": "post-1",
+            "source_url": "https://bsky.app/profile/courtsofnz.bsky.social/post/post-1",
+        }
+    ]
 
 
 def test_publishers_use_expected_endpoints() -> None:

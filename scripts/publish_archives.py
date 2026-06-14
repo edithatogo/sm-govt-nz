@@ -75,7 +75,9 @@ def create_archive_bundle(
         if normalized_dir is not None
         else source_root.parent / "historical_archive_normalized"
     )
-    raw_root = Path(raw_dir) if raw_dir is not None else source_root.parent / "historical_archive_raw"
+    raw_root = (
+        Path(raw_dir) if raw_dir is not None else source_root.parent / "historical_archive_raw"
+    )
     output_root = Path(output_dir)
     output_root.mkdir(parents=True, exist_ok=True)
     jsonl_path = output_root / "historical_archive.jsonl.gz"
@@ -116,6 +118,7 @@ def create_archive_bundle(
         jsonl_path=jsonl_path,
         normalized_jsonl_path=normalized_jsonl_path,
         normalized_parquet_path=normalized_parquet_path,
+        state_root=source_root.parent / "conductor",
     )
     corpus_manifest_path.write_text(
         json.dumps(corpus_manifest, indent=2, sort_keys=True) + "\n",
@@ -229,7 +232,9 @@ def publish_from_env(bundle: BundleManifest) -> dict[str, Any]:
 
 def write_manifest(bundle: BundleManifest, path: str | os.PathLike[str]) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
-    Path(path).write_text(json.dumps(bundle.__dict__, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    Path(path).write_text(
+        json.dumps(bundle.__dict__, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
 
 
 def _load_normalized_records(paths: list[Path]) -> list[dict[str, Any]]:
@@ -243,7 +248,9 @@ def _load_normalized_records(paths: list[Path]) -> list[dict[str, Any]]:
             except json.JSONDecodeError as exc:
                 raise ValueError(f"Invalid JSONL in {path}:{line_number}") from exc
             if not isinstance(payload, dict):
-                raise ValueError(f"Normalized JSONL record must be an object in {path}:{line_number}")
+                raise ValueError(
+                    f"Normalized JSONL record must be an object in {path}:{line_number}"
+                )
             records.append(payload)
     return records
 
@@ -257,6 +264,7 @@ def _build_corpus_manifest(
     jsonl_path: Path,
     normalized_jsonl_path: Path,
     normalized_parquet_path: Path,
+    state_root: Path,
 ) -> dict[str, Any]:
     source_counts: dict[str, int] = {}
     date_ranges: dict[str, dict[str, str]] = {}
@@ -266,7 +274,9 @@ def _build_corpus_manifest(
         created_at = str(record.get("original_created_at") or "")
         if not created_at:
             continue
-        current = date_ranges.setdefault(source, {"min_original_created_at": created_at, "max_original_created_at": created_at})
+        current = date_ranges.setdefault(
+            source, {"min_original_created_at": created_at, "max_original_created_at": created_at}
+        )
         current["min_original_created_at"] = min(current["min_original_created_at"], created_at)
         current["max_original_created_at"] = max(current["max_original_created_at"], created_at)
 
@@ -282,6 +292,10 @@ def _build_corpus_manifest(
         },
         "source_counts": dict(sorted(source_counts.items())),
         "source_date_ranges": dict(sorted(date_ranges.items())),
+        "record_index": _build_record_index(
+            normalized_records,
+            mirror_status=_load_mirror_status_by_record(state_root),
+        ),
         "normalized_record_count": len(normalized_records),
         "normalized_shard_count": len(normalized_jsonl_files),
         "raw_file_count": len(raw_files),
@@ -307,10 +321,104 @@ def _artifact_summary(path: Path) -> dict[str, Any]:
     }
 
 
+def _build_record_index(
+    normalized_records: list[dict[str, Any]],
+    *,
+    mirror_status: dict[str, list[dict[str, str]]],
+) -> list[dict[str, Any]]:
+    index: list[dict[str, Any]] = []
+    for record in normalized_records:
+        source_platform = str(record.get("source_platform") or "unknown")
+        source_account = str(record.get("source_account") or "")
+        source_record_id = str(record.get("record_id") or "")
+        if not source_record_id:
+            continue
+        source_key = f"{source_platform}:{source_account}" if source_account else source_platform
+        index.append(
+            {
+                "source_record_id": source_record_id,
+                "source_platform": source_platform,
+                "source_account": source_account,
+                "source_key": source_key,
+                "source_url": str(record.get("source_url") or record.get("canonical_url") or ""),
+                "original_timestamp": str(record.get("original_created_at") or ""),
+                "mirror_targets": mirror_status.get(
+                    source_record_id,
+                    _default_mirror_targets(source_platform),
+                ),
+            }
+        )
+    return sorted(index, key=lambda item: (item["original_timestamp"], item["source_record_id"]))
+
+
+def _default_mirror_targets(source_platform: str) -> list[dict[str, str]]:
+    if source_platform in {"bluesky", "x"}:
+        return [{"target": "bluesky", "status": "pending", "mirror_url": ""}]
+    return []
+
+
+def _load_mirror_status_by_record(state_root: Path) -> dict[str, list[dict[str, str]]]:
+    mirror_status: dict[str, list[dict[str, str]]] = {}
+    _add_bluesky_backlog_status(
+        mirror_status,
+        state_root / "bluesky_backlog_state.json",
+    )
+    _add_archive_mirror_status(
+        mirror_status,
+        state_root / "archive_mirror_state.json",
+    )
+    return mirror_status
+
+
+def _add_bluesky_backlog_status(
+    mirror_status: dict[str, list[dict[str, str]]],
+    state_path: Path,
+) -> None:
+    if not state_path.exists():
+        return
+    data = json.loads(state_path.read_text(encoding="utf-8"))
+    for _source_account, record_ids in data.get("posted_post_ids", {}).items():
+        if not isinstance(record_ids, list):
+            continue
+        for record_id in record_ids:
+            mirror_status.setdefault(str(record_id), []).append(
+                {
+                    "target": "bluesky",
+                    "status": "posted",
+                    "mirror_url": "",
+                }
+            )
+
+
+def _add_archive_mirror_status(
+    mirror_status: dict[str, list[dict[str, str]]],
+    state_path: Path,
+) -> None:
+    if not state_path.exists():
+        return
+    data = json.loads(state_path.read_text(encoding="utf-8"))
+    posted_by_target = data.get("posted_record_ids", {})
+    if not isinstance(posted_by_target, dict):
+        return
+    for target, posted_by_source in posted_by_target.items():
+        if not isinstance(posted_by_source, dict):
+            continue
+        for _source_key, record_ids in posted_by_source.items():
+            if not isinstance(record_ids, list):
+                continue
+            for record_id in record_ids:
+                mirror_status.setdefault(str(record_id), []).append(
+                    {
+                        "target": str(target),
+                        "status": "posted",
+                        "mirror_url": "",
+                    }
+                )
+
+
 def _build_dataset_card(manifest: dict[str, Any]) -> str:
     source_lines = "\n".join(
-        f"- {source}: {count} records"
-        for source, count in manifest["source_counts"].items()
+        f"- {source}: {count} records" for source, count in manifest["source_counts"].items()
     )
     if not source_lines:
         source_lines = "- No normalized records were present when this bundle was generated."
@@ -411,7 +519,9 @@ def main() -> None:
     parser.add_argument("--publish", action="store_true")
     args = parser.parse_args()
 
-    bundle = create_archive_bundle(args.archive_dir, args.output_dir, args.normalized_dir, args.raw_dir)
+    bundle = create_archive_bundle(
+        args.archive_dir, args.output_dir, args.normalized_dir, args.raw_dir
+    )
     write_manifest(bundle, args.manifest)
     if args.publish:
         print(json.dumps(publish_from_env(bundle), indent=2, sort_keys=True))

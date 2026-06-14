@@ -7,17 +7,22 @@
 - [x] Task: Verify first X archive replay post on the public Bluesky mirror.
 
 ## Phase 2: Replay Completion
-- [ ] Task: Continue bounded Bluesky-source backlog runs until
+- [x] Task: Continue bounded Bluesky-source backlog runs until
   `conductor/bluesky_backlog_state.json` reaches 49 source records.
+  - Verified dry-run selected 0 remaining Bluesky backlog records.
 - [ ] Task: Continue bounded X archive replay runs until
   `conductor/archive_mirror_state.json` reaches 689 recovered X records.
 - [ ] Task: Increase or tune batch size only after reviewing account-rate,
   platform-noise, and duplicate-prevention behavior.
-- [ ] Task: Re-run coverage reporting after each phase and commit state.
+- [x] Task: Re-run coverage reporting after each phase and commit state.
+  - Latest coverage shows Bluesky target at 167/738 total source records, with
+    0 remaining Bluesky-source records and 571 remaining X archive records.
 
 ## Phase 3: Manifest and Verification
-- [ ] Task: Extend the corpus manifest with source record ID, source URL,
+- [x] Task: Extend the corpus manifest with source record ID, source URL,
   original timestamp, mirror target, and mirror URL.
+  - Added `record_index` to `corpus_manifest.json`; older replay state does
+    not retain mirror URLs, so the field is present and empty where unavailable.
 - [ ] Task: Verify a sample of Bluesky-source and X-source mirror URLs via the
   public Bluesky API.
 - [ ] Task: Mark any unreplayable records with reason codes.
