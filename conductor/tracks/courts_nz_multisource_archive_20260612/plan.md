@@ -18,14 +18,14 @@
 ## Phase 3: Historical Backfills
 - [x] Task: Re-run Bluesky historical archive as an idempotent backfill and write a gap report.
 - [x] Task: Archive inactive historical X posts for `@courtsofnz` and write a provenance/access report.
-- [ ] Task: Archive historical LinkedIn posts and write a provenance/access report.
+- [ ] Task: Archive historical LinkedIn posts and write a provenance/access report. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
 - [x] Task: Archive available RSS histories and write per-feed reports.
 - [x] Task: Keep all historical backfills out of live syndication targets.
 
 ## Phase 4: Ongoing Capture Pipeline
 - [x] Task: Add a scheduled archive-only workflow that runs in parallel with `Syndicate`.
 - [x] Task: Capture current Bluesky feed into both raw and normalized archives.
-- [ ] Task: Capture LinkedIn posts through the approved access method.
+- [ ] Task: Capture LinkedIn posts through the approved access method. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
 - [x] Task: Capture RSS feed entries with `feedparser`.
 - [x] Task: Capture source website pages linked from posts/feed/email when they provide canonical judgments, speeches, reports, or announcements.
 - [x] Task: Commit archive state and source health reports back to GitHub.

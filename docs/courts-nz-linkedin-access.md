@@ -34,6 +34,47 @@ access through the authenticated member.
 4. Mark the source `auth_required` or `unavailable` rather than scraping
    aggressively.
 
+## Manual Seed Import
+Use `scripts/archive_linkedin_seed.py` when an operator-authorized LinkedIn
+export or bounded browser capture has been reviewed and saved as JSON.
+
+Accepted seed shape:
+
+```json
+{
+  "posts": [
+    {
+      "post_id": "urn:li:activity:123",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:123/",
+      "created_at": "2026-06-10T00:00:00Z",
+      "text": "Post text",
+      "media": [
+        {
+          "url": "https://example.test/image.jpg",
+          "media_type": "image",
+          "alt_text": ""
+        }
+      ]
+    }
+  ]
+}
+```
+
+Run:
+
+```powershell
+python scripts/archive_linkedin_seed.py --seed-json imports/linkedin/courts-nz-linkedin-seed.json --report conductor/linkedin_archive_report.json
+```
+
+The script writes raw source evidence under
+`historical_archive_raw/linkedin/<yyyy-mm>/`, appends normalized records under
+`historical_archive_normalized/linkedin/<yyyy-mm>.jsonl`, and writes a
+provenance/access report. The script is idempotent by LinkedIn post ID or a
+stable URL/date/text hash when no post ID is available.
+
+Obtaining the approved source export is tracked in
+https://github.com/edithatogo/sm-govt-nz/issues/7.
+
 ## Guardrails
 - LinkedIn records are archive-only inputs in this track.
 - LinkedIn records must not advance Bluesky-to-X syndication state.

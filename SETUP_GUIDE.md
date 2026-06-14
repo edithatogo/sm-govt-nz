@@ -241,6 +241,10 @@ New Zealand judgments of public interest email list.
 Historical and fallback-source captures must be archive-only. They must not
 advance outbound syndication state or repost old material to X.
 
+For LinkedIn, use `scripts/archive_linkedin_seed.py` only with an
+operator-authorized seed export or bounded browser capture. The seed format and
+guardrails are documented in `docs/courts-nz-linkedin-access.md`.
+
 The GitHub-side receiver is the `Archive Email` workflow. It accepts
 `repository_dispatch` events of type `courts_nz_email_received`, stores raw email
 evidence under `historical_archive_raw/email/`, and writes normalized monthly
