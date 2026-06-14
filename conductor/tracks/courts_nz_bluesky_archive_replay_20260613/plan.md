@@ -27,8 +27,11 @@
     not retain mirror URLs, so the field is present and empty where unavailable.
   - Future archive replay deliveries now record delivery details and derived
     Bluesky mirror URLs in `conductor/archive_mirror_state.json`.
-- [ ] Task: Verify a sample of Bluesky-source and X-source mirror URLs via the
+- [x] Task: Verify a sample of Bluesky-source and X-source mirror URLs via the
   public Bluesky API.
+  - Added `scripts/verify_archive_mirror_posts.py` and wired it into
+    `Syndicate`; local read-only verification passed for the five URL-bearing
+    archive replay deliveries from run `27500249516`.
 - [ ] Task: Mark any unreplayable records with reason codes.
 
 ## Phase 4: Closeout

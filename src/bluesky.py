@@ -34,6 +34,9 @@ class AuthorFeedClient(Protocol):
     def resolve_handle(self, handle: str) -> str:
         """Return the DID for a Bluesky handle."""
 
+    def fetch_posts(self, uris: list[str]) -> list[Mapping[str, Any]]:
+        """Return public post records for AT Protocol post URIs."""
+
 
 class BlueskyApiClient:
     """Small AT Protocol XRPC client for unauthenticated public author feeds."""
@@ -92,6 +95,21 @@ class BlueskyApiClient:
         if not isinstance(did, str) or not did:
             raise ValueError("Invalid Bluesky response: 'did' must be a string.")
         return did
+
+    def fetch_posts(self, uris: list[str]) -> list[Mapping[str, Any]]:
+        params = [("uris", uri) for uri in uris]
+        query = urlencode(params)
+        url = f"{self.base_url}/xrpc/app.bsky.feed.getPosts?{query}"
+        request = Request(url, headers={"Accept": "application/json"})
+
+        with urlopen(request, timeout=self.timeout_seconds) as response:
+            body = response.read().decode("utf-8")
+
+        payload = json.loads(body)
+        posts = payload.get("posts", [])
+        if not isinstance(posts, list):
+            raise ValueError("Invalid Bluesky response: 'posts' must be a list.")
+        return posts
 
 
 def extract_post_id(uri: str) -> str:
