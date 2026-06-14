@@ -1,23 +1,23 @@
 # Plan - NZ Government Social Media Registry & Archiver (Phase 1 & 2)
 
 ## Phase 1: Registry Schema & Compilation Pipeline
-- [ ] Task: Write schema validation tests in `tests/test_registry_schema.py` enforcing formatting, parent-child hierarchy validation, and loop prevention.
-- [ ] Task: Define the registry JSON schema and structure in `registry/government_directory.json`.
-- [ ] Task: Implement `scripts/compile_registry.py` to parse `registry/government_directory.json` and output domain-specific JSON files.
-- [ ] Task: Extend `scripts/compile_registry.py` to generate the SQLite database `registry/government_directory.db` with normalized tables.
-- [ ] Task: Add test coverage in `tests/test_compile_registry.py` for SQLite database generation and table integrity.
+- [x] Task: Write schema validation tests in `tests/test_registry_schema.py` enforcing formatting, parent-child hierarchy validation, and loop prevention.
+- [x] Task: Define the registry JSON schema and structure in `registry/government_directory.json`.
+- [x] Task: Implement `scripts/compile_registry.py` to parse `registry/government_directory.json` and output domain-specific JSON files.
+- [x] Task: Extend `scripts/compile_registry.py` to generate the SQLite database `registry/government_directory.db` with normalized tables.
+- [x] Task: Add test coverage in `tests/test_compile_registry.py` for SQLite database generation and table integrity.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Registry Schema & Compilation Pipeline' (Protocol in workflow.md)
 
 ## Phase 2: Multi-Remote Git Redundancy
-- [ ] Task: Write a check script to verify SSH/Access key validation for secondary Git hosts.
-- [ ] Task: Create `.github/workflows/mirror_sync.yml` to mirror the repository to a secondary git remote (GitLab or Codeberg) on every push to master.
+- [x] Task: Write a check script to verify SSH/Access key validation for secondary Git hosts.
+- [x] Task: Create `.github/workflows/mirror_sync.yml` to mirror the repository to a secondary git remote (GitLab or Codeberg) on every push to master.
 - [ ] Task: Validate the mirror sync workflow via a test push and check remote branch alignment.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Multi-Remote Git Redundancy' (Protocol in workflow.md)
 
 ## Phase 3: Twitter/X Deactivation Archive & Registry Seeding
-- [ ] Task: Ingest and parse historical post archives for target deactivated NZ government accounts.
-- [ ] Task: Seed `registry/government_directory.json` with the initial deactivated accounts (status: deactivated, start/end dates, reasons, and active alternatives).
-- [ ] Task: Run the compilation pipeline to verify that all historical and seeded files compile perfectly.
+- [x] Task: Ingest and parse historical post archives for target deactivated NZ government accounts.
+- [x] Task: Seed `registry/government_directory.json` with the initial deactivated accounts (status: deactivated, start/end dates, reasons, and active alternatives).
+- [x] Task: Run the compilation pipeline to verify that all historical and seeded files compile perfectly.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Twitter/X Deactivation Archive & Registry Seeding' (Protocol in workflow.md)
 
 ## Phase 4: Syndication & Mirroring Implementation
