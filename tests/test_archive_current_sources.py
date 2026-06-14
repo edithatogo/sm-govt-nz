@@ -186,3 +186,41 @@ def test_archive_current_sources_archives_linked_courts_website_pages(tmp_path):
     assert record["content"] == "Judgment page\n\nFull judgment text"
     state = json.loads((tmp_path / "archive_state.json").read_text(encoding="utf-8"))
     assert "courts-nz-website-pages" in state["source_cursors"]
+
+
+def test_archive_current_sources_reuses_existing_raw_website_html(tmp_path):
+    feed_config = tmp_path / "feeds.json"
+    feed_config.write_text(
+        json.dumps({"feeds": [{"feed_url": "https://www.courtsofnz.govt.nz/judgments/RSS"}]}),
+        encoding="utf-8",
+    )
+    raw_id = "12009647bb0f4c228062b61d"
+    raw_path = tmp_path / "raw" / "website" / "2026-06" / f"{raw_id}.json"
+    raw_path.parent.mkdir(parents=True)
+    raw_path.write_text(
+        json.dumps(
+            {
+                "captured_at": "2026-06-10T00:00:00+00:00",
+                "url": "https://www.courtsofnz.govt.nz/cases/example-judgment",
+                "html": "<html><title>Stored page</title><body>Stored text</body></html>",
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    archive_current_sources(
+        feed_config_path=feed_config,
+        archive_state_path=tmp_path / "archive_state.json",
+        health_report_path=tmp_path / "archive_source_health.json",
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        include_bluesky=False,
+        parser=FakeCourtsParser(),
+        website_fetcher=lambda url: (_ for _ in ()).throw(AssertionError("should not fetch")),
+    )
+
+    record = json.loads(
+        (tmp_path / "normalized" / "website" / "2026-06.jsonl").read_text(encoding="utf-8")
+    )
+    assert record["content"] == "Stored page\n\nStored text"
+    assert record["captured_at"] == "2026-06-10T00:00:00+00:00"

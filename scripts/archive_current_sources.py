@@ -258,8 +258,14 @@ def _archive_linked_website_pages(
     failures: list[str] = []
     for url in urls:
         try:
-            html = fetcher(url) if fetcher else _fetch_website_html(url)
             source_record = next(record for record in source_records if record["canonical_url"] == url)
+            html = _existing_website_raw_html(
+                url=url,
+                source_record=source_record,
+                raw_root=raw_root,
+            )
+            if not html:
+                html = fetcher(url) if fetcher else _fetch_website_html(url)
             records.append(
                 _archive_website_page(
                     url=url,
@@ -279,6 +285,23 @@ def _archive_linked_website_pages(
         len(records),
         "; ".join(failures[:3]),
     )
+
+
+def _existing_website_raw_html(
+    *,
+    url: str,
+    source_record: NormalizedArchiveRecord,
+    raw_root: Path,
+) -> str:
+    month = _month_from_datetime(source_record["original_created_at"])
+    raw_path = raw_root / month / f"{_website_record_id(url)}.json"
+    if not raw_path.exists():
+        return ""
+    try:
+        payload = json.loads(raw_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return ""
+    return str(payload.get("html", ""))
 
 
 def _archive_website_page(
