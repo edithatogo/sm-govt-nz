@@ -53,7 +53,7 @@
 
 ## Phase 7: Operational Optimizations
 - [x] Task: Add source-health dashboard output to Pages.
-- [ ] Task: Add no-op scheduled-run monitoring to confirm no duplicate posts are generated.
+- [x] Task: Add no-op scheduled-run monitoring to confirm no duplicate posts are generated.
 - [ ] Task: Add monthly compaction so Git commits stay small while Hugging Face receives dataset-friendly shards.
 - [ ] Task: Add Buffer API key rotation reminder before the current key expiry on 12 July 2026.
 - [ ] Task: Add failure isolation so one blocked source does not stop other archive sources or live Bluesky-to-X mirroring.

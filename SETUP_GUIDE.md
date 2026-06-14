@@ -258,6 +258,11 @@ corpus manifest into a downloadable Actions artifact. If `HF_TOKEN` and
 Hugging Face Datasets. If `ZENODO_TOKEN` and `ZENODO_DEPOSIT_ENDPOINT` are
 configured, it also uploads the same bundle to Zenodo.
 
+The `Archive No-Op Monitor` workflow replays a known email archive payload and
+fails if the duplicate capture changes `historical_archive_raw/email/` or
+`historical_archive_normalized/email/`. This gives the archive pipeline a
+scheduled duplicate-ingress guard without depending on live source feeds.
+
 ## 7. Source Discovery and Ingestion Tools
 
 Runtime dependencies are in `requirements.txt`.

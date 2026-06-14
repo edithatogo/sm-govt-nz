@@ -84,3 +84,28 @@ def test_archive_email_payload_accepts_raw_mime_base64(tmp_path) -> None:
     )
 
     assert (tmp_path / record["raw_path"]).read_bytes() == raw_mime
+
+
+def test_archive_email_payload_preserves_existing_raw_email(tmp_path) -> None:
+    payload = {
+        "message_id": "<raw-stable@example.test>",
+        "subject": "Raw notice",
+        "text": "Initial body",
+        "received_at": "2026-06-14T01:02:03Z",
+    }
+    record = archive_email_payload(
+        payload,
+        raw_root=tmp_path / "historical_archive_raw" / "email",
+        normalized_root=tmp_path / "historical_archive_normalized" / "email",
+    )
+    raw_path = tmp_path / record["raw_path"]
+    original_raw = raw_path.read_bytes()
+
+    payload["raw_mime_base64"] = base64.b64encode(b"replacement raw").decode("ascii")
+    archive_email_payload(
+        payload,
+        raw_root=tmp_path / "historical_archive_raw" / "email",
+        normalized_root=tmp_path / "historical_archive_normalized" / "email",
+    )
+
+    assert raw_path.read_bytes() == original_raw

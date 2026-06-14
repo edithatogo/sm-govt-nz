@@ -31,7 +31,7 @@ def archive_email_payload(
     month = received_at[:7]
     raw_path = Path(raw_root) / month / f"{record_id}.eml"
     raw_bytes = _raw_email_bytes(payload, received_at=received_at, message_id=message_id)
-    _write_bytes_if_changed(raw_path, raw_bytes)
+    _write_bytes_once(raw_path, raw_bytes)
     normalized_path = Path(normalized_root) / f"{month}.jsonl"
     existing_record = _existing_normalized_record(f"email:{record_id}", normalized_path)
 
@@ -156,9 +156,9 @@ def _existing_normalized_record(record_id: str, shard_path: Path) -> dict[str, A
     return {}
 
 
-def _write_bytes_if_changed(path: Path, content: bytes) -> None:
+def _write_bytes_once(path: Path, content: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    if path.exists() and path.read_bytes() == content:
+    if path.exists():
         return
     path.write_bytes(content)
 

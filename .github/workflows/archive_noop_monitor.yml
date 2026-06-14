@@ -1,0 +1,29 @@
+name: Archive No-Op Monitor
+
+on:
+  schedule:
+    - cron: "23 17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        run: python --version
+      - name: Replay existing email capture
+        run: >-
+          python scripts/archive_email_payload.py
+          --payload-json '{"message_id":"<codex-email-ingress-smoke-20260614@example.test>","from":"Courts of New Zealand <notices@example.test>","to":"archive@example.test","subject":"Codex email ingress smoke test","text":"Smoke test for archive-only email ingress. https://www.courtsofnz.govt.nz/","received_at":"2026-06-14T06:34:00Z","links":["https://www.courtsofnz.govt.nz/"]}'
+      - name: Confirm duplicate capture is a no-op
+        run: >-
+          python scripts/check_noop_diff.py
+          historical_archive_raw/email
+          historical_archive_normalized/email
