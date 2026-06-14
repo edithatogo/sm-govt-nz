@@ -45,8 +45,8 @@
 - [x] Task: Define the Hugging Face dataset name, license/readme, citation, and provenance statement.
 - [x] Task: Define the Zenodo deposition metadata, communities if any, citation fields, DOI/versioning policy, and provenance statement.
 - [x] Task: Add `HF_TOKEN`, `HF_DATASET_REPO_ID`, `ZENODO_TOKEN`, and `ZENODO_DEPOSIT_ENDPOINT` setup requirements to the setup guide and secret schema.
-- [ ] Task: Publish normalized JSONL and Parquet shards to Hugging Face Datasets.
-- [ ] Task: Publish citable release snapshots to Zenodo from the same normalized archive artifacts.
+- [ ] Task: Publish normalized JSONL and Parquet shards to Hugging Face Datasets. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/6
+- [ ] Task: Publish citable release snapshots to Zenodo from the same normalized archive artifacts. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/6
 - [x] Task: Publish raw-source bundles separately or as a gated/manual artifact if size or platform terms require it.
 - [x] Task: Add dataset manifests with checksums, source coverage, date ranges, and known gaps.
 - [x] Task: Add a scheduled/manual GitHub Actions workflow that bundles archive artifacts and publishes to Hugging Face/Zenodo when secrets are configured.

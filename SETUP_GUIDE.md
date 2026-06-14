@@ -271,6 +271,9 @@ configured, it also uploads the same bundle to Zenodo.
 The Hugging Face upload path includes the dataset card, corpus manifest,
 combined normalized JSONL, combined normalized Parquet, and the full raw-source
 archive bundle.
+External Hugging Face and Zenodo publication is tracked in
+https://github.com/edithatogo/sm-govt-nz/issues/6 until those secrets are
+configured and a publish run returns non-empty remote results.
 
 The `Archive No-Op Monitor` workflow replays a known email archive payload and
 fails if the duplicate capture changes `historical_archive_raw/email/` or
