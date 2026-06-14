@@ -211,6 +211,62 @@ class ThreadsApiAdapter:
         return payload
 
 
+class InstagramAdapter:
+    """Outbound adapter for Meta's official Instagram content publishing flow."""
+
+    name = "instagram"
+
+    def __init__(
+        self,
+        user_id: str,
+        access_token: str,
+        *,
+        api_base_url: str = "https://graph.facebook.com/v20.0",
+        client: JsonHttpClient | None = None,
+        text_limit: int = 2200,
+    ) -> None:
+        self.user_id = user_id
+        self.access_token = access_token
+        self.api_base_url = api_base_url.rstrip("/")
+        self.client = client or JsonHttpClient()
+        self.text_limit = text_limit
+
+    def send(self, post: BlueskyPost) -> SyndicationResult:
+        creation_payload = self.creation_payload(post)
+        if not creation_payload:
+            return SyndicationResult(self.name, success=False, detail="missing image url")
+        container = self.client.post_form(
+            f"{self.api_base_url}/{self.user_id}/media",
+            creation_payload,
+        )
+        creation_id = str(container.get("id", ""))
+        if not creation_id:
+            return SyndicationResult(self.name, success=False, detail="missing creation id")
+
+        published = self.client.post_form(
+            f"{self.api_base_url}/{self.user_id}/media_publish",
+            {
+                "creation_id": creation_id,
+                "access_token": self.access_token,
+            },
+        )
+        return SyndicationResult(
+            self.name,
+            success=True,
+            detail=str(published.get("id", "")),
+        )
+
+    def creation_payload(self, post: BlueskyPost) -> dict[str, str]:
+        image_url = _first_image_url(post)
+        if not image_url:
+            return {}
+        return {
+            "image_url": image_url,
+            "caption": format_post_text(post, limit=self.text_limit),
+            "access_token": self.access_token,
+        }
+
+
 class FacebookPageAdapter:
     """Outbound adapter for Meta's official Facebook Page publishing flow."""
 
@@ -465,6 +521,16 @@ def _build_adapter_from_env(target: str) -> SyndicationAdapter | None:
                 api_base_url=os.getenv("FACEBOOK_API_BASE_URL", "https://graph.facebook.com/v20.0"),
             )
         return None
+    if target == "instagram":
+        user_id = os.getenv("INSTAGRAM_USER_ID")
+        token = os.getenv("INSTAGRAM_ACCESS_TOKEN")
+        if user_id and token:
+            return InstagramAdapter(
+                user_id,
+                token,
+                api_base_url=os.getenv("INSTAGRAM_API_BASE_URL", "https://graph.facebook.com/v20.0"),
+            )
+        return None
     if target == "bluesky":
         handle = os.getenv("BLUESKY_MIRROR_HANDLE")
         app_password = os.getenv("BLUESKY_MIRROR_APP_PASSWORD")
@@ -485,6 +551,7 @@ def _platform_limit(target: str) -> int:
         "x": 280,
         "mastodon": 500,
         "threads": 500,
+        "instagram": 2200,
         "facebook": 63206,
         "linkedin": 3000,
         "discord": 1900,

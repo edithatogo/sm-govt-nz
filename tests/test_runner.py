@@ -191,6 +191,33 @@ def test_runner_skips_target_duplicate_from_delivery_state(tmp_path) -> None:
     assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-2"
 
 
+def test_runner_tracks_instagram_delivery_separately(tmp_path) -> None:
+    config = make_config()
+    config["monitored_accounts"][0]["syndicate_to"] = ["bluesky", "instagram"]
+    config["syndication_targets"] = {
+        "bluesky": {"enabled": True, "max_posts_per_run": 1},
+        "instagram": {"enabled": True, "max_posts_per_run": 1},
+    }
+    state: AppState = {"last_seen_post_ids": {"agency.bsky.social": ""}}
+    delivery_state = {"delivered_post_ids": {}}
+    bluesky = RecordingSuccessAdapter("bluesky")
+    instagram = RecordingSuccessAdapter("instagram")
+
+    _summary, next_state = run_syndication(
+        config,
+        state,
+        feed_client=FakeFeedClient(),
+        adapters={"bluesky": bluesky, "instagram": instagram},
+        archive_dir=str(tmp_path / "archive"),
+        delivery_state=delivery_state,
+    )
+
+    assert [post["post_id"] for post in instagram.sent_posts] == ["post-1"]
+    assert delivery_state["delivered_post_ids"]["instagram"]["agency.bsky.social"] == ["post-1"]
+    assert delivery_state["delivered_post_ids"]["bluesky"]["agency.bsky.social"] == ["post-1"]
+    assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-1"
+
+
 def test_runner_does_not_advance_source_state_when_target_delivery_fails(tmp_path) -> None:
     config = make_config()
     config["monitored_accounts"][0]["syndicate_to"] = ["bluesky", "threads"]

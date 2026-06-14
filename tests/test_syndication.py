@@ -5,6 +5,7 @@ from src.syndication import (
     DiscordWebhookAdapter,
     DryRunAdapter,
     FacebookPageAdapter,
+    InstagramAdapter,
     MastodonAdapter,
     ThreadsApiAdapter,
     TweepyXAdapter,
@@ -192,6 +193,45 @@ def test_threads_adapter_uses_first_image_when_present() -> None:
     assert payload["image_url"] == "https://cdn.example/full.jpg"
 
 
+def test_instagram_adapter_creates_and_publishes_image_container() -> None:
+    client = FakeHttpClient()
+    adapter = InstagramAdapter("ig-user", "token", client=client)
+
+    result = adapter.send(make_post())
+
+    assert result.success is True
+    assert result.detail == "remote-1"
+    create_url, create_payload, _create_headers = client.form_calls[0]
+    publish_url, publish_payload, _publish_headers = client.form_calls[1]
+    assert create_url == "https://graph.facebook.com/v20.0/ig-user/media"
+    assert create_payload["image_url"] == "https://cdn.example/full.jpg"
+    assert create_payload["access_token"] == "token"
+    assert "Original:" in create_payload["caption"]
+    assert publish_url == "https://graph.facebook.com/v20.0/ig-user/media_publish"
+    assert publish_payload == {"creation_id": "remote-1", "access_token": "token"}
+
+
+def test_instagram_adapter_exposes_creation_payload_without_posting() -> None:
+    adapter = InstagramAdapter("ig-user", "token")
+
+    payload = adapter.creation_payload(make_post())
+
+    assert payload["image_url"] == "https://cdn.example/full.jpg"
+    assert payload["access_token"] == "token"
+    assert "Original:" in payload["caption"]
+
+
+def test_instagram_adapter_fails_before_posting_without_media() -> None:
+    client = FakeHttpClient()
+    adapter = InstagramAdapter("ig-user", "token", client=client)
+
+    result = adapter.send({**make_post(), "images": []})
+
+    assert result.success is False
+    assert result.detail == "missing image url"
+    assert client.form_calls == []
+
+
 def test_facebook_page_adapter_posts_text_to_page_feed() -> None:
     client = FakeHttpClient()
     adapter = FacebookPageAdapter("page-id", "token", client=client)
@@ -261,6 +301,15 @@ def test_build_adapters_uses_facebook_page_credentials(monkeypatch) -> None:
     adapters = build_adapters_from_env(["facebook"])
 
     assert isinstance(adapters["facebook"], FacebookPageAdapter)
+
+
+def test_build_adapters_uses_instagram_credentials(monkeypatch) -> None:
+    monkeypatch.setenv("INSTAGRAM_USER_ID", "ig-user")
+    monkeypatch.setenv("INSTAGRAM_ACCESS_TOKEN", "token")
+
+    adapters = build_adapters_from_env(["instagram"])
+
+    assert isinstance(adapters["instagram"], InstagramAdapter)
 
 
 def test_build_adapters_does_not_select_archived_zernio_mapping(monkeypatch) -> None:
