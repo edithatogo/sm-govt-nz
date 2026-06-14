@@ -53,6 +53,29 @@ def test_archive_mirror_backlog_is_disabled_without_target_flag(tmp_path) -> Non
     assert next_state == {"posted_record_ids": {}}
 
 
+def test_archive_mirror_backlog_limit_override_controls_batch_size(tmp_path) -> None:
+    normalized_x_dir = tmp_path / "historical_archive_normalized" / "x"
+    normalized_x_dir.mkdir(parents=True)
+    write_x_record(normalized_x_dir / "2020-01.jsonl", "x:1", "2020-01-01T00:00:00+00:00")
+    write_x_record(normalized_x_dir / "2020-01.jsonl", "x:2", "2020-01-02T00:00:00+00:00")
+    write_x_record(normalized_x_dir / "2020-01.jsonl", "x:3", "2020-01-03T00:00:00+00:00")
+
+    adapter = RecordingAdapter()
+    summary, next_state = run_archive_mirror_backlog(
+        make_config(),
+        {"posted_record_ids": {}},
+        target="bluesky",
+        normalized_archive_dir=tmp_path / "historical_archive_normalized",
+        adapters={"bluesky": adapter},
+        limit_override=2,
+    )
+
+    assert summary.selected == 2
+    assert summary.posted == 2
+    assert [post["post_id"] for post in adapter.sent_posts] == ["x:1", "x:2"]
+    assert next_state["posted_record_ids"]["bluesky"]["x:CourtsofNZ"] == ["x:1", "x:2"]
+
+
 def make_config() -> AppConfig:
     return {
         "monitored_accounts": [],

@@ -48,6 +48,7 @@ def run_archive_mirror_backlog(
     normalized_archive_dir: str | Path = "historical_archive_normalized",
     adapters: dict[str, SyndicationAdapter] | None = None,
     dry_run: bool = False,
+    limit_override: int | None = None,
 ) -> tuple[ArchiveMirrorBacklogSummary, ArchiveMirrorState]:
     target_config = config["syndication_targets"].get(target, {})
     if not target_config.get("enabled", False) or not target_config.get("archive_replay_enabled", False):
@@ -71,7 +72,12 @@ def run_archive_mirror_backlog(
     selected = _select_unposted_records(
         records,
         posted_by_source,
-        limit=_positive_int(target_config.get("archive_replay_max_posts_per_run"), default=1),
+        limit=_positive_int(
+            limit_override
+            if limit_override is not None
+            else target_config.get("archive_replay_max_posts_per_run"),
+            default=1,
+        ),
     )
     adapter = None
     if not dry_run and selected:
@@ -139,6 +145,7 @@ def main(
     config_path: str = "config.json",
     state_path: str = "conductor/archive_mirror_state.json",
     dry_run: bool = False,
+    limit: int | None = None,
 ) -> ArchiveMirrorBacklogSummary:
     config = load_config(config_path)
     state = load_archive_mirror_state(state_path)
@@ -147,6 +154,7 @@ def main(
         state,
         target=target,
         dry_run=dry_run,
+        limit_override=limit,
     )
     if not dry_run:
         save_archive_mirror_state(next_state, state_path)

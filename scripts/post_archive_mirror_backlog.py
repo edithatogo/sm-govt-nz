@@ -10,10 +10,11 @@ from src.archive_mirror_backlog import main
 def cli() -> None:
     parser = argparse.ArgumentParser(description="Post bounded archive replay batches.")
     parser.add_argument("--target", default="bluesky")
+    parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    summary = main(target=args.target, dry_run=args.dry_run)
+    summary = main(target=args.target, dry_run=args.dry_run, limit=args.limit)
     print(
         "Selected "
         f"{summary.selected} archive replay records for {args.target}; "

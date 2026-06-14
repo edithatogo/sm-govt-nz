@@ -16,6 +16,8 @@
     and captured delivery URLs in `conductor/archive_mirror_state.json`.
   - Live run `27500580864` posted another 5 X archive records, verified the
     last 5 delivery URLs, and committed state update `5d46500`.
+  - Added a manual-only `Archive Replay` workflow so reviewed batches can run at
+    5, 10, or 20 records without increasing the scheduled `Syndicate` throttle.
 - [ ] Task: Increase or tune batch size only after reviewing account-rate,
   platform-noise, and duplicate-prevention behavior.
 - [x] Task: Re-run coverage reporting after each phase and commit state.
