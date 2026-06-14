@@ -69,3 +69,8 @@ Before enabling the scheduled syndicator for the MVP:
 *   **Credential ownership:** Use `edithatogo@gmail.com` for account administration where practical, but never post under Dylan Mordaunt, `edithatogo`, or any personal identity.
 *   **LinkedIn boundary:** LinkedIn remains an archive/source-ingestion lane only until a later explicit track reopens posting with separate risk review.
 *   **Granular remaining work:** Bluesky profile evidence, Bluesky archive replay completion, Bluesky launch operations, Threads API credentials, Threads adapter launch, and Threads historical replay policy are tracked in separate conductor tracks.
+
+## 5. Account Inter-Following Convention
+*   **Bi-Directional Mirror Following:** When a new public mirror account is onboarded, it must follow all other active mirror accounts in the registry, and all other active mirror accounts must follow it back.
+*   **API Automation:** Where API support is available (e.g., Bluesky AT Protocol), this follow synchronization should be performed automatically via an onboarding script using credentials in `secrets`. Manual onboarding is a fallback only when API restrictions prevent automated following.
+

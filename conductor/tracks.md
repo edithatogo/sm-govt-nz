@@ -55,6 +55,9 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [ ] Track: Create a central index of NZ central and local government social media sites, focusing initially on deactivated accounts, registry schema, mirroring, and sync.
 *Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*
 
+## [ ] Track: Implement automated bi-directional social media account following synchronization for new and existing mirror profiles using platform APIs.
+*Link: [./tracks/sync_mirror_follows_20260614/](./tracks/sync_mirror_follows_20260614/)*
+
 LinkedIn is source-only and archive-only for now. Deferred outbound platform
 mirrors must be created as separate conductor tracks after the Courts of New
 Zealand archive and corpus pipeline is stable, with no posting under Dylan
