@@ -103,3 +103,34 @@ def test_archive_current_sources_preserves_existing_capture_timestamp(tmp_path):
     shard = Path(tmp_path / "normalized" / "bluesky" / "2026-06.jsonl")
     record = json.loads(shard.read_text(encoding="utf-8"))
     assert record["captured_at"] == "2026-06-10T00:00:00+00:00"
+
+
+def test_archive_current_sources_keeps_health_file_stable_for_noop_run(tmp_path):
+    feed_config = tmp_path / "feeds.json"
+    feed_config.write_text(json.dumps({"feeds": []}), encoding="utf-8")
+    kwargs = {
+        "feed_config_path": feed_config,
+        "archive_state_path": tmp_path / "archive_state.json",
+        "health_report_path": tmp_path / "archive_source_health.json",
+        "raw_root": tmp_path / "raw",
+        "normalized_root": tmp_path / "normalized",
+        "bluesky_fetcher": lambda actor: [
+            {
+                "post_id": "abc123",
+                "uri": "at://did/post/abc123",
+                "cid": "cid123",
+                "handle": "courtsofnz.bsky.social",
+                "text": "Court update",
+                "created_at": "2026-06-10T00:00:00+00:00",
+                "url": "https://bsky.app/profile/courtsofnz.bsky.social/post/abc123",
+                "images": [],
+            }
+        ],
+    }
+
+    archive_current_sources(**kwargs)
+    first_health = (tmp_path / "archive_source_health.json").read_text(encoding="utf-8")
+    archive_current_sources(**kwargs)
+    second_health = (tmp_path / "archive_source_health.json").read_text(encoding="utf-8")
+
+    assert second_health == first_health

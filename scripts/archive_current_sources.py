@@ -87,7 +87,7 @@ def archive_current_sources(
                 rss_records,
                 Path(normalized_root) / "rss",
             )
-            save_archive_cursor("courts-nz-rss-website", captured_at, archive_state_path)
+            save_archive_cursor("courts-nz-rss-website", _records_cursor(rss_records), archive_state_path)
             health.extend(feed_reports)
         except Exception as error:
             health.append(_health_entry("courts-nz-rss-website", "unavailable", 0, 0, str(error)))
@@ -98,7 +98,7 @@ def archive_current_sources(
         "archived_counts": archived_counts,
         "sources": health,
     }
-    _write_json_if_changed(Path(health_report_path), report)
+    _write_health_report_if_changed(Path(health_report_path), report)
     return report
 
 
@@ -272,6 +272,22 @@ def _write_json_if_changed(path: Path, payload: Any) -> None:
     )
 
 
+def _write_health_report_if_changed(path: Path, report: dict[str, Any]) -> None:
+    stable_report = dict(report)
+    if path.exists():
+        try:
+            previous = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            previous = {}
+        previous_stable = dict(previous)
+        previous_stable.pop("generated_at", None)
+        current_stable = dict(report)
+        current_stable.pop("generated_at", None)
+        if previous_stable == current_stable:
+            return
+    _write_json_if_changed(path, stable_report)
+
+
 def _write_text_if_changed(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists() and path.read_text(encoding="utf-8") == content:
@@ -308,6 +324,19 @@ def _existing_captured_at(path: Path) -> str:
 def _rss_record_id(feed_url: str, entry_url: str, text: str) -> str:
     value = f"{feed_url}\n{entry_url}\n{text}"
     return hashlib.sha256(value.encode("utf-8")).hexdigest()[:24]
+
+
+def _records_cursor(records: list[NormalizedArchiveRecord]) -> str:
+    if not records:
+        return "empty"
+    payload = {
+        "count": len(records),
+        "latest_original_created_at": max(record["original_created_at"] for record in records),
+        "record_ids": sorted(record["record_id"] for record in records),
+    }
+    return hashlib.sha256(
+        json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    ).hexdigest()
 
 
 def _month_from_datetime(value: str) -> str:
