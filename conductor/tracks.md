@@ -16,34 +16,34 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Setup platform developer onboarding, secrets setup, and bleeding-edge GitHub integrations
 *Link: [./tracks/github_integrations_20260610/](./tracks/github_integrations_20260610/)*
 
-## [~] Track: Prioritize Courts of New Zealand mirror synchronization
+## [x] Track: Prioritize Courts of New Zealand mirror synchronization
 *Link: [./tracks/courts_nz_mirror_20260611/](./tracks/courts_nz_mirror_20260611/)*
 
 ## [ ] Track: Archive Courts of New Zealand multi-source records and publish datasets
 *Link: [./tracks/courts_nz_multisource_archive_20260612/](./tracks/courts_nz_multisource_archive_20260612/)*
 
-## [~] Track: Establish Courts of New Zealand Bluesky mirror account
+## [x] Track: Establish Courts of New Zealand Bluesky mirror account
 *Link: [./tracks/courts_nz_bluesky_mirror_20260612/](./tracks/courts_nz_bluesky_mirror_20260612/)*
 
-## [~] Track: Establish Courts of New Zealand Threads mirror account
+## [x] Track: Establish Courts of New Zealand Threads mirror account
 *Link: [./tracks/courts_nz_threads_mirror_20260612/](./tracks/courts_nz_threads_mirror_20260612/)*
 
-## [ ] Track: Complete Courts of New Zealand Bluesky profile evidence and identity archive
+## [x] Track: Complete Courts of New Zealand Bluesky profile evidence and identity archive
 *Link: [./tracks/courts_nz_bluesky_profile_archive_20260613/](./tracks/courts_nz_bluesky_profile_archive_20260613/)*
 
 ## [~] Track: Complete Courts of New Zealand Bluesky archive replay and manifest telemetry
 *Link: [./tracks/courts_nz_bluesky_archive_replay_20260613/](./tracks/courts_nz_bluesky_archive_replay_20260613/)*
 
-## [ ] Track: Harden Courts of New Zealand Bluesky mirror launch operations
+## [x] Track: Harden Courts of New Zealand Bluesky mirror launch operations
 *Link: [./tracks/courts_nz_bluesky_launch_ops_20260613/](./tracks/courts_nz_bluesky_launch_ops_20260613/)*
 
-## [ ] Track: Implement Courts of New Zealand Threads API credentials and validation
+## [x] Track: Implement Courts of New Zealand Threads API credentials and validation
 *Link: [./tracks/courts_nz_threads_api_credentials_20260613/](./tracks/courts_nz_threads_api_credentials_20260613/)*
 
-## [ ] Track: Implement Courts of New Zealand Threads adapter and controlled launch
+## [x] Track: Implement Courts of New Zealand Threads adapter and controlled launch
 *Link: [./tracks/courts_nz_threads_adapter_launch_20260613/](./tracks/courts_nz_threads_adapter_launch_20260613/)*
 
-## [ ] Track: Decide Courts of New Zealand Threads historical replay policy
+## [x] Track: Decide Courts of New Zealand Threads historical replay policy
 *Link: [./tracks/courts_nz_threads_historical_replay_policy_20260613/](./tracks/courts_nz_threads_historical_replay_policy_20260613/)*
 
 ## [ ] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs

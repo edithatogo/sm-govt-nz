@@ -14,5 +14,5 @@
 - [x] Task: Commit profile evidence after review.
 
 ## Phase 3: Track Closeout
-- [ ] Task: Update the parent Bluesky mirror track once evidence is complete.
-- [ ] Task: Run tests or lint only if docs/scripts changed.
+- [x] Task: Update the parent Bluesky mirror track once evidence is complete.
+- [x] Task: Run tests or lint only if docs/scripts changed.

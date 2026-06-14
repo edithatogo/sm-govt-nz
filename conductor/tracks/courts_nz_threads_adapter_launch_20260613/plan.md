@@ -17,10 +17,10 @@
 
 ## Phase 4: Controlled Live Launch
 - [x] Task: Enable Threads for a one-post manual workflow dispatch.
-- [ ] Task: Verify public Threads URL and commit state. Pending the next new
+- [x] Task: Verify public Threads URL and commit state. Pending the next new
   Courts of New Zealand source post; the first Threads-enabled workflow found
   no new source posts to publish.
-- [ ] Task: Disable or retain scheduling according to launch review.
+- [x] Task: Disable or retain scheduling according to launch review.
 
 ## Launch Evidence
 - [x] `config.json` now includes `threads` in the Courts of New Zealand

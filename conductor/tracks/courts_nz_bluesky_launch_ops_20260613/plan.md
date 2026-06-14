@@ -4,7 +4,7 @@
 - [x] Task: Fix the Vale path warning or document why the fallback is retained.
 - [x] Task: Update GitHub Actions versions or runner settings for the Node.js
   20 deprecation warning.
-- [ ] Task: Confirm scheduled `Syndicate` runs use the intended branch and
+- [x] Task: Confirm scheduled `Syndicate` runs use the intended branch and
   secrets.
 
 ## Phase 2: Operational Smoke Checks

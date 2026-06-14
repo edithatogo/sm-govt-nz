@@ -3,7 +3,7 @@
 ## Phase 1: Account Onboarding
 - [x] Task: Create the dedicated Bluesky mirror account using
   `edithatogo@gmail.com` for administration where practical.
-- [ ] Task: Configure display name, handle, bio, avatar, banner, and source link
+- [x] Task: Configure display name, handle, bio, avatar, banner, and source link
   using the mirror identity contract.
 - [x] Task: Archive the source and mirror profile snapshots in the repository.
 
@@ -25,11 +25,11 @@
   backfill.
 
 ## Phase 4: Controlled Launch
-- [ ] Task: Run dry-run mapping for the latest Courts of New Zealand source
+- [x] Task: Run dry-run mapping for the latest Courts of New Zealand source
   post.
-- [ ] Task: Review the generated payload before any live post.
-- [ ] Task: Run one controlled live post only after review approval.
-- [ ] Task: Verify the live URL and commit updated state.
+- [x] Task: Review the generated payload before any live post.
+- [x] Task: Run one controlled live post only after review approval.
+- [x] Task: Verify the live URL and commit updated state.
 
 ## Phase 5: Historical Corpus Sync
 - [x] Task: Add archive mirror coverage reporting for both the current Bluesky
@@ -37,8 +37,8 @@
 - [x] Task: Add a bounded X archive replay batch to the Bluesky mirror pipeline.
 - [x] Task: Split remaining Bluesky work into granular conductor tracks for
   profile evidence, archive replay completion, and launch operations.
-- [ ] Task: Generate a complete historical sync plan from the normalized Courts
+- [x] Task: Generate a complete historical sync plan from the normalized Courts
   archive.
-- [ ] Task: Review ordering, attribution, source links, and platform limits.
-- [ ] Task: Publish in bounded batches only after explicit approval.
-- [ ] Task: Record every posted historical mirror URL in the corpus manifest.
+- [x] Task: Review ordering, attribution, source links, and platform limits.
+- [x] Task: Publish in bounded batches only after explicit approval.
+- [x] Task: Record every posted historical mirror URL in the corpus manifest.

@@ -7,12 +7,12 @@
 - [x] Task: Identify whether media or link handling changes replay risk.
 
 ## Phase 2: User-Facing Risk Review
-- [ ] Task: Assess how archival posts would appear in a current Threads feed.
-- [ ] Task: Compare alternatives: profile link to corpus, pinned explainer,
+- [x] Task: Assess how archival posts would appear in a current Threads feed.
+- [x] Task: Compare alternatives: profile link to corpus, pinned explainer,
   sampled replay, or no replay.
-- [ ] Task: Define account trust and moderation guardrails.
+- [x] Task: Define account trust and moderation guardrails.
 
 ## Phase 3: Decision
 - [x] Task: Write the recommended replay policy.
-- [ ] Task: Update Threads adapter launch requirements based on the decision.
-- [ ] Task: Create a follow-up implementation track only if replay is approved.
+- [x] Task: Update Threads adapter launch requirements based on the decision.
+- [x] Task: Create a follow-up implementation track only if replay is approved.
