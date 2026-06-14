@@ -72,5 +72,5 @@ Before enabling the scheduled syndicator for the MVP:
 
 ## 5. Account Inter-Following Convention
 *   **Bi-Directional Mirror Following:** When a new public mirror account is onboarded, it must follow all other active mirror accounts in the registry, and all other active mirror accounts must follow it back.
-*   **API Automation:** Where API support is available (e.g., Bluesky AT Protocol), this follow synchronization should be performed automatically via an onboarding script using credentials in `secrets`. Manual onboarding is a fallback only when API restrictions prevent automated following.
-
+*   **Supported Automation Only:** Where official API support is available (for example, Bluesky AT Protocol), follow synchronization may be performed by an onboarding script using repository secrets. Browser sessions, cookies, password stores, and stealth click automation must not be committed or automated in GitHub Actions.
+*   **Manual Fallback:** Platforms without a supported follow API remain manual-review tasks. The pipeline may record required follows and verification evidence, but it must not bypass platform controls.

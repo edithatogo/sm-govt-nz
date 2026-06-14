@@ -55,7 +55,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [ ] Track: Create a central index of NZ central and local government social media sites, focusing initially on deactivated accounts, registry schema, mirroring, and sync.
 *Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*
 
-## [ ] Track: Implement automated bi-directional social media account following synchronization for new and existing mirror profiles using platform APIs.
+## [ ] Track: Implement mirror account follow synchronization using supported platform APIs and manual review.
 *Link: [./tracks/sync_mirror_follows_20260614/](./tracks/sync_mirror_follows_20260614/)*
 
 LinkedIn is source-only and archive-only for now. Deferred outbound platform
