@@ -1,0 +1,33 @@
+{
+  "track": "conductor/tracks/govt_registry_20260614",
+  "status": "open",
+  "open_gates": {
+    "manual_verification": {
+      "status": "open",
+      "phases": [
+        "Phase 1: Registry Schema & Compilation Pipeline",
+        "Phase 2: Multi-Remote Git Redundancy",
+        "Phase 3: Twitter/X Deactivation Archive & Registry Seeding",
+        "Phase 4: Syndication & Mirroring Implementation"
+      ],
+      "next_action": "Run the Conductor manual verification protocol for each completed phase and record review evidence."
+    },
+    "mirror_remote_validation": {
+      "latest_github_run_id": 27502631839,
+      "latest_observed_result": "skipped_missing_GIT_MIRROR_URL",
+      "required_secrets": [
+        "GIT_MIRROR_URL",
+        "GIT_MIRROR_SSH_PRIVATE_KEY"
+      ],
+      "status": "open",
+      "next_action": "Configure the secondary Git remote secrets, run Mirror Sync, then compare GitHub master HEAD to the mirror master HEAD."
+    },
+    "unified_transparency_feed": {
+      "adapter_groundwork": "present",
+      "integration_status": "not_wired_into_run_syndication",
+      "live_test_status": "not_run",
+      "status": "open",
+      "next_action": "Wire the unified transparency adapter into the runner behind explicit config, run a dry run, then perform one reviewed live-post test."
+    }
+  }
+}

@@ -12,6 +12,10 @@
 - [x] Task: Write a check script to verify SSH/Access key validation for secondary Git hosts.
 - [x] Task: Create `.github/workflows/mirror_sync.yml` to mirror the repository to a secondary git remote (GitLab or Codeberg) on every push to master.
 - [ ] Task: Validate the mirror sync workflow via a test push and check remote branch alignment.
+  - Current status: the latest Mirror Sync run succeeded by skipping because
+    `GIT_MIRROR_URL` and `GIT_MIRROR_SSH_PRIVATE_KEY` were not set in the
+    Actions environment. This remains open until a mirror remote is configured
+    and `master` is confirmed aligned on the remote.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Multi-Remote Git Redundancy' (Protocol in workflow.md)
 
 ## Phase 3: Twitter/X Deactivation Archive & Registry Seeding
@@ -29,4 +33,7 @@
   - [x] Added focused unified adapter tests in `tests/test_unified_syndication.py`.
   - [ ] Add an integration test once the unified transparency feed target is wired into `run_syndication`.
 - [ ] Task: Conduct a controlled dry-run and live-post test for the unified mirror feed.
+  - Current status: adapter-level tests exist, but the unified transparency feed
+    is not yet wired into the live `run_syndication` path and has not had a
+    controlled dry-run or live-post verification.
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Syndication & Mirroring Implementation' (Protocol in workflow.md)
