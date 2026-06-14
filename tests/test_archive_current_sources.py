@@ -21,6 +21,23 @@ class FakeParser:
         return FakeFeed()
 
 
+class FakeCourtsFeed:
+    entries = [
+        {
+            "title": "Judgment",
+            "summary": "Published",
+            "link": "https://www.courtsofnz.govt.nz/cases/example-judgment",
+            "published": "Wed, 10 Jun 2026 01:00:00 GMT",
+        }
+    ]
+
+
+class FakeCourtsParser:
+    def parse(self, url):
+        self.url = url
+        return FakeCourtsFeed()
+
+
 def test_archive_current_sources_writes_bluesky_rss_and_archive_state(tmp_path):
     feed_config = tmp_path / "feeds.json"
     feed_config.write_text(
@@ -47,10 +64,11 @@ def test_archive_current_sources_writes_bluesky_rss_and_archive_state(tmp_path):
             }
         ],
         parser=FakeParser(),
+        website_fetcher=lambda url: "<html><title>Judgment</title><body><main>Full judgment text</main></body></html>",
     )
 
     assert report["archive_only"] is True
-    assert report["archived_counts"] == {"bluesky": 1, "rss": 1}
+    assert report["archived_counts"] == {"bluesky": 1, "rss": 1, "website": 0}
     assert (tmp_path / "raw" / "bluesky" / "2026-06" / "abc123.json").is_file()
     assert list((tmp_path / "raw" / "rss" / "2026-06").glob("*.json"))
     assert "bluesky:abc123" in (tmp_path / "normalized" / "bluesky" / "2026-06.jsonl").read_text(
@@ -134,3 +152,37 @@ def test_archive_current_sources_keeps_health_file_stable_for_noop_run(tmp_path)
     second_health = (tmp_path / "archive_source_health.json").read_text(encoding="utf-8")
 
     assert second_health == first_health
+
+
+def test_archive_current_sources_archives_linked_courts_website_pages(tmp_path):
+    feed_config = tmp_path / "feeds.json"
+    feed_config.write_text(
+        json.dumps({"feeds": [{"feed_url": "https://www.courtsofnz.govt.nz/judgments/RSS"}]}),
+        encoding="utf-8",
+    )
+
+    report = archive_current_sources(
+        feed_config_path=feed_config,
+        archive_state_path=tmp_path / "archive_state.json",
+        health_report_path=tmp_path / "archive_source_health.json",
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        include_bluesky=False,
+        parser=FakeCourtsParser(),
+        website_fetcher=lambda url: (
+            "<html><head><title>Judgment page</title></head>"
+            "<body><script>ignored()</script><main>Full judgment text</main></body></html>"
+        ),
+    )
+
+    assert report["archived_counts"] == {"rss": 1, "website": 1}
+    assert list((tmp_path / "raw" / "website" / "2026-06").glob("*.json"))
+    normalized = (tmp_path / "normalized" / "website" / "2026-06.jsonl").read_text(
+        encoding="utf-8"
+    )
+    record = json.loads(normalized)
+    assert record["record_id"].startswith("website:")
+    assert record["source_kind"] == "website_page"
+    assert record["content"] == "Judgment page\n\nFull judgment text"
+    state = json.loads((tmp_path / "archive_state.json").read_text(encoding="utf-8"))
+    assert "courts-nz-website-pages" in state["source_cursors"]

@@ -102,6 +102,23 @@
       "failure_modes": ["feed_unavailable", "network_error", "html_changed"]
     },
     {
+      "id": "courts-nz-website-pages",
+      "source_platform": "courtsofnz.govt.nz",
+      "source_kind": "website_page",
+      "display_name": "Courts of New Zealand Website Pages",
+      "account": "courtsofnz.govt.nz",
+      "url": "https://www.courtsofnz.govt.nz/",
+      "access_method": "public_html_from_rss_links",
+      "auth": "none",
+      "status": "healthy",
+      "dedupe_keys": ["canonical_url", "content_hash"],
+      "raw_path_template": "historical_archive_raw/website/{yyyy_mm}/{record_id}.json",
+      "normalized_path_template": "historical_archive_normalized/website/{yyyy_mm}.jsonl",
+      "rate_limit_policy": "Fetch only bounded public pages linked from archived feed records. Preserve raw HTML and avoid aggressive crawling.",
+      "archive_only_guarantee": "Website page records enrich the corpus and must not alter outbound syndication cursors.",
+      "failure_modes": ["network_error", "html_changed", "unavailable"]
+    },
+    {
       "id": "courts-nz-email-judgments",
       "source_platform": "email",
       "source_kind": "judgments_subscription",

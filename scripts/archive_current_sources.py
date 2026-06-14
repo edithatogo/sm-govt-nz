@@ -4,8 +4,11 @@ import hashlib
 import json
 import sys
 from collections import defaultdict
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Callable, Protocol
+from urllib.parse import urlparse
+from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -22,6 +25,7 @@ class FeedParserModule(Protocol):
 
 
 BlueskyFetcher = Callable[[str], list[dict[str, Any]]]
+WebsiteFetcher = Callable[[str], str]
 
 
 def archive_current_sources(
@@ -34,9 +38,12 @@ def archive_current_sources(
     bluesky_actor: str = "did:plc:vtoa673xlou45zcsj6inyeis",
     bluesky_handle: str = "courtsofnz.bsky.social",
     rss_limit_per_feed: int = 20,
+    website_limit: int = 20,
     include_bluesky: bool = True,
     include_rss: bool = True,
+    include_website: bool = True,
     bluesky_fetcher: BlueskyFetcher | None = None,
+    website_fetcher: WebsiteFetcher | None = None,
     parser: FeedParserModule | None = None,
 ) -> dict[str, Any]:
     captured_at = _utc_now()
@@ -89,6 +96,24 @@ def archive_current_sources(
             )
             save_archive_cursor("courts-nz-rss-website", _records_cursor(rss_records), archive_state_path)
             health.extend(feed_reports)
+            if include_website:
+                website_records, website_report = _archive_linked_website_pages(
+                    source_records=rss_records,
+                    raw_root=Path(raw_root) / "website",
+                    captured_at=captured_at,
+                    limit=website_limit,
+                    fetcher=website_fetcher,
+                )
+                archived_counts["website"] = _upsert_normalized_records(
+                    website_records,
+                    Path(normalized_root) / "website",
+                )
+                save_archive_cursor(
+                    "courts-nz-website-pages",
+                    _records_cursor(website_records),
+                    archive_state_path,
+                )
+                health.append(website_report)
         except Exception as error:
             health.append(_health_entry("courts-nz-rss-website", "unavailable", 0, 0, str(error)))
 
@@ -220,6 +245,157 @@ def _archive_rss_entry(
     )
 
 
+def _archive_linked_website_pages(
+    *,
+    source_records: list[NormalizedArchiveRecord],
+    raw_root: Path,
+    captured_at: str,
+    limit: int,
+    fetcher: WebsiteFetcher | None,
+) -> tuple[list[NormalizedArchiveRecord], dict[str, Any]]:
+    urls = _website_urls_from_records(source_records)[:limit]
+    records: list[NormalizedArchiveRecord] = []
+    failures: list[str] = []
+    for url in urls:
+        try:
+            html = fetcher(url) if fetcher else _fetch_website_html(url)
+            source_record = next(record for record in source_records if record["canonical_url"] == url)
+            records.append(
+                _archive_website_page(
+                    url=url,
+                    html=html,
+                    source_record=source_record,
+                    raw_root=raw_root,
+                    captured_at=captured_at,
+                )
+            )
+        except Exception as error:
+            failures.append(f"{url}: {error}")
+    status = "healthy" if not failures else "degraded"
+    return records, _health_entry(
+        "courts-nz-website-pages",
+        status,
+        len(urls),
+        len(records),
+        "; ".join(failures[:3]),
+    )
+
+
+def _archive_website_page(
+    *,
+    url: str,
+    html: str,
+    source_record: NormalizedArchiveRecord,
+    raw_root: Path,
+    captured_at: str,
+) -> NormalizedArchiveRecord:
+    parsed = _ParsedHtml.from_html(html)
+    month = _month_from_datetime(source_record["original_created_at"])
+    record_id = _website_record_id(url)
+    raw_path = raw_root / month / f"{record_id}.json"
+    existing_captured_at = _existing_captured_at(raw_path)
+    if not raw_path.exists():
+        _write_json_if_changed(
+            raw_path,
+            {
+                "captured_at": captured_at,
+                "url": url,
+                "html": html,
+                "source_record_id": source_record["record_id"],
+            },
+        )
+    return build_normalized_record(
+        record_id=f"website:{record_id}",
+        agency_id="courts-nz",
+        source_platform="courtsofnz.govt.nz",
+        source_account="courtsofnz.govt.nz",
+        source_kind="website_page",
+        source_url=url,
+        canonical_url=url,
+        original_created_at=source_record["original_created_at"],
+        captured_at=existing_captured_at or captured_at,
+        content=parsed.content,
+        raw_path=str(raw_path).replace("\\", "/"),
+        extraction_method="public_html",
+        cross_source_ids={
+            "source_record_id": source_record["record_id"],
+            "source_content_hash": source_record["content_hash"],
+        },
+    )
+
+
+def _website_urls_from_records(records: list[NormalizedArchiveRecord]) -> list[str]:
+    urls: list[str] = []
+    seen: set[str] = set()
+    for record in records:
+        url = record["canonical_url"]
+        if not _is_courts_website_url(url) or url in seen:
+            continue
+        seen.add(url)
+        urls.append(url)
+    return urls
+
+
+def _is_courts_website_url(url: str) -> bool:
+    parsed = urlparse(url)
+    return parsed.scheme in {"http", "https"} and parsed.netloc.lower() in {
+        "www.courtsofnz.govt.nz",
+        "courtsofnz.govt.nz",
+    }
+
+
+def _fetch_website_html(url: str) -> str:
+    request = Request(url, headers={"User-Agent": "sm-govt-nz-archive/1.0"})
+    with urlopen(request, timeout=30) as response:
+        return response.read().decode("utf-8", errors="replace")
+
+
+class _ParsedHtml(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self._skip_depth = 0
+        self._in_title = False
+        self.title_parts: list[str] = []
+        self.body_parts: list[str] = []
+
+    @classmethod
+    def from_html(cls, html: str) -> "_ParsedHtml":
+        parser = cls()
+        parser.feed(html)
+        return parser
+
+    @property
+    def content(self) -> str:
+        title = " ".join(" ".join(self.title_parts).split())
+        body = " ".join(" ".join(self.body_parts).split())
+        if title and body and title not in body:
+            return f"{title}\n\n{body}"
+        return body or title
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        tag_name = tag.lower()
+        if tag_name in {"script", "style", "noscript", "svg"}:
+            self._skip_depth += 1
+        if tag_name == "title":
+            self._in_title = True
+
+    def handle_endtag(self, tag: str) -> None:
+        tag_name = tag.lower()
+        if tag_name in {"script", "style", "noscript", "svg"} and self._skip_depth:
+            self._skip_depth -= 1
+        if tag_name == "title":
+            self._in_title = False
+
+    def handle_data(self, data: str) -> None:
+        value = data.strip()
+        if not value or self._skip_depth:
+            return
+        if self._in_title:
+            self.title_parts.append(value)
+        else:
+            self.body_parts.append(value)
+
+
 def _upsert_normalized_records(records: list[NormalizedArchiveRecord], normalized_root: Path) -> int:
     by_month: dict[str, list[NormalizedArchiveRecord]] = defaultdict(list)
     for record in records:
@@ -326,6 +502,10 @@ def _rss_record_id(feed_url: str, entry_url: str, text: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()[:24]
 
 
+def _website_record_id(url: str) -> str:
+    return hashlib.sha256(url.encode("utf-8")).hexdigest()[:24]
+
+
 def _records_cursor(records: list[NormalizedArchiveRecord]) -> str:
     if not records:
         return "empty"
@@ -384,8 +564,10 @@ def main() -> None:
     parser.add_argument("--raw-root", default="historical_archive_raw")
     parser.add_argument("--normalized-root", default="historical_archive_normalized")
     parser.add_argument("--rss-limit-per-feed", type=int, default=20)
+    parser.add_argument("--website-limit", type=int, default=20)
     parser.add_argument("--skip-bluesky", action="store_true")
     parser.add_argument("--skip-rss", action="store_true")
+    parser.add_argument("--skip-website", action="store_true")
     args = parser.parse_args()
 
     report = archive_current_sources(
@@ -395,8 +577,10 @@ def main() -> None:
         raw_root=args.raw_root,
         normalized_root=args.normalized_root,
         rss_limit_per_feed=args.rss_limit_per_feed,
+        website_limit=args.website_limit,
         include_bluesky=not args.skip_bluesky,
         include_rss=not args.skip_rss,
+        include_website=not args.skip_website,
     )
     print(json.dumps(report, indent=2, ensure_ascii=False, sort_keys=True))
 

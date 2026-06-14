@@ -27,8 +27,8 @@
 - [x] Task: Capture current Bluesky feed into both raw and normalized archives.
 - [ ] Task: Capture LinkedIn posts through the approved access method.
 - [x] Task: Capture RSS feed entries with `feedparser`.
-- [ ] Task: Capture source website pages linked from posts/feed/email when they provide canonical judgments, speeches, reports, or announcements.
-- [ ] Task: Commit archive state and source health reports back to GitHub.
+- [x] Task: Capture source website pages linked from posts/feed/email when they provide canonical judgments, speeches, reports, or announcements.
+- [x] Task: Commit archive state and source health reports back to GitHub.
 
 ## Phase 5: Judgments Email Subscription Ingress
 - [ ] Task: Use Cloudflare Email Routing Worker as the default email ingress bridge because it has a free routing path and enough free Worker request capacity for low-volume notification capture.

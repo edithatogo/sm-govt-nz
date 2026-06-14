@@ -20,7 +20,7 @@ jobs:
       - name: Install runtime dependencies
         run: python -m pip install -r requirements.txt
       - name: Archive current public sources
-        run: python scripts/archive_current_sources.py
+        run: python scripts/archive_current_sources.py --website-limit 10
       - name: Commit archive updates
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
