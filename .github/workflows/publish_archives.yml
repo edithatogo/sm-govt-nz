@@ -2,6 +2,15 @@ name: Publish Archives
 
 on:
   workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish to configured external repositories"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
   schedule:
     - cron: "41 16 * * 0"
 
@@ -19,6 +28,7 @@ jobs:
       HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
       ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
       ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
+      PUBLISH_ARCHIVES: ${{ github.event_name == 'schedule' || inputs.publish == 'true' }}
     steps:
       - uses: actions/checkout@v5
       - name: Set up Python
@@ -34,14 +44,19 @@ jobs:
           --raw-dir historical_archive_raw
           --output dist/archive_compaction_manifest.json
       - name: Bundle and publish archive corpus
-        run: >-
-          python scripts/publish_archives.py
-          --archive-dir historical_archive
-          --normalized-dir historical_archive_normalized
-          --raw-dir historical_archive_raw
-          --output-dir dist
-          --manifest dist/archive_manifest.json
-          --publish
+        run: |
+          args=(
+            python scripts/publish_archives.py
+            --archive-dir historical_archive
+            --normalized-dir historical_archive_normalized
+            --raw-dir historical_archive_raw
+            --output-dir dist
+            --manifest dist/archive_manifest.json
+          )
+          if [ "$PUBLISH_ARCHIVES" = "true" ]; then
+            args+=(--publish)
+          fi
+          "${args[@]}"
       - name: Upload generated corpus bundle
         uses: actions/upload-artifact@v4
         with:

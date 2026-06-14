@@ -49,7 +49,7 @@
 - [ ] Task: Publish citable release snapshots to Zenodo from the same normalized archive artifacts. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/6
 - [x] Task: Publish raw-source bundles separately or as a gated/manual artifact if size or platform terms require it.
 - [x] Task: Add dataset manifests with checksums, source coverage, date ranges, and known gaps.
-- [x] Task: Add a scheduled/manual GitHub Actions workflow that bundles archive artifacts and publishes to Hugging Face/Zenodo when secrets are configured.
+- [x] Task: Add a scheduled/manual GitHub Actions workflow that bundles archive artifacts and publishes to Hugging Face/Zenodo when secrets are configured. Manual runs default to artifact-only and require `publish=true` to send artifacts to external repositories.
 
 ## Phase 7: Operational Optimizations
 - [x] Task: Add source-health dashboard output to Pages.
