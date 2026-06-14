@@ -47,6 +47,10 @@
     }
     .agency h3 { margin: 0 0 6px; font-size: 1rem; }
     .targets { margin-top: 10px; color: var(--muted); font-size: 0.9rem; }
+    .status-healthy { border-left: 4px solid #16835f; }
+    .status-degraded, .status-auth_required, .status-rate_limited { border-left: 4px solid #9a6a00; }
+    .status-blocked, .status-unavailable { border-left: 4px solid #a33a32; }
+    .source-id { word-break: break-word; }
     footer { color: var(--muted); font-size: 0.9rem; }
   </style>
 </head>
@@ -61,6 +65,10 @@
       <div class="metric"><strong id="target-count">0</strong><span>enabled targets</span></div>
       <div class="metric"><strong id="state-count">0</strong><span>state entries</span></div>
       <div class="metric"><strong id="open-count">0</strong><span>open-network coverage</span></div>
+    </section>
+    <section>
+      <h2>Archive Source Health</h2>
+      <div id="archive-health" class="agency-grid"></div>
     </section>
     <section>
       <h2>Open Network Gaps</h2>
@@ -87,12 +95,51 @@
       return response.json();
     };
 
+    const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    }[char]));
+
+    const renderArchiveHealth = (health) => {
+      const target = document.querySelector('#archive-health');
+      if (!health || !Array.isArray(health.sources)) {
+        target.innerHTML = '<p>Archive source health has not been published yet.</p>';
+        return;
+      }
+      const counts = health.archived_counts || {};
+      const countSummary = Object.entries(counts)
+        .map(([source, count]) => `${escapeHtml(source)}: ${escapeHtml(count)}`)
+        .join(' · ') || 'No archived counts reported';
+      target.innerHTML = `
+        <article class="agency">
+          <h3>Latest Capture</h3>
+          <p>${escapeHtml(health.generated_at || 'unknown')}</p>
+          <div class="targets">${countSummary}</div>
+        </article>
+        ${health.sources.map((source) => {
+          const status = escapeHtml(source.status || 'unknown');
+          return `
+            <article class="agency status-${status}">
+              <h3>${status}</h3>
+              <p class="source-id">${escapeHtml(source.source_id)}</p>
+              <div class="targets">Observed: ${escapeHtml(source.observed_count)} · Archived: ${escapeHtml(source.archived_count)}</div>
+              ${source.error ? `<div class="targets">${escapeHtml(source.error)}</div>` : ''}
+            </article>
+          `;
+        }).join('')}
+      `;
+    };
+
     const render = async () => {
       try {
-        const [config, state, gaps] = await Promise.all([
+        const [config, state, gaps, health] = await Promise.all([
           loadJson('config.json'),
           loadJson('conductor/state.json'),
           loadJson('registry/gap_analysis.json'),
+          loadJson('conductor/archive_source_health.json').catch(() => null),
         ]);
         const enabledTargets = Object.entries(config.syndication_targets || {})
           .filter(([, value]) => value.enabled)
@@ -101,6 +148,7 @@
         document.querySelector('#target-count').textContent = enabledTargets.length;
         document.querySelector('#state-count').textContent = Object.keys(state.last_seen_post_ids || {}).length;
         document.querySelector('#open-count').textContent = gaps.open_network_coverage;
+        renderArchiveHealth(health);
         document.querySelector('#gaps').innerHTML = gaps.open_missing.length === 0
           ? '<p>No open-network gaps in the current registry.</p>'
           : gaps.open_missing.map((agency) => `

@@ -51,7 +51,7 @@
 - [x] Task: Add a scheduled/manual GitHub Actions workflow that bundles archive artifacts and publishes to Hugging Face/Zenodo when secrets are configured.
 
 ## Phase 7: Operational Optimizations
-- [ ] Task: Add source-health dashboard output to Pages.
+- [x] Task: Add source-health dashboard output to Pages.
 - [ ] Task: Add no-op scheduled-run monitoring to confirm no duplicate posts are generated.
 - [ ] Task: Add monthly compaction so Git commits stay small while Hugging Face receives dataset-friendly shards.
 - [ ] Task: Add Buffer API key rotation reminder before the current key expiry on 12 July 2026.
