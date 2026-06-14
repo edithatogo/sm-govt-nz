@@ -48,6 +48,7 @@ test("assertAllowedRecipient enforces configured recipients", () => {
       ALLOWED_RECIPIENTS: "courts-nz-judgments@example.com",
     }),
   );
+  assert.throws(() => assertAllowedRecipient("courts-nz-judgments@example.com", {}));
 });
 
 test("extractLinks deduplicates and trims punctuation", () => {

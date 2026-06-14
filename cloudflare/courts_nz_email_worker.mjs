@@ -64,7 +64,7 @@ export async function dispatchToGitHub(payload, env) {
 export function assertAllowedRecipient(recipient, env) {
   const allowed = splitList(env.ALLOWED_RECIPIENTS);
   if (!allowed.length) {
-    return;
+    throw new Error("ALLOWED_RECIPIENTS must include at least one recipient");
   }
   const normalizedRecipient = String(recipient || "").toLowerCase();
   if (!allowed.includes(normalizedRecipient)) {
