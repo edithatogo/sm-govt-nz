@@ -16,6 +16,9 @@
     `GIT_MIRROR_URL` and `GIT_MIRROR_SSH_PRIVATE_KEY` were not set in the
     Actions environment. This remains open until a mirror remote is configured
     and `master` is confirmed aligned on the remote.
+  - The workflow now runs `scripts/validate_git_mirrors.py --branch master
+    --compare-head` after a mirror push, so configured mirror runs must compare
+    local `master` with the remote `refs/heads/master`.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Multi-Remote Git Redundancy' (Protocol in workflow.md)
 
 ## Phase 3: Twitter/X Deactivation Archive & Registry Seeding

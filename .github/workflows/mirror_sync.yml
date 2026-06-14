@@ -36,3 +36,12 @@ jobs:
           
           git remote add mirror "$GIT_MIRROR_URL"
           git push --force --prune mirror master
+      - name: Validate mirror branch alignment
+        env:
+          GIT_MIRROR_URL: ${{ secrets.GIT_MIRROR_URL }}
+        run: |
+          if [ -z "$GIT_MIRROR_URL" ]; then
+            echo "GIT_MIRROR_URL is not set, skipping mirror validation."
+            exit 0
+          fi
+          python scripts/validate_git_mirrors.py --branch master --compare-head

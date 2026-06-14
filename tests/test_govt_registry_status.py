@@ -18,6 +18,7 @@ def test_govt_registry_status_records_known_remaining_blockers() -> None:
 
     assert mirror["latest_observed_result"] == "skipped_missing_GIT_MIRROR_URL"
     assert mirror["required_secrets"] == ["GIT_MIRROR_URL", "GIT_MIRROR_SSH_PRIVATE_KEY"]
+    assert mirror["validation_script"] == "scripts/validate_git_mirrors.py --branch master --compare-head"
     assert unified["adapter_groundwork"] == "present"
     assert unified["integration_status"] == "wired_behind_disabled_config"
     assert unified["dry_run_status"] == "passed"
