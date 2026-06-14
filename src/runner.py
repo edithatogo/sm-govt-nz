@@ -16,6 +16,7 @@ from src.config import (
 )
 from src.syndication import SyndicationAdapter, SyndicationResult, build_adapters_from_env
 from src.threads_pipeline import get_threads_pipeline_status
+from src.unified_syndication import UnifiedTransparencyAdapter
 
 
 @dataclass
@@ -57,7 +58,7 @@ def run_syndication(
         backlog_state_path=backlog_state_path,
         backlog_archive_dir=backlog_archive_dir,
     )
-    available_adapters = adapters if adapters is not None else build_adapters_from_env(active_targets)
+    available_adapters = _available_adapters(config, active_targets, adapters=adapters)
     next_state: AppState = {"last_seen_post_ids": dict(state["last_seen_post_ids"])}
     target_delivery_state = delivery_state if delivery_state is not None else {"delivered_post_ids": {}}
     account_results: list[AccountRunResult] = []
@@ -243,6 +244,41 @@ def _active_targets(
                 continue
         active_targets.append(name)
     return active_targets
+
+
+def _available_adapters(
+    config: AppConfig,
+    active_targets: list[str],
+    *,
+    adapters: dict[str, SyndicationAdapter] | None,
+) -> dict[str, SyndicationAdapter]:
+    if adapters is not None:
+        available = dict(adapters)
+    else:
+        env_targets = list(active_targets)
+        for target in active_targets:
+            base_target = _unified_base_target(config, target)
+            if base_target and base_target not in env_targets:
+                env_targets.append(base_target)
+        available = build_adapters_from_env(env_targets)
+
+    if "unified" in active_targets and "unified" not in available:
+        base_target = _unified_base_target(config, "unified")
+        base_adapter = available.get(base_target) if base_target else None
+        if base_adapter is not None:
+            agency_map = {
+                account["handle"]: account.get("name", account["handle"])
+                for account in config["monitored_accounts"]
+            }
+            available["unified"] = UnifiedTransparencyAdapter(base_adapter, agency_map)
+    return available
+
+
+def _unified_base_target(config: AppConfig, target: str) -> str:
+    if target != "unified":
+        return ""
+    base_target = config["syndication_targets"].get("unified", {}).get("base_target", "")
+    return str(base_target)
 
 
 def _limit_posts_for_enabled_targets(

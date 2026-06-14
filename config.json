@@ -43,6 +43,13 @@
       "pipeline_stage_enabled": false,
       "gated_by": "facebook_page_setup_complete"
     },
+    "unified": {
+      "enabled": false,
+      "base_target": "bluesky",
+      "archive_replay_enabled": false,
+      "pipeline_stage_enabled": true,
+      "gated_by": "govt_registry_unified_feed_launch_review"
+    },
     "mastodon": {
       "enabled": false
     },

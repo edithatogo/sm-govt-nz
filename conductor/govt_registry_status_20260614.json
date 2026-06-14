@@ -24,10 +24,10 @@
     },
     "unified_transparency_feed": {
       "adapter_groundwork": "present",
-      "integration_status": "not_wired_into_run_syndication",
+      "integration_status": "wired_behind_disabled_config",
       "live_test_status": "not_run",
       "status": "open",
-      "next_action": "Wire the unified transparency adapter into the runner behind explicit config, run a dry run, then perform one reviewed live-post test."
+      "next_action": "Run a controlled dry run for the disabled-by-default unified target, then perform one reviewed live-post test after launch approval."
     }
   }
 }

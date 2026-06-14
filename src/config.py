@@ -21,6 +21,7 @@ class SyndicationTargetConfig(TypedDict):
     account_handle: NotRequired[str]
     profile_url: NotRequired[str]
     gated_by: NotRequired[str]
+    base_target: NotRequired[str]
 
 class AppConfig(TypedDict):
     monitored_accounts: List[MonitoredAccount]

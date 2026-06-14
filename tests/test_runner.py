@@ -218,6 +218,32 @@ def test_runner_tracks_instagram_delivery_separately(tmp_path) -> None:
     assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-1"
 
 
+def test_runner_wires_unified_transparency_adapter_from_base_target(tmp_path) -> None:
+    config = make_config()
+    config["monitored_accounts"][0]["syndicate_to"] = ["unified"]
+    config["syndication_targets"] = {
+        "bluesky": {"enabled": False},
+        "unified": {"enabled": True, "base_target": "bluesky", "max_posts_per_run": 1},
+    }
+    state: AppState = {"last_seen_post_ids": {"agency.bsky.social": ""}}
+    delivery_state = {"delivered_post_ids": {}}
+    bluesky = RecordingSuccessAdapter("bluesky")
+
+    _summary, next_state = run_syndication(
+        config,
+        state,
+        feed_client=FakeFeedClient(),
+        adapters={"bluesky": bluesky},
+        archive_dir=str(tmp_path / "archive"),
+        delivery_state=delivery_state,
+    )
+
+    assert [post["post_id"] for post in bluesky.sent_posts] == ["post-1"]
+    assert bluesky.sent_posts[0]["text"] == "[Agency] Older"
+    assert delivery_state["delivered_post_ids"]["unified"]["agency.bsky.social"] == ["post-1"]
+    assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-1"
+
+
 def test_runner_does_not_advance_source_state_when_target_delivery_fails(tmp_path) -> None:
     config = make_config()
     config["monitored_accounts"][0]["syndicate_to"] = ["bluesky", "threads"]
