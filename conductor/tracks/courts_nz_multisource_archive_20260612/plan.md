@@ -39,6 +39,7 @@
 - [x] Task: Normalize email subject/body/link records into the shared archive schema.
 - [x] Task: Trigger GitHub Actions with `repository_dispatch` or a scheduled polling workflow after email receipt.
 - [x] Task: Add a deployable Cloudflare Email Routing Worker template and tests for dispatching received messages into GitHub.
+- [x] Task: Add a manual GitHub Actions deployment workflow for the Cloudflare Email Routing Worker.
 
 ## Phase 6: Hugging Face and Zenodo Corpus Publication
 - [x] Task: Define the Hugging Face dataset name, license/readme, citation, and provenance statement.

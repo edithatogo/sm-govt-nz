@@ -237,7 +237,13 @@ JSONL shards under `historical_archive_normalized/email/`. See
 `docs/courts-nz-email-ingress.md` for the dispatch payload contract and
 Cloudflare Worker handoff. The deployable Worker template lives at
 `cloudflare/courts_nz_email_worker.mjs`, with a Wrangler configuration example
-at `cloudflare/wrangler.courts-nz-email.toml.example`.
+at `cloudflare/wrangler.courts-nz-email.toml.example`. The manual
+`Deploy Email Worker` workflow deploys that Worker when these repository secrets
+are configured:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+- `EMAIL_WORKER_GITHUB_TOKEN`
 
 The archive track publishes normalized corpus artifacts to Hugging Face Datasets
 and citable release snapshots to Zenodo. Additional outbound syndication

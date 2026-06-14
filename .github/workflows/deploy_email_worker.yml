@@ -1,0 +1,51 @@
+name: Deploy Email Worker
+
+on:
+  workflow_dispatch:
+    inputs:
+      allowed_recipients:
+        description: Comma-separated recipient addresses accepted by the Worker.
+        required: true
+        type: string
+        default: courts-nz-judgments@example.com
+      worker_name:
+        description: Cloudflare Worker name.
+        required: true
+        type: string
+        default: courts-nz-email-archive
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  EMAIL_WORKER_GITHUB_TOKEN: ${{ secrets.EMAIL_WORKER_GITHUB_TOKEN }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Validate deploy secrets
+        run: python scripts/validate_secrets.py --mode cloudflare_email
+      - name: Render Wrangler config
+        run: >-
+          python scripts/render_cloudflare_worker_config.py
+          --output cloudflare/wrangler.toml
+          --worker-name "${{ inputs.worker_name }}"
+          --github-repo "${{ github.repository }}"
+          --allowed-recipients "${{ inputs.allowed_recipients }}"
+      - name: Install Wrangler
+        run: npm install --global wrangler
+      - name: Set Worker GitHub dispatch token
+        working-directory: cloudflare
+        run: printf '%s' "$EMAIL_WORKER_GITHUB_TOKEN" | wrangler secret put GITHUB_TOKEN
+      - name: Deploy Worker
+        working-directory: cloudflare
+        run: wrangler deploy

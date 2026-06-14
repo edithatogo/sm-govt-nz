@@ -60,18 +60,26 @@ This repository includes a deployable Worker template:
 
 Setup outline:
 
-1. Copy `cloudflare/wrangler.courts-nz-email.toml.example` to a local
-   `wrangler.toml` for deployment.
-2. Replace `ALLOWED_RECIPIENTS` with the dedicated subscription address.
-3. Set `GITHUB_TOKEN` as a Worker secret:
+1. Add repository secrets for the manual `Deploy Email Worker` workflow:
+
+   - `CLOUDFLARE_API_TOKEN`
+   - `CLOUDFLARE_ACCOUNT_ID`
+   - `EMAIL_WORKER_GITHUB_TOKEN`
+
+2. Run the `Deploy Email Worker` workflow with the dedicated subscription
+   address in `allowed_recipients`.
+3. In Cloudflare Email Routing, create a routing rule from the dedicated
+   subscription address to the deployed Worker.
+
+For local deployment, copy `cloudflare/wrangler.courts-nz-email.toml.example`
+to `cloudflare/wrangler.toml`, replace `ALLOWED_RECIPIENTS`, and set
+`GITHUB_TOKEN` as a Worker secret:
 
    ```powershell
    wrangler secret put GITHUB_TOKEN
    ```
 
-4. Deploy the Worker from the `cloudflare/` directory.
-5. In Cloudflare Email Routing, create a routing rule from the dedicated
-   subscription address to the deployed Worker.
+Then deploy from the `cloudflare/` directory with `wrangler deploy`.
 
 The template is based on Cloudflare's Email Workers API, which exposes an
 `email(message, env, ctx)` handler, `message.headers`, `message.raw`, envelope

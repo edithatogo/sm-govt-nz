@@ -16,6 +16,10 @@ SCHEMA = {
                 {"name": "facebook", "vars": ["FACEBOOK_PAGE_ACCESS_TOKEN", "FACEBOOK_PAGE_ID"]},
             ],
         },
+        "cloudflare_email": {
+            "required": ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "EMAIL_WORKER_GITHUB_TOKEN"],
+            "anyOf": [],
+        },
         "upstream": {"required": ["GH_TOKEN"], "anyOf": []},
     },
     "jsonVars": [],
@@ -230,6 +234,32 @@ def test_validate_environment_requires_upstream_token() -> None:
 
     assert result["valid"] is False
     assert result["missing_required"] == ["GH_TOKEN"]
+
+
+def test_validate_environment_accepts_cloudflare_email_deploy_secrets() -> None:
+    result = validate_environment(
+        "cloudflare_email",
+        schema=SCHEMA,
+        env={
+            "CLOUDFLARE_API_TOKEN": "cf-token",
+            "CLOUDFLARE_ACCOUNT_ID": "account",
+            "EMAIL_WORKER_GITHUB_TOKEN": "github-token",
+        },
+    )
+
+    assert result["valid"] is True
+    assert result["missing_required"] == []
+
+
+def test_validate_environment_rejects_missing_cloudflare_email_deploy_secrets() -> None:
+    result = validate_environment("cloudflare_email", schema=SCHEMA, env={})
+
+    assert result["valid"] is False
+    assert result["missing_required"] == [
+        "CLOUDFLARE_API_TOKEN",
+        "CLOUDFLARE_ACCOUNT_ID",
+        "EMAIL_WORKER_GITHUB_TOKEN",
+    ]
 
 
 def test_load_env_file_reads_simple_key_values(tmp_path) -> None:

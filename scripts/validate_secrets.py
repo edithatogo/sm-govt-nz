@@ -146,7 +146,11 @@ def _validate_target(target: str | None, env: dict[str, str]) -> list[str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Validate GitHub Actions secrets.")
-    parser.add_argument("--mode", default="ci", choices=["ci", "syndicate", "archive", "upstream"])
+    parser.add_argument(
+        "--mode",
+        default="ci",
+        choices=["ci", "syndicate", "archive", "cloudflare_email", "upstream"],
+    )
     parser.add_argument("--schema", default="config/secrets.schema.json")
     parser.add_argument(
         "--target",
