@@ -5,9 +5,16 @@
   posting disabled until API validation completes.
 - [ ] Task: Confirm Instagram account type, profile ID, and Meta app
   permissions required for publishing.
+  - Current status: adapter, secret validation, and non-posting probe
+    groundwork exist, but launch remains blocked until the API identity,
+    account type, and publish permissions are confirmed against the actual
+    mirror account.
 - [x] Task: Confirm whether the Threads Meta account/admin can own the
   Instagram mirror without using a personal posting identity.
 - [ ] Task: Document token lifetime, refresh, and app-review requirements.
+  - Required before launch: confirm token lifetime, refresh route, app review
+    status if required, and whether the Instagram account can publish through
+    the configured Meta app without using a personal identity.
 
 ## Phase 2: Secret and Probe Contract
 - [x] Task: Add Instagram secret names to `config/secrets.schema.json`.
@@ -43,3 +50,8 @@ Evidence:
 - [ ] Task: Review payload and account identity.
 - [ ] Task: Run one controlled live post only after approval.
 - [ ] Task: Verify public URL and commit state.
+
+Launch guardrail:
+- Keep `instagram.enabled` false and keep `instagram` out of
+  `monitored_accounts[].syndicate_to` until the API identity/permission probe
+  passes and the launch review is approved.

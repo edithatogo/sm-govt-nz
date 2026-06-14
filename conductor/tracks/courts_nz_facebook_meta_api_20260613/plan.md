@@ -2,10 +2,15 @@
 
 ## Phase 1: Page and API Readiness
 - [ ] Task: Create or confirm the dedicated Facebook Page mirror identity.
+  - Current status: this remains the primary blocker. No live Facebook post is
+    allowed until a dedicated Page identity exists for the mirror account.
 - [ ] Task: Record the Facebook Page URL, handle, and admin ownership once the
   Page exists.
 - [ ] Task: Confirm Page ID, page access token, app permissions, and app-review
   requirements for publishing.
+  - Required before launch: complete the Page token path, confirm Page ID,
+    confirm publish permissions, and verify the Page probe against the actual
+    mirror Page.
 - [ ] Task: Confirm the same Meta account/admin can manage the Page without
   using a personal posting identity.
 
@@ -49,3 +54,9 @@ Evidence:
   Facebook Page request with the access token redacted and without posting.
 - `config.json` keeps `facebook.enabled` false and does not add `facebook` to
   the Courts of New Zealand `syndicate_to` list.
+
+Launch guardrail:
+- Keep `facebook.enabled` false and keep `facebook` out of
+  `monitored_accounts[].syndicate_to` until the dedicated Page identity, Page
+  access token, app permissions, dry-run payload, and launch review are all
+  complete.

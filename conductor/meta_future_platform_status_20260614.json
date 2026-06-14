@@ -1,0 +1,40 @@
+{
+  "facebook": {
+    "adapter_groundwork": "present",
+    "config_enabled": false,
+    "current_status": "future_track_blocked",
+    "dedicated_page_identity": "not_confirmed",
+    "launch_blockers": [
+      "Create or confirm the dedicated Facebook Page mirror identity.",
+      "Record Page URL, handle, and admin ownership.",
+      "Confirm Page ID, Page access token, app permissions, and app-review requirements.",
+      "Run the non-posting Facebook Page probe against the actual Page.",
+      "Complete payload and Page identity launch review before any live post."
+    ],
+    "profile_url": "",
+    "syndicate_to_configured": false,
+    "track": "conductor/tracks/courts_nz_facebook_meta_api_20260613"
+  },
+  "instagram": {
+    "adapter_groundwork": "present",
+    "api_identity_permission_confirmation": "pending",
+    "config_enabled": false,
+    "current_status": "future_track_pending_launch_review",
+    "launch_blockers": [
+      "Confirm Instagram account type and profile/user ID.",
+      "Confirm Meta app permissions for publishing to the mirror account.",
+      "Confirm token lifetime, refresh route, and app-review requirements.",
+      "Run the non-posting Instagram profile probe against the actual account.",
+      "Complete dry-run payload and account identity launch review before any live post."
+    ],
+    "profile_url": "https://www.instagram.com/mirnzcourts/",
+    "syndicate_to_configured": false,
+    "track": "conductor/tracks/courts_nz_instagram_meta_api_20260613"
+  },
+  "shared_guardrails": [
+    "Do not post under a personal Meta, Instagram, or Facebook profile.",
+    "Keep platform delivery state separate from Bluesky, Threads, and X.",
+    "Start with new forward posts only; historical replay requires a separate reviewed decision.",
+    "Enable each platform only after its probe, dry run, launch review, and controlled first-post verification pass."
+  ]
+}
