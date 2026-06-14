@@ -1,6 +1,8 @@
 from typing import Any, Mapping
+from unittest.mock import MagicMock, patch
 
 from src.bluesky import (
+    BlueskyApiClient,
     build_post_url,
     extract_post_id,
     fetch_new_posts_for_account,
@@ -95,6 +97,18 @@ def test_fetch_new_posts_uses_handle_when_did_is_missing() -> None:
 
     assert client.requested_actor == "agency.bsky.social"
     assert posts[0]["post_id"] == "post-1"
+
+
+@patch("src.bluesky.urlopen")
+def test_resolve_handle_returns_did(mock_urlopen: MagicMock) -> None:
+    response = MagicMock()
+    response.read.return_value = b'{"did":"did:plc:agency"}'
+    response.__enter__.return_value = response
+    mock_urlopen.return_value = response
+
+    client = BlueskyApiClient(base_url="https://example.test")
+
+    assert client.resolve_handle("agency.bsky.social") == "did:plc:agency"
 
 
 def make_feed_item(

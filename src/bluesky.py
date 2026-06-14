@@ -28,6 +28,12 @@ class AuthorFeedClient(Protocol):
     def fetch_author_feed(self, actor: str, *, limit: int = 50) -> list[Mapping[str, Any]]:
         """Return raw AT Protocol feed items for an actor."""
 
+    def get_relationships(self, actor: str, others: list[str]) -> list[Mapping[str, Any]]:
+        """Return relationship data between an actor and others."""
+
+    def resolve_handle(self, handle: str) -> str:
+        """Return the DID for a Bluesky handle."""
+
 
 class BlueskyApiClient:
     """Small AT Protocol XRPC client for unauthenticated public author feeds."""
@@ -53,6 +59,39 @@ class BlueskyApiClient:
         if not isinstance(feed, list):
             raise ValueError("Invalid Bluesky response: 'feed' must be a list.")
         return feed
+
+    def get_relationships(self, actor: str, others: list[str]) -> list[Mapping[str, Any]]:
+        """Check relationships between actor and others using app.bsky.graph.getRelationships."""
+        params = [("actor", actor)]
+        for other in others:
+            params.append(("others", other))
+
+        query = urlencode(params)
+        url = f"{self.base_url}/xrpc/app.bsky.graph.getRelationships?{query}"
+        request = Request(url, headers={"Accept": "application/json"})
+
+        with urlopen(request, timeout=self.timeout_seconds) as response:
+            body = response.read().decode("utf-8")
+
+        payload = json.loads(body)
+        relationships = payload.get("relationships", [])
+        if not isinstance(relationships, list):
+            raise ValueError("Invalid Bluesky response: 'relationships' must be a list.")
+        return relationships
+
+    def resolve_handle(self, handle: str) -> str:
+        query = urlencode({"handle": handle})
+        url = f"{self.base_url}/xrpc/com.atproto.identity.resolveHandle?{query}"
+        request = Request(url, headers={"Accept": "application/json"})
+
+        with urlopen(request, timeout=self.timeout_seconds) as response:
+            body = response.read().decode("utf-8")
+
+        payload = json.loads(body)
+        did = payload.get("did")
+        if not isinstance(did, str) or not did:
+            raise ValueError("Invalid Bluesky response: 'did' must be a string.")
+        return did
 
 
 def extract_post_id(uri: str) -> str:

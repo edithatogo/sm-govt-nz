@@ -1,0 +1,41 @@
+name: Mirror Follow Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      execute_live_following:
+        description: "Execute Bluesky follows after the read-only probe and dry-run"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  follow-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Set up Python
+        run: uv python install 3.11
+      - name: Install runtime dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Refresh follow status cache
+        run: python scripts/check_follow_status.py
+      - name: Upload follow status report
+        uses: actions/upload-artifact@v4
+        with:
+          name: follow-sync-state
+          path: conductor/follow_sync_state.json
+      - name: Dry-run supported follow sync
+        env:
+          BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
+        run: python scripts/sync_mirror_follows.py --dry-run
+      - name: Execute supported follow sync
+        if: ${{ inputs.execute_live_following }}
+        env:
+          BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
+          BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
+        run: python scripts/sync_mirror_follows.py --execute
