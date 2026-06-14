@@ -40,7 +40,7 @@ jobs:
       ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
       ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
       ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url || 'https://zenodo.org/api/deposit/depositions' }}
-      PUBLISH_ARCHIVES: ${{ github.event_name == 'schedule' || inputs.publish == 'true' }}
+      PUBLISH_ARCHIVES: ${{ inputs.publish == 'true' }}
     steps:
       - uses: actions/checkout@v5
       - name: Set up Python
