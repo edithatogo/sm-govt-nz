@@ -55,7 +55,7 @@
 - [x] Task: Add source-health dashboard output to Pages.
 - [x] Task: Add no-op scheduled-run monitoring to confirm no duplicate posts are generated.
 - [x] Task: Add monthly compaction so Git commits stay small while Hugging Face receives dataset-friendly shards.
-- [ ] Task: Add Buffer API key rotation reminder before the current key expiry on 12 July 2026.
+- [x] Task: Add Buffer API key rotation reminder before the current key expiry on 12 July 2026.
 - [ ] Task: Add failure isolation so one blocked source does not stop other archive sources or live Bluesky-to-X mirroring.
 - [ ] Task: Commit after each completed implementation task and run a review after each phase before starting the next phase.
 

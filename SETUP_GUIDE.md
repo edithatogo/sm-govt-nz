@@ -72,6 +72,10 @@ The X app must have write permissions and the access token must be regenerated
 after write permissions are enabled. A browser-submitted post proves the account
 can post manually, but it does not prove the unattended API workflow can post.
 
+The current Buffer API key is tracked as expiring on 12 July 2026. The
+`Buffer Key Rotation Reminder` workflow runs daily and creates or updates a
+GitHub issue once the key is inside the 30-day rotation window.
+
 Validate the API path locally:
 
 ```powershell
@@ -293,6 +297,7 @@ Run the validator locally:
 ```powershell
 python scripts/validate_secrets.py --mode syndicate
 python scripts/validate_secrets.py --mode archive
+python scripts/check_buffer_key_rotation.py --expires-on 2026-07-12
 ```
 
 Local validation reads `.env.local` when present, then lets exported process
