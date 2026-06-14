@@ -27,6 +27,12 @@ jobs:
           python-version: "3.11"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Build archive compaction manifest
+        run: >-
+          python scripts/build_archive_compaction_manifest.py
+          --normalized-dir historical_archive_normalized
+          --raw-dir historical_archive_raw
+          --output dist/archive_compaction_manifest.json
       - name: Bundle and publish archive corpus
         run: >-
           python scripts/publish_archives.py
@@ -42,6 +48,7 @@ jobs:
           name: courts-nz-archive-corpus
           path: |
             dist/archive_manifest.json
+            dist/archive_compaction_manifest.json
             dist/corpus_manifest.json
             dist/README.md
             dist/historical_archive.tar.gz

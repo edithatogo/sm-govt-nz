@@ -263,6 +263,14 @@ fails if the duplicate capture changes `historical_archive_raw/email/` or
 `historical_archive_normalized/email/`. This gives the archive pipeline a
 scheduled duplicate-ingress guard without depending on live source feeds.
 
+The `Archive Compaction Manifest` workflow runs monthly and writes only
+`conductor/archive_compaction_manifest.json`. It records source/month counts,
+byte sizes, full content checksums for normalized JSONL shards, and path/size
+inventory digests for raw shards without deleting, rewriting, or repacking
+archive records. The `Publish Archives` workflow also includes the same
+manifest in the generated corpus artifact so Hugging Face and Zenodo
+publication can verify the Git-held shards against the dataset bundle.
+
 ## 7. Source Discovery and Ingestion Tools
 
 Runtime dependencies are in `requirements.txt`.
@@ -302,6 +310,7 @@ The `Syndicate` workflow runs on schedule. Manual dispatch still requires
 ruff check --no-cache src tests scripts
 pytest -q
 python scripts/gap_analyzer.py --registry registry/agencies.json --output registry/gap_analysis.json
+python scripts/build_archive_compaction_manifest.py --normalized-dir historical_archive_normalized --raw-dir historical_archive_raw --output conductor/archive_compaction_manifest.json
 python scripts/publish_archives.py --archive-dir historical_archive --normalized-dir historical_archive_normalized --raw-dir historical_archive_raw --output-dir dist --manifest dist/archive_manifest.json
 ```
 

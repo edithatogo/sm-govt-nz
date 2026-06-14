@@ -1,0 +1,31 @@
+name: Archive Compaction Manifest
+
+on:
+  schedule:
+    - cron: "19 18 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  compact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        run: python --version
+      - name: Build archive compaction manifest
+        run: >-
+          python scripts/build_archive_compaction_manifest.py
+          --normalized-dir historical_archive_normalized
+          --raw-dir historical_archive_raw
+          --output conductor/archive_compaction_manifest.json
+      - name: Commit compaction manifest
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: Update archive compaction manifest
+          file_pattern: conductor/archive_compaction_manifest.json
