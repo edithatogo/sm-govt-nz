@@ -24,3 +24,11 @@ track.
   size, payload format, and verification.
 - If replay is rejected, the corpus remains available through GitHub Pages,
   Hugging Face, Zenodo, and Bluesky mirror replay.
+
+## Decision
+Historical Threads replay is deferred and must remain disabled. Threads live
+and ongoing posting may continue, but archive records must not be replayed to
+Threads because the platform cannot backdate them and they would appear as new
+current posts. Historical access is handled through the repository corpus,
+GitHub Pages, Hugging Face, Zenodo, and any platform that can preserve or
+clearly label archive context without flooding the current feed.

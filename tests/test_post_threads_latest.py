@@ -118,6 +118,32 @@ def test_closed_backlog_gate_blocks_posting(tmp_path) -> None:
         raise AssertionError("Expected closed backlog gate to block Threads posting")
 
 
+def test_historical_replay_flag_blocks_threads_posting(tmp_path) -> None:
+    config_path, backlog_path, delivery_path, archive_dir = write_ready_files(tmp_path)
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    config["syndication_targets"]["threads"]["archive_replay_enabled"] = True
+    config_path.write_text(json.dumps(config), encoding="utf-8")
+    adapter = RecordingThreadsAdapter()
+
+    try:
+        run_latest_threads_post(
+            config_path=str(config_path),
+            delivery_state_path=str(delivery_path),
+            backlog_state_path=str(backlog_path),
+            archive_dir=str(archive_dir),
+            dry_run=False,
+            feed_client=FakeFeedClient(),
+            adapter=adapter,
+        )
+    except RuntimeError as error:
+        assert "Threads historical archive replay must remain disabled" in str(error)
+    else:
+        raise AssertionError("Expected historical replay guard to block Threads posting")
+
+    assert adapter.sent_posts == []
+    assert json.loads(delivery_path.read_text(encoding="utf-8")) == {"delivered_post_ids": {}}
+
+
 def write_ready_files(tmp_path):
     config_path = tmp_path / "config.json"
     backlog_path = tmp_path / "bluesky_backlog_state.json"

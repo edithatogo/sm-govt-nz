@@ -1,0 +1,18 @@
+{
+  "account": {
+    "handle": "mirnzcourts",
+    "profile_url": "https://www.threads.com/@mirnzcourts"
+  },
+  "decision": "deferred_do_not_replay",
+  "historical_replay_enabled": false,
+  "live_ongoing_posting": "active",
+  "reason": "Threads cannot backdate historical posts, so archive replay would appear as current publication and create user-facing feed noise.",
+  "guardrails": [
+    "scripts/post_threads_latest.py rejects any run where syndication_targets.threads.archive_replay_enabled is true.",
+    "Threads delivery state remains separate from archive state.",
+    "Historical records remain available through the corpus and external dataset publication instead of current-feed replay."
+  ],
+  "test_coverage": [
+    "tests/test_post_threads_latest.py::test_historical_replay_flag_blocks_threads_posting"
+  ]
+}

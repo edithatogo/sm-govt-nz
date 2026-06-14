@@ -16,3 +16,5 @@
 - [x] Task: Write the recommended replay policy.
 - [x] Task: Update Threads adapter launch requirements based on the decision.
 - [x] Task: Create a follow-up implementation track only if replay is approved.
+- [x] Task: Keep `archive_replay_enabled` false for Threads and test that
+  enabling it blocks the posting command before any post is sent.
