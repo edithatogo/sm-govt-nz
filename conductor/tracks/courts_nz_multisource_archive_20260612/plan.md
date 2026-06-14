@@ -19,6 +19,8 @@
 - [x] Task: Re-run Bluesky historical archive as an idempotent backfill and write a gap report.
 - [x] Task: Archive inactive historical X posts for `@courtsofnz` and write a provenance/access report.
 - [ ] Task: Archive historical LinkedIn posts and write a provenance/access report. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
+  - Blocker status is now machine-checkable through `scripts/check_multisource_blockers.py`
+    and the `Multi-Source Blocker Status` workflow.
 - [x] Task: Archive available RSS histories and write per-feed reports.
 - [x] Task: Keep all historical backfills out of live syndication targets.
 
@@ -26,6 +28,8 @@
 - [x] Task: Add a scheduled archive-only workflow that runs in parallel with `Syndicate`.
 - [x] Task: Capture current Bluesky feed into both raw and normalized archives.
 - [ ] Task: Capture LinkedIn posts through the approved access method. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
+  - Current repo state has no approved LinkedIn seed records; `historical_archive_normalized/linkedin/`
+    only contains `.gitkeep`.
 - [x] Task: Capture RSS feed entries with `feedparser`.
 - [x] Task: Capture source website pages linked from posts/feed/email when they provide canonical judgments, speeches, reports, or announcements.
 - [x] Task: Commit archive state and source health reports back to GitHub.
@@ -35,6 +39,9 @@
 - [x] Task: Keep Mailgun inbound parse as a fallback only if Cloudflare parsing/routing is insufficient and a trial or paid plan is acceptable.
 - [x] Task: Keep scheduled mailbox polling through Gmail or IMAP as the final fallback if webhook-style inbound delivery is unavailable.
 - [ ] Task: Create a dedicated subscription address for Courts of NZ judgments of public interest notifications.
+  - Current GitHub secrets are missing the Cloudflare deploy set:
+    `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, and
+    `EMAIL_WORKER_GITHUB_TOKEN`.
 - [x] Task: Store raw email payloads under `historical_archive_raw/email/<yyyy-mm>/`.
 - [x] Task: Normalize email subject/body/link records into the shared archive schema.
 - [x] Task: Trigger GitHub Actions with `repository_dispatch` or a scheduled polling workflow after email receipt.
@@ -46,7 +53,11 @@
 - [x] Task: Define the Zenodo deposition metadata, communities if any, citation fields, DOI/versioning policy, and provenance statement.
 - [x] Task: Add `HF_TOKEN`, `HF_DATASET_REPO_ID`, `ZENODO_TOKEN`, and `ZENODO_DEPOSIT_ENDPOINT` setup requirements to the setup guide and secret schema.
 - [ ] Task: Publish normalized JSONL and Parquet shards to Hugging Face Datasets. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/6
+  - Current GitHub secrets include `HF_TOKEN` but are missing
+    `HF_DATASET_REPO_ID`.
 - [ ] Task: Publish citable release snapshots to Zenodo from the same normalized archive artifacts. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/6
+  - Current GitHub secrets include `ZENODO_TOKEN` and `ZENODO_SANDBOX_TOKEN`
+    but are missing `ZENODO_DEPOSIT_ENDPOINT`.
 - [x] Task: Publish raw-source bundles separately or as a gated/manual artifact if size or platform terms require it.
 - [x] Task: Add dataset manifests with checksums, source coverage, date ranges, and known gaps.
 - [x] Task: Add a scheduled/manual GitHub Actions workflow that bundles archive artifacts and publishes to Hugging Face/Zenodo when secrets are configured. Manual runs default to artifact-only and require `publish=true` to send artifacts to external repositories. Artifact-only run `27499923744` passed and uploaded `courts-nz-archive-corpus`.

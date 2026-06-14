@@ -1,0 +1,41 @@
+name: Multi-Source Blocker Status
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      EMAIL_WORKER_GITHUB_TOKEN: ${{ secrets.EMAIL_WORKER_GITHUB_TOKEN }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
+      ZENODO_SANDBOX_TOKEN: ${{ secrets.ZENODO_SANDBOX_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Check multi-source archive blockers
+        run: >-
+          python scripts/check_multisource_blockers.py
+          --json-output dist/multisource_blockers.json
+          --markdown-output dist/multisource_blockers.md
+      - name: Upload blocker status
+        uses: actions/upload-artifact@v4
+        with:
+          name: multisource-blocker-status
+          path: |
+            dist/multisource_blockers.json
+            dist/multisource_blockers.md
