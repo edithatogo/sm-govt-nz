@@ -52,6 +52,9 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [ ] Track: Implement Courts of New Zealand Facebook Page mirror via Meta APIs
 *Link: [./tracks/courts_nz_facebook_meta_api_20260613/](./tracks/courts_nz_facebook_meta_api_20260613/)*
 
+## [ ] Track: Create a central index of NZ central and local government social media sites, focusing initially on deactivated accounts, registry schema, mirroring, and sync.
+*Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*
+
 LinkedIn is source-only and archive-only for now. Deferred outbound platform
 mirrors must be created as separate conductor tracks after the Courts of New
 Zealand archive and corpus pipeline is stable, with no posting under Dylan
