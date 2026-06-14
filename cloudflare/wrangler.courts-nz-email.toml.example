@@ -1,0 +1,10 @@
+name = "courts-nz-email-archive"
+main = "courts_nz_email_worker.mjs"
+compatibility_date = "2026-06-14"
+
+[vars]
+GITHUB_REPO = "edithatogo/sm-govt-nz"
+ALLOWED_RECIPIENTS = "courts-nz-judgments@example.com"
+
+# Set this as a secret, not a plain variable:
+# wrangler secret put GITHUB_TOKEN

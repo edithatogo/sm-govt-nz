@@ -52,6 +52,33 @@ Required GitHub request body:
 The Worker needs a GitHub fine-grained token with permission to dispatch events
 to this repository. Store it as a Cloudflare Worker secret, not in this repo.
 
+This repository includes a deployable Worker template:
+
+- Worker module: `cloudflare/courts_nz_email_worker.mjs`
+- Wrangler example: `cloudflare/wrangler.courts-nz-email.toml.example`
+- Worker tests: `cloudflare/courts_nz_email_worker.test.mjs`
+
+Setup outline:
+
+1. Copy `cloudflare/wrangler.courts-nz-email.toml.example` to a local
+   `wrangler.toml` for deployment.
+2. Replace `ALLOWED_RECIPIENTS` with the dedicated subscription address.
+3. Set `GITHUB_TOKEN` as a Worker secret:
+
+   ```powershell
+   wrangler secret put GITHUB_TOKEN
+   ```
+
+4. Deploy the Worker from the `cloudflare/` directory.
+5. In Cloudflare Email Routing, create a routing rule from the dedicated
+   subscription address to the deployed Worker.
+
+The template is based on Cloudflare's Email Workers API, which exposes an
+`email(message, env, ctx)` handler, `message.headers`, `message.raw`, envelope
+sender/recipient fields, and `message.setReject()`. Cloudflare's local routing
+docs describe testing Email Workers through the `/cdn-cgi/handler/email`
+endpoint with a raw RFC 5322 message.
+
 ## Guardrails
 
 - Email records are archive-only corpus inputs.

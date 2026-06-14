@@ -235,7 +235,9 @@ The GitHub-side receiver is the `Archive Email` workflow. It accepts
 evidence under `historical_archive_raw/email/`, and writes normalized monthly
 JSONL shards under `historical_archive_normalized/email/`. See
 `docs/courts-nz-email-ingress.md` for the dispatch payload contract and
-Cloudflare Worker handoff.
+Cloudflare Worker handoff. The deployable Worker template lives at
+`cloudflare/courts_nz_email_worker.mjs`, with a Wrangler configuration example
+at `cloudflare/wrangler.courts-nz-email.toml.example`.
 
 The archive track publishes normalized corpus artifacts to Hugging Face Datasets
 and citable release snapshots to Zenodo. Additional outbound syndication
