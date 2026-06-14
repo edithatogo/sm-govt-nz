@@ -51,13 +51,19 @@
 ## Phase 6: Hugging Face and Zenodo Corpus Publication
 - [x] Task: Define the Hugging Face dataset name, license/readme, citation, and provenance statement.
 - [x] Task: Define the Zenodo deposition metadata, communities if any, citation fields, DOI/versioning policy, and provenance statement.
-- [x] Task: Add `HF_TOKEN`, `HF_DATASET_REPO_ID`, `ZENODO_TOKEN`, and `ZENODO_DEPOSIT_ENDPOINT` setup requirements to the setup guide and secret schema.
+- [x] Task: Add `HF_TOKEN`, optional `HF_DATASET_REPO_ID`, `ZENODO_TOKEN`, and optional `ZENODO_DEPOSIT_ENDPOINT` setup requirements to the setup guide and secret schema.
 - [ ] Task: Publish normalized JSONL and Parquet shards to Hugging Face Datasets. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/6
-  - Current GitHub secrets include `HF_TOKEN` but are missing
-    `HF_DATASET_REPO_ID`.
+  - `HF_DATASET_REPO_ID` is no longer a blocker: when omitted, the
+    `Publish Archives` workflow infers the Hugging Face namespace from
+    `HF_TOKEN` and creates/updates `courts-nz-public-notices-archive`.
+  - Remaining action: run the workflow manually with `publish=true` and verify
+    the dataset repository contents.
 - [ ] Task: Publish citable release snapshots to Zenodo from the same normalized archive artifacts. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/6
-  - Current GitHub secrets include `ZENODO_TOKEN` and `ZENODO_SANDBOX_TOKEN`
-    but are missing `ZENODO_DEPOSIT_ENDPOINT`.
+  - `ZENODO_DEPOSIT_ENDPOINT` is no longer a blocker: when omitted, the
+    `Publish Archives` workflow creates a draft deposition through the default
+    Zenodo depositions API and uploads the corpus artifacts to its bucket.
+  - Remaining action: run the workflow manually with `publish=true`, review the
+    draft deposition, and publish it when the metadata is approved.
 - [x] Task: Publish raw-source bundles separately or as a gated/manual artifact if size or platform terms require it.
 - [x] Task: Add dataset manifests with checksums, source coverage, date ranges, and known gaps.
 - [x] Task: Add a scheduled/manual GitHub Actions workflow that bundles archive artifacts and publishes to Hugging Face/Zenodo when secrets are configured. Manual runs default to artifact-only and require `publish=true` to send artifacts to external repositories. Artifact-only run `27499923744` passed and uploaded `courts-nz-archive-corpus`.

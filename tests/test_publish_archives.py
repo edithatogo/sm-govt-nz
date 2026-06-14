@@ -9,6 +9,7 @@ from scripts.publish_archives import (
     create_archive_bundle,
     publish_to_hugging_face,
     publish_to_zenodo,
+    publish_to_zenodo_deposition,
 )
 
 
@@ -127,8 +128,16 @@ def test_publishers_use_expected_endpoints() -> None:
     bundle = BundleManifest("bundle.tar.gz", "a" * 64, 2, 120)
 
     zenodo = publish_to_zenodo(bundle, "zenodo-token", "https://zenodo.example/api", uploader)
+    zenodo_deposition = publish_to_zenodo_deposition(
+        bundle,
+        "zenodo-token",
+        api_url="https://zenodo.example/api/deposit/depositions",
+        uploader=uploader,
+    )
     huggingface = publish_to_hugging_face(bundle, "hf-token", "org/dataset", uploader)
 
     assert zenodo["url"] == "https://zenodo.example/api"
+    assert zenodo_deposition["url"] == "https://zenodo.example/api/deposit/depositions"
     assert huggingface["url"] == "https://huggingface.co/api/datasets/org/dataset/upload"
     assert uploader.calls[0][3]["file_count"] == 2
+    assert uploader.calls[1][3]["metadata"]["upload_type"] == "dataset"

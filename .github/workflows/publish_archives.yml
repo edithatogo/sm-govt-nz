@@ -11,6 +11,16 @@ on:
         options:
           - "false"
           - "true"
+      hf_dataset_name:
+        description: "Dataset slug to use when HF_DATASET_REPO_ID is not set"
+        required: true
+        default: "courts-nz-public-notices-archive"
+        type: string
+      zenodo_deposit_api_url:
+        description: "Zenodo depositions API URL used when ZENODO_DEPOSIT_ENDPOINT is not set"
+        required: true
+        default: "https://zenodo.org/api/deposit/depositions"
+        type: string
   schedule:
     - cron: "41 16 * * 0"
 
@@ -26,8 +36,10 @@ jobs:
     env:
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
       HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
+      HF_DATASET_NAME: ${{ inputs.hf_dataset_name || 'courts-nz-public-notices-archive' }}
       ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
       ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
+      ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url || 'https://zenodo.org/api/deposit/depositions' }}
       PUBLISH_ARCHIVES: ${{ github.event_name == 'schedule' || inputs.publish == 'true' }}
     steps:
       - uses: actions/checkout@v5

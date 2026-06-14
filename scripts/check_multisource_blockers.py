@@ -49,10 +49,8 @@ def _check_email_ingress(env: dict[str, str]) -> dict[str, Any]:
 
 
 def _check_corpus_publication(env: dict[str, str]) -> dict[str, Any]:
-    hf_missing = [name for name in ["HF_TOKEN", "HF_DATASET_REPO_ID"] if not env.get(name)]
-    zenodo_missing = [
-        name for name in ["ZENODO_TOKEN", "ZENODO_DEPOSIT_ENDPOINT"] if not env.get(name)
-    ]
+    hf_missing = [name for name in ["HF_TOKEN"] if not env.get(name)]
+    zenodo_missing = [name for name in ["ZENODO_TOKEN"] if not env.get(name)]
     complete = not hf_missing and not zenodo_missing
     return {
         "id": "issue-6-corpus-publication",
@@ -62,10 +60,14 @@ def _check_corpus_publication(env: dict[str, str]) -> dict[str, Any]:
         "zenodo_ready": not zenodo_missing,
         "missing_hugging_face_secrets": hf_missing,
         "missing_zenodo_secrets": zenodo_missing,
+        "hugging_face_repo_id": env.get("HF_DATASET_REPO_ID") or "inferred from token",
+        "zenodo_endpoint": env.get("ZENODO_DEPOSIT_ENDPOINT")
+        or env.get("ZENODO_DEPOSIT_API_URL")
+        or "created from default depositions API",
         "sandbox_token_present": bool(env.get("ZENODO_SANDBOX_TOKEN")),
         "next_action": (
-            "Add missing publication endpoint/repository secrets, then run Publish Archives "
-            "manually with publish=true."
+            "Run Publish Archives manually with publish=true, then verify the Hugging Face "
+            "dataset and Zenodo draft deposition outputs."
         ),
     }
 

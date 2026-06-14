@@ -11,6 +11,10 @@ from typing import Any, Protocol
 from urllib.request import Request, urlopen
 
 
+DEFAULT_HF_DATASET_NAME = "courts-nz-public-notices-archive"
+DEFAULT_ZENODO_DEPOSIT_API_URL = "https://zenodo.org/api/deposit/depositions"
+
+
 @dataclass(frozen=True)
 class BundleManifest:
     bundle_path: str
@@ -184,6 +188,60 @@ def publish_to_zenodo(
     return response.json() if response.content else {}
 
 
+def publish_to_zenodo_deposition(
+    bundle: BundleManifest,
+    token: str,
+    *,
+    api_url: str = DEFAULT_ZENODO_DEPOSIT_API_URL,
+    uploader: HttpUploader | None = None,
+) -> dict[str, Any]:
+    metadata = {
+        "metadata": {
+            "title": "Courts of New Zealand public notices multi-source archive",
+            "upload_type": "dataset",
+            "description": (
+                "Normalized public notice records and raw source evidence captured for "
+                "the Courts of New Zealand archive and mirror project."
+            ),
+            "creators": [{"name": "sm-govt-nz maintainers"}],
+        }
+    }
+    if uploader is not None:
+        return uploader.upload_file(api_url, token, Path(bundle.bundle_path), metadata)
+    try:
+        import requests
+    except ImportError:
+        return UrlLibUploader().upload_file(api_url, token, Path(bundle.bundle_path), metadata)
+
+    created = requests.post(
+        api_url,
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        data=json.dumps(metadata),
+        timeout=60,
+    )
+    created.raise_for_status()
+    deposition = created.json()
+    bucket_url = deposition.get("links", {}).get("bucket")
+    if not bucket_url:
+        raise RuntimeError("Zenodo deposition response did not include an upload bucket URL.")
+    uploaded = []
+    for local_path in _zenodo_upload_paths(bundle):
+        with Path(local_path).open("rb") as file:
+            response = requests.put(
+                f"{bucket_url}/{Path(local_path).name}",
+                headers={"Authorization": f"Bearer {token}"},
+                data=file,
+                timeout=120,
+            )
+        response.raise_for_status()
+        uploaded.append(response.json() if response.content else {"filename": Path(local_path).name})
+    return {
+        "deposition_id": deposition.get("id"),
+        "deposition_url": deposition.get("links", {}).get("html") or deposition.get("links", {}).get("self"),
+        "uploaded_files": uploaded,
+    }
+
+
 def publish_to_hugging_face(
     bundle: BundleManifest,
     token: str,
@@ -204,6 +262,7 @@ def publish_to_hugging_face(
     except ImportError:
         return UrlLibUploader().upload_file(endpoint, token, Path(bundle.bundle_path), metadata)
     api = HfApi(token=token)
+    api.create_repo(repo_id=repo_id, repo_type="dataset", exist_ok=True)
     uploaded_paths = []
     for local_path in _hugging_face_upload_paths(bundle):
         path_in_repo = _hugging_face_repo_path(local_path)
@@ -223,9 +282,18 @@ def publish_from_env(bundle: BundleManifest) -> dict[str, Any]:
     zenodo_endpoint = os.getenv("ZENODO_DEPOSIT_ENDPOINT")
     if zenodo_token and zenodo_endpoint:
         results["zenodo"] = publish_to_zenodo(bundle, zenodo_token, zenodo_endpoint)
+    elif zenodo_token:
+        results["zenodo"] = publish_to_zenodo_deposition(
+            bundle,
+            zenodo_token,
+            api_url=os.getenv("ZENODO_DEPOSIT_API_URL", DEFAULT_ZENODO_DEPOSIT_API_URL),
+        )
     hf_token = os.getenv("HF_TOKEN")
-    hf_repo_id = os.getenv("HF_DATASET_REPO_ID")
-    if hf_token and hf_repo_id:
+    if hf_token:
+        hf_repo_id = os.getenv("HF_DATASET_REPO_ID") or _infer_hugging_face_repo_id(
+            hf_token,
+            os.getenv("HF_DATASET_NAME", DEFAULT_HF_DATASET_NAME),
+        )
         results["huggingface"] = publish_to_hugging_face(bundle, hf_token, hf_repo_id)
     return results
 
@@ -540,6 +608,32 @@ def _hugging_face_repo_path(path: Path) -> str:
     if path.name == "corpus_manifest.json":
         return "metadata/corpus_manifest.json"
     return f"bundles/{path.name}"
+
+
+def _infer_hugging_face_repo_id(token: str, dataset_name: str) -> str:
+    try:
+        from huggingface_hub import HfApi
+    except ImportError as error:
+        raise RuntimeError(
+            "HF_DATASET_REPO_ID is required when huggingface_hub is not installed."
+        ) from error
+    api = HfApi(token=token)
+    whoami = api.whoami(token=token)
+    namespace = str(whoami.get("name") or "").strip()
+    if not namespace:
+        raise RuntimeError("Could not infer Hugging Face namespace from token.")
+    return f"{namespace}/{dataset_name}"
+
+
+def _zenodo_upload_paths(bundle: BundleManifest) -> list[Path]:
+    candidates = [
+        bundle.dataset_card_path,
+        bundle.manifest_path,
+        bundle.normalized_jsonl_path,
+        bundle.normalized_parquet_path,
+        bundle.bundle_path,
+    ]
+    return [Path(path) for path in candidates if path and Path(path).exists()]
 
 
 def _sha256(path: Path) -> str:

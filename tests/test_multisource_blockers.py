@@ -24,12 +24,14 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
         "CLOUDFLARE_ACCOUNT_ID",
         "EMAIL_WORKER_GITHUB_TOKEN",
     ]
-    assert checks["issue-6-corpus-publication"]["missing_hugging_face_secrets"] == [
-        "HF_DATASET_REPO_ID"
-    ]
-    assert checks["issue-6-corpus-publication"]["missing_zenodo_secrets"] == [
-        "ZENODO_DEPOSIT_ENDPOINT"
-    ]
+    assert checks["issue-6-corpus-publication"]["status"] == "complete"
+    assert checks["issue-6-corpus-publication"]["missing_hugging_face_secrets"] == []
+    assert checks["issue-6-corpus-publication"]["missing_zenodo_secrets"] == []
+    assert checks["issue-6-corpus-publication"]["hugging_face_repo_id"] == "inferred from token"
+    assert (
+        checks["issue-6-corpus-publication"]["zenodo_endpoint"]
+        == "created from default depositions API"
+    )
     assert checks["issue-7-linkedin-seed"]["status"] == "blocked"
 
 
