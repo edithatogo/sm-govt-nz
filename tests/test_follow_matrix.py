@@ -1,6 +1,7 @@
 import json
 
 from scripts.check_follow_status import generate_follow_matrix
+from scripts import check_follow_status
 
 REGISTRY_PATH = "registry/agencies.json"
 MIRROR_ACCOUNTS = {
@@ -57,3 +58,44 @@ def test_empty_mirror_config_generates_no_follow_work():
     matrix = generate_follow_matrix(registry, {"mirrors": []})
 
     assert matrix == {}
+
+
+def test_bluesky_follow_check_resolves_targets_before_relationship_lookup(monkeypatch):
+    class FakeBlueskyClient:
+        def __init__(self):
+            self.relationship_others = []
+
+        def resolve_handle(self, handle):
+            return {
+                "target-a.bsky.social": "did:plc:targeta",
+                "target-b.bsky.social": "did:plc:targetb",
+            }[handle]
+
+        def get_relationships(self, actor, others):
+            self.relationship_others = others
+            assert actor == "mirror.bsky.social"
+            assert others == ["did:plc:targeta", "did:plc:targetb"]
+            return [
+                {
+                    "did": "did:plc:targeta",
+                    "following": "at://did:plc:mirror/app.bsky.graph.follow/record-a",
+                },
+                {"did": "did:plc:targetb"},
+            ]
+
+    fake_client = FakeBlueskyClient()
+    monkeypatch.setattr(check_follow_status, "BlueskyApiClient", lambda: fake_client)
+
+    results = check_follow_status.check_bluesky_follows(
+        {
+            "bluesky": [
+                ("mirror.bsky.social", "target-a.bsky.social"),
+                ("mirror.bsky.social", "target-b.bsky.social"),
+            ]
+        }
+    )
+
+    assert fake_client.relationship_others == ["did:plc:targeta", "did:plc:targetb"]
+    assert results[0]["status"] == "following"
+    assert results[0]["target_did"] == "did:plc:targeta"
+    assert results[1]["status"] == "not_following"

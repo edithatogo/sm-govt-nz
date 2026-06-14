@@ -119,17 +119,19 @@ def check_bluesky_follows(matrix):
     for follower, targets in follows_by_follower.items():
         print(f"Checking follows for Bluesky actor: {follower}...")
         try:
+            target_dids_by_handle = {
+                target: did_cache.setdefault(target, client.resolve_handle(target))
+                for target in targets
+            }
             # getRelationships supports multiple 'others'
-            relationships = client.get_relationships(follower, targets)
+            relationships = client.get_relationships(follower, list(target_dids_by_handle.values()))
 
             # Map results
-            rel_map = {rel.get("handle") or rel.get("did"): rel for rel in relationships}
+            rel_map = {rel.get("did"): rel for rel in relationships}
 
             for target in targets:
-                rel = rel_map.get(target, {})
-                target_did = rel.get("did")
-                if not target_did:
-                    target_did = did_cache.setdefault(target, client.resolve_handle(target))
+                target_did = target_dids_by_handle[target]
+                rel = rel_map.get(target_did, {})
                 # If following is present, it's the URI of the follow record
                 is_following = bool(rel.get("following"))
                 results.append(
