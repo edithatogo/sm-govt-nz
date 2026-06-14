@@ -13,10 +13,11 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Archiving & Follow State Cache' (Protocol in workflow.md)
 
 ## Phase 3: Core Group Follow Sync Execution
-- [ ] Task: Implement write-follow operations only for platforms with supported official APIs and explicit repository secrets.
+- [x] Task: Implement write-follow operations only for platforms with supported official APIs and explicit repository secrets.
 - [x] Task: Keep Threads, Instagram, Facebook, and any other unsupported follow paths as manual checklists unless an official API route is confirmed.
 - [x] Task: Add an opt-in manual workflow for dry-run reporting before any live follow execution.
-- [~] Task: Perform a dry-run and controlled live execution test for the supported API path.
+- [x] Task: Perform a dry-run and controlled live execution test for the supported API path.
   - [x] Dry-run verified for `mirnzcourts.bsky.social` with resolved target DIDs.
-  - [ ] Controlled live execution remains pending explicit Bluesky credentials and approval.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Core Group Follow Sync Execution' (Protocol in workflow.md)
+  - [x] Controlled live execution completed in GitHub Actions run `27499153549`.
+  - [x] Post-execution verification completed in GitHub Actions run `27499492262`; dry-run reported no missing follows.
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Core Group Follow Sync Execution' (Protocol in workflow.md)

@@ -21,8 +21,12 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Twitter/X Deactivation Archive & Registry Seeding' (Protocol in workflow.md)
 
 ## Phase 4: Syndication & Mirroring Implementation
-- [ ] Task: Implement a unified mirror target posting adapter to syndicate updates to the unified transparency feed.
-- [ ] Task: Implement configuration-based opt-out controls in `config.json` for specific agencies or sites.
-- [ ] Task: Write unit and integration tests verifying the posting adapter, formatting, attribution links, and opt-out logic.
+- [x] Task: Implement a unified mirror target posting adapter to syndicate updates to the unified transparency feed.
+  - Added `src/unified_syndication.py` in commit `75f012b`.
+- [x] Task: Implement configuration-based opt-out controls in `config.json` for specific agencies or sites.
+  - Existing runner opt-out path is covered through `_should_syndicate` and `syndication_opt_outs`.
+- [~] Task: Write unit and integration tests verifying the posting adapter, formatting, attribution links, and opt-out logic.
+  - [x] Added focused unified adapter tests in `tests/test_unified_syndication.py`.
+  - [ ] Add an integration test once the unified transparency feed target is wired into `run_syndication`.
 - [ ] Task: Conduct a controlled dry-run and live-post test for the unified mirror feed.
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Syndication & Mirroring Implementation' (Protocol in workflow.md)
