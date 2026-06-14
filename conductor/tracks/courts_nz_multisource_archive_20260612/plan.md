@@ -23,10 +23,10 @@
 - [x] Task: Keep all historical backfills out of live syndication targets.
 
 ## Phase 4: Ongoing Capture Pipeline
-- [ ] Task: Add a scheduled archive-only workflow that runs in parallel with `Syndicate`.
-- [ ] Task: Capture current Bluesky feed into both raw and normalized archives.
+- [x] Task: Add a scheduled archive-only workflow that runs in parallel with `Syndicate`.
+- [x] Task: Capture current Bluesky feed into both raw and normalized archives.
 - [ ] Task: Capture LinkedIn posts through the approved access method.
-- [ ] Task: Capture RSS feed entries with `feedparser`.
+- [x] Task: Capture RSS feed entries with `feedparser`.
 - [ ] Task: Capture source website pages linked from posts/feed/email when they provide canonical judgments, speeches, reports, or announcements.
 - [ ] Task: Commit archive state and source health reports back to GitHub.
 

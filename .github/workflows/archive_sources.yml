@@ -1,0 +1,28 @@
+name: Archive Sources
+
+on:
+  schedule:
+    - cron: "7 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive-sources:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        run: python --version
+      - name: Install runtime dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Archive current public sources
+        run: python scripts/archive_current_sources.py
+      - name: Commit archive updates
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: Update archive source captures
+          file_pattern: conductor/archive_state.json conductor/archive_source_health.json historical_archive_raw/** historical_archive_normalized/**
