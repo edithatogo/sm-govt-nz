@@ -40,13 +40,13 @@
 - [ ] Task: Trigger GitHub Actions with `repository_dispatch` or a scheduled polling workflow after email receipt.
 
 ## Phase 6: Hugging Face and Zenodo Corpus Publication
-- [ ] Task: Define the Hugging Face dataset name, license/readme, citation, and provenance statement.
-- [ ] Task: Define the Zenodo deposition metadata, communities if any, citation fields, DOI/versioning policy, and provenance statement.
-- [ ] Task: Add `HF_TOKEN`, `HF_DATASET_REPO_ID`, `ZENODO_TOKEN`, and `ZENODO_DEPOSIT_ENDPOINT` setup requirements to the setup guide and secret schema.
+- [x] Task: Define the Hugging Face dataset name, license/readme, citation, and provenance statement.
+- [x] Task: Define the Zenodo deposition metadata, communities if any, citation fields, DOI/versioning policy, and provenance statement.
+- [x] Task: Add `HF_TOKEN`, `HF_DATASET_REPO_ID`, `ZENODO_TOKEN`, and `ZENODO_DEPOSIT_ENDPOINT` setup requirements to the setup guide and secret schema.
 - [ ] Task: Publish normalized JSONL and Parquet shards to Hugging Face Datasets.
 - [ ] Task: Publish citable release snapshots to Zenodo from the same normalized archive artifacts.
 - [ ] Task: Publish raw-source bundles separately or as a gated/manual artifact if size or platform terms require it.
-- [ ] Task: Add dataset manifests with checksums, source coverage, date ranges, and known gaps.
+- [x] Task: Add dataset manifests with checksums, source coverage, date ranges, and known gaps.
 
 ## Phase 7: Operational Optimizations
 - [ ] Task: Add source-health dashboard output to Pages.

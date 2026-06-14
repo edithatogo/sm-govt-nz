@@ -275,7 +275,7 @@ The `Syndicate` workflow runs on schedule. Manual dispatch still requires
 ruff check --no-cache src tests scripts
 pytest -q
 python scripts/gap_analyzer.py --registry registry/agencies.json --output registry/gap_analysis.json
-python scripts/publish_archives.py --archive-dir historical_archive --output-dir dist --manifest dist/archive_manifest.json
+python scripts/publish_archives.py --archive-dir historical_archive --normalized-dir historical_archive_normalized --raw-dir historical_archive_raw --output-dir dist --manifest dist/archive_manifest.json
 ```
 
 ## 10. Upstream Fixes

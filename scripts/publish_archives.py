@@ -17,6 +17,10 @@ class BundleManifest:
     sha256: str
     file_count: int
     uncompressed_bytes: int
+    normalized_record_count: int = 0
+    raw_file_count: int = 0
+    manifest_path: str = ""
+    dataset_card_path: str = ""
 
 
 class HttpUploader(Protocol):
@@ -59,33 +63,82 @@ class UrlLibUploader:
 def create_archive_bundle(
     archive_dir: str | os.PathLike[str] = "historical_archive",
     output_dir: str | os.PathLike[str] = "dist",
+    normalized_dir: str | os.PathLike[str] | None = None,
+    raw_dir: str | os.PathLike[str] | None = None,
 ) -> BundleManifest:
-    """Create deterministic JSONL and tar.gz bundles from archived post JSON files."""
+    """Create deterministic corpus bundles from archive files."""
     source_root = Path(archive_dir)
+    normalized_root = (
+        Path(normalized_dir)
+        if normalized_dir is not None
+        else source_root.parent / "historical_archive_normalized"
+    )
+    raw_root = Path(raw_dir) if raw_dir is not None else source_root.parent / "historical_archive_raw"
     output_root = Path(output_dir)
     output_root.mkdir(parents=True, exist_ok=True)
     jsonl_path = output_root / "historical_archive.jsonl.gz"
+    normalized_jsonl_path = output_root / "normalized_archive.jsonl.gz"
     tar_path = output_root / "historical_archive.tar.gz"
-    json_files = sorted(path for path in source_root.glob("**/*.json") if path.is_file())
+    corpus_manifest_path = output_root / "corpus_manifest.json"
+    dataset_card_path = output_root / "README.md"
 
     uncompressed_bytes = 0
-    with gzip.open(jsonl_path, "wt", encoding="utf-8") as jsonl_file:
-        for path in json_files:
+    legacy_json_files = sorted(path for path in source_root.glob("**/*.json") if path.is_file())
+    normalized_jsonl_files = sorted(
+        path for path in normalized_root.glob("**/*.jsonl") if path.is_file()
+    )
+    raw_files = sorted(path for path in raw_root.glob("**/*") if path.is_file())
+
+    with gzip.open(jsonl_path, "wt", encoding="utf-8") as legacy_jsonl_file:
+        for path in legacy_json_files:
             payload = json.loads(path.read_text(encoding="utf-8"))
             line = json.dumps(payload, ensure_ascii=False, sort_keys=True)
             uncompressed_bytes += len(line.encode("utf-8"))
-            jsonl_file.write(line + "\n")
+            legacy_jsonl_file.write(line + "\n")
+
+    normalized_records = _load_normalized_records(normalized_jsonl_files)
+    normalized_record_count = len(normalized_records)
+    with gzip.open(normalized_jsonl_path, "wt", encoding="utf-8") as normalized_jsonl_file:
+        for record in normalized_records:
+            line = json.dumps(record, ensure_ascii=False, sort_keys=True)
+            uncompressed_bytes += len(line.encode("utf-8"))
+            normalized_jsonl_file.write(line + "\n")
+
+    corpus_manifest = _build_corpus_manifest(
+        legacy_json_files=legacy_json_files,
+        normalized_jsonl_files=normalized_jsonl_files,
+        raw_files=raw_files,
+        normalized_records=normalized_records,
+        jsonl_path=jsonl_path,
+        normalized_jsonl_path=normalized_jsonl_path,
+    )
+    corpus_manifest_path.write_text(
+        json.dumps(corpus_manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    dataset_card_path.write_text(_build_dataset_card(corpus_manifest), encoding="utf-8")
 
     with tarfile.open(tar_path, "w:gz") as tar_file:
         tar_file.add(jsonl_path, arcname=jsonl_path.name)
-        for path in json_files:
-            tar_file.add(path, arcname=str(path.relative_to(source_root)))
+        tar_file.add(normalized_jsonl_path, arcname=normalized_jsonl_path.name)
+        tar_file.add(corpus_manifest_path, arcname=corpus_manifest_path.name)
+        tar_file.add(dataset_card_path, arcname=dataset_card_path.name)
+        for path in legacy_json_files:
+            tar_file.add(path, arcname=f"legacy/{path.relative_to(source_root)}")
+        for path in normalized_jsonl_files:
+            tar_file.add(path, arcname=f"normalized/{path.relative_to(normalized_root)}")
+        for path in raw_files:
+            tar_file.add(path, arcname=f"raw/{path.relative_to(raw_root)}")
 
     return BundleManifest(
         bundle_path=str(tar_path),
         sha256=_sha256(tar_path),
-        file_count=len(json_files),
+        file_count=len(legacy_json_files) + len(normalized_jsonl_files) + len(raw_files),
         uncompressed_bytes=uncompressed_bytes,
+        normalized_record_count=normalized_record_count,
+        raw_file_count=len(raw_files),
+        manifest_path=str(corpus_manifest_path),
+        dataset_card_path=str(dataset_card_path),
     )
 
 
@@ -96,10 +149,11 @@ def publish_to_zenodo(
     uploader: HttpUploader | None = None,
 ) -> dict[str, Any]:
     metadata = {
-        "title": "NZ Government Bluesky Syndicator historical archive",
+        "title": "Courts of New Zealand public notices multi-source archive",
         "upload_type": "dataset",
         "sha256": bundle.sha256,
         "file_count": bundle.file_count,
+        "normalized_record_count": bundle.normalized_record_count,
     }
     if uploader is not None:
         return uploader.upload_file(endpoint, token, Path(bundle.bundle_path), metadata)
@@ -126,7 +180,12 @@ def publish_to_hugging_face(
     uploader: HttpUploader | None = None,
 ) -> dict[str, Any]:
     endpoint = f"https://huggingface.co/api/datasets/{repo_id}/upload"
-    metadata = {"repo_id": repo_id, "sha256": bundle.sha256, "file_count": bundle.file_count}
+    metadata = {
+        "repo_id": repo_id,
+        "sha256": bundle.sha256,
+        "file_count": bundle.file_count,
+        "normalized_record_count": bundle.normalized_record_count,
+    }
     if uploader is not None:
         return uploader.upload_file(endpoint, token, Path(bundle.bundle_path), metadata)
     try:
@@ -162,6 +221,114 @@ def write_manifest(bundle: BundleManifest, path: str | os.PathLike[str]) -> None
     Path(path).write_text(json.dumps(bundle.__dict__, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def _load_normalized_records(paths: list[Path]) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    for path in paths:
+        for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+            if not line.strip():
+                continue
+            try:
+                payload = json.loads(line)
+            except json.JSONDecodeError as exc:
+                raise ValueError(f"Invalid JSONL in {path}:{line_number}") from exc
+            if not isinstance(payload, dict):
+                raise ValueError(f"Normalized JSONL record must be an object in {path}:{line_number}")
+            records.append(payload)
+    return records
+
+
+def _build_corpus_manifest(
+    *,
+    legacy_json_files: list[Path],
+    normalized_jsonl_files: list[Path],
+    raw_files: list[Path],
+    normalized_records: list[dict[str, Any]],
+    jsonl_path: Path,
+    normalized_jsonl_path: Path,
+) -> dict[str, Any]:
+    source_counts: dict[str, int] = {}
+    date_ranges: dict[str, dict[str, str]] = {}
+    for record in normalized_records:
+        source = str(record.get("source_platform") or "unknown")
+        source_counts[source] = source_counts.get(source, 0) + 1
+        created_at = str(record.get("original_created_at") or "")
+        if not created_at:
+            continue
+        current = date_ranges.setdefault(source, {"min_original_created_at": created_at, "max_original_created_at": created_at})
+        current["min_original_created_at"] = min(current["min_original_created_at"], created_at)
+        current["max_original_created_at"] = max(current["max_original_created_at"], created_at)
+
+    return {
+        "title": "Courts of New Zealand public notices multi-source archive",
+        "agency_id": "courts-nz",
+        "agency_name": "Courts of New Zealand",
+        "license": "Public source records; verify source-specific terms before redistribution.",
+        "generated_artifacts": {
+            jsonl_path.name: _artifact_summary(jsonl_path),
+            normalized_jsonl_path.name: _artifact_summary(normalized_jsonl_path),
+        },
+        "source_counts": dict(sorted(source_counts.items())),
+        "source_date_ranges": dict(sorted(date_ranges.items())),
+        "normalized_record_count": len(normalized_records),
+        "normalized_shard_count": len(normalized_jsonl_files),
+        "raw_file_count": len(raw_files),
+        "legacy_json_file_count": len(legacy_json_files),
+        "known_gaps": [
+            "LinkedIn capture is pending approved access and remains archive-only.",
+            "Judgments email subscription ingress is pending Cloudflare Email Routing setup.",
+            "Parquet conversion is planned after the JSONL corpus is stable in CI.",
+        ],
+        "provenance": (
+            "Records are derived from public Courts of New Zealand source surfaces and preserve "
+            "source platform, source account, source URL, capture timestamp, original timestamp, "
+            "content hash, media references, raw path, and extraction method where available."
+        ),
+    }
+
+
+def _artifact_summary(path: Path) -> dict[str, Any]:
+    return {
+        "path": path.name,
+        "sha256": _sha256(path),
+        "bytes": path.stat().st_size,
+    }
+
+
+def _build_dataset_card(manifest: dict[str, Any]) -> str:
+    source_lines = "\n".join(
+        f"- {source}: {count} records"
+        for source, count in manifest["source_counts"].items()
+    )
+    if not source_lines:
+        source_lines = "- No normalized records were present when this bundle was generated."
+    gap_lines = "\n".join(f"- {gap}" for gap in manifest["known_gaps"])
+    return (
+        "---\n"
+        "license: other\n"
+        "task_categories:\n"
+        "- text-classification\n"
+        "- text-generation\n"
+        "language:\n"
+        "- en\n"
+        "pretty_name: Courts of New Zealand public notices multi-source archive\n"
+        "---\n\n"
+        "# Courts of New Zealand Public Notices Multi-Source Archive\n\n"
+        "This dataset package contains normalized public notice records and raw source "
+        "evidence captured for the Courts of New Zealand archive and mirror project.\n\n"
+        "## Contents\n\n"
+        "- `normalized_archive.jsonl.gz`: combined normalized records from source/month shards.\n"
+        "- `normalized/`: source/month normalized JSONL shards.\n"
+        "- `raw/`: raw source payloads captured before normalization.\n"
+        "- `corpus_manifest.json`: checksums, coverage counts, date ranges, and known gaps.\n\n"
+        "## Source Coverage\n\n"
+        f"{source_lines}\n\n"
+        "## Provenance\n\n"
+        f"{manifest['provenance']}\n\n"
+        "## Known Gaps\n\n"
+        f"{gap_lines}\n"
+    )
+
+
 def _sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as file:
@@ -173,12 +340,14 @@ def _sha256(path: Path) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Bundle and optionally publish archives.")
     parser.add_argument("--archive-dir", default="historical_archive")
+    parser.add_argument("--normalized-dir", default="historical_archive_normalized")
+    parser.add_argument("--raw-dir", default="historical_archive_raw")
     parser.add_argument("--output-dir", default="dist")
     parser.add_argument("--manifest", default="dist/archive_manifest.json")
     parser.add_argument("--publish", action="store_true")
     args = parser.parse_args()
 
-    bundle = create_archive_bundle(args.archive_dir, args.output_dir)
+    bundle = create_archive_bundle(args.archive_dir, args.output_dir, args.normalized_dir, args.raw_dir)
     write_manifest(bundle, args.manifest)
     if args.publish:
         print(json.dumps(publish_from_env(bundle), indent=2, sort_keys=True))

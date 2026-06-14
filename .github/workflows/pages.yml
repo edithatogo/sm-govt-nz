@@ -23,7 +23,13 @@ jobs:
         with:
           python-version: "3.11"
       - name: Bundle historical archive
-        run: python scripts/publish_archives.py --archive-dir historical_archive --output-dir dist --manifest dist/archive_manifest.json
+        run: >-
+          python scripts/publish_archives.py
+          --archive-dir historical_archive
+          --normalized-dir historical_archive_normalized
+          --raw-dir historical_archive_raw
+          --output-dir dist
+          --manifest dist/archive_manifest.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
