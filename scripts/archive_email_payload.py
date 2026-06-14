@@ -32,6 +32,8 @@ def archive_email_payload(
     raw_path = Path(raw_root) / month / f"{record_id}.eml"
     raw_bytes = _raw_email_bytes(payload, received_at=received_at, message_id=message_id)
     _write_bytes_if_changed(raw_path, raw_bytes)
+    normalized_path = Path(normalized_root) / f"{month}.jsonl"
+    existing_record = _existing_normalized_record(f"email:{record_id}", normalized_path)
 
     record = build_normalized_record(
         record_id=f"email:{record_id}",
@@ -42,7 +44,7 @@ def archive_email_payload(
         source_url=_canonical_url(payload),
         canonical_url=_canonical_url(payload),
         original_created_at=received_at,
-        captured_at=captured_at,
+        captured_at=str(existing_record.get("captured_at") or captured_at),
         content=_normalized_content(payload),
         raw_path=str(raw_path).replace("\\", "/"),
         extraction_method="cloudflare_email_routing_worker",
@@ -140,6 +142,18 @@ def _upsert_normalized_record(record: NormalizedArchiveRecord, normalized_root: 
         for key in sorted(existing)
     ]
     shard_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _existing_normalized_record(record_id: str, shard_path: Path) -> dict[str, Any]:
+    if not shard_path.exists():
+        return {}
+    for line in shard_path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        payload = json.loads(line)
+        if payload.get("record_id") == record_id:
+            return payload
+    return {}
 
 
 def _write_bytes_if_changed(path: Path, content: bytes) -> None:

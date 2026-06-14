@@ -46,6 +46,15 @@ def test_archive_email_payload_is_idempotent_for_same_message_id(tmp_path) -> No
         raw_root=tmp_path / "historical_archive_raw" / "email",
         normalized_root=tmp_path / "historical_archive_normalized" / "email",
     )
+    normalized_path = tmp_path / "historical_archive_normalized" / "email" / "2026-06.jsonl"
+    original_content = normalized_path.read_text(encoding="utf-8")
+    archive_email_payload(
+        payload,
+        raw_root=tmp_path / "historical_archive_raw" / "email",
+        normalized_root=tmp_path / "historical_archive_normalized" / "email",
+    )
+    assert normalized_path.read_text(encoding="utf-8") == original_content
+
     payload["text"] = "Updated notice"
     archive_email_payload(
         payload,
@@ -53,7 +62,6 @@ def test_archive_email_payload_is_idempotent_for_same_message_id(tmp_path) -> No
         normalized_root=tmp_path / "historical_archive_normalized" / "email",
     )
 
-    normalized_path = tmp_path / "historical_archive_normalized" / "email" / "2026-06.jsonl"
     lines = normalized_path.read_text(encoding="utf-8").splitlines()
     assert len(lines) == 1
     assert "Updated notice" in json.loads(lines[0])["content"]
