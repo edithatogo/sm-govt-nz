@@ -47,6 +47,7 @@
 - [ ] Task: Publish citable release snapshots to Zenodo from the same normalized archive artifacts.
 - [ ] Task: Publish raw-source bundles separately or as a gated/manual artifact if size or platform terms require it.
 - [x] Task: Add dataset manifests with checksums, source coverage, date ranges, and known gaps.
+- [x] Task: Add a scheduled/manual GitHub Actions workflow that bundles archive artifacts and publishes to Hugging Face/Zenodo when secrets are configured.
 
 ## Phase 7: Operational Optimizations
 - [ ] Task: Add source-health dashboard output to Pages.

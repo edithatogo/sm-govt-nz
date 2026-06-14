@@ -1,0 +1,46 @@
+name: Publish Archives
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 16 * * 0"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Bundle and publish archive corpus
+        run: >-
+          python scripts/publish_archives.py
+          --archive-dir historical_archive
+          --normalized-dir historical_archive_normalized
+          --raw-dir historical_archive_raw
+          --output-dir dist
+          --manifest dist/archive_manifest.json
+          --publish
+      - name: Upload generated corpus bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: courts-nz-archive-corpus
+          path: |
+            dist/archive_manifest.json
+            dist/corpus_manifest.json
+            dist/README.md
+            dist/historical_archive.tar.gz
+            dist/historical_archive.jsonl.gz
+            dist/normalized_archive.jsonl.gz

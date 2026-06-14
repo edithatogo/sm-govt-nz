@@ -236,6 +236,13 @@ accounts must be created as separate conductor tracks after the archive pipeline
 is stable, with one platform/account per track, task-level commits, phase
 reviews, and explicit posting contracts.
 
+The `Publish Archives` workflow bundles the legacy archive, normalized
+multi-source shards, raw evidence files, the Hugging Face dataset card, and the
+corpus manifest into a downloadable Actions artifact. If `HF_TOKEN` and
+`HF_DATASET_REPO_ID` are configured, the same workflow uploads the bundle to
+Hugging Face Datasets. If `ZENODO_TOKEN` and `ZENODO_DEPOSIT_ENDPOINT` are
+configured, it also uploads the same bundle to Zenodo.
+
 ## 7. Source Discovery and Ingestion Tools
 
 Runtime dependencies are in `requirements.txt`.
