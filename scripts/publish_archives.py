@@ -397,6 +397,30 @@ def _add_archive_mirror_status(
     if not state_path.exists():
         return
     data = json.loads(state_path.read_text(encoding="utf-8"))
+    detailed_by_target = data.get("posted_records", {})
+    if isinstance(detailed_by_target, dict):
+        for target, posted_by_source in detailed_by_target.items():
+            if not isinstance(posted_by_source, dict):
+                continue
+            for _source_key, deliveries in posted_by_source.items():
+                if not isinstance(deliveries, list):
+                    continue
+                for delivery in deliveries:
+                    if not isinstance(delivery, dict):
+                        continue
+                    record_id = str(delivery.get("record_id") or "")
+                    if not record_id:
+                        continue
+                    _append_mirror_status(
+                        mirror_status,
+                        record_id,
+                        {
+                            "target": str(delivery.get("target") or target),
+                            "status": str(delivery.get("status") or "posted"),
+                            "mirror_url": str(delivery.get("mirror_url") or ""),
+                        },
+                    )
+
     posted_by_target = data.get("posted_record_ids", {})
     if not isinstance(posted_by_target, dict):
         return
@@ -407,13 +431,30 @@ def _add_archive_mirror_status(
             if not isinstance(record_ids, list):
                 continue
             for record_id in record_ids:
-                mirror_status.setdefault(str(record_id), []).append(
+                _append_mirror_status(
+                    mirror_status,
+                    str(record_id),
                     {
                         "target": str(target),
                         "status": "posted",
                         "mirror_url": "",
-                    }
+                    },
                 )
+
+
+def _append_mirror_status(
+    mirror_status: dict[str, list[dict[str, str]]],
+    record_id: str,
+    status: dict[str, str],
+) -> None:
+    statuses = mirror_status.setdefault(record_id, [])
+    for existing in statuses:
+        if existing.get("target") != status.get("target"):
+            continue
+        if not existing.get("mirror_url") and status.get("mirror_url"):
+            existing.update(status)
+        return
+    statuses.append(status)
 
 
 def _build_dataset_card(manifest: dict[str, Any]) -> str:

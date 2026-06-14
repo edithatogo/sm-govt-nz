@@ -60,6 +60,28 @@ def test_create_archive_bundle_includes_normalized_raw_and_dataset_metadata(tmp_
         json.dumps({"posted_post_ids": {"courtsofnz.bsky.social": ["post-1"]}}),
         encoding="utf-8",
     )
+    (state_dir / "archive_mirror_state.json").write_text(
+        json.dumps(
+            {
+                "posted_record_ids": {"bluesky": {"bluesky:courtsofnz.bsky.social": ["post-1"]}},
+                "posted_records": {
+                    "bluesky": {
+                        "bluesky:courtsofnz.bsky.social": [
+                            {
+                                "detail": "at://did:plc:mirror/app.bsky.feed.post/post-1",
+                                "mirror_url": "https://bsky.app/profile/did:plc:mirror/post/post-1",
+                                "record_id": "post-1",
+                                "source_key": "bluesky:courtsofnz.bsky.social",
+                                "status": "posted",
+                                "target": "bluesky",
+                            }
+                        ]
+                    }
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
 
     bundle = create_archive_bundle(
         tmp_path / "historical_archive",
@@ -85,7 +107,7 @@ def test_create_archive_bundle_includes_normalized_raw_and_dataset_metadata(tmp_
         {
             "mirror_targets": [
                 {
-                    "mirror_url": "",
+                    "mirror_url": "https://bsky.app/profile/did:plc:mirror/post/post-1",
                     "status": "posted",
                     "target": "bluesky",
                 }

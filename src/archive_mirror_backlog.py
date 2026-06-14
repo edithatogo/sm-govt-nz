@@ -8,8 +8,18 @@ from src.config import AppConfig, load_config
 from src.syndication import SyndicationAdapter, SyndicationResult, build_adapters_from_env
 
 
-class ArchiveMirrorState(TypedDict):
+class ArchiveMirrorDelivery(TypedDict):
+    record_id: str
+    source_key: str
+    target: str
+    status: str
+    detail: str
+    mirror_url: str
+
+
+class ArchiveMirrorState(TypedDict, total=False):
     posted_record_ids: dict[str, dict[str, list[str]]]
+    posted_records: dict[str, dict[str, list[ArchiveMirrorDelivery]]]
 
 
 @dataclass(frozen=True)
@@ -53,7 +63,10 @@ def run_archive_mirror_backlog(
         for target_name, posted_by_source in state.get("posted_record_ids", {}).items()
     }
     next_state: ArchiveMirrorState = {"posted_record_ids": posted_state}
+    if state.get("posted_records"):
+        next_state["posted_records"] = _copy_delivery_state(state["posted_records"])
     posted_by_source = next_state["posted_record_ids"].setdefault(target, {})
+    delivery_by_source = next_state.setdefault("posted_records", {}).setdefault(target, {})
 
     selected = _select_unposted_records(
         records,
@@ -78,7 +91,20 @@ def run_archive_mirror_backlog(
         results.append(result)
         if result.success and not result.skipped:
             posted_count += 1
-            posted_by_source.setdefault(record.source_key, []).append(record.record_id)
+            if record.record_id not in posted_by_source.setdefault(record.source_key, []):
+                posted_by_source[record.source_key].append(record.record_id)
+            deliveries = delivery_by_source.setdefault(record.source_key, [])
+            if not any(delivery.get("record_id") == record.record_id for delivery in deliveries):
+                deliveries.append(
+                    {
+                        "record_id": record.record_id,
+                        "source_key": record.source_key,
+                        "target": target,
+                        "status": "posted",
+                        "detail": result.detail,
+                        "mirror_url": _mirror_url_from_result(target, result.detail),
+                    }
+                )
 
     return ArchiveMirrorBacklogSummary(selected=len(selected), posted=posted_count, results=results), next_state
 
@@ -186,6 +212,26 @@ def _select_unposted_records(
         if len(selected) >= limit:
             break
     return selected
+
+
+def _copy_delivery_state(
+    posted_records: dict[str, dict[str, list[ArchiveMirrorDelivery]]],
+) -> dict[str, dict[str, list[ArchiveMirrorDelivery]]]:
+    return {
+        target_name: {
+            source_key: [dict(delivery) for delivery in deliveries]
+            for source_key, deliveries in deliveries_by_source.items()
+        }
+        for target_name, deliveries_by_source in posted_records.items()
+    }
+
+
+def _mirror_url_from_result(target: str, detail: str) -> str:
+    if target == "bluesky" and detail.startswith("at://"):
+        parts = detail.removeprefix("at://").split("/")
+        if len(parts) >= 3 and parts[-2] == "app.bsky.feed.post":
+            return f"https://bsky.app/profile/{parts[0]}/post/{parts[-1]}"
+    return detail if detail.startswith(("http://", "https://")) else ""
 
 
 def _archive_replay_record_to_post(record: ArchiveReplayRecord) -> BlueskyPost:

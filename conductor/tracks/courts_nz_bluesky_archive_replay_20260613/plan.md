@@ -23,6 +23,8 @@
   original timestamp, mirror target, and mirror URL.
   - Added `record_index` to `corpus_manifest.json`; older replay state does
     not retain mirror URLs, so the field is present and empty where unavailable.
+  - Future archive replay deliveries now record delivery details and derived
+    Bluesky mirror URLs in `conductor/archive_mirror_state.json`.
 - [ ] Task: Verify a sample of Bluesky-source and X-source mirror URLs via the
   public Bluesky API.
 - [ ] Task: Mark any unreplayable records with reason codes.

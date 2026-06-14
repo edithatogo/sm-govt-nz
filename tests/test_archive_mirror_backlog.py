@@ -25,6 +25,16 @@ def test_archive_mirror_backlog_posts_oldest_x_record(tmp_path) -> None:
     assert [post["post_id"] for post in adapter.sent_posts] == ["x:2"]
     assert adapter.sent_posts[0]["text"].startswith("Archived X post from 2020-01-02")
     assert next_state["posted_record_ids"]["bluesky"]["x:CourtsofNZ"] == ["x:1", "x:2"]
+    assert next_state["posted_records"]["bluesky"]["x:CourtsofNZ"] == [
+        {
+            "detail": "at://did:plc:mirror/app.bsky.feed.post/x-2",
+            "mirror_url": "https://bsky.app/profile/did:plc:mirror/post/x-2",
+            "record_id": "x:2",
+            "source_key": "x:CourtsofNZ",
+            "status": "posted",
+            "target": "bluesky",
+        }
+    ]
 
 
 def test_archive_mirror_backlog_is_disabled_without_target_flag(tmp_path) -> None:
@@ -84,4 +94,9 @@ class RecordingAdapter:
 
     def send(self, post):
         self.sent_posts.append(post)
-        return SyndicationResult("bluesky", success=True, detail=f"mirror-{post['post_id']}")
+        post_key = post["post_id"].replace(":", "-")
+        return SyndicationResult(
+            "bluesky",
+            success=True,
+            detail=f"at://did:plc:mirror/app.bsky.feed.post/{post_key}",
+        )
