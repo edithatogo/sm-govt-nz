@@ -10,6 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.bluesky import BlueskyApiClient
 
 REGISTRY_PATH = "registry/agencies.json"
+MIRROR_ACCOUNTS_PATH = "config/mirror_accounts.json"
 FOLLOW_STATE_PATH = "conductor/follow_sync_state.json"
 
 
@@ -18,6 +19,13 @@ def load_registry():
         print(f"Error: Registry not found at {REGISTRY_PATH}")
         return []
     with open(REGISTRY_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_mirror_accounts():
+    if not os.path.exists(MIRROR_ACCOUNTS_PATH):
+        return {"mirrors": []}
+    with open(MIRROR_ACCOUNTS_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -60,11 +68,12 @@ def save_follow_state(results):
     print(f"\nFollow state persisted to {FOLLOW_STATE_PATH}")
 
 
-def generate_follow_matrix(registry):
+def generate_follow_matrix(registry, mirror_accounts=None):
     """
-    Generates a matrix of required follows per platform.
+    Generates a matrix of required mirror follows per platform.
     Returns: { platform: [ (follower_handle, target_handle), ... ] }
     """
+    mirror_accounts = mirror_accounts or {"mirrors": []}
     matrix = {}
     platform_handles = {}
     for agency in registry:
@@ -75,12 +84,22 @@ def generate_follow_matrix(registry):
                     platform_handles[platform] = []
                 platform_handles[platform].append(profile["handle"])
 
-    for platform, handles in platform_handles.items():
-        matrix[platform] = []
-        for follower in handles:
-            for target in handles:
-                if follower != target:
-                    matrix[platform].append((follower, target))
+    for mirror in mirror_accounts.get("mirrors", []):
+        if mirror.get("status") != "active":
+            continue
+        platform = mirror["platform"]
+        follower = mirror["handle"]
+        target_policy = mirror.get("target_registry", "active_platform_accounts")
+        if target_policy != "active_platform_accounts":
+            continue
+        targets = platform_handles.get(platform, [])
+        matrix.setdefault(platform, [])
+        for target in targets:
+            if follower != target:
+                matrix[platform].append((follower, target))
+
+    for platform, follows in matrix.items():
+        matrix[platform] = sorted(set(follows))
     return matrix
 
 
@@ -148,7 +167,8 @@ def main():
             pass
 
     registry = load_registry()
-    matrix = generate_follow_matrix(registry)
+    mirror_accounts = load_mirror_accounts()
+    matrix = generate_follow_matrix(registry, mirror_accounts)
 
     all_results = []
 

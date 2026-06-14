@@ -17,6 +17,6 @@
 - [x] Task: Keep Threads, Instagram, Facebook, and any other unsupported follow paths as manual checklists unless an official API route is confirmed.
 - [x] Task: Add an opt-in manual workflow for dry-run reporting before any live follow execution.
 - [~] Task: Perform a dry-run and controlled live execution test for the supported API path.
-  - [x] Dry-run verified for `courtsofnz.bsky.social` with resolved target DIDs.
+  - [x] Dry-run verified for `mirnzcourts.bsky.social` with resolved target DIDs.
   - [ ] Controlled live execution remains pending explicit Bluesky credentials and approval.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Core Group Follow Sync Execution' (Protocol in workflow.md)
