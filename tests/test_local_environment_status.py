@@ -17,3 +17,11 @@ def test_local_environment_status_prefers_cmd_until_powershell_config_is_stable(
 
     assert shell_note["status"] == "use_cmd_for_repo_checks"
     assert "cmd.exe" in shell_note["handling"]
+
+
+def test_local_environment_status_records_disk_pressure_guard() -> None:
+    status = json.loads(Path("conductor/local_environment_status_20260615.json").read_text())
+    disk_note = next(note for note in status["notes"] if note["area"] == "disk")
+
+    assert disk_note["status"] == "c_drive_pressure_mitigated"
+    assert "scripts/check_local_disk_space.py" in disk_note["handling"]
