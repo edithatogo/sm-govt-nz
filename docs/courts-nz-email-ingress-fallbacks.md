@@ -20,7 +20,8 @@ courts-nz-judgments@archive.edithatogo.com
 
 This address is marked `pending_external_setup` until it exists in Cloudflare
 Email Routing and is subscribed to the Courts of New Zealand judgments of public
-interest notification list.
+interest notification list. External setup is tracked in
+https://github.com/edithatogo/sm-govt-nz/issues/5.
 
 ## Default Route
 1. Courts of New Zealand sends the subscription email to the dedicated address.

@@ -79,6 +79,9 @@ Setup outline:
    `config/courts_nz_email_ingress.json` from `pending_external_setup` to
    `active`.
 
+External setup for the dedicated address is tracked in
+https://github.com/edithatogo/sm-govt-nz/issues/5.
+
 For local deployment, copy `cloudflare/wrangler.courts-nz-email.toml.example`
 to `cloudflare/wrangler.toml`, replace `ALLOWED_RECIPIENTS`, and set
 `GITHUB_TOKEN` as a Worker secret:
