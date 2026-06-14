@@ -12,11 +12,13 @@
   - Verified dry-run selected 0 remaining Bluesky backlog records.
 - [ ] Task: Continue bounded X archive replay runs until
   `conductor/archive_mirror_state.json` reaches 689 recovered X records.
+  - Live run `27500249516` posted 5 X archive records to the Bluesky mirror
+    and captured delivery URLs in `conductor/archive_mirror_state.json`.
 - [ ] Task: Increase or tune batch size only after reviewing account-rate,
   platform-noise, and duplicate-prevention behavior.
 - [x] Task: Re-run coverage reporting after each phase and commit state.
-  - Latest coverage shows Bluesky target at 172/738 total source records, with
-    0 remaining Bluesky-source records and 566 remaining X archive records.
+  - Latest coverage shows Bluesky target at 177/738 total source records, with
+    0 remaining Bluesky-source records and 561 remaining X archive records.
 
 ## Phase 3: Manifest and Verification
 - [x] Task: Extend the corpus manifest with source record ID, source URL,
