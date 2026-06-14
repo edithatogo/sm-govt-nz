@@ -53,3 +53,20 @@ jobs:
           else
             gh issue create --title "$ISSUE_TITLE" --body-file .tmp/buffer_key_rotation_issue.md
           fi
+      - name: Close resolved reminder issue
+        if: steps.rotation.outputs.due == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: ${{ steps.rotation.outputs.issue_title }}
+        run: |
+          existing_issue="$(
+            gh issue list \
+              --state open \
+              --search "$ISSUE_TITLE in:title" \
+              --json number \
+              --jq '.[0].number // ""'
+          )"
+          if [ -n "$existing_issue" ]; then
+            gh issue comment "$existing_issue" --body "Buffer API key rotation is no longer due after validation passed outside the warning window. Closing this reminder."
+            gh issue close "$existing_issue" --reason completed
+          fi
