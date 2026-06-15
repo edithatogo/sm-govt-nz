@@ -1,4 +1,5 @@
 import json
+from subprocess import CompletedProcess
 
 from scripts import check_multisource_blockers as blockers
 
@@ -120,6 +121,70 @@ def test_check_multisource_blockers_reports_complete_when_inputs_are_present(
 
     assert report["complete"] is True
     assert {check["status"] for check in report["checks"]} == {"complete"}
+
+
+def test_check_multisource_blockers_uses_github_secret_presence(
+    tmp_path,
+    monkeypatch,
+) -> None:
+    monkeypatch.chdir(tmp_path)
+    write_json(
+        tmp_path / "config" / "courts_nz_email_ingress.json",
+        {
+            "dedicated_subscription_address": {
+                "status": "active",
+                "address": "courts-nz-judgments@archive.edithatogo.com",
+            }
+        },
+    )
+    write_json(tmp_path / "conductor" / "linkedin_archive_report.json", {"record_count": 1})
+    write_json(
+        tmp_path / "conductor" / "archive_publication_report_20260614.json",
+        {
+            "hugging_face": {"verified_status": "200 OK"},
+            "zenodo": {"status": "published_with_doi", "doi": "10.5281/zenodo.123"},
+        },
+    )
+    normalized = tmp_path / "historical_archive_normalized" / "linkedin" / "2026-06.jsonl"
+    normalized.parent.mkdir(parents=True)
+    normalized.write_text('{"record_id": "linkedin:1"}\n', encoding="utf-8")
+
+    report = blockers.check_multisource_blockers(
+        env={},
+        secret_names={
+            "CLOUDFLARE_API_TOKEN",
+            "CLOUDFLARE_ACCOUNT_ID",
+            "EMAIL_WORKER_GITHUB_TOKEN",
+            "HF_TOKEN",
+            "ZENODO_TOKEN",
+            "ZENODO_SANDBOX_TOKEN",
+        },
+    )
+
+    checks = {check["id"]: check for check in report["checks"]}
+    assert report["complete"] is True
+    assert checks["issue-5-email-ingress"]["missing_secrets"] == []
+    assert checks["issue-6-corpus-publication"]["missing_hugging_face_secrets"] == []
+    assert checks["issue-6-corpus-publication"]["missing_zenodo_secrets"] == []
+    assert checks["issue-6-corpus-publication"]["sandbox_token_present"] is True
+
+
+def test_load_github_secret_names_parses_gh_output(monkeypatch) -> None:
+    def fake_run(args, check, capture_output, text):
+        assert args == ["gh", "secret", "list"]
+        assert check is False
+        assert capture_output is True
+        assert text is True
+        return CompletedProcess(
+            args=args,
+            returncode=0,
+            stdout="HF_TOKEN 2026-06-15T00:00:00Z\nZENODO_TOKEN 2026-06-15T00:00:00Z\n",
+            stderr="",
+        )
+
+    monkeypatch.setattr(blockers.subprocess, "run", fake_run)
+
+    assert blockers._load_github_secret_names() == {"HF_TOKEN", "ZENODO_TOKEN"}
 
 
 def test_write_markdown_report(tmp_path) -> None:

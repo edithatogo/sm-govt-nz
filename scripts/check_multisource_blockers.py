@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -12,11 +13,15 @@ LINKEDIN_NORMALIZED_ROOT = Path("historical_archive_normalized/linkedin")
 PUBLICATION_REPORT_PATH = Path("conductor/archive_publication_report_20260614.json")
 
 
-def check_multisource_blockers(env: dict[str, str] | None = None) -> dict[str, Any]:
+def check_multisource_blockers(
+    env: dict[str, str] | None = None,
+    secret_names: set[str] | None = None,
+) -> dict[str, Any]:
     active_env = env if env is not None else dict(os.environ)
+    active_secret_names = secret_names or set()
     checks = [
-        _check_email_ingress(active_env),
-        _check_corpus_publication(active_env),
+        _check_email_ingress(active_env, active_secret_names),
+        _check_corpus_publication(active_env, active_secret_names),
         _check_linkedin_seed(),
     ]
     return {
@@ -25,7 +30,7 @@ def check_multisource_blockers(env: dict[str, str] | None = None) -> dict[str, A
     }
 
 
-def _check_email_ingress(env: dict[str, str]) -> dict[str, Any]:
+def _check_email_ingress(env: dict[str, str], secret_names: set[str]) -> dict[str, Any]:
     config = _load_json(EMAIL_CONFIG_PATH)
     dedicated = config.get("dedicated_subscription_address", {})
     domain_setup = config.get("domain_setup", {})
@@ -36,7 +41,7 @@ def _check_email_ingress(env: dict[str, str]) -> dict[str, Any]:
         "CLOUDFLARE_ACCOUNT_ID",
         "EMAIL_WORKER_GITHUB_TOKEN",
     ]
-    missing = [name for name in required_secrets if not env.get(name)]
+    missing = _missing_secret_names(required_secrets, env, secret_names)
     return {
         "id": "issue-5-email-ingress",
         "issue": "https://github.com/edithatogo/sm-govt-nz/issues/5",
@@ -66,9 +71,9 @@ def _check_email_ingress(env: dict[str, str]) -> dict[str, Any]:
     }
 
 
-def _check_corpus_publication(env: dict[str, str]) -> dict[str, Any]:
-    hf_missing = [name for name in ["HF_TOKEN"] if not env.get(name)]
-    zenodo_missing = [name for name in ["ZENODO_TOKEN"] if not env.get(name)]
+def _check_corpus_publication(env: dict[str, str], secret_names: set[str]) -> dict[str, Any]:
+    hf_missing = _missing_secret_names(["HF_TOKEN"], env, secret_names)
+    zenodo_missing = _missing_secret_names(["ZENODO_TOKEN"], env, secret_names)
     report = _load_json(PUBLICATION_REPORT_PATH)
     hugging_face = report.get("hugging_face", {})
     zenodo = report.get("zenodo", {})
@@ -91,7 +96,7 @@ def _check_corpus_publication(env: dict[str, str]) -> dict[str, Any]:
         "zenodo_endpoint": env.get("ZENODO_DEPOSIT_ENDPOINT")
         or env.get("ZENODO_DEPOSIT_API_URL")
         or "created from default depositions API",
-        "sandbox_token_present": bool(env.get("ZENODO_SANDBOX_TOKEN")),
+        "sandbox_token_present": _has_secret(env, secret_names, "ZENODO_SANDBOX_TOKEN"),
         "next_action": (
             "Review and publish the Zenodo draft deposition, then update the publication "
             "report with the final Zenodo DOI/status."
@@ -138,6 +143,39 @@ def _count_jsonl_records(root: Path) -> int:
     return total
 
 
+def _has_secret(env: dict[str, str], secret_names: set[str], name: str) -> bool:
+    return bool(env.get(name)) or name in secret_names
+
+
+def _missing_secret_names(
+    required_names: list[str],
+    env: dict[str, str],
+    secret_names: set[str],
+) -> list[str]:
+    return [name for name in required_names if not _has_secret(env, secret_names, name)]
+
+
+def _load_github_secret_names() -> set[str]:
+    completed = subprocess.run(
+        ["gh", "secret", "list"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if completed.returncode != 0:
+        details = (completed.stderr or completed.stdout).strip()
+        message = "Unable to list GitHub Actions secrets with gh."
+        if details:
+            message = f"{message} {details}"
+        raise RuntimeError(message)
+    names: set[str] = set()
+    for line in completed.stdout.splitlines():
+        parts = line.split()
+        if parts:
+            names.add(parts[0])
+    return names
+
+
 def write_markdown_report(report: dict[str, Any], path: str | Path) -> None:
     lines = ["# Multi-Source Archive Blocker Status", ""]
     for check in report["checks"]:
@@ -164,9 +202,15 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Check multi-source archive blockers.")
     parser.add_argument("--json-output", default="")
     parser.add_argument("--markdown-output", default="")
+    parser.add_argument(
+        "--use-github-secrets",
+        action="store_true",
+        help="Treat names returned by gh secret list as present without exposing values.",
+    )
     args = parser.parse_args()
 
-    report = check_multisource_blockers()
+    secret_names = _load_github_secret_names() if args.use_github_secrets else set()
+    report = check_multisource_blockers(secret_names=secret_names)
     if args.json_output:
         Path(args.json_output).parent.mkdir(parents=True, exist_ok=True)
         Path(args.json_output).write_text(

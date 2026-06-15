@@ -5,6 +5,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
@@ -21,6 +22,7 @@ jobs:
       ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
       ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
       ZENODO_SANDBOX_TOKEN: ${{ secrets.ZENODO_SANDBOX_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v5
       - name: Set up Python
@@ -30,6 +32,7 @@ jobs:
       - name: Check multi-source archive blockers
         run: >-
           python scripts/check_multisource_blockers.py
+          --use-github-secrets
           --json-output dist/multisource_blockers.json
           --markdown-output dist/multisource_blockers.md
       - name: Upload blocker status
