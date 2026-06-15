@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T07:03:01+00:00",
+  "generated_at": "2026-06-15T10:25:54+00:00",
   "normalized": [
     {
       "bytes": 13380,
@@ -40,6 +40,14 @@
       "record_count": 1,
       "sha256": "e604b3f4d8e5c04b9ffe43c083f3329c2e72c87266a1b4d1d2dae2f03c4da83e",
       "source": "email"
+    },
+    {
+      "bytes": 3403,
+      "month": "2026-06",
+      "path": "historical_archive_normalized/linkedin/2026-06.jsonl",
+      "record_count": 2,
+      "sha256": "51039b6e400531bce25b68edfc75b4cacdfb488acefee19fd7860a7e95ffe622",
+      "source": "linkedin"
     },
     {
       "bytes": 1075,
@@ -2573,6 +2581,15 @@
       "path": "historical_archive_raw/email/2026-06",
       "sha256": "2296dfc197578381c729062ecd44e10e3bd932f0826715de4e15b708773a4297",
       "source": "email"
+    },
+    {
+      "bytes": 2743,
+      "digest_mode": "path_size_inventory",
+      "file_count": 2,
+      "month": "2026-06",
+      "path": "historical_archive_raw/linkedin/2026-06",
+      "sha256": "d320e1c7ab49d04a7ad7414ff2d8904e78d9af09f29b637f92e881714324f472",
+      "source": "linkedin"
     },
     {
       "bytes": 1430,
@@ -5366,11 +5383,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 4215642,
-    "normalized_record_count": 4206,
-    "normalized_shard_count": 315,
-    "raw_bytes": 5767778,
-    "raw_file_count": 4206,
-    "raw_shard_count": 315
+    "normalized_bytes": 4219045,
+    "normalized_record_count": 4208,
+    "normalized_shard_count": 316,
+    "raw_bytes": 5770521,
+    "raw_file_count": 4208,
+    "raw_shard_count": 316
   }
 }
