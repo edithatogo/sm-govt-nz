@@ -14,6 +14,7 @@ def render_worker_config(
             f'name = "{_toml_string(worker_name)}"',
             'main = "courts_nz_email_worker.mjs"',
             'compatibility_date = "2026-06-14"',
+            "workers_dev = false",
             "",
             "[vars]",
             f'GITHUB_REPO = "{_toml_string(github_repo)}"',

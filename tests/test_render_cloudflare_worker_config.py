@@ -14,6 +14,7 @@ def test_render_worker_config_writes_expected_wrangler_toml(tmp_path) -> None:
     content = output.read_text(encoding="utf-8")
     assert 'name = "courts-worker"' in content
     assert 'main = "courts_nz_email_worker.mjs"' in content
+    assert "workers_dev = false" in content
     assert 'GITHUB_REPO = "owner/repo"' in content
     assert 'ALLOWED_RECIPIENTS = "courts@example.test,\\"quoted\\"@example.test"' in content
     assert "GITHUB_TOKEN is set as a Cloudflare Worker secret" in content
