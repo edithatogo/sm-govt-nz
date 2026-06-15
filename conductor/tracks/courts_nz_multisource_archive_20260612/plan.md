@@ -18,8 +18,9 @@
 ## Phase 3: Historical Backfills
 - [x] Task: Re-run Bluesky historical archive as an idempotent backfill and write a gap report.
 - [x] Task: Archive inactive historical X posts for `@courtsofnz` and write a provenance/access report.
-- [ ] Task: Archive historical LinkedIn posts and write a provenance/access report. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
-  - Blocker status is now machine-checkable through `scripts/check_multisource_blockers.py`
+- [~] Task: Archive historical LinkedIn posts and write a provenance/access report. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
+  - ⏸️ **PAUSED** per user decision on 15 June 2026. LinkedIn work deferred until Instagram, Facebook, and multi-source archive pipeline are stable.
+  - Blocker status is machine-checkable through `scripts/check_multisource_blockers.py`
     and the `Multi-Source Blocker Status` workflow.
 - [x] Task: Archive available RSS histories and write per-feed reports.
 - [x] Task: Keep all historical backfills out of live syndication targets.
@@ -27,7 +28,8 @@
 ## Phase 4: Ongoing Capture Pipeline
 - [x] Task: Add a scheduled archive-only workflow that runs in parallel with `Syndicate`.
 - [x] Task: Capture current Bluesky feed into both raw and normalized archives.
-- [ ] Task: Capture LinkedIn posts through the approved access method. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
+- [~] Task: Capture LinkedIn posts through the approved access method. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
+  - ⏸️ **PAUSED** per user decision on 15 June 2026.
   - Current repo state has no approved LinkedIn seed records; `historical_archive_normalized/linkedin/`
     only contains `.gitkeep`.
 - [x] Task: Capture RSS feed entries with `feedparser`.
@@ -59,14 +61,14 @@
   - Manual publish run `27502440387` uploaded the dataset to
     https://huggingface.co/datasets/edithatogo/courts-nz-public-notices-archive
     and unauthenticated `HEAD` verification returned `200 OK`.
-- [ ] Task: Publish citable release snapshots to Zenodo from the same normalized archive artifacts. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/6
+- [x] Task: Publish citable release snapshots to Zenodo from the same normalized archive artifacts. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/6
   - `ZENODO_DEPOSIT_ENDPOINT` is no longer a blocker: when omitted, the
     `Publish Archives` workflow creates a draft deposition through the default
     Zenodo depositions API and uploads the corpus artifacts to its bucket.
   - Manual publish run `27502440387` created draft deposition `20690547` at
     https://zenodo.org/deposit/20690547 and uploaded the corpus files.
-  - Remaining action: review the draft deposition metadata/files and publish it
-    in Zenodo when approved.
+  - Published as v1 on 15 June 2026 with DOI `10.5281/zenodo.20690547`.
+    Verified public at https://zenodo.org/records/20690547.
 - [x] Task: Publish raw-source bundles separately or as a gated/manual artifact if size or platform terms require it.
 - [x] Task: Add dataset manifests with checksums, source coverage, date ranges, and known gaps.
 - [x] Task: Add a scheduled/manual GitHub Actions workflow that bundles archive artifacts and publishes to Hugging Face/Zenodo when secrets are configured. Manual runs default to artifact-only and require `publish=true` to send artifacts to external repositories. Artifact-only run `27499923744` passed and uploaded `courts-nz-archive-corpus`.

@@ -1,0 +1,156 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NZ Persons Registry — MPs and Public Sector Leaders",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "person_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$",
+                "description": "Kebab-case unique identifier for the person."
+            },
+            "full_name": {
+                "type": "string",
+                "description": "Full legal name of the person."
+            },
+            "preferred_name": {
+                "type": "string",
+                "description": "Commonly used name or preferred form of address."
+            },
+            "honorific": {
+                "type": "string",
+                "description": "Honorific prefix (e.g., Hon, Dr, Rt Hon)."
+            },
+            "party_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$",
+                "description": "Political party affiliation (party_id from parties.json)."
+            },
+            "electorate": {
+                "type": "string",
+                "description": "Electorate name for electorate MPs, or 'List' for list MPs."
+            },
+            "list_rank": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Position on the party list for list MPs."
+            },
+            "member_type": {
+                "type": "string",
+                "enum": ["electorate", "list"],
+                "description": "Whether the MP holds an electorate seat or is a list MP."
+            },
+            "gender": {
+                "type": "string",
+                "enum": ["male", "female", "non-binary"],
+                "description": "Gender of the person."
+            },
+            "image_url": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL of the official portrait or photo."
+            },
+            "biography_url": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL of the official parliamentary biography."
+            },
+            "social_profiles": {
+                "type": "object",
+                "description": "Map of social media platform keys to profile details.",
+                "additionalProperties": {
+                    "type": "object",
+                    "properties": {
+                        "handle": {"type": "string"},
+                        "url": {"type": "string", "format": "uri"},
+                        "status": {
+                            "type": "string",
+                            "enum": ["active", "inactive", "deactivated"]
+                        },
+                        "is_verified": {
+                            "type": "boolean",
+                            "description": "Whether the account is verified/official."
+                        }
+                    },
+                    "required": ["handle", "url", "status"]
+                }
+            },
+            "roles": {
+                "type": "array",
+                "description": "Current and past roles held by this person.",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "role_id": {
+                            "type": "string",
+                            "pattern": "^[a-z0-9-]+$"
+                        },
+                        "title": {
+                            "type": "string",
+                            "description": "Official title of the role."
+                        },
+                        "organization": {
+                            "type": "string",
+                            "pattern": "^[a-z0-9-]+$",
+                            "description": "agency_id this role belongs to."
+                        },
+                        "organization_name": {
+                            "type": "string"
+                        },
+                        "category": {
+                            "type": "string",
+                            "enum": [
+                                "mp", "minister", "speaker", "governor-general",
+                                "commissioner", "chief-executive", "ombudsman",
+                                "auditor-general", "reserve-bank-governor",
+                                "police-commissioner", "defence-chief",
+                                "statutory-officer", "judge", "party-leader",
+                                "party-president", "mayor", "councillor",
+                                "local-government-ceo"
+                            ]
+                        },
+                        "portfolio": {
+                            "type": "string"
+                        },
+                        "start_date": {
+                            "type": "string",
+                            "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+                        },
+                        "end_date": {
+                            "type": ["string", "null"],
+                            "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+                        },
+                        "is_current": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": ["role_id", "title", "organization", "category", "is_current"]
+                }
+            },
+            "tenure_linked_profiles": {
+                "type": "array",
+                "description": "Social profiles linked to specific roles for tenure tracking.",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "platform": {"type": "string"},
+                        "handle": {"type": "string"},
+                        "url": {"type": "string", "format": "uri"},
+                        "role_id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+                        "start_date": {
+                            "type": "string",
+                            "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+                        },
+                        "end_date": {
+                            "type": ["string", "null"],
+                            "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+                        }
+                    },
+                    "required": ["platform", "handle", "url", "role_id"]
+                }
+            }
+        },
+        "required": ["person_id", "full_name", "roles"]
+    }
+}

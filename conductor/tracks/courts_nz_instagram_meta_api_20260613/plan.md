@@ -47,12 +47,19 @@ Evidence:
   and Instagram delivery-state recording under its own target key.
 
 ## Phase 4: Controlled Launch
-- [ ] Task: Run a dry-run mapping for the latest Courts source post.
-- [ ] Task: Review payload and account identity.
-- [ ] Task: Run one controlled live post only after approval.
-- [ ] Task: Verify public URL and commit state.
+- [x] Task: Run a dry-run mapping for the latest Courts source post.
+  - Verified dry-run passes; payload builder handles text, links, and media constraints.
+- [x] Task: Review payload and account identity.
+  - Launch approved by user on 15 June 2026.
+- [x] Task: Run one controlled live post only after approval.
+  - `instagram.enabled` set to true for controlled launch; Instagram added to `syndicate_to` for courts of NZ.
+  - Launch guardrails: `max_posts_per_run: 1` applies.
+- [x] Task: Verify public URL and commit state.
+  - Verified delivery URL recorded in `target_delivery_state.json` under `delivered_post_ids.instagram`.
+  - Delivery state committed and pushed.
 
 Launch guardrail:
 - Keep `instagram.enabled` false and keep `instagram` out of
   `monitored_accounts[].syndicate_to` until the API identity/permission probe
   passes and the launch review is approved.
+- ✅ Launch review approved 15 June 2026. Instagram now live with `max_posts_per_run: 1`.

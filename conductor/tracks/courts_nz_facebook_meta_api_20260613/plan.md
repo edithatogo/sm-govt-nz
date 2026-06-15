@@ -50,6 +50,7 @@ Evidence:
 ## Phase 4: Controlled Launch
 - [x] Task: Run a dry-run mapping for the latest Courts source post.
 - [ ] Task: Review payload and Page identity.
+  - ⚠️ BLOCKED: No dedicated Facebook Page identity exists yet. The Page must be created before payload review and live post can proceed.
 - [ ] Task: Run one controlled live post only after approval.
 - [ ] Task: Verify public URL and commit state.
 
@@ -64,3 +65,5 @@ Launch guardrail:
   `monitored_accounts[].syndicate_to` until the dedicated Page identity, Page
   access token, app permissions, dry-run payload, and launch review are all
   complete.
+- ✅ Live-post launch approved by user on 15 June 2026 — awaiting Facebook Page
+  creation to proceed.

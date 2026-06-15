@@ -46,14 +46,18 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Decide Courts of New Zealand Threads historical replay policy
 *Link: [./tracks/courts_nz_threads_historical_replay_policy_20260613/](./tracks/courts_nz_threads_historical_replay_policy_20260613/)*
 
-## [ ] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs
+## [x] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs
 *Link: [./tracks/courts_nz_instagram_meta_api_20260613/](./tracks/courts_nz_instagram_meta_api_20260613/)*
 
 ## [ ] Track: Implement Courts of New Zealand Facebook Page mirror via Meta APIs
 *Link: [./tracks/courts_nz_facebook_meta_api_20260613/](./tracks/courts_nz_facebook_meta_api_20260613/)*
 
-## [ ] Track: Create a central index of NZ central and local government social media sites, focusing initially on deactivated accounts, registry schema, mirroring, and sync.
+## [~] Track: NZ Government Social Media Registry � agencies, political parties, MPs, and public sector leadership
 *Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*
+- *Phase 1–2: Registry schema, compilation pipeline, multi-remote git redundancy* ✅
+- *Phase 3: Directory expansion to all 600+ agencies (deferred)*
+- *Phase 4: Political parties, MPs, and public sector leadership accounts (new)*
+- *Phase 5: Crawling, stealth & academic/decentralized archiving (deferred)*
 
 ## [x] Track: Implement mirror account follow synchronization using supported platform APIs and manual review.
 *Link: [./tracks/sync_mirror_follows_20260614/](./tracks/sync_mirror_follows_20260614/)*

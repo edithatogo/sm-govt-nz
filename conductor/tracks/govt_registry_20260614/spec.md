@@ -24,7 +24,16 @@ To manage risk and scale, we prioritize implementing the syndication/mirroring e
 *   **Complete Mapping:** Map all public agencies, departments, and functions (military, police, intelligence, universities, hospitals), identifying those with no social media.
 *   **Alternative Feeds:** Map RSS/Atom feeds and email newsletters for all expanded organizations.
 
-### Phase 4: Crawling, Stealth & Academic/Decentralized Archiving (Future Track)
+### Phase 4: Political Parties, MPs, and Public Sector Leadership Registry (Future Track)
+*   **Political Parties:** Identify and map all registered New Zealand political parties, their official social media accounts, websites, and leadership.
+*   **Members of Parliament:** Map all current and historically significant MPs, their official parliamentary accounts, electorate office accounts, and personal/public-facing social media.
+*   **Public Sector Leaders:** Map official accounts for all public sector leaders — commissioners (e.g., Children's Commissioner, Privacy Commissioner, Health & Disability Commissioner), chief executives of all departments and crown entities, Governors-General, Speakers, Ombudsmen, Auditor-General, and other statutory officers.
+*   **Start/End Dates:** For each account, record when the account was established, when the individual held the role, and when the account was last active or deactivated.
+*   **Syndication Classification:** For each account, classify whether content is syndicated (cross-posted from another platform) or unique/original to that platform.
+*   **Role Tenure Tracking:** Link accounts to specific role tenures so that when leadership changes, the registry reflects which accounts belong to which officeholder and time period.
+*   **Schema Extension:** Extend the registry schema to support person records, role records, political party records, and tenure-linked social profiles.
+
+### Phase 5: Crawling, Stealth & Academic/Decentralized Archiving (Future Track)
 *   **Swarm Crawler:** Deploy parallelised crawling using the `antigravity-swarm` dispatcher to check health daily.
 *   **Wayback Machine Double-Anchor:** Automatically submit every source URL to the Wayback Machine save API.
 *   **Censorship-Resistant Archiving:** Automate daily syncs to Hugging Face, your OSF account, and monthly Zenodo DOI releases.
