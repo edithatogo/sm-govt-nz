@@ -28,6 +28,7 @@ def check_multisource_blockers(env: dict[str, str] | None = None) -> dict[str, A
 def _check_email_ingress(env: dict[str, str]) -> dict[str, Any]:
     config = _load_json(EMAIL_CONFIG_PATH)
     dedicated = config.get("dedicated_subscription_address", {})
+    domain_setup = config.get("domain_setup", {})
     status = str(dedicated.get("status") or "missing_config")
     required_secrets = [
         "CLOUDFLARE_API_TOKEN",
@@ -41,10 +42,15 @@ def _check_email_ingress(env: dict[str, str]) -> dict[str, Any]:
         "status": "complete" if status == "active" else "blocked",
         "configured_status": status,
         "address": dedicated.get("address", ""),
+        "domain_status": domain_setup.get("status", "unknown"),
+        "root_domain": domain_setup.get("root_domain", ""),
+        "cloudflare_zone_status": domain_setup.get("cloudflare_zone_status", ""),
+        "cloudflare_nameservers": domain_setup.get("cloudflare_nameservers", []),
         "missing_secrets": missing,
         "next_action": (
-            "Deploy the Cloudflare Email Routing Worker, route the address to it, "
-            "subscribe the address to Courts of NZ judgments, then set the config status to active."
+            "Register/delegate the root domain to the listed Cloudflare nameservers, "
+            "rerun Cloudflare Email Routing with apply=true, subscribe the address to "
+            "Courts of NZ judgments, then set the config status to active."
         ),
     }
 

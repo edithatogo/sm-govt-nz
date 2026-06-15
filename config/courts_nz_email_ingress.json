@@ -13,6 +13,19 @@
       "courts-nz-judgments@archive.edithatogo.com"
     ]
   },
+  "domain_setup": {
+    "root_domain": "edithatogo.com",
+    "requested_subdomain": "archive.edithatogo.com",
+    "status": "pending_domain_registration_or_delegation",
+    "cloudflare_zone_status": "pending_nameserver_delegation",
+    "cloudflare_nameservers": [
+      "jocelyn.ns.cloudflare.com",
+      "joel.ns.cloudflare.com"
+    ],
+    "latest_workflow_run": "https://github.com/edithatogo/sm-govt-nz/actions/runs/27537168028",
+    "last_verified": "2026-06-15",
+    "notes": "Public DNS and RDAP returned NXDOMAIN/not found for edithatogo.com on 2026-06-15. Register the root domain or switch this ingress lane to a registered domain before enabling Cloudflare Email Routing."
+  },
   "default_route": {
     "provider": "cloudflare_email_routing_worker",
     "workflow": "Archive Email",

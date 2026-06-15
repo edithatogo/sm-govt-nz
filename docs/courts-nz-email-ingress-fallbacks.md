@@ -23,6 +23,12 @@ Email Routing and is subscribed to the Courts of New Zealand judgments of public
 interest notification list. External setup is tracked in
 https://github.com/edithatogo/sm-govt-nz/issues/5.
 
+Current domain blocker: `edithatogo.com` has a pending Cloudflare zone, but
+public DNS and RDAP returned `NXDOMAIN`/not found on 2026-06-15. The root
+domain must be registered and delegated to `jocelyn.ns.cloudflare.com` and
+`joel.ns.cloudflare.com`, or this lane must be switched to another registered
+domain, before Cloudflare Email Routing can be enabled.
+
 ## Default Route
 1. Courts of New Zealand sends the subscription email to the dedicated address.
 2. Cloudflare Email Routing delivers the message to

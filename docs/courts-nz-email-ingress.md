@@ -72,9 +72,20 @@ Setup outline:
 
 2. Run the `Deploy Email Worker` workflow with the dedicated subscription
    address in `allowed_recipients`.
-3. In Cloudflare Email Routing, create a routing rule from the dedicated
+3. Register or delegate the root domain for the dedicated address. Current
+   target state is recorded in `config/courts_nz_email_ingress.json`:
+
+   - root domain: `edithatogo.com`
+   - dedicated subdomain: `archive.edithatogo.com`
+   - Cloudflare nameservers: `jocelyn.ns.cloudflare.com`,
+     `joel.ns.cloudflare.com`
+
+   As of 2026-06-15, public DNS and RDAP returned `NXDOMAIN`/not found for
+   `edithatogo.com`, so the domain must be registered or this lane must be
+   switched to a registered domain before Email Routing can become active.
+4. In Cloudflare Email Routing, create a routing rule from the dedicated
    subscription address to the deployed Worker.
-4. Subscribe the dedicated address to the Courts of New Zealand judgments of
+5. Subscribe the dedicated address to the Courts of New Zealand judgments of
    public interest notification list, then update
    `config/courts_nz_email_ingress.json` from `pending_external_setup` to
    `active`.

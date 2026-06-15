@@ -11,7 +11,16 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
             "dedicated_subscription_address": {
                 "status": "pending_external_setup",
                 "address": "courts-nz-judgments@archive.edithatogo.com",
-            }
+            },
+            "domain_setup": {
+                "status": "pending_domain_registration_or_delegation",
+                "root_domain": "edithatogo.com",
+                "cloudflare_zone_status": "pending_nameserver_delegation",
+                "cloudflare_nameservers": [
+                    "jocelyn.ns.cloudflare.com",
+                    "joel.ns.cloudflare.com",
+                ],
+            },
         },
     )
 
@@ -31,6 +40,15 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
         "CLOUDFLARE_API_TOKEN",
         "CLOUDFLARE_ACCOUNT_ID",
         "EMAIL_WORKER_GITHUB_TOKEN",
+    ]
+    assert (
+        checks["issue-5-email-ingress"]["domain_status"]
+        == "pending_domain_registration_or_delegation"
+    )
+    assert checks["issue-5-email-ingress"]["root_domain"] == "edithatogo.com"
+    assert checks["issue-5-email-ingress"]["cloudflare_nameservers"] == [
+        "jocelyn.ns.cloudflare.com",
+        "joel.ns.cloudflare.com",
     ]
     assert checks["issue-6-corpus-publication"]["status"] == "blocked"
     assert checks["issue-6-corpus-publication"]["missing_hugging_face_secrets"] == []

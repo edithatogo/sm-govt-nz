@@ -244,6 +244,12 @@ is `courts-nz-judgments@archive.edithatogo.com`; it remains pending until the
 Cloudflare routing rule exists and the address is subscribed to the Courts of
 New Zealand judgments of public interest email list.
 
+Current domain setup is also tracked in `config/courts_nz_email_ingress.json`.
+As of 2026-06-15, `edithatogo.com` has a pending Cloudflare zone but public DNS
+and RDAP returned `NXDOMAIN`/not found, so the root domain must be registered
+and delegated to `jocelyn.ns.cloudflare.com` and `joel.ns.cloudflare.com`, or
+the email ingress lane must be switched to a registered domain.
+
 Historical and fallback-source captures must be archive-only. They must not
 advance outbound syndication state or repost old material to X.
 

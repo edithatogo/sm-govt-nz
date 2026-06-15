@@ -10,6 +10,12 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
     assert config["dedicated_subscription_address"]["status"] == "pending_external_setup"
     assert config["dedicated_subscription_address"]["address"].startswith("courts-nz-judgments@")
     assert config["dedicated_subscription_address"]["tracking_issue"].endswith("/issues/5")
+    assert config["domain_setup"]["root_domain"] == "edithatogo.com"
+    assert config["domain_setup"]["status"] == "pending_domain_registration_or_delegation"
+    assert config["domain_setup"]["cloudflare_nameservers"] == [
+        "jocelyn.ns.cloudflare.com",
+        "joel.ns.cloudflare.com",
+    ]
     assert config["default_route"]["provider"] == "cloudflare_email_routing_worker"
     assert config["default_route"]["repository_dispatch_event_type"] == "courts_nz_email_received"
     assert [route["provider"] for route in config["fallback_routes"]] == [
