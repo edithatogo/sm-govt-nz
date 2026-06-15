@@ -83,6 +83,10 @@ Setup outline:
    As of 2026-06-15, public DNS and RDAP returned `NXDOMAIN`/not found for
    `edithatogo.com`, so the domain must be registered or this lane must be
    switched to a registered domain before Email Routing can become active.
+   Domain registration is cost-bearing and must not be done without explicit
+   approval. The Cloudflare account was verified on 2026-06-15 as having no
+   active subscriptions, no payment method, no billing address, no billable
+   usage data, and Workers on the `Free $0` plan.
 4. In Cloudflare Email Routing, create a routing rule from the dedicated
    subscription address to the deployed Worker.
 5. Subscribe the dedicated address to the Courts of New Zealand judgments of
@@ -117,3 +121,6 @@ endpoint with a raw RFC 5322 message.
   other mirror account.
 - If a payload is malformed, the workflow should fail before committing partial
   archive files.
+- Cloudflare setup must stay on free plans. Do not add a payment method, buy a
+  domain, purchase Workers Paid, or enable metered paid products without
+  explicit approval.

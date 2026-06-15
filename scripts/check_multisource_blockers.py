@@ -29,6 +29,7 @@ def _check_email_ingress(env: dict[str, str]) -> dict[str, Any]:
     config = _load_json(EMAIL_CONFIG_PATH)
     dedicated = config.get("dedicated_subscription_address", {})
     domain_setup = config.get("domain_setup", {})
+    cost_guardrail = config.get("cloudflare_cost_guardrail", {})
     status = str(dedicated.get("status") or "missing_config")
     required_secrets = [
         "CLOUDFLARE_API_TOKEN",
@@ -46,9 +47,19 @@ def _check_email_ingress(env: dict[str, str]) -> dict[str, Any]:
         "root_domain": domain_setup.get("root_domain", ""),
         "cloudflare_zone_status": domain_setup.get("cloudflare_zone_status", ""),
         "cloudflare_nameservers": domain_setup.get("cloudflare_nameservers", []),
+        "cloudflare_cost_guardrail_status": cost_guardrail.get("status", "unknown"),
+        "cloudflare_workers_plan": cost_guardrail.get("dashboard_observations", {}).get(
+            "workers_plan",
+            "",
+        ),
+        "cloudflare_billing_method": cost_guardrail.get("dashboard_observations", {}).get(
+            "billing_method",
+            "",
+        ),
         "missing_secrets": missing,
         "next_action": (
-            "Register/delegate the root domain to the listed Cloudflare nameservers, "
+            "After explicit approval for any cost-bearing domain registration, "
+            "register/delegate the root domain to the listed Cloudflare nameservers, "
             "rerun Cloudflare Email Routing with apply=true, subscribe the address to "
             "Courts of NZ judgments, then set the config status to active."
         ),

@@ -16,6 +16,12 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
         "jocelyn.ns.cloudflare.com",
         "joel.ns.cloudflare.com",
     ]
+    guardrail = config["cloudflare_cost_guardrail"]
+    assert guardrail["status"] == "active"
+    assert guardrail["dashboard_observations"]["workers_plan"] == "Free $0"
+    assert guardrail["dashboard_observations"]["billing_method"] == "no payment method on file"
+    assert guardrail["must_not_add_payment_method"] is True
+    assert guardrail["must_not_register_domain_without_explicit_approval"] is True
     assert config["default_route"]["provider"] == "cloudflare_email_routing_worker"
     assert config["default_route"]["repository_dispatch_event_type"] == "courts_nz_email_received"
     assert [route["provider"] for route in config["fallback_routes"]] == [

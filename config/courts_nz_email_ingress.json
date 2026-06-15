@@ -26,6 +26,22 @@
     "last_verified": "2026-06-15",
     "notes": "Public DNS and RDAP returned NXDOMAIN/not found for edithatogo.com on 2026-06-15. Register the root domain or switch this ingress lane to a registered domain before enabling Cloudflare Email Routing."
   },
+  "cloudflare_cost_guardrail": {
+    "status": "active",
+    "last_verified": "2026-06-15",
+    "dashboard_observations": {
+      "active_subscriptions": "none",
+      "billing_method": "no payment method on file",
+      "billing_address": "no address on file",
+      "workers_plan": "Free $0",
+      "billable_usage": "no data"
+    },
+    "spend_cap_note": "Cloudflare budget alerts are informational and do not cap usage. The effective zero-spend guardrail is to keep the account on free plans, avoid adding a payment method, and require explicit approval before any paid plan, domain registration, or metered billing feature is enabled.",
+    "must_not_add_payment_method": true,
+    "must_not_purchase_workers_paid": true,
+    "must_not_register_domain_without_explicit_approval": true,
+    "must_not_enable_metered_paid_products_without_explicit_approval": true
+  },
   "default_route": {
     "provider": "cloudflare_email_routing_worker",
     "workflow": "Archive Email",

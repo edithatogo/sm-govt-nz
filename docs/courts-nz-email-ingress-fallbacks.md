@@ -29,6 +29,13 @@ domain must be registered and delegated to `jocelyn.ns.cloudflare.com` and
 `joel.ns.cloudflare.com`, or this lane must be switched to another registered
 domain, before Cloudflare Email Routing can be enabled.
 
+Cost guardrail: the Cloudflare account was checked on 2026-06-15 and showed no
+active subscriptions, no payment method on file, no billing address, no billable
+usage data, and Workers on the `Free $0` plan. Cloudflare budget alerts are
+informational only and do not cap usage, so do not add a payment method,
+register a domain, purchase Workers Paid, or enable metered paid products
+without explicit approval.
+
 ## Default Route
 1. Courts of New Zealand sends the subscription email to the dedicated address.
 2. Cloudflare Email Routing delivers the message to
@@ -62,3 +69,4 @@ posting queue.
 - Email records must not advance outbound syndication state.
 - All routes must deduplicate by message ID, canonical URL, and content hash.
 - Any fallback activation needs a separate task commit and review note.
+- Any cost-bearing Cloudflare change needs explicit approval before it is made.

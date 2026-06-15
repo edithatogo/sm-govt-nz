@@ -250,6 +250,13 @@ and RDAP returned `NXDOMAIN`/not found, so the root domain must be registered
 and delegated to `jocelyn.ns.cloudflare.com` and `joel.ns.cloudflare.com`, or
 the email ingress lane must be switched to a registered domain.
 
+Cloudflare cost guardrail: the account was checked on 2026-06-15 and had no
+active subscriptions, no payment method on file, no billing address, no billable
+usage data, and Workers on the `Free $0` plan. Cloudflare budget alerts are
+informational only and do not cap usage. Do not add a payment method, register a
+domain, purchase Workers Paid, or enable metered paid products without explicit
+approval.
+
 Historical and fallback-source captures must be archive-only. They must not
 advance outbound syndication state or repost old material to X.
 

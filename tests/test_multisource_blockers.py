@@ -21,6 +21,13 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
                     "joel.ns.cloudflare.com",
                 ],
             },
+            "cloudflare_cost_guardrail": {
+                "status": "active",
+                "dashboard_observations": {
+                    "workers_plan": "Free $0",
+                    "billing_method": "no payment method on file",
+                },
+            },
         },
     )
 
@@ -50,6 +57,12 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
         "jocelyn.ns.cloudflare.com",
         "joel.ns.cloudflare.com",
     ]
+    assert checks["issue-5-email-ingress"]["cloudflare_cost_guardrail_status"] == "active"
+    assert checks["issue-5-email-ingress"]["cloudflare_workers_plan"] == "Free $0"
+    assert (
+        checks["issue-5-email-ingress"]["cloudflare_billing_method"]
+        == "no payment method on file"
+    )
     assert checks["issue-6-corpus-publication"]["status"] == "blocked"
     assert checks["issue-6-corpus-publication"]["missing_hugging_face_secrets"] == []
     assert checks["issue-6-corpus-publication"]["missing_zenodo_secrets"] == []
