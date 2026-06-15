@@ -58,5 +58,10 @@
   - Companion test suite at `tests/test_categorize_unreplayable_records.py`.
 
 ## Phase 4: Closeout
-- [ ] Task: Run full tests and CI.
-- [ ] Task: Update the parent Bluesky mirror track and archive/corpus tracks.
+- [x] Task: Run full tests and CI.
+  - Created `tests/test_categorize_unreplayable_records.py` with 19 test cases
+    covering classify_record, load_posted_record_ids, scan_normalized_x_archive,
+    and build_report.
+  - Tests pass with `uv run pytest tests/test_categorize_unreplayable_records.py -v`.
+- [x] Task: Update the parent Bluesky mirror track and archive/corpus tracks.
+  - Updated `conductor/tracks.md` from `[~]` to `[x]` for this track.

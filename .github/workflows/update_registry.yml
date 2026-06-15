@@ -22,6 +22,10 @@ jobs:
         run: python -m pip install -r requirements-dev.txt
       - name: Generate gap analysis
         run: python scripts/gap_analyzer.py --registry registry/agencies.json --output registry/gap_analysis.json
+      - name: Compile registry to SQLite
+        run: python scripts/compile_registry.py
+      - name: Verify registry compilation
+        run: python scripts/verify_registry_compilation.py --output registry/verification_report.json
       - name: Run self-evaluation
         run: python scripts/self_eval.py --output agent_framework/evaluations/latest.json
       - name: Commit generated registry outputs
@@ -29,4 +33,7 @@ jobs:
           python scripts/commit_state_updates.py
           --message "Update agency registry analysis"
           --path registry/gap_analysis.json
+          --path registry/compiled/agencies.json
+          --path registry/government_directory.db
+          --path registry/verification_report.json
           --path agent_framework/evaluations/latest.json

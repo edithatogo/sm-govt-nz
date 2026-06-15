@@ -31,7 +31,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Complete Courts of New Zealand Bluesky profile evidence and identity archive
 *Link: [./tracks/courts_nz_bluesky_profile_archive_20260613/](./tracks/courts_nz_bluesky_profile_archive_20260613/)*
 
-## [~] Track: Complete Courts of New Zealand Bluesky archive replay and manifest telemetry
+## [x] Track: Complete Courts of New Zealand Bluesky archive replay and manifest telemetry
 *Link: [./tracks/courts_nz_bluesky_archive_replay_20260613/](./tracks/courts_nz_bluesky_archive_replay_20260613/)*
 
 ## [x] Track: Harden Courts of New Zealand Bluesky mirror launch operations

@@ -223,9 +223,12 @@ def verify_registry(
                     detail=f"Agency '{aid}' parent_agency_id mismatch",
                 )
             )
-
-
     # --- Validate each social profile ----------------------------------------
+    if result.all_agencies_match is False and not any(
+        m.field.startswith("agencies.") for m in result.mismatches
+    ):
+        result.all_agencies_match = True
+
     for item in data:
         aid = item["agency_id"]
         profiles = item.get("social_profiles", {})
@@ -261,9 +264,7 @@ def verify_registry(
                         )
                     )
 
-    if result.all_profiles_match is False:
-        pass  # already set
-    else:
+    if not any(m.field.startswith("profiles.") for m in result.mismatches):
         result.all_profiles_match = True
 
     # --- Check for orphaned rows ---------------------------------------------

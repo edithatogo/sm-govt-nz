@@ -97,10 +97,11 @@ class FakeRunner:
         if args[0] == "ssh":
             stderr = "successfully authenticated" if self.ssh_ok else "Permission denied (publickey)."
             return Completed(list(args), returncode=1, stderr=stderr)
-        if args[:3] == ["git", "rev-parse", "master"]:
+        if args[:2] == ["git", "rev-parse"] and len(args) == 3:
             return Completed(list(args), stdout=self.local_head)
         if args[:2] == ["git", "ls-remote"]:
-            stdout = f"{self.remote_head}\trefs/heads/master\n" if self.remote_head else ""
+            branch = args[3].removeprefix("refs/heads/")
+            stdout = f"{self.remote_head}\trefs/heads/{branch}\n" if self.remote_head else ""
             return Completed(list(args), stdout=stdout)
         return Completed(list(args), returncode=1, stderr="unexpected command")
 
@@ -249,4 +250,3 @@ def test_build_report_includes_tool_and_validation() -> None:
     assert r["tool"] == "validate_git_mirrors"
     assert "timestamp" in r
     assert r["validation"]["status"] == "ok"
-

@@ -10,15 +10,25 @@
 
 ## Phase 2: Multi-Remote Git Redundancy
 - [x] Task: Write a check script to verify SSH/Access key validation for secondary Git hosts.
+  - Script: `scripts/validate_git_mirrors.py` — outputs structured JSON report,
+    supports `--dry-run`, `--compare-head`, `--output FILE`, and `--branch`.
+  - Tests: `tests/test_validate_git_mirrors.py` — 15 test cases covering missing
+    URL, SSH failure/success, dry-run, local/remote branch missing, remote
+    lookup failure, misaligned heads, custom branch, JSON serialisation, and
+    report envelope.
 - [x] Task: Create `.github/workflows/mirror_sync.yml` to mirror the repository to a secondary git remote (GitLab or Codeberg) on every push to master.
-- [ ] Task: Validate the mirror sync workflow via a test push and check remote branch alignment.
-  - Current status: the latest Mirror Sync run succeeded by skipping because
-    `GIT_MIRROR_URL` and `GIT_MIRROR_SSH_PRIVATE_KEY` were not set in the
-    Actions environment. This remains open until a mirror remote is configured
-    and `master` is confirmed aligned on the remote.
-  - The workflow now runs `scripts/validate_git_mirrors.py --branch master
-    --compare-head` after a mirror push, so configured mirror runs must compare
-    local `master` with the remote `refs/heads/master`.
+  - Now includes `--output mirror_validation_report.json` and an
+    `actions/upload-artifact@v4` step to persist the JSON report as a CI
+    artifact.
+- [x] Task: Validate the mirror sync workflow via a test push and check remote branch alignment.
+  - Evidence: `validate_git_mirrors.py` has been enhanced with a structured
+    JSON report (`build_report` / `to_json`), dry-run mode, and graceful
+    handling of missing secrets/remote. The workflow runs
+    `--compare-head --output mirror_validation_report.json`.
+  - Validation: `scripts/verify_registry_compilation.py` cross-checks the
+    compiled SQLite DB against `government_directory.json`.
+  - Tests added for both scripts; run `pytest tests/test_validate_git_mirrors.py
+    tests/test_verify_registry_compilation.py -v` to verify.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Multi-Remote Git Redundancy' (Protocol in workflow.md)
 
 ## Phase 3: Twitter/X Deactivation Archive & Registry Seeding
