@@ -34,6 +34,7 @@ def check_multisource_blockers(
 def _check_email_ingress(env: dict[str, str], secret_names: set[str]) -> dict[str, Any]:
     config = _load_json(EMAIL_CONFIG_PATH)
     dedicated = config.get("dedicated_subscription_address", {})
+    cloudflare_rule = dedicated.get("cloudflare_rule", {})
     domain_setup = config.get("domain_setup", {})
     cost_guardrail = config.get("cloudflare_cost_guardrail", {})
     fallback_routes = _fallback_route_statuses(config)
@@ -57,7 +58,22 @@ def _check_email_ingress(env: dict[str, str], secret_names: set[str]) -> dict[st
         "domain_status": domain_setup.get("status", "unknown"),
         "root_domain": domain_setup.get("root_domain", ""),
         "cloudflare_zone_status": domain_setup.get("cloudflare_zone_status", ""),
+        "cloudflare_email_routing_enabled": domain_setup.get(
+            "cloudflare_email_routing_enabled",
+        ),
+        "cloudflare_email_routing_status": domain_setup.get(
+            "cloudflare_email_routing_status",
+            "",
+        ),
+        "cloudflare_cli": domain_setup.get("cloudflare_cli", ""),
+        "cloudflare_cli_version": domain_setup.get("cloudflare_cli_version", ""),
+        "cloudflare_account_id": domain_setup.get("cloudflare_account_id", ""),
         "cloudflare_nameservers": domain_setup.get("cloudflare_nameservers", []),
+        "cloudflare_rule_id": cloudflare_rule.get("id", ""),
+        "cloudflare_rule_enabled": cloudflare_rule.get("enabled"),
+        "cloudflare_rule_action": cloudflare_rule.get("action", ""),
+        "cloudflare_rule_match": cloudflare_rule.get("match", ""),
+        "cloudflare_rule_last_verified": cloudflare_rule.get("last_verified", ""),
         "cloudflare_cost_guardrail_status": cost_guardrail.get("status", "unknown"),
         "cloudflare_workers_plan": cost_guardrail.get("dashboard_observations", {}).get(
             "workers_plan",

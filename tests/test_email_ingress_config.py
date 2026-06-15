@@ -10,8 +10,18 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
     assert config["dedicated_subscription_address"]["status"] == "pending_external_setup"
     assert config["dedicated_subscription_address"]["address"].startswith("courts-nz-judgments@")
     assert config["dedicated_subscription_address"]["tracking_issue"].endswith("/issues/5")
+    rule = config["dedicated_subscription_address"]["cloudflare_rule"]
+    assert rule["id"] == "4fbe93480e834fd786a1959020c8a526"
+    assert rule["enabled"] is False
+    assert rule["match"] == "to:courts-nz-judgments@archive.edithatogo.com"
+    assert rule["action"] == "worker:courts-nz-email-archive"
     assert config["domain_setup"]["root_domain"] == "edithatogo.com"
     assert config["domain_setup"]["status"] == "pending_domain_registration_or_delegation"
+    assert config["domain_setup"]["cloudflare_zone_status"] == "email_routing_unconfigured"
+    assert config["domain_setup"]["cloudflare_email_routing_enabled"] is False
+    assert config["domain_setup"]["cloudflare_email_routing_status"] == "unconfigured"
+    assert config["domain_setup"]["cloudflare_cli"] == "npx -y wrangler"
+    assert config["domain_setup"]["cloudflare_cli_version"] == "4.100.0"
     assert config["domain_setup"]["cloudflare_nameservers"] == [
         "jocelyn.ns.cloudflare.com",
         "joel.ns.cloudflare.com",

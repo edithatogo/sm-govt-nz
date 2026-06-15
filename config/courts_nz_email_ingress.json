@@ -8,6 +8,16 @@
     "purpose": "Courts of New Zealand judgments of public interest subscription capture",
     "provider": "cloudflare_email_routing",
     "worker_name": "courts-nz-email-archive",
+    "cloudflare_rule": {
+      "id": "4fbe93480e834fd786a1959020c8a526",
+      "name": "CourtsNZJudgmentsArchiveWorker",
+      "enabled": false,
+      "match": "to:courts-nz-judgments@archive.edithatogo.com",
+      "action": "worker:courts-nz-email-archive",
+      "priority": 0,
+      "last_verified": "2026-06-15",
+      "verified_with": "npx -y wrangler email routing rules get edithatogo.com 4fbe93480e834fd786a1959020c8a526"
+    },
     "tracking_issue": "https://github.com/edithatogo/sm-govt-nz/issues/5",
     "allowed_recipients": [
       "courts-nz-judgments@archive.edithatogo.com"
@@ -17,7 +27,13 @@
     "root_domain": "edithatogo.com",
     "requested_subdomain": "archive.edithatogo.com",
     "status": "pending_domain_registration_or_delegation",
-    "cloudflare_zone_status": "pending_nameserver_delegation",
+    "cloudflare_zone_status": "email_routing_unconfigured",
+    "cloudflare_email_routing_enabled": false,
+    "cloudflare_email_routing_status": "unconfigured",
+    "cloudflare_email_routing_tag": "142b0b331b548d1a0f51c7b8142ae5d9",
+    "cloudflare_cli": "npx -y wrangler",
+    "cloudflare_cli_version": "4.100.0",
+    "cloudflare_account_id": "16f3035fe42afb94d9138f86a8672ae5",
     "cloudflare_nameservers": [
       "jocelyn.ns.cloudflare.com",
       "joel.ns.cloudflare.com"

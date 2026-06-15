@@ -99,8 +99,24 @@ Setup outline:
    approval. The Cloudflare account was verified on 2026-06-15 as having no
    active subscriptions, no payment method, no billing address, no billable
    usage data, and Workers on the `Free $0` plan.
-4. In Cloudflare Email Routing, create a routing rule from the dedicated
-   subscription address to the deployed Worker.
+4. In Cloudflare Email Routing, keep the staged routing rule disabled until the
+   domain/DNS gate is cleared:
+
+   - CLI: `npx -y wrangler`
+   - Wrangler version: `4.100.0`
+   - Account ID: `16f3035fe42afb94d9138f86a8672ae5`
+   - Rule ID: `4fbe93480e834fd786a1959020c8a526`
+   - Rule name: `CourtsNZJudgmentsArchiveWorker`
+   - Matcher: `to:courts-nz-judgments@archive.edithatogo.com`
+   - Action: `worker:courts-nz-email-archive`
+   - Enabled: `false`
+   - Verification command:
+     `npx -y wrangler email routing rules get edithatogo.com 4fbe93480e834fd786a1959020c8a526`
+
+   Cloudflare Email Routing for `edithatogo.com` was verified with Wrangler on
+   2026-06-15 as `Enabled: false` and `Status: unconfigured`. Do not enable
+   this rule until the domain is registered/delegated and the required MX/TXT
+   records are in place.
 5. Subscribe the dedicated address to the Courts of New Zealand judgments of
    public interest notification list, then update
    `config/courts_nz_email_ingress.json` from `pending_external_setup` to
