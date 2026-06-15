@@ -41,7 +41,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Validate Cloudflare secrets
-        run: python scripts/validate_secrets.py --mode cloudflare_email
+        run: python scripts/validate_secrets.py --mode cloudflare_email_routing
       - name: Configure Email Routing
         run: >-
           python scripts/configure_cloudflare_email_routing.py

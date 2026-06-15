@@ -149,7 +149,14 @@ def main() -> None:
     parser.add_argument(
         "--mode",
         default="ci",
-        choices=["ci", "syndicate", "archive", "cloudflare_email", "upstream"],
+        choices=[
+            "ci",
+            "syndicate",
+            "archive",
+            "cloudflare_email",
+            "cloudflare_email_routing",
+            "upstream",
+        ],
     )
     parser.add_argument("--schema", default="config/secrets.schema.json")
     parser.add_argument(

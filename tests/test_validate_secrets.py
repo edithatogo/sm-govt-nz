@@ -20,6 +20,10 @@ SCHEMA = {
             "required": ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "EMAIL_WORKER_GITHUB_TOKEN"],
             "anyOf": [],
         },
+        "cloudflare_email_routing": {
+            "required": ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID"],
+            "anyOf": [],
+        },
         "upstream": {"required": ["GH_TOKEN"], "anyOf": []},
     },
     "jsonVars": [],
@@ -260,6 +264,20 @@ def test_validate_environment_rejects_missing_cloudflare_email_deploy_secrets() 
         "CLOUDFLARE_ACCOUNT_ID",
         "EMAIL_WORKER_GITHUB_TOKEN",
     ]
+
+
+def test_validate_environment_accepts_cloudflare_email_routing_secrets() -> None:
+    result = validate_environment(
+        "cloudflare_email_routing",
+        schema=SCHEMA,
+        env={
+            "CLOUDFLARE_API_TOKEN": "cf-token",
+            "CLOUDFLARE_ACCOUNT_ID": "account",
+        },
+    )
+
+    assert result["valid"] is True
+    assert result["missing_required"] == []
 
 
 def test_load_env_file_reads_simple_key_values(tmp_path) -> None:
