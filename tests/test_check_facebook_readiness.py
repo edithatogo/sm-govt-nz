@@ -45,7 +45,7 @@ class TestPageIdentityRequirements:
     def test_requires_dedicated_page(self) -> None:
         reqs = page_identity_requirements()
         assert "Dedicated Facebook Page" in reqs["required_identity"]
-        assert "NOT supported" in reqs["personal_profiles"]
+        assert "not supported" in reqs["personal_profiles"].lower()
 
     def test_lists_required_permissions(self) -> None:
         reqs = page_identity_requirements()

@@ -10,6 +10,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 from scripts.check_facebook_readiness import check_readiness as check_fb_readiness
 from scripts.check_instagram_readiness import check_readiness as check_ig_readiness
 

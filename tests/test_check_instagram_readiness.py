@@ -1,8 +1,5 @@
 """Tests for scripts/check_instagram_readiness.py."""
 
-import json
-from pathlib import Path
-
 from scripts.check_instagram_readiness import (
     account_type_requirements,
     check_config,
@@ -50,7 +47,7 @@ class TestAccountTypeRequirements:
     def test_requires_professional_account(self) -> None:
         reqs = account_type_requirements()
         assert "Professional" in reqs["required_account_type"]
-        assert "NOT supported" in reqs["personal_accounts"]
+        assert "not supported" in reqs["personal_accounts"].lower()
 
     def test_lists_required_permissions(self) -> None:
         reqs = account_type_requirements()

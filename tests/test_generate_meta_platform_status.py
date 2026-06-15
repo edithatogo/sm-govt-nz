@@ -1,7 +1,6 @@
 """Tests for scripts/generate_meta_platform_status.py."""
 
 import json
-from pathlib import Path
 
 from scripts.generate_meta_platform_status import generate_report, write_report
 
