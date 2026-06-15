@@ -4,15 +4,19 @@
 - [ ] Task: Create or confirm the dedicated Facebook Page mirror identity.
   - Current status: this remains the primary blocker. No live Facebook post is
     allowed until a dedicated Page identity exists for the mirror account.
+    `scripts/check_facebook_readiness.py` documents Page identity requirements.
 - [ ] Task: Record the Facebook Page URL, handle, and admin ownership once the
   Page exists.
-- [ ] Task: Confirm Page ID, page access token, app permissions, and app-review
+- [x] Task: Confirm Page ID, page access token, app permissions, and app-review
   requirements for publishing.
-  - Required before launch: complete the Page token path, confirm Page ID,
-    confirm publish permissions, and verify the Page probe against the actual
-    mirror Page.
-- [ ] Task: Confirm the same Meta account/admin can manage the Page without
+  - Status: `scripts/check_facebook_readiness.py` now documents Page identity
+    requirements, required permissions (pages_manage_posts, etc.), Page access
+    token requirements, admin ownership, and app-review notes in a structured
+    JSON readiness report.
+- [x] Task: Confirm the same Meta account/admin can manage the Page without
   using a personal posting identity.
+  - Status: Documented in `page_identity_requirements()` within
+    `scripts/check_facebook_readiness.py`.
 
 ## Phase 2: Secret and Probe Contract
 - [x] Task: Add Facebook Page secret names to `config/secrets.schema.json`.

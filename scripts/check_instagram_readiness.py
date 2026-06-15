@@ -176,3 +176,110 @@ def account_type_requirements() -> dict[str, Any]:
             "Development mode with only test users."
         ),
     }
+
+
+def check_readiness(
+    env: dict[str, str] | None = None,
+    *,
+    skip_test_run: bool = False,
+) -> dict[str, Any]:
+    """Run all Instagram readiness checks and return a combined report."""
+    secrets_result = check_secrets(env)
+    config_result = check_config(env)
+
+    if skip_test_run:
+        tests_result: dict[str, Any] = {
+            "status": "skipped",
+            "note": "Test execution skipped (--skip-test-run flag)",
+        }
+    else:
+        tests_result = check_adapter_tests()
+
+    account_type = account_type_requirements()
+
+    all_passed = (
+        secrets_result["status"] == "passed"
+        and config_result["status"] == "passed"
+        and (tests_result["status"] == "skipped" or tests_result["status"] == "passed")
+    )
+
+    blockers: list[str] = []
+    if secrets_result["status"] != "passed":
+        blockers.append(
+            f"Missing secrets: {', '.join(secrets_result['missing'])}"
+        )
+    if config_result.get("launch_blocked", True):
+        blockers.append(
+            "Instagram is not enabled in config.json "
+            "(instagram.enabled is false or missing)"
+        )
+    if tests_result.get("status") == "failed":
+        blockers.append("Instagram adapter tests are failing")
+
+    return {
+        "platform": "instagram",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "ready": all_passed,
+        "blockers": blockers,
+        "secrets": secrets_result,
+        "config": config_result,
+        "adapter_tests": tests_result,
+        "account_type_requirements": account_type,
+    }
+
+
+def main() -> None:
+    parser = __import__("argparse").ArgumentParser(
+        description="Check Instagram Meta API readiness for controlled launch."
+    )
+    parser.add_argument("--json", action="store_true", help="Output as JSON")
+    parser.add_argument(
+        "--skip-test-run",
+        action="store_true",
+        help="Skip running adapter tests (check existence only)",
+    )
+    args = parser.parse_args()
+
+    report = check_readiness(skip_test_run=args.skip_test_run)
+
+    if args.json:
+        print(json.dumps(report, indent=2, sort_keys=True))
+    else:
+        _print_human_readable(report)
+
+    sys.exit(0 if report["ready"] else 1)
+
+
+def _print_human_readable(report: dict[str, Any]) -> None:
+    print(f"=== Instagram Readiness Report ({report['timestamp']}) ===")
+    print(f"Ready: {report['ready']}")
+    if report["blockers"]:
+        print("Blockers:")
+        for b in report["blockers"]:
+            print(f"  - {b}")
+    print()
+    print("Secrets:")
+    for name, present in report["secrets"]["secrets"].items():
+        print(f"  {name}: {'YES' if present else 'NO'}")
+    print()
+    print("Config:")
+    cfg = report["config"]
+    for key in ("enabled", "account_handle", "gated_by", "syndicate_to_configured"):
+        print(f"  {key}: {cfg.get(key, 'N/A')}")
+    print()
+    print("Adapter Tests:")
+    tests = report["adapter_tests"]
+    if tests.get("note"):
+        print(f"  Status: {tests['note']}")
+    else:
+        print(f"  Status: {tests['status']}")
+        print(f"  All passed: {tests.get('all_tests_passed', 'N/A')}")
+    print()
+    print("Account Type Requirements:")
+    for key, value in report["account_type_requirements"].items():
+        print(f"  {key}: {value}")
+
+
+if __name__ == "__main__":
+    main()
+

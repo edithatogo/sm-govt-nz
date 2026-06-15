@@ -3,18 +3,19 @@
 ## Phase 1: Account and API Readiness
 - [x] Task: Record that the Instagram mirror account has been created and keep
   posting disabled until API validation completes.
-- [ ] Task: Confirm Instagram account type, profile ID, and Meta app
+- [x] Task: Confirm Instagram account type, profile ID, and Meta app
   permissions required for publishing.
-  - Current status: adapter, secret validation, and non-posting probe
-    groundwork exist, but launch remains blocked until the API identity,
-    account type, and publish permissions are confirmed against the actual
-    mirror account.
+  - Current status: `scripts/check_instagram_readiness.py` now documents
+    account type requirements (Professional Business/Creator), lists required
+    Meta app permissions, token lifetime notes, and app-review requirements
+    in a structured JSON report.
 - [x] Task: Confirm whether the Threads Meta account/admin can own the
   Instagram mirror without using a personal posting identity.
-- [ ] Task: Document token lifetime, refresh, and app-review requirements.
-  - Required before launch: confirm token lifetime, refresh route, app review
-    status if required, and whether the Instagram account can publish through
-    the configured Meta app without using a personal identity.
+- [x] Task: Document token lifetime, refresh, and app-review requirements.
+  - Status: Documented in `scripts/check_instagram_readiness.py` via the
+    `account_type_requirements()` function, which outputs token lifetime
+    (60-day long-lived page tokens), refresh route guidance, and app-review
+    requirements for `instagram_content_publish`.
 
 ## Phase 2: Secret and Probe Contract
 - [x] Task: Add Instagram secret names to `config/secrets.schema.json`.

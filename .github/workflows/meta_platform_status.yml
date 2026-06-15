@@ -1,0 +1,40 @@
+name: Meta Platform Status
+
+on:
+  workflow_dispatch:
+
+jobs:
+  meta-platform-status:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Generate Meta platform status report
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+        run: uv run python scripts/generate_meta_platform_status.py --skip-test-run
+
+      - name: Upload status report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: meta-platform-status
+          path: conductor/meta_platform_status.json
+          if-no-files-found: error
