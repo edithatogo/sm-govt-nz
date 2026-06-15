@@ -15,6 +15,8 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Set up Python
         run: python --version
       - name: Install runtime dependencies
@@ -22,7 +24,10 @@ jobs:
       - name: Archive current public sources
         run: python scripts/archive_current_sources.py --website-limit 10
       - name: Commit archive updates
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: Update archive source captures
-          file_pattern: conductor/archive_state.json conductor/archive_source_health.json historical_archive_raw/** historical_archive_normalized/**
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Update archive source captures"
+          --path conductor/archive_state.json
+          --path conductor/archive_source_health.json
+          --path 'historical_archive_raw/**'
+          --path 'historical_archive_normalized/**'

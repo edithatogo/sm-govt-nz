@@ -25,6 +25,8 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Set up Python
         run: python --version
       - name: Install runtime dependencies
@@ -90,7 +92,12 @@ jobs:
       - name: Verify archive mirror delivery URLs
         run: python scripts/verify_archive_mirror_posts.py --target bluesky --limit 5
       - name: Commit state updates
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: Update syndication state
-          file_pattern: conductor/state.json conductor/target_delivery_state.json conductor/bluesky_backlog_state.json conductor/archive_mirror_state.json conductor/archive_mirror_coverage.json historical_archive/**
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Update syndication state"
+          --path conductor/state.json
+          --path conductor/target_delivery_state.json
+          --path conductor/bluesky_backlog_state.json
+          --path conductor/archive_mirror_state.json
+          --path conductor/archive_mirror_coverage.json
+          --path 'historical_archive/**'

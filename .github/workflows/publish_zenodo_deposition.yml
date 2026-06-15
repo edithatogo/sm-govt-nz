@@ -25,6 +25,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
@@ -35,7 +37,7 @@ jobs:
           --deposition-id "${{ inputs.deposition_id }}"
           --confirm "${{ inputs.confirm }}"
       - name: Commit publication report
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: Record Zenodo DOI publication
-          file_pattern: conductor/archive_publication_report_20260614.json
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Record Zenodo DOI publication"
+          --path conductor/archive_publication_report_20260614.json

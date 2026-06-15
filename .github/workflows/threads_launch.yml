@@ -23,6 +23,8 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Set up Python
         run: python --version
       - name: Install runtime dependencies
@@ -50,7 +52,7 @@ jobs:
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
         run: python scripts/post_threads_latest.py --confirm-live-posting
       - name: Commit Threads delivery state
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: Update Threads launch delivery state
-          file_pattern: conductor/target_delivery_state.json
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Update Threads launch delivery state"
+          --path conductor/target_delivery_state.json

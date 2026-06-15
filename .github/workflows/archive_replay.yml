@@ -40,6 +40,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Set up Python
         run: python --version
       - name: Install runtime dependencies
@@ -72,7 +74,8 @@ jobs:
           --target ${{ inputs.target }}
           --limit ${{ inputs.batch_limit }}
       - name: Commit state updates
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: Update archive replay state
-          file_pattern: conductor/archive_mirror_state.json conductor/archive_mirror_coverage.json
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Update archive replay state"
+          --path conductor/archive_mirror_state.json
+          --path conductor/archive_mirror_coverage.json

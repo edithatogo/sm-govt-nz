@@ -12,7 +12,9 @@ jobs:
   update-registry:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@v5
       - name: Set up Python
         run: uv python install 3.11
@@ -23,7 +25,8 @@ jobs:
       - name: Run self-evaluation
         run: python scripts/self_eval.py --output agent_framework/evaluations/latest.json
       - name: Commit generated registry outputs
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Update agency registry analysis
-          file_pattern: registry/gap_analysis.json agent_framework/evaluations/latest.json
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Update agency registry analysis"
+          --path registry/gap_analysis.json
+          --path agent_framework/evaluations/latest.json
