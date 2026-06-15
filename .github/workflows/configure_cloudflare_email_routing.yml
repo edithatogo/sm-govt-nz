@@ -1,0 +1,51 @@
+name: Configure Cloudflare Email Routing
+
+on:
+  workflow_dispatch:
+    inputs:
+      email_address:
+        description: Email address to route into the archive Worker.
+        required: true
+        type: string
+        default: courts-nz-judgments@archive.edithatogo.com
+      worker_name:
+        description: Cloudflare Worker name.
+        required: true
+        type: string
+        default: courts-nz-email-archive
+      zone_name:
+        description: Optional Cloudflare zone name. Leave blank to infer from the email address.
+        required: false
+        type: string
+      apply:
+        description: Enable Email Routing and create the Worker rule.
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Validate Cloudflare secrets
+        run: python scripts/validate_secrets.py --mode cloudflare_email
+      - name: Configure Email Routing
+        run: >-
+          python scripts/configure_cloudflare_email_routing.py
+          --email-address "${{ inputs.email_address }}"
+          --worker-name "${{ inputs.worker_name }}"
+          ${{ inputs.zone_name && format('--zone-name "{0}"', inputs.zone_name) || '' }}
+          ${{ inputs.apply && '--apply' || '' }}
