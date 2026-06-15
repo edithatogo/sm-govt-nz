@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -209,7 +210,12 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    secret_names = _load_github_secret_names() if args.use_github_secrets else set()
+    secret_names: set[str] = set()
+    if args.use_github_secrets:
+        try:
+            secret_names = _load_github_secret_names()
+        except RuntimeError as exc:
+            print(f"warning: {exc}", file=sys.stderr)
     report = check_multisource_blockers(secret_names=secret_names)
     if args.json_output:
         Path(args.json_output).parent.mkdir(parents=True, exist_ok=True)

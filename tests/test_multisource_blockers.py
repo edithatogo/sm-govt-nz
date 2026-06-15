@@ -187,6 +187,41 @@ def test_load_github_secret_names_parses_gh_output(monkeypatch) -> None:
     assert blockers._load_github_secret_names() == {"HF_TOKEN", "ZENODO_TOKEN"}
 
 
+def test_main_falls_back_when_github_secret_listing_is_forbidden(
+    tmp_path,
+    monkeypatch,
+    capsys,
+) -> None:
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(
+        "sys.argv",
+        ["check_multisource_blockers.py", "--use-github-secrets"],
+    )
+    write_json(
+        tmp_path / "config" / "courts_nz_email_ingress.json",
+        {"dedicated_subscription_address": {"status": "pending_external_setup"}},
+    )
+
+    def fake_run(args, check, capture_output, text):
+        return CompletedProcess(
+            args=args,
+            returncode=1,
+            stdout="",
+            stderr=(
+                "failed to get secrets: HTTP 403: "
+                "Resource not accessible by integration"
+            ),
+        )
+
+    monkeypatch.setattr(blockers.subprocess, "run", fake_run)
+
+    blockers.main()
+
+    captured = capsys.readouterr()
+    assert "warning: Unable to list GitHub Actions secrets with gh." in captured.err
+    assert '"complete": false' in captured.out
+
+
 def test_write_markdown_report(tmp_path) -> None:
     path = tmp_path / "report.md"
     blockers.write_markdown_report(
