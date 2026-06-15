@@ -73,9 +73,12 @@ jobs:
           python scripts/verify_archive_mirror_posts.py
           --target ${{ inputs.target }}
           --limit ${{ inputs.batch_limit }}
+      - name: Categorize unreplayable records
+        run: python scripts/categorize_unreplayable_records.py
       - name: Commit state updates
         run: >-
           python scripts/commit_state_updates.py
           --message "Update archive replay state"
           --path conductor/archive_mirror_state.json
           --path conductor/archive_mirror_coverage.json
+          --path conductor/unreplayable_records_report.json

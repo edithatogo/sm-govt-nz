@@ -1,6 +1,13 @@
+"""Unit tests for scripts/validate_git_mirrors.py."""
+
 from dataclasses import dataclass
 
-from scripts.validate_git_mirrors import mirror_host, validate_mirrors
+from scripts.validate_git_mirrors import (
+    MirrorValidation,
+    build_report,
+    mirror_host,
+    validate_mirrors,
+)
 
 
 @dataclass
@@ -96,3 +103,150 @@ class FakeRunner:
             stdout = f"{self.remote_head}\trefs/heads/master\n" if self.remote_head else ""
             return Completed(list(args), stdout=stdout)
         return Completed(list(args), returncode=1, stderr="unexpected command")
+
+def test_validate_mirrors_dry_run_skips_ssh() -> None:
+    """dry_run=True should skip SSH access check and skip remote fetch."""
+    runner = FakeRunner(ssh_ok=False)  # would fail if SSH was attempted
+
+    result = validate_mirrors(
+        mirror_url="git@gitlab.com:owner/repo.git",
+        compare_head=True,
+        dry_run=True,
+        runner=runner,
+    )
+
+    assert result.ok is True
+    assert result.ssh_access_checked is True
+    assert result.remote_alignment_checked is False
+    assert "dry-run" in result.detail
+    assert not any(cmd[0] == "ssh" for cmd in runner.commands)
+
+
+def test_validate_mirrors_dry_run_https_skips_ls_remote() -> None:
+    """dry-run with HTTPS URL should not invoke ls-remote."""
+    runner = FakeRunner(local_head="abc123")
+
+    result = validate_mirrors(
+        mirror_url="https://codeberg.org/owner/repo.git",
+        compare_head=True,
+        dry_run=True,
+        runner=runner,
+    )
+
+    assert result.ok is True
+    assert result.local_head == "abc123"
+    assert not any("ls-remote" in cmd for cmd in runner.commands)
+
+
+def test_validate_mirrors_reports_local_branch_missing() -> None:
+    """When git rev-parse fails, report local_branch_missing."""
+
+    def failing_runner(args, capture_output, text, check):
+        return Completed(list(args), returncode=128, stderr="fatal: not a git repository")
+
+    result = validate_mirrors(
+        mirror_url="https://codeberg.org/owner/repo.git",
+        branch="nonexistent",
+        compare_head=True,
+        runner=failing_runner,
+    )
+
+    assert result.status == "local_branch_missing"
+    assert result.ok is False
+    assert "nonexistent" in result.detail
+
+
+def test_validate_mirrors_reports_remote_branch_missing() -> None:
+    """When ls-remote returns empty, report remote_branch_missing."""
+    runner = FakeRunner(local_head="abc123", remote_head="")
+
+    result = validate_mirrors(
+        mirror_url="https://codeberg.org/owner/repo.git",
+        branch="master",
+        compare_head=True,
+        runner=runner,
+    )
+
+    assert result.status == "remote_branch_missing"
+    assert result.ok is False
+    assert result.remote_alignment_checked is True
+
+
+def test_validate_mirrors_reports_remote_lookup_failed() -> None:
+    """When ls-remote command itself fails, report remote_lookup_failed."""
+
+    def failing_ls_remote(args, capture_output, text, check):
+        cmd = list(args)
+        if cmd[:2] == ["git", "ls-remote"]:
+            return Completed(cmd, returncode=128, stderr="fatal: could not read Username")
+        return FakeRunner()(args, capture_output, text, check)
+
+    result = validate_mirrors(
+        mirror_url="https://codeberg.org/owner/repo.git",
+        compare_head=True,
+        runner=failing_ls_remote,
+    )
+
+    assert result.status == "remote_lookup_failed"
+    assert result.ok is False
+    assert result.remote_alignment_checked is False
+
+
+def test_validate_mirrors_no_compare_does_not_fetch_remote() -> None:
+    runner = FakeRunner()
+
+    result = validate_mirrors(
+        mirror_url="https://codeberg.org/owner/repo.git",
+        compare_head=False,
+        runner=runner,
+    )
+
+    assert result.ok is True
+    assert result.remote_alignment_checked is False
+    assert result.local_head == ""
+    assert result.remote_head == ""
+
+
+def test_validate_mirrors_custom_branch() -> None:
+    runner = FakeRunner(local_head="def789", remote_head="def789")
+
+    result = validate_mirrors(
+        mirror_url="https://codeberg.org/owner/repo.git",
+        branch="develop",
+        compare_head=True,
+        runner=runner,
+    )
+
+    assert result.ok is True
+    assert any("develop" in cmd for cmd in runner.commands)
+
+
+def test_mirror_validation_to_json() -> None:
+    v = MirrorValidation(
+        status="ok",
+        mirror_url_present=True,
+        ssh_access_checked=True,
+        remote_alignment_checked=True,
+        local_head="abc123",
+        remote_head="abc123",
+        detail="All good.",
+    )
+    d = v.to_json()
+    assert d["status"] == "ok"
+    assert d["ok"] is True
+    assert d["local_head"] == "abc123"
+
+
+def test_build_report_includes_tool_and_validation() -> None:
+    v = MirrorValidation(
+        status="ok",
+        mirror_url_present=True,
+        ssh_access_checked=False,
+        remote_alignment_checked=False,
+        detail="Configured.",
+    )
+    r = build_report(v)
+    assert r["tool"] == "validate_git_mirrors"
+    assert "timestamp" in r
+    assert r["validation"]["status"] == "ok"
+

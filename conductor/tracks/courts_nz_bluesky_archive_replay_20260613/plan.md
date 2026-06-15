@@ -48,7 +48,14 @@
     archive replay deliveries from run `27500249516`.
   - Workflow run `27500580864` verified 5 archive mirror posts through the
     public Bluesky API before committing state.
-- [ ] Task: Mark any unreplayable records with reason codes.
+- [x] Task: Mark any unreplayable records with reason codes.
+  - Implemented `scripts/categorize_unreplayable_records.py` that scans X archive
+    JSONL files against `conductor/archive_mirror_state.json`.
+  - Detects `empty_content`, `exceeds_bluesky_limit`, `media_only_no_text`, and
+    `already_posted` reason codes via purely local file analysis.
+  - Wires into the Archive Replay workflow after delivery URL verification.
+  - Outputs `conductor/unreplayable_records_report.json` for downstream tooling.
+  - Companion test suite at `tests/test_categorize_unreplayable_records.py`.
 
 ## Phase 4: Closeout
 - [ ] Task: Run full tests and CI.
