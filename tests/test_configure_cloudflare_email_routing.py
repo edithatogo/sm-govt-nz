@@ -45,6 +45,61 @@ def test_configure_email_routing_reports_missing_zone(monkeypatch: pytest.Monkey
     assert result["zone_found"] is False
 
 
+def test_configure_email_routing_can_create_missing_zone(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(routing, "_find_zone", lambda config, zone_name: None)
+    monkeypatch.setattr(
+        routing,
+        "_create_zone",
+        lambda config, zone_name: {
+            "success": True,
+            "result": {
+                "id": "zone-id",
+                "name": zone_name,
+                "status": "pending",
+                "name_servers": ["a.ns.cloudflare.com", "b.ns.cloudflare.com"],
+            },
+        },
+    )
+
+    result = routing.configure_email_routing(
+        email_address="courts@archive.example.test",
+        worker_name="courts-worker",
+        create_zone=True,
+        env={"CLOUDFLARE_ACCOUNT_ID": "account", "CLOUDFLARE_API_TOKEN": "token"},
+    )
+
+    assert result["status"] == "zone_created_pending_nameserver_delegation"
+    assert result["zone_found"] is True
+    assert result["zone_name_servers"] == ["a.ns.cloudflare.com", "b.ns.cloudflare.com"]
+
+
+def test_configure_email_routing_reports_create_zone_failure(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(routing, "_find_zone", lambda config, zone_name: None)
+    monkeypatch.setattr(
+        routing,
+        "_create_zone",
+        lambda config, zone_name: {
+            "success": False,
+            "errors": [{"code": 10000, "message": "Authentication error"}],
+        },
+    )
+
+    result = routing.configure_email_routing(
+        email_address="courts@archive.example.test",
+        worker_name="courts-worker",
+        create_zone=True,
+        env={"CLOUDFLARE_ACCOUNT_ID": "account", "CLOUDFLARE_API_TOKEN": "token"},
+    )
+
+    assert result["status"] == "blocked_zone_not_found"
+    assert result["create_zone_response"]["success"] is False
+    assert result["create_zone_response"]["errors"][0]["message"] == "Authentication error"
+
+
 def test_configure_email_routing_dry_run_for_existing_zone(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

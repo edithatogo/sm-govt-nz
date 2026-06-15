@@ -22,6 +22,11 @@ on:
         required: true
         type: boolean
         default: false
+      create_zone:
+        description: Create the Cloudflare zone when it is missing.
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -48,4 +53,5 @@ jobs:
           --email-address "${{ inputs.email_address }}"
           --worker-name "${{ inputs.worker_name }}"
           ${{ inputs.zone_name && format('--zone-name "{0}"', inputs.zone_name) || '' }}
+          ${{ inputs.create_zone && '--create-zone' || '' }}
           ${{ inputs.apply && '--apply' || '' }}

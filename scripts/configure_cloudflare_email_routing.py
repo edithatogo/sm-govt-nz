@@ -22,6 +22,7 @@ def configure_email_routing(
     email_address: str,
     worker_name: str,
     zone_name: str | None = None,
+    create_zone: bool = False,
     apply: bool = False,
     env: dict[str, str] | None = None,
 ) -> dict[str, Any]:
@@ -41,14 +42,24 @@ def configure_email_routing(
         fallback_zone = _find_zone(config, ".".join(email_domain.split(".")[-2:]))
 
     zone = exact_zone or fallback_zone
+    created_zone_response = None
+    if zone is None and create_zone:
+        created_zone_response = _create_zone(config, target_zone_name)
+        if _success(created_zone_response):
+            zone = created_zone_response.get("result")
+
     result: dict[str, Any] = {
         "apply": apply,
+        "create_zone": create_zone,
         "email_address": email_address,
         "email_domain": email_domain,
         "requested_zone_name": target_zone_name,
         "worker_name": worker_name,
         "zone_found": bool(zone),
     }
+    if created_zone_response is not None:
+        result["create_zone_response"] = _zone_summary(created_zone_response)
+
     if zone is None:
         result["status"] = "blocked_zone_not_found"
         result["next_action"] = (
@@ -59,6 +70,14 @@ def configure_email_routing(
 
     result["zone_name"] = zone.get("name")
     result["zone_status"] = zone.get("status")
+    result["zone_name_servers"] = zone.get("name_servers") or []
+    if created_zone_response is not None:
+        result["status"] = "zone_created_pending_nameserver_delegation"
+        result["next_action"] = (
+            "Delegate the listed Cloudflare nameservers at the current DNS host, "
+            "then rerun with apply=true after the zone becomes active."
+        )
+        return result
 
     zone_id = str(zone["id"])
     routing_settings = _request(config, "GET", f"/zones/{zone_id}/email/routing")
@@ -135,6 +154,19 @@ def _find_zone(config: CloudflareConfig, zone_name: str) -> dict[str, Any] | Non
     return zones[0]
 
 
+def _create_zone(config: CloudflareConfig, zone_name: str) -> dict[str, Any]:
+    return _request(
+        config,
+        "POST",
+        "/zones",
+        {
+            "account": {"id": config.account_id},
+            "name": zone_name,
+            "type": "full",
+        },
+    )
+
+
 def _find_matching_rule(
     rules: list[dict[str, Any]],
     email_address: str,
@@ -209,11 +241,25 @@ def _summary(response: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _zone_summary(response: dict[str, Any]) -> dict[str, Any]:
+    result = response.get("result") if isinstance(response.get("result"), dict) else {}
+    summary = _summary(response)
+    summary.update(
+        {
+            "zone_name": result.get("name"),
+            "zone_status": result.get("status"),
+            "zone_name_servers": result.get("name_servers") or [],
+        }
+    )
+    return summary
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Configure Cloudflare Email Routing to a Worker.")
     parser.add_argument("--email-address", required=True)
     parser.add_argument("--worker-name", required=True)
     parser.add_argument("--zone-name")
+    parser.add_argument("--create-zone", action="store_true")
     parser.add_argument("--apply", action="store_true")
     args = parser.parse_args()
 
@@ -221,6 +267,7 @@ def main() -> None:
         email_address=args.email_address,
         worker_name=args.worker_name,
         zone_name=args.zone_name,
+        create_zone=args.create_zone,
         apply=args.apply,
     )
     print(json.dumps(result, indent=2, sort_keys=True))
