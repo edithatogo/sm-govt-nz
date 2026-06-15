@@ -25,9 +25,14 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
     assert config["default_route"]["provider"] == "cloudflare_email_routing_worker"
     assert config["default_route"]["repository_dispatch_event_type"] == "courts_nz_email_received"
     assert [route["provider"] for route in config["fallback_routes"]] == [
+        "manual_workflow_dispatch",
         "mailgun_inbound_parse",
         "scheduled_mailbox_polling",
     ]
+    manual_route = config["fallback_routes"][0]
+    assert manual_route["status"] == "active"
+    assert manual_route["workflow"] == "Archive Email"
+    assert manual_route["cost"] == "$0"
 
 
 def test_email_ingress_config_preserves_archive_only_guardrails() -> None:

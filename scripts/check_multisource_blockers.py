@@ -36,7 +36,11 @@ def _check_email_ingress(env: dict[str, str], secret_names: set[str]) -> dict[st
     dedicated = config.get("dedicated_subscription_address", {})
     domain_setup = config.get("domain_setup", {})
     cost_guardrail = config.get("cloudflare_cost_guardrail", {})
+    fallback_routes = _fallback_route_statuses(config)
     status = str(dedicated.get("status") or "missing_config")
+    capture_route_available = status == "active" or any(
+        route["status"] == "active" for route in fallback_routes
+    )
     required_secrets = [
         "CLOUDFLARE_API_TOKEN",
         "CLOUDFLARE_ACCOUNT_ID",
@@ -46,7 +50,8 @@ def _check_email_ingress(env: dict[str, str], secret_names: set[str]) -> dict[st
     return {
         "id": "issue-5-email-ingress",
         "issue": "https://github.com/edithatogo/sm-govt-nz/issues/5",
-        "status": "complete" if status == "active" else "blocked",
+        "status": "complete" if capture_route_available else "blocked",
+        "dedicated_route_status": "complete" if status == "active" else "deferred",
         "configured_status": status,
         "address": dedicated.get("address", ""),
         "domain_status": domain_setup.get("status", "unknown"),
@@ -62,12 +67,19 @@ def _check_email_ingress(env: dict[str, str], secret_names: set[str]) -> dict[st
             "billing_method",
             "",
         ),
+        "capture_route_available": capture_route_available,
+        "active_fallback_routes": [
+            route["provider"] for route in fallback_routes if route["status"] == "active"
+        ],
+        "fallback_routes": fallback_routes,
         "missing_secrets": missing,
         "next_action": (
-            "After explicit approval for any cost-bearing domain registration, "
-            "register/delegate the root domain to the listed Cloudflare nameservers, "
-            "rerun Cloudflare Email Routing with apply=true, subscribe the address to "
-            "Courts of NZ judgments, then set the config status to active."
+            "Use the active manual Archive Email workflow dispatch route for zero-cost "
+            "captures while the dedicated address is deferred. After explicit approval "
+            "for any cost-bearing domain registration, register/delegate the root domain "
+            "to the listed Cloudflare nameservers, rerun Cloudflare Email Routing with "
+            "apply=true, subscribe the address to Courts of NZ judgments, then set the "
+            "dedicated config status to active."
         ),
     }
 
@@ -142,6 +154,23 @@ def _count_jsonl_records(root: Path) -> int:
     for path in sorted(root.glob("*.jsonl")):
         total += sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
     return total
+
+
+def _fallback_route_statuses(config: dict[str, Any]) -> list[dict[str, str]]:
+    routes = config.get("fallback_routes", [])
+    if not isinstance(routes, list):
+        return []
+    statuses: list[dict[str, str]] = []
+    for route in routes:
+        if not isinstance(route, dict):
+            continue
+        statuses.append(
+            {
+                "provider": str(route.get("provider") or ""),
+                "status": str(route.get("status") or "unknown"),
+            }
+        )
+    return statuses
 
 
 def _has_secret(env: dict[str, str], secret_names: set[str], name: str) -> bool:

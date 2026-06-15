@@ -29,6 +29,9 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
                     "billing_method": "no payment method on file",
                 },
             },
+            "fallback_routes": [
+                {"provider": "manual_workflow_dispatch", "status": "active"},
+            ],
         },
     )
 
@@ -44,6 +47,12 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
 
     assert report["complete"] is False
     checks = {check["id"]: check for check in report["checks"]}
+    assert checks["issue-5-email-ingress"]["status"] == "complete"
+    assert checks["issue-5-email-ingress"]["capture_route_available"] is True
+    assert checks["issue-5-email-ingress"]["dedicated_route_status"] == "deferred"
+    assert checks["issue-5-email-ingress"]["active_fallback_routes"] == [
+        "manual_workflow_dispatch"
+    ]
     assert checks["issue-5-email-ingress"]["missing_secrets"] == [
         "CLOUDFLARE_API_TOKEN",
         "CLOUDFLARE_ACCOUNT_ID",
@@ -79,6 +88,26 @@ def test_check_multisource_blockers_reports_missing_external_inputs(tmp_path, mo
         == "created from default depositions API"
     )
     assert checks["issue-7-linkedin-seed"]["status"] == "blocked"
+
+
+def test_check_multisource_blockers_blocks_email_when_no_capture_route(
+    tmp_path,
+    monkeypatch,
+) -> None:
+    monkeypatch.chdir(tmp_path)
+    write_json(
+        tmp_path / "config" / "courts_nz_email_ingress.json",
+        {
+            "dedicated_subscription_address": {"status": "pending_external_setup"},
+            "fallback_routes": [{"provider": "mailgun_inbound_parse", "status": "deferred"}],
+        },
+    )
+
+    report = blockers.check_multisource_blockers(env={})
+
+    checks = {check["id"]: check for check in report["checks"]}
+    assert checks["issue-5-email-ingress"]["status"] == "blocked"
+    assert checks["issue-5-email-ingress"]["capture_route_available"] is False
 
 
 def test_check_multisource_blockers_reports_complete_when_inputs_are_present(

@@ -4,6 +4,10 @@
 Cloudflare Email Routing Worker remains the default ingress route for Courts of
 New Zealand judgments of public interest subscription messages.
 
+Manual `Archive Email` workflow dispatch is active as the zero-cost operational
+fallback while the dedicated Cloudflare-routed address is blocked by domain
+ownership or delegation.
+
 Mailgun inbound parse is retained as a deferred fallback only. Scheduled
 mailbox polling through Gmail or IMAP is retained as the final fallback only if
 webhook-style inbound delivery is unavailable.
@@ -45,6 +49,16 @@ without explicit approval.
 4. The `Archive Email` workflow stores raw evidence under
    `historical_archive_raw/email/` and normalized records under
    `historical_archive_normalized/email/`.
+
+## Manual Workflow Fallback
+Use the manual `Archive Email` workflow dispatch while the dedicated address is
+not yet routable. The operator supplies a `payload_json` object with the same
+fields as the Cloudflare Worker dispatch payload.
+
+This fallback is active because it does not require a domain, payment method,
+paid email routing service, or new platform credentials. It must still preserve
+raw evidence before normalization and must not touch outbound syndication
+state.
 
 ## Mailgun Fallback
 Use Mailgun inbound parse only if Cloudflare cannot route or parse the

@@ -51,6 +51,15 @@
   },
   "fallback_routes": [
     {
+      "provider": "manual_workflow_dispatch",
+      "status": "active",
+      "workflow": "Archive Email",
+      "activation_condition": "Use while the dedicated Cloudflare-routed address is blocked by domain ownership/delegation.",
+      "receiver_contract": "Paste or dispatch a Courts of NZ subscription email payload as JSON through the Archive Email workflow. The workflow archives raw and normalized email records without posting to any mirror account.",
+      "cost": "$0",
+      "tracking_issue": "https://github.com/edithatogo/sm-govt-nz/issues/5"
+    },
+    {
       "provider": "mailgun_inbound_parse",
       "status": "deferred",
       "activation_condition": "Use only if Cloudflare Email Routing cannot reliably parse or route the Courts of NZ subscription messages.",

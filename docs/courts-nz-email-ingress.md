@@ -25,6 +25,18 @@ The dispatch `client_payload` should be a JSON object with these fields:
 `historical_archive_raw/email/<yyyy-mm>/` and appends a normalized record to
 `historical_archive_normalized/email/<yyyy-mm>.jsonl`.
 
+## Zero-Cost Manual Fallback
+
+While the dedicated Cloudflare-routed address is blocked by domain ownership or
+delegation, the `Archive Email` workflow can be run manually with
+`workflow_dispatch`. Paste the same JSON payload shape into the `payload_json`
+input.
+
+This route is active, costs $0, and preserves the same archive-only contract as
+the Cloudflare route. It is suitable for capturing Courts of NZ subscription
+messages that are received through another mailbox and manually exported or
+forwarded into JSON form.
+
 ## Cloudflare Email Routing Worker
 
 Cloudflare should forward the dedicated subscription address to a Worker. The
