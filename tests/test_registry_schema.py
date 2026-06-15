@@ -72,9 +72,9 @@ def test_parties_have_required_fields():
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     for party in data:
-        assert "party_id" in party, f"Party missing party_id"
-        assert "name" in party, f"Party missing name"
-        assert "status" in party, f"Party missing status"
+        assert "party_id" in party, "Party missing party_id"
+        assert "name" in party, "Party missing name"
+        assert "status" in party, "Party missing status"
 
 
 def test_persons_file_exists():
@@ -102,10 +102,10 @@ def test_persons_have_required_fields():
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     for person in data:
-        assert "person_id" in person, f"Person missing person_id"
-        assert "full_name" in person, f"Person missing full_name"
-        assert "roles" in person, f"Person missing roles"
-        assert len(person["roles"]) > 0, f"Person has empty roles"
+        assert "person_id" in person, "Person missing person_id"
+        assert "full_name" in person, "Person missing full_name"
+        assert "roles" in person, "Person missing roles"
+        assert len(person["roles"]) > 0, "Person has empty roles"
 
 
 def test_persons_roles_valid():
@@ -125,8 +125,8 @@ def test_persons_roles_valid():
     ]
     for person in data:
         for role in person.get("roles", []):
-            assert "role_id" in role, f"Role missing role_id"
-            assert "title" in role, f"Role missing title"
-            assert "category" in role, f"Role missing category"
+            assert "role_id" in role, "Role missing role_id"
+            assert "title" in role, "Role missing title"
+            assert "category" in role, "Role missing category"
             assert role["category"] in valid_categories,                 f"Invalid category '{role.get('category')}' for {person['person_id']}"
-            assert "is_current" in role, f"Role missing is_current"
+            assert "is_current" in role, "Role missing is_current"
