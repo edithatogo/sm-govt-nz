@@ -10,20 +10,129 @@
   },
   "hugging_face": {
     "repo_id": "edithatogo/courts-nz-public-notices-archive",
-    "url": "https://huggingface.co/datasets/edithatogo/courts-nz-public-notices-archive",
-    "verified_status": "200 OK",
     "uploaded_paths": [
       "README.md",
       "metadata/corpus_manifest.json",
       "data/normalized_archive.jsonl.gz",
       "data/normalized_archive.parquet",
       "bundles/historical_archive.tar.gz"
-    ]
+    ],
+    "url": "https://huggingface.co/datasets/edithatogo/courts-nz-public-notices-archive",
+    "verified_status": "200 OK"
   },
   "zenodo": {
+    "conceptdoi": "10.5281/zenodo.20690546",
     "deposition_id": 20690547,
+    "doi": "10.5281/zenodo.20690547",
     "draft_url": "https://zenodo.org/deposit/20690547",
-    "status": "draft_uploaded_pending_review_and_publish",
+    "latest_publish_response": {
+      "conceptdoi": "10.5281/zenodo.20690546",
+      "conceptrecid": "20690546",
+      "created": "2026-06-15T04:38:44.008111+00:00",
+      "doi": "10.5281/zenodo.20690547",
+      "doi_url": "https://doi.org/10.5281/zenodo.20690547",
+      "files": [
+        {
+          "checksum": "b78ddf5af1e24ad7dd2554882db3dc5e",
+          "filename": "README.md",
+          "filesize": 1483,
+          "id": "5536e004-0f30-44c9-bb38-e0e4cb33b6d3",
+          "links": {
+            "download": "https://zenodo.org/api/records/20690547/draft/files/README.md/content",
+            "self": "https://zenodo.org/api/records/20690547/files/5536e004-0f30-44c9-bb38-e0e4cb33b6d3"
+          }
+        },
+        {
+          "checksum": "4a454f4f61b874d2e46e91b76fbe52d3",
+          "filename": "corpus_manifest.json",
+          "filesize": 1646797,
+          "id": "f8ca06b1-03b8-4f06-a741-bf6915259a7b",
+          "links": {
+            "download": "https://zenodo.org/api/records/20690547/draft/files/corpus_manifest.json/content",
+            "self": "https://zenodo.org/api/records/20690547/files/f8ca06b1-03b8-4f06-a741-bf6915259a7b"
+          }
+        },
+        {
+          "checksum": "fad2b3fbded222278a7e882ff0a82da4",
+          "filename": "historical_archive.tar.gz",
+          "filesize": 3222728,
+          "id": "deaf358a-0539-44b6-b911-f3939edb2385",
+          "links": {
+            "download": "https://zenodo.org/api/records/20690547/draft/files/historical_archive.tar.gz/content",
+            "self": "https://zenodo.org/api/records/20690547/files/deaf358a-0539-44b6-b911-f3939edb2385"
+          }
+        },
+        {
+          "checksum": "083f9bf1dda913b710e3d1e57c410671",
+          "filename": "normalized_archive.parquet",
+          "filesize": 1156148,
+          "id": "050c8da4-2391-471e-8319-d2a28498cff5",
+          "links": {
+            "download": "https://zenodo.org/api/records/20690547/draft/files/normalized_archive.parquet/content",
+            "self": "https://zenodo.org/api/records/20690547/files/050c8da4-2391-471e-8319-d2a28498cff5"
+          }
+        },
+        {
+          "checksum": "bdc906357890fe2b3a0314718d5c9836",
+          "filename": "normalized_archive.jsonl.gz",
+          "filesize": 716214,
+          "id": "fad480fa-903a-452e-bb05-453ee6071f65",
+          "links": {
+            "download": "https://zenodo.org/api/records/20690547/draft/files/normalized_archive.jsonl.gz/content",
+            "self": "https://zenodo.org/api/records/20690547/files/fad480fa-903a-452e-bb05-453ee6071f65"
+          }
+        }
+      ],
+      "id": 20690547,
+      "links": {
+        "badge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.20690547.svg",
+        "bucket": "https://zenodo.org/api/files/cc89084a-8f9a-4af0-8262-c10b27e5004c",
+        "conceptbadge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.20690546.svg",
+        "discard": "https://zenodo.org/api/deposit/depositions/20690547/actions/discard",
+        "doi": "https://doi.org/10.5281/zenodo.20690547",
+        "edit": "https://zenodo.org/api/deposit/depositions/20690547/actions/edit",
+        "files": "https://zenodo.org/api/records/20690547/files",
+        "html": "https://zenodo.org/records/20690547",
+        "latest": "https://zenodo.org/api/records/20690547/versions/latest",
+        "latest_draft": "https://zenodo.org/api/deposit/depositions/20690547",
+        "latest_draft_html": "https://zenodo.org/deposit/20690547",
+        "latest_html": "https://zenodo.org/records/20690547/latest",
+        "newversion": "https://zenodo.org/api/deposit/depositions/20690547/actions/newversion",
+        "parent_doi": "https://doi.org/10.5281/zenodo.20690546",
+        "publish": "https://zenodo.org/api/deposit/depositions/20690547/actions/publish",
+        "record": "https://zenodo.org/api/records/20690547",
+        "record_html": "https://zenodo.org/record/20690547",
+        "self": "https://zenodo.org/api/records/20690547"
+      },
+      "metadata": {
+        "access_right": "open",
+        "creators": [
+          {
+            "affiliation": null,
+            "name": "sm-govt-nz maintainers"
+          }
+        ],
+        "description": "Normalized public notice records and raw source evidence captured for the Courts of New Zealand archive and mirror project.",
+        "doi": "10.5281/zenodo.20690547",
+        "imprint_publisher": "Zenodo",
+        "license": "cc-zero",
+        "prereserve_doi": {
+          "doi": "10.5281/zenodo.20690547",
+          "recid": 20690547
+        },
+        "publication_date": "2026-06-14",
+        "title": "Courts of New Zealand public notices multi-source archive",
+        "upload_type": "dataset"
+      },
+      "modified": "2026-06-15T04:38:44.354115+00:00",
+      "owner": 1372937,
+      "record_id": 20690547,
+      "state": "done",
+      "submitted": true,
+      "title": "Courts of New Zealand public notices multi-source archive"
+    },
+    "published_url": "https://zenodo.org/records/20690547",
+    "status": "published_with_doi",
     "uploaded_files": [
       "README.md",
       "corpus_manifest.json",
