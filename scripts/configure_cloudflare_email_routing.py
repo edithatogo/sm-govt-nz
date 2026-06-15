@@ -224,7 +224,9 @@ def main() -> None:
         apply=args.apply,
     )
     print(json.dumps(result, indent=2, sort_keys=True))
-    raise SystemExit(0 if result["status"] in {"dry_run_ready", "active"} else 1)
+    if not args.apply:
+        raise SystemExit(0)
+    raise SystemExit(0 if result["status"] == "active" else 1)
 
 
 if __name__ == "__main__":
