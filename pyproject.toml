@@ -3,6 +3,9 @@ name = "sm-govt-nz"
 version = "0.1.0"
 description = "Social media archiving for New Zealand government accounts (Bluesky, Threads, etc.)"
 requires-python = ">=3.11"
+dependencies = [
+  "loguru>=0.7.2",
+]
 
 [tool.ruff]
 line-length = 100
@@ -34,3 +37,7 @@ branch = true
 [tool.coverage.report]
 fail_under = 60
 show_missing = true
+
+[tool.legal_nz]
+versioning = "semver"
+logging = "loguru"
