@@ -37,6 +37,29 @@ the Cloudflare route. It is suitable for capturing Courts of NZ subscription
 messages that are received through another mailbox and manually exported or
 forwarded into JSON form.
 
+## Zero-Cost Automated Fallback
+
+If automation is needed before an owned domain is available, use a Pipedream
+Email trigger workflow before paid inbound email services.
+
+Pipedream should receive the Courts of NZ subscription message at its generated
+workflow email address and call the same GitHub `repository_dispatch` event used
+by the Cloudflare Worker:
+
+```text
+event_type: courts_nz_email_received
+```
+
+The payload must match the `Archive Email` JSON shape above, preserve raw
+message evidence where available, and remain archive-only.
+
+Observed Courts of NZ volume is well below the level that should normally create
+paid usage for a short, dedicated email-trigger workflow: recent Bluesky records
+are 11-14 per month, 2026 RSS records are 3-33 per month, and the email lane
+currently has 1 test record. Treat the cost risk as low while the workflow stays
+limited to one trigger plus one GitHub dispatch/code step. Review Pipedream
+usage after the first month and keep billing disabled/no paid upgrade.
+
 ## Cloudflare Email Routing Worker
 
 Cloudflare should forward the dedicated subscription address to a Worker. The

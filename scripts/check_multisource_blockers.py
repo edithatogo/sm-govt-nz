@@ -90,12 +90,13 @@ def _check_email_ingress(env: dict[str, str], secret_names: set[str]) -> dict[st
         "fallback_routes": fallback_routes,
         "missing_secrets": missing,
         "next_action": (
-            "Use the active manual Archive Email workflow dispatch route for zero-cost "
-            "captures while the dedicated address is deferred. After explicit approval "
-            "for any cost-bearing domain registration, register/delegate the root domain "
-            "to the listed Cloudflare nameservers, rerun Cloudflare Email Routing with "
-            "apply=true, subscribe the address to Courts of NZ judgments, then set the "
-            "dedicated config status to active."
+            "Use the recommended Pipedream Email trigger route for zero-cost automated "
+            "captures, or the active manual Archive Email workflow dispatch route for "
+            "zero-cost manual captures, while the dedicated address is deferred. After "
+            "explicit approval for any cost-bearing domain registration, register/delegate "
+            "the root domain to the listed Cloudflare nameservers, rerun Cloudflare Email "
+            "Routing with apply=true, subscribe the address to Courts of NZ judgments, "
+            "then set the dedicated config status to active."
         ),
     }
 

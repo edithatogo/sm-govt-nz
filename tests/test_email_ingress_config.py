@@ -35,11 +35,16 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
     assert config["default_route"]["provider"] == "cloudflare_email_routing_worker"
     assert config["default_route"]["repository_dispatch_event_type"] == "courts_nz_email_received"
     assert [route["provider"] for route in config["fallback_routes"]] == [
+        "pipedream_email_trigger",
         "manual_workflow_dispatch",
         "mailgun_inbound_parse",
         "scheduled_mailbox_polling",
     ]
-    manual_route = config["fallback_routes"][0]
+    pipedream_route = config["fallback_routes"][0]
+    assert pipedream_route["status"] == "recommended_zero_cost_automation"
+    assert pipedream_route["cost"].startswith("$0 expected")
+    assert pipedream_route["usage_assessment"]["risk_of_paid_usage"].startswith("low")
+    manual_route = config["fallback_routes"][1]
     assert manual_route["status"] == "active"
     assert manual_route["workflow"] == "Archive Email"
     assert manual_route["cost"] == "$0"

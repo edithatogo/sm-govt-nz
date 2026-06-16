@@ -8,6 +8,11 @@ Manual `Archive Email` workflow dispatch is active as the zero-cost operational
 fallback while the dedicated Cloudflare-routed address is blocked by domain
 ownership or delegation.
 
+Pipedream Email Trigger is the recommended zero-cost automated fallback while
+there is no owned domain for Cloudflare Email Routing. Pipedream can provide a
+workflow-specific email address, receive the Courts of NZ subscription message,
+and call the same GitHub `repository_dispatch` event as the Cloudflare Worker.
+
 Mailgun inbound parse is retained as a deferred fallback only. Scheduled
 mailbox polling through Gmail or IMAP is retained as the final fallback only if
 webhook-style inbound delivery is unavailable.
@@ -59,6 +64,43 @@ This fallback is active because it does not require a domain, payment method,
 paid email routing service, or new platform credentials. It must still preserve
 raw evidence before normalization and must not touch outbound syndication
 state.
+
+## Pipedream Email Trigger Fallback
+Use Pipedream before Mailgun or mailbox polling if an automated zero-cost route
+is needed without buying or delegating a domain.
+
+Setup contract:
+
+1. Create a Pipedream workflow using the built-in Email trigger.
+2. Subscribe the generated Pipedream email address to the Courts of NZ
+   judgments of public interest notification list.
+3. Add one code/action step that sends:
+
+   ```text
+   POST https://api.github.com/repos/edithatogo/sm-govt-nz/dispatches
+   ```
+
+   with event type `courts_nz_email_received` and a `client_payload` matching
+   the `Archive Email` payload schema.
+4. Store the GitHub dispatch token in Pipedream's secret store. Do not commit it
+   to this repository.
+5. Run one test email and confirm raw and normalized email records are archived.
+
+Volume and cost risk:
+
+- Recent Courts of NZ Bluesky archive volume is 11-14 records per month.
+- Courts of NZ RSS records in 2026 are 3-33 records per month.
+- Existing email archive volume is 1 test record.
+- A dedicated email-trigger workflow should therefore run tens of times per
+  month, not hundreds or thousands, unless Courts of NZ publication volume
+  changes materially.
+- The expected paid-usage risk is low if the workflow remains limited to one
+  email trigger plus one GitHub dispatch/code step and does not add long-running
+  processing, fan-out posting, AI steps, or broad mailbox ingestion.
+
+Operational guardrail: keep billing disabled/no paid upgrade in Pipedream,
+review usage after the first month, and switch back to manual dispatch if the
+account approaches the free-tier execution or credit limit.
 
 ## Mailgun Fallback
 Use Mailgun inbound parse only if Cloudflare cannot route or parse the

@@ -67,6 +67,24 @@
   },
   "fallback_routes": [
     {
+      "provider": "pipedream_email_trigger",
+      "status": "recommended_zero_cost_automation",
+      "activation_condition": "Use as the preferred automated zero-cost fallback while the dedicated Cloudflare-routed address is blocked by domain ownership/delegation.",
+      "receiver_contract": "Create a Pipedream workflow with its built-in Email trigger, subscribe the generated workflow email address to the Courts of NZ judgments of public interest list, and have the workflow call the same GitHub repository_dispatch event type with the Archive Email payload shape.",
+      "cost": "$0 expected at observed Courts of NZ volume, subject to Pipedream free-tier credit limits and account usage dashboard.",
+      "usage_assessment": {
+        "expected_credit_model": "One short workflow execution per received Courts of NZ email; Pipedream's public email source trigger itself is included with the workflow trigger path.",
+        "observed_archive_volume": {
+          "courts_nz_bluesky_recent_monthly_records": "11-14",
+          "courts_nz_rss_2026_monthly_records": "3-33",
+          "existing_email_records": 1
+        },
+        "risk_of_paid_usage": "low while this workflow remains dedicated to Courts of NZ judgments and does not perform long-running processing, fan-out posting, or AI steps.",
+        "guardrail": "Keep the Pipedream workflow to one email trigger plus one GitHub dispatch/code step, leave billing disabled/no paid upgrade, and review Pipedream usage after the first month."
+      },
+      "tracking_issue": "https://github.com/edithatogo/sm-govt-nz/issues/5"
+    },
+    {
       "provider": "manual_workflow_dispatch",
       "status": "active",
       "workflow": "Archive Email",
