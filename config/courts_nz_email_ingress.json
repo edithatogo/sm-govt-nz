@@ -68,7 +68,7 @@
   "fallback_routes": [
     {
       "provider": "pipedream_email_trigger",
-      "status": "deployed_secret_configured_pending_test",
+      "status": "active_verified_pending_subscription",
       "activation_condition": "Use as the preferred automated zero-cost fallback while the dedicated Cloudflare-routed address is blocked by domain ownership/delegation.",
       "receiver_contract": "Create a Pipedream workflow with its built-in Email trigger, subscribe the generated workflow email address to the Courts of NZ judgments of public interest list, and have the workflow call the same GitHub repository_dispatch event type with the Archive Email payload shape.",
       "workflow": {
@@ -76,18 +76,33 @@
         "project_url": "https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb",
         "workflow_url": "https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb/courts-nz-judgments-email-archive-email-trigger-p_95C2agq/build",
         "generated_email_address": "em4mkapmjakoh5o@upload.pipedream.net",
+        "code_source": "pipedream/courts_nz_email_dispatch.mjs",
         "code_step_secret": "GITHUB_DISPATCH_TOKEN",
         "deployment_status": "active",
-        "deployment_version": "v5",
+        "deployment_version": "active_2026-06-16",
         "secret_status": "configured",
         "secret_configured_at": "2026-06-16",
         "configured_at": "2026-06-16",
         "deployed_at": "2026-06-16",
         "last_verified": "2026-06-16",
-        "verified_state": "Email trigger configured, Node.js dispatch code step contains courts_nz_email_received and GITHUB_DISPATCH_TOKEN references, Pipedream workflow v5 is Active, and GITHUB_DISPATCH_TOKEN is configured as a Pipedream secret. Live execution remains blocked until one email test is archived."
+        "verified_state": "Email trigger configured, GITHUB_DISPATCH_TOKEN configured as a Pipedream secret, Node.js dispatch code deployed, Pipedream workflow Active, and deployed live test email archived through GitHub Archive Email with plain-text body and raw MIME.",
+        "verification_runs": [
+          {
+            "kind": "code_step_selected_event",
+            "github_actions_run_id": "27624019635",
+            "result": "success",
+            "notes": "Selected historical Pipedream event dispatched plain-text body; raw MIME was unavailable because the signed rawUrl had expired."
+          },
+          {
+            "kind": "deployed_live_email",
+            "github_actions_run_id": "27624118414",
+            "gmail_message_id": "19ed0cb0470b4c31",
+            "result": "success",
+            "notes": "Fresh deployed-trigger email archived plain-text body and raw MIME."
+          }
+        ]
       },
       "next_actions": [
-        "Send one test email to the generated Pipedream address and confirm the Archive Email workflow stores raw and normalized records.",
         "Subscribe the generated Pipedream address to the Courts of NZ judgments of public interest notification list."
       ],
       "cost": "$0 expected at observed Courts of NZ volume, subject to Pipedream free-tier credit limits and account usage dashboard.",

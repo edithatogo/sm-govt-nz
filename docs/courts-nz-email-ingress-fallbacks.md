@@ -71,14 +71,22 @@ is needed without buying or delegating a domain.
 
 Current setup state, verified on 2026-06-16:
 
-- Status: deployed and Active in Pipedream, secret configured, pending test.
+- Status: deployed and Active in Pipedream, secret configured, tested, pending
+  subscription to the Courts of NZ notification list.
 - Project: `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb`
 - Workflow: `Courts NZ Judgments Email Archive - Email Trigger`
 - Workflow URL:
   `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb/courts-nz-judgments-email-archive-email-trigger-p_95C2agq/build`
 - Generated email address: `em4mkapmjakoh5o@upload.pipedream.net`
 - Secret: `GITHUB_DISPATCH_TOKEN`, configured
-- Deployment: `v5`, Active
+- Deployment: Active, verified on 2026-06-16
+- Code source: `pipedream/courts_nz_email_dispatch.mjs`
+- Verification:
+  - GitHub Actions run `27624019635` archived the selected historical
+    Pipedream event with plain-text body; raw MIME was unavailable because the
+    signed raw URL had expired.
+  - GitHub Actions run `27624118414` archived a fresh deployed-trigger test
+    email with plain-text body and raw MIME.
 
 Setup contract:
 
@@ -96,13 +104,14 @@ Setup contract:
 4. Store the GitHub dispatch token in Pipedream's secret store. Do not commit it
    to this repository. This is configured for the current project.
 5. Confirm the Pipedream workflow remains deployed and Active.
-6. Run one test email and confirm raw and normalized email records are archived.
+6. Subscribe the generated Pipedream email address to the Courts of NZ
+   judgments of public interest notification list.
 
 Volume and cost risk:
 
 - Recent Courts of NZ Bluesky archive volume is 11-14 records per month.
 - Courts of NZ RSS records in 2026 are 3-33 records per month.
-- Existing email archive volume is 1 test record.
+- Existing email archive volume is currently deployed verification records only.
 - A dedicated email-trigger workflow should therefore run tens of times per
   month, not hundreds or thousands, unless Courts of NZ publication volume
   changes materially.

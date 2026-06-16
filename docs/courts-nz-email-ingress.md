@@ -61,19 +61,30 @@ Current Pipedream setup state, verified on 2026-06-16:
   `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb/courts-nz-judgments-email-archive-email-trigger-p_95C2agq/build`
 - Generated email address: `em4mkapmjakoh5o@upload.pipedream.net`
 - Pipedream secret: `GITHUB_DISPATCH_TOKEN`, configured
-- Deployment: `v5`, Active
+- Deployment: Active, verified on 2026-06-16
+- Code source: `pipedream/courts_nz_email_dispatch.mjs`
 
 The workflow has the Email trigger and Node.js dispatch code step configured,
-Pipedream reports deployment `v5` as Active, and `GITHUB_DISPATCH_TOKEN` is
-configured as a Pipedream secret. It must not be treated as live-operational
-until one test email is confirmed in the repository archive.
+Pipedream reports the workflow as Active, and `GITHUB_DISPATCH_TOKEN` is
+configured as a Pipedream secret. Two repository-dispatch tests passed:
+
+- GitHub Actions run `27624019635`: selected historical Pipedream event
+  archived the plain-text body. Raw MIME was unavailable because the signed
+  Pipedream raw URL had expired.
+- GitHub Actions run `27624118414`: fresh deployed-trigger email archived the
+  plain-text body and raw MIME.
+
+The remaining activation step is to subscribe
+`em4mkapmjakoh5o@upload.pipedream.net` to the Courts of New Zealand judgments
+of public interest notification list.
 
 Observed Courts of NZ volume is well below the level that should normally create
 paid usage for a short, dedicated email-trigger workflow: recent Bluesky records
 are 11-14 per month, 2026 RSS records are 3-33 per month, and the email lane
-currently has 1 test record. Treat the cost risk as low while the workflow stays
-limited to one trigger plus one GitHub dispatch/code step. Review Pipedream
-usage after the first month and keep billing disabled/no paid upgrade.
+currently has deployed verification records only. Treat the cost risk as low
+while the workflow stays limited to one trigger plus one GitHub dispatch/code
+step. Review Pipedream usage after the first month and keep billing disabled/no
+paid upgrade.
 
 ## Cloudflare Email Routing Worker
 

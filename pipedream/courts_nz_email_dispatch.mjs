@@ -5,6 +5,7 @@ export default defineComponent({
     const event = steps.trigger.event || {};
     const mail = event.mail || event;
     const body = mail.body || event.body || {};
+    const triggerBody = steps.trigger?.event?.body || {};
 
     const asString = (value) => {
       if (!value) return "";
@@ -32,46 +33,53 @@ export default defineComponent({
     let parsed = {};
     let rawMime = "";
     const contentUrl =
+      mail.rawUrl ||
+      event.rawUrl ||
+      body.rawUrl ||
+      triggerBody.rawUrl ||
       mail.content_url ||
       event.content_url ||
       body.content_url ||
+      triggerBody.content_url ||
       mail.contentUrl ||
       event.contentUrl ||
-      body.contentUrl;
+      body.contentUrl ||
+      triggerBody.contentUrl;
 
     if (contentUrl) {
       const rawResponse = await fetch(contentUrl);
-      if (!rawResponse.ok) {
-        throw new Error(
-          `Failed to download raw email from Pipedream content_url: ${rawResponse.status}`,
-        );
+      if (rawResponse.ok) {
+        rawMime = await rawResponse.text();
+        parsed = await simpleParser(rawMime);
       }
-      rawMime = await rawResponse.text();
-      parsed = await simpleParser(rawMime);
     }
 
     const headers = parsed.headers || mail.headers || event.headers || {};
     const text = asString(
-      parsed.text ||
+      triggerBody.text ||
+        body.text ||
+        parsed.text ||
+        mail.text ||
+        event.text ||
         body.text ||
         body.text_body ||
         body.body_text ||
-        mail.text ||
         mail.text_body ||
         mail.body_text ||
-        event.text ||
         event.text_body ||
         event.body_text,
     );
     const html = asString(
-      parsed.html ||
+      triggerBody.html ||
+        body.html ||
+        parsed.html ||
+        mail.html ||
+        event.html ||
         body.html ||
         body.html_body ||
         body.body_html ||
-        mail.html ||
         mail.html_body ||
         mail.body_html ||
-        event.html ||
         event.html_body ||
         event.body_html,
     );
