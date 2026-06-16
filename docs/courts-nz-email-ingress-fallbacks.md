@@ -71,8 +71,8 @@ is needed without buying or delegating a domain.
 
 Current setup state, verified on 2026-06-16:
 
-- Status: deployed and Active in Pipedream, secret configured, tested, pending
-  subscription to the Courts of NZ notification list.
+- Status: deployed and Active in Pipedream, secret configured, tested,
+  subscription requested, pending email confirmation.
 - Project: `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb`
 - Workflow: `Courts NZ Judgments Email Archive - Email Trigger`
 - Workflow URL:
@@ -104,8 +104,17 @@ Setup contract:
 4. Store the GitHub dispatch token in Pipedream's secret store. Do not commit it
    to this repository. This is configured for the current project.
 5. Confirm the Pipedream workflow remains deployed and Active.
-6. Subscribe the generated Pipedream email address to the Courts of NZ
-   judgments of public interest notification list.
+6. Confirm that subscription confirmation emails arrive through Pipedream and
+   are archived.
+
+On 2026-06-17, a subscription request was submitted through the official Courts
+of NZ subscribe form for Supreme Court decisions, Court of Appeal decisions,
+High Court decisions, and Supreme Court Leave and Recall Judgments. The form
+returned HTTP 200 and redirected to the site root. No new `Archive Email`
+repository-dispatch runs were observed immediately after submission, so list
+confirmation remains unverified. If no confirmation emails arrive, repeat the
+request in a visible browser session and complete any site-side validation or
+confirmation step.
 
 Volume and cost risk:
 

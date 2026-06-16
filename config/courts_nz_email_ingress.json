@@ -68,7 +68,7 @@
   "fallback_routes": [
     {
       "provider": "pipedream_email_trigger",
-      "status": "active_verified_pending_subscription",
+      "status": "active_verified_subscription_requested_pending_confirmation",
       "activation_condition": "Use as the preferred automated zero-cost fallback while the dedicated Cloudflare-routed address is blocked by domain ownership/delegation.",
       "receiver_contract": "Create a Pipedream workflow with its built-in Email trigger, subscribe the generated workflow email address to the Courts of NZ judgments of public interest list, and have the workflow call the same GitHub repository_dispatch event type with the Archive Email payload shape.",
       "workflow": {
@@ -100,10 +100,27 @@
             "result": "success",
             "notes": "Fresh deployed-trigger email archived plain-text body and raw MIME."
           }
+        ],
+        "subscription_requests": [
+          {
+            "requested_at": "2026-06-17",
+            "method": "official_courtsofnz_subscribe_form",
+            "target_email": "em4mkapmjakoh5o@upload.pipedream.net",
+            "sections": [
+              "Supreme Court decisions",
+              "Court of Appeal decisions",
+              "High Court decisions",
+              "Supreme Court Leave and Recall Judgments"
+            ],
+            "result": "form_post_returned_http_200_redirect_root",
+            "confirmation_archive_runs_observed": [],
+            "notes": "The official form states each selected list sends a separate email confirmation request. No new Archive Email repository_dispatch runs were observed immediately after submission, so list confirmation remains unverified."
+          }
         ]
       },
       "next_actions": [
-        "Subscribe the generated Pipedream address to the Courts of NZ judgments of public interest notification list."
+        "Confirm that Courts of NZ subscription confirmation emails arrive through Pipedream and are archived.",
+        "If no confirmation emails arrive, repeat the subscription in a visible browser session and complete any site-side validation or confirmation step."
       ],
       "cost": "$0 expected at observed Courts of NZ volume, subject to Pipedream free-tier credit limits and account usage dashboard.",
       "usage_assessment": {

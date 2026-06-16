@@ -74,9 +74,23 @@ configured as a Pipedream secret. Two repository-dispatch tests passed:
 - GitHub Actions run `27624118414`: fresh deployed-trigger email archived the
   plain-text body and raw MIME.
 
-The remaining activation step is to subscribe
-`em4mkapmjakoh5o@upload.pipedream.net` to the Courts of New Zealand judgments
-of public interest notification list.
+On 2026-06-17, a subscription request was submitted through the official Courts
+of New Zealand subscribe form for all four available judgment lists:
+
+- Supreme Court decisions
+- Court of Appeal decisions
+- High Court decisions
+- Supreme Court Leave and Recall Judgments
+
+The form POST returned HTTP 200 and redirected to the site root. The page states
+that each selected list sends a separate email confirmation request. No new
+`Archive Email` repository-dispatch runs were observed immediately after the
+submission, so subscription confirmation remains pending.
+
+The remaining activation step is to confirm that the Courts of NZ confirmation
+emails arrive through Pipedream and are archived. If they do not arrive, repeat
+the subscription in a visible browser session and complete any site-side
+validation or confirmation step.
 
 Observed Courts of NZ volume is well below the level that should normally create
 paid usage for a short, dedicated email-trigger workflow: recent Bluesky records

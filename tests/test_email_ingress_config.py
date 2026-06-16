@@ -41,7 +41,7 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
         "scheduled_mailbox_polling",
     ]
     pipedream_route = config["fallback_routes"][0]
-    assert pipedream_route["status"] == "active_verified_pending_subscription"
+    assert pipedream_route["status"] == "active_verified_subscription_requested_pending_confirmation"
     assert pipedream_route["workflow"]["generated_email_address"].endswith("@upload.pipedream.net")
     assert pipedream_route["workflow"]["code_source"] == "pipedream/courts_nz_email_dispatch.mjs"
     assert pipedream_route["workflow"]["code_step_secret"] == "GITHUB_DISPATCH_TOKEN"
@@ -53,6 +53,10 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
     assert verification_runs[0]["github_actions_run_id"] == "27624019635"
     assert verification_runs[1]["github_actions_run_id"] == "27624118414"
     assert verification_runs[1]["kind"] == "deployed_live_email"
+    subscription_requests = pipedream_route["workflow"]["subscription_requests"]
+    assert subscription_requests[0]["method"] == "official_courtsofnz_subscribe_form"
+    assert subscription_requests[0]["target_email"].endswith("@upload.pipedream.net")
+    assert subscription_requests[0]["confirmation_archive_runs_observed"] == []
     assert pipedream_route["cost"].startswith("$0 expected")
     assert pipedream_route["usage_assessment"]["risk_of_paid_usage"].startswith("low")
     manual_route = config["fallback_routes"][1]
