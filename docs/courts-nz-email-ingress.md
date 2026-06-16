@@ -53,6 +53,20 @@ event_type: courts_nz_email_received
 The payload must match the `Archive Email` JSON shape above, preserve raw
 message evidence where available, and remain archive-only.
 
+Current Pipedream setup state, verified on 2026-06-16:
+
+- Project: `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb`
+- Workflow: `Courts NZ Judgments Email Archive - Email Trigger`
+- Workflow URL:
+  `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb/courts-nz-judgments-email-archive-email-trigger-p_95C2agq/build`
+- Generated email address: `em4mkapmjakoh5o@upload.pipedream.net`
+- Required Pipedream secret: `GITHUB_DISPATCH_TOKEN`
+
+The workflow has the Email trigger and Node.js dispatch code step configured,
+but it must not be treated as live until `GITHUB_DISPATCH_TOKEN` is added in
+Pipedream, the workflow is deployed, and one test email is confirmed in the
+repository archive.
+
 Observed Courts of NZ volume is well below the level that should normally create
 paid usage for a short, dedicated email-trigger workflow: recent Bluesky records
 are 11-14 per month, 2026 RSS records are 3-33 per month, and the email lane

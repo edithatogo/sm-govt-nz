@@ -68,9 +68,25 @@
   "fallback_routes": [
     {
       "provider": "pipedream_email_trigger",
-      "status": "recommended_zero_cost_automation",
+      "status": "configured_pending_secret_and_test",
       "activation_condition": "Use as the preferred automated zero-cost fallback while the dedicated Cloudflare-routed address is blocked by domain ownership/delegation.",
       "receiver_contract": "Create a Pipedream workflow with its built-in Email trigger, subscribe the generated workflow email address to the Courts of NZ judgments of public interest list, and have the workflow call the same GitHub repository_dispatch event type with the Archive Email payload shape.",
+      "workflow": {
+        "name": "Courts NZ Judgments Email Archive - Email Trigger",
+        "project_url": "https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb",
+        "workflow_url": "https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb/courts-nz-judgments-email-archive-email-trigger-p_95C2agq/build",
+        "generated_email_address": "em4mkapmjakoh5o@upload.pipedream.net",
+        "code_step_secret": "GITHUB_DISPATCH_TOKEN",
+        "configured_at": "2026-06-16",
+        "last_verified": "2026-06-16",
+        "verified_state": "Email trigger configured and Node.js dispatch code step contains courts_nz_email_received and GITHUB_DISPATCH_TOKEN references. Deployment/live test remains blocked until the Pipedream secret is added."
+      },
+      "next_actions": [
+        "Add a fine-grained GitHub token to Pipedream as GITHUB_DISPATCH_TOKEN.",
+        "Deploy the Pipedream workflow.",
+        "Send one test email to the generated Pipedream address and confirm the Archive Email workflow stores raw and normalized records.",
+        "Subscribe the generated Pipedream address to the Courts of NZ judgments of public interest notification list."
+      ],
       "cost": "$0 expected at observed Courts of NZ volume, subject to Pipedream free-tier credit limits and account usage dashboard.",
       "usage_assessment": {
         "expected_credit_model": "One short workflow execution per received Courts of NZ email; Pipedream's public email source trigger itself is included with the workflow trigger path.",

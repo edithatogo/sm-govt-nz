@@ -69,6 +69,16 @@ state.
 Use Pipedream before Mailgun or mailbox polling if an automated zero-cost route
 is needed without buying or delegating a domain.
 
+Current setup state, verified on 2026-06-16:
+
+- Status: configured in Pipedream, pending secret, deploy, and test.
+- Project: `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb`
+- Workflow: `Courts NZ Judgments Email Archive - Email Trigger`
+- Workflow URL:
+  `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb/courts-nz-judgments-email-archive-email-trigger-p_95C2agq/build`
+- Generated email address: `em4mkapmjakoh5o@upload.pipedream.net`
+- Required secret: `GITHUB_DISPATCH_TOKEN`
+
 Setup contract:
 
 1. Create a Pipedream workflow using the built-in Email trigger.
