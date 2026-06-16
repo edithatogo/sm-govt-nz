@@ -8,7 +8,7 @@ on:
       expires_on:
         description: Current Buffer API key expiry date.
         required: false
-        default: "2026-07-12"
+        default: "2027-06-16"
 
 permissions:
   contents: read
@@ -21,7 +21,7 @@ jobs:
   remind:
     runs-on: ubuntu-latest
     env:
-      BUFFER_API_KEY_EXPIRES_ON: ${{ github.event.inputs.expires_on || '2026-07-12' }}
+      BUFFER_API_KEY_EXPIRES_ON: ${{ github.event.inputs.expires_on || '2027-06-16' }}
     steps:
       - uses: actions/checkout@v5
       - name: Set up Python
