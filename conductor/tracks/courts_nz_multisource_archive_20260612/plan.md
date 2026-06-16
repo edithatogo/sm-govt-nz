@@ -41,9 +41,11 @@
 - [x] Task: Keep Mailgun inbound parse as a fallback only if Cloudflare parsing/routing is insufficient and a trial or paid plan is acceptable.
 - [x] Task: Keep scheduled mailbox polling through Gmail or IMAP as the final fallback if webhook-style inbound delivery is unavailable.
 - [ ] Task: Create a dedicated subscription address for Courts of NZ judgments of public interest notifications.
-  - Current GitHub secrets are missing the Cloudflare deploy set:
-    `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, and
-    `EMAIL_WORKER_GITHUB_TOKEN`.
+  - Current status: email ingress scaffolding and fallback dispatch paths exist,
+    but the dedicated subscription address is still not closed out in this
+    track. Earlier missing-secret notes are stale; the next review should verify
+    the active Cloudflare or Pipedream route and record the final address and
+    subscription confirmation.
 - [x] Task: Store raw email payloads under `historical_archive_raw/email/<yyyy-mm>/`.
 - [x] Task: Normalize email subject/body/link records into the shared archive schema.
 - [x] Task: Trigger GitHub Actions with `repository_dispatch` or a scheduled polling workflow after email receipt.
@@ -72,6 +74,9 @@
 - [x] Task: Publish raw-source bundles separately or as a gated/manual artifact if size or platform terms require it.
 - [x] Task: Add dataset manifests with checksums, source coverage, date ranges, and known gaps.
 - [x] Task: Add a scheduled/manual GitHub Actions workflow that bundles archive artifacts and publishes to Hugging Face/Zenodo when secrets are configured. Manual runs default to artifact-only and require `publish=true` to send artifacts to external repositories. Artifact-only run `27499923744` passed and uploaded `courts-nz-archive-corpus`.
+  - Follow-up cadence decision moved to
+    `courts_nz_archive_publication_cadence_20260617` so continuous Hugging Face
+    updates and episodic Zenodo snapshots are explicitly reviewed.
 
 ## Phase 7: Operational Optimizations
 - [x] Task: Add source-health dashboard output to Pages.

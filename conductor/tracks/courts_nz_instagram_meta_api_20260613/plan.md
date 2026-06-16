@@ -1,5 +1,15 @@
 # Plan - Courts of New Zealand Instagram Meta API Mirror
 
+## Reconciliation Note - 2026-06-17
+
+This plan contains earlier launch-complete notes, but the current runtime source
+of truth does not match them: `config.json` keeps `instagram.enabled` false,
+`instagram` is not listed in `monitored_accounts[0].syndicate_to`, and the
+committed target delivery state does not show a current Instagram delivery. The
+follow-up track `courts_nz_instagram_launch_reconciliation_20260617` must
+resolve whether those launch notes were stale, temporary, or reverted before
+Instagram is described as live.
+
 ## Phase 1: Account and API Readiness
 - [x] Task: Record that the Instagram mirror account has been created and keep
   posting disabled until API validation completes.

@@ -31,8 +31,9 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Complete Courts of New Zealand Bluesky profile evidence and identity archive
 *Link: [./tracks/courts_nz_bluesky_profile_archive_20260613/](./tracks/courts_nz_bluesky_profile_archive_20260613/)*
 
-## [x] Track: Complete Courts of New Zealand Bluesky archive replay and manifest telemetry
+## [~] Track: Complete Courts of New Zealand Bluesky archive replay and manifest telemetry
 *Link: [./tracks/courts_nz_bluesky_archive_replay_20260613/](./tracks/courts_nz_bluesky_archive_replay_20260613/)*
+- Remaining work: continue bounded X archive replay runs to the Bluesky mirror.
 
 ## [x] Track: Harden Courts of New Zealand Bluesky mirror launch operations
 *Link: [./tracks/courts_nz_bluesky_launch_ops_20260613/](./tracks/courts_nz_bluesky_launch_ops_20260613/)*
@@ -46,11 +47,22 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Decide Courts of New Zealand Threads historical replay policy
 *Link: [./tracks/courts_nz_threads_historical_replay_policy_20260613/](./tracks/courts_nz_threads_historical_replay_policy_20260613/)*
 
-## [x] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs
+## [~] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs
 *Link: [./tracks/courts_nz_instagram_meta_api_20260613/](./tracks/courts_nz_instagram_meta_api_20260613/)*
+- Runtime reconciliation required because `config.json` currently keeps
+  Instagram disabled.
+
+## [ ] Track: Reconcile Courts of New Zealand Instagram launch runtime state
+*Link: [./tracks/courts_nz_instagram_launch_reconciliation_20260617/](./tracks/courts_nz_instagram_launch_reconciliation_20260617/)*
+
+## [ ] Track: Select and launch Courts of New Zealand X/Twitter mirror route
+*Link: [./tracks/courts_nz_x_twitter_launch_route_20260617/](./tracks/courts_nz_x_twitter_launch_route_20260617/)*
 
 ## [ ] Track: Implement Courts of New Zealand Facebook Page mirror via Meta APIs
 *Link: [./tracks/courts_nz_facebook_meta_api_20260613/](./tracks/courts_nz_facebook_meta_api_20260613/)*
+
+## [ ] Track: Define Courts of New Zealand archive publication cadence
+*Link: [./tracks/courts_nz_archive_publication_cadence_20260617/](./tracks/courts_nz_archive_publication_cadence_20260617/)*
 
 ## [~] Track: NZ Government Social Media Registry � agencies, political parties, MPs, and public sector leadership
 *Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*
