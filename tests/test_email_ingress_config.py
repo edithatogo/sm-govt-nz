@@ -41,9 +41,11 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
         "scheduled_mailbox_polling",
     ]
     pipedream_route = config["fallback_routes"][0]
-    assert pipedream_route["status"] == "configured_pending_secret_and_test"
+    assert pipedream_route["status"] == "deployed_pending_secret_and_test"
     assert pipedream_route["workflow"]["generated_email_address"].endswith("@upload.pipedream.net")
     assert pipedream_route["workflow"]["code_step_secret"] == "GITHUB_DISPATCH_TOKEN"
+    assert pipedream_route["workflow"]["deployment_status"] == "active"
+    assert pipedream_route["workflow"]["deployment_version"] == "v5"
     assert pipedream_route["cost"].startswith("$0 expected")
     assert pipedream_route["usage_assessment"]["risk_of_paid_usage"].startswith("low")
     manual_route = config["fallback_routes"][1]

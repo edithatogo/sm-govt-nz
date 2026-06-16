@@ -61,11 +61,12 @@ Current Pipedream setup state, verified on 2026-06-16:
   `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb/courts-nz-judgments-email-archive-email-trigger-p_95C2agq/build`
 - Generated email address: `em4mkapmjakoh5o@upload.pipedream.net`
 - Required Pipedream secret: `GITHUB_DISPATCH_TOKEN`
+- Deployment: `v5`, Active
 
 The workflow has the Email trigger and Node.js dispatch code step configured,
-but it must not be treated as live until `GITHUB_DISPATCH_TOKEN` is added in
-Pipedream, the workflow is deployed, and one test email is confirmed in the
-repository archive.
+and Pipedream reports deployment `v5` as Active. It must not be treated as
+live-operational until `GITHUB_DISPATCH_TOKEN` is added in Pipedream and one
+test email is confirmed in the repository archive.
 
 Observed Courts of NZ volume is well below the level that should normally create
 paid usage for a short, dedicated email-trigger workflow: recent Bluesky records
