@@ -71,13 +71,13 @@ is needed without buying or delegating a domain.
 
 Current setup state, verified on 2026-06-16:
 
-- Status: deployed and Active in Pipedream, pending secret and test.
+- Status: deployed and Active in Pipedream, secret configured, pending test.
 - Project: `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb`
 - Workflow: `Courts NZ Judgments Email Archive - Email Trigger`
 - Workflow URL:
   `https://pipedream.com/@edithatogo-workspace/projects/proj_p2sg9bb/courts-nz-judgments-email-archive-email-trigger-p_95C2agq/build`
 - Generated email address: `em4mkapmjakoh5o@upload.pipedream.net`
-- Required secret: `GITHUB_DISPATCH_TOKEN`
+- Secret: `GITHUB_DISPATCH_TOKEN`, configured
 - Deployment: `v5`, Active
 
 Setup contract:
@@ -94,7 +94,7 @@ Setup contract:
    with event type `courts_nz_email_received` and a `client_payload` matching
    the `Archive Email` payload schema.
 4. Store the GitHub dispatch token in Pipedream's secret store. Do not commit it
-   to this repository.
+   to this repository. This is configured for the current project.
 5. Confirm the Pipedream workflow remains deployed and Active.
 6. Run one test email and confirm raw and normalized email records are archived.
 

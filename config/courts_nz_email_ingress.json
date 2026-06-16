@@ -68,7 +68,7 @@
   "fallback_routes": [
     {
       "provider": "pipedream_email_trigger",
-      "status": "deployed_pending_secret_and_test",
+      "status": "deployed_secret_configured_pending_test",
       "activation_condition": "Use as the preferred automated zero-cost fallback while the dedicated Cloudflare-routed address is blocked by domain ownership/delegation.",
       "receiver_contract": "Create a Pipedream workflow with its built-in Email trigger, subscribe the generated workflow email address to the Courts of NZ judgments of public interest list, and have the workflow call the same GitHub repository_dispatch event type with the Archive Email payload shape.",
       "workflow": {
@@ -79,13 +79,14 @@
         "code_step_secret": "GITHUB_DISPATCH_TOKEN",
         "deployment_status": "active",
         "deployment_version": "v5",
+        "secret_status": "configured",
+        "secret_configured_at": "2026-06-16",
         "configured_at": "2026-06-16",
         "deployed_at": "2026-06-16",
         "last_verified": "2026-06-16",
-        "verified_state": "Email trigger configured, Node.js dispatch code step contains courts_nz_email_received and GITHUB_DISPATCH_TOKEN references, and Pipedream workflow v5 is Active. Live execution remains blocked until the Pipedream secret is added and one email test is archived."
+        "verified_state": "Email trigger configured, Node.js dispatch code step contains courts_nz_email_received and GITHUB_DISPATCH_TOKEN references, Pipedream workflow v5 is Active, and GITHUB_DISPATCH_TOKEN is configured as a Pipedream secret. Live execution remains blocked until one email test is archived."
       },
       "next_actions": [
-        "Add a fine-grained GitHub token to Pipedream as GITHUB_DISPATCH_TOKEN.",
         "Send one test email to the generated Pipedream address and confirm the Archive Email workflow stores raw and normalized records.",
         "Subscribe the generated Pipedream address to the Courts of NZ judgments of public interest notification list."
       ],
