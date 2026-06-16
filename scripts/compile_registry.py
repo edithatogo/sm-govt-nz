@@ -257,10 +257,12 @@ def export_to_sqlite(data: list, parties_data: list, persons_data: list, db_path
             party.get("colour")
         ))
         for platform, profile in party.get("social_profiles", {}).items():
+            if isinstance(profile, str):
+                profile = {"handle": profile, "url": profile, "status": "active"}
             cursor.execute("""
                 INSERT INTO party_social_profiles (party_id, platform, handle, url, status)
                 VALUES (?, ?, ?, ?, ?)
-            """, (party["party_id"], platform, profile["handle"], profile["url"], profile["status"]))
+            """, (party["party_id"], platform, profile.get("handle", ""), profile.get("url", ""), profile.get("status", "active")))
 
     # Insert persons data
     for person in persons_data:
@@ -297,15 +299,17 @@ def export_to_sqlite(data: list, parties_data: list, persons_data: list, db_path
                 1 if role.get("is_current") else 0
             ))
         for platform, profile in person.get("social_profiles", {}).items():
+            if isinstance(profile, str):
+                profile = {"handle": profile.split("/")[-1].replace("@", ""), "url": profile, "status": "active"}
             cursor.execute("""
                 INSERT INTO person_social_profiles (person_id, platform, handle, url, status, is_verified)
                 VALUES (?, ?, ?, ?, ?, ?)
             """, (
                 person["person_id"],
                 platform,
-                profile["handle"],
-                profile["url"],
-                profile["status"],
+                profile.get("handle", ""),
+                profile.get("url", ""),
+                profile.get("status", "active"),
                 1 if profile.get("is_verified") else 0 if "is_verified" in profile else None
             ))
         for tlp in person.get("tenure_linked_profiles", []):

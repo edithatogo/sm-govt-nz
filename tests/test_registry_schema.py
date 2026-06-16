@@ -121,7 +121,8 @@ def test_persons_roles_valid():
         "police-commissioner", "defence-chief",
         "statutory-officer", "judge", "party-leader",
         "party-president", "mayor", "councillor",
-        "local-government-ceo"
+        "local-government-ceo", "spokesperson", "shadow-minister",
+        "deputy-leader", "deputy-shadow-leader", "opposition-leader"
     ]
     for person in data:
         for role in person.get("roles", []):
