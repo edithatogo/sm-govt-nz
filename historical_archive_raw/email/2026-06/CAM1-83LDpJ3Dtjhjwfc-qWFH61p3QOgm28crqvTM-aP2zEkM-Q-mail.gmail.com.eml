@@ -1,0 +1,89 @@
+Return-Path: <fionnandniamh@gmail.com>
+Received: from mail-ej1-f54.google.com (mail-ej1-f54.google.com [209.85.218.54])
+ by inbound-smtp.us-east-1.amazonaws.com with SMTP id b6if6bkv8lfi05f3hhdfmv2s0rjka6gq0jhn2jo1
+ for em4mkapmjakoh5o@upload.pipedream.net;
+ Tue, 16 Jun 2026 14:17:09 +0000 (UTC)
+X-SES-Spam-Verdict: PASS
+X-SES-Virus-Verdict: PASS
+Received-SPF: pass (spfCheck: domain of _spf.google.com designates 209.85.218.54 as permitted sender) client-ip=209.85.218.54; envelope-from=fionnandniamh@gmail.com; helo=mail-ej1-f54.google.com;
+Authentication-Results: amazonses.com;
+ spf=pass (spfCheck: domain of _spf.google.com designates 209.85.218.54 as permitted sender) client-ip=209.85.218.54; envelope-from=fionnandniamh@gmail.com; helo=mail-ej1-f54.google.com;
+ dkim=pass header.i=@gmail.com;
+ dmarc=pass header.from=gmail.com;
+X-SES-RECEIPT: AEFBQUFBQUFBQUFFVm42cC8wbWF6OWZQdU5tcmR1ejQxZmFSQ0IyN3UyZXNOMDdORDNERTdpQ0hFbGdaVGVHTDBZN1g1SVR2YVR3QkFVT2ZkUXpoenRmWU1tSW9mbGw1U0hTdldZc1o2cDMzMEpRQ1hPOWk2U29TVkJsMEhZcWo5UnN1QzdDZ1BrMkd0dGlUcTlia3ZKdlIwUzEwS0dRUDdkVVIrL00yTnRNWUw2K2VOWDBPQ3ozSlFQRU1Ca2FpMndXSTVJZVpHZGNqaTFyelN3NU8zMExMbkQvdDVXMUdlSmN6SUhDbUg5SlNIL2lYcXZMUzhIbW1JU01pZ3dnaGxMak44RElWc0ZZaXM5Q2g4QklGSVNxN3Izak9qb0lhQWJDdWVGSnd2SU83Uk4zSE9wRUVYa3c9PQ==
+X-SES-DKIM-SIGNATURE: a=rsa-sha256; q=dns/txt; b=SHoQEkbTetOXp+2/gw2zYYJymDllGC52CD59s7Dbp8M4086Iv9TB+aYhbdl/laPCd6DfBK3G8xOLVw9TGWbaBTZJmQ/rffFmsfqxS+r2ZNfHHMhz8npKK0gQnibCCpGKXlvwsyPvumU5E/pb4cpwnbY5F21JwHg61+jzyBc9+YI=; c=relaxed/simple; s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1781619429; v=1; bh=MQpnraJH0iK21Qna2+ylj6+PYaxW9G57sbCXI8+xr0c=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;
+Received: by mail-ej1-f54.google.com with SMTP id a640c23a62f3a-bf046d4da1fso428253566b.3
+        for <em4mkapmjakoh5o@upload.pipedream.net>; Tue, 16 Jun 2026 07:17:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1781619428; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Bo6kQSChKZIsgNsQydqMs4mQEwNgnF3VZKKyOzhfwEgo4d7iHomi35bRo3PlisMhkk
+         fkYjt2cezjAk7JkMH9XfNX1lUR52Q4BMQ7vKZ3OBwXrDmKt8r9YdNY1M8nvFDdyZGQwz
+         GDxzmTzwuzCYgEMoUQsa26THXYBkEDfdZ6KlgOoxbarmXz7MzhYU7hpGW0ki8mwGrSw6
+         9hVwMWZIQ+n5reWU7jXc/bkl4fE/YnX1F4uhI8XsZON+ng9FKmo4p5o/3Mh512DAf4nm
+         WyXJ4IArc5ReKl4o4fZyKLBKTOE+/sS+nNfPzFXgcOCzyp7k+CAdzCjiGDiA1ki+Fq5w
+         hFjQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=MQpnraJH0iK21Qna2+ylj6+PYaxW9G57sbCXI8+xr0c=;
+        fh=tRCBdVd/UC9lEd4AhW/zV4lBZvxU3BrXyRsW4W8oLeo=;
+        b=b/rGicn4hT32YohuKueIgxWH6heS6wn+U4YytozseqX+vR32TIwj9WiRCeooLZ7a0g
+         RY/wC6zp+110PUm4AHZ0X6mJwbgN/60MqZ+5Te+oigJTz2Nrxh+Q6Jnol4H94hbvDGup
+         2x3N0MVoOGqNsNLzJYg0yncOlvv9Q37VpuEyHMn4RMYMdANjxuXptgH2MSwqqiI3vhX3
+         2Q9lCreMMcNwHyTFOk5oLeoeLM5B2nO03p8daejNKbeTSJ/vN7HCQ3jZxF7SrMCJbbfv
+         8RL6RO3vFVzLv9EE8uV1LrnwLhlVyXu0b7o41PJ4ke8vcO/AImf0S7S1gkF0KlnTQPJ3
+         v7fw==;
+        darn=upload.pipedream.net
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1781619428; x=1782224228; darn=upload.pipedream.net;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=MQpnraJH0iK21Qna2+ylj6+PYaxW9G57sbCXI8+xr0c=;
+        b=O3GIwCdxppTJ51sG7AKZjgIceXTyO/KPowJeSHcgyEsyghN6w/X1xWQKlMeIwu3Wvf
+         +t8URlNZ9B6uJ/CYZ8t6s0O5sW5RJ/u4tR6RU0bNwJgdstnLr9fKmELguic6JzdUSsIy
+         ST8FdNSn/lIO37GG9ktyLqKdUR3Kkwf48+UMQ8Z9oN4sTGx6sYRg3Y8PLsyOusFDwGNK
+         glWdsNc8jh7i6Aq46w6TQ/0O1DfN5bJ3QFdBqRtY5ESh3IDxLy5T6pq8wwSZnLs8M0/+
+         pdOT7MmD7Hb1qlIdutuPVonOQP2s6Q9GCDZjMZNDZy5oxTpNGnQ9vNynFiaWzVairZ8d
+         522g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1781619428; x=1782224228;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=MQpnraJH0iK21Qna2+ylj6+PYaxW9G57sbCXI8+xr0c=;
+        b=m7dV7sEPrdqc+GRkBO8s8PP+0HMB3XbPhzauIsQ0qL2szL1m4P3hm2GP66Od7nIFpy
+         HHQRnOhozFGu1uVzVY09JbHLoeJIBJhlQDUk57jt/W1R8lL2o1UipFv3VxoUv7dQIgGi
+         h5WzS4B9Gy8wLYWw77D364ZDNXC1mEhdVJyargvuLG8iN73ajbaQpK+T7km+87MoX/ZC
+         6zjv3Tdnd5Zx84P9aQqNdjIQVmFeeAMu5x7EVvdAObsl+RGEfUYdzytBVP8UwduqQnCg
+         gGop7kApiUqC5C9KULi/Z9hZx22NUvUb1nU/bHhpUxk20wdH47lCWdzmkGwr6rqoF54F
+         1Liw==
+X-Gm-Message-State: AOJu0Yzt+gKiLRDwuz8SjHCOrmjslXFkOF/Hyvi/j8fIWdXH46Pv4PyX
+	Ewste3keplNMr2H6521kP8/Y3+QVWlNX/wwmvo3ksbvnqS3+i+wqNHb/7xd5tu8xwsJguTJeYWy
+	Z19Nvu05ryY9+qTE3GLo3neDjY6Hv1hWA+Q==
+X-Gm-Gg: Acq92OFMHEmSIxhfNM887E6MK/siy9/Gj91yZqx6nmraBdj4DWOyHhU1ASZqsTNz5Er
+	EtIdxoZY363+xv6lGVsmhydmHJhRy0mYlDB4MrgXM0owlDKxLMM5yVMPiKFw5pIf8kmQo5V76px
+	fx6yK/+fAysQlSaHfwzZzSVnupvk/8guAXNNIW4RGdgKtzsEjfR92VOQj90xBKqCjKFy+EuhHel
+	5uZUkOVukdqPDZmcM643pw7WxhEbnDnfcgZmj87MLzjeQA/HKpUUWkKe31DE7zTbu6z98UsOdfw
+	us6IAp8=
+X-Received: by 2002:a17:907:75d8:b0:bee:4562:32fa with SMTP id
+ a640c23a62f3a-bff4a00e3dcmr432433166b.14.1781619427480; Tue, 16 Jun 2026
+ 07:17:07 -0700 (PDT)
+Received: from 77377267392 named unknown by gmailapi.google.com with HTTPREST;
+ Tue, 16 Jun 2026 10:17:06 -0400
+Received: from 77377267392 named unknown by gmailapi.google.com with HTTPREST;
+ Tue, 16 Jun 2026 10:17:06 -0400
+MIME-Version: 1.0
+From: FandN M <fionnandniamh@gmail.com>
+Date: Tue, 16 Jun 2026 10:17:06 -0400
+X-Gm-Features: AVVi8CcrMv8nYuTUccwbCVZzjyKLjFuqeewtZWPt4MlZe67Bt_Pzw_bx9guLCL0
+Message-ID: <CAM1-83LDpJ3Dtjhjwfc=qWFH61p3QOgm28crqvTM-aP2zEkM+Q@mail.gmail.com>
+Subject: Courts NZ archive ingress live deployed test - 2026-06-16
+To: em4mkapmjakoh5o@upload.pipedream.net
+Content-Type: text/plain; charset="UTF-8"
+
+Courts NZ archive ingress live deployed test sent on 2026-06-16 after
+deploying the corrected Pipedream mapper.
+
+Source: Codex deployed-workflow test
+Expected event_type: courts_nz_email_received
+Repository: edithatogo/sm-govt-nz
+Validation target: deployed Pipedream Active workflow
