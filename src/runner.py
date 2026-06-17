@@ -120,7 +120,8 @@ def run_syndication(
                     result_items.append(
                         SyndicationResult(target, success=False, skipped=True, detail="not configured")
                     )
-                    failed_delivery = True
+                    if not _target_failure_isolated(target):
+                        failed_blocking_delivery = True
                     continue
                 result = _send_with_isolation(adapter, target, post)
                 result_items.append(result)
