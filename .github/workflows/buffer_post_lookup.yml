@@ -1,0 +1,22 @@
+name: Buffer Post Lookup
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_id:
+        description: "Buffer post id to inspect."
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Buffer CLI
+        run: npm install -g @bufferapp/cli
+      - name: Get Buffer post
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+        run: buffer posts get --id "${{ inputs.post_id }}" --output json --quiet
