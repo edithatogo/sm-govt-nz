@@ -35,6 +35,7 @@ class BacklogState(TypedDict):
 
 class TargetDeliveryState(TypedDict):
     delivered_post_ids: Dict[str, Dict[str, List[str]]]
+    pending_post_ids: NotRequired[Dict[str, Dict[str, List[str]]]]
 
 def load_config(config_path: str = "config.json") -> AppConfig:
     """Loads and returns the main application configuration from config.json."""

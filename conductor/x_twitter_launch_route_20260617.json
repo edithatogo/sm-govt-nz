@@ -24,14 +24,15 @@
     "free_tier_assumption": "Current Buffer-backed route uses the configured Buffer channel and no direct X API paid posting.",
     "api_key_expires_on": "2027-06-16",
     "rotation_workflow": ".github/workflows/buffer_key_rotation_reminder.yml",
-    "fallback_policy": "If Buffer validation or posting fails, keep Bluesky, Threads, archive capture, and dataset publication running; do not use browser automation as fallback."
+    "fallback_policy": "If Buffer validation or posting fails, keep Bluesky, Threads, archive capture, and dataset publication running; do not use browser automation as fallback. Failed X deliveries are retained in target_delivery_state.pending_post_ids.x and retried from archived source posts on later runs."
   },
   "runtime_source_of_truth": {
     "config_enabled": true,
     "syndicate_to_configured": true,
     "archive_replay_enabled": false,
     "max_posts_per_run": 1,
-    "target_delivery_state_has_x_delivery": true
+    "target_delivery_state_has_x_delivery": true,
+    "pending_retry_state": "conductor/target_delivery_state.json: pending_post_ids.x"
   },
   "local_dry_run": {
     "status": "passed",

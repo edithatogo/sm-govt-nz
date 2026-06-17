@@ -19,6 +19,11 @@ class FailingFeedClient:
         raise AssertionError("Feed should not be fetched without active account targets")
 
 
+class EmptyFeedClient:
+    def fetch_author_feed(self, actor: str, *, limit: int = 50) -> list[Mapping[str, Any]]:
+        return []
+
+
 class FailingAdapter:
     name = "threads"
 
@@ -83,20 +88,29 @@ def test_runner_isolates_enabled_target_without_adapter(tmp_path) -> None:
     config = make_config()
     config["syndication_targets"]["x"] = {"enabled": True}
     state: AppState = {"last_seen_post_ids": {"agency.bsky.social": ""}}
+    delivery_state = {"delivered_post_ids": {}}
+    discord = DryRunAdapter("discord")
+    mastodon = DryRunAdapter("mastodon")
 
     summary, next_state = run_syndication(
         config,
         state,
         feed_client=FakeFeedClient(),
-        adapters={"discord": DryRunAdapter("discord"), "mastodon": DryRunAdapter("mastodon")},
+        adapters={"discord": discord, "mastodon": mastodon},
         archive_dir=str(tmp_path / "archive"),
+        delivery_state=delivery_state,
     )
 
     missing_target_results = [result for result in summary.accounts[0].results if result.platform == "x"]
     assert missing_target_results
     assert all(not result.success for result in missing_target_results)
     assert all(result.skipped for result in missing_target_results)
+    assert [post["post_id"] for post in discord.sent_posts] == ["post-1", "post-2"]
+    assert [post["post_id"] for post in mastodon.sent_posts] == ["post-1", "post-2"]
     assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-2"
+    assert delivery_state["pending_post_ids"]["x"]["agency.bsky.social"] == ["post-1", "post-2"]
+    assert (tmp_path / "archive" / "agency.bsky.social" / "post-1.json").exists()
+    assert (tmp_path / "archive" / "agency.bsky.social" / "post-2.json").exists()
 
 
 def test_runner_limits_posts_before_advancing_state(tmp_path) -> None:
@@ -324,9 +338,42 @@ def test_runner_x_failure_does_not_block_source_state_or_other_targets(tmp_path)
     assert [post["post_id"] for post in bluesky.sent_posts] == ["post-1"]
     assert delivery_state["delivered_post_ids"]["bluesky"]["agency.bsky.social"] == ["post-1"]
     assert "x" not in delivery_state["delivered_post_ids"]
+    assert delivery_state["pending_post_ids"]["x"]["agency.bsky.social"] == ["post-1"]
     assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-1"
     assert summary.accounts[0].results[-1].platform == "x"
     assert summary.accounts[0].results[-1].success is False
+
+
+def test_runner_retries_pending_x_from_archive(tmp_path) -> None:
+    config = make_config()
+    config["monitored_accounts"][0]["syndicate_to"] = ["x"]
+    config["syndication_targets"] = {"x": {"enabled": True, "max_posts_per_run": 1}}
+    archive_dir = tmp_path / "archive"
+    account_dir = archive_dir / "agency.bsky.social"
+    account_dir.mkdir(parents=True)
+    write_archive_record(account_dir, "post-1")
+    state: AppState = {"last_seen_post_ids": {"agency.bsky.social": "post-1"}}
+    delivery_state = {
+        "delivered_post_ids": {},
+        "pending_post_ids": {"x": {"agency.bsky.social": ["post-1"]}},
+    }
+    x = RecordingSuccessAdapter("x")
+
+    summary, next_state = run_syndication(
+        config,
+        state,
+        feed_client=EmptyFeedClient(),
+        adapters={"x": x},
+        archive_dir=str(archive_dir),
+        delivery_state=delivery_state,
+    )
+
+    assert summary.fetched == 0
+    assert summary.syndicated == 1
+    assert [post["post_id"] for post in x.sent_posts] == ["post-1"]
+    assert delivery_state["delivered_post_ids"]["x"]["agency.bsky.social"] == ["post-1"]
+    assert delivery_state["pending_post_ids"] == {}
+    assert next_state == state
 
 
 def make_config() -> AppConfig:

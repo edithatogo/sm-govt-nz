@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Iterable
 
-from src.archiver import archive_bluesky_post, write_timeline
+from src.archiver import PostArchiveSchema, archive_bluesky_post, load_post_archive, write_timeline
 from src.bluesky import AuthorFeedClient, BlueskyPost, fetch_new_posts_for_account
 from src.config import (
     AppConfig,
@@ -104,6 +104,16 @@ def run_syndication(
         result_items: list[SyndicationResult] = []
         syndicated_count = 0
         failed_blocking_delivery = False
+        retry_results, retry_count = _retry_pending_isolated_deliveries(
+            target_delivery_state,
+            account_targets,
+            available_adapters,
+            handle,
+            archive_dir=archive_dir,
+            dry_run=dry_run,
+        )
+        result_items.extend(retry_results)
+        syndicated_count += retry_count
 
         for post in posts:
             if not dry_run:
@@ -120,7 +130,10 @@ def run_syndication(
                     result_items.append(
                         SyndicationResult(target, success=False, skipped=True, detail="not configured")
                     )
-                    if not _target_failure_isolated(target):
+                    if _target_failure_isolated(target):
+                        if not dry_run:
+                            _mark_pending(target_delivery_state, target, handle, post["post_id"])
+                    else:
                         failed_blocking_delivery = True
                     continue
                 result = _send_with_isolation(adapter, target, post)
@@ -129,8 +142,11 @@ def run_syndication(
                     syndicated_count += 1
                     if not dry_run:
                         _mark_delivered(target_delivery_state, target, handle, post["post_id"])
+                        _clear_pending(target_delivery_state, target, handle, post["post_id"])
                 if not result.success and not _target_failure_isolated(target):
                     failed_blocking_delivery = True
+                if not result.success and _target_failure_isolated(target) and not dry_run:
+                    _mark_pending(target_delivery_state, target, handle, post["post_id"])
 
         latest_post_id = posts[-1]["post_id"] if posts else last_seen
         if posts and not dry_run and not failed_blocking_delivery:
@@ -223,6 +239,96 @@ def _mark_delivered(
     delivered_posts = delivered_by_handle.setdefault(handle, [])
     if post_id not in delivered_posts:
         delivered_posts.append(post_id)
+
+
+def _mark_pending(
+    state: TargetDeliveryState,
+    target: str,
+    handle: str,
+    post_id: str,
+) -> None:
+    pending_by_target = state.setdefault("pending_post_ids", {})
+    pending_by_handle = pending_by_target.setdefault(target, {})
+    pending_posts = pending_by_handle.setdefault(handle, [])
+    if post_id not in pending_posts:
+        pending_posts.append(post_id)
+
+
+def _clear_pending(
+    state: TargetDeliveryState,
+    target: str,
+    handle: str,
+    post_id: str,
+) -> None:
+    pending_by_target = state.get("pending_post_ids", {})
+    pending_by_handle = pending_by_target.get(target, {})
+    pending_posts = pending_by_handle.get(handle, [])
+    if post_id in pending_posts:
+        pending_posts.remove(post_id)
+    if not pending_posts and handle in pending_by_handle:
+        del pending_by_handle[handle]
+    if not pending_by_handle and target in pending_by_target:
+        del pending_by_target[target]
+
+
+def _retry_pending_isolated_deliveries(
+    state: TargetDeliveryState,
+    account_targets: Iterable[str],
+    available_adapters: dict[str, SyndicationAdapter],
+    handle: str,
+    *,
+    archive_dir: str,
+    dry_run: bool,
+) -> tuple[list[SyndicationResult], int]:
+    results: list[SyndicationResult] = []
+    delivered_count = 0
+    for target in account_targets:
+        if not _target_failure_isolated(target):
+            continue
+        pending_post_ids = list(state.get("pending_post_ids", {}).get(target, {}).get(handle, []))
+        if not pending_post_ids:
+            continue
+        adapter = available_adapters.get(target)
+        if adapter is None:
+            results.extend(
+                SyndicationResult(target, success=False, skipped=True, detail="pending retry not configured")
+                for _post_id in pending_post_ids
+            )
+            continue
+        for post_id in pending_post_ids:
+            if _already_delivered(state, target, handle, post_id):
+                if not dry_run:
+                    _clear_pending(state, target, handle, post_id)
+                results.append(SyndicationResult(target, success=True, skipped=True, detail="duplicate"))
+                continue
+            archived_post = load_post_archive(handle, post_id, archive_dir)
+            if archived_post is None:
+                results.append(
+                    SyndicationResult(target, success=False, skipped=True, detail="pending archive missing")
+                )
+                continue
+            result = _send_with_isolation(adapter, target, _post_from_archive(archived_post))
+            results.append(result)
+            if result.success and not result.skipped:
+                delivered_count += 1
+                if not dry_run:
+                    _mark_delivered(state, target, handle, post_id)
+                    _clear_pending(state, target, handle, post_id)
+    return results, delivered_count
+
+
+def _post_from_archive(archived_post: PostArchiveSchema) -> BlueskyPost:
+    return {
+        "post_id": archived_post["post_id"],
+        "uri": "",
+        "cid": "",
+        "handle": archived_post["agency"],
+        "author_did": "",
+        "text": archived_post["content"],
+        "created_at": archived_post["created_at"],
+        "url": archived_post["source_url"],
+        "images": archived_post["images"],
+    }
 
 
 def _active_targets(

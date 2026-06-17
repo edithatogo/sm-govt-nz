@@ -14,7 +14,9 @@
   - Buffer API key expiry is tracked as `2027-06-16` by
     `.github/workflows/buffer_key_rotation_reminder.yml`.
   - Fallback policy: if Buffer fails, isolate X and keep Bluesky, Threads,
-    archive capture, and dataset publication running.
+    archive capture, and dataset publication running. Failed X deliveries are
+    retained in `target_delivery_state.pending_post_ids.x` for retry from the
+    source archive.
 
 ## Phase 2: Validation
 - [x] Task: Add or update a non-posting credential probe for the selected route.
@@ -59,6 +61,9 @@
     https://github.com/edithatogo/sm-govt-nz/actions/runs/27724489515
   - The scheduled path installed Buffer CLI, validated Buffer X secrets, probed
     Buffer account, ran the syndicator, and completed archive/backlog checks.
+  - X isolation now has per-target retry state: failed X deliveries are queued
+    in `conductor/target_delivery_state.json` and retried from archived source
+    posts on later syndication runs.
   - Note: that run warned that Threads validation failed, but the job completed
     successfully and archive/backlog work continued.
 
