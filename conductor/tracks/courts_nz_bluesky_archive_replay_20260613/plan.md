@@ -20,6 +20,9 @@
     5, 10, or 20 records without increasing the scheduled `Syndicate` throttle.
   - Manual `Archive Replay` run `27502031465` posted 20 X archive records,
     verified delivery URLs, and committed state update `be1eac4`.
+  - Manual `Archive Replay` run `27698997740` succeeded on 18 June 2026 local
+    time, posted another reviewed batch, verified delivery URLs, generated
+    unreplayable-records telemetry, and committed state update `a2c499e`.
 - [x] Task: Increase or tune batch size only after reviewing account-rate,
   platform-noise, and duplicate-prevention behavior.
   - Retained scheduled replay at 5 records and moved larger reviewed batches to
@@ -31,8 +34,8 @@
   - Evidence: reviewed 20-record run `27502031465` succeeded, verified delivery
     URLs, and did not require a scheduled throttle increase.
 - [x] Task: Re-run coverage reporting after each phase and commit state.
-  - Latest coverage shows Bluesky target at 202/738 total source records, with
-    0 remaining Bluesky-source records and 536 remaining X archive records.
+  - Latest coverage shows Bluesky target at 327/738 total source records, with
+    0 remaining Bluesky-source records and 411 remaining X archive records.
 
 ## Phase 3: Manifest and Verification
 - [x] Task: Extend the corpus manifest with source record ID, source URL,
