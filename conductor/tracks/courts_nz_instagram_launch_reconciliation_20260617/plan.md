@@ -1,30 +1,46 @@
 # Plan - Courts of New Zealand Instagram Launch Reconciliation
 
 ## Phase 1: Runtime Audit
-- [ ] Task: Compare `config.json`, `conductor/target_delivery_state.json`, recent
+- [x] Task: Compare `config.json`, `conductor/target_delivery_state.json`, recent
   workflow runs, and Instagram track notes.
-- [ ] Task: Determine whether the earlier launch notes reflected a temporary
+- [x] Task: Determine whether the earlier launch notes reflected a temporary
   branch/run, an uncommitted reversal, or stale documentation.
-- [ ] Task: Update the older Instagram track with a reconciliation note.
+- [x] Task: Update the older Instagram track with a reconciliation note.
+  - Outcome: earlier launch-complete notes are treated as stale relative to
+    committed runtime truth. `config.json` keeps Instagram disabled,
+    `instagram` is not in `syndicate_to`, no Instagram delivery exists in
+    `conductor/target_delivery_state.json`, and no recent `Validate Instagram`
+    workflow run exists.
 
 ## Phase 2: Credential and Identity Check
-- [ ] Task: Run `validate_instagram` or the local Instagram probe without
+- [x] Task: Run `validate_instagram` or the local Instagram probe without
   posting.
-- [ ] Task: Confirm the profile URL and account handle are the dedicated Courts
+- [x] Task: Confirm the profile URL and account handle are the dedicated Courts
   mirror account.
-- [ ] Task: Confirm no personal Instagram identity is used for posting.
+- [x] Task: Confirm no personal Instagram identity is used for posting.
+  - Probe result: blocked before any API request because GitHub and local
+    environment lack `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID`.
+  - Configured identity remains the dedicated mirror handle `mirnzcourts` at
+    `https://www.instagram.com/mirnzcourts/`, but it is not API-verified.
+  - No personal Instagram identity is configured for repo-side posting.
 
 ## Phase 3: Relaunch or Defer
-- [ ] Task: If credentials and identity are valid, run a dry-run latest-post
+- [x] Task: If credentials and identity are valid, run a dry-run latest-post
   payload review.
-- [ ] Task: If approved, enable Instagram with `max_posts_per_run: 1`, add it to
+- [x] Task: If approved, enable Instagram with `max_posts_per_run: 1`, add it to
   `syndicate_to`, and run one controlled live post.
-- [ ] Task: If blocked, leave Instagram disabled and record the precise blocker.
+- [x] Task: If blocked, leave Instagram disabled and record the precise blocker.
+  - Deferred. The dry-run/live-post lane is blocked until Instagram Graph API
+    credentials are added and the non-posting probe confirms `@mirnzcourts`.
+  - `config.json` is intentionally unchanged: Instagram remains disabled and
+    excluded from `syndicate_to`.
 
 ## Phase 4: Closeout
-- [ ] Task: Verify public delivery URL or defer status.
-- [ ] Task: Commit config/state/track changes.
-- [ ] Task: Update `conductor/tracks.md` and platform status review.
+- [x] Task: Verify public delivery URL or defer status.
+- [x] Task: Commit config/state/track changes.
+- [x] Task: Update `conductor/tracks.md` and platform status review.
 
-Current runtime status: `instagram.enabled` is false and `instagram` is not in
-`monitored_accounts[0].syndicate_to`, so Instagram is not live.
+Current runtime status: deferred. `instagram.enabled` is false and `instagram`
+is not in `monitored_accounts[0].syndicate_to`, so Instagram is not live. The
+closeout evidence is recorded in
+`conductor/instagram_launch_reconciliation_20260617.json`.

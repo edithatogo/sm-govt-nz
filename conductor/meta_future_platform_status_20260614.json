@@ -17,11 +17,12 @@
   },
   "instagram": {
     "adapter_groundwork": "present",
-    "api_identity_permission_confirmation": "pending",
+    "api_identity_permission_confirmation": "blocked_missing_credentials",
     "config_enabled": false,
-    "current_status": "future_track_pending_launch_review",
+    "current_status": "deferred_missing_instagram_credentials",
     "launch_blockers": [
       "Confirm Instagram account type and profile/user ID.",
+      "Add INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID as GitHub secrets.",
       "Confirm Meta app permissions for publishing to the mirror account.",
       "Confirm token lifetime, refresh route, and app-review requirements.",
       "Run the non-posting Instagram profile probe against the actual account.",

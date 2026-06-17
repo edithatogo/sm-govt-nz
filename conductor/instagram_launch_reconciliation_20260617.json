@@ -1,0 +1,43 @@
+{
+  "track": "conductor/tracks/courts_nz_instagram_launch_reconciliation_20260617",
+  "platform": "instagram",
+  "account_identity": {
+    "configured_account_handle": "mirnzcourts",
+    "configured_profile_url": "https://www.instagram.com/mirnzcourts/",
+    "dedicated_mirror_identity": "configured in repo metadata but not API-verified",
+    "personal_identity_used_for_posting": false
+  },
+  "runtime_source_of_truth": {
+    "config_enabled": false,
+    "syndicate_to_configured": false,
+    "archive_replay_enabled": false,
+    "target_delivery_state_has_instagram_delivery": false
+  },
+  "credential_probe": {
+    "github_secrets_checked_at": "2026-06-17T22:26:33Z",
+    "required_secret_names": [
+      "INSTAGRAM_ACCESS_TOKEN",
+      "INSTAGRAM_USER_ID"
+    ],
+    "github_secrets_present": {
+      "INSTAGRAM_ACCESS_TOKEN": false,
+      "INSTAGRAM_USER_ID": false
+    },
+    "local_probe_result": "blocked_missing_instagram_credentials",
+    "non_posting_probe_command": "python scripts/instagram_api_probe.py --json",
+    "non_posting_probe_error": "Missing INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID."
+  },
+  "reconciliation_outcome": {
+    "status": "deferred",
+    "reason": "Earlier launch-complete notes were stale relative to committed runtime state and cannot be verified because Instagram Graph API credentials are not configured.",
+    "older_track_outcome": "superseded_by_reconciliation",
+    "live_post_attempted": false,
+    "historical_replay_enabled": false,
+    "next_required_actions": [
+      "Add INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID as GitHub secrets for the dedicated mirror account.",
+      "Run the Validate Instagram workflow and confirm the returned username is mirnzcourts.",
+      "Review a dry-run latest-post payload before changing config.json.",
+      "Only then enable instagram with max_posts_per_run=1 and perform one controlled live post."
+    ]
+  }
+}

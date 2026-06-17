@@ -13,7 +13,7 @@ It distinguishes account/setup work from live scheduled posting.
 | X/Twitter mirror | Core adapter exists; no dedicated completion track existed | Not live: `x.enabled=false`, not in `syndicate_to` | New track: `courts_nz_x_twitter_launch_route_20260617`. |
 | Threads mirror | `courts_nz_threads_mirror_20260612`, `courts_nz_threads_api_credentials_20260613`, `courts_nz_threads_adapter_launch_20260613` | Active target: `threads.enabled=true`, one delivery recorded | Continue new-forward mirroring; historical replay remains deferred. |
 | Threads historical replay | `courts_nz_threads_historical_replay_policy_20260613` | Deferred by policy | No backlog replay unless a future explicit review accepts current-feed archive noise. |
-| Instagram mirror | `courts_nz_instagram_meta_api_20260613` | Not live in runtime config despite older launch notes | New reconciliation track: `courts_nz_instagram_launch_reconciliation_20260617`. |
+| Instagram mirror | `courts_nz_instagram_meta_api_20260613`, `courts_nz_instagram_launch_reconciliation_20260617` | Deferred: disabled in runtime config, no Instagram delivery state, missing Instagram Graph API secrets | Add `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID`, run non-posting probe for `@mirnzcourts`, then review dry-run before enabling. |
 | Facebook Page mirror | `courts_nz_facebook_meta_api_20260613` | Blocked: dedicated Page identity not confirmed | Continue existing Facebook track after Page identity exists. |
 | LinkedIn source | `courts_nz_multisource_archive_20260612` | Paused/source-only | Remains archive-only pending approved seed/access; no posting. |
 | RSS/website | `courts_nz_multisource_archive_20260612` | Scheduled archive capture active | Continue source-health monitoring. |
@@ -36,8 +36,9 @@ It distinguishes account/setup work from live scheduled posting.
 1. Bluesky and Threads are the only live scheduled outbound targets.
 2. X/Twitter needs a dedicated launch-route track because prior work left the
    runtime target disabled.
-3. Instagram has stale completion notes relative to runtime config and needs
-   reconciliation before being described as live.
+3. Instagram stale completion notes have been reconciled. Instagram is deferred,
+   not live, until Graph API credentials are configured and the dedicated
+   `@mirnzcourts` account is verified without posting.
 4. Facebook already has a track and remains blocked on a dedicated Page identity.
 5. Dataset publication exists, but the automatic versus manual external publish
    cadence needs an explicit track-level decision.

@@ -18,9 +18,12 @@ def test_meta_future_platform_status_matches_launch_blockers() -> None:
         Path("conductor/meta_future_platform_status_20260614.json").read_text(encoding="utf-8")
     )
 
-    assert status["instagram"]["current_status"] == "future_track_pending_launch_review"
-    assert status["instagram"]["api_identity_permission_confirmation"] == "pending"
+    assert status["instagram"]["current_status"] == "deferred_missing_instagram_credentials"
+    assert status["instagram"]["api_identity_permission_confirmation"] == "blocked_missing_credentials"
     assert status["facebook"]["current_status"] == "future_track_blocked"
     assert status["facebook"]["dedicated_page_identity"] == "not_confirmed"
     assert status["instagram"]["syndicate_to_configured"] is False
     assert status["facebook"]["syndicate_to_configured"] is False
+    assert "Add INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID as GitHub secrets." in status[
+        "instagram"
+    ]["launch_blockers"]

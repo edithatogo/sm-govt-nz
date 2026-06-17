@@ -49,11 +49,12 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [~] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs
 *Link: [./tracks/courts_nz_instagram_meta_api_20260613/](./tracks/courts_nz_instagram_meta_api_20260613/)*
-- Runtime reconciliation required because `config.json` currently keeps
-  Instagram disabled.
+- Superseded launch notes reconciled: Instagram remains disabled until Graph API
+  credentials are configured and `@mirnzcourts` is verified by non-posting probe.
 
-## [ ] Track: Reconcile Courts of New Zealand Instagram launch runtime state
+## [x] Track: Reconcile Courts of New Zealand Instagram launch runtime state
 *Link: [./tracks/courts_nz_instagram_launch_reconciliation_20260617/](./tracks/courts_nz_instagram_launch_reconciliation_20260617/)*
+- Outcome: deferred; missing `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID`.
 
 ## [ ] Track: Select and launch Courts of New Zealand X/Twitter mirror route
 *Link: [./tracks/courts_nz_x_twitter_launch_route_20260617/](./tracks/courts_nz_x_twitter_launch_route_20260617/)*

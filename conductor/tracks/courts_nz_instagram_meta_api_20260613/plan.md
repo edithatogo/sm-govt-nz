@@ -10,6 +10,16 @@ follow-up track `courts_nz_instagram_launch_reconciliation_20260617` must
 resolve whether those launch notes were stale, temporary, or reverted before
 Instagram is described as live.
 
+## Reconciliation Outcome - 2026-06-18
+
+The follow-up reconciliation track resolved this as deferred, not live. The
+earlier controlled-launch notes are stale relative to committed runtime state.
+GitHub secrets do not currently include `INSTAGRAM_ACCESS_TOKEN` or
+`INSTAGRAM_USER_ID`, and the local non-posting probe exits before any API call
+with `Missing INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID.` Keep Instagram
+disabled until the dedicated `@mirnzcourts` account is API-verified, a dry-run
+payload is reviewed, and a new controlled live-post approval is recorded.
+
 ## Phase 1: Account and API Readiness
 - [x] Task: Record that the Instagram mirror account has been created and keep
   posting disabled until API validation completes.
