@@ -31,7 +31,7 @@
     "syndicate_to_configured": true,
     "archive_replay_enabled": false,
     "max_posts_per_run": 1,
-    "target_delivery_state_has_x_delivery": false
+    "target_delivery_state_has_x_delivery": true
   },
   "local_dry_run": {
     "status": "passed",
@@ -42,9 +42,17 @@
     "token_redaction": "no token values are emitted by the dry-run payload"
   },
   "launch_status": {
-    "status": "pending_remote_validation_and_controlled_post",
+    "status": "buffer_sent_public_url_unverified",
     "validate_workflow": ".github/workflows/validate_buffer_syndication.yml",
+    "validate_workflow_run": "https://github.com/edithatogo/sm-govt-nz/actions/runs/27724263224",
     "launch_workflow": ".github/workflows/x_launch.yml",
-    "public_delivery_url": ""
+    "preview_workflow_run": "https://github.com/edithatogo/sm-govt-nz/actions/runs/27724295494",
+    "live_workflow_run": "https://github.com/edithatogo/sm-govt-nz/actions/runs/27724325327",
+    "scheduled_workflow_run": "https://github.com/edithatogo/sm-govt-nz/actions/runs/27724489515",
+    "buffer_post_id": "6a33226959d8b77577c60112",
+    "buffer_post_status": "sent",
+    "buffer_lookup_workflow": "https://github.com/edithatogo/sm-govt-nz/actions/runs/27724427258",
+    "public_delivery_url": "",
+    "public_url_verification": "blocked: Buffer post lookup reports status sent on channel MirNZCourts, but X public profile rendered a 4-post count while also saying @MirNZCourts has not posted and exposed no /status/ link."
   }
 }

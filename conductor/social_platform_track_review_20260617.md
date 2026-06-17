@@ -10,7 +10,7 @@ It distinguishes account/setup work from live scheduled posting.
 | Bluesky source | `courts_nz_mirror_20260611`, `courts_nz_multisource_archive_20260612` | Active source: `courtsofnz.bsky.social` | Continue archive capture and source health monitoring. |
 | Bluesky mirror | `courts_nz_bluesky_mirror_20260612`, `courts_nz_bluesky_launch_ops_20260613` | Active target: `bluesky.enabled=true` | Continue new-forward mirroring. |
 | Bluesky historical replay | `courts_nz_bluesky_archive_replay_20260613` | In progress: X replay remaining | Continue bounded manual Archive Replay runs. Top-level status corrected from complete to in progress. |
-| X/Twitter mirror | `courts_nz_x_twitter_launch_route_20260617` | Buffer route selected: `x.enabled=true`, `x` in `syndicate_to`, max 1 post/run | Complete current-head Buffer validation, controlled live post, public URL verification, and first scheduled run review. |
+| X/Twitter mirror | `courts_nz_x_twitter_launch_route_20260617` | Buffer route active: `x.enabled=true`, `x` in `syndicate_to`, max 1 post/run, Buffer send status `sent` | Resolve public X status URL verification; Buffer does not expose final provider URL in current lookup output. |
 | Threads mirror | `courts_nz_threads_mirror_20260612`, `courts_nz_threads_api_credentials_20260613`, `courts_nz_threads_adapter_launch_20260613` | Active target: `threads.enabled=true`, one delivery recorded | Continue new-forward mirroring; historical replay remains deferred. |
 | Threads historical replay | `courts_nz_threads_historical_replay_policy_20260613` | Deferred by policy | No backlog replay unless a future explicit review accepts current-feed archive noise. |
 | Instagram mirror | `courts_nz_instagram_meta_api_20260613`, `courts_nz_instagram_launch_reconciliation_20260617` | Deferred: disabled in runtime config, no Instagram delivery state, missing Instagram Graph API secrets | Add `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID`, run non-posting probe for `@mirnzcourts`, then review dry-run before enabling. |
@@ -34,8 +34,10 @@ It distinguishes account/setup work from live scheduled posting.
 ## Review Findings
 
 1. Bluesky and Threads are the only live scheduled outbound targets.
-2. X/Twitter now uses the Buffer launch route and remains under launch review
-   until the controlled live post and first scheduled run are verified.
+2. X/Twitter now uses the Buffer launch route. Buffer validation, controlled
+   live send, delivery-state commit, and first scheduled run passed; public X
+   status URL verification remains open because Buffer did not expose the final
+   provider URL.
 3. Instagram stale completion notes have been reconciled. Instagram is deferred,
    not live, until Graph API credentials are configured and the dedicated
    `@mirnzcourts` account is verified without posting.

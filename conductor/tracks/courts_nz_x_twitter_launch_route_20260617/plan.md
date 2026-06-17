@@ -34,19 +34,37 @@
   validation passes.
 - [x] Task: Set `syndication_targets.x.enabled` to true with
   `max_posts_per_run: 1`.
-- [ ] Task: Run current-head Buffer validation workflow.
-- [ ] Task: Run one controlled live post.
+- [x] Task: Run current-head Buffer validation workflow.
+- [x] Task: Run one controlled live post.
 - [ ] Task: Verify the public X URL and commit delivery state.
+  - Current-head Buffer validation passed:
+    https://github.com/edithatogo/sm-govt-nz/actions/runs/27724263224
+  - X launch preview passed:
+    https://github.com/edithatogo/sm-govt-nz/actions/runs/27724295494
+  - Controlled live Buffer send passed:
+    https://github.com/edithatogo/sm-govt-nz/actions/runs/27724325327
+  - Buffer returned post id `6a33226959d8b77577c60112` with status `sent`;
+    delivery state is committed for source post `3mo2b6w4u522m`.
+  - Public URL remains unverified: Buffer lookup does not expose a provider
+    URL, and X's public timeline showed a `4 posts` header but no visible
+    `/MirNZCourts/status/...` link.
 
 ## Phase 4: Operations
 - [x] Task: Add scheduled validation and token-expiry monitoring for the selected
   route.
 - [x] Task: Add failure isolation so a broken X route cannot block Bluesky,
   Threads, archive capture, or dataset publication.
-- [ ] Task: Review the first scheduled successful run before marking complete.
+- [x] Task: Review the first scheduled successful run before marking complete.
+  - First scheduled run after the Buffer route change passed:
+    https://github.com/edithatogo/sm-govt-nz/actions/runs/27724489515
+  - The scheduled path installed Buffer CLI, validated Buffer X secrets, probed
+    Buffer account, ran the syndicator, and completed archive/backlog checks.
+  - Note: that run warned that Threads validation failed, but the job completed
+    successfully and archive/backlog work continued.
 
 Current runtime status: Buffer route selected and configured. `x.enabled` is
-true and `x` is in `monitored_accounts[0].syndicate_to`, but the track remains
-open until current-head Buffer validation, one controlled live post, public URL
-verification, and the first scheduled successful run are complete. Evidence is
-recorded in `conductor/x_twitter_launch_route_20260617.json`.
+true and `x` is in `monitored_accounts[0].syndicate_to`. Buffer validation,
+controlled live send, committed delivery state, and first scheduled run are
+complete. The track remains open only for public X URL verification, because the
+Buffer API/CLI confirmed `sent` but did not expose the final provider URL.
+Evidence is recorded in `conductor/x_twitter_launch_route_20260617.json`.
