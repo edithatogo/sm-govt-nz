@@ -1,0 +1,57 @@
+name: X Launch
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_live_posting:
+        description: "Type true to publish the latest configured source post to X via Buffer."
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+jobs:
+  x-launch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        run: python --version
+      - name: Install runtime dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Install Buffer CLI
+        run: npm install -g @bufferapp/cli
+      - name: Validate Buffer secrets
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_X_CHANNEL_ID: ${{ secrets.BUFFER_X_CHANNEL_ID }}
+        run: python scripts/validate_secrets.py --mode syndicate --target x --env-file ""
+      - name: Validate Buffer account
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+        run: buffer account --output json --quiet
+      - name: Preview latest X payload
+        if: ${{ inputs.confirm_live_posting != 'true' }}
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_X_CHANNEL_ID: ${{ secrets.BUFFER_X_CHANNEL_ID }}
+        run: python scripts/post_x_latest.py
+      - name: Publish latest post to X via Buffer
+        if: ${{ inputs.confirm_live_posting == 'true' }}
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_X_CHANNEL_ID: ${{ secrets.BUFFER_X_CHANNEL_ID }}
+        run: python scripts/post_x_latest.py --confirm-live-posting
+      - name: Commit delivery state
+        if: ${{ inputs.confirm_live_posting == 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Update X delivery state"
+          --path conductor/target_delivery_state.json

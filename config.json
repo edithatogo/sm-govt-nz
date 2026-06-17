@@ -4,7 +4,7 @@
       "handle": "courtsofnz.bsky.social",
       "did": "did:plc:vtoa673xlou45zcsj6inyeis",
       "name": "Mirror: Courts of New Zealand",
-      "syndicate_to": ["bluesky", "threads"]
+      "syndicate_to": ["bluesky", "threads", "x"]
     }
   ],
   "syndication_targets": {
@@ -19,7 +19,18 @@
       "archive_replay_sources": ["x"]
     },
     "x": {
-      "enabled": false
+      "enabled": true,
+      "route": "buffer",
+      "max_posts_per_run": 1,
+      "archive_replay_enabled": false,
+      "pipeline_stage_enabled": true,
+      "account_handle": "MirNZCourts",
+      "profile_url": "https://x.com/MirNZCourts",
+      "queue_behavior": "shareNow",
+      "free_tier_assumption": "Buffer-backed posting uses the configured Buffer channel and current free-plan assumptions; direct X API posting remains disabled.",
+      "api_key_expires_on": "2027-06-16",
+      "rotation_workflow": ".github/workflows/buffer_key_rotation_reminder.yml",
+      "fallback_policy": "If Buffer validation or posting fails, keep Bluesky, Threads, archive capture, and dataset publication running; do not fall back to browser automation."
     },
     "threads": {
       "enabled": true,

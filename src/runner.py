@@ -103,7 +103,7 @@ def run_syndication(
         )
         result_items: list[SyndicationResult] = []
         syndicated_count = 0
-        failed_delivery = False
+        failed_blocking_delivery = False
 
         for post in posts:
             if not dry_run:
@@ -128,11 +128,11 @@ def run_syndication(
                     syndicated_count += 1
                     if not dry_run:
                         _mark_delivered(target_delivery_state, target, handle, post["post_id"])
-                if not result.success:
-                    failed_delivery = True
+                if not result.success and not _target_failure_isolated(target):
+                    failed_blocking_delivery = True
 
         latest_post_id = posts[-1]["post_id"] if posts else last_seen
-        if posts and not dry_run and not failed_delivery:
+        if posts and not dry_run and not failed_blocking_delivery:
             next_state["last_seen_post_ids"][handle] = latest_post_id
 
         account_results.append(
@@ -164,6 +164,10 @@ def _send_with_isolation(
             success=False,
             detail=f"{type(error).__name__}: {error}",
         )
+
+
+def _target_failure_isolated(target: str) -> bool:
+    return target in {"x"}
 
 
 def main(

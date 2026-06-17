@@ -56,8 +56,10 @@ This file tracks all major tracks for the project. Each track has its own detail
 *Link: [./tracks/courts_nz_instagram_launch_reconciliation_20260617/](./tracks/courts_nz_instagram_launch_reconciliation_20260617/)*
 - Outcome: deferred; missing `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID`.
 
-## [ ] Track: Select and launch Courts of New Zealand X/Twitter mirror route
+## [~] Track: Select and launch Courts of New Zealand X/Twitter mirror route
 *Link: [./tracks/courts_nz_x_twitter_launch_route_20260617/](./tracks/courts_nz_x_twitter_launch_route_20260617/)*
+- Buffer route selected and configured; pending current-head validation,
+  controlled live post, public URL verification, and first scheduled run review.
 
 ## [ ] Track: Implement Courts of New Zealand Facebook Page mirror via Meta APIs
 *Link: [./tracks/courts_nz_facebook_meta_api_20260613/](./tracks/courts_nz_facebook_meta_api_20260613/)*

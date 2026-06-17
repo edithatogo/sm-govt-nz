@@ -23,7 +23,7 @@ class FailingAdapter:
     name = "threads"
 
     def send(self, post):
-        return SyndicationResult("threads", success=False, detail="remote failure")
+        return SyndicationResult(self.name, success=False, detail="remote failure")
 
 
 class RaisingAdapter:
@@ -96,7 +96,7 @@ def test_runner_isolates_enabled_target_without_adapter(tmp_path) -> None:
     assert missing_target_results
     assert all(not result.success for result in missing_target_results)
     assert all(result.skipped for result in missing_target_results)
-    assert next_state == state
+    assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-2"
 
 
 def test_runner_limits_posts_before_advancing_state(tmp_path) -> None:
@@ -297,6 +297,36 @@ def test_runner_isolates_target_adapter_exceptions(tmp_path) -> None:
     assert summary.accounts[0].results[-1].platform == "threads"
     assert summary.accounts[0].results[-1].success is False
     assert "RuntimeError: remote unavailable" in summary.accounts[0].results[-1].detail
+
+
+def test_runner_x_failure_does_not_block_source_state_or_other_targets(tmp_path) -> None:
+    config = make_config()
+    config["monitored_accounts"][0]["syndicate_to"] = ["bluesky", "x"]
+    config["syndication_targets"] = {
+        "bluesky": {"enabled": True, "max_posts_per_run": 1},
+        "x": {"enabled": True, "max_posts_per_run": 1},
+    }
+    state: AppState = {"last_seen_post_ids": {"agency.bsky.social": ""}}
+    delivery_state = {"delivered_post_ids": {}}
+    bluesky = RecordingSuccessAdapter("bluesky")
+    failing_x = FailingAdapter()
+    failing_x.name = "x"
+
+    summary, next_state = run_syndication(
+        config,
+        state,
+        feed_client=FakeFeedClient(),
+        adapters={"bluesky": bluesky, "x": failing_x},
+        archive_dir=str(tmp_path / "archive"),
+        delivery_state=delivery_state,
+    )
+
+    assert [post["post_id"] for post in bluesky.sent_posts] == ["post-1"]
+    assert delivery_state["delivered_post_ids"]["bluesky"]["agency.bsky.social"] == ["post-1"]
+    assert "x" not in delivery_state["delivered_post_ids"]
+    assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-1"
+    assert summary.accounts[0].results[-1].platform == "x"
+    assert summary.accounts[0].results[-1].success is False
 
 
 def make_config() -> AppConfig:

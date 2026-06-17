@@ -1,0 +1,50 @@
+{
+  "track": "conductor/tracks/courts_nz_x_twitter_launch_route_20260617",
+  "platform": "x",
+  "selected_route": "buffer",
+  "direct_x_api_status": "disabled",
+  "browser_automation_status": "out_of_scope",
+  "account_identity": {
+    "configured_account_handle": "MirNZCourts",
+    "configured_profile_url": "https://x.com/MirNZCourts",
+    "personal_identity_used_for_posting": false
+  },
+  "buffer_route": {
+    "required_secret_names": [
+      "BUFFER_API_KEY",
+      "BUFFER_X_CHANNEL_ID"
+    ],
+    "github_secret_presence_checked": true,
+    "github_secrets_present": {
+      "BUFFER_API_KEY": true,
+      "BUFFER_X_CHANNEL_ID": true
+    },
+    "queue_behavior": "shareNow",
+    "scheduled_behavior": "new-forward only, max_posts_per_run=1",
+    "free_tier_assumption": "Current Buffer-backed route uses the configured Buffer channel and no direct X API paid posting.",
+    "api_key_expires_on": "2027-06-16",
+    "rotation_workflow": ".github/workflows/buffer_key_rotation_reminder.yml",
+    "fallback_policy": "If Buffer validation or posting fails, keep Bluesky, Threads, archive capture, and dataset publication running; do not use browser automation as fallback."
+  },
+  "runtime_source_of_truth": {
+    "config_enabled": true,
+    "syndicate_to_configured": true,
+    "archive_replay_enabled": false,
+    "max_posts_per_run": 1,
+    "target_delivery_state_has_x_delivery": false
+  },
+  "local_dry_run": {
+    "status": "passed",
+    "source_post_id": "3mo2b6w4u522m",
+    "source_url": "https://bsky.app/profile/courtsofnz.bsky.social/post/3mo2b6w4u522m",
+    "target": "x",
+    "route": "buffer",
+    "token_redaction": "no token values are emitted by the dry-run payload"
+  },
+  "launch_status": {
+    "status": "pending_remote_validation_and_controlled_post",
+    "validate_workflow": ".github/workflows/validate_buffer_syndication.yml",
+    "launch_workflow": ".github/workflows/x_launch.yml",
+    "public_delivery_url": ""
+  }
+}
