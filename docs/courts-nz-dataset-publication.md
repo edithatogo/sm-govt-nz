@@ -2,8 +2,8 @@
 
 ## Hugging Face Dataset
 
-- Dataset repo: value of `HF_DATASET_REPO_ID`, recommended as
-  `edithatogo/courts-nz-public-notices`.
+- Dataset repo: `edithatogo/courts-nz-public-notices-archive`, or the value of
+  `HF_DATASET_REPO_ID` when overridden.
 - Dataset title: Courts of New Zealand public notices multi-source archive.
 - License field: `other`.
 - Dataset card: generated as `dist/README.md` by `scripts/publish_archives.py`.
@@ -15,6 +15,28 @@ The dataset card must state that records are captured from public Courts of New
 Zealand source surfaces and that source-specific terms should be checked before
 redistribution. Raw payloads are included for provenance unless size or platform
 terms require a manual or gated upload.
+
+## Publication Cadence
+
+The machine-readable cadence contract is
+`config/courts_nz_archive_publication_cadence.json`.
+
+- Archive capture: `Archive Sources` runs every 6 hours and is independent of
+  outbound syndication.
+- Hugging Face: the weekly scheduled `Publish Archives` run is the rolling
+  dataset update lane and publishes only to Hugging Face when `HF_TOKEN` is
+  configured.
+- Manual `Publish Archives`: defaults to artifact-only. External publication
+  requires `publish=true` and an explicit target: `huggingface`, `zenodo`, or
+  `all`.
+- Zenodo: remains a release-snapshot lane. DOI publication must use the
+  dedicated `Publish Zenodo Deposition` confirmation phrase
+  `publish-zenodo-doi`, or another reviewed release workflow.
+
+Each `Publish Archives` run writes
+`conductor/archive_publication_status.json`, recording whether the run was
+artifact-only, Hugging Face-published, Zenodo-published/drafted, or a combined
+manual publication.
 
 ## Zenodo Deposition
 

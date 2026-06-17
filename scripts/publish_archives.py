@@ -4,6 +4,7 @@ import gzip
 import hashlib
 import json
 import os
+import subprocess
 import tarfile
 from dataclasses import dataclass
 from pathlib import Path
@@ -12,6 +13,7 @@ from urllib.request import Request, urlopen
 
 
 DEFAULT_HF_DATASET_NAME = "courts-nz-public-notices-archive"
+DEFAULT_HF_DATASET_REPO_ID = "edithatogo/courts-nz-public-notices-archive"
 DEFAULT_ZENODO_DEPOSIT_API_URL = "https://zenodo.org/api/deposit/depositions"
 
 
@@ -276,26 +278,127 @@ def publish_to_hugging_face(
     return {**metadata, "paths_in_repo": uploaded_paths}
 
 
-def publish_from_env(bundle: BundleManifest) -> dict[str, Any]:
+def publish_from_env(
+    bundle: BundleManifest,
+    *,
+    targets: set[str] | None = None,
+) -> dict[str, Any]:
     results: dict[str, Any] = {}
-    zenodo_token = os.getenv("ZENODO_TOKEN")
-    zenodo_endpoint = os.getenv("ZENODO_DEPOSIT_ENDPOINT")
-    if zenodo_token and zenodo_endpoint:
-        results["zenodo"] = publish_to_zenodo(bundle, zenodo_token, zenodo_endpoint)
-    elif zenodo_token:
-        results["zenodo"] = publish_to_zenodo_deposition(
-            bundle,
-            zenodo_token,
-            api_url=os.getenv("ZENODO_DEPOSIT_API_URL", DEFAULT_ZENODO_DEPOSIT_API_URL),
-        )
+    active_targets = targets or {"huggingface", "zenodo"}
+    if "zenodo" in active_targets:
+        zenodo_token = os.getenv("ZENODO_TOKEN")
+        zenodo_endpoint = os.getenv("ZENODO_DEPOSIT_ENDPOINT")
+        if zenodo_token and zenodo_endpoint:
+            results["zenodo"] = publish_to_zenodo(bundle, zenodo_token, zenodo_endpoint)
+        elif zenodo_token:
+            results["zenodo"] = publish_to_zenodo_deposition(
+                bundle,
+                zenodo_token,
+                api_url=os.getenv("ZENODO_DEPOSIT_API_URL", DEFAULT_ZENODO_DEPOSIT_API_URL),
+            )
     hf_token = os.getenv("HF_TOKEN")
-    if hf_token:
+    if "huggingface" in active_targets and hf_token:
         hf_repo_id = os.getenv("HF_DATASET_REPO_ID") or _infer_hugging_face_repo_id(
             hf_token,
             os.getenv("HF_DATASET_NAME", DEFAULT_HF_DATASET_NAME),
         )
         results["huggingface"] = publish_to_hugging_face(bundle, hf_token, hf_repo_id)
     return results
+
+
+def write_publication_status_report(
+    *,
+    bundle: BundleManifest,
+    path: str | os.PathLike[str],
+    mode: str,
+    requested_targets: list[str],
+    publication_results: dict[str, Any],
+) -> None:
+    report = {
+        "mode": mode,
+        "requested_targets": requested_targets,
+        "source_git": _source_git_status(),
+        "artifact": {
+            "bundle_path": bundle.bundle_path,
+            "sha256": bundle.sha256,
+            "file_count": bundle.file_count,
+            "normalized_record_count": bundle.normalized_record_count,
+            "raw_file_count": bundle.raw_file_count,
+        },
+        "hugging_face": _publication_target_status(
+            "huggingface",
+            publication_results,
+            default_repo_id=os.getenv("HF_DATASET_REPO_ID") or DEFAULT_HF_DATASET_REPO_ID,
+        ),
+        "zenodo": _publication_target_status(
+            "zenodo",
+            publication_results,
+            default_repo_id=os.getenv("ZENODO_DEPOSIT_ENDPOINT")
+            or os.getenv("ZENODO_DEPOSIT_API_URL")
+            or DEFAULT_ZENODO_DEPOSIT_API_URL,
+        ),
+    }
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    Path(path).write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _source_git_status() -> dict[str, str]:
+    head = _git_output(["rev-parse", "HEAD"])
+    archive_commit = _git_output(
+        [
+            "log",
+            "-1",
+            "--format=%H",
+            "--",
+            "historical_archive",
+            "historical_archive_normalized",
+            "historical_archive_raw",
+            "conductor/archive_state.json",
+            "conductor/archive_source_health.json",
+        ]
+    )
+    return {
+        "head_sha": head,
+        "latest_archive_commit_sha": archive_commit,
+        "freshness_status": "fresh_at_source_head" if head and archive_commit else "unknown",
+    }
+
+
+def _git_output(args: list[str]) -> str:
+    try:
+        completed = subprocess.run(
+            ["git", *args],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+    except OSError:
+        return ""
+    if completed.returncode != 0:
+        return ""
+    return completed.stdout.strip()
+
+
+def _publication_target_status(
+    key: str,
+    publication_results: dict[str, Any],
+    *,
+    default_repo_id: str,
+) -> dict[str, Any]:
+    if key not in publication_results:
+        return {
+            "status": "not_requested_or_not_configured",
+            "target": default_repo_id,
+        }
+    result = publication_results[key]
+    return {
+        "status": "published",
+        "target": result.get("repo_id")
+        or result.get("deposition_url")
+        or result.get("url")
+        or default_repo_id,
+        "result": result,
+    }
 
 
 def write_manifest(bundle: BundleManifest, path: str | os.PathLike[str]) -> None:
@@ -652,14 +755,43 @@ def main() -> None:
     parser.add_argument("--output-dir", default="dist")
     parser.add_argument("--manifest", default="dist/archive_manifest.json")
     parser.add_argument("--publish", action="store_true")
+    parser.add_argument(
+        "--publish-target",
+        choices=["artifact", "huggingface", "zenodo", "all"],
+        default="artifact",
+    )
+    parser.add_argument(
+        "--status-report",
+        default="dist/archive_publication_status.json",
+    )
     args = parser.parse_args()
 
     bundle = create_archive_bundle(
         args.archive_dir, args.output_dir, args.normalized_dir, args.raw_dir
     )
     write_manifest(bundle, args.manifest)
-    if args.publish:
-        print(json.dumps(publish_from_env(bundle), indent=2, sort_keys=True))
+    requested_targets = _requested_publish_targets(args.publish, args.publish_target)
+    publication_results: dict[str, Any] = {}
+    if requested_targets:
+        publication_results = publish_from_env(bundle, targets=set(requested_targets))
+        print(json.dumps(publication_results, indent=2, sort_keys=True))
+    write_publication_status_report(
+        bundle=bundle,
+        path=args.status_report,
+        mode="published" if requested_targets else "artifact_only",
+        requested_targets=requested_targets,
+        publication_results=publication_results,
+    )
+
+
+def _requested_publish_targets(publish: bool, publish_target: str) -> list[str]:
+    if not publish and publish_target == "artifact":
+        return []
+    if publish_target == "artifact":
+        return ["huggingface", "zenodo"] if publish else []
+    if publish_target == "all":
+        return ["huggingface", "zenodo"]
+    return [publish_target]
 
 
 if __name__ == "__main__":

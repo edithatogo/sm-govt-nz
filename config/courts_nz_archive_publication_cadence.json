@@ -1,0 +1,58 @@
+{
+  "agency_id": "courts-nz",
+  "contract_id": "courts-nz-archive-publication-cadence",
+  "archive_capture": {
+    "workflow": "Archive Sources",
+    "cadence": "every_6_hours",
+    "archive_only": true
+  },
+  "hugging_face": {
+    "repo_id": "edithatogo/courts-nz-public-notices-archive",
+    "url": "https://huggingface.co/datasets/edithatogo/courts-nz-public-notices-archive",
+    "cadence": "weekly_scheduled_rolling_update",
+    "workflow": "Publish Archives",
+    "workflow_target": "huggingface",
+    "requires_secret": "HF_TOKEN",
+    "publishes_external_artifacts": true,
+    "notes": "Scheduled Publish Archives runs publish only the rolling Hugging Face dataset. They must not create Zenodo drafts."
+  },
+  "zenodo": {
+    "doi": "10.5281/zenodo.20690547",
+    "conceptdoi": "10.5281/zenodo.20690546",
+    "url": "https://zenodo.org/records/20690547",
+    "cadence": "manual_release_snapshot",
+    "workflow": "Publish Zenodo Deposition",
+    "requires_secret": "ZENODO_TOKEN",
+    "requires_confirmation": "publish-zenodo-doi",
+    "publishes_external_artifacts": false,
+    "notes": "Create or publish Zenodo versions only after release review. Zenodo is not part of the weekly scheduled rolling update."
+  },
+  "manual_publish_archives": {
+    "workflow": "Publish Archives",
+    "default_mode": "artifact_only",
+    "publish_flag": "publish=true",
+    "publication_targets": [
+      "huggingface",
+      "zenodo",
+      "all"
+    ],
+    "notes": "Manual runs default to artifact-only. External publication requires publish=true and an explicit target."
+  },
+  "status_report": {
+    "path": "conductor/archive_publication_status.json",
+    "committed_by_workflow": true,
+    "records": [
+      "mode",
+      "requested_targets",
+      "artifact",
+      "hugging_face",
+      "zenodo"
+    ]
+  },
+  "guardrails": {
+    "archive_capture_independent_of_outbound_syndication": true,
+    "manual_runs_default_to_artifact_only": true,
+    "scheduled_runs_must_not_publish_zenodo": true,
+    "zenodo_requires_manual_release_review": true
+  }
+}

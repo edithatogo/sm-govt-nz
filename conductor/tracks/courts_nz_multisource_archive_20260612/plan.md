@@ -77,6 +77,9 @@
   - Follow-up cadence decision moved to
     `courts_nz_archive_publication_cadence_20260617` so continuous Hugging Face
     updates and episodic Zenodo snapshots are explicitly reviewed.
+  - Cadence decision: weekly scheduled `Publish Archives` updates the Hugging
+    Face rolling dataset only; Zenodo snapshots remain manual release-review
+    events behind `publish-zenodo-doi`.
 
 ## Phase 7: Operational Optimizations
 - [x] Task: Add source-health dashboard output to Pages.

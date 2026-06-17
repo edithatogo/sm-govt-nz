@@ -21,11 +21,20 @@ on:
         required: true
         default: "https://zenodo.org/api/deposit/depositions"
         type: string
+      publication_target:
+        description: "External publication target when publish=true"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - "huggingface"
+          - "zenodo"
+          - "all"
   schedule:
     - cron: "41 16 * * 0"
 
 permissions:
-  contents: read
+  contents: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
@@ -40,7 +49,7 @@ jobs:
       ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
       ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
       ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url || 'https://zenodo.org/api/deposit/depositions' }}
-      PUBLISH_ARCHIVES: ${{ inputs.publish == 'true' }}
+      ARCHIVE_PUBLICATION_TARGET: ${{ github.event_name == 'schedule' && 'huggingface' || (inputs.publish == 'true' && inputs.publication_target || 'artifact') }}
     steps:
       - uses: actions/checkout@v5
       - name: Set up Python
@@ -64,11 +73,18 @@ jobs:
             --raw-dir historical_archive_raw
             --output-dir dist
             --manifest dist/archive_manifest.json
+            --status-report conductor/archive_publication_status.json
+            --publish-target "$ARCHIVE_PUBLICATION_TARGET"
           )
-          if [ "$PUBLISH_ARCHIVES" = "true" ]; then
+          if [ "$ARCHIVE_PUBLICATION_TARGET" != "artifact" ]; then
             args+=(--publish)
           fi
           "${args[@]}"
+      - name: Commit publication status
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Update archive publication status"
+          --path conductor/archive_publication_status.json
       - name: Upload generated corpus bundle
         uses: actions/upload-artifact@v4
         with:
@@ -76,6 +92,7 @@ jobs:
           path: |
             dist/archive_manifest.json
             dist/archive_compaction_manifest.json
+            conductor/archive_publication_status.json
             dist/corpus_manifest.json
             dist/README.md
             dist/historical_archive.tar.gz

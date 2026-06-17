@@ -10,6 +10,9 @@ from scripts.publish_archives import (
     publish_to_hugging_face,
     publish_to_zenodo,
     publish_to_zenodo_deposition,
+    publish_from_env,
+    write_publication_status_report,
+    _requested_publish_targets,
 )
 
 
@@ -141,3 +144,66 @@ def test_publishers_use_expected_endpoints() -> None:
     assert huggingface["url"] == "https://huggingface.co/api/datasets/org/dataset/upload"
     assert uploader.calls[0][3]["file_count"] == 2
     assert uploader.calls[1][3]["metadata"]["upload_type"] == "dataset"
+
+
+def test_requested_publish_targets_keep_manual_default_artifact_only() -> None:
+    assert _requested_publish_targets(False, "artifact") == []
+    assert _requested_publish_targets(True, "artifact") == ["huggingface", "zenodo"]
+    assert _requested_publish_targets(True, "huggingface") == ["huggingface"]
+    assert _requested_publish_targets(True, "zenodo") == ["zenodo"]
+    assert _requested_publish_targets(True, "all") == ["huggingface", "zenodo"]
+
+
+def test_publish_from_env_can_publish_huggingface_without_zenodo(monkeypatch) -> None:
+    calls = []
+
+    def fake_hf(bundle, token, repo_id):
+        calls.append(("hf", token, repo_id))
+        return {"repo_id": repo_id, "paths_in_repo": ["README.md"]}
+
+    def fake_zenodo(*args, **kwargs):
+        calls.append(("zenodo",))
+        return {"deposition_id": 1}
+
+    monkeypatch.setenv("HF_TOKEN", "hf-token")
+    monkeypatch.setenv("HF_DATASET_REPO_ID", "org/dataset")
+    monkeypatch.setenv("ZENODO_TOKEN", "zen-token")
+    monkeypatch.setattr("scripts.publish_archives.publish_to_hugging_face", fake_hf)
+    monkeypatch.setattr("scripts.publish_archives.publish_to_zenodo_deposition", fake_zenodo)
+
+    result = publish_from_env(
+        BundleManifest("bundle.tar.gz", "a" * 64, 2, 120),
+        targets={"huggingface"},
+    )
+
+    assert result == {"huggingface": {"repo_id": "org/dataset", "paths_in_repo": ["README.md"]}}
+    assert calls == [("hf", "hf-token", "org/dataset")]
+
+
+def test_write_publication_status_report_records_artifact_and_targets(tmp_path) -> None:
+    path = tmp_path / "publication-status.json"
+    bundle = BundleManifest(
+        bundle_path="dist/historical_archive.tar.gz",
+        sha256="a" * 64,
+        file_count=2,
+        uncompressed_bytes=120,
+        normalized_record_count=1,
+        raw_file_count=3,
+    )
+
+    write_publication_status_report(
+        bundle=bundle,
+        path=path,
+        mode="published",
+        requested_targets=["huggingface"],
+        publication_results={"huggingface": {"repo_id": "org/dataset"}},
+    )
+
+    report = json.loads(path.read_text(encoding="utf-8"))
+    assert report["mode"] == "published"
+    assert report["requested_targets"] == ["huggingface"]
+    assert report["artifact"]["normalized_record_count"] == 1
+    assert "source_git" in report
+    assert report["hugging_face"]["status"] == "published"
+    assert report["hugging_face"]["target"] == "org/dataset"
+    assert report["zenodo"]["status"] == "not_requested_or_not_configured"
