@@ -97,19 +97,24 @@ class BlueskyApiClient:
         return did
 
     def fetch_posts(self, uris: list[str]) -> list[Mapping[str, Any]]:
-        params = [("uris", uri) for uri in uris]
-        query = urlencode(params)
-        url = f"{self.base_url}/xrpc/app.bsky.feed.getPosts?{query}"
-        request = Request(url, headers={"Accept": "application/json"})
+        chunk_size = 25
+        all_posts: list[Mapping[str, Any]] = []
+        for i in range(0, len(uris), chunk_size):
+            chunk = uris[i : i + chunk_size]
+            params = [("uris", uri) for uri in chunk]
+            query = urlencode(params)
+            url = f"{self.base_url}/xrpc/app.bsky.feed.getPosts?{query}"
+            request = Request(url, headers={"Accept": "application/json"})
 
-        with urlopen(request, timeout=self.timeout_seconds) as response:
-            body = response.read().decode("utf-8")
+            with urlopen(request, timeout=self.timeout_seconds) as response:
+                body = response.read().decode("utf-8")
 
-        payload = json.loads(body)
-        posts = payload.get("posts", [])
-        if not isinstance(posts, list):
-            raise ValueError("Invalid Bluesky response: 'posts' must be a list.")
-        return posts
+            payload = json.loads(body)
+            posts = payload.get("posts", [])
+            if not isinstance(posts, list):
+                raise ValueError("Invalid Bluesky response: 'posts' must be a list.")
+            all_posts.extend(posts)
+        return all_posts
 
 
 def extract_post_id(uri: str) -> str:
