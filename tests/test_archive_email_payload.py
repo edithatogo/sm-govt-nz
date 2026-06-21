@@ -25,6 +25,7 @@ def test_archive_email_payload_writes_raw_and_normalized_records(tmp_path) -> No
     assert raw_path.exists()
     assert normalized_path.exists()
     assert record["source_platform"] == "email"
+    assert record["extraction_method"] == "cloudflare_email_routing_worker"
     assert record["canonical_url"] == "https://www.courtsofnz.govt.nz/cases/example"
     assert record["cross_source_ids"]["message_id"] == "<judgment-1@example.test>"
 
@@ -84,6 +85,24 @@ def test_archive_email_payload_accepts_raw_mime_base64(tmp_path) -> None:
     )
 
     assert (tmp_path / record["raw_path"]).read_bytes() == raw_mime
+
+
+def test_archive_email_payload_passes_through_extraction_method(tmp_path) -> None:
+    payload = {
+        "message_id": "<pipedream@example.test>",
+        "subject": "Pipedream notice",
+        "text": "Body from Pipedream",
+        "received_at": "2026-06-17T01:02:03Z",
+        "extraction_method": "pipedream_email_trigger",
+    }
+
+    record = archive_email_payload(
+        payload,
+        raw_root=tmp_path / "historical_archive_raw" / "email",
+        normalized_root=tmp_path / "historical_archive_normalized" / "email",
+    )
+
+    assert record["extraction_method"] == "pipedream_email_trigger"
 
 
 def test_archive_email_payload_preserves_existing_raw_email(tmp_path) -> None:

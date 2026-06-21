@@ -87,6 +87,31 @@ that each selected list sends a separate email confirmation request. No new
 `Archive Email` repository-dispatch runs were observed immediately after the
 submission, so subscription confirmation remains pending.
 
+## Active Subscription Address
+
+The active automated subscription address while the Cloudflare dedicated
+address is deferred is:
+
+```text
+em4mkapmjakoh5o@upload.pipedream.net
+```
+
+This Pipedream-generated address is dedicated to Courts of NZ judgments of
+public interest capture, deployed, verified with two test dispatch runs, and
+subscribed to all four available judgment lists via the official Courts of NZ
+subscribe form on 2026-06-17.
+
+Subscription confirmation was verified pending on 2026-06-21: the GitHub Actions
+`Archive Email` workflow runs were reviewed between 2026-06-17 and 2026-06-21,
+and no new `repository_dispatch` runs occurred after the subscription request.
+The last `Archive Email` run was `27624118414` on 2026-06-16 (a deployed test).
+Courts of NZ may require a visible browser session to complete list
+confirmation, or confirmation emails may not have been sent yet.
+
+The machine-readable contract for the active address, subscription state, and
+confirmation verification is the `active_subscription_address` field in
+`config/courts_nz_email_ingress.json`.
+
 The remaining activation step is to confirm that the Courts of NZ confirmation
 emails arrive through Pipedream and are archived. If they do not arrive, repeat
 the subscription in a visible browser session and complete any site-side

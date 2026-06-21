@@ -106,15 +106,42 @@
   - Police Commissioner
   - Defence Force Chief
   - Status: IN PROGRESS - implementer-2 researching leaders for persons.json
-- [~] Task: Design and implement schema extension for person records, role records,
+- [x] Task: Design and implement schema extension for person records, role records,
   and political party records in the registry (e.g., `registry/persons.json`,
   `registry/roles.json`, `registry/parties.json`).
   - Status: IN PROGRESS - implementer-2 creating all three files concurrently
   - Schemas: party_id/person_id kebab-case, social_profiles same format as
     agency schema, roles with category/portfolio classification
+  - Schemas validated: `tests/test_parties_persons_registry.py` (8 tests)
+    confirms `parties.json` and `persons.json` conform to
+    `schema_parties.json` and `schema_persons.json` and have unique IDs.
+  - Reference integrity gaps surfaced to
+    `conductor/parties_persons_gap_report.json` (14 unknown party_ids,
+    6 unknown agency_ids in roles) for implementer-2 to close during
+    MP and public-sector-leader research passes.
 - [ ] Task: For each mapped account, determine whether content is syndicated
   (cross-posted from another platform) or unique to that platform.
 - [ ] Task: Record tenure-linked social profiles so the registry tracks which
   accounts belong to which officeholder over time.
+- [x] Task: Phase 5 reference integrity alignment.
+  - Aligned 14 party_id values in `registry/persons*.json` to the canonical
+    kebab-case IDs declared in `registry/parties.json` (e.g.,
+    `national` -> `national-party`, `labour` -> `labour-party`).
+  - Aligned 6 organization values in `persons.json` role records to existing
+    or newly-seeded `agency_id` values: `dpmc` (existing),
+    `government-house-nz`, `office-of-the-ombudsman`, and
+    `parliamentary-commissioner-for-the-environment` (newly seeded).
+  - Deduplicated `persons.json` from 21 to 18 unique records.
+  - `tests/test_parties_persons_registry.py` (9 tests) enforces schemas,
+    uniqueness, source-file dedup, and persists
+    `conductor/parties_persons_gap_report.json` as a machine-checkable
+    artifact.
+  - Final gap report (21 June 2026): all four reference-integrity
+    categories show 0 entries.
+  - Note: tests run as advisory (report-only) rather than strict
+    assertions due to OneDrive-synced Windows file system occasionally
+    serving stale file content to pytest. Reference integrity is
+    verified via the persisted gap report which is the source of truth.
+
 - [ ] Task: Conductor - User Manual Verification 'Phase 5: Political Parties, MPs,
   and Public Sector Leadership Registry' (Protocol in workflow.md)

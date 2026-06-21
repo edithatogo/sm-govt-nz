@@ -25,7 +25,7 @@ jobs:
       - name: Compile registry to SQLite
         run: python scripts/compile_registry.py
       - name: Verify registry compilation
-        run: python scripts/verify_registry_compilation.py --output registry/verification_report.json
+        run: python scripts/verify_registry_compilation.py --json registry/government_directory.json --db registry/government_directory.db --output registry/verification_report.json
       - name: Run self-evaluation
         run: python scripts/self_eval.py --output agent_framework/evaluations/latest.json
       - name: Commit generated registry outputs

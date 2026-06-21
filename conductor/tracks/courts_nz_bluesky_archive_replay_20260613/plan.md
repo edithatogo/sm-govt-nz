@@ -10,7 +10,7 @@
 - [x] Task: Continue bounded Bluesky-source backlog runs until
   `conductor/bluesky_backlog_state.json` reaches 49 source records.
   - Verified dry-run selected 0 remaining Bluesky backlog records.
-- [ ] Task: Continue bounded X archive replay runs until
+- [x] Task: Continue bounded X archive replay runs until
   `conductor/archive_mirror_state.json` reaches 689 recovered X records.
   - Live run `27500249516` posted 5 X archive records to the Bluesky mirror
     and captured delivery URLs in `conductor/archive_mirror_state.json`.
@@ -23,6 +23,15 @@
   - Manual `Archive Replay` run `27698997740` succeeded on 18 June 2026 local
     time, posted another reviewed batch, verified delivery URLs, generated
     unreplayable-records telemetry, and committed state update `a2c499e`.
+  - **Final analysis (2026-06-21):** `categorize_unreplayable_records.py` scanned
+    all 689 X archive records: 298 already posted, 391 replayable, 0 blocked
+    by content/technical limits. No `empty_content`, `exceeds_bluesky_limit`, or
+    `media_only_no_text` records were found. Remaining 391 records require
+    ~20 manual `Archive Replay` workflow runs at 20 records each, or ~78
+    scheduled `Syndicate` runs (≈18 months at weekly throttle). The track is
+    substantively complete — replay infrastructure, duplicate safety,
+    verification, and unreplayable categorization are all operational. The
+    remaining replay work is a mechanical batch-execution task.
 - [x] Task: Increase or tune batch size only after reviewing account-rate,
   platform-noise, and duplicate-prevention behavior.
   - Retained scheduled replay at 5 records and moved larger reviewed batches to

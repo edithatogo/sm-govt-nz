@@ -116,6 +116,14 @@ confirmation remains unverified. If no confirmation emails arrive, repeat the
 request in a visible browser session and complete any site-side validation or
 confirmation step.
 
+Subscription confirmation was re-verified pending on 2026-06-21: the GitHub
+Actions `Archive Email` workflow runs were reviewed between 2026-06-17 and
+2026-06-21, and no new `repository_dispatch` runs occurred after the
+subscription request. The last `Archive Email` run was `27624118414` on
+2026-06-16 (a deployed test). The active subscription address and confirmation
+state are recorded in the `active_subscription_address` field of
+`config/courts_nz_email_ingress.json`.
+
 Volume and cost risk:
 
 - Recent Courts of NZ Bluesky archive volume is 11-14 records per month.

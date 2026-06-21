@@ -240,10 +240,7 @@ Recommended email ingress order:
 The email ingress contract and fallback decision are tracked in
 `config/courts_nz_email_ingress.json` and
 `docs/courts-nz-email-ingress-fallbacks.md`. The planned subscription address
-is `courts-nz-judgments@archive.edithatogo.com`; it remains pending until the
-Cloudflare routing rule exists and the address is subscribed to the Courts of
-New Zealand judgments of public interest email list.
-
+is `courts-nz-judgments@archive.edithatogo.com`; it remains pending until the Cloudflare routing rule exists and the address is subscribed to the Courts of New Zealand judgments of public interest email list. The active automated subscription address while the Cloudflare address is deferred is `em4mkapmjakoh5o@upload.pipedream.net` (Pipedream Email trigger), which is deployed, verified, and subscribed to the Courts of NZ judgments lists since 2026-06-17; subscription confirmation remains pending as of 2026-06-21. Both addresses and their states are recorded in `config/courts_nz_email_ingress.json`.
 Current domain setup is also tracked in `config/courts_nz_email_ingress.json`.
 As of 2026-06-15, `edithatogo.com` has a pending Cloudflare zone but public DNS
 and RDAP returned `NXDOMAIN`/not found, so the root domain must be registered

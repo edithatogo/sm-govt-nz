@@ -23,6 +23,27 @@
       "courts-nz-judgments@archive.edithatogo.com"
     ]
   },
+  "active_subscription_address": {
+    "address": "em4mkapmjakoh5o@upload.pipedream.net",
+    "provider": "pipedream_email_trigger",
+    "status": "active_subscription_requested_pending_confirmation",
+    "purpose": "Active automated subscription address for Courts of New Zealand judgments of public interest capture while the Cloudflare dedicated address is deferred pending domain registration approval",
+    "subscribed_lists": [
+      "Supreme Court decisions",
+      "Court of Appeal decisions",
+      "High Court decisions",
+      "Supreme Court Leave and Recall Judgments"
+    ],
+    "subscription_requested_at": "2026-06-17",
+    "subscription_confirmation": {
+      "status": "pending",
+      "last_verified": "2026-06-21",
+      "verification_method": "GitHub Actions Archive Email workflow runs reviewed between 2026-06-17 and 2026-06-21",
+      "confirmation_archive_runs_observed": [],
+      "notes": "No Archive Email repository_dispatch runs were observed after the 2026-06-17 subscription request. The last Archive Email run was 27624118414 on 2026-06-16 (a deployed test). Courts of NZ may require a visible browser session to complete list confirmation, or confirmation emails may not have been sent yet."
+    },
+    "tracking_issue": "https://github.com/edithatogo/sm-govt-nz/issues/5"
+  },
   "domain_setup": {
     "root_domain": "edithatogo.com",
     "requested_subdomain": "archive.edithatogo.com",
@@ -114,13 +135,15 @@
             ],
             "result": "form_post_returned_http_200_redirect_root",
             "confirmation_archive_runs_observed": [],
+            "last_verified": "2026-06-21",
+            "verification_notes": "Reviewed GitHub Actions Archive Email workflow runs between 2026-06-17 and 2026-06-21. No new repository_dispatch runs were observed after the subscription request, so list confirmation remains unverified. The last Archive Email run was 27624118414 on 2026-06-16 (a deployed test).",
             "notes": "The official form states each selected list sends a separate email confirmation request. No new Archive Email repository_dispatch runs were observed immediately after submission, so list confirmation remains unverified."
           }
         ]
       },
       "next_actions": [
-        "Confirm that Courts of NZ subscription confirmation emails arrive through Pipedream and are archived.",
-        "If no confirmation emails arrive, repeat the subscription in a visible browser session and complete any site-side validation or confirmation step."
+        "Subscription confirmation was verified pending on 2026-06-21: no Archive Email runs occurred after the 2026-06-17 subscription request. Repeat the subscription in a visible browser session and complete any site-side validation or confirmation step if confirmation emails do not arrive.",
+        "Once a Courts of NZ confirmation or judgment email is archived through Pipedream, record the GitHub Actions run ID in confirmation_archive_runs_observed and set subscription_confirmation.status to confirmed."
       ],
       "cost": "$0 expected at observed Courts of NZ volume, subject to Pipedream free-tier credit limits and account usage dashboard.",
       "usage_assessment": {

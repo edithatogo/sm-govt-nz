@@ -119,6 +119,7 @@ export default defineComponent({
         html,
         received_at: receivedAt,
         links,
+        extraction_method: "pipedream_email_trigger",
         raw_mime_base64: rawMime ? Buffer.from(rawMime, "utf8").toString("base64") : "",
       },
     };

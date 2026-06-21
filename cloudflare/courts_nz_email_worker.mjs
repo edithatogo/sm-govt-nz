@@ -32,6 +32,7 @@ export async function buildEmailPayload(message) {
     html,
     received_at: normalizeDate(header(message.headers, "date") || parsed.date),
     links: extractLinks(bodyForLinks),
+    extraction_method: "cloudflare_email_routing_worker",
     raw_mime_base64: base64Encode(rawBytes),
   };
 }

@@ -17,10 +17,14 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - name: Set up Python
-        run: python --version
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install uv
+        run: python -m pip install uv
       - name: Install runtime dependencies
-        run: python -m pip install -r requirements.txt
+        run: uv pip install -r requirements.txt
       - name: Archive current public sources
         run: python scripts/archive_current_sources.py --website-limit 10
       - name: Commit archive updates

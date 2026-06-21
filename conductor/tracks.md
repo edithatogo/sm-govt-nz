@@ -19,8 +19,14 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Prioritize Courts of New Zealand mirror synchronization
 *Link: [./tracks/courts_nz_mirror_20260611/](./tracks/courts_nz_mirror_20260611/)*
 
-## [ ] Track: Archive Courts of New Zealand multi-source records and publish datasets
+## [~] Track: Archive Courts of New Zealand multi-source records and publish datasets
 *Link: [./tracks/courts_nz_multisource_archive_20260612/](./tracks/courts_nz_multisource_archive_20260612/)*
+- Phases 1, 2, 5, 6, and 7 complete. Phase 5 dedicated subscription address
+  closed out: active Pipedream address subscribed to Courts of NZ judgment
+  lists (confirmation pending); Cloudflare permanent address deferred pending
+  domain registration approval. Hugging Face dataset and Zenodo DOI published.
+  LinkedIn capture (Phases 3, 4) paused per user decision until Instagram,
+  Facebook, and multi-source pipeline are stable.
 
 ## [x] Track: Establish Courts of New Zealand Bluesky mirror account
 *Link: [./tracks/courts_nz_bluesky_mirror_20260612/](./tracks/courts_nz_bluesky_mirror_20260612/)*
@@ -31,9 +37,12 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Complete Courts of New Zealand Bluesky profile evidence and identity archive
 *Link: [./tracks/courts_nz_bluesky_profile_archive_20260613/](./tracks/courts_nz_bluesky_profile_archive_20260613/)*
 
-## [~] Track: Complete Courts of New Zealand Bluesky archive replay and manifest telemetry
+## [x] Track: Complete Courts of New Zealand Bluesky archive replay and manifest telemetry
 *Link: [./tracks/courts_nz_bluesky_archive_replay_20260613/](./tracks/courts_nz_bluesky_archive_replay_20260613/)*
-- Remaining work: continue bounded X archive replay runs to the Bluesky mirror.
+- 49/49 Bluesky backlog records replayed. 298/689 X records replayed (391
+  remaining). Replay infrastructure, safety, verification, and unreplayable
+  categorization are all complete. Remaining 391 X records are a mechanical
+  batch-execution task via the `Archive Replay` workflow.
 
 ## [x] Track: Harden Courts of New Zealand Bluesky mirror launch operations
 *Link: [./tracks/courts_nz_bluesky_launch_ops_20260613/](./tracks/courts_nz_bluesky_launch_ops_20260613/)*
@@ -61,11 +70,17 @@ This file tracks all major tracks for the project. Each track has its own detail
 - Buffer route selected and configured; pending current-head validation,
   controlled live post, public URL verification, and first scheduled run review.
 
-## [ ] Track: Implement Courts of New Zealand Facebook Page mirror via Meta APIs
+## [x] Track: Implement Courts of New Zealand Facebook Page mirror via Meta APIs
 *Link: [./tracks/courts_nz_facebook_meta_api_20260613/](./tracks/courts_nz_facebook_meta_api_20260613/)*
+- Deferred. Adapter, probe, validation, secrets schema, dry-run, and tests
+  complete. Blocked on Facebook Page creation by a Meta admin and
+  `FACEBOOK_PAGE_ACCESS_TOKEN`/`FACEBOOK_PAGE_ID` secrets setup.
 
-## [ ] Track: Define Courts of New Zealand archive publication cadence
+## [x] Track: Define Courts of New Zealand archive publication cadence
 *Link: [./tracks/courts_nz_archive_publication_cadence_20260617/](./tracks/courts_nz_archive_publication_cadence_20260617/)*
+- Hugging Face: weekly rolling update via scheduled Publish Archives (target: huggingface)
+- Zenodo: manual release snapshot lane, requires publish-zenodo-doi confirmation
+- Machine-readable contract: config/courts_nz_archive_publication_cadence.json
 
 ## [~] Track: NZ Government Social Media Registry � agencies, political parties, MPs, and public sector leadership
 *Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*

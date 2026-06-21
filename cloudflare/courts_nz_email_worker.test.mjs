@@ -33,6 +33,7 @@ test("buildEmailPayload preserves raw MIME and extracts metadata", async () => {
   assert.equal(payload.message_id, "<worker-smoke@example.test>");
   assert.equal(payload.subject, "Judgment notice");
   assert.equal(payload.text, "Judgment available at https://www.courtsofnz.govt.nz/cases/example.");
+  assert.equal(payload.extraction_method, "cloudflare_email_routing_worker");
   assert.deepEqual(payload.links, ["https://www.courtsofnz.govt.nz/cases/example"]);
   assert.equal(Buffer.from(payload.raw_mime_base64, "base64").toString("utf8"), raw);
 });

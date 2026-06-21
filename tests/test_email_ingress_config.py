@@ -10,6 +10,15 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
     assert config["dedicated_subscription_address"]["status"] == "pending_external_setup"
     assert config["dedicated_subscription_address"]["address"].startswith("courts-nz-judgments@")
     assert config["dedicated_subscription_address"]["tracking_issue"].endswith("/issues/5")
+    active = config["active_subscription_address"]
+    assert active["address"].endswith("@upload.pipedream.net")
+    assert active["provider"] == "pipedream_email_trigger"
+    assert active["status"] == "active_subscription_requested_pending_confirmation"
+    assert active["subscription_requested_at"] == "2026-06-17"
+    assert active["subscription_confirmation"]["status"] == "pending"
+    assert active["subscription_confirmation"]["last_verified"] == "2026-06-21"
+    assert active["subscription_confirmation"]["confirmation_archive_runs_observed"] == []
+    assert active["tracking_issue"].endswith("/issues/5")
     rule = config["dedicated_subscription_address"]["cloudflare_rule"]
     assert rule["id"] == "4fbe93480e834fd786a1959020c8a526"
     assert rule["enabled"] is False
@@ -57,6 +66,8 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
     assert subscription_requests[0]["method"] == "official_courtsofnz_subscribe_form"
     assert subscription_requests[0]["target_email"].endswith("@upload.pipedream.net")
     assert subscription_requests[0]["confirmation_archive_runs_observed"] == []
+    assert subscription_requests[0]["last_verified"] == "2026-06-21"
+    assert "verification_notes" in subscription_requests[0]
     assert pipedream_route["cost"].startswith("$0 expected")
     assert pipedream_route["usage_assessment"]["risk_of_paid_usage"].startswith("low")
     manual_route = config["fallback_routes"][1]

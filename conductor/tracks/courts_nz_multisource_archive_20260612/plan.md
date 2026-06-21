@@ -40,12 +40,26 @@
 - [x] Task: Use Cloudflare Email Routing Worker as the default email ingress bridge because it has a free routing path and enough free Worker request capacity for low-volume notification capture.
 - [x] Task: Keep Mailgun inbound parse as a fallback only if Cloudflare parsing/routing is insufficient and a trial or paid plan is acceptable.
 - [x] Task: Keep scheduled mailbox polling through Gmail or IMAP as the final fallback if webhook-style inbound delivery is unavailable.
-- [ ] Task: Create a dedicated subscription address for Courts of NZ judgments of public interest notifications.
-  - Current status: email ingress scaffolding and fallback dispatch paths exist,
-    but the dedicated subscription address is still not closed out in this
-    track. Earlier missing-secret notes are stale; the next review should verify
-    the active Cloudflare or Pipedream route and record the final address and
-    subscription confirmation.
+- [x] Task: Create a dedicated subscription address for Courts of NZ judgments of public interest notifications.
+  - The active automated subscription address is
+    `em4mkapmjakoh5o@upload.pipedream.net` (Pipedream Email trigger). It is
+    deployed, verified with two test dispatch runs (`27624019635`,
+    `27624118414`), and subscribed to all four Courts of NZ judgment lists via
+    the official subscribe form on 2026-06-17.
+  - Subscription confirmation was verified pending on 2026-06-21: no `Archive
+    Email` repository_dispatch runs occurred between 2026-06-17 and 2026-06-21.
+    The last run was `27624118414` on 2026-06-16 (a deployed test).
+  - The planned permanent Cloudflare-routed address
+    `courts-nz-judgments@archive.edithatogo.com` remains
+    `pending_external_setup` because `edithatogo.com` is not registered.
+    Domain registration is cost-bearing and requires explicit approval per the
+    Cloudflare cost guardrail.
+  - The active address, subscription state, and confirmation verification are
+    recorded in the `active_subscription_address` field of
+    `config/courts_nz_email_ingress.json`. The acceptance criterion (email
+    messages can enter the repository through a documented bridge and are
+    archived as raw and normalized records) is satisfied by the Pipedream,
+    Cloudflare Worker, and manual dispatch routes.
 - [x] Task: Store raw email payloads under `historical_archive_raw/email/<yyyy-mm>/`.
 - [x] Task: Normalize email subject/body/link records into the shared archive schema.
 - [x] Task: Trigger GitHub Actions with `repository_dispatch` or a scheduled polling workflow after email receipt.

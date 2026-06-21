@@ -280,3 +280,17 @@ def test_report_output_format() -> None:
     assert "content_preview" in entry
     assert "content_length" in entry
     assert "reasons" in entry
+
+
+def test_report_includes_already_posted_count() -> None:
+    """Report separates already_posted from other unreplayable records."""
+    records = [
+        _make_record(record_id="x:1", content="Posted"),
+        _make_record(record_id="x:2", content=""),
+        _make_record(record_id="x:3", content="Pending"),
+    ]
+    report = build_report(posted_ids={"x:1"}, all_records=records)
+
+    assert report["already_posted"] == 1
+    assert report["replayable"] == 1
+    assert report["unreplayable"] == 2

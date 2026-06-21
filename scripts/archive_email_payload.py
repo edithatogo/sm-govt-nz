@@ -47,7 +47,9 @@ def archive_email_payload(
         captured_at=str(existing_record.get("captured_at") or captured_at),
         content=_normalized_content(payload),
         raw_path=str(raw_path).replace("\\", "/"),
-        extraction_method="cloudflare_email_routing_worker",
+        extraction_method=str(
+            payload.get("extraction_method") or "cloudflare_email_routing_worker"
+        ),
         media_refs=[],
         cross_source_ids={"message_id": message_id},
     )

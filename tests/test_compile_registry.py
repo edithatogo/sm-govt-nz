@@ -8,7 +8,7 @@ def test_compile_registry_domain_files(tmp_path):
     input_path = "registry/government_directory.json"
     output_dir = tmp_path / "domains"
     db_path = tmp_path / "government_directory.db"
-    compile_registry(input_path, output_dir, db_path)
+    compile_registry(input_path, output_dir, db_path=str(db_path))
     json_files = list(output_dir.glob("*.json"))
     assert len(json_files) > 0, "No domain JSON files were generated"
     with open(json_files[0], "r", encoding="utf-8") as f:
@@ -23,9 +23,9 @@ def test_compile_registry_sqlite(tmp_path):
     compile_registry(
         "registry/government_directory.json",
         tmp_path / "domains",
-        db_path,
+        db_path=str(db_path),
     )
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(str(db_path))
     cursor = conn.cursor()
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
     tables = {row[0] for row in cursor.fetchall()}
@@ -45,4 +45,8 @@ def test_compile_registry_sqlite(tmp_path):
     assert cursor.fetchone()[0] > 0, "Agencies table is empty"
     cursor.execute("SELECT count(*) FROM social_profiles")
     assert cursor.fetchone()[0] > 0, "Social profiles table is empty"
+    cursor.execute("SELECT count(*) FROM parties")
+    assert cursor.fetchone()[0] > 0, "Parties table is empty"
+    cursor.execute("SELECT count(*) FROM persons")
+    assert cursor.fetchone()[0] > 0, "Persons table is empty"
     conn.close()

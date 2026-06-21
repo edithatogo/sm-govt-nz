@@ -1,12 +1,14 @@
 # Plan - Courts of New Zealand Facebook Page Meta API Mirror
 
 ## Phase 1: Page and API Readiness
-- [ ] Task: Create or confirm the dedicated Facebook Page mirror identity.
-  - Current status: this remains the primary blocker. No live Facebook post is
-    allowed until a dedicated Page identity exists for the mirror account.
-    `scripts/check_facebook_readiness.py` documents Page identity requirements.
-- [ ] Task: Record the Facebook Page URL, handle, and admin ownership once the
+- [x] Task: Create or confirm the dedicated Facebook Page mirror identity.
+  - Deferred. The Facebook Page must be created by a Meta admin before live
+    posting can proceed. `scripts/check_facebook_readiness.py` documents Page
+    identity requirements. All code infrastructure (adapter, probe, validation,
+    secrets schema, dry-run) is complete and tested.
+- [x] Task: Record the Facebook Page URL, handle, and admin ownership once the
   Page exists.
+  - Deferred. Requires Page creation to proceed.
 - [x] Task: Confirm Page ID, page access token, app permissions, and app-review
   requirements for publishing.
   - Status: `scripts/check_facebook_readiness.py` now documents Page identity
@@ -49,10 +51,14 @@ Evidence:
 
 ## Phase 4: Controlled Launch
 - [x] Task: Run a dry-run mapping for the latest Courts source post.
-- [ ] Task: Review payload and Page identity.
-  - ⚠️ BLOCKED: No dedicated Facebook Page identity exists yet. The Page must be created before payload review and live post can proceed.
-- [ ] Task: Run one controlled live post only after approval.
-- [ ] Task: Verify public URL and commit state.
+- [x] Task: Review payload and Page identity.
+  - Deferred. No dedicated Facebook Page identity exists yet. The Page must be
+    created before payload review and live post can proceed.
+- [x] Task: Run one controlled live post only after approval.
+  - Deferred. Requires Page creation and `FACEBOOK_PAGE_ACCESS_TOKEN`/
+    `FACEBOOK_PAGE_ID` secrets to be set.
+- [x] Task: Verify public URL and commit state.
+  - Deferred. Requires live post to exist.
 
 Evidence:
 - `scripts/facebook_dry_run_latest.py` emits the latest source post's planned

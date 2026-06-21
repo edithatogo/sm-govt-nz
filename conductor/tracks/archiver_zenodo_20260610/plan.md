@@ -8,7 +8,7 @@
 
 ## Phase 2: Zenodo & Hugging Face Publishers
 - [x] Task: Write publisher scripts using `huggingface_hub` and requests to upload archives.
-- [x] Task: Integrate publisher execution into the CD workflow (`pages.yml`).
+- [x] Task: Integrate publisher execution into dedicated CD workflows (`.github/workflows/publish_archives.yml` and `.github/workflows/publish_zenodo_deposition.yml`) with a `workflow_dispatch` gate for external publication.
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Zenodo & Hugging Face Publishers' (Protocol in workflow.md)
 
 ## Phase 3: Historical Backfill Importer

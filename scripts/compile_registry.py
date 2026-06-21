@@ -15,6 +15,7 @@ def get_domain(url: str) -> str:
 def compile_registry(
     input_path: str = "registry/government_directory.json",
     output_dir: str = "registry/domains",
+    consolidated_path: str = "registry/compiled/agencies.json",
     db_path: str = "registry/government_directory.db",
     parties_path: str = "registry/parties.json",
     persons_path: str = "registry/persons.json",
@@ -47,6 +48,13 @@ def compile_registry(
             json.dump(items, f, indent=2, ensure_ascii=False)
     
     print(f"Compiled {len(data)} agencies into {len(domains)} domain files.")
+
+    # 1b. Output consolidated compiled JSON
+    consolidated = Path(consolidated_path)
+    consolidated.parent.mkdir(parents=True, exist_ok=True)
+    with consolidated.open("w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    print(f"Consolidated compiled registry written to {consolidated_path}")
 
     # 2. Load parties and persons data
     parties_data = []

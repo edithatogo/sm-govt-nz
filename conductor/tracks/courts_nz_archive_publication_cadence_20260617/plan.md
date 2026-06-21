@@ -46,9 +46,15 @@
 
 ## Phase 4: Closeout
 - [x] Task: Update multi-source archive plan and project docs with final cadence.
-- [ ] Task: Run the relevant publication workflow in artifact-only mode and, if
+- [x] Task: Run the relevant publication workflow in artifact-only mode and, if
   approved, one external publication run.
-- [ ] Task: Commit publication reports and track status.
+  - Artifact-only run captured in `conductor/archive_publication_status.json`
+    (head SHA `73e9935c343e058199b9bcc6319729448d648079`, 4591 archive files,
+    4213 normalized records, SHA256
+    `e99c1c74e2cda3d35662cabdf19651385e54dc6770128a14a47c427fd5adc5b9`).
+- [x] Task: Commit publication reports and track status.
+  - Cadence config committed in `73e9935` ("Implement-Courts-NZ-archive-publication-cadence").
+  - Latest status committed in `10a1b2f` ("Update archive publication status").
 
 Current runtime status: archive capture is scheduled. Weekly `Publish Archives`
 is now the Hugging Face rolling update lane; Zenodo remains a manual release

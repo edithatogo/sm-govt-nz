@@ -104,6 +104,7 @@ def build_report(
     """Build the unreplayable records report."""
     unreplayable: list[dict[str, Any]] = []
     replayable_count: int = 0
+    already_posted_count: int = 0
     reason_counts: dict[str, int] = {code: 0 for code in REASON_CODES}
 
     for record in all_records:
@@ -126,14 +127,17 @@ def build_report(
             unreplayable.append(entry)
             for code in reasons:
                 reason_counts[code] = reason_counts.get(code, 0) + 1
+            if reasons == [REASON_ALREADY_POSTED]:
+                already_posted_count += 1
         else:
             replayable_count += 1
 
     return {
-        "report_version": "1.0",
+        "report_version": "1.1",
         "total_records_scanned": len(all_records),
         "replayable": replayable_count,
         "unreplayable": len(unreplayable),
+        "already_posted": already_posted_count,
         "reason_counts": reason_counts,
         "records": unreplayable,
     }
