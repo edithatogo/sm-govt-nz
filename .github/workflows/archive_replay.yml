@@ -74,7 +74,7 @@ jobs:
         run: >-
           python scripts/verify_archive_mirror_posts.py
           --target ${{ inputs.target }}
-          --limit ${{ inputs.batch_limit }}
+          ${{ inputs.batch_limit == 'drain' && '--limit 0' || format('--limit {0}', inputs.batch_limit) }}
       - name: Categorize unreplayable records
         run: python scripts/categorize_unreplayable_records.py
       - name: Commit state updates
