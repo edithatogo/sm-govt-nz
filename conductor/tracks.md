@@ -111,10 +111,25 @@ mirrors must be created as separate conductor tracks after the Courts of New
 Zealand archive and corpus pipeline is stable, with no posting under Dylan
 Mordaunt, `edithatogo`, or other personal identities.
 
-## [x] Track: NZ Government Social Media Registry — full expansion: MPs, parties, public sector leaders, historical figures
+## [~] Track: NZ Government Social Media Registry — full expansion: MPs, parties, public sector leaders, historical figures
 *Link: [./tracks/govt_registry_mp_expansion_20260621/](./tracks/govt_registry_mp_expansion_20260621/)*
 - Phase 0 complete (tooling + track setup)
-- Phase 1 batch 1/3 complete (16 National Cabinet/ministers added → 73 total persons)
-- Continuing with remaining National MPs, then Labour, Green, ACT, NZ First, Te Pāti Māori,
-  historical figures (working backwards), public sector leaders, syndication classification,
-  and tenure-linked profiles.
+- Phase 1 National Party batches 1/3, 2/3, and 3/3 are committed and strict
+  reference-integrity gates pass.
+- Next coverage step: push/verify National Phase 1, then begin Labour only after
+  quality-gate provenance rules are accepted.
+
+## [ ] Track: NZ Government Social Media Registry — provenance and batch quality gates
+*Link: [./tracks/govt_registry_quality_gates_20260622/](./tracks/govt_registry_quality_gates_20260622/)*
+- Adds evidence metadata, stricter batch validation, unknown-organization rejection,
+  and recomputed reference-integrity checks before further expansion batches.
+
+## [ ] Track: NZ Government Social Media Registry — verification refresh cadence
+*Link: [./tracks/govt_registry_refresh_cadence_20260622/](./tracks/govt_registry_refresh_cadence_20260622/)*
+- Tracks monthly and event-triggered re-verification for agencies, parties, MPs,
+  public sector leaders, and historical records.
+
+## [ ] Track: NZ Government Social Media Registry — account classification and tenure-linked profiles
+*Link: [./tracks/govt_registry_account_classification_20260622/](./tracks/govt_registry_account_classification_20260622/)*
+- Defines official/campaign/personal-public/office/party account classification,
+  syndication classification, and tenure-linked profile enrichment.

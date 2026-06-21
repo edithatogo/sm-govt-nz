@@ -7,6 +7,8 @@
 - Public sector leaders (constitutional officers, agency CEOs, judges)
 - Syndication classification per account
 - Tenure-linked profiles
+- Quality gates, refresh cadence, and account classification taxonomy are tracked
+  separately in the 2026-06-22 Conductor tracks listed in `conductor/tracks.md`.
 
 ## Phases
 
@@ -21,19 +23,20 @@
 - [x] Task: Create `scripts/data/national_batch_1.json` with 16 person records
 - [x] Task: Validate and append to `registry/persons.json` using add_person_record.py
 - [x] Task: Run gap checker and tests — all clean
-- [ ] Task: Commit batch 1 with message `national_batch_1: add 16 National MPs`
+- [x] Task: Commit batch 1 with message `national_batch_1: add 16 National MPs` (`dfcdee0`)
 
 ### Phase 1: National Party Caucus — Batch 2 (Remaining Electorate MPs)
-- [ ] Task: Research social profiles for next 16 National electorate MPs
-- [ ] Task: Create `scripts/data/national_batch_2.json` with records
-- [ ] Task: Validate, append, verify, commit
+- [x] Task: Research social profiles for next 14 National electorate MPs
+- [x] Task: Create `scripts/data/national_batch_2.json` with records
+- [x] Task: Validate, append, verify, commit (`e991d9e`)
 
 ### Phase 1: National Party Caucus — Batch 3 (Remaining List & Junior MPs)
-- [ ] Task: Research and add remaining ~17 National MPs
-- [ ] Task: Validate, append, verify, commit
+- [x] Task: Research and add remaining 12 National MPs
+- [x] Task: Validate, append, verify, commit (`928a675`)
 - [ ] Task: Push Phase 1 to remote, verify GitHub Actions
 
 ### Phase 2: Labour Party Caucus
+- [ ] Task: Confirm `govt_registry_quality_gates_20260622` Phase 1 gates are in place before appending new Labour records.
 - [ ] Task: Research and fill 38 empty social profile handles
 - [ ] Task: Research remaining ~20 Labour MPs and add records
 - [ ] Task: Validate, append, verify, commit
@@ -73,12 +76,11 @@
 - [ ] Task: Validate, commit per group, push
 
 ### Phase 9: Syndication Classification
-- [ ] Task: Classify each account as syndicated/unique/mixed
-- [ ] Task: Record syndication metadata in registry
-- [ ] Task: Validate, commit, push
+- [ ] Task: Hand off to `govt_registry_account_classification_20260622` for classification schema and taxonomy.
+- [ ] Task: Apply classification data after taxonomy and tests are accepted.
 
 ### Phase 10: Tenure-Linked Profiles
-- [ ] Task: Populate tenure_linked_profiles for all persons with tracked role-based accounts
+- [ ] Task: Populate tenure_linked_profiles for all persons with tracked role-based accounts after classification taxonomy is accepted.
 - [ ] Task: Validate, commit, push
 
 ### Phase 11: Final Verification & Close
@@ -96,3 +98,8 @@
 6. `git add -A && git commit -m "phaseX_batchY: description"`
 7. Repeat per logical task
 8. Per phase: `git push` and verify GitHub Actions
+
+## Current Status
+- National Party Phase 1 data batches 1-3 are committed and reference-integrity clean.
+- Current strict gap gate passes with zero missing party leaders, missing party presidents, unknown party references, and unknown role organization references.
+- Next coverage batch is Labour, but it should wait until the quality-gates track defines the evidence/provenance fields and strict batch checks.

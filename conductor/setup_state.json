@@ -240,6 +240,54 @@
     "blockers": "None"
   },
   {
+    "id": "govt_registry_mp_expansion_20260621",
+    "name": "NZ Government Social Media Registry - full expansion: MPs, parties, public sector leaders, historical figures",
+    "status": "in-progress",
+    "done": 14,
+    "inprogress": 0,
+    "pending": 38,
+    "total": 52,
+    "current_task": "None",
+    "next_action": "Push National Phase 1 and verify GitHub Actions.",
+    "blockers": "Quality-gate provenance rules should be accepted before Labour batches are appended."
+  },
+  {
+    "id": "govt_registry_quality_gates_20260622",
+    "name": "NZ Government Social Media Registry - provenance and batch quality gates",
+    "status": "pending",
+    "done": 0,
+    "inprogress": 0,
+    "pending": 14,
+    "total": 14,
+    "current_task": "None",
+    "next_action": "Record current strict gap baseline and add canonical role-organization regression tests.",
+    "blockers": "None"
+  },
+  {
+    "id": "govt_registry_refresh_cadence_20260622",
+    "name": "NZ Government Social Media Registry - verification refresh cadence",
+    "status": "pending",
+    "done": 0,
+    "inprogress": 0,
+    "pending": 12,
+    "total": 12,
+    "current_task": "None",
+    "next_action": "Decide inline versus companion refresh metadata model.",
+    "blockers": "None"
+  },
+  {
+    "id": "govt_registry_account_classification_20260622",
+    "name": "NZ Government Social Media Registry - account classification and tenure-linked profiles",
+    "status": "pending",
+    "done": 0,
+    "inprogress": 0,
+    "pending": 12,
+    "total": 12,
+    "current_task": "None",
+    "next_action": "Add schema support for account and syndication classification taxonomy.",
+    "blockers": "Quality-gate evidence metadata should be accepted before broad classification."
+  },
+  {
     "id": "sync_mirror_follows_20260614",
     "name": "Implement mirror account follow sync using supported platform APIs and manual review.",
     "status": "completed",

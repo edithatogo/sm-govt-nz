@@ -7,8 +7,8 @@
 - [x] Task: Extend `scripts/compile_registry.py` to generate the SQLite database `registry/government_directory.db` with normalized tables.
 - [x] Task: Add test coverage in `tests/test_compile_registry.py` for SQLite database generation and table integrity.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Registry Schema & Compilation Pipeline' (Protocol in workflow.md)
-  - Verified: `scripts/compile_registry.py` compiles 251 agencies into 244 domain files and exports `registry/government_directory.db`.
-  - Verified: `scripts/verify_registry_compilation.py` confirms JSON ↔ SQLite match (251 agencies, 483 profiles, no mismatches).
+  - Verified: `scripts/compile_registry.py` compiles 252 agencies into 245 domain files and exports `registry/government_directory.db`.
+  - Verified: `scripts/verify_registry_compilation.py` confirms JSON ↔ SQLite match (252 agencies, 483 profiles, no mismatches).
   - Verified: 25 tests pass across registry schema, compilation, git mirror validation, and compilation verification.
   - Report logged in `conductor/registry_verification_report.json`.
 
@@ -42,9 +42,9 @@
 - [x] Task: Ingest and parse historical post archives for target deactivated NZ government accounts.
 - [x] Task: Seed `registry/government_directory.json` with the initial deactivated accounts (status: deactivated, start/end dates, reasons, and active alternatives).
 - [x] Task: Run the compilation pipeline to verify that all historical and seeded files compile perfectly.
-- [x] Task: Expand social media profiles to cover all 251 agencies in the registry.
+- [x] Task: Expand social media profiles to cover all 252 agencies in the registry.
   - 218/252 agencies now have populated social profiles (June 2026 batch research)
-  - 33 agencies remain empty (SOEs, Schedule 4a companies without public social media) - expected
+  - 34 agencies remain empty (SOEs, Schedule 4a companies without public social media) - expected
   - All new entries have `discovered_at: "2026-06"`
   - Platforms researched: Facebook, LinkedIn, Instagram, YouTube, X/Twitter, Bluesky
 - [x] Task: Validate all social media data via reviewer gate.
@@ -54,7 +54,7 @@
   - Verified: Historical X posts archived for deactivated NZ government accounts.
   - Verified: 218/252 agencies have populated social profiles (34 SOEs/Schedule 4a/other agencies without public social media — expected).
   - Verified: All JSON valid, all agency_ids unique/kebab-case, duplicate profiles corrected, twitter.com URLs migrated to x.com.
-  - Verified: Compilation pipeline produces matching SQLite DB (251 agencies, 483 profiles).
+  - Verified: Compilation pipeline produces matching SQLite DB (252 agencies, 483 profiles).
 
 ## Phase 4: Syndication & Mirroring Implementation
 - [x] Task: Implement a unified mirror target posting adapter to syndicate updates to the unified transparency feed.
@@ -83,19 +83,18 @@
 ## Phase 5: Political Parties, MPs, and Public Sector Leadership Registry
 - [ ] Task: Research and catalogue all registered New Zealand political parties with
   their official social media accounts, websites, logos, and current leadership.
-  - Schema and seed data complete (27 parties in `registry/parties.json`).
-  - 20 of 27 parties missing `leader_person_id`; 8 of 27 missing `president_person_id`.
-  - Remaining work requires a human researcher to verify current leadership and
-    add corresponding person records.
-  - Status: DEFERRED — manual research task.
+  - Schema, seed data, and reference integrity are complete for the baseline registry.
+  - Full party/account enrichment continues in `govt_registry_mp_expansion_20260621`
+    and the 2026-06-22 quality/classification support tracks.
+  - Status: MOVED — active expansion track.
 - [ ] Task: Map all current Members of Parliament (54th Parliament, 2023–2026) with:
   - Official parliamentary social media accounts
   - Electorate office accounts
   - Personal public-facing accounts
   - Party affiliation, electorate/list status, and portfolio roles
-  - 57 person records seeded; schema, validation, and CI gate all operational.
-  - Remaining work: seed the remaining 102+ MPs and their social profiles.
-  - Status: DEFERRED — manual research task.
+  - National Party batches 1-3 are committed in `govt_registry_mp_expansion_20260621`.
+  - Remaining caucus coverage is tracked in the active expansion track.
+  - Status: MOVED — active expansion track.
 - [ ] Task: Map all current public sector leaders including:
   - Governor-General and their official accounts
   - Speaker of the House
@@ -152,11 +151,10 @@
   - `.github/workflows/parties_persons_gap.yml` runs the gate on push,
     PR, weekly schedule (Sunday 02:00 UTC), and manual dispatch with
     configurable `--allow-leaders` / `--allow-presidents` tolerances.
-  - Current state (21 June 2026): persons_unknown_party=0,
+  - Current state (22 June 2026): persons_unknown_party=0,
     persons_unknown_agency_in_role=0 (strict gates passing),
-    missing_party_leaders=20 and missing_party_presidents=8 (real
-    Phase 5 research gaps for implementer-2 to close as the 54th
-    Parliament MP records are seeded).
+    missing_party_leaders=0 and missing_party_presidents=0. Full coverage work
+    continues in `govt_registry_mp_expansion_20260621`.
   - Note: pytest tests are advisory (report-only) because OneDrive-synced
     Windows file systems occasionally serve stale file content to
     pytest. The strict gate is enforced by the dedicated workflow which
@@ -181,8 +179,8 @@
   - Verified: Reference integrity CI gate runs on push, PR, and weekly schedule;
     `python scripts/check_parties_persons_gaps.py --strict --allow-leaders 0
     --allow-presidents 0` exits 0 with `complete: true`.
-  - Verified: 4 missing agencies seeded, 6 missing persons added, 14 party_id
-    values aligned, persons.json expanded to 57 unique records.
+  - Verified: 4 missing agencies seeded, missing persons added, party_id
+    values aligned, and persons.json expanded beyond the initial seed records.
   - Verified: Phases 1-4 fully operational (252 agencies, 483 profiles, JSON/SQLite
     consistent, multi-remote git mirror active, unified feed dry-run passed).
   - Deferred: Phase 5 Tasks 1-3 (manual research of parties/MPs/leaders),
