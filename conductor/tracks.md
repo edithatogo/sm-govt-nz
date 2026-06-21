@@ -40,10 +40,11 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [x] Track: Complete Courts of New Zealand Bluesky archive replay and manifest telemetry
 *Link: [./tracks/courts_nz_bluesky_archive_replay_20260613/](./tracks/courts_nz_bluesky_archive_replay_20260613/)*
-- 49/49 Bluesky backlog records replayed. 298/689 X records replayed (391
-  remaining). Replay infrastructure, safety, verification, and unreplayable
-  categorization are all complete. Remaining 391 X records are a mechanical
-  batch-execution task via the `Archive Replay` workflow.
+- 50/50 Bluesky-source records and 689/689 recovered X records are reflected in
+  Bluesky mirror coverage. Replay infrastructure, duplicate safety, delivery
+  verification, and exclusion telemetry are complete; unreplayable exclusions
+  are 0. Manual `Archive Replay` remains bounded to reviewed batches of 5, 10,
+  or 20 records for any future replay source.
 
 ## [x] Track: Harden Courts of New Zealand Bluesky mirror launch operations
 *Link: [./tracks/courts_nz_bluesky_launch_ops_20260613/](./tracks/courts_nz_bluesky_launch_ops_20260613/)*

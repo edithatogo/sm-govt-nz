@@ -64,9 +64,9 @@ def scan_normalized_x_archive(
                 record = json.loads(line)
             except json.JSONDecodeError:
                 continue
-            record["_source_file"] = str(
-                jsonl_path.relative_to(archive_dir.parent)
-            )
+            record["_source_file"] = jsonl_path.relative_to(
+                archive_dir.parent
+            ).as_posix()
             records.append(record)
     return records
 
@@ -77,12 +77,8 @@ def classify_record(
 ) -> list[str]:
     """Return reason codes for why a record is unreplayable (empty = replayable)."""
     reasons: list[str] = []
-    record_id = str(record.get("record_id") or "")
     content = record.get("content")
     media_refs = record.get("media_refs", [])
-
-    if record_id in posted_ids:
-        reasons.append(REASON_ALREADY_POSTED)
 
     has_text = bool(content and content.strip())
     has_media = bool(media_refs)
@@ -103,6 +99,7 @@ def build_report(
 ) -> dict[str, Any]:
     """Build the unreplayable records report."""
     unreplayable: list[dict[str, Any]] = []
+    posted_records: list[dict[str, Any]] = []
     replayable_count: int = 0
     already_posted_count: int = 0
     reason_counts: dict[str, int] = {code: 0 for code in REASON_CODES}
@@ -111,6 +108,19 @@ def build_report(
         reasons = classify_record(record, posted_ids)
         record_id = str(record.get("record_id") or "")
         content = record.get("content") or ""
+        if record_id in posted_ids:
+            already_posted_count += 1
+            posted_records.append(
+                {
+                    "record_id": record_id,
+                    "source_file": record.get("_source_file", ""),
+                    "source_url": str(record.get("source_url") or ""),
+                    "original_created_at": str(
+                        record.get("original_created_at") or ""
+                    ),
+                }
+            )
+            continue
 
         if reasons:
             entry: dict[str, Any] = {
@@ -127,8 +137,6 @@ def build_report(
             unreplayable.append(entry)
             for code in reasons:
                 reason_counts[code] = reason_counts.get(code, 0) + 1
-            if reasons == [REASON_ALREADY_POSTED]:
-                already_posted_count += 1
         else:
             replayable_count += 1
 
@@ -137,8 +145,10 @@ def build_report(
         "total_records_scanned": len(all_records),
         "replayable": replayable_count,
         "unreplayable": len(unreplayable),
+        "posted": already_posted_count,
         "already_posted": already_posted_count,
         "reason_counts": reason_counts,
+        "posted_records": posted_records,
         "records": unreplayable,
     }
 
@@ -174,7 +184,7 @@ def main() -> None:
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
-        json.dumps(report, indent=2, sort_keys=True, ensure_ascii=False),
+        json.dumps(report, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
 

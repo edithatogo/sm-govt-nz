@@ -12,11 +12,10 @@ def cli() -> None:
     parser.add_argument("--target", default="bluesky")
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--drain", action="store_true", help="Loop until all records are posted")
     args = parser.parse_args()
 
-    summary = main(target=args.target, dry_run=args.dry_run, limit=args.limit, drain=args.drain)
-    mode = "drain" if args.drain else f"batch (limit={args.limit})"
+    summary = main(target=args.target, dry_run=args.dry_run, limit=args.limit)
+    mode = f"batch (limit={args.limit})"
     print(
         f"{mode}: selected "
         f"{summary.selected} archive replay records for {args.target}; "

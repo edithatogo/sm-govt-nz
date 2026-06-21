@@ -24,14 +24,11 @@
     time, posted another reviewed batch, verified delivery URLs, generated
     unreplayable-records telemetry, and committed state update `a2c499e`.
   - **Final analysis (2026-06-21):** `categorize_unreplayable_records.py` scanned
-    all 689 X archive records: 298 already posted, 391 replayable, 0 blocked
-    by content/technical limits. No `empty_content`, `exceeds_bluesky_limit`, or
-    `media_only_no_text` records were found. Remaining 391 records require
-    ~20 manual `Archive Replay` workflow runs at 20 records each, or ~78
-    scheduled `Syndicate` runs (≈18 months at weekly throttle). The track is
-    substantively complete — replay infrastructure, duplicate safety,
-    verification, and unreplayable categorization are all operational. The
-    remaining replay work is a mechanical batch-execution task.
+    all 689 X archive records after state reconciliation: 689 posted, 0
+    replayable, and 0 blocked by content/technical limits. No `empty_content`,
+    `exceeds_bluesky_limit`, or `media_only_no_text` records were found. The
+    track is complete: replay infrastructure, duplicate safety, delivery
+    verification, and exclusion telemetry are all operational.
 - [x] Task: Increase or tune batch size only after reviewing account-rate,
   platform-noise, and duplicate-prevention behavior.
   - Retained scheduled replay at 5 records and moved larger reviewed batches to
@@ -43,8 +40,8 @@
   - Evidence: reviewed 20-record run `27502031465` succeeded, verified delivery
     URLs, and did not require a scheduled throttle increase.
 - [x] Task: Re-run coverage reporting after each phase and commit state.
-  - Latest coverage shows Bluesky target at 327/738 total source records, with
-    0 remaining Bluesky-source records and 411 remaining X archive records.
+  - Latest coverage shows Bluesky target at 739/739 total source records, with
+    0 remaining Bluesky-source records and 0 remaining X archive records.
 
 ## Phase 3: Manifest and Verification
 - [x] Task: Extend the corpus manifest with source record ID, source URL,
@@ -63,8 +60,10 @@
 - [x] Task: Mark any unreplayable records with reason codes.
   - Implemented `scripts/categorize_unreplayable_records.py` that scans X archive
     JSONL files against `conductor/archive_mirror_state.json`.
-  - Detects `empty_content`, `exceeds_bluesky_limit`, `media_only_no_text`, and
-    `already_posted` reason codes via purely local file analysis.
+  - Detects `empty_content`, `exceeds_bluesky_limit`, and
+    `media_only_no_text` reason codes via purely local file analysis.
+  - Separates already-posted records into posted coverage telemetry rather
+    than treating them as unreplayable exclusions.
   - Wires into the Archive Replay workflow after delivery URL verification.
   - Outputs `conductor/unreplayable_records_report.json` for downstream tooling.
   - Companion test suite at `tests/test_categorize_unreplayable_records.py`.
@@ -75,5 +74,9 @@
     covering classify_record, load_posted_record_ids, scan_normalized_x_archive,
     and build_report.
   - Tests pass with `uv run pytest tests/test_categorize_unreplayable_records.py -v`.
+  - Review remediation tests pass with `python -m pytest -q
+    tests/test_archive_replay_workflow.py tests/test_archive_mirror_coverage.py
+    tests/test_categorize_unreplayable_records.py tests/test_archive_mirror_backlog.py
+    tests/test_verify_archive_mirror_posts.py`.
 - [x] Task: Update the parent Bluesky mirror track and archive/corpus tracks.
   - Updated `conductor/tracks.md` from `[~]` to `[x]` for this track.

@@ -33,7 +33,13 @@ class ArchiveMirrorCoverageReport:
 
     @property
     def complete(self) -> bool:
-        return all(target.remaining_records == 0 for target in self.targets)
+        return self.is_target_complete("bluesky")
+
+    def is_target_complete(self, target_name: str) -> bool:
+        return any(
+            target.target == target_name and target.remaining_records == 0
+            for target in self.targets
+        )
 
     def to_dict(self) -> dict[str, Any]:
         return {

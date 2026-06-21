@@ -105,17 +105,16 @@ def test_classify_under_threshold_is_replayable() -> None:
 
 
 def test_classify_already_posted() -> None:
-    """A record already posted should be marked already_posted."""
+    """A posted record with no exclusion reason should not be unreplayable."""
     record = _make_record(record_id="x:100")
     reasons = classify_record(record, posted_ids={"x:100"})
-    assert REASON_ALREADY_POSTED in reasons
+    assert reasons == []
 
 
 def test_classify_already_posted_and_empty() -> None:
-    """A record both posted and empty should get both reasons."""
+    """A posted record with bad content still reports the content reason."""
     record = _make_record(record_id="x:1", content="")
     reasons = classify_record(record, posted_ids={"x:1"})
-    assert REASON_ALREADY_POSTED in reasons
     assert REASON_EMPTY_CONTENT in reasons
 
 
@@ -240,15 +239,16 @@ def test_report_categorizes_unreplayable() -> None:
     report = build_report(posted_ids={"x:5"}, all_records=records)
     assert report["total_records_scanned"] == 5
     assert report["replayable"] == 1  # only x:1 is fully replayable
-    assert report["unreplayable"] == 4
+    assert report["posted"] == 1
+    assert report["unreplayable"] == 3
 
     reported_ids = {r["record_id"] for r in report["records"]}
-    assert reported_ids == {"x:2", "x:3", "x:4", "x:5"}
+    assert reported_ids == {"x:2", "x:3", "x:4"}
 
     assert report["reason_counts"]["empty_content"] == 1
     assert report["reason_counts"]["exceeds_bluesky_limit"] == 1
     assert report["reason_counts"]["media_only_no_text"] == 1
-    assert report["reason_counts"]["already_posted"] == 1
+    assert report["reason_counts"]["already_posted"] == 0
 
 
 def test_report_output_format() -> None:
@@ -283,7 +283,7 @@ def test_report_output_format() -> None:
 
 
 def test_report_includes_already_posted_count() -> None:
-    """Report separates already_posted from other unreplayable records."""
+    """Report separates posted coverage from unreplayable records."""
     records = [
         _make_record(record_id="x:1", content="Posted"),
         _make_record(record_id="x:2", content=""),
@@ -292,5 +292,7 @@ def test_report_includes_already_posted_count() -> None:
     report = build_report(posted_ids={"x:1"}, all_records=records)
 
     assert report["already_posted"] == 1
+    assert report["posted"] == 1
     assert report["replayable"] == 1
-    assert report["unreplayable"] == 2
+    assert report["unreplayable"] == 1
+    assert {record["record_id"] for record in report["posted_records"]} == {"x:1"}
