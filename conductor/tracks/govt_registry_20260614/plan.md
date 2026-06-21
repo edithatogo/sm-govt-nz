@@ -132,16 +132,28 @@
     `government-house-nz`, `office-of-the-ombudsman`, and
     `parliamentary-commissioner-for-the-environment` (newly seeded).
   - Deduplicated `persons.json` from 21 to 18 unique records.
-  - `tests/test_parties_persons_registry.py` (9 tests) enforces schemas,
+  - Added 4 missing agencies to `government_directory.json`:
+    `nz-parliament`, `government-house-nz`, `office-of-the-ombudsman`,
+    `parliamentary-commissioner-for-the-environment`.
+  - `tests/test_parties_persons_registry.py` (10 tests) enforces schemas,
     uniqueness, source-file dedup, and persists
     `conductor/parties_persons_gap_report.json` as a machine-checkable
     artifact.
-  - Final gap report (21 June 2026): all four reference-integrity
-    categories show 0 entries.
-  - Note: tests run as advisory (report-only) rather than strict
-    assertions due to OneDrive-synced Windows file system occasionally
-    serving stale file content to pytest. Reference integrity is
-    verified via the persisted gap report which is the source of truth.
+  - `scripts/check_parties_persons_gaps.py` is the strict CI gate; it
+    recomputes the gap report from the registry files directly and
+    exits non-zero under `--strict` when any category exceeds tolerance.
+  - `.github/workflows/parties_persons_gap.yml` runs the gate on push,
+    PR, weekly schedule (Sunday 02:00 UTC), and manual dispatch with
+    configurable `--allow-leaders` / `--allow-presidents` tolerances.
+  - Current state (21 June 2026): persons_unknown_party=0,
+    persons_unknown_agency_in_role=0 (strict gates passing),
+    missing_party_leaders=20 and missing_party_presidents=8 (real
+    Phase 5 research gaps for implementer-2 to close as the 54th
+    Parliament MP records are seeded).
+  - Note: pytest tests are advisory (report-only) because OneDrive-synced
+    Windows file systems occasionally serve stale file content to
+    pytest. The strict gate is enforced by the dedicated workflow which
+    runs the check script as a separate process.
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 5: Political Parties, MPs,
   and Public Sector Leadership Registry' (Protocol in workflow.md)

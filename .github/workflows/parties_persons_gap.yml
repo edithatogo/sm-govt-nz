@@ -1,0 +1,73 @@
+name: Parties Persons Reference Gap
+
+on:
+  push:
+    paths:
+      - "registry/parties.json"
+      - "registry/persons.json"
+      - "registry/persons_national.json"
+      - "registry/persons_labour.json"
+      - "registry/persons_minor.json"
+      - "registry/persons_leaders.json"
+      - "registry/government_directory.json"
+      - "scripts/check_parties_persons_gaps.py"
+      - "conductor/parties_persons_gap_report.json"
+      - ".github/workflows/parties_persons_gap.yml"
+  pull_request:
+    paths:
+      - "registry/parties.json"
+      - "registry/persons.json"
+      - "registry/government_directory.json"
+      - "scripts/check_parties_persons_gaps.py"
+  schedule:
+    # Weekly on Sunday at 02:00 UTC to catch drift between data refreshes.
+    - cron: "0 2 * * 0"
+  workflow_dispatch:
+    inputs:
+      allow_leaders:
+        description: "Tolerance for missing party leader_person_ids"
+        required: false
+        default: "20"
+        type: string
+      allow_presidents:
+        description: "Tolerance for missing party president_person_ids"
+        required: false
+        default: "8"
+        type: string
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  reference-gap:
+    name: Reference integrity gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Recompute gap report from registry
+        run: >-
+          python scripts/check_parties_persons_gaps.py
+          --strict
+          --allow-leaders ${{ inputs.allow_leaders || '20' }}
+          --allow-presidents ${{ inputs.allow_presidents || '8' }}
+          --json-output dist/parties_persons_gap_summary.json
+
+      - name: Upload gap summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: parties-persons-gap-summary
+          path: dist/parties_persons_gap_summary.json
