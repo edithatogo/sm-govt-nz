@@ -1,0 +1,55 @@
+Return-Path: <CourtsofNewZealand-l1hjhddyjkii1d@cmail20.com>
+Received: from mx37.a.outbound.createsend.com (mx37.a.outbound.createsend.com [203.55.21.37])
+ by inbound-smtp.us-east-1.amazonaws.com with SMTP id m7du3c2nuo9ae3lpbkti1rsfmhavf4cc9o5pj9o1
+ for em4mkapmjakoh5o@upload.pipedream.net;
+ Sun, 21 Jun 2026 11:00:30 +0000 (UTC)
+X-SES-Spam-Verdict: PASS
+X-SES-Virus-Verdict: PASS
+Received-SPF: pass (spfCheck: domain of cmail20.com designates 203.55.21.37 as permitted sender) client-ip=203.55.21.37; envelope-from=CourtsofNewZealand-l1hjhddyjkii1d@cmail20.com; helo=mx37.a.outbound.createsend.com;
+Authentication-Results: amazonses.com;
+ spf=pass (spfCheck: domain of cmail20.com designates 203.55.21.37 as permitted sender) client-ip=203.55.21.37; envelope-from=CourtsofNewZealand-l1hjhddyjkii1d@cmail20.com; helo=mx37.a.outbound.createsend.com;
+ dkim=pass header.i=@createsend.com;
+ dkim=pass header.i=@cmail2.com;
+ dmarc=pass header.from=createsend.com;
+X-SES-RECEIPT: AEFBQUFBQUFBQUFHd1BHUVNwb2dOajRIUVBqMW90QU5vTzNJcFFkM00vVk1jNHliUmcwY1dxYzVjbUVLK2kzbGpCSDVHeXpseGQ1a0tLamRkcUFxc3daTHpZRnFIa0Y0VFllZWpGUmpiNnREdlU0Sy9kaHo1enMxSTNLcnhNRXFpZlYyK2tNc29TcjJRazN1bVNLM2UyTC9BVzR5VmRzTkkwOGVMMGJTU2NBcXZmcE1XVmRxdlNHdUtTcHNOcmV5ai9MVGJIWFdZNXdTVnFYbDZ5T2o3d3B4WmtIY2daVlBTTHhCVi80dmFWd2hNOW9uajRtOGljNHk4R0tYc2VKSHdHU3JKOEl0em91bjY3aHpvMUJMQXE0VEFpN2lUUEpKWlJ2NHljQU5XYnkxWXM3dFU4dUpxcnlhcjNPYmgwbDZEWWd6WnErYUhpRVU9
+X-SES-DKIM-SIGNATURE: a=rsa-sha256; q=dns/txt; b=lceq1ojLqxnneCswUuraaJItwBRieS6reWGLOAgfOYwmR5Wl7XS/lHQ0ZkTGDYlt+kQH8JOU3Y2ZBEWUfbnuEzJSEEfjAsdi7CYbae+e424RFdhjYiGx96DgHA8ifNe0AOfvrr79rU3DSW6J2R/wqUc7br7nMW+xJTXy5+LOiJM=; c=relaxed/simple; s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1782039631; v=1; bh=UlkHDohVS79bqyQPTBn336D8zYNydDRIEturKwqOq3c=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cs2013; d=createsend.com;
+ h=From:To:Reply-To:Date:Subject:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:List-Unsubscribe:List-Unsubscribe-Post:Message-ID;
+ i=confirmation@createsend.com;
+ bh=UlkHDohVS79bqyQPTBn336D8zYNydDRIEturKwqOq3c=;
+ b=eJi6RyJU4oMIIwTkCVJomPOKIVtZ+ocUzvUWsqo+szINCHXRq4V8AhjxAK4g8YiB619QKJi3C5v7
+   yDTQk1zKvxTTZIl9AOWSRUstzM7nuMiWUFrNJSZOtzj453W5KDcXgela6MDB0ezrm3GXC1M0LqcW
+   ueIG7lIWN532rKyf2iU=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cs2013; d=cmail2.com;
+ h=From:To:Reply-To:Date:Subject:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:List-Unsubscribe:List-Unsubscribe-Post:Message-ID;
+ bh=UlkHDohVS79bqyQPTBn336D8zYNydDRIEturKwqOq3c=;
+ b=ky09qZVrKfFztwlwA0TSUVMrub/5GBmd6zKX59TyWVovqxahWrmQb/oKTDuwy5kOyUez82fJbi8B
+   qx+tFayx3xavzm2khs5rT1uCCaes4urFmtS0D2I1E2xOkB/f+oQZGLS5vP8Uo7Y7d5NjsW5WJgIR
+   p026q417ZgEUMRGE6bw=
+From: "Courts of New Zealand" <confirmation@createsend.com> 
+To: "em4mkapmjakoh5o@upload.pipedream.net" <em4mkapmjakoh5o@upload.pipedream.net>
+Reply-To: courtsnzwebsite@courts.govt.nz
+Date: Sun, 21 Jun 2026 21:00:28 +1000
+Subject: Thanks for subscribing to the Courts of New Zealand Judicial
+ Decisions notifications for the Court o
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+X-Mailer: aspNetEmail ver 3.6.1.22
+X-Feedback-ID: LS1-d-giug:LI1-d-giug:CL1-d-othky:createSEND
+List-Unsubscribe: <https://courtsofnewzealand.cmail20.com/t/completeheade
+	r/d/giug/hjhddyjkii/l/>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-ID: <USW1P-SVC-010798424fb5e0646ad964ae52b64fc98e0@usw1p-svc-010>
+
+Hi =0D=0A=0D=0ATo complete your subscription to the notifications, you ne=
+ed to click on this link below to receive the Court of Appeal decisions o=
+f Public Interest notifications=0D=0A=0D=0A------------------------------=
+=0D=0A=0D=0Ahttp://courtsofnewzealand=2Ecmail20=2Ecom/t/d-c-hjhddyjkii=0D=
+=0A=0D=0A------------------------------=0D=0A=0D=0A=0D=0AIf you subscribe=
+d in error or no longer want to hear from us, click the link below and yo=
+u will be instantly removed from our list:=0D=0A=0D=0Ahttp://courtsofnewz=
+ealand=2Ecmail20=2Ecom/t/d-u-l_giug-hjhddyjkii/
+
