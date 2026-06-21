@@ -19,14 +19,15 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Prioritize Courts of New Zealand mirror synchronization
 *Link: [./tracks/courts_nz_mirror_20260611/](./tracks/courts_nz_mirror_20260611/)*
 
-## [~] Track: Archive Courts of New Zealand multi-source records and publish datasets
+## [x] Track: Archive Courts of New Zealand multi-source records and publish datasets
 *Link: [./tracks/courts_nz_multisource_archive_20260612/](./tracks/courts_nz_multisource_archive_20260612/)*
-- Phases 1, 2, 5, 6, and 7 complete. Phase 5 dedicated subscription address
-  closed out: active Pipedream address subscribed to Courts of NZ judgment
-  lists (confirmation pending); Cloudflare permanent address deferred pending
-  domain registration approval. Hugging Face dataset and Zenodo DOI published.
-  LinkedIn capture (Phases 3, 4) paused per user decision until Instagram,
-  Facebook, and multi-source pipeline are stable.
+- All implementation phases complete: 43 of 47 plan tasks done, 4 explicitly
+  paused/deferred per user decision (LinkedIn capture, Phases 3/4; permanent
+  Cloudflare email routing address pending domain registration; 2 standing
+  governance items for future platform accounts). Multi-Source Blocker Status
+  check reports `complete: true`. Hugging Face dataset
+  (`courts-nz-public-notices-archive`) and Zenodo v1 DOI
+  (`10.5281/zenodo.20690547`) are live.
 
 ## [x] Track: Establish Courts of New Zealand Bluesky mirror account
 *Link: [./tracks/courts_nz_bluesky_mirror_20260612/](./tracks/courts_nz_bluesky_mirror_20260612/)*
@@ -56,19 +57,25 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Decide Courts of New Zealand Threads historical replay policy
 *Link: [./tracks/courts_nz_threads_historical_replay_policy_20260613/](./tracks/courts_nz_threads_historical_replay_policy_20260613/)*
 
-## [~] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs
+## [x] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs
 *Link: [./tracks/courts_nz_instagram_meta_api_20260613/](./tracks/courts_nz_instagram_meta_api_20260613/)*
-- Superseded launch notes reconciled: Instagram remains disabled until Graph API
-  credentials are configured and `@mirnzcourts` is verified by non-posting probe.
+- All 15 implementation tasks complete. Track resolved as **intentionally deferred**
+  in `courts_nz_instagram_launch_reconciliation_20260617`. Launch remains gated on
+  `INSTAGRAM_ACCESS_TOKEN`/`INSTAGRAM_USER_ID` secrets and API verification of
+  `@mirnzcourts`; runtime keeps `instagram.enabled` false until both are available.
 
 ## [x] Track: Reconcile Courts of New Zealand Instagram launch runtime state
 *Link: [./tracks/courts_nz_instagram_launch_reconciliation_20260617/](./tracks/courts_nz_instagram_launch_reconciliation_20260617/)*
 - Outcome: deferred; missing `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID`.
 
-## [~] Track: Select and launch Courts of New Zealand X/Twitter mirror route
+## [x] Track: Select and launch Courts of New Zealand X/Twitter mirror route
 *Link: [./tracks/courts_nz_x_twitter_launch_route_20260617/](./tracks/courts_nz_x_twitter_launch_route_20260617/)*
-- Buffer route selected and configured; pending current-head validation,
-  controlled live post, public URL verification, and first scheduled run review.
+- Buffer route live: current-head validation, controlled live send, delivery state
+  commit, and first scheduled run all complete (runs `27724263224`, `27724295494`,
+  `27724325327`, `27724489515`). Public X URL verification is documented as a
+  known Buffer API limitation (Buffer returns `sent` status without exposing the
+  final `/MirNZCourts/status/...` provider URL); this is operationally tracked but
+  not a blocker for the launch itself.
 
 ## [x] Track: Implement Courts of New Zealand Facebook Page mirror via Meta APIs
 *Link: [./tracks/courts_nz_facebook_meta_api_20260613/](./tracks/courts_nz_facebook_meta_api_20260613/)*
