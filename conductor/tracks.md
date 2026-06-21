@@ -93,11 +93,12 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: NZ Government Social Media Registry — agencies, political parties, MPs, and public sector leadership
 *Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*
 - Phase 1–2: Registry schema, compilation pipeline, multi-remote git redundancy ✅
-- Phase 3: Twitter/X deactivation archive & registry seeding (251 agencies, 483 profiles) ✅
+- Phase 3: Twitter/X deactivation archive & registry seeding (252 agencies, 483 profiles) ✅
 - Phase 4: Syndication & mirroring implementation (unified feed dry-run passed, gated) ✅
 - Phase 5: Political parties, MPs, leadership — schema, validation, reference integrity CI gate ✅
-  - 20 parties missing leader_person_id, 8 missing president_person_id
-    (gap report: conductor/govt_registry_phase5_verification_report.json)
+  - Reference integrity gap report is complete: 0 missing party leaders,
+    0 missing party presidents, 0 unknown party references, and 0 unknown role
+    organization references.
   - Deferred: manual research of remaining parties/MPs/leaders, syndication
     classification, tenure-linked profiles
 - Spec Phases 3/5: Directory expansion to 600+ agencies, crawling & archival automation (deferred)
