@@ -19,7 +19,7 @@ on:
         options:
           - "bluesky"
       batch_limit:
-        description: "Maximum archive records to post"
+        description: "Maximum archive records to post (drain = all in one run)"
         required: true
         default: "10"
         type: choice
@@ -27,6 +27,8 @@ on:
           - "5"
           - "10"
           - "20"
+          - "50"
+          - "drain"
 
 permissions:
   contents: write
@@ -63,7 +65,7 @@ jobs:
         run: >-
           python scripts/post_archive_mirror_backlog.py
           --target ${{ inputs.target }}
-          --limit ${{ inputs.batch_limit }}
+          ${{ inputs.batch_limit == 'drain' && '--drain' || format('--limit {0}', inputs.batch_limit) }}
       - name: Report archive mirror coverage
         run: python scripts/check_archive_mirror_coverage.py
       - name: Smoke check public Bluesky mirror

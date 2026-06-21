@@ -146,19 +146,31 @@ def main(
     state_path: str = "conductor/archive_mirror_state.json",
     dry_run: bool = False,
     limit: int | None = None,
+    drain: bool = False,
 ) -> ArchiveMirrorBacklogSummary:
-    config = load_config(config_path)
-    state = load_archive_mirror_state(state_path)
-    summary, next_state = run_archive_mirror_backlog(
-        config,
-        state,
-        target=target,
-        dry_run=dry_run,
-        limit_override=limit,
-    )
-    if not dry_run:
-        save_archive_mirror_state(next_state, state_path)
-    return summary
+    total_selected = 0
+    total_posted = 0
+    all_results: list[SyndicationResult] = []
+    loop_count = 0
+    while True:
+        config = load_config(config_path)
+        state = load_archive_mirror_state(state_path)
+        summary, next_state = run_archive_mirror_backlog(
+            config,
+            state,
+            target=target,
+            dry_run=dry_run,
+            limit_override=limit,
+        )
+        total_selected += summary.selected
+        total_posted += summary.posted
+        all_results.extend(summary.results)
+        if not dry_run:
+            save_archive_mirror_state(next_state, state_path)
+        loop_count += 1
+        if not drain or summary.selected == 0 or (limit and summary.selected < limit):
+            break
+    return ArchiveMirrorBacklogSummary(selected=total_selected, posted=total_posted, results=all_results)
 
 
 def _load_archive_replay_records(
