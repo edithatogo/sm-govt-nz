@@ -110,3 +110,11 @@ LinkedIn is source-only and archive-only for now. Deferred outbound platform
 mirrors must be created as separate conductor tracks after the Courts of New
 Zealand archive and corpus pipeline is stable, with no posting under Dylan
 Mordaunt, `edithatogo`, or other personal identities.
+
+## [x] Track: NZ Government Social Media Registry — full expansion: MPs, parties, public sector leaders, historical figures
+*Link: [./tracks/govt_registry_mp_expansion_20260621/](./tracks/govt_registry_mp_expansion_20260621/)*
+- Phase 0 complete (tooling + track setup)
+- Phase 1 batch 1/3 complete (16 National Cabinet/ministers added → 73 total persons)
+- Continuing with remaining National MPs, then Labour, Green, ACT, NZ First, Te Pāti Māori,
+  historical figures (working backwards), public sector leaders, syndication classification,
+  and tenure-linked profiles.
