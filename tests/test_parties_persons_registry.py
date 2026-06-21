@@ -134,6 +134,7 @@ def _build_reference_gap_report(parties, persons, agencies) -> dict[str, list]:
     party_ids = {p["party_id"] for p in parties}
     person_ids = {p["person_id"] for p in persons}
     agency_ids = {a["agency_id"] for a in agencies}
+    allowed_orgs = agency_ids | party_ids
 
     missing_party_leaders = [
         p["party_id"]
@@ -154,7 +155,7 @@ def _build_reference_gap_report(parties, persons, agencies) -> dict[str, list]:
     for person in persons:
         for role in person.get("roles", []):
             org = role.get("organization")
-            if org and org not in agency_ids:
+            if org and org not in allowed_orgs:
                 persons_unknown_agency_in_role.append(
                     {"person_id": person["person_id"], "organization": org}
                 )

@@ -57,6 +57,11 @@
                 "pattern": "^[a-z0-9-]+$",
                 "description": "person_id of the current party leader."
             },
+            "co_leader_person_id": {
+                "type": ["string", "null"],
+                "pattern": "^[a-z0-9-]+$",
+                "description": "person_id of the co-leader, for parties with co-leadership structures (e.g., Green Party, Te Pāti Māori)."
+            },
             "president_person_id": {
                 "type": ["string", "null"],
                 "pattern": "^[a-z0-9-]+$",

@@ -43,7 +43,7 @@
 - [x] Task: Seed `registry/government_directory.json` with the initial deactivated accounts (status: deactivated, start/end dates, reasons, and active alternatives).
 - [x] Task: Run the compilation pipeline to verify that all historical and seeded files compile perfectly.
 - [x] Task: Expand social media profiles to cover all 251 agencies in the registry.
-  - 218/251 agencies now have populated social profiles (June 2026 batch research)
+  - 218/252 agencies now have populated social profiles (June 2026 batch research)
   - 33 agencies remain empty (SOEs, Schedule 4a companies without public social media) - expected
   - All new entries have `discovered_at: "2026-06"`
   - Platforms researched: Facebook, LinkedIn, Instagram, YouTube, X/Twitter, Bluesky
@@ -52,7 +52,7 @@
   - 3 pre-existing twitter.com URLs fixed to x.com
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Twitter/X Deactivation Archive & Registry Seeding' (Protocol in workflow.md)
   - Verified: Historical X posts archived for deactivated NZ government accounts.
-  - Verified: 218/251 agencies have populated social profiles (33 SOEs/Schedule 4a without public social media — expected).
+  - Verified: 218/252 agencies have populated social profiles (34 SOEs/Schedule 4a/other agencies without public social media — expected).
   - Verified: All JSON valid, all agency_ids unique/kebab-case, duplicate profiles corrected, twitter.com URLs migrated to x.com.
   - Verified: Compilation pipeline produces matching SQLite DB (251 agencies, 483 profiles).
 
@@ -93,7 +93,7 @@
   - Electorate office accounts
   - Personal public-facing accounts
   - Party affiliation, electorate/list status, and portfolio roles
-  - 18 person records seeded; schema, validation, and CI gate all operational.
+  - 57 person records seeded; schema, validation, and CI gate all operational.
   - Remaining work: seed the remaining 102+ MPs and their social profiles.
   - Status: DEFERRED — manual research task.
 - [ ] Task: Map all current public sector leaders including:
@@ -136,11 +136,11 @@
     `national` -> `national-party`, `labour` -> `labour-party`).
   - Aligned 6 organization values in `persons.json` role records to existing
     or newly-seeded `agency_id` values: `dpmc` (existing),
-    `government-house-nz`, `office-of-the-ombudsman`, and
+    `government-house`, `office-of-the-ombudsman`, and
     `parliamentary-commissioner-for-the-environment` (newly seeded).
-  - Deduplicated `persons.json` from 21 to 18 unique records.
+  - Expanded `persons.json` to 57 unique records while preserving deduplication.
   - Added 4 missing agencies to `government_directory.json`:
-    `nz-parliament`, `government-house-nz`, `office-of-the-ombudsman`,
+    `nz-parliament`, `government-house`, `office-of-the-ombudsman`,
     `parliamentary-commissioner-for-the-environment`.
   - `tests/test_parties_persons_registry.py` (10 tests) enforces schemas,
     uniqueness, source-file dedup, and persists
@@ -166,7 +166,7 @@
     kerre-prince, dan-bidois, greg-fleming, richard-hills, tama-potaka)
     and aligned party leader references to existing IDs (christopher-luxon,
     chris-hipkins, david-seymour, winston-peters, marama-davidson,
-    rawiri-waititi). Added nz-parliament, government-house-nz,
+    rawiri-waititi). Added nz-parliament, government-house,
     office-of-the-ombudsman, parliamentary-commissioner-for-the-environment
     agencies. Set member_type='list' for NZ First list MPs. Updated
     schema_persons.json to allow nullable party_id/member_type for
@@ -182,8 +182,8 @@
     `python scripts/check_parties_persons_gaps.py --strict --allow-leaders 0
     --allow-presidents 0` exits 0 with `complete: true`.
   - Verified: 4 missing agencies seeded, 6 missing persons added, 14 party_id
-    values aligned, persons.json deduplicated from 21 to 18.
-  - Verified: Phases 1-4 fully operational (251 agencies, 483 profiles, JSON/SQLite
+    values aligned, persons.json expanded to 57 unique records.
+  - Verified: Phases 1-4 fully operational (252 agencies, 483 profiles, JSON/SQLite
     consistent, multi-remote git mirror active, unified feed dry-run passed).
   - Deferred: Phase 5 Tasks 1-3 (manual research of parties/MPs/leaders),
     Task 6 (syndication classification), Task 7 (tenure-linked profiles),

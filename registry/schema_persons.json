@@ -26,9 +26,9 @@
                 "description": "Honorific prefix (e.g., Hon, Dr, Rt Hon)."
             },
             "party_id": {
-                "type": "string",
+                "type": ["string", "null"],
                 "pattern": "^[a-z0-9-]+$",
-                "description": "Political party affiliation (party_id from parties.json)."
+                "description": "Political party affiliation (party_id from parties.json). Null for non-partisan officeholders (Governor-General, Judges, Chief Executives, etc.)."
             },
             "electorate": {
                 "type": [
@@ -49,9 +49,10 @@
                 ],
                 "enum": [
                     "electorate",
-                    "list"
+                    "list",
+                    null
                 ],
-                "description": "Whether the MP holds an electorate seat or is a list MP."
+                "description": "Whether the MP holds an electorate seat or is a list MP. Null/absent for non-MP officeholders."
             },
             "gender": {
                 "type": [
@@ -61,7 +62,8 @@
                 "enum": [
                     "male",
                     "female",
-                    "non-binary"
+                    "non-binary",
+                    null
                 ],
                 "description": "Gender of the person."
             },

@@ -11,10 +11,10 @@
       "evidence": [
         "registry/schema_persons.json defines person schema with party_id, member_type, roles, social_profiles",
         "registry/schema_parties.json defines party schema with leader_person_id, president_person_id, social_profiles",
-        "registry/parties.json seed data exists with 27 parties",
-        "registry/persons.json seed data exists with 18 persons",
+        "registry/parties.json seed data exists with 25 parties",
+        "registry/persons.json seed data exists with 57 persons",
         "registry/persons_labour.json and registry/persons_leaders.json as supplementary data sources",
-        "registry/persons.json deduplicated from 21 to 18 unique records"
+        "registry/persons.json expanded to 57 unique records while preserving deduplication"
       ]
     },
     {
@@ -30,8 +30,8 @@
       "status": "verified",
       "evidence": [
         "14 party_id values aligned to canonical kebab-case IDs in registry/parties.json",
-        "6 organization values aligned to agency_id values (dpmc, government-house-nz, office-of-the-ombudsman, parliamentary-commissioner-for-the-environment)",
-        "4 missing agencies added to government_directory.json (nz-parliament, government-house-nz, office-of-the-ombudsman, parliamentary-commissioner-for-the-environment)",
+        "6 organization values aligned to agency_id values (dpmc, government-house, office-of-the-ombudsman, parliamentary-commissioner-for-the-environment)",
+        "4 missing agencies added to government_directory.json (nz-parliament, government-house, office-of-the-ombudsman, parliamentary-commissioner-for-the-environment)",
         "6 missing persons seeded (russell-norman, kerre-prince, dan-bidois, greg-fleming, richard-hills, tama-potaka)",
         "Party leader references aligned to existing IDs (christopher-luxon, chris-hipkins, david-seymour, winston-peters, marama-davidson, rawiri-waititi)",
         "member_type='list' set for NZ First list MPs",
@@ -52,8 +52,8 @@
       "task": "Core Phases 1-4 fully operational",
       "status": "verified",
       "evidence": [
-        "251 agencies, 483 profiles in registry/government_directory.json and .db",
-        "218/251 agencies have populated social profiles (33 SOEs/Schedule 4a without public social media — expected)",
+        "252 agencies, 483 profiles in registry/government_directory.json and .db",
+        "218/252 agencies have populated social profiles (34 SOEs/Schedule 4a/other agencies without public social media — expected)",
         "JSON/SQLite full consistency verified (conductor/registry_verification_report.json)",
         "Multi-remote git mirror configured (.github/workflows/mirror_sync.yml)",
         "Unified transparency feed dry-run passed; gated pending launch review"
@@ -83,7 +83,7 @@
     },
     {
       "task": "Phase 6 (spec): Directory expansion to 600+ agencies",
-      "reason": "Manual research task; 251 agencies already seeded",
+      "reason": "Manual research task; 252 agencies already seeded",
       "status": "deferred"
     },
     {
