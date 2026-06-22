@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-14T19:02:57.835387+00:00",
-  "success": true,
+  "generated_at": "2026-06-22T13:02:14.300470+00:00",
+  "success": false,
   "results": [
     {
       "command": [
@@ -17,17 +17,17 @@
     },
     {
       "command": [
-        "/usr/bin/python",
+        "C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
         "-m",
         "pytest",
         "-q"
       ],
-      "returncode": 0,
-      "stdout": "........................................................................ [ 36%]\n........................................................................ [ 72%]\n......................................................                   [100%]\n198 passed in 5.03s\n",
-      "stderr": ""
+      "returncode": 1,
+      "stdout": "\nno tests ran in 8.93s\n",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\pytest\\__main__.py\", line 9, in <module>\n    raise SystemExit(pytest.console_main())\n                     ^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\_pytest\\config\\__init__.py\", line 223, in console_main\n    code = main()\n           ^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\_pytest\\config\\__init__.py\", line 199, in main\n    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\pluggy\\_hooks.py\", line 512, in __call__\n    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\pluggy\\_manager.py\", line 120, in _hookexec\n    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\pluggy\\_callers.py\", line 167, in _multicall\n    raise exception\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\pluggy\\_callers.py\", line 121, in _multicall\n    res = hook_impl.function(*args)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\_pytest\\main.py\", line 365, in pytest_cmdline_main\n    return wrap_session(config, _main)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\_pytest\\main.py\", line 360, in wrap_session\n    config._ensure_unconfigure()\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\_pytest\\config\\__init__.py\", line 1171, in _ensure_unconfigure\n    self._cleanup_stack.close()\n  File \"C:\\Users\\60217257\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\contextlib.py\", line 609, in close\n    self.__exit__(None, None, None)\n  File \"C:\\Users\\60217257\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\contextlib.py\", line 601, in __exit__\n    raise exc_details[1]\n  File \"C:\\Users\\60217257\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\contextlib.py\", line 586, in __exit__\n    if cb(*exc_details):\n       ^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\contextlib.py\", line 469, in _exit_wrapper\n    callback(*args, **kwds)\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\_pytest\\capture.py\", line 778, in stop_global_capturing\n    self._global_capturing.pop_outerr_to_orig()\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\_pytest\\capture.py\", line 659, in pop_outerr_to_orig\n    out, err = self.readouterr()\n               ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\_pytest\\capture.py\", line 706, in readouterr\n    out = self.out.snap() if self.out else \"\"\n          ^^^^^^^^^^^^^^^\n  File \"C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Lib\\site-packages\\_pytest\\capture.py\", line 591, in snap\n    self.tmpfile.seek(0)\nValueError: I/O operation on closed file.\n"
     }
   ],
   "suggested_actions": [
-    "No immediate changes suggested; preserve current quality gate."
+    "Inspect failing command: C:\\Users\\60217257\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe -m pytest -q"
   ]
 }
