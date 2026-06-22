@@ -76,11 +76,11 @@
 - [ ] Task: Validate, commit per group, push
 
 ### Phase 9: Syndication Classification
-- [ ] Task: Hand off to `govt_registry_account_classification_20260622` for classification schema and taxonomy.
-- [ ] Task: Apply classification data after taxonomy and tests are accepted.
+- [x] Task: Hand off to `govt_registry_account_classification_20260622` for classification schema and taxonomy.
+- [x] Task: Apply classification data after taxonomy and tests are accepted for the current seeded registry.
 
 ### Phase 10: Tenure-Linked Profiles
-- [ ] Task: Populate tenure_linked_profiles for all persons with tracked role-based accounts after classification taxonomy is accepted.
+- [x] Task: Populate tenure_linked_profiles for all persons with tracked role-based accounts after classification taxonomy is accepted for the current seeded registry.
 - [ ] Task: Validate, commit, push
 
 ### Phase 11: Final Verification & Close
@@ -107,4 +107,8 @@
   `conductor/registry_refresh_report.json` is the manual refresh queue artifact.
   Initial 2026-06-22 queue: agencies first, with 483 profiles due across 218
   agency records because `last_checked_at` has not yet been populated.
+- Account classification is implemented in `govt_registry_account_classification_20260622`;
+  future seeded profiles must include `account_classification` and
+  `syndication_classification`, and role-linked accounts must reference an
+  existing `role_id`.
 - Next coverage batch is Labour, but it should wait until the quality-gates track defines the evidence/provenance fields and strict batch checks.

@@ -132,7 +132,8 @@ Mordaunt, `edithatogo`, or other personal identities.
   and `conductor/registry_refresh_report.json` artifact. Initial 2026-06-22
   queue has 610 due profiles; agencies are the first refresh cohort.
 
-## [ ] Track: NZ Government Social Media Registry — account classification and tenure-linked profiles
+## [x] Track: NZ Government Social Media Registry — account classification and tenure-linked profiles
 *Link: [./tracks/govt_registry_account_classification_20260622/](./tracks/govt_registry_account_classification_20260622/)*
-- Defines official/campaign/personal-public/office/party account classification,
-  syndication classification, and tenure-linked profile enrichment.
+- Complete: schemas, tests, current seeded-profile classifications, and one
+  representative role-linked office profile are in place. Future seeded profiles
+  must include `account_classification` and `syndication_classification`.

@@ -254,3 +254,34 @@ def test_representative_account_classification_sample(parties, persons, agencies
     assert office_profiles
     assert office_profiles[0]["role_id"] == "prime-minister"
     assert office_profiles[0]["syndication_classification"] == "unique"
+
+
+def test_all_social_profiles_have_account_classification(parties, persons, agencies):
+    """Every seeded profile must carry account and syndication classifications."""
+    missing = []
+
+    for agency in agencies:
+        for platform, profile in agency.get("social_profiles", {}).items():
+            if "account_classification" not in profile or "syndication_classification" not in profile:
+                missing.append({"record": agency["agency_id"], "platform": platform})
+
+    for party in parties:
+        for platform, profile in party.get("social_profiles", {}).items():
+            if "account_classification" not in profile or "syndication_classification" not in profile:
+                missing.append({"record": party["party_id"], "platform": platform})
+
+    for person in persons:
+        for platform, profile in person.get("social_profiles", {}).items():
+            if "account_classification" not in profile or "syndication_classification" not in profile:
+                missing.append({"record": person["person_id"], "platform": platform})
+        for profile in person.get("tenure_linked_profiles", []):
+            if "account_classification" not in profile or "syndication_classification" not in profile:
+                missing.append(
+                    {
+                        "record": person["person_id"],
+                        "platform": profile.get("platform"),
+                        "role_id": profile.get("role_id"),
+                    }
+                )
+
+    assert not missing, f"Profiles missing classification metadata: {missing}"
