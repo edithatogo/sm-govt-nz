@@ -124,10 +124,13 @@ Mordaunt, `edithatogo`, or other personal identities.
 - Adds evidence metadata, stricter batch validation, unknown-organization rejection,
   and recomputed reference-integrity checks before further expansion batches.
 
-## [ ] Track: NZ Government Social Media Registry — verification refresh cadence
+## [x] Track: NZ Government Social Media Registry — verification refresh cadence
 *Link: [./tracks/govt_registry_refresh_cadence_20260622/](./tracks/govt_registry_refresh_cadence_20260622/)*
 - Tracks monthly and event-triggered re-verification for agencies, parties, MPs,
   public sector leaders, and historical records.
+- Complete: optional inline refresh metadata, non-mutating refresh report command,
+  and `conductor/registry_refresh_report.json` artifact. Initial 2026-06-22
+  queue has 610 due profiles; agencies are the first refresh cohort.
 
 ## [ ] Track: NZ Government Social Media Registry — account classification and tenure-linked profiles
 *Link: [./tracks/govt_registry_account_classification_20260622/](./tracks/govt_registry_account_classification_20260622/)*

@@ -94,12 +94,17 @@
 2. Create batch JSON file in scripts/data/
 3. Run `python scripts/add_person_record.py -i scripts/data/[batch].json`
 4. Run `python scripts/check_parties_persons_gaps.py --strict`
-5. Run `python -m pytest tests/test_parties_persons_registry.py -v`
-6. `git add -A && git commit -m "phaseX_batchY: description"`
-7. Repeat per logical task
-8. Per phase: `git push` and verify GitHub Actions
+5. Run `python scripts/report_refresh_cadence.py --as-of YYYY-MM-DD --output conductor/registry_refresh_report.json`
+6. Run `python -m pytest tests/test_parties_persons_registry.py -v`
+7. `git add -A && git commit -m "phaseX_batchY: description"`
+8. Repeat per logical task
+9. Per phase: `git push` and verify GitHub Actions
 
 ## Current Status
 - National Party Phase 1 data batches 1-3 are committed and reference-integrity clean.
 - Current strict gap gate passes with zero missing party leaders, missing party presidents, unknown party references, and unknown role organization references.
+- Refresh cadence is implemented in `govt_registry_refresh_cadence_20260622`;
+  `conductor/registry_refresh_report.json` is the manual refresh queue artifact.
+  Initial 2026-06-22 queue: agencies first, with 483 profiles due across 218
+  agency records because `last_checked_at` has not yet been populated.
 - Next coverage batch is Labour, but it should wait until the quality-gates track defines the evidence/provenance fields and strict batch checks.

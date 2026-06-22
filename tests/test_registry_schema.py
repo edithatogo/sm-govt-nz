@@ -4,6 +4,15 @@ from pathlib import Path
 from jsonschema import validate, ValidationError
 
 
+REFRESH_VERIFICATION_STATUSES = [
+    "current",
+    "inactive",
+    "deactivated",
+    "historical",
+    "unknown",
+]
+
+
 def load_schema(name="schema.json"):
     path = Path(f"registry/{name}")
     with open(path, "r", encoding="utf-8") as f:
@@ -131,3 +140,335 @@ def test_persons_roles_valid():
             assert "category" in role, "Role missing category"
             assert role["category"] in valid_categories,                 f"Invalid category '{role.get('category')}' for {person['person_id']}"
             assert "is_current" in role, "Role missing is_current"
+
+
+def test_social_profile_refresh_metadata_valid():
+    examples = [
+        (
+            "schema.json",
+            [
+                {
+                    "agency_id": "example-agency",
+                    "name": "Example Agency",
+                    "type": "Department",
+                    "official_website": "https://example.govt.nz",
+                    "status": "active",
+                    "social_profiles": {
+                        "bluesky": {
+                            "handle": "example.govt.nz",
+                            "url": "https://bsky.app/profile/example.govt.nz",
+                            "status": "active",
+                            "last_checked_at": "2026-06-22",
+                            "last_seen_at": "2026-06-22",
+                            "verification_status": "current",
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_parties.json",
+            [
+                {
+                    "party_id": "example-party",
+                    "name": "Example Party",
+                    "status": "active",
+                    "social_profiles": {
+                        "facebook": {
+                            "handle": "ExampleParty",
+                            "url": "https://www.facebook.com/ExampleParty",
+                            "status": "active",
+                            "last_checked_at": "2026-06-22",
+                            "last_seen_at": "2026-06-22",
+                            "verification_status": "current",
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_persons.json",
+            [
+                {
+                    "person_id": "example-person",
+                    "full_name": "Example Person",
+                    "social_profiles": {
+                        "x": {
+                            "handle": "ExamplePerson",
+                            "url": "https://x.com/ExamplePerson",
+                            "status": "inactive",
+                            "last_checked_at": "2026-06-22",
+                            "last_seen_at": "2026-05-20",
+                            "verification_status": "inactive",
+                        }
+                    },
+                    "roles": [
+                        {
+                            "role_id": "example-role",
+                            "title": "Former Member",
+                            "organization": "nz-parliament",
+                            "category": "mp",
+                            "is_current": False,
+                        }
+                    ],
+                }
+            ],
+        ),
+    ]
+
+    for schema_name, payload in examples:
+        validate(instance=payload, schema=load_schema(schema_name))
+
+
+@pytest.mark.parametrize("verification_status", REFRESH_VERIFICATION_STATUSES)
+def test_social_profile_refresh_metadata_accepts_all_states(verification_status):
+    examples = [
+        (
+            "schema.json",
+            [
+                {
+                    "agency_id": "example-agency",
+                    "name": "Example Agency",
+                    "type": "Department",
+                    "official_website": "https://example.govt.nz",
+                    "status": "active",
+                    "social_profiles": {
+                        "bluesky": {
+                            "handle": "example.govt.nz",
+                            "url": "https://bsky.app/profile/example.govt.nz",
+                            "status": "active",
+                            "last_checked_at": "2026-06-22",
+                            "last_seen_at": "2026-06-22",
+                            "verification_status": verification_status,
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_parties.json",
+            [
+                {
+                    "party_id": "example-party",
+                    "name": "Example Party",
+                    "status": "active",
+                    "social_profiles": {
+                        "facebook": {
+                            "handle": "ExampleParty",
+                            "url": "https://www.facebook.com/ExampleParty",
+                            "status": "active",
+                            "last_checked_at": "2026-06-22",
+                            "last_seen_at": "2026-06-22",
+                            "verification_status": verification_status,
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_persons.json",
+            [
+                {
+                    "person_id": "example-person",
+                    "full_name": "Example Person",
+                    "social_profiles": {
+                        "x": {
+                            "handle": "ExamplePerson",
+                            "url": "https://x.com/ExamplePerson",
+                            "status": "inactive",
+                            "last_checked_at": "2026-06-22",
+                            "last_seen_at": "2026-05-20",
+                            "verification_status": verification_status,
+                        }
+                    },
+                    "tenure_linked_profiles": [
+                        {
+                            "platform": "x",
+                            "handle": "ExamplePersonMP",
+                            "url": "https://x.com/ExamplePersonMP",
+                            "role_id": "example-role",
+                            "last_checked_at": "2026-06-22",
+                            "last_seen_at": "2026-05-20",
+                            "verification_status": verification_status,
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "role_id": "example-role",
+                            "title": "Former Member",
+                            "organization": "nz-parliament",
+                            "category": "mp",
+                            "is_current": False,
+                        }
+                    ],
+                }
+            ],
+        ),
+    ]
+
+    for schema_name, payload in examples:
+        validate(instance=payload, schema=load_schema(schema_name))
+
+
+def test_social_profile_refresh_metadata_optional():
+    examples = [
+        (
+            "schema.json",
+            [
+                {
+                    "agency_id": "example-agency",
+                    "name": "Example Agency",
+                    "type": "Department",
+                    "official_website": "https://example.govt.nz",
+                    "status": "active",
+                    "social_profiles": {
+                        "bluesky": {
+                            "handle": "example.govt.nz",
+                            "url": "https://bsky.app/profile/example.govt.nz",
+                            "status": "active",
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_parties.json",
+            [
+                {
+                    "party_id": "example-party",
+                    "name": "Example Party",
+                    "status": "active",
+                    "social_profiles": {
+                        "facebook": {
+                            "handle": "ExampleParty",
+                            "url": "https://www.facebook.com/ExampleParty",
+                            "status": "active",
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_persons.json",
+            [
+                {
+                    "person_id": "example-person",
+                    "full_name": "Example Person",
+                    "social_profiles": {
+                        "x": {
+                            "handle": "ExamplePerson",
+                            "url": "https://x.com/ExamplePerson",
+                            "status": "active",
+                        }
+                    },
+                    "tenure_linked_profiles": [
+                        {
+                            "platform": "x",
+                            "handle": "ExamplePersonMP",
+                            "url": "https://x.com/ExamplePersonMP",
+                            "role_id": "example-role",
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "role_id": "example-role",
+                            "title": "Member",
+                            "organization": "nz-parliament",
+                            "category": "mp",
+                            "is_current": True,
+                        }
+                    ],
+                }
+            ],
+        ),
+    ]
+
+    for schema_name, payload in examples:
+        validate(instance=payload, schema=load_schema(schema_name))
+
+
+def test_social_profile_refresh_metadata_rejects_bad_status():
+    payload = [
+        {
+            "agency_id": "example-agency",
+            "name": "Example Agency",
+            "type": "Department",
+            "official_website": "https://example.govt.nz",
+            "status": "active",
+            "social_profiles": {
+                "bluesky": {
+                    "handle": "example.govt.nz",
+                    "url": "https://bsky.app/profile/example.govt.nz",
+                    "status": "active",
+                    "last_checked_at": "2026-06-22",
+                    "last_seen_at": "2026-06-22",
+                    "verification_status": "fresh",
+                }
+            },
+        }
+    ]
+
+    with pytest.raises(ValidationError):
+        validate(instance=payload, schema=load_schema("schema.json"))
+
+
+def test_social_profile_refresh_metadata_rejects_bad_date():
+    payload = [
+        {
+            "person_id": "example-person",
+            "full_name": "Example Person",
+            "social_profiles": {
+                "x": {
+                    "handle": "ExamplePerson",
+                    "url": "https://x.com/ExamplePerson",
+                    "status": "active",
+                    "last_checked_at": "2026-6-22",
+                    "verification_status": "current",
+                }
+            },
+            "roles": [
+                {
+                    "role_id": "example-role",
+                    "title": "Member",
+                    "organization": "nz-parliament",
+                    "category": "mp",
+                    "is_current": True,
+                }
+            ],
+        }
+    ]
+
+    with pytest.raises(ValidationError):
+        validate(instance=payload, schema=load_schema("schema_persons.json"))
+
+
+def test_tenure_linked_profile_refresh_metadata_rejects_bad_status():
+    payload = [
+        {
+            "person_id": "example-person",
+            "full_name": "Example Person",
+            "tenure_linked_profiles": [
+                {
+                    "platform": "x",
+                    "handle": "ExamplePersonMP",
+                    "url": "https://x.com/ExamplePersonMP",
+                    "role_id": "example-role",
+                    "last_checked_at": "2026-06-22",
+                    "last_seen_at": "2026-05-20",
+                    "verification_status": "fresh",
+                }
+            ],
+            "roles": [
+                {
+                    "role_id": "example-role",
+                    "title": "Member",
+                    "organization": "nz-parliament",
+                    "category": "mp",
+                    "is_current": True,
+                }
+            ],
+        }
+    ]
+
+    with pytest.raises(ValidationError):
+        validate(instance=payload, schema=load_schema("schema_persons.json"))
