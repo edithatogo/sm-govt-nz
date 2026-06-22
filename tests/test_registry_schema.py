@@ -472,3 +472,164 @@ def test_tenure_linked_profile_refresh_metadata_rejects_bad_status():
 
     with pytest.raises(ValidationError):
         validate(instance=payload, schema=load_schema("schema_persons.json"))
+
+ACCOUNT_CLASSIFICATION_VALUES = [
+    "official",
+    "campaign",
+    "personal-public",
+    "office",
+    "party",
+    "inactive",
+    "deactivated",
+]
+
+SYNDICATION_CLASSIFICATION_VALUES = [
+    "unique",
+    "syndicated",
+    "mixed",
+    "unknown",
+]
+
+
+@pytest.mark.parametrize("account_classification", ACCOUNT_CLASSIFICATION_VALUES)
+@pytest.mark.parametrize("syndication_classification", SYNDICATION_CLASSIFICATION_VALUES)
+def test_social_profile_account_classification_accepts_taxonomy(
+    account_classification, syndication_classification
+):
+    examples = [
+        (
+            "schema.json",
+            [
+                {
+                    "agency_id": "example-agency",
+                    "name": "Example Agency",
+                    "type": "Department",
+                    "official_website": "https://example.govt.nz",
+                    "status": "active",
+                    "social_profiles": {
+                        "bluesky": {
+                            "handle": "example.govt.nz",
+                            "url": "https://bsky.app/profile/example.govt.nz",
+                            "status": "active",
+                            "account_classification": account_classification,
+                            "syndication_classification": syndication_classification,
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_parties.json",
+            [
+                {
+                    "party_id": "example-party",
+                    "name": "Example Party",
+                    "status": "active",
+                    "social_profiles": {
+                        "facebook": {
+                            "handle": "ExampleParty",
+                            "url": "https://www.facebook.com/ExampleParty",
+                            "status": "active",
+                            "account_classification": account_classification,
+                            "syndication_classification": syndication_classification,
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_persons.json",
+            [
+                {
+                    "person_id": "example-person",
+                    "full_name": "Example Person",
+                    "social_profiles": {
+                        "x": {
+                            "handle": "ExamplePerson",
+                            "url": "https://x.com/ExamplePerson",
+                            "status": "active",
+                            "account_classification": account_classification,
+                            "syndication_classification": syndication_classification,
+                        }
+                    },
+                    "tenure_linked_profiles": [
+                        {
+                            "platform": "x",
+                            "handle": "ExamplePersonMP",
+                            "url": "https://x.com/ExamplePersonMP",
+                            "role_id": "example-role",
+                            "account_classification": account_classification,
+                            "syndication_classification": syndication_classification,
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "role_id": "example-role",
+                            "title": "Member",
+                            "organization": "nz-parliament",
+                            "category": "mp",
+                            "is_current": True,
+                        }
+                    ],
+                }
+            ],
+        ),
+    ]
+
+    for schema_name, payload in examples:
+        validate(instance=payload, schema=load_schema(schema_name))
+
+
+def test_social_profile_account_classification_rejects_bad_value():
+    payload = [
+        {
+            "agency_id": "example-agency",
+            "name": "Example Agency",
+            "type": "Department",
+            "official_website": "https://example.govt.nz",
+            "status": "active",
+            "social_profiles": {
+                "bluesky": {
+                    "handle": "example.govt.nz",
+                    "url": "https://bsky.app/profile/example.govt.nz",
+                    "status": "active",
+                    "account_classification": "ministerial",
+                    "syndication_classification": "unique",
+                }
+            },
+        }
+    ]
+
+    with pytest.raises(ValidationError):
+        validate(instance=payload, schema=load_schema("schema.json"))
+
+
+def test_tenure_linked_profile_syndication_classification_rejects_bad_value():
+    payload = [
+        {
+            "person_id": "example-person",
+            "full_name": "Example Person",
+            "tenure_linked_profiles": [
+                {
+                    "platform": "x",
+                    "handle": "ExamplePersonMP",
+                    "url": "https://x.com/ExamplePersonMP",
+                    "role_id": "example-role",
+                    "account_classification": "office",
+                    "syndication_classification": "copied",
+                }
+            ],
+            "roles": [
+                {
+                    "role_id": "example-role",
+                    "title": "Member",
+                    "organization": "nz-parliament",
+                    "category": "mp",
+                    "is_current": True,
+                }
+            ],
+        }
+    ]
+
+    with pytest.raises(ValidationError):
+        validate(instance=payload, schema=load_schema("schema_persons.json"))

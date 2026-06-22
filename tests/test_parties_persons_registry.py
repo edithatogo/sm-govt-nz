@@ -216,3 +216,41 @@ def test_check_parties_persons_gaps_script_exists():
         capture_output=True, text=True
     )
     assert result.returncode == 0
+
+
+def test_tenure_linked_profiles_reference_existing_roles(persons):
+    """Every tenure-linked profile must point at a role on the same person."""
+    missing = []
+    for person in persons:
+        role_ids = {
+            role.get("role_id")
+            for role in person.get("roles", [])
+            if isinstance(role, dict)
+        }
+        for profile in person.get("tenure_linked_profiles", []):
+            role_id = profile.get("role_id")
+            if role_id not in role_ids:
+                missing.append({"person_id": person["person_id"], "role_id": role_id})
+    assert not missing, f"Tenure-linked profiles with unknown role_id: {missing}"
+
+
+def test_representative_account_classification_sample(parties, persons, agencies):
+    """The account-classification track keeps a narrow reviewed sample in data."""
+    beehive = next(a for a in agencies if a["agency_id"] == "beehive-nz")
+    national = next(p for p in parties if p["party_id"] == "national-party")
+    luxon = next(p for p in persons if p["person_id"] == "christopher-luxon")
+    campbell = next(p for p in persons if p["person_id"] == "hamish-campbell")
+
+    assert beehive["social_profiles"]["bluesky"]["account_classification"] == "official"
+    assert national["social_profiles"]["facebook"]["account_classification"] == "party"
+    assert luxon["social_profiles"]["facebook"]["account_classification"] == "personal-public"
+    assert campbell["social_profiles"]["facebook"]["account_classification"] == "campaign"
+
+    office_profiles = [
+        profile
+        for profile in luxon.get("tenure_linked_profiles", [])
+        if profile.get("account_classification") == "office"
+    ]
+    assert office_profiles
+    assert office_profiles[0]["role_id"] == "prime-minister"
+    assert office_profiles[0]["syndication_classification"] == "unique"

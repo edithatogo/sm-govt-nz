@@ -107,6 +107,24 @@
                             "type": "string",
                             "enum": ["current", "inactive", "deactivated", "historical", "unknown"],
                             "description": "Operational verification state used for refresh cadence reporting."
+                        },
+                        "account_classification": {
+                            "type": "string",
+                            "enum": [
+                                "official",
+                                "campaign",
+                                "personal-public",
+                                "office",
+                                "party",
+                                "inactive",
+                                "deactivated"
+                            ],
+                            "description": "Account ownership or use classification."
+                        },
+                        "syndication_classification": {
+                            "type": "string",
+                            "enum": ["unique", "syndicated", "mixed", "unknown"],
+                            "description": "Whether profile content is unique, syndicated, mixed, or unknown."
                         }
                     },
                     "required": ["handle", "url", "status"]
