@@ -1,0 +1,63 @@
+name: Courts Missing Mirror Backfill
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_live_posting:
+        description: "Type true to run live backfill."
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      targets:
+        description: "Comma-separated targets, for example bluesky,x,threads."
+        required: true
+        default: "bluesky,x"
+      post_ids:
+        description: "Comma-separated source post IDs to backfill."
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    if: ${{ inputs.confirm_live_posting == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install uv
+        run: python -m pip install uv
+      - name: Install runtime dependencies
+        run: uv pip install --system -r requirements.txt
+      - name: Install Buffer CLI
+        if: ${{ contains(inputs.targets, 'x') }}
+        run: npm install -g @bufferapp/cli
+      - name: Backfill missing mirror posts
+        env:
+          BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
+          BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_X_CHANNEL_ID: ${{ secrets.BUFFER_X_CHANNEL_ID }}
+        run: >-
+          python scripts/post_missing_courts_mirror_posts.py
+          --confirm-live-posting
+          --targets "${{ inputs.targets }}"
+          --post-ids "${{ inputs.post_ids }}"
+      - name: Commit state updates
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Update missing Courts mirror delivery state"
+          --path conductor/target_delivery_state.json
