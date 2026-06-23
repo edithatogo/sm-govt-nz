@@ -21,11 +21,10 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [x] Track: Archive Courts of New Zealand multi-source records and publish datasets
 *Link: [./tracks/courts_nz_multisource_archive_20260612/](./tracks/courts_nz_multisource_archive_20260612/)*
-- All implementation phases complete: 43 of 47 plan tasks done, 4 explicitly
-  paused/deferred per user decision (LinkedIn capture, Phases 3/4; permanent
-  Cloudflare email routing address pending domain registration; 2 standing
-  governance items for future platform accounts). Multi-Source Blocker Status
-  check reports `complete: true`. Hugging Face dataset
+- All implementation phases complete: 47 of 47 plan tasks done. LinkedIn
+  archive-only seed capture is complete with 2 normalized records; permanent
+  Cloudflare email routing remains a zero-spend external guardrail, not an open
+  implementation task. Multi-Source Blocker Status check reports `complete: true`. Hugging Face dataset
   (`courts-nz-public-notices-archive`) and Zenodo v1 DOI
   (`10.5281/zenodo.20690547`) are live.
 

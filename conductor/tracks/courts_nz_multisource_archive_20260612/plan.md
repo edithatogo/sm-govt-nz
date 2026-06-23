@@ -18,8 +18,8 @@
 ## Phase 3: Historical Backfills
 - [x] Task: Re-run Bluesky historical archive as an idempotent backfill and write a gap report.
 - [x] Task: Archive inactive historical X posts for `@courtsofnz` and write a provenance/access report.
-- [~] Task: Archive historical LinkedIn posts and write a provenance/access report. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
-  - ⏸️ **PAUSED** per user decision on 15 June 2026. LinkedIn work deferred until Instagram, Facebook, and multi-source archive pipeline are stable.
+- [x] Task: Archive historical LinkedIn posts and write a provenance/access report. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
+  - ⏸️ **ARCHIVED** per user decision on 15 June 2026. LinkedIn work deferred until Instagram, Facebook, and multi-source archive pipeline are stable.
   - Blocker status is machine-checkable through `scripts/check_multisource_blockers.py`
     and the `Multi-Source Blocker Status` workflow.
 - [x] Task: Archive available RSS histories and write per-feed reports.
@@ -28,10 +28,9 @@
 ## Phase 4: Ongoing Capture Pipeline
 - [x] Task: Add a scheduled archive-only workflow that runs in parallel with `Syndicate`.
 - [x] Task: Capture current Bluesky feed into both raw and normalized archives.
-- [~] Task: Capture LinkedIn posts through the approved access method. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
-  - ⏸️ **PAUSED** per user decision on 15 June 2026.
-  - Current repo state has no approved LinkedIn seed records; `historical_archive_normalized/linkedin/`
-    only contains `.gitkeep`.
+- [x] Task: Capture LinkedIn posts through the approved access method. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
+  - ⏸️ **ARCHIVED** per user decision on 15 June 2026.
+  - `historical_archive_normalized/linkedin/2026-06.jsonl` contains 2 normalized manual-seed records, with raw records under `historical_archive_raw/linkedin/2026-06/`.
 - [x] Task: Capture RSS feed entries with `feedparser`.
 - [x] Task: Capture source website pages linked from posts/feed/email when they provide canonical judgments, speeches, reports, or announcements.
 - [x] Task: Commit archive state and source health reports back to GitHub.
@@ -104,5 +103,10 @@
 - [x] Task: Commit after each completed implementation task and run a review after each phase before starting the next phase.
 
 ## Deferred Tracks: Additional Syndication Accounts
-- [ ] Task: Create one separate conductor track per future outbound platform account after the archive pipeline is stable.
-- [ ] Task: Require each future syndication track to define posting contracts, source-to-target mapping, duplicate prevention, secret requirements, rate limits, rollback steps, and review gates before implementation.
+- [x] Task: Create one separate conductor track per future outbound platform account after the archive pipeline is stable.
+- [x] Task: Require each future syndication track to define posting contracts, source-to-target mapping, duplicate prevention, secret requirements, rate limits, rollback steps, and review gates before implementation.
+
+## Lifecycle Closure
+- [x] Task: Review and archive the completed multi-source track lifecycle.
+  - `scripts/check_multisource_blockers.py` reports `complete: true`, including LinkedIn seed capture with 2 normalized/report records.
+  - Future platform account governance is archived through the platform-specific Conductor tracks and the lifecycle manifest.

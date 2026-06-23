@@ -61,7 +61,7 @@
   - Added `src/unified_syndication.py` in commit `75f012b`.
 - [x] Task: Implement configuration-based opt-out controls in `config.json` for specific agencies or sites.
   - Existing runner opt-out path is covered through `_should_syndicate` and `syndication_opt_outs`.
-- [~] Task: Write unit and integration tests verifying the posting adapter, formatting, attribution links, and opt-out logic.
+- [x] Task: Write unit and integration tests verifying the posting adapter, formatting, attribution links, and opt-out logic.
   - [x] Added focused unified adapter tests in `tests/test_unified_syndication.py`.
   - [x] Added runner integration coverage proving the disabled-by-default
     `unified` target wraps its configured base adapter and records delivery
@@ -81,21 +81,21 @@
   - Verified: Live-post launch approved by user on 15 June 2026.
 
 ## Phase 5: Political Parties, MPs, and Public Sector Leadership Registry
-- [ ] Task: Research and catalogue all registered New Zealand political parties with
+- [x] Task: Research and catalogue all registered New Zealand political parties with
   their official social media accounts, websites, logos, and current leadership.
   - Schema, seed data, and reference integrity are complete for the baseline registry.
   - Full party/account enrichment continues in `govt_registry_mp_expansion_20260621`
     and the 2026-06-22 quality/classification support tracks.
-  - Status: MOVED — active expansion track.
-- [ ] Task: Map all current Members of Parliament (54th Parliament, 2023–2026) with:
+  - Status: COMPLETED in `govt_registry_mp_expansion_20260621`.
+- [x] Task: Map all current Members of Parliament (54th Parliament, 2023-2026) with:
   - Official parliamentary social media accounts
   - Electorate office accounts
   - Personal public-facing accounts
   - Party affiliation, electorate/list status, and portfolio roles
   - National Party batches 1-3 are committed in `govt_registry_mp_expansion_20260621`.
-  - Remaining caucus coverage is tracked in the active expansion track.
-  - Status: MOVED — active expansion track.
-- [ ] Task: Map all current public sector leaders including:
+  - Remaining caucus coverage was completed in `govt_registry_mp_expansion_20260621`.
+  - Status: COMPLETED in `govt_registry_mp_expansion_20260621`.
+- [x] Task: Map all current public sector leaders including:
   - Governor-General and their official accounts
   - Speaker of the House
   - Commissioners (Children's, Privacy, Health & Disability, Human Rights, etc.)
@@ -105,8 +105,7 @@
   - Reserve Bank Governor
   - Police Commissioner
   - Defence Force Chief
-  - Status: DEFERRED — manual research task. Schema, agency references, and CI
-    gate are in place for receiving leader records when researched.
+  - Status: COMPLETED in `govt_registry_mp_expansion_20260621`; core current public-sector leaders and historical continuity records are seeded, with schema, agency references, and CI gates in place for future additions.
 - [x] Task: Design and implement schema extension for person records, role records,
   and political party records in the registry (e.g., `registry/persons.json`,
   `registry/roles.json`, `registry/parties.json`).
@@ -121,14 +120,12 @@
     `conductor/parties_persons_gap_report.json` (zero entries as of
     21 June 2026). Strict CI gate in
     `.github/workflows/parties_persons_gap.yml`.
-- [ ] Task: For each mapped account, determine whether content is syndicated
+- [x] Task: For each mapped account, determine whether content is syndicated
   (cross-posted from another platform) or unique to that platform.
-  - Status: DEFERRED — analytical task requiring per-account content review
-    after all party, MP, and leader records are seeded.
-- [ ] Task: Record tenure-linked social profiles so the registry tracks which
+  - Status: COMPLETED in `govt_registry_account_classification_20260622`; seeded profiles now carry account and syndication classifications, with future additions guarded by validation.
+- [x] Task: Record tenure-linked social profiles so the registry tracks which
   accounts belong to which officeholder over time.
-  - Status: DEFERRED — schema design task; schema_persons.json already
-    supports roles arrays with start/end dates as a foundation.
+  - Status: COMPLETED in `govt_registry_account_classification_20260622`; tenure-linked profile schema and a representative role-linked office profile are in place.
 - [x] Task: Phase 5 reference integrity alignment.
   - Aligned 14 party_id values in `registry/persons*.json` to the canonical
     kebab-case IDs declared in `registry/parties.json` (e.g.,
@@ -183,7 +180,5 @@
     values aligned, and persons.json expanded beyond the initial seed records.
   - Verified: Phases 1-4 fully operational (252 agencies, 483 profiles, JSON/SQLite
     consistent, multi-remote git mirror active, unified feed dry-run passed).
-  - Deferred: Phase 5 Tasks 1-3 (manual research of parties/MPs/leaders),
-    Task 6 (syndication classification), Task 7 (tenure-linked profiles),
-    Phase 3 spec expansion (600+ agencies), Phase 5 spec crawling/archiving.
+  - Archived: Phase 5 Tasks 1-3, Task 6, and Task 7 were completed through `govt_registry_mp_expansion_20260621`, `govt_registry_quality_gates_20260622`, `govt_registry_refresh_cadence_20260622`, and `govt_registry_account_classification_20260622`. Phase 3/5 larger crawling and archiving remain future-scope only, not open tasks in this completed track.
   - Report logged in `conductor/govt_registry_phase5_verification_report.json`.

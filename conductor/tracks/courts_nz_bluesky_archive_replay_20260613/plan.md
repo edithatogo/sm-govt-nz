@@ -79,4 +79,4 @@
     tests/test_categorize_unreplayable_records.py tests/test_archive_mirror_backlog.py
     tests/test_verify_archive_mirror_posts.py`.
 - [x] Task: Update the parent Bluesky mirror track and archive/corpus tracks.
-  - Updated `conductor/tracks.md` from `[~]` to `[x]` for this track.
+  - Updated `conductor/tracks.md` from in-progress to completed for this track.
