@@ -281,7 +281,8 @@ def test_runner_does_not_advance_source_state_when_target_delivery_fails(tmp_pat
     assert [post["post_id"] for post in bluesky.sent_posts] == ["post-1"]
     assert delivery_state["delivered_post_ids"]["bluesky"]["agency.bsky.social"] == ["post-1"]
     assert "threads" not in delivery_state["delivered_post_ids"]
-    assert next_state == state
+    assert delivery_state["pending_post_ids"]["threads"]["agency.bsky.social"] == ["post-1"]
+    assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-1"
 
 
 def test_runner_isolates_target_adapter_exceptions(tmp_path) -> None:
@@ -307,7 +308,8 @@ def test_runner_isolates_target_adapter_exceptions(tmp_path) -> None:
     assert [post["post_id"] for post in bluesky.sent_posts] == ["post-1"]
     assert delivery_state["delivered_post_ids"]["bluesky"]["agency.bsky.social"] == ["post-1"]
     assert "threads" not in delivery_state["delivered_post_ids"]
-    assert next_state == state
+    assert delivery_state["pending_post_ids"]["threads"]["agency.bsky.social"] == ["post-1"]
+    assert next_state["last_seen_post_ids"]["agency.bsky.social"] == "post-1"
     assert summary.accounts[0].results[-1].platform == "threads"
     assert summary.accounts[0].results[-1].success is False
     assert "RuntimeError: remote unavailable" in summary.accounts[0].results[-1].detail
