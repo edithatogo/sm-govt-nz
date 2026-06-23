@@ -184,7 +184,7 @@ def _send_with_isolation(
 
 
 def _target_failure_isolated(target: str) -> bool:
-    return target in {"x"}
+    return target in {"x", "threads"}
 
 
 def main(
