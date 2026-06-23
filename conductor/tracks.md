@@ -111,7 +111,7 @@ mirrors must be created as separate conductor tracks after the Courts of New
 Zealand archive and corpus pipeline is stable, with no posting under Dylan
 Mordaunt, `edithatogo`, or other personal identities.
 
-## [~] Track: NZ Government Social Media Registry — full expansion: MPs, parties, public sector leaders, historical figures
+## [x] Track: NZ Government Social Media Registry — full expansion: MPs, parties, public sector leaders, historical figures
 *Link: [./tracks/govt_registry_mp_expansion_20260621/](./tracks/govt_registry_mp_expansion_20260621/)*
 - Phase 0 complete (tooling + track setup).
 - Current 54th Parliament MP roster coverage is locally complete across National,
@@ -122,7 +122,7 @@ Mordaunt, `edithatogo`, or other personal identities.
   now includes recent former Prime Ministers, former/current Deputy Prime Minister
   continuity, major-party leaders from 1990 onward, Chief Justice Helen Winkelmann,
   and core current public-sector leaders. Persons registry has 190 records. Remote
-  push/GitHub Actions verification is pending explicit approval.
+  push/GitHub Actions verification passed on 2026-06-23.
 
 ## [x] Track: NZ Government Social Media Registry — provenance and batch quality gates
 *Link: [./tracks/govt_registry_quality_gates_20260622/](./tracks/govt_registry_quality_gates_20260622/)*
