@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "artifact": {
+    "name": "sm-govt-nz",
+    "owning_repo": "sm-govt-nz",
+    "artifact_type": "python_package",
+    "version": "0.1.0",
+    "license": "TBD",
+    "public_contracts": [
+      "package API",
+      "CLI entry points",
+      "data exports"
+    ],
+    "release_notes_path": "RELEASE.md",
+    "support_policy_path": "SECURITY.md"
+  },
+  "registries": [
+    {
+      "registry_id": "pypi",
+      "registry_kind": "package",
+      "submission_status": "not_started",
+      "requirements": [
+        {
+          "id": "pypi-metadata",
+          "description": "PyPI package metadata (name, version, description, license, classifiers) are ready.",
+          "status": "pending"
+        },
+        {
+          "id": "build-artifacts",
+          "description": "Source distribution and wheel build successfully.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "registry_id": "conda_forge",
+      "registry_kind": "package",
+      "submission_status": "not_started",
+      "requirements": [
+        {
+          "id": "conda-recipe",
+          "description": "Conda recipe (meta.yaml) is prepared and tested.",
+          "status": "pending"
+        },
+        {
+          "id": "feedstock-setup",
+          "description": "Conda-forge feedstock repository is initialized.",
+          "status": "pending"
+        }
+      ]
+    }
+  ],
+  "quality_gates": [
+    {
+      "name": "Package build",
+      "command_or_workflow": "python -m build",
+      "status": "pending"
+    },
+    {
+      "name": "Import check",
+      "command_or_workflow": "python -c 'import sm_govt_nz'",
+      "status": "pending"
+    }
+  ],
+  "security_gates": [
+    {
+      "name": "No secrets in package",
+      "status": "pending"
+    },
+    {
+      "name": "Dependency vulnerability scan",
+      "status": "pending"
+    }
+  ],
+  "submission_workflow": {
+    "phases": [
+      {
+        "name": "Package registry inventory",
+        "status": "in_progress",
+        "tasks": [
+          "Map PyPI and conda-forge requirements.",
+          "Record package build and test status."
+        ]
+      },
+      {
+        "name": "Publication",
+        "status": "blocked",
+        "tasks": [
+          "Publish only after review approval and external-write approval."
+        ],
+        "blocker": "External-write approval required."
+      }
+    ],
+    "commit_policy": "Commit manifest and evidence in the owning repo only.",
+    "review_policy": "Review package metadata, build artifacts, and security before publication.",
+    "actions_policy": "Check GitHub Actions publish workflow before and after approved upload."
+  }
+}
