@@ -26,7 +26,7 @@ def profile_cli():
     profiler.enable()
     
     try:
-        from scripts.cli import main as cli_main
+        from scripts.cli import main as cli_main  # noqa: F401
         console.print("[yellow]CLI imported (full run requires CLI args)[/yellow]")
     except ImportError as e:
         console.print(f"[red]Could not import CLI: {e}[/red]")
@@ -51,8 +51,8 @@ def profile_archive_bluesky():
     profiler.enable()
     
     try:
-        from scripts.archive_bluesky_history import main as bluesky_main
-        from scripts.archive_bluesky_profiles import main as profiles_main
+        from scripts.archive_bluesky_history import main as bluesky_main  # noqa: F401
+        from scripts.archive_bluesky_profiles import main as profiles_main  # noqa: F401
         console.print("[yellow]Bluesky archive modules imported[/yellow]")
     except ImportError as e:
         console.print(f"[red]Could not import Bluesky modules: {e}[/red]")
@@ -78,7 +78,7 @@ def profile_archive_rss():
     profiler.enable()
     
     try:
-        from scripts.archive_rss_history import main as rss_main
+        from scripts.archive_rss_history import main as rss_main  # noqa: F401
         console.print("[yellow]RSS archive module imported[/yellow]")
     except ImportError as e:
         console.print(f"[red]Could not import RSS module: {e}[/red]")
@@ -103,7 +103,7 @@ def profile_compile_registry():
     profiler.enable()
     
     try:
-        from scripts.compile_registry import main as registry_main
+        from scripts.compile_registry import main as registry_main  # noqa: F401
         console.print("[yellow]compile_registry imported[/yellow]")
     except ImportError as e:
         console.print(f"[red]Could not import compile_registry: {e}[/red]")
@@ -129,7 +129,7 @@ def profile_dedupe():
     profiler.enable()
     
     try:
-        from scripts.check_noop_diff import main as noop_main
+        from scripts.check_noop_diff import main as noop_main  # noqa: F401
         console.print("[yellow]check_noop_diff imported[/yellow]")
     except ImportError as e:
         console.print(f"[red]Could not import check_noop_diff: {e}[/red]")
@@ -154,7 +154,7 @@ def profile_publish_archives():
     profiler.enable()
     
     try:
-        from scripts.publish_archives import main as publish_main
+        from scripts.publish_archives import main as publish_main  # noqa: F401
         console.print("[yellow]publish_archives imported[/yellow]")
     except ImportError as e:
         console.print(f"[red]Could not import publish_archives: {e}[/red]")
@@ -180,7 +180,7 @@ def profile_verify_mirrors():
     profiler.enable()
     
     try:
-        from scripts.verify_archive_mirror_posts import main as verify_main
+        from scripts.verify_archive_mirror_posts import main as verify_main  # noqa: F401
         console.print("[yellow]verify_archive_mirror_posts imported[/yellow]")
     except ImportError as e:
         console.print(f"[red]Could not import verify_archive_mirror_posts: {e}[/red]")
