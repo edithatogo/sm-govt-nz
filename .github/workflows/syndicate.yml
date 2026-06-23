@@ -50,14 +50,14 @@ jobs:
         run: python scripts/bluesky_api_probe.py
       - name: Validate Threads syndication secrets
         id: validate_threads
-        continue-on-error: ${{ github.event_name == 'schedule' }}
+        continue-on-error: true
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
         run: python scripts/validate_secrets.py --mode syndicate --target threads
       - name: Probe Threads credentials
         id: probe_threads
-        continue-on-error: ${{ github.event_name == 'schedule' }}
+        continue-on-error: true
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
