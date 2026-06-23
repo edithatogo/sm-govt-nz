@@ -2,7 +2,7 @@
 
 The input JSON may be either one person object or a list of person objects.
 The command validates the resulting full registry against
-registry/schema_persons.json before writing.
+registry/schema_persons.json and strict reference-integrity gates before writing.
 """
 
 from __future__ import annotations
@@ -14,6 +14,11 @@ from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft7Validator
+
+try:
+    from scripts.check_parties_persons_gaps import build_reference_gap_report
+except ModuleNotFoundError:  # pragma: no cover - direct script execution path
+    from check_parties_persons_gaps import build_reference_gap_report
 
 
 DEFAULT_REGISTRY_DIR = Path("registry")
@@ -50,6 +55,30 @@ def duplicate_person_ids(records: list[dict[str, Any]]) -> list[str]:
             duplicates.append(person_id)
         seen.add(person_id)
     return duplicates
+
+
+def reference_integrity_errors(
+    *,
+    registry_dir: Path,
+    updated_persons: list[dict[str, Any]],
+) -> list[str]:
+    parties = load_json(registry_dir / "parties.json")
+    agencies = load_json(registry_dir / "government_directory.json")
+    if not isinstance(parties, list):
+        raise ValueError(f"{registry_dir / 'parties.json'} must contain a list")
+    if not isinstance(agencies, list):
+        raise ValueError(f"{registry_dir / 'government_directory.json'} must contain a list")
+
+    report = build_reference_gap_report(parties, updated_persons, agencies)
+    errors: list[str] = []
+    for person_id in report["persons_unknown_party"]:
+        errors.append(f"person {person_id} references an unknown party_id")
+    for gap in report["persons_unknown_agency_in_role"]:
+        errors.append(
+            f"person {gap['person_id']} references unknown role organization "
+            f"{gap['organization']}"
+        )
+    return errors
 
 
 def append_person_records(
@@ -92,6 +121,13 @@ def append_person_records(
         )
 
     updated = [*persons, *new_records]
+    reference_errors = reference_integrity_errors(
+        registry_dir=registry_dir,
+        updated_persons=updated,
+    )
+    if reference_errors:
+        raise ValueError("reference integrity failed: " + "; ".join(reference_errors[:5]))
+
     errors = sorted(
         Draft7Validator(schema).iter_errors(updated),
         key=lambda error: list(error.path),

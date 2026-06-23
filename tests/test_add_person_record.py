@@ -19,11 +19,35 @@ def _registry(tmp_path: Path) -> Path:
         json.loads(Path("registry/schema_persons.json").read_text(encoding="utf-8")),
     )
     _write_json(
+        registry_dir / "government_directory.json",
+        [
+            {
+                "agency_id": "nz-parliament",
+                "name": "New Zealand Parliament",
+                "type": "Parliament",
+                "official_website": "https://www.parliament.nz",
+                "status": "active",
+                "social_profiles": {},
+            }
+        ],
+    )
+    _write_json(
+        registry_dir / "parties.json",
+        [
+            {
+                "party_id": "example-party",
+                "name": "Example Party",
+                "status": "active",
+            }
+        ],
+    )
+    _write_json(
         registry_dir / "persons.json",
         [
             {
                 "person_id": "existing-person",
                 "full_name": "Existing Person",
+                "party_id": "example-party",
                 "roles": [
                     {
                         "role_id": "existing-role",
@@ -43,6 +67,7 @@ def _person(person_id: str = "new-person") -> dict:
     return {
         "person_id": person_id,
         "full_name": "New Person",
+        "party_id": "example-party",
         "roles": [
             {
                 "role_id": f"{person_id}-role",
@@ -99,6 +124,36 @@ def test_append_person_records_rejects_existing_duplicate(tmp_path):
         raise AssertionError("expected duplicate person_id to fail")
 
 
+def test_append_person_records_rejects_duplicate_ids_in_input(tmp_path):
+    registry_dir = _registry(tmp_path)
+    input_path = tmp_path / "people.json"
+    _write_json(input_path, [_person("dup-person"), _person("dup-person")])
+
+    try:
+        append_person_records(input_path=input_path, registry_dir=registry_dir)
+    except ValueError as exc:
+        assert "duplicate person_id values in input" in str(exc)
+    else:
+        raise AssertionError("expected duplicate input person_id to fail")
+
+
+def test_append_person_records_rejects_unknown_role_organization(tmp_path):
+    registry_dir = _registry(tmp_path)
+    input_path = tmp_path / "person.json"
+    person = _person()
+    person["roles"][0]["organization"] = "missing-agency"
+    _write_json(input_path, person)
+
+    try:
+        append_person_records(input_path=input_path, registry_dir=registry_dir)
+    except ValueError as exc:
+        message = str(exc)
+        assert "reference integrity failed" in message
+        assert "missing-agency" in message
+    else:
+        raise AssertionError("expected unknown role organization to fail")
+
+
 def test_append_person_records_rejects_schema_invalid_input(tmp_path):
     registry_dir = _registry(tmp_path)
     input_path = tmp_path / "person.json"
@@ -110,6 +165,32 @@ def test_append_person_records_rejects_schema_invalid_input(tmp_path):
         assert "schema validation failed" in str(exc)
     else:
         raise AssertionError("expected schema invalid record to fail")
+
+
+def test_append_person_records_rejects_invalid_evidence_metadata(tmp_path):
+    registry_dir = _registry(tmp_path)
+    input_path = tmp_path / "person.json"
+    person = _person()
+    person["social_profiles"] = {
+        "x": {
+            "handle": "NewPerson",
+            "url": "https://x.com/NewPerson",
+            "status": "active",
+            "evidence": {
+                "source_url": "https://example.govt.nz/new-person",
+                "source_type": "rumour",
+                "captured_at": "2026-06-22",
+            },
+        }
+    }
+    _write_json(input_path, person)
+
+    try:
+        append_person_records(input_path=input_path, registry_dir=registry_dir)
+    except ValueError as exc:
+        assert "schema validation failed" in str(exc)
+    else:
+        raise AssertionError("expected invalid evidence metadata to fail")
 
 
 def test_add_person_record_cli_validate_only(tmp_path):

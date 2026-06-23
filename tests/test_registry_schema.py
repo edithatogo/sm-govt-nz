@@ -633,3 +633,153 @@ def test_tenure_linked_profile_syndication_classification_rejects_bad_value():
 
     with pytest.raises(ValidationError):
         validate(instance=payload, schema=load_schema("schema_persons.json"))
+
+
+EVIDENCE_SOURCE_TYPES = [
+    "official-website",
+    "platform-profile",
+    "public-registry",
+    "manual-review",
+    "archive",
+    "other",
+]
+
+
+def _evidence_payload(source_type: str = "official-website"):
+    return {
+        "source_url": "https://example.govt.nz/social-media",
+        "source_type": source_type,
+        "captured_at": "2026-06-22",
+        "reviewed_by": "registry-quality-gate",
+        "notes": "Reviewed source mapping.",
+    }
+
+
+@pytest.mark.parametrize("source_type", EVIDENCE_SOURCE_TYPES)
+def test_social_profile_evidence_metadata_accepts_source_types(source_type):
+    examples = [
+        (
+            "schema.json",
+            [
+                {
+                    "agency_id": "example-agency",
+                    "name": "Example Agency",
+                    "type": "Department",
+                    "official_website": "https://example.govt.nz",
+                    "status": "active",
+                    "social_profiles": {
+                        "bluesky": {
+                            "handle": "example.govt.nz",
+                            "url": "https://bsky.app/profile/example.govt.nz",
+                            "status": "active",
+                            "evidence": _evidence_payload(source_type),
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_parties.json",
+            [
+                {
+                    "party_id": "example-party",
+                    "name": "Example Party",
+                    "status": "active",
+                    "social_profiles": {
+                        "facebook": {
+                            "handle": "ExampleParty",
+                            "url": "https://www.facebook.com/ExampleParty",
+                            "status": "active",
+                            "evidence": _evidence_payload(source_type),
+                        }
+                    },
+                }
+            ],
+        ),
+        (
+            "schema_persons.json",
+            [
+                {
+                    "person_id": "example-person",
+                    "full_name": "Example Person",
+                    "social_profiles": {
+                        "x": {
+                            "handle": "ExamplePerson",
+                            "url": "https://x.com/ExamplePerson",
+                            "status": "active",
+                            "evidence": _evidence_payload(source_type),
+                        }
+                    },
+                    "tenure_linked_profiles": [
+                        {
+                            "platform": "x",
+                            "handle": "ExamplePersonMP",
+                            "url": "https://x.com/ExamplePersonMP",
+                            "role_id": "example-role",
+                            "evidence": _evidence_payload(source_type),
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "role_id": "example-role",
+                            "title": "Member",
+                            "organization": "nz-parliament",
+                            "category": "mp",
+                            "is_current": True,
+                        }
+                    ],
+                }
+            ],
+        ),
+    ]
+
+    for schema_name, payload in examples:
+        validate(instance=payload, schema=load_schema(schema_name))
+
+
+@pytest.mark.parametrize(
+    "bad_evidence",
+    [
+        {
+            "source_url": "https://example.govt.nz/social-media",
+            "source_type": "rumour",
+            "captured_at": "2026-06-22",
+        },
+        {
+            "source_url": "https://example.govt.nz/social-media",
+            "source_type": "official-website",
+            "captured_at": "2026-6-22",
+        },
+        {
+            "source_url": "https://example.govt.nz/social-media",
+            "source_type": "official-website",
+        },
+        {
+            "source_url": "https://example.govt.nz/social-media",
+            "source_type": "official-website",
+            "captured_at": "2026-06-22",
+            "unexpected": "field",
+        },
+    ],
+)
+def test_social_profile_evidence_metadata_rejects_invalid_payload(bad_evidence):
+    payload = [
+        {
+            "agency_id": "example-agency",
+            "name": "Example Agency",
+            "type": "Department",
+            "official_website": "https://example.govt.nz",
+            "status": "active",
+            "social_profiles": {
+                "bluesky": {
+                    "handle": "example.govt.nz",
+                    "url": "https://bsky.app/profile/example.govt.nz",
+                    "status": "active",
+                    "evidence": bad_evidence,
+                }
+            },
+        }
+    ]
+
+    with pytest.raises(ValidationError):
+        validate(instance=payload, schema=load_schema("schema.json"))

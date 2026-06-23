@@ -36,7 +36,7 @@
 - [ ] Task: Push Phase 1 to remote, verify GitHub Actions
 
 ### Phase 2: Labour Party Caucus
-- [ ] Task: Confirm `govt_registry_quality_gates_20260622` Phase 1 gates are in place before appending new Labour records.
+- [x] Task: Confirm `govt_registry_quality_gates_20260622` Phase 1 gates are in place before appending new Labour records.
 - [ ] Task: Research and fill 38 empty social profile handles
 - [ ] Task: Research remaining ~20 Labour MPs and add records
 - [ ] Task: Validate, append, verify, commit
@@ -111,4 +111,6 @@
   future seeded profiles must include `account_classification` and
   `syndication_classification`, and role-linked accounts must reference an
   existing `role_id`.
-- Next coverage batch is Labour, but it should wait until the quality-gates track defines the evidence/provenance fields and strict batch checks.
+- Next coverage batch is Labour; use `python scripts/add_person_record.py --input scripts/data/<batch>.json --validate-only` before append, then run `python scripts/check_parties_persons_gaps.py --strict --allow-leaders 0 --allow-presidents 0 --write-report`.
+
+- Quality-gates track is complete: evidence metadata is optional but validated when present, append batches reject unknown role organizations, and the strict gap gate recomputes from current registry files by default.

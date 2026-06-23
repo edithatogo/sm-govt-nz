@@ -116,13 +116,13 @@ Mordaunt, `edithatogo`, or other personal identities.
 - Phase 0 complete (tooling + track setup)
 - Phase 1 National Party batches 1/3, 2/3, and 3/3 are committed and strict
   reference-integrity gates pass.
-- Next coverage step: push/verify National Phase 1, then begin Labour only after
-  quality-gate provenance rules are accepted.
+- Next coverage step: push/verify National Phase 1, then begin Labour using
+  `scripts/add_person_record.py --validate-only` and the recomputed strict gap gate.
 
-## [ ] Track: NZ Government Social Media Registry — provenance and batch quality gates
+## [x] Track: NZ Government Social Media Registry — provenance and batch quality gates
 *Link: [./tracks/govt_registry_quality_gates_20260622/](./tracks/govt_registry_quality_gates_20260622/)*
-- Adds evidence metadata, stricter batch validation, unknown-organization rejection,
-  and recomputed reference-integrity checks before further expansion batches.
+- Complete: evidence metadata, stricter batch validation, unknown-organization rejection,
+  and recomputed reference-integrity checks are in place for further expansion batches.
 
 ## [x] Track: NZ Government Social Media Registry — verification refresh cadence
 *Link: [./tracks/govt_registry_refresh_cadence_20260622/](./tracks/govt_registry_refresh_cadence_20260622/)*

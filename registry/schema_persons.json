@@ -26,7 +26,10 @@
                 "description": "Honorific prefix (e.g., Hon, Dr, Rt Hon)."
             },
             "party_id": {
-                "type": ["string", "null"],
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "pattern": "^[a-z0-9-]+$",
                 "description": "Political party affiliation (party_id from parties.json). Null for non-partisan officeholders (Governor-General, Judges, Chief Executives, etc.)."
             },
@@ -151,6 +154,48 @@
                                 "unknown"
                             ],
                             "description": "Whether profile content is unique, syndicated, mixed, or unknown."
+                        },
+                        "evidence": {
+                            "type": "object",
+                            "properties": {
+                                "source_url": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "description": "URL used as evidence for this profile mapping."
+                                },
+                                "source_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "official-website",
+                                        "platform-profile",
+                                        "public-registry",
+                                        "manual-review",
+                                        "archive",
+                                        "other"
+                                    ],
+                                    "description": "Kind of evidence supporting this profile mapping."
+                                },
+                                "captured_at": {
+                                    "type": "string",
+                                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                                    "description": "Date the evidence was captured or reviewed."
+                                },
+                                "reviewed_by": {
+                                    "type": "string",
+                                    "description": "Reviewer or process that accepted the evidence."
+                                },
+                                "notes": {
+                                    "type": "string",
+                                    "description": "Short provenance note for ambiguous mappings."
+                                }
+                            },
+                            "required": [
+                                "source_url",
+                                "source_type",
+                                "captured_at"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Optional provenance metadata for this profile mapping."
                         }
                     },
                     "required": [
@@ -311,6 +356,48 @@
                                 "unknown"
                             ],
                             "description": "Whether profile content is unique, syndicated, mixed, or unknown."
+                        },
+                        "evidence": {
+                            "type": "object",
+                            "properties": {
+                                "source_url": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "description": "URL used as evidence for this profile mapping."
+                                },
+                                "source_type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "official-website",
+                                        "platform-profile",
+                                        "public-registry",
+                                        "manual-review",
+                                        "archive",
+                                        "other"
+                                    ],
+                                    "description": "Kind of evidence supporting this profile mapping."
+                                },
+                                "captured_at": {
+                                    "type": "string",
+                                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                                    "description": "Date the evidence was captured or reviewed."
+                                },
+                                "reviewed_by": {
+                                    "type": "string",
+                                    "description": "Reviewer or process that accepted the evidence."
+                                },
+                                "notes": {
+                                    "type": "string",
+                                    "description": "Short provenance note for ambiguous mappings."
+                                }
+                            },
+                            "required": [
+                                "source_url",
+                                "source_type",
+                                "captured_at"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Optional provenance metadata for this profile mapping."
                         }
                     },
                     "required": [

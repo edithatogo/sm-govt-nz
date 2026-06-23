@@ -285,3 +285,10 @@ def test_all_social_profiles_have_account_classification(parties, persons, agenc
                 )
 
     assert not missing, f"Profiles missing classification metadata: {missing}"
+
+
+
+def test_canonical_role_organization_ids_are_seeded(agencies):
+    """Quality gates protect common role organization IDs from regression."""
+    agency_ids = {agency["agency_id"] for agency in agencies}
+    assert {"the-treasury", "mbie", "nz-police"} <= agency_ids

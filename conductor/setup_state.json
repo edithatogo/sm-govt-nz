@@ -248,19 +248,19 @@
     "pending": 38,
     "total": 52,
     "current_task": "None",
-    "next_action": "Push National Phase 1 and verify GitHub Actions.",
-    "blockers": "Quality-gate provenance rules should be accepted before Labour batches are appended."
+    "next_action": "Append the next Labour batch with add_person_record.py --validate-only, then run the recomputed strict gap gate.",
+    "blockers": "None"
   },
   {
     "id": "govt_registry_quality_gates_20260622",
     "name": "NZ Government Social Media Registry - provenance and batch quality gates",
-    "status": "pending",
-    "done": 0,
+    "status": "completed",
+    "done": 14,
     "inprogress": 0,
-    "pending": 14,
+    "pending": 0,
     "total": 14,
     "current_task": "None",
-    "next_action": "Record current strict gap baseline and add canonical role-organization regression tests.",
+    "next_action": "Use add_person_record.py --validate-only and the recomputed strict gap gate for future person batches.",
     "blockers": "None"
   },
   {
