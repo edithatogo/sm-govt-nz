@@ -59,7 +59,7 @@ jobs:
       - name: Install uv
         run: python -m pip install uv
       - name: Install dependencies
-        run: uv pip install -r requirements.txt
+        run: uv pip install --system -r requirements.txt
       - name: Build archive compaction manifest
         run: >-
           python scripts/build_archive_compaction_manifest.py
