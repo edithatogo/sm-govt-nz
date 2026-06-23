@@ -26,6 +26,7 @@ different file content for the same path.
 from __future__ import annotations
 
 import json
+from collections import Counter
 from pathlib import Path
 
 import pytest
@@ -38,6 +39,9 @@ SCHEMA_PARTIES = REGISTRY_DIR / "schema_parties.json"
 SCHEMA_PERSONS = REGISTRY_DIR / "schema_persons.json"
 AGENCIES_FILE = REGISTRY_DIR / "government_directory.json"
 GAP_REPORT_PATH = Path("conductor/parties_persons_gap_report.json")
+CURRENT_MP_SOCIAL_REVIEW = Path(
+    "conductor/current_mp_social_profile_review_20260623.json"
+)
 
 PARTY_SOURCE_FILES = [
     REGISTRY_DIR / "persons_national.json",
@@ -286,6 +290,94 @@ def test_all_social_profiles_have_account_classification(parties, persons, agenc
 
     assert not missing, f"Profiles missing classification metadata: {missing}"
 
+
+
+
+def _current_mp_records(persons):
+    return [
+        person
+        for person in persons
+        if any(
+            role.get("category") == "mp" and role.get("is_current")
+            for role in person.get("roles", [])
+        )
+    ]
+
+
+def test_current_mp_roster_minimum_party_coverage(persons):
+    """Current MP roster expansion must cover all major parliamentary parties."""
+    expected_minimums = {
+        "national-party": 49,
+        "labour-party": 34,
+        "green-party": 15,
+        "act-new-zealand": 11,
+        "new-zealand-first": 8,
+        "te-pati-maori": 6,
+    }
+    counts = Counter(
+        person.get("party_id") for person in _current_mp_records(persons)
+    )
+    shortfalls = {
+        party_id: {"expected": expected, "actual": counts.get(party_id, 0)}
+        for party_id, expected in expected_minimums.items()
+        if counts.get(party_id, 0) < expected
+    }
+    assert not shortfalls, f"Current MP roster shortfalls: {shortfalls}"
+
+
+def test_current_mp_roster_includes_replacement_mps(persons):
+    """Recent list/electorate replacements must be represented as current MPs."""
+    by_id = {person["person_id"]: person for person in persons}
+    required_current = {
+        "georgie-dansey",
+        "dan-rosewarne",
+        "oriini-kaipara",
+        "david-wilson",
+        "mike-davidson",
+    }
+    missing = []
+    for person_id in required_current:
+        person = by_id.get(person_id)
+        if not person or person not in _current_mp_records(persons):
+            missing.append(person_id)
+    assert not missing, f"Replacement MPs missing current role: {missing}"
+
+    peeni = by_id["peeni-henare"]
+    current_peeni_mp_roles = [
+        role
+        for role in peeni.get("roles", [])
+        if role.get("category") == "mp" and role.get("is_current")
+    ]
+    assert not current_peeni_mp_roles
+
+
+def test_social_profile_handles_are_not_blank(persons):
+    """Seeded social profile objects must not keep blank handles."""
+    blank_handles = []
+    for person in persons:
+        for platform, profile in person.get("social_profiles", {}).items():
+            if profile.get("handle") == "":
+                blank_handles.append(
+                    {"person_id": person["person_id"], "platform": platform}
+                )
+    assert not blank_handles, f"Blank social profile handles: {blank_handles}"
+
+
+def test_current_mp_empty_social_profiles_are_reviewed(persons):
+    """Current MPs with no structured social profile must be explicitly reviewed."""
+    review = _load_json(CURRENT_MP_SOCIAL_REVIEW)
+    assert review["captured_at"] == "2026-06-23"
+
+    empty_current_profile_ids = {
+        person["person_id"]
+        for person in _current_mp_records(persons)
+        if not person.get("social_profiles")
+    }
+    reviewed_ids = {
+        item["person_id"] for item in review["reviewed_empty_profiles"]
+    }
+    assert reviewed_ids == empty_current_profile_ids
+    assert review["reviewed_empty_profile_count"] == len(empty_current_profile_ids)
 
 
 def test_canonical_role_organization_ids_are_seeded(agencies):

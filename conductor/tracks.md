@@ -113,11 +113,14 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 ## [~] Track: NZ Government Social Media Registry — full expansion: MPs, parties, public sector leaders, historical figures
 *Link: [./tracks/govt_registry_mp_expansion_20260621/](./tracks/govt_registry_mp_expansion_20260621/)*
-- Phase 0 complete (tooling + track setup)
-- Phase 1 National Party batches 1/3, 2/3, and 3/3 are committed and strict
-  reference-integrity gates pass.
-- Next coverage step: push/verify National Phase 1, then begin Labour using
-  `scripts/add_person_record.py --validate-only` and the recomputed strict gap gate.
+- Phase 0 complete (tooling + track setup).
+- Current 54th Parliament MP roster coverage is locally complete across National,
+  Labour, Greens, ACT, NZ First, and Te Pati Maori: 60 current-MP records added,
+  blank social handles reduced to 0, and remaining current MPs without structured
+  profile IDs are reviewed in `conductor/current_mp_social_profile_review_20260623.json`.
+- Strict registry gates and focused tests pass locally. Next local coverage work is
+  Phase 7 historical figures and Phase 8 public-sector leaders; remote push/GitHub
+  Actions verification is pending explicit approval.
 
 ## [x] Track: NZ Government Social Media Registry — provenance and batch quality gates
 *Link: [./tracks/govt_registry_quality_gates_20260622/](./tracks/govt_registry_quality_gates_20260622/)*

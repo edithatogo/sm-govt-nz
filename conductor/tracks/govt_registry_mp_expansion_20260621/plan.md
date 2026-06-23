@@ -33,31 +33,35 @@
 ### Phase 1: National Party Caucus — Batch 3 (Remaining List & Junior MPs)
 - [x] Task: Research and add remaining 12 National MPs
 - [x] Task: Validate, append, verify, commit (`928a675`)
-- [ ] Task: Push Phase 1 to remote, verify GitHub Actions
+- [ ] Task: Push Phase 1/current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval).
 
 ### Phase 2: Labour Party Caucus
 - [x] Task: Confirm `govt_registry_quality_gates_20260622` Phase 1 gates are in place before appending new Labour records.
-- [ ] Task: Research and fill 38 empty social profile handles
-- [ ] Task: Research remaining ~20 Labour MPs and add records
-- [ ] Task: Validate, append, verify, commit
-- [ ] Task: Push Phase 2 to remote, verify GitHub Actions
+- [x] Task: Research and fill blank social profile handles; zero blank handles remain, and unresolved current-MP empty profiles are reviewed in `conductor/current_mp_social_profile_review_20260623.json`.
+- [x] Task: Research current Labour roster replacements and add 22 missing Labour MP records.
+- [x] Task: Validate, append, and verify current-MP roster gap batch locally.
+- [ ] Task: Push Phase 2/current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 3: Green Party Caucus (15 MPs)
 - [ ] Task: Research all Green MPs — records and social profiles
-- [ ] Task: Add 11 new records + fill profiles
-- [ ] Task: Validate, append, verify, commit, push
+- [x] Task: Add missing Green records and structured profiles/reviewed empty-profile artifact.
+- [x] Task: Validate, append, and verify current-MP records locally.
+- [ ] Task: Push current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 4: ACT Party Caucus (11 MPs)
 - [ ] Task: Research all ACT MPs — 9 new records + profiles
-- [ ] Task: Validate, append, verify, commit, push
+- [x] Task: Validate, append, and verify current-MP records locally.
+- [ ] Task: Push current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 5: NZ First Caucus (8 MPs)
 - [ ] Task: Research all NZ First MPs — 6 new records + profiles
-- [ ] Task: Validate, append, verify, commit, push
+- [x] Task: Validate, append, and verify current-MP records locally.
+- [ ] Task: Push current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 6: Te Pāti Māori Caucus (6 MPs)
 - [ ] Task: Research all Te Pāti Māori MPs — 3 new records + profiles
-- [ ] Task: Validate, append, verify, commit, push
+- [x] Task: Validate, append, and verify current-MP records locally.
+- [ ] Task: Push current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 7: Historical Figures (Working Backwards)
 - [ ] Task: Add former Prime Ministers (Key, English, Ardern, Clark, etc.)
@@ -111,6 +115,17 @@
   future seeded profiles must include `account_classification` and
   `syndication_classification`, and role-linked accounts must reference an
   existing `role_id`.
-- Next coverage batch is Labour; use `python scripts/add_person_record.py --input scripts/data/<batch>.json --validate-only` before append, then run `python scripts/check_parties_persons_gaps.py --strict --allow-leaders 0 --allow-presidents 0 --write-report`.
+- Current-MP roster batches are locally complete. Next local data-coverage work is Phase 7 historical figures and Phase 8 public-sector leaders; remote push/GitHub Actions verification requires explicit approval.
 
 - Quality-gates track is complete: evidence metadata is optional but validated when present, append batches reject unknown role organizations, and the strict gap gate recomputes from current registry files by default.
+
+- Current-MP roster gap closure (2026-06-23): appended 60 records from
+  `scripts/data/current_mp_roster_gap_batch_20260623.json`; persons registry now
+  has 159 records. Current-MP coverage floors pass for National, Labour, Greens,
+  ACT, NZ First, and Te Pati Maori. Blank social handles are zero. Remaining
+  current MPs without structured social IDs are explicitly reviewed in
+  `conductor/current_mp_social_profile_review_20260623.json`.
+- Verification (2026-06-23): `python scripts/check_parties_persons_gaps.py --strict --allow-leaders 0 --allow-presidents 0 --write-report`; `python -m pytest -q --basetemp=.tmp/pytest-current-mp-expansion-20260623b tests/test_parties_persons_registry.py tests/test_registry_schema.py tests/test_add_person_record.py tests/test_check_parties_persons_gaps.py`; `ruff check --no-cache tests/test_parties_persons_registry.py tests/test_registry_schema.py tests/test_add_person_record.py tests/test_check_parties_persons_gaps.py scripts/add_person_record.py scripts/check_parties_persons_gaps.py`.
+- Remaining track scope: remote push/GitHub Actions verification requires explicit
+  approval; Phase 7 historical figures and Phase 8 public-sector leader expansion
+  remain the next local data-coverage work.
