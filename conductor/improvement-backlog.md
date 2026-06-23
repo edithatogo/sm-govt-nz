@@ -6,6 +6,10 @@
 - [ ] Capture registry/review/skills-feedback events into the backlog from failing submission workflows.
 - [ ] Add phase-level retrospective notes for each Phase 1/2/3/4 run and record reviewer sign-off.
 
+- [ ] Preserve-3.14-and-pyproject.toml-unless-they-are-part-of-the-current-change
+  - files=3.14,pyproject.toml
+  - rule=do-not-stage-or-edit-unrelated-dirty-files
+
 ## Skills touched by this workspace
 - `conductor-implement`
 - `conductor-review`
