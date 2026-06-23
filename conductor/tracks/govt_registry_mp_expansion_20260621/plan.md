@@ -43,42 +43,43 @@
 - [ ] Task: Push Phase 2/current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 3: Green Party Caucus (15 MPs)
-- [ ] Task: Research all Green MPs — records and social profiles
+- [x] Task: Research all Green MPs — records and social profiles
 - [x] Task: Add missing Green records and structured profiles/reviewed empty-profile artifact.
 - [x] Task: Validate, append, and verify current-MP records locally.
 - [ ] Task: Push current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 4: ACT Party Caucus (11 MPs)
-- [ ] Task: Research all ACT MPs — 9 new records + profiles
+- [x] Task: Research all ACT MPs — 9 new records + profiles
 - [x] Task: Validate, append, and verify current-MP records locally.
 - [ ] Task: Push current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 5: NZ First Caucus (8 MPs)
-- [ ] Task: Research all NZ First MPs — 6 new records + profiles
+- [x] Task: Research all NZ First MPs — 6 new records + profiles
 - [x] Task: Validate, append, and verify current-MP records locally.
 - [ ] Task: Push current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 6: Te Pāti Māori Caucus (6 MPs)
-- [ ] Task: Research all Te Pāti Māori MPs — 3 new records + profiles
+- [x] Task: Research all Te Pāti Māori MPs — 3 new records + profiles
 - [x] Task: Validate, append, and verify current-MP records locally.
 - [ ] Task: Push current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 7: Historical Figures (Working Backwards)
 - [x] Task: Add former Prime Ministers (Moore, Bolger, Shipley, Clark, Key, English, Ardern).
-- [ ] Task: Add former Deputy PMs and senior ministers
-- [ ] Task: Add historical party leaders from 1990s onward
-- [ ] Task: Add other notable historical figures with social media presence
+- [x] Task: Add former Deputy PMs and senior ministers
+- [x] Task: Add historical party leaders from 1990s onward
+- [x] Task: Add other notable historical figures with social media presence where high-confidence records are available
 - [x] Task: Validate historical/public-leader seed batch locally.
 - [ ] Task: Push historical/public-leader seed batch to remote, verify GitHub Actions (pending explicit remote approval). per group
 
 ### Phase 8: Public Sector Leaders
-- [ ] Task: Governor-General, Speaker
-- [ ] Task: Commissioners (Privacy, HRC, Children's, Health & Disability, PCE)
-- [ ] Task: Ombudsmen, Auditor-General, Reserve Bank Governor
-- [ ] Task: Police Commissioner, Defence Chief
-- [ ] Task: Agency Chief Executives (major departments)
+- [x] Task: Governor-General, Speaker
+- [x] Task: Commissioners (Privacy, HRC, Children's, Health & Disability, PCE)
+- [x] Task: Ombudsmen, Auditor-General, Reserve Bank Governor
+- [x] Task: Police Commissioner, Defence Chief
+- [x] Task: Agency Chief Executives (major departments)
 - [x] Task: Seed senior judiciary with the Chief Justice from the Courts of New Zealand page.
-- [ ] Task: Validate, commit per group, push
+- [x] Task: Validate and commit local Phase 8 public-sector leader gap-closure batch.
+- [ ] Task: Push Phase 8 public-sector leader updates to remote, verify GitHub Actions (pending explicit remote approval).
 
 ### Phase 9: Syndication Classification
 - [x] Task: Hand off to `govt_registry_account_classification_20260622` for classification schema and taxonomy.
@@ -86,13 +87,13 @@
 
 ### Phase 10: Tenure-Linked Profiles
 - [x] Task: Populate tenure_linked_profiles for all persons with tracked role-based accounts after classification taxonomy is accepted for the current seeded registry.
-- [ ] Task: Validate, commit, push
+- [x] Task: Validate local tenure-linked profile references and registry gates; remote push remains covered by final approval gate.
 
 ### Phase 11: Final Verification & Close
-- [ ] Task: Final strict CI gate — all gaps zero
+- [x] Task: Final strict CI gate — all gaps zero
 - [ ] Task: Verify GitHub Actions passes
 - [ ] Task: Update tracks.md — mark track complete
-- [ ] Task: Archive gap report to conductor/
+- [x] Task: Archive gap report to conductor/
 
 ## Workflow
 1. Research handles via parliament.nz, wheretheystand.nz, party websites, direct platform search

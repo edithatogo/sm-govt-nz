@@ -419,6 +419,115 @@ def test_senior_judiciary_seed_includes_chief_justice(persons):
     )
 
 
+def test_current_public_sector_leaders_are_seeded(persons):
+    """Phase 8 seeds current officeholders for core public-sector leader offices."""
+    by_id = {person["person_id"]: person for person in persons}
+    required = {
+        "john-allen": ("office-of-the-ombudsman", "ombudsman"),
+        "grant-taylor": ("office-of-the-auditor-general", "auditor-general"),
+        "anna-breman": ("reserve-bank-of-nz", "reserve-bank-governor"),
+        "richard-chambers": ("nz-police", "police-commissioner"),
+        "tony-davies": ("nz-defence-force", "defence-chief"),
+        "stephen-rainbow": ("human-rights-commission", "commissioner"),
+        "claire-achmad": ("childrens-commissioner", "commissioner"),
+        "ben-king": ("dpmc", "chief-executive"),
+        "iain-rennie": ("the-treasury", "chief-executive"),
+        "brian-roche": ("public-service-commission", "chief-executive"),
+        "ellen-macgregor-reid": ("ministry-of-education", "chief-executive"),
+    }
+
+    missing = set(required) - set(by_id)
+    assert not missing, f"Current public-sector leaders missing: {sorted(missing)}"
+
+    for person_id, (organization, category) in required.items():
+        assert any(
+            role.get("organization") == organization
+            and role.get("category") == category
+            and role.get("is_current") is True
+            for role in by_id[person_id].get("roles", [])
+        ), f"{person_id} missing current {category} role for {organization}"
+
+
+def test_superseded_public_sector_leaders_are_historical(persons):
+    """Current-office refreshes must close superseded public-sector tenures."""
+    by_id = {person["person_id"]: person for person in persons}
+    for person_id, role_id in {
+        "peter-boshier": "chief-ombudsman",
+        "john-ryan": "auditor-general",
+    }.items():
+        roles = [
+            role
+            for role in by_id[person_id].get("roles", [])
+            if role.get("role_id") == role_id
+        ]
+        assert roles
+        assert roles[0].get("is_current") is False
+        assert roles[0].get("end_date")
+
+
+def test_historical_deputy_prime_ministers_are_seeded(persons):
+    """Phase 7 includes former and current Deputy Prime Minister continuity."""
+    by_id = {person["person_id"]: person for person in persons}
+    required = {
+        "don-mckinnon",
+        "wyatt-creech",
+        "jim-anderton",
+        "michael-cullen",
+        "bill-english",
+        "paula-bennett",
+        "winston-peters",
+        "grant-robertson",
+        "carmel-sepuloni",
+        "david-seymour",
+    }
+    missing = required - set(by_id)
+    assert not missing, f"Deputy Prime Ministers missing: {sorted(missing)}"
+
+    for person_id in required:
+        assert any(
+            role.get("organization") == "dpmc"
+            and role.get("portfolio") == "Deputy Prime Minister"
+            for role in by_id[person_id].get("roles", [])
+        ), f"{person_id} missing Deputy Prime Minister role"
+
+    assert any(
+        role.get("portfolio") == "Deputy Prime Minister"
+        and role.get("is_current") is True
+        for role in by_id["david-seymour"].get("roles", [])
+    )
+
+
+def test_major_historical_party_leaders_are_seeded(persons):
+    """Phase 7 covers recent major-party leadership changes from 1990 onward."""
+    by_id = {person["person_id"]: person for person in persons}
+    required = {
+        "mike-moore",
+        "helen-clark",
+        "phil-goff",
+        "david-shearer",
+        "david-cunliffe",
+        "andrew-little",
+        "jacinda-ardern",
+        "jim-bolger",
+        "jenny-shipley",
+        "don-brash",
+        "john-key",
+        "bill-english",
+        "simon-bridges",
+        "todd-muller",
+        "judith-collins",
+    }
+    missing = required - set(by_id)
+    assert not missing, f"Major historical party leaders missing: {sorted(missing)}"
+
+    for person_id in required:
+        assert any(
+            role.get("category") == "party-leader"
+            and role.get("is_current") is False
+            for role in by_id[person_id].get("roles", [])
+        ), f"{person_id} missing historical party-leader role"
+
+
 def test_canonical_role_organization_ids_are_seeded(agencies):
     """Quality gates protect common role organization IDs from regression."""
     agency_ids = {agency["agency_id"] for agency in agencies}

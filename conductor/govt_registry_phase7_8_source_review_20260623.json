@@ -1,0 +1,95 @@
+{
+  "captured_at": "2026-06-23",
+  "reviewed_by": "conductor mp expansion gap closure 2026-06-23",
+  "batches": [
+    "scripts/data/public_sector_leaders_batch_20260623.json",
+    "scripts/data/historical_deputy_pm_party_leaders_batch_20260623.json"
+  ],
+  "registry_result": {
+    "persons_count": 190,
+    "strict_gap_gate": "complete",
+    "missing_party_leaders": 0,
+    "missing_party_presidents": 0,
+    "persons_unknown_party": 0,
+    "persons_unknown_agency_in_role": 0
+  },
+  "public_sector_sources": [
+    {
+      "office": "Commissioner of Police",
+      "person_id": "richard-chambers",
+      "source_url": "https://www.police.govt.nz/about-us/structure/commissioner-and-executive",
+      "status": "verified-live"
+    },
+    {
+      "office": "Chief of Defence Force",
+      "person_id": "tony-davies",
+      "source_url": "https://gg.govt.nz/governor-general/blog/2024/06/change-command-ceremony-chief-defence-force",
+      "status": "verified-live"
+    },
+    {
+      "office": "Chief Human Rights Commissioner",
+      "person_id": "stephen-rainbow",
+      "source_url": "https://www.beehive.govt.nz/release/new-chief-human-rights-commissioner-appointed",
+      "status": "verified-live"
+    },
+    {
+      "office": "Children's Commissioner",
+      "person_id": "claire-achmad",
+      "source_url": "https://www.beehive.govt.nz/release/government-strengthens-advocacy-all-children-new-commission",
+      "status": "verified-live"
+    },
+    {
+      "office": "Human Rights Commission people page",
+      "person_id": "stephen-rainbow",
+      "source_url": "https://www.hrc.co.nz/about-us/our-people/",
+      "status": "verified-live"
+    },
+    {
+      "office": "Mana Mokopuna people page",
+      "person_id": "claire-achmad",
+      "source_url": "https://www.manamokopuna.org.nz/about-us/our-people/",
+      "status": "verified-live"
+    },
+    {
+      "office": "Reserve Bank Governor",
+      "person_id": "anna-breman",
+      "source_url": "https://www.rbnz.govt.nz/about-us/governance-and-people/senior-leadership-team/anna-breman",
+      "status": "official-site-blocked-403-from-local-probe"
+    },
+    {
+      "office": "DPMC Chief Executive",
+      "person_id": "ben-king",
+      "source_url": "https://www.dpmc.govt.nz/about-dpmc/dpmc-structure/chief-executive",
+      "status": "official-site-blocked-403-from-local-probe"
+    },
+    {
+      "office": "Treasury Secretary",
+      "person_id": "iain-rennie",
+      "source_url": "https://www.treasury.govt.nz/about-treasury/our-people/senior-leadership-team",
+      "status": "official-site-blocked-403-from-local-probe"
+    },
+    {
+      "office": "Auditor-General",
+      "person_id": "grant-taylor",
+      "source_url": "https://oag.parliament.nz/about-us/the-auditor-general",
+      "status": "official-site-blocked-403-from-local-probe"
+    }
+  ],
+  "source_pages_avoided": [
+    {
+      "source_url": "https://www.ombudsman.parliament.nz/about-us/chief-ombudsman",
+      "status": "404-from-local-probe",
+      "note": "John Allen retained with office homepage until a stable official profile URL is identified."
+    },
+    {
+      "source_url": "https://www.nzdf.mil.nz/nzdf/our-people/leadership/",
+      "status": "404-from-local-probe",
+      "note": "Government House change-of-command source used for Tony Davies."
+    },
+    {
+      "source_url": "https://www.hrc.co.nz/about-us/commissioners/",
+      "status": "404-from-local-probe",
+      "note": "Live HRC people page used instead."
+    }
+  ]
+}
