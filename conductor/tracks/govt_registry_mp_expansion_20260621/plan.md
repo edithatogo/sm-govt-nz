@@ -104,15 +104,16 @@
 6. Run `python -m pytest tests/test_parties_persons_registry.py -v`
 7. `git add -A && git commit -m "phaseX_batchY: description"`
 8. Repeat per logical task
-9. Per phase: `git push` and verify GitHub Actions
+9. Final gate: with explicit approval, push local commits once and verify GitHub Actions
 
 ## Current Status
 - National Party Phase 1 data batches 1-3 are committed and reference-integrity clean.
 - Current strict gap gate passes with zero missing party leaders, missing party presidents, unknown party references, and unknown role organization references.
 - Refresh cadence is implemented in `govt_registry_refresh_cadence_20260622`;
   `conductor/registry_refresh_report.json` is the manual refresh queue artifact.
-  Initial 2026-06-22 queue: agencies first, with 483 profiles due across 218
-  agency records because `last_checked_at` has not yet been populated.
+  Initial 2026-06-22 queue: 610 total due profiles; agencies are the first
+  refresh cohort, with 483 profiles due across 218 agency records because
+  `last_checked_at` has not yet been populated.
 - Account classification is implemented in `govt_registry_account_classification_20260622`;
   future seeded profiles must include `account_classification` and
   `syndication_classification`, and role-linked accounts must reference an
