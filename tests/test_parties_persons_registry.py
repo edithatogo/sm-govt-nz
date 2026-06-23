@@ -380,6 +380,45 @@ def test_current_mp_empty_social_profiles_are_reviewed(persons):
     assert review["reviewed_empty_profile_count"] == len(empty_current_profile_ids)
 
 
+
+def test_recent_former_prime_ministers_are_seeded(persons):
+    """Phase 7 seeds recent former Prime Ministers for historical continuity."""
+    by_id = {person["person_id"]: person for person in persons}
+    required = {
+        "mike-moore",
+        "jim-bolger",
+        "jenny-shipley",
+        "helen-clark",
+        "john-key",
+        "bill-english",
+        "jacinda-ardern",
+    }
+    missing = required - set(by_id)
+    assert not missing, f"Former Prime Ministers missing: {sorted(missing)}"
+
+    for person_id in required:
+        roles = by_id[person_id].get("roles", [])
+        assert any(
+            role.get("portfolio") == "Prime Minister"
+            and role.get("organization") == "dpmc"
+            and role.get("is_current") is False
+            for role in roles
+        ), f"{person_id} missing historical Prime Minister role"
+
+
+def test_senior_judiciary_seed_includes_chief_justice(persons):
+    """Phase 8 includes a verified senior judiciary seed record."""
+    by_id = {person["person_id"]: person for person in persons}
+    chief_justice = by_id["helen-winkelmann"]
+    assert any(
+        role.get("title") == "Chief Justice of New Zealand"
+        and role.get("organization") == "courts-of-nz"
+        and role.get("category") == "judge"
+        and role.get("is_current")
+        for role in chief_justice.get("roles", [])
+    )
+
+
 def test_canonical_role_organization_ids_are_seeded(agencies):
     """Quality gates protect common role organization IDs from regression."""
     agency_ids = {agency["agency_id"] for agency in agencies}

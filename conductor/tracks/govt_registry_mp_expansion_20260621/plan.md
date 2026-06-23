@@ -64,11 +64,12 @@
 - [ ] Task: Push current-MP roster updates to remote, verify GitHub Actions (pending explicit remote approval)
 
 ### Phase 7: Historical Figures (Working Backwards)
-- [ ] Task: Add former Prime Ministers (Key, English, Ardern, Clark, etc.)
+- [x] Task: Add former Prime Ministers (Moore, Bolger, Shipley, Clark, Key, English, Ardern).
 - [ ] Task: Add former Deputy PMs and senior ministers
 - [ ] Task: Add historical party leaders from 1990s onward
 - [ ] Task: Add other notable historical figures with social media presence
-- [ ] Task: Validate, commit per batch, push per group
+- [x] Task: Validate historical/public-leader seed batch locally.
+- [ ] Task: Push historical/public-leader seed batch to remote, verify GitHub Actions (pending explicit remote approval). per group
 
 ### Phase 8: Public Sector Leaders
 - [ ] Task: Governor-General, Speaker
@@ -76,7 +77,7 @@
 - [ ] Task: Ombudsmen, Auditor-General, Reserve Bank Governor
 - [ ] Task: Police Commissioner, Defence Chief
 - [ ] Task: Agency Chief Executives (major departments)
-- [ ] Task: Senior Judiciary (Chief Justice, Supreme Court, Court of Appeal)
+- [x] Task: Seed senior judiciary with the Chief Justice from the Courts of New Zealand page.
 - [ ] Task: Validate, commit per group, push
 
 ### Phase 9: Syndication Classification
@@ -129,3 +130,12 @@
 - Remaining track scope: remote push/GitHub Actions verification requires explicit
   approval; Phase 7 historical figures and Phase 8 public-sector leader expansion
   remain the next local data-coverage work.
+
+- Phase 7/8 seed batch (2026-06-23): appended 8 records from
+  `scripts/data/historical_public_leaders_batch_20260623.json` covering recent
+  former Prime Ministers and Chief Justice Helen Winkelmann. Persons registry now
+  has 167 records.
+- Verification (2026-06-23): `python scripts/check_parties_persons_gaps.py --strict --allow-leaders 0 --allow-presidents 0 --write-report`; `python -m pytest -q --basetemp=.tmp/pytest-phase7-8-expansion-20260623a tests/test_parties_persons_registry.py tests/test_registry_schema.py tests/test_add_person_record.py tests/test_check_parties_persons_gaps.py`; `ruff check --no-cache tests/test_parties_persons_registry.py scripts/add_person_record.py scripts/check_parties_persons_gaps.py`.
+- Remaining local Phase 8 work requires reliable current official sources for
+  Reserve Bank Governor, Police Commissioner, Defence Chief, remaining statutory
+  commissioners, major department chief executives, and wider senior judiciary.

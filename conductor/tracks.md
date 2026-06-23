@@ -118,9 +118,11 @@ Mordaunt, `edithatogo`, or other personal identities.
   Labour, Greens, ACT, NZ First, and Te Pati Maori: 60 current-MP records added,
   blank social handles reduced to 0, and remaining current MPs without structured
   profile IDs are reviewed in `conductor/current_mp_social_profile_review_20260623.json`.
-- Strict registry gates and focused tests pass locally. Next local coverage work is
-  Phase 7 historical figures and Phase 8 public-sector leaders; remote push/GitHub
-  Actions verification is pending explicit approval.
+- Strict registry gates and focused tests pass locally. Phase 7/8 seed coverage
+  now includes recent former Prime Ministers and Chief Justice Helen Winkelmann;
+  persons registry has 167 records. Remaining local work is broader Phase 8
+  public-sector leaders from reliable official sources; remote push/GitHub Actions
+  verification is pending explicit approval.
 
 ## [x] Track: NZ Government Social Media Registry — provenance and batch quality gates
 *Link: [./tracks/govt_registry_quality_gates_20260622/](./tracks/govt_registry_quality_gates_20260622/)*
