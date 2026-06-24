@@ -1,0 +1,44 @@
+name: Government Source Discovery
+
+on:
+  schedule:
+    - cron: "31 16 * * *"
+  workflow_dispatch:
+    inputs:
+      probe_homepages:
+        description: "Fetch public agency pages while discovering candidates"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      max_agencies:
+        description: "Maximum agencies to probe; 0 means all"
+        required: true
+        default: "0"
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Discover government source candidates
+        run: python scripts/discover_govt_source_candidates.py --probe-homepages --max-agencies 0
+      - name: Commit discovery updates
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Update government source discovery"
+          --path conductor/govt_source_candidate_report.json
+          --path conductor/govt_source_candidate_summary.md
+          --path conductor/govt_archive_source_manifest.json

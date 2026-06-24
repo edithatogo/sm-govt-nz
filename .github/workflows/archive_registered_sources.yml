@@ -1,0 +1,84 @@
+name: Archive Registered Sources
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_type:
+        description: "Which registered sources to archive or report"
+        required: true
+        default: "all_feasible"
+        type: choice
+        options:
+          - all_feasible
+          - rss
+          - website_page
+          - bluesky
+          - youtube
+          - facebook
+          - instagram
+          - threads
+          - linkedin
+          - x
+      agency_id:
+        description: "Optional agency id filter"
+        required: false
+        default: ""
+      include_blocked:
+        description: "Include degraded/manual/blocked records in the report"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      dry_run:
+        description: "Report selected sources without capturing"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install uv
+        run: python -m pip install uv
+      - name: Install runtime dependencies
+        run: uv pip install --system -r requirements.txt
+      - name: Archive registered sources
+        run: |
+          args=(
+            --source-type "${{ inputs.source_type }}"
+            --agency-id "${{ inputs.agency_id }}"
+          )
+          if [ "${{ inputs.include_blocked }}" = "true" ]; then
+            args+=(--include-blocked)
+          fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            args+=(--dry-run)
+          fi
+          python -m scripts.archive_registered_sources "${args[@]}"
+      - name: Commit archive updates
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Archive registered government sources"
+          --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/archive_state.json
+          --path conductor/archive_source_health.json
+          --path 'historical_archive_raw/**'
+          --path 'historical_archive_normalized/**'

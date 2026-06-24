@@ -1,0 +1,162 @@
+{
+  "description": "Discovery and archive-onboarding policy for New Zealand government public communication sources.",
+  "generated_at": "2026-06-24",
+  "homepage_probe": {
+    "enabled": true,
+    "timeout_seconds": 12,
+    "max_pages_per_agency": 4,
+    "user_agent": "sm-govt-nz-source-discovery/1.0 (+https://github.com/edithatogo/sm-govt-nz)",
+    "common_paths": [
+      "/",
+      "/news",
+      "/news-and-events",
+      "/media",
+      "/media-releases",
+      "/publications",
+      "/subscribe",
+      "/newsletter",
+      "/rss",
+      "/feed"
+    ]
+  },
+  "platform_archive_policy": {
+    "bluesky": {
+      "feasibility": "high",
+      "archive_status": "ready",
+      "access_method": "public_at_protocol",
+      "auth": "none",
+      "notes": "Public AT Protocol profile and posts can be captured without live-posting side effects."
+    },
+    "youtube": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "auth": "none",
+      "notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic."
+    },
+    "facebook": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "meta_graph_api_or_authorized_export",
+      "auth": "operator_or_app_authorized",
+      "notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping."
+    },
+    "instagram": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "meta_graph_api_or_authorized_export",
+      "auth": "operator_or_app_authorized",
+      "notes": "Archive capture depends on Meta access and account eligibility."
+    },
+    "threads": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "threads_api_or_authorized_export",
+      "auth": "operator_or_app_authorized",
+      "notes": "Use Threads API where accounts and app review permit it."
+    },
+    "linkedin": {
+      "feasibility": "low",
+      "archive_status": "manual_seed",
+      "access_method": "approved_api_or_user_authorized_capture",
+      "auth": "operator_authorized",
+      "notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture."
+    },
+    "x": {
+      "feasibility": "low",
+      "archive_status": "degraded",
+      "access_method": "public_archive_or_lawful_export",
+      "auth": "operator_authorized_if_browser_capture",
+      "notes": "Prefer account owner export or public archive sources. Treat live web access as degraded."
+    },
+    "rss": {
+      "feasibility": "high",
+      "archive_status": "ready",
+      "access_method": "public_rss",
+      "auth": "none",
+      "notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized."
+    },
+    "website_page": {
+      "feasibility": "high",
+      "archive_status": "ready",
+      "access_method": "bounded_public_html",
+      "auth": "none",
+      "notes": "Capture only bounded public pages discovered from feeds or explicit source manifests."
+    },
+    "newsletter": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "email_ingress_or_public_archive",
+      "auth": "inbox_or_dispatch_token",
+      "notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source."
+    }
+  },
+  "heuristics": {
+    "trusted_domain_suffixes": [
+      ".govt.nz",
+      ".parliament.nz",
+      ".ac.nz",
+      ".mil.nz",
+      ".cri.nz",
+      ".co.nz",
+      ".org.nz"
+    ],
+    "high_trust_suffixes": [
+      ".govt.nz",
+      ".parliament.nz",
+      ".ac.nz",
+      ".mil.nz",
+      ".cri.nz"
+    ],
+    "official_account_terms": [
+      "official",
+      "new zealand",
+      "nz",
+      "aotearoa",
+      "ministry",
+      "commission",
+      "agency",
+      "council",
+      "department",
+      "authority"
+    ],
+    "negative_account_terms": [
+      "fan",
+      "parody",
+      "unofficial",
+      "archive only",
+      "not affiliated"
+    ],
+    "platform_search_templates": [
+      {
+        "platform": "facebook",
+        "query": "site:facebook.com {agency_name} {domain}"
+      },
+      {
+        "platform": "instagram",
+        "query": "site:instagram.com {agency_name} {domain}"
+      },
+      {
+        "platform": "linkedin",
+        "query": "site:linkedin.com/company OR site:linkedin.com/school {agency_name} {domain}"
+      },
+      {
+        "platform": "youtube",
+        "query": "site:youtube.com/@ OR site:youtube.com/channel {agency_name} {domain}"
+      },
+      {
+        "platform": "x",
+        "query": "site:x.com OR site:twitter.com {agency_name} {domain}"
+      },
+      {
+        "platform": "bluesky",
+        "query": "site:bsky.app/profile {agency_name} {domain}"
+      },
+      {
+        "platform": "threads",
+        "query": "site:threads.net/@ {agency_name} {domain}"
+      }
+    ],
+    "learning_file": "conductor/govt_source_discovery_learning.json"
+  }
+}

@@ -1,0 +1,110 @@
+name: Register Archive Source
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_id:
+        description: "Stable source id, for example beehive-nz-bluesky"
+        required: true
+      agency_id:
+        description: "Registry agency id"
+        required: true
+      agency_name:
+        description: "Human-readable agency name"
+        required: false
+        default: ""
+      source_type:
+        description: "Source kind"
+        required: true
+        default: "social_profile"
+      platform:
+        description: "Platform or source family"
+        required: true
+        type: choice
+        options:
+          - bluesky
+          - rss
+          - website_page
+          - youtube
+          - facebook
+          - instagram
+          - threads
+          - linkedin
+          - x
+          - newsletter
+      url:
+        description: "Canonical source URL"
+        required: true
+      account:
+        description: "Handle or account label"
+        required: false
+        default: ""
+      feasibility:
+        description: "Archive feasibility"
+        required: true
+        default: "candidate"
+        type: choice
+        options:
+          - high
+          - medium
+          - low
+          - review_required
+      archive_status:
+        description: "Archive onboarding status"
+        required: true
+        default: "candidate"
+        type: choice
+        options:
+          - ready
+          - candidate
+          - manual_seed
+          - degraded
+          - blocked
+      access_method:
+        description: "Access method"
+        required: false
+        default: "review_required"
+      auth:
+        description: "Authentication posture"
+        required: false
+        default: "review_required"
+      notes:
+        description: "Operator notes"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Register source
+        run: >-
+          python scripts/register_archive_source.py
+          --source-id "${{ inputs.source_id }}"
+          --agency-id "${{ inputs.agency_id }}"
+          --agency-name "${{ inputs.agency_name }}"
+          --source-type "${{ inputs.source_type }}"
+          --platform "${{ inputs.platform }}"
+          --url "${{ inputs.url }}"
+          --account "${{ inputs.account }}"
+          --feasibility "${{ inputs.feasibility }}"
+          --archive-status "${{ inputs.archive_status }}"
+          --access-method "${{ inputs.access_method }}"
+          --auth "${{ inputs.auth }}"
+          --notes "${{ inputs.notes }}"
+      - name: Commit registration
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Register government archive source"
+          --path conductor/govt_archive_source_manifest.json
