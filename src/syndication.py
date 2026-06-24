@@ -3,6 +3,7 @@ import os
 import subprocess
 from dataclasses import dataclass
 from typing import Any, Protocol
+from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -41,11 +42,7 @@ class JsonHttpClient:
         headers: dict[str, str] | None = None,
     ) -> dict[str, Any]:
         request = Request(url, headers={"Accept": "application/json", **(headers or {})})
-        with urlopen(request, timeout=15) as response:
-            body = response.read().decode("utf-8")
-        if not body:
-            return {}
-        return json.loads(body)
+        return self._open_json(request)
 
     def post_json(
         self,
@@ -56,11 +53,7 @@ class JsonHttpClient:
         data = json.dumps(payload).encode("utf-8")
         request_headers = {"Content-Type": "application/json", **(headers or {})}
         request = Request(url, data=data, headers=request_headers, method="POST")
-        with urlopen(request, timeout=15) as response:
-            body = response.read().decode("utf-8")
-        if not body:
-            return {}
-        return json.loads(body)
+        return self._open_json(request)
 
     def post_form(
         self,
@@ -74,12 +67,27 @@ class JsonHttpClient:
             **(headers or {}),
         }
         request = Request(url, data=data, headers=request_headers, method="POST")
-        with urlopen(request, timeout=15) as response:
-            body = response.read().decode("utf-8")
+        return self._open_json(request)
+
+    def _open_json(self, request: Request) -> dict[str, Any]:
+        try:
+            with urlopen(request, timeout=15) as response:
+                body = response.read().decode("utf-8")
+        except HTTPError as error:
+            body = error.read().decode("utf-8", errors="replace")
+            raise RuntimeError(_format_http_error(error, body)) from error
         if not body:
             return {}
         return json.loads(body)
 
+
+def _format_http_error(error: HTTPError, body: str) -> str:
+    detail = body.strip().replace("\n", " ")
+    if not detail:
+        detail = str(error.reason)
+    if len(detail) > 1000:
+        detail = f"{detail[:1000]}..."
+    return f"HTTP {error.code}: {detail}"
 
 class DiscordWebhookAdapter:
     name = "discord"

@@ -1,3 +1,7 @@
+from io import BytesIO
+from urllib.error import HTTPError
+
+import pytest
 from src.bluesky import BlueskyPost
 from src.syndication import (
     BlueskyMirrorAdapter,
@@ -6,6 +10,7 @@ from src.syndication import (
     DryRunAdapter,
     FacebookPageAdapter,
     InstagramAdapter,
+    JsonHttpClient,
     MastodonAdapter,
     ThreadsApiAdapter,
     TweepyXAdapter,
@@ -27,6 +32,22 @@ class FakeHttpClient:
     def post_form(self, url, payload, headers=None):
         self.form_calls.append((url, payload, headers or {}))
         return {"id": "remote-1"}
+
+
+def test_json_http_client_includes_http_error_body(monkeypatch) -> None:
+    def fake_urlopen(request, timeout):
+        raise HTTPError(
+            request.full_url,
+            400,
+            "Bad Request",
+            {},
+            BytesIO(b'{"error":{"message":"bad token"}}'),
+        )
+
+    monkeypatch.setattr("src.syndication.urlopen", fake_urlopen)
+
+    with pytest.raises(RuntimeError, match="bad token"):
+        JsonHttpClient().get_json("https://example.test/me")
 
 
 def test_format_post_text_appends_original_url_and_truncates() -> None:
