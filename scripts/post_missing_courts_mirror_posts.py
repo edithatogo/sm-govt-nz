@@ -73,6 +73,9 @@ def run_backfill(
     for post in ordered_posts:
         for target in targets:
             if _already_delivered(delivery_state, target, source_handle, post["post_id"]):
+                if not dry_run:
+                    _clear_pending(delivery_state, target, source_handle, post["post_id"])
+                    save_target_delivery_state(delivery_state, delivery_state_path)
                 results.append(_result(target, source_handle, post, dry_run, True, True, "duplicate"))
                 continue
 
@@ -95,6 +98,7 @@ def run_backfill(
             )
             if send_result.success and not send_result.skipped and not dry_run:
                 _mark_delivered(delivery_state, target, source_handle, post["post_id"])
+                _clear_pending(delivery_state, target, source_handle, post["post_id"])
                 save_target_delivery_state(delivery_state, delivery_state_path)
 
     return results
@@ -145,6 +149,18 @@ def _mark_delivered(state: dict[str, Any], target: str, source_handle: str, post
     delivered_posts = delivered_by_handle.setdefault(source_handle, [])
     if post_id not in delivered_posts:
         delivered_posts.append(post_id)
+
+
+def _clear_pending(state: dict[str, Any], target: str, source_handle: str, post_id: str) -> None:
+    pending_by_target = state.get("pending_post_ids", {})
+    pending_by_handle = pending_by_target.get(target, {})
+    pending_posts = pending_by_handle.get(source_handle, [])
+    if post_id in pending_posts:
+        pending_posts.remove(post_id)
+    if not pending_posts and source_handle in pending_by_handle:
+        del pending_by_handle[source_handle]
+    if not pending_by_handle and target in pending_by_target:
+        del pending_by_target[target]
 
 
 def _send(adapter: Any, post: BlueskyPost) -> SyndicationResult:
