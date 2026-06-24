@@ -18,6 +18,16 @@ permissions:
   contents: write
 
 jobs:
+  manual-confirmation-required:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.confirm_live_posting != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain manual live-posting confirmation
+        run: |
+          echo "::error::Manual Syndicate runs do not post unless confirm_live_posting is set to true."
+          echo "Re-run this workflow with confirm_live_posting=true to run live syndication."
+          exit 1
+
   syndicate:
     if: ${{ github.event_name == 'schedule' || inputs.confirm_live_posting == 'true' }}
     runs-on: ubuntu-latest
