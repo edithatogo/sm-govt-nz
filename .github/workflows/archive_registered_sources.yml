@@ -39,6 +39,31 @@ on:
         options:
           - "true"
           - "false"
+      publish:
+        description: "Publish captured archive bundle after a non-dry-run capture"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      publication_target:
+        description: "External publication target when publish=true"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - huggingface
+          - zenodo
+          - all
+      hf_dataset_name:
+        description: "Dataset slug to use when HF_DATASET_REPO_ID is not set"
+        required: true
+        default: "nz-government-public-sources-archive"
+      zenodo_deposit_api_url:
+        description: "Zenodo depositions API URL used when ZENODO_DEPOSIT_ENDPOINT is not set"
+        required: true
+        default: "https://zenodo.org/api/deposit/depositions"
 
 permissions:
   contents: write
@@ -48,6 +73,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
+      HF_DATASET_NAME: ${{ inputs.hf_dataset_name }}
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
+      ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -73,6 +104,34 @@ jobs:
             args+=(--dry-run)
           fi
           python -m scripts.archive_registered_sources "${args[@]}"
+      - name: Build archive compaction manifest
+        if: ${{ inputs.dry_run == 'false' }}
+        run: >-
+          python scripts/build_archive_compaction_manifest.py
+          --normalized-dir historical_archive_normalized
+          --raw-dir historical_archive_raw
+          --output dist/archive_compaction_manifest.json
+      - name: Bundle and optionally publish archive corpus
+        if: ${{ inputs.dry_run == 'false' }}
+        run: |
+          publish_target="artifact"
+          if [ "${{ inputs.publish }}" = "true" ]; then
+            publish_target="${{ inputs.publication_target }}"
+          fi
+          args=(
+            python scripts/publish_archives.py
+            --archive-dir historical_archive
+            --normalized-dir historical_archive_normalized
+            --raw-dir historical_archive_raw
+            --output-dir dist
+            --manifest dist/archive_manifest.json
+            --status-report conductor/archive_publication_status.json
+            --publish-target "$publish_target"
+          )
+          if [ "${{ inputs.publish }}" = "true" ]; then
+            args+=(--publish)
+          fi
+          "${args[@]}"
       - name: Commit archive updates
         run: >-
           python scripts/commit_state_updates.py
@@ -80,5 +139,25 @@ jobs:
           --path conductor/govt_archive_registered_sources_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
+          --path conductor/archive_publication_status.json
+          --path dist/archive_manifest.json
+          --path dist/archive_compaction_manifest.json
+          --path dist/corpus_manifest.json
+          --path dist/README.md
           --path 'historical_archive_raw/**'
           --path 'historical_archive_normalized/**'
+      - name: Upload generated corpus bundle
+        if: ${{ inputs.dry_run == 'false' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: registered-government-source-archive-corpus
+          path: |
+            dist/archive_manifest.json
+            dist/archive_compaction_manifest.json
+            conductor/archive_publication_status.json
+            dist/corpus_manifest.json
+            dist/README.md
+            dist/historical_archive.tar.gz
+            dist/historical_archive.jsonl.gz
+            dist/normalized_archive.jsonl.gz
+            dist/normalized_archive.parquet

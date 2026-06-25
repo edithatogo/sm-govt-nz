@@ -12,8 +12,8 @@ from typing import Any, Protocol
 from urllib.request import Request, urlopen
 
 
-DEFAULT_HF_DATASET_NAME = "courts-nz-public-notices-archive"
-DEFAULT_HF_DATASET_REPO_ID = "edithatogo/courts-nz-public-notices-archive"
+DEFAULT_HF_DATASET_NAME = "nz-government-public-source-archive"
+DEFAULT_HF_DATASET_REPO_ID = "edithatogo/nz-government-public-source-archive"
 DEFAULT_ZENODO_DEPOSIT_API_URL = "https://zenodo.org/api/deposit/depositions"
 
 
@@ -166,7 +166,7 @@ def publish_to_zenodo(
     uploader: HttpUploader | None = None,
 ) -> dict[str, Any]:
     metadata = {
-        "title": "Courts of New Zealand public notices multi-source archive",
+        "title": "New Zealand government public source archive",
         "upload_type": "dataset",
         "sha256": bundle.sha256,
         "file_count": bundle.file_count,
@@ -199,11 +199,11 @@ def publish_to_zenodo_deposition(
 ) -> dict[str, Any]:
     metadata = {
         "metadata": {
-            "title": "Courts of New Zealand public notices multi-source archive",
+            "title": "New Zealand government public source archive",
             "upload_type": "dataset",
             "description": (
                 "Normalized public notice records and raw source evidence captured for "
-                "the Courts of New Zealand archive and mirror project."
+                "the New Zealand government source archive and mirror project."
             ),
             "creators": [{"name": "sm-govt-nz maintainers"}],
         }
@@ -452,9 +452,8 @@ def _build_corpus_manifest(
         current["max_original_created_at"] = max(current["max_original_created_at"], created_at)
 
     return {
-        "title": "Courts of New Zealand public notices multi-source archive",
-        "agency_id": "courts-nz",
-        "agency_name": "Courts of New Zealand",
+        "title": "New Zealand government public source archive",
+        "scope": "nz-government",
         "license": "Public source records; verify source-specific terms before redistribution.",
         "generated_artifacts": {
             jsonl_path.name: _artifact_summary(jsonl_path),
@@ -472,12 +471,12 @@ def _build_corpus_manifest(
         "raw_file_count": len(raw_files),
         "legacy_json_file_count": len(legacy_json_files),
         "known_gaps": [
-            "LinkedIn capture is pending approved access and remains archive-only.",
-            "Judgments email subscription ingress is pending Cloudflare Email Routing setup.",
+            "Platform capture beyond website, RSS, and Bluesky requires approved APIs, exports, or manual import workflows before automated archiving.",
+            "Newsletter and email subscription ingress is pending source-specific mailbox/routing setup.",
             "Raw-source bundles are included in the Actions artifact and full archive tarball; separate gated raw publication can be added if source terms require it.",
         ],
         "provenance": (
-            "Records are derived from public Courts of New Zealand source surfaces and preserve "
+            "Records are derived from public New Zealand government source surfaces and preserve "
             "source platform, source account, source URL, capture timestamp, original timestamp, "
             "content hash, media references, raw path, and extraction method where available."
         ),
@@ -643,11 +642,11 @@ def _build_dataset_card(manifest: dict[str, Any]) -> str:
         "- text-generation\n"
         "language:\n"
         "- en\n"
-        "pretty_name: Courts of New Zealand public notices multi-source archive\n"
+        "pretty_name: New Zealand government public source archive\n"
         "---\n\n"
-        "# Courts of New Zealand Public Notices Multi-Source Archive\n\n"
+        "# New Zealand Government Public Source Archive\n\n"
         "This dataset package contains normalized public notice records and raw source "
-        "evidence captured for the Courts of New Zealand archive and mirror project.\n\n"
+        "evidence captured for the New Zealand government source archive and mirror project.\n\n"
         "## Contents\n\n"
         "- `normalized_archive.jsonl.gz`: combined normalized records from source/month shards.\n"
         "- `normalized_archive.parquet`: combined normalized records in Parquet format.\n"
@@ -796,3 +795,5 @@ def _requested_publish_targets(publish: bool, publish_target: str) -> list[str]:
 
 if __name__ == "__main__":
     main()
+
+

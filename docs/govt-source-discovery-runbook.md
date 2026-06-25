@@ -55,11 +55,14 @@ Use `.github/workflows/archive_registered_sources.yml` to select registered sour
 
 Current capture support:
 
-- Courts NZ ready lanes are handed to `scripts/archive_current_sources.py`.
-- Other ready RSS, website, and Bluesky sources are reported as `pending_adapter` until a generic adapter config is added.
+- `website_page` sources are captured through bounded public HTML fetches.
+- `rss_feed` sources are captured through `feedparser` when discovered feed URLs are registered.
+- `bluesky` sources are captured through the public Bluesky author feed API.
 - Meta, LinkedIn, X, newsletter, and YouTube sources are retained in the manifest and reported honestly until their API/export/ingress requirements are satisfied.
 
 This means the manifest can be exhaustive without overstating which sources are already being captured.
+
+Non-dry-run archive workflow runs build the archive compaction manifest and bundle the corpus with `scripts/publish_archives.py`. Set `publish=true` and choose `publication_target=all`, `huggingface`, or `zenodo` to publish through configured repository secrets; otherwise the workflow uploads a GitHub Actions artifact only.
 
 ## Daily Search Operation
 

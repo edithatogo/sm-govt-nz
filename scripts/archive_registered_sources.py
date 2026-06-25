@@ -1,20 +1,26 @@
 import argparse
+import hashlib
 import json
 import sys
 from collections import Counter
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
+from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.archive_current_sources import archive_current_sources
+from scripts.archive_bluesky_history import fetch_author_history
+from src.archive_schema import build_normalized_record
 
 
 DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
 DEFAULT_REPORT = Path("conductor/govt_archive_registered_sources_report.json")
+DEFAULT_RAW_ROOT = Path("historical_archive_raw")
+DEFAULT_NORMALIZED_ROOT = Path("historical_archive_normalized")
 SUPPORTED_PLATFORMS = {"rss", "website_page", "bluesky"}
 
 
@@ -30,6 +36,44 @@ def load_json(path: Path) -> Any:
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def stable_id(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()[:24]
+
+
+def fetch_text(url: str, *, timeout: int = 30) -> str:
+    request = Request(
+        url,
+        headers={"User-Agent": "sm-govt-nz-archive-registered-sources/1.0"},
+    )
+    with urlopen(request, timeout=timeout) as response:
+        return response.read(1_500_000).decode("utf-8", errors="replace")
+
+
+def month_from_timestamp(value: str) -> str:
+    if len(value) >= 7 and value[4] == "-":
+        return value[:7]
+    return now_iso()[:7]
+
+
+def append_normalized_record(root: Path, platform: str, record: dict[str, Any]) -> bool:
+    shard = root / platform / f"{month_from_timestamp(record['original_created_at'])}.jsonl"
+    shard.parent.mkdir(parents=True, exist_ok=True)
+    existing_ids: set[str] = set()
+    if shard.exists():
+        for line in shard.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            try:
+                existing_ids.add(str(json.loads(line).get("record_id", "")))
+            except json.JSONDecodeError:
+                continue
+    if record["record_id"] in existing_ids:
+        return False
+    with shard.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+    return True
 
 
 def select_sources(
@@ -64,17 +108,251 @@ def source_result(source: dict[str, Any], status: str, reason: str = "") -> dict
     }
 
 
+def archive_website_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    website_fetcher: Any | None = None,
+) -> dict[str, Any]:
+    captured_at = now_iso()
+    url = str(source.get("url") or "")
+    fetcher = website_fetcher or fetch_text
+    html = fetcher(url)
+    record_key = stable_id(f"{source.get('source_id')}|{url}")
+    raw_rel = Path("website") / captured_at[:7] / f"{record_key}.json"
+    raw_path = raw_root / raw_rel
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    if not raw_path.exists():
+        raw_path.write_text(
+        json.dumps(
+            {
+                "captured_at": captured_at,
+                "source": source,
+                "url": url,
+                "html": html,
+            },
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    normalized = build_normalized_record(
+        record_id=f"website:{record_key}",
+        agency_id=str(source.get("agency_id") or ""),
+        source_platform="website_page",
+        source_account=str(source.get("account") or source.get("agency_id") or ""),
+        source_kind=str(source.get("source_type") or "website_page"),
+        source_url=url,
+        canonical_url=url,
+        original_created_at=captured_at,
+        captured_at=captured_at,
+        content=html[:100_000],
+        raw_path=str(raw_path),
+        extraction_method="generic_registered_website_fetch",
+        cross_source_ids={"source_id": str(source.get("source_id") or "")},
+    )
+    inserted = append_normalized_record(normalized_root, "website", normalized)
+    return source_result(
+        source,
+        "captured" if inserted else "already_captured",
+        "captured generic website page" if inserted else "website record already present",
+    )
+
+
+def entry_timestamp(entry: dict[str, Any]) -> str:
+    for key in ("published", "updated", "created"):
+        value = entry.get(key)
+        if not value:
+            continue
+        try:
+            return parsedate_to_datetime(str(value)).astimezone(timezone.utc).replace(microsecond=0).isoformat()
+        except (TypeError, ValueError, OSError):
+            if isinstance(value, str) and value:
+                return value
+    return now_iso()
+
+
+
+def bluesky_handle_from_source(source: dict[str, Any]) -> str:
+    account = str(source.get("account") or "").strip()
+    if account and "." in account and " " not in account:
+        return account.removeprefix("@")
+    url = str(source.get("url") or "")
+    marker = "/profile/"
+    if marker in url:
+        return url.split(marker, 1)[1].split("/", 1)[0].removeprefix("@")
+    return account.removeprefix("@")
+
+
+def archive_bluesky_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    fetcher: Any | None = None,
+    max_pages: int = 1,
+) -> list[dict[str, Any]]:
+    handle = bluesky_handle_from_source(source)
+    if not handle:
+        return [source_result(source, "capture_failed", "missing Bluesky handle")]
+    fetch = fetcher or fetch_author_history
+    posts = fetch(handle, handle=handle, max_pages=max_pages)
+    results = []
+    for post in posts:
+        post_id = str(post.get("post_id") or stable_id(json.dumps(post, sort_keys=True, default=str)))
+        created_at = str(post.get("created_at") or now_iso())
+        raw_rel = Path("bluesky") / month_from_timestamp(created_at) / f"{post_id}.json"
+        raw_path = raw_root / raw_rel
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        if not raw_path.exists():
+            raw_path.write_text(
+            json.dumps(
+                {
+                    "captured_at": now_iso(),
+                    "source": source,
+                    "post": post,
+                },
+                indent=2,
+                sort_keys=True,
+                default=str,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        normalized = build_normalized_record(
+            record_id=f"bluesky:{post_id}",
+            agency_id=str(source.get("agency_id") or ""),
+            source_platform="bluesky",
+            source_account=handle,
+            source_kind=str(source.get("source_type") or "social_profile"),
+            source_url=str(source.get("url") or f"https://bsky.app/profile/{handle}"),
+            canonical_url=str(post.get("url") or source.get("url") or f"https://bsky.app/profile/{handle}"),
+            original_created_at=created_at,
+            captured_at=now_iso(),
+            content=str(post.get("text") or ""),
+            raw_path=str(raw_path),
+            extraction_method="generic_registered_bluesky_public_api",
+            media_refs=post.get("images") if isinstance(post.get("images"), list) else [],
+            cross_source_ids={
+                "source_id": str(source.get("source_id") or ""),
+                "at_uri": str(post.get("uri") or ""),
+                "cid": str(post.get("cid") or ""),
+            },
+        )
+        inserted = append_normalized_record(normalized_root, "bluesky", normalized)
+        results.append(
+            source_result(
+                source,
+                "captured" if inserted else "already_captured",
+                f"captured bluesky post {normalized['record_id']}" if inserted else "bluesky record already present",
+            )
+        )
+    if not results:
+        results.append(source_result(source, "no_records", "Bluesky feed returned no posts"))
+    return results
+
+
+def archive_rss_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    parser: Any | None = None,
+) -> list[dict[str, Any]]:
+    import feedparser
+
+    parser = parser or feedparser
+    feed_url = str(source.get("url") or "")
+    parsed = parser.parse(feed_url)
+    results = []
+    for entry in getattr(parsed, "entries", []) or []:
+        entry_dict = dict(entry)
+        link = str(entry_dict.get("link") or entry_dict.get("id") or feed_url)
+        created_at = entry_timestamp(entry_dict)
+        record_key = stable_id(f"{source.get('source_id')}|{link}|{entry_dict.get('title', '')}")
+        raw_rel = Path("rss") / month_from_timestamp(created_at) / f"{record_key}.json"
+        raw_path = raw_root / raw_rel
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        if not raw_path.exists():
+            raw_path.write_text(
+            json.dumps(
+                {
+                    "captured_at": now_iso(),
+                    "feed_url": feed_url,
+                    "source": source,
+                    "entry": entry_dict,
+                },
+                indent=2,
+                sort_keys=True,
+                default=str,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        content = "\n\n".join(
+            part
+            for part in [
+                str(entry_dict.get("title") or ""),
+                str(entry_dict.get("summary") or entry_dict.get("description") or ""),
+            ]
+            if part
+        )
+        normalized = build_normalized_record(
+            record_id=f"rss:{record_key}",
+            agency_id=str(source.get("agency_id") or ""),
+            source_platform="rss",
+            source_account=str(source.get("account") or feed_url),
+            source_kind=str(source.get("source_type") or "rss_feed"),
+            source_url=feed_url,
+            canonical_url=link,
+            original_created_at=created_at,
+            captured_at=now_iso(),
+            content=content,
+            raw_path=str(raw_path),
+            extraction_method="generic_registered_rss_feedparser",
+            cross_source_ids={"source_id": str(source.get("source_id") or "")},
+        )
+        inserted = append_normalized_record(normalized_root, "rss", normalized)
+        results.append(
+            source_result(
+                source,
+                "captured" if inserted else "already_captured",
+                f"captured rss entry {normalized['record_id']}" if inserted else "rss record already present",
+            )
+        )
+    if not results:
+        results.append(source_result(source, "no_records", "feed parsed but returned no entries"))
+    return results
+
+
 def run_courts_current_sources_if_selected(selected: list[dict[str, Any]], dry_run: bool) -> dict[str, Any] | None:
     courts_sources = [
         source
         for source in selected
-        if source.get("agency_id") == "courts-nz" and source.get("platform") in SUPPORTED_PLATFORMS
+        if source.get("agency_id") == "courts-nz" and source.get("platform") in {"bluesky"}
     ]
     if not courts_sources:
         return None
     if dry_run:
         return {"dry_run": True, "selected_supported_courts_sources": len(courts_sources)}
-    return archive_current_sources()
+    return {"skipped": True, "reason": "generic Bluesky archiver handles selected Courts sources"}
+
+
+def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) -> list[dict[str, Any]]:
+    if args.dry_run:
+        return [source_result(source, "would_capture", "dry run")]
+    raw_root = Path(getattr(args, "raw_root", DEFAULT_RAW_ROOT))
+    normalized_root = Path(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT))
+    platform = source.get("platform")
+    try:
+        if platform == "website_page" or source.get("source_type") == "website_page":
+            return [archive_website_source(source, raw_root, normalized_root)]
+        if platform == "rss" or source.get("source_type") == "rss_feed":
+            return archive_rss_source(source, raw_root, normalized_root)
+        if platform == "bluesky":
+            return archive_bluesky_source(source, raw_root, normalized_root, max_pages=getattr(args, "max_bluesky_pages", 1))
+    except Exception as exc:  # noqa: BLE001 - archive reports should record per-source failures.
+        return [source_result(source, "capture_failed", str(exc)[:300])]
+    return [source_result(source, "pending_adapter", "source is feasible but needs a generic adapter or source-specific config before capture")]
 
 
 def build_report(args: argparse.Namespace) -> dict[str, Any]:
@@ -89,16 +367,8 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     courts_report = run_courts_current_sources_if_selected(selected, args.dry_run)
     for source in selected:
         platform = source.get("platform")
-        if source.get("agency_id") == "courts-nz" and platform in SUPPORTED_PLATFORMS:
-            results.append(source_result(source, "invoked", "handled by archive_current_sources.py"))
-        elif platform in SUPPORTED_PLATFORMS:
-            results.append(
-                source_result(
-                    source,
-                    "pending_adapter",
-                    "source is feasible but needs a generic adapter or source-specific config before capture",
-                )
-            )
+        if platform in {"rss", "website_page", "bluesky"} or source.get("source_type") in {"rss_feed", "website_page"}:
+            results.extend(capture_registered_source(source, args))
         else:
             results.append(
                 source_result(
@@ -108,6 +378,13 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
                 )
             )
     status_counts = Counter(row["status"] for row in results)
+    platform_counts = Counter(str(source.get("platform") or "unknown") for source in selected)
+    status_by_platform: dict[str, dict[str, int]] = {}
+    for row in results:
+        platform = str(row.get("platform") or "unknown")
+        status = str(row.get("status") or "unknown")
+        platform_statuses = status_by_platform.setdefault(platform, {})
+        platform_statuses[status] = platform_statuses.get(status, 0) + 1
     return {
         "generated_at": now_iso(),
         "dry_run": args.dry_run,
@@ -116,10 +393,17 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "source_type": args.source_type,
             "agency_id": args.agency_id,
             "include_blocked": args.include_blocked,
+            "raw_root": str(getattr(args, "raw_root", DEFAULT_RAW_ROOT)),
+            "normalized_root": str(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT)),
         },
         "summary": {
             "selected_sources": len(selected),
+            "platform_counts": dict(sorted(platform_counts.items())),
             "status_counts": dict(sorted(status_counts.items())),
+            "status_by_platform": {
+                platform: dict(sorted(counts.items()))
+                for platform, counts in sorted(status_by_platform.items())
+            },
         },
         "courts_current_sources_report": courts_report,
         "results": results,
@@ -130,6 +414,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Invoke archive capture for registered government sources.")
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--raw-root", type=Path, default=DEFAULT_RAW_ROOT)
+    parser.add_argument("--normalized-root", type=Path, default=DEFAULT_NORMALIZED_ROOT)
     parser.add_argument(
         "--source-type",
         default="all_feasible",
@@ -138,6 +424,7 @@ def main() -> None:
     parser.add_argument("--agency-id", default="")
     parser.add_argument("--include-blocked", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--max-bluesky-pages", type=int, default=1)
     args = parser.parse_args()
 
     report = build_report(args)
@@ -150,3 +437,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
+

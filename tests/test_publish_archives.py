@@ -207,3 +207,4 @@ def test_write_publication_status_report_records_artifact_and_targets(tmp_path) 
     assert report["hugging_face"]["status"] == "published"
     assert report["hugging_face"]["target"] == "org/dataset"
     assert report["zenodo"]["status"] == "not_requested_or_not_configured"
+
