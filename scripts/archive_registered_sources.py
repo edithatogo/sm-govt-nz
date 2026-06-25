@@ -1,12 +1,14 @@
 import argparse
 import hashlib
 import json
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import parse_qs, urlparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -257,6 +259,131 @@ def archive_bluesky_source(
 
 
 
+
+def youtube_channel_id_from_url(url: str) -> str:
+    parsed = urlparse(url)
+    query_channel_id = parse_qs(parsed.query).get("channel_id", [""])[0]
+    if query_channel_id.startswith("UC"):
+        return query_channel_id
+    parts = [part for part in parsed.path.split("/") if part]
+    if len(parts) >= 2 and parts[0] == "channel" and parts[1].startswith("UC"):
+        return parts[1]
+    return ""
+
+
+def youtube_channel_id_from_page(body: str) -> str:
+    patterns = [
+        r'"channelId"\s*:\s*"(UC[0-9A-Za-z_-]+)"',
+        r'"externalId"\s*:\s*"(UC[0-9A-Za-z_-]+)"',
+        r'feeds/videos\.xml\?channel_id=(UC[0-9A-Za-z_-]+)',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, body)
+        if match:
+            return match.group(1)
+    return ""
+
+
+def resolve_youtube_channel_id(source: dict[str, Any], page_fetcher: Any | None = None) -> str:
+    url = str(source.get("url") or "")
+    channel_id = youtube_channel_id_from_url(url)
+    if channel_id:
+        return channel_id
+    fetcher = page_fetcher or fetch_text
+    page = fetcher(url)
+    return youtube_channel_id_from_page(page)
+
+
+def youtube_feed_url(channel_id: str) -> str:
+    return f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
+
+
+def archive_youtube_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    parser: Any | None = None,
+    page_fetcher: Any | None = None,
+) -> list[dict[str, Any]]:
+    import feedparser
+
+    try:
+        channel_id = resolve_youtube_channel_id(source, page_fetcher=page_fetcher)
+    except Exception as exc:  # noqa: BLE001 - per-source report records resolver failures.
+        return [source_result(source, "capture_failed", f"YouTube channel resolver failed: {str(exc)[:240]}")]
+    if not channel_id:
+        return [source_result(source, "capture_failed", "could not resolve YouTube channel id")]
+
+    feed_url = youtube_feed_url(channel_id)
+    feed_parser = parser or feedparser
+    parsed = feed_parser.parse(feed_url)
+    results = []
+    for entry in getattr(parsed, "entries", []) or []:
+        entry_dict = dict(entry)
+        video_id = str(entry_dict.get("yt_videoid") or entry_dict.get("id") or "").rsplit(":", 1)[-1]
+        link = str(entry_dict.get("link") or (f"https://www.youtube.com/watch?v={video_id}" if video_id else feed_url))
+        created_at = entry_timestamp(entry_dict)
+        record_key = stable_id(f"{source.get('source_id')}|{channel_id}|{link}|{entry_dict.get('title', '')}")
+        raw_rel = Path("youtube") / month_from_timestamp(created_at) / f"{record_key}.json"
+        raw_path = raw_root / raw_rel
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        if not raw_path.exists():
+            raw_path.write_text(
+                json.dumps(
+                    {
+                        "captured_at": now_iso(),
+                        "feed_url": feed_url,
+                        "channel_id": channel_id,
+                        "source": source,
+                        "entry": entry_dict,
+                    },
+                    indent=2,
+                    sort_keys=True,
+                    default=str,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        content = "\n\n".join(
+            part
+            for part in [
+                str(entry_dict.get("title") or ""),
+                str(entry_dict.get("summary") or entry_dict.get("description") or ""),
+            ]
+            if part
+        )
+        normalized = build_normalized_record(
+            record_id=f"youtube:{record_key}",
+            agency_id=str(source.get("agency_id") or ""),
+            source_platform="youtube",
+            source_account=str(source.get("account") or channel_id),
+            source_kind=str(source.get("source_type") or "social_profile"),
+            source_url=str(source.get("url") or feed_url),
+            canonical_url=link,
+            original_created_at=created_at,
+            captured_at=now_iso(),
+            content=content,
+            raw_path=str(raw_path),
+            extraction_method="generic_registered_youtube_channel_rss",
+            cross_source_ids={
+                "source_id": str(source.get("source_id") or ""),
+                "channel_id": channel_id,
+                "video_id": video_id,
+                "feed_url": feed_url,
+            },
+        )
+        inserted = append_normalized_record(normalized_root, "youtube", normalized)
+        results.append(
+            source_result(
+                source,
+                "captured" if inserted else "already_captured",
+                f"captured youtube entry {normalized['record_id']}" if inserted else "youtube record already present",
+            )
+        )
+    if not results:
+        results.append(source_result(source, "no_records", "YouTube channel RSS returned no entries"))
+    return results
+
 def archive_manual_seed_source(
     source: dict[str, Any],
     raw_root: Path = DEFAULT_RAW_ROOT,
@@ -384,6 +511,8 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
     manual_seed_root = Path(getattr(args, "manual_seed_root", DEFAULT_MANUAL_SEED_ROOT))
     platform = source.get("platform")
     if args.dry_run:
+        if platform == "youtube":
+            return [source_result(source, "would_capture", "dry run: public YouTube channel RSS capture")]
         if platform in MANUAL_SEED_PLATFORMS and find_manual_seed_path(source, manual_seed_root) is None:
             return [source_result(source, "manual_seed_missing", "dry run: manual seed file is not present")]
         return [source_result(source, "would_capture", "dry run")]
@@ -394,6 +523,8 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
             return archive_rss_source(source, raw_root, normalized_root)
         if platform == "bluesky":
             return archive_bluesky_source(source, raw_root, normalized_root, max_pages=getattr(args, "max_bluesky_pages", 1))
+        if platform == "youtube":
+            return archive_youtube_source(source, raw_root, normalized_root)
         if platform in MANUAL_SEED_PLATFORMS:
             return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
     except Exception as exc:  # noqa: BLE001 - archive reports should record per-source failures.

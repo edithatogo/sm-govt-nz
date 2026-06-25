@@ -6,6 +6,7 @@ from scripts.archive_registered_sources import (
     archive_manual_seed_source,
     archive_rss_source,
     archive_website_source,
+    archive_youtube_source,
     build_report,
 )
 
@@ -26,6 +27,23 @@ class FakeParser:
         self.url = url
         return FakeFeed()
 
+
+class FakeYouTubeFeed:
+    entries = [
+        {
+            "title": "Video update",
+            "summary": "Public YouTube update",
+            "link": "https://www.youtube.com/watch?v=abc123",
+            "published": "Wed, 24 Jun 2026 01:00:00 GMT",
+            "yt_videoid": "abc123",
+        }
+    ]
+
+
+class FakeYouTubeParser:
+    def parse(self, url):
+        self.url = url
+        return FakeYouTubeFeed()
 
 def test_archive_registered_sources_reports_supported_and_pending_sources(tmp_path):
     manifest = tmp_path / "manifest.json"
@@ -144,7 +162,6 @@ def test_archive_website_source_writes_raw_and_normalized_records(tmp_path):
     assert "Public update" in normalized
 
 
-
 def test_archive_bluesky_source_writes_raw_and_normalized_records(tmp_path):
     source = {
         "source_id": "agency-bluesky",
@@ -180,6 +197,71 @@ def test_archive_bluesky_source_writes_raw_and_normalized_records(tmp_path):
     assert "bluesky:abc123" in normalized
     assert "Public Bluesky update" in normalized
 
+
+
+
+def test_archive_youtube_source_resolves_channel_and_writes_records(tmp_path):
+    source = {
+        "source_id": "agency-youtube",
+        "agency_id": "agency",
+        "platform": "youtube",
+        "source_type": "social_profile",
+        "url": "https://www.youtube.com/@agency",
+        "account": "Agency YouTube",
+        "archive_status": "candidate",
+        "feasibility": "medium",
+    }
+    parser = FakeYouTubeParser()
+
+    results = archive_youtube_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        parser=parser,
+        page_fetcher=lambda url: '{"channelId":"UC1234567890abcdefghiJKL"}',
+    )
+
+    assert results[0]["status"] == "captured"
+    assert parser.url == "https://www.youtube.com/feeds/videos.xml?channel_id=UC1234567890abcdefghiJKL"
+    assert list((tmp_path / "raw" / "youtube" / "2026-06").glob("*.json"))
+    normalized = (tmp_path / "normalized" / "youtube" / "2026-06.jsonl").read_text(encoding="utf-8")
+    assert "youtube:" in normalized
+    assert "Public YouTube update" in normalized
+    assert "UC1234567890abcdefghiJKL" in normalized
+
+
+def test_archive_youtube_source_reports_unresolved_channel(tmp_path):
+    source = {
+        "source_id": "agency-youtube",
+        "agency_id": "agency",
+        "platform": "youtube",
+        "source_type": "social_profile",
+        "url": "https://www.youtube.com/@agency",
+        "archive_status": "candidate",
+        "feasibility": "medium",
+    }
+
+    results = archive_youtube_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        parser=FakeYouTubeParser(),
+        page_fetcher=lambda url: "<html>No channel id</html>",
+    )
+
+    assert results == [
+        {
+            "source_id": "agency-youtube",
+            "agency_id": "agency",
+            "platform": "youtube",
+            "source_type": "social_profile",
+            "url": "https://www.youtube.com/@agency",
+            "archive_status": "candidate",
+            "feasibility": "medium",
+            "status": "capture_failed",
+            "reason": "could not resolve YouTube channel id",
+        }
+    ]
 
 def test_archive_rss_source_does_not_rewrite_existing_raw_record(tmp_path):
     source = {
@@ -237,7 +319,6 @@ def test_archive_website_source_does_not_rewrite_existing_raw_record(tmp_path):
 
     assert result["status"] == "already_captured"
     assert raw_file.read_text(encoding="utf-8") == original_raw
-
 
 def test_archive_bluesky_source_does_not_rewrite_existing_raw_record(tmp_path):
     source = {

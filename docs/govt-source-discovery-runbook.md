@@ -66,7 +66,8 @@ Current capture support:
 - `website_page` sources are captured through bounded public HTML fetches.
 - `rss_feed` sources are captured through `feedparser` when discovered feed URLs are registered.
 - `bluesky` sources are captured through the public Bluesky author feed API.
-- `facebook`, `instagram`, `linkedin`, `newsletter`, `threads`, `x`, and `youtube` sources can be captured from operator-authorized manual seed JSON files under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
+- `youtube` sources resolve channel IDs from `/channel/`, `channel_id`, or public channel pages and capture public channel RSS feeds without credentials.
+- `facebook`, `instagram`, `linkedin`, `newsletter`, `threads`, and `x` sources can be captured from operator-authorized manual seed JSON files under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
 - platform sources without a seed file are reported as `manual_seed_missing`, not as successfully captured.
 
 Manual seed files contain a JSON object with `posts` or a bare list of post objects. Each post needs `url`, `created_at`, and `text`; `post_id`, `media`, `account`, and `canonical_url` are optional. This keeps the manifest exhaustive without overstating which sources are already captured.
@@ -85,8 +86,8 @@ Manual runs can disable homepage probing or limit `max_agencies` for a bounded t
 
 ## Next Adapter Priorities
 
-1. Add manual seed files for high-value LinkedIn, Meta, X, YouTube, and newsletter sources where exports or bounded captures are available.
-2. YouTube handle-to-channel-id resolver and channel RSS capture.
+1. Run YouTube capture in dry-run, then live mode, and review unresolved channel IDs for manual correction.
+2. Add manual seed files for high-value LinkedIn, Meta, X, and newsletter sources where exports or bounded captures are available.
 3. Newsletter ingress manifests modelled on the Courts NZ email ingress.
 4. Meta platform live capture only through approved Graph/Threads API access or account-owner export.
 5. Source-specific adapters for any platform where public, stable, policy-compliant APIs become available.
