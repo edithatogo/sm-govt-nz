@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-06-25T14:52:01+00:00",
+  "track_id": "govt_archive_noncredential_adapters_20260625",
+  "source_type_risk_taxonomy": {
+    "website_page": {
+      "legal": "low",
+      "technical": "low",
+      "credential": "none",
+      "rate_limit": "low"
+    },
+    "rss": {
+      "legal": "low",
+      "technical": "low",
+      "credential": "none",
+      "rate_limit": "low"
+    },
+    "youtube": {
+      "legal": "low",
+      "technical": "medium",
+      "credential": "none",
+      "rate_limit": "low"
+    },
+    "bluesky": {
+      "legal": "low",
+      "technical": "low",
+      "credential": "low",
+      "rate_limit": "medium"
+    },
+    "newsletter_page": {
+      "legal": "medium",
+      "technical": "medium",
+      "credential": "none",
+      "rate_limit": "low"
+    },
+    "sitemap": {
+      "legal": "low",
+      "technical": "low",
+      "credential": "none",
+      "rate_limit": "low"
+    },
+    "media_release": {
+      "legal": "low",
+      "technical": "medium",
+      "credential": "none",
+      "rate_limit": "low"
+    },
+    "facebook": {
+      "legal": "high",
+      "technical": "high",
+      "credential": "high",
+      "rate_limit": "high"
+    },
+    "instagram": {
+      "legal": "high",
+      "technical": "high",
+      "credential": "high",
+      "rate_limit": "high"
+    },
+    "threads": {
+      "legal": "medium",
+      "technical": "high",
+      "credential": "high",
+      "rate_limit": "medium"
+    },
+    "linkedin": {
+      "legal": "high",
+      "technical": "high",
+      "credential": "high",
+      "rate_limit": "high"
+    },
+    "x": {
+      "legal": "medium",
+      "technical": "medium",
+      "credential": "high",
+      "rate_limit": "high"
+    }
+  },
+  "library_evaluations": {
+    "feedparser": {
+      "verdict": "actively_used"
+    },
+    "httpx": {
+      "verdict": "evaluated"
+    },
+    "trafilatura": {
+      "verdict": "not_imported_but_htmlparser_used"
+    }
+  },
+  "youtube_rss_strategy": {
+    "preferred": "channel RSS via feedparser",
+    "fallback": "yt-dlp or YouTube Data API v3"
+  }
+}
