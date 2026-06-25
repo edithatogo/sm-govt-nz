@@ -1,0 +1,123 @@
+import argparse
+import json
+from collections import Counter
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
+DEFAULT_POLICY = Path("config/manual_seed_onboarding.json")
+DEFAULT_REPORT = Path("conductor/manual_seed_onboarding_report.json")
+DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
+DEFAULT_PLATFORMS = ["facebook", "instagram", "linkedin", "x"]
+
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
+
+def load_json(path: Path) -> Any:
+    with path.open(encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def write_json(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def seed_candidates(source: dict[str, Any], policy: dict[str, Any], seed_root: Path) -> list[str]:
+    platform = str(source.get("platform") or "")
+    source_id = str(source.get("source_id") or "")
+    agency_id = str(source.get("agency_id") or "")
+    seed_directory = str(policy.get("seed_directory") or seed_root / platform).replace("\\", "/")
+    return [
+        f"{seed_directory}/{source_id}.json" if source_id else "",
+        f"{seed_directory}/{agency_id}.json" if agency_id else "",
+    ]
+
+
+def seed_present(candidates: list[str]) -> bool:
+    return any(candidate and Path(candidate).is_file() for candidate in candidates)
+
+
+def onboarding_item(source: dict[str, Any], policy: dict[str, Any], seed_root: Path) -> dict[str, Any]:
+    candidates = [candidate for candidate in seed_candidates(source, policy, seed_root) if candidate]
+    present = seed_present(candidates)
+    return {
+        "source_id": source.get("source_id", ""),
+        "agency_id": source.get("agency_id", ""),
+        "agency_name": source.get("agency_name", ""),
+        "platform": source.get("platform", ""),
+        "source_type": source.get("source_type", ""),
+        "url": source.get("url", ""),
+        "account": source.get("account", ""),
+        "archive_status": source.get("archive_status", ""),
+        "feasibility": source.get("feasibility", ""),
+        "onboarding_status": "seed_present" if present else "needs_authorized_seed_or_api",
+        "acceptable_access_methods": policy.get("acceptable_access_methods", []),
+        "required_authorization": policy.get("required_authorization", ""),
+        "seed_candidates": candidates,
+        "seed_schema": policy.get("seed_schema", ""),
+        "live_capture_policy": policy.get("live_capture_policy", ""),
+    }
+
+
+def build_report(args: argparse.Namespace) -> dict[str, Any]:
+    manifest = load_json(args.manifest)
+    policy = load_json(args.policy)
+    platform_policy = policy.get("platforms", {})
+    requested = [platform.strip() for platform in args.platforms.split(",") if platform.strip()]
+    items = []
+    for source in manifest.get("sources", []):
+        platform = str(source.get("platform") or "")
+        if platform not in requested:
+            continue
+        if platform not in platform_policy:
+            continue
+        items.append(onboarding_item(source, platform_policy[platform], args.manual_seed_root))
+    status_counts = Counter(item["onboarding_status"] for item in items)
+    platform_counts = Counter(item["platform"] for item in items)
+    status_by_platform: dict[str, dict[str, int]] = {}
+    for item in items:
+        platform = item["platform"]
+        statuses = status_by_platform.setdefault(platform, {})
+        statuses[item["onboarding_status"]] = statuses.get(item["onboarding_status"], 0) + 1
+    return {
+        "generated_at": now_iso(),
+        "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
+        "inputs": {
+            "manifest": str(args.manifest),
+            "policy": str(args.policy),
+            "manual_seed_root": str(args.manual_seed_root),
+            "platforms": requested,
+        },
+        "summary": {
+            "selected_sources": len(items),
+            "platform_counts": dict(sorted(platform_counts.items())),
+            "status_counts": dict(sorted(status_counts.items())),
+            "status_by_platform": {platform: dict(sorted(counts.items())) for platform, counts in sorted(status_by_platform.items())},
+        },
+        "platform_policies": {platform: platform_policy[platform] for platform in requested if platform in platform_policy},
+        "items": sorted(items, key=lambda item: (item["platform"], item["agency_id"], item["source_id"])),
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Build explicit manual/API onboarding queue for non-live-capturable platforms.")
+    parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
+    parser.add_argument("--policy", type=Path, default=DEFAULT_POLICY)
+    parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--manual-seed-root", type=Path, default=DEFAULT_MANUAL_SEED_ROOT)
+    parser.add_argument("--platforms", default=",".join(DEFAULT_PLATFORMS))
+    args = parser.parse_args()
+    report = build_report(args)
+    write_json(args.report, report)
+    print(
+        "Manual/API onboarding report wrote "
+        f"{report['summary']['selected_sources']} selected sources."
+    )
+
+
+if __name__ == "__main__":
+    main()

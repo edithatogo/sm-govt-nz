@@ -1,0 +1,38 @@
+{
+  "description": "Manual/API onboarding policy for platforms that must not be treated as live-capturable without authorized exports or approved APIs.",
+  "generated_at": "2026-06-25",
+  "platforms": {
+    "facebook": {
+      "family": "meta",
+      "acceptable_access_methods": ["meta_graph_api", "page_owner_export", "operator_authorized_seed"],
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_directory": "manual_archive_seeds/facebook",
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only."
+    },
+    "instagram": {
+      "family": "meta",
+      "acceptable_access_methods": ["instagram_graph_api", "account_owner_export", "operator_authorized_seed"],
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_directory": "manual_archive_seeds/instagram",
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only."
+    },
+    "linkedin": {
+      "family": "linkedin",
+      "acceptable_access_methods": ["approved_linkedin_api", "organization_admin_export", "operator_authorized_seed"],
+      "required_authorization": "organization_admin_or_approved_app",
+      "seed_directory": "manual_archive_seeds/linkedin",
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only."
+    },
+    "x": {
+      "family": "x",
+      "acceptable_access_methods": ["official_api", "account_owner_archive", "public_archive_dataset", "operator_authorized_seed"],
+      "required_authorization": "account_owner_or_approved_api_or_lawful_public_archive",
+      "seed_directory": "manual_archive_seeds/x",
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "live_capture_policy": "Treat live browser capture as degraded. Prefer official API, account-owner archive, public archive dataset, or explicit operator seed JSON."
+    }
+  }
+}

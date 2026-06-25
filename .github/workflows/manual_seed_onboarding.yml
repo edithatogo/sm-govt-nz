@@ -1,0 +1,43 @@
+name: Manual/API Source Onboarding
+
+on:
+  workflow_dispatch:
+    inputs:
+      platforms:
+        description: "Comma-separated non-live-capturable platforms to report"
+        required: true
+        default: "facebook,instagram,linkedin,x"
+      commit_report:
+        description: "Commit the refreshed onboarding report"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+  schedule:
+    - cron: "42 15 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Build manual/API onboarding report
+        run: >-
+          python scripts/build_manual_seed_onboarding_report.py
+          --platforms "${{ inputs.platforms || 'facebook,instagram,linkedin,x' }}"
+      - name: Commit onboarding report
+        if: ${{ github.event_name == 'schedule' || inputs.commit_report == 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Refresh manual API source onboarding report"
+          --path conductor/manual_seed_onboarding_report.json

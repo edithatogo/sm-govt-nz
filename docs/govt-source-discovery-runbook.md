@@ -57,6 +57,14 @@ Review decisions can be fed back into discovery with `scripts/record_source_disc
 Daily discovery reads that learning file when scoring candidates. `accepted`, `approved`, `confirmed`, `official`, and `true_positive` decisions raise confidence; `rejected`, `false_positive`, `unofficial`, `exclude`, and `excluded` decisions lower confidence; `needs_review` leaves the candidate visible but slightly de-prioritized. Configured `official_account_terms` and `negative_account_terms` are also applied to the URL, account text, link text, link title, agency name, and website surface.
 
 These signals change review priority and trust metadata only. They do not auto-register risky sources, publish archives, or override platform archive policy.
+
+## Manual/API Onboarding
+
+Use `.github/workflows/manual_seed_onboarding.yml` or `scripts/build_manual_seed_onboarding_report.py` to build `conductor/manual_seed_onboarding_report.json` for Facebook, Instagram, LinkedIn, and X. This report is an onboarding queue, not a capture result.
+
+For each source it records the accepted access methods, required authorization, candidate seed file paths, and the platform-specific no-scraping boundary. A source remains `needs_authorized_seed_or_api` until an approved API route, account-owner export, lawful public archive input, or operator-authorized seed JSON is available under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
+
+Run archive capture for these platforms only after the report shows `seed_present` or after a separately approved API adapter has been implemented. Missing seeds are reported as `manual_seed_missing`; the runner must not silently treat Meta, LinkedIn, or X as live-capturable.
 ## Archive Invocation
 
 Use `.github/workflows/archive_registered_sources.yml` to select registered sources by platform or agency.
