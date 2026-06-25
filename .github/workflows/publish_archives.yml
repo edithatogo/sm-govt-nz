@@ -29,7 +29,14 @@ on:
         options:
           - "huggingface"
           - "zenodo"
+          - "osf"
           - "all"
+          - "all_with_osf"
+      osf_upload_url:
+        description: "OSF file upload base URL used when OSF_UPLOAD_URL is not set"
+        required: false
+        default: ""
+        type: string
   schedule:
     - cron: "41 16 * * 0"
 
@@ -49,6 +56,8 @@ jobs:
       ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
       ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
       ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url || 'https://zenodo.org/api/deposit/depositions' }}
+      OSF_TOKEN: ${{ secrets.OSF_TOKEN }}
+      OSF_UPLOAD_URL: ${{ secrets.OSF_UPLOAD_URL || inputs.osf_upload_url }}
       ARCHIVE_PUBLICATION_TARGET: ${{ github.event_name == 'schedule' && 'huggingface' || (inputs.publish == 'true' && inputs.publication_target || 'artifact') }}
     steps:
       - uses: actions/checkout@v5

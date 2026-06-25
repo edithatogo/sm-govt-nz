@@ -55,7 +55,21 @@ on:
         options:
           - huggingface
           - zenodo
+          - osf
           - all
+          - all_with_osf
+      commit_payloads:
+        description: "Commit raw/normalized archive payloads to git after capture"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      osf_upload_url:
+        description: "OSF file upload base URL used when OSF_UPLOAD_URL is not set"
+        required: false
+        default: ""
       hf_dataset_name:
         description: "Dataset slug to use when HF_DATASET_REPO_ID is not set"
         required: true
@@ -79,6 +93,8 @@ jobs:
       ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
       ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
       ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url }}
+      OSF_TOKEN: ${{ secrets.OSF_TOKEN }}
+      OSF_UPLOAD_URL: ${{ secrets.OSF_UPLOAD_URL || inputs.osf_upload_url }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -138,11 +154,11 @@ jobs:
           python scripts/commit_state_updates.py
           --message "Report registered government archive sources"
           --path conductor/govt_archive_registered_sources_report.json
-      - name: Commit archive capture updates
+      - name: Commit archive capture reports
         if: ${{ inputs.dry_run == 'false' }}
         run: >-
           python scripts/commit_state_updates.py
-          --message "Archive registered government sources"
+          --message "Record registered government archive capture report"
           --path conductor/govt_archive_registered_sources_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
@@ -151,6 +167,11 @@ jobs:
           --path dist/archive_compaction_manifest.json
           --path dist/corpus_manifest.json
           --path dist/README.md
+      - name: Commit archive payloads
+        if: ${{ inputs.dry_run == 'false' && inputs.commit_payloads == 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Archive registered government source payloads"
           --path 'historical_archive_raw/**'
           --path 'historical_archive_normalized/**'
       - name: Upload generated corpus bundle

@@ -15,6 +15,7 @@ from urllib.request import Request, urlopen
 DEFAULT_HF_DATASET_NAME = "nz-government-public-source-archive"
 DEFAULT_HF_DATASET_REPO_ID = "edithatogo/nz-government-public-source-archive"
 DEFAULT_ZENODO_DEPOSIT_API_URL = "https://zenodo.org/api/deposit/depositions"
+DEFAULT_OSF_UPLOAD_URL = ""
 
 
 @dataclass(frozen=True)
@@ -278,6 +279,45 @@ def publish_to_hugging_face(
     return {**metadata, "paths_in_repo": uploaded_paths}
 
 
+def publish_to_osf(
+    bundle: BundleManifest,
+    token: str,
+    upload_url: str,
+    uploader: HttpUploader | None = None,
+) -> dict[str, Any]:
+    metadata = {
+        "target": upload_url,
+        "sha256": bundle.sha256,
+        "file_count": bundle.file_count,
+        "normalized_record_count": bundle.normalized_record_count,
+    }
+    if uploader is not None:
+        return uploader.upload_file(upload_url, token, Path(bundle.bundle_path), metadata)
+    try:
+        import requests
+    except ImportError:
+        return UrlLibUploader().upload_file(upload_url, token, Path(bundle.bundle_path), metadata)
+    uploaded_files = []
+    for local_path in _osf_upload_paths(bundle):
+        destination = _osf_file_upload_url(upload_url, local_path)
+        with Path(local_path).open("rb") as file:
+            response = requests.put(
+                destination,
+                headers={"Authorization": f"Bearer {token}"},
+                data=file,
+                timeout=120,
+            )
+        response.raise_for_status()
+        uploaded_files.append(
+            {
+                "filename": Path(local_path).name,
+                "url": destination,
+                "response": response.json() if response.content else {},
+            }
+        )
+    return {**metadata, "uploaded_files": uploaded_files}
+
+
 def publish_from_env(
     bundle: BundleManifest,
     *,
@@ -296,6 +336,10 @@ def publish_from_env(
                 zenodo_token,
                 api_url=os.getenv("ZENODO_DEPOSIT_API_URL", DEFAULT_ZENODO_DEPOSIT_API_URL),
             )
+    osf_token = os.getenv("OSF_TOKEN")
+    osf_upload_url = os.getenv("OSF_UPLOAD_URL", DEFAULT_OSF_UPLOAD_URL)
+    if "osf" in active_targets and osf_token and osf_upload_url:
+        results["osf"] = publish_to_osf(bundle, osf_token, osf_upload_url)
     hf_token = os.getenv("HF_TOKEN")
     if "huggingface" in active_targets and hf_token:
         hf_repo_id = os.getenv("HF_DATASET_REPO_ID") or _infer_hugging_face_repo_id(
@@ -349,6 +393,11 @@ def write_publication_status_report(
             default_repo_id=os.getenv("ZENODO_DEPOSIT_ENDPOINT")
             or os.getenv("ZENODO_DEPOSIT_API_URL")
             or DEFAULT_ZENODO_DEPOSIT_API_URL,
+        ),
+        "osf": _publication_target_status(
+            "osf",
+            publication_results,
+            default_repo_id=os.getenv("OSF_UPLOAD_URL", DEFAULT_OSF_UPLOAD_URL),
         ),
     }
     Path(path).parent.mkdir(parents=True, exist_ok=True)
@@ -751,6 +800,22 @@ def _zenodo_upload_paths(bundle: BundleManifest) -> list[Path]:
     return [Path(path) for path in candidates if path and Path(path).exists()]
 
 
+def _osf_upload_paths(bundle: BundleManifest) -> list[Path]:
+    candidates = [
+        bundle.dataset_card_path,
+        bundle.manifest_path,
+        bundle.normalized_jsonl_path,
+        bundle.normalized_parquet_path,
+        bundle.bundle_path,
+    ]
+    return [Path(path) for path in candidates if path and Path(path).exists()]
+
+
+def _osf_file_upload_url(upload_url: str, path: Path) -> str:
+    separator = "" if upload_url.endswith("/") else "/"
+    return f"{upload_url}{separator}{path.name}"
+
+
 def _sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as file:
@@ -769,7 +834,7 @@ def main() -> None:
     parser.add_argument("--publish", action="store_true")
     parser.add_argument(
         "--publish-target",
-        choices=["artifact", "huggingface", "zenodo", "all"],
+        choices=["artifact", "huggingface", "zenodo", "osf", "all", "all_with_osf"],
         default="artifact",
     )
     parser.add_argument(
@@ -804,6 +869,8 @@ def _requested_publish_targets(publish: bool, publish_target: str) -> list[str]:
         return ["huggingface", "zenodo"] if publish else []
     if publish_target == "all":
         return ["huggingface", "zenodo"]
+    if publish_target == "all_with_osf":
+        return ["huggingface", "zenodo", "osf"]
     return [publish_target]
 
 
