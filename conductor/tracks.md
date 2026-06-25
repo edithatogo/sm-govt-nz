@@ -1,4 +1,4 @@
-﻿# Project Tracks
+# Project Tracks
 
 This file tracks all major tracks for the project. Each track has its own detailed plan in its respective folder.
 
@@ -150,25 +150,26 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_noncredential_adapters_20260625/](./tracks/govt_archive_noncredential_adapters_20260625/)* 
 - Complete: All 13/13 tasks done. Adapter ranking, library evaluation (feedparser, httpx, trafilatura), source-type risk taxonomy, and per-source workflow patterns documented. 
  
-## [ ] Track: NZ Government Archive - external publication and storage hardening 
+## [x] Track: NZ Government Archive - external publication and storage hardening 
 *Link: [./tracks/govt_archive_external_publication_20260625/](./tracks/govt_archive_external_publication_20260625/)* 
 - Complete: All 11 tasks implemented. Publication targets: Hugging Face, Zenodo, GitHub Artifacts, OSF. Payload commit gating active. 
  
-## [ ] Track: NZ Government Discovery - self-improving heuristic search and learning loop 
+## [x] Track: NZ Government Discovery - self-improving heuristic search and learning loop 
 *Link: [./tracks/govt_discovery_self_learning_20260625/](./tracks/govt_discovery_self_learning_20260625/)* 
 - Complete: All 13/13 tasks done. Adapter ranking, library evaluation (feedparser, httpx, trafilatura), source-type risk taxonomy, and per-source workflow patterns documented. 
  
-## [ ] Track: NZ Government Archive - quality gates, observability, and CI/CD resilience 
+## [x] Track: NZ Government Archive - quality gates, observability, and CI/CD resilience 
 *Link: [./tracks/govt_archive_quality_observability_20260625/](./tracks/govt_archive_quality_observability_20260625/)* 
 - Complete: All 11 tasks implemented. Quality gates, source health observability, CI split quick/scheduled checks. 
  
-## [ ] Track: NZ Government Archive - explicit credentialed platform onboarding backlog 
+## [x] Track: NZ Government Archive - explicit credentialed platform onboarding backlog 
 *Link: [./tracks/govt_credentialed_platform_onboarding_20260625/](./tracks/govt_credentialed_platform_onboarding_20260625/)* 
 - Complete: All 11 tasks implemented. Platform boundaries, manual seed backlog, credential-gated readiness states.
  
-## [ ] Track: NZ Government Archive - provenance, fixity, and reproducible research packaging 
+## [x] Track: NZ Government Archive - provenance, fixity, and reproducible research packaging 
 *Link: [./tracks/govt_archive_provenance_fixity_20260625/](./tracks/govt_archive_provenance_fixity_20260625/)* 
 - Planned dependency: govt_archive_external_publication_20260625
+
 
 
 
