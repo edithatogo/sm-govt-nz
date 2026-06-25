@@ -141,3 +141,7 @@ Mordaunt, `edithatogo`, or other personal identities.
 - Complete: schemas, tests, current seeded-profile classifications, and one
   representative role-linked office profile are in place. Future seeded profiles
   must include `account_classification` and `syndication_classification`.
+ 
+## [ ] Track: NZ Government Archive - source readiness matrix and dependency sequencing 
+*Link: [./tracks/govt_archive_readiness_matrix_20260625/](./tracks/govt_archive_readiness_matrix_20260625/)* 
+- Planned dependency: Completed registry quality gates, account classification, refresh cadence, and existing archive reports.
