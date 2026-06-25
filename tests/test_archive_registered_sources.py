@@ -79,6 +79,15 @@ def test_archive_registered_sources_reports_supported_and_pending_sources(tmp_pa
                         "archive_status": "manual_seed",
                         "feasibility": "low",
                     },
+                    {
+                        "source_id": "agency-youtube",
+                        "agency_id": "agency",
+                        "platform": "youtube",
+                        "source_type": "social_profile",
+                        "url": "https://www.youtube.com/@agency",
+                        "archive_status": "candidate",
+                        "feasibility": "medium",
+                    },
                 ]
             }
         ),
@@ -98,10 +107,10 @@ def test_archive_registered_sources_reports_supported_and_pending_sources(tmp_pa
         )
     )
 
-    assert report["summary"]["selected_sources"] == 3
+    assert report["summary"]["selected_sources"] == 4
     assert report["summary"]["status_counts"] == {
         "manual_seed_missing": 1,
-        "would_capture": 2,
+        "would_capture": 3,
     }
     assert report["courts_current_sources_report"] == {
         "dry_run": True,
@@ -196,6 +205,29 @@ def test_archive_bluesky_source_writes_raw_and_normalized_records(tmp_path):
     normalized = (tmp_path / "normalized" / "bluesky" / "2026-06.jsonl").read_text(encoding="utf-8")
     assert "bluesky:abc123" in normalized
     assert "Public Bluesky update" in normalized
+
+
+
+def test_archive_bluesky_source_rejects_intent_share_url(tmp_path):
+    source = {
+        "source_id": "agency-bluesky-share",
+        "agency_id": "agency",
+        "platform": "bluesky",
+        "source_type": "social_profile",
+        "url": "https://bsky.app/intent/compose?text=Home&url=https%3A%2F%2Fagency.govt.nz",
+        "archive_status": "ready",
+        "feasibility": "high",
+    }
+
+    results = archive_bluesky_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        fetcher=lambda actor, handle, max_pages: [],
+    )
+
+    assert results[0]["status"] == "capture_failed"
+    assert results[0]["reason"] == "missing Bluesky handle"
 
 
 

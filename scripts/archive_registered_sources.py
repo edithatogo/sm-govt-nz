@@ -25,7 +25,7 @@ DEFAULT_REPORT = Path("conductor/govt_archive_registered_sources_report.json")
 DEFAULT_RAW_ROOT = Path("historical_archive_raw")
 DEFAULT_NORMALIZED_ROOT = Path("historical_archive_normalized")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
-SUPPORTED_PLATFORMS = {"rss", "website_page", "bluesky", *MANUAL_SEED_PLATFORMS}
+SUPPORTED_PLATFORMS = {"rss", "website_page", "bluesky", "youtube", *MANUAL_SEED_PLATFORMS}
 
 
 def now_iso() -> str:
@@ -49,7 +49,11 @@ def stable_id(value: str) -> str:
 def fetch_text(url: str, *, timeout: int = 30) -> str:
     request = Request(
         url,
-        headers={"User-Agent": "sm-govt-nz-archive-registered-sources/1.0"},
+        headers={
+            "User-Agent": "Mozilla/5.0 (compatible; sm-govt-nz-archive-registered-sources/1.0; +https://github.com/edithatogo/sm-govt-nz)",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-NZ,en;q=0.9",
+        },
     )
     with urlopen(request, timeout=timeout) as response:
         return response.read(1_500_000).decode("utf-8", errors="replace")
@@ -191,13 +195,13 @@ def entry_timestamp(entry: dict[str, Any]) -> str:
 
 def bluesky_handle_from_source(source: dict[str, Any]) -> str:
     account = str(source.get("account") or "").strip()
-    if account and "." in account and " " not in account:
+    if account and "." in account and " " not in account and "/" not in account:
         return account.removeprefix("@")
     url = str(source.get("url") or "")
-    marker = "/profile/"
-    if marker in url:
-        return url.split(marker, 1)[1].split("/", 1)[0].removeprefix("@")
-    return account.removeprefix("@")
+    parsed = urlparse(url)
+    if "bsky.app" in parsed.netloc and parsed.path.startswith("/profile/"):
+        return parsed.path.split("/profile/", 1)[1].split("/", 1)[0].removeprefix("@")
+    return ""
 
 
 def archive_bluesky_source(
