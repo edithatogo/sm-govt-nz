@@ -165,3 +165,7 @@ Mordaunt, `edithatogo`, or other personal identities.
 ## [ ] Track: NZ Government Archive - explicit credentialed platform onboarding backlog 
 *Link: [./tracks/govt_credentialed_platform_onboarding_20260625/](./tracks/govt_credentialed_platform_onboarding_20260625/)* 
 - Planned dependency: govt_archive_quality_observability_20260625
+ 
+## [ ] Track: NZ Government Archive - provenance, fixity, and reproducible research packaging 
+*Link: [./tracks/govt_archive_provenance_fixity_20260625/](./tracks/govt_archive_provenance_fixity_20260625/)* 
+- Planned dependency: govt_archive_external_publication_20260625
