@@ -300,13 +300,13 @@ def youtube_channel_id_from_page(body: str) -> str:
     return ""
 
 
-def resolve_youtube_channel_id(source: dict[str, Any], page_fetcher: Any | None = None) -> str:
+def resolve_youtube_channel_id(source: dict[str, Any], page_fetcher: Any | None = None, fetch_timeout: int = 30) -> str:
     url = str(source.get("url") or "")
     channel_id = youtube_channel_id_from_url(url)
     if channel_id:
         return channel_id
     fetcher = page_fetcher or fetch_text
-    page = fetcher(url)
+    page = fetcher(url, timeout=fetch_timeout) if page_fetcher is None else fetcher(url)
     return youtube_channel_id_from_page(page)
 
 
@@ -320,11 +320,12 @@ def archive_youtube_source(
     normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
     parser: Any | None = None,
     page_fetcher: Any | None = None,
+    fetch_timeout: int = 30,
 ) -> list[dict[str, Any]]:
     import feedparser
 
     try:
-        channel_id = resolve_youtube_channel_id(source, page_fetcher=page_fetcher)
+        channel_id = resolve_youtube_channel_id(source, page_fetcher=page_fetcher, fetch_timeout=fetch_timeout)
     except Exception as exc:  # noqa: BLE001 - per-source report records resolver failures.
         return [source_result(source, "capture_failed", f"YouTube channel resolver failed: {str(exc)[:240]}")]
     if not channel_id:
@@ -547,7 +548,12 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
         if platform == "bluesky":
             return archive_bluesky_source(source, raw_root, normalized_root, max_pages=getattr(args, "max_bluesky_pages", 1))
         if platform == "youtube":
-            return archive_youtube_source(source, raw_root, normalized_root)
+            return archive_youtube_source(
+                source,
+                raw_root,
+                normalized_root,
+                fetch_timeout=getattr(args, "fetch_timeout", 30),
+            )
         if platform in MANUAL_SEED_PLATFORMS:
             return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
     except Exception as exc:  # noqa: BLE001 - archive reports should record per-source failures.
@@ -572,6 +578,12 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             if row.get("status") == "capture_failed" and row.get("source_id")
         }
         selected = [source for source in selected if str(source.get("source_id")) in failed_source_ids]
+    offset_sources = int(getattr(args, "offset_sources", 0) or 0)
+    if offset_sources > 0:
+        selected = selected[offset_sources:]
+    limit_sources = int(getattr(args, "limit_sources", 0) or 0)
+    if limit_sources > 0:
+        selected = selected[:limit_sources]
     results = []
     courts_report = run_courts_current_sources_if_selected(selected, args.dry_run)
     for source in selected:
@@ -607,6 +619,8 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "manual_seed_root": str(getattr(args, "manual_seed_root", DEFAULT_MANUAL_SEED_ROOT)),
             "fetch_timeout": getattr(args, "fetch_timeout", 30),
             "retry_failed_from": str(getattr(args, "retry_failed_from", "") or ""),
+            "offset_sources": getattr(args, "offset_sources", 0),
+            "limit_sources": getattr(args, "limit_sources", 0),
         },
         "summary": {
             "selected_sources": len(selected),
@@ -640,6 +654,8 @@ def main() -> None:
     parser.add_argument("--max-bluesky-pages", type=int, default=1)
     parser.add_argument("--fetch-timeout", type=int, default=30)
     parser.add_argument("--retry-failed-from", type=Path, default=None)
+    parser.add_argument("--offset-sources", type=int, default=0)
+    parser.add_argument("--limit-sources", type=int, default=0)
     args = parser.parse_args()
 
     report = build_report(args)
