@@ -163,3 +163,119 @@ def test_discovery_preserves_existing_manual_manifest_sources(tmp_path):
     assert preserved
     assert preserved[0]["origin"] == "manual.registration"
     assert manifest["summary"]["archive_status_counts"]["manual_seed"] == 1
+
+
+def test_discovery_scores_configured_account_terms(tmp_path):
+    registry = tmp_path / "registry.json"
+    config = tmp_path / "config.json"
+    registry.write_text(
+        json.dumps(
+            [
+                {
+                    "agency_id": "agency-one",
+                    "name": "Agency One",
+                    "official_website": "https://agency.example",
+                    "social_profiles": {
+                        "facebook": {
+                            "handle": "Official Agency One",
+                            "url": "https://facebook.com/OfficialAgencyOne",
+                            "status": "active",
+                        },
+                        "instagram": {
+                            "handle": "Agency One Fan Page",
+                            "url": "https://instagram.com/agencyonefan",
+                            "status": "candidate",
+                        },
+                    },
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    config.write_text(
+        json.dumps(
+            {
+                "homepage_probe": {"common_paths": ["/"]},
+                "heuristics": {
+                    "official_account_terms": ["official"],
+                    "negative_account_terms": ["fan", "unofficial"],
+                },
+                "platform_archive_policy": {
+                    "facebook": {"archive_status": "candidate"},
+                    "instagram": {"archive_status": "candidate"},
+                    "website_page": {"archive_status": "ready"},
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report, _manifest = build_report(
+        argparse.Namespace(registry=registry, config=config, probe_homepages=False, max_agencies=0)
+    )
+
+    by_platform = {candidate["platform"]: candidate for candidate in report["candidates"] if candidate["source_type"] == "social_profile"}
+    assert "official_term:official" in by_platform["facebook"]["trust_signals"]
+    assert "negative_term:fan" in by_platform["instagram"]["trust_signals"]
+    assert by_platform["facebook"]["confidence_score"] > by_platform["instagram"]["confidence_score"]
+
+
+def test_discovery_scores_feedback_learning_file(tmp_path):
+    registry = tmp_path / "registry.json"
+    config = tmp_path / "config.json"
+    learning = tmp_path / "learning.json"
+    url = "https://threads.net/@agencyone"
+    registry.write_text(
+        json.dumps(
+            [
+                {
+                    "agency_id": "agency-one",
+                    "name": "Agency One",
+                    "official_website": "https://agency.example",
+                    "social_profiles": {
+                        "threads": {"handle": "agencyone", "url": url, "status": "active"}
+                    },
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    learning.write_text(
+        json.dumps(
+            {
+                "entries": [
+                    {
+                        "candidate_id": "old",
+                        "agency_id": "agency-one",
+                        "platform": "threads",
+                        "url": url,
+                        "decision": "rejected",
+                        "reason": "not the official agency account",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    config.write_text(
+        json.dumps(
+            {
+                "homepage_probe": {"common_paths": ["/"]},
+                "heuristics": {"learning_file": str(learning)},
+                "platform_archive_policy": {
+                    "threads": {"archive_status": "candidate"},
+                    "website_page": {"archive_status": "ready"},
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report, _manifest = build_report(
+        argparse.Namespace(registry=registry, config=config, probe_homepages=False, max_agencies=0)
+    )
+
+    threads = [candidate for candidate in report["candidates"] if candidate["platform"] == "threads"]
+    assert len(threads) == 1
+    assert "learning_negative" in threads[0]["trust_signals"]
+    assert threads[0]["confidence_score"] < 0.5

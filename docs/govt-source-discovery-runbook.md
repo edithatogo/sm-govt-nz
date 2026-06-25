@@ -49,6 +49,14 @@ Minimum useful inputs:
 
 The workflow calls `scripts/register_archive_source.py`, which upserts by `source_id` or by `(agency_id, platform, url)`.
 
+
+## Feedback Learning
+
+Review decisions can be fed back into discovery with `scripts/record_source_discovery_feedback.py`. The script writes to the path configured at `heuristics.learning_file`, normally `conductor/govt_source_discovery_learning.json`.
+
+Daily discovery reads that learning file when scoring candidates. `accepted`, `approved`, `confirmed`, `official`, and `true_positive` decisions raise confidence; `rejected`, `false_positive`, `unofficial`, `exclude`, and `excluded` decisions lower confidence; `needs_review` leaves the candidate visible but slightly de-prioritized. Configured `official_account_terms` and `negative_account_terms` are also applied to the URL, account text, link text, link title, agency name, and website surface.
+
+These signals change review priority and trust metadata only. They do not auto-register risky sources, publish archives, or override platform archive policy.
 ## Archive Invocation
 
 Use `.github/workflows/archive_registered_sources.yml` to select registered sources by platform or agency.

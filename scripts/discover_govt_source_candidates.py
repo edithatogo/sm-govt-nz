@@ -143,6 +143,18 @@ def candidate(
 ) -> dict[str, Any]:
     source_policy = policy_for(config, platform or source_type)
     agency_id = agency["agency_id"]
+    confidence_text = " ".join(
+        str(value)
+        for value in [
+            url,
+            agency.get("name", ""),
+            agency.get("official_website", ""),
+            extra.get("account", ""),
+            extra.get("link_text", ""),
+            extra.get("link_title", ""),
+        ]
+        if value
+    )
     return {
         "candidate_id": stable_id(agency_id, source_type, platform, url),
         "agency_id": agency_id,
@@ -159,7 +171,7 @@ def candidate(
         "access_method": source_policy["access_method"],
         "auth": source_policy["auth"],
         "policy_notes": source_policy["notes"],
-        **candidate_confidence(source_type, platform, url, origin, config),
+        **candidate_confidence(source_type, platform, url, origin, config, agency_id, confidence_text),
         **extra,
     }
 
@@ -193,7 +205,45 @@ def search_queries_for_agency(agency, config):
     return queries
 
 
-def candidate_confidence(source_type, platform, url, origin, config):
+def learning_entries(config):
+    learning_path = config.get("heuristics", {}).get("learning_file")
+    if not learning_path:
+        return []
+    path = Path(learning_path)
+    if not path.exists():
+        return []
+    try:
+        learning = load_json(path)
+    except (OSError, json.JSONDecodeError):
+        return []
+    if isinstance(learning, dict):
+        entries = learning.get("entries", learning.get("records", []))
+    else:
+        entries = learning
+    return entries if isinstance(entries, list) else []
+
+
+def learning_signal(agency_id, platform, url, config):
+    positive = {"accepted", "approved", "confirmed", "official", "true_positive"}
+    negative = {"rejected", "false_positive", "unofficial", "exclude", "excluded"}
+    for entry in reversed(learning_entries(config)):
+        if not isinstance(entry, dict):
+            continue
+        same_url = str(entry.get("url", "")).rstrip("/") == url.rstrip("/")
+        same_agency_platform = entry.get("agency_id") == agency_id and entry.get("platform") == platform
+        if not same_url and not same_agency_platform:
+            continue
+        decision = str(entry.get("decision") or entry.get("label") or entry.get("status") or "").lower()
+        if decision in positive:
+            return "positive"
+        if decision in negative:
+            return "negative"
+        if decision == "needs_review":
+            return "needs_review"
+    return ""
+
+
+def candidate_confidence(source_type, platform, url, origin, config, agency_id="", text=""):
     trust = domain_trust(url, config)
     score = 0.35
     signals = []
@@ -209,10 +259,34 @@ def candidate_confidence(source_type, platform, url, origin, config):
     if platform in {"rss", "website_page", "bluesky"}:
         score += 0.1
         signals.append("archive_friendly_platform")
+    heuristics = config.get("heuristics", {})
+    lower_text = text.lower()
+    for term in heuristics.get("official_account_terms", []):
+        normalized = str(term).strip().lower()
+        if normalized and normalized in lower_text:
+            score += 0.05
+            signals.append(f"official_term:{normalized}")
+            break
+    for term in heuristics.get("negative_account_terms", []):
+        normalized = str(term).strip().lower()
+        if normalized and normalized in lower_text:
+            score -= 0.25
+            signals.append(f"negative_term:{normalized}")
+            break
+    learned = learning_signal(agency_id, platform, url, config)
+    if learned == "positive":
+        score += 0.2
+        signals.append("learning_positive")
+    elif learned == "negative":
+        score -= 0.35
+        signals.append("learning_negative")
+    elif learned == "needs_review":
+        score -= 0.05
+        signals.append("learning_needs_review")
     if source_type == "search_seed":
         score = min(score, 0.45)
         signals.append("unverified_search_seed")
-    return {"confidence_score": round(min(score, 0.95), 2), "domain_trust": trust, "trust_signals": signals}
+    return {"confidence_score": round(min(max(score, 0.05), 0.95), 2), "domain_trust": trust, "trust_signals": signals}
 
 
 def registry_candidates(agencies: list[dict[str, Any]], config: dict[str, Any]) -> list[dict[str, Any]]:
