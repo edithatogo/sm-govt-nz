@@ -15,9 +15,9 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.archive_bluesky_history import fetch_author_history
-from scripts.archive_manual_seed import MANUAL_SEED_PLATFORMS, archive_manual_seed, find_manual_seed_path
-from src.archive_schema import build_normalized_record
+from scripts.archive_bluesky_history import fetch_author_history  # noqa: E402
+from scripts.archive_manual_seed import MANUAL_SEED_PLATFORMS, archive_manual_seed, find_manual_seed_path  # noqa: E402
+from src.archive_schema import build_normalized_record  # noqa: E402
 
 
 DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
