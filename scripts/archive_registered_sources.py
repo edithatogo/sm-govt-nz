@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts.archive_bluesky_history import fetch_author_history
+from scripts.archive_manual_seed import MANUAL_SEED_PLATFORMS, archive_manual_seed, find_manual_seed_path
 from src.archive_schema import build_normalized_record
 
 
@@ -21,7 +22,8 @@ DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
 DEFAULT_REPORT = Path("conductor/govt_archive_registered_sources_report.json")
 DEFAULT_RAW_ROOT = Path("historical_archive_raw")
 DEFAULT_NORMALIZED_ROOT = Path("historical_archive_normalized")
-SUPPORTED_PLATFORMS = {"rss", "website_page", "bluesky"}
+DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
+SUPPORTED_PLATFORMS = {"rss", "website_page", "bluesky", *MANUAL_SEED_PLATFORMS}
 
 
 def now_iso() -> str:
@@ -252,6 +254,45 @@ def archive_bluesky_source(
     return results
 
 
+
+
+
+def archive_manual_seed_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    manual_seed_root: Path = DEFAULT_MANUAL_SEED_ROOT,
+) -> list[dict[str, Any]]:
+    platform = str(source.get("platform") or "")
+    seed_path = find_manual_seed_path(source, manual_seed_root)
+    if seed_path is None:
+        return [
+            source_result(
+                source,
+                "manual_seed_missing",
+                f"{platform} capture requires an operator-authorized seed JSON under manual_archive_seeds/{platform}/",
+            )
+        ]
+    report = archive_manual_seed(
+        platform=platform,
+        seed_path=seed_path,
+        raw_root=raw_root,
+        normalized_root=normalized_root,
+        agency_id=str(source.get("agency_id") or ""),
+        source_account=str(source.get("account") or source.get("url") or ""),
+        source_kind=str(source.get("source_type") or "social_profile"),
+        source_id=str(source.get("source_id") or ""),
+    )
+    if int(report.get("record_count", 0)) == 0:
+        return [source_result(source, "no_records", f"manual seed contained no {platform} posts: {seed_path}")]
+    return [
+        source_result(
+            source,
+            "manual_seed_captured",
+            f"captured {report['record_count']} {platform} seed records from {seed_path}",
+        )
+    ]
+
 def archive_rss_source(
     source: dict[str, Any],
     raw_root: Path = DEFAULT_RAW_ROOT,
@@ -338,11 +379,14 @@ def run_courts_current_sources_if_selected(selected: list[dict[str, Any]], dry_r
 
 
 def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) -> list[dict[str, Any]]:
-    if args.dry_run:
-        return [source_result(source, "would_capture", "dry run")]
     raw_root = Path(getattr(args, "raw_root", DEFAULT_RAW_ROOT))
     normalized_root = Path(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT))
+    manual_seed_root = Path(getattr(args, "manual_seed_root", DEFAULT_MANUAL_SEED_ROOT))
     platform = source.get("platform")
+    if args.dry_run:
+        if platform in MANUAL_SEED_PLATFORMS and find_manual_seed_path(source, manual_seed_root) is None:
+            return [source_result(source, "manual_seed_missing", "dry run: manual seed file is not present")]
+        return [source_result(source, "would_capture", "dry run")]
     try:
         if platform == "website_page" or source.get("source_type") == "website_page":
             return [archive_website_source(source, raw_root, normalized_root)]
@@ -350,6 +394,8 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
             return archive_rss_source(source, raw_root, normalized_root)
         if platform == "bluesky":
             return archive_bluesky_source(source, raw_root, normalized_root, max_pages=getattr(args, "max_bluesky_pages", 1))
+        if platform in MANUAL_SEED_PLATFORMS:
+            return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
     except Exception as exc:  # noqa: BLE001 - archive reports should record per-source failures.
         return [source_result(source, "capture_failed", str(exc)[:300])]
     return [source_result(source, "pending_adapter", "source is feasible but needs a generic adapter or source-specific config before capture")]
@@ -367,7 +413,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     courts_report = run_courts_current_sources_if_selected(selected, args.dry_run)
     for source in selected:
         platform = source.get("platform")
-        if platform in {"rss", "website_page", "bluesky"} or source.get("source_type") in {"rss_feed", "website_page"}:
+        if platform in SUPPORTED_PLATFORMS or source.get("source_type") in {"rss_feed", "website_page"}:
             results.extend(capture_registered_source(source, args))
         else:
             results.append(
@@ -395,6 +441,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "include_blocked": args.include_blocked,
             "raw_root": str(getattr(args, "raw_root", DEFAULT_RAW_ROOT)),
             "normalized_root": str(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT)),
+            "manual_seed_root": str(getattr(args, "manual_seed_root", DEFAULT_MANUAL_SEED_ROOT)),
         },
         "summary": {
             "selected_sources": len(selected),
@@ -416,10 +463,11 @@ def main() -> None:
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--raw-root", type=Path, default=DEFAULT_RAW_ROOT)
     parser.add_argument("--normalized-root", type=Path, default=DEFAULT_NORMALIZED_ROOT)
+    parser.add_argument("--manual-seed-root", type=Path, default=DEFAULT_MANUAL_SEED_ROOT)
     parser.add_argument(
         "--source-type",
         default="all_feasible",
-        choices=["all_feasible", "rss", "website_page", "bluesky", "youtube", "facebook", "instagram", "threads", "linkedin", "x"],
+        choices=["all_feasible", "rss", "website_page", "bluesky", "youtube", "facebook", "instagram", "threads", "linkedin", "newsletter", "x"],
     )
     parser.add_argument("--agency-id", default="")
     parser.add_argument("--include-blocked", action="store_true")

@@ -132,7 +132,14 @@ jobs:
             args+=(--publish)
           fi
           "${args[@]}"
-      - name: Commit archive updates
+      - name: Commit archive report updates
+        if: ${{ inputs.dry_run == 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Report registered government archive sources"
+          --path conductor/govt_archive_registered_sources_report.json
+      - name: Commit archive capture updates
+        if: ${{ inputs.dry_run == 'false' }}
         run: >-
           python scripts/commit_state_updates.py
           --message "Archive registered government sources"

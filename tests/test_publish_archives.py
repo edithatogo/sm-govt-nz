@@ -11,6 +11,7 @@ from scripts.publish_archives import (
     publish_to_zenodo,
     publish_to_zenodo_deposition,
     publish_from_env,
+    require_requested_publications,
     write_publication_status_report,
     _requested_publish_targets,
 )
@@ -208,3 +209,16 @@ def test_write_publication_status_report_records_artifact_and_targets(tmp_path) 
     assert report["hugging_face"]["target"] == "org/dataset"
     assert report["zenodo"]["status"] == "not_requested_or_not_configured"
 
+
+
+def test_require_requested_publications_rejects_missing_targets() -> None:
+    try:
+        require_requested_publications(["huggingface", "zenodo"], {"huggingface": {"repo_id": "org/dataset"}})
+    except RuntimeError as error:
+        assert "zenodo" in str(error)
+    else:
+        raise AssertionError("missing publication target should fail")
+
+
+def test_require_requested_publications_accepts_completed_targets() -> None:
+    require_requested_publications(["huggingface"], {"huggingface": {"repo_id": "org/dataset"}})

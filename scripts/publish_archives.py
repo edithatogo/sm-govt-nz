@@ -306,6 +306,19 @@ def publish_from_env(
     return results
 
 
+
+def require_requested_publications(
+    requested_targets: list[str],
+    publication_results: dict[str, Any],
+) -> None:
+    missing = [target for target in requested_targets if target not in publication_results]
+    if missing:
+        raise RuntimeError(
+            "Requested archive publication target(s) were not published: "
+            + ", ".join(missing)
+            + ". Check required secrets and repository configuration."
+        )
+
 def write_publication_status_report(
     *,
     bundle: BundleManifest,
@@ -774,6 +787,7 @@ def main() -> None:
     if requested_targets:
         publication_results = publish_from_env(bundle, targets=set(requested_targets))
         print(json.dumps(publication_results, indent=2, sort_keys=True))
+        require_requested_publications(requested_targets, publication_results)
     write_publication_status_report(
         bundle=bundle,
         path=args.status_report,

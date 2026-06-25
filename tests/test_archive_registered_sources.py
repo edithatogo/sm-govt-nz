@@ -3,6 +3,7 @@ import json
 
 from scripts.archive_registered_sources import (
     archive_bluesky_source,
+    archive_manual_seed_source,
     archive_rss_source,
     archive_website_source,
     build_report,
@@ -81,7 +82,7 @@ def test_archive_registered_sources_reports_supported_and_pending_sources(tmp_pa
 
     assert report["summary"]["selected_sources"] == 3
     assert report["summary"]["status_counts"] == {
-        "unsupported_now": 1,
+        "manual_seed_missing": 1,
         "would_capture": 2,
     }
     assert report["courts_current_sources_report"] == {
@@ -282,3 +283,125 @@ def test_archive_bluesky_source_does_not_rewrite_existing_raw_record(tmp_path):
 
     assert results[0]["status"] == "already_captured"
     assert raw_file.read_text(encoding="utf-8") == original_raw
+
+
+def test_archive_manual_seed_reports_missing_seed(tmp_path):
+    source = {
+        "source_id": "agency-linkedin",
+        "agency_id": "agency",
+        "platform": "linkedin",
+        "source_type": "social_profile",
+        "url": "https://www.linkedin.com/company/agency",
+        "account": "Agency",
+        "archive_status": "manual_seed",
+        "feasibility": "medium",
+    }
+
+    results = archive_manual_seed_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        manual_seed_root=tmp_path / "manual_archive_seeds",
+    )
+
+    assert results == [
+        {
+            "source_id": "agency-linkedin",
+            "agency_id": "agency",
+            "platform": "linkedin",
+            "source_type": "social_profile",
+            "url": "https://www.linkedin.com/company/agency",
+            "archive_status": "manual_seed",
+            "feasibility": "medium",
+            "status": "manual_seed_missing",
+            "reason": "linkedin capture requires an operator-authorized seed JSON under manual_archive_seeds/linkedin/",
+        }
+    ]
+
+
+def test_archive_manual_seed_writes_registered_source_records(tmp_path):
+    source = {
+        "source_id": "agency-linkedin",
+        "agency_id": "agency",
+        "platform": "linkedin",
+        "source_type": "social_profile",
+        "url": "https://www.linkedin.com/company/agency",
+        "account": "Agency",
+        "archive_status": "manual_seed",
+        "feasibility": "medium",
+    }
+    seed_dir = tmp_path / "manual_archive_seeds" / "linkedin"
+    seed_dir.mkdir(parents=True)
+    (seed_dir / "agency-linkedin.json").write_text(
+        json.dumps(
+            {
+                "posts": [
+                    {
+                        "post_id": "urn:li:activity:registered",
+                        "url": "https://www.linkedin.com/feed/update/urn:li:activity:registered/",
+                        "created_at": "2026-06-10T00:00:00Z",
+                        "text": "Registered LinkedIn update",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    results = archive_manual_seed_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        manual_seed_root=tmp_path / "manual_archive_seeds",
+    )
+
+    assert results[0]["status"] == "manual_seed_captured"
+    raw_path = tmp_path / "raw" / "linkedin" / "2026-06" / "urnliactivityregistered.json"
+    normalized_path = tmp_path / "normalized" / "linkedin" / "2026-06.jsonl"
+    record = json.loads(normalized_path.read_text(encoding="utf-8"))
+    assert raw_path.exists()
+    assert record["agency_id"] == "agency"
+    assert record["source_account"] == "Agency"
+    assert record["source_kind"] == "social_profile"
+    assert record["cross_source_ids"]["source_id"] == "agency-linkedin"
+
+
+def test_archive_registered_sources_dry_run_reports_missing_linkedin_seed(tmp_path):
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "sources": [
+                    {
+                        "source_id": "agency-linkedin",
+                        "agency_id": "agency",
+                        "platform": "linkedin",
+                        "source_type": "social_profile",
+                        "url": "https://www.linkedin.com/company/agency",
+                        "archive_status": "manual_seed",
+                        "feasibility": "medium",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            report=tmp_path / "report.json",
+            source_type="linkedin",
+            agency_id="",
+            include_blocked=True,
+            dry_run=True,
+            raw_root=tmp_path / "raw",
+            normalized_root=tmp_path / "normalized",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+        )
+    )
+
+    assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
+    assert report["summary"]["status_by_platform"] == {"linkedin": {"manual_seed_missing": 1}}
+
+

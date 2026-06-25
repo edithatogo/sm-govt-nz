@@ -1,0 +1,24 @@
+from pathlib import Path
+
+
+def test_archive_registered_sources_dry_run_commits_only_report() -> None:
+    workflow = Path(".github/workflows/archive_registered_sources.yml").read_text(encoding="utf-8")
+
+    dry_run_block = workflow.split("- name: Commit archive report updates", 1)[1].split("- name: Commit archive capture updates", 1)[0]
+    assert "inputs.dry_run == 'true'" in dry_run_block
+    assert "conductor/govt_archive_registered_sources_report.json" in dry_run_block
+    assert "dist/archive_manifest.json" not in dry_run_block
+    assert "historical_archive_raw/**" not in dry_run_block
+
+
+def test_archive_registered_sources_capture_commits_and_uploads_generated_artifacts() -> None:
+    workflow = Path(".github/workflows/archive_registered_sources.yml").read_text(encoding="utf-8")
+
+    capture_block = workflow.split("- name: Commit archive capture updates", 1)[1].split("- name: Upload generated corpus bundle", 1)[0]
+    assert "inputs.dry_run == 'false'" in capture_block
+    assert "dist/archive_manifest.json" in capture_block
+    assert "dist/archive_compaction_manifest.json" in capture_block
+    assert "historical_archive_raw/**" in capture_block
+    assert "historical_archive_normalized/**" in capture_block
+    assert "dist/historical_archive.tar.gz" in workflow
+    assert "--publish" in workflow

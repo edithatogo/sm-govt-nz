@@ -416,17 +416,58 @@ def build_manifest(report: dict[str, Any]) -> dict[str, Any]:
                 "notes": item["policy_notes"],
             }
         )
-    counts = Counter(source["archive_status"] for source in sources)
-    return {
-        "generated_at": report["generated_at"],
-        "description": "Archive onboarding manifest generated from the government source candidate report.",
-        "summary": {
-            "total_sources": len(sources),
-            "archive_status_counts": dict(sorted(counts.items())),
-        },
-        "sources": sorted(sources, key=lambda row: (row["agency_id"], row["platform"], row["url"])),
-    }
+    return refresh_manifest_summary(
+        {
+            "generated_at": report["generated_at"],
+            "description": "Archive onboarding manifest generated from the government source candidate report.",
+            "sources": sources,
+        }
+    )
 
+
+
+def refresh_manifest_summary(manifest: dict[str, Any]) -> dict[str, Any]:
+    sources = sorted(manifest.get("sources", []), key=lambda row: (row.get("agency_id", ""), row.get("platform", ""), row.get("url", "")))
+    counts = Counter(source.get("archive_status", "unknown") for source in sources)
+    manifest["summary"] = {
+        "total_sources": len(sources),
+        "archive_status_counts": dict(sorted(counts.items())),
+    }
+    manifest["sources"] = sources
+    return manifest
+
+
+def merge_existing_manifest_sources(
+    manifest: dict[str, Any],
+    existing_manifest: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not existing_manifest:
+        return refresh_manifest_summary(manifest)
+    sources = list(manifest.get("sources", []))
+    by_source_id = {str(source.get("source_id")): index for index, source in enumerate(sources) if source.get("source_id")}
+    by_tuple = {
+        (str(source.get("agency_id")), str(source.get("platform")), str(source.get("url"))): index
+        for index, source in enumerate(sources)
+    }
+    for existing in existing_manifest.get("sources", []):
+        source_id_key = str(existing.get("source_id"))
+        tuple_key = (str(existing.get("agency_id")), str(existing.get("platform")), str(existing.get("url")))
+        index = by_source_id.get(source_id_key)
+        if index is None:
+            index = by_tuple.get(tuple_key)
+        if index is None:
+            preserved = {**existing, "origin": existing.get("origin", "manual.registration")}
+            sources.append(preserved)
+            by_source_id[str(preserved.get("source_id"))] = len(sources) - 1
+            by_tuple[(str(preserved.get("agency_id")), str(preserved.get("platform")), str(preserved.get("url")))] = len(sources) - 1
+            continue
+        merged = {**existing, **sources[index]}
+        if str(existing.get("origin", "")).startswith("manual"):
+            merged["manual_registration"] = True
+            merged["manual_registered_at"] = existing.get("created_at") or existing.get("manual_registered_at", "")
+        sources[index] = merged
+    manifest["sources"] = sources
+    return refresh_manifest_summary(manifest)
 
 def summarize(report: dict[str, Any], manifest: dict[str, Any]) -> str:
     summary = report["summary"]
@@ -505,7 +546,12 @@ def build_report(args: argparse.Namespace) -> tuple[dict[str, Any], dict[str, An
         "platform_search_queries": search_queries,
         "candidates": candidates,
     }
-    return report, build_manifest(report)
+    manifest = build_manifest(report)
+    existing_manifest = None
+    manifest_path = getattr(args, "manifest", None)
+    if manifest_path and Path(manifest_path).exists():
+        existing_manifest = load_json(Path(manifest_path))
+    return report, merge_existing_manifest_sources(manifest, existing_manifest)
 
 
 def main() -> None:

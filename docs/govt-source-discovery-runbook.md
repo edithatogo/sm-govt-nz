@@ -58,9 +58,10 @@ Current capture support:
 - `website_page` sources are captured through bounded public HTML fetches.
 - `rss_feed` sources are captured through `feedparser` when discovered feed URLs are registered.
 - `bluesky` sources are captured through the public Bluesky author feed API.
-- Meta, LinkedIn, X, newsletter, and YouTube sources are retained in the manifest and reported honestly until their API/export/ingress requirements are satisfied.
+- `facebook`, `instagram`, `linkedin`, `newsletter`, `threads`, `x`, and `youtube` sources can be captured from operator-authorized manual seed JSON files under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
+- platform sources without a seed file are reported as `manual_seed_missing`, not as successfully captured.
 
-This means the manifest can be exhaustive without overstating which sources are already being captured.
+Manual seed files contain a JSON object with `posts` or a bare list of post objects. Each post needs `url`, `created_at`, and `text`; `post_id`, `media`, `account`, and `canonical_url` are optional. This keeps the manifest exhaustive without overstating which sources are already captured.
 
 Non-dry-run archive workflow runs build the archive compaction manifest and bundle the corpus with `scripts/publish_archives.py`. Set `publish=true` and choose `publication_target=all`, `huggingface`, or `zenodo` to publish through configured repository secrets; otherwise the workflow uploads a GitHub Actions artifact only.
 
@@ -76,8 +77,8 @@ Manual runs can disable homepage probing or limit `max_agencies` for a bounded t
 
 ## Next Adapter Priorities
 
-1. Generic RSS adapter from manifest source records.
-2. Generic Bluesky adapter for all `ready` Bluesky accounts.
-3. YouTube handle-to-channel-id resolver and channel RSS capture.
-4. Newsletter ingress manifests modelled on the Courts NZ email ingress.
-5. Meta platform capture only through approved Graph/Threads API access or account-owner export.
+1. Add manual seed files for high-value LinkedIn, Meta, X, YouTube, and newsletter sources where exports or bounded captures are available.
+2. YouTube handle-to-channel-id resolver and channel RSS capture.
+3. Newsletter ingress manifests modelled on the Courts NZ email ingress.
+4. Meta platform live capture only through approved Graph/Threads API access or account-owner export.
+5. Source-specific adapters for any platform where public, stable, policy-compliant APIs become available.

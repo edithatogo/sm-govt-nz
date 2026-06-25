@@ -34,7 +34,12 @@ jobs:
         with:
           python-version: "3.11"
       - name: Discover government source candidates
-        run: python scripts/discover_govt_source_candidates.py --probe-homepages --max-agencies 0
+        run: |
+          args=(--max-agencies "${{ inputs.max_agencies || '0' }}")
+          if [ "${{ inputs.probe_homepages || 'true' }}" = "true" ]; then
+            args+=(--probe-homepages)
+          fi
+          python scripts/discover_govt_source_candidates.py "${args[@]}"
       - name: Commit discovery updates
         run: >-
           python scripts/commit_state_updates.py
