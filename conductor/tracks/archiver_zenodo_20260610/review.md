@@ -11,9 +11,9 @@
 
 | # | Requirement | Status | Evidence |
 |---|-------------|--------|----------|
-| R1 | Edit Ingestion & Tracking | ✅ **Pass** | `src/archiver.py` — `archive_post()` writes post JSONs under `historical_archive/`, detects edits via content comparison, appends to `edit_history` list with timestamps. `tests/test_archiver.py` (4 tests including hypothesis property test) verifies edit detection. |
-| R2 | Zenodo & Hugging Face Publishing | ✅ **Pass** | `scripts/publish_archives.py` bundles local JSON files into tar.gz, pushes to Hugging Face via `HfApi` and Zenodo via REST API. `scripts/publish_zenodo_deposition.py` publishes DOI. Tests in `tests/test_publish_archives.py` (7 tests) and `tests/test_publish_zenodo_deposition.py` (2 tests). |
-| R3 | Historical Backfill Management | ✅ **Pass** | `scripts/backfill_importer.py` supports importing past posts with `mastodon_visibility="unlisted"` option. `tests/test_backfill_importer.py` (1 test) verifies unlisted posting control. |
+| R1 | Edit Ingestion & Tracking | âœ… **Pass** | `src/archiver.py` â€” `archive_post()` writes post JSONs under `historical_archive/`, detects edits via content comparison, appends to `edit_history` list with timestamps. `tests/test_archiver.py` (4 tests including hypothesis property test) verifies edit detection. |
+| R2 | Zenodo & Hugging Face Publishing | âœ… **Pass** | `scripts/publish_archives.py` bundles local JSON files into tar.gz, pushes to Hugging Face via `HfApi` and Zenodo via REST API. `scripts/publish_zenodo_deposition.py` publishes DOI. Tests in `tests/test_publish_archives.py` (7 tests) and `tests/test_publish_zenodo_deposition.py` (2 tests). |
+| R3 | Historical Backfill Management | âœ… **Pass** | `scripts/backfill_importer.py` supports importing past posts with `mastodon_visibility="unlisted"` option. `tests/test_backfill_importer.py` (1 test) verifies unlisted posting control. |
 
 ---
 
@@ -21,9 +21,9 @@
 
 | Phase | Tasks | Status |
 |-------|-------|--------|
-| **Phase 1:** Local Archiver & Edit History Tracker | 4/4 | ✅ Complete |
-| **Phase 2:** Zenodo & Hugging Face Publishers | 3/3 | ✅ Complete |
-| **Phase 3:** Historical Backfill Importer | 3/3 | ✅ Complete |
+| **Phase 1:** Local Archiver & Edit History Tracker | 4/4 | âœ… Complete |
+| **Phase 2:** Zenodo & Hugging Face Publishers | 3/3 | âœ… Complete |
+| **Phase 3:** Historical Backfill Importer | 3/3 | âœ… Complete |
 
 All 10 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done: 10 / total: 10`.
 
@@ -42,31 +42,31 @@ All 10 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done:
 ### Workflow implementations
 | Workflow | Key feature | Assessment |
 |----------|-------------|------------|
-| `publish_archives.yml` | Scheduled + manual publishing | ✅ Bundles archives, publishes to Hugging Face or Zenodo, writes status report. |
-| `publish_zenodo_deposition.yml` | Manual-only Zenodo DOI publication | ✅ Requires explicit `confirm: publish-zenodo-doi` gate. |
+| `publish_archives.yml` | Scheduled + manual publishing | âœ… Bundles archives, publishes to Hugging Face or Zenodo, writes status report. |
+| `publish_zenodo_deposition.yml` | Manual-only Zenodo DOI publication | âœ… Requires explicit `confirm: publish-zenodo-doi` gate. |
 
 ### Test coverage
 | Test | Purpose | Status |
 |------|---------|--------|
-| `test_archiver.py` | Archive + edit detection + timeline | ✅ 4 passed (incl. hypothesis property test) |
-| `test_publish_archives.py` | Bundle creation, HF/Zenodo publishing, status reports | ✅ 7 passed |
-| `test_publish_zenodo_deposition.py` | DOI publication, report updates | ✅ 2 passed |
-| `test_backfill_importer.py` | Historical import with unlisted visibility | ✅ 1 passed |
+| `test_archiver.py` | Archive + edit detection + timeline | âœ… 4 passed (incl. hypothesis property test) |
+| `test_publish_archives.py` | Bundle creation, HF/Zenodo publishing, status reports | âœ… 7 passed |
+| `test_publish_zenodo_deposition.py` | DOI publication, report updates | âœ… 2 passed |
+| `test_backfill_importer.py` | Historical import with unlisted visibility | âœ… 1 passed |
 
 ---
 
 ## 4. Findings & Observations
 
-### ✅ Strengths
-1. **Edit history tracking** — Content changes are detected and recorded with timestamps, enabling full audit trail of post modifications.
-2. **Dual publication routes** — Hugging Face for rolling dataset updates, Zenodo for citable DOI snapshots.
-3. **Property-based testing** — Hypothesis-based test ensures edit detection works for arbitrary text inputs.
-4. **Backfill safety** — Historical posts can be imported with `unlisted` Mastodon visibility to prevent feed spam.
+### âœ… Strengths
+1. **Edit history tracking** â€” Content changes are detected and recorded with timestamps, enabling full audit trail of post modifications.
+2. **Dual publication routes** â€” Hugging Face for rolling dataset updates, Zenodo for citable DOI snapshots.
+3. **Property-based testing** â€” Hypothesis-based test ensures edit detection works for arbitrary text inputs.
+4. **Backfill safety** â€” Historical posts can be imported with `unlisted` Mastodon visibility to prevent feed spam.
 
-### ⚠️ Minor Issues
-1. **Workflows use `pip` instead of `uv`** — Both `publish_archives.yml` and `publish_zenodo_deposition.yml` use `pip install -r`. Consistent with other workflows but not aligned with `workflow.md` recommendation.
+### âš ï¸ Minor Issues
+1. **Workflows use `pip` instead of `uv`** â€” Both `publish_archives.yml` and `publish_zenodo_deposition.yml` use `pip install -r`. Consistent with other workflows but not aligned with `workflow.md` recommendation.
 
-### ℹ️ Notes
+### â„¹ï¸ Notes
 - Published Hugging Face dataset: `edithatogo/courts-nz-public-notices-archive`
 - Published Zenodo DOI: `10.5281/zenodo.20690547`
 - Publication cadence was further refined by `courts_nz_archive_publication_cadence_20260617` track.
@@ -77,11 +77,11 @@ All 10 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done:
 
 | Criterion | Result |
 |-----------|--------|
-| All spec requirements implemented | ✅ **Pass** |
-| All plan phases/tasks completed | ✅ **Pass** |
-| Edit tracking operational | ✅ **Pass** |
-| External publication routes operational | ✅ **Pass** |
-| Backfill importer with safety controls | ✅ **Pass** |
-| Test coverage adequate | ✅ **Pass** |
+| All spec requirements implemented | âœ… **Pass** |
+| All plan phases/tasks completed | âœ… **Pass** |
+| Edit tracking operational | âœ… **Pass** |
+| External publication routes operational | âœ… **Pass** |
+| Backfill importer with safety controls | âœ… **Pass** |
+| Test coverage adequate | âœ… **Pass** |
 
-**Overall: ✅ Track Complete — Ready to close.** No blocking issues.
+**Overall: âœ… Track Complete â€” Ready to close.** No blocking issues.

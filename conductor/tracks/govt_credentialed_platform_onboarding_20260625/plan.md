@@ -1,4 +1,4 @@
-﻿# Plan - NZ Government Archive - explicit credentialed platform onboarding backlog
+# Plan - NZ Government Archive - explicit credentialed platform onboarding backlog
 
 ## Dependencies
 Depends on `govt_archive_quality_observability_20260625`.

@@ -19,7 +19,7 @@
 - [x] Task: Re-run Bluesky historical archive as an idempotent backfill and write a gap report.
 - [x] Task: Archive inactive historical X posts for `@courtsofnz` and write a provenance/access report.
 - [x] Task: Archive historical LinkedIn posts and write a provenance/access report. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
-  - ⏸️ **ARCHIVED** per user decision on 15 June 2026. LinkedIn work deferred until Instagram, Facebook, and multi-source archive pipeline are stable.
+  - â¸ï¸ **ARCHIVED** per user decision on 15 June 2026. LinkedIn work deferred until Instagram, Facebook, and multi-source archive pipeline are stable.
   - Blocker status is machine-checkable through `scripts/check_multisource_blockers.py`
     and the `Multi-Source Blocker Status` workflow.
 - [x] Task: Archive available RSS histories and write per-feed reports.
@@ -29,7 +29,7 @@
 - [x] Task: Add a scheduled archive-only workflow that runs in parallel with `Syndicate`.
 - [x] Task: Capture current Bluesky feed into both raw and normalized archives.
 - [x] Task: Capture LinkedIn posts through the approved access method. Tracking issue: https://github.com/edithatogo/sm-govt-nz/issues/7
-  - ⏸️ **ARCHIVED** per user decision on 15 June 2026.
+  - â¸ï¸ **ARCHIVED** per user decision on 15 June 2026.
   - `historical_archive_normalized/linkedin/2026-06.jsonl` contains 2 normalized manual-seed records, with raw records under `historical_archive_raw/linkedin/2026-06/`.
 - [x] Task: Capture RSS feed entries with `feedparser`.
 - [x] Task: Capture source website pages linked from posts/feed/email when they provide canonical judgments, speeches, reports, or announcements.

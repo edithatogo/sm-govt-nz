@@ -1,4 +1,4 @@
-﻿# Review - NZ Government Archive - external publication and storage hardening
+# Review - NZ Government Archive - external publication and storage hardening
 
 **Track ID:** $(System.Collections.Hashtable.id)
 **Review Date:** 2026-06-25

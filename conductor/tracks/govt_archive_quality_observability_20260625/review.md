@@ -1,4 +1,4 @@
-﻿# Review - NZ Government Archive - quality gates, observability, and CI/CD resilience
+# Review - NZ Government Archive - quality gates, observability, and CI/CD resilience
 
 **Track ID:** $(System.Collections.Hashtable.id)
 **Review Date:** 2026-06-25

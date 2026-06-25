@@ -1,4 +1,4 @@
-﻿# Review — NZ Government Archive Readiness Matrix
+# Review — NZ Government Archive Readiness Matrix
 
 **Track ID:** `govt_archive_readiness_matrix_20260625`
 **Review Date:** 2026-06-25

@@ -71,5 +71,5 @@ Launch guardrail:
   `monitored_accounts[].syndicate_to` until the dedicated Page identity, Page
   access token, app permissions, dry-run payload, and launch review are all
   complete.
-- ✅ Live-post launch approved by user on 15 June 2026 — awaiting Facebook Page
+- âœ… Live-post launch approved by user on 15 June 2026 â€” awaiting Facebook Page
   creation to proceed.

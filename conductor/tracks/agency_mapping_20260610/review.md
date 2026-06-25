@@ -11,11 +11,11 @@
 
 | # | Requirement | Status | Evidence |
 |---|-------------|--------|----------|
-| FR1 | NZ Government Agency Directory (registry/agencies.json) | ✅ **Pass** | `registry/agencies.json` exists with structured agency data including agency_id, type, portfolio, URL, status, and social_profiles. |
-| FR2 | Social Media Profile Mapping (cross-platform) | ✅ **Pass** | Each agency entry in `registry/agencies.json` includes `social_profiles` mapping with platform keys (bluesky, x, threads, mastodon, facebook, instagram, youtube, tiktok, linkedin, rss) and deactivation tracking. |
-| FR3 | Cross-Platform Gap Analysis | ✅ **Pass** | `scripts/gap_analyzer.py` calculates platform coverage, open/proprietary network gaps, and deactivated profiles. `tests/test_gap_analyzer.py` (2 tests) verifies metric generation. |
-| FR4 | Episodic Updater Workflow | ✅ **Pass** | `.github/workflows/update_registry.yml` runs gap analysis, verification, self-evaluation, and commits registry outputs. |
-| FR5 | Self-Improving Agent Framework | ✅ **Pass** | `/agent_framework/` directory contains `prompts/`, `rules/`, `skills/`, `evaluations/`, and `README.md`. `scripts/self_eval.py` provides self-evaluation loop. |
+| FR1 | NZ Government Agency Directory (registry/agencies.json) | âœ… **Pass** | `registry/agencies.json` exists with structured agency data including agency_id, type, portfolio, URL, status, and social_profiles. |
+| FR2 | Social Media Profile Mapping (cross-platform) | âœ… **Pass** | Each agency entry in `registry/agencies.json` includes `social_profiles` mapping with platform keys (bluesky, x, threads, mastodon, facebook, instagram, youtube, tiktok, linkedin, rss) and deactivation tracking. |
+| FR3 | Cross-Platform Gap Analysis | âœ… **Pass** | `scripts/gap_analyzer.py` calculates platform coverage, open/proprietary network gaps, and deactivated profiles. `tests/test_gap_analyzer.py` (2 tests) verifies metric generation. |
+| FR4 | Episodic Updater Workflow | âœ… **Pass** | `.github/workflows/update_registry.yml` runs gap analysis, verification, self-evaluation, and commits registry outputs. |
+| FR5 | Self-Improving Agent Framework | âœ… **Pass** | `/agent_framework/` directory contains `prompts/`, `rules/`, `skills/`, `evaluations/`, and `README.md`. `scripts/self_eval.py` provides self-evaluation loop. |
 
 ---
 
@@ -23,10 +23,10 @@
 
 | Phase | Tasks | Status |
 |-------|-------|--------|
-| **Phase 1:** Registry Schema & Initial Data Seeding | 3/3 | ✅ Complete |
-| **Phase 2:** Gap Analysis & Reporting Engine | 3/3 | ✅ Complete |
-| **Phase 3:** Automated Episodic Registry Updater | 3/3 | ✅ Complete |
-| **Phase 4:** Self-Improving Agent Framework | 3/3 | ✅ Complete |
+| **Phase 1:** Registry Schema & Initial Data Seeding | 3/3 | âœ… Complete |
+| **Phase 2:** Gap Analysis & Reporting Engine | 3/3 | âœ… Complete |
+| **Phase 3:** Automated Episodic Registry Updater | 3/3 | âœ… Complete |
+| **Phase 4:** Self-Improving Agent Framework | 3/3 | âœ… Complete |
 
 All 12 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done: 12 / total: 12`.
 
@@ -45,7 +45,7 @@ All 12 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done:
 ### Workflow implementations
 | Workflow | Key feature | Assessment |
 |----------|-------------|------------|
-| `update_registry.yml` | Scheduled registry gap analysis + self-evaluation | ✅ Generates gap analysis, compiles registry, runs self-eval, commits outputs. |
+| `update_registry.yml` | Scheduled registry gap analysis + self-evaluation | âœ… Generates gap analysis, compiles registry, runs self-eval, commits outputs. |
 
 ### Agent Framework
 | Artifact | Purpose | Assessment |
@@ -58,23 +58,23 @@ All 12 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done:
 ### Test coverage
 | Test | Purpose | Status |
 |------|---------|--------|
-| `test_gap_analyzer.py` | Validates gap analysis metrics and JSON I/O | ✅ 2 passed |
-| `test_registry.py` | Validates registry file existence and structure | ✅ Part of wider test suite |
+| `test_gap_analyzer.py` | Validates gap analysis metrics and JSON I/O | âœ… 2 passed |
+| `test_registry.py` | Validates registry file existence and structure | âœ… Part of wider test suite |
 
 ---
 
 ## 4. Findings & Observations
 
-### ✅ Strengths
-1. **Comprehensive registry structure** — Agency registry covers all major NZ government entities with cross-platform profile mapping.
-2. **Gap analysis automation** — `scripts/gap_analyzer.py` produces actionable coverage metrics integrated into CI.
-3. **Self-improving framework** — Agent framework directory provides prompts, rules, and skills for autonomous operation.
-4. **CI integration** — `update_registry.yml` runs gap analysis and self-evaluation on schedule.
+### âœ… Strengths
+1. **Comprehensive registry structure** â€” Agency registry covers all major NZ government entities with cross-platform profile mapping.
+2. **Gap analysis automation** â€” `scripts/gap_analyzer.py` produces actionable coverage metrics integrated into CI.
+3. **Self-improving framework** â€” Agent framework directory provides prompts, rules, and skills for autonomous operation.
+4. **CI integration** â€” `update_registry.yml` runs gap analysis and self-evaluation on schedule.
 
-### ⚠️ Minor Issues
-1. **`update_registry.yml` uses `pip` instead of `uv`** — Line 22 uses `python -m pip install -r requirements-dev.txt`. Consistent with other workflows but inconsistent with `workflow.md` recommendation.
+### âš ï¸ Minor Issues
+1. **`update_registry.yml` uses `pip` instead of `uv`** â€” Line 22 uses `python -m pip install -r requirements-dev.txt`. Consistent with other workflows but inconsistent with `workflow.md` recommendation.
 
-### ℹ️ Notes
+### â„¹ï¸ Notes
 - Registry has been expanded significantly by subsequent tracks (`govt_registry_20260614`, etc.).
 - `registry/agencies.json` is the foundational data source for all downstream registry operations.
 - The agent framework is used by other tracks and contributes to the project's self-improving capability.
@@ -85,11 +85,11 @@ All 12 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done:
 
 | Criterion | Result |
 |-----------|--------|
-| All spec requirements implemented | ✅ **Pass** |
-| All plan phases/tasks completed | ✅ **Pass** |
-| Registry schema machine-readable | ✅ **Pass** |
-| Gap analysis produces actionable metrics | ✅ **Pass** |
-| Agent framework framework defined | ✅ **Pass** |
-| CI workflow operational | ✅ **Pass** |
+| All spec requirements implemented | âœ… **Pass** |
+| All plan phases/tasks completed | âœ… **Pass** |
+| Registry schema machine-readable | âœ… **Pass** |
+| Gap analysis produces actionable metrics | âœ… **Pass** |
+| Agent framework framework defined | âœ… **Pass** |
+| CI workflow operational | âœ… **Pass** |
 
-**Overall: ✅ Track Complete — Ready to close.** No blocking issues.
+**Overall: âœ… Track Complete â€” Ready to close.** No blocking issues.

@@ -1,4 +1,4 @@
-﻿# Plan - NZ Government Archive - quality gates, observability, and CI/CD resilience
+# Plan - NZ Government Archive - quality gates, observability, and CI/CD resilience
 
 ## Dependencies
 Depends on `govt_archive_external_publication_20260625` and `govt_discovery_self_learning_20260625`.

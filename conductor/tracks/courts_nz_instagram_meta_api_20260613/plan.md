@@ -82,4 +82,4 @@ Launch guardrail:
 - Keep `instagram.enabled` false and keep `instagram` out of
   `monitored_accounts[].syndicate_to` until the API identity/permission probe
   passes and the launch review is approved.
-- ✅ Launch review approved 15 June 2026. Instagram now live with `max_posts_per_run: 1`.
+- âœ… Launch review approved 15 June 2026. Instagram now live with `max_posts_per_run: 1`.

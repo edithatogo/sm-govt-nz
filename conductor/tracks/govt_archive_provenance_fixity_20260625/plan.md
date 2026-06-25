@@ -1,4 +1,4 @@
-﻿# Plan - NZ Government Archive - provenance, fixity, and reproducible research packaging
+# Plan - NZ Government Archive - provenance, fixity, and reproducible research packaging
 
 ## Dependencies
 Depends on `govt_archive_external_publication_20260625`.

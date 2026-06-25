@@ -1,4 +1,4 @@
-# Plan — NZ Government Social Media Registry Full Expansion
+# Plan â€” NZ Government Social Media Registry Full Expansion
 
 ## Scope
 - Complete persons registry covering all current 54th Parliament MPs (~123)
@@ -13,24 +13,24 @@
 ## Phases
 
 ### Phase 0: Tooling & Track Setup
-- [x] Task: Create `scripts/add_person_record.py` — batch person record adder with schema validation
+- [x] Task: Create `scripts/add_person_record.py` â€” batch person record adder with schema validation
 - [x] Task: Create `scripts/data/` directory for batch input files
 - [x] Task: Create track directory with spec, plan, metadata, pending checklist
 - [x] Task: Update `conductor/tracks.md` with new track entry
 
-### Phase 1: National Party Caucus — Batch 1 (Cabinet & Senior Ministers)
+### Phase 1: National Party Caucus â€” Batch 1 (Cabinet & Senior Ministers)
 - [x] Task: Research social profiles for first 16 National MPs (Cabinet + ministers outside Cabinet)
 - [x] Task: Create `scripts/data/national_batch_1.json` with 16 person records
 - [x] Task: Validate and append to `registry/persons.json` using add_person_record.py
-- [x] Task: Run gap checker and tests — all clean
+- [x] Task: Run gap checker and tests â€” all clean
 - [x] Task: Commit batch 1 with message `national_batch_1: add 16 National MPs` (`dfcdee0`)
 
-### Phase 1: National Party Caucus — Batch 2 (Remaining Electorate MPs)
+### Phase 1: National Party Caucus â€” Batch 2 (Remaining Electorate MPs)
 - [x] Task: Research social profiles for next 14 National electorate MPs
 - [x] Task: Create `scripts/data/national_batch_2.json` with records
 - [x] Task: Validate, append, verify, commit (`e991d9e`)
 
-### Phase 1: National Party Caucus — Batch 3 (Remaining List & Junior MPs)
+### Phase 1: National Party Caucus â€” Batch 3 (Remaining List & Junior MPs)
 - [x] Task: Research and add remaining 12 National MPs
 - [x] Task: Validate, append, verify, commit (`928a675`)
 - [x] Task: Phase 1/current-MP roster remote verification passed in the final GitHub Actions gate on 2026-06-23.
@@ -43,23 +43,23 @@
 - [x] Task: Phase 2/current-MP roster remote verification passed in the final GitHub Actions gate on 2026-06-23.
 
 ### Phase 3: Green Party Caucus (15 MPs)
-- [x] Task: Research all Green MPs — records and social profiles
+- [x] Task: Research all Green MPs â€” records and social profiles
 - [x] Task: Add missing Green records and structured profiles/reviewed empty-profile artifact.
 - [x] Task: Validate, append, and verify current-MP records locally.
 - [x] Task: current-MP remote verification passed in the final GitHub Actions gate on 2026-06-23.
 
 ### Phase 4: ACT Party Caucus (11 MPs)
-- [x] Task: Research all ACT MPs — 9 new records + profiles
+- [x] Task: Research all ACT MPs â€” 9 new records + profiles
 - [x] Task: Validate, append, and verify current-MP records locally.
 - [x] Task: current-MP remote verification passed in the final GitHub Actions gate on 2026-06-23.
 
 ### Phase 5: NZ First Caucus (8 MPs)
-- [x] Task: Research all NZ First MPs — 6 new records + profiles
+- [x] Task: Research all NZ First MPs â€” 6 new records + profiles
 - [x] Task: Validate, append, and verify current-MP records locally.
 - [x] Task: current-MP remote verification passed in the final GitHub Actions gate on 2026-06-23.
 
-### Phase 6: Te Pāti Māori Caucus (6 MPs)
-- [x] Task: Research all Te Pāti Māori MPs — 3 new records + profiles
+### Phase 6: Te PÄti MÄori Caucus (6 MPs)
+- [x] Task: Research all Te PÄti MÄori MPs â€” 3 new records + profiles
 - [x] Task: Validate, append, and verify current-MP records locally.
 - [x] Task: current-MP remote verification passed in the final GitHub Actions gate on 2026-06-23.
 
@@ -90,9 +90,9 @@
 - [x] Task: Validate local tenure-linked profile references and registry gates; remote push/GitHub Actions verification passed on 2026-06-23.
 
 ### Phase 11: Final Verification & Close
-- [x] Task: Final strict CI gate — all gaps zero
+- [x] Task: Final strict CI gate â€” all gaps zero
 - [x] Task: Verify GitHub Actions passes
-- [x] Task: Update tracks.md — mark track complete
+- [x] Task: Update tracks.md â€” mark track complete
 - [x] Task: Archive gap report to conductor/
 
 ## Workflow

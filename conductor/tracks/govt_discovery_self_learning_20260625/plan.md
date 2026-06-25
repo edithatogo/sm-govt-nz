@@ -1,4 +1,4 @@
-﻿# Plan - NZ Government Discovery - self-improving heuristic search and learning loop
+# Plan - NZ Government Discovery - self-improving heuristic search and learning loop
 
 ## Dependencies
 Depends on `govt_archive_readiness_matrix_20260625`.

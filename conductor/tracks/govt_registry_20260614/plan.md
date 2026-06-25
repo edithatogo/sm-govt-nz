@@ -8,15 +8,15 @@
 - [x] Task: Add test coverage in `tests/test_compile_registry.py` for SQLite database generation and table integrity.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Registry Schema & Compilation Pipeline' (Protocol in workflow.md)
   - Verified: `scripts/compile_registry.py` compiles 252 agencies into 245 domain files and exports `registry/government_directory.db`.
-  - Verified: `scripts/verify_registry_compilation.py` confirms JSON ↔ SQLite match (252 agencies, 483 profiles, no mismatches).
+  - Verified: `scripts/verify_registry_compilation.py` confirms JSON â†” SQLite match (252 agencies, 483 profiles, no mismatches).
   - Verified: 25 tests pass across registry schema, compilation, git mirror validation, and compilation verification.
   - Report logged in `conductor/registry_verification_report.json`.
 
 ## Phase 2: Multi-Remote Git Redundancy
 - [x] Task: Write a check script to verify SSH/Access key validation for secondary Git hosts.
-  - Script: `scripts/validate_git_mirrors.py` — outputs structured JSON report,
+  - Script: `scripts/validate_git_mirrors.py` â€” outputs structured JSON report,
     supports `--dry-run`, `--compare-head`, `--output FILE`, and `--branch`.
-  - Tests: `tests/test_validate_git_mirrors.py` — 15 test cases covering missing
+  - Tests: `tests/test_validate_git_mirrors.py` â€” 15 test cases covering missing
     URL, SSH failure/success, dry-run, local/remote branch missing, remote
     lookup failure, misaligned heads, custom branch, JSON serialisation, and
     report envelope.
@@ -52,7 +52,7 @@
   - 3 pre-existing twitter.com URLs fixed to x.com
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Twitter/X Deactivation Archive & Registry Seeding' (Protocol in workflow.md)
   - Verified: Historical X posts archived for deactivated NZ government accounts.
-  - Verified: 218/252 agencies have populated social profiles (34 SOEs/Schedule 4a/other agencies without public social media — expected).
+  - Verified: 218/252 agencies have populated social profiles (34 SOEs/Schedule 4a/other agencies without public social media â€” expected).
   - Verified: All JSON valid, all agency_ids unique/kebab-case, duplicate profiles corrected, twitter.com URLs migrated to x.com.
   - Verified: Compilation pipeline produces matching SQLite DB (252 agencies, 483 profiles).
 
@@ -71,7 +71,7 @@
     is now wired behind explicit config and remains disabled by default.
   - [x] Controlled dry-run passed on 15 June 2026 using the public Courts of NZ
     Bluesky feed; see `conductor/unified_transparency_dry_run_20260615.json`.
-  - [x] Reviewed live-post verification completed — launch approved by user on 15 June 2026.
+  - [x] Reviewed live-post verification completed â€” launch approved by user on 15 June 2026.
   - `unified` enabled for controlled launch with `max_posts_per_run: 1`.
 - [x] Task: Conductor - User Manual Verification 'Phase 4: Syndication & Mirroring Implementation' (Protocol in workflow.md)
   - Verified: `src/unified_syndication.py` implements the unified mirror target posting adapter.

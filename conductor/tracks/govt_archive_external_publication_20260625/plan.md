@@ -1,4 +1,4 @@
-﻿# Plan - NZ Government Archive - external publication and storage hardening
+# Plan - NZ Government Archive - external publication and storage hardening
 
 ## Dependencies
 Depends on `govt_archive_noncredential_adapters_20260625`.

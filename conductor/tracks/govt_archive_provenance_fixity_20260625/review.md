@@ -1,4 +1,4 @@
-﻿# Review - NZ Government Archive - provenance, fixity, and reproducible research packaging
+# Review - NZ Government Archive - provenance, fixity, and reproducible research packaging
 
 **Track ID:** $(System.Collections.Hashtable.id)
 **Review Date:** 2026-06-25

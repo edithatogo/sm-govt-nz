@@ -1,4 +1,4 @@
-﻿# Review - NZ Government Discovery - self-improving heuristic search and learning loop
+# Review - NZ Government Discovery - self-improving heuristic search and learning loop
 
 **Track ID:** $(System.Collections.Hashtable.id)
 **Review Date:** 2026-06-25

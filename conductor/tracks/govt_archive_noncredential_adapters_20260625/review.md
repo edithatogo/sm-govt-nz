@@ -6,7 +6,7 @@ Non-credential adapter evaluation and risk taxonomy complete. All 13 plan tasks 
 ## Phase 1: Adapter Ranking [x]
 - Task 1: Readiness matrix ranks 1637 sources across 7 non-credential source types by archival value and feasibility.
 - Task 2: Credential-gated types (Meta, LinkedIn, X) marked as credential/manual/API-onboarding in readiness matrix and source manifest.
-- Task 3: Source-type risk taxonomy added via `scripts/evaluate_adapter_libraries.py` → `conductor/adapter_library_evaluation.json`.
+- Task 3: Source-type risk taxonomy added via `scripts/evaluate_adapter_libraries.py` â†’ `conductor/adapter_library_evaluation.json`.
 
 ## Phase 2: Library and Parser Evaluation [x]
 - Task 4: `feedparser` actively used in `archive_rss_history.py`, `archive_current_sources.py`, `feed_ingestion.py`.
@@ -25,9 +25,9 @@ Non-credential adapter evaluation and risk taxonomy complete. All 13 plan tasks 
 - Task 13: Git notes added with source counts and blocked classes.
 
 ## Artifacts
-- `scripts/evaluate_adapter_libraries.py` — risk taxonomy + library evaluation script
-- `conductor/adapter_library_evaluation.json` — generated evaluation output
-- `conductor/tracks/govt_archive_noncredential_adapters_20260625/plan.md` — updated
+- `scripts/evaluate_adapter_libraries.py` â€” risk taxonomy + library evaluation script
+- `conductor/adapter_library_evaluation.json` â€” generated evaluation output
+- `conductor/tracks/govt_archive_noncredential_adapters_20260625/plan.md` â€” updated
 
 ## Next Steps
 Proceed to `govt_archive_external_publication_20260625` and `govt_discovery_self_learning_20260625`.
