@@ -1,4 +1,4 @@
-# Project Tracks
+﻿# Project Tracks
 
 This file tracks all major tracks for the project. Each track has its own detailed plan in its respective folder.
 
@@ -89,12 +89,12 @@ This file tracks all major tracks for the project. Each track has its own detail
 - Zenodo: manual release snapshot lane, requires publish-zenodo-doi confirmation
 - Machine-readable contract: config/courts_nz_archive_publication_cadence.json
 
-## [x] Track: NZ Government Social Media Registry — agencies, political parties, MPs, and public sector leadership
+## [x] Track: NZ Government Social Media Registry â€” agencies, political parties, MPs, and public sector leadership
 *Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*
-- Phase 1–2: Registry schema, compilation pipeline, multi-remote git redundancy ✅
-- Phase 3: Twitter/X deactivation archive & registry seeding (252 agencies, 483 profiles) ✅
-- Phase 4: Syndication & mirroring implementation (unified feed dry-run passed, gated) ✅
-- Phase 5: Political parties, MPs, leadership — schema, validation, reference integrity CI gate ✅
+- Phase 1â€“2: Registry schema, compilation pipeline, multi-remote git redundancy âœ…
+- Phase 3: Twitter/X deactivation archive & registry seeding (252 agencies, 483 profiles) âœ…
+- Phase 4: Syndication & mirroring implementation (unified feed dry-run passed, gated) âœ…
+- Phase 5: Political parties, MPs, leadership â€” schema, validation, reference integrity CI gate âœ…
   - Reference integrity gap report is complete: 0 missing party leaders,
     0 missing party presidents, 0 unknown party references, and 0 unknown role
     organization references.
@@ -110,7 +110,7 @@ mirrors must be created as separate conductor tracks after the Courts of New
 Zealand archive and corpus pipeline is stable, with no posting under Dylan
 Mordaunt, `edithatogo`, or other personal identities.
 
-## [x] Track: NZ Government Social Media Registry — full expansion: MPs, parties, public sector leaders, historical figures
+## [x] Track: NZ Government Social Media Registry â€” full expansion: MPs, parties, public sector leaders, historical figures
 *Link: [./tracks/govt_registry_mp_expansion_20260621/](./tracks/govt_registry_mp_expansion_20260621/)*
 - Phase 0 complete (tooling + track setup).
 - Current 54th Parliament MP roster coverage is locally complete across National,
@@ -123,12 +123,12 @@ Mordaunt, `edithatogo`, or other personal identities.
   and core current public-sector leaders. Persons registry has 190 records. Remote
   push/GitHub Actions verification passed on 2026-06-23.
 
-## [x] Track: NZ Government Social Media Registry — provenance and batch quality gates
+## [x] Track: NZ Government Social Media Registry â€” provenance and batch quality gates
 *Link: [./tracks/govt_registry_quality_gates_20260622/](./tracks/govt_registry_quality_gates_20260622/)*
 - Complete: evidence metadata, stricter batch validation, unknown-organization rejection,
   and recomputed reference-integrity checks are in place for further expansion batches.
 
-## [x] Track: NZ Government Social Media Registry — verification refresh cadence
+## [x] Track: NZ Government Social Media Registry â€” verification refresh cadence
 *Link: [./tracks/govt_registry_refresh_cadence_20260622/](./tracks/govt_registry_refresh_cadence_20260622/)*
 - Tracks monthly and event-triggered re-verification for agencies, parties, MPs,
   public sector leaders, and historical records.
@@ -136,15 +136,15 @@ Mordaunt, `edithatogo`, or other personal identities.
   and `conductor/registry_refresh_report.json` artifact. Initial 2026-06-22
   queue has 610 due profiles; agencies are the first refresh cohort.
 
-## [x] Track: NZ Government Social Media Registry — account classification and tenure-linked profiles
+## [x] Track: NZ Government Social Media Registry â€” account classification and tenure-linked profiles
 *Link: [./tracks/govt_registry_account_classification_20260622/](./tracks/govt_registry_account_classification_20260622/)*
 - Complete: schemas, tests, current seeded-profile classifications, and one
   representative role-linked office profile are in place. Future seeded profiles
   must include `account_classification` and `syndication_classification`.
  
-## [ ] Track: NZ Government Archive - source readiness matrix and dependency sequencing 
+## [x] Track: NZ Government Archive - source readiness matrix and dependency sequencing 
 *Link: [./tracks/govt_archive_readiness_matrix_20260625/](./tracks/govt_archive_readiness_matrix_20260625/)* 
-- Planned dependency: Completed registry quality gates, account classification, refresh cadence, and existing archive reports.
+- Complete: Readiness matrix with 1637 sources across 11 readiness states and 5 dependency gates. Next track: govt_archive_noncredential_adapters_20260625.
  
 ## [ ] Track: NZ Government Archive - maximise non-credential source capture 
 *Link: [./tracks/govt_archive_noncredential_adapters_20260625/](./tracks/govt_archive_noncredential_adapters_20260625/)* 
@@ -169,3 +169,4 @@ Mordaunt, `edithatogo`, or other personal identities.
 ## [ ] Track: NZ Government Archive - provenance, fixity, and reproducible research packaging 
 *Link: [./tracks/govt_archive_provenance_fixity_20260625/](./tracks/govt_archive_provenance_fixity_20260625/)* 
 - Planned dependency: govt_archive_external_publication_20260625
+
