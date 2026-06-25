@@ -145,3 +145,23 @@ Mordaunt, `edithatogo`, or other personal identities.
 ## [ ] Track: NZ Government Archive - source readiness matrix and dependency sequencing 
 *Link: [./tracks/govt_archive_readiness_matrix_20260625/](./tracks/govt_archive_readiness_matrix_20260625/)* 
 - Planned dependency: Completed registry quality gates, account classification, refresh cadence, and existing archive reports.
+ 
+## [ ] Track: NZ Government Archive - maximise non-credential source capture 
+*Link: [./tracks/govt_archive_noncredential_adapters_20260625/](./tracks/govt_archive_noncredential_adapters_20260625/)* 
+- Planned dependency: govt_archive_readiness_matrix_20260625 
+ 
+## [ ] Track: NZ Government Archive - external publication and storage hardening 
+*Link: [./tracks/govt_archive_external_publication_20260625/](./tracks/govt_archive_external_publication_20260625/)* 
+- Planned dependency: govt_archive_noncredential_adapters_20260625 
+ 
+## [ ] Track: NZ Government Discovery - self-improving heuristic search and learning loop 
+*Link: [./tracks/govt_discovery_self_learning_20260625/](./tracks/govt_discovery_self_learning_20260625/)* 
+- Planned dependency: govt_archive_readiness_matrix_20260625 
+ 
+## [ ] Track: NZ Government Archive - quality gates, observability, and CI/CD resilience 
+*Link: [./tracks/govt_archive_quality_observability_20260625/](./tracks/govt_archive_quality_observability_20260625/)* 
+- Planned dependency: govt_archive_external_publication_20260625 and govt_discovery_self_learning_20260625 
+ 
+## [ ] Track: NZ Government Archive - explicit credentialed platform onboarding backlog 
+*Link: [./tracks/govt_credentialed_platform_onboarding_20260625/](./tracks/govt_credentialed_platform_onboarding_20260625/)* 
+- Planned dependency: govt_archive_quality_observability_20260625
