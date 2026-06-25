@@ -1,8 +1,8 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-06-25T05:00:23+00:00",
+  "generated_at": "2026-06-25T17:51:04+00:00",
   "inputs": {
-    "manifest": "conductor\\govt_archive_source_manifest.json",
+    "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "platforms": [
       "facebook",
@@ -10,7 +10,7 @@
       "linkedin",
       "x"
     ],
-    "policy": "config\\manual_seed_onboarding.json"
+    "policy": "config/manual_seed_onboarding.json"
   },
   "items": [
     {
