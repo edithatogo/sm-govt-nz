@@ -61,7 +61,18 @@ def month_from_timestamp(value: str) -> str:
     return now_iso()[:7]
 
 
+def jsonl_safe_record(record: dict[str, Any]) -> dict[str, Any]:
+    safe: dict[str, Any] = {}
+    for key, value in record.items():
+        if isinstance(value, str):
+            safe[key] = value.replace("\u2028", "\\u2028").replace("\u2029", "\\u2029")
+        else:
+            safe[key] = value
+    return safe
+
+
 def append_normalized_record(root: Path, platform: str, record: dict[str, Any]) -> bool:
+    record = jsonl_safe_record(record)
     shard = root / platform / f"{month_from_timestamp(record['original_created_at'])}.jsonl"
     shard.parent.mkdir(parents=True, exist_ok=True)
     existing_ids: set[str] = set()
