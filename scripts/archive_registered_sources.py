@@ -132,11 +132,12 @@ def archive_website_source(
     raw_root: Path = DEFAULT_RAW_ROOT,
     normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
     website_fetcher: Any | None = None,
+    fetch_timeout: int = 30,
 ) -> dict[str, Any]:
     captured_at = now_iso()
     url = str(source.get("url") or "")
     fetcher = website_fetcher or fetch_text
-    html = fetcher(url)
+    html = fetcher(url, timeout=fetch_timeout) if website_fetcher is None else fetcher(url)
     record_key = stable_id(f"{source.get('source_id')}|{url}")
     raw_rel = Path("website") / captured_at[:7] / f"{record_key}.json"
     raw_path = raw_root / raw_rel
@@ -533,7 +534,14 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
         return [source_result(source, "would_capture", "dry run")]
     try:
         if platform == "website_page" or source.get("source_type") == "website_page":
-            return [archive_website_source(source, raw_root, normalized_root)]
+            return [
+                archive_website_source(
+                    source,
+                    raw_root,
+                    normalized_root,
+                    fetch_timeout=getattr(args, "fetch_timeout", 30),
+                )
+            ]
         if platform == "rss" or source.get("source_type") == "rss_feed":
             return archive_rss_source(source, raw_root, normalized_root)
         if platform == "bluesky":
@@ -555,6 +563,15 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         source_type=args.source_type,
         only_ready=not args.include_blocked,
     )
+    retry_failed_from = getattr(args, "retry_failed_from", None)
+    if retry_failed_from:
+        previous_report = load_json(Path(retry_failed_from))
+        failed_source_ids = {
+            str(row.get("source_id"))
+            for row in previous_report.get("results", [])
+            if row.get("status") == "capture_failed" and row.get("source_id")
+        }
+        selected = [source for source in selected if str(source.get("source_id")) in failed_source_ids]
     results = []
     courts_report = run_courts_current_sources_if_selected(selected, args.dry_run)
     for source in selected:
@@ -588,6 +605,8 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "raw_root": str(getattr(args, "raw_root", DEFAULT_RAW_ROOT)),
             "normalized_root": str(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT)),
             "manual_seed_root": str(getattr(args, "manual_seed_root", DEFAULT_MANUAL_SEED_ROOT)),
+            "fetch_timeout": getattr(args, "fetch_timeout", 30),
+            "retry_failed_from": str(getattr(args, "retry_failed_from", "") or ""),
         },
         "summary": {
             "selected_sources": len(selected),
@@ -619,6 +638,8 @@ def main() -> None:
     parser.add_argument("--include-blocked", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--max-bluesky-pages", type=int, default=1)
+    parser.add_argument("--fetch-timeout", type=int, default=30)
+    parser.add_argument("--retry-failed-from", type=Path, default=None)
     args = parser.parse_args()
 
     report = build_report(args)
