@@ -89,7 +89,7 @@ All 12 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done:
 | All plan phases/tasks completed | âœ… **Pass** |
 | Registry schema machine-readable | âœ… **Pass** |
 | Gap analysis produces actionable metrics | âœ… **Pass** |
-| Agent framework framework defined | âœ… **Pass** |
+| Agent framework defined | âœ… **Pass** |
 | CI workflow operational | âœ… **Pass** |
 
 **Overall: âœ… Track Complete â€” Ready to close.** No blocking issues.
