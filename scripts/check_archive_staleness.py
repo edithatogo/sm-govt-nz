@@ -126,12 +126,12 @@ def check_staleness(
         "stale_sources": stale_sources,
     }
 
-    print(f"Archive Staleness Check Report")
+    print("Archive Staleness Check Report")
     print(f"  Generated: {report['generated_at']}")
     print(f"  Overall: {report['overall_status']}")
     print(f"  Healthy: {healthy_count}, Stale: {stale_count}, Unknown: {unknown_count}")
     if stale_sources:
-        print(f"  Flagged sources:")
+        print("  Flagged sources:")
         for s in stale_sources:
             print(f"    [{s['status']}] {s['agency_id']}/{s['source_type']}: {s['message']}")
 
