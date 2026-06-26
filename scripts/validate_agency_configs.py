@@ -179,31 +179,31 @@ def main():
             contracts = data.get("contracts", [])
             plat_names = {c.get("source_platform"): c for c in contracts}
             if "bluesky" not in plat_names:
-                print(f"  WARNING: courts-of-nz missing Bluesky contract")
+                print("  WARNING: courts-of-nz missing Bluesky contract")
                 total_errors += 1
             if "rss" not in plat_names:
-                print(f"  WARNING: courts-of-nz missing RSS contract")
+                print("  WARNING: courts-of-nz missing RSS contract")
                 total_errors += 1
             if "bluesky" in plat_names and "rss" in plat_names:
                 print(
-                    f"  OK: courts-of-nz has Bluesky + RSS contracts "
+                    "  OK: courts-of-nz has Bluesky + RSS contracts "
                     f"({len(contracts)} total)")
             rss_comp = CONFIG_DIR / "courts-of-nz_rss_feeds.json"
             if rss_comp.exists():
                 rss_data = json.loads(rss_comp.read_text(encoding="utf-8"))
-                print(f"  RSS feeds present: "
+                print("  RSS feeds present: "
                       f"{rss_data.get('feed_count', 0)} feed(s)")
                 for feed in rss_data.get("feeds", []):
                     fu = feed.get("feed_url", "")
                     print(f"    Feed URL: {fu}")
             else:
-                print(f"  WARNING: courts-of-nz_rss_feeds.json missing")
+                print("  WARNING: courts-of-nz_rss_feeds.json missing")
                 total_errors += 1
         except (json.JSONDecodeError, IOError) as e:
             print(f"  ERROR reading courts-of-nz config: {e}")
             total_errors += 1
     else:
-        print(f"  WARNING: courts-of-nz_sources.json not found")
+        print("  WARNING: courts-of-nz_sources.json not found")
         total_errors += 1
     print()
 
