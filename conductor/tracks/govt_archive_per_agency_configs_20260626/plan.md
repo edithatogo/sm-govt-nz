@@ -1,0 +1,50 @@
+# Plan - NZ Government Archive - per-agency source inventory and RSS feed configuration
+
+## Track Metadata
+- **Track ID**: `govt_archive_per_agency_configs_20260626`
+- **Title**: NZ Government Archive - per-agency source inventory config files and RSS feed config files
+- **Description**: Generate and maintain per-agency source inventory config files and RSS feed config files for all agencies with discovered RSS feeds, Bluesky accounts, and website pages.
+- **Date Created**: 2026-06-26
+- **Status**: Pending
+
+## Dependencies
+- Depends on `govt_archive_readiness_matrix_20260625` (completed)
+- Depends on `govt_archive_noncredential_adapters_20260625` (completed)
+- **Is dependency gate for**: `govt_archive_rss_onboarding_20260626`, `govt_archive_bluesky_onboarding_20260626`, `govt_archive_website_onboarding_20260626`, `govt_archive_youtube_onboarding_20260626`, `govt_archive_scheduled_multisource_20260626`
+
+## Implementation Rules for Less-Capable Agents
+- Work phases in order; do not skip dependency gates.
+- After each phase, run `$conductor-review`, apply findings, rerun focused tests, then commit.
+- Add a git note to every phase commit summarizing scope, tests, residual blockers, and next action.
+- Configs must use stable agency IDs consistent with the registry and readiness matrix.
+
+## Phase 1: Generate agency configs
+- [ ] Task 1: Execute `scripts/generate_agency_configs.py` to produce per-agency source inventory config files.
+- [ ] Task 2: Verify that configs are generated for all agencies with discovered sources (RSS feeds, Bluesky accounts, website pages).
+- [ ] Task 3: Confirm 16 configs are generated as expected from the script.
+- [ ] Task 4: Review each config file for correct source-type fields, agency identifiers, and URL references.
+- [ ] Task 5: Ensure config files are stored in a consistent directory structure (e.g., `configs/agencies/{agency_id}.json`).
+
+## Phase 2: Validate configs against existing archival data
+- [ ] Task 6: Cross-reference generated configs with existing captured archival data for each agency.
+- [ ] Task 7: Verify RSS feed URLs in configs match discovered feeds from the readiness matrix.
+- [ ] Task 8: Verify Bluesky account handles in configs match registry entries.
+- [ ] Task 9: Verify website homepage URLs in configs match the 247 homepages manifest.
+- [ ] Task 10: Flag any discrepancies between configs and registry data for resolution.
+
+## Phase 3: Create agency-specific workflow patterns
+- [ ] Task 11: Define per-agency capture workflow patterns based on available source types.
+- [ ] Task 12: Document agencies that have RSS-only, Bluesky-only, website-only, or multi-source profiles.
+- [ ] Task 13: Add metadata fields for capture priority, archival cadence, and source-type mix.
+- [ ] Task 14: Generate an agency config index file (`configs/agencies/index.json`) for quick lookup.
+
+## Acceptance Criteria
+- [ ] All agencies with discovered sources have valid, validated config files.
+- [ ] Configs are consistent with registry agency IDs and readiness matrix source records.
+- [ ] Agency workflow patterns are documented and indexable for scheduled capture workflows.
+- [ ] 16 agency configs are confirmed generated and validated.
+
+## Commit and Review Protocol
+- Commit after each phase with a concise hyphenated message.
+- Add `git notes` describing implementation evidence and review status.
+- Run `$conductor-review` after each phase and auto-apply review fixes before starting the next phase.

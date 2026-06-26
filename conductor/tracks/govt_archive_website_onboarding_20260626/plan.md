@@ -1,0 +1,59 @@
+# Plan - NZ Government Archive - multi-agency website page archiving
+
+## Track Metadata
+- **Track ID**: `govt_archive_website_onboarding_20260626`
+- **Title**: NZ Government Archive - multi-agency website page archiving
+- **Description**: Archive homepage and key pages for all 200+ government agencies.
+- **Date Created**: 2026-06-26
+- **Status**: Pending
+
+## Dependencies
+- **Depends on**: `govt_archive_per_agency_configs_20260626` (per-agency configs must exist)
+- Depends on `govt_archive_readiness_matrix_20260625` (completed)
+- Depends on `govt_archive_noncredential_adapters_20260625` (completed)
+- **Is dependency gate for**: `govt_archive_scheduled_multisource_20260626`
+
+## Implementation Rules for Less-Capable Agents
+- Work phases in order; do not skip dependency gates.
+- After each phase, run `$conductor-review`, apply findings, rerun focused tests, then commit.
+- Add a git note to every phase commit summarizing scope, tests, residual blockers, and next action.
+- Use `httpx` with retry/backoff for page fetching; prefer raw HTML storage with `trafilatura` for text extraction.
+- Respect robots.txt and set polite crawl delays.
+
+## Phase 1: Identify seed pages per agency
+- [ ] Task 1: Compile the full list of agency homepage URLs from the registry and readiness matrix.
+- [ ] Task 2: Confirm 247 homepages are listed in the manifest.
+- [ ] Task 3: Validate each URL is reachable (HTTP 200) and resolves correctly.
+- [ ] Task 4: Identify additional seed pages beyond homepages (e.g., About, Contact, News, Publications) per agency.
+- [ ] Task 5: Document any URLs that are redirecting, broken, or returning errors.
+
+## Phase 2: Create agency website page contracts
+- [ ] Task 6: Define per-agency website page contracts specifying which pages to archive.
+- [ ] Task 7: Include crawl depth, page types (homepage, about, news, publications, contact), and update frequency.
+- [ ] Task 8: Store contracts in `configs/website/` directory referenced by agency ID.
+- [ ] Task 9: Validate contracts against live sites to confirm page structure and URL patterns.
+
+## Phase 3: Run initial website page capture
+- [ ] Task 10: Execute initial website capture for all 247 homepages across all agencies.
+- [ ] Task 11: Verify raw HTML is captured and stored with HTTP response headers (status, content-type, last-modified).
+- [ ] Task 12: Run text extraction via `trafilatura` on captured HTML for normalized content.
+- [ ] Task 13: Store raw HTML and extracted text in agency archive directories.
+- [ ] Task 14: Generate capture manifest with per-agency page counts and capture timestamps.
+- [ ] Task 15: Handle capture failures gracefully with retry logic and error logging.
+
+## Phase 4: Set up ongoing website page archival
+- [ ] Task 16: Create GitHub Actions workflow for scheduled weekly website capture (`archive_website_scheduled.yml`).
+- [ ] Task 17: Configure workflow to respect crawl delays and avoid overwhelming agency servers.
+- [ ] Task 18: Add incremental capture support (only re-capture pages older than configured TTL).
+- [ ] Task 19: Verify scheduled workflow runs successfully in dry-run mode.
+
+## Acceptance Criteria
+- [ ] All 247 agency homepages captured with raw HTML and extracted text.
+- [ ] Per-agency website page contracts defined and validated.
+- [ ] Website capture manifest generated with per-agency counts.
+- [ ] Scheduled weekly capture workflow is active and verified.
+
+## Commit and Review Protocol
+- Commit after each phase with a concise hyphenated message.
+- Add `git notes` describing implementation evidence and review status.
+- Run `$conductor-review` after each phase and auto-apply review fixes before starting the next phase.

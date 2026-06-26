@@ -1,0 +1,36 @@
+{
+  "agency_id": "te-wananga-o-raukawa",
+  "feed_count": 2,
+  "feeds": [
+    {
+      "discovery_method": "manifest.archive_registered_sources",
+      "feed_type": "application/rss+xml",
+      "feed_url": "https://www.wananga.com/feed/atom",
+      "seed_page": "https://www.wananga.com/feed/atom",
+      "title": "RSS Feed"
+    },
+    {
+      "discovery_method": "manifest.archive_registered_sources",
+      "feed_type": "application/rss+xml",
+      "feed_url": "https://www.wananga.com/feed/rss2",
+      "seed_page": "https://www.wananga.com/feed/rss2",
+      "title": "RSS Feed"
+    }
+  ],
+  "generated_at": "2026-06-26T06:37:22.207630+00:00",
+  "seed_page_count": 2,
+  "seed_pages": [
+    {
+      "error": "",
+      "feed_count": 1,
+      "seed_page": "https://www.wananga.com/feed/atom",
+      "status": "healthy"
+    },
+    {
+      "error": "",
+      "feed_count": 1,
+      "seed_page": "https://www.wananga.com/feed/rss2",
+      "status": "healthy"
+    }
+  ]
+}

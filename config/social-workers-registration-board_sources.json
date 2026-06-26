@@ -1,0 +1,70 @@
+{
+  "agency_id": "social-workers-registration-board",
+  "agency_name": "Social Workers Registration Board (Kāhui Whakamana Tauwhiro)",
+  "archive_only": true,
+  "contracts": [
+    {
+      "access_method": "public_rss",
+      "account": "www.swrb.govt.nz",
+      "archive_only_guarantee": "RSS records must not alter outbound syndication cursors.",
+      "auth": "none",
+      "dedupe_keys": [
+        "feed_entry_id",
+        "canonical_url",
+        "content_hash"
+      ],
+      "display_name": "Social Workers Registration Board (Kāhui Whakamana Tauwhiro) RSS & Website",
+      "failure_modes": [
+        "feed_unavailable",
+        "network_error",
+        "html_changed"
+      ],
+      "id": "social-workers-registration-board-rss-website",
+      "normalized_path_template": "historical_archive_normalized/rss/{yyyy_mm}.jsonl",
+      "rate_limit_policy": "Use feedparser for feeds and bounded HTML fetches.",
+      "raw_path_template": "historical_archive_raw/rss/{yyyy_mm}/{record_id}.json",
+      "seed_pages": [
+        "https://swrb.govt.nz/feed/"
+      ],
+      "source_kind": "rss_website",
+      "source_platform": "rss",
+      "status": "healthy",
+      "url": "https://www.swrb.govt.nz"
+    }
+  ],
+  "dataset_outputs": {
+    "hugging_face": {
+      "artifacts": [
+        "normalized_jsonl",
+        "normalized_parquet",
+        "manifest",
+        "dataset_card"
+      ],
+      "enabled": true,
+      "secret_requirements": [
+        "HF_TOKEN",
+        "HF_DATASET_REPO_ID"
+      ]
+    },
+    "zenodo": {
+      "artifacts": [
+        "release_snapshot",
+        "manifest",
+        "checksums",
+        "citation_metadata"
+      ],
+      "enabled": true,
+      "secret_requirements": [
+        "ZENODO_TOKEN",
+        "ZENODO_DEPOSIT_ENDPOINT"
+      ]
+    }
+  },
+  "generated_at": "2026-06-26T06:37:22.207630+00:00",
+  "phase_review_contract": {
+    "commit_after_each_task": true,
+    "future_syndication_tracks": "one_platform_account_per_track",
+    "review_after_each_phase": true,
+    "review_after_track": true
+  }
+}

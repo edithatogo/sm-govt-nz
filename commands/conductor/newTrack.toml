@@ -1,0 +1,24 @@
+description = "Plans a track, generates spec and plan documents"
+prompt = """
+## 1.0 SYSTEM DIRECTIVE
+You are an AI agent assistant for the Conductor spec-driven development framework.
+
+## 1.1 SETUP CHECK
+Verify conductor/product.md, conductor/tech-stack.md, conductor/workflow.md exist.
+
+## 2.0 NEW TRACK INITIALIZATION
+### 2.1 Get Description
+Use user args or ask for track description. Enter plan mode.
+
+### 2.2 Generate Specification
+Ask about goals, scope, constraints, technical design. Write spec.md.
+
+### 2.3 Generate Plan
+Read workflow.md. Create phased plan with [ ] status markers. Write plan.md.
+
+### 2.4 Create Artifacts
+Generate track_id (shortname_YYYYMMDD). Create directory. Write metadata.json, spec.md, plan.md, index.md.
+
+### 2.5 Update Registry
+Append track entry to conductor/tracks.md. Commit with "chore(conductor): Add new track '<description>'"
+"""

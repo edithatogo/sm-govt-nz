@@ -1,0 +1,94 @@
+{
+  "agency_id": "ministry-of-health",
+  "agency_name": "Ministry of Health (Manatū Hauora)",
+  "archive_only": true,
+  "contracts": [
+    {
+      "access_method": "public_at_protocol",
+      "account": "health.govt.nz",
+      "archive_only_guarantee": "Backfills must not advance outbound syndication state.",
+      "auth": "none",
+      "dedupe_keys": [
+        "at_uri",
+        "canonical_url",
+        "content_hash"
+      ],
+      "display_name": "Ministry of Health (Manatū Hauora) Bluesky",
+      "failure_modes": [
+        "rate_limited",
+        "network_error",
+        "schema_changed"
+      ],
+      "id": "ministry-of-health-bluesky",
+      "normalized_path_template": "historical_archive_normalized/bluesky/{yyyy_mm}.jsonl",
+      "rate_limit_policy": "Use bounded page sizes and persist cursors.",
+      "raw_path_template": "historical_archive_raw/bluesky/{yyyy_mm}/{record_id}.json",
+      "source_kind": "social_feed",
+      "source_platform": "bluesky",
+      "status": "healthy",
+      "url": "https://bsky.app/profile/health.govt.nz"
+    },
+    {
+      "access_method": "public_html_from_rss_links",
+      "account": "www.health.govt.nz",
+      "archive_only_guarantee": "Website records must not alter outbound syndication cursors.",
+      "auth": "none",
+      "dedupe_keys": [
+        "canonical_url",
+        "content_hash"
+      ],
+      "display_name": "Ministry of Health (Manatū Hauora) Website Pages",
+      "failure_modes": [
+        "network_error",
+        "html_changed",
+        "unavailable"
+      ],
+      "id": "ministry-of-health-website-pages",
+      "normalized_path_template": "historical_archive_normalized/website/{yyyy_mm}.jsonl",
+      "rate_limit_policy": "Fetch only bounded public pages linked from archived feed records.",
+      "raw_path_template": "historical_archive_raw/website/{yyyy_mm}/{record_id}.json",
+      "seed_pages": [
+        "https://www.health.govt.nz"
+      ],
+      "source_kind": "website_page",
+      "source_platform": "www.health.govt.nz",
+      "status": "healthy",
+      "url": "https://www.health.govt.nz"
+    }
+  ],
+  "dataset_outputs": {
+    "hugging_face": {
+      "artifacts": [
+        "normalized_jsonl",
+        "normalized_parquet",
+        "manifest",
+        "dataset_card"
+      ],
+      "enabled": true,
+      "secret_requirements": [
+        "HF_TOKEN",
+        "HF_DATASET_REPO_ID"
+      ]
+    },
+    "zenodo": {
+      "artifacts": [
+        "release_snapshot",
+        "manifest",
+        "checksums",
+        "citation_metadata"
+      ],
+      "enabled": true,
+      "secret_requirements": [
+        "ZENODO_TOKEN",
+        "ZENODO_DEPOSIT_ENDPOINT"
+      ]
+    }
+  },
+  "generated_at": "2026-06-26T06:37:22.207630+00:00",
+  "phase_review_contract": {
+    "commit_after_each_task": true,
+    "future_syndication_tracks": "one_platform_account_per_track",
+    "review_after_each_phase": true,
+    "review_after_track": true
+  }
+}

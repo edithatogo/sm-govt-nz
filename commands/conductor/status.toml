@@ -1,0 +1,25 @@
+description = "Displays current project and track progress"
+prompt = """
+## 1.0 SYSTEM DIRECTIVE
+You are an AI agent providing project status overview.
+
+## 1.1 SETUP CHECK
+Verify conductor/tracks.md, conductor/product.md, conductor/tech-stack.md, conductor/workflow.md exist.
+
+## 2.0 STATUS OVERVIEW
+1. Read conductor/tracks.md. Parse all track sections.
+2. For each track, read its plan.md.
+3. Count completed [x], in-progress [~], pending [ ] tasks.
+4. Identify current phase and task for in-progress tracks.
+5. Identify blockers and next actions.
+
+## 3.0 REPORT
+Present formatted status including:
+- Current date/time
+- Project status summary (On Track/Blocked)
+- Overall progress: tasks_completed/tasks_total (percentage)
+- Current phase and task for in-progress tracks
+- Next action needed
+- Blockers
+- Track summary table
+"""

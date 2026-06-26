@@ -170,6 +170,31 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_provenance_fixity_20260625/](./tracks/govt_archive_provenance_fixity_20260625/)* 
 - Planned dependency: govt_archive_external_publication_20260625
 
+## [ ] Track: NZ Government Archive - per-agency source inventory and RSS feed configuration
+*Link: [./tracks/govt_archive_per_agency_configs_20260626/](./tracks/govt_archive_per_agency_configs_20260626/)*
+- Dependency gate for RSS, Bluesky, Website, YouTube, and Scheduled Multisource tracks.
+
+## [ ] Track: NZ Government Archive - multi-agency RSS feed onboarding and capture
+*Link: [./tracks/govt_archive_rss_onboarding_20260626/](./tracks/govt_archive_rss_onboarding_20260626/)*
+- 70 RSS sources identified across 12 agencies; 421 entries captured. Scheduled daily capture pending.
+
+## [ ] Track: NZ Government Archive - multi-agency Bluesky account onboarding and capture
+*Link: [./tracks/govt_archive_bluesky_onboarding_20260626/](./tracks/govt_archive_bluesky_onboarding_20260626/)*
+- 5 accounts: courtsofnz, beehivenz, health.govt.nz, healthnz.govt.nz, independent-childrens-monitor.
+
+## [ ] Track: NZ Government Archive - multi-agency website page archiving
+*Link: [./tracks/govt_archive_website_onboarding_20260626/](./tracks/govt_archive_website_onboarding_20260626/)*
+- 247 homepages in manifest across 200+ agencies. Web archiving pending.
+
+## [ ] Track: NZ Government Archive - multi-agency YouTube channel archival
+*Link: [./tracks/govt_archive_youtube_onboarding_20260626/](./tracks/govt_archive_youtube_onboarding_20260626/)*
+- 175 YouTube channels discovered. Metadata archival pending.
+
+## [ ] Track: NZ Government Archive - scheduled multi-agency capture workflow
+*Link: [./tracks/govt_archive_scheduled_multisource_20260626/](./tracks/govt_archive_scheduled_multisource_20260626/)
+- Depends on all per-source-type onboarding tracks completing first.
+
+
 
 
 
