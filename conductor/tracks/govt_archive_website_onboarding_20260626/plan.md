@@ -19,6 +19,7 @@
 - Add a git note to every phase commit summarizing scope, tests, residual blockers, and next action.
 - Use `httpx` with retry/backoff for page fetching; prefer raw HTML storage with `trafilatura` for text extraction.
 - Respect robots.txt and set polite crawl delays.
+- No credentials or tokens required -- all NZ government websites are public.
 
 ## Phase 1: Identify seed pages per agency
 - [ ] Task 1: Compile the full list of agency homepage URLs from the registry and readiness matrix.
@@ -30,28 +31,31 @@
 ## Phase 2: Create agency website page contracts
 - [ ] Task 6: Define per-agency website page contracts specifying which pages to archive.
 - [ ] Task 7: Include crawl depth, page types (homepage, about, news, publications, contact), and update frequency.
-- [ ] Task 8: Store contracts in `configs/website/` directory referenced by agency ID.
+- [ ] Task 8: Store contracts in `config/website/` directory referenced by agency ID.
 - [ ] Task 9: Validate contracts against live sites to confirm page structure and URL patterns.
 
-## Phase 3: Run initial website page capture
-- [ ] Task 10: Execute initial website capture for all 247 homepages across all agencies.
-- [ ] Task 11: Verify raw HTML is captured and stored with HTTP response headers (status, content-type, last-modified).
-- [ ] Task 12: Run text extraction via `trafilatura` on captured HTML for normalized content.
-- [ ] Task 13: Store raw HTML and extracted text in agency archive directories.
-- [ ] Task 14: Generate capture manifest with per-agency page counts and capture timestamps.
-- [ ] Task 15: Handle capture failures gracefully with retry logic and error logging.
+## Phase 3: Run initial website page capture via GitHub Actions
+- [ ] Task 10: Trigger `archive_registered_sources.yml` via `workflow_dispatch` with `--source-type website_page --dry-run true` and confirm 247 homepages selected.
+- [ ] Task 11: Run initial website capture via `archive_registered_sources.yml` with `--source-type website_page --dry-run false` for all 247 homepages.
+- [ ] Task 12: Verify raw HTML is captured and stored with HTTP response headers (status, content-type, last-modified).
+- [ ] Task 13: Run text extraction via `trafilatura` on captured HTML for normalized content.
+- [ ] Task 14: Store raw HTML and extracted text in agency archive directories under `historical_archive_raw/website/` and `historical_archive_normalized/website/`.
+- [ ] Task 15: Generate capture manifest with per-agency page counts and capture timestamps.
+- [ ] Task 16: Handle capture failures gracefully with retry logic and error logging.
 
-## Phase 4: Set up ongoing website page archival
-- [ ] Task 16: Create GitHub Actions workflow for scheduled weekly website capture (`archive_website_scheduled.yml`).
-- [ ] Task 17: Configure workflow to respect crawl delays and avoid overwhelming agency servers.
-- [ ] Task 18: Add incremental capture support (only re-capture pages older than configured TTL).
-- [ ] Task 19: Verify scheduled workflow runs successfully in dry-run mode.
+## Phase 4: Set up ongoing website page archival via GitHub Actions
+- [ ] Task 17: Create `.github/workflows/archive_website_scheduled.yml` for scheduled weekly website capture (e.g., `cron: "7 2 * * 0"`).
+- [ ] Task 18: Configure workflow to respect crawl delays (3-second delay between requests) and avoid overwhelming agency servers.
+- [ ] Task 19: Add incremental capture support (only re-capture pages older than configured TTL of 7 days).
+- [ ] Task 20: Add `workflow_dispatch` trigger with parameters: `agency_id`, `dry_run`, `page_limit`.
+- [ ] Task 21: Verify workflow runs successfully via `workflow_dispatch` before enabling cron schedule.
+- [ ] Task 22: Enable cron schedule and confirm first auto-run completes.
 
 ## Acceptance Criteria
-- [ ] All 247 agency homepages captured with raw HTML and extracted text.
+- [ ] All 247 agency homepages captured with raw HTML and extracted text via GitHub Actions.
 - [ ] Per-agency website page contracts defined and validated.
 - [ ] Website capture manifest generated with per-agency counts.
-- [ ] Scheduled weekly capture workflow is active and verified.
+- [ ] `archive_website_scheduled.yml` workflow is active and verified with at least one successful auto-run.
 
 ## Commit and Review Protocol
 - Commit after each phase with a concise hyphenated message.

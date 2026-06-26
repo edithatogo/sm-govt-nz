@@ -1,0 +1,73 @@
+name: Archive RSS Scheduled
+
+on:
+  schedule:
+    - cron: "7 2 * * *"
+  workflow_dispatch:
+    inputs:
+      agency_id:
+        description: "Optional agency ID filter"
+        required: false
+        default: ""
+      dry_run:
+        description: "Report without capturing"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      commit_payloads:
+        description: "Commit raw/normalized payloads to git"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+jobs:
+  archive-rss:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install uv
+        run: python -m pip install uv
+      - name: Install runtime dependencies
+        run: uv pip install --system -r requirements.txt
+      - name: Archive RSS sources
+        run: |
+          args=(
+            --source-type rss
+            --dry-run ${{ inputs.dry_run || 'false' }}
+          )
+          if [ -n "${{ inputs.agency_id }}" ]; then
+            args+=(--agency-id "${{ inputs.agency_id }}")
+          fi
+          python -m scripts.archive_registered_sources "${args[@]}"
+      - name: Commit RSS capture reports
+        if: ${{ inputs.dry_run != 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Capture RSS feed entries from registered government sources"
+          --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/archive_state.json
+          --path conductor/archive_source_health.json
+      - name: Commit RSS payloads
+        if: ${{ inputs.dry_run != 'true' && inputs.commit_payloads == 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Archive RSS feed raw and normalized payloads"
+          --path 'historical_archive_raw/rss/**'
+          --path 'historical_archive_normalized/rss/**'

@@ -32,7 +32,10 @@ conductor/*.log
 /registry/build.py
 /registry/final.py
 
-# Local secrets
+# Historical archive payloads (large, committed only via explicit workflow dispatch)
+historical_archive_raw/
+historical_archive_normalized/
+manual_archive_seeds/
 .env.local
 .env
 

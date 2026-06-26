@@ -19,6 +19,7 @@
 - Add a git note to every phase commit summarizing scope, tests, residual blockers, and next action.
 - Use `feedparser` for RSS/Atom parsing as evaluated in non-credential adapters track.
 - Respect rate limits and use `httpx` with retry/backoff for feed fetching.
+- All RSS capture uses public feeds -- no credentials or tokens required.
 
 ## Phase 1: Identify all RSS feed URLs per agency
 - [ ] Task 1: Compile the full list of RSS feed URLs from the readiness matrix across all agencies.
@@ -30,28 +31,30 @@
 ## Phase 2: Create per-agency RSS feed configs
 - [ ] Task 6: Generate per-agency RSS feed configuration files referencing discovered feed URLs.
 - [ ] Task 7: Include feed metadata (feed type, update frequency, content type, last-modified headers).
-- [ ] Task 8: Store configs alongside agency source configs in `configs/rss/` directory.
+- [ ] Task 8: Store configs alongside agency source configs in `config/rss/` directory referenced by agency ID.
 - [ ] Task 9: Validate feed configs against live feed endpoints (HTTP 200, valid XML/JSON).
 
-## Phase 3: Run RSS capture for all agencies
-- [ ] Task 10: Execute RSS capture workflow for all configured agency feeds.
-- [ ] Task 11: Confirm 421 entries captured across all agencies.
-- [ ] Task 12: Verify captured entries include title, published date, URL, and content/summary.
-- [ ] Task 13: Check for duplicate entries across capture runs and apply deduplication.
-- [ ] Task 14: Validate captured data against original feed content for sampling of feeds.
-- [ ] Task 15: Generate capture summary report with per-agency entry counts.
+## Phase 3: Run RSS capture via GitHub Actions
+- [ ] Task 10: Trigger `archive_registered_sources.yml` via `workflow_dispatch` with `--source-type rss --dry-run true` and confirm all 70 RSS feed URLs are selected.
+- [ ] Task 11: Run RSS capture via `archive_registered_sources.yml` with `--source-type rss --dry-run false` to capture live feed data.
+- [ ] Task 12: Confirm 421+ entries captured across all agencies.
+- [ ] Task 13: Verify captured entries include title, published date, URL, and content/summary in normalized JSONL format.
+- [ ] Task 14: Check for duplicate entries across capture runs and apply deduplication.
+- [ ] Task 15: Validate captured data against original feed content for sampling of feeds.
+- [ ] Task 16: Generate capture summary report with per-agency entry counts.
 
-## Phase 4: Set up ongoing scheduled RSS capture
-- [ ] Task 16: Create GitHub Actions workflow for scheduled daily RSS capture (`archive_rss_scheduled.yml`).
-- [ ] Task 17: Configure workflow to use per-agency RSS configs and emit capture manifests.
-- [ ] Task 18: Add workflow_dispatch trigger for manual re-capture of specific agencies.
-- [ ] Task 19: Verify scheduled workflow runs successfully in dry-run mode.
+## Phase 4: Set up ongoing scheduled RSS capture via GitHub Actions
+- [ ] Task 17: Create `.github/workflows/archive_rss_scheduled.yml` for scheduled daily RSS capture (e.g., `cron: "7 2 * * *"`).
+- [ ] Task 18: Configure workflow to run `python -m scripts.archive_registered_sources --source-type rss --dry-run false` and commit state updates.
+- [ ] Task 19: Add `workflow_dispatch` trigger with parameters: `agency_id` (optional filter), `dry_run` (default: false), `commit_payloads`.
+- [ ] Task 20: Verify scheduled workflow runs successfully via `workflow_dispatch` before enabling the cron schedule.
+- [ ] Task 21: Enable cron schedule and confirm first auto-run completes successfully.
 
 ## Acceptance Criteria
-- [ ] All 70 discovered RSS feeds are configured and captured.
-- [ ] 421+ RSS entries archived with full metadata.
+- [ ] All 70 discovered RSS feeds are configured and captured via GitHub Actions.
+- [ ] 421+ RSS entries archived with full metadata in normalized format.
 - [ ] Per-agency capture manifests available for downstream publication.
-- [ ] Scheduled daily capture workflow is active and verified.
+- [ ] `archive_rss_scheduled.yml` workflow is active and verified with at least one successful auto-run.
 
 ## Commit and Review Protocol
 - Commit after each phase with a concise hyphenated message.

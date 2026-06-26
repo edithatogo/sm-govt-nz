@@ -19,6 +19,7 @@
 - Add a git note to every phase commit summarizing scope, tests, residual blockers, and next action.
 - Prefer YouTube channel RSS feeds for routine metadata capture; use the Data API only for resolver gaps.
 - Do not download video files; archive only metadata (title, description, published date, duration, thumbnails).
+- No credentials or tokens required for RSS-feed-based YouTube metadata capture.
 
 ## Phase 1: Identify YouTube channels per agency
 - [ ] Task 1: Compile the full list of NZ government YouTube channel URLs/IDs from the registry and readiness matrix.
@@ -30,27 +31,29 @@
 ## Phase 2: Create YouTube source contracts per agency
 - [ ] Task 6: Generate per-agency YouTube source config files specifying channel IDs and capture parameters.
 - [ ] Task 7: Include channel RSS feed URL (e.g., `https://www.youtube.com/feeds/videos.xml?channel_id=...`) and Data API fallback.
-- [ ] Task 8: Store configs in `configs/youtube/` directory referenced by agency ID.
+- [ ] Task 8: Store configs in `config/youtube/` directory referenced by agency ID.
 - [ ] Task 9: Validate channel RSS feeds resolve and return valid video entries.
 
-## Phase 3: Run initial YouTube metadata capture
-- [ ] Task 10: Execute YouTube metadata capture for all 175 channels across all agencies.
-- [ ] Task 11: For each channel, capture video title, description, published date, video URL, duration, and thumbnail URL.
-- [ ] Task 12: Store captured metadata in agency archive directories in normalized JSON format.
-- [ ] Task 13: Handle rate limits (via RSS feeds where possible, Data API with appropriate quotas).
-- [ ] Task 14: Generate capture manifest with per-channel video counts and capture timestamps.
+## Phase 3: Run initial YouTube metadata capture via GitHub Actions
+- [ ] Task 10: Trigger `archive_registered_sources.yml` via `workflow_dispatch` with `--source-type youtube --dry-run true` and confirm 175 channels selected.
+- [ ] Task 11: Run YouTube metadata capture via `archive_registered_sources.yml` with `--source-type youtube --dry-run false` for all channels.
+- [ ] Task 12: For each channel, capture video title, description, published date, video URL, duration, and thumbnail URL.
+- [ ] Task 13: Store captured metadata in agency archive directories under `historical_archive_normalized/youtube/` in normalized JSON format.
+- [ ] Task 14: Handle rate limits (via RSS feeds where possible to avoid Data API quota usage).
+- [ ] Task 15: Generate capture manifest with per-channel video counts and capture timestamps.
 
-## Phase 4: Set up ongoing YouTube archival
-- [ ] Task 15: Create GitHub Actions workflow for scheduled weekly YouTube metadata capture (`archive_youtube_scheduled.yml`).
-- [ ] Task 16: Configure workflow to only pull new/updated videos since last capture (incremental).
-- [ ] Task 17: Add workflow_dispatch trigger for manual re-capture of specific channels.
-- [ ] Task 18: Verify scheduled workflow runs successfully in dry-run mode.
+## Phase 4: Set up ongoing YouTube archival via GitHub Actions
+- [ ] Task 16: Create `.github/workflows/archive_youtube_scheduled.yml` for scheduled weekly YouTube metadata capture (e.g., `cron: "17 2 * * 0"`).
+- [ ] Task 17: Configure workflow to only pull new/updated videos since last capture (incremental, using RSS feed pubDate tracking).
+- [ ] Task 18: Add `workflow_dispatch` trigger with parameters: `agency_id`, `dry_run`, `channel_limit`.
+- [ ] Task 19: Verify workflow runs successfully via `workflow_dispatch` before enabling cron schedule.
+- [ ] Task 20: Enable cron schedule and confirm first auto-run completes.
 
 ## Acceptance Criteria
-- [ ] All 175 YouTube channels are configured and capturing metadata.
+- [ ] All 175 YouTube channels are configured and capturing metadata via GitHub Actions.
 - [ ] Video metadata archived per channel with consistent schema.
 - [ ] Per-channel capture manifests available for downstream publication.
-- [ ] Scheduled weekly YouTube capture workflow is active and verified.
+- [ ] `archive_youtube_scheduled.yml` workflow is active and verified with at least one successful auto-run.
 
 ## Commit and Review Protocol
 - Commit after each phase with a concise hyphenated message.
