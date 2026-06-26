@@ -35630,7 +35630,7 @@
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
-      "link_text": "Roading Alerts - No current issues",
+      "link_text": "Roading Alerts - 1x current issue",
       "official_website": "https://www.mackenzie.govt.nz",
       "origin": "homepage.link",
       "platform": "newsletter",
@@ -58561,34 +58561,7 @@
       "agency_type": "Department",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "6b79ff177b754f02",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Feedback and complaints",
-      "official_website": "https://www.orangatamariki.govt.nz",
-      "origin": "homepage.link",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Children",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.ot.govt.nz/about-us/contact-us/feedback/"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.orangatamariki.govt.nz",
-      "agency_id": "oranga-tamariki",
-      "agency_name": "Oranga Tamariki\u2014Ministry for Children",
-      "agency_type": "Department",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "53f18ccc645eb183",
+      "candidate_id": "4ff5a222a2f97528",
       "confidence_score": 0.7,
       "domain_trust": "high",
       "feasibility": "high",
@@ -58605,7 +58578,7 @@
         "archive_friendly_platform",
         "official_term:nz"
       ],
-      "url": "https://www.ot.govt.nz/children-in-our-care/information-for-children/feedback-form/"
+      "url": "https://www.orangatamariki.govt.nz/children-in-our-care/information-for-children/feedback-form/"
     },
     {
       "access_method": "public_rss",
@@ -59672,6 +59645,32 @@
         "official_term:nz"
       ],
       "url": "https://www.orc.govt.nz/your-council/latest-news/enviroschools-otago-newsletter/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.orc.govt.nz",
+      "agency_id": "otago-regional-council",
+      "agency_name": "Otago Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "63d6c5f11d80a430",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "News\r\n                                                 \r\n                                         \r\n                                         \r\n                                             New African feather grass incursion \r\n                                         \r\n                                         \r\n                                                 26 June 2026 \r\n                                             Council drop-in for pest plan review alerts locals to presence of plant pest. \r\n                                         \r\n                                         \r\n                                             Learn more",
+      "official_website": "https://www.orc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.orc.govt.nz/your-council/latest-news/news/2026/june/new-african-feather-grass-incursion/"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -70995,7 +70994,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 hours ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 day ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -79597,30 +79596,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Facebook",
-      "agency_id": "te-tumu-paeroa",
-      "agency_name": "Te Tumu Paeroa (Office of the M\u0101ori Trustee)",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "541fcf47a4bd44ff",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.tetumupaeroa.co.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "M\u0101ori Development",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/TeTumuPaeroa/"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "tetumupaeroa",
       "account_classification": "official",
       "agency_id": "te-tumu-paeroa",
@@ -79634,7 +79609,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.tetumupaeroa.co.nz",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "instagram",
       "policy_notes": "Archive capture depends on Meta access and account eligibility.",
       "portfolio": "M\u0101ori Development",
@@ -79646,30 +79621,6 @@
         "official_term:nz"
       ],
       "url": "https://www.instagram.com/tetumupaeroa/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "LinkedIn",
-      "agency_id": "te-tumu-paeroa",
-      "agency_name": "Te Tumu Paeroa (Office of the M\u0101ori Trustee)",
-      "agency_type": "Department",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "c0aa4e7a27c5a135",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.tetumupaeroa.co.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "M\u0101ori Development",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/maori-trustee/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -81549,6 +81500,32 @@
         "official_term:nz"
       ],
       "url": "https://www.tec.govt.nz"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.tcdc.govt.nz",
+      "agency_id": "thames-coromandel-district-council",
+      "agency_name": "Thames-Coromandel District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "afc626b00732354e",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Welcome to our Economic Development Newsletter - June 2026 \n\t\t Published on 26 June 2026 \n\t\t Check out the latest economic development news and info for the Thames-Coromandel District.",
+      "official_website": "https://www.tcdc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.tcdc.govt.nz/Our-Community/Economic-Development/Latest-Economic-Development-News/ED-newsletter-June-2026"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -93934,6 +93911,32 @@
       "url": "https://www.whaikaha.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.whakatane.govt.nz",
+      "agency_id": "whakatane-district-council",
+      "agency_name": "Whakat\u0101ne District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "7309048cf7bd1e6f",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Hapori Highlights",
+      "official_website": "https://www.whakatane.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.whakatane.govt.nz/about-council/news/newsletters/hapori-highlights"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.whakatane.govt.nz",
       "agency_id": "whakatane-district-council",
@@ -97218,7 +97221,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-06-25T18:36:37+00:00",
+  "generated_at": "2026-06-26T18:14:24+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -105926,8 +105929,8 @@
     },
     {
       "agency_id": "central-otago-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.codc.govt.nz/"
     },
     {
@@ -105981,8 +105984,8 @@
     },
     {
       "agency_id": "clutha-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.cluthadc.govt.nz/"
     },
     {
@@ -106002,7 +106005,7 @@
     {
       "agency_id": "creative-nz",
       "alternates": 0,
-      "links": 160,
+      "links": 161,
       "status": "ok",
       "url": "https://www.creativenz.govt.nz/"
     },
@@ -106121,8 +106124,8 @@
     },
     {
       "agency_id": "environment-southland",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.es.govt.nz/"
     },
     {
@@ -106155,7 +106158,7 @@
     {
       "agency_id": "fire-and-emergency-nz",
       "alternates": 0,
-      "links": 134,
+      "links": 133,
       "status": "ok",
       "url": "https://www.fireandemergency.nz/"
     },
@@ -106199,8 +106202,8 @@
     },
     {
       "agency_id": "grey-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.greydc.govt.nz/"
     },
     {
@@ -106220,7 +106223,7 @@
     {
       "agency_id": "hastings-district-council",
       "alternates": 0,
-      "links": 772,
+      "links": 773,
       "status": "ok",
       "url": "https://www.hastingsdc.govt.nz/"
     },
@@ -106295,8 +106298,8 @@
     },
     {
       "agency_id": "hurunui-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.hurunui.govt.nz/"
     },
     {
@@ -106334,14 +106337,14 @@
     },
     {
       "agency_id": "invercargill-city-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.icc.govt.nz/"
     },
     {
       "agency_id": "kaikoura-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.kaikoura.govt.nz/"
     },
     {
@@ -106361,7 +106364,7 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 107,
+      "links": 109,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
@@ -106455,8 +106458,8 @@
     },
     {
       "agency_id": "marlborough-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.marlborough.govt.nz/"
     },
     {
@@ -106468,8 +106471,8 @@
     },
     {
       "agency_id": "masterton-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.mstn.govt.nz/"
     },
     {
@@ -106603,8 +106606,8 @@
     },
     {
       "agency_id": "nelson-city-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.nelson.govt.nz/"
     },
     {
@@ -106720,7 +106723,7 @@
     {
       "agency_id": "nz-police",
       "alternates": 0,
-      "links": 190,
+      "links": 187,
       "status": "ok",
       "url": "https://www.police.govt.nz/"
     },
@@ -106808,8 +106811,8 @@
     },
     {
       "agency_id": "opotiki-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.odc.govt.nz/"
     },
     {
@@ -106843,7 +106846,7 @@
     {
       "agency_id": "palmerston-north-city-council",
       "alternates": 0,
-      "links": 527,
+      "links": 528,
       "status": "ok",
       "url": "https://www.pncc.govt.nz/"
     },
@@ -106903,7 +106906,7 @@
     {
       "agency_id": "public-service-commission",
       "alternates": 1,
-      "links": 63,
+      "links": 64,
       "status": "ok",
       "url": "https://www.publicservice.govt.nz/"
     },
@@ -106958,14 +106961,14 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 400,
+      "links": 401,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
     {
       "agency_id": "rotorua-lakes-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.rotorualakescouncil.nz/"
     },
     {
@@ -107004,7 +107007,7 @@
     {
       "agency_id": "sit",
       "alternates": 0,
-      "links": 359,
+      "links": 360,
       "status": "ok",
       "url": "https://www.sit.ac.nz/"
     },
@@ -107023,14 +107026,14 @@
     },
     {
       "agency_id": "south-taranaki-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.southtaranaki.com/"
     },
     {
       "agency_id": "south-waikato-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.southwaikato.govt.nz/"
     },
     {
@@ -107069,8 +107072,8 @@
     },
     {
       "agency_id": "stratford-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.stratford.govt.nz/"
     },
     {
@@ -107123,8 +107126,8 @@
     },
     {
       "agency_id": "taupo-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.taupodc.govt.nz/"
     },
     {
@@ -107170,9 +107173,8 @@
     },
     {
       "agency_id": "te-tumu-paeroa",
-      "alternates": 0,
-      "links": 97,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.tetumupaeroa.co.nz/"
     },
     {
@@ -107252,7 +107254,7 @@
     {
       "agency_id": "tvnz",
       "alternates": 0,
-      "links": 165,
+      "links": 162,
       "status": "ok",
       "url": "https://www.tvnz.co.nz/"
     },
@@ -107333,14 +107335,14 @@
     },
     {
       "agency_id": "waimate-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.waimatedc.govt.nz/"
     },
     {
       "agency_id": "waipa-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.waipadc.govt.nz/"
     },
     {
@@ -107385,14 +107387,14 @@
     },
     {
       "agency_id": "west-coast-regional-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.wcrc.govt.nz/"
     },
     {
       "agency_id": "western-bay-of-plenty-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.westernbay.govt.nz/"
     },
     {
@@ -107419,7 +107421,7 @@
     {
       "agency_id": "whanganui-district-council",
       "alternates": 0,
-      "links": 314,
+      "links": 317,
       "status": "ok",
       "url": "https://www.whanganui.govt.nz/"
     },
@@ -107464,27 +107466,27 @@
     "agency_count": 252,
     "candidate_count": 3645,
     "feasibility_counts": {
-      "high": 2544,
-      "low": 320,
-      "medium": 781
+      "high": 2543,
+      "low": 319,
+      "medium": 783
     },
-    "known_registry_social_profiles": 440,
+    "known_registry_social_profiles": 441,
     "platform_counts": {
       "bluesky": 5,
-      "facebook": 296,
+      "facebook": 295,
       "instagram": 163,
-      "linkedin": 241,
-      "newsletter": 164,
-      "rss": 2292,
+      "linkedin": 240,
+      "newsletter": 167,
+      "rss": 2291,
       "website_page": 247,
       "x": 79,
       "youtube": 158
     },
     "source_type_counts": {
-      "newsletter": 164,
-      "rss_feed": 69,
+      "newsletter": 167,
+      "rss_feed": 68,
       "search_seed": 2223,
-      "social_profile": 942,
+      "social_profile": 940,
       "website_page": 247
     }
   }
