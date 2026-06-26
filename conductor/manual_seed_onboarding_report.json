@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-06-25T17:51:04+00:00",
+  "generated_at": "2026-06-26T17:20:04+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -643,6 +643,30 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "Facebook AvSec",
+      "agency_id": "civil-aviation-authority",
+      "agency_name": "Civil Aviation Authority (Te Mana Rererangi T\u016bmatanui o Aotearoa)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/civil-aviation-authority-facebook-38da5c9a.json",
+        "manual_archive_seeds/facebook/civil-aviation-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "civil-aviation-authority-facebook-38da5c9a",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/AvSecNZ"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "CAA",
       "agency_id": "civil-aviation-authority",
       "agency_name": "Civil Aviation Authority (Te Mana Rererangi T\u016bmatanui o Aotearoa)",
@@ -660,6 +684,30 @@
       "source_id": "civil-aviation-authority-facebook-924c01e8",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/CivilAviationAuthority"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "Facebook CAA",
+      "agency_id": "civil-aviation-authority",
+      "agency_name": "Civil Aviation Authority (Te Mana Rererangi T\u016bmatanui o Aotearoa)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/civil-aviation-authority-facebook-f56a1f46.json",
+        "manual_archive_seeds/facebook/civil-aviation-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "civil-aviation-authority-facebook-f56a1f46",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/CivilAviationNZ"
     },
     {
       "acceptable_access_methods": [
@@ -1236,6 +1284,30 @@
       "source_id": "environment-southland-facebook-dbd14db7",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/EnvironmentSouthland"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/environmental-protection-authority-facebook-1cbd3458.json",
+        "manual_archive_seeds/facebook/environmental-protection-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "environmental-protection-authority-facebook-1cbd3458",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/EPAgovtNZ/"
     },
     {
       "acceptable_access_methods": [
@@ -3067,6 +3139,30 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "Facebook",
+      "agency_id": "ministry-of-health",
+      "agency_name": "Ministry of Health (Manat\u016b Hauora)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/ministry-of-health-facebook-fd984281.json",
+        "manual_archive_seeds/facebook/ministry-of-health.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "ministry-of-health-facebook-fd984281",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/minhealthnz/"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "HUDNZ",
       "agency_id": "ministry-of-housing-and-urban-development",
       "agency_name": "Ministry of Housing and Urban Development (Te T\u016b\u0101papa Kura K\u0101inga)",
@@ -3180,6 +3276,30 @@
       "source_id": "ministry-of-social-development-facebook-b38a187b",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/MSDNewZealand/"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "Facebook",
+      "agency_id": "ministry-of-transport",
+      "agency_name": "Ministry of Transport (Te Manat\u016b Waka)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/ministry-of-transport-facebook-a04e65e9.json",
+        "manual_archive_seeds/facebook/ministry-of-transport.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "ministry-of-transport-facebook-a04e65e9",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/Ministryoftransportnz"
     },
     {
       "acceptable_access_methods": [
@@ -3564,6 +3684,30 @@
       "source_id": "nz-artificial-limb-service-facebook-49a6336c",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/Peke-Waihanga-Artificial-Limb-Service-306700359982541"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/nz-blood-service-facebook-13125ee1.json",
+        "manual_archive_seeds/facebook/nz-blood-service.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "nz-blood-service-facebook-13125ee1",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/NewZealandBloodService  "
     },
     {
       "acceptable_access_methods": [
@@ -4220,6 +4364,30 @@
         "operator_authorized_seed"
       ],
       "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/otago-polytechnic-facebook-3e83bb07.json",
+        "manual_archive_seeds/facebook/otago-polytechnic.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "otago-polytechnic-facebook-3e83bb07",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/OtagoPoly"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
       "agency_id": "otago-regional-council",
       "agency_name": "Otago Regional Council",
       "archive_status": "candidate",
@@ -4555,6 +4723,30 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "Sport & Recreation",
+      "agency_id": "queenstown-lakes-district-council",
+      "agency_name": "Queenstown-Lakes District Council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/queenstown-lakes-district-council-facebook-2b68599c.json",
+        "manual_archive_seeds/facebook/queenstown-lakes-district-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "queenstown-lakes-district-council-facebook-2b68599c",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/QLDCSportRec"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "QueenstownLakesDistrictCouncil",
       "agency_id": "queenstown-lakes-district-council",
       "agency_name": "Queenstown-Lakes District Council",
@@ -4572,6 +4764,54 @@
       "source_id": "queenstown-lakes-district-council-facebook-309f183f",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/QueenstownLakesDistrictCouncil"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "Libraries",
+      "agency_id": "queenstown-lakes-district-council",
+      "agency_name": "Queenstown-Lakes District Council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/queenstown-lakes-district-council-facebook-64e87c16.json",
+        "manual_archive_seeds/facebook/queenstown-lakes-district-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "queenstown-lakes-district-council-facebook-64e87c16",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/qtlakeslibraries"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
+      "agency_id": "queenstown-lakes-district-council",
+      "agency_name": "Queenstown-Lakes District Council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/queenstown-lakes-district-council-facebook-76748a51.json",
+        "manual_archive_seeds/facebook/queenstown-lakes-district-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "queenstown-lakes-district-council-facebook-76748a51",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/QLDCinfo/"
     },
     {
       "acceptable_access_methods": [
@@ -6523,6 +6763,30 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "",
+      "agency_id": "waikato-regional-council",
+      "agency_name": "Waikato Regional Council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/waikato-regional-council-facebook-b24f0c25.json",
+        "manual_archive_seeds/facebook/waikato-regional-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "waikato-regional-council-facebook-b24f0c25",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/WaikatoRegion"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "WaimakaririDistrictCouncil",
       "agency_id": "waimakariri-district-council",
       "agency_name": "Waimakariri District Council",
@@ -8059,6 +8323,54 @@
         "account_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "instagram",
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/instagram/environmental-protection-authority-instagram-03ccdb29.json",
+        "manual_archive_seeds/instagram/environmental-protection-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "environmental-protection-authority-instagram-03ccdb29",
+      "source_type": "social_profile",
+      "url": "https://www.instagram.com/epagovtnz/"
+    },
+    {
+      "acceptable_access_methods": [
+        "instagram_graph_api",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "FENZ Instagram",
+      "agency_id": "fire-and-emergency-nz",
+      "agency_name": "Fire and Emergency New Zealand (Whakaratonga Iwi)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "instagram",
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/instagram/fire-and-emergency-nz-instagram-086363f1.json",
+        "manual_archive_seeds/instagram/fire-and-emergency-nz.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "fire-and-emergency-nz-instagram-086363f1",
+      "source_type": "social_profile",
+      "url": "https://www.instagram.com/fireandemergencynz/"
+    },
+    {
+      "acceptable_access_methods": [
+        "instagram_graph_api",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "fireandemergencynz",
       "agency_id": "fire-and-emergency-nz",
       "agency_name": "Fire and Emergency New Zealand (Whakaratonga Iwi)",
@@ -9187,6 +9499,30 @@
         "account_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "instagram",
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/instagram/nz-blood-service-instagram-cb3a01b5.json",
+        "manual_archive_seeds/instagram/nz-blood-service.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "nz-blood-service-instagram-cb3a01b5",
+      "source_type": "social_profile",
+      "url": "https://www.instagram.com/nzbloodservice/"
+    },
+    {
+      "acceptable_access_methods": [
+        "instagram_graph_api",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "nzcustomsservice",
       "agency_id": "nz-customs-service",
       "agency_name": "New Zealand Customs Service (Te Mana Arai o Aotearoa)",
@@ -9739,6 +10075,30 @@
         "account_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "instagram",
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/instagram/otago-polytechnic-instagram-687f841f.json",
+        "manual_archive_seeds/instagram/otago-polytechnic.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "otago-polytechnic-instagram-687f841f",
+      "source_type": "social_profile",
+      "url": "https://www.instagram.com/otagopolytechnic/"
+    },
+    {
+      "acceptable_access_methods": [
+        "instagram_graph_api",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "Check us out on Instagram",
       "agency_id": "palmerston-north-city-council",
       "agency_name": "Palmerston North City Council (Te Kaunihera o Papaioea)",
@@ -9924,6 +10284,30 @@
       "source_id": "public-trust-instagram-bb22d266",
       "source_type": "social_profile",
       "url": "https://www.instagram.com/publictrustnz"
+    },
+    {
+      "acceptable_access_methods": [
+        "instagram_graph_api",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
+      "agency_id": "queenstown-lakes-district-council",
+      "agency_name": "Queenstown-Lakes District Council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "instagram",
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/instagram/queenstown-lakes-district-council-instagram-a4633cfc.json",
+        "manual_archive_seeds/instagram/queenstown-lakes-district-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "queenstown-lakes-district-council-instagram-a4633cfc",
+      "source_type": "social_profile",
+      "url": "https://www.instagram.com/qldcinfo/"
     },
     {
       "acceptable_access_methods": [
@@ -11035,6 +11419,30 @@
         "account_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "",
+      "agency_id": "waikato-regional-council",
+      "agency_name": "Waikato Regional Council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "instagram",
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/instagram/waikato-regional-council-instagram-1c06a08f.json",
+        "manual_archive_seeds/instagram/waikato-regional-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "waikato-regional-council-instagram-1c06a08f",
+      "source_type": "social_profile",
+      "url": "https://www.instagram.com/ourwaikato/"
+    },
+    {
+      "acceptable_access_methods": [
+        "instagram_graph_api",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "Instagram Link",
       "agency_id": "waimakariri-district-council",
       "agency_name": "Waimakariri District Council",
@@ -11995,6 +12403,30 @@
         "organization_admin_export",
         "operator_authorized_seed"
       ],
+      "account": "Linkedin",
+      "agency_id": "civil-aviation-authority",
+      "agency_name": "Civil Aviation Authority (Te Mana Rererangi T\u016bmatanui o Aotearoa)",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "linkedin",
+      "required_authorization": "organization_admin_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/linkedin/civil-aviation-authority-linkedin-11b33003.json",
+        "manual_archive_seeds/linkedin/civil-aviation-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "civil-aviation-authority-linkedin-11b33003",
+      "source_type": "social_profile",
+      "url": "https://www.linkedin.com/company/civil-aviation-authority-of-new-zealand/"
+    },
+    {
+      "acceptable_access_methods": [
+        "approved_linkedin_api",
+        "organization_admin_export",
+        "operator_authorized_seed"
+      ],
       "account": "Civil Aviation Authority of New Zealand",
       "agency_id": "civil-aviation-authority",
       "agency_name": "Civil Aviation Authority (Te Mana Rererangi T\u016bmatanui o Aotearoa)",
@@ -12588,6 +13020,30 @@
       "source_id": "environment-southland-linkedin-67008329",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/environment-southland"
+    },
+    {
+      "acceptable_access_methods": [
+        "approved_linkedin_api",
+        "organization_admin_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "linkedin",
+      "required_authorization": "organization_admin_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/linkedin/environmental-protection-authority-linkedin-79a29b27.json",
+        "manual_archive_seeds/linkedin/environmental-protection-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "environmental-protection-authority-linkedin-79a29b27",
+      "source_type": "social_profile",
+      "url": "https://www.linkedin.com/company/2139834/"
     },
     {
       "acceptable_access_methods": [
@@ -13987,6 +14443,30 @@
         "organization_admin_export",
         "operator_authorized_seed"
       ],
+      "account": "LinkedIn",
+      "agency_id": "ministry-of-health",
+      "agency_name": "Ministry of Health (Manat\u016b Hauora)",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "linkedin",
+      "required_authorization": "organization_admin_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/linkedin/ministry-of-health-linkedin-f593ce31.json",
+        "manual_archive_seeds/linkedin/ministry-of-health.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "ministry-of-health-linkedin-f593ce31",
+      "source_type": "social_profile",
+      "url": "https://nz.linkedin.com/company/ministry-of-health-new-zealand"
+    },
+    {
+      "acceptable_access_methods": [
+        "approved_linkedin_api",
+        "organization_admin_export",
+        "operator_authorized_seed"
+      ],
       "account": "HUD NZ",
       "agency_id": "ministry-of-housing-and-urban-development",
       "agency_name": "Ministry of Housing and Urban Development (Te T\u016b\u0101papa Kura K\u0101inga)",
@@ -14100,6 +14580,30 @@
       "source_id": "ministry-of-transport-linkedin-516cbf0d",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/ministry-of-transport-new-zealand/"
+    },
+    {
+      "acceptable_access_methods": [
+        "approved_linkedin_api",
+        "organization_admin_export",
+        "operator_authorized_seed"
+      ],
+      "account": "LinkedIn",
+      "agency_id": "ministry-of-transport",
+      "agency_name": "Ministry of Transport (Te Manat\u016b Waka)",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "linkedin",
+      "required_authorization": "organization_admin_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/linkedin/ministry-of-transport-linkedin-9dc4054b.json",
+        "manual_archive_seeds/linkedin/ministry-of-transport.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "ministry-of-transport-linkedin-9dc4054b",
+      "source_type": "social_profile",
+      "url": "https://www.linkedin.com/company/ministry-of-transport-new-zealand"
     },
     {
       "acceptable_access_methods": [
@@ -14484,6 +14988,30 @@
       "source_id": "nz-artificial-limb-service-linkedin-d69fe099",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/new-zealand-artificial-limb-service"
+    },
+    {
+      "acceptable_access_methods": [
+        "approved_linkedin_api",
+        "organization_admin_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "linkedin",
+      "required_authorization": "organization_admin_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/linkedin/nz-blood-service-linkedin-620d7360.json",
+        "manual_archive_seeds/linkedin/nz-blood-service.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "nz-blood-service-linkedin-620d7360",
+      "source_type": "social_profile",
+      "url": "https://www.linkedin.com/company/new-zealand-blood-service/"
     },
     {
       "acceptable_access_methods": [
@@ -15092,6 +15620,30 @@
         "operator_authorized_seed"
       ],
       "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "linkedin",
+      "required_authorization": "organization_admin_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/linkedin/otago-polytechnic-linkedin-dfd023f3.json",
+        "manual_archive_seeds/linkedin/otago-polytechnic.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "otago-polytechnic-linkedin-dfd023f3",
+      "source_type": "social_profile",
+      "url": "https://www.linkedin.com/company/213448"
+    },
+    {
+      "acceptable_access_methods": [
+        "approved_linkedin_api",
+        "organization_admin_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
       "agency_id": "otago-regional-council",
       "agency_name": "Otago Regional Council",
       "archive_status": "manual_seed",
@@ -15396,6 +15948,30 @@
       "source_id": "public-service-commission-linkedin-a90ba070",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/te-kawa-mataaho"
+    },
+    {
+      "acceptable_access_methods": [
+        "approved_linkedin_api",
+        "organization_admin_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
+      "agency_id": "queenstown-lakes-district-council",
+      "agency_name": "Queenstown-Lakes District Council",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "linkedin",
+      "required_authorization": "organization_admin_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/linkedin/queenstown-lakes-district-council-linkedin-b1b82437.json",
+        "manual_archive_seeds/linkedin/queenstown-lakes-district-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "queenstown-lakes-district-council-linkedin-b1b82437",
+      "source_type": "social_profile",
+      "url": "https://www.linkedin.com/company/1971267/"
     },
     {
       "acceptable_access_methods": [
@@ -17059,6 +17635,30 @@
         "organization_admin_export",
         "operator_authorized_seed"
       ],
+      "account": "",
+      "agency_id": "waikato-regional-council",
+      "agency_name": "Waikato Regional Council",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "linkedin",
+      "required_authorization": "organization_admin_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/linkedin/waikato-regional-council-linkedin-4b2ad576.json",
+        "manual_archive_seeds/linkedin/waikato-regional-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "waikato-regional-council-linkedin-4b2ad576",
+      "source_type": "social_profile",
+      "url": "https://www.linkedin.com/company/waikatoregionalcouncil/"
+    },
+    {
+      "acceptable_access_methods": [
+        "approved_linkedin_api",
+        "organization_admin_export",
+        "operator_authorized_seed"
+      ],
       "account": "Linkedin Link",
       "agency_id": "waimakariri-district-council",
       "agency_name": "Waimakariri District Council",
@@ -17717,6 +18317,31 @@
         "public_archive_dataset",
         "operator_authorized_seed"
       ],
+      "account": "X (Twitter)",
+      "agency_id": "civil-aviation-authority",
+      "agency_name": "Civil Aviation Authority (Te Mana Rererangi T\u016bmatanui o Aotearoa)",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "live_capture_policy": "Treat live browser capture as degraded. Prefer official API, account-owner archive, public archive dataset, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "x",
+      "required_authorization": "account_owner_or_approved_api_or_lawful_public_archive",
+      "seed_candidates": [
+        "manual_archive_seeds/x/civil-aviation-authority-x-b696cccf.json",
+        "manual_archive_seeds/x/civil-aviation-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "civil-aviation-authority-x-b696cccf",
+      "source_type": "social_profile",
+      "url": "https://twitter.com/CivilAviationNZ"
+    },
+    {
+      "acceptable_access_methods": [
+        "official_api",
+        "account_owner_archive",
+        "public_archive_dataset",
+        "operator_authorized_seed"
+      ],
       "account": "courtsofnz",
       "agency_id": "courts-of-nz",
       "agency_name": "Courts of New Zealand (Ng\u0101 K\u014dti o Aotearoa)",
@@ -17934,6 +18559,31 @@
       "source_id": "fire-and-emergency-nz-x-1e6d3775",
       "source_type": "social_profile",
       "url": "https://x.com/FireEmergencyNZ"
+    },
+    {
+      "acceptable_access_methods": [
+        "official_api",
+        "account_owner_archive",
+        "public_archive_dataset",
+        "operator_authorized_seed"
+      ],
+      "account": "FENZ Twitter",
+      "agency_id": "fire-and-emergency-nz",
+      "agency_name": "Fire and Emergency New Zealand (Whakaratonga Iwi)",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "live_capture_policy": "Treat live browser capture as degraded. Prefer official API, account-owner archive, public archive dataset, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "x",
+      "required_authorization": "account_owner_or_approved_api_or_lawful_public_archive",
+      "seed_candidates": [
+        "manual_archive_seeds/x/fire-and-emergency-nz-x-23506314.json",
+        "manual_archive_seeds/x/fire-and-emergency-nz.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "fire-and-emergency-nz-x-23506314",
+      "source_type": "social_profile",
+      "url": "https://twitter.com/fireemergencynz"
     },
     {
       "acceptable_access_methods": [
@@ -18359,6 +19009,31 @@
       "source_id": "ministry-of-health-x-268ac5c9",
       "source_type": "social_profile",
       "url": "https://x.com/minhealthnz"
+    },
+    {
+      "acceptable_access_methods": [
+        "official_api",
+        "account_owner_archive",
+        "public_archive_dataset",
+        "operator_authorized_seed"
+      ],
+      "account": "Twitter",
+      "agency_id": "ministry-of-health",
+      "agency_name": "Ministry of Health (Manat\u016b Hauora)",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "live_capture_policy": "Treat live browser capture as degraded. Prefer official API, account-owner archive, public archive dataset, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "x",
+      "required_authorization": "account_owner_or_approved_api_or_lawful_public_archive",
+      "seed_candidates": [
+        "manual_archive_seeds/x/ministry-of-health-x-f1c79cdc.json",
+        "manual_archive_seeds/x/ministry-of-health.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "ministry-of-health-x-f1c79cdc",
+      "source_type": "social_profile",
+      "url": "https://twitter.com/minhealthnz"
     },
     {
       "acceptable_access_methods": [
@@ -19514,28 +20189,28 @@
   },
   "summary": {
     "platform_counts": {
-      "facebook": 305,
-      "instagram": 173,
-      "linkedin": 250,
-      "x": 79
+      "facebook": 316,
+      "instagram": 179,
+      "linkedin": 258,
+      "x": 82
     },
-    "selected_sources": 807,
+    "selected_sources": 835,
     "status_by_platform": {
       "facebook": {
-        "needs_authorized_seed_or_api": 305
+        "needs_authorized_seed_or_api": 316
       },
       "instagram": {
-        "needs_authorized_seed_or_api": 173
+        "needs_authorized_seed_or_api": 179
       },
       "linkedin": {
-        "needs_authorized_seed_or_api": 250
+        "needs_authorized_seed_or_api": 258
       },
       "x": {
-        "needs_authorized_seed_or_api": 79
+        "needs_authorized_seed_or_api": 82
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 807
+      "needs_authorized_seed_or_api": 835
     }
   }
 }
