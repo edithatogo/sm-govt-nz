@@ -1,6 +1,8 @@
 name: Archive Registered Sources
 
 on:
+  schedule:
+    - cron: "0 2 * * *"
   workflow_dispatch:
     inputs:
       source_type:

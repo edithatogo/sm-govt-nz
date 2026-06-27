@@ -190,9 +190,9 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_youtube_onboarding_20260626/](./tracks/govt_archive_youtube_onboarding_20260626/)*
 - Complete: All 20 tasks done. 182 YouTube channels configured across 128 agencies. archive_youtube_scheduled.yml active with weekly cron.
 
-## [ ] Track: NZ Government Archive - scheduled multi-agency capture workflow
+## [x] Track: NZ Government Archive - scheduled multi-agency capture workflow
 *Link: [./tracks/govt_archive_scheduled_multisource_20260626/](./tracks/govt_archive_scheduled_multisource_20260626/)
-- Depends on all per-source-type onboarding tracks completing first.
+- Complete: All 26 tasks done. Master workflow has daily cron. 5 per-source-type workflows active. Health monitor with staleness detection and GitHub Issues alerting.
 
 
 
