@@ -186,9 +186,9 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_website_onboarding_20260626/](./tracks/govt_archive_website_onboarding_20260626/)*
 - Complete: All 22 tasks done. 247 website pages configured. archive_website_scheduled.yml active with weekly cron.
 
-## [ ] Track: NZ Government Archive - multi-agency YouTube channel archival
+## [x] Track: NZ Government Archive - multi-agency YouTube channel archival
 *Link: [./tracks/govt_archive_youtube_onboarding_20260626/](./tracks/govt_archive_youtube_onboarding_20260626/)*
-- 175 YouTube channels discovered. Metadata archival pending.
+- Complete: All 20 tasks done. 182 YouTube channels configured across 128 agencies. archive_youtube_scheduled.yml active with weekly cron.
 
 ## [ ] Track: NZ Government Archive - scheduled multi-agency capture workflow
 *Link: [./tracks/govt_archive_scheduled_multisource_20260626/](./tracks/govt_archive_scheduled_multisource_20260626/)
