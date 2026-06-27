@@ -1,0 +1,13 @@
+Track 4: govt_archive_website_onboarding_20260626 - Multi-agency website page archiving
+
+Read plan.md at conductor/tracks/govt_archive_website_onboarding_20260626/plan.md
+
+DEPENDENCY: This depends on Track 1 completing first.
+
+Phases:
+1. Compile all 247 agency homepage URLs from registry and validate reachability
+2. Create per-agency website page contracts in config/website/ directory
+3. Run website capture via GitHub Actions: trigger archive_registered_sources.yml with --source-type website_page --dry-run false
+4. Set up ongoing scheduled weekly capture: create/verify .github/workflows/archive_website_scheduled.yml with weekly cron and workflow_dispatch
+
+Commit after each phase.

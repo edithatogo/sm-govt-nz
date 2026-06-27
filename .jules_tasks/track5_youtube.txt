@@ -1,0 +1,13 @@
+Track 5: govt_archive_youtube_onboarding_20260626 - Multi-agency YouTube channel archival
+
+Read plan.md at conductor/tracks/govt_archive_youtube_onboarding_20260626/plan.md
+
+DEPENDENCY: This depends on Track 1 completing first.
+
+Phases:
+1. Compile all 175 NZ government YouTube channel URLs/IDs and map to agencies
+2. Create per-agency YouTube source configs in config/youtube/ directory with RSS feed URLs
+3. Run YouTube metadata capture via GitHub Actions: trigger archive_registered_sources.yml with --source-type youtube --dry-run false
+4. Set up ongoing weekly capture: create/verify .github/workflows/archive_youtube_scheduled.yml with weekly cron and workflow_dispatch
+
+Commit after each phase. Archive metadata only, not video files.

@@ -1,0 +1,14 @@
+Track 6: govt_archive_scheduled_multisource_20260626 - Scheduled multi-agency capture workflow integration
+
+Read plan.md at conductor/tracks/govt_archive_scheduled_multisource_20260626/plan.md
+
+DEPENDENCY: This depends on ALL tracks 1-5 completing first.
+
+Phases:
+1. Add schedule trigger to archive_registered_sources.yml master workflow (daily cron)
+2. Verify all per-source-type workflows exist: archive_rss_scheduled.yml, archive_bluesky_scheduled.yml, archive_website_scheduled.yml, archive_youtube_scheduled.yml
+3. Set up multi-agency archive state tracking in conductor/archive_state.json
+4. Create archive health monitor: verify .github/workflows/archive_health_monitor.yml runs weekly, verify scripts/check_archive_staleness.py works
+5. Verify all workflows via workflow_dispatch, enable cron schedules, document in conductor/schedule_documentation.md
+
+Commit after each phase.

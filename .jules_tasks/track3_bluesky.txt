@@ -1,0 +1,14 @@
+Track 3: govt_archive_bluesky_onboarding_20260626 - Multi-agency Bluesky account onboarding and capture
+
+Read plan.md at conductor/tracks/govt_archive_bluesky_onboarding_20260626/plan.md
+
+DEPENDENCY: This depends on Track 1 completing first.
+
+Phases:
+1. Compile and verify all 5 Bluesky accounts: courtsofnz, beehivenz, health.govt.nz, healthnz.govt.nz, independent-childrens-monitor
+2. Create per-agency Bluesky source config files in config/bluesky/ directory
+3. Run Bluesky capture via GitHub Actions: trigger archive_registered_sources.yml with --source-type bluesky --dry-run false
+4. Archive Bluesky profiles for all accounts (avatar, banner, description)
+5. Set up ongoing scheduled capture: create/verify .github/workflows/archive_bluesky_scheduled.yml with every-6-hour cron and workflow_dispatch
+
+Commit after each phase.

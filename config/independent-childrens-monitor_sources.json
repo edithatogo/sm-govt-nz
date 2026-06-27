@@ -4,31 +4,6 @@
   "archive_only": true,
   "contracts": [
     {
-      "access_method": "public_at_protocol",
-      "account": "",
-      "archive_only_guarantee": "Backfills must not advance outbound syndication state.",
-      "auth": "none",
-      "dedupe_keys": [
-        "at_uri",
-        "canonical_url",
-        "content_hash"
-      ],
-      "display_name": "Independent Children's Monitor (Aroturuki Tamariki) Bluesky",
-      "failure_modes": [
-        "rate_limited",
-        "network_error",
-        "schema_changed"
-      ],
-      "id": "independent-childrens-monitor-bluesky",
-      "normalized_path_template": "historical_archive_normalized/bluesky/{yyyy_mm}.jsonl",
-      "rate_limit_policy": "Use bounded page sizes and persist cursors.",
-      "raw_path_template": "historical_archive_raw/bluesky/{yyyy_mm}/{record_id}.json",
-      "source_kind": "social_feed",
-      "source_platform": "bluesky",
-      "status": "healthy",
-      "url": "https://bsky.app/intent/compose?text=Home&url=https%3A%2F%2Faroturuki.govt.nz"
-    },
-    {
       "access_method": "public_html_from_rss_links",
       "account": "www.aroturuki.govt.nz",
       "archive_only_guarantee": "Website records must not alter outbound syndication cursors.",
@@ -84,7 +59,7 @@
       ]
     }
   },
-  "generated_at": "2026-06-26T06:37:22.207630+00:00",
+  "generated_at": "2026-06-27T08:25:58.499846+00:00",
   "phase_review_contract": {
     "commit_after_each_task": true,
     "future_syndication_tracks": "one_platform_account_per_track",

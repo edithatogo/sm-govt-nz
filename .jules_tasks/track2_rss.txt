@@ -1,0 +1,13 @@
+Track 2: govt_archive_rss_onboarding_20260626 - Multi-agency RSS feed onboarding and capture
+
+Read plan.md at conductor/tracks/govt_archive_rss_onboarding_20260626/plan.md
+
+DEPENDENCY: This depends on Track 1 completing first. Config files in config/ directory must exist.
+
+Phases:
+1. Identify all 70 RSS feed URLs per agency from readiness matrix and map to agency configs
+2. Create per-agency RSS feed config files in config/rss/ directory
+3. Run RSS capture via GitHub Actions: trigger archive_registered_sources.yml with --source-type rss --dry-run false
+4. Set up ongoing scheduled RSS capture: create/verify .github/workflows/archive_rss_scheduled.yml with daily cron and workflow_dispatch
+
+Commit after each phase. Ensure 421+ entries captured.

@@ -111,7 +111,10 @@ def write_agency_config(aid, agency_sources, rss_by_agency, registry_by_id, conf
 
     for s in sources:
         if s.get("platform") == "bluesky" and s.get("archive_status") == "ready":
-            contracts.append(bluesky_contract(aid, name, s.get("account", ""), s.get("url", "")))
+            acct = s.get("account", "")
+            if not acct:
+                continue
+            contracts.append(bluesky_contract(aid, name, acct, s.get("url", "")))
 
     rss_feeds = rss_by_agency.get(aid, set())
     has_rss = False
