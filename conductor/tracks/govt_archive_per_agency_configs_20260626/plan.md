@@ -5,7 +5,7 @@
 - **Title**: NZ Government Archive - per-agency source inventory config files and RSS feed config files
 - **Description**: Generate and maintain per-agency source inventory config files and RSS feed config files for all agencies with discovered RSS feeds, Bluesky accounts, and website pages.
 - **Date Created**: 2026-06-26
-- **Status**: Pending
+- **Status**: Complete
 
 ## Dependencies
 - Depends on `govt_archive_readiness_matrix_20260625` (completed)
@@ -38,18 +38,18 @@
 - [x] Task 13: Verify the workflow output report lists all non-credentialed source types (rss, bluesky, website_page, youtube) as selected with healthy counts.
 - [x] Task 14: Commit config files and updated reports. Confirm CI quality gate (`ci.yml`) passes.
 
-## Phase 4: Create agency-specific workflow patterns
-- [ ] Task 15: Define per-agency capture workflow patterns based on available source types.
-- [ ] Task 16: Document agencies that have RSS-only, Bluesky-only, website-only, or multi-source profiles.
-- [ ] Task 17: Add metadata fields for capture priority, archival cadence, and source-type mix.
-- [ ] Task 18: Generate an agency config index file (`config/agencies_index.json`) for quick lookup.
+## Phase 4: Create agency-specific workflow patterns (DONE)
+- [x] Task 15: Define per-agency capture workflow patterns based on available source types.
+- [x] Task 16: Document agencies that have RSS-only, Bluesky-only, website-only, or multi-source profiles.
+- [x] Task 17: Add metadata fields for capture priority, archival cadence, and source-type mix.
+- [x] Task 18: Generate an agency config index file (`config/agencies_index.json`) for quick lookup.
 
 ## Acceptance Criteria
-- [ ] All agencies with discovered sources have valid, validated config files in `config/` directory.
-- [ ] Configs are consistent with registry agency IDs and readiness matrix source records.
-- [ ] Agency workflow patterns are documented and indexable for scheduled capture workflows.
-- [ ] 16+ agency configs are confirmed generated and validated.
-- [ ] GitHub Actions `archive_registered_sources.yml` runs successfully in dry-run mode consuming the generated configs.
+- [x] All agencies with discovered sources have valid, validated config files in `config/` directory.
+- [x] Configs are consistent with registry agency IDs and readiness matrix source records.
+- [x] Agency workflow patterns are documented and indexable for scheduled capture workflows.
+- [x] 16+ agency configs are confirmed generated and validated.
+- [x] GitHub Actions `archive_registered_sources.yml` runs successfully in dry-run mode consuming the generated configs.
 
 ## Commit and Review Protocol
 - Commit after each phase with a concise hyphenated message.

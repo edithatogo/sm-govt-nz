@@ -170,9 +170,9 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_provenance_fixity_20260625/](./tracks/govt_archive_provenance_fixity_20260625/)* 
 - Planned dependency: govt_archive_external_publication_20260625
 
-## [ ] Track: NZ Government Archive - per-agency source inventory and RSS feed configuration
+## [x] Track: NZ Government Archive - per-agency source inventory and RSS feed configuration
 *Link: [./tracks/govt_archive_per_agency_configs_20260626/](./tracks/govt_archive_per_agency_configs_20260626/)*
-- Dependency gate for RSS, Bluesky, Website, YouTube, and Scheduled Multisource tracks.
+- Complete: All 18 tasks done. 16 agency configs generated and validated. Agencies index created. GitHub Actions dry-run verified.
 
 ## [ ] Track: NZ Government Archive - multi-agency RSS feed onboarding and capture
 *Link: [./tracks/govt_archive_rss_onboarding_20260626/](./tracks/govt_archive_rss_onboarding_20260626/)*

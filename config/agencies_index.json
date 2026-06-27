@@ -1,0 +1,277 @@
+{
+  "agencies": [
+    {
+      "agency_id": "beehive-nz",
+      "agency_name": "Beehive NZ",
+      "archival_cadence": "every-6h",
+      "capture_priority": "high",
+      "config_file": "beehive-nz_sources.json",
+      "contract_count": 2,
+      "platforms": [
+        "bluesky",
+        "www.beehive.govt.nz"
+      ],
+      "rss_config_file": null,
+      "source_types": [
+        "bluesky",
+        "website"
+      ],
+      "workflow_pattern": "multi-source"
+    },
+    {
+      "agency_id": "courts-of-nz",
+      "agency_name": "Courts of New Zealand (Ngā Kōti o Aotearoa)",
+      "archival_cadence": "every-6h",
+      "capture_priority": "high",
+      "config_file": "courts-of-nz_sources.json",
+      "contract_count": 2,
+      "platforms": [
+        "bluesky",
+        "rss"
+      ],
+      "rss_config_file": "courts-of-nz_rss_feeds.json",
+      "source_types": [
+        "bluesky",
+        "rss"
+      ],
+      "workflow_pattern": "multi-source"
+    },
+    {
+      "agency_id": "education-payroll",
+      "agency_name": "Education Payroll Limited (Rārangi Utu ā-Mātauranga)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "education-payroll_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "education-payroll_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "health-nz",
+      "agency_name": "Health New Zealand (Te Whatu Ora)",
+      "archival_cadence": "every-6h",
+      "capture_priority": "high",
+      "config_file": "health-nz_sources.json",
+      "contract_count": 2,
+      "platforms": [
+        "bluesky",
+        "www.tewhatuora.govt.nz"
+      ],
+      "rss_config_file": null,
+      "source_types": [
+        "bluesky",
+        "website"
+      ],
+      "workflow_pattern": "multi-source"
+    },
+    {
+      "agency_id": "independent-childrens-monitor",
+      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
+      "archival_cadence": "weekly",
+      "capture_priority": "normal",
+      "config_file": "independent-childrens-monitor_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "www.aroturuki.govt.nz"
+      ],
+      "rss_config_file": null,
+      "source_types": [
+        "website"
+      ],
+      "workflow_pattern": "website-only"
+    },
+    {
+      "agency_id": "kawerau-district-council",
+      "agency_name": "Kawerau District Council",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "kawerau-district-council_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "kawerau-district-council_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "manukau-institute-of-technology",
+      "agency_name": "Manukau Institute of Technology",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "manukau-institute-of-technology_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "manukau-institute-of-technology_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "ministry-of-health",
+      "agency_name": "Ministry of Health (Manatū Hauora)",
+      "archival_cadence": "every-6h",
+      "capture_priority": "high",
+      "config_file": "ministry-of-health_sources.json",
+      "contract_count": 2,
+      "platforms": [
+        "bluesky",
+        "www.health.govt.nz"
+      ],
+      "rss_config_file": null,
+      "source_types": [
+        "bluesky",
+        "website"
+      ],
+      "workflow_pattern": "multi-source"
+    },
+    {
+      "agency_id": "ministry-of-housing-and-urban-development",
+      "agency_name": "Ministry of Housing and Urban Development (Te Tūāpapa Kura Kāinga)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "ministry-of-housing-and-urban-development_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "ministry-of-housing-and-urban-development_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "network-for-learning",
+      "agency_name": "Network for Learning Limited (N4L)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "network-for-learning_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "network-for-learning_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "privacy-commissioner",
+      "agency_name": "Privacy Commissioner (Te Mana Mātāpono Matapopore)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "privacy-commissioner_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "privacy-commissioner_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "public-service-commission",
+      "agency_name": "Public Service Commission (Te Kawa Mataaho)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "public-service-commission_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "public-service-commission_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "rangitikei-district-council",
+      "agency_name": "Rangitīkei District Council",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "rangitikei-district-council_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "rangitikei-district-council_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "rnz",
+      "agency_name": "Radio New Zealand Limited (Te Reo Irirangi o Aotearoa)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "rnz_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "rnz_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "social-workers-registration-board",
+      "agency_name": "Social Workers Registration Board (Kāhui Whakamana Tauwhiro)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "social-workers-registration-board_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "social-workers-registration-board_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "te-wananga-o-raukawa",
+      "agency_name": "Te Wānanga o Raukawa",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "te-wananga-o-raukawa_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "te-wananga-o-raukawa_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    }
+  ],
+  "generated_at": "2026-06-27T08:42:50.256965+00:00",
+  "summary": {
+    "bluesky_only": 0,
+    "multi_source": 4,
+    "rss_only": 11,
+    "total_agencies": 16,
+    "website_only": 1,
+    "with_rss_feeds": 12
+  }
+}
