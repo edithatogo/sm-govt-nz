@@ -174,9 +174,9 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_per_agency_configs_20260626/](./tracks/govt_archive_per_agency_configs_20260626/)*
 - Complete: All 18 tasks done. 16 agency configs generated and validated. Agencies index created. GitHub Actions dry-run verified.
 
-## [ ] Track: NZ Government Archive - multi-agency RSS feed onboarding and capture
+## [x] Track: NZ Government Archive - multi-agency RSS feed onboarding and capture
 *Link: [./tracks/govt_archive_rss_onboarding_20260626/](./tracks/govt_archive_rss_onboarding_20260626/)*
-- 70 RSS sources identified across 12 agencies; 421 entries captured. Scheduled daily capture pending.
+- Complete: All 21 tasks done. 77 RSS sources configured, 421 entries captured. archive_rss_scheduled.yml active with daily cron.
 
 ## [ ] Track: NZ Government Archive - multi-agency Bluesky account onboarding and capture
 *Link: [./tracks/govt_archive_bluesky_onboarding_20260626/](./tracks/govt_archive_bluesky_onboarding_20260626/)*
