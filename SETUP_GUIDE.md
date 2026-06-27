@@ -210,7 +210,7 @@ services is controlled by the publishing script and environment credentials.
 The Courts of New Zealand archive expansion is tracked in
 `conductor/tracks/courts_nz_multisource_archive_20260612/`.
 The source inventory and adapter contracts are defined in
-`config/courts_nz_sources.json` and validated by `src/source_inventory.py`.
+`config/courts-of-nz_sources.json` and validated by `src/source_inventory.py`.
 
 Planned source lanes:
 

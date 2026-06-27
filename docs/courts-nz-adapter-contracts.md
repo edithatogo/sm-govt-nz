@@ -1,6 +1,6 @@
 # Courts of New Zealand Adapter Contracts
 
-The machine-readable source contracts are in `config/courts_nz_sources.json`.
+The machine-readable source contracts are in `config/courts-of-nz_sources.json`.
 This document is the Phase 1 review summary for implementers.
 
 ## Global Contract

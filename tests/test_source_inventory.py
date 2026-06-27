@@ -8,14 +8,11 @@ from src.source_inventory import ALLOWED_HEALTH, load_source_inventory
 def test_load_courts_nz_source_inventory():
     inventory = load_source_inventory()
 
-    assert inventory["agency_id"] == "courts-nz"
+    assert inventory["agency_id"] == "courts-of-nz"
     assert inventory["archive_only"] is True
     assert {contract["source_platform"] for contract in inventory["contracts"]} == {
         "bluesky",
-        "linkedin",
-        "x",
-        "courtsofnz.govt.nz",
-        "email",
+        "rss",
     }
     assert inventory["dataset_outputs"]["hugging_face"]["enabled"] is True
     assert inventory["dataset_outputs"]["zenodo"]["enabled"] is True
@@ -27,7 +24,7 @@ def test_source_inventory_requires_archive_only(tmp_path):
     inventory_path.write_text(
         json.dumps(
             {
-                "agency_id": "courts-nz",
+                "agency_id": "courts-of-nz",
                 "agency_name": "Courts of New Zealand",
                 "archive_only": False,
                 "contracts": [],

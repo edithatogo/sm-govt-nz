@@ -30,7 +30,7 @@ WebsiteFetcher = Callable[[str], str]
 
 def archive_current_sources(
     *,
-    feed_config_path: str | Path = "config/courts_nz_rss_feeds.json",
+    feed_config_path: str | Path = "config/courts-of-nz_rss_feeds.json",
     archive_state_path: str | Path = "conductor/archive_state.json",
     health_report_path: str | Path = "conductor/archive_source_health.json",
     raw_root: str | Path = "historical_archive_raw",
@@ -581,7 +581,7 @@ def _utc_now() -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Archive current Courts NZ public source records.")
-    parser.add_argument("--feed-config", default="config/courts_nz_rss_feeds.json")
+    parser.add_argument("--feed-config", default="config/courts-of-nz_rss_feeds.json")
     parser.add_argument("--archive-state", default="conductor/archive_state.json")
     parser.add_argument("--health-report", default="conductor/archive_source_health.json")
     parser.add_argument("--raw-root", default="historical_archive_raw")

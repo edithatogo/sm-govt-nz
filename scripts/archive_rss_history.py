@@ -20,7 +20,7 @@ class FeedParserModule(Protocol):
 
 def archive_rss_history(
     *,
-    feed_report_path: str | Path = "config/courts_nz_rss_feeds.json",
+    feed_report_path: str | Path = "config/courts-of-nz_rss_feeds.json",
     raw_root: str | Path = "historical_archive_raw/rss",
     normalized_root: str | Path = "historical_archive_normalized/rss",
     report_path: str | Path = "historical_archive_raw/rss/backfill_report.json",
@@ -175,7 +175,7 @@ def _load_feedparser() -> FeedParserModule:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Archive Courts of New Zealand RSS feed histories.")
-    parser.add_argument("--feed-report", default="config/courts_nz_rss_feeds.json")
+    parser.add_argument("--feed-report", default="config/courts-of-nz_rss_feeds.json")
     parser.add_argument("--raw-root", default="historical_archive_raw/rss")
     parser.add_argument("--normalized-root", default="historical_archive_normalized/rss")
     parser.add_argument("--report", default="historical_archive_raw/rss/backfill_report.json")

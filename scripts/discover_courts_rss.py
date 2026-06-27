@@ -12,8 +12,8 @@ from src.source_inventory import load_source_inventory
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Discover Courts of New Zealand RSS/Atom feeds.")
-    parser.add_argument("--inventory", default="config/courts_nz_sources.json")
-    parser.add_argument("--output", default="config/courts_nz_rss_feeds.json")
+    parser.add_argument("--inventory", default="config/courts-of-nz_sources.json")
+    parser.add_argument("--output", default="config/courts-of-nz_rss_feeds.json")
     args = parser.parse_args()
 
     report = discover_courts_rss_feeds(load_source_inventory(args.inventory))

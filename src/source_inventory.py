@@ -85,7 +85,7 @@ ALLOWED_HEALTH: set[str] = {
 
 
 def load_source_inventory(
-    path: str | Path = "config/courts_nz_sources.json",
+    path: str | Path = "config/courts-of-nz_sources.json",
 ) -> SourceInventory:
     inventory_path = Path(path)
     if not inventory_path.exists():

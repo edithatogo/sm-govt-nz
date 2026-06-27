@@ -172,7 +172,7 @@ def discover_rss_feeds(
 
 def write_rss_discovery_report(
     report: RssDiscoveryReport,
-    path: str | Path = "config/courts_nz_rss_feeds.json",
+    path: str | Path = "config/courts-of-nz_rss_feeds.json",
 ) -> None:
     output_path = Path(path)
     output_path.parent.mkdir(parents=True, exist_ok=True)

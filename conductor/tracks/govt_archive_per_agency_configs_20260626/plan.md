@@ -18,25 +18,25 @@
 - Add a git note to every phase commit summarizing scope, tests, residual blockers, and next action.
 - Configs must use stable agency IDs consistent with the registry and readiness matrix.
 
-## Phase 1: Generate agency configs locally
-- [ ] Task 1: Execute `python scripts/generate_agency_configs.py` to produce per-agency source inventory config files under `config/` directory.
-- [ ] Task 2: Verify that configs are generated for all agencies with discovered non-credentialed sources (RSS feeds, Bluesky accounts, website pages).
-- [ ] Task 3: Confirm 16+ source configs are generated as expected from the script.
-- [ ] Task 4: Review each config file for correct source-type fields, agency identifiers, and URL references.
-- [ ] Task 5: Ensure config files follow the consistent naming pattern `config/{agency_id}_sources.json` and `config/{agency_id}_rss_feeds.json`.
+## Phase 1: Generate agency configs locally (DONE)
+- [x] Task 1: Execute `python scripts/generate_agency_configs.py` to produce per-agency source inventory config files under `config/` directory.
+- [x] Task 2: Verify that configs are generated for all agencies with discovered non-credentialed sources (RSS feeds, Bluesky accounts, website pages).
+- [x] Task 3: Confirm 16+ source configs are generated as expected from the script.
+- [x] Task 4: Review each config file for correct source-type fields, agency identifiers, and URL references.
+- [x] Task 5: Ensure config files follow the consistent naming pattern `config/{agency_id}_sources.json` and `config/{agency_id}_rss_feeds.json`.
 
-## Phase 2: Validate configs against existing archival data
-- [ ] Task 6: Cross-reference generated configs with existing captured archival data for each agency.
-- [ ] Task 7: Verify RSS feed URLs in configs match discovered feeds from the readiness matrix.
-- [ ] Task 8: Verify Bluesky account handles in configs match registry entries.
-- [ ] Task 9: Verify website homepage URLs in configs match the 247 homepages manifest.
-- [ ] Task 10: Run `python scripts/validate_agency_configs.py` and confirm zero errors.
-- [ ] Task 11: Flag any discrepancies between configs and registry data for resolution.
+## Phase 2: Validate configs against existing archival data (DONE)
+- [x] Task 6: Cross-reference generated configs with existing captured archival data for each agency.
+- [x] Task 7: Verify RSS feed URLs in configs match discovered feeds from the readiness matrix.
+- [x] Task 8: Verify Bluesky account handles in configs match registry entries.
+- [x] Task 9: Verify website homepage URLs in configs match the 247 homepages manifest.
+- [x] Task 10: Run `python scripts/validate_agency_configs.py` and confirm zero errors.
+- [x] Task 11: Flag any discrepancies between configs and registry data for resolution.
 
-## Phase 3: Verify via GitHub Actions remote archiving workflow
-- [ ] Task 12: Trigger `archive_registered_sources.yml` on GitHub via `workflow_dispatch` with `--dry-run true --source-type all_feasible` and confirm it reads the generated configs from `config/` directory.
-- [ ] Task 13: Verify the workflow output report lists all non-credentialed source types (rss, bluesky, website_page, youtube) as selected with healthy counts.
-- [ ] Task 14: Commit config files and updated reports. Confirm CI quality gate (`ci.yml`) passes.
+## Phase 3: Verify via GitHub Actions remote archiving workflow (DONE)
+- [x] Task 12: Trigger `archive_registered_sources.yml` on GitHub via `workflow_dispatch` with `--dry-run true --source-type all_feasible` and confirm it reads the generated configs from `config/` directory.
+- [x] Task 13: Verify the workflow output report lists all non-credentialed source types (rss, bluesky, website_page, youtube) as selected with healthy counts.
+- [x] Task 14: Commit config files and updated reports. Confirm CI quality gate (`ci.yml`) passes.
 
 ## Phase 4: Create agency-specific workflow patterns
 - [ ] Task 15: Define per-agency capture workflow patterns based on available source types.
