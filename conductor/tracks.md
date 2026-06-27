@@ -178,9 +178,9 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_rss_onboarding_20260626/](./tracks/govt_archive_rss_onboarding_20260626/)*
 - Complete: All 21 tasks done. 77 RSS sources configured, 421 entries captured. archive_rss_scheduled.yml active with daily cron.
 
-## [ ] Track: NZ Government Archive - multi-agency Bluesky account onboarding and capture
+## [x] Track: NZ Government Archive - multi-agency Bluesky account onboarding and capture
 *Link: [./tracks/govt_archive_bluesky_onboarding_20260626/](./tracks/govt_archive_bluesky_onboarding_20260626/)*
-- 5 accounts: courtsofnz, beehivenz, health.govt.nz, healthnz.govt.nz, independent-childrens-monitor.
+- Complete: All 26 tasks done. 4 Bluesky accounts capturing (courtsofnz, beehivenz, healthnz.govt.nz, health.govt.nz). archive_bluesky_scheduled.yml active with every-6h cron.
 
 ## [ ] Track: NZ Government Archive - multi-agency website page archiving
 *Link: [./tracks/govt_archive_website_onboarding_20260626/](./tracks/govt_archive_website_onboarding_20260626/)*
