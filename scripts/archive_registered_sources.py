@@ -2,13 +2,15 @@ import argparse
 import hashlib
 import json
 import re
+import ssl
 import sys
 from collections import Counter
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
-from urllib.parse import parse_qs, urlparse
+from urllib.error import HTTPError, URLError
+from urllib.parse import parse_qs, urlparse, urlunparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,6 +59,50 @@ def fetch_text(url: str, *, timeout: int = 30) -> str:
     )
     with urlopen(request, timeout=timeout) as response:
         return response.read(1_500_000).decode("utf-8", errors="replace")
+
+
+def alternate_website_urls(url: str) -> list[str]:
+    parsed = urlparse(url)
+    host = parsed.netloc
+    if not host:
+        return []
+    alternatives = []
+    if host.lower().startswith("www."):
+        alternatives.append(urlunparse(parsed._replace(netloc=host[4:])))
+    elif "." in host:
+        alternatives.append(urlunparse(parsed._replace(netloc=f"www.{host}")))
+    if parsed.scheme == "https":
+        alternatives.append(urlunparse(parsed._replace(scheme="http")))
+    return [candidate for candidate in dict.fromkeys(alternatives) if candidate != url]
+
+
+def website_failure_status(exc: Exception) -> str:
+    if isinstance(exc, HTTPError):
+        if exc.code == 403:
+            return "capture_blocked"
+        if exc.code == 405:
+            return "method_not_allowed"
+        if exc.code == 404:
+            return "not_found"
+        if exc.code == 406:
+            return "not_acceptable"
+        return "http_error"
+    if isinstance(exc, URLError):
+        reason = exc.reason
+        if isinstance(reason, ssl.SSLError) or "CERTIFICATE_VERIFY_FAILED" in str(reason):
+            return "tls_failed"
+        if "Name or service not known" in str(reason) or "getaddrinfo failed" in str(reason):
+            return "dns_failed"
+        return "network_error"
+    return "capture_failed"
+
+
+def website_failure_reason(exc: Exception) -> str:
+    if isinstance(exc, HTTPError):
+        return f"HTTP {exc.code}: {exc.reason}"
+    if isinstance(exc, URLError):
+        return f"URL error: {exc.reason}"
+    return str(exc)[:300]
 
 
 def month_from_timestamp(value: str) -> str:
@@ -137,7 +183,22 @@ def archive_website_source(
     captured_at = now_iso()
     url = str(source.get("url") or "")
     fetcher = website_fetcher or fetch_text
-    html = fetcher(url, timeout=fetch_timeout) if website_fetcher is None else fetcher(url)
+    fetched_url = url
+    try:
+        html = fetcher(url, timeout=fetch_timeout) if website_fetcher is None else fetcher(url)
+    except Exception as exc:  # noqa: BLE001 - per-source website report records fetch failures.
+        last_exc = exc
+        html = ""
+        if website_fetcher is None and website_failure_status(exc) in {"capture_blocked", "method_not_allowed", "not_acceptable", "tls_failed", "dns_failed"}:
+            for alternate_url in alternate_website_urls(url):
+                try:
+                    html = fetcher(alternate_url, timeout=fetch_timeout)
+                    fetched_url = alternate_url
+                    break
+                except Exception as alternate_exc:  # noqa: BLE001 - keep the final failed attempt for classification.
+                    last_exc = alternate_exc
+        if not html:
+            return source_result(source, website_failure_status(last_exc), website_failure_reason(last_exc))
     record_key = stable_id(f"{source.get('source_id')}|{url}")
     raw_rel = Path("website") / captured_at[:7] / f"{record_key}.json"
     raw_path = raw_root / raw_rel
@@ -147,6 +208,7 @@ def archive_website_source(
         json.dumps(
             {
                 "captured_at": captured_at,
+                "fetched_url": fetched_url,
                 "source": source,
                 "url": url,
                 "html": html,
@@ -176,7 +238,13 @@ def archive_website_source(
     return source_result(
         source,
         "captured" if inserted else "already_captured",
-        "captured generic website page" if inserted else "website record already present",
+        (
+            f"captured generic website page via fallback {fetched_url}"
+            if inserted and fetched_url != url
+            else "captured generic website page"
+            if inserted
+            else "website record already present"
+        ),
     )
 
 
