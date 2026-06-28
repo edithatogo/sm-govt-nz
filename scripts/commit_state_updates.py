@@ -67,7 +67,16 @@ def push_with_rebase(branch: str, max_attempts: int = 3) -> None:
         if has_worktree_changes():
             run_git(["stash", "push", "--include-untracked", "--message", "commit-state-updates-autostash"], check=False)
         run_git(["fetch", "origin", branch])
-        run_git(["rebase", f"origin/{branch}"])
+        rebase = run_git(["rebase", f"origin/{branch}"], check=False)
+        if rebase.returncode != 0:
+            conflicts = run_git(["diff", "--name-only", "--diff-filter=U"], check=False).stdout.splitlines()
+            if conflicts:
+                run_git(["checkout", "--theirs", "--", *conflicts])
+                run_git(["add", "--", *conflicts])
+                run_git(["rebase", "--continue"])
+            else:
+                details = (rebase.stderr or rebase.stdout).strip()
+                raise RuntimeError(f"git rebase origin/{branch} failed: {details}")
         pushed = run_git(["push", "origin", f"HEAD:{branch}"], check=False)
         if pushed.returncode == 0:
             print(f"Pushed state update to {branch}.")
