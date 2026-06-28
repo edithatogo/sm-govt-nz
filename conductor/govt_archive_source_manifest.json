@@ -1,6 +1,6 @@
 {
   "description": "Archive onboarding manifest generated from the government source candidate report.",
-  "generated_at": "2026-06-28T21:44:10+00:00",
+  "generated_at": "2026-06-28T22:13:12+00:00",
   "sources": [
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -1713,7 +1713,10 @@
       "feasibility": "medium",
       "notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
       "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
       "platform": "newsletter",
+      "registry_record_kind": "agency",
       "source_id": "cancer-control-agency-newsletter-000607de",
       "source_type": "newsletter",
       "url": "https://teaho.govt.nz/index.php/blog/april-2026-canshare-newsletter"
@@ -1965,25 +1968,6 @@
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
-      "account": "Share on LinkedIn",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "a51623edff043926",
-      "feasibility": "low",
-      "notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "origin": "homepage.link",
-      "party_id": "",
-      "person_id": "",
-      "platform": "linkedin",
-      "registry_record_kind": "agency",
-      "source_id": "central-hawkes-bay-district-council-linkedin-15735f22",
-      "source_type": "social_profile",
-      "url": "http://www.linkedin.com/shareArticle?mini=true&url=https://www.chbdc.govt.nz/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
       "account": "View our profile on LinkedIn",
       "agency_id": "central-hawkes-bay-district-council",
       "agency_name": "Central Hawke's Bay District Council",
@@ -2108,25 +2092,6 @@
       "source_id": "central-hawkes-bay-district-council-x-cf5e1d17",
       "source_type": "social_profile",
       "url": "https://twitter.com/chbcouncil"
-    },
-    {
-      "access_method": "public_archive_or_lawful_export",
-      "account": "Share on Twitter",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "archive_status": "degraded",
-      "auth": "operator_authorized_if_browser_capture",
-      "candidate_id": "24e9ef9450f5e612",
-      "feasibility": "low",
-      "notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
-      "origin": "homepage.link",
-      "party_id": "",
-      "person_id": "",
-      "platform": "x",
-      "registry_record_kind": "agency",
-      "source_id": "central-hawkes-bay-district-council-x-82c9d6f9",
-      "source_type": "social_profile",
-      "url": "https://twitter.com/share?url=https://www.chbdc.govt.nz/"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -6807,7 +6772,10 @@
       "feasibility": "medium",
       "notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
       "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
       "platform": "newsletter",
+      "registry_record_kind": "agency",
       "source_id": "financial-markets-authority-newsletter-86c5b385",
       "source_type": "newsletter",
       "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
@@ -6823,7 +6791,10 @@
       "feasibility": "medium",
       "notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
       "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
       "platform": "newsletter",
+      "registry_record_kind": "agency",
       "source_id": "financial-markets-authority-newsletter-0b7de67d",
       "source_type": "newsletter",
       "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
@@ -10069,41 +10040,6 @@
       "url": "https://www.huttcity.govt.nz"
     },
     {
-      "access_method": "public_at_protocol",
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "adfaa92a97caaec0",
-      "feasibility": "high",
-      "notes": "Public AT Protocol profile and posts can be captured without live-posting side effects.",
-      "origin": "homepage.link",
-      "platform": "bluesky",
-      "source_id": "independent-childrens-monitor-bluesky-ac5a260a",
-      "source_type": "social_profile",
-      "url": "https://bsky.app/intent/compose?text=Home&url=https%3A%2F%2Faroturuki.govt.nz"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "03435988e040e6bc",
-      "feasibility": "medium",
-      "notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "origin": "homepage.link",
-      "party_id": "",
-      "person_id": "",
-      "platform": "facebook",
-      "registry_record_kind": "agency",
-      "source_id": "independent-childrens-monitor-facebook-4663b70e",
-      "source_type": "social_profile",
-      "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faroturuki.govt.nz"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Aroturuki Tamariki | Independent Children's Monitor",
       "agency_id": "independent-childrens-monitor",
@@ -10121,25 +10057,6 @@
       "source_id": "independent-childrens-monitor-linkedin-9993661a",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/independent-childrens-monitor"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "1fd0f31900f83dc1",
-      "feasibility": "low",
-      "notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "origin": "homepage.link",
-      "party_id": "",
-      "person_id": "",
-      "platform": "linkedin",
-      "registry_record_kind": "agency",
-      "source_id": "independent-childrens-monitor-linkedin-0b48d19c",
-      "source_type": "social_profile",
-      "url": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Faroturuki.govt.nz&summary=Home"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -10197,25 +10114,6 @@
       "source_id": "independent-childrens-monitor-website_page-f0c4a4dd",
       "source_type": "website_page",
       "url": "https://www.aroturuki.govt.nz"
-    },
-    {
-      "access_method": "public_archive_or_lawful_export",
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "archive_status": "degraded",
-      "auth": "operator_authorized_if_browser_capture",
-      "candidate_id": "afa507d2cc3d667c",
-      "feasibility": "low",
-      "notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
-      "origin": "homepage.link",
-      "party_id": "",
-      "person_id": "",
-      "platform": "x",
-      "registry_record_kind": "agency",
-      "source_id": "independent-childrens-monitor-x-33ecee16",
-      "source_type": "social_profile",
-      "url": "https://x.com/intent/tweet?text=Home&url=https%3A%2F%2Faroturuki.govt.nz"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -29134,7 +29032,7 @@
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
+      "account": "Linkedin",
       "agency_id": "nz-police",
       "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
       "archive_status": "manual_seed",
@@ -29169,6 +29067,25 @@
       "source_id": "nz-police-newsletter-0003d77b",
       "source_type": "newsletter",
       "url": "http://www.civildefence.govt.nz/get-ready/civil-defence-emergency-management-alerts-and-warnings/emergency-mobile-alert/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.police.govt.nz",
+      "agency_id": "nz-police",
+      "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "c035fcf6d3298c0b",
+      "feasibility": "medium",
+      "notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
+      "platform": "newsletter",
+      "registry_record_kind": "agency",
+      "source_id": "nz-police-newsletter-d85e6bc6",
+      "source_type": "newsletter",
+      "url": "https://www.police.govt.nz/news/traffic-and-crime-alerts"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -29248,7 +29165,7 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
+      "account": "Youtube",
       "agency_id": "nz-police",
       "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
       "archive_status": "candidate",
@@ -35442,25 +35359,6 @@
       "url": "https://www.facebook.com/SWRB"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Share",
-      "agency_id": "social-workers-registration-board",
-      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "6c72805d1c428b76",
-      "feasibility": "medium",
-      "notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "origin": "homepage.link",
-      "party_id": "",
-      "person_id": "",
-      "platform": "facebook",
-      "registry_record_kind": "agency",
-      "source_id": "social-workers-registration-board-facebook-aa043ab2",
-      "source_type": "social_profile",
-      "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2F102062118004656_1347582970818632"
-    },
-    {
       "access_method": "public_json_feed",
       "account": "https://www.swrb.govt.nz",
       "agency_id": "social-workers-registration-board",
@@ -35491,25 +35389,6 @@
       "source_id": "social-workers-registration-board-json_feed-e871f142",
       "source_type": "json_feed",
       "url": "https://swrb.govt.nz/wp-json/wp/v2/pages/140"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "Share on Linked In",
-      "agency_id": "social-workers-registration-board",
-      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "5e81125c6835cf7f",
-      "feasibility": "low",
-      "notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "origin": "homepage.link",
-      "party_id": "",
-      "person_id": "",
-      "platform": "linkedin",
-      "registry_record_kind": "agency",
-      "source_id": "social-workers-registration-board-linkedin-f5997b89",
-      "source_type": "social_profile",
-      "url": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.facebook.com%2F102062118004656_1347582970818632&title=%098%2C000%2B%20social%20workers%20have%20conquered%20the%20practising%20certificate%20renewal%20process%20%F0%9F%91%8F%F0%9F%AB%B6%20ka%20mutu%20pea%20that%20is%20great%21%20For%20those%20who%20did%20not%20complete%20the%20annual%20workforce%20survey%2C%20nau%20mau%20hoki%20mai%20%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F%E2%80%8D%E2%9E%A1%EF%B8%8F%F0%9F%8F%83%E2%80%8D%E2%9E%A1%EF%B8%8F%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F%E2%80%8D%E2%9E%A1%EF%B8%8F%20please%20come%20back%20and%20take%20the%20time%20to%20answer%20the%20survey.%20K%C5%8Drero%20mai%21Practising%20Certificate%20renewal%20closes%2030%20June.%20If%20you%20%F0%9F%AB%B5%20%20haven%E2%80%99t%20quite%20got%20there%20yet%2C%20kia%20tere%20e%20hoa%20m%C4%81.%20%09%09"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -35681,25 +35560,6 @@
       "source_id": "social-workers-registration-board-website_page-2230b155",
       "source_type": "website_page",
       "url": "https://www.swrb.govt.nz"
-    },
-    {
-      "access_method": "public_archive_or_lawful_export",
-      "account": "Share on Twitter",
-      "agency_id": "social-workers-registration-board",
-      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
-      "archive_status": "degraded",
-      "auth": "operator_authorized_if_browser_capture",
-      "candidate_id": "3d1a5c9f4ba8372c",
-      "feasibility": "low",
-      "notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
-      "origin": "homepage.link",
-      "party_id": "",
-      "person_id": "",
-      "platform": "x",
-      "registry_record_kind": "agency",
-      "source_id": "social-workers-registration-board-x-7af017c6",
-      "source_type": "social_profile",
-      "url": "https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.facebook.com%2F102062118004656_1347582970818632"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -44906,11 +44766,11 @@
   ],
   "summary": {
     "archive_status_counts": {
-      "candidate": 1811,
-      "degraded": 82,
-      "manual_seed": 258,
-      "ready": 384
+      "candidate": 1810,
+      "degraded": 79,
+      "manual_seed": 255,
+      "ready": 383
     },
-    "total_sources": 2535
+    "total_sources": 2527
   }
 }

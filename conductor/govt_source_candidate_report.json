@@ -8461,6 +8461,32 @@
       "url": "https://www.callaghaninnovation.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.teaho.govt.nz",
+      "agency_id": "cancer-control-agency",
+      "agency_name": "Cancer Control Agency (Te Aho o Te Kahu)",
+      "agency_type": "Departmental Agency",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "7d2f409cd039d75c",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "April 2026 CanShare newsletter                     \n                     \n                         View the latest news on data initiatives to improve the accessibility of cancer data, so clinicians and patients can view near real-time treatment data across the country \n                         More +",
+      "official_website": "https://www.teaho.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Health",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://teaho.govt.nz/index.php/blog/april-2026-canshare-newsletter"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.teaho.govt.nz",
       "agency_id": "cancer-control-agency",
@@ -9910,30 +9936,6 @@
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
-      "account": "Share on LinkedIn",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "agency_type": "District Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "a51623edff043926",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.chbdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "http://www.linkedin.com/shareArticle?mini=true&url=https://www.chbdc.govt.nz/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
       "account": "View our profile on LinkedIn",
       "agency_id": "central-hawkes-bay-district-council",
       "agency_name": "Central Hawke's Bay District Council",
@@ -9979,30 +9981,6 @@
         "official_term:nz"
       ],
       "url": "https://twitter.com/chbcouncil"
-    },
-    {
-      "access_method": "public_archive_or_lawful_export",
-      "account": "Share on Twitter",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "agency_type": "District Council",
-      "archive_status": "degraded",
-      "auth": "operator_authorized_if_browser_capture",
-      "candidate_id": "24e9ef9450f5e612",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.chbdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "x",
-      "policy_notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://twitter.com/share?url=https://www.chbdc.govt.nz/"
     },
     {
       "access_method": "bounded_public_html",
@@ -28855,6 +28833,58 @@
       "url": "https://www.fndc.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.fma.govt.nz",
+      "agency_id": "financial-markets-authority",
+      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "8a5ea39e62fcbcba",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Warnings & alerts",
+      "official_website": "https://www.fma.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.fma.govt.nz",
+      "agency_id": "financial-markets-authority",
+      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "ab1b487cc872cb5b",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Subscribe to FMA Update",
+      "official_website": "https://www.fma.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.fma.govt.nz",
       "agency_id": "financial-markets-authority",
@@ -42158,30 +42188,6 @@
       "url": "https://www.aroturuki.govt.nz/subscribe"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "agency_type": "Independent Crown Entity",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "03435988e040e6bc",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.aroturuki.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Children",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faroturuki.govt.nz"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Aroturuki Tamariki | Independent Children's Monitor",
       "account_classification": "official",
@@ -42208,54 +42214,6 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/company/independent-childrens-monitor"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "agency_type": "Independent Crown Entity",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "1fd0f31900f83dc1",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.aroturuki.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Children",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Faroturuki.govt.nz&summary=Home"
-    },
-    {
-      "access_method": "public_archive_or_lawful_export",
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "agency_type": "Independent Crown Entity",
-      "archive_status": "degraded",
-      "auth": "operator_authorized_if_browser_capture",
-      "candidate_id": "afa507d2cc3d667c",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.aroturuki.govt.nz",
-      "origin": "homepage.link",
-      "platform": "x",
-      "policy_notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
-      "portfolio": "Children",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://x.com/intent/tweet?text=Home&url=https%3A%2F%2Faroturuki.govt.nz"
     },
     {
       "access_method": "bounded_public_html",
@@ -45439,31 +45397,6 @@
       "url": "https://www.kaingaora.govt.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.kaipara.govt.nz",
-      "agency_id": "kaipara-district-council",
-      "agency_name": "Kaipara District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "1035e5c2d4718bde",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "link_text": "Sign up for our e-newsletter",
-      "official_website": "https://www.kaipara.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://govt.us2.list-manage.com/subscribe?u=86b5c35f2933513c7b2574131&id=e362bed676"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.kaipara.govt.nz",
       "agency_id": "kaipara-district-council",
@@ -45895,30 +45828,6 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/KaiparaDistrictCouncil"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "kaipara-district-council",
-      "agency_name": "Kaipara District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "441d6388936ce27c",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.kaipara.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/KaiparaDistrictCouncil/"
     },
     {
       "access_method": "bounded_public_html",
@@ -76252,6 +76161,32 @@
       "agency_type": "Non-Public Service State Service",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
+      "candidate_id": "c035fcf6d3298c0b",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Traffic and Crime Alerts",
+      "official_website": "https://www.police.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Police",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:new zealand"
+      ],
+      "url": "https://www.police.govt.nz/news/traffic-and-crime-alerts"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.police.govt.nz",
+      "agency_id": "nz-police",
+      "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
+      "agency_type": "Non-Public Service State Service",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
       "candidate_id": "f2ae8bdccac8edde",
       "confidence_score": 0.6,
       "domain_trust": "high",
@@ -76759,7 +76694,7 @@
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
+      "account": "Linkedin",
       "agency_id": "nz-police",
       "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
       "agency_type": "Non-Public Service State Service",
@@ -76811,7 +76746,7 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
+      "account": "Youtube",
       "agency_id": "nz-police",
       "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
       "agency_type": "Non-Public Service State Service",
@@ -102037,78 +101972,6 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/SWRB"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Share",
-      "agency_id": "social-workers-registration-board",
-      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "6c72805d1c428b76",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.swrb.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Social Development",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2F102062118004656_1347582970818632"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "Share on Linked In",
-      "agency_id": "social-workers-registration-board",
-      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
-      "agency_type": "Crown Agent",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "5e81125c6835cf7f",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.swrb.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Social Development",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.facebook.com%2F102062118004656_1347582970818632&title=%098%2C000%2B%20social%20workers%20have%20conquered%20the%20practising%20certificate%20renewal%20process%20%F0%9F%91%8F%F0%9F%AB%B6%20ka%20mutu%20pea%20that%20is%20great%21%20For%20those%20who%20did%20not%20complete%20the%20annual%20workforce%20survey%2C%20nau%20mau%20hoki%20mai%20%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F%E2%80%8D%E2%9E%A1%EF%B8%8F%F0%9F%8F%83%E2%80%8D%E2%9E%A1%EF%B8%8F%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F%E2%80%8D%E2%9E%A1%EF%B8%8F%20please%20come%20back%20and%20take%20the%20time%20to%20answer%20the%20survey.%20K%C5%8Drero%20mai%21Practising%20Certificate%20renewal%20closes%2030%20June.%20If%20you%20%F0%9F%AB%B5%20%20haven%E2%80%99t%20quite%20got%20there%20yet%2C%20kia%20tere%20e%20hoa%20m%C4%81.%20%09%09"
-    },
-    {
-      "access_method": "public_archive_or_lawful_export",
-      "account": "Share on Twitter",
-      "agency_id": "social-workers-registration-board",
-      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
-      "agency_type": "Crown Agent",
-      "archive_status": "degraded",
-      "auth": "operator_authorized_if_browser_capture",
-      "candidate_id": "3d1a5c9f4ba8372c",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.swrb.govt.nz",
-      "origin": "homepage.link",
-      "platform": "x",
-      "policy_notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
-      "portfolio": "Social Development",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.facebook.com%2F102062118004656_1347582970818632"
     },
     {
       "access_method": "bounded_public_html",
@@ -139016,7 +138879,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-06-28T21:44:10+00:00",
+  "generated_at": "2026-06-28T22:13:12+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -151888,8 +151751,9 @@
     },
     {
       "agency_id": "cancer-control-agency",
-      "error": "HTTP Error 502: Bad Gateway",
-      "status": "failed",
+      "alternates": 0,
+      "links": 172,
+      "status": "ok",
       "url": "https://www.teaho.govt.nz/"
     },
     {
@@ -152135,8 +151999,9 @@
     },
     {
       "agency_id": "financial-markets-authority",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 232,
+      "status": "ok",
       "url": "https://www.fma.govt.nz/"
     },
     {
@@ -152340,9 +152205,8 @@
     },
     {
       "agency_id": "kaipara-district-council",
-      "alternates": 0,
-      "links": 210,
-      "status": "ok",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
       "url": "https://www.kaipara.govt.nz/"
     },
     {
@@ -152644,7 +152508,7 @@
     {
       "agency_id": "nz-army",
       "alternates": 0,
-      "links": 78,
+      "links": 77,
       "status": "ok",
       "url": "https://www.army.mil.nz/"
     },
@@ -152672,7 +152536,7 @@
     {
       "agency_id": "nz-defence-force",
       "alternates": 0,
-      "links": 45,
+      "links": 44,
       "status": "ok",
       "url": "https://www.nzdf.mil.nz/"
     },
@@ -152714,7 +152578,7 @@
     {
       "agency_id": "nz-police",
       "alternates": 0,
-      "links": 187,
+      "links": 199,
       "status": "ok",
       "url": "https://www.police.govt.nz/"
     },
@@ -152965,14 +152829,14 @@
     {
       "agency_id": "royal-nz-air-force",
       "alternates": 0,
-      "links": 77,
+      "links": 76,
       "status": "ok",
       "url": "https://www.airforce.mil.nz/"
     },
     {
       "agency_id": "royal-nz-navy",
       "alternates": 0,
-      "links": 78,
+      "links": 77,
       "status": "ok",
       "url": "https://www.navy.mil.nz/"
     },
@@ -153462,31 +153326,31 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 255,
-    "candidate_count": 5197,
+    "candidate_count": 5191,
     "feasibility_counts": {
       "high": 4079,
-      "low": 320,
+      "low": 314,
       "medium": 798
     },
     "known_registry_social_profiles": 444,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 297,
+      "facebook": 294,
       "instagram": 164,
-      "linkedin": 241,
-      "newsletter": 165,
+      "linkedin": 238,
+      "newsletter": 168,
       "rss": 3811,
       "website_page": 250,
-      "x": 79,
+      "x": 76,
       "youtube": 159
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 165,
+      "newsletter": 168,
       "rss_feed": 61,
       "search_seed": 3750,
-      "social_profile": 958,
+      "social_profile": 949,
       "website_page": 250
     }
   }
