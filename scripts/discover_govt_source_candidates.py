@@ -12,6 +12,8 @@ from urllib.request import Request, urlopen
 
 
 DEFAULT_REGISTRY = Path("registry/government_directory.json")
+DEFAULT_PARTIES = Path("registry/parties.json")
+DEFAULT_PERSONS = Path("registry/persons.json")
 DEFAULT_CONFIG = Path("config/govt_source_discovery.json")
 DEFAULT_REPORT = Path("conductor/govt_source_candidate_report.json")
 DEFAULT_SUMMARY = Path("conductor/govt_source_candidate_summary.md")
@@ -95,7 +97,7 @@ def now_iso() -> str:
 
 
 def load_json(path: Path) -> Any:
-    with path.open(encoding="utf-8") as handle:
+    with path.open(encoding="utf-8-sig") as handle:
         return json.load(handle)
 
 
@@ -115,6 +117,16 @@ def normalize_agencies(raw: Any) -> list[dict[str, Any]]:
     if isinstance(raw, list):
         return raw
     raise ValueError("government directory must be an agency list or an object with agencies")
+
+
+def normalize_records(raw: Any, key: str) -> list[dict[str, Any]]:
+    if isinstance(raw, dict) and isinstance(raw.get(key), list):
+        return [item for item in raw[key] if isinstance(item, dict)]
+    if isinstance(raw, dict) and isinstance(raw.get("value"), list):
+        return [item for item in raw["value"] if isinstance(item, dict)]
+    if isinstance(raw, list):
+        return [item for item in raw if isinstance(item, dict)]
+    return []
 
 
 def social_profile_items(agency: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
@@ -426,6 +438,79 @@ def registry_candidates(agencies: list[dict[str, Any]], config: dict[str, Any]) 
     return found
 
 
+def political_registry_candidates(
+    parties: list[dict[str, Any]],
+    persons: list[dict[str, Any]],
+    config: dict[str, Any],
+) -> list[dict[str, Any]]:
+    found: list[dict[str, Any]] = []
+    for party in parties:
+        pseudo_agency = {
+            "agency_id": f"party-{party.get('party_id', '')}",
+            "name": party.get("name", ""),
+            "type": "Political Party",
+            "portfolio": "Parliament",
+            "official_website": party.get("website", ""),
+            "status": party.get("status", ""),
+            "social_profiles": party.get("social_profiles", {}),
+        }
+        for platform, profile in social_profile_items(pseudo_agency):
+            if platform != "bluesky":
+                continue
+            url = profile.get("url", "")
+            if not url:
+                continue
+            found.append(
+                candidate(
+                    pseudo_agency,
+                    "social_profile",
+                    platform,
+                    url,
+                    "registry.parties.social_profiles",
+                    config,
+                    account=profile.get("handle") or bluesky_handle_from_url(url),
+                    status=profile.get("status", ""),
+                    account_classification=profile.get("account_classification", ""),
+                    syndication_classification=profile.get("syndication_classification", ""),
+                    registry_record_kind="party",
+                    party_id=party.get("party_id", ""),
+                )
+            )
+    for person in persons:
+        pseudo_agency = {
+            "agency_id": f"person-{person.get('person_id', '')}",
+            "name": person.get("full_name", ""),
+            "type": "Person",
+            "portfolio": "Public Officeholder",
+            "official_website": person.get("biography_url", ""),
+            "status": "active",
+            "social_profiles": person.get("social_profiles", {}),
+        }
+        for platform, profile in social_profile_items(pseudo_agency):
+            if platform != "bluesky":
+                continue
+            url = profile.get("url", "")
+            if not url:
+                continue
+            found.append(
+                candidate(
+                    pseudo_agency,
+                    "social_profile",
+                    platform,
+                    url,
+                    "registry.persons.social_profiles",
+                    config,
+                    account=profile.get("handle") or bluesky_handle_from_url(url),
+                    status=profile.get("status", ""),
+                    account_classification=profile.get("account_classification", ""),
+                    syndication_classification=profile.get("syndication_classification", ""),
+                    registry_record_kind="person",
+                    person_id=person.get("person_id", ""),
+                )
+            )
+    return found
+
+
 def fetch_html(url: str, timeout: int, user_agent: str) -> str:
     request = Request(url, headers={"User-Agent": user_agent})
     with urlopen(request, timeout=timeout) as response:
@@ -655,6 +740,9 @@ def build_manifest(report: dict[str, Any]) -> dict[str, Any]:
                 "auth": item["auth"],
                 "origin": item["origin"],
                 "notes": item["policy_notes"],
+                "registry_record_kind": item.get("registry_record_kind", "agency"),
+                "person_id": item.get("person_id", ""),
+                "party_id": item.get("party_id", ""),
             }
         )
     return refresh_manifest_summary(
@@ -752,7 +840,10 @@ def summarize(report: dict[str, Any], manifest: dict[str, Any]) -> str:
 def build_report(args: argparse.Namespace) -> tuple[dict[str, Any], dict[str, Any]]:
     config = load_json(args.config)
     agencies = normalize_agencies(load_json(args.registry))
+    parties = normalize_records(load_json(args.parties), "parties") if args.parties.exists() else []
+    persons = normalize_records(load_json(args.persons), "persons") if args.persons.exists() else []
     candidates = registry_candidates(agencies, config)
+    candidates.extend(political_registry_candidates(parties, persons, config))
     probe_log: list[dict[str, Any]] = []
     if args.probe_homepages:
         probed, probe_log = probe_candidates(agencies, config, args.max_agencies)
@@ -771,6 +862,8 @@ def build_report(args: argparse.Namespace) -> tuple[dict[str, Any], dict[str, An
         "generated_at": now_iso(),
         "inputs": {
             "registry": str(args.registry),
+            "parties": str(args.parties),
+            "persons": str(args.persons),
             "config": str(args.config),
             "probe_homepages": args.probe_homepages,
             "max_agencies": args.max_agencies,
@@ -799,6 +892,8 @@ def build_report(args: argparse.Namespace) -> tuple[dict[str, Any], dict[str, An
 def main() -> None:
     parser = argparse.ArgumentParser(description="Discover government public source and archive candidates.")
     parser.add_argument("--registry", type=Path, default=DEFAULT_REGISTRY)
+    parser.add_argument("--parties", type=Path, default=DEFAULT_PARTIES)
+    parser.add_argument("--persons", type=Path, default=DEFAULT_PERSONS)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
