@@ -18,8 +18,8 @@ def main() -> None:
         raise SystemExit("repository_dispatch client_payload must be an object.")
 
     event_type = str(
-        event.get("action")
-        or event.get("event_type")
+        event.get("event_type")
+        or event.get("action")
         or _manual_event_type_from_payload(payload)
         or "push_event"
     )
