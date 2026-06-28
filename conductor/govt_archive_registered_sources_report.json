@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-28T20:49:40+00:00",
+  "generated_at": "2026-06-28T20:50:16+00:00",
   "inputs": {
-    "agency_id": "office-of-the-auditor-general",
+    "agency_id": "tasman-district-council",
     "fetch_timeout": 30,
     "include_blocked": false,
     "limit_sources": 0,
@@ -17,62 +17,40 @@
   },
   "results": [
     {
-      "agency_id": "office-of-the-auditor-general",
+      "agency_id": "tasman-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "rss",
       "reason": "feed parsed but returned no entries",
-      "source_id": "office-of-the-auditor-general-rss-25464886",
+      "source_id": "tasman-district-council-rss-ddfaf648",
       "source_type": "rss_feed",
       "status": "no_records",
-      "url": "https://ao.parliament.nz/about-us/news/most-recent-announcements/atom.xml"
+      "url": "https://www.tasman.govt.nz/do-it-online/feedback"
     },
     {
-      "agency_id": "office-of-the-auditor-general",
+      "agency_id": "tasman-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "rss",
       "reason": "feed parsed but returned no entries",
-      "source_id": "office-of-the-auditor-general-rss-6d722145",
+      "source_id": "tasman-district-council-rss-489b8c56",
       "source_type": "rss_feed",
       "status": "no_records",
-      "url": "https://ao.parliament.nz/atom.xml"
-    },
-    {
-      "agency_id": "office-of-the-auditor-general",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "rss",
-      "reason": "feed parsed but returned no entries",
-      "source_id": "office-of-the-auditor-general-rss-3327f1b1",
-      "source_type": "rss_feed",
-      "status": "no_records",
-      "url": "https://ao.parliament.nz/blog/latest-posts/atom.xml"
-    },
-    {
-      "agency_id": "office-of-the-auditor-general",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "rss",
-      "reason": "feed parsed but returned no entries",
-      "source_id": "office-of-the-auditor-general-rss-f5bea077",
-      "source_type": "rss_feed",
-      "status": "no_records",
-      "url": "https://ao.parliament.nz/resources/latest/atom.xml"
+      "url": "https://www.tasman.govt.nz/homerss"
     }
   ],
   "summary": {
     "platform_counts": {
-      "rss": 4
+      "rss": 2
     },
-    "selected_sources": 4,
+    "selected_sources": 2,
     "status_by_platform": {
       "rss": {
-        "no_records": 4
+        "no_records": 2
       }
     },
     "status_counts": {
-      "no_records": 4
+      "no_records": 2
     }
   }
 }
