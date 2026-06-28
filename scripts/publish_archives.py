@@ -382,6 +382,9 @@ def publish_to_hugging_face(
     release_version: str = "",
     uploader: HttpUploader | None = None,
 ) -> dict[str, Any]:
+    if uploader is None and hasattr(release_version, "upload_file"):
+        uploader = release_version
+        release_version = ""
     release_version = _resolve_release_version(release_version)
     endpoint = f"https://huggingface.co/api/datasets/{repo_id}/upload"
     metadata = {
