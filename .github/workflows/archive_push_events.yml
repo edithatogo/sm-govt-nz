@@ -1,0 +1,87 @@
+name: Archive Push Events
+
+on:
+  repository_dispatch:
+    types:
+      - rss_websub_notification
+      - bluesky_realtime_event
+      - atproto_realtime_event
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "Push platform to simulate"
+        required: true
+        type: choice
+        default: "rss"
+        options:
+          - "rss"
+          - "bluesky"
+      payload_json:
+        description: "Client payload JSON for manual testing"
+        required: true
+        default: "{\"title\":\"manual push test\"}"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-push-events
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Build manual dispatch event
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          payload = json.loads(os.environ["PAYLOAD_JSON"])
+          payload["platform"] = os.environ["PLATFORM"]
+          event = {
+              "event_type": f"{payload['platform']}_manual_push_event",
+              "client_payload": payload,
+          }
+          Path("manual_push_event.json").write_text(json.dumps(event), encoding="utf-8")
+          PY
+          echo "GITHUB_EVENT_PATH=${PWD}/manual_push_event.json" >> "${GITHUB_ENV}"
+        env:
+          PLATFORM: ${{ inputs.platform }}
+          PAYLOAD_JSON: ${{ inputs.payload_json }}
+
+      - name: Archive push event
+        run: python scripts/archive_push_event.py
+
+      - name: Commit push archive state
+        run: |
+          python scripts/commit_state_updates.py \
+            --message "Archive realtime push event" \
+            --path historical_archive_normalized \
+            --path historical_archive_raw \
+            --path conductor/archive_push_state.json \
+            --path conductor/archive_push_health.json
+
+      - name: Upload push archive diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: push-archive-diagnostics
+          path: |
+            conductor/archive_push_state.json
+            conductor/archive_push_health.json
