@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-28T20:46:23+00:00",
+  "generated_at": "2026-06-28T20:47:24+00:00",
   "inputs": {
-    "agency_id": "animal-control-products",
+    "agency_id": "asurequality",
     "fetch_timeout": 30,
     "include_blocked": false,
     "limit_sources": 0,
@@ -17,62 +17,29 @@
   },
   "results": [
     {
-      "agency_id": "animal-control-products",
+      "agency_id": "asurequality",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "rss",
       "reason": "feed parsed but returned no entries",
-      "source_id": "animal-control-products-rss-b68dcc37",
+      "source_id": "asurequality-rss-32701f4d",
       "source_type": "rss_feed",
       "status": "no_records",
-      "url": "https://pestoff.co.nz/feed/"
-    },
-    {
-      "agency_id": "animal-control-products",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "rss",
-      "reason": "feed parsed but returned no entries",
-      "source_id": "animal-control-products-rss-ea8b84d5",
-      "source_type": "rss_feed",
-      "status": "no_records",
-      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F"
-    },
-    {
-      "agency_id": "animal-control-products",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "rss",
-      "reason": "feed parsed but returned no entries",
-      "source_id": "animal-control-products-rss-3a6a2794",
-      "source_type": "rss_feed",
-      "status": "no_records",
-      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F&format=xml"
-    },
-    {
-      "agency_id": "animal-control-products",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "rss",
-      "reason": "feed parsed but returned no entries",
-      "source_id": "animal-control-products-rss-17f27f26",
-      "source_type": "rss_feed",
-      "status": "no_records",
-      "url": "https://pestoff.co.nz/wp-json/wp/v2/pages/2"
+      "url": "https://www.asurequality.com/home/changes"
     }
   ],
   "summary": {
     "platform_counts": {
-      "rss": 4
+      "rss": 1
     },
-    "selected_sources": 4,
+    "selected_sources": 1,
     "status_by_platform": {
       "rss": {
-        "no_records": 4
+        "no_records": 1
       }
     },
     "status_counts": {
-      "no_records": 4
+      "no_records": 1
     }
   }
 }
