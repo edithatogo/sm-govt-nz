@@ -1,14 +1,34 @@
 {
   "agency_id": "courts-nz",
-  "contract_id": "courts-nz-archive-publication-cadence",
+  "contract_id": "corpus-social-media-government-nz-publication-cadence",
+  "canonical_dataset_name": "corpus-social-media-government-nz",
+  "display_title": "New Zealand Government Social Media Corpus/Archive",
+  "naming_convention": {
+    "dataset_type": "corpus",
+    "corpus_type": "social-media",
+    "subject_scope": "government",
+    "jurisdiction": "nz"
+  },
+  "metadata_tags": [
+    "corpus",
+    "social-media",
+    "government",
+    "new-zealand",
+    "public-records",
+    "rss",
+    "bluesky"
+  ],
+  "source_collections": [
+    "courts-nz"
+  ],
   "archive_capture": {
     "workflow": "Archive Sources",
     "cadence": "every_6_hours",
     "archive_only": true
   },
   "hugging_face": {
-    "repo_id": "edithatogo/courts-nz-public-notices-archive",
-    "url": "https://huggingface.co/datasets/edithatogo/courts-nz-public-notices-archive",
+    "repo_id": "edithatogo/corpus-social-media-government-nz",
+    "url": "https://huggingface.co/datasets/edithatogo/corpus-social-media-government-nz",
     "cadence": "weekly_scheduled_rolling_update",
     "workflow": "Publish Archives",
     "workflow_target": "huggingface",

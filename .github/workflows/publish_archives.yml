@@ -14,12 +14,16 @@ on:
       hf_dataset_name:
         description: "Dataset slug to use when HF_DATASET_REPO_ID is not set"
         required: true
-        default: "courts-nz-public-notices-archive"
-        type: string
+        default: "corpus-social-media-government-nz"
       zenodo_deposit_api_url:
         description: "Zenodo depositions API URL used when ZENODO_DEPOSIT_ENDPOINT is not set"
         required: true
         default: "https://zenodo.org/api/deposit/depositions"
+        type: string
+      archive_release_version:
+        description: "Archive release version (defaults to UTC timestamp if omitted)"
+        required: false
+        default: ""
         type: string
       publication_target:
         description: "External publication target when publish=true"
@@ -37,6 +41,7 @@ on:
         required: false
         default: ""
         type: string
+
   schedule:
     - cron: "41 16 * * 0"
 
@@ -45,61 +50,92 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  HF_DATASET_NAME: ${{ inputs.hf_dataset_name || 'corpus-social-media-government-nz' }}
+  ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url || 'https://zenodo.org/api/deposit/depositions' }}
+  OSF_UPLOAD_URL: ${{ secrets.OSF_UPLOAD_URL || inputs.osf_upload_url }}
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+  OSF_TOKEN: ${{ secrets.OSF_TOKEN }}
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    env:
-      HF_TOKEN: ${{ secrets.HF_TOKEN }}
-      HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
-      HF_DATASET_NAME: ${{ inputs.hf_dataset_name || 'courts-nz-public-notices-archive' }}
-      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-      ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
-      ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url || 'https://zenodo.org/api/deposit/depositions' }}
-      OSF_TOKEN: ${{ secrets.OSF_TOKEN }}
-      OSF_UPLOAD_URL: ${{ secrets.OSF_UPLOAD_URL || inputs.osf_upload_url }}
-      ARCHIVE_PUBLICATION_TARGET: ${{ github.event_name == 'schedule' && 'huggingface' || (inputs.publish == 'true' && inputs.publication_target || 'artifact') }}
+
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v5
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
+
       - name: Install uv
         run: python -m pip install uv
+
       - name: Install dependencies
         run: uv pip install --system -r requirements.txt
+
       - name: Build archive compaction manifest
         run: >-
           python scripts/build_archive_compaction_manifest.py
           --normalized-dir historical_archive_normalized
           --raw-dir historical_archive_raw
           --output dist/archive_compaction_manifest.json
-      - name: Bundle and publish archive corpus
+
+      - name: Resolve release version
+        id: release
         run: |
-          args=(
-            python scripts/publish_archives.py
+          if [ -n "${{ inputs.archive_release_version }}" ]; then
+            VERSION="${{ inputs.archive_release_version }}"
+          else
+            VERSION="$(date -u +"%Y%m%d-%H%M%S")-archive"
+          fi
+          echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
+
+      - name: Resolve publication intent
+        id: publication
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "publish=${{ inputs.publish }}" >> "${GITHUB_OUTPUT}"
+            echo "target=${{ inputs.publication_target }}" >> "${GITHUB_OUTPUT}"
+          else
+            echo "publish=true" >> "${GITHUB_OUTPUT}"
+            echo "target=all" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Archive bundle and publish
+        run: |
+          base_args=(
             --archive-dir historical_archive
             --normalized-dir historical_archive_normalized
             --raw-dir historical_archive_raw
             --output-dir dist
             --manifest dist/archive_manifest.json
             --status-report conductor/archive_publication_status.json
-            --publish-target "$ARCHIVE_PUBLICATION_TARGET"
+            --release-version "${{ steps.release.outputs.version }}"
           )
-          if [ "$ARCHIVE_PUBLICATION_TARGET" != "artifact" ]; then
-            args+=(--publish)
+          if [ "${{ steps.publication.outputs.publish }}" = "true" ]; then
+            python scripts/publish_archives.py \
+              "${base_args[@]}" \
+              --publish \
+              --publish-target "${{ steps.publication.outputs.target }}"
+          else
+            python scripts/publish_archives.py "${base_args[@]}"
           fi
-          "${args[@]}"
-      - name: Commit publication status
-        run: >-
-          python scripts/commit_state_updates.py
-          --message "Update archive publication status"
-          --path conductor/archive_publication_status.json
+
+      - name: Commit publication report
+        if: always()
+        run: |
+          python scripts/commit_state_updates.py \
+            --message "Record scheduled publication artifacts and status report" \
+            --path conductor/archive_publication_status.json
+
       - name: Upload generated corpus bundle
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: courts-nz-archive-corpus
+          name: corpus-social-media-government-nz
           path: |
             dist/archive_manifest.json
             dist/archive_compaction_manifest.json

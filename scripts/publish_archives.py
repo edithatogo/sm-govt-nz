@@ -3,6 +3,7 @@ import base64
 import gzip
 import hashlib
 import json
+from datetime import datetime, timezone
 import os
 import subprocess
 import tarfile
@@ -12,8 +13,8 @@ from typing import Any, Protocol
 from urllib.request import Request, urlopen
 
 
-DEFAULT_HF_DATASET_NAME = "nz-government-public-source-archive"
-DEFAULT_HF_DATASET_REPO_ID = "edithatogo/nz-government-public-source-archive"
+DEFAULT_HF_DATASET_NAME = "corpus-social-media-government-nz"
+DEFAULT_HF_DATASET_REPO_ID = "edithatogo/corpus-social-media-government-nz"
 DEFAULT_ZENODO_DEPOSIT_API_URL = "https://zenodo.org/api/deposit/depositions"
 DEFAULT_OSF_UPLOAD_URL = ""
 
@@ -164,14 +165,17 @@ def publish_to_zenodo(
     bundle: BundleManifest,
     token: str,
     endpoint: str,
+    release_version: str = "",
     uploader: HttpUploader | None = None,
 ) -> dict[str, Any]:
+    release_version = _resolve_release_version(release_version)
     metadata = {
-        "title": "New Zealand government public source archive",
+        "title": "New Zealand Government Social Media Corpus/Archive",
         "upload_type": "dataset",
         "sha256": bundle.sha256,
         "file_count": bundle.file_count,
         "normalized_record_count": bundle.normalized_record_count,
+        "release_version": release_version,
     }
     if uploader is not None:
         return uploader.upload_file(endpoint, token, Path(bundle.bundle_path), metadata)
@@ -195,16 +199,29 @@ def publish_to_zenodo_deposition(
     bundle: BundleManifest,
     token: str,
     *,
+    release_version: str = "",
     api_url: str = DEFAULT_ZENODO_DEPOSIT_API_URL,
     uploader: HttpUploader | None = None,
 ) -> dict[str, Any]:
+    release_version = _resolve_release_version(release_version)
     metadata = {
         "metadata": {
-            "title": "New Zealand government public source archive",
+            "title": "New Zealand Government Social Media Corpus/Archive",
             "upload_type": "dataset",
+            "version": release_version,
+            "keywords": [
+                "corpus",
+                "social media",
+                "government",
+                "New Zealand",
+                "public records",
+                "RSS",
+                "Bluesky",
+            ],
             "description": (
-                "Normalized public notice records and raw source evidence captured for "
-                "the New Zealand government source archive and mirror project."
+                "Normalized New Zealand government social media records, with RSS and "
+                "adjacent public web source captures retained for discovery, provenance, "
+                "and source-context evidence."
             ),
             "creators": [{"name": "sm-govt-nz maintainers"}],
         }
@@ -249,14 +266,17 @@ def publish_to_hugging_face(
     bundle: BundleManifest,
     token: str,
     repo_id: str,
+    release_version: str = "",
     uploader: HttpUploader | None = None,
 ) -> dict[str, Any]:
+    release_version = _resolve_release_version(release_version)
     endpoint = f"https://huggingface.co/api/datasets/{repo_id}/upload"
     metadata = {
         "repo_id": repo_id,
         "sha256": bundle.sha256,
         "file_count": bundle.file_count,
         "normalized_record_count": bundle.normalized_record_count,
+        "release_version": release_version,
     }
     if uploader is not None:
         return uploader.upload_file(endpoint, token, Path(bundle.bundle_path), metadata)
@@ -321,19 +341,27 @@ def publish_to_osf(
 def publish_from_env(
     bundle: BundleManifest,
     *,
+    release_version: str = "",
     targets: set[str] | None = None,
 ) -> dict[str, Any]:
+    release_version = _resolve_release_version(release_version)
     results: dict[str, Any] = {}
     active_targets = targets or {"huggingface", "zenodo"}
     if "zenodo" in active_targets:
         zenodo_token = os.getenv("ZENODO_TOKEN")
         zenodo_endpoint = os.getenv("ZENODO_DEPOSIT_ENDPOINT")
         if zenodo_token and zenodo_endpoint:
-            results["zenodo"] = publish_to_zenodo(bundle, zenodo_token, zenodo_endpoint)
+            results["zenodo"] = publish_to_zenodo(
+                bundle,
+                zenodo_token,
+                zenodo_endpoint,
+                release_version,
+            )
         elif zenodo_token:
             results["zenodo"] = publish_to_zenodo_deposition(
                 bundle,
                 zenodo_token,
+                release_version=release_version,
                 api_url=os.getenv("ZENODO_DEPOSIT_API_URL", DEFAULT_ZENODO_DEPOSIT_API_URL),
             )
     osf_token = os.getenv("OSF_TOKEN")
@@ -346,7 +374,12 @@ def publish_from_env(
             hf_token,
             os.getenv("HF_DATASET_NAME", DEFAULT_HF_DATASET_NAME),
         )
-        results["huggingface"] = publish_to_hugging_face(bundle, hf_token, hf_repo_id)
+        results["huggingface"] = publish_to_hugging_face(
+            bundle,
+            hf_token,
+            hf_repo_id,
+            release_version,
+        )
     return results
 
 
@@ -370,9 +403,12 @@ def write_publication_status_report(
     mode: str,
     requested_targets: list[str],
     publication_results: dict[str, Any],
+    release_version: str = "",
 ) -> None:
+    release_version = _resolve_release_version(release_version)
     report = {
         "mode": mode,
+        "release_version": release_version,
         "requested_targets": requested_targets,
         "source_git": _source_git_status(),
         "artifact": {
@@ -402,6 +438,13 @@ def write_publication_status_report(
     }
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     Path(path).write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _resolve_release_version(release_version: str) -> str:
+    normalized = (release_version or "").strip()
+    if normalized:
+        return normalized
+    return datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S-archive")
 
 
 def _source_git_status() -> dict[str, str]:
@@ -514,8 +557,25 @@ def _build_corpus_manifest(
         current["max_original_created_at"] = max(current["max_original_created_at"], created_at)
 
     return {
-        "title": "New Zealand government public source archive",
-        "scope": "nz-government",
+        "title": "New Zealand Government Social Media Corpus/Archive",
+        "canonical_name": "corpus-social-media-government-nz",
+        "scope": "nz-government-social-media",
+        "dataset_type": "corpus",
+        "corpus_type": "social-media",
+        "subject_scope": "government",
+        "jurisdiction": "nz",
+        "tags": [
+            "corpus",
+            "social-media",
+            "government",
+            "new-zealand",
+            "public-records",
+            "rss",
+            "bluesky",
+        ],
+        "source_collections": [
+            "courts-nz",
+        ],
         "license": "Public source records; verify source-specific terms before redistribution.",
         "generated_artifacts": {
             jsonl_path.name: _artifact_summary(jsonl_path),
@@ -538,7 +598,8 @@ def _build_corpus_manifest(
             "Raw-source bundles are included in the Actions artifact and full archive tarball; separate gated raw publication can be added if source terms require it.",
         ],
         "provenance": (
-            "Records are derived from public New Zealand government source surfaces and preserve "
+            "Records are derived from New Zealand government social media and adjacent public "
+            "source surfaces and preserve "
             "source platform, source account, source URL, capture timestamp, original timestamp, "
             "content hash, media references, raw path, and extraction method where available."
         ),
@@ -704,11 +765,21 @@ def _build_dataset_card(manifest: dict[str, Any]) -> str:
         "- text-generation\n"
         "language:\n"
         "- en\n"
-        "pretty_name: New Zealand government public source archive\n"
+        "pretty_name: New Zealand Government Social Media Corpus/Archive\n"
+        "tags:\n"
+        "- corpus\n"
+        "- social-media\n"
+        "- government\n"
+        "- new-zealand\n"
+        "- public-records\n"
+        "- rss\n"
+        "- bluesky\n"
         "---\n\n"
-        "# New Zealand Government Public Source Archive\n\n"
-        "This dataset package contains normalized public notice records and raw source "
-        "evidence captured for the New Zealand government source archive and mirror project.\n\n"
+        "# New Zealand Government Social Media Corpus/Archive\n\n"
+        "Canonical name: `corpus-social-media-government-nz`.\n\n"
+        "This dataset package contains normalized New Zealand government social media "
+        "records, with RSS and adjacent public web source captures retained for "
+        "discovery, provenance, and source-context evidence.\n\n"
         "## Contents\n\n"
         "- `normalized_archive.jsonl.gz`: combined normalized records from source/month shards.\n"
         "- `normalized_archive.parquet`: combined normalized records in Parquet format.\n"
@@ -841,16 +912,26 @@ def main() -> None:
         "--status-report",
         default="dist/archive_publication_status.json",
     )
+    parser.add_argument(
+        "--release-version",
+        default="",
+        help="Archive release version. Defaults to a UTC timestamp.",
+    )
     args = parser.parse_args()
 
     bundle = create_archive_bundle(
         args.archive_dir, args.output_dir, args.normalized_dir, args.raw_dir
     )
     write_manifest(bundle, args.manifest)
+    release_version = _resolve_release_version(args.release_version)
     requested_targets = _requested_publish_targets(args.publish, args.publish_target)
     publication_results: dict[str, Any] = {}
     if requested_targets:
-        publication_results = publish_from_env(bundle, targets=set(requested_targets))
+        publication_results = publish_from_env(
+            bundle,
+            release_version=release_version,
+            targets=set(requested_targets),
+        )
         print(json.dumps(publication_results, indent=2, sort_keys=True))
         require_requested_publications(requested_targets, publication_results)
     write_publication_status_report(
@@ -859,6 +940,7 @@ def main() -> None:
         mode="published" if requested_targets else "artifact_only",
         requested_targets=requested_targets,
         publication_results=publication_results,
+        release_version=release_version,
     )
 
 
@@ -876,5 +958,3 @@ def _requested_publish_targets(publish: bool, publish_target: str) -> list[str]:
 
 if __name__ == "__main__":
     main()
-
-

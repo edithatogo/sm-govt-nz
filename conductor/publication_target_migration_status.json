@@ -1,0 +1,34 @@
+{
+  "canonical_dataset_name": "corpus-social-media-government-nz",
+  "display_title": "New Zealand Government Social Media Corpus/Archive",
+  "hugging_face": {
+    "target_repo_id": "edithatogo/corpus-social-media-government-nz",
+    "legacy_repo_id": "edithatogo/courts-nz-public-notices-archive",
+    "local_setup": "configured",
+    "remote_status_observed": "canonical_repo_not_found_legacy_repo_exists",
+    "remote_update_path": "next Publish Archives run creates or updates target_repo_id using HF_TOKEN"
+  },
+  "zenodo": {
+    "title": "New Zealand Government Social Media Corpus/Archive",
+    "keywords": [
+      "corpus",
+      "social media",
+      "government",
+      "New Zealand",
+      "public records",
+      "RSS",
+      "Bluesky"
+    ],
+    "local_setup": "configured",
+    "remote_update_path": "next Publish Archives run creates a release-versioned deposition using ZENODO_TOKEN"
+  },
+  "collections": {
+    "internal_source_collections": [
+      "courts-nz"
+    ],
+    "hugging_face_collections": [],
+    "zenodo_communities": [],
+    "decision": "Do not assign remote collections or Zenodo communities until a specific matching collection/community is chosen."
+  },
+  "status": "repo_configured_remote_publication_pending_next_publish_run"
+}
