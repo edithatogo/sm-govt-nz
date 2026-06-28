@@ -28,7 +28,10 @@ PLATFORM_HOSTS = {
 }
 
 NEWSLETTER_TERMS = ("newsletter", "subscribe", "email updates", "alerts", "mailing list")
-FEED_TERMS = ("rss", "atom", "feed.xml", "/feed")
+FEED_TERMS = ("rss", "atom", "feed.xml", "/feed", "feed.json", "json feed")
+API_TERMS = ("api", "openapi", "swagger", "developer", "data service")
+MICROFORMAT_TERMS = ("h-feed", "h-entry", "microformat", "microformats")
+ACTIVITYPUB_TERMS = ("activitypub", "mastodon", "fediverse", "webfinger")
 
 
 class LinkCollector(HTMLParser):
@@ -36,6 +39,8 @@ class LinkCollector(HTMLParser):
         super().__init__()
         self.links: list[dict[str, str]] = []
         self.alternates: list[dict[str, str]] = []
+        self.hubs: list[dict[str, str]] = []
+        self.microformats: list[dict[str, str]] = []
         self._active_href = ""
         self._active_text: list[str] = []
 
@@ -47,14 +52,27 @@ class LinkCollector(HTMLParser):
         if tag == "link" and attr.get("href"):
             rel = attr.get("rel", "").lower()
             typ = attr.get("type", "").lower()
-            if "alternate" in rel and ("rss" in typ or "atom" in typ or "xml" in typ):
+            if "alternate" in rel and (
+                "rss" in typ
+                or "atom" in typ
+                or "xml" in typ
+                or "feed+json" in typ
+                or "activity+json" in typ
+                or "json" in typ
+            ):
                 self.alternates.append(
                     {
                         "href": attr["href"],
+                        "rel": rel,
                         "title": attr.get("title", ""),
                         "type": typ,
                     }
                 )
+            if "hub" in rel:
+                self.hubs.append({"href": attr["href"], "rel": rel, "type": typ})
+        class_value = attr.get("class", "")
+        if class_value and any(term in class_value.lower().split() for term in ("h-feed", "h-entry", "h-event")):
+            self.microformats.append({"tag": tag, "class": class_value})
 
     def handle_data(self, data: str) -> None:
         if self._active_href:
@@ -107,11 +125,17 @@ def social_profile_items(agency: dict[str, Any]) -> list[tuple[str, dict[str, An
         items = []
         for profile in profiles:
             if isinstance(profile, dict):
-                platform = str(profile.get("platform") or detect_platform(profile.get("url", "")) or "unknown")
+                url = profile.get("url", "")
+                platform = str(profile.get("platform") or "").strip().lower()
+                if not platform:
+                    platform = detect_platform(url) or "unknown"
+                if platform == "bluesky":
+                    handle = profile.get("handle") or bluesky_handle_from_url(url)
+                    if handle:
+                        profile = {**profile, "handle": handle}
                 items.append((platform, profile))
         return items
     return []
-
 
 def policy_for(config: dict[str, Any], platform: str) -> dict[str, Any]:
     policy = config.get("platform_archive_policy", {}).get(platform, {})
@@ -125,12 +149,26 @@ def policy_for(config: dict[str, Any], platform: str) -> dict[str, Any]:
 
 
 def detect_platform(url: str) -> str:
-    host = urlparse(url).netloc.lower().removeprefix("www.")
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().removeprefix("www.")
     for platform, hosts in PLATFORM_HOSTS.items():
-        if any(host == candidate or host.endswith("." + candidate) for candidate in hosts):
-            return platform
+        if not any(host == candidate or host.endswith("." + candidate) for candidate in hosts):
+            continue
+        if platform == "bluesky":
+            return "bluesky" if parsed.path.startswith("/profile/") else ""
+        return platform
     return ""
 
+
+def bluesky_handle_from_url(url: str) -> str:
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().removeprefix("www.")
+    if host != "bsky.app" and not host.endswith(".bsky.app"):
+        return ""
+    parts = [part for part in parsed.path.split("/") if part]
+    if len(parts) >= 2 and parts[0] == "profile":
+        return parts[1]
+    return ""
 
 def candidate(
     agency: dict[str, Any],
@@ -256,7 +294,7 @@ def candidate_confidence(source_type, platform, url, origin, config, agency_id="
     elif trust == "medium":
         score += 0.1
         signals.append("trusted_domain_suffix")
-    if platform in {"rss", "website_page", "bluesky"}:
+    if platform in {"rss", "json_feed", "website_page", "bluesky", "microformat"}:
         score += 0.1
         signals.append("archive_friendly_platform")
     heuristics = config.get("heuristics", {})
@@ -333,7 +371,7 @@ def registry_candidates(agencies: list[dict[str, Any]], config: dict[str, Any]) 
                     url,
                     "registry.social_profiles",
                     config,
-                    account=profile.get("handle", ""),
+                    account=profile.get("handle") or bluesky_handle_from_url(url),
                     status=profile.get("status", ""),
                     account_classification=profile.get("account_classification", ""),
                     syndication_classification=profile.get("syndication_classification", ""),
@@ -371,17 +409,57 @@ def probe_url(agency: dict[str, Any], url: str, config: dict[str, Any]) -> tuple
     results: list[dict[str, Any]] = []
     for alternate in parser.alternates:
         href = urljoin(url, alternate["href"])
+        mime_type = alternate.get("type", "").lower()
+        if "feed+json" in mime_type or ("json" in mime_type and "activity+json" not in mime_type):
+            source_type = "json_feed"
+            platform = "json_feed"
+        elif "activity+json" in mime_type:
+            source_type = "activitypub_profile"
+            platform = "activitypub"
+        else:
+            source_type = "rss_feed"
+            platform = "rss"
         results.append(
             candidate(
                 agency,
-                "rss_feed",
-                "rss",
+                source_type,
+                platform,
                 href,
                 "homepage.link_alternate",
                 config,
                 account=agency.get("official_website", ""),
                 link_title=alternate.get("title", ""),
                 mime_type=alternate.get("type", ""),
+                status="discovered",
+            )
+        )
+    for hub in parser.hubs:
+        href = urljoin(url, hub["href"])
+        results.append(
+            candidate(
+                agency,
+                "websub_hub",
+                "websub",
+                href,
+                "homepage.link_hub",
+                config,
+                account=agency.get("official_website", ""),
+                link_title="WebSub hub",
+                mime_type=hub.get("type", ""),
+                status="discovered",
+            )
+        )
+    if parser.microformats:
+        results.append(
+            candidate(
+                agency,
+                "microformat_feed",
+                "microformat",
+                url,
+                "homepage.microformat_class",
+                config,
+                account=agency.get("official_website", ""),
+                link_text=", ".join(sorted({item["class"] for item in parser.microformats}))[:240],
                 status="discovered",
             )
         )
@@ -398,16 +476,60 @@ def probe_url(agency: dict[str, Any], url: str, config: dict[str, Any]) -> tuple
                     href,
                     "homepage.link",
                     config,
-                    account=link.get("text", ""),
+                    account=bluesky_handle_from_url(href) or link.get("text", ""),
                     status="discovered",
                 )
             )
         if any(term in lower for term in FEED_TERMS):
+            source_type = "json_feed" if "json" in lower else "rss_feed"
+            platform = "json_feed" if source_type == "json_feed" else "rss"
             results.append(
                 candidate(
                     agency,
-                    "rss_feed",
-                    "rss",
+                    source_type,
+                    platform,
+                    href,
+                    "homepage.link",
+                    config,
+                    account=agency.get("official_website", ""),
+                    link_text=link.get("text", ""),
+                    status="discovered",
+                )
+            )
+        if any(term in lower for term in ACTIVITYPUB_TERMS):
+            results.append(
+                candidate(
+                    agency,
+                    "activitypub_profile",
+                    "activitypub",
+                    href,
+                    "homepage.link",
+                    config,
+                    account=link.get("text", ""),
+                    link_text=link.get("text", ""),
+                    status="discovered",
+                )
+            )
+        if any(term in lower for term in API_TERMS):
+            results.append(
+                candidate(
+                    agency,
+                    "api_endpoint",
+                    "api",
+                    href,
+                    "homepage.link",
+                    config,
+                    account=agency.get("official_website", ""),
+                    link_text=link.get("text", ""),
+                    status="discovered",
+                )
+            )
+        if any(term in lower for term in MICROFORMAT_TERMS):
+            results.append(
+                candidate(
+                    agency,
+                    "microformat_feed",
+                    "microformat",
                     href,
                     "homepage.link",
                     config,
@@ -572,6 +694,7 @@ def summarize(report: dict[str, Any], manifest: dict[str, Any]) -> str:
             "## Operational Notes",
             "",
             "- RSS, public website pages, and Bluesky are the highest-priority automated archive lanes.",
+            "- Atom, JSON Feed, WebSub hubs, ActivityPub/WebFinger, public APIs, and microformats are now explicitly detected as reviewable source candidates.",
             "- YouTube is listed as candidate until channel handles are resolved to stable channel feeds.",
             "- Meta platforms should use Graph/Threads APIs or authorized exports; avoid brittle unauthenticated scraping.",
             "- LinkedIn and X are retained in the manifest with lower feasibility so archive work can proceed from approved exports or public archive sources.",
@@ -653,3 +776,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

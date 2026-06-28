@@ -20,6 +20,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   discover:
@@ -47,3 +48,35 @@ jobs:
           --path conductor/govt_source_candidate_report.json
           --path conductor/govt_source_candidate_summary.md
           --path conductor/govt_archive_source_manifest.json
+      - name: Build candidate review issue body
+        id: candidate_issue
+        run: >-
+          python scripts/build_source_candidate_issue.py
+          --body-output .tmp/source_candidate_issue.md
+      - name: Create or update candidate review issue
+        if: steps.candidate_issue.outputs.has_candidates == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: ${{ steps.candidate_issue.outputs.title }}
+        run: |
+          existing_issue="$(
+            gh issue list \
+              --repo "${{ github.repository }}" \
+              --state open \
+              --label source-discovery \
+              --json number,title \
+              --jq ".[] | select(.title == env.ISSUE_TITLE) | .number" \
+              | head -n 1
+          )"
+          if [ -n "${existing_issue}" ]; then
+            gh issue edit "${existing_issue}" \
+              --repo "${{ github.repository }}" \
+              --body-file .tmp/source_candidate_issue.md
+          else
+            gh issue create \
+              --repo "${{ github.repository }}" \
+              --title "${ISSUE_TITLE}" \
+              --label source-discovery \
+              --label needs-review \
+              --body-file .tmp/source_candidate_issue.md
+          fi

@@ -16,7 +16,13 @@
       "/subscribe",
       "/newsletter",
       "/rss",
-      "/feed"
+      "/feed",
+      "/feed.json",
+      "/atom.xml",
+      "/rss.xml",
+      "/.well-known/webfinger",
+      "/api",
+      "/openapi.json"
     ]
   },
   "platform_archive_policy": {
@@ -89,6 +95,41 @@
       "access_method": "email_ingress_or_public_archive",
       "auth": "inbox_or_dispatch_token",
       "notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source."
+    },
+    "json_feed": {
+      "feasibility": "high",
+      "archive_status": "ready",
+      "access_method": "public_json_feed",
+      "auth": "none",
+      "notes": "JSON Feed is a first-class feed source when advertised by link rel=alternate or common feed paths."
+    },
+    "websub": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "websub_hub_subscription",
+      "auth": "none",
+      "notes": "WebSub hubs enable realtime RSS/Atom delivery, but polling remains the authoritative fallback."
+    },
+    "activitypub": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "activitypub_or_webfinger",
+      "auth": "none",
+      "notes": "ActivityPub/Mastodon-compatible profiles should be reviewed for public outbox/follow collection archive feasibility."
+    },
+    "api": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "public_api_or_openapi",
+      "auth": "none_or_token",
+      "notes": "Public APIs should be preferred over page scraping when they expose stable public communications records."
+    },
+    "microformat": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "public_html_microformats",
+      "auth": "none",
+      "notes": "Microformats such as h-feed and h-entry can provide structured public updates when no feed is advertised."
     }
   },
   "heuristics": {
@@ -155,6 +196,22 @@
       {
         "platform": "threads",
         "query": "site:threads.net/@ {agency_name} {domain}"
+      },
+      {
+        "platform": "activitypub",
+        "query": "site:mastodon.nz OR site:mastodon.social OR site:mas.to {agency_name} {domain}"
+      },
+      {
+        "platform": "json_feed",
+        "query": "{agency_name} {domain} \"feed.json\" OR \"JSON Feed\""
+      },
+      {
+        "platform": "api",
+        "query": "{agency_name} {domain} \"openapi\" OR \"api\""
+      },
+      {
+        "platform": "microformat",
+        "query": "{agency_name} {domain} \"h-feed\" OR \"h-entry\""
       }
     ],
     "learning_file": "conductor/govt_source_discovery_learning.json"
