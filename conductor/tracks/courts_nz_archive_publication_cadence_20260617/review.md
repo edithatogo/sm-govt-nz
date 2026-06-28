@@ -38,8 +38,8 @@ All 12 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done:
 ### Cadence Configuration
 | Artifact | Path | Quality |
 |----------|------|---------|
-| Machine-readable contract | `config/courts_nz_archive_publication_cadence.json` | Well-structured; defines archive capture, Hugging Face, Zenodo, manual publish, status report, and guardrails with explicit field-level documentation. |
-| Publication documentation | `docs/courts-nz-dataset-publication.md` | Covers dataset card, Hugging Face cadence, Zenodo deposition, manual publish behavior, and provenance requirements. |
+| Machine-readable contract | `config/corpus_social_media_government_nz_publication_cadence.json` | Well-structured; defines archive capture, Hugging Face, Zenodo, manual publish, status report, and guardrails with explicit field-level documentation. |
+| Publication documentation | `docs/corpus-social-media-government-nz-publication.md` | Covers dataset card, Hugging Face cadence, Zenodo deposition, manual publish behavior, and provenance requirements. |
 | Status report (latest) | `conductor/archive_publication_status.json` | Shows artifact-only run: 4591 files, 4213 normalized records, SHA256 committed. |
 | Publication report (historical) | `conductor/archive_publication_report_20260614.json` | Full audit trail of Hugging Face upload (5 paths, 200 OK) and Zenodo DOI publication (deposition 20690547, state: `done`, submitted: true). |
 
@@ -60,7 +60,7 @@ All 12 plan tasks are marked `[x]`. `conductor/setup_state.json` confirms `done:
 ## 4. Findings & Observations
 
 ### âœ… Strengths
-1. **Machine-readable contract** â€” `config/courts_nz_archive_publication_cadence.json` makes the cadence explicit and testable, rather than relying on documentation alone.
+1. **Machine-readable contract** â€” `config/corpus_social_media_government_nz_publication_cadence.json` makes the cadence explicit and testable, rather than relying on documentation alone.
 2. **Safety by design** â€” Scheduled runs explicitly prohibited from publishing Zenodo. Manual runs default to artifact-only. Zenodo requires a confirmation phrase. These are all encoded as guardrails in the config and enforced in workflow logic.
 3. **Publication status tracking** â€” Every run (artifact-only or published) writes a committed report. Freshness is checked via `source_git.freshness_status` in the status report.
 4. **Independent lanes** â€” Archive capture (6h), syndication (15min), and publication (weekly) are completely independent, preventing cascading failures.

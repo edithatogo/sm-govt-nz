@@ -87,7 +87,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 *Link: [./tracks/courts_nz_archive_publication_cadence_20260617/](./tracks/courts_nz_archive_publication_cadence_20260617/)*
 - Hugging Face: weekly rolling update via scheduled Publish Archives (target: huggingface)
 - Zenodo: manual release snapshot lane, requires publish-zenodo-doi confirmation
-- Machine-readable contract: config/courts_nz_archive_publication_cadence.json
+- Machine-readable contract: config/corpus_social_media_government_nz_publication_cadence.json
 
 ## [x] Track: NZ Government Social Media Registry â€” agencies, political parties, MPs, and public sector leadership
 *Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*

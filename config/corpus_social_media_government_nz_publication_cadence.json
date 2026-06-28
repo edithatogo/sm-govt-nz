@@ -37,15 +37,15 @@
     "notes": "Scheduled Publish Archives runs publish monthly to Hugging Face and Zenodo using dynamic release versions. They must not run more frequently than monthly without manual review."
   },
   "zenodo": {
-    "doi": "10.5281/zenodo.20690547",
-    "conceptdoi": "10.5281/zenodo.20690546",
-    "url": "https://zenodo.org/records/20690547",
+    "doi": "10.5281/zenodo.20991133",
+    "conceptdoi": "10.5281/zenodo.20991132",
+    "url": "https://zenodo.org/records/20991133",
     "cadence": "manual_exception_release_snapshot",
-    "workflow": "Publish Zenodo Deposition",
+    "workflow": "Publish Archives",
     "requires_secret": "ZENODO_TOKEN",
-    "requires_confirmation": "publish-zenodo-doi",
+    "requires_confirmation": "manual_dispatch_only_for_exception_releases",
     "publishes_external_artifacts": false,
-    "notes": "Manual Zenodo releases are exception releases only; routine DOI publication occurs through the monthly scheduled social-media release."
+    "notes": "Routine DOI publication occurs through the monthly scheduled social-media release and creates a new version under concept DOI 10.5281/zenodo.20991132. Manual Zenodo releases are exception releases only."
   },
   "manual_publish_archives": {
     "workflow": "Publish Archives",

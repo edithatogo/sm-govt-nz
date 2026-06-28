@@ -42,7 +42,7 @@ provenance unless size or platform terms require a manual or gated upload.
 ## Publication Cadence
 
 The machine-readable cadence contract is
-`config/courts_nz_archive_publication_cadence.json`.
+`config/corpus_social_media_government_nz_publication_cadence.json`.
 
 - Archive capture: `Archive Sources` runs every 6 hours and is independent of
   outbound syndication.
@@ -58,7 +58,7 @@ The machine-readable cadence contract is
 
 Each `Publish Archives` run writes
 `conductor/archive_publication_status.json`, recording whether the run was
-artifact-only, Hugging Face-published, Zenodo-published/drafted, or a combined
+artifact-only, Hugging Face-published, Zenodo-published, or a combined
 manual publication.
 
 ## Zenodo Deposition
@@ -77,7 +77,7 @@ manual publication.
 - Communities: none required for the MVP; add a community only after confirming
   it matches the corpus scope.
 
-Zenodo snapshots must be generated from the same `scripts/publish_archives.py`
+Zenodo DOI versions must be generated from the same `scripts/publish_archives.py`
 bundle used for Hugging Face so the DOI release and live dataset share checksums
 and provenance.
 

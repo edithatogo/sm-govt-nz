@@ -236,14 +236,12 @@ def publish_to_zenodo_deposition(
     except ImportError:
         return UrlLibUploader().upload_file(api_url, token, Path(bundle.bundle_path), metadata)
 
-    created = requests.post(
-        api_url,
-        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-        data=json.dumps(metadata),
-        timeout=60,
+    deposition = _zenodo_release_deposition(
+        requests_module=requests,
+        api_url=api_url,
+        token=token,
+        metadata=metadata,
     )
-    created.raise_for_status()
-    deposition = created.json()
     deposition_id = deposition.get("id")
     bucket_url = deposition.get("links", {}).get("bucket")
     if not bucket_url:
@@ -262,6 +260,7 @@ def publish_to_zenodo_deposition(
     result = {
         "deposition_id": deposition_id,
         "deposition_url": deposition.get("links", {}).get("html") or deposition.get("links", {}).get("self"),
+        "concept_record_id": deposition.get("conceptrecid"),
         "uploaded_files": uploaded,
         "submitted": False,
     }
@@ -286,6 +285,91 @@ def publish_to_zenodo_deposition(
             }
         )
     return result
+
+
+def _zenodo_release_deposition(
+    *,
+    requests_module: Any,
+    api_url: str,
+    token: str,
+    metadata: dict[str, Any],
+) -> dict[str, Any]:
+    version_record_id = _zenodo_latest_version_record_id(
+        requests_module=requests_module,
+        api_url=api_url,
+        token=token,
+    )
+    if version_record_id:
+        new_version = requests_module.post(
+            f"{api_url.rstrip('/')}/{version_record_id}/actions/newversion",
+            headers={"Authorization": f"Bearer {token}"},
+            timeout=120,
+        )
+        new_version.raise_for_status()
+        new_version_payload = new_version.json() if new_version.content else {}
+        draft_url = (
+            new_version_payload.get("links", {}).get("latest_draft")
+            or new_version_payload.get("links", {}).get("draft")
+        )
+        if not draft_url:
+            raise RuntimeError("Zenodo new version response did not include a draft URL.")
+        draft = requests_module.get(
+            draft_url,
+            headers={"Authorization": f"Bearer {token}"},
+            timeout=60,
+        )
+        draft.raise_for_status()
+        draft_payload = draft.json()
+        draft_id = draft_payload.get("id")
+        if not draft_id:
+            raise RuntimeError("Zenodo draft response did not include a deposition id.")
+        updated = requests_module.put(
+            f"{api_url.rstrip('/')}/{draft_id}",
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+            data=json.dumps(metadata),
+            timeout=60,
+        )
+        updated.raise_for_status()
+        return updated.json()
+
+    created = requests_module.post(
+        api_url,
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        data=json.dumps(metadata),
+        timeout=60,
+    )
+    created.raise_for_status()
+    return created.json()
+
+
+def _zenodo_latest_version_record_id(
+    *,
+    requests_module: Any,
+    api_url: str,
+    token: str,
+) -> str:
+    version_record_id = os.getenv("ZENODO_VERSION_RECORD_ID", "").strip()
+    if version_record_id:
+        return version_record_id
+    concept_record_id = os.getenv("ZENODO_CONCEPT_RECORD_ID", "").strip()
+    if not concept_record_id:
+        return ""
+    records_api_url = _zenodo_records_api_url(api_url)
+    latest = requests_module.get(
+        f"{records_api_url.rstrip('/')}/{concept_record_id}/versions/latest",
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=60,
+    )
+    latest.raise_for_status()
+    latest_payload = latest.json()
+    return str(latest_payload.get("id") or "")
+
+
+def _zenodo_records_api_url(deposition_api_url: str) -> str:
+    normalized = deposition_api_url.rstrip("/")
+    if normalized.endswith("/deposit/depositions"):
+        return normalized[: -len("/deposit/depositions")] + "/records"
+    return "https://zenodo.org/api/records"
 
 
 def publish_to_hugging_face(

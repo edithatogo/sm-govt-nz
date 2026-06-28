@@ -41,8 +41,8 @@
   - `Publish Zenodo Deposition` still requires `publish-zenodo-doi`.
 - [x] Task: Record the relation between GitHub archive state, Hugging Face
   rolling dataset, and Zenodo versioned snapshots.
-  - Recorded in `config/courts_nz_archive_publication_cadence.json` and
-    `docs/courts-nz-dataset-publication.md`.
+  - Recorded in `config/corpus_social_media_government_nz_publication_cadence.json` and
+    `docs/corpus-social-media-government-nz-publication.md`.
 
 ## Phase 4: Closeout
 - [x] Task: Update multi-source archive plan and project docs with final cadence.
