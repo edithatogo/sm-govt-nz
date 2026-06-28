@@ -55,8 +55,10 @@ jobs:
         run: |
           args=(
             --source-type website_page
-            --dry-run ${{ inputs.dry_run || 'false' }}
           )
+          if [ "${{ inputs.dry_run || 'false' }}" = "true" ]; then
+            args+=(--dry-run)
+          fi
           if [ -n "${{ inputs.agency_id }}" ]; then
             args+=(--agency-id "${{ inputs.agency_id }}")
           fi
