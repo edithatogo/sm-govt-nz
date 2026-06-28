@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-28T20:47:55+00:00",
+  "generated_at": "2026-06-28T20:48:25+00:00",
   "inputs": {
-    "agency_id": "external-reporting-board",
+    "agency_id": "ministry-of-transport",
     "fetch_timeout": 30,
     "include_blocked": false,
     "limit_sources": 0,
@@ -17,15 +17,15 @@
   },
   "results": [
     {
-      "agency_id": "external-reporting-board",
+      "agency_id": "ministry-of-transport",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "rss",
-      "reason": "feed parsed but returned no entries",
-      "source_id": "external-reporting-board-rss-c6f9d36d",
+      "reason": "captured rss entry rss:3665353cb8e2a1599d8b643e",
+      "source_id": "ministry-of-transport-rss-b8f2f4e2",
       "source_type": "rss_feed",
-      "status": "no_records",
-      "url": "https://www.xrb.govt.nz/home/changes/"
+      "status": "captured",
+      "url": "https://www.transport.govt.nz/home/changes"
     }
   ],
   "summary": {
@@ -35,11 +35,11 @@
     "selected_sources": 1,
     "status_by_platform": {
       "rss": {
-        "no_records": 1
+        "captured": 1
       }
     },
     "status_counts": {
-      "no_records": 1
+      "captured": 1
     }
   }
 }
