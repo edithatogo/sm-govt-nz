@@ -29,6 +29,105 @@
       "source_platform": "www.aroturuki.govt.nz",
       "status": "healthy",
       "url": "https://www.aroturuki.govt.nz"
+    },
+    {
+      "archive_only_guarantee": "Archive capture must not submit forms, subscribe addresses, or alter outbound syndication cursors.",
+      "auth": "none",
+      "dedupe_keys": [
+        "canonical_url",
+        "content_hash"
+      ],
+      "failure_modes": [
+        "network_error",
+        "html_changed",
+        "unavailable"
+      ],
+      "id": "independent-childrens-monitor-news-updates",
+      "display_name": "Independent Children's Monitor News and Updates",
+      "source_kind": "website_page",
+      "source_platform": "www.aroturuki.govt.nz",
+      "access_method": "bounded_public_html",
+      "account": "www.aroturuki.govt.nz",
+      "url": "https://www.aroturuki.govt.nz/about-us/news-and-updates",
+      "seed_pages": [
+        "https://www.aroturuki.govt.nz/about-us/news-and-updates"
+      ],
+      "status": "healthy",
+      "rate_limit_policy": "Fetch bounded public index and linked public update pages only.",
+      "raw_path_template": "historical_archive_raw/website/{yyyy_mm}/{record_id}.json",
+      "normalized_path_template": "historical_archive_normalized/website/{yyyy_mm}.jsonl"
+    },
+    {
+      "archive_only_guarantee": "Archive capture must not submit forms, subscribe addresses, or alter outbound syndication cursors.",
+      "auth": "none",
+      "dedupe_keys": [
+        "canonical_url",
+        "content_hash"
+      ],
+      "failure_modes": [
+        "network_error",
+        "html_changed",
+        "unavailable"
+      ],
+      "id": "independent-childrens-monitor-linkedin",
+      "display_name": "Independent Children's Monitor LinkedIn",
+      "source_kind": "social_profile",
+      "source_platform": "linkedin",
+      "access_method": "manual_seed_or_approved_api",
+      "account": "independent-childrens-monitor",
+      "url": "https://www.linkedin.com/company/independent-childrens-monitor",
+      "status": "manual_seed",
+      "rate_limit_policy": "Use approved API, account-owner export, or curated manual seed only.",
+      "raw_path_template": "historical_archive_raw/linkedin/{yyyy_mm}/{record_id}.json",
+      "normalized_path_template": "historical_archive_normalized/linkedin/{yyyy_mm}.jsonl"
+    },
+    {
+      "archive_only_guarantee": "Archive capture must not submit forms, subscribe addresses, or alter outbound syndication cursors.",
+      "auth": "none",
+      "dedupe_keys": [
+        "canonical_url",
+        "content_hash"
+      ],
+      "failure_modes": [
+        "network_error",
+        "html_changed",
+        "unavailable"
+      ],
+      "id": "independent-childrens-monitor-newsletter-subscribe",
+      "display_name": "Independent Children's Monitor Newsletter Subscription",
+      "source_kind": "newsletter",
+      "source_platform": "createsend",
+      "access_method": "email_ingress_subscription_required",
+      "account": "Aroturuki Tamariki newsletter",
+      "url": "https://confirmsubscription.com/h/y/8347D949BFAB5740",
+      "status": "candidate",
+      "rate_limit_policy": "Do not submit subscription forms automatically; use configured archive inbox/ingress only.",
+      "raw_path_template": "historical_archive_raw/newsletter/{yyyy_mm}/{record_id}.json",
+      "normalized_path_template": "historical_archive_normalized/newsletter/{yyyy_mm}.jsonl"
+    },
+    {
+      "archive_only_guarantee": "Archive capture must not submit forms, subscribe addresses, or alter outbound syndication cursors.",
+      "auth": "none",
+      "dedupe_keys": [
+        "canonical_url",
+        "content_hash"
+      ],
+      "failure_modes": [
+        "network_error",
+        "html_changed",
+        "unavailable"
+      ],
+      "id": "independent-childrens-monitor-newsletter-archive",
+      "display_name": "Independent Children's Monitor Newsletter Archive",
+      "source_kind": "newsletter",
+      "source_platform": "createsend",
+      "access_method": "public_newsletter_archive",
+      "account": "Aroturuki Tamariki newsletter archive",
+      "url": "https://createsend.com/t/y-66C951A93546712D2540EF23F30FEDED",
+      "status": "candidate",
+      "rate_limit_policy": "Fetch public Campaign Monitor archive pages only.",
+      "raw_path_template": "historical_archive_raw/newsletter/{yyyy_mm}/{record_id}.json",
+      "normalized_path_template": "historical_archive_normalized/newsletter/{yyyy_mm}.jsonl"
     }
   ],
   "dataset_outputs": {
@@ -59,7 +158,7 @@
       ]
     }
   },
-  "generated_at": "2026-06-27T14:54:16.322778+00:00",
+  "generated_at": "2026-06-29T00:00:00+10:00",
   "phase_review_contract": {
     "commit_after_each_task": true,
     "future_syndication_tracks": "one_platform_account_per_track",

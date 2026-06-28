@@ -29,6 +29,14 @@ PLATFORM_HOSTS = {
     "youtube": ("youtube.com", "youtu.be"),
 }
 
+PLATFORM_SHARE_PATH_PREFIXES = {
+    "bluesky": ("/intent/",),
+    "facebook": ("/sharer/", "/share.php", "/dialog/"),
+    "linkedin": ("/sharearticle", "/sharing/"),
+    "threads": ("/intent/",),
+    "x": ("/intent/", "/share"),
+}
+
 NEWSLETTER_TERMS = ("newsletter", "subscribe", "email updates", "alerts", "mailing list")
 FEED_TERMS = ("rss", "atom", "feed.xml", "feed.json", "json feed")
 API_TERMS = ("api", "openapi", "swagger", "developer", "data service")
@@ -163,9 +171,12 @@ def policy_for(config: dict[str, Any], platform: str) -> dict[str, Any]:
 def detect_platform(url: str) -> str:
     parsed = urlparse(url)
     host = parsed.netloc.lower().removeprefix("www.")
+    path = parsed.path.lower()
     for platform, hosts in PLATFORM_HOSTS.items():
         if not any(host == candidate or host.endswith("." + candidate) for candidate in hosts):
             continue
+        if any(path.startswith(prefix) for prefix in PLATFORM_SHARE_PATH_PREFIXES.get(platform, ())):
+            return ""
         if platform == "bluesky":
             return "bluesky" if parsed.path.startswith("/profile/") else ""
         return platform
@@ -754,6 +765,15 @@ def build_manifest(report: dict[str, Any]) -> dict[str, Any]:
     )
 
 
+def should_preserve_existing_manifest_source(source: dict[str, Any]) -> bool:
+    source_type = str(source.get("source_type") or "")
+    platform = str(source.get("platform") or "")
+    url = str(source.get("url") or "")
+    if source_type == "social_profile" and platform in PLATFORM_HOSTS:
+        return detect_platform(url) == platform
+    return True
+
+
 
 def refresh_manifest_summary(manifest: dict[str, Any]) -> dict[str, Any]:
     sources = sorted(manifest.get("sources", []), key=lambda row: (row.get("agency_id", ""), row.get("platform", ""), row.get("url", "")))
@@ -779,6 +799,8 @@ def merge_existing_manifest_sources(
         for index, source in enumerate(sources)
     }
     for existing in existing_manifest.get("sources", []):
+        if not should_preserve_existing_manifest_source(existing):
+            continue
         source_id_key = str(existing.get("source_id"))
         tuple_key = (str(existing.get("agency_id")), str(existing.get("platform")), str(existing.get("url")))
         index = by_source_id.get(source_id_key)
