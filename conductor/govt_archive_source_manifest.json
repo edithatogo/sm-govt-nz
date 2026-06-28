@@ -1,6 +1,6 @@
 {
   "description": "Archive onboarding manifest generated from the government source candidate report.",
-  "generated_at": "2026-06-28T20:04:33+00:00",
+  "generated_at": "2026-06-28T20:07:35+00:00",
   "sources": [
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -13201,6 +13201,38 @@
       "source_id": "mbie-youtube-f7a16a5f",
       "source_type": "social_profile",
       "url": "https://www.youtube.com/@mbienz"
+    },
+    {
+      "access_method": "public_at_protocol",
+      "account": "metservice.com",
+      "agency_id": "metservice-nz",
+      "agency_name": "Meteorological Service of New Zealand (MetService NZ)",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "43382f64450551e1",
+      "feasibility": "high",
+      "notes": "Public AT Protocol profile and posts can be captured without live-posting side effects.",
+      "origin": "registry.social_profiles",
+      "platform": "bluesky",
+      "source_id": "metservice-nz-bluesky-aaf7f4b1",
+      "source_type": "social_profile",
+      "url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.metservice.com",
+      "agency_id": "metservice-nz",
+      "agency_name": "Meteorological Service of New Zealand (MetService NZ)",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "67f6deecffeddb8b",
+      "feasibility": "high",
+      "notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "origin": "registry.official_website",
+      "platform": "website_page",
+      "source_id": "metservice-nz-website_page-bf8fc51a",
+      "source_type": "website_page",
+      "url": "https://www.metservice.com"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -40152,8 +40184,8 @@
       "candidate": 1807,
       "degraded": 82,
       "manual_seed": 258,
-      "ready": 362
+      "ready": 364
     },
-    "total_sources": 2509
+    "total_sources": 2511
   }
 }
