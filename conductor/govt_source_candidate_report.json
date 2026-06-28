@@ -5806,30 +5806,6 @@
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
-      "account": "LinkedIn",
-      "agency_id": "aut-university",
-      "agency_name": "AUT University (Te W\u0101nanga Aronui o T\u0101maki Makau Rau)",
-      "agency_type": "University",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "b26fc4367206aae5",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.aut.ac.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/edu/school?id=15502"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
       "account": "Auckland University of Technology",
       "account_classification": "official",
       "agency_id": "aut-university",
@@ -34474,6 +34450,35 @@
         "unverified_search_seed"
       ],
       "url": "https://www.herengahenu.nz/subscribe"
+    },
+    {
+      "access_method": "public_at_protocol",
+      "account": "herengaanuku.govt.nz",
+      "account_classification": "official",
+      "agency_id": "herenge-a-nuku",
+      "agency_name": "Herenga \u0101 Nuku Aotearoa (Outdoor Access Commission)",
+      "agency_type": "Crown Agent",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "77b1247840c68d26",
+      "confidence_score": 0.85,
+      "discovered_at": "2026-06-29",
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://www.herengahenu.nz",
+      "origin": "registry.social_profiles",
+      "platform": "bluesky",
+      "policy_notes": "Public AT Protocol profile and posts can be captured without live-posting side effects.",
+      "portfolio": "Conservation",
+      "source_type": "social_profile",
+      "status": "active",
+      "syndication_classification": "unknown",
+      "trust_signals": [
+        "registry_known",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://bsky.app/profile/herengaanuku.govt.nz"
     },
     {
       "access_method": "bounded_public_html",
@@ -121296,7 +121301,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-06-28T14:29:43+00:00",
+  "generated_at": "2026-06-28T15:06:52+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 25,
@@ -133975,9 +133980,8 @@
     },
     {
       "agency_id": "aut-university",
-      "alternates": 0,
-      "links": 187,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.aut.ac.nz/"
     },
     {
@@ -134077,20 +134081,20 @@
     }
   ],
   "summary": {
-    "agencies_without_social_profiles": 34,
+    "agencies_without_social_profiles": 33,
     "agency_count": 252,
     "candidate_count": 4487,
     "feasibility_counts": {
-      "high": 3961,
-      "low": 185,
+      "high": 3962,
+      "low": 184,
       "medium": 341
     },
-    "known_registry_social_profiles": 479,
+    "known_registry_social_profiles": 480,
     "platform_counts": {
-      "bluesky": 4,
+      "bluesky": 5,
       "facebook": 186,
       "instagram": 83,
-      "linkedin": 135,
+      "linkedin": 134,
       "newsletter": 8,
       "rss": 3710,
       "website_page": 247,
