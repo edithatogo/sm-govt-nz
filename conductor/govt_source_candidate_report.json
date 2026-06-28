@@ -3879,7 +3879,7 @@
       "archive_status": "ready",
       "auth": "none",
       "candidate_id": "85747df0077a2979",
-      "confidence_score": 0.45,
+      "confidence_score": 0.5,
       "domain_trust": "unknown",
       "feasibility": "high",
       "link_title": "Updates to Food Assurance Services page",
@@ -3892,7 +3892,8 @@
       "source_type": "rss_feed",
       "status": "discovered",
       "trust_signals": [
-        "archive_friendly_platform"
+        "archive_friendly_platform",
+        "official_term:service"
       ],
       "url": "https://www.asurequality.com/home/changes"
     },
@@ -4192,6 +4193,7 @@
       "status": "needs_probe",
       "trust_signals": [
         "archive_friendly_platform",
+        "official_term:public",
         "unverified_search_seed"
       ],
       "url": "https://www.asurequality.com/publications"
@@ -12580,6 +12582,680 @@
         "official_term:nz"
       ],
       "url": "https://www.ccc.govt.nz"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "594ecab1d493b57b",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "link_text": "Newsletters",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://my.christchurchcitylibraries.com/newsletters/"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "9143a4e9c579ff70",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_title": "Christchurch City Libraries Ng\u0101 Kete W\u0101nanga o \u014ctautahi \u00bb Comments Feed",
+      "mime_type": "application/rss+xml",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/comments/feed/"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "3039bdd0f07301aa",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_title": "Christchurch City Libraries Ng\u0101 Kete W\u0101nanga o \u014ctautahi \u00bb Feed",
+      "mime_type": "application/rss+xml",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/feed/"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "429748fce472bf23",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_title": "Christchurch City Libraries Ng\u0101 Kete W\u0101nanga o \u014ctautahi \u00bb Homepage Comments Feed",
+      "mime_type": "application/rss+xml",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/homepage-2/feed/"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "76354854d04ad702",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_title": "oEmbed (JSON)",
+      "mime_type": "application/json+oembed",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmy.christchurchcitylibraries.com%2F"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "a5cf19c7c12ced9c",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_title": "oEmbed (XML)",
+      "mime_type": "text/xml+oembed",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmy.christchurchcitylibraries.com%2F&format=xml"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "d06d962e2da520e4",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_title": "JSON",
+      "mime_type": "application/json",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/wp-json/wp/v2/pages/9562050"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "e704e30b27b66005",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/.well-known/webfinger"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "0307437b7ab9c837",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/api"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "f4abe85dd31e95af",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/atom.xml"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "37428999e9ef3940",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/feed"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "2e75802c5ef2c40c",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/feed.json"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "0fde17726c8ff790",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/media"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "e618b5e330cc621c",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/media-releases"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "5c1183f09f541e34",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/news"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "fcb5366f0d381d11",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/news-and-events"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "cedaa402eb3373cf",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/newsletter"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "4817b55ce4d40841",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/openapi.json"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "a6a2239daf25dda4",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "official_term:public",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/publications"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "f08fae343b5ab631",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/rss"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "797fb125946281ac",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/rss.xml"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "389881a9724adf04",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "unverified_search_seed"
+      ],
+      "url": "https://my.christchurchcitylibraries.com/subscribe"
+    },
+    {
+      "access_method": "public_at_protocol",
+      "account": "christchurchlib.bsky.social",
+      "account_classification": "official",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "839911d3595b0654",
+      "confidence_score": 0.8,
+      "discovered_at": "2026-06",
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "registry.social_profiles",
+      "platform": "bluesky",
+      "policy_notes": "Public AT Protocol profile and posts can be captured without live-posting side effects.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "active",
+      "syndication_classification": "unknown",
+      "trust_signals": [
+        "registry_known",
+        "archive_friendly_platform"
+      ],
+      "url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "b370161351446c63",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://www.facebook.com/ChristchurchCityLibraries"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "f4afe74b0798dab0",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://www.instagram.com/christchurchlib/"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "1c87a841c1957945",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://www.youtube.com/channel/UCphBIrA4PHjE6GrefVPKKZQ"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://my.christchurchcitylibraries.com",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "665a791c9184c0c0",
+      "confidence_score": 0.8,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://my.christchurchcitylibraries.com",
+      "origin": "registry.official_website",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "active",
+      "trust_signals": [
+        "registry_known",
+        "archive_friendly_platform"
+      ],
+      "url": "https://my.christchurchcitylibraries.com"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -28203,58 +28879,6 @@
         "official_term:nz"
       ],
       "url": "https://www.fndc.govt.nz"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.fma.govt.nz",
-      "agency_id": "financial-markets-authority",
-      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
-      "agency_type": "Independent Crown Entity",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "8a5ea39e62fcbcba",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Warnings & alerts",
-      "official_website": "https://www.fma.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Commerce and Consumer Affairs",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.fma.govt.nz",
-      "agency_id": "financial-markets-authority",
-      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
-      "agency_type": "Independent Crown Entity",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "ab1b487cc872cb5b",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Subscribe to FMA Update",
-      "official_website": "https://www.fma.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Commerce and Consumer Affairs",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
     },
     {
       "access_method": "public_rss",
@@ -101451,7 +102075,7 @@
       "status": "needs_probe",
       "trust_signals": [
         "archive_friendly_platform",
-        "official_term:council",
+        "official_term:public",
         "unverified_search_seed"
       ],
       "url": "https://www.southtaranaki.com/publications"
@@ -114432,6 +115056,7 @@
       "status": "needs_probe",
       "trust_signals": [
         "archive_friendly_platform",
+        "official_term:public",
         "unverified_search_seed"
       ],
       "url": "https://www.wananga.com/publications"
@@ -124223,7 +124848,7 @@
       "status": "needs_probe",
       "trust_signals": [
         "archive_friendly_platform",
-        "official_term:council",
+        "official_term:public",
         "unverified_search_seed"
       ],
       "url": "https://www.upperhuttcity.com/publications"
@@ -130358,6 +130983,467 @@
         "official_term:nz"
       ],
       "url": "https://www.wellington.govt.nz"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "58af683658e6ed69",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/.well-known/webfinger"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "7bbe9d6caa6ae4a6",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/api"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "27769a2574387a09",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/atom.xml"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "0f5b12ecad5a48e3",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/feed"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "9ead139eb16d55f3",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/feed.json"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "07f5efeac85e53af",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/media"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "b6ca04c315ddfc58",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/media-releases"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "710ed75c2d542fcc",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/news"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "f74d89a54fcc8db2",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/news-and-events"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "79a35cff26663211",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/newsletter"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "791e6acb9ebf298a",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/openapi.json"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "92c88396f9d28486",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/publications"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "29f00a28f88626ae",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/rss"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "c513d8c14e9434e7",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/rss.xml"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "bff8a451ca6503bd",
+      "confidence_score": 0.45,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "configured_common_path",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Local Government",
+      "source_type": "search_seed",
+      "status": "needs_probe",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz",
+        "unverified_search_seed"
+      ],
+      "url": "https://www.wcl.govt.nz/subscribe"
+    },
+    {
+      "access_method": "public_at_protocol",
+      "account": "wcllibrary.bsky.social",
+      "account_classification": "official",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "de3a8396d0dc4b75",
+      "confidence_score": 0.85,
+      "discovered_at": "2026-06",
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "registry.social_profiles",
+      "platform": "bluesky",
+      "policy_notes": "Public AT Protocol profile and posts can be captured without live-posting side effects.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "active",
+      "syndication_classification": "unknown",
+      "trust_signals": [
+        "registry_known",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://bsky.app/profile/wcllibrary.bsky.social"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "2a6cebce528ebf9f",
+      "confidence_score": 0.95,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "registry.official_website",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "active",
+      "trust_signals": [
+        "registry_known",
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.wcl.govt.nz"
     },
     {
       "access_method": "public_rss",
@@ -137489,7 +138575,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-06-28T21:00:56+00:00",
+  "generated_at": "2026-06-28T21:14:25+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -138694,6 +139780,56 @@
         {
           "platform": "microformat",
           "query": "Christchurch City Council (Te Kaunihera o \u014ctautahi) ccc.govt.nz \"h-feed\" OR \"h-entry\""
+        }
+      ]
+    },
+    {
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "queries": [
+        {
+          "platform": "facebook",
+          "query": "site:facebook.com Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com"
+        },
+        {
+          "platform": "instagram",
+          "query": "site:instagram.com Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com"
+        },
+        {
+          "platform": "linkedin",
+          "query": "site:linkedin.com/company OR site:linkedin.com/school Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com"
+        },
+        {
+          "platform": "youtube",
+          "query": "site:youtube.com/@ OR site:youtube.com/channel Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com"
+        },
+        {
+          "platform": "x",
+          "query": "site:x.com OR site:twitter.com Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com"
+        },
+        {
+          "platform": "bluesky",
+          "query": "site:bsky.app/profile Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com"
+        },
+        {
+          "platform": "threads",
+          "query": "site:threads.net/@ Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com"
+        },
+        {
+          "platform": "activitypub",
+          "query": "site:mastodon.nz OR site:mastodon.social OR site:mas.to Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com"
+        },
+        {
+          "platform": "json_feed",
+          "query": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com \"feed.json\" OR \"JSON Feed\""
+        },
+        {
+          "platform": "api",
+          "query": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com \"openapi\" OR \"api\""
+        },
+        {
+          "platform": "microformat",
+          "query": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi) my.christchurchcitylibraries.com \"h-feed\" OR \"h-entry\""
         }
       ]
     },
@@ -149548,6 +150684,56 @@
       ]
     },
     {
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "queries": [
+        {
+          "platform": "facebook",
+          "query": "site:facebook.com Wellington City Libraries wcl.govt.nz"
+        },
+        {
+          "platform": "instagram",
+          "query": "site:instagram.com Wellington City Libraries wcl.govt.nz"
+        },
+        {
+          "platform": "linkedin",
+          "query": "site:linkedin.com/company OR site:linkedin.com/school Wellington City Libraries wcl.govt.nz"
+        },
+        {
+          "platform": "youtube",
+          "query": "site:youtube.com/@ OR site:youtube.com/channel Wellington City Libraries wcl.govt.nz"
+        },
+        {
+          "platform": "x",
+          "query": "site:x.com OR site:twitter.com Wellington City Libraries wcl.govt.nz"
+        },
+        {
+          "platform": "bluesky",
+          "query": "site:bsky.app/profile Wellington City Libraries wcl.govt.nz"
+        },
+        {
+          "platform": "threads",
+          "query": "site:threads.net/@ Wellington City Libraries wcl.govt.nz"
+        },
+        {
+          "platform": "activitypub",
+          "query": "site:mastodon.nz OR site:mastodon.social OR site:mas.to Wellington City Libraries wcl.govt.nz"
+        },
+        {
+          "platform": "json_feed",
+          "query": "Wellington City Libraries wcl.govt.nz \"feed.json\" OR \"JSON Feed\""
+        },
+        {
+          "platform": "api",
+          "query": "Wellington City Libraries wcl.govt.nz \"openapi\" OR \"api\""
+        },
+        {
+          "platform": "microformat",
+          "query": "Wellington City Libraries wcl.govt.nz \"h-feed\" OR \"h-entry\""
+        }
+      ]
+    },
+    {
       "agency_id": "weltec",
       "agency_name": "Wellington Institute of Technology (WelTec)",
       "queries": [
@@ -150312,6 +151498,13 @@
       "url": "https://www.ccc.govt.nz/"
     },
     {
+      "agency_id": "christchurch-city-libraries",
+      "alternates": 6,
+      "links": 322,
+      "status": "ok",
+      "url": "https://my.christchurchcitylibraries.com/"
+    },
+    {
       "agency_id": "city-rail-link",
       "alternates": 0,
       "links": 116,
@@ -150500,9 +151693,8 @@
     },
     {
       "agency_id": "financial-markets-authority",
-      "alternates": 0,
-      "links": 232,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.fma.govt.nz/"
     },
     {
@@ -151610,7 +152802,7 @@
     {
       "agency_id": "tvnz",
       "alternates": 0,
-      "links": 162,
+      "links": 165,
       "status": "ok",
       "url": "https://www.tvnz.co.nz/"
     },
@@ -151735,6 +152927,12 @@
       "url": "https://www.wellington.govt.nz/"
     },
     {
+      "agency_id": "wellington-city-libraries",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
+      "url": "https://www.wcl.govt.nz/"
+    },
+    {
       "agency_id": "weltec",
       "alternates": 0,
       "links": 118,
@@ -151819,33 +153017,33 @@
   ],
   "summary": {
     "agencies_without_social_profiles": 33,
-    "agency_count": 253,
-    "candidate_count": 5139,
+    "agency_count": 255,
+    "candidate_count": 5181,
     "feasibility_counts": {
-      "high": 4029,
+      "high": 4069,
       "low": 319,
-      "medium": 791
+      "medium": 793
     },
-    "known_registry_social_profiles": 443,
+    "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
-      "bluesky": 6,
-      "facebook": 294,
-      "instagram": 161,
+      "bluesky": 8,
+      "facebook": 295,
+      "instagram": 162,
       "linkedin": 240,
-      "newsletter": 167,
-      "rss": 3775,
-      "website_page": 248,
+      "newsletter": 166,
+      "rss": 3811,
+      "website_page": 250,
       "x": 79,
-      "youtube": 156
+      "youtube": 157
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 167,
-      "rss_feed": 55,
-      "search_seed": 3720,
-      "social_profile": 936,
-      "website_page": 248
+      "newsletter": 166,
+      "rss_feed": 61,
+      "search_seed": 3750,
+      "social_profile": 941,
+      "website_page": 250
     }
   }
 }
