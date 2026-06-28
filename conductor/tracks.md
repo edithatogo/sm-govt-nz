@@ -155,7 +155,8 @@ Mordaunt, `edithatogo`, or other personal identities.
 - Complete: All 11 tasks implemented. Publication targets: Hugging Face, Zenodo, GitHub Artifacts, OSF. Payload commit gating active. 
  
 ## [x] Track: NZ Government Discovery - self-improving heuristic search and learning loop 
-*Link: [./tracks/govt_discovery_self_learning_20260625/](./tracks/govt_discovery_self_learning_20260625/)* 
+*Link: [./tracks/govt_discovery_self_learning_20260625/](./tracks/govt_discovery_self_learning_20260625/)*
+- Daily discovery now covers RSS/Atom, JSON Feed, WebSub, ActivityPub, APIs, microformats, and Bluesky, and opens `source-discovery` review issues when reviewable candidates appear.
 - Complete: All 13/13 tasks done. Adapter ranking, library evaluation (feedparser, httpx, trafilatura), source-type risk taxonomy, and per-source workflow patterns documented. 
  
 ## [x] Track: NZ Government Archive - quality gates, observability, and CI/CD resilience 

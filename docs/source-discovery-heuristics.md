@@ -1,83 +1,75 @@
-# Source Discovery Heuristics
+# Government Source Discovery Heuristics
 
-The source-discovery pipeline identifies candidate public communication sources
-for the New Zealand government social-media corpus. Discovery is deliberately
-conservative: candidates are surfaced for review before being treated as
-authoritative archive sources unless they come from the registry or an accepted
-per-agency config.
+The repository runs a daily `Government Source Discovery` workflow to identify
+new NZ government public-source candidates and open or update a review issue when
+something new appears.
 
-## Source classes
+## What the discovery pass looks for
 
-- `rss`: RSS and Atom feeds discovered from `link rel=alternate`, common feed
-  paths, or visible feed links.
-- `json_feed`: JSON Feed links, usually `application/feed+json` or `feed.json`.
-- `websub`: `link rel=hub` endpoints that can support realtime feed delivery.
-- `bluesky`: public AT Protocol profiles from registry records, homepage links,
-  or targeted search seeds.
-- `activitypub`: ActivityPub/Fediverse profiles, WebFinger hints, Mastodon links,
-  or `application/activity+json` alternates.
-- `api`: public API/OpenAPI/Swagger/developer links that may expose stable public
-  communications records.
-- `microformat`: pages containing or advertising microformats such as `h-feed`
-  and `h-entry`.
-- `newsletter`: subscription and email update pages that need explicit ingress
-  setup before automated archiving.
+The discovery pipeline treats these surfaces as first-class candidates:
 
-## Confidence signals
+- RSS and Atom feeds
+- JSON Feed
+- WebSub hubs
+- Bluesky public profiles and posts
+- ActivityPub and WebFinger endpoints
+- Public APIs and OpenAPI documents
+- Microformats such as `h-feed` and `h-entry`
+- Bounded public website pages linked from official source surfaces
 
-Positive signals:
+## Heuristic bias
 
-- source is already in the government registry;
-- URL is on a high-trust domain such as `.govt.nz`, `.parliament.nz`, `.mil.nz`,
-  `.cri.nz`, or `.ac.nz`;
-- account/page text contains official terms such as `ministry`, `commission`,
-  `agency`, `council`, `department`, or `authority`;
-- historical discovery-learning records mark the source as accepted.
+The discovery config prefers official NZ government and public-sector domains,
+including:
 
-Negative signals:
+- `.govt.nz`
+- `.parliament.nz`
+- `.ac.nz`
+- `.mil.nz`
+- `.cri.nz`
 
-- terms such as `fan`, `parody`, `unofficial`, `archive only`, or `not affiliated`;
-- historical discovery-learning records mark the source as rejected;
-- search-only seeds without homepage or registry evidence.
+It also boosts account text that looks like a real public body, for example:
 
-## Definite feed onboarding rules
+- `government`
+- `govt`
+- `public`
+- `board`
+- `crown`
+- `department`
+- `service`
+- `library`
+- `parliament`
+- `ministry`
+- `commission`
+- `agency`
+- `council`
+- `authority`
 
-Feeds can be moved directly into archive configs when they are discovered from
-an official government homepage as `link rel=alternate` with RSS or Atom MIME
-metadata, or when the visible link is an explicit feed endpoint such as
-`atom.xml`, `rss.xml`, `/home/changes`, `/home/rss`, `/homerss`, `/feed/`,
-`/feed/rss2`, `/feed/atom`, or `/feed/news`.
+## Negative filters
 
-Do not auto-onboard links that merely contain matching substrings. Known noisy
-patterns include `/feedback`, explanatory pages such as `what-is-rss`, WordPress
-REST/oEmbed URLs under `wp-json`, LinkedIn share URLs containing `/feed/`, and
-topic pages where `feedlot` or similar prose is part of the path.
+The discovery workflow de-prioritizes or rejects obvious false positives such as:
 
-Public API candidates must match API as a path segment or an explicit
-OpenAPI/Swagger/developer surface. Substrings inside agency names or places,
-such as `Napier` or `rapid`, are not API evidence.
+- fan accounts
+- parody accounts
+- unofficial mirrors
+- archive-only copies
+- unrelated accounts
 
-JSON Feed candidates require `application/feed+json`, an explicit
-`/feed.json`, or visible `JSON Feed` text. Generic JSON, WordPress REST, and
-oEmbed discovery links are not treated as JSON feeds.
+## Review workflow
 
-## Realtime versus scheduled capture
+The scheduled discovery job:
 
-- RSS/Atom/JSON Feed polling remains the fallback and reconciliation mechanism.
-- WebSub is preferred where a feed advertises a hub, but WebSub delivery is not
-  assumed to be complete.
-- Bluesky firehose ingestion is preferred for realtime capture, but daily
-  Bluesky reconciliation remains required for cursor gaps and bridge downtime.
-- API and microformat sources require review before automated ingestion.
+1. Runs on a daily cron.
+2. Probes a bounded set of official homepages and common source paths.
+3. Writes the full candidate report to `conductor/govt_source_candidate_report.json`.
+4. Builds or updates a GitHub issue labeled `source-discovery` and `needs-review`
+   when reviewable candidates exist.
+5. Uses the learning file at `conductor/govt_source_discovery_learning.json` to
+   record accepted or rejected examples so the heuristics can be tightened over
+   time.
 
-## Issue workflow
+## Operational rule
 
-The `Government Source Discovery` workflow runs daily and on manual dispatch.
-It writes:
-
-- `conductor/govt_source_candidate_report.json`
-- `conductor/govt_source_candidate_summary.md`
-- `conductor/govt_archive_source_manifest.json`
-
-When reviewable candidates are detected, the workflow creates or updates one
-GitHub issue labelled `source-discovery` and `needs-review`.
+False positives are acceptable if they help surface real official sources faster.
+The review issue exists to tighten precision after discovery, not to block
+collection of a promising candidate.
