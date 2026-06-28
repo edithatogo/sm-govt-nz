@@ -559,6 +559,8 @@ def write_publication_status_report(
 
 
 def _resolve_release_version(release_version: str) -> str:
+    if not isinstance(release_version, str):
+        return datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S-archive")
     normalized = (release_version or "").strip()
     if normalized:
         return normalized
