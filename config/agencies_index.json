@@ -185,6 +185,24 @@
       "workflow_pattern": "rss-only"
     },
     {
+      "agency_id": "metservice-nz",
+      "agency_name": "Meteorological Service of New Zealand (MetService NZ)",
+      "archival_cadence": "every-6h",
+      "capture_priority": "high",
+      "config_file": "metservice-nz_sources.json",
+      "contract_count": 2,
+      "platforms": [
+        "bluesky",
+        "www.metservice.com"
+      ],
+      "rss_config_file": null,
+      "source_types": [
+        "bluesky",
+        "website"
+      ],
+      "workflow_pattern": "multi-source"
+    },
+    {
       "agency_id": "ministry-of-health",
       "agency_name": "Ministry of Health (Manatū Hauora)",
       "archival_cadence": "every-6h",
@@ -398,9 +416,9 @@
   "generated_at": "2026-06-27T08:42:50.256965+00:00",
   "summary": {
     "bluesky_only": 0,
-    "multi_source": 5,
+    "multi_source": 6,
     "rss_only": 18,
-    "total_agencies": 24,
+    "total_agencies": 25,
     "website_only": 1,
     "with_rss_feeds": 19
   }
