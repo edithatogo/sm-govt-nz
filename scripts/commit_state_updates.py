@@ -17,6 +17,7 @@ def run_git(args: list[str], check: bool = True) -> GitResult:
         check=False,
         capture_output=True,
         text=True,
+        env={**os.environ, "GIT_EDITOR": "true", "GIT_SEQUENCE_EDITOR": "true"},
     )
     result = GitResult(
         returncode=completed.returncode,
