@@ -33,6 +33,10 @@ def has_staged_changes() -> bool:
     return run_git(["diff", "--cached", "--quiet"], check=False).returncode != 0
 
 
+def has_worktree_changes() -> bool:
+    return bool(run_git(["status", "--porcelain"], check=False).stdout.strip())
+
+
 def current_branch() -> str:
     ref_name = os.environ.get("GITHUB_REF_NAME")
     if ref_name:
@@ -60,6 +64,8 @@ def commit_selected_paths(message: str, paths: list[str], *, force: bool = False
 
 def push_with_rebase(branch: str, max_attempts: int = 3) -> None:
     for attempt in range(1, max_attempts + 1):
+        if has_worktree_changes():
+            run_git(["stash", "push", "--include-untracked", "--message", "commit-state-updates-autostash"], check=False)
         run_git(["fetch", "origin", branch])
         run_git(["rebase", f"origin/{branch}"])
         pushed = run_git(["push", "origin", f"HEAD:{branch}"], check=False)
