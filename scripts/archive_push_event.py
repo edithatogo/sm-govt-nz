@@ -13,11 +13,16 @@ def main() -> None:
         raise SystemExit("GITHUB_EVENT_PATH is missing or does not exist.")
 
     event = json.loads(event_path.read_text(encoding="utf-8"))
-    event_type = str(event.get("action") or event.get("event_type") or "push_event")
     payload = event.get("client_payload") or {}
     if not isinstance(payload, dict):
         raise SystemExit("repository_dispatch client_payload must be an object.")
 
+    event_type = str(
+        event.get("action")
+        or event.get("event_type")
+        or _manual_event_type_from_payload(payload)
+        or "push_event"
+    )
     platform = _platform_from_event(event_type, payload)
     now = datetime.now(timezone.utc)
     record_id = _record_id(platform, payload, now)
@@ -59,6 +64,15 @@ def _platform_from_event(event_type: str, payload: dict[str, Any]) -> str:
     if "bluesky" in event_type or "bsky" in event_type or "atproto" in event_type:
         return "bluesky"
     raise SystemExit(f"Unsupported push archive event type: {event_type}")
+
+
+def _manual_event_type_from_payload(payload: dict[str, Any]) -> str:
+    platform = str(payload.get("platform") or "").strip().lower()
+    if platform == "rss":
+        return "rss_manual_push_event"
+    if platform == "bluesky":
+        return "bluesky_manual_push_event"
+    return ""
 
 
 def _record_id(platform: str, payload: dict[str, Any], received_at: datetime) -> str:
