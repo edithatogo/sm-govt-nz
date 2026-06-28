@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-28T22:26:17+00:00",
+  "generated_at": "2026-06-28T22:47:27+00:00",
   "inputs": {
     "agency_id": "",
     "fetch_timeout": 30,
@@ -87,10 +87,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "ashburton-district-council-website_page-e266f7e9",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.ashburtondc.govt.nz"
     },
     {
@@ -109,10 +109,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 406: Not Acceptable",
+      "reason": "website record already present",
       "source_id": "auckland-council-website_page-3bc00b81",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "already_captured",
       "url": "https://www.aucklandcouncil.govt.nz"
     },
     {
@@ -120,10 +120,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "auckland-light-rail-website_page-680a0eb9",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.aucklandlightrail.co.nz"
     },
     {
@@ -142,10 +142,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+      "reason": "URL error: timed out",
       "source_id": "bay-of-plenty-regional-council-website_page-bdd5a053",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "network_error",
       "url": "https://www.boprc.govt.nz"
     },
     {
@@ -208,10 +208,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "carterton-district-council-website_page-06a4a176",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.cartertondc.govt.nz"
     },
     {
@@ -230,10 +230,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "central-otago-district-council-website_page-d2fc9f64",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.codc.govt.nz"
     },
     {
@@ -329,10 +329,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "clutha-district-council-website_page-0c106b5d",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.cluthadc.govt.nz"
     },
     {
@@ -373,10 +373,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "criminal-cases-review-commission-website_page-4176b0c1",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.ccrc.govt.nz"
     },
     {
@@ -417,10 +417,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "department-of-corrections-website_page-9d44d1ec",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.corrections.govt.nz"
     },
     {
@@ -439,10 +439,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "dpmc-website_page-198dd998",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.dpmc.govt.nz"
     },
     {
@@ -450,10 +450,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "dunedin-city-council-website_page-027b6950",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.dunedin.govt.nz"
     },
     {
@@ -483,10 +483,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "education-review-office-website_page-bd13cf94",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.ero.govt.nz"
     },
     {
@@ -560,10 +560,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "environment-southland-website_page-68683dfa",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.es.govt.nz"
     },
     {
@@ -593,10 +593,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "far-north-district-council-website_page-61244b75",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.fndc.govt.nz"
     },
     {
@@ -637,10 +637,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "gisborne-district-council-website_page-e8ccbd41",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.gdc.govt.nz"
     },
     {
@@ -659,10 +659,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "government-house-website_page-07a02cbc",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://gg.govt.nz"
     },
     {
@@ -692,10 +692,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "grey-district-council-website_page-d7fe7b33",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.greydc.govt.nz"
     },
     {
@@ -791,10 +791,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "herenge-a-nuku-website_page-d491fe3b",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.herengahenu.nz"
     },
     {
@@ -846,10 +846,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "hurunui-district-council-website_page-c535094d",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.hurunui.govt.nz"
     },
     {
@@ -857,10 +857,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "hutt-city-council-website_page-38cabab0",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.huttcity.govt.nz"
     },
     {
@@ -901,10 +901,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "integrity-sport-and-recreation-commission-website_page-8f24a3b8",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.integritysport.nz"
     },
     {
@@ -912,10 +912,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "invercargill-city-council-website_page-ddd82ee3",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.icc.govt.nz"
     },
     {
@@ -923,10 +923,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "kaikoura-district-council-website_page-ad246909",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.kaikoura.govt.nz"
     },
     {
@@ -1022,10 +1022,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "lincoln-university-website_page-8c63ff12",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.lincoln.ac.nz"
     },
     {
@@ -1044,10 +1044,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lotto.co.nz'. (_ssl.c:1016)>",
+      "reason": "captured generic website page via fallback http://www.lotto.co.nz",
       "source_id": "lotto-nz-website_page-04c8ef71",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "captured",
       "url": "https://www.lotto.co.nz"
     },
     {
@@ -1088,10 +1088,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "maori-language-commission-website_page-03a8822f",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.taurawhiri.govt.nz"
     },
     {
@@ -1110,10 +1110,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "marlborough-district-council-website_page-30d47ef3",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.marlborough.govt.nz"
     },
     {
@@ -1132,10 +1132,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "masterton-district-council-website_page-582a705b",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.mstn.govt.nz"
     },
     {
@@ -1143,10 +1143,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "website record already present",
       "source_id": "matamata-piako-district-council-website_page-deff8ca3",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "already_captured",
       "url": "https://www.mpdc.govt.nz"
     },
     {
@@ -1187,10 +1187,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "ministry-for-culture-and-heritage-website_page-533336ab",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.mch.govt.nz"
     },
     {
@@ -1198,10 +1198,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "ministry-for-ethnic-communities-website_page-5c78ee7f",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.ethniccommunities.govt.nz"
     },
     {
@@ -1363,10 +1363,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "nelson-city-council-website_page-3a2d227d",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.nelson.govt.nz"
     },
     {
@@ -1374,10 +1374,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "captured generic website page via fallback https://nema.govt.nz",
       "source_id": "nema-website_page-bc8f8294",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "captured",
       "url": "https://www.nema.govt.nz"
     },
     {
@@ -1418,10 +1418,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "northland-regional-council-website_page-d4d466ad",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.nrc.govt.nz"
     },
     {
@@ -1660,10 +1660,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "office-of-the-ombudsman-website_page-55b65658",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.ombudsman.parliament.nz"
     },
     {
@@ -1671,10 +1671,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: Not Found",
       "source_id": "office-of-treaty-settlements-website_page-4b6aaabc",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "not_found",
       "url": "https://www.govt.nz/organisations/office-of-treaty-settlements"
     },
     {
@@ -1693,10 +1693,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "opotiki-district-council-website_page-797d15a0",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.odc.govt.nz"
     },
     {
@@ -1781,10 +1781,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "parliamentary-counsel-office-website_page-83eb0c19",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.pco.govt.nz"
     },
     {
@@ -1814,10 +1814,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "porirua-city-council-website_page-dedfde72",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.pcc.govt.nz"
     },
     {
@@ -1825,10 +1825,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "predator-free-2050-website_page-fb3a8c52",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.predatorfree2050.co.nz"
     },
     {
@@ -1924,10 +1924,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "reserve-bank-of-nz-website_page-290ef55a",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.rbnz.govt.nz"
     },
     {
@@ -1946,10 +1946,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "rotorua-lakes-council-website_page-89a54ef8",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.rotorualakescouncil.nz"
     },
     {
@@ -1990,10 +1990,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "selwyn-district-council-website_page-ce27b442",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.selwyn.govt.nz"
     },
     {
@@ -2023,10 +2023,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "social-investment-agency-website_page-31be9dc8",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.socialinvestment.govt.nz"
     },
     {
@@ -2045,10 +2045,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "south-taranaki-district-council-website_page-79737606",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.southtaranaki.com"
     },
     {
@@ -2056,10 +2056,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "south-waikato-district-council-website_page-21b305c0",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.southwaikato.govt.nz"
     },
     {
@@ -2122,10 +2122,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "stratford-district-council-website_page-e9650369",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.stratford.govt.nz"
     },
     {
@@ -2155,10 +2155,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "tamaki-redevelopment-company-website_page-65181b90",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.tamakiredevelopment.co.nz"
     },
     {
@@ -2210,10 +2210,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "taupo-district-council-website_page-82c6e634",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.taupodc.govt.nz"
     },
     {
@@ -2254,10 +2254,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "te-mangai-paho-website_page-7cc811c6",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.temangai.govt.nz"
     },
     {
@@ -2353,10 +2353,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "the-treasury-website_page-dd337856",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.treasury.govt.nz"
     },
     {
@@ -2375,10 +2375,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "toi-ohomai-website_page-818df08d",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.toiohomai.ac.nz"
     },
     {
@@ -2386,10 +2386,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "tourism-nz-website_page-1c93446d",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.tourismnewzealand.com"
     },
     {
@@ -2474,10 +2474,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "university-of-otago-website_page-e953fe64",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.otago.ac.nz"
     },
     {
@@ -2551,10 +2551,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "waimate-district-council-website_page-dc32bd4e",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz"
     },
     {
@@ -2562,10 +2562,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "waipa-district-council-website_page-51dc351d",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz"
     },
     {
@@ -2650,10 +2650,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "west-coast-regional-council-website_page-4a6f2c93",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.wcrc.govt.nz"
     },
     {
@@ -2661,10 +2661,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "western-bay-of-plenty-district-council-website_page-7aafd26d",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "method_not_allowed",
       "url": "https://www.westernbay.govt.nz"
     },
     {
@@ -2774,15 +2774,23 @@
     "selected_sources": 250,
     "status_by_platform": {
       "website_page": {
-        "already_captured": 188,
-        "capture_failed": 58,
-        "captured": 4
+        "already_captured": 190,
+        "capture_blocked": 21,
+        "captured": 6,
+        "dns_failed": 11,
+        "method_not_allowed": 20,
+        "network_error": 1,
+        "not_found": 1
       }
     },
     "status_counts": {
-      "already_captured": 188,
-      "capture_failed": 58,
-      "captured": 4
+      "already_captured": 190,
+      "capture_blocked": 21,
+      "captured": 6,
+      "dns_failed": 11,
+      "method_not_allowed": 20,
+      "network_error": 1,
+      "not_found": 1
     }
   }
 }
