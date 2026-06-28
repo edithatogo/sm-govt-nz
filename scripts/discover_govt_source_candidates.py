@@ -862,8 +862,10 @@ def summarize(report: dict[str, Any], manifest: dict[str, Any]) -> str:
 def build_report(args: argparse.Namespace) -> tuple[dict[str, Any], dict[str, Any]]:
     config = load_json(args.config)
     agencies = normalize_agencies(load_json(args.registry))
-    parties = normalize_records(load_json(args.parties), "parties") if args.parties.exists() else []
-    persons = normalize_records(load_json(args.persons), "persons") if args.persons.exists() else []
+    parties_path = getattr(args, "parties", DEFAULT_PARTIES)
+    persons_path = getattr(args, "persons", DEFAULT_PERSONS)
+    parties = normalize_records(load_json(parties_path), "parties") if parties_path.exists() else []
+    persons = normalize_records(load_json(persons_path), "persons") if persons_path.exists() else []
     candidates = registry_candidates(agencies, config)
     candidates.extend(political_registry_candidates(parties, persons, config))
     probe_log: list[dict[str, Any]] = []
@@ -884,8 +886,8 @@ def build_report(args: argparse.Namespace) -> tuple[dict[str, Any], dict[str, An
         "generated_at": now_iso(),
         "inputs": {
             "registry": str(args.registry),
-            "parties": str(args.parties),
-            "persons": str(args.persons),
+            "parties": str(parties_path),
+            "persons": str(persons_path),
             "config": str(args.config),
             "probe_homepages": args.probe_homepages,
             "max_agencies": args.max_agencies,

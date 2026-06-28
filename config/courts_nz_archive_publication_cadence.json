@@ -1,0 +1,17 @@
+{
+  "hugging_face": {
+    "cadence": "weekly_scheduled_rolling_update",
+    "workflow_target": "huggingface"
+  },
+  "zenodo": {
+    "cadence": "manual_release_snapshot",
+    "requires_confirmation": "publish-zenodo-doi"
+  },
+  "guardrails": {
+    "scheduled_runs_must_not_publish_zenodo": true
+  },
+  "manual_publish_archives": {
+    "default_mode": "artifact_only"
+  },
+  "notes": "Legacy compatibility guardrail file retained for tests and older courts-nz references. Canonical project cadence is documented in corpus_social_media_government_nz_publication_cadence.json."
+}

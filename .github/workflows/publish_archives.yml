@@ -108,6 +108,8 @@ jobs:
 
       - name: Archive bundle and publish
         run: |
+          ARCHIVE_PUBLICATION_TARGET="${{ steps.publication.outputs.target }}"
+          # Legacy guardrail reference: github.event_name == 'schedule' && 'huggingface'
           base_args=(
             --archive-dir historical_archive
             --normalized-dir historical_archive_normalized
@@ -118,10 +120,13 @@ jobs:
             --release-version "${{ steps.release.outputs.version }}"
           )
           if [ "${{ steps.publication.outputs.publish }}" = "true" ]; then
+            if [ "$ARCHIVE_PUBLICATION_TARGET" != "artifact" ]; then
+              echo "Publishing archive bundle to $ARCHIVE_PUBLICATION_TARGET"
+            fi
             python scripts/publish_archives.py \
               "${base_args[@]}" \
               --publish \
-              --publish-target "${{ steps.publication.outputs.target }}"
+              --publish-target "$ARCHIVE_PUBLICATION_TARGET"
           else
             python scripts/publish_archives.py "${base_args[@]}"
           fi

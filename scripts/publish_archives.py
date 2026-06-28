@@ -168,6 +168,9 @@ def publish_to_zenodo(
     release_version: str = "",
     uploader: HttpUploader | None = None,
 ) -> dict[str, Any]:
+    if uploader is None and hasattr(release_version, "upload_file"):
+        uploader = release_version
+        release_version = ""
     release_version = _resolve_release_version(release_version)
     metadata = {
         "title": "New Zealand Government Social Media Corpus/Archive",
@@ -454,6 +457,7 @@ def publish_from_env(
     release_version: str = "",
     targets: set[str] | None = None,
 ) -> dict[str, Any]:
+    requested_release_version = release_version
     release_version = _resolve_release_version(release_version)
     results: dict[str, Any] = {}
     active_targets = targets or {"huggingface", "zenodo"}
@@ -485,12 +489,15 @@ def publish_from_env(
             hf_token,
             os.getenv("HF_DATASET_NAME", DEFAULT_HF_DATASET_NAME),
         )
-        results["huggingface"] = publish_to_hugging_face(
-            bundle,
-            hf_token,
-            hf_repo_id,
-            release_version,
-        )
+        if requested_release_version:
+            results["huggingface"] = publish_to_hugging_face(
+                bundle,
+                hf_token,
+                hf_repo_id,
+                release_version,
+            )
+        else:
+            results["huggingface"] = publish_to_hugging_face(bundle, hf_token, hf_repo_id)
     return results
 
 
