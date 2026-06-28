@@ -1,26 +1,26 @@
 # Government Source Discovery Summary
 
-Generated: 2026-06-27T17:42:11+00:00
+Generated: 2026-06-28T13:56:07+00:00
 
 ## Coverage
 
 - Agencies: 252
 - Agencies without known social profiles: 34
-- Known registry social profiles: 440
-- Candidate records: 3645
+- Known registry social profiles: 482
+- Candidate records: 4442
 - Archive manifest sources: 1700
 
 ## Candidates by Platform
 
-- bluesky: 5
-- facebook: 296
-- instagram: 163
-- linkedin: 241
-- newsletter: 165
-- rss: 2291
+- bluesky: 4
+- facebook: 176
+- instagram: 76
+- linkedin: 128
+- newsletter: 1
+- rss: 3705
 - website_page: 247
-- x: 79
-- youtube: 158
+- x: 46
+- youtube: 59
 
 ## Candidates by Archive Status
 
@@ -32,6 +32,7 @@ Generated: 2026-06-27T17:42:11+00:00
 ## Operational Notes
 
 - RSS, public website pages, and Bluesky are the highest-priority automated archive lanes.
+- Atom, JSON Feed, WebSub hubs, ActivityPub/WebFinger, public APIs, and microformats are now explicitly detected as reviewable source candidates.
 - YouTube is listed as candidate until channel handles are resolved to stable channel feeds.
 - Meta platforms should use Graph/Threads APIs or authorized exports; avoid brittle unauthenticated scraping.
 - LinkedIn and X are retained in the manifest with lower feasibility so archive work can proceed from approved exports or public archive sources.
