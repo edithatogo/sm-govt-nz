@@ -46,7 +46,7 @@ The machine-readable cadence contract is
 
 - Archive capture: `Archive Sources` runs every 6 hours and is independent of
   outbound syndication.
-- Hugging Face: the weekly scheduled `Publish Archives` run is the rolling
+- Hugging Face: the monthly scheduled `Publish Archives` run is the rolling
   dataset update lane and publishes only to Hugging Face when `HF_TOKEN` is
   configured.
 - Manual `Publish Archives`: defaults to artifact-only. External publication
@@ -69,7 +69,7 @@ manual publication.
 - Title: New Zealand Government Social Media Corpus/Archive.
 - Keywords: `corpus`, `social media`, `government`, `New Zealand`,
   `public records`, `RSS`, `Bluesky`.
-- Version policy: create a new archive version for each scheduled weekly
+- Version policy: create a new archive version for each scheduled monthly
   release. Manual reviewed releases can override `archive_release_version`; when
   omitted, the workflow uses a UTC timestamp ending in `-archive`.
 - Citation fields: use the generated `corpus_manifest.json` checksum and record

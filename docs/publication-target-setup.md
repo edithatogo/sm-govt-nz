@@ -53,7 +53,7 @@ Keywords:
 
 Versioning:
 
-Each scheduled publication uses `archive_release_version` from GitHub Actions,
+Each monthly scheduled publication uses `archive_release_version` from GitHub Actions,
 defaulting to a UTC timestamp ending in `-archive`.
 
 Zenodo communities are not configured until a specific matching community is
