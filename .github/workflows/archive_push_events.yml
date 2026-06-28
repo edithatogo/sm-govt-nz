@@ -20,6 +20,14 @@ on:
         description: "Client payload JSON for manual testing"
         required: true
         default: "{\"title\":\"manual push test\"}"
+      dry_run:
+        description: "Run push archive logic without committing generated archive files"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
 
 permissions:
   contents: write
@@ -69,6 +77,7 @@ jobs:
         run: python scripts/archive_push_event.py
 
       - name: Commit push archive state
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run != 'true' }}
         run: |
           python scripts/commit_state_updates.py \
             --message "Archive realtime push event" \

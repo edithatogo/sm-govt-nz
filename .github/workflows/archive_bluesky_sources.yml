@@ -54,15 +54,13 @@ jobs:
       - name: Archive registered Bluesky sources
         run: |
           args=(
-            --platform bluesky
-            --archive-dir historical_archive
-            --normalized-dir historical_archive_normalized
-            --raw-dir historical_archive_raw
-            --state-path conductor/archive_state.json
-            --health-report conductor/archive_source_health.json
+            --source-type bluesky
+            --raw-root historical_archive_raw
+            --normalized-root historical_archive_normalized
+            --report conductor/archive_source_health.json
           )
           if [ -n "${{ inputs.source_limit }}" ]; then
-            args+=(--limit "${{ inputs.source_limit }}")
+            args+=(--limit-sources "${{ inputs.source_limit }}")
           fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             args+=(--dry-run)
