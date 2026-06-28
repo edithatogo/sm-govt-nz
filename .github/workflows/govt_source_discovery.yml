@@ -59,6 +59,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           ISSUE_TITLE: ${{ steps.candidate_issue.outputs.title }}
         run: |
+          gh label create source-discovery \
+            --repo "${{ github.repository }}" \
+            --description "Source discovery candidates and review" \
+            --color "0e8a16" \
+            --force
+          gh label create needs-review \
+            --repo "${{ github.repository }}" \
+            --description "Needs human review" \
+            --color "fbca04" \
+            --force
           existing_issue="$(
             gh issue list \
               --repo "${{ github.repository }}" \
