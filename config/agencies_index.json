@@ -1,6 +1,38 @@
 {
   "agencies": [
     {
+      "agency_id": "animal-control-products",
+      "agency_name": "Animal Control Products (Pestoff)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "animal-control-products_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "animal-control-products_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "asurequality",
+      "agency_name": "AsureQuality (Kaitiaki Kai)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "asurequality_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "asurequality_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
       "agency_id": "beehive-nz",
       "agency_name": "Beehive NZ",
       "archival_cadence": "every-6h",
@@ -47,6 +79,22 @@
         "rss"
       ],
       "rss_config_file": "education-payroll_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "external-reporting-board",
+      "agency_name": "External Reporting Board (Te Kāwai Ārahi Pūrongo Mōwaho)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "external-reporting-board_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "external-reporting-board_rss_feeds.json",
       "source_types": [
         "rss"
       ],
@@ -153,6 +201,38 @@
       "workflow_pattern": "rss-only"
     },
     {
+      "agency_id": "ministry-of-transport",
+      "agency_name": "Ministry of Transport (Te Manatū Waka)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "ministry-of-transport_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "ministry-of-transport_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "napier-city-council",
+      "agency_name": "Napier City Council (Te Kaunihera o Ahurire)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "napier-city-council_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "napier-city-council_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
       "agency_id": "network-for-learning",
       "agency_name": "Network for Learning Limited (N4L)",
       "archival_cadence": "daily",
@@ -163,6 +243,22 @@
         "rss"
       ],
       "rss_config_file": "network-for-learning_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
+      "agency_id": "office-of-the-auditor-general",
+      "agency_name": "Office of the Controller and Auditor-General (Tumuaki o te Mana Arotake)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "office-of-the-auditor-general_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "office-of-the-auditor-general_rss_feeds.json",
       "source_types": [
         "rss"
       ],
@@ -249,6 +345,22 @@
       "workflow_pattern": "rss-only"
     },
     {
+      "agency_id": "tasman-district-council",
+      "agency_name": "Tasman District Council (Te Kaunihera o te tai o Aorere)",
+      "archival_cadence": "daily",
+      "capture_priority": "high",
+      "config_file": "tasman-district-council_sources.json",
+      "contract_count": 1,
+      "platforms": [
+        "rss"
+      ],
+      "rss_config_file": "tasman-district-council_rss_feeds.json",
+      "source_types": [
+        "rss"
+      ],
+      "workflow_pattern": "rss-only"
+    },
+    {
       "agency_id": "te-wananga-o-raukawa",
       "agency_name": "Te Wānanga o Raukawa",
       "archival_cadence": "daily",
@@ -269,9 +381,9 @@
   "summary": {
     "bluesky_only": 0,
     "multi_source": 4,
-    "rss_only": 11,
-    "total_agencies": 16,
+    "rss_only": 18,
+    "total_agencies": 23,
     "website_only": 1,
-    "with_rss_feeds": 12
+    "with_rss_feeds": 19
   }
 }

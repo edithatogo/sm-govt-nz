@@ -26,7 +26,7 @@ def review_candidates(report: dict[str, Any]) -> list[dict[str, Any]]:
     for item in report.get("candidates", []):
         if item.get("source_type") not in REVIEW_SOURCE_TYPES:
             continue
-        if item.get("origin") == "registry.social_profiles":
+        if "registry.social_profiles" in str(item.get("origin", "")):
             continue
         if item.get("archive_status") in {"blocked", "degraded"}:
             continue

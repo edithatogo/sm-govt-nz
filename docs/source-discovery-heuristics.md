@@ -40,6 +40,27 @@ Negative signals:
 - historical discovery-learning records mark the source as rejected;
 - search-only seeds without homepage or registry evidence.
 
+## Definite feed onboarding rules
+
+Feeds can be moved directly into archive configs when they are discovered from
+an official government homepage as `link rel=alternate` with RSS or Atom MIME
+metadata, or when the visible link is an explicit feed endpoint such as
+`atom.xml`, `rss.xml`, `/home/changes`, `/home/rss`, `/homerss`, `/feed/`,
+`/feed/rss2`, `/feed/atom`, or `/feed/news`.
+
+Do not auto-onboard links that merely contain matching substrings. Known noisy
+patterns include `/feedback`, explanatory pages such as `what-is-rss`, WordPress
+REST/oEmbed URLs under `wp-json`, LinkedIn share URLs containing `/feed/`, and
+topic pages where `feedlot` or similar prose is part of the path.
+
+Public API candidates must match API as a path segment or an explicit
+OpenAPI/Swagger/developer surface. Substrings inside agency names or places,
+such as `Napier` or `rapid`, are not API evidence.
+
+JSON Feed candidates require `application/feed+json`, an explicit
+`/feed.json`, or visible `JSON Feed` text. Generic JSON, WordPress REST, and
+oEmbed discovery links are not treated as JSON feeds.
+
 ## Realtime versus scheduled capture
 
 - RSS/Atom/JSON Feed polling remains the fallback and reconciliation mechanism.

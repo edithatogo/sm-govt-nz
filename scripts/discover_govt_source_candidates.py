@@ -28,7 +28,7 @@ PLATFORM_HOSTS = {
 }
 
 NEWSLETTER_TERMS = ("newsletter", "subscribe", "email updates", "alerts", "mailing list")
-FEED_TERMS = ("rss", "atom", "feed.xml", "/feed", "feed.json", "json feed")
+FEED_TERMS = ("rss", "atom", "feed.xml", "feed.json", "json feed")
 API_TERMS = ("api", "openapi", "swagger", "developer", "data service")
 MICROFORMAT_TERMS = ("h-feed", "h-entry", "microformat", "microformats")
 ACTIVITYPUB_TERMS = ("activitypub", "mastodon", "fediverse", "webfinger")
@@ -169,6 +169,51 @@ def bluesky_handle_from_url(url: str) -> str:
     if len(parts) >= 2 and parts[0] == "profile":
         return parts[1]
     return ""
+
+
+def url_path_segments(url: str) -> list[str]:
+    return [part.lower() for part in urlparse(url).path.split("/") if part]
+
+
+def looks_like_feed_url(url: str, text: str = "", mime_type: str = "") -> bool:
+    lower_url = url.lower()
+    lower_text = text.lower()
+    lower_mime = mime_type.lower()
+    if "feedback" in lower_url or "what-is-rss" in lower_url:
+        return False
+    if any(token in lower_mime for token in ("rss", "atom", "xml")):
+        return True
+    path = urlparse(url).path.lower().rstrip("/")
+    segments = url_path_segments(url)
+    if path.endswith(("atom.xml", "rss.xml", "feed.xml", "rss-news.xml")):
+        return True
+    if segments and segments[-1] in {"feed", "rss", "rss2", "atom", "homerss"}:
+        return True
+    if len(segments) >= 2 and segments[-2:] in (["feed", "news"], ["feed", "rss2"], ["feed", "atom"]):
+        return True
+    if path.endswith(("/home/changes", "/home/rss")):
+        return True
+    return any(term in lower_text for term in FEED_TERMS)
+
+
+def looks_like_json_feed_url(url: str, text: str = "", mime_type: str = "") -> bool:
+    lower_url = url.lower()
+    lower_text = text.lower()
+    lower_mime = mime_type.lower()
+    if "wp-json" in lower_url or "oembed" in lower_url:
+        return False
+    return "feed+json" in lower_mime or lower_url.rstrip("/").endswith("/feed.json") or "json feed" in lower_text
+
+
+def looks_like_api_url(url: str, text: str = "") -> bool:
+    lower_text = text.lower()
+    segments = set(url_path_segments(url))
+    path = urlparse(url).path.lower()
+    if segments.intersection({"api", "apis", "developer", "developers", "swagger"}):
+        return True
+    if path.endswith(("/openapi.json", "/swagger.json", "/api.json")):
+        return True
+    return any(term in lower_text for term in (" openapi ", " swagger ", " api ", "developer api", "data service"))
 
 def candidate(
     agency: dict[str, Any],
@@ -410,7 +455,7 @@ def probe_url(agency: dict[str, Any], url: str, config: dict[str, Any]) -> tuple
     for alternate in parser.alternates:
         href = urljoin(url, alternate["href"])
         mime_type = alternate.get("type", "").lower()
-        if "feed+json" in mime_type or ("json" in mime_type and "activity+json" not in mime_type):
+        if looks_like_json_feed_url(href, alternate.get("title", ""), mime_type):
             source_type = "json_feed"
             platform = "json_feed"
         elif "activity+json" in mime_type:
@@ -480,8 +525,8 @@ def probe_url(agency: dict[str, Any], url: str, config: dict[str, Any]) -> tuple
                     status="discovered",
                 )
             )
-        if any(term in lower for term in FEED_TERMS):
-            source_type = "json_feed" if "json" in lower else "rss_feed"
+        if looks_like_feed_url(href, link.get("text", "")) or looks_like_json_feed_url(href, link.get("text", "")):
+            source_type = "json_feed" if looks_like_json_feed_url(href, link.get("text", "")) else "rss_feed"
             platform = "json_feed" if source_type == "json_feed" else "rss"
             results.append(
                 candidate(
@@ -510,7 +555,7 @@ def probe_url(agency: dict[str, Any], url: str, config: dict[str, Any]) -> tuple
                     status="discovered",
                 )
             )
-        if any(term in lower for term in API_TERMS):
+        if looks_like_api_url(href, f" {link.get('text', '')} "):
             results.append(
                 candidate(
                     agency,

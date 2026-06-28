@@ -1,0 +1,62 @@
+{
+    "agency_id":  "office-of-the-auditor-general",
+    "feed_count":  4,
+    "feeds":  [
+                  {
+                      "discovery_method":  "manifest.source_discovery.definite_feed",
+                      "feed_type":  "application/rss+xml",
+                      "feed_url":  "https://ao.parliament.nz/about-us/news/most-recent-announcements/atom.xml",
+                      "seed_page":  "https://ao.parliament.nz/about-us/news/most-recent-announcements/atom.xml",
+                      "title":  "Atom Feed"
+                  },
+                  {
+                      "discovery_method":  "manifest.source_discovery.definite_feed",
+                      "feed_type":  "application/rss+xml",
+                      "feed_url":  "https://ao.parliament.nz/atom.xml",
+                      "seed_page":  "https://ao.parliament.nz/atom.xml",
+                      "title":  "Atom Feed"
+                  },
+                  {
+                      "discovery_method":  "manifest.source_discovery.definite_feed",
+                      "feed_type":  "application/rss+xml",
+                      "feed_url":  "https://ao.parliament.nz/blog/latest-posts/atom.xml",
+                      "seed_page":  "https://ao.parliament.nz/blog/latest-posts/atom.xml",
+                      "title":  "Atom Feed"
+                  },
+                  {
+                      "discovery_method":  "manifest.source_discovery.definite_feed",
+                      "feed_type":  "application/rss+xml",
+                      "feed_url":  "https://ao.parliament.nz/resources/latest/atom.xml",
+                      "seed_page":  "https://ao.parliament.nz/resources/latest/atom.xml",
+                      "title":  "Atom Feed"
+                  }
+              ],
+    "generated_at":  "2026-06-28T14:24:39Z",
+    "seed_page_count":  4,
+    "seed_pages":  [
+                       {
+                           "error":  "",
+                           "feed_count":  1,
+                           "seed_page":  "https://ao.parliament.nz/about-us/news/most-recent-announcements/atom.xml",
+                           "status":  "healthy"
+                       },
+                       {
+                           "error":  "",
+                           "feed_count":  1,
+                           "seed_page":  "https://ao.parliament.nz/atom.xml",
+                           "status":  "healthy"
+                       },
+                       {
+                           "error":  "",
+                           "feed_count":  1,
+                           "seed_page":  "https://ao.parliament.nz/blog/latest-posts/atom.xml",
+                           "status":  "healthy"
+                       },
+                       {
+                           "error":  "",
+                           "feed_count":  1,
+                           "seed_page":  "https://ao.parliament.nz/resources/latest/atom.xml",
+                           "status":  "healthy"
+                       }
+                   ]
+}
