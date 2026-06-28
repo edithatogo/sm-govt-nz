@@ -48,7 +48,7 @@ Before enabling the scheduled syndicator for the MVP:
 8.  Monitor scheduled runs and confirm `conductor/state.json`, `conductor/bluesky_backlog_state.json`, `conductor/archive_mirror_state.json`, and `conductor/archive_mirror_coverage.json` advance without duplicating posts.
 
 ### 2. GitHub Pages & External Archiving
-*   **Trigger:** Runs on merges to `main` or scheduled weekly sweeps.
+*   **Trigger:** Runs on merges to `main` or scheduled monthly sweeps.
 *   **Action:** Deploys the static root files to the public GitHub Pages site and packages/publishes historical datasets to external research repositories (Zenodo and Hugging Face).
 
 ### 3. Courts of New Zealand Multi-Source Archive Capture
