@@ -119,6 +119,24 @@
       "workflow_pattern": "multi-source"
     },
     {
+      "agency_id": "herenge-a-nuku",
+      "agency_name": "Herenga Ā Nuku Aotearoa (Outdoor Access Commission)",
+      "archival_cadence": "every-6h",
+      "capture_priority": "high",
+      "config_file": "herenge-a-nuku_sources.json",
+      "contract_count": 2,
+      "platforms": [
+        "bluesky",
+        "www.herengahenu.nz"
+      ],
+      "rss_config_file": null,
+      "source_types": [
+        "bluesky",
+        "website"
+      ],
+      "workflow_pattern": "multi-source"
+    },
+    {
       "agency_id": "independent-childrens-monitor",
       "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
       "archival_cadence": "weekly",
@@ -380,9 +398,9 @@
   "generated_at": "2026-06-27T08:42:50.256965+00:00",
   "summary": {
     "bluesky_only": 0,
-    "multi_source": 4,
+    "multi_source": 5,
     "rss_only": 18,
-    "total_agencies": 23,
+    "total_agencies": 24,
     "website_only": 1,
     "with_rss_feeds": 19
   }
