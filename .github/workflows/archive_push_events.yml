@@ -75,6 +75,8 @@ jobs:
 
       - name: Archive push event
         run: python scripts/archive_push_event.py
+        env:
+          PUSH_PLATFORM: ${{ inputs.platform || '' }}
 
       - name: Commit push archive state
         if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run != 'true' }}

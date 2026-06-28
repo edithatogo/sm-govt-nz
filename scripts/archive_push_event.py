@@ -56,7 +56,7 @@ def main() -> None:
 
 
 def _platform_from_event(event_type: str, payload: dict[str, Any]) -> str:
-    platform = str(payload.get("platform") or "").strip().lower()
+    platform = str(payload.get("platform") or os.getenv("PUSH_PLATFORM") or "").strip().lower()
     if platform in {"rss", "bluesky"}:
         return platform
     if "rss" in event_type or "websub" in event_type:
