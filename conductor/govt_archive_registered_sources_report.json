@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-28T20:48:25+00:00",
+  "generated_at": "2026-06-28T20:49:05+00:00",
   "inputs": {
-    "agency_id": "ministry-of-transport",
+    "agency_id": "napier-city-council",
     "fetch_timeout": 30,
     "include_blocked": false,
     "limit_sources": 0,
@@ -17,29 +17,40 @@
   },
   "results": [
     {
-      "agency_id": "ministry-of-transport",
+      "agency_id": "napier-city-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "rss",
-      "reason": "captured rss entry rss:3665353cb8e2a1599d8b643e",
-      "source_id": "ministry-of-transport-rss-b8f2f4e2",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "napier-city-council-rss-5fe216f5",
       "source_type": "rss_feed",
-      "status": "captured",
-      "url": "https://www.transport.govt.nz/home/changes"
+      "status": "no_records",
+      "url": "https://www.napier.govt.nz/home/rss"
+    },
+    {
+      "agency_id": "napier-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "napier-city-council-rss-cbe56325",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.napier.govt.nz/our-council/about-this-site/what-is-rss/"
     }
   ],
   "summary": {
     "platform_counts": {
-      "rss": 1
+      "rss": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "rss": {
-        "captured": 1
+        "no_records": 2
       }
     },
     "status_counts": {
-      "captured": 1
+      "no_records": 2
     }
   }
 }
