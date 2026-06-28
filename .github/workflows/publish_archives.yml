@@ -52,6 +52,7 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   HF_DATASET_NAME: ${{ inputs.hf_dataset_name || 'corpus-social-media-government-nz' }}
   ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url || 'https://zenodo.org/api/deposit/depositions' }}
+  ZENODO_PUBLISH: ${{ secrets.ZENODO_PUBLISH || 'true' }}
   OSF_UPLOAD_URL: ${{ secrets.OSF_UPLOAD_URL || inputs.osf_upload_url }}
   HF_TOKEN: ${{ secrets.HF_TOKEN }}
   ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}

@@ -201,6 +201,7 @@ def publish_to_zenodo_deposition(
     *,
     release_version: str = "",
     api_url: str = DEFAULT_ZENODO_DEPOSIT_API_URL,
+    publish: bool = True,
     uploader: HttpUploader | None = None,
 ) -> dict[str, Any]:
     release_version = _resolve_release_version(release_version)
@@ -209,6 +210,8 @@ def publish_to_zenodo_deposition(
             "title": "New Zealand Government Social Media Corpus/Archive",
             "upload_type": "dataset",
             "version": release_version,
+            "access_right": "open",
+            "license": "cc-zero",
             "keywords": [
                 "corpus",
                 "social media",
@@ -241,6 +244,7 @@ def publish_to_zenodo_deposition(
     )
     created.raise_for_status()
     deposition = created.json()
+    deposition_id = deposition.get("id")
     bucket_url = deposition.get("links", {}).get("bucket")
     if not bucket_url:
         raise RuntimeError("Zenodo deposition response did not include an upload bucket URL.")
@@ -255,11 +259,33 @@ def publish_to_zenodo_deposition(
             )
         response.raise_for_status()
         uploaded.append(response.json() if response.content else {"filename": Path(local_path).name})
-    return {
-        "deposition_id": deposition.get("id"),
+    result = {
+        "deposition_id": deposition_id,
         "deposition_url": deposition.get("links", {}).get("html") or deposition.get("links", {}).get("self"),
         "uploaded_files": uploaded,
+        "submitted": False,
     }
+    if publish:
+        if not deposition_id:
+            raise RuntimeError("Zenodo deposition response did not include a deposition id.")
+        published = requests.post(
+            f"{api_url.rstrip('/')}/{deposition_id}/actions/publish",
+            headers={"Authorization": f"Bearer {token}"},
+            timeout=120,
+        )
+        published.raise_for_status()
+        published_deposition = published.json() if published.content else {}
+        result.update(
+            {
+                "submitted": bool(published_deposition.get("submitted", True)),
+                "state": published_deposition.get("state", "done"),
+                "record_id": published_deposition.get("record_id"),
+                "record_url": published_deposition.get("record_url"),
+                "doi": published_deposition.get("doi"),
+                "doi_url": published_deposition.get("doi_url"),
+            }
+        )
+    return result
 
 
 def publish_to_hugging_face(
@@ -363,6 +389,7 @@ def publish_from_env(
                 zenodo_token,
                 release_version=release_version,
                 api_url=os.getenv("ZENODO_DEPOSIT_API_URL", DEFAULT_ZENODO_DEPOSIT_API_URL),
+                publish=_env_flag("ZENODO_PUBLISH", default=True),
             )
     osf_token = os.getenv("OSF_TOKEN")
     osf_upload_url = os.getenv("OSF_UPLOAD_URL", DEFAULT_OSF_UPLOAD_URL)
@@ -499,6 +526,8 @@ def _publication_target_status(
     return {
         "status": "published",
         "target": result.get("repo_id")
+        or result.get("record_url")
+        or result.get("doi_url")
         or result.get("deposition_url")
         or result.get("url")
         or default_repo_id,
@@ -511,6 +540,13 @@ def write_manifest(bundle: BundleManifest, path: str | os.PathLike[str]) -> None
     Path(path).write_text(
         json.dumps(bundle.__dict__, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
+
+
+def _env_flag(name: str, *, default: bool) -> bool:
+    value = os.getenv(name)
+    if value is None or not value.strip():
+        return default
+    return value.strip().lower() not in {"0", "false", "no", "off"}
 
 
 def _load_normalized_records(paths: list[Path]) -> list[dict[str, Any]]:
@@ -569,6 +605,7 @@ def _build_corpus_manifest(
             "social-media",
             "government",
             "new-zealand",
+            "region:nz",
             "public-records",
             "rss",
             "bluesky",
@@ -771,6 +808,7 @@ def _build_dataset_card(manifest: dict[str, Any]) -> str:
         "- social-media\n"
         "- government\n"
         "- new-zealand\n"
+        "- region:nz\n"
         "- public-records\n"
         "- rss\n"
         "- bluesky\n"
