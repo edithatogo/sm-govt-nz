@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-28T20:42:47+00:00",
+  "generated_at": "2026-06-28T20:46:23+00:00",
   "inputs": {
-    "agency_id": "external-reporting-board",
+    "agency_id": "animal-control-products",
     "fetch_timeout": 30,
     "include_blocked": false,
     "limit_sources": 0,
@@ -17,29 +17,62 @@
   },
   "results": [
     {
-      "agency_id": "external-reporting-board",
+      "agency_id": "animal-control-products",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "rss",
       "reason": "feed parsed but returned no entries",
-      "source_id": "external-reporting-board-rss-c6f9d36d",
+      "source_id": "animal-control-products-rss-b68dcc37",
       "source_type": "rss_feed",
       "status": "no_records",
-      "url": "https://www.xrb.govt.nz/home/changes/"
+      "url": "https://pestoff.co.nz/feed/"
+    },
+    {
+      "agency_id": "animal-control-products",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "animal-control-products-rss-ea8b84d5",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F"
+    },
+    {
+      "agency_id": "animal-control-products",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "animal-control-products-rss-3a6a2794",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F&format=xml"
+    },
+    {
+      "agency_id": "animal-control-products",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "animal-control-products-rss-17f27f26",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://pestoff.co.nz/wp-json/wp/v2/pages/2"
     }
   ],
   "summary": {
     "platform_counts": {
-      "rss": 1
+      "rss": 4
     },
-    "selected_sources": 1,
+    "selected_sources": 4,
     "status_by_platform": {
       "rss": {
-        "no_records": 1
+        "no_records": 4
       }
     },
     "status_counts": {
-      "no_records": 1
+      "no_records": 4
     }
   }
 }
