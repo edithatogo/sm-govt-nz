@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-28T20:50:16+00:00",
+  "generated_at": "2026-06-28T21:01:17+00:00",
   "inputs": {
-    "agency_id": "tasman-district-council",
+    "agency_id": "christchurch-city-libraries",
     "fetch_timeout": 30,
     "include_blocked": false,
     "limit_sources": 0,
@@ -13,44 +13,13 @@
     "offset_sources": 0,
     "raw_root": "historical_archive_raw",
     "retry_failed_from": "",
-    "source_type": "rss"
+    "source_type": "bluesky"
   },
-  "results": [
-    {
-      "agency_id": "tasman-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "rss",
-      "reason": "feed parsed but returned no entries",
-      "source_id": "tasman-district-council-rss-ddfaf648",
-      "source_type": "rss_feed",
-      "status": "no_records",
-      "url": "https://www.tasman.govt.nz/do-it-online/feedback"
-    },
-    {
-      "agency_id": "tasman-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "rss",
-      "reason": "feed parsed but returned no entries",
-      "source_id": "tasman-district-council-rss-489b8c56",
-      "source_type": "rss_feed",
-      "status": "no_records",
-      "url": "https://www.tasman.govt.nz/homerss"
-    }
-  ],
+  "results": [],
   "summary": {
-    "platform_counts": {
-      "rss": 2
-    },
-    "selected_sources": 2,
-    "status_by_platform": {
-      "rss": {
-        "no_records": 2
-      }
-    },
-    "status_counts": {
-      "no_records": 2
-    }
+    "platform_counts": {},
+    "selected_sources": 0,
+    "status_by_platform": {},
+    "status_counts": {}
   }
 }
