@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-28T21:46:22+00:00",
+  "generated_at": "2026-06-28T22:19:31+00:00",
   "inputs": {
     "agency_id": "",
     "fetch_timeout": 30,
@@ -4690,17 +4690,6 @@
       "source_type": "social_profile",
       "status": "captured",
       "url": "https://bsky.app/profile/herengaanuku.govt.nz"
-    },
-    {
-      "agency_id": "independent-childrens-monitor",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "missing Bluesky handle",
-      "source_id": "independent-childrens-monitor-bluesky-ac5a260a",
-      "source_type": "social_profile",
-      "status": "capture_failed",
-      "url": "https://bsky.app/intent/compose?text=Home&url=https%3A%2F%2Faroturuki.govt.nz"
     },
     {
       "agency_id": "metservice-nz",
@@ -17377,19 +17366,17 @@
   ],
   "summary": {
     "platform_counts": {
-      "bluesky": 19
+      "bluesky": 18
     },
-    "selected_sources": 19,
+    "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
         "already_captured": 352,
-        "capture_failed": 1,
         "captured": 1225
       }
     },
     "status_counts": {
       "already_captured": 352,
-      "capture_failed": 1,
       "captured": 1225
     }
   }
