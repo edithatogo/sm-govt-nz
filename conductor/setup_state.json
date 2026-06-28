@@ -386,73 +386,73 @@
     {
         "id": "govt_archive_per_agency_configs_20260626",
         "name": "NZ Government Archive - per-agency source inventory and RSS feed configuration",
-        "status": "pending",
+        "status": "completed",
         "done": 18,
         "inprogress": 0,
         "pending": 0,
         "total": 18,
-        "current_task": "Phase 1: Generate agency configs",
-        "next_action": "Execute generate_agency_configs.py",
+        "current_task": "None",
+        "next_action": "None",
         "blockers": "None"
     },
     {
         "id": "govt_archive_rss_onboarding_20260626",
         "name": "NZ Government Archive - multi-agency RSS feed onboarding and capture",
-        "status": "pending",
+        "status": "completed",
         "done": 21,
         "inprogress": 0,
         "pending": 0,
         "total": 21,
-        "current_task": "Phase 1: Identify all RSS feed URLs per agency",
-        "next_action": "Compile RSS feed URLs from readiness matrix",
-        "blockers": "govt_archive_per_agency_configs_20260626"
+        "current_task": "None",
+        "next_action": "None",
+        "blockers": "None"
     },
     {
         "id": "govt_archive_bluesky_onboarding_20260626",
         "name": "NZ Government Archive - multi-agency Bluesky account onboarding and capture",
-        "status": "pending",
+        "status": "completed",
         "done": 26,
         "inprogress": 0,
         "pending": 0,
         "total": 26,
-        "current_task": "Phase 1: Identify all Bluesky accounts",
-        "next_action": "Compile Bluesky account list from registry",
-        "blockers": "govt_archive_per_agency_configs_20260626"
+        "current_task": "None",
+        "next_action": "None",
+        "blockers": "None"
     },
     {
         "id": "govt_archive_website_onboarding_20260626",
         "name": "NZ Government Archive - multi-agency website page archiving",
-        "status": "pending",
+        "status": "completed",
         "done": 22,
         "inprogress": 0,
         "pending": 0,
         "total": 22,
-        "current_task": "Phase 1: Identify seed pages per agency",
-        "next_action": "Compile homepage URLs from manifest",
-        "blockers": "govt_archive_per_agency_configs_20260626"
+        "current_task": "None",
+        "next_action": "None",
+        "blockers": "None"
     },
     {
         "id": "govt_archive_youtube_onboarding_20260626",
         "name": "NZ Government Archive - multi-agency YouTube channel archival",
-        "status": "pending",
+        "status": "completed",
         "done": 20,
         "inprogress": 0,
         "pending": 0,
         "total": 20,
-        "current_task": "Phase 1: Identify YouTube channels per agency",
-        "next_action": "Compile YouTube channel URLs from registry",
-        "blockers": "govt_archive_per_agency_configs_20260626"
+        "current_task": "None",
+        "next_action": "None",
+        "blockers": "None"
     },
     {
         "id": "govt_archive_scheduled_multisource_20260626",
         "name": "NZ Government Archive - scheduled multi-agency capture workflow",
-        "status": "pending",
+        "status": "completed",
         "done": 26,
         "inprogress": 0,
         "pending": 0,
         "total": 26,
-        "current_task": "Phase 1: Update archive_registered_sources.yml",
-        "next_action": "Add schedule trigger to workflow",
-        "blockers": "govt_archive_rss_onboarding_20260626, govt_archive_bluesky_onboarding_20260626, govt_archive_website_onboarding_20260626, govt_archive_youtube_onboarding_20260626"
+        "current_task": "None",
+        "next_action": "None",
+        "blockers": "None"
     }
 ]

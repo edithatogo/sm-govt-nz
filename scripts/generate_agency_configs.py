@@ -6,6 +6,7 @@ import sys
 import io
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -48,6 +49,16 @@ def bluesky_contract(aid, name, handle, url):
         "archive_only_guarantee": "Backfills must not advance outbound syndication state.",
         "failure_modes": ["rate_limited", "network_error", "schema_changed"]}
 
+
+def bluesky_handle_from_source_url(url: str) -> str:
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().removeprefix("www.")
+    if host != "bsky.app" and not host.endswith(".bsky.app"):
+        return ""
+    parts = [part for part in parsed.path.split("/") if part]
+    if len(parts) >= 2 and parts[0] == "profile":
+        return parts[1]
+    return ""
 
 def rss_contract(aid, name, website, seed_pages):
     acct = website.replace("https://", "").replace("http://", "").rstrip("/") if website else aid
@@ -111,7 +122,7 @@ def write_agency_config(aid, agency_sources, rss_by_agency, registry_by_id, conf
 
     for s in sources:
         if s.get("platform") == "bluesky" and s.get("archive_status") == "ready":
-            acct = s.get("account", "")
+            acct = s.get("account", "") or bluesky_handle_from_source_url(s.get("url", ""))
             if not acct:
                 continue
             contracts.append(bluesky_contract(aid, name, acct, s.get("url", "")))
@@ -186,3 +197,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
