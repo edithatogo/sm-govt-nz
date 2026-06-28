@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-28T20:19:04+00:00",
+  "generated_at": "2026-06-28T20:42:47+00:00",
   "inputs": {
-    "agency_id": "herenge-a-nuku",
+    "agency_id": "external-reporting-board",
     "fetch_timeout": 30,
     "include_blocked": false,
     "limit_sources": 0,
@@ -15,11 +15,31 @@
     "retry_failed_from": "",
     "source_type": "rss"
   },
-  "results": [],
+  "results": [
+    {
+      "agency_id": "external-reporting-board",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "external-reporting-board-rss-c6f9d36d",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.xrb.govt.nz/home/changes/"
+    }
+  ],
   "summary": {
-    "platform_counts": {},
-    "selected_sources": 0,
-    "status_by_platform": {},
-    "status_counts": {}
+    "platform_counts": {
+      "rss": 1
+    },
+    "selected_sources": 1,
+    "status_by_platform": {
+      "rss": {
+        "no_records": 1
+      }
+    },
+    "status_counts": {
+      "no_records": 1
+    }
   }
 }
