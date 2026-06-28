@@ -45,9 +45,12 @@ def configure_identity() -> None:
     run_git(["config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"])
 
 
-def commit_selected_paths(message: str, paths: list[str]) -> bool:
+def commit_selected_paths(message: str, paths: list[str], *, force: bool = False) -> bool:
     configure_identity()
-    run_git(["add", "--", *paths])
+    add_args = ["add"]
+    if force:
+        add_args.append("-f")
+    run_git([*add_args, "--", *paths])
     if not has_staged_changes():
         print("No selected state updates to commit.")
         return False
@@ -75,9 +78,10 @@ def main() -> None:
     parser.add_argument("--path", action="append", required=True)
     parser.add_argument("--branch", default="")
     parser.add_argument("--max-attempts", type=int, default=3)
+    parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
-    if not commit_selected_paths(args.message, args.path):
+    if not commit_selected_paths(args.message, args.path, force=args.force):
         return
     push_with_rebase(args.branch or current_branch(), max_attempts=args.max_attempts)
 

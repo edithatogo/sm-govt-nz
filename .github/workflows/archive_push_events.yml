@@ -83,6 +83,7 @@ jobs:
         run: |
           python scripts/commit_state_updates.py \
             --message "Archive realtime push event" \
+            --force \
             --path historical_archive_normalized \
             --path historical_archive_raw \
             --path conductor/archive_push_state.json \
