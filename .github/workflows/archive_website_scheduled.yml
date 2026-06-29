@@ -55,6 +55,7 @@ jobs:
         run: |
           args=(
             --source-type website_page
+            --fetch-timeout 10
           )
           if [ "${{ inputs.dry_run || 'false' }}" = "true" ]; then
             args+=(--dry-run)
