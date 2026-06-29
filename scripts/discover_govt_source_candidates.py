@@ -24,7 +24,7 @@ PLATFORM_HOSTS = {
     "facebook": ("facebook.com", "fb.com"),
     "instagram": ("instagram.com",),
     "linkedin": ("linkedin.com",),
-    "threads": ("threads.net",),
+    "threads": ("threads.net", "threads.com"),
     "x": ("x.com", "twitter.com"),
     "youtube": ("youtube.com", "youtu.be"),
 }

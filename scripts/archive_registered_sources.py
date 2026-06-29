@@ -1,6 +1,7 @@
 import argparse
 import hashlib
 import json
+import os
 import re
 import ssl
 import sys
@@ -10,7 +11,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import parse_qs, urlparse, urlunparse
+from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,7 +28,7 @@ DEFAULT_REPORT = Path("conductor/govt_archive_registered_sources_report.json")
 DEFAULT_RAW_ROOT = Path("historical_archive_raw")
 DEFAULT_NORMALIZED_ROOT = Path("historical_archive_normalized")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
-SUPPORTED_PLATFORMS = {"rss", "json_feed", "website_page", "bluesky", "youtube", *MANUAL_SEED_PLATFORMS}
+SUPPORTED_PLATFORMS = {"rss", "json_feed", "website_page", "bluesky", "youtube", "threads", *MANUAL_SEED_PLATFORMS}
 
 
 def now_iso() -> str:
@@ -663,6 +664,139 @@ def archive_json_feed_source(
     return results
 
 
+def threads_user_id(source: dict[str, Any]) -> str:
+    for key in ("threads_user_id", "platform_user_id", "external_id"):
+        value = str(source.get(key) or "").strip()
+        if value and value.isdigit():
+            return value
+    account = str(source.get("account") or "").strip().lstrip("@")
+    return account if account.isdigit() else ""
+
+
+def threads_handle(source: dict[str, Any]) -> str:
+    account = str(source.get("account") or "").strip().lstrip("@")
+    if account and not account.isdigit():
+        return account
+    parsed = urlparse(str(source.get("url") or ""))
+    parts = [part for part in parsed.path.split("/") if part]
+    if parts and parts[0].startswith("@"):
+        return parts[0].lstrip("@")
+    return ""
+
+
+def fetch_threads_posts(user_id: str, access_token: str, *, api_base_url: str, limit: int) -> dict[str, Any]:
+    fields = ",".join(
+        [
+            "id",
+            "media_type",
+            "media_url",
+            "permalink",
+            "text",
+            "timestamp",
+            "thumbnail_url",
+            "shortcode",
+            "username",
+        ]
+    )
+    query = urlencode(
+        {
+            "fields": fields,
+            "limit": str(limit),
+            "access_token": access_token,
+        }
+    )
+    request = Request(
+        f"{api_base_url.rstrip('/')}/{user_id}/threads?{query}",
+        headers={"Accept": "application/json"},
+    )
+    with urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def archive_threads_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    *,
+    access_token: str = "",
+    api_base_url: str = "https://graph.threads.net/v1.0",
+    limit: int = 25,
+) -> list[dict[str, Any]]:
+    if not access_token:
+        return [source_result(source, "auth_required", "THREADS_ACCESS_TOKEN is required for official Threads API capture")]
+    user_id = threads_user_id(source)
+    if not user_id:
+        handle = threads_handle(source)
+        detail = f"Threads handle @{handle} needs a Threads API user ID before official API capture" if handle else "Threads source needs a Threads API user ID before official API capture"
+        return [source_result(source, "needs_threads_user_id", detail)]
+
+    payload = fetch_threads_posts(user_id, access_token, api_base_url=api_base_url, limit=limit)
+    items = payload.get("data")
+    if not isinstance(items, list):
+        return [source_result(source, "no_records", "Threads API returned no data array")]
+
+    results = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        created_at = str(item.get("timestamp") or now_iso())
+        record_key = stable_id(f"{source.get('source_id')}|{item.get('id', '')}|{item.get('permalink', '')}")
+        raw_rel = Path("threads") / month_from_timestamp(created_at) / f"{record_key}.json"
+        raw_path = raw_root / raw_rel
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        if not raw_path.exists():
+            raw_path.write_text(
+                json.dumps(
+                    {
+                        "captured_at": now_iso(),
+                        "api_base_url": api_base_url,
+                        "source": source,
+                        "item": item,
+                    },
+                    indent=2,
+                    sort_keys=True,
+                    default=str,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        normalized = build_normalized_record(
+            record_id=f"threads:{record_key}",
+            agency_id=str(source.get("agency_id") or ""),
+            source_platform="threads",
+            source_account=str(source.get("account") or threads_handle(source) or user_id),
+            source_kind=str(source.get("source_type") or "social_profile"),
+            source_url=str(source.get("url") or f"https://www.threads.net/@{threads_handle(source)}"),
+            canonical_url=str(item.get("permalink") or source.get("url") or ""),
+            original_created_at=created_at,
+            captured_at=now_iso(),
+            content=str(item.get("text") or ""),
+            raw_path=str(raw_path),
+            extraction_method="official_threads_api",
+            media_refs=[
+                ref
+                for ref in [item.get("media_url"), item.get("thumbnail_url")]
+                if isinstance(ref, str) and ref
+            ],
+            cross_source_ids={
+                "source_id": str(source.get("source_id") or ""),
+                "threads_user_id": user_id,
+                "threads_post_id": str(item.get("id") or ""),
+            },
+        )
+        inserted = append_normalized_record(normalized_root, "threads", normalized)
+        results.append(
+            source_result(
+                source,
+                "captured" if inserted else "already_captured",
+                f"captured Threads post {normalized['record_id']}" if inserted else "Threads record already present",
+            )
+        )
+    if not results:
+        results.append(source_result(source, "no_records", "Threads API returned no posts"))
+    return results
+
+
 def run_courts_current_sources_if_selected(selected: list[dict[str, Any]], dry_run: bool) -> dict[str, Any] | None:
     courts_sources = [
         source
@@ -714,6 +848,15 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 raw_root,
                 normalized_root,
                 fetch_timeout=getattr(args, "fetch_timeout", 30),
+            )
+        if platform == "threads":
+            return archive_threads_source(
+                source,
+                raw_root,
+                normalized_root,
+                access_token=os.getenv("THREADS_ACCESS_TOKEN", ""),
+                api_base_url=os.getenv("THREADS_API_BASE_URL", "https://graph.threads.net/v1.0"),
+                limit=getattr(args, "max_threads_posts", 25),
             )
         if platform in MANUAL_SEED_PLATFORMS:
             return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
@@ -813,6 +956,7 @@ def main() -> None:
     parser.add_argument("--include-blocked", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--max-bluesky-pages", type=int, default=1)
+    parser.add_argument("--max-threads-posts", type=int, default=25)
     parser.add_argument("--fetch-timeout", type=int, default=30)
     parser.add_argument("--retry-failed-from", type=Path, default=None)
     parser.add_argument("--offset-sources", type=int, default=0)
