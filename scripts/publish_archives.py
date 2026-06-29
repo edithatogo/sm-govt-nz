@@ -223,6 +223,7 @@ def publish_to_zenodo_deposition(
                 "public records",
                 "RSS",
                 "Bluesky",
+                "Threads",
             ],
             "description": (
                 "Normalized New Zealand government social media records, with RSS and "

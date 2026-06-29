@@ -1,48 +1,10 @@
-name: Archive Registered Sources
+name: Archive Threads Manual Seeds
 
 on:
-  schedule:
-    - cron: "0 2 * * *"
   workflow_dispatch:
     inputs:
-      source_type:
-        description: "Which registered sources to archive or report"
-        required: true
-        default: "all_feasible"
-        type: choice
-        options:
-          - all_feasible
-          - rss
-          - website_page
-          - bluesky
-          - youtube
-          - facebook
-          - instagram
-          - threads
-          - linkedin
-          - x
-      agency_id:
-        description: "Optional agency id filter"
-        required: false
-        default: ""
-      include_blocked:
-        description: "Include degraded/manual/blocked records in the report"
-        required: true
-        default: "false"
-        type: choice
-        options:
-          - "false"
-          - "true"
-      dry_run:
-        description: "Report selected sources without capturing"
-        required: true
-        default: "true"
-        type: choice
-        options:
-          - "true"
-          - "false"
       publish:
-        description: "Publish captured archive bundle after a non-dry-run capture"
+        description: "Publish corpus after archiving seeds"
         required: true
         default: "false"
         type: choice
@@ -61,42 +23,30 @@ on:
           - all
           - all_with_osf
       commit_payloads:
-        description: "Commit raw/normalized archive payloads to git after capture"
+        description: "Commit raw/normalized Threads payloads"
         required: true
-        default: "false"
+        default: "true"
         type: choice
         options:
-          - "false"
           - "true"
-      osf_upload_url:
-        description: "OSF file upload base URL used when OSF_UPLOAD_URL is not set"
-        required: false
-        default: ""
-      hf_dataset_name:
-        description: "Dataset slug to use when HF_DATASET_REPO_ID is not set"
-        required: true
-        default: "corpus-social-media-government-nz"
-      zenodo_deposit_api_url:
-        description: "Zenodo depositions API URL used when ZENODO_DEPOSIT_ENDPOINT is not set"
-        required: true
-        default: "https://zenodo.org/api/deposit/depositions"
+          - "false"
 
 permissions:
   contents: write
 
 jobs:
-  archive:
+  archive-threads-seeds:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
       HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
-      HF_DATASET_NAME: ${{ inputs.hf_dataset_name }}
+      HF_DATASET_NAME: corpus-social-media-government-nz
       ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
       ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
-      ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url }}
+      ZENODO_DEPOSIT_API_URL: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT || 'https://zenodo.org/api/deposit/depositions' }}
       OSF_TOKEN: ${{ secrets.OSF_TOKEN }}
-      OSF_UPLOAD_URL: ${{ secrets.OSF_UPLOAD_URL || inputs.osf_upload_url }}
+      OSF_UPLOAD_URL: ${{ secrets.OSF_UPLOAD_URL }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -109,28 +59,19 @@ jobs:
         run: python -m pip install uv
       - name: Install runtime dependencies
         run: uv pip install --system -r requirements.txt
-      - name: Archive registered sources
-        run: |
-          args=(
-            --source-type "${{ inputs.source_type || 'all_feasible' }}"
-            --agency-id "${{ inputs.agency_id || '' }}"
-          )
-          if [ "${{ inputs.include_blocked }}" = "true" ]; then
-            args+=(--include-blocked)
-          fi
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
-            args+=(--dry-run)
-          fi
-          python -m scripts.archive_registered_sources "${args[@]}"
+      - name: Validate Threads manual seeds
+        run: python scripts/validate_threads_manual_seeds.py
+      - name: Archive registered Threads sources
+        run: >-
+          python -m scripts.archive_registered_sources
+          --source-type threads
       - name: Build archive compaction manifest
-        if: ${{ inputs.dry_run == 'false' }}
         run: >-
           python scripts/build_archive_compaction_manifest.py
           --normalized-dir historical_archive_normalized
           --raw-dir historical_archive_raw
           --output dist/archive_compaction_manifest.json
       - name: Bundle and optionally publish archive corpus
-        if: ${{ inputs.dry_run == 'false' }}
         run: |
           publish_target="artifact"
           if [ "${{ inputs.publish }}" = "true" ]; then
@@ -150,17 +91,11 @@ jobs:
             args+=(--publish)
           fi
           "${args[@]}"
-      - name: Commit archive report updates
-        if: ${{ inputs.dry_run == 'true' }}
+      - name: Commit Threads seed archive reports
         run: >-
           python scripts/commit_state_updates.py
-          --message "Report registered government archive sources"
-          --path conductor/govt_archive_registered_sources_report.json
-      - name: Commit archive capture reports
-        if: ${{ inputs.dry_run == 'false' }}
-        run: >-
-          python scripts/commit_state_updates.py
-          --message "Record registered government archive capture report"
+          --message "Archive Threads manual seed exports"
+          --path conductor/threads_manual_seed_validation_report.json
           --path conductor/govt_archive_registered_sources_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
@@ -169,18 +104,17 @@ jobs:
           --path dist/archive_compaction_manifest.json
           --path dist/corpus_manifest.json
           --path dist/README.md
-      - name: Commit archive payloads
-        if: ${{ inputs.dry_run == 'false' && inputs.commit_payloads == 'true' }}
+      - name: Commit Threads seed payloads
+        if: ${{ inputs.commit_payloads == 'true' }}
         run: >-
           python scripts/commit_state_updates.py
-          --message "Archive registered government source payloads"
-          --path 'historical_archive_raw/**'
-          --path 'historical_archive_normalized/**'
+          --message "Archive Threads manual seed payloads"
+          --path 'historical_archive_raw/threads/**'
+          --path 'historical_archive_normalized/threads/**'
       - name: Upload generated corpus bundle
-        if: ${{ inputs.dry_run == 'false' }}
         uses: actions/upload-artifact@v4
         with:
-          name: registered-government-source-archive-corpus
+          name: threads-manual-seed-archive-corpus
           path: |
             dist/archive_manifest.json
             dist/archive_compaction_manifest.json

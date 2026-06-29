@@ -35,6 +35,16 @@ archive capture because the archive runner tries `/profile_posts?username=...`
 before falling back to numeric user-ID capture. The active blocker is Meta API
 access for the configured app/token.
 
+While Meta API access is blocked, authorized exports can still be archived
+through the manual seed fallback:
+
+1. Copy `manual_archive_seeds/threads/README.template.json` to a source-specific
+   filename under `manual_archive_seeds/threads/`.
+2. Replace the example post list with posts from an operator-authorized Threads
+   export or bounded capture.
+3. Run `Validate Threads Manual Seeds`.
+4. Run `Archive Threads Manual Seeds`.
+
 ## Pending post IDs
 
 - `3mom5bzcekc2g`
@@ -79,5 +89,7 @@ post_ids=3mom5bzcekc2g,3momf4jknxk2k,3momhtdf62k2k,3movx5nyv5s2e,3movyzaflkc2e
 - `Archive Threads Scheduled` selecting registered sources but reporting
   `threads_permission_error` means source registration and scheduling are
   working, but the configured Meta app/token cannot read Threads profile posts.
+- `Archive Threads Manual Seeds` succeeding means the fallback path is working
+  and the corpus can be published even before Meta restores API access.
 - Bluesky and X delivery state should not be changed while resolving this
   blocker.

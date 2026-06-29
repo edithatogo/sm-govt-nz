@@ -1,0 +1,45 @@
+name: Validate Threads Manual Seeds
+
+on:
+  workflow_dispatch:
+    inputs:
+      allow_empty:
+        description: "Allow no seed files to be present"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+  push:
+    paths:
+      - "manual_archive_seeds/threads/**"
+      - "scripts/validate_threads_manual_seeds.py"
+
+permissions:
+  contents: write
+
+jobs:
+  validate-threads-seeds:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Validate Threads manual seeds
+        run: |
+          args=()
+          if [ "${{ inputs.allow_empty || 'true' }}" = "true" ]; then
+            args+=(--allow-empty)
+          fi
+          python scripts/validate_threads_manual_seeds.py "${args[@]}"
+      - name: Commit validation report
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Validate Threads manual seed exports"
+          --path conductor/threads_manual_seed_validation_report.json
