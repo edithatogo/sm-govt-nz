@@ -112,8 +112,8 @@ jobs:
       - name: Archive registered sources
         run: |
           args=(
-            --source-type "${{ inputs.source_type }}"
-            --agency-id "${{ inputs.agency_id }}"
+            --source-type "${{ inputs.source_type || 'all_feasible' }}"
+            --agency-id "${{ inputs.agency_id || '' }}"
           )
           if [ "${{ inputs.include_blocked }}" = "true" ]; then
             args+=(--include-blocked)
