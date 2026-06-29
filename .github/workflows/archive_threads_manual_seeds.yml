@@ -106,19 +106,28 @@ jobs:
           fi
           "${args[@]}"
       - name: Commit Threads seed archive reports
-        run: >-
-          python scripts/commit_state_updates.py
-          --message "Archive Threads manual seed exports"
-          --force
-          --path conductor/threads_manual_seed_validation_report.json
-          --path conductor/threads_seed_readiness_report.json
-          --path conductor/threads_seed_readiness_summary.md
-          --path conductor/govt_archive_registered_sources_report.json
-          --path conductor/archive_state.json
-          --path conductor/archive_source_health.json
-          --path dist/archive_publication_status_artifact.json
-          --path dist/archive_publication_status_skipped.json
-          --path conductor/archive_publication_status.json
+        run: |
+          args=(
+            python scripts/commit_state_updates.py
+            --message "Archive Threads manual seed exports"
+            --force
+            --path conductor/threads_manual_seed_validation_report.json
+            --path conductor/threads_seed_readiness_report.json
+            --path conductor/threads_seed_readiness_summary.md
+            --path conductor/govt_archive_registered_sources_report.json
+            --path conductor/archive_state.json
+            --path conductor/archive_source_health.json
+          )
+          for optional_path in \
+            dist/archive_publication_status_artifact.json \
+            dist/archive_publication_status_skipped.json \
+            conductor/archive_publication_status.json
+          do
+            if [ -f "$optional_path" ]; then
+              args+=(--path "$optional_path")
+            fi
+          done
+          "${args[@]}"
       - name: Commit published Threads corpus manifests
         if: ${{ inputs.publish == 'true' && steps.monthly-publication.outputs.should_publish == 'true' }}
         run: >-
