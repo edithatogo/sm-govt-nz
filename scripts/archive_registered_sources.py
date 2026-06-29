@@ -899,7 +899,7 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 fetch_timeout=getattr(args, "fetch_timeout", 30),
             )
         if platform == "threads":
-            return archive_threads_source(
+            api_results = archive_threads_source(
                 source,
                 raw_root,
                 normalized_root,
@@ -907,6 +907,15 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 api_base_url=os.getenv("THREADS_API_BASE_URL", "https://graph.threads.net/v1.0"),
                 limit=getattr(args, "max_threads_posts", 25),
             )
+            if (
+                all(result.get("status") in {"auth_required", "threads_permission_error", "threads_api_error"} for result in api_results)
+                and find_manual_seed_path(source, manual_seed_root) is not None
+            ):
+                seed_results = archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
+                for result in seed_results:
+                    result["reason"] = f"official Threads API unavailable; archived authorized manual seed. {result.get('reason', '')}".strip()
+                return seed_results
+            return api_results
         if platform in MANUAL_SEED_PLATFORMS:
             return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
     except Exception as exc:  # noqa: BLE001 - archive reports should record per-source failures.

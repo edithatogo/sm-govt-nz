@@ -1,0 +1,20 @@
+{
+  "description": "Template for an operator-authorized Threads export or bounded capture. Copy this file to manual_archive_seeds/threads/<source_id>.json or manual_archive_seeds/threads/<agency_id>.json and replace posts with captured records.",
+  "posts": [
+    {
+      "post_id": "example-thread-post-id",
+      "url": "https://www.threads.net/@example/post/example",
+      "canonical_url": "https://www.threads.net/@example/post/example",
+      "created_at": "2026-01-01T00:00:00+00:00",
+      "account": "example",
+      "text": "Example Threads post text from an authorized export.",
+      "media": [
+        {
+          "url": "https://example.invalid/media.jpg",
+          "media_type": "image",
+          "alt_text": "Optional media description"
+        }
+      ]
+    }
+  ]
+}

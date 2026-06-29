@@ -80,11 +80,26 @@ Current capture support:
   profile-post lookup by account handle before falling back to numeric Threads
   user IDs. A result of `threads_permission_error` means the source is
   registered and selected, but the configured Meta app/token is blocked from
-  reading Threads profile posts.
+  reading Threads profile posts. If a matching operator-authorized seed exists
+  under `manual_archive_seeds/threads/`, the runner archives that seed when the
+  official API is unavailable.
 - `facebook`, `instagram`, `linkedin`, `newsletter`, `threads`, and `x` sources can be captured from operator-authorized manual seed JSON files under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
 - platform sources without a seed file are reported as `manual_seed_missing`, not as successfully captured.
 
 Manual seed files contain a JSON object with `posts` or a bare list of post objects. Each post needs `url`, `created_at`, and `text`; `post_id`, `media`, `account`, and `canonical_url` are optional. This keeps the manifest exhaustive without overstating which sources are already captured.
+
+For Threads, place authorized exports at either:
+
+- `manual_archive_seeds/threads/<source_id>.json`
+- `manual_archive_seeds/threads/<agency_id>.json`
+
+For the currently registered Threads sources, the source-specific filenames are:
+
+- `manual_archive_seeds/threads/nz-police-threads-newzealandpolice.json`
+- `manual_archive_seeds/threads/nzte-threads-nzte.json`
+- `manual_archive_seeds/threads/wellington-city-libraries-threads-wcl-library.json`
+
+Use `manual_archive_seeds/threads/README.template.json` as the JSON shape.
 
 Non-dry-run archive workflow runs build the archive compaction manifest and bundle the corpus with `scripts/publish_archives.py`. Set `publish=true` and choose `publication_target=all`, `huggingface`, or `zenodo` to publish through configured repository secrets; otherwise the workflow uploads a GitHub Actions artifact only.
 

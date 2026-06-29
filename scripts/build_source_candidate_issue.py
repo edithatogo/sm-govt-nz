@@ -63,6 +63,7 @@ def markdown_table(candidates: list[dict[str, Any]], limit: int) -> str:
 
 def build_body(report: dict[str, Any], candidates: list[dict[str, Any]], limit: int) -> str:
     counts = Counter(item.get("platform", "unknown") for item in candidates)
+    threads_candidates = [item for item in candidates if item.get("platform") == "threads"]
     lines = [
         "# Source discovery candidates need review",
         "",
@@ -75,6 +76,17 @@ def build_body(report: dict[str, Any], candidates: list[dict[str, Any]], limit: 
     ]
     for platform, count in sorted(counts.items()):
         lines.append(f"- `{platform}`: {count}")
+    if threads_candidates:
+        lines.extend(
+            [
+                "",
+                "## Threads candidates",
+                "",
+                "Threads candidates need official-account confirmation and either approved Threads API access or an operator-authorized seed/export.",
+                "",
+                markdown_table(threads_candidates, min(limit, 20)),
+            ]
+        )
     lines.extend(
         [
             "",
