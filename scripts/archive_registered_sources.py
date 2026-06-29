@@ -684,8 +684,8 @@ def threads_handle(source: dict[str, Any]) -> str:
     return ""
 
 
-def fetch_threads_posts(user_id: str, access_token: str, *, api_base_url: str, limit: int) -> dict[str, Any]:
-    fields = ",".join(
+def threads_fields() -> str:
+    return ",".join(
         [
             "id",
             "media_type",
@@ -698,9 +698,12 @@ def fetch_threads_posts(user_id: str, access_token: str, *, api_base_url: str, l
             "username",
         ]
     )
+
+
+def fetch_threads_posts(user_id: str, access_token: str, *, api_base_url: str, limit: int) -> dict[str, Any]:
     query = urlencode(
         {
-            "fields": fields,
+            "fields": threads_fields(),
             "limit": str(limit),
             "access_token": access_token,
         }
@@ -711,6 +714,46 @@ def fetch_threads_posts(user_id: str, access_token: str, *, api_base_url: str, l
     )
     with urlopen(request, timeout=30) as response:
         return json.loads(response.read().decode("utf-8"))
+
+
+def fetch_threads_profile_posts(handle: str, access_token: str, *, api_base_url: str, limit: int) -> dict[str, Any]:
+    query = urlencode(
+        {
+            "username": handle.lstrip("@"),
+            "fields": threads_fields(),
+            "limit": str(limit),
+            "access_token": access_token,
+        }
+    )
+    request = Request(
+        f"{api_base_url.rstrip('/')}/profile_posts?{query}",
+        headers={"Accept": "application/json"},
+    )
+    with urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def threads_api_error_detail(error: HTTPError | URLError) -> str:
+    if isinstance(error, HTTPError):
+        body = error.read().decode("utf-8", errors="replace")
+        try:
+            payload = json.loads(body)
+            api_error = payload.get("error") if isinstance(payload, dict) else None
+            if isinstance(api_error, dict):
+                message = str(api_error.get("message") or "").strip()
+                code = str(api_error.get("code") or "").strip()
+                error_type = str(api_error.get("type") or "").strip()
+                return " ".join(part for part in [f"HTTP {error.code}", error_type, code, message] if part)
+        except json.JSONDecodeError:
+            pass
+        return f"HTTP {error.code} {body[:500]}".strip()
+    return str(error)
+
+
+def threads_api_status(error: HTTPError | URLError) -> str:
+    if isinstance(error, HTTPError) and error.code in {400, 401, 403}:
+        return "threads_permission_error"
+    return "threads_api_error"
 
 
 def archive_threads_source(
@@ -725,12 +768,17 @@ def archive_threads_source(
     if not access_token:
         return [source_result(source, "auth_required", "THREADS_ACCESS_TOKEN is required for official Threads API capture")]
     user_id = threads_user_id(source)
-    if not user_id:
-        handle = threads_handle(source)
-        detail = f"Threads handle @{handle} needs a Threads API user ID before official API capture" if handle else "Threads source needs a Threads API user ID before official API capture"
-        return [source_result(source, "needs_threads_user_id", detail)]
+    handle = threads_handle(source)
+    try:
+        if handle:
+            payload = fetch_threads_profile_posts(handle, access_token, api_base_url=api_base_url, limit=limit)
+        elif user_id:
+            payload = fetch_threads_posts(user_id, access_token, api_base_url=api_base_url, limit=limit)
+        else:
+            return [source_result(source, "needs_threads_handle", "Threads source needs an account handle or Threads API user ID before official API capture")]
+    except (HTTPError, URLError) as error:
+        return [source_result(source, threads_api_status(error), threads_api_error_detail(error))]
 
-    payload = fetch_threads_posts(user_id, access_token, api_base_url=api_base_url, limit=limit)
     items = payload.get("data")
     if not isinstance(items, list):
         return [source_result(source, "no_records", "Threads API returned no data array")]
@@ -781,6 +829,7 @@ def archive_threads_source(
             cross_source_ids={
                 "source_id": str(source.get("source_id") or ""),
                 "threads_user_id": user_id,
+                "threads_handle": handle,
                 "threads_post_id": str(item.get("id") or ""),
             },
         )
