@@ -37,6 +37,36 @@ Optional fields:
 - `account`
 - `media`
 
+## Intake checklist
+
+Only add records that come from an operator-authorized export or bounded capture.
+Do not fabricate placeholder posts and do not scrape around access controls.
+
+For each registered source:
+
+1. Create the source-specific JSON file listed above.
+2. Record each post with its public URL, original created timestamp, and text.
+3. Include media URLs and alt text when they are visible in the authorized
+   export or capture.
+4. Preserve the source account handle in `account`.
+5. Keep `created_at` in ISO 8601 format, including a timezone offset when known.
+6. Run validation before archiving.
+
+Example minimal file:
+
+```json
+{
+  "posts": [
+    {
+      "url": "https://www.threads.net/@newzealandpolice/post/example",
+      "created_at": "2026-06-01T12:00:00+12:00",
+      "account": "newzealandpolice",
+      "text": "Post text from an authorized export or bounded capture."
+    }
+  ]
+}
+```
+
 ## Validation and archive workflows
 
 Run `Validate Threads Manual Seeds` after adding or changing seed files.
