@@ -1,0 +1,76 @@
+name: Archive JSON Feed Scheduled
+
+on:
+  schedule:
+    - cron: "37 2 * * *"
+  workflow_dispatch:
+    inputs:
+      agency_id:
+        description: "Optional agency ID filter"
+        required: false
+        default: ""
+      dry_run:
+        description: "Report without capturing"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      commit_payloads:
+        description: "Commit raw/normalized payloads to git"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+jobs:
+  archive-json-feed:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install uv
+        run: python -m pip install uv
+      - name: Install runtime dependencies
+        run: uv pip install --system -r requirements.txt
+      - name: Archive JSON Feed sources
+        run: |
+          args=(
+            --source-type json_feed
+            --fetch-timeout 10
+          )
+          if [ "${{ inputs.dry_run || 'false' }}" = "true" ]; then
+            args+=(--dry-run)
+          fi
+          if [ -n "${{ inputs.agency_id }}" ]; then
+            args+=(--agency-id "${{ inputs.agency_id }}")
+          fi
+          python -m scripts.archive_registered_sources "${args[@]}"
+      - name: Commit JSON Feed capture reports
+        if: ${{ inputs.dry_run != 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Capture JSON Feed entries from registered government sources"
+          --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/archive_state.json
+          --path conductor/archive_source_health.json
+      - name: Commit JSON Feed payloads
+        if: ${{ inputs.dry_run != 'true' && inputs.commit_payloads == 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Archive JSON Feed raw and normalized payloads"
+          --path 'historical_archive_raw/json_feed/**'
+          --path 'historical_archive_normalized/json_feed/**'
