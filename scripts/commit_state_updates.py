@@ -73,7 +73,7 @@ def push_with_rebase(branch: str, max_attempts: int = 3) -> None:
             conflicts = run_git(["diff", "--name-only", "--diff-filter=U"], check=False).stdout.splitlines()
             if conflicts:
                 run_git(["checkout", "--theirs", "--", *conflicts])
-                run_git(["add", "--", *conflicts])
+                run_git(["add", "-f", "--", *conflicts])
                 run_git(["rebase", "--continue"])
             else:
                 details = (rebase.stderr or rebase.stdout).strip()
