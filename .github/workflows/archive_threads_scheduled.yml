@@ -104,6 +104,8 @@ jobs:
           if [ ! -s /tmp/threads_issue_body.md ]; then
             exit 0
           fi
+          gh label create threads --color 4f46e5 --description "Threads platform archival work" || true
+          gh label create archive-blocker --color b91c1c --description "Archive workflow blocker requiring operator action" || true
           existing="$(gh issue list --state open --label threads --label archive-blocker --json number --jq '.[0].number // empty')"
           if [ -n "$existing" ]; then
             gh issue comment "$existing" --body-file /tmp/threads_issue_body.md
