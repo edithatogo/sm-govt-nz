@@ -1,6 +1,6 @@
 {
   "description": "Archive onboarding manifest generated from the government source candidate report.",
-  "generated_at": "2026-06-29T05:20:03+00:00",
+  "generated_at": "2026-06-29T09:53:46+00:00",
   "sources": [
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -18354,6 +18354,22 @@
       "url": "https://www.police.govt.nz/subscribe/news-and-alerts"
     },
     {
+      "access_method": "official_threads_api",
+      "account": "newzealandpolice",
+      "agency_id": "nz-police",
+      "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
+      "archive_status": "registered",
+      "auth": "official_api_required",
+      "created_at": "2026-06-29T09:53:46+00:00",
+      "feasibility": "api_or_export_required",
+      "notes": "Official Threads profile identified via web search; API capture requires permitted THREADS_ACCESS_TOKEN and numeric Threads user ID enrichment if handle lookup is unavailable.",
+      "origin": "manual.verified_threads_search",
+      "platform": "threads",
+      "source_id": "nz-police-threads-newzealandpolice",
+      "source_type": "social_profile",
+      "url": "https://www.threads.net/@newzealandpolice"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.police.govt.nz",
       "agency_id": "nz-police",
@@ -19245,6 +19261,22 @@
       "source_id": "nz-trade-and-enterprise-linkedin-6b67fce0",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/new-zealand-trade-and-enterprise/"
+    },
+    {
+      "access_method": "official_threads_api",
+      "account": "nzte",
+      "agency_id": "nz-trade-and-enterprise",
+      "agency_name": "New Zealand Trade and Enterprise (Te Taurapa T\u016bhono)",
+      "archive_status": "registered",
+      "auth": "official_api_required",
+      "created_at": "2026-06-29T09:53:46+00:00",
+      "feasibility": "api_or_export_required",
+      "notes": "Official Threads profile identified via web search; API capture requires permitted THREADS_ACCESS_TOKEN and numeric Threads user ID enrichment if handle lookup is unavailable.",
+      "origin": "manual.verified_threads_search",
+      "platform": "threads",
+      "source_id": "nzte-threads-nzte",
+      "source_type": "social_profile",
+      "url": "https://www.threads.net/@nzte"
     },
     {
       "access_method": "bounded_public_html",
@@ -31706,6 +31738,22 @@
       "url": "https://bsky.app/profile/wcllibrary.bsky.social"
     },
     {
+      "access_method": "official_threads_api",
+      "account": "wcl_library",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "archive_status": "registered",
+      "auth": "official_api_required",
+      "created_at": "2026-06-29T09:53:46+00:00",
+      "feasibility": "api_or_export_required",
+      "notes": "Official Threads profile identified via web search; API capture requires permitted THREADS_ACCESS_TOKEN and numeric Threads user ID enrichment if handle lookup is unavailable.",
+      "origin": "manual.verified_threads_search",
+      "platform": "threads",
+      "source_id": "wellington-city-libraries-threads-wcl-library",
+      "source_type": "social_profile",
+      "url": "https://www.threads.net/@wcl_library"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -33853,8 +33901,9 @@
       "candidate": 1048,
       "degraded": 79,
       "manual_seed": 255,
-      "ready": 450
+      "ready": 450,
+      "registered": 3
     },
-    "total_sources": 1832
+    "total_sources": 1835
   }
 }
