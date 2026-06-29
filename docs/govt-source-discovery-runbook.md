@@ -105,6 +105,17 @@ Use `manual_archive_seeds/threads/README.template.json` as the JSON shape.
 
 Non-dry-run archive workflow runs build the archive compaction manifest and bundle the corpus with `scripts/publish_archives.py`. Set `publish=true` and choose `publication_target=all`, `huggingface`, or `zenodo` to publish through configured repository secrets; otherwise the workflow uploads a GitHub Actions artifact only.
 
+For broad `all_feasible` review or interactive testing, use the workflow
+batching controls instead of letting one run attempt every registered source:
+
+- `limit_sources`: maximum selected sources to process; `0` means all selected sources.
+- `offset_sources`: number of selected sources to skip before processing.
+- `fetch_timeout`: per-source network fetch timeout in seconds.
+
+The workflow also has a 45 minute job timeout so a small number of slow feeds,
+web pages, or protocol endpoints cannot leave the archive job running
+indefinitely. Scheduled runs still default to the full selected set.
+
 Publication workflows are guarded to one external release per UTC month. The
 release version is generated as `YYYY-MM`. If
 `conductor/archive_publication_status.json` already records a successful

@@ -52,6 +52,13 @@ For each registered source:
 5. Keep `created_at` in ISO 8601 format, including a timezone offset when known.
 6. Run validation before archiving.
 
+The validator rejects duplicate records within a seed file, malformed Threads
+URLs, non-Threads canonical URLs, invalid timestamps, and mismatches between a
+known source filename and the account handle in `url`, `canonical_url`, or
+`account`. It accepts empty seed files only when the validation workflow is run
+with `--allow-empty`, which is used for readiness checks before seed exports
+exist.
+
 Example minimal file:
 
 ```json

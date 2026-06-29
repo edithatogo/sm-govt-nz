@@ -41,6 +41,18 @@ on:
         options:
           - "true"
           - "false"
+      limit_sources:
+        description: "Maximum selected sources to process; 0 means all"
+        required: true
+        default: "0"
+      offset_sources:
+        description: "Number of selected sources to skip before processing"
+        required: true
+        default: "0"
+      fetch_timeout:
+        description: "Per-source fetch timeout in seconds"
+        required: true
+        default: "30"
       publish:
         description: "Publish captured archive bundle after a non-dry-run capture"
         required: true
@@ -87,6 +99,7 @@ permissions:
 jobs:
   archive:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -111,10 +124,22 @@ jobs:
         run: uv pip install --system -r requirements.txt
       - name: Archive registered sources
         run: |
+          limit_sources="${{ inputs.limit_sources || '0' }}"
+          offset_sources="${{ inputs.offset_sources || '0' }}"
+          fetch_timeout="${{ inputs.fetch_timeout || '30' }}"
           args=(
             --source-type "${{ inputs.source_type || 'all_feasible' }}"
             --agency-id "${{ inputs.agency_id || '' }}"
           )
+          if [ "$limit_sources" != "0" ]; then
+            args+=(--limit-sources "$limit_sources")
+          fi
+          if [ "$offset_sources" != "0" ]; then
+            args+=(--offset-sources "$offset_sources")
+          fi
+          if [ -n "$fetch_timeout" ]; then
+            args+=(--fetch-timeout "$fetch_timeout")
+          fi
           if [ "${{ inputs.include_blocked }}" = "true" ]; then
             args+=(--include-blocked)
           fi
