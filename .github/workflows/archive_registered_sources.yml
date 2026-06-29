@@ -184,12 +184,28 @@ jobs:
           --path dist/README.md
       - name: Commit archive payloads
         if: ${{ inputs.dry_run == 'false' && inputs.commit_payloads == 'true' }}
-        run: >-
-          python scripts/commit_state_updates.py
-          --message "Archive registered government source payloads"
-          --force
-          --path 'historical_archive_raw/**'
-          --path 'historical_archive_normalized/**'
+        run: |
+          shopt -s globstar nullglob
+          files=(historical_archive_raw/** historical_archive_normalized/**)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No archive payload files to commit."
+            exit 0
+          fi
+          args=(
+            python scripts/commit_state_updates.py
+            --message "Archive registered government source payloads"
+            --force
+          )
+          for file in "${files[@]}"; do
+            if [ -f "$file" ]; then
+              args+=(--path "$file")
+            fi
+          done
+          if [ "${#args[@]}" -eq 5 ]; then
+            echo "No archive payload files to commit."
+            exit 0
+          fi
+          "${args[@]}"
       - name: Upload generated corpus bundle
         if: ${{ inputs.dry_run == 'false' }}
         uses: actions/upload-artifact@v4

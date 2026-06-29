@@ -118,12 +118,28 @@ jobs:
           --path dist/README.md
       - name: Commit Threads seed payloads
         if: ${{ inputs.commit_payloads == 'true' }}
-        run: >-
-          python scripts/commit_state_updates.py
-          --message "Archive Threads manual seed payloads"
-          --force
-          --path 'historical_archive_raw/threads/**'
-          --path 'historical_archive_normalized/threads/**'
+        run: |
+          shopt -s globstar nullglob
+          files=(historical_archive_raw/threads/** historical_archive_normalized/threads/**)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No Threads seed payload files to commit."
+            exit 0
+          fi
+          args=(
+            python scripts/commit_state_updates.py
+            --message "Archive Threads manual seed payloads"
+            --force
+          )
+          for file in "${files[@]}"; do
+            if [ -f "$file" ]; then
+              args+=(--path "$file")
+            fi
+          done
+          if [ "${#args[@]}" -eq 5 ]; then
+            echo "No Threads seed payload files to commit."
+            exit 0
+          fi
+          "${args[@]}"
       - name: Upload generated corpus bundle
         uses: actions/upload-artifact@v4
         with:
