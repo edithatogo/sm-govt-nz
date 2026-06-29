@@ -231,14 +231,35 @@ def looks_like_json_feed_url(url: str, text: str = "", mime_type: str = "") -> b
 
 
 def looks_like_api_url(url: str, text: str = "") -> bool:
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https"}:
+        return False
+    host = parsed.netloc.lower()
+    if any(
+        blocked in host
+        for blocked in (
+            "google.co.",
+            "google.com",
+            "maps.google.",
+            "wufoo.com",
+            "instagram.com",
+            "facebook.com",
+            "linkedin.com",
+            "x.com",
+            "twitter.com",
+        )
+    ):
+        return False
     lower_text = text.lower()
     segments = set(url_path_segments(url))
-    path = urlparse(url).path.lower()
-    if segments.intersection({"api", "apis", "developer", "developers", "swagger"}):
+    path = parsed.path.lower()
+    if segments.intersection({"api", "apis", "openapi", "developer", "developers", "swagger"}):
         return True
     if path.endswith(("/openapi.json", "/swagger.json", "/api.json")):
         return True
-    return any(term in lower_text for term in (" openapi ", " swagger ", " api ", "developer api", "data service"))
+    if any(term in lower_text for term in (" openapi ", " swagger ", " api ", "developer api", "data service")):
+        return True
+    return False
 
 
 def looks_like_public_newsletter_archive(url: str, text: str = "") -> bool:
