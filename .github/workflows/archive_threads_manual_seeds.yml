@@ -106,6 +106,7 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Archive Threads manual seed exports"
+          --force
           --path conductor/threads_manual_seed_validation_report.json
           --path conductor/govt_archive_registered_sources_report.json
           --path conductor/archive_state.json
@@ -120,6 +121,7 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Archive Threads manual seed payloads"
+          --force
           --path 'historical_archive_raw/threads/**'
           --path 'historical_archive_normalized/threads/**'
       - name: Upload generated corpus bundle

@@ -173,6 +173,7 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Record registered government archive capture report"
+          --force
           --path conductor/govt_archive_registered_sources_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
@@ -186,6 +187,7 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Archive registered government source payloads"
+          --force
           --path 'historical_archive_raw/**'
           --path 'historical_archive_normalized/**'
       - name: Upload generated corpus bundle
