@@ -812,7 +812,11 @@ def build_manifest(report: dict[str, Any]) -> dict[str, Any]:
 def should_preserve_existing_manifest_source(source: dict[str, Any]) -> bool:
     source_type = str(source.get("source_type") or "")
     platform = str(source.get("platform") or "")
+    archive_status = str(source.get("archive_status") or "")
+    origin = str(source.get("origin") or "")
     url = str(source.get("url") or "")
+    if source_type == "api_endpoint" and platform == "api" and archive_status == "candidate" and origin == "homepage.link":
+        return False
     if source_type == "social_profile" and platform in PLATFORM_HOSTS:
         return detect_platform(url) == platform
     return True
