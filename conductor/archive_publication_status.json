@@ -1,138 +1,29 @@
 {
   "artifact": {
     "bundle_path": "dist/historical_archive.tar.gz",
-    "file_count": 7504,
-    "normalized_record_count": 6994,
-    "raw_file_count": 7003,
-    "sha256": "772062179292cb604a119574b8b4e42e1b5db50e8d146af757ebec71075a63af"
+    "file_count": 7509,
+    "normalized_record_count": 6997,
+    "raw_file_count": 7006,
+    "sha256": "01c315e4c5b0f65f9a13d43acd9fb9ad21272b0adc9fe2239e581a1476d4318f"
   },
   "hugging_face": {
-    "result": {
-      "file_count": 7504,
-      "normalized_record_count": 6994,
-      "paths_in_repo": [
-        "README.md",
-        "metadata/corpus_manifest.json",
-        "data/normalized_archive.jsonl.gz",
-        "data/normalized_archive.parquet",
-        "bundles/historical_archive.tar.gz"
-      ],
-      "release_version": "20260628-064455-archive",
-      "repo_id": "edithatogo/corpus-social-media-government-nz",
-      "sha256": "772062179292cb604a119574b8b4e42e1b5db50e8d146af757ebec71075a63af"
-    },
-    "status": "published",
+    "status": "not_requested_or_not_configured",
     "target": "edithatogo/corpus-social-media-government-nz"
   },
-  "mode": "published",
+  "mode": "artifact_only",
   "osf": {
     "status": "not_requested_or_not_configured",
     "target": ""
   },
-  "release_version": "20260628-064455-archive",
-  "requested_targets": [
-    "huggingface",
-    "zenodo"
-  ],
+  "release_version": "2026-06",
+  "requested_targets": [],
   "source_git": {
     "freshness_status": "fresh_at_source_head",
-    "head_sha": "9f04031ffbe4880bcf41f68e1010807119740464",
-    "latest_archive_commit_sha": "9f04031ffbe4880bcf41f68e1010807119740464"
+    "head_sha": "eec8edf536df634e1c37eaefc06423ca5e67c92a",
+    "latest_archive_commit_sha": "320dd0cf773537e77363df2fde568eb38a696842"
   },
   "zenodo": {
-    "result": {
-      "deposition_id": 20991133,
-      "deposition_url": "https://zenodo.org/deposit/20991133",
-      "doi": "10.5281/zenodo.20991133",
-      "doi_url": "https://doi.org/10.5281/zenodo.20991133",
-      "record_id": 20991133,
-      "record_url": null,
-      "state": "done",
-      "submitted": true,
-      "uploaded_files": [
-        {
-          "checksum": "md5:2d6da73d4468ed71b45a0d1677f5b9c2",
-          "created": "2026-06-28T06:46:26.538896+00:00",
-          "delete_marker": false,
-          "is_head": true,
-          "key": "README.md",
-          "links": {
-            "self": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/README.md",
-            "uploads": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/README.md?uploads=1",
-            "version": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/README.md?version_id=d40ec2e2-9cb9-4a86-9075-5aa536869348"
-          },
-          "mimetype": "application/octet-stream",
-          "size": 1854,
-          "updated": "2026-06-28T06:46:26.652500+00:00",
-          "version_id": "d40ec2e2-9cb9-4a86-9075-5aa536869348"
-        },
-        {
-          "checksum": "md5:6e76b2b7724b139e761fbaf87a4411d3",
-          "created": "2026-06-28T06:46:27.167908+00:00",
-          "delete_marker": false,
-          "is_head": true,
-          "key": "corpus_manifest.json",
-          "links": {
-            "self": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/corpus_manifest.json",
-            "uploads": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/corpus_manifest.json?uploads=1",
-            "version": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/corpus_manifest.json?version_id=305aafe9-eb30-4618-abb3-ae625f179329"
-          },
-          "mimetype": "application/json",
-          "size": 2725189,
-          "updated": "2026-06-28T06:46:28.132253+00:00",
-          "version_id": "305aafe9-eb30-4618-abb3-ae625f179329"
-        },
-        {
-          "checksum": "md5:23e5307f68c0f060d82eda4b20658ef3",
-          "created": "2026-06-28T06:46:28.625146+00:00",
-          "delete_marker": false,
-          "is_head": true,
-          "key": "normalized_archive.jsonl.gz",
-          "links": {
-            "self": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/normalized_archive.jsonl.gz",
-            "uploads": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/normalized_archive.jsonl.gz?uploads=1",
-            "version": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/normalized_archive.jsonl.gz?version_id=e4a4becf-92c7-4d81-aa61-43dc5478c024"
-          },
-          "mimetype": "application/gzip",
-          "size": 4315815,
-          "updated": "2026-06-28T06:46:29.740904+00:00",
-          "version_id": "e4a4becf-92c7-4d81-aa61-43dc5478c024"
-        },
-        {
-          "checksum": "md5:b21ef6696976b379e02d6293a70eca71",
-          "created": "2026-06-28T06:46:30.234504+00:00",
-          "delete_marker": false,
-          "is_head": true,
-          "key": "normalized_archive.parquet",
-          "links": {
-            "self": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/normalized_archive.parquet",
-            "uploads": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/normalized_archive.parquet?uploads=1",
-            "version": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/normalized_archive.parquet?version_id=958c65a9-0a40-45ab-bffd-b73548f5095d"
-          },
-          "mimetype": "application/octet-stream",
-          "size": 6815114,
-          "updated": "2026-06-28T06:46:31.453641+00:00",
-          "version_id": "958c65a9-0a40-45ab-bffd-b73548f5095d"
-        },
-        {
-          "checksum": "md5:e53ecc1390aac353dd233eebd7f832f4",
-          "created": "2026-06-28T06:46:31.968555+00:00",
-          "delete_marker": false,
-          "is_head": true,
-          "key": "historical_archive.tar.gz",
-          "links": {
-            "self": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/historical_archive.tar.gz",
-            "uploads": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/historical_archive.tar.gz?uploads=1",
-            "version": "https://zenodo.org/api/files/3f1848e0-869f-4de9-bb0d-5211943ac921/historical_archive.tar.gz?version_id=e8f8f809-868c-492e-a06b-29cf37c70b2a"
-          },
-          "mimetype": "application/gzip",
-          "size": 22698247,
-          "updated": "2026-06-28T06:46:33.895750+00:00",
-          "version_id": "e8f8f809-868c-492e-a06b-29cf37c70b2a"
-        }
-      ]
-    },
-    "status": "published",
-    "target": "https://doi.org/10.5281/zenodo.20991133"
+    "status": "not_requested_or_not_configured",
+    "target": "https://zenodo.org/api/deposit/depositions"
   }
 }
