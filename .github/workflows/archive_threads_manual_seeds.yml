@@ -34,9 +34,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: archive-state-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   archive-threads-seeds:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -79,6 +84,8 @@ jobs:
           python scripts/monthly_publication_guard.py
           --status-report conductor/archive_publication_status.json
           --release-version "$(date -u +'%Y-%m')"
+      - name: Validate canonical publication status before bundling
+        run: python scripts/validate_archive_publication_status.py
       - name: Bundle and optionally publish archive corpus
         run: |
           publish_target="artifact"
@@ -106,28 +113,19 @@ jobs:
           fi
           "${args[@]}"
       - name: Commit Threads seed archive reports
-        run: |
-          args=(
-            python scripts/commit_state_updates.py
-            --message "Archive Threads manual seed exports"
-            --force
-            --path conductor/threads_manual_seed_validation_report.json
-            --path conductor/threads_seed_readiness_report.json
-            --path conductor/threads_seed_readiness_summary.md
-            --path conductor/govt_archive_registered_sources_report.json
-            --path conductor/archive_state.json
-            --path conductor/archive_source_health.json
-          )
-          for optional_path in \
-            dist/archive_publication_status_artifact.json \
-            dist/archive_publication_status_skipped.json \
-            conductor/archive_publication_status.json
-          do
-            if [ -f "$optional_path" ]; then
-              args+=(--path "$optional_path")
-            fi
-          done
-          "${args[@]}"
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Archive Threads manual seed exports"
+          --force
+          --path conductor/threads_manual_seed_validation_report.json
+          --path conductor/threads_seed_readiness_report.json
+          --path conductor/threads_seed_readiness_summary.md
+          --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/archive_state.json
+          --path conductor/archive_source_health.json
+          --path dist/archive_publication_status_artifact.json
+          --path dist/archive_publication_status_skipped.json
+          --path conductor/archive_publication_status.json
       - name: Commit published Threads corpus manifests
         if: ${{ inputs.publish == 'true' && steps.monthly-publication.outputs.should_publish == 'true' }}
         run: >-

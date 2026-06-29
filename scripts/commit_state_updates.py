@@ -52,10 +52,17 @@ def configure_identity() -> None:
 
 def commit_selected_paths(message: str, paths: list[str], *, force: bool = False) -> bool:
     configure_identity()
+    existing_paths = [path for path in paths if os.path.exists(path) or any(char in path for char in "*?[]")]
+    skipped_paths = [path for path in paths if path not in existing_paths]
+    for path in skipped_paths:
+        print(f"Skipping missing state path: {path}")
+    if not existing_paths:
+        print("No existing selected state paths to commit.")
+        return False
     add_args = ["add"]
     if force:
         add_args.append("-f")
-    run_git([*add_args, "--", *paths])
+    run_git([*add_args, "--", *existing_paths])
     if not has_staged_changes():
         print("No selected state updates to commit.")
         return False

@@ -127,6 +127,14 @@ publication for that release version, later publish-enabled runs in the same
 month still build the corpus and upload the GitHub Actions artifact, but they
 do not push another Hugging Face, Zenodo, or OSF release.
 
+Canonical publication status is reserved for external publication state. Plain
+artifact-only runs write `dist/archive_publication_status_artifact.json`, and
+same-month publish skips write `dist/archive_publication_status_skipped.json`.
+They must not replace `conductor/archive_publication_status.json`. The archive
+workflows call `scripts/validate_archive_publication_status.py` before bundling
+to catch malformed canonical status files before they can affect publication
+guard behavior.
+
 ## Daily Search Operation
 
 The daily workflow:

@@ -96,6 +96,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: archive-state-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   archive:
     runs-on: ubuntu-latest
@@ -161,6 +165,9 @@ jobs:
           python scripts/monthly_publication_guard.py
           --status-report conductor/archive_publication_status.json
           --release-version "$(date -u +'%Y-%m')"
+      - name: Validate canonical publication status before bundling
+        if: ${{ inputs.dry_run == 'false' }}
+        run: python scripts/validate_archive_publication_status.py
       - name: Bundle and optionally publish archive corpus
         if: ${{ inputs.dry_run == 'false' }}
         run: |
@@ -196,29 +203,20 @@ jobs:
           --path conductor/govt_archive_registered_sources_report.json
       - name: Commit archive capture reports
         if: ${{ inputs.dry_run == 'false' }}
-        run: |
-          args=(
-            python scripts/commit_state_updates.py
-            --message "Record registered government archive capture report"
-            --force
-            --path conductor/govt_archive_registered_sources_report.json
-            --path conductor/archive_state.json
-            --path conductor/archive_source_health.json
-            --path dist/archive_manifest.json
-            --path dist/archive_compaction_manifest.json
-            --path dist/corpus_manifest.json
-            --path dist/README.md
-          )
-          for optional_path in \
-            dist/archive_publication_status_artifact.json \
-            dist/archive_publication_status_skipped.json \
-            conductor/archive_publication_status.json
-          do
-            if [ -f "$optional_path" ]; then
-              args+=(--path "$optional_path")
-            fi
-          done
-          "${args[@]}"
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Record registered government archive capture report"
+          --force
+          --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/archive_state.json
+          --path conductor/archive_source_health.json
+          --path dist/archive_manifest.json
+          --path dist/archive_compaction_manifest.json
+          --path dist/corpus_manifest.json
+          --path dist/README.md
+          --path dist/archive_publication_status_artifact.json
+          --path dist/archive_publication_status_skipped.json
+          --path conductor/archive_publication_status.json
       - name: Commit archive payloads
         if: ${{ inputs.dry_run == 'false' && inputs.commit_payloads == 'true' }}
         run: |

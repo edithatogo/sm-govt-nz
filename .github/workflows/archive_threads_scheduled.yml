@@ -30,9 +30,14 @@ permissions:
   contents: write
   issues: write
 
+concurrency:
+  group: archive-state-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   archive-threads:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
