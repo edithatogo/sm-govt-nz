@@ -38,6 +38,8 @@ PLATFORM_SHARE_PATH_PREFIXES = {
 }
 
 NEWSLETTER_TERMS = ("newsletter", "subscribe", "email updates", "alerts", "mailing list")
+NEWSLETTER_SUBSCRIPTION_TERMS = ("subscribe", "sign-up", "signup", "sign up", "mailing list", "alerts")
+PUBLIC_NEWSLETTER_ARCHIVE_TERMS = ("newsletter", "newsletters", "campaign-archive.com", "createsend.com", "mailchi.mp")
 FEED_TERMS = ("rss", "atom", "feed.xml", "feed.json", "json feed")
 API_TERMS = ("api", "openapi", "swagger", "developer", "data service")
 MICROFORMAT_TERMS = ("h-feed", "h-entry", "microformat", "microformats")
@@ -237,6 +239,13 @@ def looks_like_api_url(url: str, text: str = "") -> bool:
     if path.endswith(("/openapi.json", "/swagger.json", "/api.json")):
         return True
     return any(term in lower_text for term in (" openapi ", " swagger ", " api ", "developer api", "data service"))
+
+
+def looks_like_public_newsletter_archive(url: str, text: str = "") -> bool:
+    lower = f"{url} {text}".lower()
+    if not any(term in lower for term in PUBLIC_NEWSLETTER_ARCHIVE_TERMS):
+        return False
+    return not any(term in lower for term in NEWSLETTER_SUBSCRIPTION_TERMS)
 
 def candidate(
     agency: dict[str, Any],
@@ -680,6 +689,20 @@ def probe_url(agency: dict[str, Any], url: str, config: dict[str, Any]) -> tuple
                 )
             )
         if any(term in lower for term in NEWSLETTER_TERMS):
+            if looks_like_public_newsletter_archive(href, link.get("text", "")):
+                results.append(
+                    candidate(
+                        agency,
+                        "website_page",
+                        "website_page",
+                        href,
+                        "homepage.newsletter_archive_link",
+                        config,
+                        account=agency.get("official_website", ""),
+                        link_text=link.get("text", ""),
+                        status="discovered",
+                    )
+                )
             results.append(
                 candidate(
                     agency,
