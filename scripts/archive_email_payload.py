@@ -37,10 +37,10 @@ def archive_email_payload(
 
     record = build_normalized_record(
         record_id=f"email:{record_id}",
-        agency_id="courts-nz",
+        agency_id=str(payload.get("agency_id") or "courts-nz"),
         source_platform="email",
-        source_account="judgments-of-public-interest-subscription",
-        source_kind="judgments_subscription",
+        source_account=str(payload.get("source_account") or payload.get("to") or "judgments-of-public-interest-subscription"),
+        source_kind=str(payload.get("source_kind") or "email_subscription"),
         source_url=_canonical_url(payload),
         canonical_url=_canonical_url(payload),
         original_created_at=received_at,
@@ -51,7 +51,14 @@ def archive_email_payload(
             payload.get("extraction_method") or "cloudflare_email_routing_worker"
         ),
         media_refs=[],
-        cross_source_ids={"message_id": message_id},
+        cross_source_ids={
+            key: str(value)
+            for key, value in {
+                "message_id": message_id,
+                "source_id": payload.get("source_id"),
+            }.items()
+            if value
+        },
     )
     _upsert_normalized_record(record, Path(normalized_root))
     return record
