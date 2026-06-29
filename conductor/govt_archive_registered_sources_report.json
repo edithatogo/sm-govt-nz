@@ -1,102 +1,67 @@
 {
   "courts_current_sources_report": null,
-  "dry_run": true,
-  "generated_at": "2026-06-29T16:47:36+00:00",
+  "dry_run": false,
+  "generated_at": "2026-06-29T16:54:25+00:00",
   "inputs": {
     "agency_id": "",
-    "fetch_timeout": 20,
+    "fetch_timeout": 30,
     "include_blocked": false,
-    "limit_sources": 5,
+    "limit_sources": 0,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
     "raw_root": "historical_archive_raw",
     "retry_failed_from": "",
-    "source_type": "all_feasible"
+    "source_type": "threads"
   },
   "results": [
     {
-      "agency_id": "accident-compensation-corporation",
+      "agency_id": "nz-police",
       "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "facebook",
-      "reason": "dry run: manual seed file is not present",
-      "source_id": "accident-compensation-corporation-facebook-a4eafd5a",
-      "source_type": "social_profile",
-      "status": "manual_seed_missing",
-      "url": "https://www.facebook.com/ACCNewZealand"
+      "feasibility": "api_or_export_required",
+      "platform": "threads",
+      "reason": "THREADS_ACCESS_TOKEN is required for official Threads API capture",
+      "source_id": "nz-police-threads-newzealandpolice",
+      "source_type": "threads",
+      "status": "auth_required",
+      "url": "https://www.threads.net/@newzealandpolice"
     },
     {
-      "agency_id": "accident-compensation-corporation",
+      "agency_id": "nz-trade-and-enterprise",
       "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "instagram",
-      "reason": "dry run: manual seed file is not present",
-      "source_id": "accident-compensation-corporation-instagram-ebbf541a",
-      "source_type": "social_profile",
-      "status": "manual_seed_missing",
-      "url": "https://www.instagram.com/accnewzealand"
+      "feasibility": "api_or_export_required",
+      "platform": "threads",
+      "reason": "THREADS_ACCESS_TOKEN is required for official Threads API capture",
+      "source_id": "nzte-threads-nzte",
+      "source_type": "threads",
+      "status": "auth_required",
+      "url": "https://www.threads.net/@nzte"
     },
     {
-      "agency_id": "accident-compensation-corporation",
+      "agency_id": "wellington-city-libraries",
       "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "instagram",
-      "reason": "dry run: manual seed file is not present",
-      "source_id": "accident-compensation-corporation-instagram-41dd3f71",
-      "source_type": "social_profile",
-      "status": "manual_seed_missing",
-      "url": "https://www.instagram.com/accnewzealand/"
-    },
-    {
-      "agency_id": "accident-compensation-corporation",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "newsletter",
-      "reason": "dry run: manual seed file is not present",
-      "source_id": "accident-compensation-corporation-newsletter-a2c2ad5b",
-      "source_type": "newsletter",
-      "status": "manual_seed_missing",
-      "url": "https://www.acc.co.nz/for-business/get-to-know-us/working-with-business"
-    },
-    {
-      "agency_id": "accident-compensation-corporation",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "dry run",
-      "source_id": "accident-compensation-corporation-website_page-2f4e753e",
-      "source_type": "website_page",
-      "status": "would_capture",
-      "url": "https://www.acc.co.nz"
+      "feasibility": "api_or_export_required",
+      "platform": "threads",
+      "reason": "THREADS_ACCESS_TOKEN is required for official Threads API capture",
+      "source_id": "wellington-city-libraries-threads-wcl-library",
+      "source_type": "threads",
+      "status": "auth_required",
+      "url": "https://www.threads.net/@wcl_library"
     }
   ],
   "summary": {
     "platform_counts": {
-      "facebook": 1,
-      "instagram": 2,
-      "newsletter": 1,
-      "website_page": 1
+      "threads": 3
     },
-    "selected_sources": 5,
+    "selected_sources": 3,
     "status_by_platform": {
-      "facebook": {
-        "manual_seed_missing": 1
-      },
-      "instagram": {
-        "manual_seed_missing": 2
-      },
-      "newsletter": {
-        "manual_seed_missing": 1
-      },
-      "website_page": {
-        "would_capture": 1
+      "threads": {
+        "auth_required": 3
       }
     },
     "status_counts": {
-      "manual_seed_missing": 4,
-      "would_capture": 1
+      "auth_required": 3
     }
   }
 }
