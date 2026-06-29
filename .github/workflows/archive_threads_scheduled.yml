@@ -28,6 +28,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   archive-threads:
@@ -69,6 +70,50 @@ jobs:
           --path conductor/govt_archive_registered_sources_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
+      - name: Open Threads API blocker issue
+        if: ${{ inputs.dry_run != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY' > /tmp/threads_issue_body.md
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("conductor/govt_archive_registered_sources_report.json").read_text())
+          blocked = [
+              result for result in report.get("results", [])
+              if result.get("status") in {"threads_permission_error", "threads_api_error"}
+          ]
+          if not blocked:
+              raise SystemExit(0)
+          print("# Threads archive API blocker")
+          print()
+          print(f"Generated at: {report.get('generated_at', '')}")
+          print()
+          print("The scheduled Threads archive workflow reached the Threads API but did not capture records for these registered sources:")
+          print()
+          for result in blocked:
+              print(f"- `{result.get('source_id')}` `{result.get('status')}`: {result.get('reason', '')}")
+          print()
+          print("Next steps:")
+          print()
+          print("1. Restore or approve Threads API access for the Meta app/token used by `THREADS_ACCESS_TOKEN`.")
+          print("2. Confirm profile read access for each registered government Threads account.")
+          print("3. Rerun `Archive Threads Scheduled`.")
+          PY
+          if [ ! -s /tmp/threads_issue_body.md ]; then
+            exit 0
+          fi
+          existing="$(gh issue list --state open --label threads --label archive-blocker --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file /tmp/threads_issue_body.md
+          else
+            gh issue create \
+              --title "Threads archive API access blocked" \
+              --label threads \
+              --label archive-blocker \
+              --body-file /tmp/threads_issue_body.md
+          fi
       - name: Commit Threads payloads
         if: ${{ inputs.dry_run != 'true' && inputs.commit_payloads == 'true' }}
         run: >-

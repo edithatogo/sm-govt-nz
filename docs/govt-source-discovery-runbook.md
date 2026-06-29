@@ -75,6 +75,12 @@ Current capture support:
 - `rss_feed` sources are captured through `feedparser` when discovered feed URLs are registered.
 - `bluesky` sources are captured through the public Bluesky author feed API.
 - `youtube` sources resolve channel IDs from `/channel/`, `channel_id`, or public channel pages and capture public channel RSS feeds without credentials.
+- `threads` sources are selected by the scheduled Threads archive workflow and
+  captured through the official Threads API. The runner tries public
+  profile-post lookup by account handle before falling back to numeric Threads
+  user IDs. A result of `threads_permission_error` means the source is
+  registered and selected, but the configured Meta app/token is blocked from
+  reading Threads profile posts.
 - `facebook`, `instagram`, `linkedin`, `newsletter`, `threads`, and `x` sources can be captured from operator-authorized manual seed JSON files under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
 - platform sources without a seed file are reported as `manual_seed_missing`, not as successfully captured.
 
@@ -97,5 +103,7 @@ Manual runs can disable homepage probing or limit `max_agencies` for a bounded t
 1. Run YouTube capture in dry-run, then live mode, and review unresolved channel IDs for manual correction.
 2. Add manual seed files for high-value LinkedIn, Meta, X, and newsletter sources where exports or bounded captures are available.
 3. Newsletter ingress manifests modelled on the Courts NZ email ingress.
-4. Meta platform live capture only through approved Graph/Threads API access or account-owner export.
+4. Restore approved Threads API access for the configured Meta app/token so the
+   registered Threads sources can move from `threads_permission_error` to live
+   capture.
 5. Source-specific adapters for any platform where public, stable, policy-compliant APIs become available.

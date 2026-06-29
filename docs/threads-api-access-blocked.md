@@ -2,6 +2,8 @@
 
 Date observed: 2026-06-24
 
+Latest archival observation: 2026-06-29
+
 The Courts of New Zealand Threads mirror is blocked by Meta before content is
 accepted for posting. A Threads-only backfill for the five missed court posts
 failed for every pending post with:
@@ -12,6 +14,26 @@ HTTP 400: {"error":{"message":"API access blocked.","type":"OAuthException","cod
 
 The same error is returned by the Threads profile probe, so this is an account,
 app, permission, or token access problem rather than a post formatting problem.
+
+The broader `corpus-social-media-government-nz` archive now also uses the
+official Threads profile-post lookup path for registered public handles. On
+2026-06-29, `Archive Threads Scheduled` selected all three registered Threads
+archive sources and each returned:
+
+```text
+HTTP 400 OAuthException 200 API access blocked.
+```
+
+Current registered Threads archive sources:
+
+- `nz-police-threads-newzealandpolice`: `https://www.threads.net/@newzealandpolice`
+- `nzte-threads-nzte`: `https://www.threads.net/@nzte`
+- `wellington-city-libraries-threads-wcl-library`: `https://www.threads.net/@wcl_library`
+
+Numeric Threads user IDs are no longer the first blocker for public-profile
+archive capture because the archive runner tries `/profile_posts?username=...`
+before falling back to numeric user-ID capture. The active blocker is Meta API
+access for the configured app/token.
 
 ## Pending post IDs
 
@@ -36,7 +58,9 @@ Threads `pending_post_ids` list until a successful Threads backfill posts them.
    - `THREADS_ACCESS_TOKEN`
    - `THREADS_USER_ID`, if the target account changed
 5. Run the `Validate Threads` workflow.
-6. After validation succeeds, run the `Courts Missing Mirror Backfill` workflow
+6. Run the `Archive Threads Scheduled` workflow and confirm the report no longer
+   shows `threads_permission_error`.
+7. After validation succeeds, run the `Courts Missing Mirror Backfill` workflow
    with:
 
 ```text
@@ -52,5 +76,8 @@ post_ids=3mom5bzcekc2g,3momf4jknxk2k,3momhtdf62k2k,3movx5nyv5s2e,3movyzaflkc2e
 - A Threads-only backfill failing with the same OAuth error for each pending
   ID means the five posts cannot be belatedly mirrored until Meta API access is
   restored.
+- `Archive Threads Scheduled` selecting registered sources but reporting
+  `threads_permission_error` means source registration and scheduling are
+  working, but the configured Meta app/token cannot read Threads profile posts.
 - Bluesky and X delivery state should not be changed while resolving this
   blocker.
