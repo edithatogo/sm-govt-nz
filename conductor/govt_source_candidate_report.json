@@ -8310,6 +8310,54 @@
       "url": "https://www.facebook.com/CallaghanInnovation"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "callaghan-innovation",
+      "agency_name": "Callaghan Innovation (Te Pokap\u016b Auaha)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "e8c2e3015d4b2e33",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.callaghaninnovation.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Economic Development, Science and Innovation",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/callaghaninnovationnz/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "callaghan-innovation",
+      "agency_name": "Callaghan Innovation (Te Pokap\u016b Auaha)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "fa356a1ab5732ab5",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.callaghaninnovation.govt.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Economic Development, Science and Innovation",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/callaghaninnovation/"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Callaghan Innovation",
       "account_classification": "official",
@@ -8336,6 +8384,54 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/company/callaghan-innovation"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "callaghan-innovation",
+      "agency_name": "Callaghan Innovation (Te Pokap\u016b Auaha)",
+      "agency_type": "Crown Agent",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "1761888b0593aa1d",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.callaghaninnovation.govt.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
+      "portfolio": "Economic Development, Science and Innovation",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/callaghan-innovation/"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "callaghan-innovation",
+      "agency_name": "Callaghan Innovation (Te Pokap\u016b Auaha)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "7e8f28b926e101ab",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.callaghaninnovation.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Economic Development, Science and Innovation",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/c/callaghaninnovationgovtnz"
     },
     {
       "access_method": "bounded_public_html",
@@ -28867,6 +28963,58 @@
         "official_term:nz"
       ],
       "url": "https://www.fndc.govt.nz"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.fma.govt.nz",
+      "agency_id": "financial-markets-authority",
+      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "8a5ea39e62fcbcba",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Warnings & alerts",
+      "official_website": "https://www.fma.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.fma.govt.nz",
+      "agency_id": "financial-markets-authority",
+      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "ab1b487cc872cb5b",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Subscribe to FMA Update",
+      "official_website": "https://www.fma.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
     },
     {
       "access_method": "public_rss",
@@ -140487,7 +140635,7 @@
       "url": "https://www.worksafe.govt.nz/about-us/news-and-media/high-hazards-newsletter-june-2026/"
     }
   ],
-  "generated_at": "2026-06-29T05:05:21+00:00",
+  "generated_at": "2026-06-29T05:20:03+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -153352,8 +153500,9 @@
     },
     {
       "agency_id": "callaghan-innovation",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 111,
+      "status": "ok",
       "url": "https://www.callaghaninnovation.govt.nz/"
     },
     {
@@ -153447,7 +153596,7 @@
     {
       "agency_id": "commerce-commission",
       "alternates": 0,
-      "links": 149,
+      "links": 148,
       "status": "ok",
       "url": "https://www.comcom.govt.nz/"
     },
@@ -153481,7 +153630,7 @@
     {
       "agency_id": "crown-law-office",
       "alternates": 0,
-      "links": 79,
+      "links": 80,
       "status": "ok",
       "url": "https://www.crownlaw.govt.nz/"
     },
@@ -153606,8 +153755,9 @@
     },
     {
       "agency_id": "financial-markets-authority",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 232,
+      "status": "ok",
       "url": "https://www.fma.govt.nz/"
     },
     {
@@ -154716,7 +154866,7 @@
     {
       "agency_id": "tvnz",
       "alternates": 0,
-      "links": 162,
+      "links": 165,
       "status": "ok",
       "url": "https://www.tvnz.co.nz/"
     },
@@ -154932,31 +155082,31 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 255,
-    "candidate_count": 5250,
+    "candidate_count": 5256,
     "feasibility_counts": {
       "high": 4146,
-      "low": 313,
-      "medium": 791
+      "low": 314,
+      "medium": 796
     },
     "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 293,
-      "instagram": 162,
-      "linkedin": 237,
-      "newsletter": 166,
+      "facebook": 294,
+      "instagram": 163,
+      "linkedin": 238,
+      "newsletter": 168,
       "rss": 3811,
       "website_page": 317,
       "x": 76,
-      "youtube": 157
+      "youtube": 158
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 166,
+      "newsletter": 168,
       "rss_feed": 61,
       "search_seed": 3750,
-      "social_profile": 943,
+      "social_profile": 947,
       "website_page": 317
     }
   }
