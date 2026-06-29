@@ -31,6 +31,7 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Update archive source captures"
+          --force
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
           --path 'historical_archive_raw/**'
