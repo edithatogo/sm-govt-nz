@@ -1,6 +1,6 @@
 {
   "description": "Archive onboarding manifest generated from the government source candidate report.",
-  "generated_at": "2026-06-29T09:53:46+00:00",
+  "generated_at": "2026-06-29T10:22:59+00:00",
   "sources": [
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -12,7 +12,7 @@
       "candidate_id": "fc8c94dc594b1c0c",
       "feasibility": "medium",
       "notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "party_id": "",
       "person_id": "",
       "platform": "facebook",
@@ -27950,7 +27950,7 @@
       "candidate_id": "2f4321feb9c7f4dc",
       "feasibility": "low",
       "notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "origin": "registry.social_profiles",
+      "origin": "homepage.link,registry.social_profiles",
       "party_id": "",
       "person_id": "",
       "platform": "linkedin",
@@ -33898,9 +33898,8 @@
   ],
   "summary": {
     "archive_status_counts": {
-      "candidate": 1048,
-      "degraded": 79,
       "candidate": 1051,
+      "degraded": 79,
       "manual_seed": 255,
       "ready": 450
     },

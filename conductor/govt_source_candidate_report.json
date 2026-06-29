@@ -1,32 +1,6 @@
 {
   "candidates": [
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.acc.co.nz",
-      "agency_id": "accident-compensation-corporation",
-      "agency_name": "Accident Compensation Corporation (Te Kaporeihana \u0100whina Hunga Whara)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "8c23cf957df7a46f",
-      "confidence_score": 0.5,
-      "domain_trust": "medium",
-      "feasibility": "medium",
-      "link_text": "Subscribe to 'Working with business' updates",
-      "official_website": "https://www.acc.co.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "ACC",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.acc.co.nz/for-business/get-to-know-us/working-with-business"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.acc.co.nz",
       "agency_id": "accident-compensation-corporation",
@@ -446,7 +420,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.acc.co.nz",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "facebook",
       "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
       "portfolio": "ACC",
@@ -488,30 +462,6 @@
       "url": "https://www.instagram.com/accnewzealand"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "ACC New Zealand on Instagram",
-      "agency_id": "accident-compensation-corporation",
-      "agency_name": "Accident Compensation Corporation (Te Kaporeihana \u0100whina Hunga Whara)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "cd0b595447b81420",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.acc.co.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "ACC",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.instagram.com/accnewzealand/"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "ACC New Zealand",
       "account_classification": "official",
@@ -540,30 +490,6 @@
       "url": "https://www.linkedin.com/company/acc-new-zealand"
     },
     {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "ACC New Zealand on LinkedIn",
-      "agency_id": "accident-compensation-corporation",
-      "agency_name": "Accident Compensation Corporation (Te Kaporeihana \u0100whina Hunga Whara)",
-      "agency_type": "Crown Agent",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "98f366e57c5d766e",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.acc.co.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "ACC",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.linkedin.com/company/acc-new-zealand/"
-    },
-    {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
       "account": "ACC New Zealand",
       "account_classification": "official",
@@ -590,30 +516,6 @@
         "official_term:new zealand"
       ],
       "url": "https://www.youtube.com/@accnz"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "ACC New Zealand on YouTube",
-      "agency_id": "accident-compensation-corporation",
-      "agency_name": "Accident Compensation Corporation (Te Kaporeihana \u0100whina Hunga Whara)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "dae4ac8e59670469",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.acc.co.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "ACC",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
     },
     {
       "access_method": "bounded_public_html",
@@ -28963,58 +28865,6 @@
         "official_term:nz"
       ],
       "url": "https://www.fndc.govt.nz"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.fma.govt.nz",
-      "agency_id": "financial-markets-authority",
-      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
-      "agency_type": "Independent Crown Entity",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "8a5ea39e62fcbcba",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Warnings & alerts",
-      "official_website": "https://www.fma.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Commerce and Consumer Affairs",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.fma.govt.nz",
-      "agency_id": "financial-markets-authority",
-      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
-      "agency_type": "Independent Crown Entity",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "ab1b487cc872cb5b",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Subscribe to FMA Update",
-      "official_website": "https://www.fma.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Commerce and Consumer Affairs",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
     },
     {
       "access_method": "public_rss",
@@ -72447,32 +72297,6 @@
       "url": "https://www.nzals.co.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.nzblood.co.nz",
-      "agency_id": "nz-blood-service",
-      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "44a047d4d3996ce3",
-      "confidence_score": 0.5,
-      "domain_trust": "medium",
-      "feasibility": "medium",
-      "link_text": "Clinical Newsletter",
-      "official_website": "https://www.nzblood.co.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Health",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "official_term:new zealand"
-      ],
-      "url": "https://www.nzblood.co.nz/healthcare-professionals/transfusion-medicine/clinical-newsletter"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.nzblood.co.nz",
       "agency_id": "nz-blood-service",
@@ -72878,102 +72702,6 @@
       "url": "https://www.nzblood.co.nz/subscribe"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "nz-blood-service",
-      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "6a614cc59697a5e0",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.nzblood.co.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Health",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.facebook.com/NewZealandBloodService  "
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "nz-blood-service",
-      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "e20ee523619f521c",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.nzblood.co.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Health",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.instagram.com/nzbloodservice/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "nz-blood-service",
-      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
-      "agency_type": "Crown Agent",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "c0a496da3b6f97d3",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.nzblood.co.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Health",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.linkedin.com/company/new-zealand-blood-service/"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
-      "agency_id": "nz-blood-service",
-      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "7b3ee8c0091a8ef7",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.nzblood.co.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Health",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.youtube.com/user/savelivesgiveblood "
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.nzblood.co.nz",
       "agency_id": "nz-blood-service",
@@ -72999,33 +72727,6 @@
         "official_term:new zealand"
       ],
       "url": "https://www.nzblood.co.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.nzblood.co.nz",
-      "agency_id": "nz-blood-service",
-      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
-      "agency_type": "Crown Agent",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "3ce7e987a8fc9751",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_text": "Clinical Newsletter",
-      "official_website": "https://www.nzblood.co.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Health",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:new zealand"
-      ],
-      "url": "https://www.nzblood.co.nz/healthcare-professionals/transfusion-medicine/clinical-newsletter"
     },
     {
       "access_method": "public_rss",
@@ -117710,6 +117411,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Visit TWWoA facebook \r\n                             \r\n     Facebook Logo",
+      "agency_id": "te-whare-wananga-o-awanuiarangi",
+      "agency_name": "Te Whare W\u0101nanga o Awanui\u0101rangi",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "015ade3fa05fce96",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wananga.ac.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/Awanuiarangi/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "twwananga",
       "account_classification": "official",
       "agency_id": "te-whare-wananga-o-awanuiarangi",
@@ -117735,6 +117460,30 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/twwananga"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Visit TWWoA instagram \r\n                             \r\n     Instagram Logo",
+      "agency_id": "te-whare-wananga-o-awanuiarangi",
+      "agency_name": "Te Whare W\u0101nanga o Awanui\u0101rangi",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "615c031467bba39a",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wananga.ac.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/tewharewanangaoawanuiarangi/"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -117779,7 +117528,7 @@
       "domain_trust": "unknown",
       "feasibility": "low",
       "official_website": "https://www.wananga.ac.nz",
-      "origin": "registry.social_profiles",
+      "origin": "homepage.link,registry.social_profiles",
       "platform": "linkedin",
       "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
       "portfolio": "Education",
@@ -117819,6 +117568,30 @@
         "official_term:nz"
       ],
       "url": "https://www.youtube.com/@TeWhareWananga"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "Visit TWWoA youtube \r\n                             \r\n     Youtube Logo",
+      "agency_id": "te-whare-wananga-o-awanuiarangi",
+      "agency_name": "Te Whare W\u0101nanga o Awanui\u0101rangi",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "a97186e8ab4328f5",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wananga.ac.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/@tewharewanangaoawanuiarangi"
     },
     {
       "access_method": "bounded_public_html",
@@ -140635,7 +140408,7 @@
       "url": "https://www.worksafe.govt.nz/about-us/news-and-media/high-hazards-newsletter-june-2026/"
     }
   ],
-  "generated_at": "2026-06-29T05:20:03+00:00",
+  "generated_at": "2026-06-29T10:22:59+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -153399,9 +153172,8 @@
   "probe_log": [
     {
       "agency_id": "accident-compensation-corporation",
-      "alternates": 0,
-      "links": 200,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.acc.co.nz/"
     },
     {
@@ -153527,8 +153299,8 @@
     },
     {
       "agency_id": "central-otago-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.codc.govt.nz/"
     },
     {
@@ -153589,8 +153361,8 @@
     },
     {
       "agency_id": "clutha-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.cluthadc.govt.nz/"
     },
     {
@@ -153630,7 +153402,7 @@
     {
       "agency_id": "crown-law-office",
       "alternates": 0,
-      "links": 80,
+      "links": 81,
       "status": "ok",
       "url": "https://www.crownlaw.govt.nz/"
     },
@@ -153729,8 +153501,8 @@
     },
     {
       "agency_id": "environment-southland",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.es.govt.nz/"
     },
     {
@@ -153755,9 +153527,8 @@
     },
     {
       "agency_id": "financial-markets-authority",
-      "alternates": 0,
-      "links": 232,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.fma.govt.nz/"
     },
     {
@@ -153807,8 +153578,8 @@
     },
     {
       "agency_id": "grey-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.greydc.govt.nz/"
     },
     {
@@ -153903,8 +153674,8 @@
     },
     {
       "agency_id": "hurunui-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.hurunui.govt.nz/"
     },
     {
@@ -153942,14 +153713,14 @@
     },
     {
       "agency_id": "invercargill-city-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.icc.govt.nz/"
     },
     {
       "agency_id": "kaikoura-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.kaikoura.govt.nz/"
     },
     {
@@ -153969,7 +153740,7 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 109,
+      "links": 108,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
@@ -154063,8 +153834,8 @@
     },
     {
       "agency_id": "marlborough-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.marlborough.govt.nz/"
     },
     {
@@ -154076,8 +153847,8 @@
     },
     {
       "agency_id": "masterton-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.mstn.govt.nz/"
     },
     {
@@ -154218,8 +153989,8 @@
     },
     {
       "agency_id": "nelson-city-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.nelson.govt.nz/"
     },
     {
@@ -154278,9 +154049,8 @@
     },
     {
       "agency_id": "nz-blood-service",
-      "alternates": 0,
-      "links": 665,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.nzblood.co.nz/"
     },
     {
@@ -154423,8 +154193,8 @@
     },
     {
       "agency_id": "opotiki-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.odc.govt.nz/"
     },
     {
@@ -154579,8 +154349,8 @@
     },
     {
       "agency_id": "rotorua-lakes-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.rotorualakescouncil.nz/"
     },
     {
@@ -154638,14 +154408,14 @@
     },
     {
       "agency_id": "south-taranaki-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.southtaranaki.com/"
     },
     {
       "agency_id": "south-waikato-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.southwaikato.govt.nz/"
     },
     {
@@ -154684,8 +154454,8 @@
     },
     {
       "agency_id": "stratford-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.stratford.govt.nz/"
     },
     {
@@ -154738,8 +154508,8 @@
     },
     {
       "agency_id": "taupo-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.taupodc.govt.nz/"
     },
     {
@@ -154806,8 +154576,9 @@
     },
     {
       "agency_id": "te-whare-wananga-o-awanuiarangi",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 134,
+      "status": "ok",
       "url": "https://www.wananga.ac.nz/"
     },
     {
@@ -154947,14 +154718,14 @@
     },
     {
       "agency_id": "waimate-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.waimatedc.govt.nz/"
     },
     {
       "agency_id": "waipa-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.waipadc.govt.nz/"
     },
     {
@@ -155005,14 +154776,14 @@
     },
     {
       "agency_id": "west-coast-regional-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.wcrc.govt.nz/"
     },
     {
       "agency_id": "western-bay-of-plenty-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.westernbay.govt.nz/"
     },
     {
@@ -155082,32 +154853,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 255,
-    "candidate_count": 5256,
+    "candidate_count": 5247,
     "feasibility_counts": {
-      "high": 4146,
-      "low": 314,
-      "medium": 796
+      "high": 4145,
+      "low": 312,
+      "medium": 790
     },
     "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
       "facebook": 294,
-      "instagram": 163,
-      "linkedin": 238,
-      "newsletter": 168,
+      "instagram": 162,
+      "linkedin": 236,
+      "newsletter": 164,
       "rss": 3811,
-      "website_page": 317,
+      "website_page": 316,
       "x": 76,
-      "youtube": 158
+      "youtube": 157
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 168,
+      "newsletter": 164,
       "rss_feed": 61,
       "search_seed": 3750,
-      "social_profile": 947,
-      "website_page": 317
+      "social_profile": 943,
+      "website_page": 316
     }
   }
 }
