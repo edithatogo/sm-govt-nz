@@ -165,9 +165,10 @@ jobs:
         if: ${{ inputs.dry_run == 'false' }}
         run: |
           publish_target="artifact"
-          status_report="conductor/archive_publication_status.json"
+          status_report="dist/archive_publication_status_artifact.json"
           if [ "${{ inputs.publish }}" = "true" ] && [ "${{ steps.monthly-publication.outputs.should_publish }}" = "true" ]; then
             publish_target="${{ inputs.publication_target }}"
+            status_report="conductor/archive_publication_status.json"
           elif [ "${{ inputs.publish }}" = "true" ]; then
             status_report="dist/archive_publication_status_skipped.json"
             echo "External publication already exists for ${{ steps.monthly-publication.outputs.release_version }}; building artifact only."
@@ -202,11 +203,13 @@ jobs:
           --path conductor/govt_archive_registered_sources_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
-          --path conductor/archive_publication_status.json
           --path dist/archive_manifest.json
           --path dist/archive_compaction_manifest.json
           --path dist/corpus_manifest.json
           --path dist/README.md
+          --path dist/archive_publication_status_artifact.json
+          --path dist/archive_publication_status_skipped.json
+          --path conductor/archive_publication_status.json
       - name: Commit archive payloads
         if: ${{ inputs.dry_run == 'false' && inputs.commit_payloads == 'true' }}
         run: |
@@ -240,6 +243,7 @@ jobs:
             dist/archive_manifest.json
             dist/archive_compaction_manifest.json
             conductor/archive_publication_status.json
+            dist/archive_publication_status_artifact.json
             dist/archive_publication_status_skipped.json
             dist/corpus_manifest.json
             dist/README.md
