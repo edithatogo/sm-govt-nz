@@ -9,7 +9,7 @@ DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
 DEFAULT_POLICY = Path("config/manual_seed_onboarding.json")
 DEFAULT_REPORT = Path("conductor/manual_seed_onboarding_report.json")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
-DEFAULT_PLATFORMS = ["facebook", "instagram", "linkedin", "x"]
+DEFAULT_PLATFORMS = ["facebook", "instagram", "threads", "linkedin", "x"]
 
 
 def now_iso() -> str:

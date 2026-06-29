@@ -1,0 +1,73 @@
+{
+  "description": "Readiness report for registered Threads sources using approved API access or operator-authorized manual seed exports.",
+  "generated_at": "2026-06-29T16:52:02+00:00",
+  "inputs": {
+    "manifest": "conductor\\govt_archive_source_manifest.json",
+    "seed_root": "manual_archive_seeds\\threads",
+    "validation_report": "conductor\\threads_manual_seed_validation_report.json"
+  },
+  "items": [
+    {
+      "access_method": "official_threads_api",
+      "agency_id": "nz-police",
+      "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
+      "archive_status": "candidate",
+      "feasibility": "api_or_export_required",
+      "handle": "newzealandpolice",
+      "readiness": "seed_missing",
+      "record_count": 0,
+      "seed_candidates": [
+        "manual_archive_seeds/threads/nz-police-threads-newzealandpolice.json",
+        "manual_archive_seeds/threads/nz-police.json"
+      ],
+      "seed_files_present": [],
+      "source_id": "nz-police-threads-newzealandpolice",
+      "url": "https://www.threads.net/@newzealandpolice",
+      "validation_results": []
+    },
+    {
+      "access_method": "official_threads_api",
+      "agency_id": "nz-trade-and-enterprise",
+      "agency_name": "New Zealand Trade and Enterprise (Te Taurapa T\u016bhono)",
+      "archive_status": "candidate",
+      "feasibility": "api_or_export_required",
+      "handle": "nzte",
+      "readiness": "seed_missing",
+      "record_count": 0,
+      "seed_candidates": [
+        "manual_archive_seeds/threads/nzte-threads-nzte.json",
+        "manual_archive_seeds/threads/nz-trade-and-enterprise.json"
+      ],
+      "seed_files_present": [],
+      "source_id": "nzte-threads-nzte",
+      "url": "https://www.threads.net/@nzte",
+      "validation_results": []
+    },
+    {
+      "access_method": "official_threads_api",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "archive_status": "candidate",
+      "feasibility": "api_or_export_required",
+      "handle": "wcl_library",
+      "readiness": "seed_missing",
+      "record_count": 0,
+      "seed_candidates": [
+        "manual_archive_seeds/threads/wellington-city-libraries-threads-wcl-library.json",
+        "manual_archive_seeds/threads/wellington-city-libraries.json"
+      ],
+      "seed_files_present": [],
+      "source_id": "wellington-city-libraries-threads-wcl-library",
+      "url": "https://www.threads.net/@wcl_library",
+      "validation_results": []
+    }
+  ],
+  "summary": {
+    "readiness_counts": {
+      "seed_missing": 3
+    },
+    "records_ready": 0,
+    "registered_threads_sources": 3,
+    "seed_files_present": 0
+  }
+}

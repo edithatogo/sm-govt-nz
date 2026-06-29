@@ -38,8 +38,12 @@ jobs:
             args+=(--allow-empty)
           fi
           python scripts/validate_threads_manual_seeds.py "${args[@]}"
+      - name: Build Threads seed readiness report
+        run: python scripts/build_threads_seed_readiness_report.py
       - name: Commit validation report
         run: >-
           python scripts/commit_state_updates.py
           --message "Validate Threads manual seed exports"
           --path conductor/threads_manual_seed_validation_report.json
+          --path conductor/threads_seed_readiness_report.json
+          --path conductor/threads_seed_readiness_summary.md

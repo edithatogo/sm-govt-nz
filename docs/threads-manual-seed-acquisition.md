@@ -37,6 +37,21 @@ Recommended optional fields:
 5. Fix any duplicate, URL, timestamp, account-handle, or media-shape failures.
 6. Run `Archive Threads Manual Seeds` after validation passes.
 
+## Readiness reporting
+
+Run `scripts/build_threads_seed_readiness_report.py` or the `Validate Threads
+Manual Seeds` workflow to refresh:
+
+- `conductor/threads_seed_readiness_report.json`
+- `conductor/threads_seed_readiness_summary.md`
+
+Readiness statuses:
+
+- `seed_missing`: no source-specific or agency-level seed JSON is present.
+- `seed_empty`: a seed file is present but contains no posts.
+- `seed_invalid`: a seed file is present but failed validation.
+- `ready_to_archive`: at least one valid post is ready for archival.
+
 ## Current registered seed filenames
 
 - `manual_archive_seeds/threads/nz-police-threads-newzealandpolice.json`

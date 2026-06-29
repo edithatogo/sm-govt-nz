@@ -6,7 +6,7 @@ on:
       platforms:
         description: "Comma-separated non-live-capturable platforms to report"
         required: true
-        default: "facebook,instagram,linkedin,x"
+        default: "facebook,instagram,threads,linkedin,x"
       commit_report:
         description: "Commit the refreshed onboarding report"
         required: true
@@ -34,7 +34,7 @@ jobs:
       - name: Build manual/API onboarding report
         run: >-
           python scripts/build_manual_seed_onboarding_report.py
-          --platforms "${{ inputs.platforms || 'facebook,instagram,linkedin,x' }}"
+          --platforms "${{ inputs.platforms || 'facebook,instagram,threads,linkedin,x' }}"
       - name: Commit onboarding report
         if: ${{ github.event_name == 'schedule' || inputs.commit_report == 'true' }}
         run: >-

@@ -18,6 +18,14 @@
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
       "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only."
     },
+    "threads": {
+      "family": "meta",
+      "acceptable_access_methods": ["threads_api_with_threads_profile_discovery", "account_owner_export", "operator_authorized_seed"],
+      "required_authorization": "approved_threads_app_or_account_owner_or_operator_authorized_capture",
+      "seed_directory": "manual_archive_seeds/threads",
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "live_capture_policy": "Do not scrape unauthenticated public Threads pages. Use the approved Threads API path, account-owner export, or explicit operator-authorized seed JSON only."
+    },
     "linkedin": {
       "family": "linkedin",
       "acceptable_access_methods": ["approved_linkedin_api", "organization_admin_export", "operator_authorized_seed"],

@@ -59,6 +59,8 @@ jobs:
         run: python -m pip install uv
       - name: Install runtime dependencies
         run: uv pip install --system -r requirements.txt
+      - name: Build Threads seed readiness report
+        run: python scripts/build_threads_seed_readiness_report.py
       - name: Validate Threads manual seeds
         run: python scripts/validate_threads_manual_seeds.py --allow-empty
       - name: Archive registered Threads sources
@@ -108,6 +110,8 @@ jobs:
           --message "Archive Threads manual seed exports"
           --force
           --path conductor/threads_manual_seed_validation_report.json
+          --path conductor/threads_seed_readiness_report.json
+          --path conductor/threads_seed_readiness_summary.md
           --path conductor/govt_archive_registered_sources_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json

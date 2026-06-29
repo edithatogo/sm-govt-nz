@@ -1,16 +1,17 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-06-28T16:46:07+00:00",
+  "generated_at": "2026-06-29T16:52:03+00:00",
   "inputs": {
-    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manifest": "conductor\\govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "platforms": [
       "facebook",
       "instagram",
+      "threads",
       "linkedin",
       "x"
     ],
-    "policy": "config/manual_seed_onboarding.json"
+    "policy": "config\\manual_seed_onboarding.json"
   },
   "items": [
     {
@@ -588,6 +589,30 @@
       "source_id": "christchurch-city-council-facebook-97a01ba4",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/ChristchurchCityCouncil"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/christchurch-city-libraries-facebook-5f7e2331.json",
+        "manual_archive_seeds/facebook/christchurch-city-libraries.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "christchurch-city-libraries-facebook-5f7e2331",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/ChristchurchCityLibraries"
     },
     {
       "acceptable_access_methods": [
@@ -1932,30 +1957,6 @@
       "source_id": "hutt-city-council-facebook-0df3abb5",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/HuttCityCouncil"
-    },
-    {
-      "acceptable_access_methods": [
-        "meta_graph_api",
-        "page_owner_export",
-        "operator_authorized_seed"
-      ],
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
-      "onboarding_status": "needs_authorized_seed_or_api",
-      "platform": "facebook",
-      "required_authorization": "page_owner_or_approved_app",
-      "seed_candidates": [
-        "manual_archive_seeds/facebook/independent-childrens-monitor-facebook-4663b70e.json",
-        "manual_archive_seeds/facebook/independent-childrens-monitor.json"
-      ],
-      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "independent-childrens-monitor-facebook-4663b70e",
-      "source_type": "social_profile",
-      "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faroturuki.govt.nz"
     },
     {
       "acceptable_access_methods": [
@@ -5299,7 +5300,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 3 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 4 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "archive_status": "candidate",
@@ -5340,30 +5341,6 @@
       "source_id": "social-workers-registration-board-facebook-6c3382b9",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/102062118004656_1347582970818632"
-    },
-    {
-      "acceptable_access_methods": [
-        "meta_graph_api",
-        "page_owner_export",
-        "operator_authorized_seed"
-      ],
-      "account": "Share",
-      "agency_id": "social-workers-registration-board",
-      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
-      "onboarding_status": "needs_authorized_seed_or_api",
-      "platform": "facebook",
-      "required_authorization": "page_owner_or_approved_app",
-      "seed_candidates": [
-        "manual_archive_seeds/facebook/social-workers-registration-board-facebook-aa043ab2.json",
-        "manual_archive_seeds/facebook/social-workers-registration-board.json"
-      ],
-      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "social-workers-registration-board-facebook-aa043ab2",
-      "source_type": "social_profile",
-      "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2F102062118004656_1347582970818632"
     },
     {
       "acceptable_access_methods": [
@@ -8004,6 +7981,30 @@
       "source_id": "christchurch-city-council-instagram-deb342eb",
       "source_type": "social_profile",
       "url": "https://www.instagram.com/christchurchcitycouncil/"
+    },
+    {
+      "acceptable_access_methods": [
+        "instagram_graph_api",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "",
+      "agency_id": "christchurch-city-libraries",
+      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "instagram",
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/instagram/christchurch-city-libraries-instagram-83b94b38.json",
+        "manual_archive_seeds/instagram/christchurch-city-libraries.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "christchurch-city-libraries-instagram-83b94b38",
+      "source_type": "social_profile",
+      "url": "https://www.instagram.com/christchurchlib/"
     },
     {
       "acceptable_access_methods": [
@@ -12211,30 +12212,6 @@
         "organization_admin_export",
         "operator_authorized_seed"
       ],
-      "account": "Share on LinkedIn",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "archive_status": "manual_seed",
-      "feasibility": "low",
-      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
-      "onboarding_status": "needs_authorized_seed_or_api",
-      "platform": "linkedin",
-      "required_authorization": "organization_admin_or_approved_app",
-      "seed_candidates": [
-        "manual_archive_seeds/linkedin/central-hawkes-bay-district-council-linkedin-15735f22.json",
-        "manual_archive_seeds/linkedin/central-hawkes-bay-district-council.json"
-      ],
-      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "central-hawkes-bay-district-council-linkedin-15735f22",
-      "source_type": "social_profile",
-      "url": "http://www.linkedin.com/shareArticle?mini=true&url=https://www.chbdc.govt.nz/"
-    },
-    {
-      "acceptable_access_methods": [
-        "approved_linkedin_api",
-        "organization_admin_export",
-        "operator_authorized_seed"
-      ],
       "account": "View our profile on LinkedIn",
       "agency_id": "central-hawkes-bay-district-council",
       "agency_name": "Central Hawke's Bay District Council",
@@ -13476,30 +13453,6 @@
       "source_id": "hutt-city-council-linkedin-4ff33532",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/hutt-city-council"
-    },
-    {
-      "acceptable_access_methods": [
-        "approved_linkedin_api",
-        "organization_admin_export",
-        "operator_authorized_seed"
-      ],
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "archive_status": "manual_seed",
-      "feasibility": "low",
-      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
-      "onboarding_status": "needs_authorized_seed_or_api",
-      "platform": "linkedin",
-      "required_authorization": "organization_admin_or_approved_app",
-      "seed_candidates": [
-        "manual_archive_seeds/linkedin/independent-childrens-monitor-linkedin-0b48d19c.json",
-        "manual_archive_seeds/linkedin/independent-childrens-monitor.json"
-      ],
-      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "independent-childrens-monitor-linkedin-0b48d19c",
-      "source_type": "social_profile",
-      "url": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Faroturuki.govt.nz&summary=Home"
     },
     {
       "acceptable_access_methods": [
@@ -15187,7 +15140,7 @@
         "organization_admin_export",
         "operator_authorized_seed"
       ],
-      "account": "",
+      "account": "Linkedin",
       "agency_id": "nz-police",
       "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
       "archive_status": "manual_seed",
@@ -16380,30 +16333,6 @@
       "source_id": "social-investment-agency-linkedin-7e43ac35",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/social-investment-agency"
-    },
-    {
-      "acceptable_access_methods": [
-        "approved_linkedin_api",
-        "organization_admin_export",
-        "operator_authorized_seed"
-      ],
-      "account": "Share on Linked In",
-      "agency_id": "social-workers-registration-board",
-      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
-      "archive_status": "manual_seed",
-      "feasibility": "low",
-      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
-      "onboarding_status": "needs_authorized_seed_or_api",
-      "platform": "linkedin",
-      "required_authorization": "organization_admin_or_approved_app",
-      "seed_candidates": [
-        "manual_archive_seeds/linkedin/social-workers-registration-board-linkedin-f5997b89.json",
-        "manual_archive_seeds/linkedin/social-workers-registration-board.json"
-      ],
-      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "social-workers-registration-board-linkedin-f5997b89",
-      "source_type": "social_profile",
-      "url": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.facebook.com%2F102062118004656_1347582970818632&title=%098%2C000%2B%20social%20workers%20have%20conquered%20the%20practising%20certificate%20renewal%20process%20%F0%9F%91%8F%F0%9F%AB%B6%20ka%20mutu%20pea%20that%20is%20great%21%20For%20those%20who%20did%20not%20complete%20the%20annual%20workforce%20survey%2C%20nau%20mau%20hoki%20mai%20%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F%E2%80%8D%E2%9E%A1%EF%B8%8F%F0%9F%8F%83%E2%80%8D%E2%9E%A1%EF%B8%8F%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F%E2%80%8D%E2%9E%A1%EF%B8%8F%20please%20come%20back%20and%20take%20the%20time%20to%20answer%20the%20survey.%20K%C5%8Drero%20mai%21Practising%20Certificate%20renewal%20closes%2030%20June.%20If%20you%20%F0%9F%AB%B5%20%20haven%E2%80%99t%20quite%20got%20there%20yet%2C%20kia%20tere%20e%20hoa%20m%C4%81.%20%09%09"
     },
     {
       "acceptable_access_methods": [
@@ -18087,6 +18016,78 @@
     },
     {
       "acceptable_access_methods": [
+        "threads_api_with_threads_profile_discovery",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "newzealandpolice",
+      "agency_id": "nz-police",
+      "agency_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa)",
+      "archive_status": "candidate",
+      "feasibility": "api_or_export_required",
+      "live_capture_policy": "Do not scrape unauthenticated public Threads pages. Use the approved Threads API path, account-owner export, or explicit operator-authorized seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "threads",
+      "required_authorization": "approved_threads_app_or_account_owner_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/threads/nz-police-threads-newzealandpolice.json",
+        "manual_archive_seeds/threads/nz-police.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "nz-police-threads-newzealandpolice",
+      "source_type": "threads",
+      "url": "https://www.threads.net/@newzealandpolice"
+    },
+    {
+      "acceptable_access_methods": [
+        "threads_api_with_threads_profile_discovery",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "nzte",
+      "agency_id": "nz-trade-and-enterprise",
+      "agency_name": "New Zealand Trade and Enterprise (Te Taurapa T\u016bhono)",
+      "archive_status": "candidate",
+      "feasibility": "api_or_export_required",
+      "live_capture_policy": "Do not scrape unauthenticated public Threads pages. Use the approved Threads API path, account-owner export, or explicit operator-authorized seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "threads",
+      "required_authorization": "approved_threads_app_or_account_owner_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/threads/nzte-threads-nzte.json",
+        "manual_archive_seeds/threads/nz-trade-and-enterprise.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "nzte-threads-nzte",
+      "source_type": "threads",
+      "url": "https://www.threads.net/@nzte"
+    },
+    {
+      "acceptable_access_methods": [
+        "threads_api_with_threads_profile_discovery",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "wcl_library",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "archive_status": "candidate",
+      "feasibility": "api_or_export_required",
+      "live_capture_policy": "Do not scrape unauthenticated public Threads pages. Use the approved Threads API path, account-owner export, or explicit operator-authorized seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "threads",
+      "required_authorization": "approved_threads_app_or_account_owner_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/threads/wellington-city-libraries-threads-wcl-library.json",
+        "manual_archive_seeds/threads/wellington-city-libraries.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "wellington-city-libraries-threads-wcl-library",
+      "source_type": "threads",
+      "url": "https://www.threads.net/@wcl_library"
+    },
+    {
+      "acceptable_access_methods": [
         "official_api",
         "account_owner_archive",
         "public_archive_dataset",
@@ -18209,31 +18210,6 @@
       "source_id": "broadcasting-standards-authority-x-db8d9de8",
       "source_type": "social_profile",
       "url": "https://Twitter.com/BSA_NZ"
-    },
-    {
-      "acceptable_access_methods": [
-        "official_api",
-        "account_owner_archive",
-        "public_archive_dataset",
-        "operator_authorized_seed"
-      ],
-      "account": "Share on Twitter",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "archive_status": "degraded",
-      "feasibility": "low",
-      "live_capture_policy": "Treat live browser capture as degraded. Prefer official API, account-owner archive, public archive dataset, or explicit operator seed JSON.",
-      "onboarding_status": "needs_authorized_seed_or_api",
-      "platform": "x",
-      "required_authorization": "account_owner_or_approved_api_or_lawful_public_archive",
-      "seed_candidates": [
-        "manual_archive_seeds/x/central-hawkes-bay-district-council-x-82c9d6f9.json",
-        "manual_archive_seeds/x/central-hawkes-bay-district-council.json"
-      ],
-      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "central-hawkes-bay-district-council-x-82c9d6f9",
-      "source_type": "social_profile",
-      "url": "https://twitter.com/share?url=https://www.chbdc.govt.nz/"
     },
     {
       "acceptable_access_methods": [
@@ -18759,31 +18735,6 @@
       "source_id": "human-rights-commission-x-401ebc0e",
       "source_type": "social_profile",
       "url": "https://x.com/HRCNZ"
-    },
-    {
-      "acceptable_access_methods": [
-        "official_api",
-        "account_owner_archive",
-        "public_archive_dataset",
-        "operator_authorized_seed"
-      ],
-      "account": "",
-      "agency_id": "independent-childrens-monitor",
-      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
-      "archive_status": "degraded",
-      "feasibility": "low",
-      "live_capture_policy": "Treat live browser capture as degraded. Prefer official API, account-owner archive, public archive dataset, or explicit operator seed JSON.",
-      "onboarding_status": "needs_authorized_seed_or_api",
-      "platform": "x",
-      "required_authorization": "account_owner_or_approved_api_or_lawful_public_archive",
-      "seed_candidates": [
-        "manual_archive_seeds/x/independent-childrens-monitor-x-33ecee16.json",
-        "manual_archive_seeds/x/independent-childrens-monitor.json"
-      ],
-      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "independent-childrens-monitor-x-33ecee16",
-      "source_type": "social_profile",
-      "url": "https://x.com/intent/tweet?text=Home&url=https%3A%2F%2Faroturuki.govt.nz"
     },
     {
       "acceptable_access_methods": [
@@ -19817,31 +19768,6 @@
         "public_archive_dataset",
         "operator_authorized_seed"
       ],
-      "account": "Share on Twitter",
-      "agency_id": "social-workers-registration-board",
-      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
-      "archive_status": "degraded",
-      "feasibility": "low",
-      "live_capture_policy": "Treat live browser capture as degraded. Prefer official API, account-owner archive, public archive dataset, or explicit operator seed JSON.",
-      "onboarding_status": "needs_authorized_seed_or_api",
-      "platform": "x",
-      "required_authorization": "account_owner_or_approved_api_or_lawful_public_archive",
-      "seed_candidates": [
-        "manual_archive_seeds/x/social-workers-registration-board-x-7af017c6.json",
-        "manual_archive_seeds/x/social-workers-registration-board.json"
-      ],
-      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "social-workers-registration-board-x-7af017c6",
-      "source_type": "social_profile",
-      "url": "https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.facebook.com%2F102062118004656_1347582970818632"
-    },
-    {
-      "acceptable_access_methods": [
-        "official_api",
-        "account_owner_archive",
-        "public_archive_dataset",
-        "operator_authorized_seed"
-      ],
       "account": "Stats_NZ",
       "agency_id": "stats-nz",
       "agency_name": "Statistics New Zealand (Tatauranga Aotearoa)",
@@ -20173,6 +20099,18 @@
       "seed_directory": "manual_archive_seeds/linkedin",
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url"
     },
+    "threads": {
+      "acceptable_access_methods": [
+        "threads_api_with_threads_profile_discovery",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
+      "family": "meta",
+      "live_capture_policy": "Do not scrape unauthenticated public Threads pages. Use the approved Threads API path, account-owner export, or explicit operator-authorized seed JSON only.",
+      "required_authorization": "approved_threads_app_or_account_owner_or_operator_authorized_capture",
+      "seed_directory": "manual_archive_seeds/threads",
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url"
+    },
     "x": {
       "acceptable_access_methods": [
         "official_api",
@@ -20189,28 +20127,32 @@
   },
   "summary": {
     "platform_counts": {
-      "facebook": 316,
-      "instagram": 179,
-      "linkedin": 258,
-      "x": 82
+      "facebook": 315,
+      "instagram": 180,
+      "linkedin": 255,
+      "threads": 3,
+      "x": 79
     },
-    "selected_sources": 835,
+    "selected_sources": 832,
     "status_by_platform": {
       "facebook": {
-        "needs_authorized_seed_or_api": 316
+        "needs_authorized_seed_or_api": 315
       },
       "instagram": {
-        "needs_authorized_seed_or_api": 179
+        "needs_authorized_seed_or_api": 180
       },
       "linkedin": {
-        "needs_authorized_seed_or_api": 258
+        "needs_authorized_seed_or_api": 255
+      },
+      "threads": {
+        "needs_authorized_seed_or_api": 3
       },
       "x": {
-        "needs_authorized_seed_or_api": 82
+        "needs_authorized_seed_or_api": 79
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 835
+      "needs_authorized_seed_or_api": 832
     }
   }
 }
