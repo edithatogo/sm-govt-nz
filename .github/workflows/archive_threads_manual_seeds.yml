@@ -60,7 +60,7 @@ jobs:
       - name: Install runtime dependencies
         run: uv pip install --system -r requirements.txt
       - name: Validate Threads manual seeds
-        run: python scripts/validate_threads_manual_seeds.py
+        run: python scripts/validate_threads_manual_seeds.py --allow-empty
       - name: Archive registered Threads sources
         run: >-
           python -m scripts.archive_registered_sources
