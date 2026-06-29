@@ -75,13 +75,15 @@ Current capture support:
 - `rss_feed` sources are captured through `feedparser` when discovered feed URLs are registered.
 - `bluesky` sources are captured through the public Bluesky author feed API.
 - `youtube` sources resolve channel IDs from `/channel/`, `channel_id`, or public channel pages and capture public channel RSS feeds without credentials.
-- `threads` sources are selected by the scheduled Threads archive workflow and
-  captured through the official Threads API. The runner tries public
-  profile-post lookup by account handle before falling back to numeric Threads
-  user IDs. A result of `threads_permission_error` means the source is
-  registered and selected, but the configured Meta app/token is blocked from
-  reading Threads profile posts. If a matching operator-authorized seed exists
-  under `manual_archive_seeds/threads/`, the runner archives that seed when the
+- `threads` sources are selected by the scheduled Threads archive workflow, but
+  live public profile capture is gated by Meta approval for
+  `threads_profile_discovery`. The project was rolled back to a non-business,
+  non-App-Review setup, so public profile capture is expected to report
+  `threads_permission_error` or `threads_api_error` until Meta business
+  verification and App Review are deliberately completed. The runner still
+  tries public profile-post lookup by account handle before falling back to
+  numeric Threads user IDs. If a matching operator-authorized seed exists under
+  `manual_archive_seeds/threads/`, the runner archives that seed when the
   official API is unavailable.
 - `facebook`, `instagram`, `linkedin`, `newsletter`, `threads`, and `x` sources can be captured from operator-authorized manual seed JSON files under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
 - platform sources without a seed file are reported as `manual_seed_missing`, not as successfully captured.
@@ -103,6 +105,13 @@ Use `manual_archive_seeds/threads/README.template.json` as the JSON shape.
 
 Non-dry-run archive workflow runs build the archive compaction manifest and bundle the corpus with `scripts/publish_archives.py`. Set `publish=true` and choose `publication_target=all`, `huggingface`, or `zenodo` to publish through configured repository secrets; otherwise the workflow uploads a GitHub Actions artifact only.
 
+Publication workflows are guarded to one external release per UTC month. The
+release version is generated as `YYYY-MM`. If
+`conductor/archive_publication_status.json` already records a successful
+publication for that release version, later publish-enabled runs in the same
+month still build the corpus and upload the GitHub Actions artifact, but they
+do not push another Hugging Face, Zenodo, or OSF release.
+
 ## Daily Search Operation
 
 The daily workflow:
@@ -118,7 +127,8 @@ Manual runs can disable homepage probing or limit `max_agencies` for a bounded t
 1. Run YouTube capture in dry-run, then live mode, and review unresolved channel IDs for manual correction.
 2. Add manual seed files for high-value LinkedIn, Meta, X, and newsletter sources where exports or bounded captures are available.
 3. Newsletter ingress manifests modelled on the Courts NZ email ingress.
-4. Restore approved Threads API access for the configured Meta app/token so the
-   registered Threads sources can move from `threads_permission_error` to live
+4. Either add authorized Threads seed exports for the confirmed registered
+   Threads sources, or deliberately complete Meta business verification and App
+   Review for `threads_profile_discovery` before expecting live public Threads
    capture.
 5. Source-specific adapters for any platform where public, stable, policy-compliant APIs become available.

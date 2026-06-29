@@ -85,5 +85,12 @@ Police, New Zealand Trade and Enterprise, and Wellington City Libraries.
 
 The archive runner no longer requires numeric Threads user IDs before attempting
 capture. It tries official profile-post lookup by handle first. If the scheduled
-workflow reports `threads_permission_error`, treat that as an upstream Meta
-app/token blocker, not as a missing-source-registration problem.
+workflow reports `threads_permission_error` or `threads_api_error`, treat that as
+an upstream Meta app/token/App Review blocker, not as a
+missing-source-registration problem.
+
+Current Meta posture: the app has been rolled back from the business/App Review
+path. `threads_profile_discovery` should be treated as unavailable for live
+public profile archival unless the operator deliberately completes Meta business
+verification and App Review again. Until then, use operator-authorized manual
+seed exports for Threads captures.

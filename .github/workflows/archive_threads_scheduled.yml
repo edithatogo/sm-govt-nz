@@ -97,9 +97,9 @@ jobs:
           print()
           print("Next steps:")
           print()
-          print("1. Restore or approve Threads API access for the Meta app/token used by `THREADS_ACCESS_TOKEN`.")
-          print("2. Confirm profile read access for each registered government Threads account.")
-          print("3. Rerun `Archive Threads Scheduled`.")
+          print("1. For live public Threads capture, deliberately complete Meta business verification and App Review for `threads_profile_discovery` on the app/token used by `THREADS_ACCESS_TOKEN`.")
+          print("2. Otherwise, add operator-authorized seed exports under `manual_archive_seeds/threads/` for the registered sources.")
+          print("3. Rerun `Archive Threads Scheduled` or `Archive Threads Manual Seeds`.")
           PY
           if [ ! -s /tmp/threads_issue_body.md ]; then
             exit 0

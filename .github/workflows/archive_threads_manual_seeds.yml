@@ -71,11 +71,21 @@ jobs:
           --normalized-dir historical_archive_normalized
           --raw-dir historical_archive_raw
           --output dist/archive_compaction_manifest.json
+      - name: Check monthly publication guard
+        id: monthly-publication
+        run: >-
+          python scripts/monthly_publication_guard.py
+          --status-report conductor/archive_publication_status.json
+          --release-version "$(date -u +'%Y-%m')"
       - name: Bundle and optionally publish archive corpus
         run: |
           publish_target="artifact"
-          if [ "${{ inputs.publish }}" = "true" ]; then
+          status_report="conductor/archive_publication_status.json"
+          if [ "${{ inputs.publish }}" = "true" ] && [ "${{ steps.monthly-publication.outputs.should_publish }}" = "true" ]; then
             publish_target="${{ inputs.publication_target }}"
+          elif [ "${{ inputs.publish }}" = "true" ]; then
+            status_report="dist/archive_publication_status_skipped.json"
+            echo "External publication already exists for ${{ steps.monthly-publication.outputs.release_version }}; building artifact only."
           fi
           args=(
             python scripts/publish_archives.py
@@ -84,10 +94,11 @@ jobs:
             --raw-dir historical_archive_raw
             --output-dir dist
             --manifest dist/archive_manifest.json
-            --status-report conductor/archive_publication_status.json
+            --status-report "$status_report"
             --publish-target "$publish_target"
+            --release-version "${{ steps.monthly-publication.outputs.release_version }}"
           )
-          if [ "${{ inputs.publish }}" = "true" ]; then
+          if [ "${{ inputs.publish }}" = "true" ] && [ "${{ steps.monthly-publication.outputs.should_publish }}" = "true" ]; then
             args+=(--publish)
           fi
           "${args[@]}"
@@ -119,6 +130,7 @@ jobs:
             dist/archive_manifest.json
             dist/archive_compaction_manifest.json
             conductor/archive_publication_status.json
+            dist/archive_publication_status_skipped.json
             dist/corpus_manifest.json
             dist/README.md
             dist/historical_archive.tar.gz

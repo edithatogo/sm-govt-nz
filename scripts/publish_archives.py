@@ -706,9 +706,12 @@ def _build_corpus_manifest(
             "public-records",
             "rss",
             "bluesky",
+            "threads",
+            "youtube",
         ],
         "source_collections": [
-            "courts-nz",
+            "corpus-social-media-government-nz",
+            "nz-government-social-media",
         ],
         "license": "Public source records; verify source-specific terms before redistribution.",
         "generated_artifacts": {
@@ -909,6 +912,8 @@ def _build_dataset_card(manifest: dict[str, Any]) -> str:
         "- public-records\n"
         "- rss\n"
         "- bluesky\n"
+        "- threads\n"
+        "- youtube\n"
         "---\n\n"
         "# New Zealand Government Social Media Corpus/Archive\n\n"
         "Canonical name: `corpus-social-media-government-nz`.\n\n"
