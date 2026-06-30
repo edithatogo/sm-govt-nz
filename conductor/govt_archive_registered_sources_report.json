@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-06-30T06:41:39+00:00",
+  "generated_at": "2026-06-30T07:08:09+00:00",
   "inputs": {
     "agency_id": "",
     "fetch_timeout": 30,
@@ -21,10 +21,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "HTTP 500 THApiException 10 Application does not have permission for this action",
+      "reason": "THREADS_ACCESS_TOKEN is required for official Threads API capture",
       "source_id": "nz-police-threads-newzealandpolice",
       "source_type": "threads",
-      "status": "threads_api_error",
+      "status": "auth_required",
       "url": "https://www.threads.net/@newzealandpolice"
     },
     {
@@ -32,10 +32,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "HTTP 500 THApiException 10 Application does not have permission for this action",
+      "reason": "THREADS_ACCESS_TOKEN is required for official Threads API capture",
       "source_id": "nzte-threads-nzte",
       "source_type": "threads",
-      "status": "threads_api_error",
+      "status": "auth_required",
       "url": "https://www.threads.net/@nzte"
     },
     {
@@ -43,10 +43,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "HTTP 500 THApiException 10 Application does not have permission for this action",
+      "reason": "THREADS_ACCESS_TOKEN is required for official Threads API capture",
       "source_id": "wellington-city-libraries-threads-wcl-library",
       "source_type": "threads",
-      "status": "threads_api_error",
+      "status": "auth_required",
       "url": "https://www.threads.net/@wcl_library"
     }
   ],
@@ -57,11 +57,11 @@
     "selected_sources": 3,
     "status_by_platform": {
       "threads": {
-        "threads_api_error": 3
+        "auth_required": 3
       }
     },
     "status_counts": {
-      "threads_api_error": 3
+      "auth_required": 3
     }
   }
 }
