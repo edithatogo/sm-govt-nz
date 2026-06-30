@@ -21,7 +21,7 @@ on:
         default: "https://zenodo.org/api/deposit/depositions"
         type: string
       archive_release_version:
-        description: "Archive release version (defaults to UTC timestamp if omitted)"
+        description: "Archive release version, normally YYYY-MM. Defaults to current UTC month."
         required: false
         default: ""
         type: string
@@ -47,6 +47,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: archive-state-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
@@ -85,13 +89,21 @@ jobs:
           --raw-dir historical_archive_raw
           --output dist/archive_compaction_manifest.json
 
+      - name: Build monthly release plan
+        run: >-
+          python scripts/build_monthly_release_plan.py
+          --normalized-root historical_archive_normalized
+          --status-report conductor/archive_publication_status.json
+          --output conductor/monthly_release_plan.json
+          --summary conductor/monthly_release_plan.md
+
       - name: Resolve release version
         id: release
         run: |
           if [ -n "${{ inputs.archive_release_version }}" ]; then
             VERSION="${{ inputs.archive_release_version }}"
           else
-            VERSION="$(date -u +"%Y%m%d-%H%M%S")-archive"
+            VERSION="$(date -u +"%Y-%m")"
           fi
           echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
 
@@ -136,7 +148,14 @@ jobs:
         run: |
           python scripts/commit_state_updates.py \
             --message "Record scheduled publication artifacts and status report" \
-            --path conductor/archive_publication_status.json
+            --force \
+            --path conductor/archive_publication_status.json \
+            --path conductor/monthly_release_plan.json \
+            --path conductor/monthly_release_plan.md \
+            --path dist/archive_manifest.json \
+            --path dist/archive_compaction_manifest.json \
+            --path dist/corpus_manifest.json \
+            --path dist/README.md
 
       - name: Upload generated corpus bundle
         if: always()
@@ -147,6 +166,8 @@ jobs:
             dist/archive_manifest.json
             dist/archive_compaction_manifest.json
             conductor/archive_publication_status.json
+            conductor/monthly_release_plan.json
+            conductor/monthly_release_plan.md
             dist/corpus_manifest.json
             dist/README.md
             dist/historical_archive.tar.gz

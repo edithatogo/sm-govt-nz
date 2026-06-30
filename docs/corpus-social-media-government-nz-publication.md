@@ -56,6 +56,19 @@ The machine-readable cadence contract is
   dedicated `Publish Zenodo Deposition` confirmation phrase
   `publish-zenodo-doi`, or another reviewed release workflow.
 
+Each monthly release is cumulative: all archived accounts and source types that
+have normalized records in the repository are bundled into the same corpus
+release for that month. The project does not create separate public releases per
+account. Account/source coverage is represented inside `corpus_manifest.json`
+through `source_counts`, `source_date_ranges`, and `record_index`.
+
+Retrospective monthly publication is represented by
+`conductor/monthly_release_plan.json` and
+`conductor/monthly_release_plan.md`. The plan lists every historical month with
+archived normalized records and gives a one-month-at-a-time workflow command for
+reviewed backfill releases. Retrospective releases should still be cumulative
+corpus bundles, not per-account bundles.
+
 Each `Publish Archives` run writes
 `conductor/archive_publication_status.json`, recording whether the run was
 artifact-only, Hugging Face-published, Zenodo-published, or a combined
@@ -70,8 +83,9 @@ manual publication.
 - Keywords: `corpus`, `social media`, `government`, `New Zealand`,
   `public records`, `RSS`, `Bluesky`.
 - Version policy: create a new archive version for each scheduled monthly
-  release. Manual reviewed releases can override `archive_release_version`; when
-  omitted, the workflow uses a UTC timestamp ending in `-archive`.
+  release using `YYYY-MM`. Manual reviewed releases can override
+  `archive_release_version`, but retrospective releases should still use the
+  month they represent, for example `2024-02`.
 - Citation fields: use the generated `corpus_manifest.json` checksum and record
   counts in the release notes.
 - Communities: none required for the MVP; add a community only after confirming
