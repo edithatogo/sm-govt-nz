@@ -36,6 +36,7 @@ def test_threads_scheduled_workflow_closes_api_blocker_when_not_actionable() -> 
 
     assert 'THREADS_API_CAPTURE_ENABLED: ${{ vars.THREADS_API_CAPTURE_ENABLED || \'false\' }}' in workflow
     assert 'if result.get("status") in {"threads_permission_error", "threads_api_error"}' in workflow
+    assert "if: ${{ inputs.dry_run != 'true' }}\n        env:\n          GH_TOKEN" not in workflow
     assert "gh issue close" in workflow
     assert "Live public Threads API capture is disabled" in workflow
     assert "Manual seeds remain the active automated capture path" in workflow

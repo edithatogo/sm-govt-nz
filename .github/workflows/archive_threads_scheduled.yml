@@ -78,7 +78,6 @@ jobs:
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
       - name: Open Threads API blocker issue
-        if: ${{ inputs.dry_run != 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
