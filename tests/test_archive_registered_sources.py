@@ -1,6 +1,8 @@
 import argparse
 import json
+from urllib.error import HTTPError
 
+import scripts.archive_registered_sources as archive_registered_sources
 from scripts.archive_registered_sources import (
     archive_bluesky_source,
     archive_manual_seed_source,
@@ -516,5 +518,119 @@ def test_archive_registered_sources_dry_run_reports_missing_linkedin_seed(tmp_pa
 
     assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
     assert report["summary"]["status_by_platform"] == {"linkedin": {"manual_seed_missing": 1}}
+
+
+def threads_source() -> dict[str, str]:
+    return {
+        "source_id": "agency-threads",
+        "agency_id": "agency",
+        "platform": "threads",
+        "source_type": "social_profile",
+        "url": "https://www.threads.net/@agency",
+        "account": "agency",
+        "archive_status": "ready",
+        "feasibility": "medium",
+    }
+
+
+def report_args(tmp_path, manifest, *, dry_run=False):
+    return argparse.Namespace(
+        manifest=manifest,
+        report=tmp_path / "report.json",
+        source_type="threads",
+        agency_id="",
+        include_blocked=True,
+        dry_run=dry_run,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        manual_seed_root=tmp_path / "manual_archive_seeds",
+        max_threads_posts=25,
+    )
+
+
+def write_threads_manifest(tmp_path, source=None):
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(json.dumps({"sources": [source or threads_source()]}), encoding="utf-8")
+    return manifest
+
+
+def test_archive_threads_api_disabled_reports_missing_seed(tmp_path, monkeypatch):
+    monkeypatch.delenv("THREADS_API_CAPTURE_ENABLED", raising=False)
+    manifest = write_threads_manifest(tmp_path)
+
+    report = build_report(report_args(tmp_path, manifest))
+
+    assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
+    result = report["results"][0]
+    assert result["status"] == "manual_seed_missing"
+    assert "live API capture is disabled" in result["reason"]
+
+
+def test_archive_threads_api_disabled_archives_authorized_seed(tmp_path, monkeypatch):
+    monkeypatch.delenv("THREADS_API_CAPTURE_ENABLED", raising=False)
+    manifest = write_threads_manifest(tmp_path)
+    seed_dir = tmp_path / "manual_archive_seeds" / "threads"
+    seed_dir.mkdir(parents=True)
+    (seed_dir / "agency-threads.json").write_text(
+        json.dumps(
+            {
+                "posts": [
+                    {
+                        "post_id": "threads-seed-1",
+                        "url": "https://www.threads.net/@agency/post/1",
+                        "created_at": "2026-06-10T00:00:00Z",
+                        "text": "Authorized Threads seed",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report(report_args(tmp_path, manifest))
+
+    assert report["summary"]["status_counts"] == {"manual_seed_captured": 1}
+    normalized_path = tmp_path / "normalized" / "threads" / "2026-06.jsonl"
+    record = json.loads(normalized_path.read_text(encoding="utf-8"))
+    assert record["source_platform"] == "threads"
+    assert record["content"] == "Authorized Threads seed"
+
+
+def test_archive_threads_api_enabled_reports_permission_error(tmp_path, monkeypatch):
+    monkeypatch.setenv("THREADS_API_CAPTURE_ENABLED", "true")
+    monkeypatch.setenv("THREADS_ACCESS_TOKEN", "token")
+    manifest = write_threads_manifest(tmp_path)
+
+    def blocked_urlopen(request, timeout=30):
+        raise HTTPError(
+            request.full_url,
+            400,
+            "Bad Request",
+            hdrs=None,
+            fp=None,
+        )
+
+    monkeypatch.setattr(archive_registered_sources, "urlopen", blocked_urlopen)
+
+    report = build_report(report_args(tmp_path, manifest))
+
+    assert report["summary"]["status_counts"] == {"threads_permission_error": 1}
+    assert report["results"][0]["status"] == "threads_permission_error"
+
+
+def test_archive_threads_api_disabled_never_reports_api_blocker_status(tmp_path, monkeypatch):
+    monkeypatch.delenv("THREADS_API_CAPTURE_ENABLED", raising=False)
+    monkeypatch.setenv("THREADS_ACCESS_TOKEN", "token")
+    manifest = write_threads_manifest(tmp_path)
+
+    def unexpected_urlopen(request, timeout=30):
+        raise AssertionError("Threads API should not be called when capture is disabled")
+
+    monkeypatch.setattr(archive_registered_sources, "urlopen", unexpected_urlopen)
+
+    report = build_report(report_args(tmp_path, manifest))
+
+    assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
+    assert report["results"][0]["status"] not in {"threads_permission_error", "threads_api_error"}
 
 

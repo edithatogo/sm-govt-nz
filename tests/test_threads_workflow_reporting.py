@@ -9,6 +9,7 @@ def test_threads_workflows_write_dedicated_archive_report() -> None:
     assert "--report conductor/threads_archive_report.json" in scheduled
     assert "--path conductor/threads_archive_report.json" in manual
     assert "--path conductor/threads_archive_report.json" in scheduled
+    assert "THREADS_API_CAPTURE_ENABLED" in scheduled
 
 
 def test_seed_missing_is_report_only_for_threads_readiness() -> None:
@@ -28,3 +29,13 @@ def test_invalid_or_empty_threads_seeds_remain_issue_worthy() -> None:
     assert "seed_empty" in workflow
     assert "archive-input-needed" in workflow
     assert "gh issue create" in workflow
+
+
+def test_threads_scheduled_workflow_closes_api_blocker_when_not_actionable() -> None:
+    workflow = Path(".github/workflows/archive_threads_scheduled.yml").read_text(encoding="utf-8")
+
+    assert 'THREADS_API_CAPTURE_ENABLED: ${{ vars.THREADS_API_CAPTURE_ENABLED || \'false\' }}' in workflow
+    assert 'if result.get("status") in {"threads_permission_error", "threads_api_error"}' in workflow
+    assert "gh issue close" in workflow
+    assert "Live public Threads API capture is disabled" in workflow
+    assert "Manual seeds remain the active automated capture path" in workflow

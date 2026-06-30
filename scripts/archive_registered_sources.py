@@ -756,6 +756,10 @@ def threads_api_status(error: HTTPError | URLError) -> str:
     return "threads_api_error"
 
 
+def threads_api_capture_enabled() -> bool:
+    return os.getenv("THREADS_API_CAPTURE_ENABLED", "").strip().lower() == "true"
+
+
 def archive_threads_source(
     source: dict[str, Any],
     raw_root: Path = DEFAULT_RAW_ROOT,
@@ -899,6 +903,17 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 fetch_timeout=getattr(args, "fetch_timeout", 30),
             )
         if platform == "threads":
+            seed_path = find_manual_seed_path(source, manual_seed_root)
+            if not threads_api_capture_enabled():
+                if seed_path is not None:
+                    return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
+                return [
+                    source_result(
+                        source,
+                        "manual_seed_missing",
+                        "Threads live API capture is disabled; no authorized manual seed file is present",
+                    )
+                ]
             api_results = archive_threads_source(
                 source,
                 raw_root,
@@ -909,7 +924,7 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
             )
             if (
                 all(result.get("status") in {"auth_required", "threads_permission_error", "threads_api_error"} for result in api_results)
-                and find_manual_seed_path(source, manual_seed_root) is not None
+                and seed_path is not None
             ):
                 seed_results = archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
                 for result in seed_results:

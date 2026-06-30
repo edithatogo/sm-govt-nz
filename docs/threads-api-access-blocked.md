@@ -15,10 +15,12 @@ HTTP 400: {"error":{"message":"API access blocked.","type":"OAuthException","cod
 The same error is returned by the Threads profile probe, so this is an account,
 app, permission, or token access problem rather than a post formatting problem.
 
-The broader `corpus-social-media-government-nz` archive now also uses the
-official Threads profile-post lookup path for registered public handles. On
-2026-06-29, `Archive Threads Scheduled` selected all three registered Threads
-archive sources and each returned:
+The broader `corpus-social-media-government-nz` archive can use the official
+Threads profile-post lookup path for registered public handles, but live API
+capture is disabled by default. It is only attempted when
+`THREADS_API_CAPTURE_ENABLED=true` is deliberately configured. On 2026-06-29,
+before that opt-in gate was added, `Archive Threads Scheduled` selected all
+three registered Threads archive sources and each returned:
 
 ```text
 HTTP 400 OAuthException 200 API access blocked.
@@ -31,12 +33,12 @@ Current registered Threads archive sources:
 - `wellington-city-libraries-threads-wcl-library`: `https://www.threads.net/@wcl_library`
 
 Numeric Threads user IDs are no longer the first blocker for public-profile
-archive capture because the archive runner tries `/profile_posts?username=...`
-before falling back to numeric user-ID capture. The active blocker is Meta API
-access for the configured app/token.
+archive capture because the archive runner can try `/profile_posts?username=...`
+before falling back to numeric user-ID capture. The active blocker for live API
+capture is Meta API access for the configured app/token, so live capture remains
+an optional external capability rather than the default corpus path.
 
-While Meta API access is blocked, authorized exports can still be archived
-through the manual seed fallback:
+Authorized exports are the default compliant Threads archive path:
 
 1. Copy `manual_archive_seeds/threads/README.template.json` to a source-specific
    filename under `manual_archive_seeds/threads/`.
@@ -67,10 +69,11 @@ Threads `pending_post_ids` list until a successful Threads backfill posts them.
 4. Update the GitHub repository secrets:
    - `THREADS_ACCESS_TOKEN`
    - `THREADS_USER_ID`, if the target account changed
-5. Run the `Validate Threads` workflow.
-6. Run the `Archive Threads Scheduled` workflow and confirm the report no longer
+5. Set repository variable `THREADS_API_CAPTURE_ENABLED=true`.
+6. Run the `Validate Threads` workflow.
+7. Run the `Archive Threads Scheduled` workflow and confirm the report no longer
    shows `threads_permission_error`.
-7. After validation succeeds, run the `Courts Missing Mirror Backfill` workflow
+8. After validation succeeds, run the `Courts Missing Mirror Backfill` workflow
    with:
 
 ```text
@@ -86,9 +89,13 @@ post_ids=3mom5bzcekc2g,3momf4jknxk2k,3momhtdf62k2k,3movx5nyv5s2e,3movyzaflkc2e
 - A Threads-only backfill failing with the same OAuth error for each pending
   ID means the five posts cannot be belatedly mirrored until Meta API access is
   restored.
-- `Archive Threads Scheduled` selecting registered sources but reporting
-  `threads_permission_error` means source registration and scheduling are
-  working, but the configured Meta app/token cannot read Threads profile posts.
+- `Archive Threads Scheduled` reporting `manual_seed_missing` means source
+  registration and scheduling are working, but no authorized manual seed exists
+  and live public Threads API capture is not enabled.
+- If `THREADS_API_CAPTURE_ENABLED=true`, `Archive Threads Scheduled` selecting
+  registered sources but reporting `threads_permission_error` means source
+  registration and scheduling are working, but the configured Meta app/token
+  cannot read Threads profile posts.
 - `Archive Threads Manual Seeds` succeeding means the fallback path is working
   and the corpus can be published even before Meta restores API access.
 - Bluesky and X delivery state should not be changed while resolving this

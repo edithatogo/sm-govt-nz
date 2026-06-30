@@ -42,6 +42,7 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
       THREADS_API_BASE_URL: ${{ secrets.THREADS_API_BASE_URL || 'https://graph.threads.net/v1.0' }}
+      THREADS_API_CAPTURE_ENABLED: ${{ vars.THREADS_API_CAPTURE_ENABLED || 'false' }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -107,20 +108,34 @@ jobs:
           print("2. Otherwise, add operator-authorized seed exports under `manual_archive_seeds/threads/` for the registered sources.")
           print("3. Rerun `Archive Threads Scheduled` or `Archive Threads Manual Seeds`.")
           PY
-          if [ ! -s /tmp/threads_issue_body.md ]; then
-            exit 0
-          fi
           gh label create threads --color 4f46e5 --description "Threads platform archival work" || true
           gh label create archive-blocker --color b91c1c --description "Archive workflow blocker requiring operator action" || true
           existing="$(gh issue list --state open --label threads --label archive-blocker --json number --jq '.[0].number // empty')"
-          if [ -n "$existing" ]; then
+          if [ -s /tmp/threads_issue_body.md ] && [ -n "$existing" ]; then
             gh issue comment "$existing" --body-file /tmp/threads_issue_body.md
-          else
+          elif [ -s /tmp/threads_issue_body.md ]; then
             gh issue create \
               --title "Threads archive API access blocked" \
               --label threads \
               --label archive-blocker \
               --body-file /tmp/threads_issue_body.md
+          elif [ -n "$existing" ]; then
+            printf '%s\n' \
+              '# Threads API blocker: live capture disabled by default' \
+              '' \
+              'Threads sources are registered and monitored by scheduled workflows.' \
+              '' \
+              'Current state:' \
+              '- No Threads records are archived yet.' \
+              '- Live public Threads API capture is disabled unless `THREADS_API_CAPTURE_ENABLED=true` is deliberately configured.' \
+              '- Manual seeds remain the active automated capture path.' \
+              '- Missing seed inputs are tracked as `manual_seed_missing` in `conductor/threads_archive_report.json`.' \
+              '- Future authorized seed files or explicit API enablement will be handled automatically.' \
+              '' \
+              'This issue is closed because Meta API availability is now represented as an optional external capability, not a default repo blocker.' \
+              > /tmp/threads_api_close.md
+            gh issue comment "$existing" --body-file /tmp/threads_api_close.md
+            gh issue close "$existing" --reason completed
           fi
       - name: Commit Threads payloads
         if: ${{ inputs.dry_run != 'true' && inputs.commit_payloads == 'true' }}
