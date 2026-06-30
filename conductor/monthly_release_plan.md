@@ -1,6 +1,6 @@
 # Monthly Release Plan
 
-Generated: 2026-06-30T00:20:19+00:00
+Generated: 2026-06-30T00:23:29+00:00
 
 Each monthly release is cumulative: it bundles all archived accounts and source types present in the repository at release time.
 
