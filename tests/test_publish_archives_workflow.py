@@ -5,10 +5,12 @@ def test_publish_archives_requires_manual_publish_flag_for_external_publication(
     workflow = Path(".github/workflows/publish_archives.yml").read_text(encoding="utf-8")
 
     assert "ARCHIVE_PUBLICATION_TARGET" in workflow
-    assert "github.event_name == 'schedule' && 'huggingface'" in workflow
+    assert "echo \"target=all\"" in workflow
+    assert "scripts/monthly_publication_guard.py" in workflow
     assert "--publish-target \"$ARCHIVE_PUBLICATION_TARGET\"" in workflow
     assert "if [ \"$ARCHIVE_PUBLICATION_TARGET\" != \"artifact\" ]; then" in workflow
     assert "--status-report conductor/archive_publication_status.json" in workflow
+    assert "dist/archive_publication_status_artifact.json" in workflow
     assert "--path conductor/archive_publication_status.json" in workflow
 
 
