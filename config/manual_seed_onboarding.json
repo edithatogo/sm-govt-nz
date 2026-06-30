@@ -41,6 +41,14 @@
       "seed_directory": "manual_archive_seeds/x",
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
       "live_capture_policy": "Treat live browser capture as degraded. Prefer official API, account-owner archive, public archive dataset, or explicit operator seed JSON."
+    },
+    "newsletter": {
+      "family": "newsletter",
+      "acceptable_access_methods": ["public_newsletter_archive", "email_ingress", "operator_authorized_seed"],
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_directory": "manual_archive_seeds/newsletter",
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON."
     }
   }
 }

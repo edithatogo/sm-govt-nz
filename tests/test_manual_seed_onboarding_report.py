@@ -136,3 +136,54 @@ def test_manual_seed_onboarding_report_is_limited_to_requested_platforms(tmp_pat
 
     assert report["summary"]["platform_counts"] == {"facebook": 1, "x": 1}
     assert {item["platform"] for item in report["items"]} == {"facebook", "x"}
+
+
+def test_manual_seed_onboarding_report_includes_newsletter_policy(tmp_path):
+    manifest = tmp_path / "manifest.json"
+    policy = tmp_path / "policy.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "sources": [
+                    {
+                        "source_id": "agency-newsletter",
+                        "agency_id": "agency",
+                        "platform": "newsletter",
+                        "source_type": "newsletter",
+                        "url": "https://agency.example/newsletter",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    policy.write_text(
+        json.dumps(
+            {
+                "platforms": {
+                    "newsletter": {
+                        "acceptable_access_methods": ["public_newsletter_archive", "operator_authorized_seed"],
+                        "required_authorization": "public_archive_or_operator_authorized_capture",
+                        "seed_directory": "manual_archive_seeds/newsletter",
+                        "seed_schema": "posts[]",
+                        "live_capture_policy": "public archive or authorized seed only",
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            policy=policy,
+            report=tmp_path / "report.json",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            platforms="newsletter",
+        )
+    )
+
+    assert report["summary"]["platform_counts"] == {"newsletter": 1}
+    assert report["items"][0]["onboarding_status"] == "needs_authorized_seed_or_api"
+    assert "public_newsletter_archive" in report["items"][0]["acceptable_access_methods"]

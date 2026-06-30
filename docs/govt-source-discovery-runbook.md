@@ -60,7 +60,7 @@ These signals change review priority and trust metadata only. They do not auto-r
 
 ## Manual/API Onboarding
 
-Use `.github/workflows/manual_seed_onboarding.yml` or `scripts/build_manual_seed_onboarding_report.py` to build `conductor/manual_seed_onboarding_report.json` for Facebook, Instagram, LinkedIn, and X. This report is an onboarding queue, not a capture result.
+Use `.github/workflows/manual_seed_onboarding.yml` or `scripts/build_manual_seed_onboarding_report.py` to build `conductor/manual_seed_onboarding_report.json` for Facebook, Instagram, Threads, LinkedIn, X, and newsletters. This report is an onboarding queue, not a capture result.
 
 For each source it records the accepted access methods, required authorization, candidate seed file paths, and the platform-specific no-scraping boundary. A source remains `needs_authorized_seed_or_api` until an approved API route, account-owner export, lawful public archive input, or operator-authorized seed JSON is available under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
 
@@ -76,15 +76,11 @@ Current capture support:
 - `bluesky` sources are captured through the public Bluesky author feed API.
 - `youtube` sources resolve channel IDs from `/channel/`, `channel_id`, or public channel pages and capture public channel RSS feeds without credentials.
 - `threads` sources are selected by the scheduled Threads archive workflow, but
-  live public profile capture is gated by Meta approval for
-  `threads_profile_discovery`. The project was rolled back to a non-business,
-  non-App-Review setup, so public profile capture is expected to report
-  `threads_permission_error` or `threads_api_error` until Meta business
-  verification and App Review are deliberately completed. The runner still
-  tries public profile-post lookup by account handle before falling back to
-  numeric Threads user IDs. If a matching operator-authorized seed exists under
-  `manual_archive_seeds/threads/`, the runner archives that seed when the
-  official API is unavailable.
+  live public profile capture is disabled by default and only runs when
+  `THREADS_API_CAPTURE_ENABLED=true` is deliberately configured after Meta
+  approval for the required public-profile permission. If a matching
+  operator-authorized seed exists under `manual_archive_seeds/threads/`, the
+  runner archives that seed without requiring live API capture.
 - `facebook`, `instagram`, `linkedin`, `newsletter`, `threads`, and `x` sources can be captured from operator-authorized manual seed JSON files under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
 - platform sources without a seed file are reported as `manual_seed_missing`, not as successfully captured.
 

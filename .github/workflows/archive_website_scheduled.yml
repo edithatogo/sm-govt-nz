@@ -53,10 +53,15 @@ jobs:
         run: uv pip install --system -r requirements.txt
       - name: Archive website sources
         run: |
+          page_limit="${{ inputs.page_limit || '50' }}"
           args=(
             --source-type website_page
             --fetch-timeout 5
+            --report conductor/website_archive_report.json
           )
+          if [ "$page_limit" != "0" ]; then
+            args+=(--limit-sources "$page_limit")
+          fi
           if [ "${{ inputs.dry_run || 'false' }}" = "true" ]; then
             args+=(--dry-run)
           fi
@@ -69,7 +74,7 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Capture website pages from registered government sources"
-          --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/website_archive_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
       - name: Commit website payloads
@@ -77,5 +82,6 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Archive website raw HTML and normalized text payloads"
+          --force
           --path 'historical_archive_raw/website/**'
           --path 'historical_archive_normalized/website/**'

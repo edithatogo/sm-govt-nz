@@ -45,9 +45,14 @@ jobs:
         run: uv pip install --system -r requirements.txt
       - name: Archive YouTube sources
         run: |
+          channel_limit="${{ inputs.channel_limit || '50' }}"
           args=(
             --source-type youtube
+            --report conductor/youtube_archive_report.json
           )
+          if [ "$channel_limit" != "0" ]; then
+            args+=(--limit-sources "$channel_limit")
+          fi
           if [ "${{ inputs.dry_run || 'false' }}" = "true" ]; then
             args+=(--dry-run)
           fi
@@ -60,7 +65,7 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Capture YouTube video metadata from registered government channels"
-          --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/youtube_archive_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
       - name: Commit YouTube payloads
@@ -68,4 +73,6 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Archive YouTube normalized metadata payloads"
+          --force
+          --path 'historical_archive_raw/youtube/**'
           --path 'historical_archive_normalized/youtube/**'

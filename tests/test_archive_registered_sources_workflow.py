@@ -31,3 +31,23 @@ def test_archive_registered_sources_payload_commit_is_explicit() -> None:
     assert "inputs.commit_payloads == 'true'" in payload_block
     assert "historical_archive_raw/**" in payload_block
     assert "historical_archive_normalized/**" in payload_block
+
+
+def test_youtube_scheduled_workflow_uses_dedicated_report_and_limit() -> None:
+    workflow = Path(".github/workflows/archive_youtube_scheduled.yml").read_text(encoding="utf-8")
+
+    assert "--report conductor/youtube_archive_report.json" in workflow
+    assert "--limit-sources \"$channel_limit\"" in workflow
+    assert "--path conductor/youtube_archive_report.json" in workflow
+    assert "--force" in workflow
+    assert "historical_archive_raw/youtube/**" in workflow
+
+
+def test_website_scheduled_workflow_uses_dedicated_report_and_limit() -> None:
+    workflow = Path(".github/workflows/archive_website_scheduled.yml").read_text(encoding="utf-8")
+
+    assert "--report conductor/website_archive_report.json" in workflow
+    assert "--limit-sources \"$page_limit\"" in workflow
+    assert "--path conductor/website_archive_report.json" in workflow
+    assert "--force" in workflow
+    assert "historical_archive_raw/website/**" in workflow
