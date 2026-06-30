@@ -74,6 +74,7 @@ jobs:
         run: >-
           python -m scripts.archive_registered_sources
           --source-type threads
+          --report conductor/threads_archive_report.json
       - name: Build archive compaction manifest
         run: >-
           python scripts/build_archive_compaction_manifest.py
@@ -122,7 +123,7 @@ jobs:
           --path conductor/threads_manual_seed_validation_report.json
           --path conductor/threads_seed_readiness_report.json
           --path conductor/threads_seed_readiness_summary.md
-          --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/threads_archive_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
           --path dist/archive_publication_status_artifact.json

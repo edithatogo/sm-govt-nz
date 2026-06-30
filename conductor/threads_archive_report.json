@@ -1,0 +1,67 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": true,
+  "generated_at": "2026-06-30T16:55:57+00:00",
+  "inputs": {
+    "agency_id": "",
+    "fetch_timeout": 30,
+    "include_blocked": false,
+    "limit_sources": 0,
+    "manifest": "conductor\\govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "threads"
+  },
+  "results": [
+    {
+      "agency_id": "nz-police",
+      "archive_status": "candidate",
+      "feasibility": "api_or_export_required",
+      "platform": "threads",
+      "reason": "dry run: manual seed file is not present",
+      "source_id": "nz-police-threads-newzealandpolice",
+      "source_type": "threads",
+      "status": "manual_seed_missing",
+      "url": "https://www.threads.net/@newzealandpolice"
+    },
+    {
+      "agency_id": "nz-trade-and-enterprise",
+      "archive_status": "candidate",
+      "feasibility": "api_or_export_required",
+      "platform": "threads",
+      "reason": "dry run: manual seed file is not present",
+      "source_id": "nzte-threads-nzte",
+      "source_type": "threads",
+      "status": "manual_seed_missing",
+      "url": "https://www.threads.net/@nzte"
+    },
+    {
+      "agency_id": "wellington-city-libraries",
+      "archive_status": "candidate",
+      "feasibility": "api_or_export_required",
+      "platform": "threads",
+      "reason": "dry run: manual seed file is not present",
+      "source_id": "wellington-city-libraries-threads-wcl-library",
+      "source_type": "threads",
+      "status": "manual_seed_missing",
+      "url": "https://www.threads.net/@wcl_library"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "threads": 3
+    },
+    "selected_sources": 3,
+    "status_by_platform": {
+      "threads": {
+        "manual_seed_missing": 3
+      }
+    },
+    "status_counts": {
+      "manual_seed_missing": 3
+    }
+  }
+}

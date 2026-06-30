@@ -7,11 +7,13 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-
-from scripts.archive_manual_seed import _seed_posts
+try:
+    from scripts.archive_manual_seed import _seed_posts
+except ModuleNotFoundError:
+    ROOT = Path(__file__).resolve().parents[1]
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    from scripts.archive_manual_seed import _seed_posts
 
 DEFAULT_ROOT = Path("manual_archive_seeds/threads")
 THREADS_HOSTS = {"threads.net", "www.threads.net", "threads.com", "www.threads.com"}

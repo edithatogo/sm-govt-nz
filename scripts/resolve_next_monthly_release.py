@@ -3,11 +3,13 @@ import os
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-
-from scripts.build_monthly_release_plan import build_plan
+try:
+    from scripts.build_monthly_release_plan import build_plan
+except ModuleNotFoundError:
+    ROOT = Path(__file__).resolve().parents[1]
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    from scripts.build_monthly_release_plan import build_plan
 
 
 def _write_outputs(values: dict[str, str]) -> None:
