@@ -60,6 +60,12 @@ jobs:
             args+=(--agency-id "${{ inputs.agency_id }}")
           fi
           python -m scripts.archive_registered_sources "${args[@]}"
+      - name: Commit YouTube dry-run report
+        if: ${{ inputs.dry_run == 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Report YouTube government archive sources"
+          --path conductor/youtube_archive_report.json
       - name: Commit YouTube capture reports
         if: ${{ inputs.dry_run != 'true' }}
         run: >-
