@@ -31,9 +31,12 @@ Recommended optional fields:
 ## Automated workflow
 
 The repository does not rely on manual workflow dispatch for Threads archival.
-Scheduled workflows refresh readiness, open or update GitHub issues for missing
-or invalid seed inputs, validate any seed JSON that appears under
-`manual_archive_seeds/threads/`, and archive valid seeds automatically.
+Scheduled workflows refresh readiness, record missing seed inputs as an
+automatically tracked coverage gap, validate any seed JSON that appears under
+`manual_archive_seeds/threads/`, and archive valid seeds automatically. GitHub
+issues are reserved for actionable automation faults, including present but
+empty or invalid seed files, workflow failures, or API permission/configuration
+errors that block an otherwise configured capture path.
 
 The only external input is the authorized seed JSON itself. Once a seed file is
 committed at a listed source-specific or agency-level path, automation handles
@@ -54,6 +57,10 @@ Readiness statuses:
 - `seed_empty`: a seed file is present but contains no posts.
 - `seed_invalid`: a seed file is present but failed validation.
 - `ready_to_archive`: at least one valid post is ready for archival.
+
+`seed_missing` means the source is registered and monitored, but not yet
+archiving Threads records. It is reported in conductor status files rather than
+kept open as a GitHub issue.
 
 ## Current registered seed filenames
 
