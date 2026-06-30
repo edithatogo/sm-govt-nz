@@ -118,20 +118,34 @@ jobs:
             echo "target=all" >> "${GITHUB_OUTPUT}"
           fi
 
+      - name: Check monthly publication guard
+        id: monthly-publication
+        run: >-
+          python scripts/monthly_publication_guard.py
+          --status-report conductor/archive_publication_status.json
+          --release-version "${{ steps.release.outputs.version }}"
+
       - name: Archive bundle and publish
         run: |
           ARCHIVE_PUBLICATION_TARGET="${{ steps.publication.outputs.target }}"
-          # Legacy guardrail reference: github.event_name == 'schedule' && 'huggingface'
+          STATUS_REPORT="dist/archive_publication_status_artifact.json"
+          if [ "${{ steps.publication.outputs.publish }}" = "true" ] && [ "${{ steps.monthly-publication.outputs.should_publish }}" = "true" ]; then
+            STATUS_REPORT="conductor/archive_publication_status.json"
+          elif [ "${{ steps.publication.outputs.publish }}" = "true" ]; then
+            ARCHIVE_PUBLICATION_TARGET="artifact"
+            STATUS_REPORT="dist/archive_publication_status_skipped.json"
+            echo "External publication already exists for ${{ steps.release.outputs.version }}; building artifact only."
+          fi
           base_args=(
             --archive-dir historical_archive
             --normalized-dir historical_archive_normalized
             --raw-dir historical_archive_raw
             --output-dir dist
             --manifest dist/archive_manifest.json
-            --status-report conductor/archive_publication_status.json
+            --status-report "$STATUS_REPORT"
             --release-version "${{ steps.release.outputs.version }}"
           )
-          if [ "${{ steps.publication.outputs.publish }}" = "true" ]; then
+          if [ "${{ steps.publication.outputs.publish }}" = "true" ] && [ "${{ steps.monthly-publication.outputs.should_publish }}" = "true" ]; then
             if [ "$ARCHIVE_PUBLICATION_TARGET" != "artifact" ]; then
               echo "Publishing archive bundle to $ARCHIVE_PUBLICATION_TARGET"
             fi
@@ -150,6 +164,8 @@ jobs:
             --message "Record scheduled publication artifacts and status report" \
             --force \
             --path conductor/archive_publication_status.json \
+            --path dist/archive_publication_status_artifact.json \
+            --path dist/archive_publication_status_skipped.json \
             --path conductor/monthly_release_plan.json \
             --path conductor/monthly_release_plan.md \
             --path dist/archive_manifest.json \
@@ -166,6 +182,8 @@ jobs:
             dist/archive_manifest.json
             dist/archive_compaction_manifest.json
             conductor/archive_publication_status.json
+            dist/archive_publication_status_artifact.json
+            dist/archive_publication_status_skipped.json
             conductor/monthly_release_plan.json
             conductor/monthly_release_plan.md
             dist/corpus_manifest.json
