@@ -94,6 +94,7 @@ jobs:
           python scripts/build_monthly_release_plan.py
           --normalized-root historical_archive_normalized
           --status-report conductor/archive_publication_status.json
+          --ledger conductor/monthly_release_ledger.json
           --output conductor/monthly_release_plan.json
           --summary conductor/monthly_release_plan.md
 
@@ -157,6 +158,13 @@ jobs:
             python scripts/publish_archives.py "${base_args[@]}"
           fi
 
+      - name: Record published monthly release
+        if: ${{ steps.publication.outputs.publish == 'true' && steps.monthly-publication.outputs.should_publish == 'true' }}
+        run: >-
+          python scripts/record_monthly_release.py
+          --status-report conductor/archive_publication_status.json
+          --ledger conductor/monthly_release_ledger.json
+
       - name: Commit publication report
         if: always()
         run: |
@@ -166,6 +174,7 @@ jobs:
             --path conductor/archive_publication_status.json \
             --path dist/archive_publication_status_artifact.json \
             --path dist/archive_publication_status_skipped.json \
+            --path conductor/monthly_release_ledger.json \
             --path conductor/monthly_release_plan.json \
             --path conductor/monthly_release_plan.md \
             --path dist/archive_manifest.json \
@@ -184,6 +193,7 @@ jobs:
             conductor/archive_publication_status.json
             dist/archive_publication_status_artifact.json
             dist/archive_publication_status_skipped.json
+            conductor/monthly_release_ledger.json
             conductor/monthly_release_plan.json
             conductor/monthly_release_plan.md
             dist/corpus_manifest.json

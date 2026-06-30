@@ -62,12 +62,13 @@ release for that month. The project does not create separate public releases per
 account. Account/source coverage is represented inside `corpus_manifest.json`
 through `source_counts`, `source_date_ranges`, and `record_index`.
 
-Retrospective monthly publication is represented by
+Retrospective monthly publication is automated and represented by
 `conductor/monthly_release_plan.json` and
 `conductor/monthly_release_plan.md`. The plan lists every historical month with
-archived normalized records and gives a one-month-at-a-time workflow command for
-reviewed backfill releases. Retrospective releases should still be cumulative
-corpus bundles, not per-account bundles.
+archived normalized records. The `Publish Retrospective Monthly Archive`
+workflow deterministically publishes the oldest unpublished candidate month on
+its schedule. Retrospective releases are still cumulative corpus bundles, not
+per-account bundles.
 
 Each `Publish Archives` run writes
 `conductor/archive_publication_status.json`, recording whether the run was

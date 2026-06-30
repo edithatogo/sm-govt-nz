@@ -1,6 +1,8 @@
 name: Archive Threads Manual Seeds
 
 on:
+  schedule:
+    - cron: "37 3 * * *"
   workflow_dispatch:
     inputs:
       publish:

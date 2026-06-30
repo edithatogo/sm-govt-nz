@@ -1,0 +1,113 @@
+name: Publish Retrospective Monthly Archive
+
+on:
+  schedule:
+    - cron: "23 17 15 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-state-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  HF_DATASET_NAME: corpus-social-media-government-nz
+  ZENODO_DEPOSIT_API_URL: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT || 'https://zenodo.org/api/deposit/depositions' }}
+  ZENODO_PUBLISH: ${{ secrets.ZENODO_PUBLISH || 'true' }}
+  ZENODO_CONCEPT_RECORD_ID: ${{ vars.ZENODO_CONCEPT_RECORD_ID || secrets.ZENODO_CONCEPT_RECORD_ID || '20991132' }}
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+jobs:
+  publish-next-retrospective-month:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install uv
+        run: python -m pip install uv
+      - name: Install dependencies
+        run: uv pip install --system -r requirements.txt
+      - name: Resolve next retrospective monthly release
+        id: next-release
+        run: >-
+          python scripts/resolve_next_monthly_release.py
+          --normalized-root historical_archive_normalized
+          --status-report conductor/archive_publication_status.json
+          --ledger conductor/monthly_release_ledger.json
+      - name: Stop when no retrospective candidate exists
+        if: ${{ steps.next-release.outputs.should_publish != 'true' }}
+        run: echo "No retrospective monthly release candidate remains."
+      - name: Build archive compaction manifest
+        if: ${{ steps.next-release.outputs.should_publish == 'true' }}
+        run: >-
+          python scripts/build_archive_compaction_manifest.py
+          --normalized-dir historical_archive_normalized
+          --raw-dir historical_archive_raw
+          --output dist/archive_compaction_manifest.json
+      - name: Publish next retrospective monthly release
+        if: ${{ steps.next-release.outputs.should_publish == 'true' }}
+        run: >-
+          python scripts/publish_archives.py
+          --archive-dir historical_archive
+          --normalized-dir historical_archive_normalized
+          --raw-dir historical_archive_raw
+          --output-dir dist
+          --manifest dist/archive_manifest.json
+          --status-report conductor/archive_publication_status.json
+          --release-version "${{ steps.next-release.outputs.release_version }}"
+          --publish
+          --publish-target all
+      - name: Record published monthly release
+        if: ${{ steps.next-release.outputs.should_publish == 'true' }}
+        run: >-
+          python scripts/record_monthly_release.py
+          --status-report conductor/archive_publication_status.json
+          --ledger conductor/monthly_release_ledger.json
+      - name: Refresh monthly release plan
+        run: >-
+          python scripts/build_monthly_release_plan.py
+          --normalized-root historical_archive_normalized
+          --status-report conductor/archive_publication_status.json
+          --ledger conductor/monthly_release_ledger.json
+          --output conductor/monthly_release_plan.json
+          --summary conductor/monthly_release_plan.md
+      - name: Commit retrospective release state
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Record retrospective monthly archive release"
+          --force
+          --path conductor/archive_publication_status.json
+          --path conductor/monthly_release_ledger.json
+          --path conductor/monthly_release_plan.json
+          --path conductor/monthly_release_plan.md
+          --path dist/archive_manifest.json
+          --path dist/archive_compaction_manifest.json
+          --path dist/corpus_manifest.json
+          --path dist/README.md
+      - name: Upload generated corpus bundle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: retrospective-monthly-archive-corpus
+          path: |
+            conductor/archive_publication_status.json
+            conductor/monthly_release_ledger.json
+            conductor/monthly_release_plan.json
+            conductor/monthly_release_plan.md
+            dist/archive_manifest.json
+            dist/archive_compaction_manifest.json
+            dist/corpus_manifest.json
+            dist/README.md
+            dist/historical_archive.tar.gz
+            dist/historical_archive.jsonl.gz
+            dist/normalized_archive.jsonl.gz
+            dist/normalized_archive.parquet

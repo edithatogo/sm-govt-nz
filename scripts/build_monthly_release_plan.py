@@ -9,6 +9,7 @@ from typing import Any
 
 DEFAULT_NORMALIZED_ROOT = Path("historical_archive_normalized")
 DEFAULT_STATUS_REPORT = Path("conductor/archive_publication_status.json")
+DEFAULT_LEDGER = Path("conductor/monthly_release_ledger.json")
 DEFAULT_OUTPUT = Path("conductor/monthly_release_plan.json")
 DEFAULT_SUMMARY = Path("conductor/monthly_release_plan.md")
 MONTH_RE = re.compile(r"^\d{4}-\d{2}$")
@@ -47,10 +48,21 @@ def _record_month(record: dict[str, Any], fallback_source_month: str = "") -> st
     return fallback_source_month if MONTH_RE.match(fallback_source_month) else "unknown"
 
 
-def build_plan(normalized_root: Path, status_report: Path) -> dict[str, Any]:
-    records = _iter_normalized_records(normalized_root)
+def _published_versions(status_report: Path, ledger_path: Path) -> set[str]:
+    versions: set[str] = set()
     status = _load_status(status_report)
-    latest_published = str(status.get("release_version") or "") if status.get("mode") == "published" else ""
+    if status.get("mode") == "published" and str(status.get("release_version") or ""):
+        versions.add(str(status.get("release_version")))
+    ledger = _load_status(ledger_path)
+    for release in ledger.get("releases", []):
+        if release.get("mode") == "published" and str(release.get("release_version") or ""):
+            versions.add(str(release.get("release_version")))
+    return versions
+
+
+def build_plan(normalized_root: Path, status_report: Path, ledger_path: Path = DEFAULT_LEDGER) -> dict[str, Any]:
+    records = _iter_normalized_records(normalized_root)
+    published_versions = _published_versions(status_report, ledger_path)
     by_month: dict[str, dict[str, Any]] = defaultdict(
         lambda: {
             "record_count": 0,
@@ -75,7 +87,7 @@ def build_plan(normalized_root: Path, status_report: Path) -> dict[str, Any]:
                 "record_count": item["record_count"],
                 "source_counts": dict(sorted(item["source_counts"].items())),
                 "account_count": len(item["accounts"]),
-                "status": "published" if month == latest_published else "candidate",
+                "status": "published" if month in published_versions else "candidate",
                 "publish_command": (
                     "gh workflow run \"Publish Archives\" --ref master "
                     f"-f publish=true -f publication_target=all -f archive_release_version={month} "
@@ -87,7 +99,7 @@ def build_plan(normalized_root: Path, status_report: Path) -> dict[str, Any]:
     return {
         "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "description": "Cumulative monthly release plan. Each release bundles all archived accounts and sources present in the repository at release time.",
-        "latest_published_release_version": latest_published,
+        "published_release_versions": sorted(published_versions),
         "summary": {
             "months_with_records": len(months),
             "total_records": sum(item["record_count"] for item in months),
@@ -125,10 +137,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Build cumulative monthly archive release plan.")
     parser.add_argument("--normalized-root", type=Path, default=DEFAULT_NORMALIZED_ROOT)
     parser.add_argument("--status-report", type=Path, default=DEFAULT_STATUS_REPORT)
+    parser.add_argument("--ledger", type=Path, default=DEFAULT_LEDGER)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
     args = parser.parse_args()
-    plan = build_plan(args.normalized_root, args.status_report)
+    plan = build_plan(args.normalized_root, args.status_report, args.ledger)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(plan, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     write_summary(args.summary, plan)

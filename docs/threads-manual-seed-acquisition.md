@@ -28,19 +28,22 @@ Recommended optional fields:
 - `canonical_url`: canonical public URL if different from `url`.
 - `media`: list of visible media URLs and alt text when available.
 
-## Operator workflow
+## Automated workflow
 
-1. Open the official Threads profile URL for the registered source.
-2. Capture visible posts through an authorized export or bounded browser session.
-3. Save one JSON file under `manual_archive_seeds/threads/<source_id>.json`.
-4. Run the `Validate Threads Manual Seeds` workflow.
-5. Fix any duplicate, URL, timestamp, account-handle, or media-shape failures.
-6. Run `Archive Threads Manual Seeds` after validation passes.
+The repository does not rely on manual workflow dispatch for Threads archival.
+Scheduled workflows refresh readiness, open or update GitHub issues for missing
+or invalid seed inputs, validate any seed JSON that appears under
+`manual_archive_seeds/threads/`, and archive valid seeds automatically.
+
+The only external input is the authorized seed JSON itself. Once a seed file is
+committed at a listed source-specific or agency-level path, automation handles
+validation, archival, normalized record creation, report commits, and inclusion
+in the next monthly cumulative corpus release.
 
 ## Readiness reporting
 
-Run `scripts/build_threads_seed_readiness_report.py` or the `Validate Threads
-Manual Seeds` workflow to refresh:
+Run `scripts/build_threads_seed_readiness_report.py` locally if needed. In
+normal operation the scheduled `Validate Threads Manual Seeds` workflow refreshes:
 
 - `conductor/threads_seed_readiness_report.json`
 - `conductor/threads_seed_readiness_summary.md`
