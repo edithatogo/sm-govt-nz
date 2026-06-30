@@ -3878,33 +3878,6 @@
       "agency_type": "SOE",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "85747df0077a2979",
-      "confidence_score": 0.5,
-      "domain_trust": "unknown",
-      "feasibility": "high",
-      "link_title": "Updates to Food Assurance Services page",
-      "mime_type": "application/rss+xml",
-      "official_website": "https://www.asurequality.com",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "archive_friendly_platform",
-        "official_term:service"
-      ],
-      "url": "https://www.asurequality.com/home/changes"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.asurequality.com",
-      "agency_id": "asurequality",
-      "agency_name": "AsureQuality (Kaitiaki Kai)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
       "candidate_id": "cb6baccb1afd97a4",
       "confidence_score": 0.45,
       "domain_trust": "unknown",
@@ -4274,50 +4247,6 @@
       "url": "https://www.asurequality.com/subscribe"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "asurequality",
-      "agency_name": "AsureQuality (Kaitiaki Kai)",
-      "agency_type": "SOE",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "46d586812cea32c6",
-      "confidence_score": 0.35,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.asurequality.com",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Agriculture",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [],
-      "url": "https://www.facebook.com/AsureQualityLtd"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "asurequality",
-      "agency_name": "AsureQuality (Kaitiaki Kai)",
-      "agency_type": "SOE",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "09666088682a0f04",
-      "confidence_score": 0.35,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.asurequality.com",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Agriculture",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [],
-      "url": "https://www.instagram.com/asurequality/?hl=en"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "AsureQuality",
       "account_classification": "official",
@@ -4332,7 +4261,7 @@
       "domain_trust": "unknown",
       "feasibility": "low",
       "official_website": "https://www.asurequality.com",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "linkedin",
       "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
       "portfolio": "Agriculture",
@@ -13772,6 +13701,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "city-rail-link",
+      "agency_name": "City Rail Link Limited",
+      "agency_type": "Schedule 4a Company",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "0830c7b779c15137",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.cityraillink.co.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Transport",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/akltransport/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "",
       "agency_id": "city-rail-link",
       "agency_name": "City Rail Link Limited",
@@ -13793,6 +13746,30 @@
         "official_term:nz"
       ],
       "url": "http://instagram.com/cityraillink"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram",
+      "agency_id": "city-rail-link",
+      "agency_name": "City Rail Link Limited",
+      "agency_type": "Schedule 4a Company",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "d0be6b2763dda71f",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.cityraillink.co.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Transport",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/akltransport/"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -27343,11 +27320,11 @@
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "d4aef98d66d77cb5",
+      "candidate_id": "5d6cb23e632c089f",
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
-      "link_text": "Hazardous Substances Update",
+      "link_text": "Te P\u016btara p\u0101nui",
       "official_website": "https://www.epa.govt.nz",
       "origin": "homepage.link",
       "platform": "newsletter",
@@ -27359,7 +27336,7 @@
         "high_trust_domain_suffix",
         "official_term:nz"
       ],
-      "url": "https://www.epa.govt.nz/news-and-alerts/newsletters/hazardous-substances-update/"
+      "url": "https://www.epa.govt.nz/news-and-alerts/newsletters/te-putara/"
     },
     {
       "access_method": "public_rss",
@@ -34392,78 +34369,6 @@
       "url": "https://www.facebook.com/HamiltonCityCouncil"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Facebook",
-      "agency_id": "hamilton-city-council",
-      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
-      "agency_type": "City Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "bb181e559f4e3ff9",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.hamilton.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/hamiltoncitycouncil/"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Instagram",
-      "agency_id": "hamilton-city-council",
-      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
-      "agency_type": "City Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "59dd87336790dee4",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.hamilton.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/hamilton_city_nz/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "Linkedin",
-      "agency_id": "hamilton-city-council",
-      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
-      "agency_type": "City Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "107457abf6530fc6",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.hamilton.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/2758203"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Hamilton City Council",
       "account_classification": "official",
@@ -34492,30 +34397,6 @@
       "url": "https://www.linkedin.com/company/hamilton-city-council"
     },
     {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "YouTube",
-      "agency_id": "hamilton-city-council",
-      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
-      "agency_type": "City Council",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "be829f7ab524a73e",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.hamilton.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/user/HamiltonCityCouncil"
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.hamilton.govt.nz",
       "agency_id": "hamilton-city-council",
@@ -34541,397 +34422,6 @@
         "official_term:nz"
       ],
       "url": "https://www.hamilton.govt.nz"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "45fe6304af2cb274",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Kawerongo t\u0101hiko \n\t\t\t \n\t\n\t\t\t\tE-Newsletters",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "12ce49a972f639d8",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Aquatics Hastings",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/aquatics-hastings-enewsletter/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "e905fc7ab4ae07f5",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Hastings City Art Gallery",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-city-art-gallery/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "1a8bb297428fc60a",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Hastings District Libraries",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-district-libraries-newsblast/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "e5e2e28371d66ff3",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "iWay Enewsletter",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/iway-e/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "987f1c73c07d22fb",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "My Hastings",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/my-hastings/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "fa63a3dad007a9ad",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Neighbourhood Support",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/neighbourhood-support/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "d0f6a25bd1000965",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Residential Development Update",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/residential-development-update/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "c83f27059f7450e7",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Splash Planet",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/splash-planet-newsletter/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "16af796f1038f84e",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Waste Minimisation",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/waste-minimisation/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "df87efaa358910de",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Civil Defence Alerts No Emergency",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/services/civil-defence-and-emergency-management"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "44bab53e0fe7f448",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Road Closure Alerts\n\t\t\t\t Road Hazards and Closures",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/services/roads-and-streets/road-closures"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "a95c3d53b017a713",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Landfill comes last",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/services/rubbish-and-recycling/waste-awareness-newsletter/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "814052639cf9ee84",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Water Restriction Alerts\n\t\t\t\t Level 1 Conservation: Voluntary action to conserve water.",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/services/water/water-restrictions/"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "17c858882dc65bf3",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "RSS Feeds",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Local Government",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/"
     },
     {
       "access_method": "public_rss",
@@ -35367,78 +34857,6 @@
       "url": "https://www.facebook.com/HastingsDistrictCouncil"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Follow us on Facebook",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "2782b7a796a32141",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/hastingsdc/"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Follow us on Instagram",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "a65bc0306eb256ba",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/hastings_district_council/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "View our profile on LinkedIn",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "a8b533c955869d52",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/hastings-district-council/?originalSubdomain=nz"
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.hastingsdc.govt.nz",
       "agency_id": "hastings-district-council",
@@ -35464,303 +34882,6 @@
         "official_term:nz"
       ],
       "url": "https://www.hastingsdc.govt.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "08e73cb869518b42",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Kawerongo t\u0101hiko \n\t\t\t \n\t\n\t\t\t\tE-Newsletters",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "fa2af21914dbfecc",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Aquatics Hastings",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/aquatics-hastings-enewsletter/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "8dbdb67550bd10a8",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Hastings City Art Gallery",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-city-art-gallery/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "8a22d5da5c6be4b7",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Hastings District Libraries",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-district-libraries-newsblast/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "47678493c1260f9f",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "iWay Enewsletter",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/iway-e/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "d1ebbe0a99339ed0",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "My Hastings",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/my-hastings/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "fe66508553b4b759",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Neighbourhood Support",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/neighbourhood-support/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "1fa17e7d0ef27a5c",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Residential Development Update",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/residential-development-update/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "64a010aa97d85074",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Splash Planet",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/splash-planet-newsletter/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "7b472c2f0cad53bb",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Waste Minimisation",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/waste-minimisation/"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.hastingsdc.govt.nz",
-      "agency_id": "hastings-district-council",
-      "agency_name": "Hastings District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "af6060c47934c30d",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Landfill comes last",
-      "official_website": "https://www.hastingsdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.hastingsdc.govt.nz/services/rubbish-and-recycling/waste-awareness-newsletter/"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -51744,162 +50865,6 @@
       "url": "https://www.lotto.co.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.mackenzie.govt.nz",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "50b011e8bef83440",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Newsletters",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.mackenzie.govt.nz/community/newsletters"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.mackenzie.govt.nz",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "db32544d104db593",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Civil Defence Alerts - No Current Issues",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.mackenzie.govt.nz/home/icon-redirects/row-1/civil-defence-alerts"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.mackenzie.govt.nz",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "61fd9a21291f29b2",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Roading Alerts - 1x current issue",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.mackenzie.govt.nz/home/icon-redirects/row-1/roading-alerts"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.mackenzie.govt.nz",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "56b0c0f09c45c874",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Water Alerts - 2x water alerts",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.mackenzie.govt.nz/home/icon-redirects/row-1/water-alerts"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.mackenzie.govt.nz",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "1cfdb5c7e9cb0299",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Latest Newsletter",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.mackenzie.govt.nz/home/icon-redirects/row-2/latest-newsletter"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.mackenzie.govt.nz",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "7e027892e1d158f5",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "22 June 2026 \r\n             News & Information from Mackenzie District Council - Late-June 2026 \r\n            \r\n             The Late-June newsletter is out now, covering local area notices and upcoming activities within the Mackenzie District.",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.mackenzie.govt.nz/pages/public-notices/2026/news-and-information-from-mackenzie-district-council-late-june-2026"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.mackenzie.govt.nz",
       "agency_id": "mackenzie-district-council",
@@ -52333,102 +51298,6 @@
       "url": "https://www.facebook.com/MackenzieDistrictCouncil"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Facebook Link",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "c8132e91b62056be",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/mackenziedistrict/"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Instagram Link",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "7b8bda52980ae869",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://instagram.com/nz_mackenzie"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "Linkedin Link",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "239996ad08bdad5c",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://nz.linkedin.com/company/mackenzie-district-council"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Youtube Link",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "9c4f2ac476c0e471",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.mackenzie.govt.nz",
       "agency_id": "mackenzie-district-council",
@@ -52454,113 +51323,6 @@
         "official_term:nz"
       ],
       "url": "https://www.mackenzie.govt.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.mackenzie.govt.nz",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "f54848d1d5ca3b38",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Newsletters",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.mackenzie.govt.nz/community/newsletters"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.mackenzie.govt.nz",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "33004e5e15354c57",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Latest Newsletter",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.mackenzie.govt.nz/home/icon-redirects/row-2/latest-newsletter"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.mackenzie.govt.nz",
-      "agency_id": "mackenzie-district-council",
-      "agency_name": "Mackenzie District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "4e65a336cbdcf7ab",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "22 June 2026 \r\n             News & Information from Mackenzie District Council - Late-June 2026 \r\n            \r\n             The Late-June newsletter is out now, covering local area notices and upcoming activities within the Mackenzie District.",
-      "official_website": "https://www.mackenzie.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.mackenzie.govt.nz/pages/public-notices/2026/news-and-information-from-mackenzie-district-council-late-june-2026"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.mdc.govt.nz",
-      "agency_id": "manawatu-district-council",
-      "agency_name": "Manawat\u016b District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "644c03b7e3f9963f",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Monthly Newsletter",
-      "official_website": "https://www.mdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.mdc.govt.nz/projects-and-news/monthly-newsletter"
     },
     {
       "access_method": "public_rss",
@@ -52969,30 +51731,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Facebook Icon \r\n                                     \r\n                                 \r\n                                Facebook",
-      "agency_id": "manawatu-district-council",
-      "agency_name": "Manawat\u016b District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "125f4954f2c46e4f",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.mdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://facebook.com/manawatudc"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "ManawatuDistrictCouncil",
       "account_classification": "official",
       "agency_id": "manawatu-district-council",
@@ -53020,54 +51758,6 @@
       "url": "https://www.facebook.com/ManawatuDistrictCouncil"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Instagram Icon \r\n                                     \r\n                                 \r\n                                Instagram",
-      "agency_id": "manawatu-district-council",
-      "agency_name": "Manawat\u016b District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "04c4778621ccf678",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.mdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/manawatudc"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "LinkedIn Icon \r\n                                     \r\n                                 \r\n                                LinkedIn",
-      "agency_id": "manawatu-district-council",
-      "agency_name": "Manawat\u016b District Council",
-      "agency_type": "District Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "358f44aa07a404ea",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.mdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://nz.linkedin.com/company/manawatu-district-council"
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.mdc.govt.nz",
       "agency_id": "manawatu-district-council",
@@ -53093,33 +51783,6 @@
         "official_term:nz"
       ],
       "url": "https://www.mdc.govt.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.mdc.govt.nz",
-      "agency_id": "manawatu-district-council",
-      "agency_name": "Manawat\u016b District Council",
-      "agency_type": "District Council",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "957a1c03f3235e67",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Monthly Newsletter",
-      "official_website": "https://www.mdc.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.mdc.govt.nz/projects-and-news/monthly-newsletter"
     },
     {
       "access_method": "public_rss",
@@ -62234,32 +60897,6 @@
       "url": "https://www.education.govt.nz/bulletins"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.education.govt.nz",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "017e70e9212bd0a1",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Kia Manawaroa issue 16 out now 25 June 2026 Welcome to Issue 16 of Kia Manawaroa, the Ministry\u2019s monthly newsletter for wh\u0101nau M\u0101ori. Find out more",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Education",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-16-out-now"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.education.govt.nz",
       "agency_id": "ministry-of-education",
@@ -62925,33 +61562,6 @@
         "official_term:nz"
       ],
       "url": "https://www.education.govt.nz/bulletins"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.education.govt.nz",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "5b70ff35f7f8524d",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Kia Manawaroa issue 16 out now 25 June 2026 Welcome to Issue 16 of Kia Manawaroa, the Ministry\u2019s monthly newsletter for wh\u0101nau M\u0101ori. Find out more",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Education",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-16-out-now"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -64089,7 +62699,7 @@
       "agency_type": "Department",
       "archive_status": "candidate",
       "auth": "operator_or_app_authorized",
-      "candidate_id": "dc935f1ce36928b6",
+      "candidate_id": "ac8dc2bc31479169",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -64103,7 +62713,7 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "https://www.facebook.com/HUDgovtnz"
+      "url": "https://www.facebook.com/MCERTNZ/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -64141,7 +62751,7 @@
       "agency_type": "Department",
       "archive_status": "manual_seed",
       "auth": "operator_authorized",
-      "candidate_id": "d9b2235e869f2dbe",
+      "candidate_id": "2c6cec7637bb6867",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "low",
@@ -64155,7 +62765,7 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "https://www.linkedin.com/company/te-t%C5%AB%C4%81papa-kura-k%C4%81inga-ministry-of-housing-and-urban-development-nz/mycompany/"
+      "url": "https://www.linkedin.com/company/mcertnz"
     },
     {
       "access_method": "bounded_public_html",
@@ -65376,7 +63986,7 @@
       "confidence_score": 0.7,
       "domain_trust": "high",
       "feasibility": "high",
-      "link_title": "Updates to Enabling a transport system that connects New Zealand page",
+      "link_title": "Updates to Ministry of Cities, Environment, Regions and Transport  page",
       "mime_type": "application/rss+xml",
       "official_website": "https://www.transport.govt.nz",
       "origin": "homepage.link_alternate",
@@ -65388,7 +63998,7 @@
       "trust_signals": [
         "high_trust_domain_suffix",
         "archive_friendly_platform",
-        "official_term:new zealand"
+        "official_term:nz"
       ],
       "url": "https://www.transport.govt.nz/home/changes"
     },
@@ -103294,7 +101904,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 4 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 5 hours ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -103324,7 +101934,7 @@
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "operator_or_app_authorized",
-      "candidate_id": "8e538c3c22ae7528",
+      "candidate_id": "59df9d76f3495a13",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -103338,7 +101948,7 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "https://www.facebook.com/102062118004656_1347582970818632"
+      "url": "https://www.facebook.com/102062118004656_1351917083718554"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -110262,30 +108872,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Facebook Link",
-      "agency_id": "tararua-district-council",
-      "agency_name": "Tararua District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "405a09b33d6feed0",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.tararuadc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/TararuaDC"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "TararuaDistrictCouncil",
       "account_classification": "official",
       "agency_id": "tararua-district-council",
@@ -110311,78 +108897,6 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/TararuaDistrictCouncil"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Instagram Link",
-      "agency_id": "tararua-district-council",
-      "agency_name": "Tararua District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "cf1f77779d3cc4e8",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.tararuadc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/tararuadistrictcouncil"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "Linkedin Link",
-      "agency_id": "tararua-district-council",
-      "agency_name": "Tararua District Council",
-      "agency_type": "District Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "ae636c9e32173c92",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.tararuadc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://nz.linkedin.com/company/tararua-district-council"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Youtube Link",
-      "agency_id": "tararua-district-council",
-      "agency_name": "Tararua District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "6ecff0c83a59bc3f",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.tararuadc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/user/TararuaCountry"
     },
     {
       "access_method": "bounded_public_html",
@@ -119881,30 +118395,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "timaru-district-council",
-      "agency_name": "Timaru District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "26e731a459f676de",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.timaru.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/TimaruDC"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "TimaruDistrictCouncil",
       "account_classification": "official",
       "agency_id": "timaru-district-council",
@@ -119930,54 +118420,6 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/TimaruDistrictCouncil"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "timaru-district-council",
-      "agency_name": "Timaru District Council",
-      "agency_type": "District Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "bd720a540976d5b7",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.timaru.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/timaru-district-council"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
-      "agency_id": "timaru-district-council",
-      "agency_name": "Timaru District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "d2f2f280b41e82c4",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.timaru.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/user/TimaruDC"
     },
     {
       "access_method": "bounded_public_html",
@@ -140707,7 +139149,7 @@
       "url": "https://www.worksafe.govt.nz/about-us/news-and-media/high-hazards-newsletter-june-2026/"
     }
   ],
-  "generated_at": "2026-06-29T18:33:20+00:00",
+  "generated_at": "2026-06-30T18:24:20+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -153519,9 +151961,8 @@
     },
     {
       "agency_id": "asurequality",
-      "alternates": 1,
-      "links": 103,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.asurequality.com/"
     },
     {
@@ -153552,7 +151993,7 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 73,
+      "links": 74,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
@@ -153599,8 +152040,8 @@
     },
     {
       "agency_id": "central-otago-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.codc.govt.nz/"
     },
     {
@@ -153634,14 +152075,14 @@
     {
       "agency_id": "christchurch-city-libraries",
       "alternates": 6,
-      "links": 322,
+      "links": 321,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
     {
       "agency_id": "city-rail-link",
       "alternates": 0,
-      "links": 116,
+      "links": 111,
       "status": "ok",
       "url": "https://www.cityraillink.co.nz/"
     },
@@ -153661,14 +152102,14 @@
     },
     {
       "agency_id": "clutha-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.cluthadc.govt.nz/"
     },
     {
       "agency_id": "commerce-commission",
       "alternates": 0,
-      "links": 148,
+      "links": 145,
       "status": "ok",
       "url": "https://www.comcom.govt.nz/"
     },
@@ -153781,7 +152222,7 @@
     {
       "agency_id": "electricity-authority",
       "alternates": 0,
-      "links": 285,
+      "links": 287,
       "status": "ok",
       "url": "https://www.ea.govt.nz/"
     },
@@ -153801,8 +152242,8 @@
     },
     {
       "agency_id": "environment-southland",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.es.govt.nz/"
     },
     {
@@ -153815,7 +152256,7 @@
     {
       "agency_id": "external-reporting-board",
       "alternates": 1,
-      "links": 69,
+      "links": 70,
       "status": "ok",
       "url": "https://www.xrb.govt.nz/"
     },
@@ -153879,8 +152320,8 @@
     },
     {
       "agency_id": "grey-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.greydc.govt.nz/"
     },
     {
@@ -153892,16 +152333,14 @@
     },
     {
       "agency_id": "hamilton-city-council",
-      "alternates": 0,
-      "links": 166,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.hamilton.govt.nz/"
     },
     {
       "agency_id": "hastings-district-council",
-      "alternates": 0,
-      "links": 773,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.hastingsdc.govt.nz/"
     },
     {
@@ -153975,8 +152414,8 @@
     },
     {
       "agency_id": "hurunui-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.hurunui.govt.nz/"
     },
     {
@@ -154014,14 +152453,14 @@
     },
     {
       "agency_id": "invercargill-city-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.icc.govt.nz/"
     },
     {
       "agency_id": "kaikoura-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.kaikoura.govt.nz/"
     },
     {
@@ -154041,7 +152480,7 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 108,
+      "links": 105,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
@@ -154101,16 +152540,14 @@
     },
     {
       "agency_id": "mackenzie-district-council",
-      "alternates": 0,
-      "links": 107,
-      "status": "ok",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
       "url": "https://www.mackenzie.govt.nz/"
     },
     {
       "agency_id": "manawatu-district-council",
-      "alternates": 0,
-      "links": 603,
-      "status": "ok",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
       "url": "https://www.mdc.govt.nz/"
     },
     {
@@ -154135,8 +152572,8 @@
     },
     {
       "agency_id": "marlborough-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.marlborough.govt.nz/"
     },
     {
@@ -154148,8 +152585,8 @@
     },
     {
       "agency_id": "masterton-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.mstn.govt.nz/"
     },
     {
@@ -154207,7 +152644,7 @@
     {
       "agency_id": "ministry-for-the-environment",
       "alternates": 0,
-      "links": 102,
+      "links": 101,
       "status": "ok",
       "url": "https://www.mfe.govt.nz/"
     },
@@ -154277,7 +152714,7 @@
     {
       "agency_id": "napier-city-council",
       "alternates": 1,
-      "links": 725,
+      "links": 721,
       "status": "ok",
       "url": "https://www.napier.govt.nz/"
     },
@@ -154290,8 +152727,8 @@
     },
     {
       "agency_id": "nelson-city-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.nelson.govt.nz/"
     },
     {
@@ -154495,8 +152932,8 @@
     },
     {
       "agency_id": "opotiki-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.odc.govt.nz/"
     },
     {
@@ -154530,7 +152967,7 @@
     {
       "agency_id": "palmerston-north-city-council",
       "alternates": 0,
-      "links": 528,
+      "links": 525,
       "status": "ok",
       "url": "https://www.pncc.govt.nz/"
     },
@@ -154583,7 +153020,7 @@
     {
       "agency_id": "privacy-commissioner",
       "alternates": 1,
-      "links": 155,
+      "links": 154,
       "status": "ok",
       "url": "https://www.privacy.org.nz/"
     },
@@ -154618,7 +153055,7 @@
     {
       "agency_id": "rangitikei-district-council",
       "alternates": 0,
-      "links": 144,
+      "links": 140,
       "status": "ok",
       "url": "https://www.rangitikei.govt.nz/"
     },
@@ -154651,8 +153088,8 @@
     },
     {
       "agency_id": "rotorua-lakes-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.rotorualakescouncil.nz/"
     },
     {
@@ -154710,14 +153147,14 @@
     },
     {
       "agency_id": "south-taranaki-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.southtaranaki.com/"
     },
     {
       "agency_id": "south-waikato-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.southwaikato.govt.nz/"
     },
     {
@@ -154756,8 +153193,8 @@
     },
     {
       "agency_id": "stratford-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.stratford.govt.nz/"
     },
     {
@@ -154789,9 +153226,8 @@
     },
     {
       "agency_id": "tararua-district-council",
-      "alternates": 0,
-      "links": 114,
-      "status": "ok",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
       "url": "https://www.tararuadc.govt.nz/"
     },
     {
@@ -154810,8 +153246,8 @@
     },
     {
       "agency_id": "taupo-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.taupodc.govt.nz/"
     },
     {
@@ -154844,7 +153280,7 @@
     {
       "agency_id": "te-papa",
       "alternates": 0,
-      "links": 101,
+      "links": 102,
       "status": "ok",
       "url": "https://www.tepapa.govt.nz/"
     },
@@ -154886,14 +153322,14 @@
     {
       "agency_id": "tertiary-education-commission",
       "alternates": 0,
-      "links": 389,
+      "links": 388,
       "status": "ok",
       "url": "https://www.tec.govt.nz/"
     },
     {
       "agency_id": "thames-coromandel-district-council",
       "alternates": 0,
-      "links": 279,
+      "links": 274,
       "status": "ok",
       "url": "https://www.tcdc.govt.nz/"
     },
@@ -154905,9 +153341,8 @@
     },
     {
       "agency_id": "timaru-district-council",
-      "alternates": 0,
-      "links": 205,
-      "status": "ok",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
       "url": "https://www.timaru.govt.nz/"
     },
     {
@@ -154939,7 +153374,7 @@
     {
       "agency_id": "tvnz",
       "alternates": 0,
-      "links": 162,
+      "links": 165,
       "status": "ok",
       "url": "https://www.tvnz.co.nz/"
     },
@@ -154960,7 +153395,7 @@
     {
       "agency_id": "university-of-auckland",
       "alternates": 0,
-      "links": 379,
+      "links": 380,
       "status": "ok",
       "url": "https://www.auckland.ac.nz/"
     },
@@ -154987,7 +153422,7 @@
     {
       "agency_id": "upper-hutt-city-council",
       "alternates": 0,
-      "links": 320,
+      "links": 319,
       "status": "ok",
       "url": "https://www.upperhuttcity.com/"
     },
@@ -155000,7 +153435,7 @@
     {
       "agency_id": "waikato-district-council",
       "alternates": 0,
-      "links": 79,
+      "links": 78,
       "status": "ok",
       "url": "https://www.waikatodistrict.govt.nz/"
     },
@@ -155014,20 +153449,20 @@
     {
       "agency_id": "waimakariri-district-council",
       "alternates": 0,
-      "links": 306,
+      "links": 307,
       "status": "ok",
       "url": "https://www.waimakariri.govt.nz/"
     },
     {
       "agency_id": "waimate-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.waimatedc.govt.nz/"
     },
     {
       "agency_id": "waipa-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.waipadc.govt.nz/"
     },
     {
@@ -155040,14 +153475,14 @@
     {
       "agency_id": "waitaki-district-council",
       "alternates": 0,
-      "links": 356,
+      "links": 355,
       "status": "ok",
       "url": "https://www.waitaki.govt.nz/"
     },
     {
       "agency_id": "waitomo-district-council",
       "alternates": 0,
-      "links": 110,
+      "links": 109,
       "status": "ok",
       "url": "https://www.waitomo.govt.nz/"
     },
@@ -155078,14 +153513,14 @@
     },
     {
       "agency_id": "west-coast-regional-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.wcrc.govt.nz/"
     },
     {
       "agency_id": "western-bay-of-plenty-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.westernbay.govt.nz/"
     },
     {
@@ -155112,14 +153547,14 @@
     {
       "agency_id": "whanganui-district-council",
       "alternates": 0,
-      "links": 318,
+      "links": 320,
       "status": "ok",
       "url": "https://www.whanganui.govt.nz/"
     },
     {
       "agency_id": "whangarei-district-council",
       "alternates": 0,
-      "links": 357,
+      "links": 377,
       "status": "ok",
       "url": "https://www.wdc.govt.nz/"
     },
@@ -155155,32 +153590,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 255,
-    "candidate_count": 5259,
+    "candidate_count": 5198,
     "feasibility_counts": {
-      "high": 4146,
-      "low": 314,
-      "medium": 799
+      "high": 4128,
+      "low": 308,
+      "medium": 762
     },
-    "known_registry_social_profiles": 444,
+    "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 295,
-      "instagram": 164,
-      "linkedin": 238,
-      "newsletter": 168,
-      "rss": 3811,
-      "website_page": 317,
+      "facebook": 289,
+      "instagram": 159,
+      "linkedin": 232,
+      "newsletter": 146,
+      "rss": 3809,
+      "website_page": 301,
       "x": 76,
-      "youtube": 159
+      "youtube": 155
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 168,
-      "rss_feed": 61,
+      "newsletter": 146,
+      "rss_feed": 59,
       "search_seed": 3750,
-      "social_profile": 950,
-      "website_page": 317
+      "social_profile": 929,
+      "website_page": 301
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "description": "Archive onboarding manifest generated from the government source candidate report.",
-  "generated_at": "2026-06-29T18:33:20+00:00",
+  "generated_at": "2026-06-30T18:24:20+00:00",
   "sources": [
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -823,7 +823,7 @@
       "candidate_id": "b0ffbf2516476ffc",
       "feasibility": "low",
       "notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "party_id": "",
       "person_id": "",
       "platform": "linkedin",
@@ -2843,6 +2843,25 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "city-rail-link",
+      "agency_name": "City Rail Link Limited",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "0830c7b779c15137",
+      "feasibility": "medium",
+      "notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
+      "platform": "facebook",
+      "registry_record_kind": "agency",
+      "source_id": "city-rail-link-facebook-1424b081",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/akltransport/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "",
       "agency_id": "city-rail-link",
       "agency_name": "City Rail Link Limited",
@@ -2859,6 +2878,25 @@
       "source_id": "city-rail-link-instagram-ce493477",
       "source_type": "social_profile",
       "url": "http://instagram.com/cityraillink"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram",
+      "agency_id": "city-rail-link",
+      "agency_name": "City Rail Link Limited",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "d0be6b2763dda71f",
+      "feasibility": "medium",
+      "notes": "Archive capture depends on Meta access and account eligibility.",
+      "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
+      "platform": "instagram",
+      "registry_record_kind": "agency",
+      "source_id": "city-rail-link-instagram-0fa8b2b2",
+      "source_type": "social_profile",
+      "url": "https://www.instagram.com/akltransport/"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -6294,6 +6332,25 @@
       "source_id": "environmental-protection-authority-newsletter-253907cc",
       "source_type": "newsletter",
       "url": "https://www.epa.govt.nz/news-and-alerts/newsletters/hazardous-substances-update/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.epa.govt.nz",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "5d6cb23e632c089f",
+      "feasibility": "medium",
+      "notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
+      "platform": "newsletter",
+      "registry_record_kind": "agency",
+      "source_id": "environmental-protection-authority-newsletter-1efab03b",
+      "source_type": "newsletter",
+      "url": "https://www.epa.govt.nz/news-and-alerts/newsletters/te-putara/"
     },
     {
       "access_method": "bounded_public_html",
@@ -14902,6 +14959,25 @@
       "url": "https://www.facebook.com/HUDgovtnz"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "HUD on Facebook",
+      "agency_id": "ministry-of-housing-and-urban-development",
+      "agency_name": "Ministry of Housing and Urban Development (Te T\u016b\u0101papa Kura K\u0101inga)",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "ac8dc2bc31479169",
+      "feasibility": "medium",
+      "notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
+      "platform": "facebook",
+      "registry_record_kind": "agency",
+      "source_id": "ministry-of-housing-and-urban-development-facebook-60305680",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/MCERTNZ/"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "HUD NZ",
       "agency_id": "ministry-of-housing-and-urban-development",
@@ -14919,6 +14995,25 @@
       "source_id": "ministry-of-housing-and-urban-development-linkedin-60dd4796",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/hud-nz/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "HUD on LinkedIn",
+      "agency_id": "ministry-of-housing-and-urban-development",
+      "agency_name": "Ministry of Housing and Urban Development (Te T\u016b\u0101papa Kura K\u0101inga)",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "2c6cec7637bb6867",
+      "feasibility": "low",
+      "notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
+      "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
+      "platform": "linkedin",
+      "registry_record_kind": "agency",
+      "source_id": "ministry-of-housing-and-urban-development-linkedin-555b2cad",
+      "source_type": "social_profile",
+      "url": "https://www.linkedin.com/company/mcertnz"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -24464,7 +24559,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 4 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 5 hours ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "archive_status": "candidate",
@@ -24499,6 +24594,25 @@
       "source_id": "social-workers-registration-board-facebook-6c3382b9",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/102062118004656_1347582970818632"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "View on Facebook",
+      "agency_id": "social-workers-registration-board",
+      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "59df9d76f3495a13",
+      "feasibility": "medium",
+      "notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "origin": "homepage.link",
+      "party_id": "",
+      "person_id": "",
+      "platform": "facebook",
+      "registry_record_kind": "agency",
+      "source_id": "social-workers-registration-board-facebook-f0dec6c5",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/102062118004656_1351917083718554"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -33898,11 +34012,11 @@
   ],
   "summary": {
     "archive_status_counts": {
-      "candidate": 1051,
+      "candidate": 1056,
       "degraded": 79,
-      "manual_seed": 255,
+      "manual_seed": 256,
       "ready": 450
     },
-    "total_sources": 1835
+    "total_sources": 1841
   }
 }
