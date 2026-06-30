@@ -1,0 +1,89 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": true,
+  "generated_at": "2026-06-30T18:50:34+00:00",
+  "inputs": {
+    "agency_id": "",
+    "fetch_timeout": 5,
+    "include_blocked": false,
+    "limit_sources": 5,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "website_page"
+  },
+  "results": [
+    {
+      "agency_id": "accident-compensation-corporation",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "dry run",
+      "source_id": "accident-compensation-corporation-website_page-2f4e753e",
+      "source_type": "website_page",
+      "status": "would_capture",
+      "url": "https://www.acc.co.nz"
+    },
+    {
+      "agency_id": "accreditation-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "dry run",
+      "source_id": "accreditation-council-website_page-5d885a8f",
+      "source_type": "website_page",
+      "status": "would_capture",
+      "url": "https://www.accreditation.co.nz"
+    },
+    {
+      "agency_id": "airways-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "dry run",
+      "source_id": "airways-nz-website_page-8f2cead0",
+      "source_type": "website_page",
+      "status": "would_capture",
+      "url": "https://www.airways.co.nz"
+    },
+    {
+      "agency_id": "animal-control-products",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "dry run",
+      "source_id": "animal-control-products-website_page-15dfd90e",
+      "source_type": "website_page",
+      "status": "would_capture",
+      "url": "https://www.pestoff.co.nz"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "dry run",
+      "source_id": "antarctica-nz-website_page-1cd1a2ba",
+      "source_type": "website_page",
+      "status": "would_capture",
+      "url": "https://www.antarcticanz.govt.nz"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "website_page": 5
+    },
+    "selected_sources": 5,
+    "status_by_platform": {
+      "website_page": {
+        "would_capture": 5
+      }
+    },
+    "status_counts": {
+      "would_capture": 5
+    }
+  }
+}
