@@ -1,0 +1,89 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": true,
+  "generated_at": "2026-06-30T18:50:33+00:00",
+  "inputs": {
+    "agency_id": "",
+    "fetch_timeout": 30,
+    "include_blocked": false,
+    "limit_sources": 5,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "youtube"
+  },
+  "results": [
+    {
+      "agency_id": "accident-compensation-corporation",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "dry run: public YouTube channel RSS capture",
+      "source_id": "accident-compensation-corporation-youtube-27f8304b",
+      "source_type": "social_profile",
+      "status": "would_capture",
+      "url": "https://www.youtube.com/@accnz"
+    },
+    {
+      "agency_id": "accident-compensation-corporation",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "dry run: public YouTube channel RSS capture",
+      "source_id": "accident-compensation-corporation-youtube-07699fd4",
+      "source_type": "social_profile",
+      "status": "would_capture",
+      "url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "dry run: public YouTube channel RSS capture",
+      "source_id": "antarctica-nz-youtube-a01ad39c",
+      "source_type": "social_profile",
+      "status": "would_capture",
+      "url": "https://www.youtube.com/@AntarcticaNZ"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "dry run: public YouTube channel RSS capture",
+      "source_id": "antarctica-nz-youtube-b8cec902",
+      "source_type": "social_profile",
+      "status": "would_capture",
+      "url": "https://www.youtube.com/user/AntarcticaNewZealand"
+    },
+    {
+      "agency_id": "ara-institute-of-canterbury",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "dry run: public YouTube channel RSS capture",
+      "source_id": "ara-institute-of-canterbury-youtube-412c4f86",
+      "source_type": "social_profile",
+      "status": "would_capture",
+      "url": "https://www.youtube.com/@AraInstitute"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "youtube": 5
+    },
+    "selected_sources": 5,
+    "status_by_platform": {
+      "youtube": {
+        "would_capture": 5
+      }
+    },
+    "status_counts": {
+      "would_capture": 5
+    }
+  }
+}
