@@ -72,6 +72,7 @@ jobs:
         run: |
           python scripts/commit_state_updates.py \
             --message "Archive registered Bluesky sources" \
+            --force \
             --path historical_archive \
             --path historical_archive_normalized \
             --path historical_archive_raw \

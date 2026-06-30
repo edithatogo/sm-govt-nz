@@ -71,5 +71,6 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Archive Bluesky raw and normalized payloads"
+          --force
           --path 'historical_archive_raw/bluesky/**'
           --path 'historical_archive_normalized/bluesky/**'
