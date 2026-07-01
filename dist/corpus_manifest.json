@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 15088,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "7968449437d2ebb42232c537a32c95f125d553541c9d3fdc4fa3c56b3c90710a"
+      "sha256": "ce7c8b0e50f288a35d49bea00b96e4a22b4f561bcad505c6851bd90b04c28f39"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 4672604,
+      "bytes": 4679643,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "751d5923ce7b0929b3cfbbb42e19f40d9f103c7f622236eb1a1feead92ec3155"
+      "sha256": "8b9f5f5bbba937945e8c7cfc71e8c07e2c5eb44c720144e7b1c1e4d7f2e474c6"
     },
     "normalized_archive.parquet": {
-      "bytes": 7451139,
+      "bytes": 7465289,
       "path": "normalized_archive.parquet",
-      "sha256": "fb6aa2a3cb79a2fb04e2f173f7bfe527900e26d568acbf084425e47f3c848905"
+      "sha256": "ae52cf496eb620289023faa346641567d3bc507664733c1e211903d50fc53943"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 61,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 7188,
+  "normalized_record_count": 7226,
   "normalized_shard_count": 473,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 9857,
+  "raw_file_count": 9895,
   "record_index": [
     {
       "mirror_targets": [],
@@ -71394,6 +71394,576 @@
       "source_url": "https://x.com/AntarcticaNZ"
     },
     {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:28+00:00",
+      "source_account": "AklCouncil",
+      "source_key": "x:AklCouncil",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:c200469c968d630c07b8046e",
+      "source_url": "https://x.com/AklCouncil"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:29+00:00",
+      "source_account": "BSA_NZ",
+      "source_key": "x:BSA_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:467830b11ab63a33926a1456",
+      "source_url": "https://x.com/BSA_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:29+00:00",
+      "source_account": "ChristchurchCC",
+      "source_key": "x:ChristchurchCC",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:de5c4597185bbe8d5273ef4a",
+      "source_url": "https://x.com/ChristchurchCC"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:30+00:00",
+      "source_account": "NZConservation",
+      "source_key": "x:NZConservation",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:36896623031bb87f4e339e37",
+      "source_url": "https://x.com/NZConservation"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:30+00:00",
+      "source_account": "DnCityCouncil",
+      "source_key": "x:DnCityCouncil",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:548f2b958347d878bd371546",
+      "source_url": "https://x.com/DnCityCouncil"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:30+00:00",
+      "source_account": "CreativeNZ",
+      "source_key": "x:CreativeNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:88db92eed43be77c47d69bef",
+      "source_url": "https://x.com/CreativeNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:30+00:00",
+      "source_account": "CivilAviationNZ",
+      "source_key": "x:CivilAviationNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:d73dbda8a8f238f6d498c8b3",
+      "source_url": "https://x.com/CivilAviationNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:31+00:00",
+      "source_account": "ElectionsNZ",
+      "source_key": "x:ElectionsNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:338a5852b206bd77614535c2",
+      "source_url": "https://x.com/ElectionsNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:31+00:00",
+      "source_account": "eithawkesbay",
+      "source_key": "x:eithawkesbay",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:60f8c02bae245679a3c5e73d",
+      "source_url": "https://x.com/eithawkesbay"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:31+00:00",
+      "source_account": "FireEmergencyNZ",
+      "source_key": "x:FireEmergencyNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:6869f0e9c95df200f602af1d",
+      "source_url": "https://x.com/FireEmergencyNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:32+00:00",
+      "source_account": "NZSuperFund",
+      "source_key": "x:NZSuperFund",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:9c5c006c7bda9c305eeecb88",
+      "source_url": "https://x.com/NZSuperFund"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:33+00:00",
+      "source_account": "HRC",
+      "source_key": "x:HRC",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:c80a07f724875e627cff2dd2",
+      "source_url": "https://x.com/HRC"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:34+00:00",
+      "source_account": "IPCA_NZ",
+      "source_key": "x:IPCA_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:2c6bd60db5c6f5a2aa868f48",
+      "source_url": "https://x.com/IPCA_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:34+00:00",
+      "source_account": "HeritageNZ",
+      "source_key": "x:HeritageNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:722a8058f9772f3a9f2e9fa3",
+      "source_url": "https://x.com/HeritageNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:34+00:00",
+      "source_account": "HRCNZ",
+      "source_key": "x:HRCNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:7d05febe324ef17cb8e52d01",
+      "source_url": "https://x.com/HRCNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:34+00:00",
+      "source_account": "KiwibankNZ",
+      "source_key": "x:KiwibankNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:a1f2ebfb3dd29427d6da2c80",
+      "source_url": "https://x.com/KiwibankNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:35+00:00",
+      "source_account": "LOTTO_NZ",
+      "source_key": "x:LOTTO_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:f29229c6ed93d05c8ddf79ea",
+      "source_url": "https://x.com/LOTTO_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:36+00:00",
+      "source_account": "ManatuTaonga",
+      "source_key": "x:ManatuTaonga",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:bee4e89144d59d8a5aaedb09",
+      "source_url": "https://x.com/ManatuTaonga"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:36+00:00",
+      "source_account": "nzjustice",
+      "source_key": "x:nzjustice",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:ebdbcc1407a4d4873c3bbe39",
+      "source_url": "https://x.com/nzjustice"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:36+00:00",
+      "source_account": "msdgovtnz",
+      "source_key": "x:msdgovtnz",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:ffcbba22ab9172cbe6656ad2",
+      "source_url": "https://x.com/msdgovtnz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:37+00:00",
+      "source_account": "NZCustoms",
+      "source_key": "x:NZCustoms",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:04b0c5e74f22676500236551",
+      "source_url": "https://x.com/NZCustoms"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:37+00:00",
+      "source_account": "NZFilm",
+      "source_key": "x:NZFilm",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:844617fab1ad544abeb32e45",
+      "source_url": "https://x.com/NZFilm"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:37+00:00",
+      "source_account": "TeWaihanga",
+      "source_key": "x:TeWaihanga",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:eab61235a2f78e90e4dc8ec6",
+      "source_url": "https://x.com/TeWaihanga"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:37+00:00",
+      "source_account": "NapierCouncil",
+      "source_key": "x:NapierCouncil",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:f3d132ed28dcf81c553d704b",
+      "source_url": "https://x.com/NapierCouncil"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:38+00:00",
+      "source_account": "OrangaTamariki",
+      "source_key": "x:OrangaTamariki",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:53bb92a1f74ffd1774431649",
+      "source_url": "https://x.com/OrangaTamariki"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:38+00:00",
+      "source_account": "NZOnAir",
+      "source_key": "x:NZOnAir",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:b0e4cca0d4b00538f7b08903",
+      "source_url": "https://x.com/NZOnAir"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:38+00:00",
+      "source_account": "NZPost",
+      "source_key": "x:NZPost",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:d1e288c2692114993ef4257b",
+      "source_url": "https://x.com/NZPost"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:38+00:00",
+      "source_account": "NZSO",
+      "source_key": "x:NZSO",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:d3a73817e7750eff6604f950",
+      "source_url": "https://x.com/NZSO"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:39+00:00",
+      "source_account": "Pamu_NZ",
+      "source_key": "x:Pamu_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:1e41b2ce764fac8172e401e9",
+      "source_url": "https://x.com/Pamu_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:39+00:00",
+      "source_account": "PublicTrustNZ",
+      "source_key": "x:PublicTrustNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:39d9bd7611345528881cb928",
+      "source_url": "https://x.com/PublicTrustNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:40+00:00",
+      "source_account": "Stats_NZ",
+      "source_key": "x:Stats_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:52c809e26fc3470947a4deee",
+      "source_url": "https://x.com/Stats_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:40+00:00",
+      "source_account": "rbnz",
+      "source_key": "x:rbnz",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:658f7ee7d7fc1c7d6445f920",
+      "source_url": "https://x.com/rbnz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:40+00:00",
+      "source_account": "SFONZ",
+      "source_key": "x:SFONZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:f408a34e2107b6a7eafd6a09",
+      "source_url": "https://x.com/SFONZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:41+00:00",
+      "source_account": "TePapa",
+      "source_key": "x:TePapa",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:13fd8138ce4fe8a30b0380bc",
+      "source_url": "https://x.com/TePapa"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:41+00:00",
+      "source_account": "TeMangaiPaho",
+      "source_key": "x:TeMangaiPaho",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:a69d24899aef5ec15426f3fa",
+      "source_url": "https://x.com/TeMangaiPaho"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:41+00:00",
+      "source_account": "NZTA",
+      "source_key": "x:NZTA",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:a77e5f4c3b8f0544e35bb986",
+      "source_url": "https://x.com/NZTA"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:41+00:00",
+      "source_account": "TePuniKokiri",
+      "source_key": "x:TePuniKokiri",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:d5a26c911d96c8d4138552ec",
+      "source_url": "https://x.com/TePuniKokiri"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:41:42+00:00",
+      "source_account": "WorkSafeNZ",
+      "source_key": "x:WorkSafeNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:67e7bf19548939c83109f1c2",
+      "source_url": "https://x.com/WorkSafeNZ"
+    },
+    {
       "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
@@ -71597,7 +72167,7 @@
     "linkedin": 2,
     "rss": 3930,
     "website_page": 226,
-    "x": 690,
+    "x": 728,
     "youtube": 1833
   },
   "source_date_ranges": {
@@ -71634,7 +72204,7 @@
       "min_original_created_at": "2026-06-25T03:44:00+00:00"
     },
     "x": {
-      "max_original_created_at": "2026-07-01T15:39:17+00:00",
+      "max_original_created_at": "2026-07-01T15:41:42+00:00",
       "min_original_created_at": "2015-12-22T00:00:00+00:00"
     },
     "youtube": {
