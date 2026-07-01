@@ -1,8 +1,11 @@
 import argparse
+import base64
 import hashlib
+import hmac
 import json
 import os
 import re
+import secrets
 import socket
 import ssl
 import sys
@@ -12,7 +15,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
+from urllib.parse import parse_qs, quote, urlencode, urlparse, urlunparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -800,6 +803,349 @@ def archive_api_source(
     ]
 
 
+def x_handle_from_source(source: dict[str, Any]) -> str:
+    account = str(source.get("account") or "").strip().lstrip("@")
+    if account and "/" not in account and " " not in account and "." not in account:
+        return account
+    parsed = urlparse(str(source.get("url") or account or ""))
+    host = parsed.netloc.lower()
+    if host not in {"x.com", "www.x.com", "twitter.com", "www.twitter.com"}:
+        return ""
+    parts = [part for part in parsed.path.split("/") if part]
+    if not parts or parts[0].lower() in {"home", "share", "intent", "i", "search"}:
+        return ""
+    return parts[0].lstrip("@")
+
+
+def x_user_id_from_source(source: dict[str, Any]) -> str:
+    for key in ("x_user_id", "twitter_user_id", "platform_user_id", "external_id"):
+        value = str(source.get(key) or "").strip()
+        if value and value.isdigit():
+            return value
+    return ""
+
+
+def x_api_capture_enabled() -> bool:
+    return os.getenv("X_API_CAPTURE_ENABLED", "").strip().lower() == "true"
+
+
+def x_oauth_credentials() -> dict[str, str]:
+    keys = ["X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET"]
+    values = {key: os.getenv(key, "").strip() for key in keys}
+    return values if all(values.values()) else {}
+
+
+def x_percent_encode(value: str) -> str:
+    return quote(value, safe="~-._")
+
+
+def x_oauth_header(method: str, url: str, query_params: dict[str, str], credentials: dict[str, str]) -> str:
+    oauth_params = {
+        "oauth_consumer_key": credentials["X_API_KEY"],
+        "oauth_nonce": secrets.token_hex(16),
+        "oauth_signature_method": "HMAC-SHA1",
+        "oauth_timestamp": str(int(datetime.now(timezone.utc).timestamp())),
+        "oauth_token": credentials["X_ACCESS_TOKEN"],
+        "oauth_version": "1.0",
+    }
+    parsed = urlparse(url)
+    signature_params: list[tuple[str, str]] = []
+    for key, value in parse_qs(parsed.query, keep_blank_values=True).items():
+        for item in value:
+            signature_params.append((key, item))
+    for key, value in query_params.items():
+        signature_params.append((key, value))
+    signature_params.extend(oauth_params.items())
+    encoded_params = "&".join(
+        f"{x_percent_encode(str(key))}={x_percent_encode(str(value))}"
+        for key, value in sorted(signature_params)
+    )
+    base_url = urlunparse((parsed.scheme, parsed.netloc, parsed.path, "", "", ""))
+    signature_base = "&".join(
+        [
+            method.upper(),
+            x_percent_encode(base_url),
+            x_percent_encode(encoded_params),
+        ]
+    )
+    signing_key = (
+        f"{x_percent_encode(credentials['X_API_SECRET'])}&"
+        f"{x_percent_encode(credentials['X_ACCESS_TOKEN_SECRET'])}"
+    )
+    digest = hmac.new(signing_key.encode(), signature_base.encode(), "sha1").digest()
+    oauth_params["oauth_signature"] = base64.b64encode(digest).decode()
+    return "OAuth " + ", ".join(
+        f'{x_percent_encode(key)}="{x_percent_encode(value)}"'
+        for key, value in sorted(oauth_params.items())
+    )
+
+
+def x_api_get_json(
+    endpoint: str,
+    params: dict[str, str],
+    *,
+    api_base_url: str,
+    bearer_token: str,
+    oauth_credentials: dict[str, str],
+    timeout: int,
+) -> dict[str, Any]:
+    base = api_base_url.rstrip("/")
+    url = f"{base}{endpoint if endpoint.startswith('/') else '/' + endpoint}"
+    query = urlencode(params)
+    request_url = f"{url}?{query}" if query else url
+    headers = {
+        "Accept": "application/json",
+        "User-Agent": "sm-govt-nz-x-archive/1.0 (+https://github.com/edithatogo/sm-govt-nz)",
+    }
+    if bearer_token:
+        headers["Authorization"] = f"Bearer {bearer_token}"
+    elif oauth_credentials:
+        headers["Authorization"] = x_oauth_header("GET", url, params, oauth_credentials)
+    else:
+        raise RuntimeError("X API capture requires X_BEARER_TOKEN or X OAuth 1.0a credentials")
+    with urlopen(Request(request_url, headers=headers), timeout=timeout) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def x_api_error_detail(error: HTTPError | URLError) -> str:
+    if isinstance(error, HTTPError):
+        body = error.read().decode("utf-8", errors="replace")
+        try:
+            payload = json.loads(body)
+            errors = payload.get("errors") if isinstance(payload, dict) else None
+            if isinstance(errors, list) and errors:
+                return f"HTTP {error.code} {json.dumps(errors[0], sort_keys=True)[:500]}"
+            title = str(payload.get("title") or "").strip() if isinstance(payload, dict) else ""
+            detail = str(payload.get("detail") or "").strip() if isinstance(payload, dict) else ""
+            if title or detail:
+                return f"HTTP {error.code} {title} {detail}".strip()
+        except json.JSONDecodeError:
+            pass
+        return f"HTTP {error.code} {body[:500]}".strip()
+    return str(error)
+
+
+def x_api_status(error: HTTPError | URLError) -> str:
+    if isinstance(error, HTTPError):
+        if error.code in {401, 403}:
+            return "x_permission_error"
+        if error.code == 402:
+            return "x_billing_required"
+        if error.code == 429:
+            return "rate_limited"
+    return "x_api_error"
+
+
+def x_tweet_fields() -> str:
+    return ",".join(
+        [
+            "attachments",
+            "author_id",
+            "conversation_id",
+            "created_at",
+            "edit_history_tweet_ids",
+            "entities",
+            "geo",
+            "id",
+            "in_reply_to_user_id",
+            "lang",
+            "note_tweet",
+            "possibly_sensitive",
+            "public_metrics",
+            "referenced_tweets",
+            "reply_settings",
+            "text",
+        ]
+    )
+
+
+def x_user_fields() -> str:
+    return ",".join(
+        [
+            "created_at",
+            "description",
+            "id",
+            "location",
+            "name",
+            "profile_image_url",
+            "protected",
+            "public_metrics",
+            "url",
+            "username",
+            "verified",
+            "verified_type",
+        ]
+    )
+
+
+def x_media_fields() -> str:
+    return "alt_text,duration_ms,height,media_key,preview_image_url,public_metrics,type,url,width"
+
+
+def x_resolve_user(
+    source: dict[str, Any],
+    *,
+    api_fetcher: Any,
+) -> dict[str, Any]:
+    user_id = x_user_id_from_source(source)
+    handle = x_handle_from_source(source)
+    if user_id:
+        payload = api_fetcher(
+            f"/users/{user_id}",
+            {"user.fields": x_user_fields()},
+        )
+    elif handle:
+        payload = api_fetcher(
+            f"/users/by/username/{handle}",
+            {"user.fields": x_user_fields()},
+        )
+    else:
+        raise ValueError("X source needs an account handle, x_user_id, or platform_user_id")
+    data = payload.get("data")
+    if not isinstance(data, dict) or not data.get("id"):
+        raise ValueError("X API returned no user data")
+    return data
+
+
+def archive_x_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    *,
+    api_fetcher: Any | None = None,
+    bearer_token: str = "",
+    oauth_credentials: dict[str, str] | None = None,
+    api_base_url: str = "https://api.x.com/2",
+    max_posts: int = 25,
+    fetch_timeout: int = 30,
+) -> list[dict[str, Any]]:
+    bearer_token = bearer_token.strip()
+    oauth_credentials = oauth_credentials or {}
+    if api_fetcher is None and not bearer_token and not oauth_credentials:
+        return [
+            source_result(
+                source,
+                "x_auth_required",
+                "X API capture is enabled but X_BEARER_TOKEN or X OAuth credentials are missing",
+            )
+        ]
+
+    def fetch(endpoint: str, params: dict[str, str]) -> dict[str, Any]:
+        if api_fetcher is not None:
+            return api_fetcher(endpoint, params)
+        return x_api_get_json(
+            endpoint,
+            params,
+            api_base_url=api_base_url,
+            bearer_token=bearer_token,
+            oauth_credentials=oauth_credentials,
+            timeout=fetch_timeout,
+        )
+
+    try:
+        user = x_resolve_user(source, api_fetcher=fetch)
+        user_id = str(user["id"])
+        username = str(user.get("username") or x_handle_from_source(source) or source.get("account") or "")
+        payload = fetch(
+            f"/users/{user_id}/tweets",
+            {
+                "max_results": str(max(5, min(max_posts, 100))),
+                "tweet.fields": x_tweet_fields(),
+                "user.fields": x_user_fields(),
+                "media.fields": x_media_fields(),
+                "expansions": "attachments.media_keys,author_id,geo.place_id,referenced_tweets.id,referenced_tweets.id.author_id",
+            },
+        )
+    except ValueError as error:
+        return [source_result(source, "needs_x_handle", str(error))]
+    except (HTTPError, URLError) as error:
+        return [source_result(source, x_api_status(error), x_api_error_detail(error))]
+
+    posts = payload.get("data")
+    if not isinstance(posts, list) or not posts:
+        return [source_result(source, "no_records", "X API returned no posts")]
+
+    includes = payload.get("includes") if isinstance(payload.get("includes"), dict) else {}
+    media_by_key = {
+        str(item.get("media_key")): item
+        for item in includes.get("media", [])
+        if isinstance(item, dict) and item.get("media_key")
+    }
+    results = []
+    for post in posts:
+        if not isinstance(post, dict):
+            continue
+        tweet_id = str(post.get("id") or stable_id(json.dumps(post, sort_keys=True, default=str)))
+        created_at = str(post.get("created_at") or now_iso())
+        raw_rel = Path("x") / month_from_timestamp(created_at) / f"{tweet_id}.json"
+        raw_path = raw_root / raw_rel
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        if not raw_path.exists():
+            raw_path.write_text(
+                json.dumps(
+                    {
+                        "captured_at": now_iso(),
+                        "api_base_url": api_base_url,
+                        "source": source,
+                        "user": user,
+                        "post": post,
+                        "includes": includes,
+                    },
+                    indent=2,
+                    sort_keys=True,
+                    default=str,
+                )
+                + "
+",
+                encoding="utf-8",
+            )
+        media_refs = []
+        attachments = post.get("attachments") if isinstance(post.get("attachments"), dict) else {}
+        for media_key in attachments.get("media_keys", []) or []:
+            media = media_by_key.get(str(media_key))
+            if isinstance(media, dict):
+                media_refs.append(media)
+        text = str(
+            (post.get("note_tweet") or {}).get("text")
+            if isinstance(post.get("note_tweet"), dict)
+            else post.get("text") or ""
+        )
+        canonical_url = f"https://x.com/{username}/status/{tweet_id}" if username else str(source.get("url") or "")
+        normalized = build_normalized_record(
+            record_id=f"x:{tweet_id}",
+            agency_id=str(source.get("agency_id") or ""),
+            source_platform="x",
+            source_account=username or str(source.get("account") or ""),
+            source_kind=str(source.get("source_type") or "social_profile"),
+            source_url=str(source.get("url") or (f"https://x.com/{username}" if username else "")),
+            canonical_url=canonical_url,
+            original_created_at=created_at,
+            captured_at=now_iso(),
+            content=text,
+            raw_path=str(raw_path),
+            extraction_method="official_x_api_user_timeline",
+            media_refs=media_refs,
+            cross_source_ids={
+                "source_id": str(source.get("source_id") or ""),
+                "x_user_id": user_id,
+                "x_username": username,
+                "x_post_id": tweet_id,
+            },
+        )
+        inserted = append_normalized_record(normalized_root, "x", normalized)
+        results.append(
+            source_result(
+                source,
+                "captured" if inserted else "already_captured",
+                f"captured X post {normalized['record_id']}" if inserted else "X record already present",
+            )
+        )
+    if not results:
+        results.append(source_result(source, "no_records", "X API returned no usable posts"))
+    return results
+
+
+
 def threads_user_id(source: dict[str, Any]) -> str:
     for key in ("threads_user_id", "platform_user_id", "external_id"):
         value = str(source.get(key) or "").strip()
@@ -1005,6 +1351,11 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
     manual_seed_root = Path(getattr(args, "manual_seed_root", DEFAULT_MANUAL_SEED_ROOT))
     platform = source.get("platform")
     if args.dry_run:
+        if platform == "x":
+            if x_api_capture_enabled():
+                return [source_result(source, "would_capture", "dry run: official X API capture enabled")]
+            if find_manual_seed_path(source, manual_seed_root) is None:
+                return [source_result(source, "manual_seed_missing", "dry run: manual seed file is not present and X API capture is disabled")]
         if platform == "youtube":
             return [source_result(source, "would_capture", "dry run: public YouTube channel RSS capture")]
         if platform in MANUAL_SEED_PLATFORMS and find_manual_seed_path(source, manual_seed_root) is None:
@@ -1074,6 +1425,37 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                     result["reason"] = f"official Threads API unavailable; archived authorized manual seed. {result.get('reason', '')}".strip()
                 return seed_results
             return api_results
+        if platform == "x":
+            seed_path = find_manual_seed_path(source, manual_seed_root)
+            if not x_api_capture_enabled():
+                if seed_path is not None:
+                    return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
+                return [
+                    source_result(
+                        source,
+                        "manual_seed_missing",
+                        "X API capture is disabled; no authorized manual seed file is present",
+                    )
+                ]
+            api_results = archive_x_source(
+                source,
+                raw_root,
+                normalized_root,
+                bearer_token=os.getenv("X_BEARER_TOKEN", ""),
+                oauth_credentials=x_oauth_credentials(),
+                api_base_url=os.getenv("X_API_BASE_URL", "https://api.x.com/2"),
+                max_posts=getattr(args, "max_x_posts", 25),
+                fetch_timeout=getattr(args, "fetch_timeout", 30),
+            )
+            if (
+                all(result.get("status") in {"x_auth_required", "x_permission_error", "x_billing_required", "x_api_error"} for result in api_results)
+                and seed_path is not None
+            ):
+                seed_results = archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
+                for result in seed_results:
+                    result["reason"] = f"official X API unavailable; archived authorized manual seed. {result.get('reason', '')}".strip()
+                return seed_results
+            return api_results
         if platform in MANUAL_SEED_PLATFORMS:
             return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
     except Exception as exc:  # noqa: BLE001 - archive reports should record per-source failures.
@@ -1138,6 +1520,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "normalized_root": str(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT)),
             "manual_seed_root": str(getattr(args, "manual_seed_root", DEFAULT_MANUAL_SEED_ROOT)),
             "fetch_timeout": getattr(args, "fetch_timeout", 30),
+            "max_x_posts": getattr(args, "max_x_posts", 25),
             "retry_failed_from": str(getattr(args, "retry_failed_from", "") or ""),
             "offset_sources": getattr(args, "offset_sources", 0),
             "limit_sources": getattr(args, "limit_sources", 0),
@@ -1225,6 +1608,7 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--max-bluesky-pages", type=int, default=1)
     parser.add_argument("--max-threads-posts", type=int, default=25)
+    parser.add_argument("--max-x-posts", type=int, default=25)
     parser.add_argument("--fetch-timeout", type=int, default=30)
     parser.add_argument("--retry-failed-from", type=Path, default=None)
     parser.add_argument("--offset-sources", type=int, default=0)
