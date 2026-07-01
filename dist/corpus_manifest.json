@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 15088,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "41970d7792ca122b8aa0d814d08e3f5de92db5d8fe37cf1ded18a96226651590"
+      "sha256": "7968449437d2ebb42232c537a32c95f125d553541c9d3fdc4fa3c56b3c90710a"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 4672344,
+      "bytes": 4672604,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "21ef1135a5a588f18c1835d3f290069fdfd867be38389a702bd851f713d9dac2"
+      "sha256": "751d5923ce7b0929b3cfbbb42e19f40d9f103c7f622236eb1a1feead92ec3155"
     },
     "normalized_archive.parquet": {
-      "bytes": 7449953,
+      "bytes": 7451139,
       "path": "normalized_archive.parquet",
-      "sha256": "7bbee34a630b88713b2db3a48fea16fd20604606b916dab31730f3acd9953579"
+      "sha256": "fb6aa2a3cb79a2fb04e2f173f7bfe527900e26d568acbf084425e47f3c848905"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 61,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 7187,
-  "normalized_shard_count": 472,
+  "normalized_record_count": 7188,
+  "normalized_shard_count": 473,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 9856,
+  "raw_file_count": 9857,
   "record_index": [
     {
       "mirror_targets": [],
@@ -71379,6 +71379,21 @@
       "source_url": "https://www.unitec.ac.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.unitec.ac.nz%2F"
     },
     {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-01T15:39:17+00:00",
+      "source_account": "AntarcticaNZ",
+      "source_key": "x:AntarcticaNZ",
+      "source_platform": "x",
+      "source_record_id": "x_public_snapshot:36b0505637ae1650bb31d539",
+      "source_url": "https://x.com/AntarcticaNZ"
+    },
+    {
       "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
@@ -71582,7 +71597,7 @@
     "linkedin": 2,
     "rss": 3930,
     "website_page": 226,
-    "x": 689,
+    "x": 690,
     "youtube": 1833
   },
   "source_date_ranges": {
@@ -71619,7 +71634,7 @@
       "min_original_created_at": "2026-06-25T03:44:00+00:00"
     },
     "x": {
-      "max_original_created_at": "2024-12-19T00:00:00+00:00",
+      "max_original_created_at": "2026-07-01T15:39:17+00:00",
       "min_original_created_at": "2015-12-22T00:00:00+00:00"
     },
     "youtube": {
