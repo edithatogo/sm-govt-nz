@@ -125,6 +125,19 @@ jobs:
       - uses: ./.github/actions/setup-python-uv
         with:
           requirements: requirements.txt
+      - name: Resolve archive report paths
+        run: |
+          source_type="${{ inputs.source_type || 'all_feasible' }}"
+          if [ "$source_type" = "all_feasible" ]; then
+            report_path="conductor/govt_archive_registered_sources_report.json"
+            summary_path="conductor/govt_archive_registered_sources_summary.md"
+          else
+            safe_source_type="${source_type//[^A-Za-z0-9_]/_}"
+            report_path="conductor/${safe_source_type}_archive_report.json"
+            summary_path="conductor/${safe_source_type}_archive_summary.md"
+          fi
+          echo "ARCHIVE_REPORT_PATH=$report_path" >> "$GITHUB_ENV"
+          echo "ARCHIVE_SUMMARY_PATH=$summary_path" >> "$GITHUB_ENV"
       - name: Archive registered sources
         run: |
           limit_sources="${{ inputs.limit_sources || '0' }}"
@@ -133,6 +146,8 @@ jobs:
           args=(
             --source-type "${{ inputs.source_type || 'all_feasible' }}"
             --agency-id "${{ inputs.agency_id || '' }}"
+            --report "$ARCHIVE_REPORT_PATH"
+            --summary "$ARCHIVE_SUMMARY_PATH"
           )
           if [ "$limit_sources" != "0" ]; then
             args+=(--limit-sources "$limit_sources")
@@ -199,8 +214,8 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Report registered government archive sources"
-          --path conductor/govt_archive_registered_sources_report.json
-          --path conductor/govt_archive_registered_sources_summary.md
+          --path "$ARCHIVE_REPORT_PATH"
+          --path "$ARCHIVE_SUMMARY_PATH"
       - name: Commit archive capture reports
         if: ${{ inputs.dry_run == 'false' }}
         run: >-
@@ -208,8 +223,8 @@ jobs:
           --message "Record registered government archive capture report"
           --force
           --max-attempts 10
-          --path conductor/govt_archive_registered_sources_report.json
-          --path conductor/govt_archive_registered_sources_summary.md
+          --path "$ARCHIVE_REPORT_PATH"
+          --path "$ARCHIVE_SUMMARY_PATH"
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
           --path dist/archive_manifest.json
