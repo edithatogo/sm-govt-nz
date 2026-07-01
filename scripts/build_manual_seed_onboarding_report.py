@@ -8,8 +8,9 @@ from typing import Any
 DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
 DEFAULT_POLICY = Path("config/manual_seed_onboarding.json")
 DEFAULT_REPORT = Path("conductor/manual_seed_onboarding_report.json")
+DEFAULT_SUMMARY = Path("conductor/manual_seed_onboarding_summary.md")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
-DEFAULT_PLATFORMS = ["facebook", "instagram", "threads", "linkedin", "x"]
+DEFAULT_PLATFORMS = ["facebook", "instagram", "threads", "linkedin", "x", "newsletter"]
 
 
 def now_iso() -> str:
@@ -111,16 +112,63 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     }
 
 
+def write_summary(path: Path, report: dict[str, Any]) -> None:
+    summary = report.get("summary", {})
+    lines = [
+        "# Manual/API Source Onboarding",
+        "",
+        f"Generated: {report.get('generated_at', '')}",
+        "",
+        "## Summary",
+        "",
+        f"- `selected_sources`: {summary.get('selected_sources', 0)}",
+        f"- `remaining_group_count`: {summary.get('remaining_group_count', 0)}",
+        f"- `remaining_source_count`: {summary.get('remaining_source_count', 0)}",
+        "",
+        "## Remaining groups",
+        "",
+    ]
+    remaining_groups = summary.get("remaining_groups", {})
+    if remaining_groups:
+        for platform, count in remaining_groups.items():
+            lines.append(f"- `{platform}`: {count}")
+    else:
+        lines.append("- None")
+    lines.extend(
+        [
+            "",
+            "## Platform status",
+            "",
+        ]
+    )
+    for platform, counts in summary.get("status_by_platform", {}).items():
+        lines.append(f"- `{platform}`: {counts}")
+    lines.extend(
+        [
+            "",
+            "## Notes",
+            "",
+            "- This queue is for Facebook, Instagram, Threads, LinkedIn, X, and newsletters.",
+            "- `seed_present` sources are ready for archival processing.",
+            "- `needs_authorized_seed_or_api` sources remain in the manual/API remainder set.",
+        ]
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build explicit manual/API onboarding queue for non-live-capturable platforms.")
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--policy", type=Path, default=DEFAULT_POLICY)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
     parser.add_argument("--manual-seed-root", type=Path, default=DEFAULT_MANUAL_SEED_ROOT)
     parser.add_argument("--platforms", default=",".join(DEFAULT_PLATFORMS))
     args = parser.parse_args()
     report = build_report(args)
     write_json(args.report, report)
+    write_summary(args.summary, report)
     print(
         "Manual/API onboarding report wrote "
         f"{report['summary']['selected_sources']} selected sources."

@@ -1,7 +1,7 @@
 import argparse
 import json
 
-from scripts.build_manual_seed_onboarding_report import build_report
+from scripts.build_manual_seed_onboarding_report import build_report, write_summary
 
 
 def test_manual_seed_onboarding_report_marks_missing_and_present_seeds(tmp_path):
@@ -97,6 +97,46 @@ def test_manual_seed_onboarding_report_marks_missing_and_present_seeds(tmp_path)
     assert by_platform["linkedin"]["onboarding_status"] == "seed_present"
     assert "meta_graph_api" in by_platform["facebook"]["acceptable_access_methods"]
     assert by_platform["facebook"]["live_capture_policy"] == "no public scraping"
+
+
+def test_manual_seed_onboarding_report_writes_summary(tmp_path):
+    manifest = tmp_path / "manifest.json"
+    policy = tmp_path / "policy.json"
+    summary_path = tmp_path / "summary.md"
+    manifest.write_text(
+        json.dumps(
+            {
+                "sources": [
+                    {
+                        "source_id": "agency-facebook",
+                        "agency_id": "agency",
+                        "agency_name": "Agency",
+                        "platform": "facebook",
+                        "source_type": "social_profile",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    policy.write_text(json.dumps({"platforms": {"facebook": {"seed_directory": "manual_archive_seeds/facebook"}}}), encoding="utf-8")
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            policy=policy,
+            report=tmp_path / "report.json",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            platforms="facebook",
+        )
+    )
+
+    write_summary(summary_path, report)
+    assert summary_path.is_file()
+    summary = summary_path.read_text(encoding="utf-8")
+    assert "Remaining groups" in summary
+    assert "`facebook`: 1" in summary
+    assert report["summary"]["remaining_group_count"] == 1
 
 
 def test_manual_seed_onboarding_report_is_limited_to_requested_platforms(tmp_path):

@@ -41,3 +41,4 @@ jobs:
           python scripts/commit_state_updates.py
           --message "Refresh manual API source onboarding report"
           --path conductor/manual_seed_onboarding_report.json
+          --path conductor/manual_seed_onboarding_summary.md
