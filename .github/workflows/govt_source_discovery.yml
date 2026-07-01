@@ -41,6 +41,11 @@ jobs:
             args+=(--probe-homepages)
           fi
           python scripts/discover_govt_source_candidates.py "${args[@]}"
+      - name: Promote ready source candidates
+        run: >-
+          python scripts/promote_govt_source_candidates.py
+          --report conductor/govt_source_candidate_report.json
+          --manifest conductor/govt_archive_source_manifest.json
       - name: Commit discovery updates
         run: >-
           python scripts/commit_state_updates.py
