@@ -1,15 +1,15 @@
 # Monthly Release Plan
 
-Generated: 2026-07-01T05:34:09+00:00
+Generated: 2026-07-01T10:09:56+00:00
 
 Each monthly release is cumulative: it bundles all archived accounts and source types present in the repository at release time.
 
 ## Summary
 
 - `months_with_records`: 260
-- `total_records`: 7145
-- `published_months`: 1
-- `candidate_months`: 259
+- `total_records`: 7185
+- `published_months`: 2
+- `candidate_months`: 258
 
 ## Months
 
@@ -54,7 +54,7 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2007-07 | candidate | 10 | 1 | rss: 10 |
 | 2007-08 | candidate | 11 | 1 | rss: 11 |
 | 2007-09 | candidate | 7 | 1 | rss: 7 |
-| 2007-10 | candidate | 8 | 1 | rss: 8 |
+| 2007-10 | candidate | 9 | 2 | rss: 8, youtube: 1 |
 | 2007-11 | candidate | 10 | 1 | rss: 10 |
 | 2007-12 | candidate | 13 | 1 | rss: 13 |
 | 2008-02 | candidate | 10 | 1 | rss: 10 |
@@ -79,7 +79,7 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2009-10 | candidate | 13 | 1 | rss: 13 |
 | 2009-11 | candidate | 9 | 1 | rss: 9 |
 | 2009-12 | candidate | 12 | 1 | rss: 12 |
-| 2010-02 | candidate | 11 | 1 | rss: 11 |
+| 2010-02 | candidate | 14 | 2 | rss: 11, youtube: 3 |
 | 2010-03 | candidate | 22 | 1 | rss: 22 |
 | 2010-04 | candidate | 13 | 1 | rss: 13 |
 | 2010-05 | candidate | 13 | 1 | rss: 13 |
@@ -87,7 +87,7 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2010-07 | candidate | 22 | 2 | rss: 21, youtube: 1 |
 | 2010-08 | candidate | 17 | 1 | rss: 17 |
 | 2010-09 | candidate | 10 | 1 | rss: 10 |
-| 2010-10 | candidate | 3 | 1 | rss: 3 |
+| 2010-10 | candidate | 4 | 2 | json_feed: 1, rss: 3 |
 | 2010-11 | candidate | 17 | 1 | rss: 17 |
 | 2010-12 | candidate | 13 | 1 | rss: 13 |
 | 2011-01 | candidate | 4 | 1 | youtube: 4 |
@@ -96,7 +96,7 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2011-04 | candidate | 10 | 1 | rss: 10 |
 | 2011-05 | candidate | 14 | 2 | rss: 13, youtube: 1 |
 | 2011-06 | candidate | 14 | 1 | rss: 14 |
-| 2011-07 | candidate | 8 | 2 | rss: 7, youtube: 1 |
+| 2011-07 | candidate | 9 | 3 | json_feed: 1, rss: 7, youtube: 1 |
 | 2011-08 | candidate | 21 | 2 | rss: 20, youtube: 1 |
 | 2011-09 | candidate | 19 | 2 | rss: 18, youtube: 1 |
 | 2011-10 | candidate | 14 | 2 | rss: 12, youtube: 2 |
@@ -133,7 +133,7 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2014-08 | candidate | 20 | 2 | rss: 19, youtube: 1 |
 | 2014-09 | candidate | 17 | 2 | rss: 16, youtube: 1 |
 | 2014-10 | candidate | 20 | 1 | rss: 20 |
-| 2014-11 | candidate | 16 | 3 | rss: 14, youtube: 2 |
+| 2014-11 | candidate | 17 | 4 | json_feed: 1, rss: 14, youtube: 2 |
 | 2014-12 | candidate | 32 | 3 | rss: 24, youtube: 8 |
 | 2015-01 | candidate | 3 | 2 | youtube: 3 |
 | 2015-02 | candidate | 16 | 2 | rss: 14, youtube: 2 |
@@ -162,7 +162,7 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2017-01 | candidate | 1 | 1 | rss: 1 |
 | 2017-02 | candidate | 17 | 2 | rss: 16, x: 1 |
 | 2017-03 | candidate | 21 | 1 | rss: 21 |
-| 2017-04 | candidate | 16 | 3 | rss: 13, x: 1, youtube: 2 |
+| 2017-04 | candidate | 17 | 4 | json_feed: 1, rss: 13, x: 1, youtube: 2 |
 | 2017-05 | candidate | 23 | 1 | rss: 23 |
 | 2017-06 | candidate | 16 | 1 | rss: 16 |
 | 2017-07 | candidate | 11 | 1 | rss: 11 |
@@ -170,8 +170,8 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2017-09 | candidate | 12 | 1 | rss: 12 |
 | 2017-10 | candidate | 22 | 5 | rss: 17, x: 1, youtube: 4 |
 | 2017-11 | candidate | 19 | 2 | rss: 17, youtube: 2 |
-| 2017-12 | candidate | 18 | 1 | rss: 18 |
-| 2018-01 | candidate | 1 | 1 | rss: 1 |
+| 2017-12 | candidate | 19 | 2 | rss: 18, youtube: 1 |
+| 2018-01 | candidate | 3 | 2 | rss: 1, youtube: 2 |
 | 2018-02 | candidate | 15 | 2 | rss: 15 |
 | 2018-03 | candidate | 10 | 1 | rss: 10 |
 | 2018-04 | candidate | 12 | 2 | rss: 11, x: 1 |
@@ -184,17 +184,17 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2018-11 | candidate | 17 | 2 | rss: 16, x: 1 |
 | 2018-12 | candidate | 9 | 1 | rss: 9 |
 | 2019-01 | candidate | 2 | 1 | youtube: 2 |
-| 2019-02 | candidate | 22 | 2 | rss: 18, youtube: 4 |
+| 2019-02 | candidate | 23 | 3 | json_feed: 1, rss: 18, youtube: 4 |
 | 2019-03 | candidate | 15 | 2 | rss: 13, x: 2 |
-| 2019-04 | candidate | 10 | 2 | rss: 10 |
+| 2019-04 | candidate | 11 | 3 | rss: 10, youtube: 1 |
 | 2019-05 | candidate | 11 | 1 | rss: 11 |
 | 2019-06 | candidate | 11 | 1 | rss: 11 |
 | 2019-07 | candidate | 16 | 1 | rss: 16 |
 | 2019-08 | candidate | 11 | 1 | rss: 11 |
-| 2019-09 | candidate | 23 | 2 | rss: 9, x: 14 |
+| 2019-09 | candidate | 24 | 3 | rss: 9, x: 14, youtube: 1 |
 | 2019-10 | candidate | 41 | 3 | rss: 14, x: 23, youtube: 4 |
 | 2019-11 | candidate | 33 | 2 | rss: 13, x: 20 |
-| 2019-12 | candidate | 48 | 2 | rss: 24, x: 24 |
+| 2019-12 | candidate | 50 | 4 | rss: 24, x: 24, youtube: 2 |
 | 2020-01 | candidate | 6 | 1 | rss: 6 |
 | 2020-02 | candidate | 29 | 3 | rss: 14, x: 15 |
 | 2020-03 | candidate | 42 | 4 | rss: 16, x: 25, youtube: 1 |
@@ -221,7 +221,7 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2021-12 | candidate | 71 | 4 | rss: 30, x: 37, youtube: 4 |
 | 2022-01 | candidate | 10 | 2 | rss: 6, x: 4 |
 | 2022-02 | candidate | 30 | 3 | rss: 16, x: 14 |
-| 2022-03 | candidate | 53 | 5 | rss: 30, x: 17, youtube: 6 |
+| 2022-03 | candidate | 54 | 6 | json_feed: 1, rss: 30, x: 17, youtube: 6 |
 | 2022-04 | candidate | 45 | 6 | rss: 16, x: 25, youtube: 4 |
 | 2022-05 | candidate | 53 | 9 | rss: 27, x: 19, youtube: 7 |
 | 2022-06 | candidate | 44 | 7 | rss: 25, x: 17, youtube: 2 |
@@ -246,14 +246,14 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2024-01 | candidate | 6 | 4 | rss: 4, youtube: 2 |
 | 2024-02 | candidate | 23 | 5 | bluesky: 1, rss: 19, x: 1, youtube: 2 |
 | 2024-03 | candidate | 32 | 8 | rss: 13, youtube: 19 |
-| 2024-04 | candidate | 30 | 4 | rss: 23, youtube: 7 |
+| 2024-04 | candidate | 31 | 5 | json_feed: 1, rss: 23, youtube: 7 |
 | 2024-05 | candidate | 49 | 6 | rss: 27, x: 2, youtube: 20 |
 | 2024-06 | candidate | 29 | 5 | rss: 23, youtube: 6 |
 | 2024-07 | candidate | 37 | 9 | rss: 26, youtube: 11 |
 | 2024-08 | candidate | 35 | 6 | courtsofnz.govt.nz: 1, rss: 27, youtube: 7 |
 | 2024-09 | candidate | 46 | 9 | rss: 25, x: 2, youtube: 19 |
 | 2024-10 | candidate | 40 | 8 | rss: 24, youtube: 16 |
-| 2024-11 | candidate | 36 | 8 | rss: 22, youtube: 14 |
+| 2024-11 | candidate | 37 | 9 | json_feed: 1, rss: 22, youtube: 14 |
 | 2024-12 | candidate | 52 | 13 | bluesky: 2, rss: 33, x: 3, youtube: 14 |
 | 2025-01 | candidate | 21 | 7 | bluesky: 14, rss: 3, youtube: 4 |
 | 2025-02 | candidate | 63 | 11 | bluesky: 23, rss: 19, youtube: 21 |
@@ -273,5 +273,5 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2026-04 | candidate | 168 | 35 | bluesky: 41, courtsofnz.govt.nz: 3, rss: 35, youtube: 89 |
 | 2026-05 | candidate | 364 | 58 | bluesky: 32, rss: 54, youtube: 278 |
 | 2026-06 | published | 1006 | 285 | bluesky: 165, courtsofnz.govt.nz: 1, email: 12, linkedin: 2, rss: 102, website_page: 219, youtube: 505 |
-| 2026-07 | candidate | 44 | 12 | bluesky: 1, email: 2, rss: 33, website_page: 7, youtube: 1 |
+| 2026-07 | published | 65 | 21 | api: 13, bluesky: 1, email: 2, json_feed: 8, rss: 33, website_page: 7, youtube: 1 |
 | unknown | candidate | 20 | 1 | rss: 20 |
