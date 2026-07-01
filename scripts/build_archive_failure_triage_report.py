@@ -7,6 +7,9 @@ from typing import Any
 
 
 SUCCESS_STATUSES = {"captured", "already_captured", "would_capture", "manual_seed_captured"}
+REPORT_ONLY_STATUSES_BY_PLATFORM = {
+    ("youtube", "no_records"): "monitor_zero_record_channel",
+}
 
 ACTION_BY_STATUS = {
     "capture_blocked": "review_access_or_mark_blocked",
@@ -47,8 +50,15 @@ def triage_item(report_path: Path, row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def report_only_action(row: dict[str, Any]) -> str:
+    platform = str(row.get("platform") or "")
+    status = str(row.get("status") or "unknown")
+    return REPORT_ONLY_STATUSES_BY_PLATFORM.get((platform, status), "")
+
+
 def build_report(report_paths: list[Path]) -> dict[str, Any]:
     items: list[dict[str, Any]] = []
+    report_only_items: list[dict[str, Any]] = []
     report_summaries: dict[str, Any] = {}
     for report_path in report_paths:
         report = load_json(report_path)
@@ -65,10 +75,20 @@ def build_report(report_paths: list[Path]) -> dict[str, Any]:
         for row in results:
             if not isinstance(row, dict):
                 continue
-            if row.get("status") not in SUCCESS_STATUSES:
-                items.append(triage_item(report_path, row))
+            if row.get("status") in SUCCESS_STATUSES:
+                continue
+            report_only = report_only_action(row)
+            if report_only:
+                item = triage_item(report_path, row)
+                item["recommended_action"] = report_only
+                item["report_only"] = True
+                report_only_items.append(item)
+                continue
+            items.append(triage_item(report_path, row))
     status_counts = Counter(item["status"] for item in items)
     platform_counts = Counter(item["platform"] for item in items)
+    report_only_status_counts = Counter(item["status"] for item in report_only_items)
+    report_only_platform_counts = Counter(item["platform"] for item in report_only_items)
     return {
         "generated_at": now_iso(),
         "inputs": {"reports": [str(path) for path in report_paths]},
@@ -76,9 +96,13 @@ def build_report(report_paths: list[Path]) -> dict[str, Any]:
         "summary": {
             "failure_count": len(items),
             "platform_counts": dict(sorted(platform_counts.items())),
+            "report_only_count": len(report_only_items),
+            "report_only_platform_counts": dict(sorted(report_only_platform_counts.items())),
+            "report_only_status_counts": dict(sorted(report_only_status_counts.items())),
             "status_counts": dict(sorted(status_counts.items())),
         },
         "items": items,
+        "report_only_items": report_only_items,
     }
 
 

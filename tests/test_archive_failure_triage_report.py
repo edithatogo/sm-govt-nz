@@ -43,6 +43,36 @@ def test_archive_failure_triage_report_extracts_non_success_rows(tmp_path):
     assert "feedback_command" not in item
 
 
+def test_archive_failure_triage_report_treats_youtube_no_records_as_report_only(tmp_path):
+    report_path = tmp_path / "youtube_report.json"
+    report_path.write_text(
+        json.dumps(
+            {
+                "results": [
+                    {
+                        "source_id": "empty",
+                        "agency_id": "agency",
+                        "platform": "youtube",
+                        "url": "https://www.youtube.com/@empty",
+                        "status": "no_records",
+                        "reason": "YouTube channel RSS returned no entries",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report([report_path])
+
+    assert report["summary"]["failure_count"] == 0
+    assert report["summary"]["report_only_count"] == 1
+    assert report["summary"]["report_only_status_counts"] == {"no_records": 1}
+    assert report["items"] == []
+    assert report["report_only_items"][0]["recommended_action"] == "monitor_zero_record_channel"
+    assert report["report_only_items"][0]["report_only"] is True
+
+
 def test_archive_failure_triage_report_writes_output(tmp_path, monkeypatch):
     report_path = tmp_path / "website_report.json"
     output = tmp_path / "triage.json"
