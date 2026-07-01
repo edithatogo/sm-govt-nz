@@ -23,6 +23,7 @@ def archive_email_payload(
     *,
     raw_root: str | Path = "historical_archive_raw/email",
     normalized_root: str | Path = "historical_archive_normalized/email",
+    report_path: str | Path | None = None,
 ) -> NormalizedArchiveRecord:
     captured_at = _utc_now()
     received_at = _coerce_datetime(str(payload.get("received_at") or payload.get("date") or captured_at))
@@ -61,6 +62,8 @@ def archive_email_payload(
         },
     )
     _upsert_normalized_record(record, Path(normalized_root))
+    if report_path is not None:
+        _write_email_report(record, Path(report_path))
     return record
 
 
@@ -172,6 +175,31 @@ def _write_bytes_once(path: Path, content: bytes) -> None:
     path.write_bytes(content)
 
 
+def _write_email_report(record: NormalizedArchiveRecord, path: Path) -> None:
+    report = {
+        "summary": {
+            "selected_sources": 1,
+            "platform_counts": {"email": 1},
+            "status_counts": {"captured": 1},
+            "status_by_platform": {"email": {"captured": 1}},
+        },
+        "results": [
+            {
+                "source_id": record.get("cross_source_ids", {}).get("source_id", ""),
+                "agency_id": record.get("agency_id", ""),
+                "platform": "email",
+                "source_type": record.get("source_kind", "email_subscription"),
+                "status": "captured",
+                "record_id": record.get("record_id", ""),
+                "raw_path": record.get("raw_path", ""),
+                "reason": "archived inbound email payload",
+            }
+        ],
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
 def _coerce_datetime(value: str) -> str:
     parsed = _parse_datetime(value)
     return parsed.astimezone(dt.timezone.utc).isoformat().replace("+00:00", "Z")
@@ -205,12 +233,14 @@ def main() -> None:
     parser.add_argument("--payload-json")
     parser.add_argument("--raw-root", default="historical_archive_raw/email")
     parser.add_argument("--normalized-root", default="historical_archive_normalized/email")
+    parser.add_argument("--report")
     args = parser.parse_args()
 
     record = archive_email_payload(
         load_payload(args.payload_file, args.payload_json),
         raw_root=args.raw_root,
         normalized_root=args.normalized_root,
+        report_path=args.report,
     )
     print(json.dumps(record, indent=2, sort_keys=True))
 
