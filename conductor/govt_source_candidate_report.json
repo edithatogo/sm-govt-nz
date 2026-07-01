@@ -84678,32 +84678,6 @@
       "url": "https://www.odc.govt.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.orangatamariki.govt.nz",
-      "agency_id": "oranga-tamariki",
-      "agency_name": "Oranga Tamariki\u2014Ministry for Children",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "eae6ea9ab0060417",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Care Matters newsletter",
-      "official_website": "https://www.orangatamariki.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Children",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.orangatamariki.govt.nz/caregiving/care-matters-newsletter/"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.orangatamariki.govt.nz",
       "agency_id": "oranga-tamariki",
@@ -85123,7 +85097,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.orangatamariki.govt.nz",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "facebook",
       "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
       "portfolio": "Children",
@@ -85221,30 +85195,6 @@
       "url": "https://www.youtube.com/@OrangaTamariki"
     },
     {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "YouTube \n    \n\n    \n         , opens in a new window",
-      "agency_id": "oranga-tamariki",
-      "agency_name": "Oranga Tamariki\u2014Ministry for Children",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "b614b680d1d5f0f6",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.orangatamariki.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Children",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/channel/UCWpNNGDSur1P7ytjZEfFfKA"
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.orangatamariki.govt.nz",
       "agency_id": "oranga-tamariki",
@@ -85270,33 +85220,6 @@
         "official_term:nz"
       ],
       "url": "https://www.orangatamariki.govt.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.orangatamariki.govt.nz",
-      "agency_id": "oranga-tamariki",
-      "agency_name": "Oranga Tamariki\u2014Ministry for Children",
-      "agency_type": "Department",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "7dc5223863b4af4c",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Care Matters newsletter",
-      "official_website": "https://www.orangatamariki.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Children",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.orangatamariki.govt.nz/caregiving/care-matters-newsletter/"
     },
     {
       "access_method": "public_rss",
@@ -86920,32 +86843,6 @@
       "url": "https://www.orc.govt.nz/your-council/latest-news/regulatory-newsletter/"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.otodc.govt.nz",
-      "agency_id": "otorohanga-district-council",
-      "agency_name": "\u014ctorohanga District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "e10cbe2b66474cbf",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Sign up to Newsletter",
-      "official_website": "https://www.otodc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.otodc.govt.nz/latest-news/newsletter"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.otodc.govt.nz",
       "agency_id": "otorohanga-district-council",
@@ -87365,7 +87262,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.otodc.govt.nz",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "facebook",
       "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
       "portfolio": "Local Government",
@@ -87377,54 +87274,6 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/OtorohangaDistrictCouncil"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "Follow us on linkedin",
-      "agency_id": "otorohanga-district-council",
-      "agency_name": "\u014ctorohanga District Council",
-      "agency_type": "District Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "c988430d5d5f350b",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.otodc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/otorohanga-district-council"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Follow us on youtube",
-      "agency_id": "otorohanga-district-council",
-      "agency_name": "\u014ctorohanga District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "8400cdeb727c491d",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.otodc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/@otorohangadistrictcouncil2783"
     },
     {
       "access_method": "bounded_public_html",
@@ -140060,7 +139909,7 @@
       "url": "https://www.worksafe.govt.nz/about-us/news-and-media/high-hazards-newsletter-june-2026/"
     }
   ],
-  "generated_at": "2026-07-01T05:51:38+00:00",
+  "generated_at": "2026-07-01T11:02:48+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -152898,7 +152747,7 @@
     },
     {
       "agency_id": "bay-of-plenty-regional-council",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
       "status": "failed",
       "url": "https://www.boprc.govt.nz/"
     },
@@ -153008,7 +152857,7 @@
     {
       "agency_id": "climate-change-commission",
       "alternates": 0,
-      "links": 84,
+      "links": 85,
       "status": "ok",
       "url": "https://www.climatecommission.govt.nz/"
     },
@@ -153447,7 +153296,7 @@
     },
     {
       "agency_id": "lotto-nz",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lotto.co.nz'. (_ssl.c:1016)>",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lotto.co.nz'. (_ssl.c:1082)>",
       "status": "failed",
       "url": "https://www.lotto.co.nz/"
     },
@@ -153693,7 +153542,7 @@
     },
     {
       "agency_id": "nz-artificial-limb-service",
-      "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+      "error": "<urlopen error _ssl.c:1064: The handshake operation timed out>",
       "status": "failed",
       "url": "https://www.nzals.co.nz/"
     },
@@ -153850,9 +153699,8 @@
     },
     {
       "agency_id": "oranga-tamariki",
-      "alternates": 0,
-      "links": 174,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.orangatamariki.govt.nz/"
     },
     {
@@ -153872,14 +153720,14 @@
     {
       "agency_id": "otorohanga-district-council",
       "alternates": 0,
-      "links": 318,
+      "links": 0,
       "status": "ok",
       "url": "https://www.otodc.govt.nz/"
     },
     {
       "agency_id": "palmerston-north-city-council",
       "alternates": 0,
-      "links": 528,
+      "links": 529,
       "status": "ok",
       "url": "https://www.pncc.govt.nz/"
     },
@@ -153994,7 +153842,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 404,
+      "links": 401,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -154213,7 +154061,7 @@
     {
       "agency_id": "te-wananga-o-aotearoa",
       "alternates": 0,
-      "links": 330,
+      "links": 329,
       "status": "ok",
       "url": "https://www.twoa.ac.nz/"
     },
@@ -154227,7 +154075,7 @@
     {
       "agency_id": "te-whare-wananga-o-awanuiarangi",
       "alternates": 0,
-      "links": 135,
+      "links": 134,
       "status": "ok",
       "url": "https://www.wananga.ac.nz/"
     },
@@ -154271,7 +154119,7 @@
     },
     {
       "agency_id": "transport-accident-investigation-commission",
-      "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+      "error": "<urlopen error _ssl.c:1064: The handshake operation timed out>",
       "status": "failed",
       "url": "https://www.taic.org.nz/"
     },
@@ -154360,7 +154208,7 @@
     {
       "agency_id": "waimakariri-district-council",
       "alternates": 0,
-      "links": 307,
+      "links": 308,
       "status": "ok",
       "url": "https://www.waimakariri.govt.nz/"
     },
@@ -154501,32 +154349,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 255,
-    "candidate_count": 5233,
+    "candidate_count": 5227,
     "feasibility_counts": {
-      "high": 4143,
-      "low": 309,
-      "medium": 781
+      "high": 4142,
+      "low": 308,
+      "medium": 777
     },
-    "known_registry_social_profiles": 444,
+    "known_registry_social_profiles": 446,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
       "facebook": 290,
       "instagram": 161,
-      "linkedin": 233,
-      "newsletter": 161,
+      "linkedin": 232,
+      "newsletter": 159,
       "rss": 3811,
-      "website_page": 314,
+      "website_page": 313,
       "x": 76,
-      "youtube": 156
+      "youtube": 154
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 161,
+      "newsletter": 159,
       "rss_feed": 61,
       "search_seed": 3750,
-      "social_profile": 934,
-      "website_page": 314
+      "social_profile": 931,
+      "website_page": 313
     }
   }
 }
