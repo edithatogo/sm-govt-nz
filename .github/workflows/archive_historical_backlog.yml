@@ -1,0 +1,143 @@
+name: Archive Historical Backlog
+
+on:
+  schedule:
+    - cron: "19 3 2 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dispatch backlog shards in report-only mode"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      commit_payloads:
+        description: "Ask child archive runs to commit raw/normalized payloads"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      batch_size:
+        description: "Sources per child archive run"
+        required: true
+        default: "100"
+      max_batches:
+        description: "Maximum shard count per source type; 0 means all"
+        required: true
+        default: "0"
+      source_types:
+        description: "Comma-separated source types to fan out"
+        required: true
+        default: "rss,json_feed,bluesky,youtube,website_page,threads,facebook,instagram,linkedin,x"
+      release_version:
+        description: "Optional monthly release version for HF publish, normally YYYY-MM"
+        required: false
+        default: ""
+      publish_huggingface:
+        description: "Trigger HF-only monthly publication after dispatch"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: historical-backlog-orchestrator-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  build-backlog-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Build exact backlog shard matrix
+        id: matrix
+        run: >-
+          python scripts/build_historical_backlog_matrix.py
+          --source-types "${{ inputs.source_types || 'rss,json_feed,bluesky,youtube,website_page,threads,facebook,instagram,linkedin,x' }}"
+          --batch-size "${{ inputs.batch_size || '100' }}"
+          --max-batches "${{ inputs.max_batches || '0' }}"
+          --output conductor/historical_backlog_matrix.json
+          --github-output-key matrix
+      - name: Upload backlog shard matrix
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-backlog-shard-matrix
+          path: conductor/historical_backlog_matrix.json
+
+  dispatch-backlog-shards:
+    needs: build-backlog-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.build-backlog-matrix.outputs.matrix) }}
+    steps:
+      - name: Dispatch source-type backlog shards
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_TYPE: ${{ matrix.source_type }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          COMMIT_PAYLOADS: ${{ inputs.commit_payloads || 'true' }}
+          LIMIT: ${{ matrix.limit }}
+          OFFSET: ${{ matrix.offset }}
+          REPOSITORY: ${{ github.repository }}
+          REF_NAME: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          echo "Dispatching $SOURCE_TYPE backlog shard offset=$OFFSET limit=$LIMIT"
+          gh workflow run "Archive Registered Sources" \
+            --repo "$REPOSITORY" \
+            --ref "$REF_NAME" \
+            -f source_type="$SOURCE_TYPE" \
+            -f dry_run="$DRY_RUN" \
+            -f limit_sources="$LIMIT" \
+            -f offset_sources="$OFFSET" \
+            -f commit_payloads="$COMMIT_PAYLOADS" \
+            -f publish=false
+
+  dispatch-huggingface-monthly-publish:
+    needs: dispatch-backlog-shards
+    if: ${{ github.event_name == 'schedule' || inputs.publish_huggingface == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve release version
+        id: release
+        shell: bash
+        run: |
+          version="${{ inputs.release_version }}"
+          if [ -z "$version" ]; then
+            version="$(date -u +"%Y-%m")"
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch HF-only monthly publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          REF_NAME: ${{ github.ref_name }}
+        run: >-
+          gh workflow run "Publish Archives"
+          --repo "$REPOSITORY"
+          --ref "$REF_NAME"
+          -f publish=true
+          -f publication_target=huggingface
+          -f archive_release_version="${{ steps.release.outputs.version }}"
+          -f hf_dataset_name=corpus-social-media-government-nz
+          -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions

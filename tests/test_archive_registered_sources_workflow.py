@@ -63,3 +63,20 @@ def test_website_scheduled_workflow_uses_dedicated_report_and_limit() -> None:
     assert "--path conductor/website_archive_failure_triage_report.json" in workflow
     assert "--force" in workflow
     assert "historical_archive_raw/website/**" in workflow
+
+
+def test_historical_backlog_workflow_fans_out_source_shards_and_hf_publish() -> None:
+    workflow = Path(".github/workflows/archive_historical_backlog.yml").read_text(encoding="utf-8")
+
+    assert "name: Archive Historical Backlog" in workflow
+    assert "actions: write" in workflow
+    assert "scripts/build_historical_backlog_matrix.py" in workflow
+    assert "matrix: ${{ fromJson(needs.build-backlog-matrix.outputs.matrix) }}" in workflow
+    assert "gh workflow run \"Archive Registered Sources\"" in workflow
+    assert "-f limit_sources=\"$LIMIT\"" in workflow
+    assert "-f offset_sources=\"$OFFSET\"" in workflow
+    assert "-f commit_payloads=\"$COMMIT_PAYLOADS\"" in workflow
+    assert "-f publish=false" in workflow
+    assert "gh workflow run \"Publish Archives\"" in workflow
+    assert "-f publication_target=huggingface" in workflow
+    assert "-f archive_release_version=\"${{ steps.release.outputs.version }}\"" in workflow
