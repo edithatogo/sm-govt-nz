@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
-  "dry_run": true,
-  "generated_at": "2026-07-01T04:32:28+00:00",
+  "dry_run": false,
+  "generated_at": "2026-07-01T04:33:43+00:00",
   "inputs": {
     "agency_id": "",
     "fetch_timeout": 30,
@@ -21,10 +21,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "accident-compensation-corporation-youtube-27f8304b",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@accnz"
     },
     {
@@ -32,10 +32,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "accident-compensation-corporation-youtube-07699fd4",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
     },
     {
@@ -43,10 +43,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "antarctica-nz-youtube-a01ad39c",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@AntarcticaNZ"
     },
     {
@@ -54,10 +54,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "antarctica-nz-youtube-b8cec902",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/AntarcticaNewZealand"
     },
     {
@@ -65,10 +65,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ara-institute-of-canterbury-youtube-412c4f86",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@AraInstitute"
     },
     {
@@ -76,10 +76,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "auckland-council-youtube-314ca547",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/AklCouncil"
     },
     {
@@ -87,10 +87,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "aut-university-youtube-25f8980e",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@AUTUni"
     },
     {
@@ -98,10 +98,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "buller-district-council-youtube-84c56782",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCbYaweDogoFXeZuU7necLaw"
     },
     {
@@ -109,10 +109,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "callaghan-innovation-youtube-357ca5f7",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/c/callaghaninnovationgovtnz"
     },
     {
@@ -120,10 +120,164 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "youtube record already present",
       "source_id": "central-otago-district-council-youtube-b76029cb",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
+      "url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "central-otago-district-council-youtube-b76029cb",
+      "source_type": "social_profile",
+      "status": "already_captured",
       "url": "http://www.youtube.com/centralotagodc"
     },
     {
@@ -131,10 +285,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "christchurch-city-council-youtube-0b627232",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/ChchCityCouncil"
     },
     {
@@ -142,10 +296,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "christchurch-city-libraries-youtube-17ebd905",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCphBIrA4PHjE6GrefVPKKZQ"
     },
     {
@@ -153,10 +307,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "city-rail-link-youtube-933d9324",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/CityRailLinkAuckland"
     },
     {
@@ -164,10 +318,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "civil-aviation-authority-youtube-9342105f",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCWFHIXlzuH3VlcC0AvCB4MA"
     },
     {
@@ -175,10 +329,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "climate-change-commission-youtube-ac260476",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCvAJ21jjC9ynnMJ5rq0ZxVQ"
     },
     {
@@ -186,10 +340,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "clutha-district-council-youtube-b72c0cdb",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
     },
     {
@@ -197,10 +351,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "commerce-commission-youtube-a5f0c047",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/CommerceCommission"
     },
     {
@@ -208,10 +362,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "creative-nz-youtube-cae50c88",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "http://www.youtube.com/user/CreativeNewZealand"
     },
     {
@@ -219,10 +373,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "eeca-youtube-82d38840",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "http://www.youtube.com/c/EECAnz"
     },
     {
@@ -230,10 +384,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "eeca-youtube-69a450d7",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@EECA"
     },
     {
@@ -241,10 +395,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "eit-youtube-eb167475",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/EIThawkesbay"
     },
     {
@@ -252,10 +406,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "eit-youtube-7db66004",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://youtu.be/dhtw7Dhjc-U"
     },
     {
@@ -263,10 +417,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "electoral-commission-youtube-7f89caef",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@ElectionsNZ"
     },
     {
@@ -274,10 +428,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "electricity-authority-youtube-6f6eb783",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/ElectricityNZ"
     },
     {
@@ -285,10 +439,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "environment-canterbury-youtube-3c9a8ae5",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
     },
     {
@@ -296,10 +450,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "environment-canterbury-youtube-2132ce2e",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/ECanGovt"
     },
     {
@@ -307,10 +461,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "environment-southland-youtube-45c3c2c6",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/environmentsouthland"
     },
     {
@@ -318,10 +472,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "external-reporting-board-youtube-0795d379",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCq5hXvb8XFkwNrEXsw9MC8Q"
     },
     {
@@ -329,10 +483,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "fire-and-emergency-nz-youtube-bd1c9f48",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@FireandEmergencyNZ"
     },
     {
@@ -340,10 +494,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "fire-and-emergency-nz-youtube-7bda9752",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCQu-E5AwQWpXspT446EvbNw"
     },
     {
@@ -351,10 +505,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "gore-district-council-youtube-9589975a",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/GoreDistrictCouncil"
     },
     {
@@ -362,10 +516,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "greater-wellington-regional-council-youtube-88fe9890",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/greaterwellington"
     },
     {
@@ -373,10 +527,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "hamilton-city-council-youtube-e256d270",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/HamiltonCityCouncil"
     },
     {
@@ -384,10 +538,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "hawkes-bay-regional-council-youtube-bb45e821",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/HBRegionalCouncil"
     },
     {
@@ -395,10 +549,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "health-nz-youtube-68710900",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@healthnewzealand"
     },
     {
@@ -406,10 +560,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "health-quality-and-safety-commission-youtube-a1b00f74",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UC5yFtbreIu20QxZMb4v7L7Q"
     },
     {
@@ -417,10 +571,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "horowhenua-district-council-youtube-b8d6d56a",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UC_WCKYirkzkNaLWzf3BnmVQ"
     },
     {
@@ -428,10 +582,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "inland-revenue-department-youtube-2e471178",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@InlandRevenueNZ"
     },
     {
@@ -439,10 +593,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "inland-revenue-department-youtube-ff63914b",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/InlandRevenueNZ?id=footer"
     },
     {
@@ -450,10 +604,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "invercargill-city-council-youtube-ab01354f",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/invercargillcitycouncil"
     },
     {
@@ -461,10 +615,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "kapiti-coast-district-council-youtube-b3bc57e2",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/KapitiCouncil"
     },
     {
@@ -472,10 +626,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "kiwirail-youtube-27fdec70",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@KiwiRailNZ"
     },
     {
@@ -483,10 +637,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "kiwirail-youtube-043082d3",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/c/KiwiRailOfficial"
     },
     {
@@ -494,10 +648,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "kiwirail-youtube-fab28b2a",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://youtu.be/BxCZ35apffI"
     },
     {
@@ -505,10 +659,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "kordia-youtube-2709f059",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@KordiaGroup"
     },
     {
@@ -516,10 +670,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "law-commission-youtube-7926b5bb",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UC9cFSwSgwv9hrw0naL2j4HA"
     },
     {
@@ -527,10 +681,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "lincoln-university-youtube-5561d6e0",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@LincolnUniversityNZ"
     },
     {
@@ -538,10 +692,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "linz-youtube-191b70cb",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/linzvideoofficial"
     },
     {
@@ -549,10 +703,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "mackenzie-district-council-youtube-25f156f2",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
     },
     {
@@ -560,10 +714,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "manukau-institute-of-technology-youtube-0d25aa1d",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@ManukauInstitute"
     },
     {
@@ -571,10 +725,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "marlborough-district-council-youtube-80677dff",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCI0cwLPcK77Rvb8w0ljwd_Q"
     },
     {
@@ -582,10 +736,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
       "source_id": "massey-university-youtube-976d1ff9",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "capture_failed",
       "url": "https://www.youtube.com/@MasseyUni"
     },
     {
@@ -593,10 +747,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "masterton-district-council-youtube-ad024128",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCZVLsxQO3TiswnSDGK9QZ_A/featured"
     },
     {
@@ -604,10 +758,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "mbie-youtube-f7a16a5f",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@mbienz"
     },
     {
@@ -615,10 +769,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ministry-for-culture-and-heritage-youtube-d26fa441",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@manatutaonga"
     },
     {
@@ -626,10 +780,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ministry-for-culture-and-heritage-youtube-cbf9efaa",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/ManatuTaonga"
     },
     {
@@ -637,10 +791,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ministry-for-ethnic-communities-youtube-78129c20",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
     },
     {
@@ -648,10 +802,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ministry-for-pacific-peoples-youtube-e5721f35",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/MinistryforPacificPeoples"
     },
     {
@@ -659,10 +813,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ministry-of-education-youtube-cf184acd",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@nzeducation"
     },
     {
@@ -670,10 +824,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ministry-of-education-youtube-aff417b3",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/EducationGovtNewZealand"
     },
     {
@@ -681,10 +835,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ministry-of-health-youtube-d2afde3e",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/minhealthnz"
     },
     {
@@ -692,10 +846,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ministry-of-justice-youtube-789684e4",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@MinistryofJusticeNZ"
     },
     {
@@ -703,10 +857,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "ministry-of-justice-youtube-99911683",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/nzministryofjustice"
     },
     {
@@ -714,10 +868,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
       "source_id": "natural-hazards-commission-youtube-a7601001",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "capture_failed",
       "url": "https://www.youtube.com/@NaturalHazardsCommission"
     },
     {
@@ -725,10 +879,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "natural-hazards-commission-youtube-d2975096",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCn008_LQ4z89psIuaDBLyFg"
     },
     {
@@ -736,10 +890,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nelson-city-council-youtube-cd7c66f0",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://youtube.com/nelsoncouncil"
     },
     {
@@ -747,10 +901,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "network-for-learning-youtube-cbc3f911",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@N4LNZ"
     },
     {
@@ -758,10 +912,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nmit-youtube-dd72b082",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "http://www.youtube.com/user/NMITNZ"
     },
     {
@@ -769,10 +923,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nmit-youtube-ceabf650",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@NMITNZ"
     },
     {
@@ -780,10 +934,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "northland-regional-council-youtube-51871cdb",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCNkfD16wB1X6MnFFWpfNQTQ"
     },
     {
@@ -791,10 +945,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
       "source_id": "northtec-youtube-fc06f1ca",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "capture_failed",
       "url": "https://www.youtube.com/@NorthTecNZ"
     },
     {
@@ -802,10 +956,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "northtec-youtube-b452a015",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/northteconline"
     },
     {
@@ -813,10 +967,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-army-youtube-dddbb6d0",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@nzarmy"
     },
     {
@@ -824,10 +978,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-army-youtube-9a630978",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
@@ -835,10 +989,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-blood-service-youtube-914ba230",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/savelivesgiveblood "
     },
     {
@@ -846,10 +1000,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-defence-force-youtube-1b57245f",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@nzdefenceforce"
     },
     {
@@ -857,10 +1011,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-defence-force-youtube-9a630978",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
@@ -868,10 +1022,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-on-air-youtube-1b134b28",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "http://www.youtube.com/user/nzonairnzmusic"
     },
     {
@@ -879,10 +1033,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-on-air-youtube-c5b1c2e9",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UChUcrXfC-Uf-y0Bwes_hb5Q"
     },
     {
@@ -890,10 +1044,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
       "source_id": "nz-on-air-youtube-0da6ebd5",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "capture_failed",
       "url": "https://www.youtube.com/watch?v=0G40RGmRiYM&list=PLSMETuURtTXDFRpYxJeImpsgt5EGDiTJm"
     },
     {
@@ -901,10 +1055,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-police-youtube-ed7969d4",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@NewZealandPolice"
     },
     {
@@ -912,10 +1066,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-police-youtube-48af672c",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/c/newzealandpolice"
     },
     {
@@ -923,10 +1077,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-post-youtube-fb239bcd",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@nzpost"
     },
     {
@@ -934,10 +1088,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-railways-corporation-youtube-043082d3",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/c/KiwiRailOfficial"
     },
     {
@@ -945,10 +1099,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-railways-corporation-youtube-fab28b2a",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://youtu.be/BxCZ35apffI"
     },
     {
@@ -956,10 +1110,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-symphony-orchestra-youtube-3826086f",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@nzso"
     },
     {
@@ -967,10 +1121,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-symphony-orchestra-youtube-4a8179c9",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCLFiG5ZlifHRfYUr_RiajPQ"
     },
     {
@@ -978,10 +1132,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "nz-trade-and-enterprise-youtube-a33ef7ed",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/c/NZTEvideo"
     },
     {
@@ -989,10 +1143,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "office-of-the-ombudsman-youtube-cd21a656",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCBUdf5reShcNcgLeFxosiBQ"
     },
     {
@@ -1000,10 +1154,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "open-polytechnic-youtube-3ddea1e1",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "http://www.youtube.com/user/OpenPolytechnic"
     },
     {
@@ -1011,10 +1165,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "open-polytechnic-youtube-52b7f212",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@OpenPolytechnic"
     },
     {
@@ -1022,10 +1176,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "opotiki-district-council-youtube-4f86f500",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCs9_BtgsYsycitdSj_l27aw"
     },
     {
@@ -1033,10 +1187,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
       "source_id": "oranga-tamariki-youtube-facf04a8",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "capture_failed",
       "url": "https://www.youtube.com/@OrangaTamariki"
     },
     {
@@ -1044,10 +1198,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "oranga-tamariki-youtube-258eda72",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UCWpNNGDSur1P7ytjZEfFfKA"
     },
     {
@@ -1055,10 +1209,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "otago-polytechnic-youtube-c1e88e81",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "http://www.youtube.com/user/OtagoPolytech"
     },
     {
@@ -1066,10 +1220,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "otago-polytechnic-youtube-de6496e4",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@OtagoPolytechnic"
     },
     {
@@ -1077,10 +1231,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "otago-regional-council-youtube-8030d22b",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/channel/UC77y56iqIzQYFTyLKUHzQXg"
     },
     {
@@ -1088,10 +1242,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "otorohanga-district-council-youtube-2ae5b72d",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/@otorohangadistrictcouncil2783"
     },
     {
@@ -1099,10 +1253,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel RSS returned no entries",
       "source_id": "palmerston-north-city-council-youtube-ba577416",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "no_records",
       "url": "https://www.youtube.com/user/PNCCTV"
     },
     {
@@ -1110,10 +1264,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "dry run: public YouTube channel RSS capture",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
       "source_id": "pamu-youtube-133148b0",
       "source_type": "social_profile",
-      "status": "would_capture",
+      "status": "capture_failed",
       "url": "https://www.youtube.com/@PamuNZ"
     }
   ],
@@ -1124,11 +1278,15 @@
     "selected_sources": 100,
     "status_by_platform": {
       "youtube": {
-        "would_capture": 100
+        "already_captured": 15,
+        "capture_failed": 6,
+        "no_records": 93
       }
     },
     "status_counts": {
-      "would_capture": 100
+      "already_captured": 15,
+      "capture_failed": 6,
+      "no_records": 93
     }
   }
 }

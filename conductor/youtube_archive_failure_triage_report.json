@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T04:27:28+00:00",
+  "generated_at": "2026-07-01T04:33:44+00:00",
   "inputs": {
     "reports": [
       "conductor/youtube_archive_report.json"
@@ -35,6 +35,16 @@
       "source_id": "antarctica-nz-youtube-a01ad39c",
       "status": "no_records",
       "url": "https://www.youtube.com/@AntarcticaNZ"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "antarctica-nz-youtube-b8cec902",
+      "status": "no_records",
+      "url": "https://www.youtube.com/user/AntarcticaNewZealand"
     },
     {
       "agency_id": "ara-institute-of-canterbury",
@@ -87,16 +97,6 @@
       "url": "https://www.youtube.com/c/callaghaninnovationgovtnz"
     },
     {
-      "agency_id": "central-otago-district-council",
-      "platform": "youtube",
-      "reason": "YouTube channel RSS returned no entries",
-      "recommended_action": "monitor_or_verify_channel_activity",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "central-otago-district-council-youtube-b76029cb",
-      "status": "no_records",
-      "url": "http://www.youtube.com/centralotagodc"
-    },
-    {
       "agency_id": "christchurch-city-council",
       "platform": "youtube",
       "reason": "YouTube channel RSS returned no entries",
@@ -145,6 +145,16 @@
       "source_id": "climate-change-commission-youtube-ac260476",
       "status": "no_records",
       "url": "https://www.youtube.com/channel/UCvAJ21jjC9ynnMJ5rq0ZxVQ"
+    },
+    {
+      "agency_id": "clutha-district-council",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "clutha-district-council-youtube-b72c0cdb",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
     },
     {
       "agency_id": "commerce-commission",
@@ -362,6 +372,16 @@
       "reason": "YouTube channel RSS returned no entries",
       "recommended_action": "monitor_or_verify_channel_activity",
       "report": "conductor/youtube_archive_report.json",
+      "source_id": "inland-revenue-department-youtube-2e471178",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@InlandRevenueNZ"
+    },
+    {
+      "agency_id": "inland-revenue-department",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
       "source_id": "inland-revenue-department-youtube-ff63914b",
       "status": "no_records",
       "url": "https://www.youtube.com/user/InlandRevenueNZ?id=footer"
@@ -449,16 +469,6 @@
     {
       "agency_id": "linz",
       "platform": "youtube",
-      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
-      "recommended_action": "review_url_or_adapter",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "linz-youtube-52508941",
-      "status": "capture_failed",
-      "url": "https://www.youtube.com/@linzgovtnz"
-    },
-    {
-      "agency_id": "linz",
-      "platform": "youtube",
       "reason": "YouTube channel RSS returned no entries",
       "recommended_action": "monitor_or_verify_channel_activity",
       "report": "conductor/youtube_archive_report.json",
@@ -475,40 +485,550 @@
       "source_id": "mackenzie-district-council-youtube-25f156f2",
       "status": "no_records",
       "url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
+    },
+    {
+      "agency_id": "manukau-institute-of-technology",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "manukau-institute-of-technology-youtube-0d25aa1d",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@ManukauInstitute"
+    },
+    {
+      "agency_id": "marlborough-district-council",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "marlborough-district-council-youtube-80677dff",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UCI0cwLPcK77Rvb8w0ljwd_Q"
+    },
+    {
+      "agency_id": "massey-university",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "massey-university-youtube-976d1ff9",
+      "status": "capture_failed",
+      "url": "https://www.youtube.com/@MasseyUni"
+    },
+    {
+      "agency_id": "masterton-district-council",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "masterton-district-council-youtube-ad024128",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UCZVLsxQO3TiswnSDGK9QZ_A/featured"
+    },
+    {
+      "agency_id": "mbie",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "mbie-youtube-f7a16a5f",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@mbienz"
+    },
+    {
+      "agency_id": "ministry-for-culture-and-heritage",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "ministry-for-culture-and-heritage-youtube-d26fa441",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@manatutaonga"
+    },
+    {
+      "agency_id": "ministry-for-culture-and-heritage",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "ministry-for-culture-and-heritage-youtube-cbf9efaa",
+      "status": "no_records",
+      "url": "https://www.youtube.com/user/ManatuTaonga"
+    },
+    {
+      "agency_id": "ministry-for-ethnic-communities",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "ministry-for-ethnic-communities-youtube-78129c20",
+      "status": "no_records",
+      "url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
+    },
+    {
+      "agency_id": "ministry-for-pacific-peoples",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "ministry-for-pacific-peoples-youtube-e5721f35",
+      "status": "no_records",
+      "url": "https://www.youtube.com/MinistryforPacificPeoples"
+    },
+    {
+      "agency_id": "ministry-of-education",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "ministry-of-education-youtube-cf184acd",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@nzeducation"
+    },
+    {
+      "agency_id": "ministry-of-education",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "ministry-of-education-youtube-aff417b3",
+      "status": "no_records",
+      "url": "https://www.youtube.com/EducationGovtNewZealand"
+    },
+    {
+      "agency_id": "ministry-of-health",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "ministry-of-health-youtube-d2afde3e",
+      "status": "no_records",
+      "url": "https://www.youtube.com/user/minhealthnz"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "ministry-of-justice-youtube-789684e4",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@MinistryofJusticeNZ"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "ministry-of-justice-youtube-99911683",
+      "status": "no_records",
+      "url": "https://www.youtube.com/user/nzministryofjustice"
+    },
+    {
+      "agency_id": "natural-hazards-commission",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "natural-hazards-commission-youtube-a7601001",
+      "status": "capture_failed",
+      "url": "https://www.youtube.com/@NaturalHazardsCommission"
+    },
+    {
+      "agency_id": "natural-hazards-commission",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "natural-hazards-commission-youtube-d2975096",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UCn008_LQ4z89psIuaDBLyFg"
+    },
+    {
+      "agency_id": "nelson-city-council",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nelson-city-council-youtube-cd7c66f0",
+      "status": "no_records",
+      "url": "https://youtube.com/nelsoncouncil"
+    },
+    {
+      "agency_id": "network-for-learning",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "network-for-learning-youtube-cbc3f911",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@N4LNZ"
+    },
+    {
+      "agency_id": "nmit",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nmit-youtube-dd72b082",
+      "status": "no_records",
+      "url": "http://www.youtube.com/user/NMITNZ"
+    },
+    {
+      "agency_id": "nmit",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nmit-youtube-ceabf650",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@NMITNZ"
+    },
+    {
+      "agency_id": "northland-regional-council",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "northland-regional-council-youtube-51871cdb",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UCNkfD16wB1X6MnFFWpfNQTQ"
+    },
+    {
+      "agency_id": "northtec",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "northtec-youtube-fc06f1ca",
+      "status": "capture_failed",
+      "url": "https://www.youtube.com/@NorthTecNZ"
+    },
+    {
+      "agency_id": "northtec",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "northtec-youtube-b452a015",
+      "status": "no_records",
+      "url": "https://www.youtube.com/user/northteconline"
+    },
+    {
+      "agency_id": "nz-army",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-army-youtube-dddbb6d0",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@nzarmy"
+    },
+    {
+      "agency_id": "nz-army",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-army-youtube-9a630978",
+      "status": "no_records",
+      "url": "https://www.youtube.com/user/NZDefenceForce"
+    },
+    {
+      "agency_id": "nz-blood-service",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-blood-service-youtube-914ba230",
+      "status": "no_records",
+      "url": "https://www.youtube.com/user/savelivesgiveblood "
+    },
+    {
+      "agency_id": "nz-defence-force",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-defence-force-youtube-1b57245f",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@nzdefenceforce"
+    },
+    {
+      "agency_id": "nz-defence-force",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-defence-force-youtube-9a630978",
+      "status": "no_records",
+      "url": "https://www.youtube.com/user/NZDefenceForce"
+    },
+    {
+      "agency_id": "nz-on-air",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-on-air-youtube-1b134b28",
+      "status": "no_records",
+      "url": "http://www.youtube.com/user/nzonairnzmusic"
+    },
+    {
+      "agency_id": "nz-on-air",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-on-air-youtube-c5b1c2e9",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UChUcrXfC-Uf-y0Bwes_hb5Q"
+    },
+    {
+      "agency_id": "nz-on-air",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-on-air-youtube-0da6ebd5",
+      "status": "capture_failed",
+      "url": "https://www.youtube.com/watch?v=0G40RGmRiYM&list=PLSMETuURtTXDFRpYxJeImpsgt5EGDiTJm"
+    },
+    {
+      "agency_id": "nz-police",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-police-youtube-ed7969d4",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@NewZealandPolice"
+    },
+    {
+      "agency_id": "nz-police",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-police-youtube-48af672c",
+      "status": "no_records",
+      "url": "https://www.youtube.com/c/newzealandpolice"
+    },
+    {
+      "agency_id": "nz-post",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-post-youtube-fb239bcd",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@nzpost"
+    },
+    {
+      "agency_id": "nz-railways-corporation",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-railways-corporation-youtube-043082d3",
+      "status": "no_records",
+      "url": "https://www.youtube.com/c/KiwiRailOfficial"
+    },
+    {
+      "agency_id": "nz-railways-corporation",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-railways-corporation-youtube-fab28b2a",
+      "status": "no_records",
+      "url": "https://youtu.be/BxCZ35apffI"
+    },
+    {
+      "agency_id": "nz-symphony-orchestra",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-symphony-orchestra-youtube-3826086f",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@nzso"
+    },
+    {
+      "agency_id": "nz-symphony-orchestra",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-symphony-orchestra-youtube-4a8179c9",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UCLFiG5ZlifHRfYUr_RiajPQ"
+    },
+    {
+      "agency_id": "nz-trade-and-enterprise",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "nz-trade-and-enterprise-youtube-a33ef7ed",
+      "status": "no_records",
+      "url": "https://www.youtube.com/c/NZTEvideo"
+    },
+    {
+      "agency_id": "office-of-the-ombudsman",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "office-of-the-ombudsman-youtube-cd21a656",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UCBUdf5reShcNcgLeFxosiBQ"
+    },
+    {
+      "agency_id": "open-polytechnic",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "open-polytechnic-youtube-3ddea1e1",
+      "status": "no_records",
+      "url": "http://www.youtube.com/user/OpenPolytechnic"
+    },
+    {
+      "agency_id": "open-polytechnic",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "open-polytechnic-youtube-52b7f212",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@OpenPolytechnic"
+    },
+    {
+      "agency_id": "opotiki-district-council",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "opotiki-district-council-youtube-4f86f500",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UCs9_BtgsYsycitdSj_l27aw"
+    },
+    {
+      "agency_id": "oranga-tamariki",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "oranga-tamariki-youtube-facf04a8",
+      "status": "capture_failed",
+      "url": "https://www.youtube.com/@OrangaTamariki"
+    },
+    {
+      "agency_id": "oranga-tamariki",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "oranga-tamariki-youtube-258eda72",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UCWpNNGDSur1P7ytjZEfFfKA"
+    },
+    {
+      "agency_id": "otago-polytechnic",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "otago-polytechnic-youtube-c1e88e81",
+      "status": "no_records",
+      "url": "http://www.youtube.com/user/OtagoPolytech"
+    },
+    {
+      "agency_id": "otago-polytechnic",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "otago-polytechnic-youtube-de6496e4",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@OtagoPolytechnic"
+    },
+    {
+      "agency_id": "otago-regional-council",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "otago-regional-council-youtube-8030d22b",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UC77y56iqIzQYFTyLKUHzQXg"
+    },
+    {
+      "agency_id": "otorohanga-district-council",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "otorohanga-district-council-youtube-2ae5b72d",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@otorohangadistrictcouncil2783"
+    },
+    {
+      "agency_id": "palmerston-north-city-council",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "palmerston-north-city-council-youtube-ba577416",
+      "status": "no_records",
+      "url": "https://www.youtube.com/user/PNCCTV"
+    },
+    {
+      "agency_id": "pamu",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "pamu-youtube-133148b0",
+      "status": "capture_failed",
+      "url": "https://www.youtube.com/@PamuNZ"
     }
   ],
   "report_summaries": {
     "conductor/youtube_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-07-01T04:27:28+00:00",
+      "generated_at": "2026-07-01T04:33:43+00:00",
       "summary": {
         "platform_counts": {
-          "youtube": 50
+          "youtube": 100
         },
-        "selected_sources": 50,
+        "selected_sources": 100,
         "status_by_platform": {
           "youtube": {
-            "already_captured": 45,
-            "capture_failed": 1,
-            "no_records": 46
+            "already_captured": 15,
+            "capture_failed": 6,
+            "no_records": 93
           }
         },
         "status_counts": {
-          "already_captured": 45,
-          "capture_failed": 1,
-          "no_records": 46
+          "already_captured": 15,
+          "capture_failed": 6,
+          "no_records": 93
         }
       }
     }
   },
   "summary": {
-    "failure_count": 47,
+    "failure_count": 99,
     "platform_counts": {
-      "youtube": 47
+      "youtube": 99
     },
     "status_counts": {
-      "capture_failed": 1,
-      "no_records": 46
+      "capture_failed": 6,
+      "no_records": 93
     }
   }
 }
