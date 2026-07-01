@@ -1095,8 +1095,7 @@ def archive_x_source(
                     sort_keys=True,
                     default=str,
                 )
-                + "
-",
+                + "\n",
                 encoding="utf-8",
             )
         media_refs = []
