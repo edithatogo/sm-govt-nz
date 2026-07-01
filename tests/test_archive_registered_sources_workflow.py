@@ -4,6 +4,9 @@ from pathlib import Path
 def test_archive_registered_sources_dry_run_commits_only_report() -> None:
     workflow = Path(".github/workflows/archive_registered_sources.yml").read_text(encoding="utf-8")
 
+    assert "          - json_feed" in workflow
+    assert "inputs.source_type || 'scheduled'" in workflow
+    assert "inputs.offset_sources || '0'" in workflow
     dry_run_block = workflow.split("- name: Commit archive report updates", 1)[1].split("- name: Commit archive capture reports", 1)[0]
     assert "inputs.dry_run == 'true'" in dry_run_block
     assert "conductor/govt_archive_registered_sources_report.json" in dry_run_block

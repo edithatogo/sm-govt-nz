@@ -13,6 +13,7 @@ on:
         options:
           - all_feasible
           - rss
+          - json_feed
           - website_page
           - bluesky
           - youtube
@@ -97,7 +98,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: archive-state-${{ github.workflow }}-${{ github.ref }}
+  group: archive-state-${{ github.workflow }}-${{ github.ref }}-${{ inputs.source_type || 'scheduled' }}-${{ inputs.offset_sources || '0' }}
   cancel-in-progress: false
 
 jobs:
