@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-01T10:45:27+00:00",
+  "generated_at": "2026-07-01T11:09:43+00:00",
   "inputs": {
     "agency_id": "",
     "fetch_timeout": 30,
@@ -43,10 +43,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "dd1a03f93071c42e",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.icc.govt.nz"
     },
     {
@@ -54,10 +54,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "688ab6d1a647b209",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.kaikoura.govt.nz"
     },
     {
@@ -296,10 +296,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "23676d26d3609961",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.marlborough.govt.nz"
     },
     {
@@ -318,10 +318,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "b15cac08235c9265",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.mstn.govt.nz"
     },
     {
@@ -593,10 +593,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "36d9562d35593fe3",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.nelson.govt.nz"
     },
     {
@@ -967,10 +967,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "7a2733b8af5581a3",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.odc.govt.nz"
     },
     {
@@ -1125,15 +1125,17 @@
     "status_by_platform": {
       "website_page": {
         "capture_blocked": 7,
-        "captured": 90,
+        "captured": 84,
         "dns_failed": 2,
+        "method_not_allowed": 6,
         "not_found": 1
       }
     },
     "status_counts": {
       "capture_blocked": 7,
-      "captured": 90,
+      "captured": 84,
       "dns_failed": 2,
+      "method_not_allowed": 6,
       "not_found": 1
     }
   }
