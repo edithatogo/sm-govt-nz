@@ -19,6 +19,25 @@ def test_commit_selected_paths_skips_when_no_selected_changes(monkeypatch) -> No
     assert ["commit", "-m", "Update state"] not in calls
 
 
+def test_commit_selected_paths_skips_unmatched_globs(monkeypatch, capsys) -> None:
+    calls = []
+
+    def fake_run_git(args, check=True):
+        calls.append(args)
+        return commit_state.GitResult(returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(commit_state, "run_git", fake_run_git)
+
+    committed = commit_state.commit_selected_paths(
+        "Archive empty platform",
+        ["historical_archive_raw/threads/**", "historical_archive_normalized/threads/**"],
+    )
+
+    assert committed is False
+    assert "Skipping unmatched state path glob: historical_archive_raw/threads/**" in capsys.readouterr().out
+    assert not any(call[:1] == ["add"] for call in calls)
+
+
 def test_push_with_rebase_retries_when_remote_moves(monkeypatch) -> None:
     calls = []
     push_attempts = {"count": 0}
