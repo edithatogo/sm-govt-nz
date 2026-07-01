@@ -119,20 +119,20 @@ jobs:
               --label archive-blocker \
               --body-file /tmp/threads_issue_body.md
           elif [ -n "$existing" ]; then
-            printf '%s\n' \
-              '# Threads API blocker: live capture disabled by default' \
-              '' \
-              'Threads sources are registered and monitored by scheduled workflows.' \
-              '' \
-              'Current state:' \
-              '- No Threads records are archived yet.' \
-              '- Live public Threads API capture is disabled unless `THREADS_API_CAPTURE_ENABLED=true` is deliberately configured.' \
-              '- Manual seeds remain the active automated capture path.' \
-              '- Missing seed inputs are tracked as `manual_seed_missing` in `conductor/threads_archive_report.json`.' \
-              '- Future authorized seed files or explicit API enablement will be handled automatically.' \
-              '' \
-              'This issue is closed because Meta API availability is now represented as an optional external capability, not a default repo blocker.' \
-              > /tmp/threads_api_close.md
+            cat > /tmp/threads_api_close.md <<'EOF'
+          # Threads API blocker: live capture disabled by default
+
+          Threads sources are registered and monitored by scheduled workflows.
+
+          Current state:
+          - No Threads records are archived yet.
+          - Live public Threads API capture is disabled unless `THREADS_API_CAPTURE_ENABLED=true` is deliberately configured.
+          - Manual seeds remain the active automated capture path.
+          - Missing seed inputs are tracked as `manual_seed_missing` in `conductor/threads_archive_report.json`.
+          - Future authorized seed files or explicit API enablement will be handled automatically.
+
+          This issue is closed because Meta API availability is now represented as an optional external capability, not a default repo blocker.
+          EOF
             gh issue comment "$existing" --body-file /tmp/threads_api_close.md
             gh issue close "$existing" --reason completed
           fi

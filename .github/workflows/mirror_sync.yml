@@ -28,8 +28,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "$GIT_MIRROR_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          HOST=$(echo $GIT_MIRROR_URL | cut -d'@' -f2 | cut -d':' -f1)
-          ssh-keyscan -t ed25519 $HOST >> ~/.ssh/known_hosts
+          HOST=$(echo "$GIT_MIRROR_URL" | cut -d'@' -f2 | cut -d':' -f1)
+          ssh-keyscan -t ed25519 "$HOST" >> ~/.ssh/known_hosts
           git remote add mirror "$GIT_MIRROR_URL"
           git push --force --prune mirror master
       - name: Validate mirror branch alignment

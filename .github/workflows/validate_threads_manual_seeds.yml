@@ -93,20 +93,20 @@ jobs:
               --label archive-input-needed \
               --body-file /tmp/threads_seed_issue.md
           elif [ -n "$existing" ]; then
-            printf '%s\n' \
-              '# Threads seed readiness: coverage gap tracked automatically' \
-              '' \
-              'Threads sources are registered and monitored by scheduled workflows.' \
-              '' \
-              'Current state:' \
-              '- No Threads records are archived yet.' \
-              '- All three registered Threads accounts currently report `manual_seed_missing`.' \
-              '- Missing seed inputs are tracked in `conductor/threads_seed_readiness_report.json` and `conductor/threads_archive_report.json`.' \
-              '- `seed_missing` is an expected zero-input coverage gap, not an implementation blocker.' \
-              '- Future authorized seed files or API availability will be validated and archived automatically.' \
-              '' \
-              'Issues will reopen only for actionable automation faults, including present but empty or invalid seed files, workflow failures, or API permission/configuration errors.' \
-              > /tmp/threads_seed_close.md
+            cat > /tmp/threads_seed_close.md <<'EOF'
+          # Threads seed readiness: coverage gap tracked automatically
+
+          Threads sources are registered and monitored by scheduled workflows.
+
+          Current state:
+          - No Threads records are archived yet.
+          - All three registered Threads accounts currently report `manual_seed_missing`.
+          - Missing seed inputs are tracked in `conductor/threads_seed_readiness_report.json` and `conductor/threads_archive_report.json`.
+          - `seed_missing` is an expected zero-input coverage gap, not an implementation blocker.
+          - Future authorized seed files or API availability will be validated and archived automatically.
+
+          Issues will reopen only for actionable automation faults, including present but empty or invalid seed files, workflow failures, or API permission/configuration errors.
+          EOF
             gh issue comment "$existing" --body-file /tmp/threads_seed_close.md
             gh issue close "$existing" --reason completed
           fi
