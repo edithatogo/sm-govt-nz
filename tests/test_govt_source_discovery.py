@@ -1,7 +1,8 @@
 import argparse
 import json
+from pathlib import Path
 
-from scripts.discover_govt_source_candidates import build_report
+from scripts.discover_govt_source_candidates import build_report, summarize
 
 
 def test_discovery_builds_candidate_report_and_archive_manifest(tmp_path):
@@ -92,6 +93,72 @@ def test_discovery_builds_candidate_report_and_archive_manifest(tmp_path):
     assert manifest["summary"]["archive_status_counts"]["ready"] == 3
     assert manifest["summary"]["archive_status_counts"]["manual_seed"] == 1
     assert all(source["source_type"] != "search_seed" for source in manifest["sources"])
+
+
+def test_discovery_summary_matches_compact_report_shape(tmp_path):
+    registry = tmp_path / "registry.json"
+    config = tmp_path / "config.json"
+    registry.write_text(
+        json.dumps(
+            [
+                {
+                    "agency_id": "agency-one",
+                    "name": "Agency One",
+                    "social_profiles": {
+                        "rss": {
+                            "url": "https://agency.example/feed.xml",
+                            "status": "active",
+                        }
+                    },
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    config.write_text(
+        json.dumps(
+            {
+                "homepage_probe": {"common_paths": ["/"]},
+                "platform_archive_policy": {
+                    "rss": {
+                        "feasibility": "high",
+                        "archive_status": "ready",
+                        "access_method": "public_rss",
+                        "auth": "none",
+                    },
+                    "website_page": {
+                        "feasibility": "high",
+                        "archive_status": "ready",
+                        "access_method": "bounded_public_html",
+                        "auth": "none",
+                    },
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report, manifest = build_report(
+        argparse.Namespace(
+            registry=registry,
+            config=config,
+            probe_homepages=False,
+            max_agencies=0,
+        )
+    )
+    summary = summarize(report, manifest)
+
+    assert summary.startswith("# Government Source Discovery Summary\n")
+    assert "- Candidate records: 1" in summary
+    assert "- Archive manifest sources: 1" in summary
+    assert "conductor/govt_source_candidate_report.json" in summary
+
+
+def test_discovery_workflow_commits_summary_artifact():
+    workflow = Path(".github/workflows/govt_source_discovery.yml").read_text(encoding="utf-8")
+
+    assert "conductor/govt_source_candidate_summary.md" in workflow
+    assert "Commit discovery updates" in workflow
 
 
 def test_discovery_preserves_existing_manual_manifest_sources(tmp_path):
