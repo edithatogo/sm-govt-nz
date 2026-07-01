@@ -35,6 +35,28 @@ def test_archive_email_payload_writes_raw_and_normalized_records(tmp_path) -> No
     assert stored["record_id"] == record["record_id"]
 
 
+def test_archive_email_payload_writes_report(tmp_path) -> None:
+    payload = {
+        "message_id": "<reported@example.test>",
+        "subject": "Reported notice",
+        "text": "Body",
+        "received_at": "2026-06-14T01:02:03Z",
+        "source_id": "email-source",
+    }
+
+    record = archive_email_payload(
+        payload,
+        raw_root=tmp_path / "historical_archive_raw" / "email",
+        normalized_root=tmp_path / "historical_archive_normalized" / "email",
+        report_path=tmp_path / "conductor" / "email_archive_report.json",
+    )
+
+    report = json.loads((tmp_path / "conductor" / "email_archive_report.json").read_text(encoding="utf-8"))
+    assert report["summary"]["status_counts"] == {"captured": 1}
+    assert report["results"][0]["record_id"] == record["record_id"]
+    assert report["results"][0]["source_id"] == "email-source"
+
+
 def test_archive_email_payload_is_idempotent_for_same_message_id(tmp_path) -> None:
     payload = {
         "message_id": "<same@example.test>",
