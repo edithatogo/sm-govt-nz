@@ -8,12 +8,13 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from scripts.discover_govt_source_candidates import looks_like_public_newsletter_archive  # noqa: E402
 from scripts.register_archive_source import load_manifest, upsert_source, write_manifest  # noqa: E402
 
 
 DEFAULT_REPORT = Path("conductor/govt_source_candidate_report.json")
 DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
-DEFAULT_ALLOWED_SOURCE_TYPES = ("rss_feed", "json_feed", "api_endpoint", "website_page")
+DEFAULT_ALLOWED_SOURCE_TYPES = ("rss_feed", "json_feed", "api_endpoint", "website_page", "newsletter")
 DEFAULT_MIN_CONFIDENCE = 0.6
 
 
@@ -30,6 +31,11 @@ def select_candidates(
     selected: list[dict[str, Any]] = []
     for item in report.get("candidates", []):
         if item.get("source_type") not in allowed_source_types:
+            continue
+        if item.get("source_type") == "newsletter" and not looks_like_public_newsletter_archive(
+            str(item.get("url", "")),
+            str(item.get("link_text", "")),
+        ):
             continue
         if item.get("archive_status") != "ready":
             continue
