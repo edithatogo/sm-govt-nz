@@ -21,6 +21,7 @@ def test_archive_registered_sources_capture_commits_and_uploads_generated_artifa
     assert "inputs.dry_run == 'false'" in capture_block
     assert "dist/archive_manifest.json" in capture_block
     assert "dist/archive_compaction_manifest.json" in capture_block
+    assert "--max-attempts 10" in capture_block
     assert "historical_archive_raw/**" not in capture_block
     assert "historical_archive_normalized/**" not in capture_block
     assert "dist/historical_archive.tar.gz" in workflow
@@ -34,6 +35,7 @@ def test_archive_registered_sources_payload_commit_is_explicit() -> None:
     assert "inputs.commit_payloads == 'true'" in payload_block
     assert "historical_archive_raw/**" in payload_block
     assert "historical_archive_normalized/**" in payload_block
+    assert "--max-attempts 10" in payload_block
 
 
 def test_youtube_scheduled_workflow_uses_dedicated_report_and_limit() -> None:
