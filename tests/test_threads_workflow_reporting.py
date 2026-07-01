@@ -1,6 +1,13 @@
 from pathlib import Path
 
 
+import argparse
+import json
+from pathlib import Path
+
+from scripts.build_threads_seed_readiness_report import build_report, write_summary
+
+
 def test_threads_workflows_write_dedicated_archive_report() -> None:
     manual = Path(".github/workflows/archive_threads_manual_seeds.yml").read_text(encoding="utf-8")
     scheduled = Path(".github/workflows/archive_threads_scheduled.yml").read_text(encoding="utf-8")
@@ -9,6 +16,7 @@ def test_threads_workflows_write_dedicated_archive_report() -> None:
     assert "--report conductor/threads_archive_report.json" in scheduled
     assert "--path conductor/threads_archive_report.json" in manual
     assert "--path conductor/threads_archive_report.json" in scheduled
+    assert "--path conductor/threads_seed_readiness_summary.md" in manual
     assert "THREADS_API_CAPTURE_ENABLED" in scheduled
 
 
@@ -40,3 +48,40 @@ def test_threads_scheduled_workflow_closes_api_blocker_when_not_actionable() -> 
     assert "gh issue close" in workflow
     assert "Live public Threads API capture is disabled" in workflow
     assert "Manual seeds remain the active automated capture path" in workflow
+
+
+def test_threads_seed_readiness_report_writes_summary(tmp_path) -> None:
+    manifest = tmp_path / "manifest.json"
+    validation = tmp_path / "validation.json"
+    summary_path = tmp_path / "summary.md"
+    manifest.write_text(
+        json.dumps(
+            {
+                "sources": [
+                    {
+                        "source_id": "threads-one",
+                        "agency_id": "agency",
+                        "agency_name": "Agency",
+                        "platform": "threads",
+                        "source_type": "threads",
+                        "url": "https://www.threads.net/@agency",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    validation.write_text(json.dumps({"results": []}), encoding="utf-8")
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            seed_root=tmp_path / "manual_archive_seeds" / "threads",
+            validation_report=validation,
+        )
+    )
+
+    write_summary(summary_path, report)
+    summary = summary_path.read_text(encoding="utf-8")
+    assert "Threads Seed Readiness" in summary
+    assert "`registered_threads_sources`: 1" in summary
