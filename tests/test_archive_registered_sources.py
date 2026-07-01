@@ -11,6 +11,7 @@ from scripts.archive_registered_sources import (
     archive_manual_seed_source,
     archive_rss_source,
     archive_website_source,
+    archive_x_source,
     archive_youtube_source,
     build_report,
     fetch_website_with_alternates,
@@ -724,6 +725,93 @@ def test_archive_registered_sources_dry_run_reports_missing_linkedin_seed(tmp_pa
 
     assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
     assert report["summary"]["status_by_platform"] == {"linkedin": {"manual_seed_missing": 1}}
+
+
+def x_source() -> dict[str, str]:
+    return {
+        "source_id": "agency-x",
+        "agency_id": "agency",
+        "platform": "x",
+        "source_type": "social_profile",
+        "url": "https://x.com/agency",
+        "account": "agency",
+        "archive_status": "ready",
+        "feasibility": "medium",
+    }
+
+
+def test_archive_x_source_writes_official_api_records(tmp_path):
+    def api_fetcher(endpoint, params):
+        if endpoint == "/users/by/username/agency":
+            return {"data": {"id": "12345", "username": "agency", "name": "Agency"}}
+        if endpoint == "/users/12345/tweets":
+            assert params["max_results"] == "5"
+            return {
+                "data": [
+                    {
+                        "id": "98765",
+                        "author_id": "12345",
+                        "created_at": "2026-06-10T00:00:00Z",
+                        "text": "Official X API update",
+                    }
+                ],
+                "includes": {},
+            }
+        raise AssertionError(f"unexpected endpoint {endpoint}")
+
+    results = archive_x_source(
+        x_source(),
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        api_fetcher=api_fetcher,
+        max_posts=1,
+    )
+
+    assert results[0]["status"] == "captured"
+    raw_path = tmp_path / "raw" / "x" / "2026-06" / "98765.json"
+    normalized_path = tmp_path / "normalized" / "x" / "2026-06.jsonl"
+    record = json.loads(normalized_path.read_text(encoding="utf-8"))
+    assert raw_path.exists()
+    assert record["record_id"] == "x:98765"
+    assert record["source_platform"] == "x"
+    assert record["source_account"] == "agency"
+    assert record["canonical_url"] == "https://x.com/agency/status/98765"
+    assert record["content"] == "Official X API update"
+    assert record["extraction_method"] == "official_x_api_user_timeline"
+
+
+def test_archive_x_api_enabled_missing_credentials_reports_auth_required(tmp_path):
+    results = archive_x_source(
+        x_source(),
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+    )
+
+    assert results[0]["status"] == "x_auth_required"
+
+
+def test_archive_x_api_disabled_reports_missing_seed(tmp_path, monkeypatch):
+    monkeypatch.delenv("X_API_CAPTURE_ENABLED", raising=False)
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(json.dumps({"sources": [x_source()]}), encoding="utf-8")
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            report=tmp_path / "report.json",
+            source_type="x",
+            agency_id="",
+            include_blocked=True,
+            dry_run=False,
+            raw_root=tmp_path / "raw",
+            normalized_root=tmp_path / "normalized",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            max_x_posts=25,
+        )
+    )
+
+    assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
+    assert "X API capture is disabled" in report["results"][0]["reason"]
 
 
 def threads_source() -> dict[str, str]:
