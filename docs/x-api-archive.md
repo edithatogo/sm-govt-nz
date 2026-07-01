@@ -41,6 +41,23 @@ When enabled, `Archive Registered Sources` resolves each account handle to a use
 
 When disabled, the workflow does not call X. If an authorized seed exists, it archives the seed. If no seed exists, it reports `manual_seed_missing`.
 
+## Public snapshot fallback
+
+When official X API credits are unavailable, the repository can use a conservative public snapshot fallback:
+
+- `X_PUBLIC_SNAPSHOT_ENABLED=true`
+
+This fallback uses unauthenticated public HTTP requests only. It does not log in, use proxies, bypass anti-bot controls, call private GraphQL endpoints, or attempt to reconstruct full timelines. It stores the accessible public profile page HTML and normalized profile-snapshot metadata as provenance evidence.
+
+Snapshot output is intentionally distinct from post-level API or seed records:
+
+- raw snapshots: `historical_archive_raw/x_public_snapshot/<yyyy-mm>/`
+- normalized snapshot records: `historical_archive_normalized/x/<yyyy-mm>.jsonl`
+- record IDs: `x_public_snapshot:<stable_id>`
+- status: `public_snapshot_captured`, `public_snapshot_already_captured`, or the relevant blocked/error status
+
+Use this mode only as a fallback when official X API access is unavailable and no authorized seed/export exists.
+
 ## Cost and safety controls
 
 The `max_x_posts` workflow input limits recent posts requested per account. The default is `25`, capped to the X API endpoint range of `5` to `100`.
@@ -58,3 +75,11 @@ gh workflow run "Archive Registered Sources" -f source_type=x -f dry_run=false -
 ```
 
 Only expand to all X sources after the small shard report shows `captured`, `already_captured`, or `no_records` without `x_billing_required`, `x_permission_error`, or `rate_limited`.
+
+To run the public snapshot fallback without calling the X API:
+
+```bash
+gh variable set X_API_CAPTURE_ENABLED --body false
+gh variable set X_PUBLIC_SNAPSHOT_ENABLED --body true
+gh workflow run "Archive Registered Sources" -f source_type=x -f dry_run=false -f limit_sources=1 -f commit_payloads=true
+```
