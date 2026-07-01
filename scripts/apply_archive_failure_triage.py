@@ -41,6 +41,7 @@ def should_degrade(item: dict[str, Any]) -> bool:
             "not a channel URL" in reason
             or "not a YouTube URL" in reason
             or "HTTP Error 404" in reason
+            or "control characters" in reason
         )
     if platform == "website_page":
         return status in {"capture_blocked", "dns_failed", "method_not_allowed", "not_acceptable", "not_found"}
