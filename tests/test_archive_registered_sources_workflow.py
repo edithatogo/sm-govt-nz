@@ -11,6 +11,7 @@ def test_archive_registered_sources_dry_run_commits_only_report() -> None:
 
     assert "          - json_feed" in workflow
     assert "          - social_profile" in workflow
+    assert "          - newsletter" in workflow
     assert "./.github/actions/setup-python-uv" in workflow
     assert "requirements: requirements.txt" in workflow
     assert "inputs.source_type || 'scheduled'" in workflow
@@ -92,7 +93,7 @@ def test_historical_backlog_workflow_fans_out_source_shards_and_hf_publish() -> 
     assert "name: Archive Historical Backlog" in workflow
     assert "actions: write" in workflow
     assert "scripts/build_historical_backlog_matrix.py" in workflow
-    assert "default: \"rss,json_feed,api,bluesky,youtube,website_page,threads,social_profile\"" in workflow
+    assert "default: \"rss,json_feed,api,bluesky,youtube,website_page,threads,x,linkedin,newsletter\"" in workflow
     assert "matrix: ${{ fromJson(needs.build-backlog-matrix.outputs.matrix) }}" in workflow
     assert "batch_count: ${{ steps.matrix.outputs.batch_count }}" in workflow
     assert "gh workflow run \"Archive Registered Sources\"" in workflow
