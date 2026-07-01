@@ -1,4 +1,5 @@
 import argparse
+import glob
 import os
 import subprocess
 from dataclasses import dataclass
@@ -50,12 +51,24 @@ def configure_identity() -> None:
     run_git(["config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"])
 
 
+def selected_existing_paths(paths: list[str]) -> list[str]:
+    existing_paths: list[str] = []
+    for path in paths:
+        if any(char in path for char in "*?[]"):
+            matches = sorted(match for match in glob.glob(path, recursive=True) if os.path.exists(match))
+            if not matches:
+                print(f"Skipping unmatched state path glob: {path}")
+            existing_paths.extend(matches)
+        elif os.path.exists(path):
+            existing_paths.append(path)
+        else:
+            print(f"Skipping missing state path: {path}")
+    return existing_paths
+
+
 def commit_selected_paths(message: str, paths: list[str], *, force: bool = False) -> bool:
     configure_identity()
-    existing_paths = [path for path in paths if os.path.exists(path) or any(char in path for char in "*?[]")]
-    skipped_paths = [path for path in paths if path not in existing_paths]
-    for path in skipped_paths:
-        print(f"Skipping missing state path: {path}")
+    existing_paths = selected_existing_paths(paths)
     if not existing_paths:
         print("No existing selected state paths to commit.")
         return False
