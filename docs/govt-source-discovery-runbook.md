@@ -65,6 +65,8 @@ Use `.github/workflows/manual_seed_onboarding.yml` or `scripts/build_manual_seed
 
 For each source it records the accepted access methods, required authorization, candidate seed file paths, and the platform-specific no-scraping boundary. A source remains `needs_authorized_seed_or_api` until an approved API route, account-owner export, lawful public archive input, or operator-authorized seed JSON is available under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
 
+The workflow also writes `conductor/manual_seed_onboarding_summary.md`, which is the compact remainder map for the manual/API queue. Use that summary when you need the current group counts at a glance and the JSON report when you need the per-source detail.
+
 Run archive capture for these platforms only after the report shows `seed_present` or after a separately approved API adapter has been implemented. Missing seeds are reported as `manual_seed_missing`; the runner must not silently treat Meta, LinkedIn, or X as live-capturable.
 ## Archive Invocation
 
