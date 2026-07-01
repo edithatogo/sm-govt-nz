@@ -23,6 +23,7 @@ def test_threads_workflows_write_dedicated_archive_report() -> None:
 def test_seed_missing_is_report_only_for_threads_readiness() -> None:
     workflow = Path(".github/workflows/validate_threads_manual_seeds.yml").read_text(encoding="utf-8")
 
+    assert 'python-version: "3.14"' in workflow
     assert 'if item.get("readiness") in {"seed_empty", "seed_invalid"}' in workflow
     assert 'if item.get("readiness") in {"seed_missing", "seed_empty", "seed_invalid"}' not in workflow
     assert "Missing seed files are tracked in conductor reports only" in workflow
