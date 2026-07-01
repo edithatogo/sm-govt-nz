@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-01T04:04:29+00:00",
+  "generated_at": "2026-07-01T04:11:02+00:00",
   "inputs": {
     "reports": [
-      "conductor\\website_archive_report.json"
+      "conductor/website_archive_report.json"
     ]
   },
   "items": [
@@ -11,7 +11,7 @@
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden",
       "recommended_action": "review_access_or_mark_blocked",
-      "report": "conductor\\website_archive_report.json",
+      "report": "conductor/website_archive_report.json",
       "source_id": "ashburton-district-council-website_page-e266f7e9",
       "status": "capture_blocked",
       "url": "https://www.ashburtondc.govt.nz"
@@ -21,7 +21,7 @@
       "platform": "website_page",
       "reason": "HTTP 406: Not Acceptable",
       "recommended_action": "review_headers_or_alternate_url",
-      "report": "conductor\\website_archive_report.json",
+      "report": "conductor/website_archive_report.json",
       "source_id": "auckland-council-website_page-3bc00b81",
       "status": "not_acceptable",
       "url": "https://www.aucklandcouncil.govt.nz"
@@ -31,7 +31,7 @@
       "platform": "website_page",
       "reason": "URL error: [Errno -2] Name or service not known",
       "recommended_action": "verify_url_or_mark_stale",
-      "report": "conductor\\website_archive_report.json",
+      "report": "conductor/website_archive_report.json",
       "source_id": "auckland-light-rail-website_page-680a0eb9",
       "status": "dns_failed",
       "url": "https://www.aucklandlightrail.co.nz"
@@ -40,98 +40,112 @@
       "agency_id": "bay-of-plenty-regional-council",
       "platform": "website_page",
       "reason": "URL error: timed out",
-      "recommended_action": "retry_later",
-      "report": "conductor\\website_archive_report.json",
+      "recommended_action": "review",
+      "report": "conductor/website_archive_report.json",
       "source_id": "bay-of-plenty-regional-council-website_page-bdd5a053",
-      "status": "network_error",
+      "status": "network_timeout",
       "url": "https://www.boprc.govt.nz"
-    },
-    {
-      "agency_id": "cancer-control-agency",
-      "platform": "website_page",
-      "reason": "The read operation timed out",
-      "recommended_action": "review_url_or_adapter",
-      "report": "conductor\\website_archive_report.json",
-      "source_id": "cancer-control-agency-website_page-000607de",
-      "status": "capture_failed",
-      "url": "https://teaho.govt.nz/index.php/blog/april-2026-canshare-newsletter"
     },
     {
       "agency_id": "carterton-district-council",
       "platform": "website_page",
       "reason": "URL error: [Errno -2] Name or service not known",
       "recommended_action": "verify_url_or_mark_stale",
-      "report": "conductor\\website_archive_report.json",
+      "report": "conductor/website_archive_report.json",
       "source_id": "carterton-district-council-website_page-06a4a176",
       "status": "dns_failed",
       "url": "https://www.cartertondc.govt.nz"
     },
     {
-      "agency_id": "central-otago-district-council",
+      "agency_id": "criminal-cases-review-commission",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed",
-      "recommended_action": "review_alternate_url",
-      "report": "conductor\\website_archive_report.json",
-      "source_id": "central-otago-district-council-website_page-d2fc9f64",
-      "status": "method_not_allowed",
-      "url": "https://www.codc.govt.nz"
+      "reason": "URL error: [Errno -2] Name or service not known",
+      "recommended_action": "verify_url_or_mark_stale",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "criminal-cases-review-commission-website_page-4176b0c1",
+      "status": "dns_failed",
+      "url": "https://www.ccrc.govt.nz"
     },
     {
-      "agency_id": "chatham-islands-council",
+      "agency_id": "department-of-corrections",
       "platform": "website_page",
-      "reason": "The read operation timed out",
-      "recommended_action": "review_url_or_adapter",
-      "report": "conductor\\website_archive_report.json",
-      "source_id": "chatham-islands-council-website_page-fdb26d29",
-      "status": "capture_failed",
-      "url": "https://us17.campaign-archive.com/home/?u=0d7d1b7e2a53c8cd46868914d&id=35e8af1465"
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "department-of-corrections-website_page-9d44d1ec",
+      "status": "capture_blocked",
+      "url": "https://www.corrections.govt.nz"
+    },
+    {
+      "agency_id": "dpmc",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "dpmc-website_page-198dd998",
+      "status": "capture_blocked",
+      "url": "https://www.dpmc.govt.nz"
+    },
+    {
+      "agency_id": "dunedin-city-council",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "dunedin-city-council-website_page-027b6950",
+      "status": "capture_blocked",
+      "url": "https://www.dunedin.govt.nz"
+    },
+    {
+      "agency_id": "education-review-office",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "education-review-office-website_page-bd13cf94",
+      "status": "capture_blocked",
+      "url": "https://www.ero.govt.nz"
     }
   ],
   "report_summaries": {
-    "conductor\\website_archive_report.json": {
+    "conductor/website_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-07-01T01:56:29+00:00",
+      "generated_at": "2026-07-01T04:11:02+00:00",
       "summary": {
         "platform_counts": {
-          "website_page": 25
+          "website_page": 50
         },
-        "selected_sources": 25,
+        "selected_sources": 50,
         "status_by_platform": {
           "website_page": {
             "already_captured": 7,
-            "capture_blocked": 1,
-            "capture_failed": 2,
-            "captured": 10,
-            "dns_failed": 2,
-            "method_not_allowed": 1,
-            "network_error": 1,
+            "capture_blocked": 5,
+            "captured": 33,
+            "dns_failed": 3,
+            "network_timeout": 1,
             "not_acceptable": 1
           }
         },
         "status_counts": {
           "already_captured": 7,
-          "capture_blocked": 1,
-          "capture_failed": 2,
-          "captured": 10,
-          "dns_failed": 2,
-          "method_not_allowed": 1,
-          "network_error": 1,
+          "capture_blocked": 5,
+          "captured": 33,
+          "dns_failed": 3,
+          "network_timeout": 1,
           "not_acceptable": 1
         }
       }
     }
   },
   "summary": {
-    "failure_count": 8,
+    "failure_count": 10,
     "platform_counts": {
-      "website_page": 8
+      "website_page": 10
     },
     "status_counts": {
-      "capture_blocked": 1,
-      "capture_failed": 2,
-      "dns_failed": 2,
-      "method_not_allowed": 1,
-      "network_error": 1,
+      "capture_blocked": 5,
+      "dns_failed": 3,
+      "network_timeout": 1,
       "not_acceptable": 1
     }
   }

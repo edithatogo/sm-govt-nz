@@ -1,12 +1,12 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-01T01:56:29+00:00",
+  "generated_at": "2026-07-01T04:11:02+00:00",
   "inputs": {
     "agency_id": "",
     "fetch_timeout": 5,
     "include_blocked": false,
-    "limit_sources": 25,
+    "limit_sources": 50,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "normalized_root": "historical_archive_normalized",
@@ -145,7 +145,7 @@
       "reason": "URL error: timed out",
       "source_id": "bay-of-plenty-regional-council-website_page-bdd5a053",
       "source_type": "website_page",
-      "status": "network_error",
+      "status": "network_timeout",
       "url": "https://www.boprc.govt.nz"
     },
     {
@@ -197,10 +197,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "The read operation timed out",
+      "reason": "captured generic website page via fallback https://www.teaho.govt.nz/index.php/blog/april-2026-canshare-newsletter",
       "source_id": "cancer-control-agency-website_page-000607de",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "captured",
       "url": "https://teaho.govt.nz/index.php/blog/april-2026-canshare-newsletter"
     },
     {
@@ -241,10 +241,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed",
+      "reason": "captured generic website page",
       "source_id": "central-otago-district-council-website_page-d2fc9f64",
       "source_type": "website_page",
-      "status": "method_not_allowed",
+      "status": "captured",
       "url": "https://www.codc.govt.nz"
     },
     {
@@ -263,10 +263,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "The read operation timed out",
+      "reason": "captured generic website page via fallback http://us17.campaign-archive.com/home/?u=0d7d1b7e2a53c8cd46868914d&id=35e8af1465",
       "source_id": "chatham-islands-council-website_page-fdb26d29",
       "source_type": "website_page",
-      "status": "capture_failed",
+      "status": "captured",
       "url": "https://us17.campaign-archive.com/home/?u=0d7d1b7e2a53c8cd46868914d&id=35e8af1465"
     },
     {
@@ -290,33 +290,304 @@
       "source_type": "website_page",
       "status": "captured",
       "url": "https://www.manamokopuna.org.nz"
+    },
+    {
+      "agency_id": "christchurch-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "christchurch-city-council-website_page-a3cabc8d",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.ccc.govt.nz"
+    },
+    {
+      "agency_id": "christchurch-city-libraries",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "christchurch-city-libraries-website_page-309c6bbb",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://my.christchurchcitylibraries.com"
+    },
+    {
+      "agency_id": "christchurch-city-libraries",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "christchurch-city-libraries-website_page-c4affcd3",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://my.christchurchcitylibraries.com/newsletters/"
+    },
+    {
+      "agency_id": "city-rail-link",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "city-rail-link-website_page-05263e5c",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.cityraillink.co.nz"
+    },
+    {
+      "agency_id": "city-rail-link",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "city-rail-link-website_page-ce8030fe",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.cityraillink.co.nz/crl-newsletters"
+    },
+    {
+      "agency_id": "civil-aviation-authority",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "civil-aviation-authority-website_page-2dabace9",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.caa.govt.nz"
+    },
+    {
+      "agency_id": "climate-change-commission",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "climate-change-commission-website_page-5c0a9c67",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.climatecommission.govt.nz"
+    },
+    {
+      "agency_id": "clutha-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "clutha-district-council-website_page-0c106b5d",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.cluthadc.govt.nz"
+    },
+    {
+      "agency_id": "commerce-commission",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "commerce-commission-website_page-b207c379",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.comcom.govt.nz"
+    },
+    {
+      "agency_id": "courts-of-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "courts-of-nz-website_page-fa61a70c",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.courtsofnz.govt.nz"
+    },
+    {
+      "agency_id": "creative-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "creative-nz-website_page-bdcc3819",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.creativenz.govt.nz"
+    },
+    {
+      "agency_id": "criminal-cases-review-commission",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "URL error: [Errno -2] Name or service not known",
+      "source_id": "criminal-cases-review-commission-website_page-4176b0c1",
+      "source_type": "website_page",
+      "status": "dns_failed",
+      "url": "https://www.ccrc.govt.nz"
+    },
+    {
+      "agency_id": "crown-irrigation-investments",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "crown-irrigation-investments-website_page-b70917a6",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.crownirrigation.co.nz"
+    },
+    {
+      "agency_id": "crown-law-office",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "crown-law-office-website_page-ccdeb80c",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.crownlaw.govt.nz"
+    },
+    {
+      "agency_id": "department-of-conservation",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "department-of-conservation-website_page-1141ec0e",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.doc.govt.nz"
+    },
+    {
+      "agency_id": "department-of-corrections",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "department-of-corrections-website_page-9d44d1ec",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.corrections.govt.nz"
+    },
+    {
+      "agency_id": "department-of-internal-affairs",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "department-of-internal-affairs-website_page-1e41abf7",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.dia.govt.nz"
+    },
+    {
+      "agency_id": "dpmc",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "dpmc-website_page-198dd998",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.dpmc.govt.nz"
+    },
+    {
+      "agency_id": "dunedin-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "dunedin-city-council-website_page-027b6950",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.dunedin.govt.nz"
+    },
+    {
+      "agency_id": "education-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "education-nz-website_page-0ee206f0",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.enz.govt.nz"
+    },
+    {
+      "agency_id": "education-payroll",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "education-payroll-website_page-cffe83ba",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.educationpayroll.co.nz"
+    },
+    {
+      "agency_id": "education-review-office",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "education-review-office-website_page-bd13cf94",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.ero.govt.nz"
+    },
+    {
+      "agency_id": "eeca",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "eeca-website_page-e18b5f2a",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.eeca.govt.nz"
+    },
+    {
+      "agency_id": "eit",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "eit-website_page-2c291966",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.eit.ac.nz"
+    },
+    {
+      "agency_id": "eit",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "eit-website_page-7c4d0c30",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.eit.ac.nz/research-innovation/research-newsletters/"
     }
   ],
   "summary": {
     "platform_counts": {
-      "website_page": 25
+      "website_page": 50
     },
-    "selected_sources": 25,
+    "selected_sources": 50,
     "status_by_platform": {
       "website_page": {
         "already_captured": 7,
-        "capture_blocked": 1,
-        "capture_failed": 2,
-        "captured": 10,
-        "dns_failed": 2,
-        "method_not_allowed": 1,
-        "network_error": 1,
+        "capture_blocked": 5,
+        "captured": 33,
+        "dns_failed": 3,
+        "network_timeout": 1,
         "not_acceptable": 1
       }
     },
     "status_counts": {
       "already_captured": 7,
-      "capture_blocked": 1,
-      "capture_failed": 2,
-      "captured": 10,
-      "dns_failed": 2,
-      "method_not_allowed": 1,
-      "network_error": 1,
+      "capture_blocked": 5,
+      "captured": 33,
+      "dns_failed": 3,
+      "network_timeout": 1,
       "not_acceptable": 1
     }
   }
