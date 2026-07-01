@@ -1,15 +1,15 @@
 # Monthly Release Plan
 
-Generated: 2026-06-30T00:23:29+00:00
+Generated: 2026-07-01T05:34:09+00:00
 
 Each monthly release is cumulative: it bundles all archived accounts and source types present in the repository at release time.
 
 ## Summary
 
-- `months_with_records`: 259
-- `total_records`: 6995
+- `months_with_records`: 260
+- `total_records`: 7145
 - `published_months`: 1
-- `candidate_months`: 258
+- `candidate_months`: 259
 
 ## Months
 
@@ -244,7 +244,7 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2023-11 | candidate | 27 | 8 | courtsofnz.govt.nz: 1, rss: 20, youtube: 6 |
 | 2023-12 | candidate | 23 | 8 | rss: 16, x: 1, youtube: 6 |
 | 2024-01 | candidate | 6 | 4 | rss: 4, youtube: 2 |
-| 2024-02 | candidate | 22 | 4 | rss: 19, x: 1, youtube: 2 |
+| 2024-02 | candidate | 23 | 5 | bluesky: 1, rss: 19, x: 1, youtube: 2 |
 | 2024-03 | candidate | 32 | 8 | rss: 13, youtube: 19 |
 | 2024-04 | candidate | 30 | 4 | rss: 23, youtube: 7 |
 | 2024-05 | candidate | 49 | 6 | rss: 27, x: 2, youtube: 20 |
@@ -254,11 +254,11 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2024-09 | candidate | 46 | 9 | rss: 25, x: 2, youtube: 19 |
 | 2024-10 | candidate | 40 | 8 | rss: 24, youtube: 16 |
 | 2024-11 | candidate | 36 | 8 | rss: 22, youtube: 14 |
-| 2024-12 | candidate | 50 | 12 | rss: 33, x: 3, youtube: 14 |
-| 2025-01 | candidate | 7 | 5 | rss: 3, youtube: 4 |
-| 2025-02 | candidate | 40 | 9 | rss: 19, youtube: 21 |
-| 2025-03 | candidate | 43 | 5 | rss: 37, youtube: 6 |
-| 2025-04 | candidate | 50 | 9 | rss: 41, youtube: 9 |
+| 2024-12 | candidate | 52 | 13 | bluesky: 2, rss: 33, x: 3, youtube: 14 |
+| 2025-01 | candidate | 21 | 7 | bluesky: 14, rss: 3, youtube: 4 |
+| 2025-02 | candidate | 63 | 11 | bluesky: 23, rss: 19, youtube: 21 |
+| 2025-03 | candidate | 63 | 7 | bluesky: 20, rss: 37, youtube: 6 |
+| 2025-04 | candidate | 60 | 10 | bluesky: 10, rss: 41, youtube: 9 |
 | 2025-05 | candidate | 59 | 9 | bluesky: 3, rss: 29, youtube: 27 |
 | 2025-06 | candidate | 31 | 10 | bluesky: 2, rss: 19, youtube: 10 |
 | 2025-07 | candidate | 62 | 13 | bluesky: 1, rss: 45, youtube: 16 |
@@ -272,5 +272,6 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2026-03 | candidate | 130 | 38 | bluesky: 25, courtsofnz.govt.nz: 3, rss: 37, youtube: 65 |
 | 2026-04 | candidate | 168 | 35 | bluesky: 41, courtsofnz.govt.nz: 3, rss: 35, youtube: 89 |
 | 2026-05 | candidate | 364 | 58 | bluesky: 32, rss: 54, youtube: 278 |
-| 2026-06 | published | 980 | 284 | bluesky: 140, courtsofnz.govt.nz: 1, email: 11, linkedin: 2, rss: 102, website_page: 219, youtube: 505 |
-| unknown | candidate | 10 | 1 | rss: 10 |
+| 2026-06 | published | 1006 | 285 | bluesky: 165, courtsofnz.govt.nz: 1, email: 12, linkedin: 2, rss: 102, website_page: 219, youtube: 505 |
+| 2026-07 | candidate | 44 | 12 | bluesky: 1, email: 2, rss: 33, website_page: 7, youtube: 1 |
+| unknown | candidate | 20 | 1 | rss: 20 |
