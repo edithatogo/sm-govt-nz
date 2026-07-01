@@ -84,6 +84,13 @@ Current capture support:
 - `facebook`, `instagram`, `linkedin`, `newsletter`, `threads`, and `x` sources can be captured from operator-authorized manual seed JSON files under `manual_archive_seeds/<platform>/<source_id>.json` or `manual_archive_seeds/<platform>/<agency_id>.json`.
 - platform sources without a seed file are reported as `manual_seed_missing`, not as successfully captured.
 
+Archive failure triage is generated from dedicated platform reports with
+`scripts/build_archive_failure_triage_report.py`. Apply conservative manifest
+status updates with `scripts/apply_archive_failure_triage.py`; this degrades
+malformed/stale YouTube URLs and blocked or stale website endpoints while
+leaving valid-but-empty YouTube channels and transient website timeouts in the
+monitored capture set.
+
 Manual seed files contain a JSON object with `posts` or a bare list of post objects. Each post needs `url`, `created_at`, and `text`; `post_id`, `media`, `account`, and `canonical_url` are optional. This keeps the manifest exhaustive without overstating which sources are already captured.
 
 For Threads, place authorized exports at either:
