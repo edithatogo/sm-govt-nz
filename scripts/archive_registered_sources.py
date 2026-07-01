@@ -26,6 +26,7 @@ from src.archive_schema import build_normalized_record  # noqa: E402
 
 DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
 DEFAULT_REPORT = Path("conductor/govt_archive_registered_sources_report.json")
+DEFAULT_SUMMARY = Path("conductor/govt_archive_registered_sources_summary.md")
 DEFAULT_RAW_ROOT = Path("historical_archive_raw")
 DEFAULT_NORMALIZED_ROOT = Path("historical_archive_normalized")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
@@ -1038,10 +1039,62 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     }
 
 
+def write_summary(path: Path, report: dict[str, Any]) -> None:
+    summary = report.get("summary", {})
+    status_by_platform = summary.get("status_by_platform", {})
+    lines = [
+        "# Registered Sources Archive Summary",
+        "",
+        f"Generated: {report.get('generated_at', '')}",
+        "",
+        "## Summary",
+        "",
+        f"- `selected_sources`: {summary.get('selected_sources', 0)}",
+        f"- `platform_count`: {len(summary.get('platform_counts', {}))}",
+        f"- `status_count`: {len(summary.get('status_counts', {}))}",
+        "",
+        "## Platform counts",
+        "",
+    ]
+    for platform, count in summary.get("platform_counts", {}).items():
+        lines.append(f"- `{platform}`: {count}")
+    lines.extend(
+        [
+            "",
+            "## Status counts",
+            "",
+        ]
+    )
+    for status, count in summary.get("status_counts", {}).items():
+        lines.append(f"- `{status}`: {count}")
+    lines.extend(
+        [
+            "",
+            "## Status by platform",
+            "",
+        ]
+    )
+    for platform, counts in status_by_platform.items():
+        lines.append(f"- `{platform}`: {counts}")
+    lines.extend(
+        [
+            "",
+            "## Notes",
+            "",
+            "- Dry-run reports describe the selected sources without capturing payloads.",
+            "- Non-dry-run runs may also publish external corpus artifacts when enabled.",
+            "- Use the JSON report for per-source detail and this summary for the current state at a glance.",
+        ]
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Invoke archive capture for registered government sources.")
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
     parser.add_argument("--raw-root", type=Path, default=DEFAULT_RAW_ROOT)
     parser.add_argument("--normalized-root", type=Path, default=DEFAULT_NORMALIZED_ROOT)
     parser.add_argument("--manual-seed-root", type=Path, default=DEFAULT_MANUAL_SEED_ROOT)
@@ -1063,6 +1116,7 @@ def main() -> None:
 
     report = build_report(args)
     write_json(args.report, report)
+    write_summary(args.summary, report)
     print(
         "Archive registered sources report wrote "
         f"{report['summary']['selected_sources']} selected sources."

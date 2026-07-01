@@ -1,5 +1,10 @@
 from pathlib import Path
 
+import argparse
+import json
+
+from scripts.archive_registered_sources import build_report, write_summary
+
 
 def test_archive_registered_sources_dry_run_commits_only_report() -> None:
     workflow = Path(".github/workflows/archive_registered_sources.yml").read_text(encoding="utf-8")
@@ -11,6 +16,7 @@ def test_archive_registered_sources_dry_run_commits_only_report() -> None:
     dry_run_block = workflow.split("- name: Commit archive report updates", 1)[1].split("- name: Commit archive capture reports", 1)[0]
     assert "inputs.dry_run == 'true'" in dry_run_block
     assert "conductor/govt_archive_registered_sources_report.json" in dry_run_block
+    assert "conductor/govt_archive_registered_sources_summary.md" in dry_run_block
     assert "dist/archive_manifest.json" not in dry_run_block
     assert "historical_archive_raw/**" not in dry_run_block
 
@@ -23,6 +29,7 @@ def test_archive_registered_sources_capture_commits_and_uploads_generated_artifa
     assert "dist/archive_manifest.json" in capture_block
     assert "dist/archive_compaction_manifest.json" in capture_block
     assert "--max-attempts 10" in capture_block
+    assert "conductor/govt_archive_registered_sources_summary.md" in capture_block
     assert "historical_archive_raw/**" not in capture_block
     assert "historical_archive_normalized/**" not in capture_block
     assert "dist/historical_archive.tar.gz" in workflow
@@ -91,3 +98,52 @@ def test_historical_backlog_workflow_fans_out_source_shards_and_hf_publish() -> 
     assert "gh workflow run \"Publish Archives\"" in workflow
     assert "-f publication_target=huggingface" in workflow
     assert "-f archive_release_version=\"${{ steps.release.outputs.version }}\"" in workflow
+
+
+def test_registered_sources_report_writes_summary(tmp_path) -> None:
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "sources": [
+                    {
+                        "source_id": "rss-1",
+                        "agency_id": "agency",
+                        "agency_name": "Agency",
+                        "platform": "rss",
+                        "source_type": "rss_feed",
+                        "url": "https://example.govt.nz/feed",
+                        "archive_status": "ready",
+                        "feasibility": "high",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            source_type="rss",
+            agency_id="",
+            include_blocked=False,
+            raw_root=tmp_path / "raw",
+            normalized_root=tmp_path / "normalized",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            fetch_timeout=30,
+            retry_failed_from=None,
+            offset_sources=0,
+            limit_sources=0,
+            dry_run=True,
+            max_bluesky_pages=1,
+            max_threads_posts=25,
+        )
+    )
+
+    summary_path = tmp_path / "summary.md"
+    write_summary(summary_path, report)
+    summary = summary_path.read_text(encoding="utf-8")
+    assert "Registered Sources Archive Summary" in summary
+    assert "`selected_sources`: 1" in summary
+    assert "`rss`: 1" in summary
