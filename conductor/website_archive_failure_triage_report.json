@@ -1,41 +1,11 @@
 {
-  "generated_at": "2026-07-01T04:11:02+00:00",
+  "generated_at": "2026-07-01T04:28:47+00:00",
   "inputs": {
     "reports": [
       "conductor/website_archive_report.json"
     ]
   },
   "items": [
-    {
-      "agency_id": "ashburton-district-council",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden",
-      "recommended_action": "review_access_or_mark_blocked",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "ashburton-district-council-website_page-e266f7e9",
-      "status": "capture_blocked",
-      "url": "https://www.ashburtondc.govt.nz"
-    },
-    {
-      "agency_id": "auckland-council",
-      "platform": "website_page",
-      "reason": "HTTP 406: Not Acceptable",
-      "recommended_action": "review_headers_or_alternate_url",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "auckland-council-website_page-3bc00b81",
-      "status": "not_acceptable",
-      "url": "https://www.aucklandcouncil.govt.nz"
-    },
-    {
-      "agency_id": "auckland-light-rail",
-      "platform": "website_page",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "recommended_action": "verify_url_or_mark_stale",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "auckland-light-rail-website_page-680a0eb9",
-      "status": "dns_failed",
-      "url": "https://www.aucklandlightrail.co.nz"
-    },
     {
       "agency_id": "bay-of-plenty-regional-council",
       "platform": "website_page",
@@ -47,70 +17,50 @@
       "url": "https://www.boprc.govt.nz"
     },
     {
-      "agency_id": "carterton-district-council",
+      "agency_id": "central-otago-district-council",
       "platform": "website_page",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "recommended_action": "verify_url_or_mark_stale",
+      "reason": "HTTP 405: Not Allowed",
+      "recommended_action": "review_alternate_url",
       "report": "conductor/website_archive_report.json",
-      "source_id": "carterton-district-council-website_page-06a4a176",
-      "status": "dns_failed",
-      "url": "https://www.cartertondc.govt.nz"
+      "source_id": "central-otago-district-council-website_page-d2fc9f64",
+      "status": "method_not_allowed",
+      "url": "https://www.codc.govt.nz"
     },
     {
-      "agency_id": "criminal-cases-review-commission",
+      "agency_id": "clutha-district-council",
       "platform": "website_page",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "recommended_action": "verify_url_or_mark_stale",
+      "reason": "HTTP 405: Not Allowed",
+      "recommended_action": "review_alternate_url",
       "report": "conductor/website_archive_report.json",
-      "source_id": "criminal-cases-review-commission-website_page-4176b0c1",
-      "status": "dns_failed",
-      "url": "https://www.ccrc.govt.nz"
+      "source_id": "clutha-district-council-website_page-0c106b5d",
+      "status": "method_not_allowed",
+      "url": "https://www.cluthadc.govt.nz"
     },
     {
-      "agency_id": "department-of-corrections",
+      "agency_id": "environment-southland",
+      "platform": "website_page",
+      "reason": "HTTP 405: Not Allowed",
+      "recommended_action": "review_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "environment-southland-website_page-68683dfa",
+      "status": "method_not_allowed",
+      "url": "https://www.es.govt.nz"
+    },
+    {
+      "agency_id": "far-north-district-council",
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden",
       "recommended_action": "review_access_or_mark_blocked",
       "report": "conductor/website_archive_report.json",
-      "source_id": "department-of-corrections-website_page-9d44d1ec",
+      "source_id": "far-north-district-council-website_page-61244b75",
       "status": "capture_blocked",
-      "url": "https://www.corrections.govt.nz"
-    },
-    {
-      "agency_id": "dpmc",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden",
-      "recommended_action": "review_access_or_mark_blocked",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "dpmc-website_page-198dd998",
-      "status": "capture_blocked",
-      "url": "https://www.dpmc.govt.nz"
-    },
-    {
-      "agency_id": "dunedin-city-council",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden",
-      "recommended_action": "review_access_or_mark_blocked",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "dunedin-city-council-website_page-027b6950",
-      "status": "capture_blocked",
-      "url": "https://www.dunedin.govt.nz"
-    },
-    {
-      "agency_id": "education-review-office",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden",
-      "recommended_action": "review_access_or_mark_blocked",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "education-review-office-website_page-bd13cf94",
-      "status": "capture_blocked",
-      "url": "https://www.ero.govt.nz"
+      "url": "https://www.fndc.govt.nz"
     }
   ],
   "report_summaries": {
     "conductor/website_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-07-01T04:11:02+00:00",
+      "generated_at": "2026-07-01T04:28:47+00:00",
       "summary": {
         "platform_counts": {
           "website_page": 50
@@ -119,34 +69,31 @@
         "status_by_platform": {
           "website_page": {
             "already_captured": 7,
-            "capture_blocked": 5,
-            "captured": 33,
-            "dns_failed": 3,
-            "network_timeout": 1,
-            "not_acceptable": 1
+            "capture_blocked": 1,
+            "captured": 38,
+            "method_not_allowed": 3,
+            "network_timeout": 1
           }
         },
         "status_counts": {
           "already_captured": 7,
-          "capture_blocked": 5,
-          "captured": 33,
-          "dns_failed": 3,
-          "network_timeout": 1,
-          "not_acceptable": 1
+          "capture_blocked": 1,
+          "captured": 38,
+          "method_not_allowed": 3,
+          "network_timeout": 1
         }
       }
     }
   },
   "summary": {
-    "failure_count": 10,
+    "failure_count": 5,
     "platform_counts": {
-      "website_page": 10
+      "website_page": 5
     },
     "status_counts": {
-      "capture_blocked": 5,
-      "dns_failed": 3,
-      "network_timeout": 1,
-      "not_acceptable": 1
+      "capture_blocked": 1,
+      "method_not_allowed": 3,
+      "network_timeout": 1
     }
   }
 }
