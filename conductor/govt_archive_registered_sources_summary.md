@@ -1,24 +1,27 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-01T10:07:38+00:00
+Generated: 2026-07-01T10:07:49+00:00
 
 ## Summary
 
-- `selected_sources`: 3
+- `selected_sources`: 50
 - `platform_count`: 1
-- `status_count`: 1
+- `status_count`: 4
 
 ## Platform counts
 
-- `threads`: 3
+- `youtube`: 50
 
 ## Status counts
 
-- `manual_seed_missing`: 3
+- `already_captured`: 394
+- `capture_failed`: 8
+- `captured`: 126
+- `no_records`: 1
 
 ## Status by platform
 
-- `threads`: {'manual_seed_missing': 3}
+- `youtube`: {'already_captured': 394, 'capture_failed': 8, 'captured': 126, 'no_records': 1}
 
 ## Notes
 
