@@ -41,7 +41,10 @@ jobs:
             printf '%s' "$CLIENT_PAYLOAD" > email_payload.json
           fi
       - name: Archive email payload
-        run: python scripts/archive_email_payload.py --payload-file email_payload.json
+        run: >-
+          python scripts/archive_email_payload.py
+          --payload-file email_payload.json
+          --report conductor/email_archive_report.json
       - name: Commit email archive updates
         run: >-
           python scripts/commit_state_updates.py
@@ -49,3 +52,4 @@ jobs:
           --force
           --path 'historical_archive_raw/email/**'
           --path 'historical_archive_normalized/email/**'
+          --path conductor/email_archive_report.json
