@@ -1,0 +1,177 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-01T10:14:36+00:00",
+  "inputs": {
+    "agency_id": "",
+    "fetch_timeout": 30,
+    "include_blocked": false,
+    "limit_sources": 50,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "api"
+  },
+  "results": [
+    {
+      "agency_id": "linz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "linz-api-90193158",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://data.linz.govt.nz/x/NfksV2"
+    },
+    {
+      "agency_id": "linz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "linz-api-f4c2e787",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.linz.govt.nz/guidance/data-service"
+    },
+    {
+      "agency_id": "linz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "linz-api-9bc3c337",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.linz.govt.nz/products-services/data/linz-data-service"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "nz-post-api-56cb4d9c",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/label-api"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "nz-post-api-14fee8a4",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/locator-api"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "nz-post-api-2ce1bff3",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/rate-finder-api"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "nz-post-api-75a112a6",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/tracking-api"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "nz-post-api-d2a9d258",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/tracking-notification-api"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "nz-post-api-50edce23",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.nzpost.co.nz/business/terms-and-conditions/addressing-api"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "nz-post-api-182e744a",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.nzpost.co.nz/business/terms-and-conditions/developer-centre-api-terms-conditions"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "nz-post-api-083d3e9c",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.nzpost.co.nz/business/terms-and-conditions/shipping-api"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "nz-post-api-ccc71c01",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.nzpost.co.nz/business/terms-and-conditions/terms-and-conditions-for-api-use"
+    },
+    {
+      "agency_id": "reannz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "api",
+      "reason": "api snapshot already present",
+      "source_id": "reannz-api-edd3a7f8",
+      "source_type": "api_endpoint",
+      "status": "already_captured",
+      "url": "https://www.reannz.co.nz/products-and-services/data-services"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "api": 13
+    },
+    "selected_sources": 13,
+    "status_by_platform": {
+      "api": {
+        "already_captured": 13
+      }
+    },
+    "status_counts": {
+      "already_captured": 13
+    }
+  }
+}
