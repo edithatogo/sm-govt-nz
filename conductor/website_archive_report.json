@@ -1,12 +1,12 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-01T01:46:54+00:00",
+  "generated_at": "2026-07-01T01:56:29+00:00",
   "inputs": {
     "agency_id": "",
     "fetch_timeout": 5,
     "include_blocked": false,
-    "limit_sources": 10,
+    "limit_sources": 25,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "normalized_root": "historical_archive_normalized",
@@ -21,10 +21,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "website record already present",
       "source_id": "accident-compensation-corporation-website_page-2f4e753e",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "already_captured",
       "url": "https://www.acc.co.nz"
     },
     {
@@ -32,10 +32,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "website record already present",
       "source_id": "accreditation-council-website_page-5d885a8f",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "already_captured",
       "url": "https://www.accreditation.co.nz"
     },
     {
@@ -43,10 +43,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "website record already present",
       "source_id": "airways-nz-website_page-8f2cead0",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "already_captured",
       "url": "https://www.airways.co.nz"
     },
     {
@@ -54,10 +54,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "website record already present",
       "source_id": "animal-control-products-website_page-15dfd90e",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "already_captured",
       "url": "https://www.pestoff.co.nz"
     },
     {
@@ -65,10 +65,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "website record already present",
       "source_id": "antarctica-nz-website_page-1cd1a2ba",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "already_captured",
       "url": "https://www.antarcticanz.govt.nz"
     },
     {
@@ -76,10 +76,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "website record already present",
       "source_id": "ara-institute-of-canterbury-website_page-ff23aa1c",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "already_captured",
       "url": "https://www.ara.ac.nz"
     },
     {
@@ -98,10 +98,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "website record already present",
       "source_id": "asurequality-website_page-6b3ca170",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "already_captured",
       "url": "https://www.asurequality.com"
     },
     {
@@ -125,25 +125,198 @@
       "source_type": "website_page",
       "status": "dns_failed",
       "url": "https://www.aucklandlightrail.co.nz"
+    },
+    {
+      "agency_id": "aut-university",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "aut-university-website_page-15951076",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.aut.ac.nz"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "URL error: timed out",
+      "source_id": "bay-of-plenty-regional-council-website_page-bdd5a053",
+      "source_type": "website_page",
+      "status": "network_error",
+      "url": "https://www.boprc.govt.nz"
+    },
+    {
+      "agency_id": "beehive-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "beehive-nz-website_page-25d827f0",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.beehive.govt.nz"
+    },
+    {
+      "agency_id": "broadcasting-standards-authority",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "broadcasting-standards-authority-website_page-a5cf9bac",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.bsa.govt.nz"
+    },
+    {
+      "agency_id": "buller-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "buller-district-council-website_page-48de2fd0",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.bullerdc.govt.nz"
+    },
+    {
+      "agency_id": "callaghan-innovation",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "callaghan-innovation-website_page-71d92453",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.callaghaninnovation.govt.nz"
+    },
+    {
+      "agency_id": "cancer-control-agency",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "The read operation timed out",
+      "source_id": "cancer-control-agency-website_page-000607de",
+      "source_type": "website_page",
+      "status": "capture_failed",
+      "url": "https://teaho.govt.nz/index.php/blog/april-2026-canshare-newsletter"
+    },
+    {
+      "agency_id": "cancer-control-agency",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "cancer-control-agency-website_page-5055e200",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.teaho.govt.nz"
+    },
+    {
+      "agency_id": "carterton-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "URL error: [Errno -2] Name or service not known",
+      "source_id": "carterton-district-council-website_page-06a4a176",
+      "source_type": "website_page",
+      "status": "dns_failed",
+      "url": "https://www.cartertondc.govt.nz"
+    },
+    {
+      "agency_id": "central-hawkes-bay-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "central-hawkes-bay-district-council-website_page-8c78a8d0",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.chbdc.govt.nz"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 405: Not Allowed",
+      "source_id": "central-otago-district-council-website_page-d2fc9f64",
+      "source_type": "website_page",
+      "status": "method_not_allowed",
+      "url": "https://www.codc.govt.nz"
+    },
+    {
+      "agency_id": "charter-school-agency",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "charter-school-agency-website_page-e25314e9",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.charterschools.govt.nz"
+    },
+    {
+      "agency_id": "chatham-islands-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "The read operation timed out",
+      "source_id": "chatham-islands-council-website_page-fdb26d29",
+      "source_type": "website_page",
+      "status": "capture_failed",
+      "url": "https://us17.campaign-archive.com/home/?u=0d7d1b7e2a53c8cd46868914d&id=35e8af1465"
+    },
+    {
+      "agency_id": "chatham-islands-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "chatham-islands-council-website_page-eb01d238",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.cic.govt.nz"
+    },
+    {
+      "agency_id": "childrens-commissioner",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "childrens-commissioner-website_page-c92a376b",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.manamokopuna.org.nz"
     }
   ],
   "summary": {
     "platform_counts": {
-      "website_page": 10
+      "website_page": 25
     },
-    "selected_sources": 10,
+    "selected_sources": 25,
     "status_by_platform": {
       "website_page": {
+        "already_captured": 7,
         "capture_blocked": 1,
-        "captured": 7,
-        "dns_failed": 1,
+        "capture_failed": 2,
+        "captured": 10,
+        "dns_failed": 2,
+        "method_not_allowed": 1,
+        "network_error": 1,
         "not_acceptable": 1
       }
     },
     "status_counts": {
+      "already_captured": 7,
       "capture_blocked": 1,
-      "captured": 7,
-      "dns_failed": 1,
+      "capture_failed": 2,
+      "captured": 10,
+      "dns_failed": 2,
+      "method_not_allowed": 1,
+      "network_error": 1,
       "not_acceptable": 1
     }
   }
