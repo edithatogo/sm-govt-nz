@@ -32,7 +32,7 @@ on:
       source_types:
         description: "Comma-separated source types to fan out"
         required: true
-        default: "rss,json_feed,bluesky,youtube,website_page,threads,social_profile"
+        default: "rss,json_feed,api,bluesky,youtube,website_page,threads,social_profile"
       release_version:
         description: "Optional monthly release version for HF publish, normally YYYY-MM"
         required: false
@@ -76,7 +76,7 @@ jobs:
         id: matrix
         run: >-
           python scripts/build_historical_backlog_matrix.py
-          --source-types "${{ inputs.source_types || 'rss,json_feed,bluesky,youtube,website_page,threads,social_profile' }}"
+          --source-types "${{ inputs.source_types || 'rss,json_feed,api,bluesky,youtube,website_page,threads,social_profile' }}"
           --batch-size "${{ inputs.batch_size || '100' }}"
           --max-batches "${{ inputs.max_batches || '0' }}"
           --output conductor/historical_backlog_matrix.json

@@ -30,7 +30,7 @@ DEFAULT_SUMMARY = Path("conductor/govt_archive_registered_sources_summary.md")
 DEFAULT_RAW_ROOT = Path("historical_archive_raw")
 DEFAULT_NORMALIZED_ROOT = Path("historical_archive_normalized")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
-SUPPORTED_PLATFORMS = {"rss", "json_feed", "website_page", "bluesky", "youtube", "threads", *MANUAL_SEED_PLATFORMS}
+SUPPORTED_PLATFORMS = {"rss", "json_feed", "website_page", "bluesky", "youtube", "threads", "api", *MANUAL_SEED_PLATFORMS}
 
 
 def now_iso() -> str:
@@ -605,7 +605,7 @@ def archive_rss_source(
 
 
 def json_feed_item_timestamp(item: dict[str, Any]) -> str:
-    for key in ("date_published", "date_modified"):
+    for key in ("date_published", "date_modified", "date", "modified", "created_at", "updated_at"):
         value = item.get(key)
         if isinstance(value, str) and value.strip():
             try:
@@ -613,6 +613,63 @@ def json_feed_item_timestamp(item: dict[str, Any]) -> str:
             except ValueError:
                 continue
     return now_iso()
+
+
+def value_text(value: Any) -> str:
+    if isinstance(value, str):
+        return value.strip()
+    if isinstance(value, dict):
+        for key in ("rendered", "text", "html", "plain"):
+            nested = value.get(key)
+            if isinstance(nested, str) and nested.strip():
+                return nested.strip()
+    return ""
+
+
+def json_feed_items(payload: Any) -> list[dict[str, Any]]:
+    if isinstance(payload, list):
+        return [item for item in payload if isinstance(item, dict)]
+    if not isinstance(payload, dict):
+        return []
+    items = payload.get("items")
+    if isinstance(items, list):
+        return [item for item in items if isinstance(item, dict)]
+    for key in ("data", "results", "posts", "pages"):
+        nested = payload.get(key)
+        if isinstance(nested, list):
+            return [item for item in nested if isinstance(item, dict)]
+    return [payload]
+
+
+def json_feed_item_url(item: dict[str, Any], feed_url: str) -> str:
+    guid = item.get("guid")
+    links = item.get("_links")
+    if isinstance(links, dict):
+        self_links = links.get("self")
+        if isinstance(self_links, list) and self_links and isinstance(self_links[0], dict):
+            href = self_links[0].get("href")
+            if isinstance(href, str) and href:
+                return href
+    if isinstance(guid, dict):
+        rendered = guid.get("rendered")
+        if isinstance(rendered, str) and rendered:
+            return rendered
+    return str(item.get("url") or item.get("link") or item.get("external_url") or item.get("id") or feed_url)
+
+
+def json_feed_item_content(item: dict[str, Any]) -> str:
+    return "\n\n".join(
+        part
+        for part in [
+            value_text(item.get("title")),
+            value_text(item.get("summary")),
+            value_text(item.get("excerpt")),
+            value_text(item.get("content_text")),
+            value_text(item.get("content_html")),
+            value_text(item.get("content")),
+        ]
+        if part
+    )
 
 
 def archive_json_feed_source(
@@ -624,17 +681,15 @@ def archive_json_feed_source(
 ) -> list[dict[str, Any]]:
     feed_url = str(source.get("url") or "")
     payload = json.loads(fetch_text(feed_url, timeout=fetch_timeout))
-    items = payload.get("items")
-    if not isinstance(items, list):
-        return [source_result(source, "no_records", "JSON feed returned no items array")]
+    items = json_feed_items(payload)
+    if not items:
+        return [source_result(source, "no_records", "JSON feed parsed but returned no object records")]
 
     results = []
     for item in items:
-        if not isinstance(item, dict):
-            continue
-        item_url = str(item.get("url") or item.get("external_url") or item.get("id") or feed_url)
+        item_url = json_feed_item_url(item, feed_url)
         created_at = json_feed_item_timestamp(item)
-        record_key = stable_id(f"{source.get('source_id')}|{item_url}|{item.get('title', '')}")
+        record_key = stable_id(f"{source.get('source_id')}|{item_url}|{value_text(item.get('title'))}")
         raw_rel = Path("json_feed") / month_from_timestamp(created_at) / f"{record_key}.json"
         raw_path = raw_root / raw_rel
         raw_path.parent.mkdir(parents=True, exist_ok=True)
@@ -654,14 +709,7 @@ def archive_json_feed_source(
                 + "\n",
                 encoding="utf-8",
             )
-        content = "\n\n".join(
-            part
-            for part in [
-                str(item.get("title") or ""),
-                str(item.get("summary") or item.get("content_text") or item.get("content_html") or ""),
-            ]
-            if part
-        )
+        content = json_feed_item_content(item)
         normalized = build_normalized_record(
             record_id=f"json_feed:{record_key}",
             agency_id=str(source.get("agency_id") or ""),
@@ -688,6 +736,68 @@ def archive_json_feed_source(
     if not results:
         results.append(source_result(source, "no_records", "JSON feed parsed but returned no item records"))
     return results
+
+
+def api_keyless(source: dict[str, Any]) -> bool:
+    auth = str(source.get("auth") or "").strip().lower()
+    access_method = str(source.get("access_method") or "").strip().lower()
+    return auth in {"", "none", "none_or_token"} or access_method in {"public_api_or_openapi", "public_json_feed"}
+
+
+def archive_api_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    *,
+    fetch_timeout: int = 30,
+) -> list[dict[str, Any]]:
+    if not api_keyless(source):
+        return [source_result(source, "auth_required", "API endpoint is not marked keyless")]
+    captured_at = now_iso()
+    url = str(source.get("url") or "")
+    body = fetch_text(url, timeout=fetch_timeout)
+    record_key = stable_id(f"{source.get('source_id')}|{url}")
+    raw_rel = Path("api") / captured_at[:7] / f"{record_key}.json"
+    raw_path = raw_root / raw_rel
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    if not raw_path.exists():
+        raw_path.write_text(
+            json.dumps(
+                {
+                    "captured_at": captured_at,
+                    "source": source,
+                    "url": url,
+                    "body": body,
+                },
+                indent=2,
+                sort_keys=True,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+    normalized = build_normalized_record(
+        record_id=f"api:{record_key}",
+        agency_id=str(source.get("agency_id") or ""),
+        source_platform="api",
+        source_account=str(source.get("account") or url),
+        source_kind=str(source.get("source_type") or "api_endpoint"),
+        source_url=url,
+        canonical_url=url,
+        original_created_at=captured_at,
+        captured_at=captured_at,
+        content=body[:100_000],
+        raw_path=str(raw_path),
+        extraction_method="generic_keyless_api_snapshot",
+        cross_source_ids={"source_id": str(source.get("source_id") or "")},
+    )
+    inserted = append_normalized_record(normalized_root, "api", normalized)
+    return [
+        source_result(
+            source,
+            "captured" if inserted else "already_captured",
+            "captured keyless public API/source documentation snapshot" if inserted else "api snapshot already present",
+        )
+    ]
 
 
 def threads_user_id(source: dict[str, Any]) -> str:
@@ -919,6 +1029,13 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 normalized_root,
                 fetch_timeout=getattr(args, "fetch_timeout", 30),
             )
+        if platform == "api" or source.get("source_type") == "api_endpoint":
+            return archive_api_source(
+                source,
+                raw_root,
+                normalized_root,
+                fetch_timeout=getattr(args, "fetch_timeout", 30),
+            )
         if platform == "bluesky":
             return archive_bluesky_source(source, raw_root, normalized_root, max_pages=getattr(args, "max_bluesky_pages", 1))
         if platform == "youtube":
@@ -991,7 +1108,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     courts_report = run_courts_current_sources_if_selected(selected, args.dry_run)
     for source in selected:
         platform = source.get("platform")
-        if platform in SUPPORTED_PLATFORMS or source.get("source_type") in {"rss_feed", "json_feed", "website_page"}:
+        if platform in SUPPORTED_PLATFORMS or source.get("source_type") in {"rss_feed", "json_feed", "website_page", "api_endpoint"}:
             results.extend(capture_registered_source(source, args))
         else:
             results.append(
@@ -1101,7 +1218,7 @@ def main() -> None:
     parser.add_argument(
         "--source-type",
         default="all_feasible",
-        choices=["all_feasible", "rss", "json_feed", "website_page", "social_profile", "bluesky", "youtube", "facebook", "instagram", "threads", "linkedin", "newsletter", "x"],
+        choices=["all_feasible", "rss", "json_feed", "website_page", "api", "api_endpoint", "social_profile", "bluesky", "youtube", "facebook", "instagram", "threads", "linkedin", "newsletter", "x"],
     )
     parser.add_argument("--agency-id", default="")
     parser.add_argument("--include-blocked", action="store_true")

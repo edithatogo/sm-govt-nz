@@ -5,7 +5,9 @@ from urllib.error import HTTPError, URLError
 
 import scripts.archive_registered_sources as archive_registered_sources
 from scripts.archive_registered_sources import (
+    archive_api_source,
     archive_bluesky_source,
+    archive_json_feed_source,
     archive_manual_seed_source,
     archive_rss_source,
     archive_website_source,
@@ -346,6 +348,80 @@ def test_archive_youtube_source_reports_bad_youtube_non_channel_url(tmp_path):
 
     assert results[0]["status"] == "capture_failed"
     assert results[0]["reason"] == "YouTube channel resolver failed: YouTube URL is not a channel URL"
+
+
+def test_archive_json_feed_source_archives_single_json_object(tmp_path, monkeypatch):
+    source = {
+        "source_id": "agency-json",
+        "agency_id": "agency",
+        "platform": "json_feed",
+        "source_type": "json_feed",
+        "url": "https://agency.example/wp-json/wp/v2/pages/1",
+        "account": "Agency",
+        "archive_status": "ready",
+        "feasibility": "high",
+    }
+
+    monkeypatch.setattr(
+        archive_registered_sources,
+        "fetch_text",
+        lambda url, timeout=30: json.dumps(
+            {
+                "id": 1,
+                "link": "https://agency.example/page",
+                "date": "2026-06-10T00:00:00",
+                "title": {"rendered": "Agency page"},
+                "content": {"rendered": "Public API-backed page body"},
+            }
+        ),
+    )
+
+    results = archive_json_feed_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+
+    assert results[0]["status"] == "captured"
+    normalized = (tmp_path / "normalized" / "json_feed" / "2026-06.jsonl").read_text(encoding="utf-8")
+    assert "Agency page" in normalized
+    assert "Public API-backed page body" in normalized
+
+
+def test_archive_api_source_archives_keyless_public_snapshot(tmp_path, monkeypatch):
+    source = {
+        "source_id": "agency-api",
+        "agency_id": "agency",
+        "platform": "api",
+        "source_type": "api_endpoint",
+        "url": "https://agency.example/openapi.json",
+        "account": "Agency API",
+        "archive_status": "candidate",
+        "access_method": "public_api_or_openapi",
+        "auth": "none",
+        "feasibility": "medium",
+    }
+    monkeypatch.setattr(archive_registered_sources, "fetch_text", lambda url, timeout=30: '{"openapi":"3.1.0"}')
+
+    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+
+    assert results[0]["status"] == "captured"
+    assert list((tmp_path / "raw" / "api" / "2026-07").glob("*.json"))
+    normalized = (tmp_path / "normalized" / "api" / "2026-07.jsonl").read_text(encoding="utf-8")
+    assert "api:" in normalized
+    assert "generic_keyless_api_snapshot" in normalized
+
+
+def test_archive_api_source_reports_auth_required_for_non_keyless_source(tmp_path):
+    source = {
+        "source_id": "agency-api",
+        "agency_id": "agency",
+        "platform": "api",
+        "source_type": "api_endpoint",
+        "url": "https://agency.example/private",
+        "archive_status": "candidate",
+        "auth": "api_key_required",
+    }
+
+    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+
+    assert results[0]["status"] == "auth_required"
 
 
 def test_archive_rss_source_does_not_rewrite_existing_raw_record(tmp_path):
