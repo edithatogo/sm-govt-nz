@@ -11,6 +11,7 @@ from scripts.archive_registered_sources import (
     archive_manual_seed_source,
     archive_rss_source,
     archive_website_source,
+    archive_x_public_snapshot_source,
     archive_x_source,
     archive_youtube_source,
     build_report,
@@ -812,6 +813,58 @@ def test_archive_x_api_disabled_reports_missing_seed(tmp_path, monkeypatch):
 
     assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
     assert "X API capture is disabled" in report["results"][0]["reason"]
+
+
+def test_archive_x_public_snapshot_source_writes_profile_snapshot(tmp_path):
+    result = archive_x_public_snapshot_source(
+        x_source(),
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        fetcher=lambda url, timeout=30: (
+            "<html><head><title>Agency / X</title>"
+            '<meta property="og:description" content="Official agency updates on X">'
+            "</head><body></body></html>"
+        ),
+    )
+
+    assert result["status"] == "public_snapshot_captured"
+    assert list((tmp_path / "raw" / "x_public_snapshot" / "2026-07").glob("*.json"))
+    normalized_path = tmp_path / "normalized" / "x" / "2026-07.jsonl"
+    record = json.loads(normalized_path.read_text(encoding="utf-8"))
+    assert record["source_platform"] == "x"
+    assert record["source_kind"] == "public_profile_snapshot"
+    assert record["extraction_method"] == "x_public_web_snapshot"
+    assert "Official agency updates on X" in record["content"]
+
+
+def test_archive_x_api_disabled_uses_public_snapshot_fallback_when_enabled(tmp_path, monkeypatch):
+    monkeypatch.delenv("X_API_CAPTURE_ENABLED", raising=False)
+    monkeypatch.setenv("X_PUBLIC_SNAPSHOT_ENABLED", "true")
+    monkeypatch.setattr(
+        archive_registered_sources,
+        "fetch_text",
+        lambda url, timeout=30: "<html><head><title>Agency / X</title></head></html>",
+    )
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(json.dumps({"sources": [x_source()]}), encoding="utf-8")
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            report=tmp_path / "report.json",
+            source_type="x",
+            agency_id="",
+            include_blocked=True,
+            dry_run=False,
+            raw_root=tmp_path / "raw",
+            normalized_root=tmp_path / "normalized",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            max_x_posts=25,
+            fetch_timeout=30,
+        )
+    )
+
+    assert report["summary"]["status_counts"] == {"public_snapshot_captured": 1}
 
 
 def threads_source() -> dict[str, str]:
