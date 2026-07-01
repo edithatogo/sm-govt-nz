@@ -13,6 +13,9 @@ The local wrappers run through `uv run --python 3.14` so validation does not
 depend on the Windows Store `python` alias. CI enforces the same project Python
 version.
 
+The repo targets Python 3.14 only. Do not add compatibility branches, fallback
+paths, or workflow pins for earlier Python versions.
+
 ## Workflow contracts
 
 Workflow behavior that affects archive state should have a focused contract test
@@ -37,6 +40,9 @@ triage and should point back to the JSON report when detailed review is needed.
 
 ## Operating rules
 
+- Keep dependency updates automated through Renovate. Python requirements,
+  PEP 621 dependencies, `uv.lock`, and GitHub Actions should be updated by
+  dependency PRs unless a dependency must be deliberately held back.
 - Keep scheduled workflows bounded with limits, offsets, and timeouts.
 - Prefer sharded backlog runs for large historical captures.
 - Commit reports separately from payload files unless a workflow explicitly opts

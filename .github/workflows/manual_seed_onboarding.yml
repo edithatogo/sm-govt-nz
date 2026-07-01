@@ -30,7 +30,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
+          python-version: "3.14"
       - name: Build manual/API onboarding report
         run: >-
           python scripts/build_manual_seed_onboarding_report.py

@@ -165,7 +165,6 @@ def main():
         try:
             sys.stdout.reconfigure(encoding="utf-8")
         except AttributeError:
-            # Fallback for older python versions if needed
             pass
 
     registry = load_registry()

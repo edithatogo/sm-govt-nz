@@ -6,7 +6,7 @@
 *   **Dependency Management:** **`uv`** (Rust-based Python package installer) and **Renovate** (automated package dependency manager).
 
 ## Backend / Scripting Stack (Python)
-*   **Language Version:** Python 3.11+
+*   **Language Version:** Python 3.14 only
 *   **Type Checker:** **`ty` (in strict mode)** via `uvx ty check`
 *   **Prose Linter:** **Vale** (for markdown validation)
 *   **Profiler:** **Scalene** (high-precision CPU, GPU, and memory profiling)

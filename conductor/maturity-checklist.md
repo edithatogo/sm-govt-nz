@@ -2,7 +2,7 @@
 
 | Category | Status | Rationale |
 |---|---|---|
-| Python environment manager (uv/pixi) | `required` | uv already adopted: `uv.lock` resolves pyproject deps, `uv pip install` in CI, `uv python install 3.11` in 4+ workflows. Pixi not used and not needed. |
+| Python environment manager (uv/pixi) | `required` | uv already adopted: `uv.lock` resolves pyproject deps, `uv pip install` in CI, and workflow/runtime pins now target Python 3.14. Pixi not used and not needed. |
 | Python lint/format (ruff) | `required` | Already configured in `pyproject.toml`. Current selection (E4, E7, E9, F) is very minimal — should expand to broader rule sets for maturity. |
 | Python type checking (ty/pyright) | `optional` | tech-stack.md claims `ty` in strict mode via `uvx ty check`, but no config exists and the codebase uses `TypedDict` + `cast` without enforcement. Would require significant refactoring to pass strict mode. Adopt when the codebase is ready. |
 | Python logging (loguru) | `required` | Declared in `pyproject.toml` deps and in `[tool.legal_nz]` convention. Not yet imported in any source file — should be adopted across the codebase. |
