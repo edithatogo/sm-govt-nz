@@ -1,4 +1,3 @@
-import argparse
 import json
 
 from scripts.build_archive_failure_triage_report import build_report, main
