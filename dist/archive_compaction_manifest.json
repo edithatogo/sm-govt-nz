@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T00:23:29+00:00",
+  "generated_at": "2026-07-01T05:22:19+00:00",
   "normalized": [
     {
       "bytes": 3420,
@@ -106,19 +106,35 @@
       "source": "bluesky"
     },
     {
-      "bytes": 145882,
+      "bytes": 169925,
       "month": "2026-06",
       "path": "historical_archive_normalized/bluesky/2026-06.jsonl",
-      "record_count": 140,
-      "sha256": "db3c405946b82b159ff27038fdf8e9e68b8c38f18f6bfa9883cb8941a9c90778",
+      "record_count": 165,
+      "sha256": "16a90fe6a60d735fd93b9cb516ab8a6f00bda3c8c27fae4c12ad75e75d6f451e",
       "source": "bluesky"
     },
     {
-      "bytes": 12838,
+      "bytes": 1368,
+      "month": "2026-07",
+      "path": "historical_archive_normalized/bluesky/2026-07.jsonl",
+      "record_count": 1,
+      "sha256": "59c4e36ead3c1cf4b4a2fb54f820fb70caaa40dcd24c62ae04f05f058b5e5732",
+      "source": "bluesky"
+    },
+    {
+      "bytes": 14096,
       "month": "2026-06",
       "path": "historical_archive_normalized/email/2026-06.jsonl",
-      "record_count": 11,
-      "sha256": "4cbb26acb15e810b2e65132f9faeaee3698500e5bffe5fc9bb636f1fe5ba4f0d",
+      "record_count": 12,
+      "sha256": "fce791f064b97aa89db0e145d59e07750de714abc2938bc509274b24e2e8a27c",
+      "source": "email"
+    },
+    {
+      "bytes": 2573,
+      "month": "2026-07",
+      "path": "historical_archive_normalized/email/2026-07.jsonl",
+      "record_count": 2,
+      "sha256": "1b96f31a10d001c5804f1f3150faaa2703b90bee88bca52d645fd15e8ab3fbde",
       "source": "email"
     },
     {
@@ -2218,6 +2234,14 @@
       "source": "website"
     },
     {
+      "bytes": 6004160,
+      "month": "2026-07",
+      "path": "historical_archive_normalized/website/2026-07.jsonl",
+      "record_count": 62,
+      "sha256": "2e9c79329bd1fdd540408d5d9e9edb3afc54a13d70dda74d1da0f9f09d04510f",
+      "source": "website"
+    },
+    {
       "bytes": 813,
       "month": "2015-12",
       "path": "historical_archive_normalized/x/2015-12.jsonl",
@@ -3536,6 +3560,14 @@
       "record_count": 505,
       "sha256": "69f780c751a3b57383f63eb89d8f3b1278298cb9d25aaa89f3a9d276080e6c45",
       "source": "youtube"
+    },
+    {
+      "bytes": 1799,
+      "month": "2026-07",
+      "path": "historical_archive_normalized/youtube/2026-07.jsonl",
+      "record_count": 1,
+      "sha256": "8c9dc3ac61a0e3b8d6e615997579f3a16f0e0741eeddc648638b94d2513d7996",
+      "source": "youtube"
     }
   ],
   "policy": {
@@ -3663,21 +3695,39 @@
       "source": "bluesky"
     },
     {
-      "bytes": 168414,
+      "bytes": 199492,
       "digest_mode": "path_size_inventory",
-      "file_count": 140,
+      "file_count": 165,
       "month": "2026-06",
       "path": "historical_archive_raw/bluesky/2026-06",
-      "sha256": "b7a9225bfef9f3638cf67f916085c6a29062d11e3e6f4262b69f7e32479ce035",
+      "sha256": "2ec08fd42796da8802c4bef73a21932c73e621cf243e1e8dedbf0814338cb538",
       "source": "bluesky"
     },
     {
-      "bytes": 44157,
+      "bytes": 1179,
       "digest_mode": "path_size_inventory",
-      "file_count": 11,
+      "file_count": 1,
+      "month": "2026-07",
+      "path": "historical_archive_raw/bluesky/2026-07",
+      "sha256": "ec2d0870717ca9014878249b9ea236ec108b233de3a1409214a2de098812291d",
+      "source": "bluesky"
+    },
+    {
+      "bytes": 52149,
+      "digest_mode": "path_size_inventory",
+      "file_count": 12,
       "month": "2026-06",
       "path": "historical_archive_raw/email/2026-06",
-      "sha256": "a4f83a14a1b676e4b807e2d1c8d47f037240a632b3db7ec035d9b5d7469a8014",
+      "sha256": "81fb795d12e81d1336714f5b36e9ab0532f8149afca0b7055406e1742f3d2f3f",
+      "source": "email"
+    },
+    {
+      "bytes": 15912,
+      "digest_mode": "path_size_inventory",
+      "file_count": 2,
+      "month": "2026-07",
+      "path": "historical_archive_raw/email/2026-07",
+      "sha256": "5683bfee53350dc8d7a6c35f3311bf399752d573c2e6f82357f5e538392eb687",
       "source": "email"
     },
     {
@@ -6057,6 +6107,15 @@
       "source": "website"
     },
     {
+      "bytes": 52274483,
+      "digest_mode": "path_size_inventory",
+      "file_count": 261,
+      "month": "2026-07",
+      "path": "historical_archive_raw/website/2026-07",
+      "sha256": "1c3c7461129579574ea294b2b441d152a5953b1f027f1abf9647d6fc70f9f8fb",
+      "source": "website"
+    },
+    {
       "bytes": 917,
       "digest_mode": "path_size_inventory",
       "file_count": 1,
@@ -7398,12 +7457,12 @@
       "source": "youtube"
     },
     {
-      "bytes": 31110,
+      "bytes": 43751,
       "digest_mode": "path_size_inventory",
-      "file_count": 6,
+      "file_count": 10,
       "month": "2025-03",
       "path": "historical_archive_raw/youtube/2025-03",
-      "sha256": "73ca102dd19ac3ede66f21897e801c4a6d366fe27d2fb270b9c75c97cbbc04ea",
+      "sha256": "8749da0559f1f8b6a76027d4378f87cf9683693c410cdda72c7ab6402a2b1397",
       "source": "youtube"
     },
     {
@@ -7434,21 +7493,21 @@
       "source": "youtube"
     },
     {
-      "bytes": 69225,
+      "bytes": 91452,
       "digest_mode": "path_size_inventory",
-      "file_count": 16,
+      "file_count": 23,
       "month": "2025-07",
       "path": "historical_archive_raw/youtube/2025-07",
-      "sha256": "039c678e0dcf2031b530d6b0a03b4a424f7fa0ec79ed2c2b8e9a864bb6e1150f",
+      "sha256": "9342c6bbcb735d3668b7ac0faf05d928188cc0e032c2a4050f6ff45f4ee0fa7e",
       "source": "youtube"
     },
     {
-      "bytes": 135155,
+      "bytes": 173947,
       "digest_mode": "path_size_inventory",
-      "file_count": 38,
+      "file_count": 50,
       "month": "2025-08",
       "path": "historical_archive_raw/youtube/2025-08",
-      "sha256": "c1d86fb3b0c18fba96f83c52a62bfd96a0d94d0dcc10af09664b38097b956e11",
+      "sha256": "a4cb8080979a4f4374db144f5713a9602496062cabe562463b579c256662b2ef",
       "source": "youtube"
     },
     {
@@ -7461,12 +7520,12 @@
       "source": "youtube"
     },
     {
-      "bytes": 166591,
+      "bytes": 171236,
       "digest_mode": "path_size_inventory",
-      "file_count": 49,
+      "file_count": 50,
       "month": "2025-10",
       "path": "historical_archive_raw/youtube/2025-10",
-      "sha256": "124ff5285d6f5fd0db64b50b4b1e0860250df2448d7edd4579868d2468b32f09",
+      "sha256": "a191041767d095cf863dc81f44645bd9fdf33d4771d994b800557f559fcf1ca1",
       "source": "youtube"
     },
     {
@@ -7479,75 +7538,84 @@
       "source": "youtube"
     },
     {
-      "bytes": 239495,
+      "bytes": 246736,
       "digest_mode": "path_size_inventory",
-      "file_count": 67,
+      "file_count": 69,
       "month": "2025-12",
       "path": "historical_archive_raw/youtube/2025-12",
-      "sha256": "848a62f80034888af60b6cb48659ab5ad7cbe6aef052637389647b218e824dd4",
+      "sha256": "b9076c11e48d28da3b2bace085d089563a942f55948a0f672f5e0f0f0531ba5b",
       "source": "youtube"
     },
     {
-      "bytes": 139519,
+      "bytes": 170595,
       "digest_mode": "path_size_inventory",
-      "file_count": 35,
+      "file_count": 43,
       "month": "2026-01",
       "path": "historical_archive_raw/youtube/2026-01",
-      "sha256": "b492112f99fca25c3ecc3e5df5c3650aac8edf672d9e38d31733d7416a40a957",
+      "sha256": "86440c6dd1aeb0853447ac732a7743d523526222931ef5a0b67d4b136981b0e7",
       "source": "youtube"
     },
     {
-      "bytes": 282320,
+      "bytes": 296834,
       "digest_mode": "path_size_inventory",
-      "file_count": 60,
+      "file_count": 64,
       "month": "2026-02",
       "path": "historical_archive_raw/youtube/2026-02",
-      "sha256": "db1a3211d70c7d4a1777529bbe07516869db011eb38aedb6bfaed2d5b9b2fed5",
+      "sha256": "7967bd4f077435207d2c6f12431919915fde00973d7a9fff252c1ad0924ab1f1",
       "source": "youtube"
     },
     {
-      "bytes": 248738,
+      "bytes": 252042,
       "digest_mode": "path_size_inventory",
-      "file_count": 65,
+      "file_count": 66,
       "month": "2026-03",
       "path": "historical_archive_raw/youtube/2026-03",
-      "sha256": "d2496785012acd95e5b8ba837d0f742a8b875ee364ed1a186dffc321c7408470",
+      "sha256": "091774046e67e24de272460373f41f9614eb2a40bd74320cced8dc93348cdd36",
       "source": "youtube"
     },
     {
-      "bytes": 329396,
+      "bytes": 405628,
       "digest_mode": "path_size_inventory",
-      "file_count": 89,
+      "file_count": 109,
       "month": "2026-04",
       "path": "historical_archive_raw/youtube/2026-04",
-      "sha256": "ecb34b027ead08af72af558bfafae5b40413f1411d6dda77a68838bf3e1abc9b",
+      "sha256": "9b56e455b81587c88c71472d684ba537119fa1b6dcc1999a397d4706d3fa080a",
       "source": "youtube"
     },
     {
-      "bytes": 1017633,
+      "bytes": 1064266,
       "digest_mode": "path_size_inventory",
-      "file_count": 278,
+      "file_count": 289,
       "month": "2026-05",
       "path": "historical_archive_raw/youtube/2026-05",
-      "sha256": "a5d20a757fd999abaccbd8b34cfd9b3bcb7e8c7c7884409265ef846b7d61d393",
+      "sha256": "eeb970eeea7d9130d98f14506c75e5103077dba9f49c0c84d3bf60aa5659df21",
       "source": "youtube"
     },
     {
-      "bytes": 1911639,
+      "bytes": 1986623,
       "digest_mode": "path_size_inventory",
-      "file_count": 505,
+      "file_count": 525,
       "month": "2026-06",
       "path": "historical_archive_raw/youtube/2026-06",
-      "sha256": "6b20ea0c5d9baf3d3e65e691be4d4ea7dd464e7e6b717ee367e40ed229b8fd86",
+      "sha256": "7fe79f512a047ca4d34cde186cad090ea96ec030523f4b02ed01e1152d914230",
+      "source": "youtube"
+    },
+    {
+      "bytes": 4810,
+      "digest_mode": "path_size_inventory",
+      "file_count": 1,
+      "month": "2026-07",
+      "path": "historical_archive_raw/youtube/2026-07",
+      "sha256": "ea3d8c24a10018b754dddb879fb029fd047a6f98d81a7b9b793241bd455f752e",
       "source": "youtube"
     }
   ],
   "totals": {
-    "normalized_bytes": 25717555,
-    "normalized_record_count": 6995,
-    "normalized_shard_count": 442,
-    "raw_bytes": 53814596,
-    "raw_file_count": 6997,
-    "raw_shard_count": 444
+    "normalized_bytes": 31752756,
+    "normalized_record_count": 7087,
+    "normalized_shard_count": 446,
+    "raw_bytes": 106482339,
+    "raw_file_count": 7378,
+    "raw_shard_count": 448
   }
 }
