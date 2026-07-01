@@ -15,10 +15,14 @@ def test_archive_registered_sources_dry_run_commits_only_report() -> None:
     assert "requirements: requirements.txt" in workflow
     assert "inputs.source_type || 'scheduled'" in workflow
     assert "inputs.offset_sources || '0'" in workflow
+    assert "Resolve archive report paths" in workflow
+    assert "ARCHIVE_REPORT_PATH=$report_path" in workflow
+    assert "--report \"$ARCHIVE_REPORT_PATH\"" in workflow
+    assert "--summary \"$ARCHIVE_SUMMARY_PATH\"" in workflow
     dry_run_block = workflow.split("- name: Commit archive report updates", 1)[1].split("- name: Commit archive capture reports", 1)[0]
     assert "inputs.dry_run == 'true'" in dry_run_block
-    assert "conductor/govt_archive_registered_sources_report.json" in dry_run_block
-    assert "conductor/govt_archive_registered_sources_summary.md" in dry_run_block
+    assert '"$ARCHIVE_REPORT_PATH"' in dry_run_block
+    assert '"$ARCHIVE_SUMMARY_PATH"' in dry_run_block
     assert "dist/archive_manifest.json" not in dry_run_block
     assert "historical_archive_raw/**" not in dry_run_block
 
@@ -31,7 +35,8 @@ def test_archive_registered_sources_capture_commits_and_uploads_generated_artifa
     assert "dist/archive_manifest.json" in capture_block
     assert "dist/archive_compaction_manifest.json" in capture_block
     assert "--max-attempts 10" in capture_block
-    assert "conductor/govt_archive_registered_sources_summary.md" in capture_block
+    assert '"$ARCHIVE_REPORT_PATH"' in capture_block
+    assert '"$ARCHIVE_SUMMARY_PATH"' in capture_block
     assert "historical_archive_raw/**" not in capture_block
     assert "historical_archive_normalized/**" not in capture_block
     assert "dist/historical_archive.tar.gz" in workflow
@@ -86,7 +91,7 @@ def test_historical_backlog_workflow_fans_out_source_shards_and_hf_publish() -> 
     assert "name: Archive Historical Backlog" in workflow
     assert "actions: write" in workflow
     assert "scripts/build_historical_backlog_matrix.py" in workflow
-    assert "default: \"rss,json_feed,bluesky,youtube,website_page,threads,social_profile\"" in workflow
+    assert "default: \"rss,json_feed,api,bluesky,youtube,website_page,threads,social_profile\"" in workflow
     assert "matrix: ${{ fromJson(needs.build-backlog-matrix.outputs.matrix) }}" in workflow
     assert "batch_count: ${{ steps.matrix.outputs.batch_count }}" in workflow
     assert "gh workflow run \"Archive Registered Sources\"" in workflow
