@@ -38,6 +38,15 @@ def test_workflows_do_not_pin_python_311() -> None:
     assert "uv python install 3.11" not in workflow_text
 
 
+def test_workflows_install_python_dependencies_with_uv() -> None:
+    workflow_text = "\n".join(
+        path.read_text(encoding="utf-8") for path in Path(".github/workflows").glob("*.yml")
+    )
+
+    assert "python -m pip install -r requirements" not in workflow_text
+    assert "uv pip install --system -r requirements" in workflow_text
+
+
 def test_renovate_tracks_latest_python_and_workflow_dependencies() -> None:
     config = json.loads(Path("renovate.json").read_text(encoding="utf-8"))
 
