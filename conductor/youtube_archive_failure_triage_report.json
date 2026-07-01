@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-07-01T04:04:29+00:00",
+  "inputs": {
+    "reports": [
+      "conductor\\youtube_archive_report.json"
+    ]
+  },
+  "items": [
+    {
+      "agency_id": "ara-institute-of-canterbury",
+      "platform": "youtube",
+      "reason": "YouTube channel RSS returned no entries",
+      "recommended_action": "monitor_or_verify_channel_activity",
+      "report": "conductor\\youtube_archive_report.json",
+      "source_id": "ara-institute-of-canterbury-youtube-412c4f86",
+      "status": "no_records",
+      "url": "https://www.youtube.com/@AraInstitute"
+    },
+    {
+      "agency_id": "broadcasting-standards-authority",
+      "platform": "youtube",
+      "reason": "could not resolve YouTube channel id",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor\\youtube_archive_report.json",
+      "source_id": "broadcasting-standards-authority-youtube-acb2e172",
+      "status": "capture_failed",
+      "url": "https://www.youtube.com/yt/about/policies/#community-guidelines"
+    },
+    {
+      "agency_id": "civil-aviation-authority",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor\\youtube_archive_report.json",
+      "source_id": "civil-aviation-authority-youtube-99da4f7c",
+      "status": "capture_failed",
+      "url": "https://www.youtube.com/@CAANewZealand"
+    },
+    {
+      "agency_id": "eit",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: HTTP Error 404: Not Found",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor\\youtube_archive_report.json",
+      "source_id": "eit-youtube-e110f5c7",
+      "status": "capture_failed",
+      "url": "https://www.youtube.com/@EITHawkesBay"
+    }
+  ],
+  "report_summaries": {
+    "conductor\\youtube_archive_report.json": {
+      "dry_run": false,
+      "generated_at": "2026-07-01T01:55:37+00:00",
+      "summary": {
+        "platform_counts": {
+          "youtube": 25
+        },
+        "selected_sources": 25,
+        "status_by_platform": {
+          "youtube": {
+            "already_captured": 239,
+            "capture_failed": 3,
+            "captured": 38,
+            "no_records": 1
+          }
+        },
+        "status_counts": {
+          "already_captured": 239,
+          "capture_failed": 3,
+          "captured": 38,
+          "no_records": 1
+        }
+      }
+    }
+  },
+  "summary": {
+    "failure_count": 4,
+    "platform_counts": {
+      "youtube": 4
+    },
+    "status_counts": {
+      "capture_failed": 3,
+      "no_records": 1
+    }
+  }
+}

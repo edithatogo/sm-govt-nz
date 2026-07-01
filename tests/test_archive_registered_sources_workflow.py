@@ -38,8 +38,13 @@ def test_youtube_scheduled_workflow_uses_dedicated_report_and_limit() -> None:
 
     assert "--report conductor/youtube_archive_report.json" in workflow
     assert "--limit-sources \"$channel_limit\"" in workflow
+    assert "channel_limit=\"${CHANNEL_LIMIT:-50}\"" in workflow
+    assert "args+=(--agency-id \"$AGENCY_ID\")" in workflow
+    assert 'inputs.agency_id }}"' not in workflow
     assert "Commit YouTube dry-run report" in workflow
     assert "--path conductor/youtube_archive_report.json" in workflow
+    assert "scripts/build_archive_failure_triage_report.py" in workflow
+    assert "--path conductor/youtube_archive_failure_triage_report.json" in workflow
     assert "--force" in workflow
     assert "historical_archive_raw/youtube/**" in workflow
 
@@ -49,7 +54,12 @@ def test_website_scheduled_workflow_uses_dedicated_report_and_limit() -> None:
 
     assert "--report conductor/website_archive_report.json" in workflow
     assert "--limit-sources \"$page_limit\"" in workflow
+    assert "page_limit=\"${PAGE_LIMIT:-50}\"" in workflow
+    assert "args+=(--agency-id \"$AGENCY_ID\")" in workflow
+    assert 'inputs.agency_id }}"' not in workflow
     assert "Commit website dry-run report" in workflow
     assert "--path conductor/website_archive_report.json" in workflow
+    assert "scripts/build_archive_failure_triage_report.py" in workflow
+    assert "--path conductor/website_archive_failure_triage_report.json" in workflow
     assert "--force" in workflow
     assert "historical_archive_raw/website/**" in workflow

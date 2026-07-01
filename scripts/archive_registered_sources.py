@@ -3,6 +3,7 @@ import hashlib
 import json
 import os
 import re
+import socket
 import ssl
 import sys
 from collections import Counter
@@ -92,9 +93,13 @@ def website_failure_status(exc: Exception) -> str:
         reason = exc.reason
         if isinstance(reason, ssl.SSLError) or "CERTIFICATE_VERIFY_FAILED" in str(reason):
             return "tls_failed"
+        if isinstance(reason, TimeoutError) or isinstance(reason, socket.timeout) or "timed out" in str(reason).lower():
+            return "network_timeout"
         if "Name or service not known" in str(reason) or "getaddrinfo failed" in str(reason):
             return "dns_failed"
         return "network_error"
+    if isinstance(exc, TimeoutError) or isinstance(exc, socket.timeout) or "timed out" in str(exc).lower():
+        return "network_timeout"
     return "capture_failed"
 
 
@@ -104,6 +109,27 @@ def website_failure_reason(exc: Exception) -> str:
     if isinstance(exc, URLError):
         return f"URL error: {exc.reason}"
     return str(exc)[:300]
+
+
+def should_try_website_alternates(status: str) -> bool:
+    return status in {"capture_blocked", "method_not_allowed", "not_acceptable", "tls_failed", "dns_failed", "network_timeout"}
+
+
+def fetch_website_with_alternates(source_url: str, fetcher: Any, fetch_timeout: int, *, allow_alternates: bool) -> tuple[str, str]:
+    urls = [source_url]
+    if allow_alternates:
+        urls.extend(alternate_website_urls(source_url))
+    last_exc: Exception | None = None
+    for index, candidate_url in enumerate(urls):
+        try:
+            return candidate_url, fetcher(candidate_url, timeout=fetch_timeout)
+        except Exception as exc:  # noqa: BLE001 - caller classifies the final per-source failure.
+            last_exc = exc
+            if index == 0 and not should_try_website_alternates(website_failure_status(exc)):
+                break
+    if last_exc is None:
+        raise RuntimeError("no website URL candidates were available")
+    raise last_exc
 
 
 def month_from_timestamp(value: str) -> str:
@@ -184,22 +210,14 @@ def archive_website_source(
     captured_at = now_iso()
     url = str(source.get("url") or "")
     fetcher = website_fetcher or fetch_text
-    fetched_url = url
     try:
-        html = fetcher(url, timeout=fetch_timeout) if website_fetcher is None else fetcher(url)
+        if website_fetcher is None:
+            fetched_url, html = fetch_website_with_alternates(url, fetcher, fetch_timeout, allow_alternates=True)
+        else:
+            fetched_url = url
+            html = fetcher(url)
     except Exception as exc:  # noqa: BLE001 - per-source website report records fetch failures.
-        last_exc = exc
-        html = ""
-        if website_fetcher is None and website_failure_status(exc) in {"capture_blocked", "method_not_allowed", "not_acceptable", "tls_failed", "dns_failed"}:
-            for alternate_url in alternate_website_urls(url):
-                try:
-                    html = fetcher(alternate_url, timeout=fetch_timeout)
-                    fetched_url = alternate_url
-                    break
-                except Exception as alternate_exc:  # noqa: BLE001 - keep the final failed attempt for classification.
-                    last_exc = alternate_exc
-        if not html:
-            return source_result(source, website_failure_status(last_exc), website_failure_reason(last_exc))
+        return source_result(source, website_failure_status(exc), website_failure_reason(exc))
     record_key = stable_id(f"{source.get('source_id')}|{url}")
     raw_rel = Path("website") / captured_at[:7] / f"{record_key}.json"
     raw_path = raw_root / raw_rel
@@ -371,6 +389,13 @@ def youtube_channel_id_from_page(body: str) -> str:
 
 def resolve_youtube_channel_id(source: dict[str, Any], page_fetcher: Any | None = None, fetch_timeout: int = 30) -> str:
     url = str(source.get("url") or "")
+    parsed = urlparse(url)
+    host = parsed.netloc.lower()
+    if "youtube.com" not in host and "youtu.be" not in host:
+        raise ValueError("not a YouTube URL")
+    path_parts = [part for part in parsed.path.split("/") if part]
+    if path_parts and path_parts[0] in {"watch", "shorts", "embed", "yt"}:
+        raise ValueError("YouTube URL is not a channel URL")
     channel_id = youtube_channel_id_from_url(url)
     if channel_id:
         return channel_id

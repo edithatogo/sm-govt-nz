@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-07-01T04:04:29+00:00",
+  "inputs": {
+    "reports": [
+      "conductor\\website_archive_report.json"
+    ]
+  },
+  "items": [
+    {
+      "agency_id": "ashburton-district-council",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor\\website_archive_report.json",
+      "source_id": "ashburton-district-council-website_page-e266f7e9",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz"
+    },
+    {
+      "agency_id": "auckland-council",
+      "platform": "website_page",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "review_headers_or_alternate_url",
+      "report": "conductor\\website_archive_report.json",
+      "source_id": "auckland-council-website_page-3bc00b81",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz"
+    },
+    {
+      "agency_id": "auckland-light-rail",
+      "platform": "website_page",
+      "reason": "URL error: [Errno -2] Name or service not known",
+      "recommended_action": "verify_url_or_mark_stale",
+      "report": "conductor\\website_archive_report.json",
+      "source_id": "auckland-light-rail-website_page-680a0eb9",
+      "status": "dns_failed",
+      "url": "https://www.aucklandlightrail.co.nz"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "platform": "website_page",
+      "reason": "URL error: timed out",
+      "recommended_action": "retry_later",
+      "report": "conductor\\website_archive_report.json",
+      "source_id": "bay-of-plenty-regional-council-website_page-bdd5a053",
+      "status": "network_error",
+      "url": "https://www.boprc.govt.nz"
+    },
+    {
+      "agency_id": "cancer-control-agency",
+      "platform": "website_page",
+      "reason": "The read operation timed out",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor\\website_archive_report.json",
+      "source_id": "cancer-control-agency-website_page-000607de",
+      "status": "capture_failed",
+      "url": "https://teaho.govt.nz/index.php/blog/april-2026-canshare-newsletter"
+    },
+    {
+      "agency_id": "carterton-district-council",
+      "platform": "website_page",
+      "reason": "URL error: [Errno -2] Name or service not known",
+      "recommended_action": "verify_url_or_mark_stale",
+      "report": "conductor\\website_archive_report.json",
+      "source_id": "carterton-district-council-website_page-06a4a176",
+      "status": "dns_failed",
+      "url": "https://www.cartertondc.govt.nz"
+    },
+    {
+      "agency_id": "central-otago-district-council",
+      "platform": "website_page",
+      "reason": "HTTP 405: Not Allowed",
+      "recommended_action": "review_alternate_url",
+      "report": "conductor\\website_archive_report.json",
+      "source_id": "central-otago-district-council-website_page-d2fc9f64",
+      "status": "method_not_allowed",
+      "url": "https://www.codc.govt.nz"
+    },
+    {
+      "agency_id": "chatham-islands-council",
+      "platform": "website_page",
+      "reason": "The read operation timed out",
+      "recommended_action": "review_url_or_adapter",
+      "report": "conductor\\website_archive_report.json",
+      "source_id": "chatham-islands-council-website_page-fdb26d29",
+      "status": "capture_failed",
+      "url": "https://us17.campaign-archive.com/home/?u=0d7d1b7e2a53c8cd46868914d&id=35e8af1465"
+    }
+  ],
+  "report_summaries": {
+    "conductor\\website_archive_report.json": {
+      "dry_run": false,
+      "generated_at": "2026-07-01T01:56:29+00:00",
+      "summary": {
+        "platform_counts": {
+          "website_page": 25
+        },
+        "selected_sources": 25,
+        "status_by_platform": {
+          "website_page": {
+            "already_captured": 7,
+            "capture_blocked": 1,
+            "capture_failed": 2,
+            "captured": 10,
+            "dns_failed": 2,
+            "method_not_allowed": 1,
+            "network_error": 1,
+            "not_acceptable": 1
+          }
+        },
+        "status_counts": {
+          "already_captured": 7,
+          "capture_blocked": 1,
+          "capture_failed": 2,
+          "captured": 10,
+          "dns_failed": 2,
+          "method_not_allowed": 1,
+          "network_error": 1,
+          "not_acceptable": 1
+        }
+      }
+    }
+  },
+  "summary": {
+    "failure_count": 8,
+    "platform_counts": {
+      "website_page": 8
+    },
+    "status_counts": {
+      "capture_blocked": 1,
+      "capture_failed": 2,
+      "dns_failed": 2,
+      "method_not_allowed": 1,
+      "network_error": 1,
+      "not_acceptable": 1
+    }
+  }
+}

@@ -52,8 +52,12 @@ jobs:
       - name: Install runtime dependencies
         run: uv pip install --system -r requirements.txt
       - name: Archive website sources
+        env:
+          AGENCY_ID: ${{ inputs.agency_id }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          PAGE_LIMIT: ${{ inputs.page_limit }}
         run: |
-          page_limit="${{ inputs.page_limit || '50' }}"
+          page_limit="${PAGE_LIMIT:-50}"
           args=(
             --source-type website_page
             --fetch-timeout 5
@@ -62,11 +66,11 @@ jobs:
           if [ "$page_limit" != "0" ]; then
             args+=(--limit-sources "$page_limit")
           fi
-          if [ "${{ inputs.dry_run || 'false' }}" = "true" ]; then
+          if [ "${DRY_RUN:-false}" = "true" ]; then
             args+=(--dry-run)
           fi
-          if [ -n "${{ inputs.agency_id }}" ]; then
-            args+=(--agency-id "${{ inputs.agency_id }}")
+          if [ -n "$AGENCY_ID" ]; then
+            args+=(--agency-id "$AGENCY_ID")
           fi
           python -m scripts.archive_registered_sources "${args[@]}"
       - name: Commit website dry-run report
@@ -78,9 +82,14 @@ jobs:
       - name: Commit website capture reports
         if: ${{ inputs.dry_run != 'true' }}
         run: >-
+          python scripts/build_archive_failure_triage_report.py
+          --report conductor/website_archive_report.json
+          --output conductor/website_archive_failure_triage_report.json
+          &&
           python scripts/commit_state_updates.py
           --message "Capture website pages from registered government sources"
           --path conductor/website_archive_report.json
+          --path conductor/website_archive_failure_triage_report.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
       - name: Commit website payloads

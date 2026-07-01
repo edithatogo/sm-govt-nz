@@ -1,6 +1,7 @@
 import argparse
 import json
-from urllib.error import HTTPError
+import socket
+from urllib.error import HTTPError, URLError
 
 import scripts.archive_registered_sources as archive_registered_sources
 from scripts.archive_registered_sources import (
@@ -10,6 +11,7 @@ from scripts.archive_registered_sources import (
     archive_website_source,
     archive_youtube_source,
     build_report,
+    fetch_website_with_alternates,
 )
 
 
@@ -167,8 +169,10 @@ def test_archive_website_source_writes_raw_and_normalized_records(tmp_path):
     )
 
     assert result["status"] == "captured"
-    assert list((tmp_path / "raw" / "website" / "2026-06").glob("*.json"))
-    normalized = (tmp_path / "normalized" / "website" / "2026-06.jsonl").read_text(encoding="utf-8")
+    assert list((tmp_path / "raw" / "website").glob("*/*.json"))
+    normalized_files = list((tmp_path / "normalized" / "website").glob("*.jsonl"))
+    assert normalized_files
+    normalized = normalized_files[0].read_text(encoding="utf-8")
     assert "website:" in normalized
     assert "Public update" in normalized
 
@@ -297,6 +301,53 @@ def test_archive_youtube_source_reports_unresolved_channel(tmp_path):
         }
     ]
 
+
+def test_archive_youtube_source_reports_bad_non_youtube_url(tmp_path):
+    source = {
+        "source_id": "agency-youtube",
+        "agency_id": "agency",
+        "platform": "youtube",
+        "source_type": "social_profile",
+        "url": "https://agency.example/videos",
+        "archive_status": "candidate",
+        "feasibility": "medium",
+    }
+
+    results = archive_youtube_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        parser=FakeYouTubeParser(),
+        page_fetcher=lambda url: "<html>No channel id</html>",
+    )
+
+    assert results[0]["status"] == "capture_failed"
+    assert results[0]["reason"] == "YouTube channel resolver failed: not a YouTube URL"
+
+
+def test_archive_youtube_source_reports_bad_youtube_non_channel_url(tmp_path):
+    source = {
+        "source_id": "agency-youtube",
+        "agency_id": "agency",
+        "platform": "youtube",
+        "source_type": "social_profile",
+        "url": "https://www.youtube.com/watch?v=abc123",
+        "archive_status": "candidate",
+        "feasibility": "medium",
+    }
+
+    results = archive_youtube_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        parser=FakeYouTubeParser(),
+        page_fetcher=lambda url: "<html>No channel id</html>",
+    )
+
+    assert results[0]["status"] == "capture_failed"
+    assert results[0]["reason"] == "YouTube channel resolver failed: YouTube URL is not a channel URL"
+
+
 def test_archive_rss_source_does_not_rewrite_existing_raw_record(tmp_path):
     source = {
         "source_id": "agency-rss",
@@ -353,6 +404,85 @@ def test_archive_website_source_does_not_rewrite_existing_raw_record(tmp_path):
 
     assert result["status"] == "already_captured"
     assert raw_file.read_text(encoding="utf-8") == original_raw
+
+
+def test_fetch_website_with_alternates_uses_www_after_403():
+    seen = []
+
+    def fetcher(url, timeout):
+        seen.append(url)
+        if url == "https://agency.example":
+            raise HTTPError(url, 403, "Forbidden", hdrs=None, fp=None)
+        return "<html>fallback</html>"
+
+    fetched_url, html = fetch_website_with_alternates("https://agency.example", fetcher, 5, allow_alternates=True)
+
+    assert fetched_url == "https://www.agency.example"
+    assert html == "<html>fallback</html>"
+    assert seen == ["https://agency.example", "https://www.agency.example"]
+
+
+def test_fetch_website_with_alternates_uses_www_after_406():
+    def fetcher(url, timeout):
+        if url == "https://agency.example":
+            raise HTTPError(url, 406, "Not Acceptable", hdrs=None, fp=None)
+        return "<html>fallback</html>"
+
+    fetched_url, html = fetch_website_with_alternates("https://agency.example", fetcher, 5, allow_alternates=True)
+
+    assert fetched_url == "https://www.agency.example"
+    assert html == "<html>fallback</html>"
+
+
+def test_fetch_website_with_alternates_uses_www_after_405():
+    def fetcher(url, timeout):
+        if url == "https://agency.example":
+            raise HTTPError(url, 405, "Method Not Allowed", hdrs=None, fp=None)
+        return "<html>fallback</html>"
+
+    fetched_url, html = fetch_website_with_alternates("https://agency.example", fetcher, 5, allow_alternates=True)
+
+    assert fetched_url == "https://www.agency.example"
+    assert html == "<html>fallback</html>"
+
+
+def test_archive_website_source_reports_dns_failure(tmp_path):
+    result = archive_website_source(
+        {
+            "source_id": "agency-website",
+            "agency_id": "agency",
+            "platform": "website_page",
+            "source_type": "website_page",
+            "url": "https://agency.example",
+            "archive_status": "ready",
+            "feasibility": "high",
+        },
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        website_fetcher=lambda url: (_ for _ in ()).throw(URLError("getaddrinfo failed")),
+    )
+
+    assert result["status"] == "dns_failed"
+
+
+def test_archive_website_source_reports_network_timeout(tmp_path):
+    result = archive_website_source(
+        {
+            "source_id": "agency-website",
+            "agency_id": "agency",
+            "platform": "website_page",
+            "source_type": "website_page",
+            "url": "https://agency.example",
+            "archive_status": "ready",
+            "feasibility": "high",
+        },
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        website_fetcher=lambda url: (_ for _ in ()).throw(URLError(socket.timeout("timed out"))),
+    )
+
+    assert result["status"] == "network_timeout"
+
 
 def test_archive_bluesky_source_does_not_rewrite_existing_raw_record(tmp_path):
     source = {
