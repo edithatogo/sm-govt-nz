@@ -14,7 +14,7 @@ from scripts.register_archive_source import load_manifest, upsert_source, write_
 
 DEFAULT_REPORT = Path("conductor/govt_source_candidate_report.json")
 DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
-DEFAULT_ALLOWED_SOURCE_TYPES = ("rss_feed", "json_feed", "api_endpoint", "website_page", "newsletter")
+DEFAULT_ALLOWED_SOURCE_TYPES = ("rss_feed", "json_feed", "api_endpoint", "website_page", "newsletter", "social_profile")
 DEFAULT_MIN_CONFIDENCE = 0.6
 
 
@@ -32,12 +32,20 @@ def select_candidates(
     for item in report.get("candidates", []):
         if item.get("source_type") not in allowed_source_types:
             continue
+        if item.get("source_type") == "social_profile":
+            origin = str(item.get("origin", ""))
+            if "registry.social_profiles" not in origin:
+                continue
+            if item.get("status") != "active":
+                continue
+            if "registry_known" not in set(item.get("trust_signals", [])):
+                continue
         if item.get("source_type") == "newsletter" and not looks_like_public_newsletter_archive(
             str(item.get("url", "")),
             str(item.get("link_text", "")),
         ):
             continue
-        if item.get("archive_status") != "ready":
+        if item.get("source_type") != "social_profile" and item.get("archive_status") != "ready":
             continue
         if float(item.get("confidence_score", 0)) < min_confidence:
             continue
@@ -76,7 +84,7 @@ def register_selected_candidates(
             "url": item["url"],
             "account": item.get("account", ""),
             "feasibility": item.get("feasibility", "review_required"),
-            "archive_status": item.get("archive_status", "candidate"),
+            "archive_status": "ready" if item.get("source_type") == "social_profile" else item.get("archive_status", "candidate"),
             "access_method": item.get("access_method", "review_required"),
             "auth": item.get("auth", "review_required"),
             "origin": item.get("origin", "govt_source_discovery"),

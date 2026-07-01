@@ -108,6 +108,40 @@ def test_promote_govt_source_candidates_registers_ready_feed_and_page_sources(tm
                         "status": "discovered",
                         "link_text": "Subscribe to our newsletter",
                     },
+                    {
+                        "candidate_id": "social-1",
+                        "agency_id": "agency-social",
+                        "agency_name": "Agency Social",
+                        "source_type": "social_profile",
+                        "platform": "facebook",
+                        "url": "https://facebook.com/agency-social",
+                        "account": "https://example.govt.nz",
+                        "feasibility": "medium",
+                        "archive_status": "candidate",
+                        "access_method": "public_archive_or_lawful_export",
+                        "auth": "none",
+                        "origin": "registry.social_profiles",
+                        "confidence_score": 0.75,
+                        "status": "active",
+                        "trust_signals": ["registry_known", "official_term:new zealand"],
+                    },
+                    {
+                        "candidate_id": "social-2",
+                        "agency_id": "agency-social",
+                        "agency_name": "Agency Social",
+                        "source_type": "social_profile",
+                        "platform": "facebook",
+                        "url": "https://facebook.com/agency-social-fan",
+                        "account": "https://example.govt.nz",
+                        "feasibility": "medium",
+                        "archive_status": "candidate",
+                        "access_method": "public_archive_or_lawful_export",
+                        "auth": "none",
+                        "origin": "homepage.link",
+                        "confidence_score": 0.4,
+                        "status": "discovered",
+                        "trust_signals": ["official_term:new zealand"],
+                    },
                 ]
             }
         ),
@@ -120,25 +154,27 @@ def test_promote_govt_source_candidates_registers_ready_feed_and_page_sources(tm
     assert [item["candidate_id"] for item in selected] == ["page-1", "api-1", "rss-1"]
     selected_with_newsletters = select_candidates(
         report,
-        {"rss_feed", "api_endpoint", "website_page", "newsletter"},
+        {"rss_feed", "api_endpoint", "website_page", "newsletter", "social_profile"},
         0.6,
     )
-    assert [item["candidate_id"] for item in selected_with_newsletters] == ["page-1", "api-1", "newsletter-archive-1", "rss-1"]
+    assert [item["candidate_id"] for item in selected_with_newsletters] == ["page-1", "social-1", "api-1", "newsletter-archive-1", "rss-1"]
 
-    result = register_selected_candidates(report, manifest_path, {"rss_feed", "api_endpoint", "website_page", "newsletter"}, 0.6)
+    result = register_selected_candidates(report, manifest_path, {"rss_feed", "api_endpoint", "website_page", "newsletter", "social_profile"}, 0.6)
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
-    assert result["selected_count"] == 4
-    assert result["added_count"] == 4
+    assert result["selected_count"] == 5
+    assert result["added_count"] == 5
     assert result["updated_count"] == 0
-    assert manifest["summary"]["total_sources"] == 4
-    assert manifest["summary"]["archive_status_counts"] == {"ready": 4}
+    assert manifest["summary"]["total_sources"] == 5
+    assert manifest["summary"]["archive_status_counts"] == {"ready": 5}
     by_id = {source["source_id"]: source for source in manifest["sources"]}
     assert by_id["rss-1"]["platform"] == "rss"
     assert by_id["api-1"]["source_type"] == "api_endpoint"
     assert by_id["page-1"]["archive_status"] == "ready"
     assert by_id["newsletter-archive-1"]["source_type"] == "newsletter"
+    assert by_id["social-1"]["source_type"] == "social_profile"
     assert "newsletter-signup-1" not in by_id
+    assert "social-2" not in by_id
     assert "Promoted from discovery" in by_id["rss-1"]["notes"]
 
 
