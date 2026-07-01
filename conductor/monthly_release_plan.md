@@ -1,13 +1,13 @@
 # Monthly Release Plan
 
-Generated: 2026-07-01T11:11:05+00:00
+Generated: 2026-07-01T18:29:20+00:00
 
 Each monthly release is cumulative: it bundles all archived accounts and source types present in the repository at release time.
 
 ## Summary
 
 - `months_with_records`: 260
-- `total_records`: 7185
+- `total_records`: 8345
 - `published_months`: 2
 - `candidate_months`: 258
 
@@ -259,19 +259,19 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2025-02 | candidate | 63 | 11 | bluesky: 23, rss: 19, youtube: 21 |
 | 2025-03 | candidate | 63 | 7 | bluesky: 20, rss: 37, youtube: 6 |
 | 2025-04 | candidate | 60 | 10 | bluesky: 10, rss: 41, youtube: 9 |
-| 2025-05 | candidate | 59 | 9 | bluesky: 3, rss: 29, youtube: 27 |
-| 2025-06 | candidate | 31 | 10 | bluesky: 2, rss: 19, youtube: 10 |
-| 2025-07 | candidate | 62 | 13 | bluesky: 1, rss: 45, youtube: 16 |
-| 2025-08 | candidate | 62 | 15 | bluesky: 1, rss: 23, youtube: 38 |
-| 2025-09 | candidate | 88 | 18 | bluesky: 6, rss: 35, youtube: 47 |
-| 2025-10 | candidate | 121 | 16 | bluesky: 39, rss: 33, youtube: 49 |
-| 2025-11 | candidate | 124 | 27 | bluesky: 37, rss: 47, youtube: 40 |
-| 2025-12 | candidate | 121 | 29 | bluesky: 9, courtsofnz.govt.nz: 1, rss: 44, youtube: 67 |
-| 2026-01 | candidate | 49 | 14 | bluesky: 5, rss: 9, youtube: 35 |
-| 2026-02 | candidate | 90 | 22 | bluesky: 15, courtsofnz.govt.nz: 1, rss: 14, youtube: 60 |
-| 2026-03 | candidate | 130 | 38 | bluesky: 25, courtsofnz.govt.nz: 3, rss: 37, youtube: 65 |
-| 2026-04 | candidate | 168 | 35 | bluesky: 41, courtsofnz.govt.nz: 3, rss: 35, youtube: 89 |
-| 2026-05 | candidate | 364 | 58 | bluesky: 32, rss: 54, youtube: 278 |
-| 2026-06 | published | 1006 | 285 | bluesky: 165, courtsofnz.govt.nz: 1, email: 12, linkedin: 2, rss: 102, website_page: 219, youtube: 505 |
-| 2026-07 | published | 65 | 21 | api: 13, bluesky: 1, email: 2, json_feed: 8, rss: 33, website_page: 7, youtube: 1 |
+| 2025-05 | candidate | 102 | 12 | bluesky: 46, rss: 29, youtube: 27 |
+| 2025-06 | candidate | 51 | 14 | bluesky: 22, rss: 19, youtube: 10 |
+| 2025-07 | candidate | 78 | 16 | bluesky: 17, rss: 45, youtube: 16 |
+| 2025-08 | candidate | 75 | 17 | bluesky: 14, rss: 23, youtube: 38 |
+| 2025-09 | candidate | 105 | 21 | bluesky: 23, rss: 35, youtube: 47 |
+| 2025-10 | candidate | 138 | 20 | bluesky: 56, rss: 33, youtube: 49 |
+| 2025-11 | candidate | 138 | 31 | bluesky: 51, rss: 47, youtube: 40 |
+| 2025-12 | candidate | 147 | 33 | bluesky: 35, courtsofnz.govt.nz: 1, rss: 44, youtube: 67 |
+| 2026-01 | candidate | 109 | 21 | bluesky: 65, rss: 9, youtube: 35 |
+| 2026-02 | candidate | 153 | 29 | bluesky: 78, courtsofnz.govt.nz: 1, rss: 14, youtube: 60 |
+| 2026-03 | candidate | 208 | 45 | bluesky: 103, courtsofnz.govt.nz: 3, rss: 37, youtube: 65 |
+| 2026-04 | candidate | 252 | 41 | bluesky: 125, courtsofnz.govt.nz: 3, rss: 35, youtube: 89 |
+| 2026-05 | candidate | 520 | 69 | bluesky: 188, rss: 54, youtube: 278 |
+| 2026-06 | published | 1537 | 298 | bluesky: 696, courtsofnz.govt.nz: 1, email: 12, linkedin: 2, rss: 102, website_page: 219, youtube: 505 |
+| 2026-07 | published | 87 | 28 | api: 13, bluesky: 22, email: 2, json_feed: 8, rss: 33, website_page: 7, x: 1, youtube: 1 |
 | unknown | candidate | 20 | 1 | rss: 20 |

@@ -1,6 +1,6 @@
 {
   "description": "Cumulative monthly release plan. Each release bundles all archived accounts and sources present in the repository at release time.",
-  "generated_at": "2026-07-01T11:11:05+00:00",
+  "generated_at": "2026-07-01T18:29:20+00:00",
   "months": [
     {
       "account_count": 1,
@@ -2857,104 +2857,104 @@
       "status": "candidate"
     },
     {
-      "account_count": 9,
+      "account_count": 12,
       "month": "2025-05",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2025-05 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 59,
+      "record_count": 102,
       "release_version": "2025-05",
       "source_counts": {
-        "bluesky": 3,
+        "bluesky": 46,
         "rss": 29,
         "youtube": 27
       },
       "status": "candidate"
     },
     {
-      "account_count": 10,
+      "account_count": 14,
       "month": "2025-06",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2025-06 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 31,
+      "record_count": 51,
       "release_version": "2025-06",
       "source_counts": {
-        "bluesky": 2,
+        "bluesky": 22,
         "rss": 19,
         "youtube": 10
       },
       "status": "candidate"
     },
     {
-      "account_count": 13,
+      "account_count": 16,
       "month": "2025-07",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2025-07 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 62,
+      "record_count": 78,
       "release_version": "2025-07",
       "source_counts": {
-        "bluesky": 1,
+        "bluesky": 17,
         "rss": 45,
         "youtube": 16
       },
       "status": "candidate"
     },
     {
-      "account_count": 15,
+      "account_count": 17,
       "month": "2025-08",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2025-08 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 62,
+      "record_count": 75,
       "release_version": "2025-08",
       "source_counts": {
-        "bluesky": 1,
+        "bluesky": 14,
         "rss": 23,
         "youtube": 38
       },
       "status": "candidate"
     },
     {
-      "account_count": 18,
+      "account_count": 21,
       "month": "2025-09",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2025-09 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 88,
+      "record_count": 105,
       "release_version": "2025-09",
       "source_counts": {
-        "bluesky": 6,
+        "bluesky": 23,
         "rss": 35,
         "youtube": 47
       },
       "status": "candidate"
     },
     {
-      "account_count": 16,
+      "account_count": 20,
       "month": "2025-10",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2025-10 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 121,
+      "record_count": 138,
       "release_version": "2025-10",
       "source_counts": {
-        "bluesky": 39,
+        "bluesky": 56,
         "rss": 33,
         "youtube": 49
       },
       "status": "candidate"
     },
     {
-      "account_count": 27,
+      "account_count": 31,
       "month": "2025-11",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2025-11 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 124,
+      "record_count": 138,
       "release_version": "2025-11",
       "source_counts": {
-        "bluesky": 37,
+        "bluesky": 51,
         "rss": 47,
         "youtube": 40
       },
       "status": "candidate"
     },
     {
-      "account_count": 29,
+      "account_count": 33,
       "month": "2025-12",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2025-12 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 121,
+      "record_count": 147,
       "release_version": "2025-12",
       "source_counts": {
-        "bluesky": 9,
+        "bluesky": 35,
         "courtsofnz.govt.nz": 1,
         "rss": 44,
         "youtube": 67
@@ -2962,26 +2962,26 @@
       "status": "candidate"
     },
     {
-      "account_count": 14,
+      "account_count": 21,
       "month": "2026-01",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-01 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 49,
+      "record_count": 109,
       "release_version": "2026-01",
       "source_counts": {
-        "bluesky": 5,
+        "bluesky": 65,
         "rss": 9,
         "youtube": 35
       },
       "status": "candidate"
     },
     {
-      "account_count": 22,
+      "account_count": 29,
       "month": "2026-02",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-02 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 90,
+      "record_count": 153,
       "release_version": "2026-02",
       "source_counts": {
-        "bluesky": 15,
+        "bluesky": 78,
         "courtsofnz.govt.nz": 1,
         "rss": 14,
         "youtube": 60
@@ -2989,13 +2989,13 @@
       "status": "candidate"
     },
     {
-      "account_count": 38,
+      "account_count": 45,
       "month": "2026-03",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-03 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 130,
+      "record_count": 208,
       "release_version": "2026-03",
       "source_counts": {
-        "bluesky": 25,
+        "bluesky": 103,
         "courtsofnz.govt.nz": 3,
         "rss": 37,
         "youtube": 65
@@ -3003,13 +3003,13 @@
       "status": "candidate"
     },
     {
-      "account_count": 35,
+      "account_count": 41,
       "month": "2026-04",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-04 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 168,
+      "record_count": 252,
       "release_version": "2026-04",
       "source_counts": {
-        "bluesky": 41,
+        "bluesky": 125,
         "courtsofnz.govt.nz": 3,
         "rss": 35,
         "youtube": 89
@@ -3017,26 +3017,26 @@
       "status": "candidate"
     },
     {
-      "account_count": 58,
+      "account_count": 69,
       "month": "2026-05",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-05 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 364,
+      "record_count": 520,
       "release_version": "2026-05",
       "source_counts": {
-        "bluesky": 32,
+        "bluesky": 188,
         "rss": 54,
         "youtube": 278
       },
       "status": "candidate"
     },
     {
-      "account_count": 285,
+      "account_count": 298,
       "month": "2026-06",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-06 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 1006,
+      "record_count": 1537,
       "release_version": "2026-06",
       "source_counts": {
-        "bluesky": 165,
+        "bluesky": 696,
         "courtsofnz.govt.nz": 1,
         "email": 12,
         "linkedin": 2,
@@ -3047,18 +3047,19 @@
       "status": "published"
     },
     {
-      "account_count": 21,
+      "account_count": 28,
       "month": "2026-07",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-07 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 65,
+      "record_count": 87,
       "release_version": "2026-07",
       "source_counts": {
         "api": 13,
-        "bluesky": 1,
+        "bluesky": 22,
         "email": 2,
         "json_feed": 8,
         "rss": 33,
         "website_page": 7,
+        "x": 1,
         "youtube": 1
       },
       "status": "published"
@@ -3083,6 +3084,6 @@
     "candidate_months": 258,
     "months_with_records": 260,
     "published_months": 2,
-    "total_records": 7185
+    "total_records": 8345
   }
 }
