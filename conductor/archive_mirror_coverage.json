@@ -8,6 +8,12 @@
       "total_records": 58
     },
     {
+      "source_account": "AntarcticaNZ",
+      "source_key": "x:AntarcticaNZ",
+      "source_platform": "x",
+      "total_records": 1
+    },
+    {
       "source_account": "CourtsofNZ",
       "source_key": "x:CourtsofNZ",
       "source_platform": "x",
@@ -17,27 +23,29 @@
   "targets": [
     {
       "note": "Bluesky posts are published as current mirror posts; original source timestamps are preserved in repo archive metadata.",
-      "posted_records": 747,
+      "posted_records": 748,
       "remaining_by_source": {
         "bluesky:courtsofnz.bsky.social": 0,
+        "x:AntarcticaNZ": 0,
         "x:CourtsofNZ": 0
       },
       "remaining_records": 0,
       "supports_backdating": false,
       "target": "bluesky",
-      "total_source_records": 747
+      "total_source_records": 748
     },
     {
       "note": "Threads publishing does not expose a supported backdated publication timestamp in the configured pipeline; original timestamps must be preserved in mirror text and archive metadata.",
       "posted_records": 0,
       "remaining_by_source": {
         "bluesky:courtsofnz.bsky.social": 58,
+        "x:AntarcticaNZ": 1,
         "x:CourtsofNZ": 689
       },
-      "remaining_records": 747,
+      "remaining_records": 748,
       "supports_backdating": false,
       "target": "threads",
-      "total_source_records": 747
+      "total_source_records": 748
     }
   ]
 }
