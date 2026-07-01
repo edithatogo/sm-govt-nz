@@ -83,6 +83,11 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         platform = item["platform"]
         statuses = status_by_platform.setdefault(platform, {})
         statuses[item["onboarding_status"]] = statuses.get(item["onboarding_status"], 0) + 1
+    remaining_groups = {
+        platform: counts.get("needs_authorized_seed_or_api", 0)
+        for platform, counts in status_by_platform.items()
+        if counts.get("needs_authorized_seed_or_api", 0) > 0
+    }
     return {
         "generated_at": now_iso(),
         "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
@@ -97,6 +102,9 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "platform_counts": dict(sorted(platform_counts.items())),
             "status_counts": dict(sorted(status_counts.items())),
             "status_by_platform": {platform: dict(sorted(counts.items())) for platform, counts in sorted(status_by_platform.items())},
+            "remaining_groups": dict(sorted(remaining_groups.items())),
+            "remaining_group_count": len(remaining_groups),
+            "remaining_source_count": sum(remaining_groups.values()),
         },
         "platform_policies": {platform: platform_policy[platform] for platform in requested if platform in platform_policy},
         "items": sorted(items, key=lambda item: (item["platform"], item["agency_id"], item["source_id"])),

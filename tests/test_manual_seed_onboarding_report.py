@@ -89,6 +89,9 @@ def test_manual_seed_onboarding_report_marks_missing_and_present_seeds(tmp_path)
         "needs_authorized_seed_or_api": 1,
         "seed_present": 1,
     }
+    assert report["summary"]["remaining_groups"] == {"facebook": 1}
+    assert report["summary"]["remaining_group_count"] == 1
+    assert report["summary"]["remaining_source_count"] == 1
     by_platform = {item["platform"]: item for item in report["items"]}
     assert by_platform["facebook"]["onboarding_status"] == "needs_authorized_seed_or_api"
     assert by_platform["linkedin"]["onboarding_status"] == "seed_present"
