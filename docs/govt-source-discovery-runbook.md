@@ -1,5 +1,7 @@
 # Government Source Discovery and Archive Onboarding
 
+For local Windows execution, prefer `.\scripts\dev.ps1 ...` or `uv run --python 3.14 ...` rather than bare `python`.
+
 This repo now treats government public-source mapping as a repeatable pipeline:
 
 1. `registry/government_directory.json` remains the canonical known agency and social-account inventory.

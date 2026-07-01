@@ -1,5 +1,7 @@
 # Threads Manual Seed Acquisition Checklist
 
+For local Windows execution, prefer `.\scripts\dev.ps1 ...` or `uv run --python 3.14 ...` rather than bare `python`.
+
 This project does not use live public Threads profile capture unless the
 official Meta permission path is deliberately completed. Until then, Threads
 archiving depends on operator-authorized seed exports.
