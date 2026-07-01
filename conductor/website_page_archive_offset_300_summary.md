@@ -1,12 +1,12 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-01T10:43:46+00:00
+Generated: 2026-07-01T11:07:10+00:00
 
 ## Summary
 
 - `selected_sources`: 15
 - `platform_count`: 1
-- `status_count`: 2
+- `status_count`: 1
 
 ## Platform counts
 
@@ -14,12 +14,11 @@ Generated: 2026-07-01T10:43:46+00:00
 
 ## Status counts
 
-- `captured`: 13
-- `method_not_allowed`: 2
+- `captured`: 15
 
 ## Status by platform
 
-- `website_page`: {'captured': 13, 'method_not_allowed': 2}
+- `website_page`: {'captured': 15}
 
 ## Notes
 
