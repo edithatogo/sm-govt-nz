@@ -128,13 +128,19 @@ jobs:
       - name: Resolve archive report paths
         run: |
           source_type="${{ inputs.source_type || 'all_feasible' }}"
+          offset_sources="${{ inputs.offset_sources || '0' }}"
           if [ "$source_type" = "all_feasible" ]; then
             report_path="conductor/govt_archive_registered_sources_report.json"
             summary_path="conductor/govt_archive_registered_sources_summary.md"
           else
             safe_source_type="${source_type//[^A-Za-z0-9_]/_}"
-            report_path="conductor/${safe_source_type}_archive_report.json"
-            summary_path="conductor/${safe_source_type}_archive_summary.md"
+            if [ "$offset_sources" != "0" ]; then
+              report_path="conductor/${safe_source_type}_archive_offset_${offset_sources}_report.json"
+              summary_path="conductor/${safe_source_type}_archive_offset_${offset_sources}_summary.md"
+            else
+              report_path="conductor/${safe_source_type}_archive_report.json"
+              summary_path="conductor/${safe_source_type}_archive_summary.md"
+            fi
           fi
           echo "ARCHIVE_REPORT_PATH=$report_path" >> "$GITHUB_ENV"
           echo "ARCHIVE_SUMMARY_PATH=$summary_path" >> "$GITHUB_ENV"
