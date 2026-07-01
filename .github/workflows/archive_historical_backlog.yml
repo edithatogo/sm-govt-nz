@@ -62,11 +62,16 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
+      batch_count: ${{ steps.matrix.outputs.batch_count }}
+      started_at: ${{ steps.started-at.outputs.started_at }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
+      - name: Record orchestrator start time
+        id: started-at
+        run: echo "started_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> "$GITHUB_OUTPUT"
       - name: Build exact backlog shard matrix
         id: matrix
         run: >-
@@ -112,8 +117,77 @@ jobs:
             -f commit_payloads="$COMMIT_PAYLOADS" \
             -f publish=false
 
+  wait-for-backlog-shards:
+    needs:
+      - build-backlog-matrix
+      - dispatch-backlog-shards
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for dispatched archive shard runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_COUNT: ${{ needs.build-backlog-matrix.outputs.batch_count }}
+          REPOSITORY: ${{ github.repository }}
+          REF_NAME: ${{ github.ref_name }}
+          HEAD_SHA: ${{ github.sha }}
+          STARTED_AT: ${{ needs.build-backlog-matrix.outputs.started_at }}
+        shell: bash
+        run: |
+          if [ "$EXPECTED_COUNT" = "0" ]; then
+            echo "No backlog shards were dispatched."
+            exit 0
+          fi
+          deadline=$((SECONDS + 5400))
+          while [ "$SECONDS" -lt "$deadline" ]; do
+            gh run list \
+              --repo "$REPOSITORY" \
+              --workflow "Archive Registered Sources" \
+              --branch "$REF_NAME" \
+              --limit 100 \
+              --json databaseId,status,conclusion,headSha,createdAt,url > runs.json
+            python - <<'PY' > shard-status.env
+          import json
+          import os
+          from datetime import datetime, timezone
+
+          expected = int(os.environ["EXPECTED_COUNT"])
+          head_sha = os.environ["HEAD_SHA"]
+          started_at = datetime.fromisoformat(os.environ["STARTED_AT"].replace("Z", "+00:00"))
+          runs = json.load(open("runs.json", encoding="utf-8"))
+          matched = []
+          for run in runs:
+              if run.get("headSha") != head_sha:
+                  continue
+              created = datetime.fromisoformat(str(run.get("createdAt")).replace("Z", "+00:00"))
+              if created >= started_at:
+                  matched.append(run)
+          completed = [run for run in matched if run.get("status") == "completed"]
+          failed = [run for run in completed if run.get("conclusion") != "success"]
+          print(f"matched={len(matched)}")
+          print(f"completed={len(completed)}")
+          print(f"failed={len(failed)}")
+          print(f"expected={expected}")
+          if failed:
+              print("failed_urls=" + ",".join(str(run.get("url")) for run in failed))
+          PY
+            cat shard-status.env
+            # shellcheck disable=SC1091
+            source shard-status.env
+            if [ "$failed" != "0" ]; then
+              echo "One or more backlog shard runs failed: ${failed_urls:-}"
+              exit 1
+            fi
+            if [ "$matched" -ge "$EXPECTED_COUNT" ] && [ "$completed" -ge "$EXPECTED_COUNT" ]; then
+              echo "All dispatched backlog shard runs completed successfully."
+              exit 0
+            fi
+            sleep 60
+          done
+          echo "Timed out waiting for backlog shard runs."
+          exit 1
+
   dispatch-huggingface-monthly-publish:
-    needs: dispatch-backlog-shards
+    needs: wait-for-backlog-shards
     if: ${{ github.event_name == 'schedule' || inputs.publish_huggingface == 'true' }}
     runs-on: ubuntu-latest
     steps:

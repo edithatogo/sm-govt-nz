@@ -103,6 +103,7 @@ def main() -> None:
     matrix_json = json.dumps({"include": matrix["include"]}, separators=(",", ":"), sort_keys=True)
     if args.github_output_key:
         write_github_output(args.github_output_key, matrix_json)
+        write_github_output("batch_count", str(matrix["summary"]["batch_count"]))
     print(f"Historical backlog matrix contains {matrix['summary']['batch_count']} batches.")
 
 

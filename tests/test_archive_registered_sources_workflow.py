@@ -72,11 +72,15 @@ def test_historical_backlog_workflow_fans_out_source_shards_and_hf_publish() -> 
     assert "actions: write" in workflow
     assert "scripts/build_historical_backlog_matrix.py" in workflow
     assert "matrix: ${{ fromJson(needs.build-backlog-matrix.outputs.matrix) }}" in workflow
+    assert "batch_count: ${{ steps.matrix.outputs.batch_count }}" in workflow
     assert "gh workflow run \"Archive Registered Sources\"" in workflow
     assert "-f limit_sources=\"$LIMIT\"" in workflow
     assert "-f offset_sources=\"$OFFSET\"" in workflow
     assert "-f commit_payloads=\"$COMMIT_PAYLOADS\"" in workflow
     assert "-f publish=false" in workflow
+    assert "wait-for-backlog-shards" in workflow
+    assert "--workflow \"Archive Registered Sources\"" in workflow
+    assert "All dispatched backlog shard runs completed successfully." in workflow
     assert "gh workflow run \"Publish Archives\"" in workflow
     assert "-f publication_target=huggingface" in workflow
     assert "-f archive_release_version=\"${{ steps.release.outputs.version }}\"" in workflow
