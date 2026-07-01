@@ -1,0 +1,507 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-01T10:43:11+00:00",
+  "inputs": {
+    "agency_id": "",
+    "fetch_timeout": 30,
+    "include_blocked": false,
+    "limit_sources": 100,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "x"
+  },
+  "results": [
+    {
+      "agency_id": "antarctica-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "b30b39b6377e603c",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/AntarcticaNZ"
+    },
+    {
+      "agency_id": "auckland-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "dcd5933aefc5b47f",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/AklCouncil"
+    },
+    {
+      "agency_id": "broadcasting-standards-authority",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "b96b6c0354fff710",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/BSA_NZ"
+    },
+    {
+      "agency_id": "christchurch-city-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "e9eeee8dbd553162",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/ChristchurchCC"
+    },
+    {
+      "agency_id": "civil-aviation-authority",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "406f437058619a30",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/CivilAviationNZ"
+    },
+    {
+      "agency_id": "creative-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "ef1314d051b2bc9d",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/CreativeNZ"
+    },
+    {
+      "agency_id": "department-of-conservation",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "8639f10cac690502",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NZConservation"
+    },
+    {
+      "agency_id": "dunedin-city-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "aacd89a62f99a19f",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/DnCityCouncil"
+    },
+    {
+      "agency_id": "eit",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "a4090db8d867dede",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/eithawkesbay"
+    },
+    {
+      "agency_id": "electoral-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "c66256e39c792af0",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/ElectionsNZ"
+    },
+    {
+      "agency_id": "fire-and-emergency-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "8db2dbda2463d702",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/FireEmergencyNZ"
+    },
+    {
+      "agency_id": "guardians-of-nz-superannuation",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "44f8fdd2ed75a077",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NZSuperFund"
+    },
+    {
+      "agency_id": "health-quality-and-safety-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "9f833861045a3020",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/HQSC_NZ"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "859966f6ea9c7df7",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/HRC"
+    },
+    {
+      "agency_id": "heritage-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "7801e115ce97703b",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/HeritageNZ"
+    },
+    {
+      "agency_id": "human-rights-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "d642f0cadfc26b7f",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/HRCNZ"
+    },
+    {
+      "agency_id": "independent-police-conduct-authority",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "379e0bc9d0cb6e3e",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/IPCA_NZ"
+    },
+    {
+      "agency_id": "kiwi-group-capital",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "5a8988f7471dbf1b",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/KiwibankNZ"
+    },
+    {
+      "agency_id": "lotto-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "22386d8a8163520a",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/LOTTO_NZ"
+    },
+    {
+      "agency_id": "ministry-for-culture-and-heritage",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "8ab8dcdd4e653a8e",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/ManatuTaonga"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "66fc1c573530a3b5",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/nzjustice"
+    },
+    {
+      "agency_id": "ministry-of-social-development",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "3ba835f95d4f20ad",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/msdgovtnz"
+    },
+    {
+      "agency_id": "napier-city-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "02ad75759275c2ee",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NapierCouncil"
+    },
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "52a4961327f246bd",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NZCustoms"
+    },
+    {
+      "agency_id": "nz-film-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "5adb146d6f4f08f6",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NZFilm"
+    },
+    {
+      "agency_id": "nz-infrastructure-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "b2158b46eb9167e3",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/TeWaihanga"
+    },
+    {
+      "agency_id": "nz-on-air",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "b48197e5816cf59b",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NZOnAir"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "d274869d5a2a6661",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NZPost"
+    },
+    {
+      "agency_id": "nz-symphony-orchestra",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "3d0353e4ffd70a42",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NZSO"
+    },
+    {
+      "agency_id": "oranga-tamariki",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "3a80c44d50cb6deb",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/OrangaTamariki"
+    },
+    {
+      "agency_id": "pamu",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "0d3847c0306fefed",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/Pamu_NZ"
+    },
+    {
+      "agency_id": "parliamentary-commissioner-for-environment",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "171ff2dbc6f56fac",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/PCE_Env"
+    },
+    {
+      "agency_id": "public-service-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "4811ce166aaeada1",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NZPublicService"
+    },
+    {
+      "agency_id": "public-trust",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "80aff05ac3e932f6",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/PublicTrustNZ"
+    },
+    {
+      "agency_id": "reserve-bank-of-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "ad9c132a17a7aa10",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/rbnz"
+    },
+    {
+      "agency_id": "serious-fraud-office",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "c0acda794588129c",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/SFONZ"
+    },
+    {
+      "agency_id": "stats-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "f9f9e587f29a6de3",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/Stats_NZ"
+    },
+    {
+      "agency_id": "te-mangai-paho",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "b43338c80000236e",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/TeMangaiPaho"
+    },
+    {
+      "agency_id": "te-papa",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "9718c360ca4995d0",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/TePapa"
+    },
+    {
+      "agency_id": "te-puni-kokiri",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "8acc720f8cd8ea3a",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/TePuniKokiri"
+    },
+    {
+      "agency_id": "waka-kotahi",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "f1c6e0bdfdc6ef00",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/NZTA"
+    },
+    {
+      "agency_id": "whaikaha",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "a0bc3c5d6b328a03",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/WhaikahaNZ"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "x capture requires an operator-authorized seed JSON under manual_archive_seeds/x/",
+      "source_id": "017e89fc03fa5962",
+      "source_type": "social_profile",
+      "status": "manual_seed_missing",
+      "url": "https://x.com/WorkSafeNZ"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 43
+    },
+    "selected_sources": 43,
+    "status_by_platform": {
+      "x": {
+        "manual_seed_missing": 43
+      }
+    },
+    "status_counts": {
+      "manual_seed_missing": 43
+    }
+  }
+}
