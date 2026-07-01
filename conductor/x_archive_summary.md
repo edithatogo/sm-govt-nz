@@ -1,24 +1,24 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-01T13:39:29+00:00
+Generated: 2026-07-01T13:41:50+00:00
 
 ## Summary
 
-- `selected_sources`: 1
+- `selected_sources`: 43
 - `platform_count`: 1
 - `status_count`: 1
 
 ## Platform counts
 
-- `x`: 1
+- `x`: 43
 
 ## Status counts
 
-- `x_billing_required`: 1
+- `manual_seed_missing`: 43
 
 ## Status by platform
 
-- `x`: {'x_billing_required': 1}
+- `x`: {'manual_seed_missing': 43}
 
 ## Notes
 
