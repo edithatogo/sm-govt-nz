@@ -39,8 +39,8 @@ This dataset package contains normalized New Zealand government social media rec
 - courtsofnz.govt.nz: 11 records
 - email: 14 records
 - linkedin: 2 records
-- rss: 3970 records
-- website_page: 226 records
+- rss: 3887 records
+- website_page: 326 records
 - x: 689 records
 - youtube: 1822 records
 
