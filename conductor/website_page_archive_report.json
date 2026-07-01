@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-01T10:46:22+00:00",
+  "generated_at": "2026-07-01T11:09:27+00:00",
   "inputs": {
     "agency_id": "",
     "fetch_timeout": 30,
@@ -241,10 +241,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "64372d3f52dde38d",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.codc.govt.nz"
     },
     {
@@ -373,10 +373,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "38b2ebe81566aa72",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.cluthadc.govt.nz"
     },
     {
@@ -615,10 +615,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "aa8c82d50ad42f41",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.es.govt.nz"
     },
     {
@@ -758,10 +758,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "c9f245a4b9a22cdd",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.greydc.govt.nz"
     },
     {
@@ -1066,10 +1066,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "4145b6f2544e3158",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.hurunui.govt.nz"
     },
     {
@@ -1125,16 +1125,18 @@
     "status_by_platform": {
       "website_page": {
         "capture_blocked": 9,
-        "captured": 85,
+        "captured": 80,
         "dns_failed": 4,
+        "method_not_allowed": 5,
         "network_timeout": 1,
         "not_acceptable": 1
       }
     },
     "status_counts": {
       "capture_blocked": 9,
-      "captured": 85,
+      "captured": 80,
       "dns_failed": 4,
+      "method_not_allowed": 5,
       "network_timeout": 1,
       "not_acceptable": 1
     }
