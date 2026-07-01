@@ -58,6 +58,10 @@ on:
         description: "Per-source fetch timeout in seconds"
         required: true
         default: "30"
+      max_x_posts:
+        description: "Maximum recent X posts to request per account when X API capture is explicitly enabled"
+        required: true
+        default: "25"
       publish:
         description: "Publish captured archive bundle after a non-dry-run capture"
         required: true
@@ -119,6 +123,13 @@ jobs:
       ZENODO_DEPOSIT_API_URL: ${{ inputs.zenodo_deposit_api_url }}
       OSF_TOKEN: ${{ secrets.OSF_TOKEN }}
       OSF_UPLOAD_URL: ${{ secrets.OSF_UPLOAD_URL || inputs.osf_upload_url }}
+      X_API_CAPTURE_ENABLED: ${{ vars.X_API_CAPTURE_ENABLED || 'false' }}
+      X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_SECRET: ${{ secrets.X_API_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+      X_API_BASE_URL: ${{ vars.X_API_BASE_URL || 'https://api.x.com/2' }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -150,6 +161,7 @@ jobs:
           limit_sources="${{ inputs.limit_sources || '0' }}"
           offset_sources="${{ inputs.offset_sources || '0' }}"
           fetch_timeout="${{ inputs.fetch_timeout || '30' }}"
+          max_x_posts="${{ inputs.max_x_posts || '25' }}"
           args=(
             --source-type "${{ inputs.source_type || 'all_feasible' }}"
             --agency-id "${{ inputs.agency_id || '' }}"
@@ -164,6 +176,9 @@ jobs:
           fi
           if [ -n "$fetch_timeout" ]; then
             args+=(--fetch-timeout "$fetch_timeout")
+          fi
+          if [ -n "$max_x_posts" ]; then
+            args+=(--max-x-posts "$max_x_posts")
           fi
           if [ "${{ inputs.include_blocked }}" = "true" ]; then
             args+=(--include-blocked)
