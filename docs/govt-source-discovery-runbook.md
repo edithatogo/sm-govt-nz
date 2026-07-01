@@ -16,6 +16,7 @@ The discovery report includes:
 
 - every known registry social account, preserving platform, handle, URL, source status, account classification, and syndication classification where present;
 - each official agency website as a public website archive candidate;
+- known registry-backed social profiles, which are promoted into the archive manifest when they meet the automatic confidence and trust checks;
 - common RSS/news/media/subscribe/newsletter path seeds for every agency website;
 - optional bounded homepage probes for RSS/Atom alternates, newsletter/subscribe links, and social profile links.
 
@@ -26,7 +27,7 @@ The summary file is intentionally compact. The JSON report is the exhaustive rev
 Archive onboarding is prioritized by feasibility:
 
 - `ready`: public RSS, public website pages, and Bluesky where a direct public protocol is available.
-- `candidate`: YouTube, Facebook, Instagram, Threads, newsletters, and other sources that need stable IDs, API access, or explicit ingress configuration.
+- `candidate`: YouTube, newsletters, and other sources that need stable IDs, API access, or explicit ingress configuration.
 - `manual_seed`: LinkedIn and similar platforms where approved API access, account-owner export, or bounded user-authorized capture is required.
 - `degraded`: X/Twitter and other sources where account-owner export or public archive sources are preferred over live web capture.
 - `blocked`: sources that should not be archived until legal, authentication, or technical prerequisites are resolved.
@@ -75,6 +76,7 @@ Current capture support:
 - `rss_feed` sources are captured through `feedparser` when discovered feed URLs are registered.
 - `bluesky` sources are captured through the public Bluesky author feed API.
 - `youtube` sources resolve channel IDs from `/channel/`, `channel_id`, or public channel pages and capture public channel RSS feeds without credentials.
+- Registry-backed `social_profile` sources are promoted automatically into the manifest when they are official and active; they are then processed by the platform-specific archive adapters below.
 - `threads` sources are selected by the scheduled Threads archive workflow, but
   live public profile capture is disabled by default and only runs when
   `THREADS_API_CAPTURE_ENABLED=true` is deliberately configured after Meta
@@ -153,8 +155,11 @@ Manual runs can disable homepage probing or limit `max_agencies` for a bounded t
 1. Run YouTube capture in dry-run, then live mode, and review unresolved channel IDs for manual correction.
 2. Add manual seed files for high-value LinkedIn, Meta, X, and newsletter sources where exports or bounded captures are available.
 3. Newsletter ingress manifests modelled on the Courts NZ email ingress.
-4. Either add authorized Threads seed exports for the confirmed registered
-   Threads sources, or deliberately complete Meta business verification and App
-   Review for `threads_profile_discovery` before expecting live public Threads
-   capture.
+4. Keep Threads on the explicit seed/API path unless approved public API access is restored.
 5. Source-specific adapters for any platform where public, stable, policy-compliant APIs become available.
+
+## Current Coverage Snapshot
+
+- Automated archive lanes: RSS, JSON Feed, website pages, Bluesky, YouTube, and registry-backed official social profiles.
+- Awaiting manual/API inputs: Facebook, Instagram, LinkedIn, Threads, X, and newsletters.
+- Threads registered sources currently stay in `manual_seed_missing` until an authorized seed or approved API access appears.
