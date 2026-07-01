@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T04:28:47+00:00",
+  "generated_at": "2026-07-01T04:35:42+00:00",
   "inputs": {
     "reports": [
       "conductor/website_archive_report.json"
@@ -17,82 +17,92 @@
       "url": "https://www.boprc.govt.nz"
     },
     {
-      "agency_id": "central-otago-district-council",
-      "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed",
-      "recommended_action": "review_alternate_url",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "central-otago-district-council-website_page-d2fc9f64",
-      "status": "method_not_allowed",
-      "url": "https://www.codc.govt.nz"
-    },
-    {
-      "agency_id": "clutha-district-council",
-      "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed",
-      "recommended_action": "review_alternate_url",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "clutha-district-council-website_page-0c106b5d",
-      "status": "method_not_allowed",
-      "url": "https://www.cluthadc.govt.nz"
-    },
-    {
-      "agency_id": "environment-southland",
-      "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed",
-      "recommended_action": "review_alternate_url",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "environment-southland-website_page-68683dfa",
-      "status": "method_not_allowed",
-      "url": "https://www.es.govt.nz"
-    },
-    {
-      "agency_id": "far-north-district-council",
+      "agency_id": "gisborne-district-council",
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden",
       "recommended_action": "review_access_or_mark_blocked",
       "report": "conductor/website_archive_report.json",
-      "source_id": "far-north-district-council-website_page-61244b75",
+      "source_id": "gisborne-district-council-website_page-e8ccbd41",
       "status": "capture_blocked",
-      "url": "https://www.fndc.govt.nz"
+      "url": "https://www.gdc.govt.nz"
+    },
+    {
+      "agency_id": "government-house",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "government-house-website_page-07a02cbc",
+      "status": "capture_blocked",
+      "url": "https://gg.govt.nz"
+    },
+    {
+      "agency_id": "herenge-a-nuku",
+      "platform": "website_page",
+      "reason": "URL error: [Errno -2] Name or service not known",
+      "recommended_action": "verify_url_or_mark_stale",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "herenge-a-nuku-website_page-d491fe3b",
+      "status": "dns_failed",
+      "url": "https://www.herengahenu.nz"
+    },
+    {
+      "agency_id": "hutt-city-council",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "hutt-city-council-website_page-38cabab0",
+      "status": "capture_blocked",
+      "url": "https://www.huttcity.govt.nz"
+    },
+    {
+      "agency_id": "integrity-sport-and-recreation-commission",
+      "platform": "website_page",
+      "reason": "URL error: [Errno -2] Name or service not known",
+      "recommended_action": "verify_url_or_mark_stale",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "integrity-sport-and-recreation-commission-website_page-8f24a3b8",
+      "status": "dns_failed",
+      "url": "https://www.integritysport.nz"
     }
   ],
   "report_summaries": {
     "conductor/website_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-07-01T04:28:47+00:00",
+      "generated_at": "2026-07-01T04:35:41+00:00",
       "summary": {
         "platform_counts": {
-          "website_page": 50
+          "website_page": 100
         },
-        "selected_sources": 50,
+        "selected_sources": 100,
         "status_by_platform": {
           "website_page": {
             "already_captured": 7,
-            "capture_blocked": 1,
-            "captured": 38,
-            "method_not_allowed": 3,
+            "capture_blocked": 3,
+            "captured": 87,
+            "dns_failed": 2,
             "network_timeout": 1
           }
         },
         "status_counts": {
           "already_captured": 7,
-          "capture_blocked": 1,
-          "captured": 38,
-          "method_not_allowed": 3,
+          "capture_blocked": 3,
+          "captured": 87,
+          "dns_failed": 2,
           "network_timeout": 1
         }
       }
     }
   },
   "summary": {
-    "failure_count": 5,
+    "failure_count": 6,
     "platform_counts": {
-      "website_page": 5
+      "website_page": 6
     },
     "status_counts": {
-      "capture_blocked": 1,
-      "method_not_allowed": 3,
+      "capture_blocked": 3,
+      "dns_failed": 2,
       "network_timeout": 1
     }
   }
