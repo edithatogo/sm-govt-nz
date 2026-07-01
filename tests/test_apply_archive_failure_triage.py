@@ -26,6 +26,20 @@ def test_apply_archive_failure_triage_degrades_bad_youtube_and_blocked_website()
                 "feasibility": "high",
                 "url": "https://agency.example",
             },
+            {
+                "source_id": "method-not-allowed-website",
+                "platform": "website_page",
+                "archive_status": "ready",
+                "feasibility": "high",
+                "url": "https://method.example",
+            },
+            {
+                "source_id": "timeout-website",
+                "platform": "website_page",
+                "archive_status": "ready",
+                "feasibility": "high",
+                "url": "https://timeout.example",
+            },
         ]
     }
     triage = {
@@ -48,14 +62,28 @@ def test_apply_archive_failure_triage_degrades_bad_youtube_and_blocked_website()
                 "status": "capture_blocked",
                 "reason": "HTTP 403: Forbidden",
             },
+            {
+                "source_id": "method-not-allowed-website",
+                "platform": "website_page",
+                "status": "method_not_allowed",
+                "reason": "HTTP 405: Method Not Allowed",
+            },
+            {
+                "source_id": "timeout-website",
+                "platform": "website_page",
+                "status": "network_timeout",
+                "reason": "timed out",
+            },
         ]
     }
 
     report = apply_triage(manifest, [triage])
 
-    assert report["summary"]["changed_sources"] == 2
+    assert report["summary"]["changed_sources"] == 3
     by_id = {source["source_id"]: source for source in manifest["sources"]}
     assert by_id["bad-youtube"]["archive_status"] == "degraded"
     assert by_id["blocked-website"]["archive_status"] == "degraded"
+    assert by_id["method-not-allowed-website"]["archive_status"] == "degraded"
     assert by_id["empty-youtube"]["archive_status"] == "candidate"
-    assert manifest["summary"]["archive_status_counts"] == {"candidate": 1, "degraded": 2}
+    assert by_id["timeout-website"]["archive_status"] == "ready"
+    assert manifest["summary"]["archive_status_counts"] == {"candidate": 1, "degraded": 3, "ready": 1}

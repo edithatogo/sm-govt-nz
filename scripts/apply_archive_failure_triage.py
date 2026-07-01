@@ -43,7 +43,7 @@ def should_degrade(item: dict[str, Any]) -> bool:
             or "HTTP Error 404" in reason
         )
     if platform == "website_page":
-        return status in {"capture_blocked", "dns_failed", "not_acceptable"}
+        return status in {"capture_blocked", "dns_failed", "method_not_allowed", "not_acceptable", "not_found"}
     return False
 
 
