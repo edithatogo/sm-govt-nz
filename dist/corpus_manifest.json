@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 15088,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "0cc95eb3bd8c2a302d4387f77a2f3a9869e60124e7967ad41db29081eda64a82"
+      "sha256": "b9ec1cf48c3bc5025e0b609d4428b0b94c6a1b9a80508ced417c3370a8d35621"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 5886744,
+      "bytes": 5691094,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "d6715775bded47287caf63be8f9279633d26434578a55de955f8b44cc9ebe4b9"
+      "sha256": "a661867d524f4b0ec110197cd455e336d25e263d7c08c61d802de9ac348d3213"
     },
     "normalized_archive.parquet": {
-      "bytes": 9093844,
+      "bytes": 8715181,
       "path": "normalized_archive.parquet",
-      "sha256": "c4d9476ffcb885b57aab0243af5879081626058a5a8b92162f37ae2ee980edb7"
+      "sha256": "93918abf8f0e67041ecc3f8a68e1aabb58d58b2d8668aca97720061551f6d8d1"
     }
   },
   "jurisdiction": "nz",
@@ -27,7 +27,7 @@
   ],
   "legacy_json_file_count": 61,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 7134,
+  "normalized_record_count": 7126,
   "normalized_shard_count": 448,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
   "raw_file_count": 7387,
@@ -69673,903 +69673,831 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:23:57+00:00",
-      "source_account": "https://www.mbie.govt.nz",
-      "source_key": "website_page:https://www.mbie.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:eadcf8d02a470ca0096a2633",
-      "source_url": "https://www.mbie.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:23:59+00:00",
-      "source_account": "https://www.mfat.govt.nz",
-      "source_key": "website_page:https://www.mfat.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:ed4ebf60bcfd714922f62225",
-      "source_url": "https://www.mfat.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:23:59+00:00",
-      "source_account": "https://www.metservice.com",
-      "source_key": "website_page:https://www.metservice.com",
-      "source_platform": "website_page",
-      "source_record_id": "website:ff911b5fb63014e1424e48db",
-      "source_url": "https://www.metservice.com"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:01+00:00",
-      "source_account": "https://www.mpp.govt.nz",
-      "source_key": "website_page:https://www.mpp.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:0c7453aa1126f9c827f7822e",
-      "source_url": "https://www.mpp.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:03+00:00",
-      "source_account": "https://www.mpi.govt.nz",
-      "source_key": "website_page:https://www.mpi.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:ed5fcda0429153923e83f0e7",
-      "source_url": "https://www.mpi.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:07+00:00",
-      "source_account": "https://www.regulation.govt.nz",
-      "source_key": "website_page:https://www.regulation.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:4f0de50de84c0b672b72698a",
-      "source_url": "https://www.regulation.govt.nz"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:24:08+00:00",
-      "source_account": "https://www.mfe.govt.nz",
-      "source_key": "website_page:https://www.mfe.govt.nz",
+      "source_account": "https://www.aut.ac.nz",
+      "source_key": "website_page:https://www.aut.ac.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:da13998b007ea847ebe1ad11",
-      "source_url": "https://www.mfe.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:11+00:00",
-      "source_account": "https://www.women.govt.nz",
-      "source_key": "website_page:https://www.women.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:94e245b409c0cd7ef0949fd1",
-      "source_url": "https://www.women.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:12+00:00",
-      "source_account": "https://www.defence.govt.nz",
-      "source_key": "website_page:https://www.defence.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:41b5f1bfcff1b60f29b08314",
-      "source_url": "https://www.defence.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:12+00:00",
-      "source_account": "https://www.education.govt.nz",
-      "source_key": "website_page:https://www.education.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:9c2a6a6fa00f17e9e625bf0d",
-      "source_url": "https://www.education.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:13+00:00",
-      "source_account": "https://www.education.govt.nz",
-      "source_key": "website_page:https://www.education.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:1b942f324e295f17251407e9",
-      "source_url": "https://www.education.govt.nz/news/kia-manawaroa-issue-16-out-now"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:13+00:00",
-      "source_account": "https://www.education.govt.nz",
-      "source_key": "website_page:https://www.education.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:581c6091340d8c8e54e8b235",
-      "source_url": "https://www.education.govt.nz/bulletins"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:14+00:00",
-      "source_account": "https://www.health.govt.nz",
-      "source_key": "website_page:https://www.health.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:07a70ef55437134b00662713",
-      "source_url": "https://www.health.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:14+00:00",
-      "source_account": "https://www.hud.govt.nz",
-      "source_key": "website_page:https://www.hud.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:2a54588525da6d1b9496f85e",
-      "source_url": "https://www.hud.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:16+00:00",
-      "source_account": "https://www.justice.govt.nz",
-      "source_key": "website_page:https://www.justice.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:0853078e19c2a362b0c16029",
-      "source_url": "https://www.justice.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:17+00:00",
-      "source_account": "https://www.msd.govt.nz",
-      "source_key": "website_page:https://www.msd.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:8c64ef86ca4943502bd0e2c0",
-      "source_url": "https://www.msd.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:19+00:00",
-      "source_account": "https://www.transport.govt.nz",
-      "source_key": "website_page:https://www.transport.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:96c27f261593f1e736c180ba",
-      "source_url": "https://www.transport.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:22+00:00",
-      "source_account": "https://www.napier.govt.nz",
-      "source_key": "website_page:https://www.napier.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:7cbd02788c1bb09c4ebdd36c",
-      "source_url": "https://www.napier.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:24+00:00",
-      "source_account": "https://www.napier.govt.nz",
-      "source_key": "website_page:https://www.napier.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:3bb9b6c52350aa09f052a597",
-      "source_url": "https://www.napier.govt.nz/napier/community-development/community-connect-enewsletter/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:26+00:00",
-      "source_account": "https://www.napier.govt.nz",
-      "source_key": "website_page:https://www.napier.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:8c5b67ffa173e647768e3844",
-      "source_url": "https://www.napier.govt.nz/our-council/news/e-newsletters/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:28+00:00",
-      "source_account": "https://www.naturalhazards.govt.nz",
-      "source_key": "website_page:https://www.naturalhazards.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:0290115ed1b1fc9ccae64159",
-      "source_url": "https://www.naturalhazards.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:30+00:00",
-      "source_account": "https://www.nema.govt.nz",
-      "source_key": "website_page:https://www.nema.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:006d9680d10baf350c79c3dc",
-      "source_url": "https://www.nema.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:32+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "website_page:https://www.n4l.co.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:e7d087bff021f6ef8fef85b5",
-      "source_url": "https://www.n4l.co.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:34+00:00",
-      "source_account": "https://www.npdc.govt.nz",
-      "source_key": "website_page:https://www.npdc.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:df5bd17dd7693911801143b2",
-      "source_url": "https://www.npdc.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:35+00:00",
-      "source_account": "https://www.nmit.ac.nz",
-      "source_key": "website_page:https://www.nmit.ac.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:fe78fdcc5da91ae6e6caf617",
-      "source_url": "https://www.nmit.ac.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:37+00:00",
-      "source_account": "https://www.northtec.ac.nz",
-      "source_key": "website_page:https://www.northtec.ac.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:d4357f88d4fed75481ec5a94",
-      "source_url": "https://www.northtec.ac.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:38+00:00",
-      "source_account": "https://www.army.mil.nz",
-      "source_key": "website_page:https://www.army.mil.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:d418858a2162e7953e955058",
-      "source_url": "https://www.army.mil.nz"
+      "source_record_id": "website:e069b0918b38ae850caff597",
+      "source_url": "https://www.aut.ac.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:24:40+00:00",
-      "source_account": "https://www.nzals.co.nz",
-      "source_key": "website_page:https://www.nzals.co.nz",
+      "source_account": "https://www.beehive.govt.nz",
+      "source_key": "website_page:https://www.beehive.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:d4155dd1d5ea38f0a0834fcb",
-      "source_url": "https://www.nzals.co.nz"
+      "source_record_id": "website:c3c67e13bac81f5ec3d415b0",
+      "source_url": "https://www.beehive.govt.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:42+00:00",
-      "source_account": "https://www.nzblood.co.nz",
-      "source_key": "website_page:https://www.nzblood.co.nz",
+      "original_timestamp": "2026-07-01T05:24:41+00:00",
+      "source_account": "https://www.bsa.govt.nz",
+      "source_key": "website_page:https://www.bsa.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:f132911535efeafdd9913527",
-      "source_url": "https://www.nzblood.co.nz"
+      "source_record_id": "website:93d0cce531a8f9d9c7f6abbf",
+      "source_url": "https://www.bsa.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:24:43+00:00",
-      "source_account": "https://www.nzblood.co.nz",
-      "source_key": "website_page:https://www.nzblood.co.nz",
+      "source_account": "https://www.bullerdc.govt.nz",
+      "source_key": "website_page:https://www.bullerdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:24fd8d92e99d74e8d6855770",
-      "source_url": "https://www.nzblood.co.nz/healthcare-professionals/transfusion-medicine/clinical-newsletter"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:45+00:00",
-      "source_account": "https://www.customs.govt.nz",
-      "source_key": "website_page:https://www.customs.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:e7c344bfda6ee70e788c3f87",
-      "source_url": "https://www.customs.govt.nz"
+      "source_record_id": "website:88aa560bab0f901d303b7ce2",
+      "source_url": "https://www.bullerdc.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:24:46+00:00",
-      "source_account": "https://www.nzdf.mil.nz",
-      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_account": "https://www.callaghaninnovation.govt.nz",
+      "source_key": "website_page:https://www.callaghaninnovation.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:b466d4023634394a78802737",
-      "source_url": "https://www.nzdf.mil.nz"
+      "source_record_id": "website:a41ce20fe99ef5e7e1ebbeda",
+      "source_url": "https://www.callaghaninnovation.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:24:48+00:00",
-      "source_account": "https://www.nzfilm.co.nz",
-      "source_key": "website_page:https://www.nzfilm.co.nz",
+      "source_account": "https://www.teaho.govt.nz",
+      "source_key": "website_page:https://www.teaho.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:872c23f14c5125d74656f7ce",
-      "source_url": "https://www.nzfilm.co.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:48+00:00",
-      "source_account": "https://www.nzgcp.co.nz",
-      "source_key": "website_page:https://www.nzgcp.co.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:b7882c423bd2340610b73b21",
-      "source_url": "https://www.nzgcp.co.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:49+00:00",
-      "source_account": "https://www.tewaihanga.govt.nz",
-      "source_key": "website_page:https://www.tewaihanga.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:f3905e08009b51a7b6b81057",
-      "source_url": "https://www.tewaihanga.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:50+00:00",
-      "source_account": "https://www.nzonair.govt.nz",
-      "source_key": "website_page:https://www.nzonair.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:c58eed4be17898268615cff4",
-      "source_url": "https://www.nzonair.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:51+00:00",
-      "source_account": "https://www.nzonair.govt.nz",
-      "source_key": "website_page:https://www.nzonair.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:efc86ac9c4a6c98af9b6c3b6",
-      "source_url": "https://www.nzonair.govt.nz/news/shorts-newsletter-4-june-2026/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:52+00:00",
-      "source_account": "https://www.parliament.nz",
-      "source_key": "website_page:https://www.parliament.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:8d16ec9b047861919c976525",
-      "source_url": "https://www.parliament.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:53+00:00",
-      "source_account": "https://www.police.govt.nz",
-      "source_key": "website_page:https://www.police.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:2438b742ce1815e8bd13535c",
-      "source_url": "https://www.police.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:54+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "website_page:https://www.nzpost.co.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:f525e37b553ee594537bdd34",
-      "source_url": "https://www.nzpost.co.nz"
+      "source_record_id": "website:fe2b8618bf801e5051190932",
+      "source_url": "https://teaho.govt.nz/index.php/blog/april-2026-canshare-newsletter"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:24:55+00:00",
-      "source_account": "https://www.nzqa.govt.nz",
-      "source_key": "website_page:https://www.nzqa.govt.nz",
+      "source_account": "https://www.teaho.govt.nz",
+      "source_key": "website_page:https://www.teaho.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:31465bfae66e461d4049dc18",
-      "source_url": "https://www.nzqa.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:57+00:00",
-      "source_account": "https://www.kiwirail.co.nz",
-      "source_key": "website_page:https://www.kiwirail.co.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:1435bc04e23d0eadbf61ed72",
-      "source_url": "https://www.kiwirail.co.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:58+00:00",
-      "source_account": "https://www.nzso.co.nz",
-      "source_key": "website_page:https://www.nzso.co.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:127f5004990cbbb81562827d",
-      "source_url": "https://www.nzso.co.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:24:59+00:00",
-      "source_account": "https://www.nzte.govt.nz",
-      "source_key": "website_page:https://www.nzte.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:1dfa3abf90db55c345a29661",
-      "source_url": "https://www.nzte.govt.nz"
+      "source_record_id": "website:2eea542d3c878c74c5551f1f",
+      "source_url": "https://www.teaho.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:01+00:00",
-      "source_account": "https://www.nzsis.govt.nz",
-      "source_key": "website_page:https://www.nzsis.govt.nz",
+      "source_account": "https://www.chbdc.govt.nz",
+      "source_key": "website_page:https://www.chbdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:f7cc391ab1b8be67f782be66",
-      "source_url": "https://www.nzsis.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:02+00:00",
-      "source_account": "https://www.classificationoffice.govt.nz",
-      "source_key": "website_page:https://www.classificationoffice.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:e05ece37bc51e04f4d67c976",
-      "source_url": "https://www.classificationoffice.govt.nz"
+      "source_record_id": "website:4e6b3c8c6984781d6f7de783",
+      "source_url": "https://www.chbdc.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:03+00:00",
-      "source_account": "https://www.oag.govt.nz",
-      "source_key": "website_page:https://www.oag.govt.nz",
+      "source_account": "https://www.charterschools.govt.nz",
+      "source_key": "website_page:https://www.charterschools.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:1d89fe999c3ca144f4c3c91f",
-      "source_url": "https://www.oag.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:03+00:00",
-      "source_account": "https://www.classificationoffice.govt.nz",
-      "source_key": "website_page:https://www.classificationoffice.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:246f4f94b586b0f6503ce9de",
-      "source_url": "https://www.classificationoffice.govt.nz/news/newsletters/"
+      "source_record_id": "website:c816e226ffd9b9ae65f83f34",
+      "source_url": "https://www.charterschools.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:04+00:00",
-      "source_account": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/",
-      "source_key": "website_page:https://www.parliament.nz/en/about-parliament/office-of-the-clerk/",
+      "source_account": "https://www.cic.govt.nz",
+      "source_key": "website_page:https://www.cic.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:64d564fc9ba3c5b672fbbe9a",
-      "source_url": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/"
+      "source_record_id": "website:0e3483eb03e1c23cf58b0864",
+      "source_url": "https://us17.campaign-archive.com/home/?u=0d7d1b7e2a53c8cd46868914d&id=35e8af1465"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:05+00:00",
-      "source_account": "https://www.openpolytechnic.ac.nz",
-      "source_key": "website_page:https://www.openpolytechnic.ac.nz",
+      "original_timestamp": "2026-07-01T05:25:10+00:00",
+      "source_account": "https://www.cic.govt.nz",
+      "source_key": "website_page:https://www.cic.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:335b1d6b38ef0a02b7e75a80",
-      "source_url": "https://www.openpolytechnic.ac.nz"
+      "source_record_id": "website:588a2a8644d68c64e21961a3",
+      "source_url": "https://www.cic.govt.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:09+00:00",
-      "source_account": "https://www.orangatamariki.govt.nz",
-      "source_key": "website_page:https://www.orangatamariki.govt.nz",
+      "original_timestamp": "2026-07-01T05:25:13+00:00",
+      "source_account": "https://www.ccc.govt.nz",
+      "source_key": "website_page:https://www.ccc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:56dc49700d33a817903e82e0",
-      "source_url": "https://www.orangatamariki.govt.nz"
+      "source_record_id": "website:948fb921cb2eef8d6c7483b3",
+      "source_url": "https://www.ccc.govt.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:11+00:00",
-      "source_account": "https://www.orangatamariki.govt.nz",
-      "source_key": "website_page:https://www.orangatamariki.govt.nz",
+      "original_timestamp": "2026-07-01T05:25:13+00:00",
+      "source_account": "https://www.manamokopuna.org.nz",
+      "source_key": "website_page:https://www.manamokopuna.org.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:a111fc2cc6dbeaea33ca4aba",
-      "source_url": "https://www.orangatamariki.govt.nz/caregiving/care-matters-newsletter/"
+      "source_record_id": "website:a8a0c29f12176df68344c466",
+      "source_url": "https://www.manamokopuna.org.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:18+00:00",
-      "source_account": "https://www.op.ac.nz",
-      "source_key": "website_page:https://www.op.ac.nz",
+      "original_timestamp": "2026-07-01T05:25:14+00:00",
+      "source_account": "https://my.christchurchcitylibraries.com",
+      "source_key": "website_page:https://my.christchurchcitylibraries.com",
       "source_platform": "website_page",
-      "source_record_id": "website:ac8ddd3831e9c91e528227eb",
-      "source_url": "https://www.op.ac.nz"
+      "source_record_id": "website:17c3634a9ca460e99b6d0000",
+      "source_url": "https://my.christchurchcitylibraries.com"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:23+00:00",
-      "source_account": "https://www.orc.govt.nz",
-      "source_key": "website_page:https://www.orc.govt.nz",
+      "original_timestamp": "2026-07-01T05:25:15+00:00",
+      "source_account": "https://my.christchurchcitylibraries.com",
+      "source_key": "website_page:https://my.christchurchcitylibraries.com",
       "source_platform": "website_page",
-      "source_record_id": "website:31c831c5fa8310b2dc705e9f",
-      "source_url": "https://www.orc.govt.nz"
+      "source_record_id": "website:84dd189abbbda90127cf94ba",
+      "source_url": "https://my.christchurchcitylibraries.com/newsletters/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:16+00:00",
+      "source_account": "https://www.cityraillink.co.nz",
+      "source_key": "website_page:https://www.cityraillink.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4f46037e835c49d2745a48aa",
+      "source_url": "https://www.cityraillink.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:17+00:00",
+      "source_account": "https://www.cityraillink.co.nz",
+      "source_key": "website_page:https://www.cityraillink.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:009a3c4f8d222bfd06bc02e6",
+      "source_url": "https://www.cityraillink.co.nz/crl-newsletters"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:17+00:00",
+      "source_account": "https://www.caa.govt.nz",
+      "source_key": "website_page:https://www.caa.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:330da607a935b405f49a468e",
+      "source_url": "https://www.caa.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:20+00:00",
+      "source_account": "https://www.climatecommission.govt.nz",
+      "source_key": "website_page:https://www.climatecommission.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b9afcf2d6a00f7c3ce00a09e",
+      "source_url": "https://www.climatecommission.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:22+00:00",
+      "source_account": "https://www.comcom.govt.nz",
+      "source_key": "website_page:https://www.comcom.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:9ef6914111f99bee041eb540",
+      "source_url": "https://www.comcom.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:24+00:00",
-      "source_account": "https://www.orc.govt.nz",
-      "source_key": "website_page:https://www.orc.govt.nz",
+      "source_account": "https://www.courtsofnz.govt.nz",
+      "source_key": "website_page:https://www.courtsofnz.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:4af140795a9fa7e371b93f20",
-      "source_url": "https://www.orc.govt.nz/consents-and-compliance/the-farmers-guide/freshwater-farm-plans/freshwater-farm-plans-newsletter/"
+      "source_record_id": "website:d47a0ebcae040707781ad86a",
+      "source_url": "https://www.courtsofnz.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:25+00:00",
-      "source_account": "https://www.orc.govt.nz",
-      "source_key": "website_page:https://www.orc.govt.nz",
+      "source_account": "https://www.creativenz.govt.nz",
+      "source_key": "website_page:https://www.creativenz.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:31c339ed67cddd77e8c26e46",
-      "source_url": "https://www.orc.govt.nz/get-involved/projects-in-your-area/head-of-lake-whakatipu/get-involved/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:27+00:00",
-      "source_account": "https://www.orc.govt.nz",
-      "source_key": "website_page:https://www.orc.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:4b89bba1258aed3a7acdb449",
-      "source_url": "https://www.orc.govt.nz/get-involved/projects-in-your-area/toitu-te-hakapupu-the-pleasant-river-catchment-project/toitu-te-hakapupu-newsletter/"
+      "source_record_id": "website:7d7c946a4922780fde054bce",
+      "source_url": "https://www.creativenz.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:28+00:00",
-      "source_account": "https://www.orc.govt.nz",
-      "source_key": "website_page:https://www.orc.govt.nz",
+      "source_account": "https://www.crownirrigation.co.nz",
+      "source_key": "website_page:https://www.crownirrigation.co.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:99c953c3d8d39175d2ad695b",
-      "source_url": "https://www.orc.govt.nz/orbus/travel-with-us/about-orbus/on-board-with-orbus-newsletter/"
+      "source_record_id": "website:c7eda6c121d1cec9bf83c78b",
+      "source_url": "https://www.crownirrigation.co.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:29+00:00",
-      "source_account": "https://www.orc.govt.nz",
-      "source_key": "website_page:https://www.orc.govt.nz",
+      "source_account": "https://www.crownlaw.govt.nz",
+      "source_key": "website_page:https://www.crownlaw.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:1274d26f9637a6475b336d80",
-      "source_url": "https://www.orc.govt.nz/your-council/latest-news/enviroschools-otago-newsletter/"
+      "source_record_id": "website:df0bc5c7ccee6510715a3e87",
+      "source_url": "https://www.crownlaw.govt.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:31+00:00",
-      "source_account": "https://www.orc.govt.nz",
-      "source_key": "website_page:https://www.orc.govt.nz",
+      "original_timestamp": "2026-07-01T05:25:30+00:00",
+      "source_account": "https://www.dia.govt.nz",
+      "source_key": "website_page:https://www.dia.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:9025395d7e82cb9794ddabff",
-      "source_url": "https://www.orc.govt.nz/your-council/latest-news/on-stream-newsletter/"
+      "source_record_id": "website:94bb52dbad0068bbea072f32",
+      "source_url": "https://www.dia.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:30+00:00",
+      "source_account": "https://www.doc.govt.nz",
+      "source_key": "website_page:https://www.doc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e0b27f0ec26441f028051b2e",
+      "source_url": "https://www.doc.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:32+00:00",
-      "source_account": "https://www.orc.govt.nz",
-      "source_key": "website_page:https://www.orc.govt.nz",
+      "source_account": "https://www.enz.govt.nz",
+      "source_key": "website_page:https://www.enz.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:82a2496923d02d6eab5e33bf",
-      "source_url": "https://www.orc.govt.nz/your-council/latest-news/regulatory-newsletter/"
+      "source_record_id": "website:d09a908de3d37e9a467eb24b",
+      "source_url": "https://www.enz.govt.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:34+00:00",
-      "source_account": "https://www.otodc.govt.nz",
-      "source_key": "website_page:https://www.otodc.govt.nz",
+      "original_timestamp": "2026-07-01T05:25:33+00:00",
+      "source_account": "https://www.educationpayroll.co.nz",
+      "source_key": "website_page:https://www.educationpayroll.co.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:42a2b66242efab8c3acd2a07",
-      "source_url": "https://www.otodc.govt.nz"
+      "source_record_id": "website:9c878777f2c887608eda3819",
+      "source_url": "https://www.educationpayroll.co.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:36+00:00",
-      "source_account": "https://www.pncc.govt.nz",
-      "source_key": "website_page:https://www.pncc.govt.nz",
+      "original_timestamp": "2026-07-01T05:25:35+00:00",
+      "source_account": "https://www.eeca.govt.nz",
+      "source_key": "website_page:https://www.eeca.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:81b65ffe89199bd8fc9b9a19",
-      "source_url": "https://www.pncc.govt.nz"
+      "source_record_id": "website:0904894bb75c870ac6a3181b",
+      "source_url": "https://www.eeca.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:37+00:00",
+      "source_account": "https://www.eit.ac.nz",
+      "source_key": "website_page:https://www.eit.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:fd7092dbb2188cebf6c8750c",
+      "source_url": "https://www.eit.ac.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:38+00:00",
-      "source_account": "https://www.pamu.co.nz",
-      "source_key": "website_page:https://www.pamu.co.nz",
+      "source_account": "https://www.eit.ac.nz",
+      "source_key": "website_page:https://www.eit.ac.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:7e02e7598889b523625178be",
-      "source_url": "https://www.pamu.co.nz"
+      "source_record_id": "website:810449b4f97026d663516d34",
+      "source_url": "https://www.eit.ac.nz/research-innovation/research-newsletters/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:39+00:00",
-      "source_account": "https://www.pce.parliament.nz",
-      "source_key": "website_page:https://www.pce.parliament.nz",
+      "source_account": "https://www.elections.nz",
+      "source_key": "website_page:https://www.elections.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:1716e5b858217eb285cdec42",
-      "source_url": "https://www.pce.parliament.nz"
+      "source_record_id": "website:6891fb04ba8ac8311fa2354a",
+      "source_url": "https://www.elections.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:39+00:00",
+      "source_account": "https://www.ea.govt.nz",
+      "source_key": "website_page:https://www.ea.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c9e06b8d0b473129b9652674",
+      "source_url": "https://www.ea.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:40+00:00",
+      "source_account": "https://www.ecnz.co.nz",
+      "source_key": "website_page:https://www.ecnz.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0ed70e02f71c426a9632da11",
+      "source_url": "https://www.ecnz.co.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:41+00:00",
-      "source_account": "https://www.parliament.nz",
-      "source_key": "website_page:https://www.parliament.nz",
+      "source_account": "https://www.ecan.govt.nz",
+      "source_key": "website_page:https://www.ecan.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:b96199586200a6e9c6db98e9",
-      "source_url": "https://www.parliament.nz"
+      "source_record_id": "website:aaec462300af220b58a5e801",
+      "source_url": "https://www.ecan.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:42+00:00",
-      "source_account": "https://www.pharmac.govt.nz",
-      "source_key": "website_page:https://www.pharmac.govt.nz",
+      "source_account": "https://www.epa.govt.nz",
+      "source_key": "website_page:https://www.epa.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:ab6d64f0a557d8090301feb7",
-      "source_url": "https://www.pharmac.govt.nz"
+      "source_record_id": "website:4fa1853edc897d63b5ba399f",
+      "source_url": "https://www.epa.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:44+00:00",
-      "source_account": "https://www.privacy.org.nz",
-      "source_key": "website_page:https://www.privacy.org.nz",
+      "source_account": "https://www.xrb.govt.nz",
+      "source_key": "website_page:https://www.xrb.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:2ac6da4c292ebd8c1d5f71b0",
-      "source_url": "https://www.privacy.org.nz"
+      "source_record_id": "website:0c3d9001862fbedd6cfc3290",
+      "source_url": "https://www.xrb.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:46+00:00",
-      "source_account": "https://www.privacy.org.nz",
-      "source_key": "website_page:https://www.privacy.org.nz",
+      "source_account": "https://www.fma.govt.nz",
+      "source_key": "website_page:https://www.fma.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:967dad5dbe63c51f741159a2",
-      "source_url": "https://www.privacy.org.nz/tuhono-connect/privacy-news/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:47+00:00",
-      "source_account": "https://www.publicservice.govt.nz",
-      "source_key": "website_page:https://www.publicservice.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:f254738fcddb0950edb6a8dd",
-      "source_url": "https://www.publicservice.govt.nz"
+      "source_record_id": "website:4db4a0ea5a9ae04ffd3e044d",
+      "source_url": "https://www.fma.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:48+00:00",
-      "source_account": "https://www.publictrust.co.nz",
-      "source_key": "website_page:https://www.publictrust.co.nz",
+      "source_account": "https://www.fireandemergency.nz",
+      "source_key": "website_page:https://www.fireandemergency.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:6c29785205e6b86bcde3ca27",
-      "source_url": "https://www.publictrust.co.nz"
+      "source_record_id": "website:57c5df2fd62689cab5f313f4",
+      "source_url": "https://www.fireandemergency.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:48+00:00",
-      "source_account": "https://www.qldc.govt.nz",
-      "source_key": "website_page:https://www.qldc.govt.nz",
+      "original_timestamp": "2026-07-01T05:25:50+00:00",
+      "source_account": "https://www.gcsb.govt.nz",
+      "source_key": "website_page:https://www.gcsb.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:e1c7eba3e360f97eb128e834",
-      "source_url": "https://www.qldc.govt.nz"
+      "source_record_id": "website:24173d3530ad73ca4e1a7100",
+      "source_url": "https://www.gcsb.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:25:51+00:00",
+      "source_account": "https://www.goredc.govt.nz",
+      "source_key": "website_page:https://www.goredc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:1a9d72f7f621a3139fcaca1f",
+      "source_url": "https://www.goredc.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:52+00:00",
-      "source_account": "https://www.qldc.govt.nz",
-      "source_key": "website_page:https://www.qldc.govt.nz",
+      "source_account": "https://www.gsfa.govt.nz",
+      "source_key": "website_page:https://www.gsfa.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:c7f2f6c0c36a8139a4d1a9f1",
-      "source_url": "https://www.qldc.govt.nz/do-it-online/lets-talk-korero-mai/"
+      "source_record_id": "website:14bf4527ccc5fa3e337662dd",
+      "source_url": "https://www.gsfa.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:53+00:00",
-      "source_account": "https://www.qldc.govt.nz",
-      "source_key": "website_page:https://www.qldc.govt.nz",
+      "source_account": "https://www.gsfa.govt.nz",
+      "source_key": "website_page:https://www.gsfa.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:10b98d9b2760ff7660bbb6e4",
-      "source_url": "https://www.qldc.govt.nz/your-council/district-plan/planning-matters-planning-development-newsletter/"
+      "source_record_id": "website:379e26d2b5d93adde0518ea6",
+      "source_url": "https://www.gsfa.govt.nz/members/newsletters/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:54+00:00",
-      "source_account": "https://www.qldc.govt.nz",
-      "source_key": "website_page:https://www.qldc.govt.nz",
+      "source_account": "https://www.gw.govt.nz",
+      "source_key": "website_page:https://www.gw.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:a99aade547afe85e2d90c847",
-      "source_url": "https://www.qldc.govt.nz/your-council/newsletter-archive/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:25:55+00:00",
-      "source_account": "https://www.qv.co.nz",
-      "source_key": "website_page:https://www.qv.co.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:946b6336dc221ffd8d71969b",
-      "source_url": "https://www.qv.co.nz"
+      "source_record_id": "website:1741915ce0ac5b6651cc37a5",
+      "source_url": "https://www.gw.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:56+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "website_page:https://www.rangitikei.govt.nz",
+      "source_account": "https://www.nzsuperfund.nz",
+      "source_key": "website_page:https://www.nzsuperfund.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:ca05c7505a76abd3715ceb45",
-      "source_url": "https://www.rangitikei.govt.nz"
+      "source_record_id": "website:1cbd87031252c7ed61886f67",
+      "source_url": "https://www.nzsuperfund.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:57+00:00",
-      "source_account": "https://www.rea.govt.nz",
-      "source_key": "website_page:https://www.rea.govt.nz",
+      "source_account": "https://www.hamilton.govt.nz",
+      "source_key": "website_page:https://www.hamilton.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:182cfc6acbf8852b106d63e3",
-      "source_url": "https://www.rea.govt.nz"
+      "source_record_id": "website:3791030fc0e597254784bfa9",
+      "source_url": "https://www.hamilton.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:25:59+00:00",
-      "source_account": "https://www.reannz.co.nz",
-      "source_key": "website_page:https://www.reannz.co.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:98b301067a30ceb020e59ee8",
-      "source_url": "https://www.reannz.co.nz"
+      "source_record_id": "website:92c2825fe9abfe3ade281948",
+      "source_url": "https://www.hastingsdc.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:01+00:00",
-      "source_account": "https://www.reannz.co.nz",
-      "source_key": "website_page:https://www.reannz.co.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:e7122df332336cbf02871dd8",
-      "source_url": "https://www.reannz.co.nz/news-and-events/training-newsletter-june"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:26:02+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "website_page:https://www.rnz.co.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:75771e520c8c315de6fae965",
-      "source_url": "https://www.rnz.co.nz"
+      "source_record_id": "website:fbee4bfed5abd9925f808346",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:03+00:00",
-      "source_account": "https://www.airforce.mil.nz",
-      "source_key": "website_page:https://www.airforce.mil.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:11ba5dd8592ea12dd87f828f",
-      "source_url": "https://www.airforce.mil.nz"
+      "source_record_id": "website:4ddfb19a1a44bbade0c3c316",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/aquatics-hastings-enewsletter/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:05+00:00",
-      "source_account": "https://www.navy.mil.nz",
-      "source_key": "website_page:https://www.navy.mil.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:43c76d163a08852392e639ef",
-      "source_url": "https://www.navy.mil.nz"
+      "source_record_id": "website:e7070ff9675db0e36991a673",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-city-art-gallery/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:07+00:00",
-      "source_account": "https://www.sfo.govt.nz",
-      "source_key": "website_page:https://www.sfo.govt.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:b30e80e0175c0b41ccb42372",
-      "source_url": "https://www.sfo.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:26:07+00:00",
-      "source_account": "https://www.ruapehudc.govt.nz",
-      "source_key": "website_page:https://www.ruapehudc.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:dcd2664b42d4c367654f6c8d",
-      "source_url": "https://www.ruapehudc.govt.nz"
+      "source_record_id": "website:cc17f4d28f968382c5e096ac",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-district-libraries-newsblast/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:09+00:00",
-      "source_account": "https://www.sit.ac.nz",
-      "source_key": "website_page:https://www.sit.ac.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:d5fe3ae4eae632dca1aa4f65",
-      "source_url": "https://www.sit.ac.nz"
+      "source_record_id": "website:00010ddf053988dd34f8f1e1",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/iway-e/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:10+00:00",
-      "source_account": "https://www.sit.ac.nz",
-      "source_key": "website_page:https://www.sit.ac.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:294ba7010730141a4eb49fa9",
-      "source_url": "https://www.sit.ac.nz/Home/About-Us/News/Community-Newsletter"
+      "source_record_id": "website:e27194adb877ec9cb3fb8d4c",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/my-hastings/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:12+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:1e49b9e35ad4ad94d622fec2",
-      "source_url": "https://swrb.govt.nz/onboard-newsletter-june-2026/"
+      "source_record_id": "website:adcd153db8352b0ca0e3c3bc",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/neighbourhood-support/"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:26:13+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "website_page:https://www.swrb.govt.nz",
+      "original_timestamp": "2026-07-01T05:26:14+00:00",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:a49be0413c2e70236448896e",
-      "source_url": "https://www.swrb.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:26:13+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "website_page:https://www.swrb.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:dcc69aba3c1a0fe15d55bb80",
-      "source_url": "https://swrb.govt.nz/onboard-newsletter-may-2026/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:26:15+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "website_page:https://www.swrb.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:dbf9b552896a4f7fb2afabe6",
-      "source_url": "https://www.swrb.govt.nz/about-us/news-and-publications/newsletters/"
+      "source_record_id": "website:9116175b2c122d8c6aa38c2f",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/residential-development-update/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:16+00:00",
-      "source_account": "https://www.swdc.govt.nz",
-      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:195ea9cf5bc46e48c5b05528",
-      "source_url": "https://swdc.govt.nz/community/quarterly-community-newsletter/"
+      "source_record_id": "website:fd414271cc369a1ed551a98e",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/splash-planet-newsletter/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:17+00:00",
-      "source_account": "https://www.swdc.govt.nz",
-      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:8623c5cbff608d0345c64e18",
-      "source_url": "https://www.swdc.govt.nz"
+      "source_record_id": "website:33d448cd69dec9515c795304",
+      "source_url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/waste-minimisation/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:19+00:00",
-      "source_account": "https://www.southernresponse.co.nz",
-      "source_key": "website_page:https://www.southernresponse.co.nz",
+      "source_account": "https://www.hastingsdc.govt.nz",
+      "source_key": "website_page:https://www.hastingsdc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:e739bffb4d3089f1b48c4e08",
-      "source_url": "https://www.southernresponse.co.nz"
+      "source_record_id": "website:e6e88b506cecc5470f952229",
+      "source_url": "https://www.hastingsdc.govt.nz/services/rubbish-and-recycling/waste-awareness-newsletter/"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:26:20+00:00",
-      "source_account": "https://www.southlanddc.govt.nz",
-      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "original_timestamp": "2026-07-01T05:26:21+00:00",
+      "source_account": "https://www.hbrc.govt.nz",
+      "source_key": "website_page:https://www.hbrc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:77d287270d2826978c364d6c",
-      "source_url": "https://www.southlanddc.govt.nz"
+      "source_record_id": "website:06c68145583f1d9590089743",
+      "source_url": "https://www.hbrc.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:22+00:00",
-      "source_account": "https://www.sportnz.org.nz",
-      "source_key": "website_page:https://www.sportnz.org.nz",
+      "source_account": "https://www.hdc.org.nz",
+      "source_key": "website_page:https://www.hdc.org.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:074f1bd43480fa1df9ce5672",
-      "source_url": "https://www.sportnz.org.nz"
+      "source_record_id": "website:8c092f5e4da7183bc39691c4",
+      "source_url": "https://www.hdc.org.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:26:25+00:00",
-      "source_account": "https://www.stats.govt.nz",
-      "source_key": "website_page:https://www.stats.govt.nz",
+      "original_timestamp": "2026-07-01T05:26:23+00:00",
+      "source_account": "https://www.hdc.org.nz",
+      "source_key": "website_page:https://www.hdc.org.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:08dac37f1d14c4a5ad6694c3",
-      "source_url": "https://www.stats.govt.nz"
+      "source_record_id": "website:0e8b2e14e4811ce52cfaaca4",
+      "source_url": "https://www.hdc.org.nz/news-resources/hdc-newsletters/"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T05:26:28+00:00",
-      "source_account": "https://www.tpp.ac.nz",
-      "source_key": "website_page:https://www.tpp.ac.nz",
+      "original_timestamp": "2026-07-01T05:26:24+00:00",
+      "source_account": "https://www.tewhatuora.govt.nz",
+      "source_key": "website_page:https://www.tewhatuora.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:4fc1a2e4a79c4843eb7fe5db",
-      "source_url": "https://www.tpp.ac.nz"
+      "source_record_id": "website:0129117b2fbe9b7b6e49dfca",
+      "source_url": "https://www.tewhatuora.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:27+00:00",
+      "source_account": "https://www.hqsc.govt.nz",
+      "source_key": "website_page:https://www.hqsc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a428a31bf438616308ee865e",
+      "source_url": "https://www.hqsc.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:29+00:00",
+      "source_account": "https://www.hrc.govt.nz",
+      "source_key": "website_page:https://www.hrc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:caa721f41678db2ea5808eb8",
+      "source_url": "https://www.hrc.govt.nz"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:30+00:00",
-      "source_account": "https://www.takeovers.govt.nz",
-      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_account": "https://www.hrc.govt.nz",
+      "source_key": "website_page:https://www.hrc.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:f0794f0774bf3091037f832b",
-      "source_url": "https://www.takeovers.govt.nz"
+      "source_record_id": "website:0a7d915153feba5cdf7efda7",
+      "source_url": "https://www.hrc.govt.nz/news-and-events/newsletters"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-01T05:26:31+00:00",
-      "source_account": "https://www.trc.govt.nz",
-      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_account": "https://www.horizons.govt.nz",
+      "source_key": "website_page:https://www.horizons.govt.nz",
       "source_platform": "website_page",
-      "source_record_id": "website:2a0977d120b1fec0f29f0c02",
-      "source_url": "https://www.trc.govt.nz"
+      "source_record_id": "website:067b60c6481b84bdb9432822",
+      "source_url": "https://www.horizons.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:31+00:00",
+      "source_account": "https://www.heritage.org.nz",
+      "source_key": "website_page:https://www.heritage.org.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:812ec7d6091162206c4f2df5",
+      "source_url": "https://www.heritage.org.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:32+00:00",
+      "source_account": "https://www.horizons.govt.nz",
+      "source_key": "website_page:https://www.horizons.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:6fee7f1800218fb28fe2b0f7",
+      "source_url": "https://www.horizons.govt.nz/about-our-region-and-council/newsletters"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:34+00:00",
+      "source_account": "https://www.horowhenua.govt.nz",
+      "source_key": "website_page:https://www.horowhenua.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e407153909a70974c856faff",
+      "source_url": "https://www.horowhenua.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:37+00:00",
+      "source_account": "https://www.hrc.co.nz",
+      "source_key": "website_page:https://www.hrc.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2e701397199fba732189af7e",
+      "source_url": "https://www.hrc.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:39+00:00",
+      "source_account": "https://www.aroturuki.govt.nz",
+      "source_key": "website_page:https://www.aroturuki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:02da0bcb0bba39d8d0f98bc9",
+      "source_url": "https://www.aroturuki.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:39+00:00",
+      "source_account": "https://www.aroturuki.govt.nz",
+      "source_key": "website_page:https://www.aroturuki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d26e478d9793889982d4fd91",
+      "source_url": "https://createsend.com/t/y-66C951A93546712D2540EF23F30FEDED"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:42+00:00",
+      "source_account": "https://www.ipca.govt.nz",
+      "source_key": "website_page:https://www.ipca.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:124f4d19c3496b6d9913f32b",
+      "source_url": "https://www.ipca.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:44+00:00",
+      "source_account": "https://www.kaingaora.govt.nz",
+      "source_key": "website_page:https://www.kaingaora.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4c345cbe44f4e695598e96c0",
+      "source_url": "https://www.kaingaora.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:44+00:00",
+      "source_account": "https://www.ird.govt.nz",
+      "source_key": "website_page:https://www.ird.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e8fbf530b116a3fb5f233f06",
+      "source_url": "https://www.ird.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:46+00:00",
+      "source_account": "https://www.kaingaora.govt.nz",
+      "source_key": "website_page:https://www.kaingaora.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e967c0b088d1be0cbe603908",
+      "source_url": "https://www.kaingaora.govt.nz/en_NZ/publications/tenant-publications/close-to-home-tenant-newsletter/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:48+00:00",
+      "source_account": "https://www.kaingaora.govt.nz",
+      "source_key": "website_page:https://www.kaingaora.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:3deabdc128613e78be1de740",
+      "source_url": "https://www.kaingaora.govt.nz/en_NZ/tenant-information/our-tenants/close-to-home-tenant-newsletter/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:51+00:00",
+      "source_account": "https://www.kaipara.govt.nz",
+      "source_key": "website_page:https://www.kaipara.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:620729680d0e62fe4998ef04",
+      "source_url": "https://www.kaipara.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:52+00:00",
+      "source_account": "https://www.kapiticoast.govt.nz",
+      "source_key": "website_page:https://www.kapiticoast.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b02608092a2b21f32915325e",
+      "source_url": "https://www.kapiticoast.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:53+00:00",
+      "source_account": "https://www.kaweraudc.govt.nz",
+      "source_key": "website_page:https://www.kaweraudc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5d975bcaa9e94906f7cb3375",
+      "source_url": "https://www.kaweraudc.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:55+00:00",
+      "source_account": "https://www.kaweraudc.govt.nz",
+      "source_key": "website_page:https://www.kaweraudc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c2be4a332db4361bf323a796",
+      "source_url": "https://www.kaweraudc.govt.nz/community-newsletters"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:56+00:00",
+      "source_account": "https://www.kiwibank.co.nz",
+      "source_key": "website_page:https://www.kiwibank.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:f2c536848276c4d42b4af2f9",
+      "source_url": "https://www.kiwibank.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:26:58+00:00",
+      "source_account": "https://www.kiwirail.co.nz",
+      "source_key": "website_page:https://www.kiwirail.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a35d235ab41164a3aa03ab28",
+      "source_url": "https://www.kiwirail.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:27:00+00:00",
+      "source_account": "https://www.lawcom.govt.nz",
+      "source_key": "website_page:https://www.lawcom.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:68ec67533ac200f454bf9f68",
+      "source_url": "https://www.lawcom.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:27:00+00:00",
+      "source_account": "https://www.kordia.co.nz",
+      "source_key": "website_page:https://www.kordia.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:f0ec7e7e15fb22b9d2dca7f0",
+      "source_url": "https://www.kordia.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:27:01+00:00",
+      "source_account": "https://www.lawcom.govt.nz",
+      "source_key": "website_page:https://www.lawcom.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:f38883c77b1199710e659366",
+      "source_url": "https://www.lawcom.govt.nz/about-us/news-and-media/newsletter-te-aka-korero-no-32"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:27:02+00:00",
+      "source_account": "https://www.linz.govt.nz",
+      "source_key": "website_page:https://www.linz.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:7341da9d5bf5bfa882617bed",
+      "source_url": "https://www.linz.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:27:03+00:00",
+      "source_account": "https://www.lotto.co.nz",
+      "source_key": "website_page:https://www.lotto.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:6b8c56b4c1923bc5976aeedc",
+      "source_url": "https://www.lotto.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:27:05+00:00",
+      "source_account": "https://www.manukau.ac.nz",
+      "source_key": "website_page:https://www.manukau.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:8071b52ca06588b81fcb1f9c",
+      "source_url": "https://www.manukau.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:27:06+00:00",
+      "source_account": "https://www.maritimenz.govt.nz",
+      "source_key": "website_page:https://www.maritimenz.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:756e9780b3eb5687255dc639",
+      "source_url": "https://www.maritimenz.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:27:07+00:00",
+      "source_account": "https://www.massey.ac.nz",
+      "source_key": "website_page:https://www.massey.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5250b7a7ae29173e22ecc8a7",
+      "source_url": "https://www.massey.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-01T05:27:09+00:00",
+      "source_account": "https://www.mpdc.govt.nz",
+      "source_key": "website_page:https://www.mpdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2f4f4593163765f83eaa1746",
+      "source_url": "https://www.mpdc.govt.nz"
     },
     {
       "mirror_targets": [],
@@ -70682,7 +70610,7 @@
     "email": 14,
     "linkedin": 2,
     "rss": 3887,
-    "website_page": 326,
+    "website_page": 318,
     "x": 689,
     "youtube": 1822
   },
@@ -70708,7 +70636,7 @@
       "min_original_created_at": "2004-05-05T12:00:00+00:00"
     },
     "website_page": {
-      "max_original_created_at": "2026-07-01T05:26:31+00:00",
+      "max_original_created_at": "2026-07-01T05:27:09+00:00",
       "min_original_created_at": "2026-06-25T03:44:00+00:00"
     },
     "x": {
