@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 
-DEFAULT_SOURCE_TYPES = "rss,json_feed,bluesky,youtube,website_page,threads,facebook,instagram,linkedin,x"
+DEFAULT_SOURCE_TYPES = "rss,json_feed,bluesky,youtube,website_page,threads,social_profile"
 
 
 def load_manifest(path: Path) -> dict[str, Any]:

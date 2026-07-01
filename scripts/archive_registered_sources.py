@@ -1048,7 +1048,7 @@ def main() -> None:
     parser.add_argument(
         "--source-type",
         default="all_feasible",
-        choices=["all_feasible", "rss", "json_feed", "website_page", "bluesky", "youtube", "facebook", "instagram", "threads", "linkedin", "newsletter", "x"],
+        choices=["all_feasible", "rss", "json_feed", "website_page", "social_profile", "bluesky", "youtube", "facebook", "instagram", "threads", "linkedin", "newsletter", "x"],
     )
     parser.add_argument("--agency-id", default="")
     parser.add_argument("--include-blocked", action="store_true")
