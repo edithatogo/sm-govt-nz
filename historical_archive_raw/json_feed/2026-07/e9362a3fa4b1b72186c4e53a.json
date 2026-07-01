@@ -1,0 +1,32 @@
+{
+  "captured_at": "2026-07-01T10:07:53+00:00",
+  "feed_url": "https://www.n4l.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.n4l.co.nz%2F",
+  "item": {
+    "author_name": "N4L",
+    "description": "Smarter, simpler digital technologies so schools & kura can focus on teaching & learning | Find out more about N4L",
+    "height": 338,
+    "html": "<blockquote class=\"wp-embedded-content\" data-secret=\"OBiuj98Kbt\"><a href=\"https://www.n4l.co.nz/\">Faster safer internet for NZ schools</a></blockquote><iframe sandbox=\"allow-scripts\" security=\"restricted\" src=\"https://www.n4l.co.nz/embed/#?secret=OBiuj98Kbt\" width=\"600\" height=\"338\" title=\"&#8220;Faster safer internet for NZ schools&#8221; &#8212; Network for Learning | N4L\" data-secret=\"OBiuj98Kbt\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" class=\"wp-embedded-content\"></iframe><script>\n/*! This file is auto-generated */\n!function(d,l){\"use strict\";l.querySelector&&d.addEventListener&&\"undefined\"!=typeof URL&&(d.wp=d.wp||{},d.wp.receiveEmbedMessage||(d.wp.receiveEmbedMessage=function(e){var t=e.data;if((t||t.secret||t.message||t.value)&&!/[^a-zA-Z0-9]/.test(t.secret)){for(var s,r,n,a=l.querySelectorAll('iframe[data-secret=\"'+t.secret+'\"]'),o=l.querySelectorAll('blockquote[data-secret=\"'+t.secret+'\"]'),c=new RegExp(\"^https?:$\",\"i\"),i=0;i<o.length;i++)o[i].style.display=\"none\";for(i=0;i<a.length;i++)s=a[i],e.source===s.contentWindow&&(s.removeAttribute(\"style\"),\"height\"===t.message?(1e3<(r=parseInt(t.value,10))?r=1e3:~~r<200&&(r=200),s.height=r):\"link\"===t.message&&(r=new URL(s.getAttribute(\"src\")),n=new URL(t.value),c.test(n.protocol))&&n.host===r.host&&l.activeElement===s&&(d.top.location.href=t.value))}},d.addEventListener(\"message\",d.wp.receiveEmbedMessage,!1),l.addEventListener(\"DOMContentLoaded\",function(){for(var e,t,s=l.querySelectorAll(\"iframe.wp-embedded-content\"),r=0;r<s.length;r++)(t=(e=s[r]).getAttribute(\"data-secret\"))||(t=Math.random().toString(36).substring(2,12),e.src+=\"#?secret=\"+t,e.setAttribute(\"data-secret\",t)),e.contentWindow.postMessage({message:\"ready\",secret:t},\"*\")},!1)))}(window,document);\n//# sourceURL=https://www.n4l.co.nz/wp-includes/js/wp-embed.min.js\n</script>\n",
+    "provider_name": "Network for Learning | N4L",
+    "provider_url": "https://www.n4l.co.nz",
+    "title": "Faster safer internet for NZ schools | Network for Learning | N4L",
+    "type": "rich",
+    "version": "1.0",
+    "width": 600
+  },
+  "source": {
+    "access_method": "public_json_feed",
+    "account": "https://www.n4l.co.nz",
+    "agency_id": "network-for-learning",
+    "agency_name": "Network for Learning Limited (N4L)",
+    "archive_status": "ready",
+    "auth": "none",
+    "candidate_id": "307dc9ea054395c0",
+    "feasibility": "high",
+    "notes": "JSON Feed is a first-class feed source when advertised by link rel=alternate or common feed paths.",
+    "origin": "homepage.link_alternate",
+    "platform": "json_feed",
+    "source_id": "network-for-learning-json_feed-8b6deef2",
+    "source_type": "json_feed",
+    "url": "https://www.n4l.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.n4l.co.nz%2F"
+  }
+}
