@@ -2,6 +2,7 @@ import argparse
 import base64
 import hashlib
 import hmac
+import html as html_lib
 import json
 import os
 import re
@@ -829,6 +830,10 @@ def x_api_capture_enabled() -> bool:
     return os.getenv("X_API_CAPTURE_ENABLED", "").strip().lower() == "true"
 
 
+def x_public_snapshot_enabled() -> bool:
+    return os.getenv("X_PUBLIC_SNAPSHOT_ENABLED", "").strip().lower() == "true"
+
+
 def x_oauth_credentials() -> dict[str, str]:
     keys = ["X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET"]
     values = {key: os.getenv(key, "").strip() for key in keys}
@@ -1145,6 +1150,104 @@ def archive_x_source(
 
 
 
+def extract_x_public_snapshot_content(body: str, url: str) -> str:
+    def first_match(pattern: str) -> str:
+        match = re.search(pattern, body, flags=re.IGNORECASE | re.DOTALL)
+        if not match:
+            return ""
+        return html_lib.unescape(re.sub(r"\s+", " ", match.group(1)).strip())
+
+    title = first_match(r"<title[^>]*>(.*?)</title>")
+    description = first_match(
+        r'<meta[^>]+(?:name|property)=["\'](?:description|og:description|twitter:description)["\'][^>]+content=["\']([^"\']+)["\']'
+    )
+    og_title = first_match(
+        r'<meta[^>]+(?:name|property)=["\'](?:og:title|twitter:title)["\'][^>]+content=["\']([^"\']+)["\']'
+    )
+    parts = []
+    for value in [og_title, title, description, f"Public snapshot URL: {url}"]:
+        if value and value not in parts:
+            parts.append(value)
+    if parts:
+        return "\n\n".join(parts)
+    return f"Public X profile snapshot captured from {url}; no extractable title or description metadata was present."
+
+
+def archive_x_public_snapshot_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    *,
+    fetcher: Any | None = None,
+    fetch_timeout: int = 30,
+) -> dict[str, Any]:
+    captured_at = now_iso()
+    handle = x_handle_from_source(source)
+    if not handle:
+        return source_result(source, "needs_x_handle", "X public snapshot fallback needs an account handle")
+    url = str(source.get("url") or f"https://x.com/{handle}")
+    fetch = fetcher or fetch_text
+    try:
+        body = fetch(url, timeout=fetch_timeout)
+    except Exception as exc:  # noqa: BLE001 - per-source report records public page failures.
+        return source_result(source, website_failure_status(exc), website_failure_reason(exc))
+
+    snapshot_key = stable_id(f"{source.get('source_id')}|{url}|{captured_at[:10]}")
+    raw_rel = Path("x_public_snapshot") / captured_at[:7] / f"{snapshot_key}.json"
+    raw_path = raw_root / raw_rel
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    if not raw_path.exists():
+        raw_path.write_text(
+            json.dumps(
+                {
+                    "captured_at": captured_at,
+                    "source": source,
+                    "url": url,
+                    "html": body,
+                    "policy": {
+                        "access_method": "unauthenticated_public_http_snapshot",
+                        "no_login": True,
+                        "no_proxy": True,
+                        "no_anti_bot_bypass": True,
+                        "not_post_level_api_equivalent": True,
+                    },
+                },
+                indent=2,
+                sort_keys=True,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+    normalized = build_normalized_record(
+        record_id=f"x_public_snapshot:{snapshot_key}",
+        agency_id=str(source.get("agency_id") or ""),
+        source_platform="x",
+        source_account=handle,
+        source_kind="public_profile_snapshot",
+        source_url=url,
+        canonical_url=url,
+        original_created_at=captured_at,
+        captured_at=captured_at,
+        content=extract_x_public_snapshot_content(body, url),
+        raw_path=str(raw_path),
+        extraction_method="x_public_web_snapshot",
+        cross_source_ids={
+            "source_id": str(source.get("source_id") or ""),
+            "x_username": handle,
+            "snapshot_date": captured_at[:10],
+        },
+    )
+    inserted = append_normalized_record(normalized_root, "x", normalized)
+    return source_result(
+        source,
+        "public_snapshot_captured" if inserted else "public_snapshot_already_captured",
+        "captured unauthenticated public X profile snapshot"
+        if inserted
+        else "public X profile snapshot already present for this source/date",
+    )
+
+
+
 def threads_user_id(source: dict[str, Any]) -> str:
     for key in ("threads_user_id", "platform_user_id", "external_id"):
         value = str(source.get(key) or "").strip()
@@ -1354,6 +1457,8 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
             if x_api_capture_enabled():
                 return [source_result(source, "would_capture", "dry run: official X API capture enabled")]
             if find_manual_seed_path(source, manual_seed_root) is None:
+                if x_public_snapshot_enabled():
+                    return [source_result(source, "would_capture", "dry run: public X snapshot fallback enabled")]
                 return [source_result(source, "manual_seed_missing", "dry run: manual seed file is not present and X API capture is disabled")]
         if platform == "youtube":
             return [source_result(source, "would_capture", "dry run: public YouTube channel RSS capture")]
@@ -1423,17 +1528,41 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 for result in seed_results:
                     result["reason"] = f"official Threads API unavailable; archived authorized manual seed. {result.get('reason', '')}".strip()
                 return seed_results
+            if (
+                all(result.get("status") in {"x_auth_required", "x_permission_error", "x_billing_required", "x_api_error", "rate_limited"} for result in api_results)
+                and x_public_snapshot_enabled()
+            ):
+                snapshot_result = archive_x_public_snapshot_source(
+                    source,
+                    raw_root,
+                    normalized_root,
+                    fetch_timeout=getattr(args, "fetch_timeout", 30),
+                )
+                snapshot_result["reason"] = (
+                    "official X API unavailable; used public snapshot fallback. "
+                    f"{snapshot_result.get('reason', '')}"
+                ).strip()
+                return [snapshot_result]
             return api_results
         if platform == "x":
             seed_path = find_manual_seed_path(source, manual_seed_root)
             if not x_api_capture_enabled():
                 if seed_path is not None:
                     return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
+                if x_public_snapshot_enabled():
+                    return [
+                        archive_x_public_snapshot_source(
+                            source,
+                            raw_root,
+                            normalized_root,
+                            fetch_timeout=getattr(args, "fetch_timeout", 30),
+                        )
+                    ]
                 return [
                     source_result(
                         source,
                         "manual_seed_missing",
-                        "X API capture is disabled; no authorized manual seed file is present",
+                        "X API capture and public snapshot fallback are disabled; no authorized manual seed file is present",
                     )
                 ]
             api_results = archive_x_source(
