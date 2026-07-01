@@ -24,6 +24,6 @@ or prefer `zernio-cli`.
 ## Local validation
 
 ```powershell
-python scripts/validate_secrets.py --mode syndicate --json
-pytest -q tests/test_syndication.py
+uv run --python 3.14 python scripts/validate_secrets.py --mode syndicate --json
+uv run --python 3.14 python -m pytest -q tests/test_syndication.py
 ```

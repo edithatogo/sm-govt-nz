@@ -17,8 +17,8 @@ Check these files before and after each controlled run:
 Run:
 
 ```powershell
-python scripts/bluesky_mirror_smoke.py --actor mirnzcourts.bsky.social --min-posts 1
-python scripts/check_archive_mirror_coverage.py
+uv run --python 3.14 python scripts/bluesky_mirror_smoke.py --actor mirnzcourts.bsky.social --min-posts 1
+uv run --python 3.14 python scripts/check_archive_mirror_coverage.py
 ```
 
 The smoke check is non-posting. It reads the public Bluesky mirror feed and

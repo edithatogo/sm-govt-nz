@@ -63,7 +63,7 @@ Accepted seed shape:
 Run:
 
 ```powershell
-python scripts/archive_linkedin_seed.py --seed-json imports/linkedin/courts-nz-linkedin-seed.json --report conductor/linkedin_archive_report.json
+uv run --python 3.14 python scripts/archive_linkedin_seed.py --seed-json imports/linkedin/courts-nz-linkedin-seed.json --report conductor/linkedin_archive_report.json
 ```
 
 The script writes raw source evidence under
