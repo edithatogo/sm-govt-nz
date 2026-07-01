@@ -1,12 +1,12 @@
 {
   "courts_current_sources_report": null,
-  "dry_run": true,
-  "generated_at": "2026-06-30T18:50:34+00:00",
+  "dry_run": false,
+  "generated_at": "2026-07-01T01:46:54+00:00",
   "inputs": {
     "agency_id": "",
     "fetch_timeout": 5,
     "include_blocked": false,
-    "limit_sources": 5,
+    "limit_sources": 10,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "normalized_root": "historical_archive_normalized",
@@ -21,10 +21,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "dry run",
+      "reason": "captured generic website page",
       "source_id": "accident-compensation-corporation-website_page-2f4e753e",
       "source_type": "website_page",
-      "status": "would_capture",
+      "status": "captured",
       "url": "https://www.acc.co.nz"
     },
     {
@@ -32,10 +32,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "dry run",
+      "reason": "captured generic website page",
       "source_id": "accreditation-council-website_page-5d885a8f",
       "source_type": "website_page",
-      "status": "would_capture",
+      "status": "captured",
       "url": "https://www.accreditation.co.nz"
     },
     {
@@ -43,10 +43,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "dry run",
+      "reason": "captured generic website page",
       "source_id": "airways-nz-website_page-8f2cead0",
       "source_type": "website_page",
-      "status": "would_capture",
+      "status": "captured",
       "url": "https://www.airways.co.nz"
     },
     {
@@ -54,10 +54,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "dry run",
+      "reason": "captured generic website page",
       "source_id": "animal-control-products-website_page-15dfd90e",
       "source_type": "website_page",
-      "status": "would_capture",
+      "status": "captured",
       "url": "https://www.pestoff.co.nz"
     },
     {
@@ -65,25 +65,86 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "dry run",
+      "reason": "captured generic website page",
       "source_id": "antarctica-nz-website_page-1cd1a2ba",
       "source_type": "website_page",
-      "status": "would_capture",
+      "status": "captured",
       "url": "https://www.antarcticanz.govt.nz"
+    },
+    {
+      "agency_id": "ara-institute-of-canterbury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "ara-institute-of-canterbury-website_page-ff23aa1c",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.ara.ac.nz"
+    },
+    {
+      "agency_id": "ashburton-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "ashburton-district-council-website_page-e266f7e9",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz"
+    },
+    {
+      "agency_id": "asurequality",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "asurequality-website_page-6b3ca170",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.asurequality.com"
+    },
+    {
+      "agency_id": "auckland-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 406: Not Acceptable",
+      "source_id": "auckland-council-website_page-3bc00b81",
+      "source_type": "website_page",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz"
+    },
+    {
+      "agency_id": "auckland-light-rail",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "URL error: [Errno -2] Name or service not known",
+      "source_id": "auckland-light-rail-website_page-680a0eb9",
+      "source_type": "website_page",
+      "status": "dns_failed",
+      "url": "https://www.aucklandlightrail.co.nz"
     }
   ],
   "summary": {
     "platform_counts": {
-      "website_page": 5
+      "website_page": 10
     },
-    "selected_sources": 5,
+    "selected_sources": 10,
     "status_by_platform": {
       "website_page": {
-        "would_capture": 5
+        "capture_blocked": 1,
+        "captured": 7,
+        "dns_failed": 1,
+        "not_acceptable": 1
       }
     },
     "status_counts": {
-      "would_capture": 5
+      "capture_blocked": 1,
+      "captured": 7,
+      "dns_failed": 1,
+      "not_acceptable": 1
     }
   }
 }
