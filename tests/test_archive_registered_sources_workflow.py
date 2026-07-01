@@ -11,7 +11,8 @@ def test_archive_registered_sources_dry_run_commits_only_report() -> None:
 
     assert "          - json_feed" in workflow
     assert "          - social_profile" in workflow
-    assert 'python-version: "3.14"' in workflow
+    assert "./.github/actions/setup-python-uv" in workflow
+    assert "requirements: requirements.txt" in workflow
     assert "inputs.source_type || 'scheduled'" in workflow
     assert "inputs.offset_sources || '0'" in workflow
     dry_run_block = workflow.split("- name: Commit archive report updates", 1)[1].split("- name: Commit archive capture reports", 1)[0]

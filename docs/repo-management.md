@@ -32,6 +32,9 @@ GitHub Actions YAML is linted with `actionlint` in CI. If `actionlint` is
 installed locally, `.\scripts\validate_repo.ps1 workflows` runs it before the
 workflow contract tests.
 
+Shared Python workflow setup lives in `.github/actions/setup-python-uv`. New
+workflows should use that composite action when they need Python dependencies.
+
 ## State artifacts
 
 Machine-readable report files under `conductor/` and `dist/` are the durable

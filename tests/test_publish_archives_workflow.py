@@ -4,7 +4,8 @@ from pathlib import Path
 def test_publish_archives_requires_manual_publish_flag_for_external_publication() -> None:
     workflow = Path(".github/workflows/publish_archives.yml").read_text(encoding="utf-8")
 
-    assert 'python-version: "3.14"' in workflow
+    assert "./.github/actions/setup-python-uv" in workflow
+    assert "requirements: requirements.txt" in workflow
     assert "ARCHIVE_PUBLICATION_TARGET" in workflow
     assert "echo \"target=all\"" in workflow
     assert "scripts/monthly_publication_guard.py" in workflow
@@ -22,6 +23,7 @@ def test_publish_archives_keeps_zenodo_behind_manual_confirmation() -> None:
 
     assert "publication_target" in publish_archives
     assert "- \"zenodo\"" in publish_archives
-    assert 'python-version: "3.14"' in retrospective
+    assert "./.github/actions/setup-python-uv" in retrospective
+    assert "requirements: requirements.txt" in retrospective
     assert "confirm" in zenodo
     assert "publish-zenodo-doi" in zenodo

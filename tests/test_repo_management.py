@@ -6,7 +6,8 @@ def test_ci_runs_actionlint_before_python_tests() -> None:
     workflow = Path(".github/workflows/ci.yml").read_text(encoding="utf-8")
 
     assert "raven-actions/actionlint@v2" in workflow
-    assert 'python-version: "3.14"' in workflow
+    assert "./.github/actions/setup-python-uv" in workflow
+    assert "requirements: requirements-dev.txt" in workflow
     assert "python -m pytest tests -q" in workflow
 
 
@@ -45,6 +46,16 @@ def test_workflows_install_python_dependencies_with_uv() -> None:
 
     assert "python -m pip install -r requirements" not in workflow_text
     assert "uv pip install --system -r requirements" in workflow_text
+    assert "./.github/actions/setup-python-uv" in workflow_text
+
+
+def test_composite_python_setup_action_pins_python_and_uses_uv() -> None:
+    action = Path(".github/actions/setup-python-uv/action.yml").read_text(encoding="utf-8")
+
+    assert "actions/setup-python@v6" in action
+    assert 'python-version: "3.14"' in action
+    assert "python -m pip install uv" in action
+    assert 'uv pip install --system -r "${{ inputs.requirements }}"' in action
 
 
 def test_renovate_tracks_latest_python_and_workflow_dependencies() -> None:
@@ -66,5 +77,6 @@ def test_repo_management_docs_capture_script_workflow_guardrails() -> None:
 
     assert ".\\scripts\\validate_repo.ps1 workflows" in docs
     assert "actionlint" in docs
+    assert ".github/actions/setup-python-uv" in docs
     assert "Workflow behavior that affects archive state" in docs
     assert "conductor/archive_publication_status.json" in docs
