@@ -42,7 +42,7 @@ on:
       feasibility:
         description: "Archive feasibility"
         required: true
-        default: "candidate"
+        default: "review_required"
         type: choice
         options:
           - high
@@ -87,7 +87,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
+          python-version: "3.14"
       - name: Register source
         run: >-
           python scripts/register_archive_source.py
