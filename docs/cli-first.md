@@ -6,6 +6,7 @@ Use `sm-govt-nz` before invoking repository scripts directly.
 
 - `sm-govt-nz --list` lists approved aliases.
 - `sm-govt-nz <alias> -- <script-args>` dispatches to the existing script implementation.
+- `.\scripts\dev.ps1 <command> [args...]` runs ad hoc local commands through `uv run --python 3.14`.
 
 ## Approved aliases
 
@@ -24,3 +25,4 @@ Use `sm-govt-nz` before invoking repository scripts directly.
 ## Policy
 
 Existing `scripts/*.py` files remain implementation modules. New automation, conductor tracks, and swarm prompts should call the package CLI first, then add a new alias here when a repeated workflow is needed.
+For local validation on Windows, prefer `.\scripts\dev.ps1 ...` or `uv run --python 3.14 ...` over bare `python` so the repo does not depend on the Windows Store alias.
