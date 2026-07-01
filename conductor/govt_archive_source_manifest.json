@@ -1,6 +1,6 @@
 {
   "description": "Archive onboarding manifest generated from the government source candidate report.",
-  "generated_at": "2026-07-01T04:21:19+00:00",
+  "generated_at": "2026-07-01T04:29:38+00:00",
   "sources": [
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -6564,11 +6564,11 @@
       "account": "https://www.fndc.govt.nz",
       "agency_id": "far-north-district-council",
       "agency_name": "Far North District Council (Te Kaunihera o Te Hiku o Te Ika)",
-      "archive_status": "ready",
+      "archive_status": "degraded",
       "auth": "none",
       "candidate_id": "1321f96fc484c7fa",
-      "feasibility": "high",
-      "notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "feasibility": "low",
+      "notes": "Capture only bounded public pages discovered from feeds or explicit source manifests. Archive triage 2026-07-01: degraded website source after `capture_blocked` (HTTP 403: Forbidden); keep out of default capture until an alternate URL or access path is verified.",
       "origin": "registry.official_website",
       "party_id": "",
       "person_id": "",
@@ -6576,6 +6576,7 @@
       "registry_record_kind": "agency",
       "source_id": "far-north-district-council-website_page-61244b75",
       "source_type": "website_page",
+      "updated_at": "2026-07-01T04:29:38+00:00",
       "url": "https://www.fndc.govt.nz"
     },
     {
@@ -11868,11 +11869,11 @@
       "account": "linzgovtnz",
       "agency_id": "linz",
       "agency_name": "Land Information New Zealand (Toit\u016b te Whenua)",
-      "archive_status": "candidate",
+      "archive_status": "degraded",
       "auth": "none",
       "candidate_id": "2ce9f001342b825d",
-      "feasibility": "medium",
-      "notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "feasibility": "low",
+      "notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic. Archive triage 2026-07-01: degraded malformed, stale, or unreachable YouTube source after `capture_failed` (YouTube channel resolver failed: HTTP Error 404: Not Found); keep out of default capture until a replacement channel URL is verified.",
       "origin": "registry.social_profiles",
       "party_id": "",
       "person_id": "",
@@ -11880,6 +11881,7 @@
       "registry_record_kind": "agency",
       "source_id": "linz-youtube-52508941",
       "source_type": "social_profile",
+      "updated_at": "2026-07-01T04:29:38+00:00",
       "url": "https://www.youtube.com/@linzgovtnz"
     },
     {
@@ -34029,10 +34031,10 @@
   ],
   "summary": {
     "archive_status_counts": {
-      "candidate": 1048,
-      "degraded": 96,
+      "candidate": 1047,
+      "degraded": 98,
       "manual_seed": 256,
-      "ready": 441
+      "ready": 440
     },
     "total_sources": 1841
   }
