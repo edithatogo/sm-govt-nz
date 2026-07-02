@@ -223,7 +223,7 @@ jobs:
             args+=(--dry-run)
           fi
           if [ "$capture_backend" = "browser" ]; then
-            xvfb-run -a python -m scripts.archive_registered_sources "${args[@]}"
+            xvfb-run -a -s "-screen 0 1920x1080x24" python -m scripts.archive_registered_sources "${args[@]}"
           else
             python -m scripts.archive_registered_sources "${args[@]}"
           fi
