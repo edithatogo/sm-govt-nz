@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T12:46:07+00:00",
+  "generated_at": "2026-07-02T12:49:08+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -3145,10 +3145,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "reason": "HTTP 401: YouTube video metadata unavailable for UWM5Bt6eV24",
       "source_id": "environment-canterbury-youtube-4c9e496b",
       "source_type": "social_profile",
-      "status": "capture_failed",
+      "status": "youtube_video_metadata_blocked",
       "url": "http://www.youtube.com/watch/UWM5Bt6eV24"
     },
     {
@@ -3156,10 +3156,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "reason": "HTTP 401: YouTube video metadata unavailable for ceTKqFs728w",
       "source_id": "environment-canterbury-youtube-ec7191cd",
       "source_type": "social_profile",
-      "status": "capture_failed",
+      "status": "youtube_video_metadata_blocked",
       "url": "http://www.youtube.com/watch/ceTKqFs728w"
     },
     {
@@ -3167,10 +3167,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "reason": "HTTP 401: YouTube video metadata unavailable for gRqlMhAmmJA",
       "source_id": "environment-canterbury-youtube-b08cb22a",
       "source_type": "social_profile",
-      "status": "capture_failed",
+      "status": "youtube_video_metadata_blocked",
       "url": "http://www.youtube.com/watch/gRqlMhAmmJA"
     },
     {
@@ -3178,10 +3178,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "reason": "HTTP 401: YouTube video metadata unavailable for sdvdzpVunWQ",
       "source_id": "environment-canterbury-youtube-3b868f65",
       "source_type": "social_profile",
-      "status": "capture_failed",
+      "status": "youtube_video_metadata_blocked",
       "url": "http://www.youtube.com/watch/sdvdzpVunWQ"
     },
     {
@@ -3189,10 +3189,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "reason": "HTTP 401: YouTube video metadata unavailable for uC6hC7VDe5c",
       "source_id": "environment-canterbury-youtube-3140d08b",
       "source_type": "social_profile",
-      "status": "capture_failed",
+      "status": "youtube_video_metadata_blocked",
       "url": "http://www.youtube.com/watch/uC6hC7VDe5c"
     },
     {
@@ -5701,21 +5701,21 @@
     "status_by_platform": {
       "youtube": {
         "already_captured": 377,
-        "capture_failed": 5,
         "captured": 129,
         "no_records": 1,
         "source_url_not_channel": 1,
-        "youtube_channel_not_found": 2
+        "youtube_channel_not_found": 2,
+        "youtube_video_metadata_blocked": 5
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "already_captured": 377,
-      "capture_failed": 5,
       "captured": 129,
       "no_records": 1,
       "source_url_not_channel": 1,
-      "youtube_channel_not_found": 2
+      "youtube_channel_not_found": 2,
+      "youtube_video_metadata_blocked": 5
     }
   }
 }
