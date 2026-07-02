@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T03:18:50+00:00",
+  "generated_at": "2026-07-02T03:18:56+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "browser_and_feed",
@@ -15,7 +15,7 @@
     "max_x_posts": 25,
     "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
     "normalized_root": "historical_archive_normalized",
-    "offset_sources": 0,
+    "offset_sources": 10,
     "per_account_timeout": 90,
     "raw_root": "historical_archive_raw",
     "retry_failed_from": "",
@@ -28,494 +28,494 @@
   },
   "results": [
     {
-      "agency_id": "auckland-council",
+      "agency_id": "eit",
       "archive_status": "ready",
       "attempts": [
         {
-          "feed_url": "https://rsshub.app/twitter/user/AklCouncil",
+          "feed_url": "https://rsshub.app/twitter/user/eithawkesbay",
           "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
           "status": "feed_not_found"
         }
       ],
       "feasibility": "low",
-      "handle": "AklCouncil",
+      "handle": "eithawkesbay",
       "platform": "x",
       "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/AklCouncil: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "dcd5933aefc5b47f",
+      "reason": "https://rsshub.app/twitter/user/eithawkesbay: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "a4090db8d867dede",
       "source_type": "social_profile",
       "status": "feed_not_found",
-      "url": "https://x.com/AklCouncil"
-    },
-    {
-      "agency_id": "auckland-council",
-      "archive_status": "ready",
-      "attempts": [],
-      "feasibility": "low",
-      "feed_url": "https://xcancel.com/AklCouncil/rss",
-      "handle": "AklCouncil",
-      "platform": "x",
-      "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_aklcouncil_2304be8035a92213f46fbfd6.json",
-      "reason": "nitter feed entries=1 captured=0 already=1",
-      "source_id": "dcd5933aefc5b47f",
-      "source_type": "social_profile",
-      "status": "feed_already_captured",
-      "url": "https://x.com/AklCouncil"
-    },
-    {
-      "agency_id": "antarctica-nz",
-      "archive_status": "ready",
-      "attempts": [
-        {
-          "feed_url": "https://rsshub.app/twitter/user/AntarcticaNZ",
-          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-          "status": "feed_not_found"
-        }
-      ],
-      "feasibility": "low",
-      "handle": "AntarcticaNZ",
-      "platform": "x",
-      "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/AntarcticaNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "b30b39b6377e603c",
-      "source_type": "social_profile",
-      "status": "feed_not_found",
-      "url": "https://x.com/AntarcticaNZ"
-    },
-    {
-      "agency_id": "antarctica-nz",
-      "archive_status": "ready",
-      "attempts": [],
-      "feasibility": "low",
-      "feed_url": "https://xcancel.com/AntarcticaNZ/rss",
-      "handle": "AntarcticaNZ",
-      "platform": "x",
-      "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_antarcticanz_d570fc11150d94ff72da14f9.json",
-      "reason": "nitter feed entries=1 captured=1 already=0",
-      "source_id": "b30b39b6377e603c",
-      "source_type": "social_profile",
-      "status": "feed_captured",
-      "url": "https://x.com/AntarcticaNZ"
-    },
-    {
-      "agency_id": "broadcasting-standards-authority",
-      "archive_status": "ready",
-      "attempts": [
-        {
-          "feed_url": "https://rsshub.app/twitter/user/BSA_NZ",
-          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-          "status": "feed_not_found"
-        }
-      ],
-      "feasibility": "low",
-      "handle": "BSA_NZ",
-      "platform": "x",
-      "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/BSA_NZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "b96b6c0354fff710",
-      "source_type": "social_profile",
-      "status": "feed_not_found",
-      "url": "https://x.com/BSA_NZ"
-    },
-    {
-      "agency_id": "broadcasting-standards-authority",
-      "archive_status": "ready",
-      "attempts": [],
-      "feasibility": "low",
-      "feed_url": "https://xcancel.com/BSA_NZ/rss",
-      "handle": "BSA_NZ",
-      "platform": "x",
-      "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_bsa_nz_8d803171a2203ba1e9343073.json",
-      "reason": "nitter feed entries=1 captured=1 already=0",
-      "source_id": "b96b6c0354fff710",
-      "source_type": "social_profile",
-      "status": "feed_captured",
-      "url": "https://x.com/BSA_NZ"
-    },
-    {
-      "agency_id": "central-hawkes-bay-district-council",
-      "archive_status": "degraded",
-      "attempts": [
-        {
-          "feed_url": "https://rsshub.app/twitter/user/chbcouncil",
-          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-          "status": "feed_not_found"
-        }
-      ],
-      "feasibility": "low",
-      "handle": "chbcouncil",
-      "platform": "x",
-      "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/chbcouncil: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "central-hawkes-bay-district-council-x-cf5e1d17",
-      "source_type": "social_profile",
-      "status": "feed_not_found",
-      "url": "https://twitter.com/chbcouncil"
-    },
-    {
-      "agency_id": "central-hawkes-bay-district-council",
-      "archive_status": "degraded",
-      "attempts": [],
-      "feasibility": "low",
-      "feed_url": "https://xcancel.com/chbcouncil/rss",
-      "handle": "chbcouncil",
-      "platform": "x",
-      "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_chbcouncil_9ce2b9558873066e44e0bb7d.json",
-      "reason": "nitter feed entries=1 captured=1 already=0",
-      "source_id": "central-hawkes-bay-district-council-x-cf5e1d17",
-      "source_type": "social_profile",
-      "status": "feed_captured",
-      "url": "https://twitter.com/chbcouncil"
-    },
-    {
-      "agency_id": "christchurch-city-council",
-      "archive_status": "ready",
-      "attempts": [
-        {
-          "feed_url": "https://rsshub.app/twitter/user/ChristchurchCC",
-          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-          "status": "feed_not_found"
-        }
-      ],
-      "feasibility": "low",
-      "handle": "ChristchurchCC",
-      "platform": "x",
-      "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/ChristchurchCC: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "e9eeee8dbd553162",
-      "source_type": "social_profile",
-      "status": "feed_not_found",
-      "url": "https://x.com/ChristchurchCC"
-    },
-    {
-      "agency_id": "christchurch-city-council",
-      "archive_status": "ready",
-      "attempts": [],
-      "feasibility": "low",
-      "feed_url": "https://xcancel.com/ChristchurchCC/rss",
-      "handle": "ChristchurchCC",
-      "platform": "x",
-      "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_christchurchcc_d51576f9bcc5f9f6b43eaf1d.json",
-      "reason": "nitter feed entries=1 captured=1 already=0",
-      "source_id": "e9eeee8dbd553162",
-      "source_type": "social_profile",
-      "status": "feed_captured",
-      "url": "https://x.com/ChristchurchCC"
-    },
-    {
-      "agency_id": "civil-aviation-authority",
-      "archive_status": "ready",
-      "attempts": [
-        {
-          "feed_url": "https://rsshub.app/twitter/user/CivilAviationNZ",
-          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-          "status": "feed_not_found"
-        }
-      ],
-      "feasibility": "low",
-      "handle": "CivilAviationNZ",
-      "platform": "x",
-      "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/CivilAviationNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "406f437058619a30",
-      "source_type": "social_profile",
-      "status": "feed_not_found",
-      "url": "https://x.com/CivilAviationNZ"
-    },
-    {
-      "agency_id": "civil-aviation-authority",
-      "archive_status": "ready",
-      "attempts": [],
-      "feasibility": "low",
-      "feed_url": "https://xcancel.com/CivilAviationNZ/rss",
-      "handle": "CivilAviationNZ",
-      "platform": "x",
-      "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_civilaviationnz_07cf3c952f2d2941bfabc90b.json",
-      "reason": "nitter feed entries=1 captured=1 already=0",
-      "source_id": "406f437058619a30",
-      "source_type": "social_profile",
-      "status": "feed_captured",
-      "url": "https://x.com/CivilAviationNZ"
-    },
-    {
-      "agency_id": "courts-of-nz",
-      "archive_status": "degraded",
-      "attempts": [
-        {
-          "feed_url": "https://rsshub.app/twitter/user/courtsofnz",
-          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-          "status": "feed_not_found"
-        }
-      ],
-      "feasibility": "low",
-      "handle": "courtsofnz",
-      "platform": "x",
-      "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/courtsofnz: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "courts-of-nz-x-7aebef2c",
-      "source_type": "social_profile",
-      "status": "feed_not_found",
-      "url": "https://x.com/courtsofnz"
-    },
-    {
-      "agency_id": "courts-of-nz",
-      "archive_status": "degraded",
-      "attempts": [],
-      "feasibility": "low",
-      "feed_url": "https://xcancel.com/courtsofnz/rss",
-      "handle": "courtsofnz",
-      "platform": "x",
-      "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_courtsofnz_c0bd098df6802c8941714c40.json",
-      "reason": "nitter feed entries=1 captured=1 already=0",
-      "source_id": "courts-of-nz-x-7aebef2c",
-      "source_type": "social_profile",
-      "status": "feed_captured",
-      "url": "https://x.com/courtsofnz"
-    },
-    {
-      "agency_id": "creative-nz",
-      "archive_status": "ready",
-      "attempts": [
-        {
-          "feed_url": "https://rsshub.app/twitter/user/CreativeNZ",
-          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-          "status": "feed_not_found"
-        }
-      ],
-      "feasibility": "low",
-      "handle": "CreativeNZ",
-      "platform": "x",
-      "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/CreativeNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "ef1314d051b2bc9d",
-      "source_type": "social_profile",
-      "status": "feed_not_found",
-      "url": "https://x.com/CreativeNZ"
-    },
-    {
-      "agency_id": "creative-nz",
-      "archive_status": "ready",
-      "attempts": [],
-      "feasibility": "low",
-      "feed_url": "https://xcancel.com/CreativeNZ/rss",
-      "handle": "CreativeNZ",
-      "platform": "x",
-      "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_creativenz_39530925006e44063a4193e8.json",
-      "reason": "nitter feed entries=1 captured=1 already=0",
-      "source_id": "ef1314d051b2bc9d",
-      "source_type": "social_profile",
-      "status": "feed_captured",
-      "url": "https://x.com/CreativeNZ"
-    },
-    {
-      "agency_id": "dunedin-city-council",
-      "archive_status": "ready",
-      "attempts": [
-        {
-          "feed_url": "https://rsshub.app/twitter/user/DnCityCouncil",
-          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-          "status": "feed_not_found"
-        }
-      ],
-      "feasibility": "low",
-      "handle": "DnCityCouncil",
-      "platform": "x",
-      "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/DnCityCouncil: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "aacd89a62f99a19f",
-      "source_type": "social_profile",
-      "status": "feed_not_found",
-      "url": "https://x.com/DnCityCouncil"
-    },
-    {
-      "agency_id": "dunedin-city-council",
-      "archive_status": "ready",
-      "attempts": [],
-      "feasibility": "low",
-      "feed_url": "https://xcancel.com/DnCityCouncil/rss",
-      "handle": "DnCityCouncil",
-      "platform": "x",
-      "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_dncitycouncil_1b1798eb9b3e7e7e8a602cdd.json",
-      "reason": "nitter feed entries=1 captured=1 already=0",
-      "source_id": "aacd89a62f99a19f",
-      "source_type": "social_profile",
-      "status": "feed_captured",
-      "url": "https://x.com/DnCityCouncil"
+      "url": "https://x.com/eithawkesbay"
     },
     {
       "agency_id": "eit",
-      "archive_status": "degraded",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/eithawkesbay/rss",
+      "handle": "eithawkesbay",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_eithawkesbay_f4f468802770f492080f4779.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "a4090db8d867dede",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/eithawkesbay"
+    },
+    {
+      "agency_id": "electoral-commission",
+      "archive_status": "ready",
       "attempts": [
         {
-          "feed_url": "https://rsshub.app/twitter/user/EIT_NZ",
+          "feed_url": "https://rsshub.app/twitter/user/ElectionsNZ",
           "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
           "status": "feed_not_found"
         }
       ],
       "feasibility": "low",
-      "handle": "EIT_NZ",
+      "handle": "ElectionsNZ",
       "platform": "x",
       "provider": "rsshub",
-      "reason": "https://rsshub.app/twitter/user/EIT_NZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
-      "source_id": "eit-x-e38a3c04",
+      "reason": "https://rsshub.app/twitter/user/ElectionsNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "c66256e39c792af0",
       "source_type": "social_profile",
       "status": "feed_not_found",
-      "url": "https://twitter.com/EIT_NZ"
+      "url": "https://x.com/ElectionsNZ"
     },
     {
-      "agency_id": "eit",
+      "agency_id": "electoral-commission",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/ElectionsNZ/rss",
+      "handle": "ElectionsNZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_electionsnz_41d1cf5939b59b1cd0557f69.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "c66256e39c792af0",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/ElectionsNZ"
+    },
+    {
+      "agency_id": "fire-and-emergency-nz",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/FireEmergencyNZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "FireEmergencyNZ",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/FireEmergencyNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "8db2dbda2463d702",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/FireEmergencyNZ"
+    },
+    {
+      "agency_id": "fire-and-emergency-nz",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/FireEmergencyNZ/rss",
+      "handle": "FireEmergencyNZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_fireemergencynz_266eeee0236db745f78b2add.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "8db2dbda2463d702",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/FireEmergencyNZ"
+    },
+    {
+      "agency_id": "selwyn-district-council",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/FutureforSelwyn",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "FutureforSelwyn",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/FutureforSelwyn: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "selwyn-district-council-x-9c211011",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/FutureforSelwyn"
+    },
+    {
+      "agency_id": "selwyn-district-council",
       "archive_status": "degraded",
       "attempts": [],
       "feasibility": "low",
-      "feed_url": "https://xcancel.com/EIT_NZ/rss",
-      "handle": "EIT_NZ",
+      "feed_url": "https://xcancel.com/FutureforSelwyn/rss",
+      "handle": "FutureforSelwyn",
       "platform": "x",
       "provider": "nitter",
-      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_eit_nz_a8d6e914417084d075639efc.json",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_futureforselwyn_87057364bb69497cdefc1d1a.json",
       "reason": "nitter feed entries=1 captured=1 already=0",
-      "source_id": "eit-x-e38a3c04",
+      "source_id": "selwyn-district-council-x-9c211011",
       "source_type": "social_profile",
       "status": "feed_captured",
-      "url": "https://twitter.com/EIT_NZ"
+      "url": "https://x.com/FutureforSelwyn"
     },
     {
-      "agency_id": "auckland-council",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "handle": "AklCouncil",
-      "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/aklcouncil_574fafc14d7033ce826ae9b9.json",
-      "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "dcd5933aefc5b47f",
-      "source_type": "social_profile",
-      "status": "browser_no_visible_posts",
-      "url": "https://x.com/AklCouncil"
-    },
-    {
-      "agency_id": "antarctica-nz",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "handle": "AntarcticaNZ",
-      "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/antarcticanz_c787ba05181ab8eff8123302.json",
-      "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "b30b39b6377e603c",
-      "source_type": "social_profile",
-      "status": "browser_no_visible_posts",
-      "url": "https://x.com/AntarcticaNZ"
-    },
-    {
-      "agency_id": "broadcasting-standards-authority",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "handle": "BSA_NZ",
-      "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/bsa_nz_8e7a1d9d922887377b4b8c93.json",
-      "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "b96b6c0354fff710",
-      "source_type": "social_profile",
-      "status": "browser_no_visible_posts",
-      "url": "https://x.com/BSA_NZ"
-    },
-    {
-      "agency_id": "central-hawkes-bay-district-council",
+      "agency_id": "health-nz",
       "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/healthnz",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
       "feasibility": "low",
-      "handle": "chbcouncil",
+      "handle": "healthnz",
       "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/chbcouncil_c149421b4a6bdbaaae762ff2.json",
-      "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "central-hawkes-bay-district-council-x-cf5e1d17",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/healthnz: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "health-nz-x-fec7719c",
       "source_type": "social_profile",
-      "status": "browser_no_visible_posts",
-      "url": "https://twitter.com/chbcouncil"
+      "status": "feed_not_found",
+      "url": "https://x.com/healthnz"
     },
     {
-      "agency_id": "christchurch-city-council",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "handle": "ChristchurchCC",
-      "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/christchurchcc_fd8f140a6ad65d3c2eb1a767.json",
-      "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "e9eeee8dbd553162",
-      "source_type": "social_profile",
-      "status": "browser_no_visible_posts",
-      "url": "https://x.com/ChristchurchCC"
-    },
-    {
-      "agency_id": "civil-aviation-authority",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "handle": "CivilAviationNZ",
-      "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/civilaviationnz_85432f67fc5a6cd428aefadc.json",
-      "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "406f437058619a30",
-      "source_type": "social_profile",
-      "status": "browser_no_visible_posts",
-      "url": "https://x.com/CivilAviationNZ"
-    },
-    {
-      "agency_id": "courts-of-nz",
+      "agency_id": "health-nz",
       "archive_status": "degraded",
+      "attempts": [],
       "feasibility": "low",
-      "handle": "courtsofnz",
+      "feed_url": "https://xcancel.com/healthnz/rss",
+      "handle": "healthnz",
       "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/courtsofnz_e07005ffefd38e5d1eca6c54.json",
-      "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "courts-of-nz-x-7aebef2c",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_healthnz_f6dbbd23b2e4e930158f6e6a.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "health-nz-x-fec7719c",
       "source_type": "social_profile",
-      "status": "browser_no_visible_posts",
-      "url": "https://x.com/courtsofnz"
+      "status": "feed_captured",
+      "url": "https://x.com/healthnz"
     },
     {
-      "agency_id": "creative-nz",
+      "agency_id": "heritage-nz",
       "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/HeritageNZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
       "feasibility": "low",
-      "handle": "CreativeNZ",
+      "handle": "HeritageNZ",
       "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/creativenz_b92f1ff551ac0fad230928a1.json",
-      "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "ef1314d051b2bc9d",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/HeritageNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "7801e115ce97703b",
       "source_type": "social_profile",
-      "status": "browser_no_visible_posts",
-      "url": "https://x.com/CreativeNZ"
+      "status": "feed_not_found",
+      "url": "https://x.com/HeritageNZ"
     },
     {
-      "agency_id": "dunedin-city-council",
+      "agency_id": "heritage-nz",
       "archive_status": "ready",
+      "attempts": [],
       "feasibility": "low",
-      "handle": "DnCityCouncil",
+      "feed_url": "https://xcancel.com/HeritageNZ/rss",
+      "handle": "HeritageNZ",
       "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/dncitycouncil_6e82170c5ca0f2c8a74e8fed.json",
-      "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "aacd89a62f99a19f",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_heritagenz_2d28ec0822407c8cb2e5d364.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "7801e115ce97703b",
       "source_type": "social_profile",
-      "status": "browser_no_visible_posts",
-      "url": "https://x.com/DnCityCouncil"
+      "status": "feed_captured",
+      "url": "https://x.com/HeritageNZ"
+    },
+    {
+      "agency_id": "health-quality-and-safety-commission",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/HQSC_NZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "HQSC_NZ",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/HQSC_NZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "9f833861045a3020",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/HQSC_NZ"
+    },
+    {
+      "agency_id": "health-quality-and-safety-commission",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/HQSC_NZ/rss",
+      "handle": "HQSC_NZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_hqsc_nz_a56e5fbfaf39344cff0160d9.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "9f833861045a3020",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/HQSC_NZ"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/HRC",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "HRC",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/HRC: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "859966f6ea9c7df7",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/HRC"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/HRC/rss",
+      "handle": "HRC",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_hrc_a47bdfc4ddd7cb8221946260.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "859966f6ea9c7df7",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/HRC"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/hrcnewzealand",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "hrcnewzealand",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/hrcnewzealand: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "health-research-council-x-47978eb7",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://twitter.com/hrcnewzealand"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/hrcnewzealand/rss",
+      "handle": "hrcnewzealand",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_hrcnewzealand_6f4c88a352bebdaae074ccaf.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "health-research-council-x-47978eb7",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://twitter.com/hrcnewzealand"
+    },
+    {
+      "agency_id": "human-rights-commission",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/HRCNZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "HRCNZ",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/HRCNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "d642f0cadfc26b7f",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/HRCNZ"
+    },
+    {
+      "agency_id": "human-rights-commission",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/HRCNZ/rss",
+      "handle": "HRCNZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_hrcnz_2e4845d516284108fa79ffb9.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "d642f0cadfc26b7f",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/HRCNZ"
     },
     {
       "agency_id": "eit",
-      "archive_status": "degraded",
+      "archive_status": "ready",
       "feasibility": "low",
-      "handle": "EIT_NZ",
+      "handle": "eithawkesbay",
       "platform": "x",
-      "raw_path": "historical_archive_raw/x_browser/2026-07/eit_nz_bd50640e8545452c933b5b3d.json",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/eithawkesbay_b806c8dd8fd9b3765d43b209.json",
       "reason": "public browser page loaded but no visible post cards were found",
-      "source_id": "eit-x-e38a3c04",
+      "source_id": "a4090db8d867dede",
       "source_type": "social_profile",
       "status": "browser_no_visible_posts",
-      "url": "https://twitter.com/EIT_NZ"
+      "url": "https://x.com/eithawkesbay"
+    },
+    {
+      "agency_id": "electoral-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "ElectionsNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/electionsnz_4e0454c322e18bbd0546abde.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "c66256e39c792af0",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/ElectionsNZ"
+    },
+    {
+      "agency_id": "fire-and-emergency-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "FireEmergencyNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/fireemergencynz_1054a26b3941f85275e59fb2.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "8db2dbda2463d702",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/FireEmergencyNZ"
+    },
+    {
+      "agency_id": "selwyn-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "FutureforSelwyn",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/futureforselwyn_ef950108bb4f47be3a341787.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "selwyn-district-council-x-9c211011",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/FutureforSelwyn"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "healthnz",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/healthnz_670f9bf1e473b7c4fe78fd0d.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "health-nz-x-fec7719c",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/healthnz"
+    },
+    {
+      "agency_id": "heritage-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "HeritageNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/heritagenz_605ed28e31248067198e6774.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "7801e115ce97703b",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/HeritageNZ"
+    },
+    {
+      "agency_id": "health-quality-and-safety-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "HQSC_NZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/hqsc_nz_0917557527ca8f826db96d58.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "9f833861045a3020",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/HQSC_NZ"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "HRC",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/hrc_5132a77503aba03242470827.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "859966f6ea9c7df7",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/HRC"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "hrcnewzealand",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/hrcnewzealand_fc3a79bd7fc30bba85a2a5b6.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "health-research-council-x-47978eb7",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/hrcnewzealand"
+    },
+    {
+      "agency_id": "human-rights-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "HRCNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/hrcnz_3672c38b04888f711f8f1740.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "d642f0cadfc26b7f",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/HRCNZ"
     }
   ],
   "summary": {
@@ -525,17 +525,17 @@
     "selected_sources": 10,
     "status_by_platform": {
       "x": {
-        "browser_no_visible_posts": 10,
-        "feed_already_captured": 1,
-        "feed_captured": 9,
-        "feed_not_found": 10
+        "browser_no_visible_posts": 8,
+        "feed_captured": 10,
+        "feed_not_found": 10,
+        "protected": 2
       }
     },
     "status_counts": {
-      "browser_no_visible_posts": 10,
-      "feed_already_captured": 1,
-      "feed_captured": 9,
-      "feed_not_found": 10
+      "browser_no_visible_posts": 8,
+      "feed_captured": 10,
+      "feed_not_found": 10,
+      "protected": 2
     }
   }
 }
