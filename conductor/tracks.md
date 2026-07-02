@@ -196,8 +196,9 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 ---
 
-## [ ] Track: NZ Government Archive - blocked website browser fallback capture
-*Link: [./tracks/govt_archive_blocked_website_browser_fallback_20260702/](./tracks/govt_archive_blocked_website_browser_fallback_20260702/)*
+## [x] Track: NZ Government Archive - blocked website browser fallback capture
+*Link: [./archive/govt_archive_blocked_website_browser_fallback_20260702/](./archive/govt_archive_blocked_website_browser_fallback_20260702/)*
+- Complete: Bounded Playwright fallback for eligible public website failures is implemented with triage-driven selection, raw evidence, normalized text, screenshots, shardable GitHub Actions, monthly guarded publication hook, docs, and tests.
 
 
 
