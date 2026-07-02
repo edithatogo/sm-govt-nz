@@ -1,0 +1,171 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-02T02:40:13+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "browser",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": false,
+    "limit_sources": 10,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 5,
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 30,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "x"
+  },
+  "results": [
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "NZ_Customs",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nz_customs_6149daf8e779e49e9be76b05.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "nz-customs-service-x-9d15a87d",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/NZ_Customs"
+    },
+    {
+      "agency_id": "department-of-conservation",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZConservation",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzconservation_002a6e05145e7a5d48001b44.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "8639f10cac690502",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/NZConservation"
+    },
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZCustoms",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzcustoms_683e80ae68a0e2aa4b6a0de0.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "52a4961327f246bd",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZCustoms"
+    },
+    {
+      "agency_id": "nz-film-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZFilm",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzfilm_4fb4c87709ddbff11eecf48d.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "5adb146d6f4f08f6",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZFilm"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "nzjustice",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzjustice_2b21e7b537642e595ad37195.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "66fc1c573530a3b5",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/nzjustice"
+    },
+    {
+      "agency_id": "nz-on-air",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZOnAir",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzonair_01abc0e663dcfabdb978bc79.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "b48197e5816cf59b",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/NZOnAir"
+    },
+    {
+      "agency_id": "nz-parliament",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "NZParliament",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzparliament_74f66733e8d58681d229630b.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "nz-parliament-x-90226bd7",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZParliament"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZPost",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzpost_b0998a2ab34feb9ef544db13.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "d274869d5a2a6661",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZPost"
+    },
+    {
+      "agency_id": "public-service-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZPublicService",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzpublicservice_88462fcadcbe9915370b1d47.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "4811ce166aaeada1",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZPublicService"
+    },
+    {
+      "agency_id": "nz-qualifications-authority",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "nzqaofficial",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzqaofficial_e8267bc6544230bcc2bb5d7b.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "nz-qualifications-authority-x-25c3e2dc",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/nzqaofficial"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 10
+    },
+    "selected_sources": 10,
+    "status_by_platform": {
+      "x": {
+        "browser_no_visible_posts": 8,
+        "protected": 2
+      }
+    },
+    "status_counts": {
+      "browser_no_visible_posts": 8,
+      "protected": 2
+    }
+  }
+}
