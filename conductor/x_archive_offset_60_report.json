@@ -1,0 +1,104 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-02T02:40:08+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "browser",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": false,
+    "limit_sources": 10,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 5,
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 60,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "x"
+  },
+  "results": [
+    {
+      "agency_id": "te-wananga-o-raukawa",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "wanangaoraukawa",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/wanangaoraukawa_20626c15aa9396bdc573cef7.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "te-wananga-o-raukawa-x-a5972859",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/wanangaoraukawa?lang=en"
+    },
+    {
+      "agency_id": "whaikaha",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "Whaikaha",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/whaikaha_1f02b4a6a78aa13b176f1e34.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "whaikaha-x-0fc5e7ba",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/Whaikaha"
+    },
+    {
+      "agency_id": "whaikaha",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "WhaikahaNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/whaikahanz_7ac893958481eb3ac84bc6ed.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "a0bc3c5d6b328a03",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/WhaikahaNZ"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "WorkSafeNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/worksafenz_a24e8f501d747135693caf39.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "017e89fc03fa5962",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/WorkSafeNZ"
+    },
+    {
+      "agency_id": "pamu",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "X",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/x_3382a71170e9d8f4ba219b24.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "pamu-x-2f485c82",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/pamu_nz"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 5
+    },
+    "selected_sources": 5,
+    "status_by_platform": {
+      "x": {
+        "browser_no_visible_posts": 5
+      }
+    },
+    "status_counts": {
+      "browser_no_visible_posts": 5
+    }
+  }
+}
