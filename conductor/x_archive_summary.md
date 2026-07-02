@@ -1,24 +1,24 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T01:38:27+00:00
+Generated: 2026-07-02T02:40:45+00:00
 
 ## Summary
 
-- `selected_sources`: 1
+- `selected_sources`: 10
 - `platform_count`: 1
 - `status_count`: 1
 
 ## Platform counts
 
-- `x`: 1
+- `x`: 10
 
 ## Status counts
 
-- `browser_no_visible_posts`: 1
+- `browser_no_visible_posts`: 10
 
 ## Status by platform
 
-- `x`: {'browser_no_visible_posts': 1}
+- `x`: {'browser_no_visible_posts': 10}
 
 ## Notes
 

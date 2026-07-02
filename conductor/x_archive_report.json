@@ -1,17 +1,17 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T01:38:27+00:00",
+  "generated_at": "2026-07-02T02:40:45+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "browser",
     "fetch_timeout": 30,
     "idle_rounds": 3,
     "include_blocked": false,
-    "limit_sources": 1,
+    "limit_sources": 10,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
-    "max_scrolls": 3,
+    "max_scrolls": 25,
     "max_x_posts": 5,
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
@@ -33,20 +33,137 @@
       "source_type": "social_profile",
       "status": "browser_no_visible_posts",
       "url": "https://x.com/AklCouncil"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "AntarcticaNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/antarcticanz_c787ba05181ab8eff8123302.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "b30b39b6377e603c",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/AntarcticaNZ"
+    },
+    {
+      "agency_id": "broadcasting-standards-authority",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "BSA_NZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/bsa_nz_8e7a1d9d922887377b4b8c93.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "b96b6c0354fff710",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/BSA_NZ"
+    },
+    {
+      "agency_id": "central-hawkes-bay-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "chbcouncil",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/chbcouncil_c149421b4a6bdbaaae762ff2.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "central-hawkes-bay-district-council-x-cf5e1d17",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/chbcouncil"
+    },
+    {
+      "agency_id": "christchurch-city-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "ChristchurchCC",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/christchurchcc_fd8f140a6ad65d3c2eb1a767.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "e9eeee8dbd553162",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/ChristchurchCC"
+    },
+    {
+      "agency_id": "civil-aviation-authority",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "CivilAviationNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/civilaviationnz_85432f67fc5a6cd428aefadc.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "406f437058619a30",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/CivilAviationNZ"
+    },
+    {
+      "agency_id": "courts-of-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "courtsofnz",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/courtsofnz_e07005ffefd38e5d1eca6c54.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "courts-of-nz-x-7aebef2c",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/courtsofnz"
+    },
+    {
+      "agency_id": "creative-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "CreativeNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/creativenz_b92f1ff551ac0fad230928a1.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "ef1314d051b2bc9d",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/CreativeNZ"
+    },
+    {
+      "agency_id": "dunedin-city-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "DnCityCouncil",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/dncitycouncil_6e82170c5ca0f2c8a74e8fed.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "aacd89a62f99a19f",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/DnCityCouncil"
+    },
+    {
+      "agency_id": "eit",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "EIT_NZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/eit_nz_bd50640e8545452c933b5b3d.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "eit-x-e38a3c04",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/EIT_NZ"
     }
   ],
   "summary": {
     "platform_counts": {
-      "x": 1
+      "x": 10
     },
-    "selected_sources": 1,
+    "selected_sources": 10,
     "status_by_platform": {
       "x": {
-        "browser_no_visible_posts": 1
+        "browser_no_visible_posts": 10
       }
     },
     "status_counts": {
-      "browser_no_visible_posts": 1
+      "browser_no_visible_posts": 10
     }
   }
 }
