@@ -1,0 +1,541 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-02T03:25:56+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "browser_and_feed",
+    "fetch_timeout": 30,
+    "idle_rounds": 1,
+    "include_blocked": false,
+    "limit_sources": 10,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 1,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 30,
+    "per_account_timeout": 30,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "x",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NZ_Customs",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NZ_Customs",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NZ_Customs: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "nz-customs-service-x-9d15a87d",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://twitter.com/NZ_Customs"
+    },
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NZ_Customs/rss",
+      "handle": "NZ_Customs",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nz_customs_45fd008f6f06e3c8a1158960.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "nz-customs-service-x-9d15a87d",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://twitter.com/NZ_Customs"
+    },
+    {
+      "agency_id": "department-of-conservation",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NZConservation",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NZConservation",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NZConservation: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "8639f10cac690502",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/NZConservation"
+    },
+    {
+      "agency_id": "department-of-conservation",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NZConservation/rss",
+      "handle": "NZConservation",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nzconservation_43527ca1a9ec37dc6ca013ca.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "8639f10cac690502",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/NZConservation"
+    },
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NZCustoms",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NZCustoms",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NZCustoms: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "52a4961327f246bd",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/NZCustoms"
+    },
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NZCustoms/rss",
+      "handle": "NZCustoms",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nzcustoms_008454d265a346ab699ab2b7.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "52a4961327f246bd",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/NZCustoms"
+    },
+    {
+      "agency_id": "nz-film-commission",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NZFilm",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NZFilm",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NZFilm: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "5adb146d6f4f08f6",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/NZFilm"
+    },
+    {
+      "agency_id": "nz-film-commission",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NZFilm/rss",
+      "handle": "NZFilm",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nzfilm_93f6f99560b12cc7837be37f.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "5adb146d6f4f08f6",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/NZFilm"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/nzjustice",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "nzjustice",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/nzjustice: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "66fc1c573530a3b5",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/nzjustice"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/nzjustice/rss",
+      "handle": "nzjustice",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nzjustice_cab6f2547e467c3854b12d53.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "66fc1c573530a3b5",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/nzjustice"
+    },
+    {
+      "agency_id": "nz-on-air",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NZOnAir",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NZOnAir",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NZOnAir: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "b48197e5816cf59b",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/NZOnAir"
+    },
+    {
+      "agency_id": "nz-on-air",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NZOnAir/rss",
+      "handle": "NZOnAir",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nzonair_4cd984af5eccbc5175fa4a3a.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "b48197e5816cf59b",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/NZOnAir"
+    },
+    {
+      "agency_id": "nz-parliament",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NZParliament",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NZParliament",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NZParliament: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "nz-parliament-x-90226bd7",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/NZParliament"
+    },
+    {
+      "agency_id": "nz-parliament",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NZParliament/rss",
+      "handle": "NZParliament",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nzparliament_720521797a134c9c755b019c.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "nz-parliament-x-90226bd7",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/NZParliament"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NZPost",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NZPost",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NZPost: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "d274869d5a2a6661",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/NZPost"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NZPost/rss",
+      "handle": "NZPost",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nzpost_6fd6c1f0c9fb5521e034de1d.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "d274869d5a2a6661",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/NZPost"
+    },
+    {
+      "agency_id": "public-service-commission",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NZPublicService",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NZPublicService",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NZPublicService: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "4811ce166aaeada1",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/NZPublicService"
+    },
+    {
+      "agency_id": "public-service-commission",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NZPublicService/rss",
+      "handle": "NZPublicService",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nzpublicservice_181761063df9fa1c5e58a490.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "4811ce166aaeada1",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/NZPublicService"
+    },
+    {
+      "agency_id": "nz-qualifications-authority",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/nzqaofficial",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "nzqaofficial",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/nzqaofficial: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "nz-qualifications-authority-x-25c3e2dc",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/nzqaofficial"
+    },
+    {
+      "agency_id": "nz-qualifications-authority",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/nzqaofficial/rss",
+      "handle": "nzqaofficial",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_nzqaofficial_b5341d48fee602fb59447262.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "nz-qualifications-authority-x-25c3e2dc",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/nzqaofficial"
+    },
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "NZ_Customs",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nz_customs_6149daf8e779e49e9be76b05.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "nz-customs-service-x-9d15a87d",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/NZ_Customs"
+    },
+    {
+      "agency_id": "department-of-conservation",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZConservation",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzconservation_002a6e05145e7a5d48001b44.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "8639f10cac690502",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/NZConservation"
+    },
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZCustoms",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzcustoms_683e80ae68a0e2aa4b6a0de0.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "52a4961327f246bd",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZCustoms"
+    },
+    {
+      "agency_id": "nz-film-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZFilm",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzfilm_4fb4c87709ddbff11eecf48d.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "5adb146d6f4f08f6",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZFilm"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "nzjustice",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzjustice_2b21e7b537642e595ad37195.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "66fc1c573530a3b5",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/nzjustice"
+    },
+    {
+      "agency_id": "nz-on-air",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZOnAir",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzonair_01abc0e663dcfabdb978bc79.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "b48197e5816cf59b",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/NZOnAir"
+    },
+    {
+      "agency_id": "nz-parliament",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "NZParliament",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzparliament_74f66733e8d58681d229630b.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "nz-parliament-x-90226bd7",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZParliament"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZPost",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzpost_b0998a2ab34feb9ef544db13.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "d274869d5a2a6661",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZPost"
+    },
+    {
+      "agency_id": "public-service-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZPublicService",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzpublicservice_88462fcadcbe9915370b1d47.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "4811ce166aaeada1",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZPublicService"
+    },
+    {
+      "agency_id": "nz-qualifications-authority",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "nzqaofficial",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzqaofficial_e8267bc6544230bcc2bb5d7b.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "nz-qualifications-authority-x-25c3e2dc",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/nzqaofficial"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 10
+    },
+    "selected_sources": 10,
+    "status_by_platform": {
+      "x": {
+        "browser_no_visible_posts": 8,
+        "feed_captured": 10,
+        "feed_not_found": 10,
+        "protected": 2
+      }
+    },
+    "status_counts": {
+      "browser_no_visible_posts": 8,
+      "feed_captured": 10,
+      "feed_not_found": 10,
+      "protected": 2
+    }
+  }
+}
