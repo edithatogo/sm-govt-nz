@@ -2,12 +2,12 @@
   "gaps": [],
   "inputs": {
     "reports": [
-      "conductor\\website_archive_report.json",
-      "conductor\\website_browser_archive_report.json"
+      "conductor/website_archive_report.json",
+      "conductor/website_browser_archive_report.json"
     ]
   },
   "report_summaries": {
-    "conductor\\website_archive_report.json": {
+    "conductor/website_archive_report.json": {
       "platform_counts": {
         "website_page": 50
       },
@@ -15,7 +15,8 @@
       "status_by_platform": {
         "website_page": {
           "capture_blocked": 5,
-          "captured": 43,
+          "captured": 41,
+          "method_not_allowed": 2,
           "network_timeout": 1,
           "not_acceptable": 1
         }
@@ -23,12 +24,13 @@
       "status_by_provider": {},
       "status_counts": {
         "capture_blocked": 5,
-        "captured": 43,
+        "captured": 41,
+        "method_not_allowed": 2,
         "network_timeout": 1,
         "not_acceptable": 1
       }
     },
-    "conductor\\website_browser_archive_report.json": {
+    "conductor/website_browser_archive_report.json": {
       "result_count": 10,
       "selected_sources": 10,
       "status_counts": {
@@ -45,7 +47,8 @@
       "browser_capture_failed": 1,
       "browser_captured": 7,
       "capture_blocked": 5,
-      "captured": 43,
+      "captured": 41,
+      "method_not_allowed": 2,
       "network_timeout": 1,
       "not_acceptable": 1
     },
