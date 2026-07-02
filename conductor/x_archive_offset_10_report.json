@@ -1,0 +1,171 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-02T02:40:06+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "browser",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": false,
+    "limit_sources": 10,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 5,
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 10,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "x"
+  },
+  "results": [
+    {
+      "agency_id": "eit",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "eithawkesbay",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/eithawkesbay_b806c8dd8fd9b3765d43b209.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "a4090db8d867dede",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/eithawkesbay"
+    },
+    {
+      "agency_id": "electoral-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "ElectionsNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/electionsnz_4e0454c322e18bbd0546abde.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "c66256e39c792af0",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/ElectionsNZ"
+    },
+    {
+      "agency_id": "fire-and-emergency-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "FireEmergencyNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/fireemergencynz_1054a26b3941f85275e59fb2.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "8db2dbda2463d702",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/FireEmergencyNZ"
+    },
+    {
+      "agency_id": "selwyn-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "FutureforSelwyn",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/futureforselwyn_ef950108bb4f47be3a341787.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "selwyn-district-council-x-9c211011",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/FutureforSelwyn"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "healthnz",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/healthnz_670f9bf1e473b7c4fe78fd0d.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "health-nz-x-fec7719c",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/healthnz"
+    },
+    {
+      "agency_id": "heritage-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "HeritageNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/heritagenz_605ed28e31248067198e6774.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "7801e115ce97703b",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/HeritageNZ"
+    },
+    {
+      "agency_id": "health-quality-and-safety-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "HQSC_NZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/hqsc_nz_0917557527ca8f826db96d58.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "9f833861045a3020",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/HQSC_NZ"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "HRC",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/hrc_5132a77503aba03242470827.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "859966f6ea9c7df7",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/HRC"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "hrcnewzealand",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/hrcnewzealand_fc3a79bd7fc30bba85a2a5b6.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "health-research-council-x-47978eb7",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/hrcnewzealand"
+    },
+    {
+      "agency_id": "human-rights-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "HRCNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/hrcnz_3672c38b04888f711f8f1740.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "d642f0cadfc26b7f",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/HRCNZ"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 10
+    },
+    "selected_sources": 10,
+    "status_by_platform": {
+      "x": {
+        "browser_no_visible_posts": 8,
+        "protected": 2
+      }
+    },
+    "status_counts": {
+      "browser_no_visible_posts": 8,
+      "protected": 2
+    }
+  }
+}
