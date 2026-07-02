@@ -14,6 +14,8 @@ from scripts.build_archive_failure_triage_report import PRIORITY_DESCRIPTIONS, P
 
 SUCCESS_STATUSES = {
     "already_captured",
+    "browser_already_captured",
+    "browser_captured",
     "captured",
     "feed_already_captured",
     "feed_captured",
@@ -22,7 +24,14 @@ SUCCESS_STATUSES = {
     "public_snapshot_captured",
 }
 
-REPORT_ONLY_STATUSES = {"no_records", "feed_not_found", "browser_no_visible_posts"}
+REPORT_ONLY_STATUSES = {
+    "browser_captcha_or_challenge",
+    "browser_login_required",
+    "browser_no_visible_content",
+    "browser_no_visible_posts",
+    "feed_not_found",
+    "no_records",
+}
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -37,11 +46,30 @@ def status_priority(status: str) -> str:
     return PRIORITY_BY_STATUS.get(status, "review")
 
 
+def source_key(row: dict[str, Any]) -> str:
+    source_id = str(row.get("source_id") or "")
+    if source_id:
+        return source_id
+    return f"{row.get('platform') or ''}|{row.get('url') or ''}"
+
+
+def merge_rows(existing: dict[str, Any], candidate: dict[str, Any]) -> dict[str, Any]:
+    existing_priority = status_priority(str(existing.get("status") or ""))
+    candidate_priority = status_priority(str(candidate.get("status") or ""))
+    rank = {"archived_or_already_archived": 0, "monitor_report_only": 1}
+    existing_rank = rank.get(existing_priority, 2)
+    candidate_rank = rank.get(candidate_priority, 2)
+    if candidate_rank < existing_rank or candidate_rank == existing_rank:
+        merged = dict(candidate)
+        merged["supersedes_status"] = existing.get("status", "")
+        merged["supersedes_report"] = existing.get("report", "")
+        return merged
+    return existing
+
+
 def build_gap_map(report_paths: list[Path]) -> dict[str, Any]:
-    items: list[dict[str, Any]] = []
-    status_counts: Counter[str] = Counter()
-    priority_counts: Counter[str] = Counter()
-    platform_counts: Counter[str] = Counter()
+    rows_by_source: dict[str, dict[str, Any]] = {}
+    input_status_counts: Counter[str] = Counter()
     report_summaries: dict[str, Any] = {}
     for path in report_paths:
         report = load_json(path)
@@ -52,33 +80,55 @@ def build_gap_map(report_paths: list[Path]) -> dict[str, Any]:
         for row in results:
             if not isinstance(row, dict):
                 continue
-            status = str(row.get("status") or "unknown")
-            priority = status_priority(status)
-            platform = str(row.get("platform") or "unknown")
-            status_counts[status] += 1
-            priority_counts[priority] += 1
-            platform_counts[platform] += 1
-            if priority in {"archived_or_already_archived", "monitor_report_only"}:
+            source_id = source_key(row)
+            if not source_id:
                 continue
-            items.append(
-                {
-                    "source_id": str(row.get("source_id") or ""),
-                    "agency_id": str(row.get("agency_id") or ""),
-                    "platform": platform,
-                    "url": str(row.get("url") or ""),
-                    "status": status,
-                    "reason": str(row.get("reason") or ""),
-                    "priority": priority,
-                    "priority_description": PRIORITY_DESCRIPTIONS.get(priority, "Needs review."),
-                }
-            )
+            row_with_report = dict(row)
+            row_with_report["report"] = str(path)
+            input_status_counts[str(row.get("status") or "unknown")] += 1
+            if source_id in rows_by_source:
+                rows_by_source[source_id] = merge_rows(rows_by_source[source_id], row_with_report)
+            else:
+                rows_by_source[source_id] = row_with_report
+
+    items: list[dict[str, Any]] = []
+    status_counts: Counter[str] = Counter()
+    priority_counts: Counter[str] = Counter()
+    platform_counts: Counter[str] = Counter()
+    superseded_count = sum(1 for row in rows_by_source.values() if row.get("supersedes_status"))
+    for row in rows_by_source.values():
+        status = str(row.get("status") or "unknown")
+        priority = status_priority(status)
+        platform = str(row.get("platform") or "unknown")
+        status_counts[status] += 1
+        priority_counts[priority] += 1
+        platform_counts[platform] += 1
+        if priority in {"archived_or_already_archived", "monitor_report_only"}:
+            continue
+        items.append(
+            {
+                "source_id": str(row.get("source_id") or ""),
+                "agency_id": str(row.get("agency_id") or ""),
+                "platform": platform,
+                "url": str(row.get("url") or ""),
+                "status": status,
+                "reason": str(row.get("reason") or ""),
+                "priority": priority,
+                "priority_description": PRIORITY_DESCRIPTIONS.get(priority, "Needs review."),
+                "report": str(row.get("report") or ""),
+                "supersedes_status": str(row.get("supersedes_status") or ""),
+                "supersedes_report": str(row.get("supersedes_report") or ""),
+            }
+        )
     return {
         "inputs": {"reports": [str(path) for path in report_paths]},
         "summary": {
             "gap_count": len(items),
             "platform_counts": dict(sorted(platform_counts.items())),
             "priority_counts": dict(sorted(priority_counts.items())),
+            "input_status_counts": dict(sorted(input_status_counts.items())),
             "status_counts": dict(sorted(status_counts.items())),
+            "superseded_source_count": superseded_count,
         },
         "report_summaries": report_summaries,
         "gaps": items,
@@ -94,6 +144,8 @@ def default_reports() -> list[Path]:
         "bluesky_archive_report.json",
         "youtube_archive*_report.json",
         "website_page_archive*_report.json",
+        "website_archive_report.json",
+        "website_browser_archive_report.json",
         "threads_archive_report.json",
         "x_feed_archive_report.json",
         "linkedin_archive*_report.json",

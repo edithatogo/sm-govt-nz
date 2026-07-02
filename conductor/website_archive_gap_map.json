@@ -1,44 +1,17 @@
 {
   "gaps": [
     {
-      "agency_id": "ashburton-district-council",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "f33df640b05e8598",
-      "status": "capture_blocked",
-      "url": "https://www.ashburtondc.govt.nz"
-    },
-    {
-      "agency_id": "auckland-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 406: Not Acceptable",
-      "source_id": "31196512638ed2ed",
-      "status": "not_acceptable",
-      "url": "https://www.aucklandcouncil.govt.nz"
-    },
-    {
       "agency_id": "auckland-light-rail",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -5] No address associated with hostname",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.aucklandlightrail.co.nz/\nCall log:\n  - navigating to \"https://www.aucklandlightrail.co.nz/\", waiting until \"domcontentloaded\"\n",
+      "report": "conductor\\website_browser_archive_report.json",
       "source_id": "ea7740e611200bed",
-      "status": "network_error",
+      "status": "browser_capture_failed",
+      "supersedes_report": "conductor\\website_archive_report.json",
+      "supersedes_status": "network_error",
       "url": "https://www.aucklandlightrail.co.nz"
-    },
-    {
-      "agency_id": "bay-of-plenty-regional-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: timed out",
-      "source_id": "01a73b769530cc60",
-      "status": "network_timeout",
-      "url": "https://www.boprc.govt.nz"
     },
     {
       "agency_id": "carterton-district-council",
@@ -46,29 +19,12 @@
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "URL error: [Errno -2] Name or service not known",
+      "report": "conductor\\website_archive_report.json",
       "source_id": "b0d8b95ac20d8925",
       "status": "dns_failed",
+      "supersedes_report": "",
+      "supersedes_status": "",
       "url": "https://www.cartertondc.govt.nz"
-    },
-    {
-      "agency_id": "central-otago-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed",
-      "source_id": "64372d3f52dde38d",
-      "status": "method_not_allowed",
-      "url": "https://www.codc.govt.nz"
-    },
-    {
-      "agency_id": "clutha-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed",
-      "source_id": "38b2ebe81566aa72",
-      "status": "method_not_allowed",
-      "url": "https://www.cluthadc.govt.nz"
     },
     {
       "agency_id": "criminal-cases-review-commission",
@@ -76,58 +32,22 @@
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "URL error: [Errno -2] Name or service not known",
+      "report": "conductor\\website_archive_report.json",
       "source_id": "6c23d8c73930b931",
       "status": "dns_failed",
+      "supersedes_report": "",
+      "supersedes_status": "",
       "url": "https://www.ccrc.govt.nz"
-    },
-    {
-      "agency_id": "department-of-corrections",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "c1ec96d478c92e9c",
-      "status": "capture_blocked",
-      "url": "https://www.corrections.govt.nz"
-    },
-    {
-      "agency_id": "dpmc",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "e48d45bb68dfbd35",
-      "status": "capture_blocked",
-      "url": "https://www.dpmc.govt.nz"
-    },
-    {
-      "agency_id": "dunedin-city-council",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "0e2463964d79ebe2",
-      "status": "capture_blocked",
-      "url": "https://www.dunedin.govt.nz"
-    },
-    {
-      "agency_id": "education-review-office",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "a9da02fbaefa8cc2",
-      "status": "capture_blocked",
-      "url": "https://www.ero.govt.nz"
     }
   ],
   "inputs": {
     "reports": [
-      "conductor/website_archive_report.json"
+      "conductor\\website_archive_report.json",
+      "conductor\\website_browser_archive_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/website_archive_report.json": {
+    "conductor\\website_archive_report.json": {
       "platform_counts": {
         "website_page": 50
       },
@@ -153,19 +73,23 @@
         "network_timeout": 1,
         "not_acceptable": 1
       }
+    },
+    "conductor\\website_browser_archive_report.json": {
+      "result_count": 10,
+      "selected_sources": 10,
+      "status_counts": {
+        "browser_captcha_or_challenge": 2,
+        "browser_capture_failed": 1,
+        "browser_captured": 7
+      }
     }
   },
   "summary": {
-    "gap_count": 12,
-    "platform_counts": {
-      "website_page": 50
-    },
-    "priority_counts": {
-      "archived_or_already_archived": 38,
-      "p1_existing_resources": 7,
-      "p4_larger_browser_or_access_project": 5
-    },
-    "status_counts": {
+    "gap_count": 3,
+    "input_status_counts": {
+      "browser_captcha_or_challenge": 2,
+      "browser_capture_failed": 1,
+      "browser_captured": 7,
       "capture_blocked": 5,
       "captured": 38,
       "dns_failed": 2,
@@ -173,6 +97,23 @@
       "network_error": 1,
       "network_timeout": 1,
       "not_acceptable": 1
-    }
+    },
+    "platform_counts": {
+      "website_page": 50
+    },
+    "priority_counts": {
+      "archived_or_already_archived": 45,
+      "monitor_report_only": 2,
+      "p1_existing_resources": 2,
+      "review": 1
+    },
+    "status_counts": {
+      "browser_captcha_or_challenge": 2,
+      "browser_capture_failed": 1,
+      "browser_captured": 7,
+      "captured": 38,
+      "dns_failed": 2
+    },
+    "superseded_source_count": 10
   }
 }
