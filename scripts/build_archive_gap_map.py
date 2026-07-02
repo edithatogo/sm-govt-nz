@@ -22,6 +22,7 @@ SUCCESS_STATUSES = {
     "manual_seed_captured",
     "public_snapshot_already_captured",
     "public_snapshot_captured",
+    "seed_present",
 }
 
 REPORT_ONLY_STATUSES = {
@@ -48,6 +49,8 @@ def status_priority(status: str) -> str:
         return "archived_or_already_archived"
     if status in REPORT_ONLY_STATUSES:
         return "monitor_report_only"
+    if status == "needs_authorized_seed_or_api":
+        return "p2_existing_system_needs_seed_input"
     return PRIORITY_BY_STATUS.get(status, "review")
 
 
@@ -72,19 +75,33 @@ def merge_rows(existing: dict[str, Any], candidate: dict[str, Any]) -> dict[str,
     return existing
 
 
+def report_rows(report: dict[str, Any]) -> list[dict[str, Any]]:
+    results = report.get("results", [])
+    if isinstance(results, list) and results:
+        return [row for row in results if isinstance(row, dict)]
+    items = report.get("items", [])
+    if not isinstance(items, list):
+        return []
+    rows = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        row = dict(item)
+        row["status"] = row.get("status") or row.get("onboarding_status") or "unknown"
+        if row["status"] == "needs_authorized_seed_or_api" and not row.get("reason"):
+            row["reason"] = "authorized seed, owner export, or approved API access is required"
+        rows.append(row)
+    return rows
+
+
 def build_gap_map(report_paths: list[Path]) -> dict[str, Any]:
     rows_by_source: dict[str, dict[str, Any]] = {}
     input_status_counts: Counter[str] = Counter()
     report_summaries: dict[str, Any] = {}
     for path in report_paths:
         report = load_json(path)
-        results = report.get("results", [])
-        if not isinstance(results, list):
-            results = []
         report_summaries[report_path(path)] = report.get("summary", {})
-        for row in results:
-            if not isinstance(row, dict):
-                continue
+        for row in report_rows(report):
             source_id = source_key(row)
             if not source_id:
                 continue
@@ -142,23 +159,26 @@ def build_gap_map(report_paths: list[Path]) -> dict[str, Any]:
 
 def default_reports() -> list[Path]:
     conductor = Path("conductor")
-    patterns = [
+    names = [
         "rss_archive_report.json",
         "json_feed_archive_report.json",
         "api_archive_report.json",
         "bluesky_archive_report.json",
-        "youtube_archive*_report.json",
-        "website_page_archive*_report.json",
+        "youtube_archive_report.json",
         "website_archive_report.json",
         "website_browser_archive_report.json",
         "threads_archive_report.json",
         "x_feed_archive_report.json",
-        "linkedin_archive*_report.json",
-        "newsletter_archive*_report.json",
+        "x_browser_and_feed_archive_report.json",
+        "linkedin_archive_report.json",
+        "newsletter_archive_report.json",
+        "manual_seed_onboarding_report.json",
     ]
     paths: list[Path] = []
-    for pattern in patterns:
-        paths.extend(sorted(conductor.glob(pattern)))
+    for name in names:
+        path = conductor / name
+        if path.is_file():
+            paths.append(path)
     return list(dict.fromkeys(paths))
 
 
