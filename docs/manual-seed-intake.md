@@ -42,6 +42,8 @@ Each seed file should be named with the registered `source_id` when possible, fa
 - Threads, LinkedIn, and newsletters are already wired to ingest seeds when files appear.
 - Logged-in, private, cookie, local storage, and hidden GraphQL data must not be extracted into seed files unless separately authorized and documented.
 - `conductor/manual_seed_work_queue.json` is the deterministic execution queue for remaining seed/API-dependent sources. It groups the same sources as `conductor/manual_seed_onboarding_report.json`, but sorts them by lowest-friction ingestion first: Threads, newsletters, LinkedIn, Facebook, Instagram, then X.
+- `conductor/manual_seed_drop_targets.md` lists the next seed files to create or drop into `manual_archive_seeds/`.
+- `conductor/manual_seed_next_batch_templates.json` contains the starter templates for the next batch of seed files.
 
 ## Validation statuses
 
