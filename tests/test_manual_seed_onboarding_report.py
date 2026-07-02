@@ -1,7 +1,7 @@
 import argparse
 import json
 
-from scripts.build_manual_seed_onboarding_report import build_report, build_work_queue, write_summary
+from scripts.build_manual_seed_onboarding_report import build_next_batch_templates, build_report, build_work_queue, write_summary
 
 
 def test_manual_seed_onboarding_report_marks_missing_and_present_seeds(tmp_path):
@@ -283,3 +283,9 @@ def test_manual_seed_work_queue_orders_lowest_friction_platforms_first(tmp_path)
 
     assert queue["summary"]["priority_order"] == ["threads", "newsletter", "facebook"]
     assert [item["source_id"] for item in queue["items"]] == ["threads", "newsletter", "fb"]
+
+    templates = build_next_batch_templates(report, limit=2)
+    assert templates["summary"]["template_count"] == 2
+    assert templates["templates"][0]["target_path"] == "manual_archive_seeds/threads/threads.json"
+    assert templates["templates"][0]["source_id"] == "threads"
+    assert templates["templates"][0]["posts"][0]["post_id"] == "stable-platform-id-or-operator-id"

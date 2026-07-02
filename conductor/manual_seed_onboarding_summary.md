@@ -1,6 +1,6 @@
 # Manual/API Source Onboarding
 
-Generated: 2026-07-02T13:16:20+00:00
+Generated: 2026-07-02T14:29:19+00:00
 
 ## Summary
 
@@ -61,3 +61,4 @@ Generated: 2026-07-02T13:16:20+00:00
 - `seed_present` sources are ready for archival processing.
 - `needs_authorized_seed_or_api` sources remain in the manual/API remainder set.
 - `conductor/manual_seed_work_queue.json` lists the remaining sources in deterministic execution order with preferred seed paths.
+- `conductor/manual_seed_next_batch_templates.json` contains source-specific starter JSON for the next deterministic batch without creating live seed files.

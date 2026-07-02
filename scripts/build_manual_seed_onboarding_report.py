@@ -10,6 +10,7 @@ DEFAULT_POLICY = Path("config/manual_seed_onboarding.json")
 DEFAULT_REPORT = Path("conductor/manual_seed_onboarding_report.json")
 DEFAULT_SUMMARY = Path("conductor/manual_seed_onboarding_summary.md")
 DEFAULT_QUEUE = Path("conductor/manual_seed_work_queue.json")
+DEFAULT_NEXT_BATCH_TEMPLATES = Path("conductor/manual_seed_next_batch_templates.json")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
 DEFAULT_PLATFORMS = ["facebook", "instagram", "threads", "linkedin", "x", "newsletter"]
 PLATFORM_PRIORITY = {
@@ -124,6 +125,49 @@ def build_work_queue(report: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def seed_template_for_item(item: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "target_path": item.get("preferred_seed_path", ""),
+        "source_id": item.get("source_id", ""),
+        "agency_id": item.get("agency_id", ""),
+        "agency_name": item.get("agency_name", ""),
+        "platform": item.get("platform", ""),
+        "source_url": item.get("url", ""),
+        "account": item.get("account", ""),
+        "authorization_note": "Replace this template with operator-authorized export data before placing it under manual_archive_seeds/.",
+        "posts": [
+            {
+                "post_id": "stable-platform-id-or-operator-id",
+                "url": "https://example.govt.nz/or/platform/post",
+                "created_at": "2026-07-01T00:00:00Z",
+                "text": "Archived public or operator-authorized content.",
+                "media": [
+                    {
+                        "url": "https://example.govt.nz/media.jpg",
+                        "media_type": "image",
+                        "alt_text": "Optional description",
+                    }
+                ],
+            }
+        ],
+    }
+
+
+def build_next_batch_templates(report: dict[str, Any], *, limit: int = 25) -> dict[str, Any]:
+    work_queue = build_work_queue(report)
+    items = work_queue.get("items", [])[:limit]
+    return {
+        "generated_at": report.get("generated_at", ""),
+        "description": "Source-specific starter templates for the next deterministic manual seed batch. These are not seed files and do not mark sources as seed_present.",
+        "summary": {
+            "template_count": len(items),
+            "limit": limit,
+            "platform_counts": dict(sorted(Counter(item.get("platform", "") for item in items).items())),
+        },
+        "templates": [seed_template_for_item(item) for item in items],
+    }
+
+
 def build_report(args: argparse.Namespace) -> dict[str, Any]:
     manifest = load_json(args.manifest)
     policy = load_json(args.policy)
@@ -234,6 +278,7 @@ def write_summary(path: Path, report: dict[str, Any]) -> None:
             "- `seed_present` sources are ready for archival processing.",
             "- `needs_authorized_seed_or_api` sources remain in the manual/API remainder set.",
             "- `conductor/manual_seed_work_queue.json` lists the remaining sources in deterministic execution order with preferred seed paths.",
+            "- `conductor/manual_seed_next_batch_templates.json` contains source-specific starter JSON for the next deterministic batch without creating live seed files.",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -247,6 +292,7 @@ def main() -> None:
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
     parser.add_argument("--queue", type=Path, default=DEFAULT_QUEUE)
+    parser.add_argument("--next-batch-templates", type=Path, default=DEFAULT_NEXT_BATCH_TEMPLATES)
     parser.add_argument("--manual-seed-root", type=Path, default=DEFAULT_MANUAL_SEED_ROOT)
     parser.add_argument("--platforms", default=",".join(DEFAULT_PLATFORMS))
     args = parser.parse_args()
@@ -254,6 +300,7 @@ def main() -> None:
     write_json(args.report, report)
     write_summary(args.summary, report)
     write_json(args.queue, build_work_queue(report))
+    write_json(args.next_batch_templates, build_next_batch_templates(report))
     print(
         "Manual/API onboarding report wrote "
         f"{report['summary']['selected_sources']} selected sources."
