@@ -185,10 +185,6 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 
 
----
-
-## [ ] Track: NZ Government Archive - website and YouTube fixable failure remediation
-*Link: [./tracks/govt_archive_website_youtube_fixable_failures_20260702/](./tracks/govt_archive_website_youtube_fixable_failures_20260702/)*
 
 ---
 
@@ -209,6 +205,7 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 ## [ ] Track: NZ Government Archive - blocked website browser fallback capture
 *Link: [./tracks/govt_archive_blocked_website_browser_fallback_20260702/](./tracks/govt_archive_blocked_website_browser_fallback_20260702/)*
+
 
 
 
