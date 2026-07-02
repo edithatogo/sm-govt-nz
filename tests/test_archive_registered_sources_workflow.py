@@ -50,6 +50,8 @@ def test_archive_registered_sources_capture_commits_and_uploads_generated_artifa
 
     capture_block = workflow.split("- name: Commit archive capture reports", 1)[1].split("- name: Commit archive payloads", 1)[0]
     assert "inputs.dry_run == 'false'" in capture_block
+    assert "scripts/build_archive_gap_map.py" in capture_block
+    assert "--path conductor/archive_gap_map.json" in capture_block
     assert "dist/archive_manifest.json" in capture_block
     assert "dist/archive_compaction_manifest.json" in capture_block
     assert "--max-attempts 10" in capture_block
@@ -83,6 +85,8 @@ def test_youtube_scheduled_workflow_uses_dedicated_report_and_limit() -> None:
     assert "--path conductor/youtube_archive_report.json" in workflow
     assert "scripts/build_archive_failure_triage_report.py" in workflow
     assert "--path conductor/youtube_archive_failure_triage_report.json" in workflow
+    assert "scripts/build_archive_gap_map.py" in workflow
+    assert "--path conductor/youtube_archive_gap_map.json" in workflow
     assert "--force" in workflow
     assert "historical_archive_raw/youtube/**" in workflow
 
@@ -99,6 +103,8 @@ def test_website_scheduled_workflow_uses_dedicated_report_and_limit() -> None:
     assert "--path conductor/website_archive_report.json" in workflow
     assert "scripts/build_archive_failure_triage_report.py" in workflow
     assert "--path conductor/website_archive_failure_triage_report.json" in workflow
+    assert "scripts/build_archive_gap_map.py" in workflow
+    assert "--path conductor/website_archive_gap_map.json" in workflow
     assert "--force" in workflow
     assert "historical_archive_raw/website/**" in workflow
 

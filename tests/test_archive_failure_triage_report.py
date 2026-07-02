@@ -36,10 +36,12 @@ def test_archive_failure_triage_report_extracts_non_success_rows(tmp_path):
     report = build_report([report_path])
 
     assert report["summary"]["failure_count"] == 1
+    assert report["summary"]["priority_counts"] == {"p1_existing_resources": 1}
     assert report["summary"]["status_counts"] == {"capture_failed": 1}
     item = report["items"][0]
     assert item["source_id"] == "bad"
     assert item["recommended_action"] == "review_url_or_adapter"
+    assert item["priority"] == "p1_existing_resources"
     assert "feedback_command" not in item
 
 
@@ -109,6 +111,7 @@ def test_archive_failure_triage_report_writes_output(tmp_path, monkeypatch):
     written = json.loads(output.read_text(encoding="utf-8"))
     assert written["summary"]["platform_counts"] == {"website_page": 1}
     assert written["items"][0]["recommended_action"] == "review_access_or_mark_blocked"
+    assert written["items"][0]["priority"] == "p4_larger_browser_or_access_project"
 
 
 def test_archive_failure_triage_report_tolerates_schema_drift(tmp_path):

@@ -57,7 +57,17 @@ def stable_id(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()[:24]
 
 
+def normalize_url_for_fetch(url: str) -> str:
+    url = " ".join(str(url or "").strip().split())
+    parsed = urlparse(url)
+    if parsed.netloc.lower().endswith("youtube.com") and parsed.path.startswith("/@"):
+        handle = parsed.path[2:].replace(" ", "")
+        return urlunparse(parsed._replace(path=f"/@{handle}"))
+    return url
+
+
 def fetch_text(url: str, *, timeout: int = 30) -> str:
+    url = normalize_url_for_fetch(url)
     request = Request(
         url,
         headers={
@@ -71,6 +81,7 @@ def fetch_text(url: str, *, timeout: int = 30) -> str:
 
 
 def alternate_website_urls(url: str) -> list[str]:
+    url = normalize_url_for_fetch(url)
     parsed = urlparse(url)
     host = parsed.netloc
     if not host:
@@ -395,7 +406,7 @@ def youtube_channel_id_from_page(body: str) -> str:
 
 
 def resolve_youtube_channel_id(source: dict[str, Any], page_fetcher: Any | None = None, fetch_timeout: int = 30) -> str:
-    url = str(source.get("url") or "")
+    url = normalize_url_for_fetch(str(source.get("url") or ""))
     parsed = urlparse(url)
     host = parsed.netloc.lower()
     if "youtube.com" not in host and "youtu.be" not in host:

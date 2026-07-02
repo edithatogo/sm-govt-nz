@@ -365,12 +365,17 @@ jobs:
       - name: Commit archive capture reports
         if: ${{ inputs.dry_run == 'false' }}
         run: >-
+          python scripts/build_archive_gap_map.py
+          --report "$ARCHIVE_REPORT_PATH"
+          --output conductor/archive_gap_map.json
+          &&
           python scripts/commit_state_updates.py
           --message "Record registered government archive capture report"
           --force
           --max-attempts 10
           --path "$ARCHIVE_REPORT_PATH"
           --path "$ARCHIVE_SUMMARY_PATH"
+          --path conductor/archive_gap_map.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
           --path dist/archive_manifest.json

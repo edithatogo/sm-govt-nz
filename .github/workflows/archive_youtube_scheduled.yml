@@ -77,10 +77,15 @@ jobs:
           --report conductor/youtube_archive_report.json
           --output conductor/youtube_archive_failure_triage_report.json
           &&
+          python scripts/build_archive_gap_map.py
+          --report conductor/youtube_archive_report.json
+          --output conductor/youtube_archive_gap_map.json
+          &&
           python scripts/commit_state_updates.py
           --message "Capture YouTube video metadata from registered government channels"
           --path conductor/youtube_archive_report.json
           --path conductor/youtube_archive_failure_triage_report.json
+          --path conductor/youtube_archive_gap_map.json
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
       - name: Commit YouTube payloads

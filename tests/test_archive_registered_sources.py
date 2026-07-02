@@ -352,6 +352,34 @@ def test_archive_youtube_source_reports_bad_youtube_non_channel_url(tmp_path):
     assert results[0]["reason"] == "YouTube channel resolver failed: YouTube URL is not a channel URL"
 
 
+def test_archive_youtube_source_normalizes_spaces_in_handle(tmp_path):
+    seen = []
+
+    def page_fetcher(url):
+        seen.append(url)
+        return '{"channelId":"UC1234567890abcdefghiJKL"}'
+
+    source = {
+        "source_id": "agency-youtube",
+        "agency_id": "agency",
+        "platform": "youtube",
+        "source_type": "social_profile",
+        "url": "https://www.youtube.com/@tewanangao raukawa",
+        "archive_status": "candidate",
+        "feasibility": "medium",
+    }
+
+    archive_youtube_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        parser=FakeYouTubeParser(),
+        page_fetcher=page_fetcher,
+    )
+
+    assert seen == ["https://www.youtube.com/@tewanangaoraukawa"]
+
+
 def test_archive_json_feed_source_archives_single_json_object(tmp_path, monkeypatch):
     source = {
         "source_id": "agency-json",

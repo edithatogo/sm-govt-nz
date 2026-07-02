@@ -11,6 +11,7 @@ This repo uses source tools in narrow roles:
 - `Nitter-compatible feeds`: optional redundant X feed sources such as `xcancel.com/<handle>/rss`.
 - `twscrape` and `Scweet`: disabled account-cookie scraper stubs unless explicitly enabled and configured by an operator.
 - `gofeed`: reference if feed ingestion is later moved to Go.
+- `build_archive_gap_map.py`: deterministic prioritisation of archive gaps into existing-resource fixes, manual-seed inputs, operator/API access, and larger browser/access projects.
 
 Configuration lives in `config/source_tools.json`.
 

@@ -24,3 +24,12 @@ Archive adapters must report one of the statuses defined in
 - `degraded`, `rate_limited`, and `unavailable` can be retried by scheduled
   archive workflows.
 - Health status must never alter outbound syndication state.
+
+## Archive gap priorities
+
+Archive gap reports classify non-success states into implementation priorities:
+
+- `p1_existing_resources`: likely fixable by URL normalization, alternate public endpoints, bounded retry, or adapter changes.
+- `p2_existing_system_needs_seed_input`: the ingest system exists, but an operator-authorized seed file is missing.
+- `p3_needs_operator_or_platform_access`: official API, export, login, or provider access is required.
+- `p4_larger_browser_or_access_project`: needs a separate browser/API/access project and must not attempt CAPTCHA, login bypass, cookie extraction, or hidden private API capture by default.

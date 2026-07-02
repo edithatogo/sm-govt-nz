@@ -20,6 +20,28 @@ ACTION_BY_STATUS = {
     "no_records": "monitor_or_verify_channel_activity",
     "not_acceptable": "review_headers_or_alternate_url",
     "tls_failed": "review_tls_or_alternate_url",
+    "manual_seed_missing": "supply_operator_authorized_seed",
+}
+
+PRIORITY_BY_STATUS = {
+    "capture_failed": "p1_existing_resources",
+    "dns_failed": "p1_existing_resources",
+    "method_not_allowed": "p1_existing_resources",
+    "network_error": "p1_existing_resources",
+    "network_timeout": "p1_existing_resources",
+    "not_acceptable": "p1_existing_resources",
+    "not_found": "p1_existing_resources",
+    "tls_failed": "p1_existing_resources",
+    "manual_seed_missing": "p2_existing_system_needs_seed_input",
+    "auth_required": "p3_needs_operator_or_platform_access",
+    "capture_blocked": "p4_larger_browser_or_access_project",
+}
+
+PRIORITY_DESCRIPTIONS = {
+    "p1_existing_resources": "Can be improved with existing repo resources and keyless public retries.",
+    "p2_existing_system_needs_seed_input": "Existing archive system is ready, but operator-authorized seed input is missing.",
+    "p3_needs_operator_or_platform_access": "Needs login/export/API access before capture can lawfully proceed.",
+    "p4_larger_browser_or_access_project": "Requires a larger browser/API/access project and careful policy boundaries.",
 }
 
 def now_iso() -> str:
@@ -38,6 +60,7 @@ def triage_item(report_path: Path, row: dict[str, Any]) -> dict[str, Any]:
     agency_id = str(row.get("agency_id") or "")
     url = str(row.get("url") or "")
     reason = str(row.get("reason") or "")
+    priority = PRIORITY_BY_STATUS.get(status, "review")
     return {
         "source_id": source_id,
         "agency_id": agency_id,
@@ -46,6 +69,8 @@ def triage_item(report_path: Path, row: dict[str, Any]) -> dict[str, Any]:
         "status": status,
         "reason": reason,
         "recommended_action": ACTION_BY_STATUS.get(status, "review"),
+        "priority": priority,
+        "priority_description": PRIORITY_DESCRIPTIONS.get(priority, "Needs review."),
         "report": str(report_path),
     }
 
@@ -87,8 +112,10 @@ def build_report(report_paths: list[Path]) -> dict[str, Any]:
             items.append(triage_item(report_path, row))
     status_counts = Counter(item["status"] for item in items)
     platform_counts = Counter(item["platform"] for item in items)
+    priority_counts = Counter(item["priority"] for item in items)
     report_only_status_counts = Counter(item["status"] for item in report_only_items)
     report_only_platform_counts = Counter(item["platform"] for item in report_only_items)
+    report_only_priority_counts = Counter(item["priority"] for item in report_only_items)
     return {
         "generated_at": now_iso(),
         "inputs": {"reports": [str(path) for path in report_paths]},
@@ -98,7 +125,9 @@ def build_report(report_paths: list[Path]) -> dict[str, Any]:
             "platform_counts": dict(sorted(platform_counts.items())),
             "report_only_count": len(report_only_items),
             "report_only_platform_counts": dict(sorted(report_only_platform_counts.items())),
+            "report_only_priority_counts": dict(sorted(report_only_priority_counts.items())),
             "report_only_status_counts": dict(sorted(report_only_status_counts.items())),
+            "priority_counts": dict(sorted(priority_counts.items())),
             "status_counts": dict(sorted(status_counts.items())),
         },
         "items": items,
