@@ -187,10 +187,6 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 
 
----
-
-## [ ] Track: NZ Government Archive - newsletter and email ingestion automation
-*Link: [./tracks/govt_archive_newsletter_ingestion_automation_20260702/](./tracks/govt_archive_newsletter_ingestion_automation_20260702/)*
 
 ---
 
@@ -201,6 +197,7 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 ## [ ] Track: NZ Government Archive - blocked website browser fallback capture
 *Link: [./tracks/govt_archive_blocked_website_browser_fallback_20260702/](./tracks/govt_archive_blocked_website_browser_fallback_20260702/)*
+
 
 
 
