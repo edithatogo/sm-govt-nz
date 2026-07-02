@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T12:27:02+00:00",
+  "generated_at": "2026-07-02T12:46:07+00:00",
   "inputs": {
     "reports": [
       "conductor/youtube_archive_report.json"
@@ -46,81 +46,68 @@
       "url": "https://www.youtube.com/@EITHawkesBay"
     },
     {
-      "agency_id": "eit",
-      "fixability_class": "youtube_url_or_channel_resolution",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
-      "recommended_action": "replace_with_channel_url_or_mark_video_seed",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "eit-youtube-7db66004",
-      "status": "source_url_not_channel",
-      "url": "https://youtu.be/dhtw7Dhjc-U"
-    },
-    {
       "agency_id": "environment-canterbury",
       "fixability_class": "youtube_url_or_channel_resolution",
       "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
-      "recommended_action": "replace_with_channel_url_or_mark_video_seed",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "recommended_action": "review_url_or_adapter",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-4c9e496b",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/UWM5Bt6eV24"
     },
     {
       "agency_id": "environment-canterbury",
       "fixability_class": "youtube_url_or_channel_resolution",
       "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
-      "recommended_action": "replace_with_channel_url_or_mark_video_seed",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "recommended_action": "review_url_or_adapter",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-ec7191cd",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/ceTKqFs728w"
     },
     {
       "agency_id": "environment-canterbury",
       "fixability_class": "youtube_url_or_channel_resolution",
       "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
-      "recommended_action": "replace_with_channel_url_or_mark_video_seed",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "recommended_action": "review_url_or_adapter",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-b08cb22a",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/gRqlMhAmmJA"
     },
     {
       "agency_id": "environment-canterbury",
       "fixability_class": "youtube_url_or_channel_resolution",
       "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
-      "recommended_action": "replace_with_channel_url_or_mark_video_seed",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "recommended_action": "review_url_or_adapter",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-3b868f65",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/sdvdzpVunWQ"
     },
     {
       "agency_id": "environment-canterbury",
       "fixability_class": "youtube_url_or_channel_resolution",
       "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
-      "recommended_action": "replace_with_channel_url_or_mark_video_seed",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
+      "recommended_action": "review_url_or_adapter",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-3140d08b",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/uC6hC7VDe5c"
     }
   ],
@@ -143,7 +130,7 @@
   "report_summaries": {
     "conductor/youtube_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-07-02T12:27:02+00:00",
+      "generated_at": "2026-07-02T12:46:07+00:00",
       "summary": {
         "platform_counts": {
           "youtube": 50
@@ -152,30 +139,33 @@
         "status_by_platform": {
           "youtube": {
             "already_captured": 377,
-            "captured": 128,
+            "capture_failed": 5,
+            "captured": 129,
             "no_records": 1,
-            "source_url_not_channel": 7,
+            "source_url_not_channel": 1,
             "youtube_channel_not_found": 2
           }
         },
         "status_by_provider": {},
         "status_counts": {
           "already_captured": 377,
-          "captured": 128,
+          "capture_failed": 5,
+          "captured": 129,
           "no_records": 1,
-          "source_url_not_channel": 7,
+          "source_url_not_channel": 1,
           "youtube_channel_not_found": 2
         }
       }
     }
   },
   "summary": {
-    "failure_count": 9,
+    "failure_count": 8,
     "platform_counts": {
-      "youtube": 9
+      "youtube": 8
     },
     "priority_counts": {
-      "review": 9
+      "p1_existing_resources": 5,
+      "review": 3
     },
     "report_only_count": 1,
     "report_only_platform_counts": {
@@ -188,7 +178,8 @@
       "no_records": 1
     },
     "status_counts": {
-      "source_url_not_channel": 7,
+      "capture_failed": 5,
+      "source_url_not_channel": 1,
       "youtube_channel_not_found": 2
     }
   }

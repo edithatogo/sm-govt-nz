@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T12:27:02+00:00",
+  "generated_at": "2026-07-02T12:46:07+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -2958,10 +2958,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
+      "reason": "captured youtube video metadata youtube:6985380574faae9113c6cbaf",
       "source_id": "eit-youtube-7db66004",
       "source_type": "social_profile",
-      "status": "source_url_not_channel",
+      "status": "captured",
       "url": "https://youtu.be/dhtw7Dhjc-U"
     },
     {
@@ -3145,10 +3145,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
       "source_id": "environment-canterbury-youtube-4c9e496b",
       "source_type": "social_profile",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/UWM5Bt6eV24"
     },
     {
@@ -3156,10 +3156,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
       "source_id": "environment-canterbury-youtube-ec7191cd",
       "source_type": "social_profile",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/ceTKqFs728w"
     },
     {
@@ -3167,10 +3167,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
       "source_id": "environment-canterbury-youtube-b08cb22a",
       "source_type": "social_profile",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/gRqlMhAmmJA"
     },
     {
@@ -3178,10 +3178,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
       "source_id": "environment-canterbury-youtube-3b868f65",
       "source_type": "social_profile",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/sdvdzpVunWQ"
     },
     {
@@ -3189,10 +3189,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
+      "reason": "YouTube video metadata fetch failed: HTTP 401: Unauthorized",
       "source_id": "environment-canterbury-youtube-3140d08b",
       "source_type": "social_profile",
-      "status": "source_url_not_channel",
+      "status": "capture_failed",
       "url": "http://www.youtube.com/watch/uC6hC7VDe5c"
     },
     {
@@ -5701,18 +5701,20 @@
     "status_by_platform": {
       "youtube": {
         "already_captured": 377,
-        "captured": 128,
+        "capture_failed": 5,
+        "captured": 129,
         "no_records": 1,
-        "source_url_not_channel": 7,
+        "source_url_not_channel": 1,
         "youtube_channel_not_found": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "already_captured": 377,
-      "captured": 128,
+      "capture_failed": 5,
+      "captured": 129,
       "no_records": 1,
-      "source_url_not_channel": 7,
+      "source_url_not_channel": 1,
       "youtube_channel_not_found": 2
     }
   }
