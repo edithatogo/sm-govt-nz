@@ -53,6 +53,14 @@ def test_extract_posts_from_html_finds_status_urls():
     assert [post["tweet_id"] for post in posts] == ["1111111111111111111", "2222222222222222222"]
 
 
+def test_extract_posts_from_html_includes_empty_card_metadata() -> None:
+    posts = extract_posts_from_html('<a href="https://x.com/agency/status/3333333333333333333">post</a>', handle="agency")
+
+    assert posts[0]["external_links"] == []
+    assert posts[0]["card_links"] == []
+    assert posts[0]["media"] == []
+
+
 def test_archive_x_browser_sources_fixture_writes_raw_normalized_and_report(tmp_path):
     html = Path("tests/fixtures/x_timeline_sample.html").read_text(encoding="utf-8")
     source = {

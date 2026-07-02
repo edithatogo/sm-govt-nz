@@ -64,6 +64,16 @@ on:
           - osf
           - all
           - all_with_osf
+      x_capture_backend:
+        description: "Capture backend for X backlog shards"
+        required: true
+        default: "feed"
+        type: choice
+        options:
+          - feed
+          - browser
+          - browser_and_feed
+          - default
 
 permissions:
   actions: write
@@ -120,19 +130,25 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           COMMIT_PAYLOADS: ${{ inputs.commit_payloads || 'true' }}
           INCLUDE_BLOCKED: ${{ inputs.include_blocked || 'true' }}
+          X_CAPTURE_BACKEND: ${{ inputs.x_capture_backend || 'feed' }}
           LIMIT: ${{ matrix.limit }}
           OFFSET: ${{ matrix.offset }}
           REPOSITORY: ${{ github.repository }}
           REF_NAME: ${{ github.ref_name }}
         shell: bash
         run: |
-          echo "Dispatching $SOURCE_TYPE backlog shard offset=$OFFSET limit=$LIMIT"
+          capture_backend="default"
+          if [ "$SOURCE_TYPE" = "x" ]; then
+            capture_backend="$X_CAPTURE_BACKEND"
+          fi
+          echo "Dispatching $SOURCE_TYPE backlog shard offset=$OFFSET limit=$LIMIT backend=$capture_backend"
           gh workflow run "Archive Registered Sources" \
             --repo "$REPOSITORY" \
             --ref "$REF_NAME" \
             -f source_type="$SOURCE_TYPE" \
             -f dry_run="$DRY_RUN" \
             -f include_blocked="$INCLUDE_BLOCKED" \
+            -f capture_backend="$capture_backend" \
             -f limit_sources="$LIMIT" \
             -f offset_sources="$OFFSET" \
             -f commit_payloads="$COMMIT_PAYLOADS" \
@@ -222,7 +238,7 @@ jobs:
           fi
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
-      - name: Dispatch HF-only monthly publication
+      - name: Dispatch monthly archive publication
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}

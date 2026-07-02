@@ -116,13 +116,28 @@ def test_historical_backlog_workflow_fans_out_source_shards_and_hf_publish() -> 
     assert "-f limit_sources=\"$LIMIT\"" in workflow
     assert "-f offset_sources=\"$OFFSET\"" in workflow
     assert "-f commit_payloads=\"$COMMIT_PAYLOADS\"" in workflow
+    assert "-f capture_backend=\"$capture_backend\"" in workflow
+    assert "X_CAPTURE_BACKEND: ${{ inputs.x_capture_backend || 'feed' }}" in workflow
+    assert "backend=$capture_backend" in workflow
     assert "-f publish=false" in workflow
     assert "wait-for-backlog-shards" in workflow
     assert "--workflow \"Archive Registered Sources\"" in workflow
     assert "All dispatched backlog shard runs completed successfully." in workflow
     assert "gh workflow run \"Publish Archives\"" in workflow
-    assert "-f publication_target=huggingface" in workflow
+    assert "-f publication_target=\"${{ inputs.publication_target || 'all' }}\"" in workflow
     assert "-f archive_release_version=\"${{ steps.release.outputs.version }}\"" in workflow
+
+
+def test_x_feed_scheduled_workflow_dispatches_feed_backend() -> None:
+    workflow = Path(".github/workflows/archive_x_feed_scheduled.yml").read_text(encoding="utf-8")
+
+    assert "name: Archive X Feed Scheduled" in workflow
+    assert "actions: write" in workflow
+    assert "gh workflow run \"Archive Registered Sources\"" in workflow
+    assert "-f source_type=x" in workflow
+    assert "-f capture_backend=feed" in workflow
+    assert "-f publish=false" in workflow
+    assert "cron: \"31 1 * * *\"" in workflow
 
 
 def test_registered_sources_report_writes_summary(tmp_path) -> None:

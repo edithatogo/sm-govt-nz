@@ -147,6 +147,30 @@ def post_from_card(card: Any, *, handle: str, index: int) -> dict[str, Any] | No
     except Exception:
         hrefs = []
     try:
+        media = card.locator("img, video").evaluate_all(
+            """els => [...els].map(el => ({
+                url: el.currentSrc || el.src || el.getAttribute('poster') || '',
+                media_type: el.tagName === 'VIDEO' ? 'video' : 'image',
+                alt_text: el.getAttribute('alt') || el.getAttribute('aria-label') || ''
+            })).filter(item => item.url)"""
+        )
+    except Exception:
+        media = []
+    try:
+        card_links = card.locator("a").evaluate_all(
+            """els => [...els].map(a => ({
+                url: a.href || a.getAttribute('href') || '',
+                text: (a.innerText || a.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim()
+            })).filter(item => item.url)"""
+        )
+    except Exception:
+        card_links = []
+    external_links = [
+        str(href)
+        for href in hrefs
+        if href and not re.search(r"https?://(?:www\.)?(?:x|twitter)\.com/", str(href), flags=re.I)
+    ]
+    try:
         created_at = str(card.locator("time").first.get_attribute("datetime", timeout=1000) or "")
     except Exception:
         created_at = ""
@@ -169,6 +193,9 @@ def post_from_card(card: Any, *, handle: str, index: int) -> dict[str, Any] | No
         "text": text,
         "html": outer_html,
         "hrefs": hrefs,
+        "external_links": external_links,
+        "card_links": card_links,
+        "media": media,
     }
 
 
@@ -204,6 +231,9 @@ def extract_posts_from_html(html: str, *, handle: str) -> list[dict[str, Any]]:
                 "text": "",
                 "html": "",
                 "hrefs": [match.group(0)],
+                "external_links": [],
+                "card_links": [],
+                "media": [],
             }
         )
     if not posts and html.strip():
@@ -215,6 +245,9 @@ def extract_posts_from_html(html: str, *, handle: str) -> list[dict[str, Any]]:
                 "text": " ".join(re.sub(r"<[^>]+>", " ", html).split())[:4000],
                 "html": html,
                 "hrefs": [],
+                "external_links": [],
+                "card_links": [],
+                "media": [],
             }
         )
     return posts
@@ -312,11 +345,23 @@ def normalize_browser_posts(
             content=content,
             raw_path=str(raw_path).replace("\\", "/"),
             extraction_method="seleniumbase_playwright_public_browser",
+            media_refs=[
+                {
+                    "url": str(item.get("url") or ""),
+                    "media_type": str(item.get("media_type") or ""),
+                    "alt_text": str(item.get("alt_text") or ""),
+                }
+                for item in post.get("media", [])
+                if isinstance(item, dict) and item.get("url")
+            ],
             cross_source_ids={
                 "source_id": str(source.get("source_id") or ""),
                 "duplicate_source_ids": ",".join(source.get("duplicate_source_ids", [])),
                 "x_username": handle,
                 "x_post_id": tweet_id,
+                "external_links": ",".join(str(link) for link in post.get("external_links", []) if link),
+                "card_link_count": str(len(post.get("card_links", []))),
+                "media_count": str(len(post.get("media", []))),
             },
         )
         if append_normalized_record(normalized_root, "x", record):

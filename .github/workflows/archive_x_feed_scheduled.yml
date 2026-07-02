@@ -1,0 +1,70 @@
+name: Archive X Feed Scheduled
+
+on:
+  schedule:
+    - cron: "31 1 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Report selected X sources without capturing"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      commit_payloads:
+        description: "Ask child archive run to commit raw/normalized X feed payloads"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      limit_sources:
+        description: "Maximum X sources to process; 0 means all"
+        required: true
+        default: "0"
+      include_blocked:
+        description: "Include degraded/manual/blocked registered X sources"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: archive-x-feed-scheduled-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  dispatch-x-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch X feed archive run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          REF_NAME: ${{ github.ref_name }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          COMMIT_PAYLOADS: ${{ inputs.commit_payloads || 'true' }}
+          LIMIT_SOURCES: ${{ inputs.limit_sources || '0' }}
+          INCLUDE_BLOCKED: ${{ inputs.include_blocked || 'true' }}
+        shell: bash
+        run: >-
+          gh workflow run "Archive Registered Sources"
+          --repo "$REPOSITORY"
+          --ref "$REF_NAME"
+          -f source_type=x
+          -f capture_backend=feed
+          -f dry_run="$DRY_RUN"
+          -f include_blocked="$INCLUDE_BLOCKED"
+          -f limit_sources="$LIMIT_SOURCES"
+          -f offset_sources=0
+          -f commit_payloads="$COMMIT_PAYLOADS"
+          -f publish=false
