@@ -160,7 +160,7 @@ def post_from_card(card: Any, *, handle: str, index: int) -> dict[str, Any] | No
         card_links = card.locator("a").evaluate_all(
             """els => [...els].map(a => ({
                 url: a.href || a.getAttribute('href') || '',
-                text: (a.innerText || a.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim()
+                text: (a.innerText || a.getAttribute('aria-label') || '').replace(/\\s+/g, ' ').trim()
             })).filter(item => item.url)"""
         )
     except Exception:
