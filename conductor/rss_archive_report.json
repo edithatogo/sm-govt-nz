@@ -1,14 +1,14 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T05:19:07+00:00",
+  "generated_at": "2026-07-02T06:31:29+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
     "include_blocked": true,
-    "limit_sources": 0,
+    "limit_sources": 100,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "max_scrolls": 25,
@@ -1649,7 +1649,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "rss",
-      "reason": "captured rss entry rss:490dc9686a4ce22ab210b70d",
+      "reason": "captured rss entry rss:0bd9cd6c559420132e5eee16",
       "source_id": "0361ec90decc06a8",
       "source_type": "rss_feed",
       "status": "captured",
@@ -1660,7 +1660,18 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "rss",
-      "reason": "captured rss entry rss:2e4d572e2bb3ad5d46f23302",
+      "reason": "captured rss entry rss:cb44808c717c92470b664671",
+      "source_id": "0361ec90decc06a8",
+      "source_type": "rss_feed",
+      "status": "captured",
+      "url": "https://www.rnz.co.nz/rss/news.xml"
+    },
+    {
+      "agency_id": "rnz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "captured rss entry rss:47622a7d78484e07d702ea86",
       "source_id": "0361ec90decc06a8",
       "source_type": "rss_feed",
       "status": "captured",
@@ -1682,7 +1693,29 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "rss",
-      "reason": "captured rss entry rss:0bd9cd6c559420132e5eee16",
+      "reason": "captured rss entry rss:dec4d31ba2e6d3bdee9467e6",
+      "source_id": "0361ec90decc06a8",
+      "source_type": "rss_feed",
+      "status": "captured",
+      "url": "https://www.rnz.co.nz/rss/news.xml"
+    },
+    {
+      "agency_id": "rnz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "captured rss entry rss:490dc9686a4ce22ab210b70d",
+      "source_id": "0361ec90decc06a8",
+      "source_type": "rss_feed",
+      "status": "captured",
+      "url": "https://www.rnz.co.nz/rss/news.xml"
+    },
+    {
+      "agency_id": "rnz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "captured rss entry rss:2e4d572e2bb3ad5d46f23302",
       "source_id": "0361ec90decc06a8",
       "source_type": "rss_feed",
       "status": "captured",
@@ -2068,28 +2101,6 @@
       "feasibility": "high",
       "platform": "rss",
       "reason": "captured rss entry rss:e365753ee68e7dc0b8a664f3",
-      "source_id": "0361ec90decc06a8",
-      "source_type": "rss_feed",
-      "status": "captured",
-      "url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "agency_id": "rnz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "rss",
-      "reason": "captured rss entry rss:a55c032adbde6696e28f028b",
-      "source_id": "0361ec90decc06a8",
-      "source_type": "rss_feed",
-      "status": "captured",
-      "url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "agency_id": "rnz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "rss",
-      "reason": "captured rss entry rss:23504403a6f32db738e96d36",
       "source_id": "0361ec90decc06a8",
       "source_type": "rss_feed",
       "status": "captured",
@@ -5811,14 +5822,14 @@
     "status_by_platform": {
       "rss": {
         "already_captured": 303,
-        "captured": 140,
+        "captured": 141,
         "no_records": 82
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "already_captured": 303,
-      "captured": 140,
+      "captured": 141,
       "no_records": 82
     }
   }
