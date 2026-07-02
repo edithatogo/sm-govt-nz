@@ -195,11 +195,6 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_scheduled_multisource_20260626/](./tracks/govt_archive_scheduled_multisource_20260626/)
 - Complete: All 26 tasks done. Master workflow has daily cron. 5 per-source-type workflows active. Health monitor with staleness detection and GitHub Issues alerting.
 
----
-
-## [x] Track: NZ Government Archive - gap prioritization and seed intake hardening
-*Link: [./tracks/govt_archive_gap_prioritization_20260702/](./tracks/govt_archive_gap_prioritization_20260702/)*
-- Complete: Gap priority reporting, workflow gap-map hooks, LinkedIn/newsletter seed templates, manual seed intake docs, and YouTube handle normalization implemented in `87d9842`.
 
 
 
