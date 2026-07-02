@@ -337,14 +337,22 @@ class BrowserSession:
         from playwright.sync_api import sync_playwright
         from seleniumbase import sb_cdp
 
-        self.sb = sb_cdp.Chrome()
-        endpoint_url = self.sb.get_endpoint_url()
-        self.playwright = sync_playwright().start()
-        self.browser = self.playwright.chromium.connect_over_cdp(endpoint_url, timeout=60_000)
-        context = self.browser.contexts[0] if self.browser.contexts else self.browser.new_context()
-        self.page = context.pages[0] if context.pages else context.new_page()
-        self.page.set_default_timeout(15_000)
-        return self
+        last_error: Exception | None = None
+        for attempt in range(3):
+            try:
+                self.sb = sb_cdp.Chrome()
+                endpoint_url = self.sb.get_endpoint_url()
+                self.playwright = sync_playwright().start()
+                self.browser = self.playwright.chromium.connect_over_cdp(endpoint_url, timeout=60_000)
+                context = self.browser.contexts[0] if self.browser.contexts else self.browser.new_context()
+                self.page = context.pages[0] if context.pages else context.new_page()
+                self.page.set_default_timeout(15_000)
+                return self
+            except Exception as exc:  # noqa: BLE001 - browser startup can be transient under Xvfb.
+                last_error = exc
+                self.__exit__(None, None, None)
+                time.sleep(5 * (attempt + 1))
+        raise RuntimeError(f"Failed to start SeleniumBase CDP browser after retries: {last_error}")
 
     def __exit__(self, *_exc: object) -> None:
         for item in [self.browser, self.playwright, self.sb]:
