@@ -1,50 +1,11 @@
 {
-  "generated_at": "2026-07-02T12:49:08+00:00",
+  "generated_at": "2026-07-02T12:54:02+00:00",
   "inputs": {
     "reports": [
       "conductor/youtube_archive_report.json"
     ]
   },
   "items": [
-    {
-      "agency_id": "broadcasting-standards-authority",
-      "fixability_class": "youtube_url_or_channel_resolution",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
-      "recommended_action": "replace_with_channel_url_or_mark_video_seed",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "broadcasting-standards-authority-youtube-acb2e172",
-      "status": "source_url_not_channel",
-      "url": "https://www.youtube.com/yt/about/policies/#community-guidelines"
-    },
-    {
-      "agency_id": "civil-aviation-authority",
-      "fixability_class": "youtube_url_or_channel_resolution",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "recommended_action": "verify_handle_or_mark_retired",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "e0c6802767a9d1ed",
-      "status": "youtube_channel_not_found",
-      "url": "https://www.youtube.com/@CAANewZealand"
-    },
-    {
-      "agency_id": "eit",
-      "fixability_class": "youtube_url_or_channel_resolution",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "recommended_action": "verify_handle_or_mark_retired",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "de77c5b674f02811",
-      "status": "youtube_channel_not_found",
-      "url": "https://www.youtube.com/@EITHawkesBay"
-    },
     {
       "agency_id": "environment-canterbury",
       "fixability_class": "youtube_video_metadata_unavailable",
@@ -130,7 +91,7 @@
   "report_summaries": {
     "conductor/youtube_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-07-02T12:49:08+00:00",
+      "generated_at": "2026-07-02T12:54:02+00:00",
       "summary": {
         "platform_counts": {
           "youtube": 50
@@ -139,33 +100,28 @@
         "status_by_platform": {
           "youtube": {
             "already_captured": 377,
-            "captured": 129,
+            "captured": 174,
             "no_records": 1,
-            "source_url_not_channel": 1,
-            "youtube_channel_not_found": 2,
             "youtube_video_metadata_blocked": 5
           }
         },
         "status_by_provider": {},
         "status_counts": {
           "already_captured": 377,
-          "captured": 129,
+          "captured": 174,
           "no_records": 1,
-          "source_url_not_channel": 1,
-          "youtube_channel_not_found": 2,
           "youtube_video_metadata_blocked": 5
         }
       }
     }
   },
   "summary": {
-    "failure_count": 8,
+    "failure_count": 5,
     "platform_counts": {
-      "youtube": 8
+      "youtube": 5
     },
     "priority_counts": {
-      "p3_needs_operator_or_platform_access": 5,
-      "review": 3
+      "p3_needs_operator_or_platform_access": 5
     },
     "report_only_count": 1,
     "report_only_platform_counts": {
@@ -178,8 +134,6 @@
       "no_records": 1
     },
     "status_counts": {
-      "source_url_not_channel": 1,
-      "youtube_channel_not_found": 2,
       "youtube_video_metadata_blocked": 5
     }
   }
