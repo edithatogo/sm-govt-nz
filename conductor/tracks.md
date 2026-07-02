@@ -163,10 +163,6 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_quality_observability_20260625/](./tracks/govt_archive_quality_observability_20260625/)* 
 - Complete: All 11 tasks implemented. Quality gates, source health observability, CI split quick/scheduled checks. 
  
-## [x] Track: NZ Government Archive - explicit credentialed platform onboarding backlog 
-*Link: [./tracks/govt_credentialed_platform_onboarding_20260625/](./tracks/govt_credentialed_platform_onboarding_20260625/)* 
-- Complete: All 11 tasks implemented. Platform boundaries, manual seed backlog, credential-gated readiness states.
- 
 ## [x] Track: NZ Government Archive - provenance, fixity, and reproducible research packaging 
 *Link: [./tracks/govt_archive_provenance_fixity_20260625/](./tracks/govt_archive_provenance_fixity_20260625/)* 
 - Planned dependency: govt_archive_external_publication_20260625
@@ -217,5 +213,6 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 ## [ ] Track: NZ Government Archive - blocked website browser fallback capture
 *Link: [./tracks/govt_archive_blocked_website_browser_fallback_20260702/](./tracks/govt_archive_blocked_website_browser_fallback_20260702/)*
+
 
 
