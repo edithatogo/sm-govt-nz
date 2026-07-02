@@ -1,12 +1,17 @@
 import argparse
 import json
+import sys
 from email import policy
 from email.parser import BytesParser
 from pathlib import Path
 from typing import Any
 
-from scripts.archive_email_payload import archive_email_payload
-from scripts.archive_registered_sources import DEFAULT_MANIFEST, load_json, source_result, write_json
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.archive_email_payload import archive_email_payload  # noqa: E402
+from scripts.archive_registered_sources import DEFAULT_MANIFEST, load_json, source_result, write_json  # noqa: E402
 
 DEFAULT_INPUT_DIR = Path("manual_archive_seeds/newsletter_payloads")
 DEFAULT_REPORT = Path("conductor/newsletter_payload_archive_report.json")
