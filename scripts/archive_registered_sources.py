@@ -1458,8 +1458,8 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 return [source_result(source, "would_capture", "dry run: official X API capture enabled")]
             if find_manual_seed_path(source, manual_seed_root) is None:
                 if x_public_snapshot_enabled():
-                    return [source_result(source, "would_capture", "dry run: public X snapshot fallback enabled")]
-                return [source_result(source, "manual_seed_missing", "dry run: manual seed file is not present and X API capture is disabled")]
+                    return [source_result(source, "would_capture", "dry run: public X snapshot source enabled")]
+                return [source_result(source, "manual_seed_missing", "dry run: manual seed file is not present and public X snapshot source is disabled")]
         if platform == "youtube":
             return [source_result(source, "would_capture", "dry run: public YouTube channel RSS capture")]
         if platform in MANUAL_SEED_PLATFORMS and find_manual_seed_path(source, manual_seed_root) is None:
@@ -1539,7 +1539,7 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                     fetch_timeout=getattr(args, "fetch_timeout", 30),
                 )
                 snapshot_result["reason"] = (
-                    "official X API unavailable; used public snapshot fallback. "
+                    "official X API unavailable; used public X snapshot source. "
                     f"{snapshot_result.get('reason', '')}"
                 ).strip()
                 return [snapshot_result]
@@ -1562,7 +1562,7 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                     source_result(
                         source,
                         "manual_seed_missing",
-                        "X API capture and public snapshot fallback are disabled; no authorized manual seed file is present",
+                        "X API capture and public X snapshot source are disabled; no authorized manual seed file is present",
                     )
                 ]
             api_results = archive_x_source(
