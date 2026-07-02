@@ -1,13 +1,13 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T04:58:24+00:00",
+  "generated_at": "2026-07-02T05:00:47+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
-    "include_blocked": false,
+    "include_blocked": true,
     "limit_sources": 0,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -27,6 +27,17 @@
     "x_feed_timeout": 30
   },
   "results": [
+    {
+      "agency_id": "antarctica-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/antarctica-nz-x-5b64f97c.json",
+      "source_id": "antarctica-nz-x-5b64f97c",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/AntarcticaNZ"
+    },
     {
       "agency_id": "antarctica-nz",
       "archive_status": "ready",
@@ -51,6 +62,17 @@
     },
     {
       "agency_id": "broadcasting-standards-authority",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/broadcasting-standards-authority-x-db8d9de8.json",
+      "source_id": "broadcasting-standards-authority-x-db8d9de8",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://Twitter.com/BSA_NZ"
+    },
+    {
+      "agency_id": "broadcasting-standards-authority",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "x",
@@ -59,6 +81,17 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/BSA_NZ"
+    },
+    {
+      "agency_id": "central-hawkes-bay-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/central-hawkes-bay-district-council-x-cf5e1d17.json",
+      "source_id": "central-hawkes-bay-district-council-x-cf5e1d17",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/chbcouncil"
     },
     {
       "agency_id": "christchurch-city-council",
@@ -73,6 +106,17 @@
     },
     {
       "agency_id": "civil-aviation-authority",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/civil-aviation-authority-x-b696cccf.json",
+      "source_id": "civil-aviation-authority-x-b696cccf",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/CivilAviationNZ"
+    },
+    {
+      "agency_id": "civil-aviation-authority",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "x",
@@ -81,6 +125,17 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/CivilAviationNZ"
+    },
+    {
+      "agency_id": "courts-of-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "captured 14 x seed records from manual_archive_seeds/x/courts-of-nz-x-7aebef2c.json",
+      "source_id": "courts-of-nz-x-7aebef2c",
+      "source_type": "social_profile",
+      "status": "manual_seed_captured",
+      "url": "https://x.com/courtsofnz"
     },
     {
       "agency_id": "creative-nz",
@@ -117,6 +172,28 @@
     },
     {
       "agency_id": "eit",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/eit-x-97f64e17.json",
+      "source_id": "eit-x-97f64e17",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "http://twitter.com/EITHB"
+    },
+    {
+      "agency_id": "eit",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/eit-x-e38a3c04.json",
+      "source_id": "eit-x-e38a3c04",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/EIT_NZ"
+    },
+    {
+      "agency_id": "eit",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "x",
@@ -136,6 +213,17 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/ElectionsNZ"
+    },
+    {
+      "agency_id": "fire-and-emergency-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "captured 14 x seed records from manual_archive_seeds/x/fire-and-emergency-nz-x-23506314.json",
+      "source_id": "fire-and-emergency-nz-x-23506314",
+      "source_type": "social_profile",
+      "status": "manual_seed_captured",
+      "url": "https://twitter.com/fireemergencynz"
     },
     {
       "agency_id": "fire-and-emergency-nz",
@@ -160,6 +248,17 @@
       "url": "https://x.com/NZSuperFund"
     },
     {
+      "agency_id": "health-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/health-nz-x-fec7719c.json",
+      "source_id": "health-nz-x-fec7719c",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://x.com/healthnz"
+    },
+    {
       "agency_id": "health-quality-and-safety-commission",
       "archive_status": "ready",
       "feasibility": "low",
@@ -169,6 +268,17 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/HQSC_NZ"
+    },
+    {
+      "agency_id": "health-research-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/health-research-council-x-47978eb7.json",
+      "source_id": "health-research-council-x-47978eb7",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/hrcnewzealand"
     },
     {
       "agency_id": "health-research-council",
@@ -205,6 +315,17 @@
     },
     {
       "agency_id": "independent-police-conduct-authority",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/independent-police-conduct-authority-x-4c592cf9.json",
+      "source_id": "independent-police-conduct-authority-x-4c592cf9",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/ipca_nz"
+    },
+    {
+      "agency_id": "independent-police-conduct-authority",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "x",
@@ -237,6 +358,28 @@
       "url": "https://x.com/LOTTO_NZ"
     },
     {
+      "agency_id": "maritime-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/maritime-nz-x-2217d50b.json",
+      "source_id": "maritime-nz-x-2217d50b",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/MaritimeNZ"
+    },
+    {
+      "agency_id": "ministry-for-culture-and-heritage",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/ministry-for-culture-and-heritage-x-46292647.json",
+      "source_id": "ministry-for-culture-and-heritage-x-46292647",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/Manatutaonga"
+    },
+    {
       "agency_id": "ministry-for-culture-and-heritage",
       "archive_status": "ready",
       "feasibility": "low",
@@ -248,6 +391,50 @@
       "url": "https://x.com/ManatuTaonga"
     },
     {
+      "agency_id": "ministry-for-pacific-peoples",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/ministry-for-pacific-peoples-x-7f7cdc2d.json",
+      "source_id": "ministry-for-pacific-peoples-x-7f7cdc2d",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/Pacific_Peoples"
+    },
+    {
+      "agency_id": "ministry-of-health",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "captured 20 x seed records from manual_archive_seeds/x/ministry-of-health-x-f1c79cdc.json",
+      "source_id": "ministry-of-health-x-f1c79cdc",
+      "source_type": "social_profile",
+      "status": "manual_seed_captured",
+      "url": "https://twitter.com/minhealthnz"
+    },
+    {
+      "agency_id": "ministry-of-health",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "captured 20 x seed records from manual_archive_seeds/x/ministry-of-health-x-268ac5c9.json",
+      "source_id": "ministry-of-health-x-268ac5c9",
+      "source_type": "social_profile",
+      "status": "manual_seed_captured",
+      "url": "https://x.com/minhealthnz"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/ministry-of-justice-x-63923593.json",
+      "source_id": "ministry-of-justice-x-63923593",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://www.twitter.com/@justicenzgovt"
+    },
+    {
       "agency_id": "ministry-of-justice",
       "archive_status": "ready",
       "feasibility": "low",
@@ -257,6 +444,17 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/nzjustice"
+    },
+    {
+      "agency_id": "ministry-of-social-development",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/ministry-of-social-development-x-51643da8.json",
+      "source_id": "ministry-of-social-development-x-51643da8",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/msdgovtnz"
     },
     {
       "agency_id": "ministry-of-social-development",
@@ -279,6 +477,28 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/NapierCouncil"
+    },
+    {
+      "agency_id": "new-plymouth-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/new-plymouth-district-council-x-1cebc80b.json",
+      "source_id": "new-plymouth-district-council-x-1cebc80b",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/NPDCouncil"
+    },
+    {
+      "agency_id": "nz-customs-service",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/nz-customs-service-x-9d15a87d.json",
+      "source_id": "nz-customs-service-x-9d15a87d",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/NZ_Customs"
     },
     {
       "agency_id": "nz-customs-service",
@@ -325,6 +545,28 @@
       "url": "https://x.com/NZOnAir"
     },
     {
+      "agency_id": "nz-parliament",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "captured 17 x seed records from manual_archive_seeds/x/nz-parliament-x-90226bd7.json",
+      "source_id": "nz-parliament-x-90226bd7",
+      "source_type": "social_profile",
+      "status": "manual_seed_captured",
+      "url": "https://x.com/NZParliament"
+    },
+    {
+      "agency_id": "nz-post",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/nz-post-x-c96e836f.json",
+      "source_id": "nz-post-x-c96e836f",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/nzpost/"
+    },
+    {
       "agency_id": "nz-post",
       "archive_status": "ready",
       "feasibility": "low",
@@ -334,6 +576,28 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/NZPost"
+    },
+    {
+      "agency_id": "nz-qualifications-authority",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "captured 14 x seed records from manual_archive_seeds/x/nz-qualifications-authority-x-25c3e2dc.json",
+      "source_id": "nz-qualifications-authority-x-25c3e2dc",
+      "source_type": "social_profile",
+      "status": "manual_seed_captured",
+      "url": "https://x.com/nzqaofficial"
+    },
+    {
+      "agency_id": "nz-symphony-orchestra",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/nz-symphony-orchestra-x-e64a4d6b.json",
+      "source_id": "nz-symphony-orchestra-x-e64a4d6b",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/nzso?lang=en"
     },
     {
       "agency_id": "nz-symphony-orchestra",
@@ -347,6 +611,17 @@
       "url": "https://x.com/NZSO"
     },
     {
+      "agency_id": "nz-trade-and-enterprise",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "captured 13 x seed records from manual_archive_seeds/x/nz-trade-and-enterprise-x-92aa504b.json",
+      "source_id": "nz-trade-and-enterprise-x-92aa504b",
+      "source_type": "social_profile",
+      "status": "manual_seed_captured",
+      "url": "https://x.com/NZTEnews"
+    },
+    {
       "agency_id": "oranga-tamariki",
       "archive_status": "ready",
       "feasibility": "low",
@@ -356,6 +631,17 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/OrangaTamariki"
+    },
+    {
+      "agency_id": "pamu",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/pamu-x-2f485c82.json",
+      "source_id": "pamu-x-2f485c82",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/pamu_nz"
     },
     {
       "agency_id": "pamu",
@@ -381,6 +667,17 @@
     },
     {
       "agency_id": "public-service-commission",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/public-service-commission-x-e2f0f2ee.json",
+      "source_id": "public-service-commission-x-e2f0f2ee",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/TeKawaMataaho"
+    },
+    {
+      "agency_id": "public-service-commission",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "x",
@@ -403,6 +700,17 @@
     },
     {
       "agency_id": "reserve-bank-of-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "captured 15 x seed records from manual_archive_seeds/x/reserve-bank-of-nz-x-e6db19e1.json",
+      "source_id": "reserve-bank-of-nz-x-e6db19e1",
+      "source_type": "social_profile",
+      "status": "manual_seed_captured",
+      "url": "https://twitter.com/reservebankofnz"
+    },
+    {
+      "agency_id": "reserve-bank-of-nz",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "x",
@@ -411,6 +719,28 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/rbnz"
+    },
+    {
+      "agency_id": "rnz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "captured 15 x seed records from manual_archive_seeds/x/rnz-x-4947056b.json",
+      "source_id": "rnz-x-4947056b",
+      "source_type": "social_profile",
+      "status": "manual_seed_captured",
+      "url": "https://twitter.com/radionz"
+    },
+    {
+      "agency_id": "selwyn-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/selwyn-district-council-x-9c211011.json",
+      "source_id": "selwyn-district-council-x-9c211011",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://x.com/FutureforSelwyn"
     },
     {
       "agency_id": "serious-fraud-office",
@@ -422,6 +752,17 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/SFONZ"
+    },
+    {
+      "agency_id": "sit",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/sit-x-195c2991.json",
+      "source_id": "sit-x-195c2991",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/sit_nz"
     },
     {
       "agency_id": "stats-nz",
@@ -468,6 +809,39 @@
       "url": "https://x.com/TePuniKokiri"
     },
     {
+      "agency_id": "te-wananga-o-raukawa",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/te-wananga-o-raukawa-x-a5972859.json",
+      "source_id": "te-wananga-o-raukawa-x-a5972859",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/wanangaoraukawa?lang=en"
+    },
+    {
+      "agency_id": "waikato-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/waikato-district-council-x-f8e9d0bf.json",
+      "source_id": "waikato-district-council-x-f8e9d0bf",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://x.com/waikatodistrict"
+    },
+    {
+      "agency_id": "waimakariri-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/waimakariri-district-council-x-4ebd1f60.json",
+      "source_id": "waimakariri-district-council-x-4ebd1f60",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://www.twitter.com/waimakariridc"
+    },
+    {
       "agency_id": "waka-kotahi",
       "archive_status": "ready",
       "feasibility": "low",
@@ -480,6 +854,17 @@
     },
     {
       "agency_id": "whaikaha",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/whaikaha-x-0fc5e7ba.json",
+      "source_id": "whaikaha-x-0fc5e7ba",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/Whaikaha"
+    },
+    {
+      "agency_id": "whaikaha",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "x",
@@ -488,6 +873,17 @@
       "source_type": "social_profile",
       "status": "no_records",
       "url": "https://x.com/WhaikahaNZ"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "x",
+      "reason": "manual seed contained no x posts: manual_archive_seeds/x/worksafe-nz-x-51382248.json",
+      "source_id": "worksafe-nz-x-51382248",
+      "source_type": "social_profile",
+      "status": "no_records",
+      "url": "https://twitter.com/WorkSafeNZ"
     },
     {
       "agency_id": "worksafe-nz",
@@ -503,19 +899,19 @@
   ],
   "summary": {
     "platform_counts": {
-      "x": 43
+      "x": 79
     },
-    "selected_sources": 43,
+    "selected_sources": 79,
     "status_by_platform": {
       "x": {
-        "manual_seed_captured": 5,
-        "no_records": 38
+        "manual_seed_captured": 14,
+        "no_records": 65
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "manual_seed_captured": 5,
-      "no_records": 38
+      "manual_seed_captured": 14,
+      "no_records": 65
     }
   }
 }

@@ -1,25 +1,25 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T04:58:24+00:00
+Generated: 2026-07-02T05:00:47+00:00
 
 ## Summary
 
-- `selected_sources`: 43
+- `selected_sources`: 79
 - `platform_count`: 1
 - `status_count`: 2
 
 ## Platform counts
 
-- `x`: 43
+- `x`: 79
 
 ## Status counts
 
-- `manual_seed_captured`: 5
-- `no_records`: 38
+- `manual_seed_captured`: 14
+- `no_records`: 65
 
 ## Status by platform
 
-- `x`: {'manual_seed_captured': 5, 'no_records': 38}
+- `x`: {'manual_seed_captured': 14, 'no_records': 65}
 
 ## Notes
 
