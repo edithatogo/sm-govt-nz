@@ -1,0 +1,55 @@
+name: Archive Newsletter Payloads
+
+on:
+  workflow_dispatch:
+    inputs:
+      agency_id:
+        description: "Optional agency id filter"
+        required: false
+        default: ""
+      input_dir:
+        description: "Directory containing operator-provided newsletter JSON or EML payloads"
+        required: true
+        default: "manual_archive_seeds/newsletter_payloads"
+      commit_payloads:
+        description: "Commit generated raw/normalized newsletter payloads"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+  schedule:
+    - cron: "27 14 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  archive-newsletters:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+      - name: Archive newsletter payloads
+        run: >-
+          python scripts/archive_newsletter_payloads.py
+          --agency-id "${{ inputs.agency_id || '' }}"
+          --input-dir "${{ inputs.input_dir || 'manual_archive_seeds/newsletter_payloads' }}"
+          --report conductor/newsletter_payload_archive_report.json
+      - name: Commit newsletter report
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Record newsletter payload archive report"
+          --path conductor/newsletter_payload_archive_report.json
+      - name: Commit newsletter payloads
+        if: ${{ inputs.commit_payloads == 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Archive newsletter payload records"
+          --path historical_archive_raw/newsletter_email
+          --path historical_archive_normalized/newsletter

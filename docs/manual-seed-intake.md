@@ -50,3 +50,11 @@ Each seed file should be named with the registered `source_id` when possible, fa
 - `manual_seed_captured`: valid seed posts were written to raw and normalized archive paths.
 
 Synthetic fixtures for the accepted shape are stored under `tests/fixtures/manual_archive_seeds/` for Threads, LinkedIn, and newsletter inputs. These are not real public records and exist only to keep parser expectations deterministic.
+
+## Newsletter payload ingestion
+
+Newsletter payloads can also be supplied as JSON or `.eml` files under `manual_archive_seeds/newsletter_payloads/` and processed with `scripts/archive_newsletter_payloads.py` or the `Archive Newsletter Payloads` workflow.
+
+Supported JSON fields include `source_id`, `agency_id`, `message_id`, `from`, `to`, `subject`, `text`, `html`, `received_at`, `links`, `raw_mime`, and `raw_mime_base64`. Matching is deterministic: `source_id` is preferred, then `agency_id`. Unmatched registered newsletter sources report `missing_payload`; malformed payload files report `payload_invalid`.
+
+The workflow does not configure a mailbox or subscribe to sources. It only archives operator-provided payload files and is safe to run without email-provider credentials.

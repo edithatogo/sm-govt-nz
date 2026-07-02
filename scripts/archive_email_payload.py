@@ -34,12 +34,13 @@ def archive_email_payload(
     raw_bytes = _raw_email_bytes(payload, received_at=received_at, message_id=message_id)
     _write_bytes_once(raw_path, raw_bytes)
     normalized_path = Path(normalized_root) / f"{month}.jsonl"
-    existing_record = _existing_normalized_record(f"email:{record_id}", normalized_path)
+    source_platform = str(payload.get("source_platform") or payload.get("platform") or "email")
+    existing_record = _existing_normalized_record(f"{source_platform}:{record_id}", normalized_path)
 
     record = build_normalized_record(
-        record_id=f"email:{record_id}",
+        record_id=f"{source_platform}:{record_id}",
         agency_id=str(payload.get("agency_id") or "courts-nz"),
-        source_platform="email",
+        source_platform=source_platform,
         source_account=str(payload.get("source_account") or payload.get("to") or "judgments-of-public-interest-subscription"),
         source_kind=str(payload.get("source_kind") or "email_subscription"),
         source_url=_canonical_url(payload),
@@ -187,7 +188,7 @@ def _write_email_report(record: NormalizedArchiveRecord, path: Path) -> None:
             {
                 "source_id": record.get("cross_source_ids", {}).get("source_id", ""),
                 "agency_id": record.get("agency_id", ""),
-                "platform": "email",
+                "platform": record.get("source_platform", "email"),
                 "source_type": record.get("source_kind", "email_subscription"),
                 "status": "captured",
                 "record_id": record.get("record_id", ""),
@@ -247,3 +248,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
