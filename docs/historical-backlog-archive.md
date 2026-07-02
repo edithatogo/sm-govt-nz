@@ -22,6 +22,10 @@ The workflow covers sources that already have archive payloads and sources that
 are added later. Already-captured records remain idempotent because normalized
 record IDs are stable. Manual-seed platforms report missing seeds until lawful
 operator-authorized seed files are added under `manual_archive_seeds/`.
+The current operator queue and next-batch templates are surfaced in
+`conductor/manual_seed_work_queue.json`,
+`conductor/manual_seed_drop_targets.md`, and
+`conductor/manual_seed_next_batch_templates.json`.
 
 External publication remains monthly and dynamically versioned. The backlog
 orchestrator may dispatch an HF-only `Publish Archives` run for the current
