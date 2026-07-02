@@ -1,0 +1,52 @@
+{
+  "access_method": "playwright_public_browser_no_login",
+  "captured_at": "2026-07-02T12:30:03+00:00",
+  "diagnostics": {
+    "elapsed_seconds": 2.71,
+    "visible_text_length": 105
+  },
+  "final_url": "https://www.aucklandcouncil.govt.nz/",
+  "guardrails": {
+    "captcha_solving": false,
+    "credential_bypass": false,
+    "login": false,
+    "proxies": false
+  },
+  "html": "<!DOCTYPE html><html><head>\n          <title>406 Not Acceptable</title>\n        </head>\n        <body>\n          <h1>Error 406 Not Acceptable</h1>\n          <p>Not Acceptable</p>\n          <p>Trace-id: 51e6f5be-98f8-49b1-8c32-abad49dc04ea</p>\n        \n      \n    </body></html>",
+  "screenshot_path": "historical_archive_raw/website_browser/2026-07/2be762ac26f43727cf03ef62.png",
+  "source": {
+    "access_method": "bounded_public_html",
+    "account": "https://www.aucklandcouncil.govt.nz",
+    "agency_id": "auckland-council",
+    "agency_name": "Auckland Council (Te Kaunihera o T\u0101maki Makaurau)",
+    "archive_status": "ready",
+    "auth": "none",
+    "browser_fallback_trigger": {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "31196512638ed2ed",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz"
+    },
+    "candidate_id": "31196512638ed2ed",
+    "feasibility": "high",
+    "notes": "Promoted from discovery: confidence=0.95; trust=registry_known,high_trust_domain_suffix,archive_friendly_platform,official_term:nz",
+    "origin": "registry.official_website",
+    "party_id": "",
+    "person_id": "",
+    "platform": "website_page",
+    "registry_record_kind": "agency",
+    "source_id": "31196512638ed2ed",
+    "source_type": "website_page",
+    "updated_at": "2026-07-01T18:28:57+00:00",
+    "url": "https://www.aucklandcouncil.govt.nz"
+  },
+  "url": "https://www.aucklandcouncil.govt.nz",
+  "visible_text": "406 Not Acceptable Error 406 Not Acceptable Not Acceptable Trace-id: 51e6f5be-98f8-49b1-8c32-abad49dc04ea"
+}
