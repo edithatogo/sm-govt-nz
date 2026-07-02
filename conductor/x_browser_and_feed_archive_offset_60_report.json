@@ -1,0 +1,294 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-02T03:25:13+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "browser_and_feed",
+    "fetch_timeout": 30,
+    "idle_rounds": 1,
+    "include_blocked": false,
+    "limit_sources": 10,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 1,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 60,
+    "per_account_timeout": 30,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "x",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "te-wananga-o-raukawa",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/wanangaoraukawa",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "wanangaoraukawa",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/wanangaoraukawa: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "te-wananga-o-raukawa-x-a5972859",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://twitter.com/wanangaoraukawa?lang=en"
+    },
+    {
+      "agency_id": "te-wananga-o-raukawa",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/wanangaoraukawa/rss",
+      "handle": "wanangaoraukawa",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_wanangaoraukawa_9787512d95dc9c9245ea5cd1.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "te-wananga-o-raukawa-x-a5972859",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://twitter.com/wanangaoraukawa?lang=en"
+    },
+    {
+      "agency_id": "whaikaha",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/Whaikaha",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "Whaikaha",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/Whaikaha: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "whaikaha-x-0fc5e7ba",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://twitter.com/Whaikaha"
+    },
+    {
+      "agency_id": "whaikaha",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/Whaikaha/rss",
+      "handle": "Whaikaha",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_whaikaha_1d468bb9188298e1e6968071.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "whaikaha-x-0fc5e7ba",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://twitter.com/Whaikaha"
+    },
+    {
+      "agency_id": "whaikaha",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/WhaikahaNZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "WhaikahaNZ",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/WhaikahaNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "a0bc3c5d6b328a03",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/WhaikahaNZ"
+    },
+    {
+      "agency_id": "whaikaha",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/WhaikahaNZ/rss",
+      "handle": "WhaikahaNZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_whaikahanz_3faa476be8de6d4dc218d78b.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "a0bc3c5d6b328a03",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/WhaikahaNZ"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/WorkSafeNZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "WorkSafeNZ",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/WorkSafeNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "017e89fc03fa5962",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/WorkSafeNZ"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/WorkSafeNZ/rss",
+      "handle": "WorkSafeNZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_worksafenz_9c85d54a49d57d2da4519d1f.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "017e89fc03fa5962",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/WorkSafeNZ"
+    },
+    {
+      "agency_id": "pamu",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/X",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "X",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/X: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "pamu-x-2f485c82",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://twitter.com/pamu_nz"
+    },
+    {
+      "agency_id": "pamu",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/X/rss",
+      "handle": "X",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_x_5724503d8f0b97d3e0073a1d.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "pamu-x-2f485c82",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://twitter.com/pamu_nz"
+    },
+    {
+      "agency_id": "te-wananga-o-raukawa",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "wanangaoraukawa",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/wanangaoraukawa_20626c15aa9396bdc573cef7.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "te-wananga-o-raukawa-x-a5972859",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/wanangaoraukawa?lang=en"
+    },
+    {
+      "agency_id": "whaikaha",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "Whaikaha",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/whaikaha_1f02b4a6a78aa13b176f1e34.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "whaikaha-x-0fc5e7ba",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/Whaikaha"
+    },
+    {
+      "agency_id": "whaikaha",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "WhaikahaNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/whaikahanz_7ac893958481eb3ac84bc6ed.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "a0bc3c5d6b328a03",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/WhaikahaNZ"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "WorkSafeNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/worksafenz_a24e8f501d747135693caf39.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "017e89fc03fa5962",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/WorkSafeNZ"
+    },
+    {
+      "agency_id": "pamu",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "X",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/x_3382a71170e9d8f4ba219b24.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "pamu-x-2f485c82",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/pamu_nz"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 5
+    },
+    "selected_sources": 5,
+    "status_by_platform": {
+      "x": {
+        "browser_no_visible_posts": 5,
+        "feed_captured": 5,
+        "feed_not_found": 5
+      }
+    },
+    "status_counts": {
+      "browser_no_visible_posts": 5,
+      "feed_captured": 5,
+      "feed_not_found": 5
+    }
+  }
+}
