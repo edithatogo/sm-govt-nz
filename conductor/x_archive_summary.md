@@ -1,26 +1,24 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-01T15:41:42+00:00
+Generated: 2026-07-02T01:38:27+00:00
 
 ## Summary
 
-- `selected_sources`: 43
+- `selected_sources`: 1
 - `platform_count`: 1
-- `status_count`: 3
+- `status_count`: 1
 
 ## Platform counts
 
-- `x`: 43
+- `x`: 1
 
 ## Status counts
 
-- `not_found`: 4
-- `public_snapshot_already_captured`: 1
-- `public_snapshot_captured`: 38
+- `browser_no_visible_posts`: 1
 
 ## Status by platform
 
-- `x`: {'not_found': 4, 'public_snapshot_already_captured': 1, 'public_snapshot_captured': 38}
+- `x`: {'browser_no_visible_posts': 1}
 
 ## Notes
 
