@@ -1,24 +1,27 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T03:21:47+00:00
+Generated: 2026-07-02T03:26:00+00:00
 
 ## Summary
 
-- `selected_sources`: 1
+- `selected_sources`: 10
 - `platform_count`: 1
-- `status_count`: 1
+- `status_count`: 4
 
 ## Platform counts
 
-- `x`: 1
+- `x`: 10
 
 ## Status counts
 
-- `would_capture`: 1
+- `browser_no_visible_posts`: 8
+- `feed_captured`: 10
+- `feed_not_found`: 10
+- `protected`: 2
 
 ## Status by platform
 
-- `x`: {'would_capture': 1}
+- `x`: {'browser_no_visible_posts': 8, 'feed_captured': 10, 'feed_not_found': 10, 'protected': 2}
 
 ## Notes
 
