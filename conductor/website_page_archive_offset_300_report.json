@@ -1,21 +1,76 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-01T11:07:10+00:00",
+  "generated_at": "2026-07-02T05:17:33+00:00",
   "inputs": {
     "agency_id": "",
+    "capture_backend": "default",
     "fetch_timeout": 30,
-    "include_blocked": false,
+    "idle_rounds": 3,
+    "include_blocked": true,
     "limit_sources": 100,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 300,
+    "per_account_timeout": 120,
     "raw_root": "historical_archive_raw",
     "retry_failed_from": "",
-    "source_type": "website_page"
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
   },
   "results": [
+    {
+      "agency_id": "waitomo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "1d240fd29fdd8f81",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.waitomo.govt.nz"
+    },
+    {
+      "agency_id": "waitomo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "d03113f13c20dd38",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.waitomo.govt.nz/council/news-summary/waitomo-way-newsletter/"
+    },
+    {
+      "agency_id": "waka-kotahi",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "01e0b651510ccddb",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.nzta.govt.nz"
+    },
+    {
+      "agency_id": "wellington-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "88d40ff279d6ea69",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.wellington.govt.nz"
+    },
     {
       "agency_id": "wellington-city-libraries",
       "archive_status": "ready",
@@ -43,10 +98,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "6e8af60dd78701fa",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.wcrc.govt.nz"
     },
     {
@@ -54,10 +109,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "c922863927e4d8ac",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.westernbay.govt.nz"
     },
     {
@@ -184,16 +239,19 @@
   ],
   "summary": {
     "platform_counts": {
-      "website_page": 15
+      "website_page": 19
     },
-    "selected_sources": 15,
+    "selected_sources": 19,
     "status_by_platform": {
       "website_page": {
-        "captured": 15
+        "captured": 17,
+        "method_not_allowed": 2
       }
     },
+    "status_by_provider": {},
     "status_counts": {
-      "captured": 15
+      "captured": 17,
+      "method_not_allowed": 2
     }
   }
 }
