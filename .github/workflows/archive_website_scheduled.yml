@@ -81,22 +81,14 @@ jobs:
           --path conductor/website_archive_report.json
       - name: Commit website capture reports
         if: ${{ inputs.dry_run != 'true' }}
-        run: >-
-          python scripts/build_archive_failure_triage_report.py
-          --report conductor/website_archive_report.json
-          --output conductor/website_archive_failure_triage_report.json
-          &&
-          python scripts/build_archive_gap_map.py
-          --report conductor/website_archive_report.json
-          --output conductor/website_archive_gap_map.json
-          &&
-          python scripts/commit_state_updates.py
-          --message "Capture website pages from registered government sources"
-          --path conductor/website_archive_report.json
-          --path conductor/website_archive_failure_triage_report.json
-          --path conductor/website_archive_gap_map.json
-          --path conductor/archive_state.json
-          --path conductor/archive_source_health.json
+        run: |
+          python scripts/build_archive_failure_triage_report.py             --report conductor/website_archive_report.json             --output conductor/website_archive_failure_triage_report.json
+          if [ -f conductor/website_browser_archive_report.json ]; then
+            python scripts/build_archive_gap_map.py               --report conductor/website_archive_report.json               --report conductor/website_browser_archive_report.json               --output conductor/website_archive_gap_map.json
+          else
+            python scripts/build_archive_gap_map.py               --report conductor/website_archive_report.json               --output conductor/website_archive_gap_map.json
+          fi
+          python scripts/commit_state_updates.py             --message "Capture website pages from registered government sources"             --path conductor/website_archive_report.json             --path conductor/website_archive_failure_triage_report.json             --path conductor/website_archive_gap_map.json             --path conductor/archive_state.json             --path conductor/archive_source_health.json
       - name: Commit website payloads
         if: ${{ inputs.dry_run != 'true' && inputs.commit_payloads == 'true' }}
         run: >-

@@ -193,3 +193,11 @@ def test_registered_sources_report_writes_summary(tmp_path) -> None:
     assert "Registered Sources Archive Summary" in summary
     assert "`selected_sources`: 1" in summary
     assert "`rss`: 1" in summary
+
+
+def test_website_scheduled_workflow_preserves_browser_gap_supersession() -> None:
+    workflow = Path(".github/workflows/archive_website_scheduled.yml").read_text(encoding="utf-8")
+
+    assert "conductor/website_browser_archive_report.json" in workflow
+    assert "--report conductor/website_browser_archive_report.json" in workflow
+    assert "--output conductor/website_archive_gap_map.json" in workflow

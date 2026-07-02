@@ -1,104 +1,13 @@
 {
-  "gaps": [
-    {
-      "agency_id": "ashburton-district-council",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "f33df640b05e8598",
-      "status": "capture_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.ashburtondc.govt.nz"
-    },
-    {
-      "agency_id": "auckland-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 406: Not Acceptable",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "31196512638ed2ed",
-      "status": "not_acceptable",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.aucklandcouncil.govt.nz"
-    },
-    {
-      "agency_id": "bay-of-plenty-regional-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: timed out",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "01a73b769530cc60",
-      "status": "network_timeout",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.boprc.govt.nz"
-    },
-    {
-      "agency_id": "department-of-corrections",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "c1ec96d478c92e9c",
-      "status": "capture_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.corrections.govt.nz"
-    },
-    {
-      "agency_id": "dpmc",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "e48d45bb68dfbd35",
-      "status": "capture_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.dpmc.govt.nz"
-    },
-    {
-      "agency_id": "dunedin-city-council",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "0e2463964d79ebe2",
-      "status": "capture_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.dunedin.govt.nz"
-    },
-    {
-      "agency_id": "education-review-office",
-      "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "a9da02fbaefa8cc2",
-      "status": "capture_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.ero.govt.nz"
-    }
-  ],
+  "gaps": [],
   "inputs": {
     "reports": [
-      "conductor/website_archive_report.json"
+      "conductor\\website_archive_report.json",
+      "conductor\\website_browser_archive_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/website_archive_report.json": {
+    "conductor\\website_archive_report.json": {
       "platform_counts": {
         "website_page": 50
       },
@@ -118,11 +27,23 @@
         "network_timeout": 1,
         "not_acceptable": 1
       }
+    },
+    "conductor\\website_browser_archive_report.json": {
+      "result_count": 10,
+      "selected_sources": 10,
+      "status_counts": {
+        "browser_captcha_or_challenge": 2,
+        "browser_capture_failed": 1,
+        "browser_captured": 7
+      }
     }
   },
   "summary": {
-    "gap_count": 7,
+    "gap_count": 0,
     "input_status_counts": {
+      "browser_captcha_or_challenge": 2,
+      "browser_capture_failed": 1,
+      "browser_captured": 7,
       "capture_blocked": 5,
       "captured": 43,
       "network_timeout": 1,
@@ -132,16 +53,14 @@
       "website_page": 50
     },
     "priority_counts": {
-      "archived_or_already_archived": 43,
-      "p1_existing_resources": 2,
-      "p4_larger_browser_or_access_project": 5
+      "archived_or_already_archived": 48,
+      "monitor_report_only": 2
     },
     "status_counts": {
-      "capture_blocked": 5,
-      "captured": 43,
-      "network_timeout": 1,
-      "not_acceptable": 1
+      "browser_captcha_or_challenge": 2,
+      "browser_captured": 7,
+      "captured": 41
     },
-    "superseded_source_count": 0
+    "superseded_source_count": 9
   }
 }
