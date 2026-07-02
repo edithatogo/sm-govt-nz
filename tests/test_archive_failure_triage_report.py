@@ -124,3 +124,43 @@ def test_archive_failure_triage_report_tolerates_schema_drift(tmp_path):
 
     assert report["summary"]["failure_count"] == 0
     assert report["report_summaries"][str(scalar_report)]["summary"] == {}
+
+def test_archive_failure_triage_report_classifies_structured_fixability(tmp_path):
+    report_path = tmp_path / "mixed_report.json"
+    report_path.write_text(
+        json.dumps(
+            {
+                "results": [
+                    {
+                        "source_id": "site",
+                        "platform": "website_page",
+                        "status": "method_not_allowed",
+                        "url": "https://agency.example",
+                    },
+                    {
+                        "source_id": "yt",
+                        "platform": "youtube",
+                        "status": "source_url_not_channel",
+                        "url": "https://www.youtube.com/watch?v=abc123",
+                    },
+                    {
+                        "source_id": "blocked",
+                        "platform": "website_page",
+                        "status": "capture_blocked",
+                        "url": "https://blocked.example",
+                    },
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report([report_path])
+
+    by_source = {item["source_id"]: item for item in report["items"]}
+    assert by_source["site"]["recommended_action"] == "retry_with_get_and_alternate_host"
+    assert by_source["site"]["fixability_class"] == "retry_or_url_canonicalization"
+    assert by_source["yt"]["recommended_action"] == "replace_with_channel_url_or_mark_video_seed"
+    assert by_source["yt"]["fixability_class"] == "youtube_url_or_channel_resolution"
+    assert by_source["blocked"]["priority"] == "p4_larger_browser_or_access_project"
+    assert by_source["blocked"]["fixability_class"] == "browser_fallback_candidate"

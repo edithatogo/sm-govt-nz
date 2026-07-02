@@ -300,7 +300,7 @@ def test_archive_youtube_source_reports_unresolved_channel(tmp_path):
             "url": "https://www.youtube.com/@agency",
             "archive_status": "candidate",
             "feasibility": "medium",
-            "status": "capture_failed",
+            "status": "youtube_channel_unresolved",
             "reason": "could not resolve YouTube channel id",
         }
     ]
@@ -325,7 +325,7 @@ def test_archive_youtube_source_reports_bad_non_youtube_url(tmp_path):
         page_fetcher=lambda url: "<html>No channel id</html>",
     )
 
-    assert results[0]["status"] == "capture_failed"
+    assert results[0]["status"] == "source_url_not_channel"
     assert results[0]["reason"] == "YouTube channel resolver failed: not a YouTube URL"
 
 
@@ -348,7 +348,7 @@ def test_archive_youtube_source_reports_bad_youtube_non_channel_url(tmp_path):
         page_fetcher=lambda url: "<html>No channel id</html>",
     )
 
-    assert results[0]["status"] == "capture_failed"
+    assert results[0]["status"] == "source_url_not_channel"
     assert results[0]["reason"] == "YouTube channel resolver failed: YouTube URL is not a channel URL"
 
 
@@ -552,6 +552,49 @@ def test_fetch_website_with_alternates_uses_www_after_405():
     assert html == "<html>fallback</html>"
 
 
+
+def test_fetch_website_with_alternates_tries_http_www_combination_after_405():
+    seen = []
+
+    def fetcher(url, timeout):
+        seen.append(url)
+        if url != "http://www.agency.example":
+            raise HTTPError(url, 405, "Method Not Allowed", hdrs=None, fp=None)
+        return "<html>fallback</html>"
+
+    fetched_url, html = fetch_website_with_alternates("https://agency.example", fetcher, 5, allow_alternates=True)
+
+    assert fetched_url == "http://www.agency.example"
+    assert html == "<html>fallback</html>"
+    assert seen == [
+        "https://agency.example",
+        "https://www.agency.example",
+        "http://agency.example",
+        "http://www.agency.example",
+    ]
+
+
+def test_archive_youtube_source_reports_missing_handle_as_channel_not_found(tmp_path):
+    source = {
+        "source_id": "agency-youtube",
+        "agency_id": "agency",
+        "platform": "youtube",
+        "source_type": "social_profile",
+        "url": "https://www.youtube.com/@retired",
+        "archive_status": "candidate",
+        "feasibility": "medium",
+    }
+
+    results = archive_youtube_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        parser=FakeYouTubeParser(),
+        page_fetcher=lambda url: (_ for _ in ()).throw(HTTPError(url, 404, "Not Found", hdrs=None, fp=None)),
+    )
+
+    assert results[0]["status"] == "youtube_channel_not_found"
+    assert results[0]["reason"] == "YouTube channel resolver failed: HTTP 404: YouTube channel page not found"
 def test_archive_website_source_reports_dns_failure(tmp_path):
     result = archive_website_source(
         {
@@ -1007,5 +1050,9 @@ def test_archive_threads_api_disabled_never_reports_api_blocker_status(tmp_path,
 
     assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
     assert report["results"][0]["status"] not in {"threads_permission_error", "threads_api_error"}
+
+
+
+
 
 

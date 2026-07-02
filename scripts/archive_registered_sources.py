@@ -86,13 +86,21 @@ def alternate_website_urls(url: str) -> list[str]:
     host = parsed.netloc
     if not host:
         return []
-    alternatives = []
+    host_variants = [host]
     if host.lower().startswith("www."):
-        alternatives.append(urlunparse(parsed._replace(netloc=host[4:])))
+        host_variants.append(host[4:])
     elif "." in host:
-        alternatives.append(urlunparse(parsed._replace(netloc=f"www.{host}")))
+        host_variants.append(f"www.{host}")
+    scheme_variants = [parsed.scheme or "https"]
     if parsed.scheme == "https":
-        alternatives.append(urlunparse(parsed._replace(scheme="http")))
+        scheme_variants.append("http")
+    elif parsed.scheme == "http":
+        scheme_variants.append("https")
+    alternatives = [
+        urlunparse(parsed._replace(scheme=scheme, netloc=host_variant))
+        for scheme in scheme_variants
+        for host_variant in host_variants
+    ]
     return [candidate for candidate in dict.fromkeys(alternatives) if candidate != url]
 
 
@@ -405,20 +413,31 @@ def youtube_channel_id_from_page(body: str) -> str:
     return ""
 
 
+class YouTubeResolverError(ValueError):
+    def __init__(self, status: str, reason: str) -> None:
+        super().__init__(reason)
+        self.status = status
+
+
 def resolve_youtube_channel_id(source: dict[str, Any], page_fetcher: Any | None = None, fetch_timeout: int = 30) -> str:
     url = normalize_url_for_fetch(str(source.get("url") or ""))
     parsed = urlparse(url)
     host = parsed.netloc.lower()
     if "youtube.com" not in host and "youtu.be" not in host:
-        raise ValueError("not a YouTube URL")
+        raise YouTubeResolverError("source_url_not_channel", "not a YouTube URL")
     path_parts = [part for part in parsed.path.split("/") if part]
-    if path_parts and path_parts[0] in {"watch", "shorts", "embed", "yt"}:
-        raise ValueError("YouTube URL is not a channel URL")
+    if host.endswith("youtu.be") or (path_parts and path_parts[0] in {"watch", "shorts", "embed", "yt"}):
+        raise YouTubeResolverError("source_url_not_channel", "YouTube URL is not a channel URL")
     channel_id = youtube_channel_id_from_url(url)
     if channel_id:
         return channel_id
     fetcher = page_fetcher or fetch_text
-    page = fetcher(url, timeout=fetch_timeout) if page_fetcher is None else fetcher(url)
+    try:
+        page = fetcher(url, timeout=fetch_timeout) if page_fetcher is None else fetcher(url)
+    except HTTPError as exc:
+        if exc.code == 404:
+            raise YouTubeResolverError("youtube_channel_not_found", "HTTP 404: YouTube channel page not found") from exc
+        raise
     return youtube_channel_id_from_page(page)
 
 
@@ -438,10 +457,12 @@ def archive_youtube_source(
 
     try:
         channel_id = resolve_youtube_channel_id(source, page_fetcher=page_fetcher, fetch_timeout=fetch_timeout)
+    except YouTubeResolverError as exc:
+        return [source_result(source, exc.status, f"YouTube channel resolver failed: {str(exc)[:240]}")]
     except Exception as exc:  # noqa: BLE001 - per-source report records resolver failures.
         return [source_result(source, "capture_failed", f"YouTube channel resolver failed: {str(exc)[:240]}")]
     if not channel_id:
-        return [source_result(source, "capture_failed", "could not resolve YouTube channel id")]
+        return [source_result(source, "youtube_channel_unresolved", "could not resolve YouTube channel id")]
 
     feed_url = youtube_feed_url(channel_id)
     feed_parser = parser or feedparser
@@ -1848,6 +1869,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 

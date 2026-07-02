@@ -15,11 +15,15 @@ ACTION_BY_STATUS = {
     "capture_blocked": "review_access_or_mark_blocked",
     "capture_failed": "review_url_or_adapter",
     "dns_failed": "verify_url_or_mark_stale",
-    "method_not_allowed": "review_alternate_url",
+    "method_not_allowed": "retry_with_get_and_alternate_host",
     "network_error": "retry_later",
     "no_records": "monitor_or_verify_channel_activity",
-    "not_acceptable": "review_headers_or_alternate_url",
+    "not_acceptable": "retry_with_browser_headers_or_alternate_url",
+    "not_found": "verify_url_or_mark_retired",
+    "source_url_not_channel": "replace_with_channel_url_or_mark_video_seed",
     "tls_failed": "review_tls_or_alternate_url",
+    "youtube_channel_not_found": "verify_handle_or_mark_retired",
+    "youtube_channel_unresolved": "verify_channel_page_or_mark_unresolved",
     "manual_seed_missing": "supply_operator_authorized_seed",
 }
 
@@ -53,6 +57,18 @@ def load_json(path: Path) -> dict[str, Any]:
         return json.load(handle)
 
 
+def fixability_class(platform: str, status: str) -> str:
+    if platform == "website_page" and status in {"dns_failed", "method_not_allowed", "network_timeout", "network_error", "not_acceptable", "not_found", "tls_failed"}:
+        return "retry_or_url_canonicalization"
+    if platform == "website_page" and status == "capture_blocked":
+        return "browser_fallback_candidate"
+    if platform == "youtube" and status in {"capture_failed", "source_url_not_channel", "youtube_channel_not_found", "youtube_channel_unresolved"}:
+        return "youtube_url_or_channel_resolution"
+    if status == "manual_seed_missing":
+        return "operator_seed_input"
+    return "review"
+
+
 def triage_item(report_path: Path, row: dict[str, Any]) -> dict[str, Any]:
     status = str(row.get("status") or "unknown")
     source_id = str(row.get("source_id") or "")
@@ -69,6 +85,7 @@ def triage_item(report_path: Path, row: dict[str, Any]) -> dict[str, Any]:
         "status": status,
         "reason": reason,
         "recommended_action": ACTION_BY_STATUS.get(status, "review"),
+        "fixability_class": fixability_class(platform, status),
         "priority": priority,
         "priority_description": PRIORITY_DESCRIPTIONS.get(priority, "Needs review."),
         "report": str(report_path),
@@ -149,3 +166,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
+
