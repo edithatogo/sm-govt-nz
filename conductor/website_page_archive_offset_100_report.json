@@ -1,19 +1,30 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-01T11:09:43+00:00",
+  "generated_at": "2026-07-02T05:18:57+00:00",
   "inputs": {
     "agency_id": "",
+    "capture_backend": "default",
     "fetch_timeout": 30,
-    "include_blocked": false,
+    "idle_rounds": 3,
+    "include_blocked": true,
     "limit_sources": 100,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 100,
+    "per_account_timeout": 120,
     "raw_root": "historical_archive_raw",
     "retry_failed_from": "",
-    "source_type": "website_page"
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
   },
   "results": [
     {
@@ -248,6 +259,39 @@
       "url": "https://www.mackenzie.govt.nz"
     },
     {
+      "agency_id": "mackenzie-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "mackenzie-district-council-website_page-2dd5544b",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.mackenzie.govt.nz/community/newsletters"
+    },
+    {
+      "agency_id": "mackenzie-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "mackenzie-district-council-website_page-e49e8b80",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.mackenzie.govt.nz/home/icon-redirects/row-2/latest-newsletter"
+    },
+    {
+      "agency_id": "mackenzie-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "mackenzie-district-council-website_page-fa4cbc45",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.mackenzie.govt.nz/pages/public-notices/2026/news-and-information-from-mackenzie-district-council-late-june-2026"
+    },
+    {
       "agency_id": "manawatu-district-council",
       "archive_status": "ready",
       "feasibility": "high",
@@ -257,6 +301,17 @@
       "source_type": "website_page",
       "status": "capture_blocked",
       "url": "https://www.mdc.govt.nz"
+    },
+    {
+      "agency_id": "manawatu-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "manawatu-district-council-website_page-f27f8356",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.mdc.govt.nz/projects-and-news/monthly-newsletter"
     },
     {
       "agency_id": "manukau-institute-of-technology",
@@ -1071,50 +1126,6 @@
       "source_type": "website_page",
       "status": "captured",
       "url": "https://www.orc.govt.nz/your-council/latest-news/enviroschools-otago-newsletter/"
-    },
-    {
-      "agency_id": "otago-regional-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "captured generic website page",
-      "source_id": "53781a0594f66773",
-      "source_type": "website_page",
-      "status": "captured",
-      "url": "https://www.orc.govt.nz/your-council/latest-news/on-stream-newsletter/"
-    },
-    {
-      "agency_id": "otago-regional-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "captured generic website page",
-      "source_id": "0f0e04e500a16ded",
-      "source_type": "website_page",
-      "status": "captured",
-      "url": "https://www.orc.govt.nz/your-council/latest-news/regulatory-newsletter/"
-    },
-    {
-      "agency_id": "otorohanga-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "captured generic website page",
-      "source_id": "421413074c325d54",
-      "source_type": "website_page",
-      "status": "captured",
-      "url": "https://www.otodc.govt.nz"
-    },
-    {
-      "agency_id": "palmerston-north-city-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "captured generic website page",
-      "source_id": "41b5d334557b18f9",
-      "source_type": "website_page",
-      "status": "captured",
-      "url": "https://www.pncc.govt.nz"
     }
   ],
   "summary": {
@@ -1124,16 +1135,17 @@
     "selected_sources": 100,
     "status_by_platform": {
       "website_page": {
-        "capture_blocked": 7,
-        "captured": 84,
+        "capture_blocked": 11,
+        "captured": 80,
         "dns_failed": 2,
         "method_not_allowed": 6,
         "not_found": 1
       }
     },
+    "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 7,
-      "captured": 84,
+      "capture_blocked": 11,
+      "captured": 80,
       "dns_failed": 2,
       "method_not_allowed": 6,
       "not_found": 1
