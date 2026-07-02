@@ -47,7 +47,7 @@
 - [x] Task: Implement repository changes for Validate targeted workflows
     - [x] Add or update scripts, configuration, documentation, and reports as required by the specification.
     - [x] Add targeted tests or fixtures for the changed behaviour.
-- [x] Task: Validate Validate targeted workflows
+- [x] Task: Verify targeted workflows
     - [x] Run targeted tests and lightweight workflow/YAML validation relevant to the changed files.
     - [x] Record residual gaps as machine-readable report states rather than open-ended manual decisions.
 - [x] Task: Conductor - User Manual Verification 'Validate targeted workflows' (Protocol in workflow.md)
