@@ -1,0 +1,539 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-02T03:25:52+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "browser_and_feed",
+    "fetch_timeout": 30,
+    "idle_rounds": 1,
+    "include_blocked": false,
+    "limit_sources": 10,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 1,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 20,
+    "per_account_timeout": 30,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "x",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "independent-police-conduct-authority",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/IPCA_NZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "IPCA_NZ",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/IPCA_NZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "379e0bc9d0cb6e3e",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/IPCA_NZ"
+    },
+    {
+      "agency_id": "independent-police-conduct-authority",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/IPCA_NZ/rss",
+      "handle": "IPCA_NZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_ipca_nz_7ea3e210ad7e654f9842988e.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "379e0bc9d0cb6e3e",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/IPCA_NZ"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/justicenzgovt",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "justicenzgovt",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/justicenzgovt: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "ministry-of-justice-x-63923593",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://www.twitter.com/@justicenzgovt"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/justicenzgovt/rss",
+      "handle": "justicenzgovt",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_justicenzgovt_2922bbb27dc3d71cd11a4e3f.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "ministry-of-justice-x-63923593",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://www.twitter.com/@justicenzgovt"
+    },
+    {
+      "agency_id": "kiwi-group-capital",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/KiwibankNZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "KiwibankNZ",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/KiwibankNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "5a8988f7471dbf1b",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/KiwibankNZ"
+    },
+    {
+      "agency_id": "kiwi-group-capital",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/KiwibankNZ/rss",
+      "handle": "KiwibankNZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_kiwibanknz_2552f0213958585188df33da.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "5a8988f7471dbf1b",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/KiwibankNZ"
+    },
+    {
+      "agency_id": "lotto-nz",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/LOTTO_NZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "LOTTO_NZ",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/LOTTO_NZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "22386d8a8163520a",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/LOTTO_NZ"
+    },
+    {
+      "agency_id": "lotto-nz",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/LOTTO_NZ/rss",
+      "handle": "LOTTO_NZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_lotto_nz_96dcd98d46a7f1ffbc8966ea.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "22386d8a8163520a",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/LOTTO_NZ"
+    },
+    {
+      "agency_id": "ministry-for-culture-and-heritage",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/ManatuTaonga",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "ManatuTaonga",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/ManatuTaonga: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "8ab8dcdd4e653a8e",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/ManatuTaonga"
+    },
+    {
+      "agency_id": "ministry-for-culture-and-heritage",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/ManatuTaonga/rss",
+      "handle": "ManatuTaonga",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_manatutaonga_919148801333f377427b9821.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "8ab8dcdd4e653a8e",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/ManatuTaonga"
+    },
+    {
+      "agency_id": "maritime-nz",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/MaritimeNZ",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "MaritimeNZ",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/MaritimeNZ: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "maritime-nz-x-2217d50b",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://twitter.com/MaritimeNZ"
+    },
+    {
+      "agency_id": "maritime-nz",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/MaritimeNZ/rss",
+      "handle": "MaritimeNZ",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_maritimenz_8588e901ec4a755f8c5f9cc4.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "maritime-nz-x-2217d50b",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://twitter.com/MaritimeNZ"
+    },
+    {
+      "agency_id": "ministry-of-health",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/minhealthnz",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "minhealthnz",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/minhealthnz: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "ministry-of-health-x-268ac5c9",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/minhealthnz"
+    },
+    {
+      "agency_id": "ministry-of-health",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/minhealthnz/rss",
+      "handle": "minhealthnz",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_minhealthnz_6c9894b57b5fb699ab917a9f.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "ministry-of-health-x-268ac5c9",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/minhealthnz"
+    },
+    {
+      "agency_id": "ministry-of-social-development",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/msdgovtnz",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "msdgovtnz",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/msdgovtnz: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "3ba835f95d4f20ad",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/msdgovtnz"
+    },
+    {
+      "agency_id": "ministry-of-social-development",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/msdgovtnz/rss",
+      "handle": "msdgovtnz",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_msdgovtnz_a01ff2a1cc74f1821237c94e.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "3ba835f95d4f20ad",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/msdgovtnz"
+    },
+    {
+      "agency_id": "napier-city-council",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NapierCouncil",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NapierCouncil",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NapierCouncil: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "02ad75759275c2ee",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/NapierCouncil"
+    },
+    {
+      "agency_id": "napier-city-council",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NapierCouncil/rss",
+      "handle": "NapierCouncil",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_napiercouncil_ac7c88a7c8e9d4d83e1c5fc9.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "02ad75759275c2ee",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/NapierCouncil"
+    },
+    {
+      "agency_id": "new-plymouth-district-council",
+      "archive_status": "degraded",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/NPDCouncil",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "NPDCouncil",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/NPDCouncil: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "new-plymouth-district-council-x-1cebc80b",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://twitter.com/NPDCouncil"
+    },
+    {
+      "agency_id": "new-plymouth-district-council",
+      "archive_status": "degraded",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/NPDCouncil/rss",
+      "handle": "NPDCouncil",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_npdcouncil_bd67cf73cf68aff1915e7a70.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "new-plymouth-district-council-x-1cebc80b",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://twitter.com/NPDCouncil"
+    },
+    {
+      "agency_id": "independent-police-conduct-authority",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "IPCA_NZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/ipca_nz_a73fc8d0290a9904e454740c.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "379e0bc9d0cb6e3e",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/IPCA_NZ"
+    },
+    {
+      "agency_id": "ministry-of-justice",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "justicenzgovt",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/justicenzgovt_e3444123622182e5c43e94f4.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "ministry-of-justice-x-63923593",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://www.twitter.com/@justicenzgovt"
+    },
+    {
+      "agency_id": "kiwi-group-capital",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "KiwibankNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/kiwibanknz_6730d1727d57377ae1db9f7d.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "5a8988f7471dbf1b",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/KiwibankNZ"
+    },
+    {
+      "agency_id": "lotto-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "LOTTO_NZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/lotto_nz_ff4b9536df7dde6ae26abde2.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "22386d8a8163520a",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/LOTTO_NZ"
+    },
+    {
+      "agency_id": "ministry-for-culture-and-heritage",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "ManatuTaonga",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/manatutaonga_fe94dd1b1b1204ef57e75811.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "8ab8dcdd4e653a8e",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/ManatuTaonga"
+    },
+    {
+      "agency_id": "maritime-nz",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "MaritimeNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/maritimenz_be2f2066d43ed635ff2a7755.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "maritime-nz-x-2217d50b",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/MaritimeNZ"
+    },
+    {
+      "agency_id": "ministry-of-health",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "minhealthnz",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/minhealthnz_915954b826fe158680990073.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "ministry-of-health-x-268ac5c9",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/minhealthnz"
+    },
+    {
+      "agency_id": "ministry-of-social-development",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "msdgovtnz",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/msdgovtnz_da3e62782ceb78ce4a60ae59.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "3ba835f95d4f20ad",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/msdgovtnz"
+    },
+    {
+      "agency_id": "napier-city-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NapierCouncil",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/napiercouncil_c0342085517b4d393ecd85e9.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "02ad75759275c2ee",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NapierCouncil"
+    },
+    {
+      "agency_id": "new-plymouth-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "NPDCouncil",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/npdcouncil_ca1cf13c5fdcaf943ec32038.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "new-plymouth-district-council-x-1cebc80b",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/NPDCouncil"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 10
+    },
+    "selected_sources": 10,
+    "status_by_platform": {
+      "x": {
+        "browser_no_visible_posts": 10,
+        "feed_captured": 10,
+        "feed_not_found": 10
+      }
+    },
+    "status_counts": {
+      "browser_no_visible_posts": 10,
+      "feed_captured": 10,
+      "feed_not_found": 10
+    }
+  }
+}
