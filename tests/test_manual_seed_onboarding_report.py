@@ -143,6 +143,8 @@ def test_manual_seed_onboarding_report_writes_summary(tmp_path):
     summary = summary_path.read_text(encoding="utf-8")
     assert "Remaining groups" in summary
     assert "`facebook`: 1" in summary
+    assert "Next deterministic batch" in summary
+    assert "`manual_archive_seeds/facebook/agency-facebook.json`" in summary
     assert report["summary"]["remaining_group_count"] == 1
 
 

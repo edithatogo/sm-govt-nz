@@ -174,6 +174,8 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
 
 def write_summary(path: Path, report: dict[str, Any]) -> None:
     summary = report.get("summary", {})
+    work_queue = build_work_queue(report)
+    next_items = work_queue.get("items", [])[:25]
     lines = [
         "# Manual/API Source Onboarding",
         "",
@@ -203,6 +205,26 @@ def write_summary(path: Path, report: dict[str, Any]) -> None:
     )
     for platform, counts in summary.get("status_by_platform", {}).items():
         lines.append(f"- `{platform}`: {counts}")
+    lines.extend(
+        [
+            "",
+            "## Next deterministic batch",
+            "",
+        ]
+    )
+    if next_items:
+        lines.append("| Platform | Source | Agency | Preferred seed path |")
+        lines.append("| --- | --- | --- | --- |")
+        for item in next_items:
+            lines.append(
+                "| "
+                f"`{item.get('platform', '')}` | "
+                f"`{item.get('source_id', '')}` | "
+                f"{item.get('agency_name') or item.get('agency_id') or ''} | "
+                f"`{item.get('preferred_seed_path', '')}` |"
+            )
+    else:
+        lines.append("- None")
     lines.extend(
         [
             "",
