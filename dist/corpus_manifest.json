@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 15088,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "dbb736a1d84aea2c5207bdeda0b2c5b5ceafc88de1565141ce90e7d10ca7f662"
+      "sha256": "2bb7628a9dde6166aeef6fac322e1a7baf35f730d9e09ed928c30298fa3d0d33"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 4979550,
+      "bytes": 4980457,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "f0aeb05a05041f5a598564e29511ce4a3328f161a3316b3e24dc7c2427a380a2"
+      "sha256": "31998f01c17b9099cca4f924af874270413dec67e1a5d03938db856fe6dc49f6"
     },
     "normalized_archive.parquet": {
-      "bytes": 7897827,
+      "bytes": 7903182,
       "path": "normalized_archive.parquet",
-      "sha256": "92bc19f02ec908ec4abc6ebf275a4cedda871a3c6bb44fe5d7d610450cc59fd1"
+      "sha256": "6211d88813a86b478a0da623bb08dff49b45bf22eedd7c71a928c6ec7b44f860"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 61,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 8353,
+  "normalized_record_count": 8358,
   "normalized_shard_count": 474,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 10031,
+  "raw_file_count": 10036,
   "record_index": [
     {
       "mirror_targets": [
@@ -41,11 +41,11 @@
         }
       ],
       "original_timestamp": "1971-01-01T00:00:00+00:00",
-      "source_account": "WorkSafeNZ",
-      "source_key": "x:WorkSafeNZ",
+      "source_account": "TePuniKokiri",
+      "source_key": "x:TePuniKokiri",
       "source_platform": "x",
-      "source_record_id": "x_feed:018ecee866a1167084acc148",
-      "source_url": "https://x.com/WorkSafeNZ"
+      "source_record_id": "x_feed:1a7c15d4215d1dbe195ce5ac",
+      "source_url": "https://x.com/TePuniKokiri"
     },
     {
       "mirror_targets": [
@@ -56,11 +56,11 @@
         }
       ],
       "original_timestamp": "1971-01-01T00:00:00+00:00",
-      "source_account": "wanangaoraukawa",
-      "source_key": "x:wanangaoraukawa",
+      "source_account": "TeWaihanga",
+      "source_key": "x:TeWaihanga",
       "source_platform": "x",
-      "source_record_id": "x_feed:0adb5d36df4d74dbec359239",
-      "source_url": "https://twitter.com/wanangaoraukawa?lang=en"
+      "source_record_id": "x_feed:389ebc39536c1774cecc5e1c",
+      "source_url": "https://x.com/TeWaihanga"
     },
     {
       "mirror_targets": [
@@ -71,11 +71,11 @@
         }
       ],
       "original_timestamp": "1971-01-01T00:00:00+00:00",
-      "source_account": "X",
-      "source_key": "x:X",
+      "source_account": "waimakariridc",
+      "source_key": "x:waimakariridc",
       "source_platform": "x",
-      "source_record_id": "x_feed:0c3ded00f0a1474118cf3e6a",
-      "source_url": "https://twitter.com/pamu_nz"
+      "source_record_id": "x_feed:3c302471d1f50f585f155588",
+      "source_url": "https://www.twitter.com/waimakariridc"
     },
     {
       "mirror_targets": [
@@ -86,11 +86,11 @@
         }
       ],
       "original_timestamp": "1971-01-01T00:00:00+00:00",
-      "source_account": "Whaikaha",
-      "source_key": "x:Whaikaha",
+      "source_account": "TePapa",
+      "source_key": "x:TePapa",
       "source_platform": "x",
-      "source_record_id": "x_feed:2c81ec31b27d8e99fca6029f",
-      "source_url": "https://twitter.com/Whaikaha"
+      "source_record_id": "x_feed:5f195b4e1717ed9ac716ed3d",
+      "source_url": "https://x.com/TePapa"
     },
     {
       "mirror_targets": [
@@ -101,11 +101,56 @@
         }
       ],
       "original_timestamp": "1971-01-01T00:00:00+00:00",
-      "source_account": "WhaikahaNZ",
-      "source_key": "x:WhaikahaNZ",
+      "source_account": "Stats_NZ",
+      "source_key": "x:Stats_NZ",
       "source_platform": "x",
-      "source_record_id": "x_feed:7ee3faeb5c0d26d7cd7cce95",
-      "source_url": "https://x.com/WhaikahaNZ"
+      "source_record_id": "x_feed:6bdea69eeb9b106be3cfbd60",
+      "source_url": "https://x.com/Stats_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "TeMangaiPaho",
+      "source_key": "x:TeMangaiPaho",
+      "source_platform": "x",
+      "source_record_id": "x_feed:77276675ed32787e8804411a",
+      "source_url": "https://x.com/TeMangaiPaho"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "Twitter",
+      "source_key": "x:Twitter",
+      "source_platform": "x",
+      "source_record_id": "x_feed:c0f1ab0145cfa3e5513d5545",
+      "source_url": "http://twitter.com/EITHB"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "sit_nz",
+      "source_key": "x:sit_nz",
+      "source_platform": "x",
+      "source_record_id": "x_feed:c8072ca3c4c543c1cb274887",
+      "source_url": "https://twitter.com/sit_nz"
     },
     {
       "mirror_targets": [
@@ -121,6 +166,36 @@
       "source_platform": "x",
       "source_record_id": "x_feed:ea183044460f2f26c49da2dd",
       "source_url": "https://x.com/AklCouncil"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "WaikatoDistrict",
+      "source_key": "x:WaikatoDistrict",
+      "source_platform": "x",
+      "source_record_id": "x_feed:f617753de2748e354cfce341",
+      "source_url": "https://x.com/waikatodistrict"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "SFONZ",
+      "source_key": "x:SFONZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:f8645d2f735f8d30e026408a",
+      "source_url": "https://x.com/SFONZ"
     },
     {
       "mirror_targets": [],
@@ -89072,7 +89147,7 @@
     "linkedin": 2,
     "rss": 3930,
     "website_page": 226,
-    "x": 696,
+    "x": 701,
     "youtube": 1833
   },
   "source_date_ranges": {
