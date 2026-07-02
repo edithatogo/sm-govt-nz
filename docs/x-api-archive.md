@@ -1,16 +1,21 @@
 # X API archive path
 
-The repository supports an official X API capture path for registered X accounts, but it is disabled by default.
+The repository supports two X capture paths:
+
+- primary path: unauthenticated public HTTP profile snapshots
+- optional enhancement: official X API post capture when credits/billing are available
 
 ## Default state
 
-Registered X accounts remain `manual_seed_missing` unless one of these inputs is available:
+Registered X accounts are captured through public HTTP snapshots by default in GitHub Actions. They remain `manual_seed_missing` only when both public snapshots and official API capture are disabled and no authorized seed exists.
+
+Additional inputs can improve coverage:
 
 - an operator-authorized seed file under `manual_archive_seeds/x/`
 - `X_API_CAPTURE_ENABLED=true` configured as a repository variable
 - valid X API credentials configured as repository secrets
 
-This default is intentional because X API access is usage-billed. A stored secret alone must not cause archive runs to make paid API calls.
+Official X API access is usage-billed. A stored secret alone must not cause archive runs to make paid API calls.
 
 ## Required GitHub configuration
 
@@ -41,13 +46,13 @@ When enabled, `Archive Registered Sources` resolves each account handle to a use
 
 When disabled, the workflow does not call X. If an authorized seed exists, it archives the seed. If no seed exists, it reports `manual_seed_missing`.
 
-## Public snapshot fallback
+## Public HTTP snapshot primary path
 
-When official X API credits are unavailable, the repository can use a conservative public snapshot fallback:
+The repository uses conservative public HTTP snapshots as the primary ongoing X archival path:
 
 - `X_PUBLIC_SNAPSHOT_ENABLED=true`
 
-This fallback uses unauthenticated public HTTP requests only. It does not log in, use proxies, bypass anti-bot controls, call private GraphQL endpoints, or attempt to reconstruct full timelines. It stores the accessible public profile page HTML and normalized profile-snapshot metadata as provenance evidence.
+This path uses unauthenticated public HTTP requests only. It does not log in, use proxies, bypass anti-bot controls, call private GraphQL endpoints, or attempt to reconstruct full timelines. It stores the accessible public profile page HTML and normalized profile-snapshot metadata as provenance evidence.
 
 Snapshot output is intentionally distinct from post-level API or seed records:
 
@@ -56,7 +61,7 @@ Snapshot output is intentionally distinct from post-level API or seed records:
 - record IDs: `x_public_snapshot:<stable_id>`
 - status: `public_snapshot_captured`, `public_snapshot_already_captured`, or the relevant blocked/error status
 
-Use this mode only as a fallback when official X API access is unavailable and no authorized seed/export exists.
+Use official X API capture only as an optional enhancement when credits/billing are available. Public HTTP snapshots remain the default source for X.
 
 ## Cost and safety controls
 
@@ -76,7 +81,7 @@ gh workflow run "Archive Registered Sources" -f source_type=x -f dry_run=false -
 
 Only expand to all X sources after the small shard report shows `captured`, `already_captured`, or `no_records` without `x_billing_required`, `x_permission_error`, or `rate_limited`.
 
-To run the public snapshot fallback without calling the X API:
+To run the public HTTP snapshot source without calling the X API:
 
 ```bash
 gh variable set X_API_CAPTURE_ENABLED --body false
