@@ -1,6 +1,6 @@
 {
   "dry_run": false,
-  "generated_at": "2026-07-02T12:30:10+00:00",
+  "generated_at": "2026-07-02T12:34:56+00:00",
   "guardrails": {
     "captcha_solving": false,
     "credential_bypass": false,
@@ -65,10 +65,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "Page.goto: Navigation to \"https://www.boprc.govt.nz/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\n  - navigating to \"https://www.boprc.govt.nz/\", waiting until \"domcontentloaded\"\n",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/f788420661054523d80b393c.json",
+      "reason": "captured public rendered website content",
       "source_id": "01a73b769530cc60",
       "source_type": "website_page",
-      "status": "browser_capture_failed",
+      "status": "browser_captured",
       "url": "https://www.boprc.govt.nz"
     },
     {
@@ -76,10 +77,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "Page.goto: Navigation to \"https://www.codc.govt.nz/\" is interrupted by another navigation to \"https://www.boprc.govt.nz/\"\nCall log:\n  - navigating to \"https://www.codc.govt.nz/\", waiting until \"domcontentloaded\"\n",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/470a87b442a188b67c3b0573.json",
+      "reason": "captured public rendered website content",
       "source_id": "64372d3f52dde38d",
       "source_type": "website_page",
-      "status": "browser_capture_failed",
+      "status": "browser_captured",
       "url": "https://www.codc.govt.nz"
     },
     {
@@ -87,10 +89,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "Page.goto: Navigation to \"https://www.cluthadc.govt.nz/\" is interrupted by another navigation to \"https://www.codc.govt.nz/\"\nCall log:\n  - navigating to \"https://www.cluthadc.govt.nz/\", waiting until \"domcontentloaded\"\n",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/6087ed9c91c80ae45a14905a.json",
+      "reason": "captured public rendered website content",
       "source_id": "38b2ebe81566aa72",
       "source_type": "website_page",
-      "status": "browser_capture_failed",
+      "status": "browser_captured",
       "url": "https://www.cluthadc.govt.nz"
     },
     {
@@ -98,10 +101,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "Page.goto: Navigation to \"https://www.corrections.govt.nz/\" is interrupted by another navigation to \"https://www.cluthadc.govt.nz/\"\nCall log:\n  - navigating to \"https://www.corrections.govt.nz/\", waiting until \"domcontentloaded\"\n",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/771287a6930c6850ce51570a.json",
+      "reason": "captured public rendered website content",
       "source_id": "c1ec96d478c92e9c",
       "source_type": "website_page",
-      "status": "browser_capture_failed",
+      "status": "browser_captured",
       "url": "https://www.corrections.govt.nz"
     },
     {
@@ -109,10 +113,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "Page.goto: Navigation to \"https://www.dpmc.govt.nz/\" is interrupted by another navigation to \"https://www.corrections.govt.nz/\"\nCall log:\n  - navigating to \"https://www.dpmc.govt.nz/\", waiting until \"domcontentloaded\"\n",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/7ff5d41006b2ee5dd84d6868.json",
+      "reason": "public browser fallback stopped at access marker: cloudflare",
       "source_id": "e48d45bb68dfbd35",
       "source_type": "website_page",
-      "status": "browser_capture_failed",
+      "status": "browser_captcha_or_challenge",
       "url": "https://www.dpmc.govt.nz"
     },
     {
@@ -120,10 +125,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "Page.goto: Navigation to \"https://www.dunedin.govt.nz/\" is interrupted by another navigation to \"https://www.dpmc.govt.nz/\"\nCall log:\n  - navigating to \"https://www.dunedin.govt.nz/\", waiting until \"domcontentloaded\"\n",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/143d6e5d976ae389caa3ab04.json",
+      "reason": "captured public rendered website content",
       "source_id": "0e2463964d79ebe2",
       "source_type": "website_page",
-      "status": "browser_capture_failed",
+      "status": "browser_captured",
       "url": "https://www.dunedin.govt.nz"
     },
     {
@@ -131,10 +137,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "Page.goto: Navigation to \"https://www.ero.govt.nz/\" is interrupted by another navigation to \"https://www.dunedin.govt.nz/\"\nCall log:\n  - navigating to \"https://www.ero.govt.nz/\", waiting until \"domcontentloaded\"\n",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/21eb775946bca05137725d4e.json",
+      "reason": "public browser fallback stopped at access marker: Cloudflare",
       "source_id": "a9da02fbaefa8cc2",
       "source_type": "website_page",
-      "status": "browser_capture_failed",
+      "status": "browser_captcha_or_challenge",
       "url": "https://www.ero.govt.nz"
     }
   ],
@@ -142,8 +149,9 @@
     "result_count": 10,
     "selected_sources": 10,
     "status_counts": {
-      "browser_capture_failed": 8,
-      "browser_captured": 2
+      "browser_captcha_or_challenge": 2,
+      "browser_capture_failed": 1,
+      "browser_captured": 7
     }
   }
 }
