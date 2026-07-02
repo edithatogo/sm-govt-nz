@@ -489,6 +489,8 @@ def archive_youtube_video_source(
     except HTTPError as exc:
         if exc.code == 404:
             return [source_result(source, "youtube_video_not_found", f"HTTP 404: YouTube video metadata not found for {video_id}")]
+        if exc.code in {401, 403}:
+            return [source_result(source, "youtube_video_metadata_blocked", f"HTTP {exc.code}: YouTube video metadata unavailable for {video_id}")]
         return [source_result(source, "capture_failed", f"YouTube video metadata fetch failed: HTTP {exc.code}: {exc.reason}")]
     except Exception as exc:  # noqa: BLE001 - per-source report records metadata failures.
         return [source_result(source, "capture_failed", f"YouTube video metadata fetch failed: {str(exc)[:240]}")]

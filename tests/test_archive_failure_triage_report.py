@@ -187,3 +187,26 @@ def test_archive_failure_triage_report_classifies_seed_invalid_and_empty(tmp_pat
     assert by_source["invalid"]["recommended_action"] == "fix_seed_json_or_required_fields"
     assert by_source["empty"]["fixability_class"] == "operator_seed_input"
     assert report["summary"]["priority_counts"] == {"p2_existing_system_needs_seed_input": 2}
+
+def test_archive_failure_triage_report_classifies_blocked_youtube_video_metadata(tmp_path):
+    report_path = tmp_path / "youtube.json"
+    report_path.write_text(
+        json.dumps(
+            {
+                "results": [
+                    {
+                        "source_id": "video",
+                        "platform": "youtube",
+                        "status": "youtube_video_metadata_blocked",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report([report_path])
+
+    assert report["items"][0]["priority"] == "p3_needs_operator_or_platform_access"
+    assert report["items"][0]["fixability_class"] == "youtube_video_metadata_unavailable"
+

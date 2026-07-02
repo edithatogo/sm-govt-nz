@@ -24,6 +24,8 @@ ACTION_BY_STATUS = {
     "tls_failed": "review_tls_or_alternate_url",
     "youtube_channel_not_found": "verify_handle_or_mark_retired",
     "youtube_channel_unresolved": "verify_channel_page_or_mark_unresolved",
+    "youtube_video_metadata_blocked": "record_video_metadata_unavailable_or_supply_seed",
+    "youtube_video_not_found": "verify_video_url_or_mark_retired",
     "manual_seed_missing": "supply_operator_authorized_seed",
     "seed_empty": "replace_empty_seed_with_authorized_records",
     "seed_invalid": "fix_seed_json_or_required_fields",
@@ -42,6 +44,8 @@ PRIORITY_BY_STATUS = {
     "seed_empty": "p2_existing_system_needs_seed_input",
     "seed_invalid": "p2_existing_system_needs_seed_input",
     "auth_required": "p3_needs_operator_or_platform_access",
+    "youtube_video_metadata_blocked": "p3_needs_operator_or_platform_access",
+    "youtube_video_not_found": "p1_existing_resources",
     "capture_blocked": "p4_larger_browser_or_access_project",
 }
 
@@ -66,8 +70,10 @@ def fixability_class(platform: str, status: str) -> str:
         return "retry_or_url_canonicalization"
     if platform == "website_page" and status == "capture_blocked":
         return "browser_fallback_candidate"
-    if platform == "youtube" and status in {"capture_failed", "source_url_not_channel", "youtube_channel_not_found", "youtube_channel_unresolved"}:
+    if platform == "youtube" and status in {"capture_failed", "source_url_not_channel", "youtube_channel_not_found", "youtube_channel_unresolved", "youtube_video_not_found"}:
         return "youtube_url_or_channel_resolution"
+    if platform == "youtube" and status == "youtube_video_metadata_blocked":
+        return "youtube_video_metadata_unavailable"
     if status in {"manual_seed_missing", "seed_empty", "seed_invalid"}:
         return "operator_seed_input"
     return "review"

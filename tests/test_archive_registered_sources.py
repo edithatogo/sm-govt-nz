@@ -1130,9 +1130,22 @@ def test_archive_threads_api_disabled_never_reports_api_blocker_status(tmp_path,
     assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
     assert report["results"][0]["status"] not in {"threads_permission_error", "threads_api_error"}
 
+def test_archive_youtube_video_source_reports_blocked_metadata(tmp_path):
+    def blocked(_url):
+        raise HTTPError("https://www.youtube.com/oembed", 401, "Unauthorized", hdrs=None, fp=None)
 
+    results = archive_registered_sources.archive_youtube_video_source(
+        {
+            "source_id": "agency-youtube-video",
+            "agency_id": "agency",
+            "platform": "youtube",
+            "source_type": "social_profile",
+            "url": "https://www.youtube.com/watch?v=abc123",
+        },
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        metadata_fetcher=blocked,
+    )
 
-
-
-
+    assert results[0]["status"] == "youtube_video_metadata_blocked"
 
