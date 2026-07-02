@@ -11,6 +11,7 @@ DEFAULT_REPORT = Path("conductor/manual_seed_onboarding_report.json")
 DEFAULT_SUMMARY = Path("conductor/manual_seed_onboarding_summary.md")
 DEFAULT_QUEUE = Path("conductor/manual_seed_work_queue.json")
 DEFAULT_NEXT_BATCH_TEMPLATES = Path("conductor/manual_seed_next_batch_templates.json")
+DEFAULT_DROP_TARGETS = Path("conductor/manual_seed_drop_targets.md")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
 DEFAULT_PLATFORMS = ["facebook", "instagram", "threads", "linkedin", "x", "newsletter"]
 PLATFORM_PRIORITY = {
@@ -168,6 +169,46 @@ def build_next_batch_templates(report: dict[str, Any], *, limit: int = 25) -> di
     }
 
 
+def write_drop_targets(path: Path, templates: dict[str, Any]) -> None:
+    lines = [
+        "# Manual Seed Drop Targets",
+        "",
+        "Use these paths to place operator-authorized seed JSON files for the next deterministic batch.",
+        "The templates below are derived from `conductor/manual_seed_next_batch_templates.json` and do not create live seed files by themselves.",
+        "",
+        f"Generated: {templates.get('generated_at', '')}",
+        "",
+        "## Summary",
+        "",
+    ]
+    summary = templates.get("summary", {})
+    lines.append(f"- `template_count`: {summary.get('template_count', 0)}")
+    lines.append(f"- `limit`: {summary.get('limit', 0)}")
+    lines.append("")
+    lines.append("| Platform | Source | Seed path |")
+    lines.append("| --- | --- | --- |")
+    for item in templates.get("templates", []):
+        lines.append(
+            "| "
+            f"`{item.get('platform', '')}` | "
+            f"`{item.get('source_id', '')}` | "
+            f"`{item.get('target_path', '')}` |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Shape",
+            "",
+            "```json",
+            json.dumps((templates.get("templates") or [{}])[0], indent=2, sort_keys=True),
+            "```",
+            "",
+        ]
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+
+
 def build_report(args: argparse.Namespace) -> dict[str, Any]:
     manifest = load_json(args.manifest)
     policy = load_json(args.policy)
@@ -293,14 +334,18 @@ def main() -> None:
     parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
     parser.add_argument("--queue", type=Path, default=DEFAULT_QUEUE)
     parser.add_argument("--next-batch-templates", type=Path, default=DEFAULT_NEXT_BATCH_TEMPLATES)
+    parser.add_argument("--drop-targets", type=Path, default=DEFAULT_DROP_TARGETS)
     parser.add_argument("--manual-seed-root", type=Path, default=DEFAULT_MANUAL_SEED_ROOT)
     parser.add_argument("--platforms", default=",".join(DEFAULT_PLATFORMS))
     args = parser.parse_args()
     report = build_report(args)
     write_json(args.report, report)
     write_summary(args.summary, report)
-    write_json(args.queue, build_work_queue(report))
-    write_json(args.next_batch_templates, build_next_batch_templates(report))
+    queue = build_work_queue(report)
+    templates = build_next_batch_templates(report)
+    write_json(args.queue, queue)
+    write_json(args.next_batch_templates, templates)
+    write_drop_targets(args.drop_targets, templates)
     print(
         "Manual/API onboarding report wrote "
         f"{report['summary']['selected_sources']} selected sources."

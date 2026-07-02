@@ -1,7 +1,13 @@
 import argparse
 import json
 
-from scripts.build_manual_seed_onboarding_report import build_next_batch_templates, build_report, build_work_queue, write_summary
+from scripts.build_manual_seed_onboarding_report import (
+    build_next_batch_templates,
+    build_report,
+    build_work_queue,
+    write_drop_targets,
+    write_summary,
+)
 
 
 def test_manual_seed_onboarding_report_marks_missing_and_present_seeds(tmp_path):
@@ -289,3 +295,9 @@ def test_manual_seed_work_queue_orders_lowest_friction_platforms_first(tmp_path)
     assert templates["templates"][0]["target_path"] == "manual_archive_seeds/threads/threads.json"
     assert templates["templates"][0]["source_id"] == "threads"
     assert templates["templates"][0]["posts"][0]["post_id"] == "stable-platform-id-or-operator-id"
+
+    drop_targets_path = tmp_path / "drop_targets.md"
+    write_drop_targets(drop_targets_path, templates)
+    drop_targets = drop_targets_path.read_text(encoding="utf-8")
+    assert "Manual Seed Drop Targets" in drop_targets
+    assert "`manual_archive_seeds/threads/threads.json`" in drop_targets
