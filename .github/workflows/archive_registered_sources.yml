@@ -46,6 +46,14 @@ on:
         options:
           - "true"
           - "false"
+      capture_backend:
+        description: "Capture backend for eligible source types"
+        required: true
+        default: "default"
+        type: choice
+        options:
+          - default
+          - browser
       limit_sources:
         description: "Maximum selected sources to process; 0 means all"
         required: true
@@ -62,6 +70,18 @@ on:
         description: "Maximum recent X posts to request per account when X API capture is explicitly enabled"
         required: true
         default: "25"
+      max_scrolls:
+        description: "Maximum browser scroll rounds per X account when capture_backend=browser"
+        required: true
+        default: "25"
+      idle_rounds:
+        description: "Stop browser capture after this many scroll rounds without new visible X posts"
+        required: true
+        default: "3"
+      per_account_timeout:
+        description: "Maximum seconds per X account when capture_backend=browser"
+        required: true
+        default: "120"
       publish:
         description: "Publish captured archive bundle after a non-dry-run capture"
         required: true
@@ -138,6 +158,11 @@ jobs:
       - uses: ./.github/actions/setup-python-uv
         with:
           requirements: requirements.txt
+      - name: Install browser runtime dependencies
+        if: ${{ inputs.capture_backend == 'browser' }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb xauth libnss3 libatk-bridge2.0-0 libgtk-3-0 libgbm1 libasound2t64
       - name: Resolve archive report paths
         run: |
           source_type="${{ inputs.source_type || 'all_feasible' }}"
@@ -163,11 +188,16 @@ jobs:
           offset_sources="${{ inputs.offset_sources || '0' }}"
           fetch_timeout="${{ inputs.fetch_timeout || '30' }}"
           max_x_posts="${{ inputs.max_x_posts || '25' }}"
+          capture_backend="${{ inputs.capture_backend || 'default' }}"
+          max_scrolls="${{ inputs.max_scrolls || '25' }}"
+          idle_rounds="${{ inputs.idle_rounds || '3' }}"
+          per_account_timeout="${{ inputs.per_account_timeout || '120' }}"
           args=(
             --source-type "${{ inputs.source_type || 'all_feasible' }}"
             --agency-id "${{ inputs.agency_id || '' }}"
             --report "$ARCHIVE_REPORT_PATH"
             --summary "$ARCHIVE_SUMMARY_PATH"
+            --capture-backend "$capture_backend"
           )
           if [ "$limit_sources" != "0" ]; then
             args+=(--limit-sources "$limit_sources")
@@ -181,13 +211,22 @@ jobs:
           if [ -n "$max_x_posts" ]; then
             args+=(--max-x-posts "$max_x_posts")
           fi
+          if [ "$capture_backend" = "browser" ]; then
+            args+=(--max-scrolls "$max_scrolls")
+            args+=(--idle-rounds "$idle_rounds")
+            args+=(--per-account-timeout "$per_account_timeout")
+          fi
           if [ "${{ inputs.include_blocked }}" = "true" ]; then
             args+=(--include-blocked)
           fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             args+=(--dry-run)
           fi
-          python -m scripts.archive_registered_sources "${args[@]}"
+          if [ "$capture_backend" = "browser" ]; then
+            xvfb-run -a python -m scripts.archive_registered_sources "${args[@]}"
+          else
+            python -m scripts.archive_registered_sources "${args[@]}"
+          fi
       - name: Build archive compaction manifest
         if: ${{ inputs.dry_run == 'false' }}
         run: >-
