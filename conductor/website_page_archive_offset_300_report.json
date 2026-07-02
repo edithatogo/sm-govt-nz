@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T06:29:13+00:00",
+  "generated_at": "2026-07-02T06:51:49+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -98,10 +98,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "6e8af60dd78701fa",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.wcrc.govt.nz"
     },
     {
@@ -109,10 +109,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "c922863927e4d8ac",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.westernbay.govt.nz"
     },
     {
@@ -244,12 +244,14 @@
     "selected_sources": 19,
     "status_by_platform": {
       "website_page": {
-        "captured": 19
+        "captured": 17,
+        "method_not_allowed": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "captured": 19
+      "captured": 17,
+      "method_not_allowed": 2
     }
   }
 }
