@@ -130,7 +130,7 @@ jobs:
       X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
       X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
       X_API_BASE_URL: ${{ vars.X_API_BASE_URL || 'https://api.x.com/2' }}
-      X_PUBLIC_SNAPSHOT_ENABLED: ${{ vars.X_PUBLIC_SNAPSHOT_ENABLED || 'false' }}
+      X_PUBLIC_SNAPSHOT_ENABLED: ${{ vars.X_PUBLIC_SNAPSHOT_ENABLED || 'true' }}
     steps:
       - uses: actions/checkout@v5
         with:
