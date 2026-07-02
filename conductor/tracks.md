@@ -190,8 +190,9 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 ---
 
-## [ ] Track: NZ Government Archive - credentialed platform access and API capture backlog
-*Link: [./tracks/govt_archive_credentialed_platform_access_capture_20260702/](./tracks/govt_archive_credentialed_platform_access_capture_20260702/)*
+## [x] Track: NZ Government Archive - credentialed platform access and API capture backlog
+*Link: [./archive/govt_archive_credentialed_platform_access_capture_20260702/](./archive/govt_archive_credentialed_platform_access_capture_20260702/)*
+- Complete: Credentialed platform readiness reporting, live API gates, issue policy, docs, workflow, and tests are in place. Disabled credentialed API paths are report-only; enabled gates missing secrets are actionable configuration faults.
 
 ---
 
