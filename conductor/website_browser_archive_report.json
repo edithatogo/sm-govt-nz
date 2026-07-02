@@ -1,0 +1,33 @@
+{
+  "dry_run": true,
+  "generated_at": "2026-07-02T10:21:44+00:00",
+  "guardrails": {
+    "captcha_solving": false,
+    "credential_bypass": false,
+    "login": false,
+    "private_api_calls": false,
+    "proxies": false
+  },
+  "inputs": {
+    "eligible_statuses": [
+      "capture_blocked",
+      "method_not_allowed",
+      "network_error",
+      "network_timeout",
+      "not_acceptable"
+    ],
+    "include_without_triage": false,
+    "limit_sources": 5,
+    "manifest": "conductor\\govt_archive_source_manifest.json",
+    "offset_sources": 0,
+    "per_page_timeout": 45,
+    "screenshot": false,
+    "triage_report": "conductor\\website_archive_failure_triage_report.json"
+  },
+  "results": [],
+  "summary": {
+    "result_count": 0,
+    "selected_sources": 0,
+    "status_counts": {}
+  }
+}

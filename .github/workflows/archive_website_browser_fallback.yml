@@ -1,0 +1,136 @@
+name: Archive Website Browser Fallback
+
+on:
+  workflow_dispatch:
+    inputs:
+      agency_id:
+        description: "Optional agency ID filter"
+        required: false
+        default: ""
+      dry_run:
+        description: "Report eligible browser fallback sources without capturing"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      limit_sources:
+        description: "Maximum sources to capture in this shard"
+        required: true
+        default: "10"
+        type: number
+      offset_sources:
+        description: "Source offset for sharding"
+        required: true
+        default: "0"
+        type: number
+      eligible_statuses:
+        description: "Comma-separated HTTP failure statuses eligible for browser fallback"
+        required: true
+        default: "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable"
+      per_page_timeout:
+        description: "Maximum seconds per page"
+        required: true
+        default: "45"
+        type: number
+      commit_payloads:
+        description: "Commit raw/normalized browser fallback payloads"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      publish:
+        description: "Run monthly guarded external publication after capture"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: website-browser-fallback-${{ github.ref }}-${{ inputs.offset_sources || '0' }}
+  cancel-in-progress: false
+
+jobs:
+  archive-website-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+          cache: "pip"
+      - name: Install uv
+        run: python -m pip install uv
+      - name: Install runtime dependencies
+        run: uv pip install --system -r requirements.txt
+      - name: Install browser runtime dependencies
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb xauth libnss3 libatk-bridge2.0-0 libgtk-3-0 libgbm1 libasound2t64
+          python -m playwright install chromium
+      - name: Archive eligible website browser fallback sources
+        env:
+          AGENCY_ID: ${{ inputs.agency_id }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          LIMIT_SOURCES: ${{ inputs.limit_sources }}
+          OFFSET_SOURCES: ${{ inputs.offset_sources }}
+          ELIGIBLE_STATUSES: ${{ inputs.eligible_statuses }}
+          PER_PAGE_TIMEOUT: ${{ inputs.per_page_timeout }}
+        run: |
+          args=(
+            --triage-report conductor/website_archive_failure_triage_report.json
+            --report conductor/website_browser_archive_report.json
+            --summary conductor/website_browser_archive_summary.md
+            --eligible-statuses "${ELIGIBLE_STATUSES:-capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable}"
+            --limit-sources "${LIMIT_SOURCES:-10}"
+            --offset-sources "${OFFSET_SOURCES:-0}"
+            --per-page-timeout "${PER_PAGE_TIMEOUT:-45}"
+            --screenshot
+          )
+          if [ -n "$AGENCY_ID" ]; then
+            args+=(--agency-id "$AGENCY_ID")
+          fi
+          if [ "${DRY_RUN:-true}" = "true" ]; then
+            args+=(--dry-run)
+            python -m scripts.archive_website_browser "${args[@]}"
+          else
+            xvfb-run -a python -m scripts.archive_website_browser "${args[@]}"
+          fi
+      - name: Commit website browser fallback reports
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Report website browser fallback archive status"
+          --path conductor/website_browser_archive_report.json
+          --path conductor/website_browser_archive_summary.md
+      - name: Commit website browser fallback payloads
+        if: ${{ inputs.dry_run != 'true' && inputs.commit_payloads == 'true' }}
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Archive website browser fallback payloads"
+          --force
+          --path 'historical_archive_raw/website_browser/**'
+          --path 'historical_archive_normalized/website/**'
+      - name: Publish monthly external release if requested
+        if: ${{ inputs.dry_run != 'true' && inputs.publish == 'true' }}
+        run: >-
+          python scripts/publish_archive_release.py
+          --monthly-guard
+          --status conductor/archive_publication_status.json
