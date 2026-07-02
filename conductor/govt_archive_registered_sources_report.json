@@ -1,20 +1,30 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-01T20:08:18+00:00",
+  "generated_at": "2026-07-02T04:18:35+00:00",
   "inputs": {
     "agency_id": "",
+    "capture_backend": "default",
     "fetch_timeout": 30,
+    "idle_rounds": 3,
     "include_blocked": false,
     "limit_sources": 0,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
     "max_x_posts": 25,
+    "nitter_base_urls": "",
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
+    "per_account_timeout": 120,
     "raw_root": "historical_archive_raw",
     "retry_failed_from": "",
-    "source_type": "bluesky"
+    "rsshub_base_urls": "",
+    "source_type": "bluesky",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
   },
   "results": [
     {
@@ -22,10 +32,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpn35cg3cz2m",
       "source_id": "dc2d30e0772e3af0",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
@@ -33,10 +43,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmwngv6kl2h",
       "source_id": "dc2d30e0772e3af0",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
@@ -44,10 +54,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmtijskju2m",
       "source_id": "dc2d30e0772e3af0",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
@@ -55,10 +65,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmpdevhxp2r",
       "source_id": "dc2d30e0772e3af0",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
@@ -66,10 +76,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmnctmch42r",
       "source_id": "dc2d30e0772e3af0",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
@@ -77,10 +87,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmlaiz2fd2x",
       "source_id": "dc2d30e0772e3af0",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
@@ -88,10 +98,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpminzuis22s",
       "source_id": "dc2d30e0772e3af0",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
@@ -1122,10 +1132,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mphxy556ek24",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -1133,10 +1143,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmujpp2f22v",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -1144,10 +1154,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmmtqgsg22v",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -1155,10 +1165,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmi7sgfj22w",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -1166,10 +1176,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmhbxq54c22",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -1177,10 +1187,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmh7iibnk22",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -1188,10 +1198,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmh4hp2d22p",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -1199,10 +1209,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmh2el7u22p",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -1210,10 +1220,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmgmthnyk2p",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -2860,10 +2870,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpn6dbiixa2i",
       "source_id": "600f7ea8eaf290ee",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/healthnz.govt.nz"
     },
     {
@@ -4713,6 +4723,28 @@
       "source_type": "social_profile",
       "status": "already_captured",
       "url": "https://bsky.app/profile/herengaanuku.govt.nz"
+    },
+    {
+      "agency_id": "metservice-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mpmoshqunk2g",
+      "source_id": "43382f64450551e1",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "agency_id": "metservice-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mpmoscpbqs2g",
+      "source_id": "43382f64450551e1",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/metservice.com"
     },
     {
       "agency_id": "metservice-nz",
@@ -5793,36 +5825,14 @@
       "url": "https://bsky.app/profile/metservice.com"
     },
     {
-      "agency_id": "metservice-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "43382f64450551e1",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/metservice.com"
-    },
-    {
-      "agency_id": "metservice-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "43382f64450551e1",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/metservice.com"
-    },
-    {
       "agency_id": "ministry-of-health",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmop2rprs2h",
       "source_id": "f5554a272767cdcd",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/health.govt.nz"
     },
     {
@@ -5830,10 +5840,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmo77assc2h",
       "source_id": "f5554a272767cdcd",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/health.govt.nz"
     },
     {
@@ -5841,10 +5851,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmo25hzl22h",
       "source_id": "f5554a272767cdcd",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/health.govt.nz"
     },
     {
@@ -8019,10 +8029,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmskhliwk2u",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
@@ -8030,10 +8040,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmsgpwdq22u",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
@@ -8041,10 +8051,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpkmum47622b",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
@@ -8052,10 +8062,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmd4hcahc23",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
@@ -12408,10 +12418,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpn3kyqlss2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12419,10 +12429,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpn3fb63gs2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12430,10 +12440,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpn3bizstk2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12441,10 +12451,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpn2suyhh22t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12452,10 +12462,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmzzgp2js2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12463,10 +12473,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmzrx7fa22t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12474,10 +12484,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmzmtbbas2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12485,10 +12495,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmzhwzlyk2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12496,10 +12506,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmz6k44gs2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12507,10 +12517,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmyrlu7xk2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12518,10 +12528,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmx4egclc2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12529,10 +12539,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmwxjlppc2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12540,10 +12550,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmwxislyk2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12551,10 +12561,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmvy7fbsc2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12562,10 +12572,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmvsvtpn22t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12573,10 +12583,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmt5w42ws2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12584,10 +12594,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmt2lryq22t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12595,10 +12605,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmt2klfes2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12606,10 +12616,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmskh3k6s2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12617,10 +12627,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpms7gsvlc2i",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12628,10 +12638,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmrxxn5ns2i",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12639,10 +12649,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmrqmlwx22i",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12650,10 +12660,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmrqlgzck2i",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12661,10 +12671,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmqw6yep22i",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12672,10 +12682,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmqtpl3fs2i",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12683,10 +12693,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmpzhkdss2i",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12694,10 +12704,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmpsn4qt22i",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12705,10 +12715,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmnww5up22t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12716,10 +12726,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmnrtmbjk2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12727,10 +12737,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmnl6myns2t",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12738,10 +12748,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmmsr7b2s23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12749,10 +12759,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmmlh36xs23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12760,10 +12770,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmmbkxqn223",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12771,10 +12781,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmly3uojc23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12782,10 +12792,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmlrlr33s23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12793,10 +12803,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpml4i7gh223",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12804,10 +12814,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmkqlrpu223",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12815,10 +12825,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmkqkyq2c23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12826,10 +12836,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmkfqnjws23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12837,10 +12847,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmkdvj4d223",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12848,10 +12858,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmk4kogls23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12859,10 +12869,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmjy3rxb223",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12870,10 +12880,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmjy3rses23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -12881,10 +12891,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmddl2yos23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -15191,10 +15201,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mpmxayblx22p",
       "source_id": "person-rebecca-matthews-bluesky-0ed9d92a",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/rebeccamatthews.bsky.social"
     },
     {
@@ -17416,13 +17426,14 @@
     "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
-        "already_captured": 1579,
-        "captured": 2
+        "already_captured": 1508,
+        "captured": 73
       }
     },
+    "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1579,
-      "captured": 2
+      "already_captured": 1508,
+      "captured": 73
     }
   }
 }
