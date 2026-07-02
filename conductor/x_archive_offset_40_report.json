@@ -1,0 +1,171 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-02T02:40:22+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "browser",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": false,
+    "limit_sources": 10,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 5,
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 40,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "x"
+  },
+  "results": [
+    {
+      "agency_id": "nz-symphony-orchestra",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZSO",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzso_f737dcb23b4544aafd544373.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "3d0353e4ffd70a42",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZSO"
+    },
+    {
+      "agency_id": "guardians-of-nz-superannuation",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZSuperFund",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzsuperfund_98fa69e4334fb99eeabb1d19.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "44f8fdd2ed75a077",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZSuperFund"
+    },
+    {
+      "agency_id": "waka-kotahi",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "NZTA",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nzta_ca80669de97fdf832cdd24b6.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "f1c6e0bdfdc6ef00",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/NZTA"
+    },
+    {
+      "agency_id": "nz-trade-and-enterprise",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "NZTEnews",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/nztenews_3a93bf044f92aec8a05e6dc9.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "nz-trade-and-enterprise-x-92aa504b",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/NZTEnews"
+    },
+    {
+      "agency_id": "oranga-tamariki",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "OrangaTamariki",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/orangatamariki_a948c8b5b2f5703117d43223.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "3a80c44d50cb6deb",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "https://x.com/OrangaTamariki"
+    },
+    {
+      "agency_id": "ministry-for-pacific-peoples",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "Pacific_Peoples",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/pacific_peoples_26646f51db5b45f86a74175e.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "ministry-for-pacific-peoples-x-7f7cdc2d",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/Pacific_Peoples"
+    },
+    {
+      "agency_id": "pamu",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "Pamu_NZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/pamu_nz_b91842e03669e0c6ff57cfb8.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "0d3847c0306fefed",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/Pamu_NZ"
+    },
+    {
+      "agency_id": "parliamentary-commissioner-for-environment",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "PCE_Env",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/pce_env_5fb9435d340c34d3e1b2c4e7.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "171ff2dbc6f56fac",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/PCE_Env"
+    },
+    {
+      "agency_id": "public-trust",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "PublicTrustNZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/publictrustnz_9032290a0d82214e868209e0.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "80aff05ac3e932f6",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/PublicTrustNZ"
+    },
+    {
+      "agency_id": "reserve-bank-of-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "rbnz",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/rbnz_63b632044a69f8fb0eabffc5.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "ad9c132a17a7aa10",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/rbnz"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 10
+    },
+    "selected_sources": 10,
+    "status_by_platform": {
+      "x": {
+        "browser_no_visible_posts": 8,
+        "protected": 2
+      }
+    },
+    "status_counts": {
+      "browser_no_visible_posts": 8,
+      "protected": 2
+    }
+  }
+}
