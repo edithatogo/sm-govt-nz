@@ -1,30 +1,31 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T03:42:36+00:00
+Generated: 2026-07-02T03:47:32+00:00
 
 ## Summary
 
-- `selected_sources`: 1
+- `selected_sources`: 65
 - `platform_count`: 1
-- `status_count`: 2
+- `status_count`: 3
 
 ## Platform counts
 
-- `x`: 1
+- `x`: 65
 
 ## Status counts
 
 - `feed_already_captured`: 1
-- `feed_not_found`: 1
+- `feed_captured`: 64
+- `feed_not_found`: 65
 
 ## Status by platform
 
-- `x`: {'feed_already_captured': 1, 'feed_not_found': 1}
+- `x`: {'feed_already_captured': 1, 'feed_captured': 64, 'feed_not_found': 65}
 
 ## Status by provider
 
-- `nitter`: {'feed_already_captured': 1}
-- `rsshub`: {'feed_not_found': 1}
+- `nitter`: {'feed_already_captured': 1, 'feed_captured': 64}
+- `rsshub`: {'feed_not_found': 65}
 
 ## Notes
 
