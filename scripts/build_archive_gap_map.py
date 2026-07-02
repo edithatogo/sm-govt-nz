@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.build_archive_failure_triage_report import PRIORITY_DESCRIPTIONS, PRIORITY_BY_STATUS
+from scripts.build_archive_failure_triage_report import PRIORITY_DESCRIPTIONS, PRIORITY_BY_STATUS  # noqa: E402
 
 
 SUCCESS_STATUSES = {
