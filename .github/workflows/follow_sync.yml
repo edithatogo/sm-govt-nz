@@ -20,11 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
-      - name: Set up Python
-        run: uv python install 3.14
-      - name: Install runtime dependencies
-        run: uv pip install --system -r requirements.txt
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
       - name: Refresh follow status cache
         run: python scripts/check_follow_status.py
       - name: Upload follow status report
