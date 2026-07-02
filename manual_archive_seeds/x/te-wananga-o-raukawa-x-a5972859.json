@@ -1,0 +1,45 @@
+{
+  "description": "Operator-authorized Chrome rendered capture status for public X profile surfaces. Generated without reading cookies, local storage, or private GraphQL responses.",
+  "captured_at": "2026-07-02T04:54:30+00:00",
+  "platform": "x",
+  "source_id": "te-wananga-o-raukawa-x-a5972859",
+  "duplicate_source_ids": [],
+  "agency_id": "te-wananga-o-raukawa",
+  "account": "wanangaoraukawa",
+  "source_url": "https://x.com/wanangaoraukawa",
+  "access_method": "user_authorized_chrome_rendered_dom",
+  "capture_scope": [
+    "posts",
+    "with_replies",
+    "media"
+  ],
+  "capture_status": "chrome_navigation_timeout",
+  "profile_routes": [
+    "https://x.com/wanangaoraukawa",
+    "https://x.com/wanangaoraukawa/with_replies",
+    "https://x.com/wanangaoraukawa/media"
+  ],
+  "posts": [],
+  "gaps": [
+    "Chrome plugin navigation timed out before visible posts could be extracted for this profile in the operator browser session."
+  ],
+  "source_manifest": {
+    "access_method": "public_archive_or_lawful_export",
+    "account": "",
+    "agency_id": "te-wananga-o-raukawa",
+    "agency_name": "Te Wānanga o Raukawa",
+    "archive_status": "degraded",
+    "auth": "operator_authorized_if_browser_capture",
+    "candidate_id": "c54d2b6d96952ff1",
+    "feasibility": "low",
+    "notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
+    "origin": "homepage.link",
+    "party_id": "",
+    "person_id": "",
+    "platform": "x",
+    "registry_record_kind": "agency",
+    "source_id": "te-wananga-o-raukawa-x-a5972859",
+    "source_type": "social_profile",
+    "url": "https://twitter.com/wanangaoraukawa?lang=en"
+  }
+}

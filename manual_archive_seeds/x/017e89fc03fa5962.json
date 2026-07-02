@@ -1,0 +1,48 @@
+{
+  "description": "Operator-authorized Chrome rendered capture status for public X profile surfaces. Generated without reading cookies, local storage, or private GraphQL responses.",
+  "captured_at": "2026-07-02T04:54:30+00:00",
+  "platform": "x",
+  "source_id": "017e89fc03fa5962",
+  "duplicate_source_ids": [
+    "worksafe-nz-x-51382248"
+  ],
+  "agency_id": "worksafe-nz",
+  "account": "WorkSafeNZ",
+  "source_url": "https://x.com/WorkSafeNZ",
+  "access_method": "user_authorized_chrome_rendered_dom",
+  "capture_scope": [
+    "posts",
+    "with_replies",
+    "media"
+  ],
+  "capture_status": "chrome_navigation_timeout",
+  "profile_routes": [
+    "https://x.com/WorkSafeNZ",
+    "https://x.com/WorkSafeNZ/with_replies",
+    "https://x.com/WorkSafeNZ/media"
+  ],
+  "posts": [],
+  "gaps": [
+    "Chrome plugin navigation timed out before visible posts could be extracted for this profile in the operator browser session."
+  ],
+  "source_manifest": {
+    "access_method": "public_archive_or_lawful_export",
+    "account": "WorkSafeNZ",
+    "agency_id": "worksafe-nz",
+    "agency_name": "WorkSafe New Zealand (Mahi Haumaru Aotearoa)",
+    "archive_status": "ready",
+    "auth": "operator_authorized_if_browser_capture",
+    "candidate_id": "017e89fc03fa5962",
+    "feasibility": "low",
+    "notes": "Promoted from discovery: confidence=0.75; trust=registry_known,official_term:new zealand",
+    "origin": "registry.social_profiles",
+    "party_id": "",
+    "person_id": "",
+    "platform": "x",
+    "registry_record_kind": "agency",
+    "source_id": "017e89fc03fa5962",
+    "source_type": "social_profile",
+    "updated_at": "2026-07-01T16:00:50+10:00",
+    "url": "https://x.com/WorkSafeNZ"
+  }
+}
