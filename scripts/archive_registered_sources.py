@@ -445,6 +445,114 @@ def youtube_feed_url(channel_id: str) -> str:
     return f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
 
 
+def youtube_video_id_from_url(url: str) -> str:
+    parsed = urlparse(normalize_url_for_fetch(url))
+    host = parsed.netloc.lower()
+    parts = [part for part in parsed.path.split("/") if part]
+    if host.endswith("youtu.be") and parts:
+        return parts[0]
+    if "youtube.com" in host:
+        query_id = parse_qs(parsed.query).get("v", [""])[0]
+        if query_id:
+            return query_id
+        if len(parts) >= 2 and parts[0] in {"shorts", "embed", "watch"}:
+            return parts[1]
+    return ""
+
+
+def archive_youtube_video_source(
+    source: dict[str, Any],
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    *,
+    metadata_fetcher: Any | None = None,
+    fetch_timeout: int = 30,
+) -> list[dict[str, Any]]:
+    video_id = youtube_video_id_from_url(str(source.get("url") or ""))
+    if not video_id:
+        return [source_result(source, "source_url_not_channel", "YouTube URL is neither a channel nor a recognized video URL")]
+    canonical_url = f"https://www.youtube.com/watch?v={video_id}"
+    oembed_url = f"https://www.youtube.com/oembed?url={quote(canonical_url, safe='')}&format=json"
+    try:
+        if metadata_fetcher is None:
+            request = Request(
+                oembed_url,
+                headers={
+                    "User-Agent": "sm-govt-nz-youtube-video-archive/1.0 (+https://github.com/edithatogo/sm-govt-nz)",
+                    "Accept": "application/json",
+                },
+            )
+            with urlopen(request, timeout=fetch_timeout) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+        else:
+            payload = metadata_fetcher(oembed_url)
+    except HTTPError as exc:
+        if exc.code == 404:
+            return [source_result(source, "youtube_video_not_found", f"HTTP 404: YouTube video metadata not found for {video_id}")]
+        return [source_result(source, "capture_failed", f"YouTube video metadata fetch failed: HTTP {exc.code}: {exc.reason}")]
+    except Exception as exc:  # noqa: BLE001 - per-source report records metadata failures.
+        return [source_result(source, "capture_failed", f"YouTube video metadata fetch failed: {str(exc)[:240]}")]
+
+    captured_at = now_iso()
+    record_key = stable_id(f"{source.get('source_id')}|youtube-video|{video_id}")
+    raw_rel = Path("youtube") / captured_at[:7] / f"{record_key}.json"
+    raw_path = raw_root / raw_rel
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    if not raw_path.exists():
+        raw_path.write_text(
+            json.dumps(
+                {
+                    "captured_at": captured_at,
+                    "source": source,
+                    "video_id": video_id,
+                    "canonical_url": canonical_url,
+                    "oembed_url": oembed_url,
+                    "metadata": payload,
+                },
+                indent=2,
+                sort_keys=True,
+                default=str,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+    content = "\n\n".join(
+        part
+        for part in [
+            str(payload.get("title") or source.get("account") or ""),
+            str(payload.get("author_name") or ""),
+        ]
+        if part
+    )
+    normalized = build_normalized_record(
+        record_id=f"youtube:{record_key}",
+        agency_id=str(source.get("agency_id") or ""),
+        source_platform="youtube",
+        source_account=str(payload.get("author_name") or source.get("account") or video_id),
+        source_kind="youtube_video",
+        source_url=str(source.get("url") or canonical_url),
+        canonical_url=canonical_url,
+        original_created_at=captured_at,
+        captured_at=captured_at,
+        content=content,
+        raw_path=str(raw_path),
+        extraction_method="generic_registered_youtube_video_oembed",
+        cross_source_ids={
+            "source_id": str(source.get("source_id") or ""),
+            "video_id": video_id,
+            "oembed_url": oembed_url,
+        },
+    )
+    inserted = append_normalized_record(normalized_root, "youtube", normalized)
+    return [
+        source_result(
+            source,
+            "captured" if inserted else "already_captured",
+            f"captured youtube video metadata {normalized['record_id']}" if inserted else "youtube video record already present",
+        )
+    ]
+
+
 def archive_youtube_source(
     source: dict[str, Any],
     raw_root: Path = DEFAULT_RAW_ROOT,
@@ -458,6 +566,8 @@ def archive_youtube_source(
     try:
         channel_id = resolve_youtube_channel_id(source, page_fetcher=page_fetcher, fetch_timeout=fetch_timeout)
     except YouTubeResolverError as exc:
+        if exc.status == "source_url_not_channel" and youtube_video_id_from_url(str(source.get("url") or "")):
+            return archive_youtube_video_source(source, raw_root, normalized_root, fetch_timeout=fetch_timeout)
         return [source_result(source, exc.status, f"YouTube channel resolver failed: {str(exc)[:240]}")]
     except Exception as exc:  # noqa: BLE001 - per-source report records resolver failures.
         return [source_result(source, "capture_failed", f"YouTube channel resolver failed: {str(exc)[:240]}")]

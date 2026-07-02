@@ -348,8 +348,35 @@ def test_archive_youtube_source_reports_bad_youtube_non_channel_url(tmp_path):
         page_fetcher=lambda url: "<html>No channel id</html>",
     )
 
-    assert results[0]["status"] == "source_url_not_channel"
-    assert results[0]["reason"] == "YouTube channel resolver failed: YouTube URL is not a channel URL"
+    assert results[0]["status"] == "capture_failed"
+    assert "YouTube video metadata fetch failed" in results[0]["reason"]
+
+
+def test_archive_youtube_video_source_writes_oembed_metadata(tmp_path):
+    source = {
+        "source_id": "agency-youtube-video",
+        "agency_id": "agency",
+        "platform": "youtube",
+        "source_type": "social_profile",
+        "url": "https://youtu.be/abc123",
+        "account": "Agency video",
+        "archive_status": "candidate",
+        "feasibility": "medium",
+    }
+
+    results = archive_registered_sources.archive_youtube_video_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        metadata_fetcher=lambda url: {"title": "Council meeting", "author_name": "Agency Channel"},
+    )
+
+    assert results[0]["status"] == "captured"
+    raw_files = list((tmp_path / "raw" / "youtube").glob("*/*.json"))
+    assert raw_files
+    normalized = list((tmp_path / "normalized" / "youtube").glob("*.jsonl"))[0].read_text(encoding="utf-8")
+    assert "Council meeting" in normalized
+    assert "generic_registered_youtube_video_oembed" in normalized
 
 
 def test_archive_youtube_source_normalizes_spaces_in_handle(tmp_path):
