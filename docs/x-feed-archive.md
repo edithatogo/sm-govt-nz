@@ -56,6 +56,8 @@ Output paths:
 - normalized records: `historical_archive_normalized/x/<yyyy-mm>.jsonl`
 - feed report: `conductor/x_feed_archive_report.json`
 
+Reports include provider-specific status counts under `summary.status_by_provider`, so RSSHub failures and Nitter-compatible successes remain distinguishable.
+
 Set workflow input `newsboat_health_check=true` only when you want Actions to generate the same feed URL set and run `newsboat -x reload` as a provider-health check. Newsboat output is not used as the canonical archive parser.
 
 ## Account-cookie scraper stubs

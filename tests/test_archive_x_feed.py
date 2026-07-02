@@ -158,3 +158,4 @@ def test_build_report_fixture_counts_provider_statuses(tmp_path):
 
     assert report["summary"]["selected_sources"] == 1
     assert report["summary"]["status_counts"] == {"would_capture": 1}
+    assert report["summary"]["status_by_provider"] == {"none": {"would_capture": 1}}

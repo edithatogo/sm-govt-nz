@@ -387,6 +387,7 @@ def archive_feed_provider(
         reason or f"{provider} has no configured feed URLs",
         provider=provider,
         handle=handle,
+        feed_url=attempts[0]["feed_url"] if attempts else "",
         attempts=attempts,
     )
 
@@ -566,6 +567,12 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         )
     status_counts = Counter(str(row.get("status") or "unknown") for row in results)
     provider_counts = Counter(str(row.get("provider") or "none") for row in results)
+    status_by_provider: dict[str, dict[str, int]] = {}
+    for row in results:
+        provider = str(row.get("provider") or "none")
+        status = str(row.get("status") or "unknown")
+        provider_statuses = status_by_provider.setdefault(provider, {})
+        provider_statuses[status] = provider_statuses.get(status, 0) + 1
     return {
         "generated_at": now_iso(),
         "dry_run": bool(args.dry_run),
@@ -589,6 +596,10 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "selected_sources": len(selected),
             "status_counts": dict(sorted(status_counts.items())),
             "provider_counts": dict(sorted(provider_counts.items())),
+            "status_by_provider": {
+                provider: dict(sorted(counts.items()))
+                for provider, counts in sorted(status_by_provider.items())
+            },
             "newsboat_url_count": newsboat_url_count,
         },
         "results": results,

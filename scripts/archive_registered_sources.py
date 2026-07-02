@@ -1675,11 +1675,16 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     status_counts = Counter(row["status"] for row in results)
     platform_counts = Counter(str(source.get("platform") or "unknown") for source in selected)
     status_by_platform: dict[str, dict[str, int]] = {}
+    status_by_provider: dict[str, dict[str, int]] = {}
     for row in results:
         platform = str(row.get("platform") or "unknown")
         status = str(row.get("status") or "unknown")
         platform_statuses = status_by_platform.setdefault(platform, {})
         platform_statuses[status] = platform_statuses.get(status, 0) + 1
+        provider = str(row.get("provider") or "")
+        if provider:
+            provider_statuses = status_by_provider.setdefault(provider, {})
+            provider_statuses[status] = provider_statuses.get(status, 0) + 1
     return {
         "generated_at": now_iso(),
         "dry_run": args.dry_run,
@@ -1714,6 +1719,10 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "status_by_platform": {
                 platform: dict(sorted(counts.items()))
                 for platform, counts in sorted(status_by_platform.items())
+            },
+            "status_by_provider": {
+                provider: dict(sorted(counts.items()))
+                for provider, counts in sorted(status_by_provider.items())
             },
         },
         "courts_current_sources_report": courts_report,
@@ -1758,6 +1767,17 @@ def write_summary(path: Path, report: dict[str, Any]) -> None:
     )
     for platform, counts in status_by_platform.items():
         lines.append(f"- `{platform}`: {counts}")
+    provider_counts = summary.get("status_by_provider", {})
+    if provider_counts:
+        lines.extend(
+            [
+                "",
+                "## Status by provider",
+                "",
+            ]
+        )
+        for provider, counts in provider_counts.items():
+            lines.append(f"- `{provider}`: {counts}")
     lines.extend(
         [
             "",
