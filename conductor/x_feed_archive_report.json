@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T03:14:42+00:00",
+  "generated_at": "2026-07-02T03:42:36+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "feed",
@@ -38,6 +38,7 @@
         }
       ],
       "feasibility": "low",
+      "feed_url": "https://rsshub.app/twitter/user/AklCouncil",
       "handle": "AklCouncil",
       "platform": "x",
       "provider": "rsshub",
@@ -57,10 +58,10 @@
       "platform": "x",
       "provider": "nitter",
       "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_aklcouncil_2304be8035a92213f46fbfd6.json",
-      "reason": "nitter feed entries=1 captured=1 already=0",
+      "reason": "nitter feed entries=1 captured=0 already=1",
       "source_id": "dcd5933aefc5b47f",
       "source_type": "social_profile",
-      "status": "feed_captured",
+      "status": "feed_already_captured",
       "url": "https://x.com/AklCouncil"
     }
   ],
@@ -71,12 +72,20 @@
     "selected_sources": 1,
     "status_by_platform": {
       "x": {
-        "feed_captured": 1,
+        "feed_already_captured": 1,
+        "feed_not_found": 1
+      }
+    },
+    "status_by_provider": {
+      "nitter": {
+        "feed_already_captured": 1
+      },
+      "rsshub": {
         "feed_not_found": 1
       }
     },
     "status_counts": {
-      "feed_captured": 1,
+      "feed_already_captured": 1,
       "feed_not_found": 1
     }
   }
