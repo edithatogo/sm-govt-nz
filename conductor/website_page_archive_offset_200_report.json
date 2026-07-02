@@ -1,21 +1,76 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-01T11:08:49+00:00",
+  "generated_at": "2026-07-02T05:19:55+00:00",
   "inputs": {
     "agency_id": "",
+    "capture_backend": "default",
     "fetch_timeout": 30,
-    "include_blocked": false,
+    "idle_rounds": 3,
+    "include_blocked": true,
     "limit_sources": 100,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 200,
+    "per_account_timeout": 120,
     "raw_root": "historical_archive_raw",
     "retry_failed_from": "",
-    "source_type": "website_page"
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
   },
   "results": [
+    {
+      "agency_id": "otago-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "53781a0594f66773",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.orc.govt.nz/your-council/latest-news/on-stream-newsletter/"
+    },
+    {
+      "agency_id": "otago-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "0f0e04e500a16ded",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.orc.govt.nz/your-council/latest-news/regulatory-newsletter/"
+    },
+    {
+      "agency_id": "otorohanga-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "421413074c325d54",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.otodc.govt.nz"
+    },
+    {
+      "agency_id": "palmerston-north-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "41b5d334557b18f9",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.pncc.govt.nz"
+    },
     {
       "agency_id": "pamu",
       "archive_status": "ready",
@@ -153,10 +208,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "5e3177cfbb527331",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "capture_blocked",
       "url": "https://www.qldc.govt.nz/do-it-online/lets-talk-korero-mai/"
     },
     {
@@ -164,10 +219,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "5e8f35c2cddd6e9f",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "capture_blocked",
       "url": "https://www.qldc.govt.nz/your-council/district-plan/planning-matters-planning-development-newsletter/"
     },
     {
@@ -175,10 +230,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "6f9a8844e113de7c",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "capture_blocked",
       "url": "https://www.qldc.govt.nz/your-council/newsletter-archive/"
     },
     {
@@ -1071,50 +1126,6 @@
       "source_type": "website_page",
       "status": "captured",
       "url": "https://www.waitaki.govt.nz/Council/News-Events-and-Public-Notices/Newsletters"
-    },
-    {
-      "agency_id": "waitomo-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "captured generic website page",
-      "source_id": "1d240fd29fdd8f81",
-      "source_type": "website_page",
-      "status": "captured",
-      "url": "https://www.waitomo.govt.nz"
-    },
-    {
-      "agency_id": "waitomo-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "captured generic website page",
-      "source_id": "d03113f13c20dd38",
-      "source_type": "website_page",
-      "status": "captured",
-      "url": "https://www.waitomo.govt.nz/council/news-summary/waitomo-way-newsletter/"
-    },
-    {
-      "agency_id": "waka-kotahi",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "captured generic website page",
-      "source_id": "01e0b651510ccddb",
-      "source_type": "website_page",
-      "status": "captured",
-      "url": "https://www.nzta.govt.nz"
-    },
-    {
-      "agency_id": "wellington-city-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "captured generic website page",
-      "source_id": "88d40ff279d6ea69",
-      "source_type": "website_page",
-      "status": "captured",
-      "url": "https://www.wellington.govt.nz"
     }
   ],
   "summary": {
@@ -1124,15 +1135,16 @@
     "selected_sources": 100,
     "status_by_platform": {
       "website_page": {
-        "capture_blocked": 9,
-        "captured": 79,
+        "capture_blocked": 12,
+        "captured": 76,
         "dns_failed": 5,
         "method_not_allowed": 7
       }
     },
+    "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 9,
-      "captured": 79,
+      "capture_blocked": 12,
+      "captured": 76,
       "dns_failed": 5,
       "method_not_allowed": 7
     }
