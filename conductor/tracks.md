@@ -183,10 +183,6 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_bluesky_onboarding_20260626/](./tracks/govt_archive_bluesky_onboarding_20260626/)*
 - Complete: All 26 tasks done. 4 Bluesky accounts capturing (courtsofnz, beehivenz, healthnz.govt.nz, health.govt.nz). archive_bluesky_scheduled.yml active with every-6h cron.
 
-## [x] Track: NZ Government Archive - multi-agency website page archiving
-*Link: [./tracks/govt_archive_website_onboarding_20260626/](./tracks/govt_archive_website_onboarding_20260626/)*
-- Complete: All 22 tasks done. 247 website pages configured. archive_website_scheduled.yml active with weekly cron.
-
 ## [x] Track: NZ Government Archive - multi-agency YouTube channel archival
 *Link: [./tracks/govt_archive_youtube_onboarding_20260626/](./tracks/govt_archive_youtube_onboarding_20260626/)*
 - Complete: All 20 tasks done. 182 YouTube channels configured across 128 agencies. archive_youtube_scheduled.yml active with weekly cron.
@@ -225,3 +221,4 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 ## [ ] Track: NZ Government Archive - blocked website browser fallback capture
 *Link: [./tracks/govt_archive_blocked_website_browser_fallback_20260702/](./tracks/govt_archive_blocked_website_browser_fallback_20260702/)*
+
