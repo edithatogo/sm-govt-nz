@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T06:31:20+00:00",
+  "generated_at": "2026-07-02T06:53:33+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -318,10 +318,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "5d728cda0418d29d",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.rotorualakescouncil.nz"
     },
     {
@@ -461,10 +461,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "152f3ec064968f9e",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.southtaranaki.com"
     },
     {
@@ -472,10 +472,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "faae71801b88b4f2",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.southwaikato.govt.nz"
     },
     {
@@ -549,10 +549,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "88fe67f3b15e1db9",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.stratford.govt.nz"
     },
     {
@@ -692,10 +692,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "6592d59571cea393",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.taupodc.govt.nz"
     },
     {
@@ -1077,10 +1077,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "942dacd4807e5d24",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz"
     },
     {
@@ -1088,10 +1088,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "captured generic website page",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "fadabbb12076bbba",
       "source_type": "website_page",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz"
     },
     {
@@ -1136,15 +1136,17 @@
     "status_by_platform": {
       "website_page": {
         "capture_blocked": 9,
-        "captured": 86,
-        "dns_failed": 5
+        "captured": 79,
+        "dns_failed": 5,
+        "method_not_allowed": 7
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "capture_blocked": 9,
-      "captured": 86,
-      "dns_failed": 5
+      "captured": 79,
+      "dns_failed": 5,
+      "method_not_allowed": 7
     }
   }
 }
