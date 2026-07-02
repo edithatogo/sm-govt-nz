@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 15088,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "e9b2e6d0c5696fc0808951b8920799ec639411572db3a3b70fececa9d626d311"
+      "sha256": "1a58a91c7fcb1b0238c34c67662934b07d57c6dd3932f4b0dd7cc793740a86db"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 5017491,
+      "bytes": 5004995,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "4e44eae8ec8508e4071532ecbaa4191d042cd0541f077f4317778b0710043cc5"
+      "sha256": "7ed8662ede8672aef328e4b489ee9052ff763124048e924059d9566d85104576"
     },
     "normalized_archive.parquet": {
-      "bytes": 7987395,
+      "bytes": 7948444,
       "path": "normalized_archive.parquet",
-      "sha256": "5b6837ed8feb03f219758f9af9cd6292fef7e9e339b112e4e7a1daba8376c84b"
+      "sha256": "1ef935c84575ec019a97727c3237a37d44415c329ea27f273009b83c1c186923"
     }
   },
   "jurisdiction": "nz",
@@ -27,11 +27,881 @@
   ],
   "legacy_json_file_count": 61,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 8557,
+  "normalized_record_count": 8481,
   "normalized_shard_count": 515,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 10303,
+  "raw_file_count": 10262,
   "record_index": [
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "WorkSafeNZ",
+      "source_key": "x:WorkSafeNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:018ecee866a1167084acc148",
+      "source_url": "https://x.com/WorkSafeNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZPublicService",
+      "source_key": "x:NZPublicService",
+      "source_platform": "x",
+      "source_record_id": "x_feed:073e6575c5310d65ac4ecbf7",
+      "source_url": "https://x.com/NZPublicService"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "ChristchurchCC",
+      "source_key": "x:ChristchurchCC",
+      "source_platform": "x",
+      "source_record_id": "x_feed:07453d0e3672e6e6e2ac3dd2",
+      "source_url": "https://x.com/ChristchurchCC"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "minhealthnz",
+      "source_key": "x:minhealthnz",
+      "source_platform": "x",
+      "source_record_id": "x_feed:07cb2accef7eb3cab0da2bba",
+      "source_url": "https://x.com/minhealthnz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "nzqaofficial",
+      "source_key": "x:nzqaofficial",
+      "source_platform": "x",
+      "source_record_id": "x_feed:0809cba88da3b006ddc37130",
+      "source_url": "https://x.com/nzqaofficial"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "chbcouncil",
+      "source_key": "x:chbcouncil",
+      "source_platform": "x",
+      "source_record_id": "x_feed:084af496732012687eefc8ef",
+      "source_url": "https://twitter.com/chbcouncil"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "FutureforSelwyn",
+      "source_key": "x:FutureforSelwyn",
+      "source_platform": "x",
+      "source_record_id": "x_feed:09d1f75509909c754050dcf5",
+      "source_url": "https://x.com/FutureforSelwyn"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZTA",
+      "source_key": "x:NZTA",
+      "source_platform": "x",
+      "source_record_id": "x_feed:0aa8937b4f1570effc20770d",
+      "source_url": "https://x.com/NZTA"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "wanangaoraukawa",
+      "source_key": "x:wanangaoraukawa",
+      "source_platform": "x",
+      "source_record_id": "x_feed:0adb5d36df4d74dbec359239",
+      "source_url": "https://twitter.com/wanangaoraukawa?lang=en"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "X",
+      "source_key": "x:X",
+      "source_platform": "x",
+      "source_record_id": "x_feed:0c3ded00f0a1474118cf3e6a",
+      "source_url": "https://twitter.com/pamu_nz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "Pacific_Peoples",
+      "source_key": "x:Pacific_Peoples",
+      "source_platform": "x",
+      "source_record_id": "x_feed:18648972a35a8653c7656ef8",
+      "source_url": "https://twitter.com/Pacific_Peoples"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "TePuniKokiri",
+      "source_key": "x:TePuniKokiri",
+      "source_platform": "x",
+      "source_record_id": "x_feed:1a7c15d4215d1dbe195ce5ac",
+      "source_url": "https://x.com/TePuniKokiri"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "courtsofnz",
+      "source_key": "x:courtsofnz",
+      "source_platform": "x",
+      "source_record_id": "x_feed:1f71d9b55529aa2e6505fb3c",
+      "source_url": "https://x.com/courtsofnz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZParliament",
+      "source_key": "x:NZParliament",
+      "source_platform": "x",
+      "source_record_id": "x_feed:28244018b8a12146f9af5602",
+      "source_url": "https://x.com/NZParliament"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "healthnz",
+      "source_key": "x:healthnz",
+      "source_platform": "x",
+      "source_record_id": "x_feed:2a8313d0e619cedf2dc274aa",
+      "source_url": "https://x.com/healthnz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZ_Customs",
+      "source_key": "x:NZ_Customs",
+      "source_platform": "x",
+      "source_record_id": "x_feed:2bc6f767795c025ef4bf61a1",
+      "source_url": "https://twitter.com/NZ_Customs"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "Whaikaha",
+      "source_key": "x:Whaikaha",
+      "source_platform": "x",
+      "source_record_id": "x_feed:2c81ec31b27d8e99fca6029f",
+      "source_url": "https://twitter.com/Whaikaha"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "KiwibankNZ",
+      "source_key": "x:KiwibankNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:32e39a5114c2750851375113",
+      "source_url": "https://x.com/KiwibankNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "EIT_NZ",
+      "source_key": "x:EIT_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:331f96243dfb50c2bf7b3173",
+      "source_url": "https://twitter.com/EIT_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "BSA_NZ",
+      "source_key": "x:BSA_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:387ddbac7323a3801bdf3a13",
+      "source_url": "https://x.com/BSA_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "TeWaihanga",
+      "source_key": "x:TeWaihanga",
+      "source_platform": "x",
+      "source_record_id": "x_feed:389ebc39536c1774cecc5e1c",
+      "source_url": "https://x.com/TeWaihanga"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "ElectionsNZ",
+      "source_key": "x:ElectionsNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:39eb39f8c42f93e60d18c465",
+      "source_url": "https://x.com/ElectionsNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "msdgovtnz",
+      "source_key": "x:msdgovtnz",
+      "source_platform": "x",
+      "source_record_id": "x_feed:3a1e5493aedd32555ae72464",
+      "source_url": "https://x.com/msdgovtnz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "waimakariridc",
+      "source_key": "x:waimakariridc",
+      "source_platform": "x",
+      "source_record_id": "x_feed:3c302471d1f50f585f155588",
+      "source_url": "https://www.twitter.com/waimakariridc"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "AntarcticaNZ",
+      "source_key": "x:AntarcticaNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:3c917914bea8f0f9da938c93",
+      "source_url": "https://x.com/AntarcticaNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "LOTTO_NZ",
+      "source_key": "x:LOTTO_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:4d0461d92a6861f4c84f7884",
+      "source_url": "https://x.com/LOTTO_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZPost",
+      "source_key": "x:NZPost",
+      "source_platform": "x",
+      "source_record_id": "x_feed:500aefda0d4d0b388f62dd56",
+      "source_url": "https://x.com/NZPost"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NPDCouncil",
+      "source_key": "x:NPDCouncil",
+      "source_platform": "x",
+      "source_record_id": "x_feed:57b53157b13259f4016fbfe8",
+      "source_url": "https://twitter.com/NPDCouncil"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "TePapa",
+      "source_key": "x:TePapa",
+      "source_platform": "x",
+      "source_record_id": "x_feed:5f195b4e1717ed9ac716ed3d",
+      "source_url": "https://x.com/TePapa"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZSuperFund",
+      "source_key": "x:NZSuperFund",
+      "source_platform": "x",
+      "source_record_id": "x_feed:60f7b02e20e31741c9214e74",
+      "source_url": "https://x.com/NZSuperFund"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "justicenzgovt",
+      "source_key": "x:justicenzgovt",
+      "source_platform": "x",
+      "source_record_id": "x_feed:68ded8ea542faba3086e01d2",
+      "source_url": "https://www.twitter.com/@justicenzgovt"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "Stats_NZ",
+      "source_key": "x:Stats_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:6bdea69eeb9b106be3cfbd60",
+      "source_url": "https://x.com/Stats_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "MaritimeNZ",
+      "source_key": "x:MaritimeNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:6db70b251520cfa6e9da5174",
+      "source_url": "https://twitter.com/MaritimeNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZTEnews",
+      "source_key": "x:NZTEnews",
+      "source_platform": "x",
+      "source_record_id": "x_feed:6e60ae8a579789c7b707a6ba",
+      "source_url": "https://x.com/NZTEnews"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "ManatuTaonga",
+      "source_key": "x:ManatuTaonga",
+      "source_platform": "x",
+      "source_record_id": "x_feed:6f74c32df5b90c46047c17ee",
+      "source_url": "https://x.com/ManatuTaonga"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "HRCNZ",
+      "source_key": "x:HRCNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:7255226c09cc082314446595",
+      "source_url": "https://x.com/HRCNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "TeMangaiPaho",
+      "source_key": "x:TeMangaiPaho",
+      "source_platform": "x",
+      "source_record_id": "x_feed:77276675ed32787e8804411a",
+      "source_url": "https://x.com/TeMangaiPaho"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "WhaikahaNZ",
+      "source_key": "x:WhaikahaNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:7ee3faeb5c0d26d7cd7cce95",
+      "source_url": "https://x.com/WhaikahaNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZSO",
+      "source_key": "x:NZSO",
+      "source_platform": "x",
+      "source_record_id": "x_feed:7f3970bbce9bddf544f46066",
+      "source_url": "https://x.com/NZSO"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZOnAir",
+      "source_key": "x:NZOnAir",
+      "source_platform": "x",
+      "source_record_id": "x_feed:869d8435f73c66c1f70da2bc",
+      "source_url": "https://x.com/NZOnAir"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "IPCA_NZ",
+      "source_key": "x:IPCA_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:98d5a1385d989b3dce9d2cd2",
+      "source_url": "https://x.com/IPCA_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "HQSC_NZ",
+      "source_key": "x:HQSC_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:a56efac5110764fd2e2e10fd",
+      "source_url": "https://x.com/HQSC_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "PCE_Env",
+      "source_key": "x:PCE_Env",
+      "source_platform": "x",
+      "source_record_id": "x_feed:a7eaa1c3ffc3e7a6ddd613ff",
+      "source_url": "https://x.com/PCE_Env"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "eithawkesbay",
+      "source_key": "x:eithawkesbay",
+      "source_platform": "x",
+      "source_record_id": "x_feed:aaf74c5bd64198216a7c6ed4",
+      "source_url": "https://x.com/eithawkesbay"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "HRC",
+      "source_key": "x:HRC",
+      "source_platform": "x",
+      "source_record_id": "x_feed:b2dec12c891279f92d3e83c1",
+      "source_url": "https://x.com/HRC"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "rbnz",
+      "source_key": "x:rbnz",
+      "source_platform": "x",
+      "source_record_id": "x_feed:b4834c7c31e22a27492551ab",
+      "source_url": "https://x.com/rbnz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "Twitter",
+      "source_key": "x:Twitter",
+      "source_platform": "x",
+      "source_record_id": "x_feed:c0f1ab0145cfa3e5513d5545",
+      "source_url": "http://twitter.com/EITHB"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZConservation",
+      "source_key": "x:NZConservation",
+      "source_platform": "x",
+      "source_record_id": "x_feed:c2f576190979e558c85510cd",
+      "source_url": "https://x.com/NZConservation"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "nzjustice",
+      "source_key": "x:nzjustice",
+      "source_platform": "x",
+      "source_record_id": "x_feed:c3f086dd8508424054220ee9",
+      "source_url": "https://x.com/nzjustice"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "sit_nz",
+      "source_key": "x:sit_nz",
+      "source_platform": "x",
+      "source_record_id": "x_feed:c8072ca3c4c543c1cb274887",
+      "source_url": "https://twitter.com/sit_nz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NapierCouncil",
+      "source_key": "x:NapierCouncil",
+      "source_platform": "x",
+      "source_record_id": "x_feed:cd643a96294f3bcabcbec1ff",
+      "source_url": "https://x.com/NapierCouncil"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "DnCityCouncil",
+      "source_key": "x:DnCityCouncil",
+      "source_platform": "x",
+      "source_record_id": "x_feed:cf5491d7d714816e42f76d6c",
+      "source_url": "https://x.com/DnCityCouncil"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "CivilAviationNZ",
+      "source_key": "x:CivilAviationNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:d097d27c8fe18391778459a9",
+      "source_url": "https://x.com/CivilAviationNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "Pamu_NZ",
+      "source_key": "x:Pamu_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:d1df336ed95b8854e66f2ece",
+      "source_url": "https://x.com/Pamu_NZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "CreativeNZ",
+      "source_key": "x:CreativeNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:d6bd961202e6286a1c9ac6a7",
+      "source_url": "https://x.com/CreativeNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "OrangaTamariki",
+      "source_key": "x:OrangaTamariki",
+      "source_platform": "x",
+      "source_record_id": "x_feed:d79edcc68648484eb1afd395",
+      "source_url": "https://x.com/OrangaTamariki"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "HeritageNZ",
+      "source_key": "x:HeritageNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:d7f484c7155a87e2badfd2fe",
+      "source_url": "https://x.com/HeritageNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZFilm",
+      "source_key": "x:NZFilm",
+      "source_platform": "x",
+      "source_record_id": "x_feed:deea521e9be2fb74163d0a70",
+      "source_url": "https://x.com/NZFilm"
+    },
     {
       "mirror_targets": [
         {
@@ -46,6 +916,96 @@
       "source_platform": "x",
       "source_record_id": "x_feed:ea183044460f2f26c49da2dd",
       "source_url": "https://x.com/AklCouncil"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "PublicTrustNZ",
+      "source_key": "x:PublicTrustNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:ed7060df11a5dd34cda8e0e1",
+      "source_url": "https://x.com/PublicTrustNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "FireEmergencyNZ",
+      "source_key": "x:FireEmergencyNZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:f4fb916e64661ed902bd888b",
+      "source_url": "https://x.com/FireEmergencyNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "WaikatoDistrict",
+      "source_key": "x:WaikatoDistrict",
+      "source_platform": "x",
+      "source_record_id": "x_feed:f617753de2748e354cfce341",
+      "source_url": "https://x.com/waikatodistrict"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "SFONZ",
+      "source_key": "x:SFONZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:f8645d2f735f8d30e026408a",
+      "source_url": "https://x.com/SFONZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "hrcnewzealand",
+      "source_key": "x:hrcnewzealand",
+      "source_platform": "x",
+      "source_record_id": "x_feed:f895abdbf7de855163b69074",
+      "source_url": "https://twitter.com/hrcnewzealand"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "NZCustoms",
+      "source_key": "x:NZCustoms",
+      "source_platform": "x",
+      "source_record_id": "x_feed:fb4ecf0997cf879407e57b49",
+      "source_url": "https://x.com/NZCustoms"
     },
     {
       "mirror_targets": [],
@@ -18328,29 +19288,11 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2018-02-24T07:38:58+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:e7ef83889cd63ba6f9a0e69f",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2018-02-26T21:08:48+00:00",
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
       "source_record_id": "rss:1e0466ab69ef0699520bea4d",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2018-02-26T21:08:48+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:7fbbb71799098d20662b368d",
       "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
@@ -18659,15 +19601,6 @@
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:1ed3a133d473084a21798bb7",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2018-05-19T22:47:03+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:742a8648df1b5bf57eaa4068",
       "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
@@ -18794,15 +19727,6 @@
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:13b6bda3ae2bdb6e8b3180ac",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2018-06-27T02:00:50+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:d9c2d6b3317af1596cc6675f",
       "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
@@ -18814,15 +19738,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:27f8884b2fcb6a879eb73b82",
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2018-07-03T22:02:04+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:aacf73f82fea28d93442c50b",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
       "mirror_targets": [],
@@ -18847,15 +19762,6 @@
       "source_platform": "x",
       "source_record_id": "x:1014656449903902725",
       "source_url": "https://x.com/CourtsofNZ/status/1014656449903902725"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2018-07-05T07:38:57+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:3211bc6ffe499a9219380831",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
       "mirror_targets": [],
@@ -18931,15 +19837,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2018-08-02T22:10:18+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:d896dfac225fb039a9adb0eb",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2018-08-05T12:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
       "source_key": "rss:courtsofnz.govt.nz",
@@ -18982,15 +19879,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:e4a217f6f9f235a0ec377870",
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2018-08-09T05:17:10+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:ab956c70c489f54180815277",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
       "mirror_targets": [],
@@ -19880,25 +20768,7 @@
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:2420d43837a8c524494ea68c",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2019-04-02T22:18:20+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:37b6b6e733e420516779ec16",
-      "source_url": "https://www.n4l.co.nz/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2019-04-02T23:21:44+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:3a050fdf32f86aa57bd454d9",
       "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
@@ -25086,15 +25956,6 @@
       "source_key": "rss:https://www.privacy.org.nz",
       "source_platform": "rss",
       "source_record_id": "rss:4056e20bceba95f4b6a87452",
-      "source_url": "https://www.privacy.org.nz/home/rss/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2020-07-17T00:05:02+00:00",
-      "source_account": "https://www.privacy.org.nz",
-      "source_key": "rss:https://www.privacy.org.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:bd50b7e862e3581018c8caea",
       "source_url": "https://www.privacy.org.nz/home/rss/"
     },
     {
@@ -35468,15 +36329,6 @@
       "source_account": "https://www.publicservice.govt.nz",
       "source_key": "rss:https://www.publicservice.govt.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:cd5d0ee85c51cbe9a657329f",
-      "source_url": "https://www.publicservice.govt.nz/home/changes"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2022-05-31T03:03:09+00:00",
-      "source_account": "https://www.publicservice.govt.nz",
-      "source_key": "rss:https://www.publicservice.govt.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:f92facb9526593d8f8f34b0e",
       "source_url": "https://www.publicservice.govt.nz/home/changes"
     },
@@ -35904,15 +36756,6 @@
       "source_key": "rss:https://www.hud.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:13f6c04d0c545932fb6fc09e",
-      "source_url": "https://www.hud.govt.nz/home/changes"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2022-06-27T05:27:16+00:00",
-      "source_account": "https://www.hud.govt.nz",
-      "source_key": "rss:https://www.hud.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:220e9d686c58a8363eb2b3b5",
       "source_url": "https://www.hud.govt.nz/home/changes"
     },
     {
@@ -36671,15 +37514,6 @@
       "source_account": "https://www.educationpayroll.co.nz",
       "source_key": "rss:https://www.educationpayroll.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:d15061a2f9827cf80df85b04",
-      "source_url": "https://educationpayroll.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2022-08-22T05:20:48+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:d7e84eaa1380f935236fae3d",
       "source_url": "https://educationpayroll.co.nz/feed/"
     },
@@ -37053,15 +37887,6 @@
       "source_key": "rss:https://www.educationpayroll.co.nz",
       "source_platform": "rss",
       "source_record_id": "rss:0ee25a239863cb056a220b2d",
-      "source_url": "https://educationpayroll.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2022-10-19T19:12:40+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:c311a6664ad10702c5218efc",
       "source_url": "https://educationpayroll.co.nz/feed/"
     },
     {
@@ -37447,15 +38272,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:3191283620dd5b8456cca109",
       "source_url": "https://www.youtube.com/user/tepunikokiri"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2022-12-07T22:37:35+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:107d888546ac80e68874fccd",
-      "source_url": "https://educationpayroll.co.nz/feed/"
     },
     {
       "mirror_targets": [],
@@ -39095,15 +39911,6 @@
       "source_account": "https://www.educationpayroll.co.nz",
       "source_key": "rss:https://www.educationpayroll.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:392a471f2a119211a547d607",
-      "source_url": "https://educationpayroll.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2023-06-29T21:13:09+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:c943c63d65e621d39fd3c614",
       "source_url": "https://educationpayroll.co.nz/feed/"
     },
@@ -40267,15 +41074,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2023-10-18T23:48:17+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:f5fac1ba7cbe31d1c0042716",
-      "source_url": "https://educationpayroll.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2023-10-19T11:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
       "source_key": "rss:courtsofnz.govt.nz",
@@ -40435,15 +41233,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:5e94a27c36735fb999b7d8c8",
       "source_url": "https://www.youtube.com/user/UCOLonline"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2023-11-07T19:33:14+00:00",
-      "source_account": "https://www.courtsofnz.govt.nz",
-      "source_key": "rss:https://www.courtsofnz.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:d09663c1605af917af993ecb",
-      "source_url": "https://www.courtsofnz.govt.nz/home/RSS"
     },
     {
       "mirror_targets": [],
@@ -41131,15 +41920,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:11474cb64c9858f139ac7c06",
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2024-02-26T22:59:31+00:00",
-      "source_account": "https://www.transport.govt.nz",
-      "source_key": "rss:https://www.transport.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:bf3de185d4c10bcacab346e4",
-      "source_url": "https://www.transport.govt.nz/home/changes"
     },
     {
       "mirror_targets": [],
@@ -42701,15 +43481,6 @@
       "source_account": "https://www.educationpayroll.co.nz",
       "source_key": "rss:https://www.educationpayroll.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:44545fee2053d14e99b5b4db",
-      "source_url": "https://educationpayroll.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2024-07-30T02:55:41+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:c2d19927be24e1e5de9d6ac6",
       "source_url": "https://educationpayroll.co.nz/feed/"
     },
@@ -43062,15 +43833,6 @@
       "source_key": "rss:courtsofnz.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:902880d1b32058727bfd174d",
-      "source_url": "https://www.courtsofnz.govt.nz/home/RSS"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2024-08-22T22:51:53+00:00",
-      "source_account": "https://www.courtsofnz.govt.nz",
-      "source_key": "rss:https://www.courtsofnz.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:9041fab48799244989d30ae6",
       "source_url": "https://www.courtsofnz.govt.nz/home/RSS"
     },
     {
@@ -44171,15 +44933,6 @@
       "source_account": "https://www.educationpayroll.co.nz",
       "source_key": "rss:https://www.educationpayroll.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:39a77f034ee454ec02c50126",
-      "source_url": "https://educationpayroll.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2024-11-18T13:53:06+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:8aa3df4463182ba9eb9196f2",
       "source_url": "https://educationpayroll.co.nz/feed/"
     },
@@ -45235,15 +45988,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:b4d6d53aa2b2a947bab3301b",
       "source_url": "https://www.courtsofnz.govt.nz/judgments/high-court/RSS"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2025-02-13T21:13:02+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:06a0151a98c186c001399100",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
     },
     {
       "mirror_targets": [],
@@ -47536,15 +48280,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2025-05-07T03:49:14+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:d73a972908d0e4609e2c6cf1",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2025-05-07T12:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
       "source_key": "rss:courtsofnz.govt.nz",
@@ -47965,15 +48700,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:498fcacf1a496f2bb0460225",
       "source_url": "https://www.youtube.com/@ManukauInstitute"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2025-05-19T07:02:32+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:724de94074cb462e73f08a19",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
     },
     {
       "mirror_targets": [
@@ -48978,15 +49704,6 @@
       "source_url": "https://educationpayroll.co.nz/feed/"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2025-06-29T08:45:56+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:cb29a5914083b27f93a2e8dd",
-      "source_url": "https://educationpayroll.co.nz/feed/"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -49402,15 +50119,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:e02ccf180184293fcde22cd5",
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2025-07-21T05:17:34+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:7288d0e29990262c74b6760a",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
     },
     {
       "mirror_targets": [
@@ -53329,15 +54037,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2025-11-02T18:48:04+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:a84c65c8b5b67eece8a00e11",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2025-11-02T19:50:25+00:00",
       "source_account": "UC8GHQr8stuAV6fwlcSuJ3Ew",
       "source_key": "youtube:UC8GHQr8stuAV6fwlcSuJ3Ew",
@@ -55395,15 +56094,6 @@
       "source_url": "https://www.youtube.com/user/HBRegionalCouncil"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2025-12-11T03:38:09+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:b2e7e06d7d02131f411a3b69",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -55483,15 +56173,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2025-12-11T22:06:38+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:6c87584f000d13fe3db82b09",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2025-12-12T01:17:45+00:00",
       "source_account": "YouTube \n    \n\n    \n         , opens in a new window",
       "source_key": "youtube:YouTube \n    \n\n    \n         , opens in a new window",
@@ -55549,15 +56230,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:a1e082fa235ae638e13aeb3d",
       "source_url": "https://www.courtsofnz.govt.nz/judgments/high-court/RSS"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2025-12-14T18:56:44+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:4173e74d65a01c5fb61973bd",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
     },
     {
       "mirror_targets": [],
@@ -57931,15 +58603,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-02-03T03:05:47+00:00",
-      "source_account": "https://www.transport.govt.nz",
-      "source_key": "rss:https://www.transport.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:b0c08c8a63aabbd955cc7ed3",
-      "source_url": "https://www.transport.govt.nz/home/changes"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-02-03T11:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
       "source_key": "rss:courtsofnz.govt.nz",
@@ -59338,15 +60001,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-02-25T01:01:21+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:ee09bf72c8ff1e012971d8da",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-02-25T01:42:13+00:00",
       "source_account": "UCxPAYgO8OpFev3PUTKbsxNw",
       "source_key": "youtube:UCxPAYgO8OpFev3PUTKbsxNw",
@@ -60473,15 +61127,6 @@
       "source_account": "https://www.educationpayroll.co.nz",
       "source_key": "rss:https://www.educationpayroll.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:596b952ce647cce8aabbd5df",
-      "source_url": "https://educationpayroll.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-03-12T01:39:53+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:f227c7ca225eccda45c8ca88",
       "source_url": "https://educationpayroll.co.nz/feed/"
     },
@@ -60914,15 +61559,6 @@
       "source_account": "https://www.swrb.govt.nz",
       "source_key": "rss:https://www.swrb.govt.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:9437e7098c2bc5876142f105",
-      "source_url": "https://swrb.govt.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-03-16T22:45:05+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:ed41f81d645842c5a32b0446",
       "source_url": "https://swrb.govt.nz/feed/"
     },
@@ -60991,15 +61627,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mhc4wprog22a",
       "source_url": "https://bsky.app/profile/geordierogers.co.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-03-18T01:48:47+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:2756e4be8823571f80401d1e",
-      "source_url": "https://swrb.govt.nz/feed/"
     },
     {
       "mirror_targets": [],
@@ -61272,15 +61899,6 @@
       "source_key": "rss:https://www.courtsofnz.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:78cbce31d4be014b238b1f2d",
-      "source_url": "https://www.courtsofnz.govt.nz/home/RSS"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-03-22T21:40:35+00:00",
-      "source_account": "https://www.courtsofnz.govt.nz",
-      "source_key": "rss:https://www.courtsofnz.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:e1467c8a3eabd4bf5076c3c5",
       "source_url": "https://www.courtsofnz.govt.nz/home/RSS"
     },
     {
@@ -63603,15 +64221,6 @@
       "source_url": "https://bsky.app/profile/lanpham.greens.org.nz"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-04-17T08:52:49+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:b49518a72e8800d9f0148f73",
-      "source_url": "https://my.christchurchcitylibraries.com/comments/feed/"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -63801,24 +64410,6 @@
       "source_key": "rss:https://www.swrb.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:84edad6ed493285769e75827",
-      "source_url": "https://swrb.govt.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-04-19T23:51:40+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:8fbf2694449cc4fba03eab31",
-      "source_url": "https://swrb.govt.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-04-20T00:00:35+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:c9160603fd98dd4235b6430e",
       "source_url": "https://swrb.govt.nz/feed/"
     },
     {
@@ -64471,15 +65062,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-04-23T10:03:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:284d8ec6ce023c524d869f68",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-04-23T12:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
       "source_key": "rss:courtsofnz.govt.nz",
@@ -64774,15 +65356,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:b7e6c4a579463c1e4554c220",
       "source_url": "https://www.youtube.com/user/HamiltonCityCouncil"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-04-25T07:48:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:1d02bdc6ad08971e48ade694",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
     },
     {
       "mirror_targets": [],
@@ -65768,15 +66341,6 @@
       "source_account": "https://www.swrb.govt.nz",
       "source_key": "rss:https://www.swrb.govt.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:657ecb93b285efb7e7e8802c",
-      "source_url": "https://swrb.govt.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-05-05T03:53:46+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:f8258b15edf4c1500062dfd9",
       "source_url": "https://swrb.govt.nz/feed/"
     },
@@ -65787,24 +66351,6 @@
       "source_key": "rss:https://www.swrb.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:05e7517d95e204bc75750a41",
-      "source_url": "https://swrb.govt.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-05-05T04:12:19+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:6720cfbac545045020272f4a",
-      "source_url": "https://swrb.govt.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-05-05T04:19:00+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:346331b5b6503d7b150598d1",
       "source_url": "https://swrb.govt.nz/feed/"
     },
     {
@@ -66045,15 +66591,6 @@
       "source_key": "rss:https://www.swrb.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:443bf42893313d80f4855af6",
-      "source_url": "https://swrb.govt.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-05-06T23:14:15+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:56ed9379eb1be58bdb5deb71",
       "source_url": "https://swrb.govt.nz/feed/"
     },
     {
@@ -67620,15 +68157,6 @@
       "source_url": "https://www.youtube.com/channel/UC3Jb7rgClQf2GhS5kgE6zsA"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-05-15T08:14:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:1f7375119002ae1c5f53ddbf",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -68068,15 +68596,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:e33edde43a45743f981539f8",
       "source_url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-05-19T11:09:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:bb03ae26b757e3b9692fc961",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
     },
     {
       "mirror_targets": [],
@@ -69249,15 +69768,6 @@
       "source_url": "https://bsky.app/profile/lanpham.greens.org.nz"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-05-22T13:29:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:753cb9fd8a92976aee9aca93",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -70426,15 +70936,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-05-28T00:00:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:c3c624af6badc53d48a92c7e",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-05-28T00:30:31+00:00",
       "source_account": "Youtube",
       "source_key": "youtube:Youtube",
@@ -71361,15 +71862,6 @@
       "source_url": "https://www.n4l.co.nz/feed/"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-01T21:04:54+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:859b48fe66246c3cb3bc2f1d",
-      "source_url": "https://www.n4l.co.nz/feed/"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -71533,15 +72025,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-06-02T03:57:14+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:c9a0850ad0ed7db28f538aa3",
-      "source_url": "https://www.n4l.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-06-02T05:10:48+00:00",
       "source_account": "UCde4c26jlE60fWGoNMEOzDQ",
       "source_key": "youtube:UCde4c26jlE60fWGoNMEOzDQ",
@@ -71644,15 +72127,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:87f949db70b2dde3937c074e",
       "source_url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-02T10:12:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:2dc8d841db0e5b645b44edc3",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
     },
     {
       "mirror_targets": [],
@@ -71956,15 +72430,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:017b0fe758dd784725955b63",
       "source_url": "https://www.youtube.com/c/NZTEvideo"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-03T00:04:33+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:1e43829403865a4822af8a48",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
     },
     {
       "mirror_targets": [],
@@ -72522,15 +72987,6 @@
       "source_url": "https://swrb.govt.nz/feed/"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-04T02:03:25+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:b2ec818ffef146a1296330da",
-      "source_url": "https://swrb.govt.nz/feed/"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -72840,15 +73296,6 @@
       "source_key": "rss:https://www.manukau.ac.nz",
       "source_platform": "rss",
       "source_record_id": "rss:b882715096dd13ae68505844",
-      "source_url": "https://www.manukau.ac.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-04T22:38:51+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:ed8834dd5bab13892b8b6ae7",
       "source_url": "https://www.manukau.ac.nz/feed/"
     },
     {
@@ -73555,24 +74002,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mnqemytuny2n",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-08T00:04:27+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:bd64ff2d6a756956b9ec736a",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-08T00:06:23+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:e6e3003c9b512904d0e18b0b",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
     },
     {
       "mirror_targets": [
@@ -74891,15 +75320,6 @@
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:6a717bd05cacce7e3f064619",
-      "source_url": "https://www.n4l.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-09T23:33:31+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:a15d3705720bbb79b0686d19",
       "source_url": "https://www.n4l.co.nz/feed/"
     },
@@ -75462,15 +75882,6 @@
       "source_key": "rss:https://www.manukau.ac.nz",
       "source_platform": "rss",
       "source_record_id": "rss:5de1ff17d624da0280ffd821",
-      "source_url": "https://www.manukau.ac.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-10T10:44:36+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:7f7703daab9570f455b5d663",
       "source_url": "https://www.manukau.ac.nz/feed/"
     },
     {
@@ -76423,29 +76834,11 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-06-11T21:59:48+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:fc395358527704d5c4e4085a",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-06-11T22:00:40+00:00",
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
       "source_record_id": "rss:2f20b42bfb93204ae5b6059e",
-      "source_url": "https://www.n4l.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-11T22:00:40+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:5184088a57c69f6b88a378b3",
       "source_url": "https://www.n4l.co.nz/feed/"
     },
     {
@@ -76786,15 +77179,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mo2tmlsfzt2j",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-12T04:26:05+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:57f309ec342bcfc863b09b26",
-      "source_url": "https://www.manukau.ac.nz/feed/"
     },
     {
       "mirror_targets": [],
@@ -78045,15 +78429,6 @@
       "source_url": "https://www.n4l.co.nz/feed/"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-15T20:54:10+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:e2848dfe171e8fe0b8941a3c",
-      "source_url": "https://www.n4l.co.nz/feed/"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -78205,15 +78580,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:acf50cf0a261b87078cba4c2",
       "source_url": "https://www.wananga.com/feed/atom"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-16T03:10:47+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:ad7726c962f66f231d204a58",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
     },
     {
       "mirror_targets": [
@@ -78630,15 +78996,6 @@
       "source_url": "https://www.manukau.ac.nz/feed/"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-16T23:28:07+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:ca1b0c827a9f7638d01c1b69",
-      "source_url": "https://www.manukau.ac.nz/feed/"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -78963,15 +79320,6 @@
       "source_key": "rss:https://www.manukau.ac.nz",
       "source_platform": "rss",
       "source_record_id": "rss:09e52f512274c33a46b5aa0f",
-      "source_url": "https://www.manukau.ac.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-17T04:02:42+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:a4fb39ca4b8076e20f2a0394",
       "source_url": "https://www.manukau.ac.nz/feed/"
     },
     {
@@ -80453,15 +80801,6 @@
       "source_account": "https://www.manukau.ac.nz",
       "source_key": "rss:https://www.manukau.ac.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:988d3de0cfa5a45e440b08bf",
-      "source_url": "https://www.manukau.ac.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-19T00:30:57+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:9cdf1f8460d43107c5e8cb80",
       "source_url": "https://www.manukau.ac.nz/feed/"
     },
@@ -80503,15 +80842,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mom66kov6u2n",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-19T01:40:51+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:2e9345595e25305e945f7dd6",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
     },
     {
       "mirror_targets": [],
@@ -81740,15 +82070,6 @@
       "source_account": "https://www.swrb.govt.nz",
       "source_key": "rss:https://www.swrb.govt.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:aec61501d8acfe0a2c271e6d",
-      "source_url": "https://swrb.govt.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-22T06:14:50+00:00",
-      "source_account": "https://www.swrb.govt.nz",
-      "source_key": "rss:https://www.swrb.govt.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:d32dd185b31458af1740d1a1",
       "source_url": "https://swrb.govt.nz/feed/"
     },
@@ -82233,15 +82554,6 @@
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-23T00:00:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:875459deed62271d7a5f7ded",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -82285,15 +82597,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mow6zzw6hk26",
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-23T01:03:59+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:384f29b9f44050e17f0df527",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
     },
     {
       "mirror_targets": [
@@ -82975,15 +83278,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-06-23T20:15:28+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:bdbc3fc1b83f5c5cb25a1d88",
-      "source_url": "https://www.n4l.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-06-23T20:51:00+00:00",
       "source_account": "UnitecNZ",
       "source_key": "youtube:UnitecNZ",
@@ -83016,15 +83310,6 @@
       "source_key": "rss:https://www.manukau.ac.nz",
       "source_platform": "rss",
       "source_record_id": "rss:ca9c9e25ce4f6c770d63707c",
-      "source_url": "https://www.manukau.ac.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-23T21:12:45+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:daeeb8629e8ece53f992ac43",
       "source_url": "https://www.manukau.ac.nz/feed/"
     },
     {
@@ -83251,15 +83536,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3moymvtm25s2k",
       "source_url": "https://bsky.app/profile/courtsofnz.bsky.social/post/3moymvtm25s2k"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-24T00:28:07+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:368c6ca1aeff237187cee470",
-      "source_url": "https://www.n4l.co.nz/feed/"
     },
     {
       "mirror_targets": [],
@@ -84036,15 +84312,6 @@
       "source_url": "http://www.youtube.com/watch/UWM5Bt6eV24"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-24T09:03:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:d05f7e0676b73e8e68ea37c7",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -84389,15 +84656,6 @@
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:6bf4302a821f5fb5b71858fc",
-      "source_url": "https://www.n4l.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-24T21:36:17+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:a8e1339a81482d940ca3fe30",
       "source_url": "https://www.n4l.co.nz/feed/"
     },
@@ -84705,15 +84963,6 @@
       "source_key": "rss:https://www.manukau.ac.nz",
       "source_platform": "rss",
       "source_record_id": "rss:b1c916e83f9472ebce060448",
-      "source_url": "https://www.manukau.ac.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-25T00:18:31+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:c2b6fd7fef5bef67fb35b960",
       "source_url": "https://www.manukau.ac.nz/feed/"
     },
     {
@@ -87867,15 +88116,6 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-26T01:38:41+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:dbe672bd7ff67c89bdc88c60",
-      "source_url": "https://www.manukau.ac.nz/feed/"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -87889,24 +88129,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mp5vb3qtz423",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-26T03:01:45+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:293829624fd0960038de8f61",
-      "source_url": "https://www.n4l.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-26T03:03:33+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:9cbd675b72158925ada236a7",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
     },
     {
       "mirror_targets": [
@@ -88503,15 +88725,6 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-29T00:00:00+00:00",
-      "source_account": "https://www.rangitikei.govt.nz",
-      "source_key": "rss:https://www.rangitikei.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:ee0932a9cb8dd0f03839a7d3",
-      "source_url": "https://www.rangitikei.govt.nz/rss-news.xml"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -88579,15 +88792,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mpflfx3zbg2i",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-29T03:54:51+00:00",
-      "source_account": "https://www.manukau.ac.nz",
-      "source_key": "rss:https://www.manukau.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:c11afca8b03c4178a4c849af",
-      "source_url": "https://www.manukau.ac.nz/feed/"
     },
     {
       "mirror_targets": [
@@ -88888,15 +89092,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mphk2sjz3k22",
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-29T22:56:43+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:57a96ab944df3293e40c873b",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
     },
     {
       "mirror_targets": [
@@ -89448,15 +89643,6 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-30T05:58:22+00:00",
-      "source_account": "https://www.transport.govt.nz",
-      "source_key": "rss:https://www.transport.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:aa2643142852d7f6d3881140",
-      "source_url": "https://www.transport.govt.nz/home/changes"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -89575,15 +89761,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mpjxk3lhka2w",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-30T21:55:56+00:00",
-      "source_account": "https://my.christchurchcitylibraries.com",
-      "source_key": "rss:https://my.christchurchcitylibraries.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:091302983d3cb67915a25cc8",
-      "source_url": "https://my.christchurchcitylibraries.com/feed/"
     },
     {
       "mirror_targets": [
@@ -89802,15 +89979,6 @@
       "source_key": "rss:https://www.educationpayroll.co.nz",
       "source_platform": "rss",
       "source_record_id": "rss:04fca0b7b39d5c5dc0409c34",
-      "source_url": "https://educationpayroll.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T01:18:15+00:00",
-      "source_account": "https://www.educationpayroll.co.nz",
-      "source_key": "rss:https://www.educationpayroll.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:3e0cc0fee6823a07591aafe4",
       "source_url": "https://educationpayroll.co.nz/feed/"
     },
     {
@@ -90622,384 +90790,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-01T20:23:38+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:23504403a6f32db738e96d36",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T20:35:38+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:a55c032adbde6696e28f028b",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T21:22:54+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:e365753ee68e7dc0b8a664f3",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T21:47:47+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:a47c0f518579b366444f52b0",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T21:51:14+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:ad4b1bbedd29244ca037b436",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T21:52:47+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:107e2e4f5aca4e1726c30704",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T21:52:47+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:170b3ad09add77bb58d04573",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T22:04:27+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:2cf9e6ccff51b30dae2023bb",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T22:21:44+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:f4737962936f2fe7c3fc070f",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T22:28:00+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:4e89ff21b1872bf35022ea8c",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T22:47:59+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:3708d434796824b8820ef26b",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T22:56:07+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:baede1da82d3638118f24ae7",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T23:19:56+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:cd60941738084e0fcfa298a2",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T23:39:22+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:e8a0146e4d6e54831597c350",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T23:47:38+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:2db8d768e2ea4bf5d61362b4",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-01T23:58:55+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:4617dd03fcf98aa15272c597",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T00:02:02+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:c4ef8ed025a0c82c7cf0240c",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T00:18:58+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:b42a5d7bc369a124fb530b3b",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T00:20:03+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:a4fd09632e98eed4dd33ee2a",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T00:25:57+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:cbf39d97e5823c0ee3093e55",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T01:04:42+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:d0c4481dbacec683b03ef3ad",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T01:05:32+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:ed3df9fb15823e1c8f789253",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T01:07:04+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:e5ce5f47fd780b2db113d49c",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T01:14:31+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:a64789e42aee373d7cda1235",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T01:33:27+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:3def1c70153f3f8eea05233f",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T01:49:07+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:1c19683247c287aa582bae42",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T02:20:35+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:a9e301e795f8818f58f8ab93",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T02:37:07+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:cd7ad33ef738bc12b70b64fd",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T02:47:14+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:dc7a55a33d6c8f2496ec9835",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T03:01:55+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:a024f6ee38406c5a73b6b6c8",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T03:12:22+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:d2ef5be8a6f930b8fc3450e9",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T03:12:32+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:35df0323b688e73c3ae9237e",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T03:20:45+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:0fdb2ed5209e0baabdbc2727",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T03:21:26+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:8280373543d8610ade79f902",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T03:38:22+00:00",
-      "source_account": "https://www.n4l.co.nz",
-      "source_key": "rss:https://www.n4l.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:d9e0ad199121556a20e3a6cc",
-      "source_url": "https://www.n4l.co.nz/feed/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T03:38:48+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:88e602d6baa60b054bfb1b0b",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T03:52:50+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:49273d7e803b363c62b44ed6",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T04:00:47+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:e137ebbf77e5310b86e309e4",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T04:29:16+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:0bd9cd6c559420132e5eee16",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T04:29:27+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:4a553176cef099991d3ae06d",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T04:55:25+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:2e4d572e2bb3ad5d46f23302",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-02T04:58:20+00:00",
-      "source_account": "https://www.rnz.co.nz",
-      "source_key": "rss:https://www.rnz.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:490dc9686a4ce22ab210b70d",
-      "source_url": "https://www.rnz.co.nz/rss/news.xml"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -91014,15 +90804,6 @@
       "source_key": "rss:https://www.kaweraudc.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:0d1de3afbc7db7ac5092eecf",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "Friday, 17 April 2026 - 9:02am",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:831f91ec2057e9f90928b6cc",
       "source_url": "https://www.kaweraudc.govt.nz/feed/news"
     },
     {
@@ -91045,15 +90826,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "Friday, 20 February 2026 - 3:14pm",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:eed603e410bb6b23df92a782",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "Monday, 25 May 2026 - 4:20pm",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -91068,15 +90840,6 @@
       "source_key": "rss:https://www.kaweraudc.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:47501eca9d737b55397d9439",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "Monday, 25 May 2026 - 4:20pm",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:e73d481a3734dff8f5554ffe",
       "source_url": "https://www.kaweraudc.govt.nz/feed/news"
     },
     {
@@ -91094,15 +90857,6 @@
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
       "source_platform": "rss",
-      "source_record_id": "rss:00c17beee3297ae67ef57d44",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "Thursday, 14 May 2026 - 1:41pm",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
       "source_record_id": "rss:a9ae361bd516ffe72ea534ea",
       "source_url": "https://www.kaweraudc.govt.nz/feed/news"
     },
@@ -91135,15 +90889,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "Thursday, 14 May 2026 - 1:49pm",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:5fb6ddf91c29a61970c66b3a",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "Thursday, 5 March 2026 - 12:47pm",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -91162,24 +90907,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "Thursday, 5 March 2026 - 12:47pm",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:5d38ebdde0d353c0c7adfaac",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "Thursday, 9 April 2026 - 5:52pm",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:a8dc9a22fc636de71b9bf925",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "Thursday, 9 April 2026 - 5:52pm",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -91194,15 +90921,6 @@
       "source_key": "rss:https://www.kaweraudc.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:b533275d8a4d1fdbfc330603",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "Wednesday, 22 April 2026 - 12:04pm",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:00f8f2765589ea4a2b3a653a",
       "source_url": "https://www.kaweraudc.govt.nz/feed/news"
     },
     {
@@ -91239,24 +90957,6 @@
       "source_key": "rss:https://www.kaweraudc.govt.nz",
       "source_platform": "rss",
       "source_record_id": "rss:003a3035253670fddf66b862",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "Wednesday, 25 March 2026 - 11:22am",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:1fc2df1e88105c9bf64dfe17",
-      "source_url": "https://www.kaweraudc.govt.nz/feed/news"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "Wednesday, 25 March 2026 - 12:01pm",
-      "source_account": "https://www.kaweraudc.govt.nz",
-      "source_key": "rss:https://www.kaweraudc.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:678e4ad6dd5d1e4830219ff4",
       "source_url": "https://www.kaweraudc.govt.nz/feed/news"
     },
     {
@@ -91290,9 +90990,9 @@
     "email": 14,
     "json_feed": 16,
     "linkedin": 2,
-    "rss": 4070,
+    "rss": 3930,
     "website_page": 226,
-    "x": 760,
+    "x": 824,
     "youtube": 1833
   },
   "source_date_ranges": {
