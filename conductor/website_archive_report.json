@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T12:27:56+00:00",
+  "generated_at": "2026-07-02T12:55:25+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -131,11 +131,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "URL error: [Errno -5] No address associated with hostname",
+      "reason": "captured generic website page",
       "source_id": "ea7740e611200bed",
       "source_type": "website_page",
-      "status": "network_error",
-      "url": "https://www.aucklandlightrail.co.nz"
+      "status": "captured",
+      "url": "https://www.lightrail.co.nz/"
     },
     {
       "agency_id": "aut-university",
@@ -230,11 +230,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "captured generic website page",
       "source_id": "b0d8b95ac20d8925",
       "source_type": "website_page",
-      "status": "dns_failed",
-      "url": "https://www.cartertondc.govt.nz"
+      "status": "captured",
+      "url": "https://cdc.govt.nz/"
     },
     {
       "agency_id": "central-hawkes-bay-district-council",
@@ -252,10 +252,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed",
+      "reason": "captured generic website page",
       "source_id": "64372d3f52dde38d",
       "source_type": "website_page",
-      "status": "method_not_allowed",
+      "status": "captured",
       "url": "https://www.codc.govt.nz"
     },
     {
@@ -384,10 +384,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed",
+      "reason": "captured generic website page",
       "source_id": "38b2ebe81566aa72",
       "source_type": "website_page",
-      "status": "method_not_allowed",
+      "status": "captured",
       "url": "https://www.cluthadc.govt.nz"
     },
     {
@@ -428,11 +428,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "captured generic website page",
       "source_id": "6c23d8c73930b931",
       "source_type": "website_page",
-      "status": "dns_failed",
-      "url": "https://www.ccrc.govt.nz"
+      "status": "captured",
+      "url": "https://www.ccrc.nz/home"
     },
     {
       "agency_id": "crown-irrigation-investments",
@@ -586,10 +586,7 @@
     "status_by_platform": {
       "website_page": {
         "capture_blocked": 5,
-        "captured": 38,
-        "dns_failed": 2,
-        "method_not_allowed": 2,
-        "network_error": 1,
+        "captured": 43,
         "network_timeout": 1,
         "not_acceptable": 1
       }
@@ -597,10 +594,7 @@
     "status_by_provider": {},
     "status_counts": {
       "capture_blocked": 5,
-      "captured": 38,
-      "dns_failed": 2,
-      "method_not_allowed": 2,
-      "network_error": 1,
+      "captured": 43,
       "network_timeout": 1,
       "not_acceptable": 1
     }
