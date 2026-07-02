@@ -1,0 +1,83 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-02T03:14:42+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "feed",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": false,
+    "limit_sources": 1,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "x",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "auckland-council",
+      "archive_status": "ready",
+      "attempts": [
+        {
+          "feed_url": "https://rsshub.app/twitter/user/AklCouncil",
+          "reason": "HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+          "status": "feed_not_found"
+        }
+      ],
+      "feasibility": "low",
+      "handle": "AklCouncil",
+      "platform": "x",
+      "provider": "rsshub",
+      "reason": "https://rsshub.app/twitter/user/AklCouncil: feed_not_found HTTP 404 <!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1",
+      "source_id": "dcd5933aefc5b47f",
+      "source_type": "social_profile",
+      "status": "feed_not_found",
+      "url": "https://x.com/AklCouncil"
+    },
+    {
+      "agency_id": "auckland-council",
+      "archive_status": "ready",
+      "attempts": [],
+      "feasibility": "low",
+      "feed_url": "https://xcancel.com/AklCouncil/rss",
+      "handle": "AklCouncil",
+      "platform": "x",
+      "provider": "nitter",
+      "raw_path": "historical_archive_raw/x_feed/2026-07/nitter_aklcouncil_2304be8035a92213f46fbfd6.json",
+      "reason": "nitter feed entries=1 captured=1 already=0",
+      "source_id": "dcd5933aefc5b47f",
+      "source_type": "social_profile",
+      "status": "feed_captured",
+      "url": "https://x.com/AklCouncil"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 1
+    },
+    "selected_sources": 1,
+    "status_by_platform": {
+      "x": {
+        "feed_captured": 1,
+        "feed_not_found": 1
+      }
+    },
+    "status_counts": {
+      "feed_captured": 1,
+      "feed_not_found": 1
+    }
+  }
+}

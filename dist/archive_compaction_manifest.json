@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T02:43:26+00:00",
+  "generated_at": "2026-07-02T03:14:42+00:00",
   "normalized": [
     {
       "bytes": 1229001,
@@ -2376,6 +2376,14 @@
       "record_count": 7,
       "sha256": "75fce193f611a373159aa39e8c285356ebe31a50499c870c33c42e0408988bdf",
       "source": "website"
+    },
+    {
+      "bytes": 1352,
+      "month": "1971-01",
+      "path": "historical_archive_normalized/x/1971-01.jsonl",
+      "record_count": 1,
+      "sha256": "dcd0a32ec5b907ddd141742f834b9242bc673b6db1893799b56f61f5817d5625",
+      "source": "x"
     },
     {
       "bytes": 813,
@@ -6955,6 +6963,15 @@
       "source": "x_browser"
     },
     {
+      "bytes": 3063,
+      "digest_mode": "path_size_inventory",
+      "file_count": 1,
+      "month": "2026-07",
+      "path": "historical_archive_raw/x_feed/2026-07",
+      "sha256": "c76b016466e81d4e1c3bbb556b3934da3699a5bacfd80a71ea34840b2bf1921e",
+      "source": "x_feed"
+    },
+    {
       "bytes": 7296878,
       "digest_mode": "path_size_inventory",
       "file_count": 39,
@@ -8045,11 +8062,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 29882118,
-    "normalized_record_count": 8345,
-    "normalized_shard_count": 471,
-    "raw_bytes": 203506550,
-    "raw_file_count": 10016,
-    "raw_shard_count": 474
+    "normalized_bytes": 29883470,
+    "normalized_record_count": 8346,
+    "normalized_shard_count": 472,
+    "raw_bytes": 203509613,
+    "raw_file_count": 10017,
+    "raw_shard_count": 475
   }
 }

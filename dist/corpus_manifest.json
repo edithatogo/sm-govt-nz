@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 15088,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "86b38be77a423a0e6c2a0b1a0c88eb473578b9b1a526158a04b04dd0b4bfb289"
+      "sha256": "c3becaae11dd481e7288898c8667d87a9b32cc619d4e1b92f4450c6bb0dce61a"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 4978111,
+      "bytes": 4978677,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "ff1fdfd8ebddc34c70311ce8f63107280620f14f32a8a016da06cbebe9bc0f30"
+      "sha256": "9421d8f0da5f7ef0f887e5abcf081aa70e6bff1d80eb23eb5b749011c4acf75b"
     },
     "normalized_archive.parquet": {
-      "bytes": 7901811,
+      "bytes": 7895596,
       "path": "normalized_archive.parquet",
-      "sha256": "d20acff4d8c8c2c8623414eeedd3a9708e971f3ba3fd44c7e44eec209e58ca03"
+      "sha256": "755bc6ec383bd1a6e2023f8c84f85322956db3014f5f69b874971a577972e9aa"
     }
   },
   "jurisdiction": "nz",
@@ -27,11 +27,26 @@
   ],
   "legacy_json_file_count": 61,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 8347,
-  "normalized_shard_count": 473,
+  "normalized_record_count": 8348,
+  "normalized_shard_count": 474,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 10025,
+  "raw_file_count": 10026,
   "record_index": [
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "AklCouncil",
+      "source_key": "x:AklCouncil",
+      "source_platform": "x",
+      "source_record_id": "x_feed:ea183044460f2f26c49da2dd",
+      "source_url": "https://x.com/AklCouncil"
+    },
     {
       "mirror_targets": [],
       "original_timestamp": "2004-05-05T12:00:00+00:00",
@@ -88982,7 +88997,7 @@
     "linkedin": 2,
     "rss": 3930,
     "website_page": 226,
-    "x": 690,
+    "x": 691,
     "youtube": 1833
   },
   "source_date_ranges": {
@@ -89020,7 +89035,7 @@
     },
     "x": {
       "max_original_created_at": "2026-07-01T15:39:17+00:00",
-      "min_original_created_at": "2015-12-22T00:00:00+00:00"
+      "min_original_created_at": "1971-01-01T00:00:00+00:00"
     },
     "youtube": {
       "max_original_created_at": "2026-07-01T03:08:58+00:00",
