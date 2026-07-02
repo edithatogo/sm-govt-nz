@@ -1,24 +1,24 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-01T11:06:35+00:00
+Generated: 2026-07-02T05:17:06+00:00
 
 ## Summary
 
-- `selected_sources`: 26
+- `selected_sources`: 100
 - `platform_count`: 1
 - `status_count`: 1
 
 ## Platform counts
 
-- `linkedin`: 26
+- `linkedin`: 100
 
 ## Status counts
 
-- `manual_seed_missing`: 26
+- `manual_seed_missing`: 100
 
 ## Status by platform
 
-- `linkedin`: {'manual_seed_missing': 26}
+- `linkedin`: {'manual_seed_missing': 100}
 
 ## Notes
 
