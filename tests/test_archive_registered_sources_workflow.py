@@ -14,6 +14,20 @@ def test_archive_registered_sources_dry_run_commits_only_report() -> None:
     assert "          - newsletter" in workflow
     assert "./.github/actions/setup-python-uv" in workflow
     assert "requirements: requirements.txt" in workflow
+    assert "          - feed" in workflow
+    assert "          - browser_and_feed" in workflow
+    assert "X_FEED_PROVIDERS" in workflow
+    assert "RSSHUB_BASE_URLS" in workflow
+    assert "NITTER_BASE_URLS" in workflow
+    assert "X_AUTH_SCRAPE_ENABLED" in workflow
+    assert "newsboat_health_check" in workflow
+    assert "newsboat -u \"$urls\"" in workflow
+    assert "conductor/x_feed_archive_report.json" in workflow
+    assert "--x-feed-providers" in workflow
+    install_block = workflow.split("- name: Install browser runtime dependencies", 1)[1].split("- name: Install Newsboat for optional X feed health check", 1)[0]
+    assert "inputs.capture_backend == 'browser'" in install_block
+    assert "inputs.capture_backend == 'browser_and_feed'" in install_block
+    assert "inputs.capture_backend == 'feed'" not in install_block
     assert "inputs.source_type || 'scheduled'" in workflow
     assert "inputs.offset_sources || '0'" in workflow
     assert "Resolve archive report paths" in workflow

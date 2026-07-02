@@ -53,7 +53,29 @@ on:
         type: choice
         options:
           - default
+          - feed
           - browser
+          - browser_and_feed
+      x_feed_providers:
+        description: "Comma-separated X feed providers when capture_backend=feed or browser_and_feed"
+        required: true
+        default: "rsshub,nitter"
+      x_feed_timeout:
+        description: "Per-provider X feed timeout in seconds"
+        required: true
+        default: "30"
+      x_feed_max_items:
+        description: "Maximum feed entries to normalize per provider/source"
+        required: true
+        default: "25"
+      newsboat_health_check:
+        description: "Optionally validate generated X feed URLs with Newsboat when using feed backends"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
       limit_sources:
         description: "Maximum selected sources to process; 0 means all"
         required: true
@@ -151,6 +173,12 @@ jobs:
       X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
       X_API_BASE_URL: ${{ vars.X_API_BASE_URL || 'https://api.x.com/2' }}
       X_PUBLIC_SNAPSHOT_ENABLED: ${{ vars.X_PUBLIC_SNAPSHOT_ENABLED || 'true' }}
+      X_FEED_PROVIDERS: ${{ vars.X_FEED_PROVIDERS || inputs.x_feed_providers || 'rsshub,nitter' }}
+      RSSHUB_BASE_URLS: ${{ vars.RSSHUB_BASE_URLS || 'https://rsshub.app' }}
+      NITTER_BASE_URLS: ${{ vars.NITTER_BASE_URLS || 'https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc' }}
+      X_FEED_TIMEOUT: ${{ vars.X_FEED_TIMEOUT || inputs.x_feed_timeout || '30' }}
+      X_FEED_MAX_ITEMS: ${{ vars.X_FEED_MAX_ITEMS || inputs.x_feed_max_items || '25' }}
+      X_AUTH_SCRAPE_ENABLED: ${{ vars.X_AUTH_SCRAPE_ENABLED || 'false' }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -159,15 +187,27 @@ jobs:
         with:
           requirements: requirements.txt
       - name: Install browser runtime dependencies
-        if: ${{ inputs.capture_backend == 'browser' }}
+        if: ${{ inputs.capture_backend == 'browser' || inputs.capture_backend == 'browser_and_feed' }}
         run: |
           sudo apt-get update
           sudo apt-get install -y xvfb xauth libnss3 libatk-bridge2.0-0 libgtk-3-0 libgbm1 libasound2t64
+      - name: Install Newsboat for optional X feed health check
+        if: ${{ inputs.newsboat_health_check == 'true' && (inputs.capture_backend == 'feed' || inputs.capture_backend == 'browser_and_feed') }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y newsboat
       - name: Resolve archive report paths
         run: |
           source_type="${{ inputs.source_type || 'all_feasible' }}"
           offset_sources="${{ inputs.offset_sources || '0' }}"
-          if [ "$source_type" = "all_feasible" ]; then
+          capture_backend="${{ inputs.capture_backend || 'default' }}"
+          if [ "$source_type" = "x" ] && [ "$capture_backend" = "feed" ]; then
+            report_path="conductor/x_feed_archive_report.json"
+            summary_path="conductor/x_feed_archive_summary.md"
+          elif [ "$source_type" = "x" ] && [ "$capture_backend" = "browser_and_feed" ]; then
+            report_path="conductor/x_browser_and_feed_archive_report.json"
+            summary_path="conductor/x_browser_and_feed_archive_summary.md"
+          elif [ "$source_type" = "all_feasible" ]; then
             report_path="conductor/govt_archive_registered_sources_report.json"
             summary_path="conductor/govt_archive_registered_sources_summary.md"
           else
@@ -192,6 +232,9 @@ jobs:
           max_scrolls="${{ inputs.max_scrolls || '25' }}"
           idle_rounds="${{ inputs.idle_rounds || '3' }}"
           per_account_timeout="${{ inputs.per_account_timeout || '120' }}"
+          x_feed_providers="${{ inputs.x_feed_providers || 'rsshub,nitter' }}"
+          x_feed_timeout="${{ inputs.x_feed_timeout || '30' }}"
+          x_feed_max_items="${{ inputs.x_feed_max_items || '25' }}"
           args=(
             --source-type "${{ inputs.source_type || 'all_feasible' }}"
             --agency-id "${{ inputs.agency_id || '' }}"
@@ -216,16 +259,46 @@ jobs:
             args+=(--idle-rounds "$idle_rounds")
             args+=(--per-account-timeout "$per_account_timeout")
           fi
+          if [ "$capture_backend" = "browser_and_feed" ]; then
+            args+=(--max-scrolls "$max_scrolls")
+            args+=(--idle-rounds "$idle_rounds")
+            args+=(--per-account-timeout "$per_account_timeout")
+          fi
+          if [ "$capture_backend" = "feed" ] || [ "$capture_backend" = "browser_and_feed" ]; then
+            args+=(--x-feed-providers "$x_feed_providers")
+            args+=(--x-feed-timeout "$x_feed_timeout")
+            args+=(--x-feed-max-items "$x_feed_max_items")
+          fi
           if [ "${{ inputs.include_blocked }}" = "true" ]; then
             args+=(--include-blocked)
           fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             args+=(--dry-run)
           fi
-          if [ "$capture_backend" = "browser" ]; then
+          if [ "$capture_backend" = "browser" ] || [ "$capture_backend" = "browser_and_feed" ]; then
             xvfb-run -a -s "-screen 0 1920x1080x24" python -m scripts.archive_registered_sources "${args[@]}"
           else
             python -m scripts.archive_registered_sources "${args[@]}"
+          fi
+      - name: Optional Newsboat X feed health check
+        if: ${{ inputs.newsboat_health_check == 'true' && (inputs.capture_backend == 'feed' || inputs.capture_backend == 'browser_and_feed') }}
+        run: |
+          urls="$RUNNER_TEMP/x-feed-urls.txt"
+          config="$RUNNER_TEMP/newsboat-config"
+          cache="$RUNNER_TEMP/newsboat-cache.db"
+          : > "$config"
+          python -m scripts.archive_x_feed \
+            --dry-run \
+            --limit-sources "${{ inputs.limit_sources || '0' }}" \
+            --offset-sources "${{ inputs.offset_sources || '0' }}" \
+            --x-feed-providers "${{ inputs.x_feed_providers || 'rsshub,nitter' }}" \
+            --rsshub-base-urls "$RSSHUB_BASE_URLS" \
+            --nitter-base-urls "$NITTER_BASE_URLS" \
+            --newsboat-url-file "$urls"
+          if [ -s "$urls" ]; then
+            newsboat -u "$urls" -c "$cache" -C "$config" -x reload
+          else
+            echo "No X feed URLs generated for Newsboat health check."
           fi
       - name: Build archive compaction manifest
         if: ${{ inputs.dry_run == 'false' }}

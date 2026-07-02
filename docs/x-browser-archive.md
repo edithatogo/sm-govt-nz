@@ -48,3 +48,5 @@ gh workflow run "Archive Registered Sources" \
 For full X browser archival, set `limit_sources=0` and `max_scrolls=25`.
 
 The workflow runs headful Chromium inside Xvfb on Ubuntu.
+
+Use `capture_backend=browser_and_feed` when you want RSSHub/Nitter-compatible feed capture to run before the browser fallback in the same archive job.

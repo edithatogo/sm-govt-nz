@@ -26,6 +26,7 @@ if str(ROOT) not in sys.path:
 from scripts.archive_bluesky_history import fetch_author_history  # noqa: E402
 from scripts.archive_manual_seed import MANUAL_SEED_PLATFORMS, archive_manual_seed, find_manual_seed_path  # noqa: E402
 from scripts.archive_x_browser import archive_x_browser_sources, dedupe_x_sources  # noqa: E402
+from scripts.archive_x_feed import archive_x_feed_sources  # noqa: E402
 from src.archive_schema import build_normalized_record  # noqa: E402
 
 
@@ -1593,8 +1594,9 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
 def build_report(args: argparse.Namespace) -> dict[str, Any]:
     manifest = load_json(args.manifest)
     capture_backend = str(getattr(args, "capture_backend", "default") or "default")
+    x_special_backends = {"browser", "feed", "browser_and_feed"}
     only_ready = not args.include_blocked
-    if args.source_type == "x" and capture_backend == "browser":
+    if args.source_type == "x" and capture_backend in x_special_backends:
         only_ready = False
     selected = select_sources(
         manifest.get("sources", []),
@@ -1602,7 +1604,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         source_type=args.source_type,
         only_ready=only_ready,
     )
-    if args.source_type == "x" and capture_backend == "browser":
+    if args.source_type == "x" and capture_backend in x_special_backends:
         selected = dedupe_x_sources(selected)
     retry_failed_from = getattr(args, "retry_failed_from", None)
     if retry_failed_from:
@@ -1621,27 +1623,42 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         selected = selected[:limit_sources]
     results = []
     courts_report = run_courts_current_sources_if_selected(selected, args.dry_run)
-    if args.source_type == "x" and capture_backend == "browser":
+    if args.source_type == "x" and capture_backend in x_special_backends:
         if args.dry_run:
             for source in selected:
                 results.append(
                     source_result(
                         source,
                         "would_capture",
-                        "dry run: SeleniumBase/Playwright public browser capture",
+                        f"dry run: X {capture_backend} capture",
                     )
                 )
         else:
-            results.extend(
-                archive_x_browser_sources(
-                    selected,
-                    raw_root=Path(getattr(args, "raw_root", DEFAULT_RAW_ROOT)),
-                    normalized_root=Path(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT)),
-                    max_scrolls=getattr(args, "max_scrolls", 25),
-                    idle_rounds=getattr(args, "idle_rounds", 3),
-                    per_account_timeout=getattr(args, "per_account_timeout", 120),
+            if capture_backend in {"feed", "browser_and_feed"}:
+                results.extend(
+                    archive_x_feed_sources(
+                        selected,
+                        raw_root=Path(getattr(args, "raw_root", DEFAULT_RAW_ROOT)),
+                        normalized_root=Path(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT)),
+                        providers=getattr(args, "x_feed_providers", os.getenv("X_FEED_PROVIDERS", "rsshub,nitter")),
+                        rsshub_base_urls=getattr(args, "rsshub_base_urls", os.getenv("RSSHUB_BASE_URLS", "")),
+                        nitter_base_urls=getattr(args, "nitter_base_urls", os.getenv("NITTER_BASE_URLS", "")),
+                        timeout=getattr(args, "x_feed_timeout", 30),
+                        max_items=getattr(args, "x_feed_max_items", 25),
+                        enable_auth_scrape=os.getenv("X_AUTH_SCRAPE_ENABLED", "").strip().lower() == "true",
+                    )
                 )
-            )
+            if capture_backend in {"browser", "browser_and_feed"}:
+                results.extend(
+                    archive_x_browser_sources(
+                        selected,
+                        raw_root=Path(getattr(args, "raw_root", DEFAULT_RAW_ROOT)),
+                        normalized_root=Path(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT)),
+                        max_scrolls=getattr(args, "max_scrolls", 25),
+                        idle_rounds=getattr(args, "idle_rounds", 3),
+                        per_account_timeout=getattr(args, "per_account_timeout", 120),
+                    )
+                )
     else:
         for source in selected:
             platform = source.get("platform")
@@ -1680,6 +1697,12 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "max_scrolls": getattr(args, "max_scrolls", 25),
             "idle_rounds": getattr(args, "idle_rounds", 3),
             "per_account_timeout": getattr(args, "per_account_timeout", 120),
+            "x_feed_providers": getattr(args, "x_feed_providers", os.getenv("X_FEED_PROVIDERS", "rsshub,nitter")),
+            "rsshub_base_urls": getattr(args, "rsshub_base_urls", os.getenv("RSSHUB_BASE_URLS", "")),
+            "nitter_base_urls": getattr(args, "nitter_base_urls", os.getenv("NITTER_BASE_URLS", "")),
+            "x_feed_timeout": getattr(args, "x_feed_timeout", 30),
+            "x_feed_max_items": getattr(args, "x_feed_max_items", 25),
+            "x_auth_scrape_enabled": os.getenv("X_AUTH_SCRAPE_ENABLED", "").strip().lower() == "true",
             "retry_failed_from": str(getattr(args, "retry_failed_from", "") or ""),
             "offset_sources": getattr(args, "offset_sources", 0),
             "limit_sources": getattr(args, "limit_sources", 0),
@@ -1765,13 +1788,18 @@ def main() -> None:
     parser.add_argument("--agency-id", default="")
     parser.add_argument("--include-blocked", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--capture-backend", choices=["default", "browser"], default="default")
+    parser.add_argument("--capture-backend", choices=["default", "feed", "browser", "browser_and_feed"], default="default")
     parser.add_argument("--max-bluesky-pages", type=int, default=1)
     parser.add_argument("--max-threads-posts", type=int, default=25)
     parser.add_argument("--max-x-posts", type=int, default=25)
     parser.add_argument("--max-scrolls", type=int, default=25)
     parser.add_argument("--idle-rounds", type=int, default=3)
     parser.add_argument("--per-account-timeout", type=int, default=120)
+    parser.add_argument("--x-feed-providers", default=os.getenv("X_FEED_PROVIDERS", "rsshub,nitter"))
+    parser.add_argument("--rsshub-base-urls", default=os.getenv("RSSHUB_BASE_URLS", ""))
+    parser.add_argument("--nitter-base-urls", default=os.getenv("NITTER_BASE_URLS", ""))
+    parser.add_argument("--x-feed-timeout", type=int, default=int(os.getenv("X_FEED_TIMEOUT", "30")))
+    parser.add_argument("--x-feed-max-items", type=int, default=int(os.getenv("X_FEED_MAX_ITEMS", "25")))
     parser.add_argument("--fetch-timeout", type=int, default=30)
     parser.add_argument("--retry-failed-from", type=Path, default=None)
     parser.add_argument("--offset-sources", type=int, default=0)

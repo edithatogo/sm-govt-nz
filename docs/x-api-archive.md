@@ -4,6 +4,7 @@ The repository supports two X capture paths:
 
 - primary path: unauthenticated public HTTP profile snapshots
 - optional enhancement: official X API post capture when credits/billing are available
+- redundant path: RSSHub and Nitter-compatible public feed capture via `capture_backend=feed` or `browser_and_feed`
 
 ## Default state
 
@@ -62,6 +63,12 @@ Snapshot output is intentionally distinct from post-level API or seed records:
 - status: `public_snapshot_captured`, `public_snapshot_already_captured`, or the relevant blocked/error status
 
 Use official X API capture only as an optional enhancement when credits/billing are available. Public HTTP snapshots remain the default source for X.
+
+## Redundant public feed path
+
+`capture_backend=feed` tries RSSHub and Nitter-compatible feed providers without logging in or using private APIs. Raw feed payloads are written to `historical_archive_raw/x_feed/<yyyy-mm>/`, and normalized feed entries are written to `historical_archive_normalized/x/<yyyy-mm>.jsonl`.
+
+Use `capture_backend=browser_and_feed` to run feed capture first and the SeleniumBase/Playwright browser capture second.
 
 ## Cost and safety controls
 
