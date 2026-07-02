@@ -21,6 +21,14 @@ on:
         options:
           - "true"
           - "false"
+      include_blocked:
+        description: "Ask child archive runs to include degraded/manual/blocked registered sources"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
       batch_size:
         description: "Sources per child archive run"
         required: true
@@ -38,13 +46,24 @@ on:
         required: false
         default: ""
       publish_huggingface:
-        description: "Trigger HF-only monthly publication after dispatch"
+        description: "Trigger monthly publication after dispatch"
         required: true
         default: "true"
         type: choice
         options:
           - "true"
           - "false"
+      publication_target:
+        description: "External publication target when publish_huggingface=true"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - huggingface
+          - zenodo
+          - osf
+          - all
+          - all_with_osf
 
 permissions:
   actions: write
@@ -100,6 +119,7 @@ jobs:
           SOURCE_TYPE: ${{ matrix.source_type }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           COMMIT_PAYLOADS: ${{ inputs.commit_payloads || 'true' }}
+          INCLUDE_BLOCKED: ${{ inputs.include_blocked || 'true' }}
           LIMIT: ${{ matrix.limit }}
           OFFSET: ${{ matrix.offset }}
           REPOSITORY: ${{ github.repository }}
@@ -112,6 +132,7 @@ jobs:
             --ref "$REF_NAME" \
             -f source_type="$SOURCE_TYPE" \
             -f dry_run="$DRY_RUN" \
+            -f include_blocked="$INCLUDE_BLOCKED" \
             -f limit_sources="$LIMIT" \
             -f offset_sources="$OFFSET" \
             -f commit_payloads="$COMMIT_PAYLOADS" \
@@ -186,7 +207,7 @@ jobs:
           echo "Timed out waiting for backlog shard runs."
           exit 1
 
-  dispatch-huggingface-monthly-publish:
+  dispatch-monthly-publish:
     needs: wait-for-backlog-shards
     if: ${{ github.event_name == 'schedule' || inputs.publish_huggingface == 'true' }}
     runs-on: ubuntu-latest
@@ -211,7 +232,7 @@ jobs:
           --repo "$REPOSITORY"
           --ref "$REF_NAME"
           -f publish=true
-          -f publication_target=huggingface
+          -f publication_target="${{ inputs.publication_target || 'all' }}"
           -f archive_release_version="${{ steps.release.outputs.version }}"
           -f hf_dataset_name=corpus-social-media-government-nz
           -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions
