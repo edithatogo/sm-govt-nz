@@ -146,10 +146,6 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./tracks/govt_archive_readiness_matrix_20260625/](./tracks/govt_archive_readiness_matrix_20260625/)* 
 - Complete: Readiness matrix with 1637 sources across 11 readiness states and 5 dependency gates. Next track: govt_archive_noncredential_adapters_20260625.
  
-## [x] Track: NZ Government Archive - maximise non-credential source capture 
-*Link: [./tracks/govt_archive_noncredential_adapters_20260625/](./tracks/govt_archive_noncredential_adapters_20260625/)* 
-- Complete: All 13/13 tasks done. Adapter ranking, library evaluation (feedparser, httpx, trafilatura), source-type risk taxonomy, and per-source workflow patterns documented. 
- 
 ## [x] Track: NZ Government Archive - external publication and storage hardening 
 *Link: [./tracks/govt_archive_external_publication_20260625/](./tracks/govt_archive_external_publication_20260625/)* 
 - Complete: All 11 tasks implemented. Publication targets: Hugging Face, Zenodo, GitHub Artifacts, OSF. Payload commit gating active. 
@@ -213,6 +209,7 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 ## [ ] Track: NZ Government Archive - blocked website browser fallback capture
 *Link: [./tracks/govt_archive_blocked_website_browser_fallback_20260702/](./tracks/govt_archive_blocked_website_browser_fallback_20260702/)*
+
 
 
 
