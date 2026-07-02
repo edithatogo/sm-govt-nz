@@ -12,6 +12,7 @@ def test_publish_archives_requires_manual_publish_flag_for_external_publication(
     assert "--publish-target \"$ARCHIVE_PUBLICATION_TARGET\"" in workflow
     assert "if [ \"$ARCHIVE_PUBLICATION_TARGET\" != \"artifact\" ]; then" in workflow
     assert "--status-report conductor/archive_publication_status.json" in workflow
+    assert "--ledger conductor/monthly_release_ledger.json" in workflow
     assert "dist/archive_publication_status_artifact.json" in workflow
     assert "--path conductor/archive_publication_status.json" in workflow
 

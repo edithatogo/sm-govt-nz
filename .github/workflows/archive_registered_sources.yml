@@ -323,6 +323,7 @@ jobs:
         run: >-
           python scripts/monthly_publication_guard.py
           --status-report conductor/archive_publication_status.json
+          --ledger conductor/monthly_release_ledger.json
           --release-version "$(date -u +'%Y-%m')"
       - name: Validate canonical publication status before bundling
         if: ${{ inputs.dry_run == 'false' }}

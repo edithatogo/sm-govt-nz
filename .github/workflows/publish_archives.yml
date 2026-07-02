@@ -118,6 +118,7 @@ jobs:
         run: >-
           python scripts/monthly_publication_guard.py
           --status-report conductor/archive_publication_status.json
+          --ledger conductor/monthly_release_ledger.json
           --release-version "${{ steps.release.outputs.version }}"
 
       - name: Archive bundle and publish
