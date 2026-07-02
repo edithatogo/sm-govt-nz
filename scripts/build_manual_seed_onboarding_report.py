@@ -9,8 +9,17 @@ DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
 DEFAULT_POLICY = Path("config/manual_seed_onboarding.json")
 DEFAULT_REPORT = Path("conductor/manual_seed_onboarding_report.json")
 DEFAULT_SUMMARY = Path("conductor/manual_seed_onboarding_summary.md")
+DEFAULT_QUEUE = Path("conductor/manual_seed_work_queue.json")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
 DEFAULT_PLATFORMS = ["facebook", "instagram", "threads", "linkedin", "x", "newsletter"]
+PLATFORM_PRIORITY = {
+    "threads": 10,
+    "newsletter": 20,
+    "linkedin": 30,
+    "facebook": 40,
+    "instagram": 50,
+    "x": 60,
+}
 
 
 def now_iso() -> str:
@@ -59,8 +68,59 @@ def onboarding_item(source: dict[str, Any], policy: dict[str, Any], seed_root: P
         "acceptable_access_methods": policy.get("acceptable_access_methods", []),
         "required_authorization": policy.get("required_authorization", ""),
         "seed_candidates": candidates,
+        "preferred_seed_path": candidates[0] if candidates else "",
         "seed_schema": policy.get("seed_schema", ""),
         "live_capture_policy": policy.get("live_capture_policy", ""),
+    }
+
+
+def work_queue_item(item: dict[str, Any]) -> dict[str, Any]:
+    platform = str(item.get("platform") or "")
+    return {
+        "source_id": item.get("source_id", ""),
+        "agency_id": item.get("agency_id", ""),
+        "agency_name": item.get("agency_name", ""),
+        "platform": platform,
+        "url": item.get("url", ""),
+        "account": item.get("account", ""),
+        "onboarding_status": item.get("onboarding_status", ""),
+        "preferred_seed_path": item.get("preferred_seed_path", ""),
+        "seed_candidates": item.get("seed_candidates", []),
+        "required_authorization": item.get("required_authorization", ""),
+        "acceptable_access_methods": item.get("acceptable_access_methods", []),
+        "priority_rank": PLATFORM_PRIORITY.get(platform, 999),
+    }
+
+
+def build_work_queue(report: dict[str, Any]) -> dict[str, Any]:
+    queue_items = [
+        work_queue_item(item)
+        for item in report.get("items", [])
+        if item.get("onboarding_status") == "needs_authorized_seed_or_api"
+    ]
+    queue_items.sort(
+        key=lambda item: (
+            item["priority_rank"],
+            str(item.get("agency_name") or ""),
+            str(item.get("agency_id") or ""),
+            str(item.get("source_id") or ""),
+        )
+    )
+    platform_counts = Counter(item["platform"] for item in queue_items)
+    return {
+        "generated_at": report.get("generated_at", ""),
+        "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
+        "inputs": report.get("inputs", {}),
+        "summary": {
+            "queue_count": len(queue_items),
+            "platform_counts": dict(sorted(platform_counts.items())),
+            "priority_order": [
+                platform
+                for platform, _rank in sorted(PLATFORM_PRIORITY.items(), key=lambda row: row[1])
+                if platform_counts.get(platform, 0)
+            ],
+        },
+        "items": queue_items,
     }
 
 
@@ -151,6 +211,7 @@ def write_summary(path: Path, report: dict[str, Any]) -> None:
             "- This queue is for Facebook, Instagram, Threads, LinkedIn, X, and newsletters.",
             "- `seed_present` sources are ready for archival processing.",
             "- `needs_authorized_seed_or_api` sources remain in the manual/API remainder set.",
+            "- `conductor/manual_seed_work_queue.json` lists the remaining sources in deterministic execution order with preferred seed paths.",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -163,12 +224,14 @@ def main() -> None:
     parser.add_argument("--policy", type=Path, default=DEFAULT_POLICY)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
+    parser.add_argument("--queue", type=Path, default=DEFAULT_QUEUE)
     parser.add_argument("--manual-seed-root", type=Path, default=DEFAULT_MANUAL_SEED_ROOT)
     parser.add_argument("--platforms", default=",".join(DEFAULT_PLATFORMS))
     args = parser.parse_args()
     report = build_report(args)
     write_json(args.report, report)
     write_summary(args.summary, report)
+    write_json(args.queue, build_work_queue(report))
     print(
         "Manual/API onboarding report wrote "
         f"{report['summary']['selected_sources']} selected sources."

@@ -41,6 +41,7 @@ Each seed file should be named with the registered `source_id` when possible, fa
 - `manual_seed_missing` is a tracked zero-input state, not a workflow failure.
 - Threads, LinkedIn, and newsletters are already wired to ingest seeds when files appear.
 - Logged-in, private, cookie, local storage, and hidden GraphQL data must not be extracted into seed files unless separately authorized and documented.
+- `conductor/manual_seed_work_queue.json` is the deterministic execution queue for remaining seed/API-dependent sources. It groups the same sources as `conductor/manual_seed_onboarding_report.json`, but sorts them by lowest-friction ingestion first: Threads, newsletters, LinkedIn, Facebook, Instagram, then X.
 
 ## Validation statuses
 

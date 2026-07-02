@@ -1,7 +1,7 @@
 import argparse
 import json
 
-from scripts.build_manual_seed_onboarding_report import build_report, write_summary
+from scripts.build_manual_seed_onboarding_report import build_report, build_work_queue, write_summary
 
 
 def test_manual_seed_onboarding_report_marks_missing_and_present_seeds(tmp_path):
@@ -95,8 +95,15 @@ def test_manual_seed_onboarding_report_marks_missing_and_present_seeds(tmp_path)
     by_platform = {item["platform"]: item for item in report["items"]}
     assert by_platform["facebook"]["onboarding_status"] == "needs_authorized_seed_or_api"
     assert by_platform["linkedin"]["onboarding_status"] == "seed_present"
+    assert by_platform["facebook"]["preferred_seed_path"].endswith("/facebook/agency-facebook.json")
     assert "meta_graph_api" in by_platform["facebook"]["acceptable_access_methods"]
     assert by_platform["facebook"]["live_capture_policy"] == "no public scraping"
+
+    queue = build_work_queue(report)
+    assert queue["summary"]["queue_count"] == 1
+    assert queue["summary"]["platform_counts"] == {"facebook": 1}
+    assert queue["items"][0]["source_id"] == "agency-facebook"
+    assert queue["items"][0]["preferred_seed_path"].endswith("/facebook/agency-facebook.json")
 
 
 def test_manual_seed_onboarding_report_writes_summary(tmp_path):
@@ -230,3 +237,47 @@ def test_manual_seed_onboarding_report_includes_newsletter_policy(tmp_path):
     assert report["summary"]["platform_counts"] == {"newsletter": 1}
     assert report["items"][0]["onboarding_status"] == "needs_authorized_seed_or_api"
     assert "public_newsletter_archive" in report["items"][0]["acceptable_access_methods"]
+
+
+def test_manual_seed_work_queue_orders_lowest_friction_platforms_first(tmp_path):
+    manifest = tmp_path / "manifest.json"
+    policy = tmp_path / "policy.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "sources": [
+                    {"source_id": "fb", "agency_id": "b", "agency_name": "B", "platform": "facebook"},
+                    {"source_id": "threads", "agency_id": "a", "agency_name": "A", "platform": "threads"},
+                    {"source_id": "newsletter", "agency_id": "c", "agency_name": "C", "platform": "newsletter"},
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    policy.write_text(
+        json.dumps(
+            {
+                "platforms": {
+                    "facebook": {"seed_directory": "manual_archive_seeds/facebook"},
+                    "threads": {"seed_directory": "manual_archive_seeds/threads"},
+                    "newsletter": {"seed_directory": "manual_archive_seeds/newsletter"},
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            policy=policy,
+            report=tmp_path / "report.json",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            platforms="facebook,threads,newsletter",
+        )
+    )
+
+    queue = build_work_queue(report)
+
+    assert queue["summary"]["priority_order"] == ["threads", "newsletter", "facebook"]
+    assert [item["source_id"] for item in queue["items"]] == ["threads", "newsletter", "fb"]

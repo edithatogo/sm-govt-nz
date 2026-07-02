@@ -1,6 +1,6 @@
 # Manual/API Source Onboarding
 
-Generated: 2026-07-02T12:25:54+00:00
+Generated: 2026-07-02T13:09:44+00:00
 
 ## Summary
 
@@ -30,3 +30,4 @@ Generated: 2026-07-02T12:25:54+00:00
 - This queue is for Facebook, Instagram, Threads, LinkedIn, X, and newsletters.
 - `seed_present` sources are ready for archival processing.
 - `needs_authorized_seed_or_api` sources remain in the manual/API remainder set.
+- `conductor/manual_seed_work_queue.json` lists the remaining sources in deterministic execution order with preferred seed paths.
