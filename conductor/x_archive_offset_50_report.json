@@ -1,0 +1,171 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-02T02:40:32+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "browser",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": false,
+    "limit_sources": 10,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 5,
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 50,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "source_type": "x"
+  },
+  "results": [
+    {
+      "agency_id": "serious-fraud-office",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "SFONZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/sfonz_13e651f1dc084f99ce2a4d25.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "c0acda794588129c",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/SFONZ"
+    },
+    {
+      "agency_id": "sit",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "sit_nz",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/sit_nz_b0fa9c0416a20a5ce7fa292f.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "sit-x-195c2991",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://twitter.com/sit_nz"
+    },
+    {
+      "agency_id": "stats-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "Stats_NZ",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/stats_nz_b30729272a60960bdd93b57e.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "f9f9e587f29a6de3",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/Stats_NZ"
+    },
+    {
+      "agency_id": "te-mangai-paho",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "TeMangaiPaho",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/temangaipaho_9448ffa0fb6aa1b887309709.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "b43338c80000236e",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/TeMangaiPaho"
+    },
+    {
+      "agency_id": "te-papa",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "TePapa",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/tepapa_58ca6cf1e0d1780a9c48bb4c.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "9718c360ca4995d0",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/TePapa"
+    },
+    {
+      "agency_id": "te-puni-kokiri",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "TePuniKokiri",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/tepunikokiri_11c35809084d3a7530068c6c.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "8acc720f8cd8ea3a",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/TePuniKokiri"
+    },
+    {
+      "agency_id": "nz-infrastructure-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "handle": "TeWaihanga",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/tewaihanga_a710f6059b93e94a2e675dea.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "b2158b46eb9167e3",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/TeWaihanga"
+    },
+    {
+      "agency_id": "eit",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "Twitter",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/twitter_70a9dd40b68dcc2ae2bede32.json",
+      "reason": "public browser page did not expose posts: These posts are protected",
+      "source_id": "eit-x-97f64e17",
+      "source_type": "social_profile",
+      "status": "protected",
+      "url": "http://twitter.com/EITHB"
+    },
+    {
+      "agency_id": "waikato-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "WaikatoDistrict",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/waikatodistrict_5d1a8a66fa81c4b60fc19373.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "waikato-district-council-x-f8e9d0bf",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://x.com/waikatodistrict"
+    },
+    {
+      "agency_id": "waimakariri-district-council",
+      "archive_status": "degraded",
+      "feasibility": "low",
+      "handle": "waimakariridc",
+      "platform": "x",
+      "raw_path": "historical_archive_raw/x_browser/2026-07/waimakariridc_4197b5a1e58f950134ae41ec.json",
+      "reason": "public browser page loaded but no visible post cards were found",
+      "source_id": "waimakariri-district-council-x-4ebd1f60",
+      "source_type": "social_profile",
+      "status": "browser_no_visible_posts",
+      "url": "https://www.twitter.com/waimakariridc"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "x": 10
+    },
+    "selected_sources": 10,
+    "status_by_platform": {
+      "x": {
+        "browser_no_visible_posts": 9,
+        "protected": 1
+      }
+    },
+    "status_counts": {
+      "browser_no_visible_posts": 9,
+      "protected": 1
+    }
+  }
+}
