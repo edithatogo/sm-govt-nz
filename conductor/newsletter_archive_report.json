@@ -1,19 +1,30 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-01T11:06:38+00:00",
+  "generated_at": "2026-07-02T05:17:11+00:00",
   "inputs": {
     "agency_id": "",
+    "capture_backend": "default",
     "fetch_timeout": 30,
-    "include_blocked": false,
+    "idle_rounds": 3,
+    "include_blocked": true,
     "limit_sources": 100,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
+    "per_account_timeout": 120,
     "raw_root": "historical_archive_raw",
     "retry_failed_from": "",
-    "source_type": "newsletter"
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "newsletter",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
   },
   "results": [
     {
@@ -1127,6 +1138,7 @@
         "manual_seed_missing": 100
       }
     },
+    "status_by_provider": {},
     "status_counts": {
       "manual_seed_missing": 100
     }
