@@ -25,6 +25,7 @@ if str(ROOT) not in sys.path:
 
 from scripts.archive_bluesky_history import fetch_author_history  # noqa: E402
 from scripts.archive_manual_seed import MANUAL_SEED_PLATFORMS, archive_manual_seed, find_manual_seed_path  # noqa: E402
+from scripts.archive_x_browser import archive_x_browser_sources, dedupe_x_sources  # noqa: E402
 from src.archive_schema import build_normalized_record  # noqa: E402
 
 
@@ -1149,7 +1150,6 @@ def archive_x_source(
     return results
 
 
-
 def extract_x_public_snapshot_content(body: str, url: str) -> str:
     def first_match(pattern: str) -> str:
         match = re.search(pattern, body, flags=re.IGNORECASE | re.DOTALL)
@@ -1245,7 +1245,6 @@ def archive_x_public_snapshot_source(
         if inserted
         else "public X profile snapshot already present for this source/date",
     )
-
 
 
 def threads_user_id(source: dict[str, Any]) -> str:
@@ -1528,21 +1527,6 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 for result in seed_results:
                     result["reason"] = f"official Threads API unavailable; archived authorized manual seed. {result.get('reason', '')}".strip()
                 return seed_results
-            if (
-                all(result.get("status") in {"x_auth_required", "x_permission_error", "x_billing_required", "x_api_error", "rate_limited"} for result in api_results)
-                and x_public_snapshot_enabled()
-            ):
-                snapshot_result = archive_x_public_snapshot_source(
-                    source,
-                    raw_root,
-                    normalized_root,
-                    fetch_timeout=getattr(args, "fetch_timeout", 30),
-                )
-                snapshot_result["reason"] = (
-                    "official X API unavailable; used public X snapshot source. "
-                    f"{snapshot_result.get('reason', '')}"
-                ).strip()
-                return [snapshot_result]
             return api_results
         if platform == "x":
             seed_path = find_manual_seed_path(source, manual_seed_root)
@@ -1562,7 +1546,7 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                     source_result(
                         source,
                         "manual_seed_missing",
-                        "X API capture and public X snapshot source are disabled; no authorized manual seed file is present",
+                        "X API capture is disabled and public X snapshot source is disabled; no authorized manual seed file is present",
                     )
                 ]
             api_results = archive_x_source(
@@ -1583,6 +1567,21 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 for result in seed_results:
                     result["reason"] = f"official X API unavailable; archived authorized manual seed. {result.get('reason', '')}".strip()
                 return seed_results
+            if (
+                all(result.get("status") in {"x_auth_required", "x_permission_error", "x_billing_required", "x_api_error", "rate_limited"} for result in api_results)
+                and x_public_snapshot_enabled()
+            ):
+                snapshot_result = archive_x_public_snapshot_source(
+                    source,
+                    raw_root,
+                    normalized_root,
+                    fetch_timeout=getattr(args, "fetch_timeout", 30),
+                )
+                snapshot_result["reason"] = (
+                    "official X API unavailable; used public X snapshot source. "
+                    f"{snapshot_result.get('reason', '')}"
+                ).strip()
+                return [snapshot_result]
             return api_results
         if platform in MANUAL_SEED_PLATFORMS:
             return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
@@ -1593,12 +1592,18 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
 
 def build_report(args: argparse.Namespace) -> dict[str, Any]:
     manifest = load_json(args.manifest)
+    capture_backend = str(getattr(args, "capture_backend", "default") or "default")
+    only_ready = not args.include_blocked
+    if args.source_type == "x" and capture_backend == "browser":
+        only_ready = False
     selected = select_sources(
         manifest.get("sources", []),
         agency_id=args.agency_id,
         source_type=args.source_type,
-        only_ready=not args.include_blocked,
+        only_ready=only_ready,
     )
+    if args.source_type == "x" and capture_backend == "browser":
+        selected = dedupe_x_sources(selected)
     retry_failed_from = getattr(args, "retry_failed_from", None)
     if retry_failed_from:
         previous_report = load_json(Path(retry_failed_from))
@@ -1616,18 +1621,40 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         selected = selected[:limit_sources]
     results = []
     courts_report = run_courts_current_sources_if_selected(selected, args.dry_run)
-    for source in selected:
-        platform = source.get("platform")
-        if platform in SUPPORTED_PLATFORMS or source.get("source_type") in {"rss_feed", "json_feed", "website_page", "api_endpoint"}:
-            results.extend(capture_registered_source(source, args))
+    if args.source_type == "x" and capture_backend == "browser":
+        if args.dry_run:
+            for source in selected:
+                results.append(
+                    source_result(
+                        source,
+                        "would_capture",
+                        "dry run: SeleniumBase/Playwright public browser capture",
+                    )
+                )
         else:
-            results.append(
-                source_result(
-                    source,
-                    "unsupported_now",
-                    "manifested for onboarding but not captured by the current archive runner",
+            results.extend(
+                archive_x_browser_sources(
+                    selected,
+                    raw_root=Path(getattr(args, "raw_root", DEFAULT_RAW_ROOT)),
+                    normalized_root=Path(getattr(args, "normalized_root", DEFAULT_NORMALIZED_ROOT)),
+                    max_scrolls=getattr(args, "max_scrolls", 25),
+                    idle_rounds=getattr(args, "idle_rounds", 3),
+                    per_account_timeout=getattr(args, "per_account_timeout", 120),
                 )
             )
+    else:
+        for source in selected:
+            platform = source.get("platform")
+            if platform in SUPPORTED_PLATFORMS or source.get("source_type") in {"rss_feed", "json_feed", "website_page", "api_endpoint"}:
+                results.extend(capture_registered_source(source, args))
+            else:
+                results.append(
+                    source_result(
+                        source,
+                        "unsupported_now",
+                        "manifested for onboarding but not captured by the current archive runner",
+                    )
+                )
     status_counts = Counter(row["status"] for row in results)
     platform_counts = Counter(str(source.get("platform") or "unknown") for source in selected)
     status_by_platform: dict[str, dict[str, int]] = {}
@@ -1649,6 +1676,10 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "manual_seed_root": str(getattr(args, "manual_seed_root", DEFAULT_MANUAL_SEED_ROOT)),
             "fetch_timeout": getattr(args, "fetch_timeout", 30),
             "max_x_posts": getattr(args, "max_x_posts", 25),
+            "capture_backend": capture_backend,
+            "max_scrolls": getattr(args, "max_scrolls", 25),
+            "idle_rounds": getattr(args, "idle_rounds", 3),
+            "per_account_timeout": getattr(args, "per_account_timeout", 120),
             "retry_failed_from": str(getattr(args, "retry_failed_from", "") or ""),
             "offset_sources": getattr(args, "offset_sources", 0),
             "limit_sources": getattr(args, "limit_sources", 0),
@@ -1734,9 +1765,13 @@ def main() -> None:
     parser.add_argument("--agency-id", default="")
     parser.add_argument("--include-blocked", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--capture-backend", choices=["default", "browser"], default="default")
     parser.add_argument("--max-bluesky-pages", type=int, default=1)
     parser.add_argument("--max-threads-posts", type=int, default=25)
     parser.add_argument("--max-x-posts", type=int, default=25)
+    parser.add_argument("--max-scrolls", type=int, default=25)
+    parser.add_argument("--idle-rounds", type=int, default=3)
+    parser.add_argument("--per-account-timeout", type=int, default=120)
     parser.add_argument("--fetch-timeout", type=int, default=30)
     parser.add_argument("--retry-failed-from", type=Path, default=None)
     parser.add_argument("--offset-sources", type=int, default=0)
