@@ -760,6 +760,58 @@ def test_archive_manual_seed_writes_registered_source_records(tmp_path):
     assert record["cross_source_ids"]["source_id"] == "agency-linkedin"
 
 
+
+
+def test_archive_manual_seed_reports_empty_seed(tmp_path):
+    source = {
+        "source_id": "agency-newsletter",
+        "agency_id": "agency",
+        "platform": "newsletter",
+        "source_type": "email_subscription",
+        "url": "mailto:newsletter@example.govt.nz",
+        "account": "Agency Newsletter",
+        "archive_status": "manual_seed",
+        "feasibility": "medium",
+    }
+    seed_dir = tmp_path / "manual_archive_seeds" / "newsletter"
+    seed_dir.mkdir(parents=True)
+    (seed_dir / "agency-newsletter.json").write_text(json.dumps({"posts": []}), encoding="utf-8")
+
+    results = archive_manual_seed_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        manual_seed_root=tmp_path / "manual_archive_seeds",
+    )
+
+    assert results[0]["status"] == "seed_empty"
+    assert "manual seed contained no newsletter posts" in results[0]["reason"]
+
+
+def test_archive_manual_seed_reports_invalid_seed(tmp_path):
+    source = {
+        "source_id": "agency-threads",
+        "agency_id": "agency",
+        "platform": "threads",
+        "source_type": "social_profile",
+        "url": "https://www.threads.net/@agency",
+        "account": "agency",
+        "archive_status": "manual_seed",
+        "feasibility": "medium",
+    }
+    seed_dir = tmp_path / "manual_archive_seeds" / "threads"
+    seed_dir.mkdir(parents=True)
+    (seed_dir / "agency-threads.json").write_text(json.dumps({"posts": [{"text": "missing url and date"}]}), encoding="utf-8")
+
+    results = archive_manual_seed_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        manual_seed_root=tmp_path / "manual_archive_seeds",
+    )
+
+    assert results[0]["status"] == "seed_invalid"
+    assert "missing url" in results[0]["reason"]
 def test_archive_registered_sources_dry_run_reports_missing_linkedin_seed(tmp_path):
     manifest = tmp_path / "manifest.json"
     manifest.write_text(
@@ -1050,6 +1102,7 @@ def test_archive_threads_api_disabled_never_reports_api_blocker_status(tmp_path,
 
     assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
     assert report["results"][0]["status"] not in {"threads_permission_error", "threads_api_error"}
+
 
 
 

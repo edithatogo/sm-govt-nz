@@ -25,6 +25,8 @@ ACTION_BY_STATUS = {
     "youtube_channel_not_found": "verify_handle_or_mark_retired",
     "youtube_channel_unresolved": "verify_channel_page_or_mark_unresolved",
     "manual_seed_missing": "supply_operator_authorized_seed",
+    "seed_empty": "replace_empty_seed_with_authorized_records",
+    "seed_invalid": "fix_seed_json_or_required_fields",
 }
 
 PRIORITY_BY_STATUS = {
@@ -37,6 +39,8 @@ PRIORITY_BY_STATUS = {
     "not_found": "p1_existing_resources",
     "tls_failed": "p1_existing_resources",
     "manual_seed_missing": "p2_existing_system_needs_seed_input",
+    "seed_empty": "p2_existing_system_needs_seed_input",
+    "seed_invalid": "p2_existing_system_needs_seed_input",
     "auth_required": "p3_needs_operator_or_platform_access",
     "capture_blocked": "p4_larger_browser_or_access_project",
 }
@@ -64,7 +68,7 @@ def fixability_class(platform: str, status: str) -> str:
         return "browser_fallback_candidate"
     if platform == "youtube" and status in {"capture_failed", "source_url_not_channel", "youtube_channel_not_found", "youtube_channel_unresolved"}:
         return "youtube_url_or_channel_resolution"
-    if status == "manual_seed_missing":
+    if status in {"manual_seed_missing", "seed_empty", "seed_invalid"}:
         return "operator_seed_input"
     return "review"
 
@@ -166,6 +170,8 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
 
 
 

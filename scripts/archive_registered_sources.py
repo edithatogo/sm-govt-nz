@@ -550,18 +550,21 @@ def archive_manual_seed_source(
                 f"{platform} capture requires an operator-authorized seed JSON under manual_archive_seeds/{platform}/",
             )
         ]
-    report = archive_manual_seed(
-        platform=platform,
-        seed_path=seed_path,
-        raw_root=raw_root,
-        normalized_root=normalized_root,
-        agency_id=str(source.get("agency_id") or ""),
-        source_account=str(source.get("account") or source.get("url") or ""),
-        source_kind=str(source.get("source_type") or "social_profile"),
-        source_id=str(source.get("source_id") or ""),
-    )
+    try:
+        report = archive_manual_seed(
+            platform=platform,
+            seed_path=seed_path,
+            raw_root=raw_root,
+            normalized_root=normalized_root,
+            agency_id=str(source.get("agency_id") or ""),
+            source_account=str(source.get("account") or source.get("url") or ""),
+            source_kind=str(source.get("source_type") or "social_profile"),
+            source_id=str(source.get("source_id") or ""),
+        )
+    except (json.JSONDecodeError, ValueError) as exc:
+        return [source_result(source, "seed_invalid", f"manual seed is invalid: {seed_path}: {str(exc)[:240]}")]
     if int(report.get("record_count", 0)) == 0:
-        return [source_result(source, "no_records", f"manual seed contained no {platform} posts: {seed_path}")]
+        return [source_result(source, "seed_empty", f"manual seed contained no {platform} posts: {seed_path}")]
     return [
         source_result(
             source,
@@ -1869,6 +1872,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 

@@ -60,3 +60,20 @@ def test_find_manual_seed_path_prefers_source_id_then_agency(tmp_path) -> None:
     )
 
     assert path == source_seed
+
+
+def test_archive_manual_seed_allows_empty_seed_report(tmp_path) -> None:
+    seed_path = tmp_path / "empty_seed.json"
+    seed_path.write_text(json.dumps({"posts": []}), encoding="utf-8")
+
+    report = archive_manual_seed(
+        platform="threads",
+        seed_path=seed_path,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        captured_at="2026-06-14T00:00:00+00:00",
+    )
+
+    assert report["record_count"] == 0
+    assert report["min_original_created_at"] == ""
+    assert not (tmp_path / "normalized" / "threads").exists()

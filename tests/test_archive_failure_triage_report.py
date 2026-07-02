@@ -164,3 +164,26 @@ def test_archive_failure_triage_report_classifies_structured_fixability(tmp_path
     assert by_source["yt"]["fixability_class"] == "youtube_url_or_channel_resolution"
     assert by_source["blocked"]["priority"] == "p4_larger_browser_or_access_project"
     assert by_source["blocked"]["fixability_class"] == "browser_fallback_candidate"
+
+
+def test_archive_failure_triage_report_classifies_seed_invalid_and_empty(tmp_path):
+    report_path = tmp_path / "seed_report.json"
+    report_path.write_text(
+        json.dumps(
+            {
+                "results": [
+                    {"source_id": "empty", "platform": "newsletter", "status": "seed_empty"},
+                    {"source_id": "invalid", "platform": "threads", "status": "seed_invalid"},
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report([report_path])
+
+    by_source = {item["source_id"]: item for item in report["items"]}
+    assert by_source["empty"]["recommended_action"] == "replace_empty_seed_with_authorized_records"
+    assert by_source["invalid"]["recommended_action"] == "fix_seed_json_or_required_fields"
+    assert by_source["empty"]["fixability_class"] == "operator_seed_input"
+    assert report["summary"]["priority_counts"] == {"p2_existing_system_needs_seed_input": 2}
