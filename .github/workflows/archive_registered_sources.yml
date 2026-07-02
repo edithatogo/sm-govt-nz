@@ -202,11 +202,21 @@ jobs:
           offset_sources="${{ inputs.offset_sources || '0' }}"
           capture_backend="${{ inputs.capture_backend || 'default' }}"
           if [ "$source_type" = "x" ] && [ "$capture_backend" = "feed" ]; then
-            report_path="conductor/x_feed_archive_report.json"
-            summary_path="conductor/x_feed_archive_summary.md"
+            if [ "$offset_sources" != "0" ]; then
+              report_path="conductor/x_feed_archive_offset_${offset_sources}_report.json"
+              summary_path="conductor/x_feed_archive_offset_${offset_sources}_summary.md"
+            else
+              report_path="conductor/x_feed_archive_report.json"
+              summary_path="conductor/x_feed_archive_summary.md"
+            fi
           elif [ "$source_type" = "x" ] && [ "$capture_backend" = "browser_and_feed" ]; then
-            report_path="conductor/x_browser_and_feed_archive_report.json"
-            summary_path="conductor/x_browser_and_feed_archive_summary.md"
+            if [ "$offset_sources" != "0" ]; then
+              report_path="conductor/x_browser_and_feed_archive_offset_${offset_sources}_report.json"
+              summary_path="conductor/x_browser_and_feed_archive_offset_${offset_sources}_summary.md"
+            else
+              report_path="conductor/x_browser_and_feed_archive_report.json"
+              summary_path="conductor/x_browser_and_feed_archive_summary.md"
+            fi
           elif [ "$source_type" = "all_feasible" ]; then
             report_path="conductor/govt_archive_registered_sources_report.json"
             summary_path="conductor/govt_archive_registered_sources_summary.md"
