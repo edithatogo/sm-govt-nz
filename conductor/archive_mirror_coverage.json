@@ -1,11 +1,17 @@
 {
-  "complete": true,
+  "complete": false,
   "sources": [
     {
       "source_account": "courtsofnz.bsky.social",
       "source_key": "bluesky:courtsofnz.bsky.social",
       "source_platform": "bluesky",
-      "total_records": 58
+      "total_records": 59
+    },
+    {
+      "source_account": "AklCouncil",
+      "source_key": "x:AklCouncil",
+      "source_platform": "x",
+      "total_records": 16
     },
     {
       "source_account": "AntarcticaNZ",
@@ -18,34 +24,100 @@
       "source_key": "x:CourtsofNZ",
       "source_platform": "x",
       "total_records": 689
+    },
+    {
+      "source_account": "FireEmergencyNZ",
+      "source_key": "x:FireEmergencyNZ",
+      "source_platform": "x",
+      "total_records": 8
+    },
+    {
+      "source_account": "HRC",
+      "source_key": "x:HRC",
+      "source_platform": "x",
+      "total_records": 6
+    },
+    {
+      "source_account": "KiwibankNZ",
+      "source_key": "x:KiwibankNZ",
+      "source_platform": "x",
+      "total_records": 7
+    },
+    {
+      "source_account": "LOTTO_NZ",
+      "source_key": "x:LOTTO_NZ",
+      "source_platform": "x",
+      "total_records": 12
+    },
+    {
+      "source_account": "NZParliament",
+      "source_key": "x:NZParliament",
+      "source_platform": "x",
+      "total_records": 3
+    },
+    {
+      "source_account": "NZTEnews",
+      "source_key": "x:NZTEnews",
+      "source_platform": "x",
+      "total_records": 12
+    },
+    {
+      "source_account": "courtsofnz",
+      "source_key": "x:courtsofnz",
+      "source_platform": "x",
+      "total_records": 3
+    },
+    {
+      "source_account": "nzqaofficial",
+      "source_key": "x:nzqaofficial",
+      "source_platform": "x",
+      "total_records": 3
     }
   ],
   "targets": [
     {
       "note": "Bluesky posts are published as current mirror posts; original source timestamps are preserved in repo archive metadata.",
-      "posted_records": 748,
+      "posted_records": 754,
       "remaining_by_source": {
         "bluesky:courtsofnz.bsky.social": 0,
+        "x:AklCouncil": 15,
         "x:AntarcticaNZ": 0,
-        "x:CourtsofNZ": 0
+        "x:CourtsofNZ": 0,
+        "x:FireEmergencyNZ": 8,
+        "x:HRC": 6,
+        "x:KiwibankNZ": 7,
+        "x:LOTTO_NZ": 9,
+        "x:NZParliament": 3,
+        "x:NZTEnews": 12,
+        "x:courtsofnz": 3,
+        "x:nzqaofficial": 2
       },
-      "remaining_records": 0,
+      "remaining_records": 65,
       "supports_backdating": false,
       "target": "bluesky",
-      "total_source_records": 748
+      "total_source_records": 819
     },
     {
       "note": "Threads publishing does not expose a supported backdated publication timestamp in the configured pipeline; original timestamps must be preserved in mirror text and archive metadata.",
       "posted_records": 0,
       "remaining_by_source": {
-        "bluesky:courtsofnz.bsky.social": 58,
+        "bluesky:courtsofnz.bsky.social": 59,
+        "x:AklCouncil": 16,
         "x:AntarcticaNZ": 1,
-        "x:CourtsofNZ": 689
+        "x:CourtsofNZ": 689,
+        "x:FireEmergencyNZ": 8,
+        "x:HRC": 6,
+        "x:KiwibankNZ": 7,
+        "x:LOTTO_NZ": 12,
+        "x:NZParliament": 3,
+        "x:NZTEnews": 12,
+        "x:courtsofnz": 3,
+        "x:nzqaofficial": 3
       },
-      "remaining_records": 748,
+      "remaining_records": 819,
       "supports_backdating": false,
       "target": "threads",
-      "total_source_records": 748
+      "total_source_records": 819
     }
   ]
 }

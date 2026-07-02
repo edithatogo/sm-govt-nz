@@ -1,6 +1,9 @@
 {
   "posted_record_ids": {
     "bluesky": {
+      "x:AklCouncil": [
+        "x_feed:ea183044460f2f26c49da2dd"
+      ],
       "x:AntarcticaNZ": [
         "x_public_snapshot:36b0505637ae1650bb31d539"
       ],
@@ -694,11 +697,29 @@
         "x:1869137246764544252",
         "x:1869205789220708446",
         "x:1869552825866551714"
+      ],
+      "x:LOTTO_NZ": [
+        "x:15194791239225345",
+        "x:463427669640482816",
+        "x:468855084689141761"
+      ],
+      "x:nzqaofficial": [
+        "x:290901844656541696"
       ]
     }
   },
   "posted_records": {
     "bluesky": {
+      "x:AklCouncil": [
+        {
+          "detail": "at://did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/app.bsky.feed.post/3mpngbngjgz2f",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpngbngjgz2f",
+          "record_id": "x_feed:ea183044460f2f26c49da2dd",
+          "source_key": "x:AklCouncil",
+          "status": "posted",
+          "target": "bluesky"
+        }
+      ],
       "x:AntarcticaNZ": [
         {
           "detail": "at://did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/app.bsky.feed.post/3mplztkaiio2f",
@@ -5235,6 +5256,42 @@
           "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3moscdzjgts2u",
           "record_id": "x:1869552825866551714",
           "source_key": "x:CourtsofNZ",
+          "status": "posted",
+          "target": "bluesky"
+        }
+      ],
+      "x:LOTTO_NZ": [
+        {
+          "detail": "at://did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/app.bsky.feed.post/3mpngbnihip2v",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpngbnihip2v",
+          "record_id": "x:15194791239225345",
+          "source_key": "x:LOTTO_NZ",
+          "status": "posted",
+          "target": "bluesky"
+        },
+        {
+          "detail": "at://did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/app.bsky.feed.post/3mpngbnm5ob2h",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpngbnm5ob2h",
+          "record_id": "x:463427669640482816",
+          "source_key": "x:LOTTO_NZ",
+          "status": "posted",
+          "target": "bluesky"
+        },
+        {
+          "detail": "at://did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/app.bsky.feed.post/3mpngbnojpn2b",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpngbnojpn2b",
+          "record_id": "x:468855084689141761",
+          "source_key": "x:LOTTO_NZ",
+          "status": "posted",
+          "target": "bluesky"
+        }
+      ],
+      "x:nzqaofficial": [
+        {
+          "detail": "at://did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/app.bsky.feed.post/3mpngbnk6vs2f",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpngbnk6vs2f",
+          "record_id": "x:290901844656541696",
+          "source_key": "x:nzqaofficial",
           "status": "posted",
           "target": "bluesky"
         }
