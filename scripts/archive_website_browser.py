@@ -227,9 +227,9 @@ def capture_live_sources(
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         context = browser.new_context(user_agent="Mozilla/5.0 (compatible; sm-govt-nz-website-browser-fallback/1.0; +https://github.com/edithatogo/sm-govt-nz)")
-        page = context.new_page()
-        page.set_default_timeout(per_page_timeout * 1000)
         for source in sources:
+            page = context.new_page()
+            page.set_default_timeout(per_page_timeout * 1000)
             captured_at = now_iso()
             started = time.monotonic()
             try:
@@ -265,6 +265,8 @@ def capture_live_sources(
                     results.append(source_result(source, "browser_captured" if inserted else "browser_already_captured", "captured public rendered website content" if inserted else "browser website record already present") | {"raw_path": str(raw_path).replace("\\", "/")})
             except Exception as exc:  # noqa: BLE001 - isolate per-source browser failures.
                 results.append(source_result(source, "browser_capture_failed", str(exc)[:300]))
+            finally:
+                page.close()
         context.close()
         browser.close()
     return results
