@@ -96,3 +96,28 @@ def test_gap_map_keeps_browser_challenge_as_report_only(tmp_path):
     assert gap_map["summary"]["gap_count"] == 0
     assert gap_map["summary"]["priority_counts"] == {"monitor_report_only": 1}
 
+
+def test_gap_map_keeps_blocked_youtube_video_metadata_as_report_only(tmp_path):
+    report = tmp_path / "youtube_archive_report.json"
+    report.write_text(
+        json.dumps(
+            {
+                "results": [
+                    {
+                        "source_id": "yt-video",
+                        "platform": "youtube",
+                        "status": "youtube_video_metadata_blocked",
+                        "reason": "HTTP 401: YouTube video metadata unavailable",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    gap_map = build_gap_map([report])
+
+    assert gap_map["summary"]["gap_count"] == 0
+    assert gap_map["summary"]["priority_counts"] == {"monitor_report_only": 1}
+    assert gap_map["summary"]["status_counts"] == {"youtube_video_metadata_blocked": 1}
+

@@ -31,11 +31,16 @@ REPORT_ONLY_STATUSES = {
     "browser_no_visible_posts",
     "feed_not_found",
     "no_records",
+    "youtube_video_metadata_blocked",
 }
 
 
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def report_path(path: Path) -> str:
+    return path.as_posix()
 
 
 def status_priority(status: str) -> str:
@@ -76,7 +81,7 @@ def build_gap_map(report_paths: list[Path]) -> dict[str, Any]:
         results = report.get("results", [])
         if not isinstance(results, list):
             results = []
-        report_summaries[str(path)] = report.get("summary", {})
+        report_summaries[report_path(path)] = report.get("summary", {})
         for row in results:
             if not isinstance(row, dict):
                 continue
@@ -84,7 +89,7 @@ def build_gap_map(report_paths: list[Path]) -> dict[str, Any]:
             if not source_id:
                 continue
             row_with_report = dict(row)
-            row_with_report["report"] = str(path)
+            row_with_report["report"] = report_path(path)
             input_status_counts[str(row.get("status") or "unknown")] += 1
             if source_id in rows_by_source:
                 rows_by_source[source_id] = merge_rows(rows_by_source[source_id], row_with_report)
@@ -121,7 +126,7 @@ def build_gap_map(report_paths: list[Path]) -> dict[str, Any]:
             }
         )
     return {
-        "inputs": {"reports": [str(path) for path in report_paths]},
+        "inputs": {"reports": [report_path(path) for path in report_paths]},
         "summary": {
             "gap_count": len(items),
             "platform_counts": dict(sorted(platform_counts.items())),

@@ -33,3 +33,10 @@ Archive gap reports classify non-success states into implementation priorities:
 - `p2_existing_system_needs_seed_input`: the ingest system exists, but an operator-authorized seed file is missing.
 - `p3_needs_operator_or_platform_access`: official API, export, login, or provider access is required.
 - `p4_larger_browser_or_access_project`: needs a separate browser/API/access project and must not attempt CAPTCHA, login bypass, cookie extraction, or hidden private API capture by default.
+
+Some terminal public-source states are report-only rather than actionable gaps.
+For example, `youtube_video_metadata_blocked` means a specific public video URL
+could not expose metadata through the keyless public metadata path. These rows
+stay visible in archive and triage reports, but they do not keep the source in
+the fixable gap queue unless an authorized seed, official API key, or alternate
+lawful public source is later supplied.

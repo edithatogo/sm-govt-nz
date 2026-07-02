@@ -1,71 +1,5 @@
 {
-  "gaps": [
-    {
-      "agency_id": "environment-canterbury",
-      "platform": "youtube",
-      "priority": "p3_needs_operator_or_platform_access",
-      "priority_description": "Needs login/export/API access before capture can lawfully proceed.",
-      "reason": "HTTP 401: YouTube video metadata unavailable for UWM5Bt6eV24",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "environment-canterbury-youtube-4c9e496b",
-      "status": "youtube_video_metadata_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "http://www.youtube.com/watch/UWM5Bt6eV24"
-    },
-    {
-      "agency_id": "environment-canterbury",
-      "platform": "youtube",
-      "priority": "p3_needs_operator_or_platform_access",
-      "priority_description": "Needs login/export/API access before capture can lawfully proceed.",
-      "reason": "HTTP 401: YouTube video metadata unavailable for ceTKqFs728w",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "environment-canterbury-youtube-ec7191cd",
-      "status": "youtube_video_metadata_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "http://www.youtube.com/watch/ceTKqFs728w"
-    },
-    {
-      "agency_id": "environment-canterbury",
-      "platform": "youtube",
-      "priority": "p3_needs_operator_or_platform_access",
-      "priority_description": "Needs login/export/API access before capture can lawfully proceed.",
-      "reason": "HTTP 401: YouTube video metadata unavailable for gRqlMhAmmJA",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "environment-canterbury-youtube-b08cb22a",
-      "status": "youtube_video_metadata_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "http://www.youtube.com/watch/gRqlMhAmmJA"
-    },
-    {
-      "agency_id": "environment-canterbury",
-      "platform": "youtube",
-      "priority": "p3_needs_operator_or_platform_access",
-      "priority_description": "Needs login/export/API access before capture can lawfully proceed.",
-      "reason": "HTTP 401: YouTube video metadata unavailable for sdvdzpVunWQ",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "environment-canterbury-youtube-3b868f65",
-      "status": "youtube_video_metadata_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "http://www.youtube.com/watch/sdvdzpVunWQ"
-    },
-    {
-      "agency_id": "environment-canterbury",
-      "platform": "youtube",
-      "priority": "p3_needs_operator_or_platform_access",
-      "priority_description": "Needs login/export/API access before capture can lawfully proceed.",
-      "reason": "HTTP 401: YouTube video metadata unavailable for uC6hC7VDe5c",
-      "report": "conductor/youtube_archive_report.json",
-      "source_id": "environment-canterbury-youtube-3140d08b",
-      "status": "youtube_video_metadata_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "http://www.youtube.com/watch/uC6hC7VDe5c"
-    }
-  ],
+  "gaps": [],
   "inputs": {
     "reports": [
       "conductor/youtube_archive_report.json"
@@ -95,7 +29,7 @@
     }
   },
   "summary": {
-    "gap_count": 5,
+    "gap_count": 0,
     "input_status_counts": {
       "already_captured": 377,
       "captured": 174,
@@ -107,8 +41,7 @@
     },
     "priority_counts": {
       "archived_or_already_archived": 44,
-      "monitor_report_only": 1,
-      "p3_needs_operator_or_platform_access": 5
+      "monitor_report_only": 6
     },
     "status_counts": {
       "already_captured": 29,
