@@ -1,8 +1,8 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-02T14:43:58+00:00",
+  "generated_at": "2026-07-02T17:14:58+00:00",
   "inputs": {
-    "manifest": "conductor\\govt_archive_source_manifest.json",
+    "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "platforms": [
       "facebook",
@@ -12,7 +12,7 @@
       "x",
       "newsletter"
     ],
-    "policy": "config\\manual_seed_onboarding.json"
+    "policy": "config/manual_seed_onboarding.json"
   },
   "items": [
     {
@@ -1286,6 +1286,27 @@
       "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-37f96551.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-37f96551.json",
+        "manual_archive_seeds/newsletter/environmental-protection-authority.json"
+      ],
+      "source_id": "environmental-protection-authority-newsletter-37f96551",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/delivering-progress-for-hazardous-substances/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.epa.govt.nz",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-5f6e293c.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
@@ -2366,6 +2387,27 @@
       ],
       "source_id": "hawkes-bay-regional-council-newsletter-fdd87aab",
       "url": "https://www.hbrc.govt.nz/contact-us/sign-up-for-our-newsletters/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tewhatuora.govt.nz",
+      "agency_id": "health-nz",
+      "agency_name": "Health New Zealand (Te Whatu Ora)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-0df7d090.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/health-nz-newsletter-0df7d090.json",
+        "manual_archive_seeds/newsletter/health-nz.json"
+      ],
+      "source_id": "health-nz-newsletter-0df7d090",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/changes-to-public-health-advice-regarding-moa-point"
     },
     {
       "acceptable_access_methods": [
@@ -5936,6 +5978,27 @@
       ],
       "source_id": "te-hiringa-mahara-newsletter-4f11e74a",
       "url": "https://www.mhwc.govt.nz/contact-us/sign-up-to-our-mailing-list/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tec.govt.nz",
+      "agency_id": "tertiary-education-commission",
+      "agency_name": "Tertiary Education Commission (Te Amorangi M\u0101tauranga Matua)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
+        "manual_archive_seeds/newsletter/tertiary-education-commission.json"
+      ],
+      "source_id": "tertiary-education-commission-newsletter-ac936eba",
+      "url": "https://www.tec.govt.nz/alerts"
     },
     {
       "acceptable_access_methods": [
@@ -17619,7 +17682,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 day ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -23499,7 +23562,7 @@
       "facebook": 318,
       "instagram": 181,
       "linkedin": 256,
-      "newsletter": 360,
+      "newsletter": 363,
       "threads": 3
     },
     "priority_order": [
@@ -23509,6 +23572,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 1118
+    "queue_count": 1121
   }
 }

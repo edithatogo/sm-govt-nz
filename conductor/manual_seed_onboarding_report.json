@@ -1,8 +1,8 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-02T14:43:58+00:00",
+  "generated_at": "2026-07-02T17:14:58+00:00",
   "inputs": {
-    "manifest": "conductor\\govt_archive_source_manifest.json",
+    "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "platforms": [
       "facebook",
@@ -12,7 +12,7 @@
       "x",
       "newsletter"
     ],
-    "policy": "config\\manual_seed_onboarding.json"
+    "policy": "config/manual_seed_onboarding.json"
   },
   "items": [
     {
@@ -5571,7 +5571,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 day ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "archive_status": "candidate",
@@ -20329,6 +20329,31 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-37f96551.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-37f96551.json",
+        "manual_archive_seeds/newsletter/environmental-protection-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "environmental-protection-authority-newsletter-37f96551",
+      "source_type": "newsletter",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/delivering-progress-for-hazardous-substances/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.epa.govt.nz",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-5f6e293c.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
@@ -21639,6 +21664,31 @@
       "source_id": "health-and-disability-commissioner-newsletter-4b76b3dc",
       "source_type": "newsletter",
       "url": "https://www.hdc.org.nz/news-resources/hdc-newsletters/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tewhatuora.govt.nz",
+      "agency_id": "health-nz",
+      "agency_name": "Health New Zealand (Te Whatu Ora)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-0df7d090.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/health-nz-newsletter-0df7d090.json",
+        "manual_archive_seeds/newsletter/health-nz.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "health-nz-newsletter-0df7d090",
+      "source_type": "newsletter",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/changes-to-public-health-advice-regarding-moa-point"
     },
     {
       "acceptable_access_methods": [
@@ -26096,6 +26146,31 @@
         "email_ingress",
         "operator_authorized_seed"
       ],
+      "account": "https://www.tec.govt.nz",
+      "agency_id": "tertiary-education-commission",
+      "agency_name": "Tertiary Education Commission (Te Amorangi M\u0101tauranga Matua)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
+        "manual_archive_seeds/newsletter/tertiary-education-commission.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "tertiary-education-commission-newsletter-ac936eba",
+      "source_type": "newsletter",
+      "url": "https://www.tec.govt.nz/alerts"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
       "account": "https://www.tcdc.govt.nz",
       "agency_id": "thames-coromandel-district-council",
       "agency_name": "Thames-Coromandel District Council",
@@ -30100,7 +30175,7 @@
       "facebook": 318,
       "instagram": 181,
       "linkedin": 256,
-      "newsletter": 360,
+      "newsletter": 363,
       "threads": 3,
       "x": 79
     },
@@ -30109,11 +30184,11 @@
       "facebook": 318,
       "instagram": 181,
       "linkedin": 256,
-      "newsletter": 360,
+      "newsletter": 363,
       "threads": 3
     },
-    "remaining_source_count": 1118,
-    "selected_sources": 1197,
+    "remaining_source_count": 1121,
+    "selected_sources": 1200,
     "status_by_platform": {
       "facebook": {
         "needs_authorized_seed_or_api": 318
@@ -30125,7 +30200,7 @@
         "needs_authorized_seed_or_api": 256
       },
       "newsletter": {
-        "needs_authorized_seed_or_api": 360
+        "needs_authorized_seed_or_api": 363
       },
       "threads": {
         "needs_authorized_seed_or_api": 3
@@ -30135,7 +30210,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 1118,
+      "needs_authorized_seed_or_api": 1121,
       "seed_present": 79
     }
   }
