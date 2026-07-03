@@ -62,6 +62,12 @@
       "total_records": 12
     },
     {
+      "source_account": "Pamu_NZ",
+      "source_key": "x:Pamu_NZ",
+      "source_platform": "x",
+      "total_records": 9
+    },
+    {
       "source_account": "courtsofnz",
       "source_key": "x:courtsofnz",
       "source_platform": "x",
@@ -77,7 +83,7 @@
   "targets": [
     {
       "note": "Bluesky posts are published as current mirror posts; original source timestamps are preserved in repo archive metadata.",
-      "posted_records": 810,
+      "posted_records": 815,
       "remaining_by_source": {
         "bluesky:courtsofnz.bsky.social": 0,
         "x:AklCouncil": 0,
@@ -89,13 +95,14 @@
         "x:LOTTO_NZ": 0,
         "x:NZParliament": 0,
         "x:NZTEnews": 10,
+        "x:Pamu_NZ": 4,
         "x:courtsofnz": 0,
         "x:nzqaofficial": 0
       },
-      "remaining_records": 10,
+      "remaining_records": 14,
       "supports_backdating": false,
       "target": "bluesky",
-      "total_source_records": 820
+      "total_source_records": 829
     },
     {
       "note": "Threads publishing does not expose a supported backdated publication timestamp in the configured pipeline; original timestamps must be preserved in mirror text and archive metadata.",
@@ -111,13 +118,14 @@
         "x:LOTTO_NZ": 12,
         "x:NZParliament": 3,
         "x:NZTEnews": 12,
+        "x:Pamu_NZ": 9,
         "x:courtsofnz": 3,
         "x:nzqaofficial": 3
       },
-      "remaining_records": 820,
+      "remaining_records": 829,
       "supports_backdating": false,
       "target": "threads",
-      "total_source_records": 820
+      "total_source_records": 829
     }
   ]
 }
