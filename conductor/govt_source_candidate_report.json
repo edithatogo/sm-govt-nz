@@ -3878,6 +3878,33 @@
       "agency_type": "SOE",
       "archive_status": "ready",
       "auth": "none",
+      "candidate_id": "85747df0077a2979",
+      "confidence_score": 0.5,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_title": "Updates to Food Assurance Services page",
+      "mime_type": "application/rss+xml",
+      "official_website": "https://www.asurequality.com",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Agriculture",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "official_term:service"
+      ],
+      "url": "https://www.asurequality.com/home/changes"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.asurequality.com",
+      "agency_id": "asurequality",
+      "agency_name": "AsureQuality (Kaitiaki Kai)",
+      "agency_type": "SOE",
+      "archive_status": "ready",
+      "auth": "none",
       "candidate_id": "cb6baccb1afd97a4",
       "confidence_score": 0.45,
       "domain_trust": "unknown",
@@ -4247,6 +4274,50 @@
       "url": "https://www.asurequality.com/subscribe"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "asurequality",
+      "agency_name": "AsureQuality (Kaitiaki Kai)",
+      "agency_type": "SOE",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "46d586812cea32c6",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.asurequality.com",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Agriculture",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://www.facebook.com/AsureQualityLtd"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "asurequality",
+      "agency_name": "AsureQuality (Kaitiaki Kai)",
+      "agency_type": "SOE",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "09666088682a0f04",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.asurequality.com",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Agriculture",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://www.instagram.com/asurequality/?hl=en"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "AsureQuality",
       "account_classification": "official",
@@ -4261,7 +4332,7 @@
       "domain_trust": "unknown",
       "feasibility": "low",
       "official_website": "https://www.asurequality.com",
-      "origin": "registry.social_profiles",
+      "origin": "homepage.link,registry.social_profiles",
       "platform": "linkedin",
       "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
       "portfolio": "Agriculture",
@@ -29486,7 +29557,7 @@
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "c10439f6bc359f92",
+      "candidate_id": "783b061cad53b157",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -29501,7 +29572,7 @@
       "trust_signals": [
         "official_term:new zealand"
       ],
-      "url": "https://www.fireandemergency.nz/incidents-and-news/emergency-mobile-alerts/"
+      "url": "https://www.fireandemergency.nz/mi_NZ/incidents-and-news/emergency-mobile-alerts/"
     },
     {
       "access_method": "public_rss",
@@ -102866,7 +102937,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 3 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -117394,32 +117465,6 @@
         "official_term:nz"
       ],
       "url": "https://www.wananga.ac.nz"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.tec.govt.nz",
-      "agency_id": "tertiary-education-commission",
-      "agency_name": "Tertiary Education Commission (Te Amorangi M\u0101tauranga Matua)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "04c53a089679ef0f",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Alerts",
-      "official_website": "https://www.tec.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Education",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.tec.govt.nz/alerts"
     },
     {
       "access_method": "public_rss",
@@ -132519,57 +132564,6 @@
       "url": "https://www.wellington.govt.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.wcl.govt.nz",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "e992daa0fdf06fca",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.wcl.govt.nz",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "a159b229e9fd0a47",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "link_text": "Subscribe on Youtube",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133004,78 +132998,6 @@
       "url": "https://bsky.app/profile/wcllibrary.bsky.social"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Like us on Facebook",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "4c3f179a8402f5aa",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/wellingtoncitylibraries"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Follow us on Instagram",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "f61ccf07bd59e4c0",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://instagram.com/wcl_library"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Subscribe on Youtube",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "98aaf6b9e2d42b19",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133101,33 +133023,6 @@
         "official_term:nz"
       ],
       "url": "https://www.wcl.govt.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.wcl.govt.nz",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "d3a11038ecc7a113",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
     },
     {
       "access_method": "public_rss",
@@ -134673,32 +134568,6 @@
       "agency_type": "District Council",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "d66247a4eba6e714",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Subscribe \r\n\r\n                             \r\n                                 Subscribe to our text alerts, our newsletter and more. \r\n                             \r\n\r\n                             \r\n                                 \r\n                                     \r\n                                    Subscribe",
-      "official_website": "https://www.westlanddc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "http://www.westlanddc.govt.nz/do-it-online/subscribe/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.westlanddc.govt.nz",
-      "agency_id": "westland-district-council",
-      "agency_name": "Westland District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
       "candidate_id": "51615684f68cdda2",
       "confidence_score": 0.5,
       "domain_trust": "medium",
@@ -134716,6 +134585,32 @@
         "official_term:nz"
       ],
       "url": "https://westlandmatters.buzzit.co.nz/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.westlanddc.govt.nz",
+      "agency_id": "westland-district-council",
+      "agency_name": "Westland District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "18e734958d624e21",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Subscribe \r\n\r\n                             \r\n                                 Subscribe to our text alerts, our newsletter and more. \r\n                             \r\n\r\n                             \r\n                                 \r\n                                     \r\n                                    Subscribe",
+      "official_website": "https://www.westlanddc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.westlanddc.govt.nz/do-it-online/subscribe/"
     },
     {
       "access_method": "public_rss",
@@ -140234,7 +140129,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-02T18:17:12+00:00",
+  "generated_at": "2026-07-03T05:23:48+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -153046,8 +152941,9 @@
     },
     {
       "agency_id": "asurequality",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 1,
+      "links": 103,
+      "status": "ok",
       "url": "https://www.asurequality.com/"
     },
     {
@@ -153078,7 +152974,7 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 66,
+      "links": 70,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
@@ -153099,7 +152995,7 @@
     {
       "agency_id": "callaghan-innovation",
       "alternates": 0,
-      "links": 110,
+      "links": 111,
       "status": "ok",
       "url": "https://www.callaghaninnovation.govt.nz/"
     },
@@ -153119,7 +153015,7 @@
     {
       "agency_id": "central-hawkes-bay-district-council",
       "alternates": 0,
-      "links": 502,
+      "links": 503,
       "status": "ok",
       "url": "https://www.chbdc.govt.nz/"
     },
@@ -153160,7 +153056,7 @@
     {
       "agency_id": "christchurch-city-libraries",
       "alternates": 6,
-      "links": 320,
+      "links": 317,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
@@ -153314,7 +153210,7 @@
     {
       "agency_id": "electricity-corporation-of-nz",
       "alternates": 0,
-      "links": 16,
+      "links": 20,
       "status": "ok",
       "url": "https://www.ecnz.co.nz/"
     },
@@ -153361,7 +153257,7 @@
     {
       "agency_id": "fire-and-emergency-nz",
       "alternates": 0,
-      "links": 134,
+      "links": 133,
       "status": "ok",
       "url": "https://www.fireandemergency.nz/"
     },
@@ -153567,7 +153463,7 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 104,
+      "links": 102,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
@@ -153581,7 +153477,7 @@
     {
       "agency_id": "kiwi-group-capital",
       "alternates": 0,
-      "links": 239,
+      "links": 238,
       "status": "ok",
       "url": "https://www.kiwibank.co.nz/"
     },
@@ -154054,7 +153950,7 @@
     {
       "agency_id": "palmerston-north-city-council",
       "alternates": 0,
-      "links": 527,
+      "links": 526,
       "status": "ok",
       "url": "https://www.pncc.govt.nz/"
     },
@@ -154169,7 +154065,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 365,
+      "links": 400,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -154388,7 +154284,7 @@
     {
       "agency_id": "te-wananga-o-aotearoa",
       "alternates": 0,
-      "links": 333,
+      "links": 334,
       "status": "ok",
       "url": "https://www.twoa.ac.nz/"
     },
@@ -154409,14 +154305,14 @@
     {
       "agency_id": "tertiary-education-commission",
       "alternates": 0,
-      "links": 390,
+      "links": 385,
       "status": "ok",
       "url": "https://www.tec.govt.nz/"
     },
     {
       "agency_id": "thames-coromandel-district-council",
       "alternates": 0,
-      "links": 274,
+      "links": 273,
       "status": "ok",
       "url": "https://www.tcdc.govt.nz/"
     },
@@ -154461,7 +154357,7 @@
     {
       "agency_id": "tvnz",
       "alternates": 0,
-      "links": 162,
+      "links": 165,
       "status": "ok",
       "url": "https://www.tvnz.co.nz/"
     },
@@ -154482,7 +154378,7 @@
     {
       "agency_id": "university-of-auckland",
       "alternates": 0,
-      "links": 380,
+      "links": 378,
       "status": "ok",
       "url": "https://www.auckland.ac.nz/"
     },
@@ -154509,7 +154405,7 @@
     {
       "agency_id": "upper-hutt-city-council",
       "alternates": 0,
-      "links": 316,
+      "links": 314,
       "status": "ok",
       "url": "https://www.upperhuttcity.com/"
     },
@@ -154562,7 +154458,7 @@
     {
       "agency_id": "waitaki-district-council",
       "alternates": 0,
-      "links": 355,
+      "links": 353,
       "status": "ok",
       "url": "https://www.waitaki.govt.nz/"
     },
@@ -154587,9 +154483,8 @@
     },
     {
       "agency_id": "wellington-city-libraries",
-      "alternates": 0,
-      "links": 94,
-      "status": "ok",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
       "url": "https://www.wcl.govt.nz/"
     },
     {
@@ -154628,7 +154523,7 @@
     {
       "agency_id": "whakatane-district-council",
       "alternates": 0,
-      "links": 591,
+      "links": 590,
       "status": "ok",
       "url": "https://www.whakatane.govt.nz/"
     },
@@ -154678,32 +154573,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 255,
-    "candidate_count": 5240,
+    "candidate_count": 5236,
     "feasibility_counts": {
       "high": 4142,
       "low": 310,
-      "medium": 788
+      "medium": 784
     },
-    "known_registry_social_profiles": 445,
+    "known_registry_social_profiles": 444,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
       "facebook": 292,
       "instagram": 162,
       "linkedin": 234,
-      "newsletter": 164,
-      "rss": 3810,
-      "website_page": 314,
+      "newsletter": 161,
+      "rss": 3811,
+      "website_page": 313,
       "x": 76,
-      "youtube": 157
+      "youtube": 156
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 164,
-      "rss_feed": 60,
+      "newsletter": 161,
+      "rss_feed": 61,
       "search_seed": 3750,
-      "social_profile": 939,
-      "website_page": 314
+      "social_profile": 938,
+      "website_page": 313
     }
   }
 }
