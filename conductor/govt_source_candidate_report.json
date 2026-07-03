@@ -29013,6 +29013,58 @@
       "url": "https://www.fndc.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.fma.govt.nz",
+      "agency_id": "financial-markets-authority",
+      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "8a5ea39e62fcbcba",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Warnings & alerts",
+      "official_website": "https://www.fma.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.fma.govt.nz",
+      "agency_id": "financial-markets-authority",
+      "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "ab1b487cc872cb5b",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Subscribe to FMA Update",
+      "official_website": "https://www.fma.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.fma.govt.nz",
       "agency_id": "financial-markets-authority",
@@ -85725,6 +85777,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "92f7f85f4fcd06be",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/OtagoPoly"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "OtagoPolytechnic",
       "account_classification": "official",
       "agency_id": "otago-polytechnic",
@@ -85780,6 +85856,54 @@
       "url": "https://www.instagram.com/otagopolytechnic"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "d32669ba1a66538a",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/otagopolytechnic/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "894173a6864da511",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/213448"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Otago Polytechnic",
       "account_classification": "official",
@@ -85806,6 +85930,30 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/school/otago-polytechnic"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "f8add89960419679",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "http://www.youtube.com/user/OtagoPolytech"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -139981,7 +140129,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-03T07:29:31+00:00",
+  "generated_at": "2026-07-03T18:01:33+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -152873,8 +153021,8 @@
     },
     {
       "agency_id": "central-otago-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.codc.govt.nz/"
     },
     {
@@ -152935,8 +153083,8 @@
     },
     {
       "agency_id": "clutha-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.cluthadc.govt.nz/"
     },
     {
@@ -153075,8 +153223,8 @@
     },
     {
       "agency_id": "environment-southland",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.es.govt.nz/"
     },
     {
@@ -153101,8 +153249,9 @@
     },
     {
       "agency_id": "financial-markets-authority",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 230,
+      "status": "ok",
       "url": "https://www.fma.govt.nz/"
     },
     {
@@ -153152,8 +153301,8 @@
     },
     {
       "agency_id": "grey-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.greydc.govt.nz/"
     },
     {
@@ -153248,8 +153397,8 @@
     },
     {
       "agency_id": "hurunui-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.hurunui.govt.nz/"
     },
     {
@@ -153287,14 +153436,14 @@
     },
     {
       "agency_id": "invercargill-city-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.icc.govt.nz/"
     },
     {
       "agency_id": "kaikoura-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.kaikoura.govt.nz/"
     },
     {
@@ -153314,7 +153463,7 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 102,
+      "links": 101,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
@@ -153406,8 +153555,8 @@
     },
     {
       "agency_id": "marlborough-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.marlborough.govt.nz/"
     },
     {
@@ -153419,8 +153568,8 @@
     },
     {
       "agency_id": "masterton-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.mstn.govt.nz/"
     },
     {
@@ -153561,8 +153710,8 @@
     },
     {
       "agency_id": "nelson-city-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.nelson.govt.nz/"
     },
     {
@@ -153766,8 +153915,8 @@
     },
     {
       "agency_id": "opotiki-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.odc.govt.nz/"
     },
     {
@@ -153779,8 +153928,9 @@
     },
     {
       "agency_id": "otago-polytechnic",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 324,
+      "status": "ok",
       "url": "https://www.op.ac.nz/"
     },
     {
@@ -153800,7 +153950,7 @@
     {
       "agency_id": "palmerston-north-city-council",
       "alternates": 0,
-      "links": 526,
+      "links": 525,
       "status": "ok",
       "url": "https://www.pncc.govt.nz/"
     },
@@ -153921,8 +154071,8 @@
     },
     {
       "agency_id": "rotorua-lakes-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.rotorualakescouncil.nz/"
     },
     {
@@ -153980,14 +154130,14 @@
     },
     {
       "agency_id": "south-taranaki-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.southtaranaki.com/"
     },
     {
       "agency_id": "south-waikato-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.southwaikato.govt.nz/"
     },
     {
@@ -154026,8 +154176,8 @@
     },
     {
       "agency_id": "stratford-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.stratford.govt.nz/"
     },
     {
@@ -154079,8 +154229,8 @@
     },
     {
       "agency_id": "taupo-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.taupodc.govt.nz/"
     },
     {
@@ -154134,7 +154284,7 @@
     {
       "agency_id": "te-wananga-o-aotearoa",
       "alternates": 0,
-      "links": 334,
+      "links": 333,
       "status": "ok",
       "url": "https://www.twoa.ac.nz/"
     },
@@ -154155,7 +154305,7 @@
     {
       "agency_id": "tertiary-education-commission",
       "alternates": 0,
-      "links": 385,
+      "links": 384,
       "status": "ok",
       "url": "https://www.tec.govt.nz/"
     },
@@ -154288,14 +154438,14 @@
     },
     {
       "agency_id": "waimate-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.waimatedc.govt.nz/"
     },
     {
       "agency_id": "waipa-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.waipadc.govt.nz/"
     },
     {
@@ -154346,14 +154496,14 @@
     },
     {
       "agency_id": "west-coast-regional-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.wcrc.govt.nz/"
     },
     {
       "agency_id": "western-bay-of-plenty-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.westernbay.govt.nz/"
     },
     {
@@ -154423,31 +154573,31 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 255,
-    "candidate_count": 5230,
+    "candidate_count": 5236,
     "feasibility_counts": {
       "high": 4142,
-      "low": 309,
-      "medium": 779
+      "low": 310,
+      "medium": 784
     },
     "known_registry_social_profiles": 444,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 291,
-      "instagram": 161,
-      "linkedin": 233,
-      "newsletter": 159,
+      "facebook": 292,
+      "instagram": 162,
+      "linkedin": 234,
+      "newsletter": 161,
       "rss": 3811,
       "website_page": 313,
       "x": 76,
-      "youtube": 155
+      "youtube": 156
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 159,
+      "newsletter": 161,
       "rss_feed": 61,
       "search_seed": 3750,
-      "social_profile": 934,
+      "social_profile": 938,
       "website_page": 313
     }
   }
