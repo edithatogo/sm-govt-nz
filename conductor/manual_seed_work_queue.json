@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-02T17:14:58+00:00",
+  "generated_at": "2026-07-03T17:01:45+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -1517,15 +1517,15 @@
       "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/financial-markets-authority-newsletter-0b7de67d.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/8a5ea39e62fcbcba.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/financial-markets-authority-newsletter-0b7de67d.json",
+        "manual_archive_seeds/newsletter/8a5ea39e62fcbcba.json",
         "manual_archive_seeds/newsletter/financial-markets-authority.json"
       ],
-      "source_id": "financial-markets-authority-newsletter-0b7de67d",
-      "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
+      "source_id": "8a5ea39e62fcbcba",
+      "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
     },
     {
       "acceptable_access_methods": [
@@ -1538,15 +1538,15 @@
       "agency_name": "Financial Markets Authority (Te Mana T\u0101tai Hokohoko)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/financial-markets-authority-newsletter-86c5b385.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/ab1b487cc872cb5b.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/financial-markets-authority-newsletter-86c5b385.json",
+        "manual_archive_seeds/newsletter/ab1b487cc872cb5b.json",
         "manual_archive_seeds/newsletter/financial-markets-authority.json"
       ],
-      "source_id": "financial-markets-authority-newsletter-86c5b385",
-      "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
+      "source_id": "ab1b487cc872cb5b",
+      "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
     },
     {
       "acceptable_access_methods": [
@@ -5990,14 +5990,14 @@
       "agency_name": "Tertiary Education Commission (Te Amorangi M\u0101tauranga Matua)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/04c53a089679ef0f.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
+        "manual_archive_seeds/newsletter/04c53a089679ef0f.json",
         "manual_archive_seeds/newsletter/tertiary-education-commission.json"
       ],
-      "source_id": "tertiary-education-commission-newsletter-ac936eba",
+      "source_id": "04c53a089679ef0f",
       "url": "https://www.tec.govt.nz/alerts"
     },
     {
@@ -6909,6 +6909,48 @@
         "email_ingress",
         "operator_authorized_seed"
       ],
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/a159b229e9fd0a47.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/a159b229e9fd0a47.json",
+        "manual_archive_seeds/newsletter/wellington-city-libraries.json"
+      ],
+      "source_id": "a159b229e9fd0a47",
+      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/e992daa0fdf06fca.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/e992daa0fdf06fca.json",
+        "manual_archive_seeds/newsletter/wellington-city-libraries.json"
+      ],
+      "source_id": "e992daa0fdf06fca",
+      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
       "account": "https://www.wcrc.govt.nz",
       "agency_id": "west-coast-regional-council",
       "agency_name": "West Coast Regional Council (Te Tai o Poutini)",
@@ -7355,6 +7397,27 @@
       "agency_name": "Westland District Council",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/d66247a4eba6e714.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/d66247a4eba6e714.json",
+        "manual_archive_seeds/newsletter/westland-district-council.json"
+      ],
+      "source_id": "d66247a4eba6e714",
+      "url": "http://www.westlanddc.govt.nz/do-it-online/subscribe/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.westlanddc.govt.nz",
+      "agency_id": "westland-district-council",
+      "agency_name": "Westland District Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/westland-district-council-newsletter-104203a3.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
@@ -7376,15 +7439,15 @@
       "agency_name": "Westland District Council",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/westland-district-council-newsletter-6f1029ec.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/westland-district-council-newsletter-a001be00.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/westland-district-council-newsletter-6f1029ec.json",
+        "manual_archive_seeds/newsletter/westland-district-council-newsletter-a001be00.json",
         "manual_archive_seeds/newsletter/westland-district-council.json"
       ],
-      "source_id": "westland-district-council-newsletter-6f1029ec",
-      "url": "http://www.westlanddc.govt.nz/do-it-online/subscribe/"
+      "source_id": "westland-district-council-newsletter-a001be00",
+      "url": "https://www.westlanddc.govt.nz/do-it-online/subscribe/"
     },
     {
       "acceptable_access_methods": [
@@ -11030,14 +11093,14 @@
       "agency_name": "Otago Polytechnic",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "linkedin",
-      "preferred_seed_path": "manual_archive_seeds/linkedin/otago-polytechnic-linkedin-dfd023f3.json",
+      "preferred_seed_path": "manual_archive_seeds/linkedin/894173a6864da511.json",
       "priority_rank": 30,
       "required_authorization": "organization_admin_or_approved_app",
       "seed_candidates": [
-        "manual_archive_seeds/linkedin/otago-polytechnic-linkedin-dfd023f3.json",
+        "manual_archive_seeds/linkedin/894173a6864da511.json",
         "manual_archive_seeds/linkedin/otago-polytechnic.json"
       ],
-      "source_id": "otago-polytechnic-linkedin-dfd023f3",
+      "source_id": "894173a6864da511",
       "url": "https://www.linkedin.com/company/213448"
     },
     {
@@ -16973,14 +17036,14 @@
       "agency_name": "Otago Polytechnic",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "facebook",
-      "preferred_seed_path": "manual_archive_seeds/facebook/otago-polytechnic-facebook-3e83bb07.json",
+      "preferred_seed_path": "manual_archive_seeds/facebook/92f7f85f4fcd06be.json",
       "priority_rank": 40,
       "required_authorization": "page_owner_or_approved_app",
       "seed_candidates": [
-        "manual_archive_seeds/facebook/otago-polytechnic-facebook-3e83bb07.json",
+        "manual_archive_seeds/facebook/92f7f85f4fcd06be.json",
         "manual_archive_seeds/facebook/otago-polytechnic.json"
       ],
-      "source_id": "otago-polytechnic-facebook-3e83bb07",
+      "source_id": "92f7f85f4fcd06be",
       "url": "https://www.facebook.com/OtagoPoly"
     },
     {
@@ -17682,7 +17745,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 3 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -19250,6 +19313,27 @@
       ],
       "source_id": "21e0cbe391214279",
       "url": "https://www.facebook.com/WgtnCouncil"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "Like us on Facebook",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "preferred_seed_path": "manual_archive_seeds/facebook/4c3f179a8402f5aa.json",
+      "priority_rank": 40,
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/4c3f179a8402f5aa.json",
+        "manual_archive_seeds/facebook/wellington-city-libraries.json"
+      ],
+      "source_id": "4c3f179a8402f5aa",
+      "url": "https://www.facebook.com/wellingtoncitylibraries"
     },
     {
       "acceptable_access_methods": [
@@ -22055,14 +22139,14 @@
       "agency_name": "Otago Polytechnic",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "instagram",
-      "preferred_seed_path": "manual_archive_seeds/instagram/otago-polytechnic-instagram-687f841f.json",
+      "preferred_seed_path": "manual_archive_seeds/instagram/d32669ba1a66538a.json",
       "priority_rank": 50,
       "required_authorization": "business_or_creator_account_owner_or_approved_app",
       "seed_candidates": [
-        "manual_archive_seeds/instagram/otago-polytechnic-instagram-687f841f.json",
+        "manual_archive_seeds/instagram/d32669ba1a66538a.json",
         "manual_archive_seeds/instagram/otago-polytechnic.json"
       ],
-      "source_id": "otago-polytechnic-instagram-687f841f",
+      "source_id": "d32669ba1a66538a",
       "url": "https://www.instagram.com/otagopolytechnic/"
     },
     {
@@ -23289,6 +23373,27 @@
         "account_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "Follow us on Instagram",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "instagram",
+      "preferred_seed_path": "manual_archive_seeds/instagram/f61ccf07bd59e4c0.json",
+      "priority_rank": 50,
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/instagram/f61ccf07bd59e4c0.json",
+        "manual_archive_seeds/instagram/wellington-city-libraries.json"
+      ],
+      "source_id": "f61ccf07bd59e4c0",
+      "url": "https://instagram.com/wcl_library"
+    },
+    {
+      "acceptable_access_methods": [
+        "instagram_graph_api",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "weltecnz",
       "agency_id": "weltec",
       "agency_name": "Wellington Institute of Technology (WelTec)",
@@ -23559,10 +23664,10 @@
   ],
   "summary": {
     "platform_counts": {
-      "facebook": 318,
-      "instagram": 181,
+      "facebook": 319,
+      "instagram": 182,
       "linkedin": 256,
-      "newsletter": 363,
+      "newsletter": 366,
       "threads": 3
     },
     "priority_order": [
@@ -23572,6 +23677,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 1121
+    "queue_count": 1126
   }
 }
