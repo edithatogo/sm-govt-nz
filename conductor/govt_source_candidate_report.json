@@ -3878,33 +3878,6 @@
       "agency_type": "SOE",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "85747df0077a2979",
-      "confidence_score": 0.5,
-      "domain_trust": "unknown",
-      "feasibility": "high",
-      "link_title": "Updates to Food Assurance Services page",
-      "mime_type": "application/rss+xml",
-      "official_website": "https://www.asurequality.com",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "archive_friendly_platform",
-        "official_term:service"
-      ],
-      "url": "https://www.asurequality.com/home/changes"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.asurequality.com",
-      "agency_id": "asurequality",
-      "agency_name": "AsureQuality (Kaitiaki Kai)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
       "candidate_id": "cb6baccb1afd97a4",
       "confidence_score": 0.45,
       "domain_trust": "unknown",
@@ -4274,50 +4247,6 @@
       "url": "https://www.asurequality.com/subscribe"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "asurequality",
-      "agency_name": "AsureQuality (Kaitiaki Kai)",
-      "agency_type": "SOE",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "46d586812cea32c6",
-      "confidence_score": 0.35,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.asurequality.com",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Agriculture",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [],
-      "url": "https://www.facebook.com/AsureQualityLtd"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "asurequality",
-      "agency_name": "AsureQuality (Kaitiaki Kai)",
-      "agency_type": "SOE",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "09666088682a0f04",
-      "confidence_score": 0.35,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.asurequality.com",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Agriculture",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [],
-      "url": "https://www.instagram.com/asurequality/?hl=en"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "AsureQuality",
       "account_classification": "official",
@@ -4332,7 +4261,7 @@
       "domain_trust": "unknown",
       "feasibility": "low",
       "official_website": "https://www.asurequality.com",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "linkedin",
       "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
       "portfolio": "Agriculture",
@@ -26554,30 +26483,6 @@
       "agency_type": "Regional Council",
       "archive_status": "candidate",
       "auth": "none",
-      "candidate_id": "048f6d00b0e85b02",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.ecan.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "http://www.youtube.com/watch/7MgLLT-pt1I"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "18 June 2026 (Briefings/Workshops \u2013 Afternoon)",
-      "agency_id": "environment-canterbury",
-      "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
-      "agency_type": "Regional Council",
-      "archive_status": "candidate",
-      "auth": "none",
       "candidate_id": "dad4f17dfe7431b3",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
@@ -26593,6 +26498,30 @@
         "official_term:nz"
       ],
       "url": "http://www.youtube.com/watch/UWM5Bt6eV24"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "Council Meeting - 24 June 2026",
+      "agency_id": "environment-canterbury",
+      "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "1225a746fcf9467d",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.ecan.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "http://www.youtube.com/watch/ceTKqFs728w"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -26644,13 +26573,13 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Regulation Hearing Committee 17 June 2026",
+      "account": "Environment Canterbury Livestream - 24 June 2026",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
       "agency_type": "Regional Council",
       "archive_status": "candidate",
       "auth": "none",
-      "candidate_id": "fc5e48a17dd508fa",
+      "candidate_id": "c299eefde23f1d75",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -26664,7 +26593,7 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "http://www.youtube.com/watch/y8LO17UlKng"
+      "url": "http://www.youtube.com/watch/uC6hC7VDe5c"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -132590,6 +132519,57 @@
       "url": "https://www.wellington.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "e992daa0fdf06fca",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "a159b229e9fd0a47",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "link_text": "Subscribe on Youtube",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133024,6 +133004,78 @@
       "url": "https://bsky.app/profile/wcllibrary.bsky.social"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Like us on Facebook",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "4c3f179a8402f5aa",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/wellingtoncitylibraries"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Follow us on Instagram",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "f61ccf07bd59e4c0",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://instagram.com/wcl_library"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "Subscribe on Youtube",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "98aaf6b9e2d42b19",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133049,6 +133101,33 @@
         "official_term:nz"
       ],
       "url": "https://www.wcl.govt.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "d3a11038ecc7a113",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
     },
     {
       "access_method": "public_rss",
@@ -140155,7 +140234,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-02T14:55:49+00:00",
+  "generated_at": "2026-07-02T18:17:12+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -152967,9 +153046,8 @@
     },
     {
       "agency_id": "asurequality",
-      "alternates": 1,
-      "links": 103,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.asurequality.com/"
     },
     {
@@ -153028,7 +153106,7 @@
     {
       "agency_id": "cancer-control-agency",
       "alternates": 0,
-      "links": 172,
+      "links": 175,
       "status": "ok",
       "url": "https://www.teaho.govt.nz/"
     },
@@ -153047,8 +153125,8 @@
     },
     {
       "agency_id": "central-otago-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.codc.govt.nz/"
     },
     {
@@ -153109,8 +153187,8 @@
     },
     {
       "agency_id": "clutha-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.cluthadc.govt.nz/"
     },
     {
@@ -153236,7 +153314,7 @@
     {
       "agency_id": "electricity-corporation-of-nz",
       "alternates": 0,
-      "links": 20,
+      "links": 16,
       "status": "ok",
       "url": "https://www.ecnz.co.nz/"
     },
@@ -153249,8 +153327,8 @@
     },
     {
       "agency_id": "environment-southland",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.es.govt.nz/"
     },
     {
@@ -153327,8 +153405,8 @@
     },
     {
       "agency_id": "grey-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.greydc.govt.nz/"
     },
     {
@@ -153423,8 +153501,8 @@
     },
     {
       "agency_id": "hurunui-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.hurunui.govt.nz/"
     },
     {
@@ -153462,14 +153540,14 @@
     },
     {
       "agency_id": "invercargill-city-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.icc.govt.nz/"
     },
     {
       "agency_id": "kaikoura-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.kaikoura.govt.nz/"
     },
     {
@@ -153581,8 +153659,8 @@
     },
     {
       "agency_id": "marlborough-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.marlborough.govt.nz/"
     },
     {
@@ -153594,8 +153672,8 @@
     },
     {
       "agency_id": "masterton-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.mstn.govt.nz/"
     },
     {
@@ -153736,8 +153814,8 @@
     },
     {
       "agency_id": "nelson-city-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.nelson.govt.nz/"
     },
     {
@@ -153941,8 +154019,8 @@
     },
     {
       "agency_id": "opotiki-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.odc.govt.nz/"
     },
     {
@@ -154091,14 +154169,14 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 368,
+      "links": 365,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
     {
       "agency_id": "rotorua-lakes-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.rotorualakescouncil.nz/"
     },
     {
@@ -154156,14 +154234,14 @@
     },
     {
       "agency_id": "south-taranaki-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.southtaranaki.com/"
     },
     {
       "agency_id": "south-waikato-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.southwaikato.govt.nz/"
     },
     {
@@ -154202,8 +154280,8 @@
     },
     {
       "agency_id": "stratford-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.stratford.govt.nz/"
     },
     {
@@ -154255,8 +154333,8 @@
     },
     {
       "agency_id": "taupo-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.taupodc.govt.nz/"
     },
     {
@@ -154383,7 +154461,7 @@
     {
       "agency_id": "tvnz",
       "alternates": 0,
-      "links": 165,
+      "links": 162,
       "status": "ok",
       "url": "https://www.tvnz.co.nz/"
     },
@@ -154464,14 +154542,14 @@
     },
     {
       "agency_id": "waimate-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.waimatedc.govt.nz/"
     },
     {
       "agency_id": "waipa-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.waipadc.govt.nz/"
     },
     {
@@ -154509,8 +154587,9 @@
     },
     {
       "agency_id": "wellington-city-libraries",
-      "error": "HTTP Error 403: Forbidden",
-      "status": "failed",
+      "alternates": 0,
+      "links": 94,
+      "status": "ok",
       "url": "https://www.wcl.govt.nz/"
     },
     {
@@ -154522,14 +154601,14 @@
     },
     {
       "agency_id": "west-coast-regional-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.wcrc.govt.nz/"
     },
     {
       "agency_id": "western-bay-of-plenty-district-council",
-      "error": "HTTP Error 405: Not Allowed",
-      "status": "failed",
+      "error": "non-html response",
+      "status": "skipped",
       "url": "https://www.westernbay.govt.nz/"
     },
     {
@@ -154599,32 +154678,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 255,
-    "candidate_count": 5237,
+    "candidate_count": 5240,
     "feasibility_counts": {
       "high": 4142,
       "low": 310,
-      "medium": 785
+      "medium": 788
     },
-    "known_registry_social_profiles": 444,
+    "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
       "facebook": 292,
       "instagram": 162,
       "linkedin": 234,
-      "newsletter": 162,
-      "rss": 3811,
-      "website_page": 313,
+      "newsletter": 164,
+      "rss": 3810,
+      "website_page": 314,
       "x": 76,
-      "youtube": 156
+      "youtube": 157
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 162,
-      "rss_feed": 61,
+      "newsletter": 164,
+      "rss_feed": 60,
       "search_seed": 3750,
-      "social_profile": 938,
-      "website_page": 313
+      "social_profile": 939,
+      "website_page": 314
     }
   }
 }

@@ -639,6 +639,17 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "newsletter",
+      "reason": "no newsletter payload matched environmental-protection-authority-newsletter-37f96551",
+      "source_id": "environmental-protection-authority-newsletter-37f96551",
+      "source_type": "newsletter",
+      "status": "missing_payload",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/delivering-progress-for-hazardous-substances/"
+    },
+    {
+      "agency_id": "environmental-protection-authority",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
       "reason": "no newsletter payload matched environmental-protection-authority-newsletter-90540a54",
       "source_id": "environmental-protection-authority-newsletter-90540a54",
       "source_type": "newsletter",
@@ -1227,6 +1238,17 @@
       "source_type": "newsletter",
       "status": "missing_payload",
       "url": "https://www.tewhatuora.govt.nz/health-alerts"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "no newsletter payload matched health-nz-newsletter-0df7d090",
+      "source_id": "health-nz-newsletter-0df7d090",
+      "source_type": "newsletter",
+      "status": "missing_payload",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/changes-to-public-health-advice-regarding-moa-point"
     },
     {
       "agency_id": "health-nz",
@@ -3176,6 +3198,17 @@
       "url": "https://www.tepapa.govt.nz/about/contact-us/newsletters"
     },
     {
+      "agency_id": "tertiary-education-commission",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "no newsletter payload matched tertiary-education-commission-newsletter-ac936eba",
+      "source_id": "tertiary-education-commission-newsletter-ac936eba",
+      "source_type": "newsletter",
+      "status": "missing_payload",
+      "url": "https://www.tec.govt.nz/alerts"
+    },
+    {
       "agency_id": "thames-coromandel-district-council",
       "archive_status": "candidate",
       "feasibility": "medium",
@@ -3971,16 +4004,16 @@
   "summary": {
     "payload_count": 0,
     "platform_counts": {
-      "newsletter": 360
+      "newsletter": 363
     },
-    "selected_sources": 360,
+    "selected_sources": 363,
     "status_by_platform": {
       "newsletter": {
-        "missing_payload": 360
+        "missing_payload": 363
       }
     },
     "status_counts": {
-      "missing_payload": 360
+      "missing_payload": 363
     }
   }
 }
