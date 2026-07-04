@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 15501,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "f472c97b33207def8e66d82bded66b6baaea2ac4fabeedeaa9c92cf17b1d8370"
+      "sha256": "aad312e1da2a0e524fc78245f07e076de1129ef1da09bbd656b0e41b2f41f07f"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 5031316,
+      "bytes": 5037070,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "7a9233ee7ad0e74629aab9266f50fbc72a7e1ac12e2d68c706fe5333eff93071"
+      "sha256": "17d5ebc3c365f0bbc7969a9e7827280d887e5aa35cadd419391a6c8fb0e070f5"
     },
     "normalized_archive.parquet": {
-      "bytes": 7988006,
+      "bytes": 7996530,
       "path": "normalized_archive.parquet",
-      "sha256": "371915b102a1488ca5445a67fe0726daddd32276156f7cbe59c3fd2cf3ff735a"
+      "sha256": "ada6f739b5e3b4516254571505296ceb034efea66cf5d8d02122d59a4268b42f"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 63,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 8590,
+  "normalized_record_count": 8607,
   "normalized_shard_count": 517,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 10531,
+  "raw_file_count": 10623,
   "record_index": [
     {
       "mirror_targets": [
@@ -826,6 +826,21 @@
       "source_platform": "x",
       "source_record_id": "x_feed:d097d27c8fe18391778459a9",
       "source_url": "https://x.com/CivilAviationNZ"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "1971-01-01T00:00:00+00:00",
+      "source_account": "Pamu_NZ",
+      "source_key": "x:Pamu_NZ",
+      "source_platform": "x",
+      "source_record_id": "x_feed:d1df336ed95b8854e66f2ece",
+      "source_url": "https://x.com/Pamu_NZ"
     },
     {
       "mirror_targets": [
@@ -43317,21 +43332,6 @@
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
     },
     {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-07-08T22:01:00+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:7a96d5ee02b19e588752d968",
-      "source_url": "https://x.com/Pamu_NZ"
-    },
-    {
       "mirror_targets": [],
       "original_timestamp": "2024-07-09T02:27:24+00:00",
       "source_account": "YouTube \n    \n\n    \n         , opens in a new window",
@@ -43348,36 +43348,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:949e9bad3564a6dcff2fe8f9",
       "source_url": "https://www.youtube.com/c/callaghaninnovationgovtnz"
-    },
-    {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-07-11T20:01:22+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:fee68e1d156f1b98084637ba",
-      "source_url": "https://x.com/Pamu_NZ"
-    },
-    {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-07-15T22:00:24+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:c3053b26d58fd3add30c8670",
-      "source_url": "https://x.com/Pamu_NZ"
     },
     {
       "mirror_targets": [],
@@ -43398,36 +43368,6 @@
       "source_url": "https://www.wananga.com/feed/atom"
     },
     {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-07-16T21:14:50+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:61595a76bcadc81ba1e401a4",
-      "source_url": "https://x.com/Pamu_NZ"
-    },
-    {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-07-18T20:00:30+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:08c974b878fc2f0b2a5895d9",
-      "source_url": "https://x.com/Pamu_NZ"
-    },
-    {
       "mirror_targets": [],
       "original_timestamp": "2024-07-22T12:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
@@ -43435,21 +43375,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:1b494208007308b1937633d3",
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
-    },
-    {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-07-22T22:00:30+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:5b0703444b84aef085b3e79b",
-      "source_url": "https://x.com/Pamu_NZ"
     },
     {
       "mirror_targets": [],
@@ -43468,21 +43393,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:f21613269b513ba82149263e",
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
-    },
-    {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-07-24T22:00:26+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:c18bff8a06b3c14032c0311c",
-      "source_url": "https://x.com/Pamu_NZ"
     },
     {
       "mirror_targets": [],
@@ -43566,21 +43476,6 @@
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
     },
     {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-07-29T22:00:25+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:9f101426a4f4e95a9a848b42",
-      "source_url": "https://x.com/Pamu_NZ"
-    },
-    {
       "mirror_targets": [],
       "original_timestamp": "2024-07-30T02:55:41+00:00",
       "source_account": "https://www.educationpayroll.co.nz",
@@ -43615,21 +43510,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:f7f046dbc97fd537430354a5",
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
-    },
-    {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-07-30T22:00:25+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:52b5320dcb4c92c017dfa8a4",
-      "source_url": "https://x.com/Pamu_NZ"
     },
     {
       "mirror_targets": [],
@@ -43823,8 +43703,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpq4uq54gp2s",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -43865,8 +43745,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpq4uq73vg2t",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -43952,8 +43832,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpq4uqatl72s",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -43994,8 +43874,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpq4uqcv5y2z",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -44036,8 +43916,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpq4uqennh2s",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -44078,8 +43958,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqfwxucy52f",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -44499,21 +44379,6 @@
       "source_url": "https://www.youtube.com/user/tepunikokiri"
     },
     {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-09-30T02:30:17+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:2c8e47b9e37eda46161dcf9a",
-      "source_url": "https://x.com/Pamu_NZ"
-    },
-    {
       "mirror_targets": [],
       "original_timestamp": "2024-09-30T04:31:46+00:00",
       "source_account": "nzpost",
@@ -44552,8 +44417,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqfwxuvlg2e",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -44792,8 +44657,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqfwxyx4d2k",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -44834,8 +44699,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqfwxzsua2c",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -44944,21 +44809,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:7379a8514da9d3631ec91bc5",
       "source_url": "https://www.youtube.com/channel/UCn008_LQ4z89psIuaDBLyFg"
-    },
-    {
-      "mirror_targets": [
-        {
-          "mirror_url": "",
-          "status": "pending",
-          "target": "bluesky"
-        }
-      ],
-      "original_timestamp": "2024-11-03T02:00:30+00:00",
-      "source_account": "Pamu_NZ",
-      "source_key": "x:Pamu_NZ",
-      "source_platform": "x",
-      "source_record_id": "x_feed:9bdf26d0567fc830ad7849d2",
-      "source_url": "https://x.com/Pamu_NZ"
     },
     {
       "mirror_targets": [],
@@ -67622,8 +67472,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqfwy2ici2j",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -67637,8 +67487,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqmlnva6m2c",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -67931,8 +67781,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqmlnwkgf2u",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -69299,8 +69149,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqmlny3cr2b",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -70181,8 +70031,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqmlnzonx2e",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -70586,8 +70436,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqmlo35jx2e",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -70916,8 +70766,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqu5tg3ah2u",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -73475,8 +73325,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqu5tgrgs2c",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -80633,8 +80483,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqu5thjwr2m",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -82406,8 +82256,8 @@
     {
       "mirror_targets": [
         {
-          "mirror_url": "",
-          "status": "pending",
+          "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3mpqu5tif4c2e",
+          "status": "posted",
           "target": "bluesky"
         }
       ],
@@ -92409,6 +92259,261 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-02T18:30:03.095Z",
+      "source_account": "ponekeben.bsky.social",
+      "source_key": "bluesky:ponekeben.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mponzm5esm27",
+      "source_url": "https://bsky.app/profile/ponekeben.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-02T20:24:36.227Z",
+      "source_account": "metservice.com",
+      "source_key": "bluesky:metservice.com",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpouggdzls2o",
+      "source_url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-02T20:24:36.228Z",
+      "source_account": "metservice.com",
+      "source_key": "bluesky:metservice.com",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpouhksiqk2o",
+      "source_url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-02T20:38:28.718Z",
+      "source_account": "christchurchlib.bsky.social",
+      "source_key": "bluesky:christchurchlib.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpov7ab5hk2t",
+      "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-02T21:42:38.839749+00:00",
+      "source_account": "beehivenz.bsky.social",
+      "source_key": "bluesky:beehivenz.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpoyrxztaz2m",
+      "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-02T21:46:45.368Z",
+      "source_account": "metservice.com",
+      "source_key": "bluesky:metservice.com",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpoyzd4ya22s",
+      "source_url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-02T21:46:45.369Z",
+      "source_account": "metservice.com",
+      "source_key": "bluesky:metservice.com",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpoyziaoj22s",
+      "source_url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-02T22:45:00.418Z",
+      "source_account": "ahawkins.bsky.social",
+      "source_key": "bluesky:ahawkins.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpp4bibgyk2w",
+      "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T00:11:12.139062+00:00",
+      "source_account": "beehivenz.bsky.social",
+      "source_key": "bluesky:beehivenz.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mppb3mg3o72a",
+      "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T00:20:53.299Z",
+      "source_account": "christchurchlib.bsky.social",
+      "source_key": "bluesky:christchurchlib.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mppbmwnjrk2g",
+      "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T01:02:20.879586+00:00",
+      "source_account": "beehivenz.bsky.social",
+      "source_key": "bluesky:beehivenz.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mppdx2zfxj2r",
+      "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T01:38:56.903Z",
+      "source_account": "ahawkins.bsky.social",
+      "source_key": "bluesky:ahawkins.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mppfyjbqtc2z",
+      "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T01:46:51.508Z",
+      "source_account": "rebeccamatthews.bsky.social",
+      "source_key": "bluesky:rebeccamatthews.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mppggnvhds2h",
+      "source_url": "https://bsky.app/profile/rebeccamatthews.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T01:51:39.181Z",
+      "source_account": "health.govt.nz",
+      "source_key": "bluesky:health.govt.nz",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mppgpaakyc2n",
+      "source_url": "https://bsky.app/profile/health.govt.nz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T01:52:02.771Z",
+      "source_account": "health.govt.nz",
+      "source_key": "bluesky:health.govt.nz",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mppgpwqi3s2n",
+      "source_url": "https://bsky.app/profile/health.govt.nz"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T01:58:10.237902+00:00",
+      "source_account": "beehivenz.bsky.social",
+      "source_key": "bluesky:beehivenz.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpph2v7oyj2h",
+      "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T02:17:27.580Z",
+      "source_account": "ahawkins.bsky.social",
+      "source_key": "bluesky:ahawkins.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mppi5evwfs2l",
+      "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
       "mirror_targets": [],
       "original_timestamp": "2026-07-03T03:01:49Z",
       "source_account": "em4mkapmjakoh5o@upload.pipedream.net",
@@ -92416,6 +92521,156 @@
       "source_platform": "email",
       "source_record_id": "email:cm.1301497090507.wblrjy.hjhddyjkih.d-cmail19.com",
       "source_url": "http://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T03:15:53.413022+00:00",
+      "source_account": "beehivenz.bsky.social",
+      "source_key": "bluesky:beehivenz.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpplfueiwj2e",
+      "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T03:28:45.447Z",
+      "source_account": "andrewlittlenz.bsky.social",
+      "source_key": "bluesky:andrewlittlenz.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mppm4um3us2d",
+      "source_url": "https://bsky.app/profile/andrewlittlenz.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T04:29:50.118Z",
+      "source_account": "ponekeben.bsky.social",
+      "source_key": "bluesky:ponekeben.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpppk3iy5k2r",
+      "source_url": "https://bsky.app/profile/ponekeben.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T04:35:52.401963+00:00",
+      "source_account": "beehivenz.bsky.social",
+      "source_key": "bluesky:beehivenz.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpppuuzt3w2r",
+      "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T05:07:56.642Z",
+      "source_account": "ponekeben.bsky.social",
+      "source_key": "bluesky:ponekeben.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpproa45qk2g",
+      "source_url": "https://bsky.app/profile/ponekeben.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T06:04:41.588697+00:00",
+      "source_account": "beehivenz.bsky.social",
+      "source_key": "bluesky:beehivenz.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpputpdqsg2k",
+      "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T07:59:16.377Z",
+      "source_account": "ahawkins.bsky.social",
+      "source_key": "bluesky:ahawkins.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpq3almrhc2m",
+      "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T08:06:28.342Z",
+      "source_account": "ahawkins.bsky.social",
+      "source_key": "bluesky:ahawkins.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpq3nhlbcc2l",
+      "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T08:27:21.436Z",
+      "source_account": "ahawkins.bsky.social",
+      "source_key": "bluesky:ahawkins.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpq4ssn7ic2s",
+      "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [
+        {
+          "mirror_url": "",
+          "status": "pending",
+          "target": "bluesky"
+        }
+      ],
+      "original_timestamp": "2026-07-03T09:47:37.533763+00:00",
+      "source_account": "beehivenz.bsky.social",
+      "source_key": "bluesky:beehivenz.bsky.social",
+      "source_platform": "bluesky",
+      "source_record_id": "bluesky:3mpqbcdmkmx2h",
+      "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
       "mirror_targets": [],
@@ -92614,14 +92869,14 @@
   ],
   "source_counts": {
     "api": 13,
-    "bluesky": 1701,
+    "bluesky": 1728,
     "courtsofnz.govt.nz": 11,
     "email": 15,
     "json_feed": 16,
     "linkedin": 2,
     "rss": 3930,
     "website_page": 226,
-    "x": 843,
+    "x": 833,
     "youtube": 1833
   },
   "source_date_ranges": {
@@ -92630,7 +92885,7 @@
       "min_original_created_at": "2026-07-01T10:07:40+00:00"
     },
     "bluesky": {
-      "max_original_created_at": "2026-07-02T08:46:46.843579+00:00",
+      "max_original_created_at": "2026-07-03T09:47:37.533763+00:00",
       "min_original_created_at": "2024-02-13T18:39:02.215Z"
     },
     "courtsofnz.govt.nz": {
