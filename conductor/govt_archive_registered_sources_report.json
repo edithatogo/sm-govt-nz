@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-04T08:49:27+00:00",
+  "generated_at": "2026-07-04T13:55:44+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -4751,6 +4751,28 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mpssjjqrx22g",
+      "source_id": "43382f64450551e1",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "agency_id": "metservice-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mpssjg2tjs2g",
+      "source_id": "43382f64450551e1",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "agency_id": "metservice-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
       "reason": "captured bluesky post bluesky:3mprlrnduas2j",
       "source_id": "43382f64450551e1",
       "source_type": "social_profile",
@@ -4766,28 +4788,6 @@
       "source_id": "43382f64450551e1",
       "source_type": "social_profile",
       "status": "captured",
-      "url": "https://bsky.app/profile/metservice.com"
-    },
-    {
-      "agency_id": "metservice-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "43382f64450551e1",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/metservice.com"
-    },
-    {
-      "agency_id": "metservice-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "43382f64450551e1",
-      "source_type": "social_profile",
-      "status": "already_captured",
       "url": "https://bsky.app/profile/metservice.com"
     },
     {
@@ -17448,14 +17448,14 @@
     "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
-        "already_captured": 1572,
-        "captured": 11
+        "already_captured": 1570,
+        "captured": 13
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1572,
-      "captured": 11
+      "already_captured": 1570,
+      "captured": 13
     }
   }
 }
