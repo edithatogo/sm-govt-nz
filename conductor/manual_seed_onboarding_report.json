@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-03T17:01:45+00:00",
+  "generated_at": "2026-07-04T16:38:16+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -4599,19 +4599,19 @@
       "account": "",
       "agency_id": "otago-polytechnic",
       "agency_name": "Otago Polytechnic",
-      "archive_status": "ready",
+      "archive_status": "candidate",
       "feasibility": "medium",
       "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "facebook",
-      "preferred_seed_path": "manual_archive_seeds/facebook/92f7f85f4fcd06be.json",
+      "preferred_seed_path": "manual_archive_seeds/facebook/otago-polytechnic-facebook-3e83bb07.json",
       "required_authorization": "page_owner_or_approved_app",
       "seed_candidates": [
-        "manual_archive_seeds/facebook/92f7f85f4fcd06be.json",
+        "manual_archive_seeds/facebook/otago-polytechnic-facebook-3e83bb07.json",
         "manual_archive_seeds/facebook/otago-polytechnic.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "92f7f85f4fcd06be",
+      "source_id": "otago-polytechnic-facebook-3e83bb07",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/OtagoPoly"
     },
@@ -10624,19 +10624,19 @@
       "account": "",
       "agency_id": "otago-polytechnic",
       "agency_name": "Otago Polytechnic",
-      "archive_status": "ready",
+      "archive_status": "candidate",
       "feasibility": "medium",
       "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "instagram",
-      "preferred_seed_path": "manual_archive_seeds/instagram/d32669ba1a66538a.json",
+      "preferred_seed_path": "manual_archive_seeds/instagram/otago-polytechnic-instagram-687f841f.json",
       "required_authorization": "business_or_creator_account_owner_or_approved_app",
       "seed_candidates": [
-        "manual_archive_seeds/instagram/d32669ba1a66538a.json",
+        "manual_archive_seeds/instagram/otago-polytechnic-instagram-687f841f.json",
         "manual_archive_seeds/instagram/otago-polytechnic.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "d32669ba1a66538a",
+      "source_id": "otago-polytechnic-instagram-687f841f",
       "source_type": "social_profile",
       "url": "https://www.instagram.com/otagopolytechnic/"
     },
@@ -16399,19 +16399,19 @@
       "account": "",
       "agency_id": "otago-polytechnic",
       "agency_name": "Otago Polytechnic",
-      "archive_status": "ready",
+      "archive_status": "manual_seed",
       "feasibility": "low",
       "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "linkedin",
-      "preferred_seed_path": "manual_archive_seeds/linkedin/894173a6864da511.json",
+      "preferred_seed_path": "manual_archive_seeds/linkedin/otago-polytechnic-linkedin-dfd023f3.json",
       "required_authorization": "organization_admin_or_approved_app",
       "seed_candidates": [
-        "manual_archive_seeds/linkedin/894173a6864da511.json",
+        "manual_archive_seeds/linkedin/otago-polytechnic-linkedin-dfd023f3.json",
         "manual_archive_seeds/linkedin/otago-polytechnic.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "894173a6864da511",
+      "source_id": "otago-polytechnic-linkedin-dfd023f3",
       "source_type": "social_profile",
       "url": "https://www.linkedin.com/company/213448"
     },
@@ -20654,16 +20654,16 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/8a5ea39e62fcbcba.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/financial-markets-authority-newsletter-0b7de67d.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/8a5ea39e62fcbcba.json",
+        "manual_archive_seeds/newsletter/financial-markets-authority-newsletter-0b7de67d.json",
         "manual_archive_seeds/newsletter/financial-markets-authority.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "8a5ea39e62fcbcba",
+      "source_id": "financial-markets-authority-newsletter-0b7de67d",
       "source_type": "newsletter",
-      "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
+      "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
     },
     {
       "acceptable_access_methods": [
@@ -20679,16 +20679,16 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/ab1b487cc872cb5b.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/financial-markets-authority-newsletter-86c5b385.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/ab1b487cc872cb5b.json",
+        "manual_archive_seeds/newsletter/financial-markets-authority-newsletter-86c5b385.json",
         "manual_archive_seeds/newsletter/financial-markets-authority.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "ab1b487cc872cb5b",
+      "source_id": "financial-markets-authority-newsletter-86c5b385",
       "source_type": "newsletter",
-      "url": "https://www.fma.govt.nz/subscribe-to-fma-news-and-alerts"
+      "url": "https://www.fma.govt.nz/library/warnings-and-alerts/"
     },
     {
       "acceptable_access_methods": [
