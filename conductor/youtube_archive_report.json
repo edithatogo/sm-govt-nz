@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T12:54:02+00:00",
+  "generated_at": "2026-07-05T06:15:34+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -763,6 +763,17 @@
       "source_type": "social_profile",
       "status": "captured",
       "url": "https://www.youtube.com/@AUTUni"
+    },
+    {
+      "agency_id": "broadcasting-standards-authority",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
+      "source_id": "broadcasting-standards-authority-youtube-acb2e172",
+      "source_type": "social_profile",
+      "status": "source_url_not_channel",
+      "url": "https://www.youtube.com/yt/about/policies/#community-guidelines"
     },
     {
       "agency_id": "buller-district-council",
@@ -1753,6 +1764,17 @@
       "source_type": "social_profile",
       "status": "already_captured",
       "url": "https://www.youtube.com/CityRailLinkAuckland"
+    },
+    {
+      "agency_id": "civil-aviation-authority",
+      "archive_status": "ready",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
+      "source_id": "e0c6802767a9d1ed",
+      "source_type": "social_profile",
+      "status": "youtube_channel_not_found",
+      "url": "https://www.youtube.com/@CAANewZealand"
     },
     {
       "agency_id": "civil-aviation-authority",
@@ -2925,165 +2947,11 @@
       "archive_status": "ready",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "captured youtube entry youtube:c6b2d032053afeea7be5cbca",
+      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
       "source_id": "de77c5b674f02811",
       "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:4044c4d2c1d9d9325d6b5cce",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:3eff7978d36c2c65f4476277",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:c134e5fe06ae199e02c0bcd8",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:8012df50d802498e117a89db",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:6a80bb562a9fa27cdaef7364",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:3cdaf255fde5f10f1982f0a4",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:3b12bedc842d5866a86f0e2b",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:c7c2ee6caeb1758b5903a41c",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:db6e54d8458e0113d9ebe082",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:fa68e692188a19adab6c577b",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:0fa1abae8331385b0eee5407",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:8af2af7dff7b29801c37fed5",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:97bea768c1ead1f3916de131",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
-    },
-    {
-      "agency_id": "eit",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:1cccc4f4d799704e03cf927b",
-      "source_id": "de77c5b674f02811",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/user/EIThawkesbay"
+      "status": "youtube_channel_not_found",
+      "url": "https://www.youtube.com/@EITHawkesBay"
     },
     {
       "agency_id": "eit",
@@ -3442,6 +3310,17 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
+      "reason": "HTTP 401: YouTube video metadata unavailable for 7MgLLT-pt1I",
+      "source_id": "environment-canterbury-youtube-2dae092d",
+      "source_type": "social_profile",
+      "status": "youtube_video_metadata_blocked",
+      "url": "http://www.youtube.com/watch/7MgLLT-pt1I"
+    },
+    {
+      "agency_id": "environment-canterbury",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
       "reason": "HTTP 401: YouTube video metadata unavailable for UWM5Bt6eV24",
       "source_id": "environment-canterbury-youtube-4c9e496b",
       "source_type": "social_profile",
@@ -3497,6 +3376,17 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
+      "reason": "HTTP 401: YouTube video metadata unavailable for y8LO17UlKng",
+      "source_id": "environment-canterbury-youtube-ad2102eb",
+      "source_type": "social_profile",
+      "status": "youtube_video_metadata_blocked",
+      "url": "http://www.youtube.com/watch/y8LO17UlKng"
+    },
+    {
+      "agency_id": "environment-canterbury",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
       "reason": "youtube record already present",
       "source_id": "environment-canterbury-youtube-3c9a8ae5",
       "source_type": "social_profile",
@@ -3739,7 +3629,7 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "captured youtube entry youtube:7f13e4407f64431f0c9d5478",
+      "reason": "captured youtube entry youtube:2065133175cfb0a7f8d3a4d0",
       "source_id": "environment-southland-youtube-45c3c2c6",
       "source_type": "social_profile",
       "status": "captured",
@@ -3750,10 +3640,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "youtube record already present",
+      "reason": "captured youtube entry youtube:7f13e4407f64431f0c9d5478",
       "source_id": "environment-southland-youtube-45c3c2c6",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.youtube.com/user/environmentsouthland"
     },
     {
@@ -4025,7 +3915,7 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "captured youtube entry youtube:f89da50a4ea6d320ea96329c",
+      "reason": "captured youtube entry youtube:efe2498fcdd6c4b7db4cba8d",
       "source_id": "external-reporting-board-youtube-0795d379",
       "source_type": "social_profile",
       "status": "captured",
@@ -4036,7 +3926,7 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
-      "reason": "captured youtube entry youtube:055a8766c4f3efd1ec3bc994",
+      "reason": "captured youtube entry youtube:f867d38e8233be3086d5bb56",
       "source_id": "external-reporting-board-youtube-0795d379",
       "source_type": "social_profile",
       "status": "captured",
@@ -4938,6 +4828,39 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "youtube",
+      "reason": "captured youtube entry youtube:d7c4821444fae4bca6b2813f",
+      "source_id": "health-nz-youtube-68710900",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://www.youtube.com/@healthnewzealand"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "captured youtube entry youtube:628bddc001a7974cc24db1a2",
+      "source_id": "health-nz-youtube-68710900",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://www.youtube.com/@healthnewzealand"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "captured youtube entry youtube:f13c0b539668e0d317e4f2b4",
+      "source_id": "health-nz-youtube-68710900",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://www.youtube.com/@healthnewzealand"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
       "reason": "captured youtube entry youtube:85e6120c4225065c247ca357",
       "source_id": "health-nz-youtube-68710900",
       "source_type": "social_profile",
@@ -5066,39 +4989,6 @@
       "url": "https://www.youtube.com/@healthnewzealand"
     },
     {
-      "agency_id": "health-nz",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "health-nz-youtube-68710900",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/@healthnewzealand"
-    },
-    {
-      "agency_id": "health-nz",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "health-nz-youtube-68710900",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/@healthnewzealand"
-    },
-    {
-      "agency_id": "health-nz",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "health-nz-youtube-68710900",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/@healthnewzealand"
-    },
-    {
       "agency_id": "health-quality-and-safety-commission",
       "archive_status": "candidate",
       "feasibility": "medium",
@@ -5262,17 +5152,6 @@
       "source_type": "social_profile",
       "status": "already_captured",
       "url": "https://www.youtube.com/channel/UC5yFtbreIu20QxZMb4v7L7Q"
-    },
-    {
-      "agency_id": "horowhenua-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:31c3147759088b21244da93d",
-      "source_id": "horowhenua-district-council-youtube-b8d6d56a",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/channel/UC_WCKYirkzkNaLWzf3BnmVQ"
     },
     {
       "agency_id": "horowhenua-district-council",
@@ -5294,6 +5173,17 @@
       "source_id": "horowhenua-district-council-youtube-b8d6d56a",
       "source_type": "social_profile",
       "status": "captured",
+      "url": "https://www.youtube.com/channel/UC_WCKYirkzkNaLWzf3BnmVQ"
+    },
+    {
+      "agency_id": "horowhenua-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "youtube",
+      "reason": "youtube record already present",
+      "source_id": "horowhenua-district-council-youtube-b8d6d56a",
+      "source_type": "social_profile",
+      "status": "already_captured",
       "url": "https://www.youtube.com/channel/UC_WCKYirkzkNaLWzf3BnmVQ"
     },
     {
@@ -5757,402 +5647,6 @@
       "source_type": "social_profile",
       "status": "already_captured",
       "url": "https://www.youtube.com/user/InlandRevenueNZ?id=footer"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:8d35552da535338ffff3edf2",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:a450e9289875aafca2b4385f",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "invercargill-city-council-youtube-ab01354f",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/invercargillcitycouncil"
-    },
-    {
-      "agency_id": "kapiti-coast-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "kapiti-coast-district-council-youtube-b3bc57e2",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/user/KapitiCouncil"
-    },
-    {
-      "agency_id": "kapiti-coast-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "kapiti-coast-district-council-youtube-b3bc57e2",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/user/KapitiCouncil"
-    },
-    {
-      "agency_id": "kapiti-coast-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "kapiti-coast-district-council-youtube-b3bc57e2",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/user/KapitiCouncil"
-    },
-    {
-      "agency_id": "kapiti-coast-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "youtube record already present",
-      "source_id": "kapiti-coast-district-council-youtube-b3bc57e2",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://www.youtube.com/user/KapitiCouncil"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:c98c964e3872334d9fb9c2c4",
-      "source_id": "6b5bdb875cb85c81",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/@KiwiRailNZ"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "ready",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:ed015dfd7aa7e561b1b84d86",
-      "source_id": "6b5bdb875cb85c81",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/@KiwiRailNZ"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:9d7593f7420a49800f8f85d4",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:9c54eb9c2d8a90e4a2bd03bf",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:5c60e7211c5a3e4b42787620",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:e53d7fbcf67b4b96159d9c55",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:307ec7cf8a8d4107c41374e9",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:304c9468d9a9cf5127bd1659",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:cf0843a14e2b110281e785b7",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:0868146e9ba7a7e1d6846852",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:06f75d693b5a37a856c46b1c",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:72e87b02e54e590ad01c9783",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:e2ad70bfac4526afd135af1d",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:a7d3e84ca0635a4b61d8304b",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:39d8d7093f82d036f6cbfadd",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:b6d7bea2abd8afb359e50d73",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
-    },
-    {
-      "agency_id": "kiwirail",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "youtube",
-      "reason": "captured youtube entry youtube:63781c9b20a4e2c20f5b54ee",
-      "source_id": "kiwirail-youtube-043082d3",
-      "source_type": "social_profile",
-      "status": "captured",
-      "url": "https://www.youtube.com/c/KiwiRailOfficial"
     }
   ],
   "summary": {
@@ -6162,18 +5656,22 @@
     "selected_sources": 50,
     "status_by_platform": {
       "youtube": {
-        "already_captured": 377,
-        "captured": 174,
+        "already_captured": 357,
+        "captured": 143,
         "no_records": 1,
-        "youtube_video_metadata_blocked": 5
+        "source_url_not_channel": 1,
+        "youtube_channel_not_found": 2,
+        "youtube_video_metadata_blocked": 7
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 377,
-      "captured": 174,
+      "already_captured": 357,
+      "captured": 143,
       "no_records": 1,
-      "youtube_video_metadata_blocked": 5
+      "source_url_not_channel": 1,
+      "youtube_channel_not_found": 2,
+      "youtube_video_metadata_blocked": 7
     }
   }
 }

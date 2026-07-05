@@ -1,11 +1,63 @@
 {
-  "generated_at": "2026-07-02T12:54:02+00:00",
+  "generated_at": "2026-07-05T06:15:35+00:00",
   "inputs": {
     "reports": [
       "conductor/youtube_archive_report.json"
     ]
   },
   "items": [
+    {
+      "agency_id": "broadcasting-standards-authority",
+      "fixability_class": "youtube_url_or_channel_resolution",
+      "platform": "youtube",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "YouTube channel resolver failed: YouTube URL is not a channel URL",
+      "recommended_action": "replace_with_channel_url_or_mark_video_seed",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "broadcasting-standards-authority-youtube-acb2e172",
+      "status": "source_url_not_channel",
+      "url": "https://www.youtube.com/yt/about/policies/#community-guidelines"
+    },
+    {
+      "agency_id": "civil-aviation-authority",
+      "fixability_class": "youtube_url_or_channel_resolution",
+      "platform": "youtube",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
+      "recommended_action": "verify_handle_or_mark_retired",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "e0c6802767a9d1ed",
+      "status": "youtube_channel_not_found",
+      "url": "https://www.youtube.com/@CAANewZealand"
+    },
+    {
+      "agency_id": "eit",
+      "fixability_class": "youtube_url_or_channel_resolution",
+      "platform": "youtube",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
+      "recommended_action": "verify_handle_or_mark_retired",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "de77c5b674f02811",
+      "status": "youtube_channel_not_found",
+      "url": "https://www.youtube.com/@EITHawkesBay"
+    },
+    {
+      "agency_id": "environment-canterbury",
+      "fixability_class": "youtube_video_metadata_unavailable",
+      "platform": "youtube",
+      "priority": "p3_needs_operator_or_platform_access",
+      "priority_description": "Needs login/export/API access before capture can lawfully proceed.",
+      "reason": "HTTP 401: YouTube video metadata unavailable for 7MgLLT-pt1I",
+      "recommended_action": "record_video_metadata_unavailable_or_supply_seed",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "environment-canterbury-youtube-2dae092d",
+      "status": "youtube_video_metadata_blocked",
+      "url": "http://www.youtube.com/watch/7MgLLT-pt1I"
+    },
     {
       "agency_id": "environment-canterbury",
       "fixability_class": "youtube_video_metadata_unavailable",
@@ -70,6 +122,19 @@
       "source_id": "environment-canterbury-youtube-3140d08b",
       "status": "youtube_video_metadata_blocked",
       "url": "http://www.youtube.com/watch/uC6hC7VDe5c"
+    },
+    {
+      "agency_id": "environment-canterbury",
+      "fixability_class": "youtube_video_metadata_unavailable",
+      "platform": "youtube",
+      "priority": "p3_needs_operator_or_platform_access",
+      "priority_description": "Needs login/export/API access before capture can lawfully proceed.",
+      "reason": "HTTP 401: YouTube video metadata unavailable for y8LO17UlKng",
+      "recommended_action": "record_video_metadata_unavailable_or_supply_seed",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "environment-canterbury-youtube-ad2102eb",
+      "status": "youtube_video_metadata_blocked",
+      "url": "http://www.youtube.com/watch/y8LO17UlKng"
     }
   ],
   "report_only_items": [
@@ -91,7 +156,7 @@
   "report_summaries": {
     "conductor/youtube_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-07-02T12:54:02+00:00",
+      "generated_at": "2026-07-05T06:15:34+00:00",
       "summary": {
         "platform_counts": {
           "youtube": 50
@@ -99,29 +164,34 @@
         "selected_sources": 50,
         "status_by_platform": {
           "youtube": {
-            "already_captured": 377,
-            "captured": 174,
+            "already_captured": 357,
+            "captured": 143,
             "no_records": 1,
-            "youtube_video_metadata_blocked": 5
+            "source_url_not_channel": 1,
+            "youtube_channel_not_found": 2,
+            "youtube_video_metadata_blocked": 7
           }
         },
         "status_by_provider": {},
         "status_counts": {
-          "already_captured": 377,
-          "captured": 174,
+          "already_captured": 357,
+          "captured": 143,
           "no_records": 1,
-          "youtube_video_metadata_blocked": 5
+          "source_url_not_channel": 1,
+          "youtube_channel_not_found": 2,
+          "youtube_video_metadata_blocked": 7
         }
       }
     }
   },
   "summary": {
-    "failure_count": 5,
+    "failure_count": 10,
     "platform_counts": {
-      "youtube": 5
+      "youtube": 10
     },
     "priority_counts": {
-      "p3_needs_operator_or_platform_access": 5
+      "p3_needs_operator_or_platform_access": 7,
+      "review": 3
     },
     "report_only_count": 1,
     "report_only_platform_counts": {
@@ -134,7 +204,9 @@
       "no_records": 1
     },
     "status_counts": {
-      "youtube_video_metadata_blocked": 5
+      "source_url_not_channel": 1,
+      "youtube_channel_not_found": 2,
+      "youtube_video_metadata_blocked": 7
     }
   }
 }
