@@ -1,11 +1,102 @@
 {
-  "generated_at": "2026-07-02T13:00:55+00:00",
+  "generated_at": "2026-07-05T06:16:15+00:00",
   "inputs": {
     "reports": [
       "conductor/website_archive_report.json"
     ]
   },
   "items": [
+    {
+      "agency_id": "antarctica-nz",
+      "fixability_class": "browser_fallback_candidate",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "848ae72b5ddd2f0c",
+      "status": "capture_blocked",
+      "url": "https://www.antarcticanz.govt.nz/api"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "recommended_action": "verify_url_or_mark_retired",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "cf7529f187d846b1",
+      "status": "not_found",
+      "url": "https://www.antarcticanz.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "recommended_action": "verify_url_or_mark_retired",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "6a77126dfac2a760",
+      "status": "not_found",
+      "url": "https://www.antarcticanz.govt.nz/news"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "recommended_action": "verify_url_or_mark_retired",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "26512b65170cc30d",
+      "status": "not_found",
+      "url": "https://www.antarcticanz.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "recommended_action": "verify_url_or_mark_retired",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "1d96a84d6d1d2c82",
+      "status": "not_found",
+      "url": "https://www.antarcticanz.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "recommended_action": "verify_url_or_mark_retired",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "08c94d3cd578e15d",
+      "status": "not_found",
+      "url": "https://www.antarcticanz.govt.nz/publications"
+    },
+    {
+      "agency_id": "antarctica-nz",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "recommended_action": "verify_url_or_mark_retired",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "77691b3a30015341",
+      "status": "not_found",
+      "url": "https://www.antarcticanz.govt.nz/subscribe"
+    },
     {
       "agency_id": "ashburton-district-council",
       "fixability_class": "browser_fallback_candidate",
@@ -18,6 +109,110 @@
       "source_id": "f33df640b05e8598",
       "status": "capture_blocked",
       "url": "https://www.ashburtondc.govt.nz"
+    },
+    {
+      "agency_id": "ashburton-district-council",
+      "fixability_class": "browser_fallback_candidate",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "cb4f9b96d2803ef6",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz/api"
+    },
+    {
+      "agency_id": "ashburton-district-council",
+      "fixability_class": "browser_fallback_candidate",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "a54312dd7aeb563c",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz/media"
+    },
+    {
+      "agency_id": "ashburton-district-council",
+      "fixability_class": "browser_fallback_candidate",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "88a58cb473413007",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "ashburton-district-council",
+      "fixability_class": "browser_fallback_candidate",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "50e64a6da45f8011",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz/news"
+    },
+    {
+      "agency_id": "ashburton-district-council",
+      "fixability_class": "browser_fallback_candidate",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "9fe590830aa19de2",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "ashburton-district-council",
+      "fixability_class": "browser_fallback_candidate",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "70a13610eec31b6b",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "ashburton-district-council",
+      "fixability_class": "browser_fallback_candidate",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "e849cb62a27b0cc9",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz/publications"
+    },
+    {
+      "agency_id": "ashburton-district-council",
+      "fixability_class": "browser_fallback_candidate",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden",
+      "recommended_action": "review_access_or_mark_blocked",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "e5cb49183a46927d",
+      "status": "capture_blocked",
+      "url": "https://www.ashburtondc.govt.nz/subscribe"
     },
     {
       "agency_id": "auckland-council",
@@ -33,6 +228,123 @@
       "url": "https://www.aucklandcouncil.govt.nz"
     },
     {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "53772773a9f9b5a7",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/api"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "23032184b0314e7c",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/media"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "e1edd6a1177114cc",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "4977b1b2e4a3222a",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/news"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "0b733fec8a3a8ebd",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "d3076d1b5e6e58ae",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "4f6a6ad650674936",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/publications"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "65f64039aabf225c",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "auckland-light-rail",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
+      "recommended_action": "retry_later",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "ea7740e611200bed",
+      "status": "network_error",
+      "url": "https://www.aucklandlightrail.co.nz"
+    },
+    {
       "agency_id": "bay-of-plenty-regional-council",
       "fixability_class": "retry_or_url_canonicalization",
       "platform": "website_page",
@@ -46,89 +358,154 @@
       "url": "https://www.boprc.govt.nz"
     },
     {
-      "agency_id": "central-otago-district-council",
+      "agency_id": "bay-of-plenty-regional-council",
       "fixability_class": "retry_or_url_canonicalization",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed",
-      "recommended_action": "retry_with_get_and_alternate_host",
+      "reason": "URL error: timed out",
+      "recommended_action": "review",
       "report": "conductor/website_archive_report.json",
-      "source_id": "64372d3f52dde38d",
-      "status": "method_not_allowed",
-      "url": "https://www.codc.govt.nz"
+      "source_id": "18b01bf83376dfb6",
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/api"
     },
     {
-      "agency_id": "clutha-district-council",
+      "agency_id": "bay-of-plenty-regional-council",
       "fixability_class": "retry_or_url_canonicalization",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed",
-      "recommended_action": "retry_with_get_and_alternate_host",
+      "reason": "URL error: timed out",
+      "recommended_action": "review",
       "report": "conductor/website_archive_report.json",
-      "source_id": "38b2ebe81566aa72",
-      "status": "method_not_allowed",
-      "url": "https://www.cluthadc.govt.nz"
+      "source_id": "74033a24e08026ce",
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/media"
     },
     {
-      "agency_id": "department-of-corrections",
-      "fixability_class": "browser_fallback_candidate",
+      "agency_id": "bay-of-plenty-regional-council",
+      "fixability_class": "retry_or_url_canonicalization",
       "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "recommended_action": "review_access_or_mark_blocked",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "URL error: timed out",
+      "recommended_action": "review",
       "report": "conductor/website_archive_report.json",
-      "source_id": "c1ec96d478c92e9c",
-      "status": "capture_blocked",
-      "url": "https://www.corrections.govt.nz"
+      "source_id": "ebf964e9f9d977da",
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/media-releases"
     },
     {
-      "agency_id": "dpmc",
-      "fixability_class": "browser_fallback_candidate",
+      "agency_id": "bay-of-plenty-regional-council",
+      "fixability_class": "retry_or_url_canonicalization",
       "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "recommended_action": "review_access_or_mark_blocked",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "URL error: timed out",
+      "recommended_action": "review",
       "report": "conductor/website_archive_report.json",
-      "source_id": "e48d45bb68dfbd35",
-      "status": "capture_blocked",
-      "url": "https://www.dpmc.govt.nz"
+      "source_id": "4bf073d8da463117",
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/news"
     },
     {
-      "agency_id": "dunedin-city-council",
-      "fixability_class": "browser_fallback_candidate",
+      "agency_id": "bay-of-plenty-regional-council",
+      "fixability_class": "retry_or_url_canonicalization",
       "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "recommended_action": "review_access_or_mark_blocked",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "URL error: timed out",
+      "recommended_action": "review",
       "report": "conductor/website_archive_report.json",
-      "source_id": "0e2463964d79ebe2",
-      "status": "capture_blocked",
-      "url": "https://www.dunedin.govt.nz"
+      "source_id": "a2c0466ad7d6b0e7",
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/news-and-events"
     },
     {
-      "agency_id": "education-review-office",
-      "fixability_class": "browser_fallback_candidate",
+      "agency_id": "bay-of-plenty-regional-council",
+      "fixability_class": "retry_or_url_canonicalization",
       "platform": "website_page",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "recommended_action": "review_access_or_mark_blocked",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "URL error: timed out",
+      "recommended_action": "review",
       "report": "conductor/website_archive_report.json",
-      "source_id": "a9da02fbaefa8cc2",
-      "status": "capture_blocked",
-      "url": "https://www.ero.govt.nz"
+      "source_id": "1018160ab7aece8e",
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "URL error: timed out",
+      "recommended_action": "review",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "76ebe030c99021d6",
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/publications"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "URL error: timed out",
+      "recommended_action": "review",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "f13909b5ce47ec80",
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "beehive-nz",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "recommended_action": "verify_url_or_mark_retired",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "49702ab2ca75c2a8",
+      "status": "not_found",
+      "url": "https://www.beehive.govt.nz/api"
+    },
+    {
+      "agency_id": "beehive-nz",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "recommended_action": "verify_url_or_mark_retired",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "e286805a2bca9705",
+      "status": "not_found",
+      "url": "https://www.beehive.govt.nz/media"
+    },
+    {
+      "agency_id": "beehive-nz",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "recommended_action": "verify_url_or_mark_retired",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "344dda2003f0e5a8",
+      "status": "not_found",
+      "url": "https://www.beehive.govt.nz/media-releases"
     }
   ],
   "report_only_items": [],
   "report_summaries": {
     "conductor/website_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-07-02T13:00:55+00:00",
+      "generated_at": "2026-07-05T06:16:15+00:00",
       "summary": {
         "platform_counts": {
           "website_page": 50
@@ -136,42 +513,45 @@
         "selected_sources": 50,
         "status_by_platform": {
           "website_page": {
-            "capture_blocked": 5,
-            "captured": 41,
-            "method_not_allowed": 2,
-            "network_timeout": 1,
-            "not_acceptable": 1
+            "capture_blocked": 10,
+            "captured": 12,
+            "network_error": 1,
+            "network_timeout": 9,
+            "not_acceptable": 9,
+            "not_found": 9
           }
         },
         "status_by_provider": {},
         "status_counts": {
-          "capture_blocked": 5,
-          "captured": 41,
-          "method_not_allowed": 2,
-          "network_timeout": 1,
-          "not_acceptable": 1
+          "capture_blocked": 10,
+          "captured": 12,
+          "network_error": 1,
+          "network_timeout": 9,
+          "not_acceptable": 9,
+          "not_found": 9
         }
       }
     }
   },
   "summary": {
-    "failure_count": 9,
+    "failure_count": 38,
     "platform_counts": {
-      "website_page": 9
+      "website_page": 38
     },
     "priority_counts": {
-      "p1_existing_resources": 4,
-      "p4_larger_browser_or_access_project": 5
+      "p1_existing_resources": 28,
+      "p4_larger_browser_or_access_project": 10
     },
     "report_only_count": 0,
     "report_only_platform_counts": {},
     "report_only_priority_counts": {},
     "report_only_status_counts": {},
     "status_counts": {
-      "capture_blocked": 5,
-      "method_not_allowed": 2,
-      "network_timeout": 1,
-      "not_acceptable": 1
+      "capture_blocked": 10,
+      "network_error": 1,
+      "network_timeout": 9,
+      "not_acceptable": 9,
+      "not_found": 9
     }
   }
 }
