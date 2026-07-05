@@ -15,6 +15,8 @@ def test_threads_workflows_write_dedicated_archive_report() -> None:
     assert "--path conductor/threads_archive_report.json" in scheduled
     assert "--path conductor/threads_seed_readiness_summary.md" in manual
     assert "THREADS_API_CAPTURE_ENABLED" in scheduled
+    assert "lawful personal Threads account token" in scheduled
+    assert "business verification" not in Path("manual_archive_seeds/threads/README.md").read_text(encoding="utf-8")
 
 
 def test_seed_missing_is_report_only_for_threads_readiness() -> None:
@@ -46,6 +48,7 @@ def test_threads_scheduled_workflow_closes_api_blocker_when_not_actionable() -> 
     assert "gh issue close" in workflow
     assert "Live public Threads API capture is disabled" in workflow
     assert "Manual seeds remain the active automated capture path" in workflow
+    assert "lawful personal Threads account token" in workflow
 
 
 def test_threads_seed_readiness_report_writes_summary(tmp_path) -> None:

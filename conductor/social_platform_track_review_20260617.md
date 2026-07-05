@@ -11,10 +11,10 @@ It distinguishes account/setup work from live scheduled posting.
 | Bluesky mirror | `courts_nz_bluesky_mirror_20260612`, `courts_nz_bluesky_launch_ops_20260613` | Active target: `bluesky.enabled=true` | Continue new-forward mirroring. |
 | Bluesky historical replay | `courts_nz_bluesky_archive_replay_20260613` | In progress: X replay remaining | Continue bounded manual Archive Replay runs. Top-level status corrected from complete to in progress. |
 | X/Twitter mirror | `courts_nz_x_twitter_launch_route_20260617` | Buffer route active: `x.enabled=true`, `x` in `syndicate_to`, max 1 post/run, Buffer send status `sent` | Resolve public X status URL verification; Buffer does not expose final provider URL in current lookup output. |
-| Threads mirror | `courts_nz_threads_mirror_20260612`, `courts_nz_threads_api_credentials_20260613`, `courts_nz_threads_adapter_launch_20260613` | Active target: `threads.enabled=true`, one delivery recorded | Continue new-forward mirroring; historical replay remains deferred. |
+| Threads archive | `courts_nz_threads_mirror_20260612`, `courts_nz_threads_api_credentials_20260613`, `courts_nz_threads_adapter_launch_20260613` | Active archive lane: `THREADS_API_CAPTURE_ENABLED=true`, one delivery recorded | Continue archive capture; historical replay remains deferred. |
 | Threads historical replay | `courts_nz_threads_historical_replay_policy_20260613` | Deferred by policy | No backlog replay unless a future explicit review accepts current-feed archive noise. |
-| Instagram mirror | `courts_nz_instagram_meta_api_20260613`, `courts_nz_instagram_launch_reconciliation_20260617` | Deferred: disabled in runtime config, no Instagram delivery state, missing Instagram Graph API secrets | Add `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID`, run non-posting probe for `@mirnzcourts`, then review dry-run before enabling. |
-| Facebook Page mirror | `courts_nz_facebook_meta_api_20260613` | Blocked: dedicated Page identity not confirmed | Continue existing Facebook track after Page identity exists. |
+| Instagram archive | `courts_nz_instagram_meta_api_20260613`, `courts_nz_instagram_launch_reconciliation_20260617` | Deferred: no authenticated API path enabled; public-profile snapshot capture is available | Keep archive-only snapshot capture and defer any authenticated API lane until a later business-account decision. |
+| Facebook Page archive | `courts_nz_facebook_meta_api_20260613` | Deferred: no authenticated API path enabled; public-page snapshot capture is available | Keep archive-only snapshot capture and defer any authenticated API lane until a later business-account decision. |
 | LinkedIn source | `courts_nz_multisource_archive_20260612` | Paused/source-only | Remains archive-only pending approved seed/access; no posting. |
 | RSS/website | `courts_nz_multisource_archive_20260612` | Scheduled archive capture active | Continue source-health monitoring. |
 | Judgments email | `courts_nz_multisource_archive_20260612` | Email bridge scaffold exists; subscription/address confirmation remains open | Resolve the dedicated subscription address lane or keep Pipedream fallback documented. |
@@ -31,6 +31,12 @@ It distinguishes account/setup work from live scheduled posting.
 - Archive replay to Bluesky is enabled for recovered X archive records.
 - Threads, Instagram, and Facebook archive replay remain disabled.
 
+## Meta Archive Bucket Map
+
+- [`conductor/meta_archive_bucket_map_20260705.md`](conductor/meta_archive_bucket_map_20260705.md)
+- [`conductor/meta_archive_bucket_map_20260705.json`](conductor/meta_archive_bucket_map_20260705.json)
+- Current split: public snapshot now for Instagram/Facebook; seed/API needed for Threads.
+
 ## Review Findings
 
 1. Bluesky and Threads are the only live scheduled outbound targets.
@@ -38,6 +44,8 @@ It distinguishes account/setup work from live scheduled posting.
    live send, delivery-state commit, and first scheduled run passed; public X
    status URL verification remains open because Buffer did not expose the final
    provider URL.
+3. Instagram and Facebook remain archive-only snapshot lanes until a later
+   business-account decision.
 3. Instagram stale completion notes have been reconciled. Instagram is deferred,
    not live, until Graph API credentials are configured and the dedicated
    `@mirnzcourts` account is verified without posting.

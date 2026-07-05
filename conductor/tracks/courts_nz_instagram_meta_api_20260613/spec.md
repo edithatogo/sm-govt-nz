@@ -1,35 +1,32 @@
-# Specification - Courts of New Zealand Instagram Meta API Mirror
+# Specification - Courts of New Zealand Instagram archive lane
 
 ## Overview
-After Threads is set up, add a separate Instagram mirror lane for Courts of New
-Zealand content using official Meta Instagram APIs. This track may use the same
-Meta account/admin ownership as Threads where practical, but it must not share
-posting state or assume Threads tokens authorize Instagram publishing.
 
-## Requirements
-1. Account identity:
-   - Use a dedicated mirror identity aligned with `Mirror: Courts of New
-     Zealand`.
-   - Do not post under Dylan Mordaunt, `edithatogo`, or any personal Instagram
-     identity.
-   - Use the same Meta account/admin structure as Threads only for ownership and
-     administration, not as a posting identity.
-2. API route:
-   - Use official Meta Instagram APIs for content publishing.
-   - Confirm whether the mirror account must be a professional, business, or
-     creator account before implementation.
-   - Store Instagram profile/account IDs and tokens separately from Threads.
-3. Posting contract:
-   - Preserve source text and attribution without commentary.
-   - Use separate duplicate-prevention state.
-   - Start with new forward posts only; historical replay requires a separate
-     review because Instagram posts cannot be treated as backdated corpus
-     imports by default.
+Keep Instagram as an archive-only lane for Courts of New Zealand content.
+Public-profile snapshots are allowed now. Any future authenticated Meta
+Instagram API lane remains deferred until a later business-account decision.
+
+## Functional Requirements
+
+- Describe Instagram as archive-only, not mirroring.
+- Archive public-profile snapshots from the official Instagram pages.
+- Do not assume Threads tokens authorize Instagram access.
+- Keep any authenticated API or outbound publishing work deferred.
+- Keep the workflow and operator guidance read-only until an archive action is
+  explicitly run.
+
+## Non-Goals
+
+- Posting to Instagram.
+- Creating or requiring a business account now.
+- Changing the broader Meta access strategy beyond archive-only snapshot
+  capture.
 
 ## Acceptance Criteria
-- A non-posting credential probe validates the Instagram account/profile
-  identity.
-- Secret schema and setup docs list Instagram-specific secrets.
-- A dry-run payload builder handles text, links, and media constraints.
-- A controlled live post is possible only after explicit config enablement and
-  review.
+
+- Instagram guidance documents the archive-only public snapshot path.
+- The workflow and readiness docs do not require a business account for the
+  current archive lane.
+- Tests and reports distinguish archive-only snapshot capture from any future
+  authenticated API work.
+- Business-account dependent work stays explicitly deferred.

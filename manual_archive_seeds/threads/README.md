@@ -1,9 +1,19 @@
 # Threads manual seed exports
 
-Live public Threads profile capture is currently gated by Meta business
-verification and App Review for `threads_profile_discovery`. Until that is
-deliberately completed, archive registered Threads sources through
-operator-authorized seed exports.
+Live public Threads archive capture is supported through the official Threads
+API when a personal Threads account token is available in the GitHub Actions
+secret `THREADS_ACCESS_TOKEN` and `THREADS_API_CAPTURE_ENABLED=true` is set as
+the repo variable. Until that is deliberately enabled, archive registered
+Threads sources through operator-authorized seed exports.
+
+## Live API enablement
+
+To turn on ongoing Threads archiving:
+
+1. Store the personal-account token in the `THREADS_ACCESS_TOKEN` GitHub secret.
+2. Set the repository variable `THREADS_API_CAPTURE_ENABLED` to `true`.
+3. Keep `THREADS_API_BASE_URL` at the default unless the API endpoint changes.
+4. Run `Archive Threads Scheduled` or `Validate Threads Manual Seeds` as needed.
 
 ## Seed file locations
 
@@ -80,5 +90,6 @@ Run `Validate Threads Manual Seeds` after adding or changing seed files.
 
 Run `Archive Threads Manual Seeds` to normalize and archive valid seed exports.
 
-The scheduled `Archive Threads Scheduled` workflow also falls back to a matching
-manual seed when the official Threads API is unavailable.
+The scheduled `Archive Threads Scheduled` workflow uses the official Threads API
+when the personal-account gate is enabled, and otherwise falls back to a matching
+manual seed.

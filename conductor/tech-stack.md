@@ -34,7 +34,7 @@
 
 ## MVP Runtime Configuration
 *   **Active source account:** `courtsofnz.bsky.social`.
-*   **Active targets:** Bluesky mirror via `BLUESKY_MIRROR_HANDLE` and `BLUESKY_MIRROR_APP_PASSWORD`, plus Threads mirror via `THREADS_ACCESS_TOKEN` and `THREADS_USER_ID`.
+*   **Active targets:** Bluesky mirror via `BLUESKY_MIRROR_HANDLE` and `BLUESKY_MIRROR_APP_PASSWORD`, plus Threads archive capture via `THREADS_ACCESS_TOKEN` with `THREADS_API_CAPTURE_ENABLED=true`.
 *   **Remote workflow state:** `Syndicate` is available for controlled manual dispatch and scheduled bounded runs once credentials validate.
 *   **Launch throttle:** `max_posts_per_run` is `1` for live posts. Historical Bluesky-source backlog is complete, and recovered X archive replay to Bluesky is bounded by `archive_replay_max_posts_per_run: 5`.
 *   **Backlog State Store:** Git-backed local `conductor/bluesky_backlog_state.json`, separate from live `conductor/state.json`.
@@ -42,9 +42,11 @@
 *   **Archive Coverage Report:** `conductor/archive_mirror_coverage.json` records source counts, target counts, remaining records, and backdating support.
 *   **Non-MVP targets:** X, Instagram, Facebook Pages, Mastodon, Discord, and
     LinkedIn remain disabled in `config.json`; LinkedIn remains source-only.
-*   **Future Meta Targets:** Instagram and Facebook Page publishing should use
-    official Meta APIs, sharing account administration where practical but not
-    sharing state or assuming identical permission scopes.
+*   **Future Meta Archive Targets:** Instagram and Facebook Page archival should
+    use public profile snapshots first, then official Meta APIs only if a
+    deliberate operator-approved archive track is enabled. Do not assume
+    Threads tokens are sufficient for Instagram or Facebook access, and do not
+    treat archive-only capture as publishing.
 
 ## Frontend / Public Web Stack
 *   **Hosting Platform:** GitHub Pages

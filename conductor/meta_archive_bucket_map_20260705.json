@@ -1,0 +1,134 @@
+{
+  "counts": {
+    "archive_now_count": 501,
+    "by_platform": {
+      "facebook": 319,
+      "instagram": 182,
+      "threads": 3
+    },
+    "deferred_business_account_work_count": 3,
+    "meta_total": 504,
+    "seed_or_api_needed_count": 3
+  },
+  "examples": {
+    "facebook": [
+      {
+        "source_id": "accident-compensation-corporation-facebook-a4eafd5a",
+        "url": "https://www.facebook.com/ACCNewZealand"
+      },
+      {
+        "source_id": "airways-nz-facebook-2e76afae",
+        "url": "https://www.facebook.com/AirwaysNZ/"
+      },
+      {
+        "source_id": "antarctica-nz-facebook-6494d1ed",
+        "url": "https://www.facebook.com/Antarctica.New.Zealand/"
+      },
+      {
+        "source_id": "antarctica-nz-facebook-d81b995d",
+        "url": "https://www.facebook.com/AntarcticaNZ"
+      },
+      {
+        "source_id": "ara-institute-of-canterbury-facebook-6ce26c93",
+        "url": "https://www.facebook.com/AraCanterbury"
+      },
+      {
+        "source_id": "ara-institute-of-canterbury-facebook-0e0a7645",
+        "url": "https://www.facebook.com/AraInstitute"
+      },
+      {
+        "source_id": "ashburton-district-council-facebook-60947088",
+        "url": "https://www.facebook.com/AshburtonDistrictCouncil"
+      },
+      {
+        "source_id": "asurequality-facebook-602ae22f",
+        "url": "https://www.facebook.com/AsureQualityLtd"
+      },
+      {
+        "source_id": "auckland-council-facebook-f66931c1",
+        "url": "https://www.facebook.com/aklcouncil"
+      },
+      {
+        "source_id": "aut-university-facebook-0fb9a4b1",
+        "url": "https://www.facebook.com/AUTUniversity"
+      }
+    ],
+    "instagram": [
+      {
+        "source_id": "accident-compensation-corporation-instagram-ebbf541a",
+        "url": "https://www.instagram.com/accnewzealand"
+      },
+      {
+        "source_id": "accident-compensation-corporation-instagram-41dd3f71",
+        "url": "https://www.instagram.com/accnewzealand/"
+      },
+      {
+        "source_id": "airways-nz-instagram-424df104",
+        "url": "https://www.instagram.com/airwaysnz/?hl=en"
+      },
+      {
+        "source_id": "antarctica-nz-instagram-6ead4fe3",
+        "url": "https://www.instagram.com/antarctica.nz/"
+      },
+      {
+        "source_id": "antarctica-nz-instagram-e4af56d7",
+        "url": "https://www.instagram.com/antarcticanz"
+      },
+      {
+        "source_id": "ara-institute-of-canterbury-instagram-320deb41",
+        "url": "https://www.instagram.com/AraCanterbury/"
+      },
+      {
+        "source_id": "ara-institute-of-canterbury-instagram-c465254c",
+        "url": "https://www.instagram.com/arainstitute"
+      },
+      {
+        "source_id": "asurequality-instagram-e3f3ee93",
+        "url": "https://www.instagram.com/asurequality/?hl=en"
+      },
+      {
+        "source_id": "auckland-council-instagram-ffa626d3",
+        "url": "https://www.instagram.com/aklcouncil/"
+      },
+      {
+        "source_id": "auckland-council-instagram-920e5d51",
+        "url": "https://www.instagram.com/aklcouncil/?hl=en"
+      }
+    ],
+    "threads": [
+      {
+        "source_id": "nz-police-threads-newzealandpolice",
+        "url": "https://www.threads.net/@newzealandpolice"
+      },
+      {
+        "source_id": "nzte-threads-nzte",
+        "url": "https://www.threads.net/@nzte"
+      },
+      {
+        "source_id": "wellington-city-libraries-threads-wcl-library",
+        "url": "https://www.threads.net/@wcl_library"
+      }
+    ]
+  },
+  "generated_at": "2026-07-05T00:00:00+10:00",
+  "notes": [
+    "Instagram and Facebook are currently archiveable as public-profile/page snapshot lanes without a business account.",
+    "Threads currently requires either approved API access or operator-authorized seeds for complete archive coverage.",
+    "This report intentionally excludes outbound mirroring and treats archive-only capture as the current target."
+  ],
+  "scope": "Meta government accounts in conductor/govt_archive_source_manifest.json",
+  "strategy": {
+    "archive_now": [
+      "facebook",
+      "instagram"
+    ],
+    "deferred_business_account_work": [
+      "threads_authenticated_api",
+      "instagram_authenticated_api",
+      "facebook_authenticated_api"
+    ],
+    "seed_or_api_needed": [
+      "threads"
+    ]
+  }
+}

@@ -57,16 +57,17 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [x] Track: Decide Courts of New Zealand Threads historical replay policy
 *Link: [./tracks/courts_nz_threads_historical_replay_policy_20260613/](./tracks/courts_nz_threads_historical_replay_policy_20260613/)*
 
-## [x] Track: Implement Courts of New Zealand Instagram mirror via Meta APIs
+## [x] Track: Implement Courts of New Zealand Instagram archive lane via Meta APIs
 *Link: [./tracks/courts_nz_instagram_meta_api_20260613/](./tracks/courts_nz_instagram_meta_api_20260613/)*
 - All 15 implementation tasks complete. Track resolved as **intentionally deferred**
-  in `courts_nz_instagram_launch_reconciliation_20260617`. Launch remains gated on
-  `INSTAGRAM_ACCESS_TOKEN`/`INSTAGRAM_USER_ID` secrets and API verification of
-  `@mirnzcourts`; runtime keeps `instagram.enabled` false until both are available.
+  in `courts_nz_instagram_launch_reconciliation_20260617`. The repo now treats
+  Instagram as an archive-only lane: public profile snapshots are allowed, and
+  any future API archive work remains gated on explicit operator approval.
 
 ## [x] Track: Reconcile Courts of New Zealand Instagram launch runtime state
 *Link: [./tracks/courts_nz_instagram_launch_reconciliation_20260617/](./tracks/courts_nz_instagram_launch_reconciliation_20260617/)*
-- Outcome: deferred; missing `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID`.
+- Outcome: deferred; archive-only snapshot capture remains available, while any
+  live API lane stays intentionally disabled.
 
 ## [x] Track: Select and launch Courts of New Zealand X/Twitter mirror route
 *Link: [./tracks/courts_nz_x_twitter_launch_route_20260617/](./tracks/courts_nz_x_twitter_launch_route_20260617/)*
@@ -77,11 +78,12 @@ This file tracks all major tracks for the project. Each track has its own detail
   final `/MirNZCourts/status/...` provider URL); this is operationally tracked but
   not a blocker for the launch itself.
 
-## [x] Track: Implement Courts of New Zealand Facebook Page mirror via Meta APIs
+## [x] Track: Implement Courts of New Zealand Facebook Page archive lane via Meta APIs
 *Link: [./tracks/courts_nz_facebook_meta_api_20260613/](./tracks/courts_nz_facebook_meta_api_20260613/)*
 - Deferred. Adapter, probe, validation, secrets schema, dry-run, and tests
-  complete. Blocked on Facebook Page creation by a Meta admin and
-  `FACEBOOK_PAGE_ACCESS_TOKEN`/`FACEBOOK_PAGE_ID` secrets setup.
+  complete. The repo now treats Facebook as an archive-only lane for public
+  page snapshots; any future API archive work remains gated on explicit
+  operator approval.
 
 ## [x] Track: Define Courts of New Zealand archive publication cadence
 *Link: [./tracks/courts_nz_archive_publication_cadence_20260617/](./tracks/courts_nz_archive_publication_cadence_20260617/)*
@@ -93,7 +95,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 *Link: [./tracks/govt_registry_20260614/](./tracks/govt_registry_20260614/)*
 - Phase 1â€“2: Registry schema, compilation pipeline, multi-remote git redundancy âœ…
 - Phase 3: Twitter/X deactivation archive & registry seeding (252 agencies, 483 profiles) âœ…
-- Phase 4: Syndication & mirroring implementation (unified feed dry-run passed, gated) âœ…
+- Phase 4: Syndication & archive capture implementation (unified feed dry-run passed, gated) âœ…
 - Phase 5: Political parties, MPs, leadership â€” schema, validation, reference integrity CI gate âœ…
   - Reference integrity gap report is complete: 0 missing party leaders,
     0 missing party presidents, 0 unknown party references, and 0 unknown role
@@ -102,7 +104,7 @@ This file tracks all major tracks for the project. Each track has its own detail
     classification, tenure-linked profiles
 - Spec Phases 3/5: Directory expansion to 600+ agencies, crawling & archival automation (deferred)
 
-## [x] Track: Implement mirror account follow synchronization using supported platform APIs and manual review.
+## [x] Track: Implement archive account follow synchronization using supported platform APIs and manual review.
 *Link: [./tracks/sync_mirror_follows_20260614/](./tracks/sync_mirror_follows_20260614/)*
 
 LinkedIn is source-only and archive-only for now. Deferred outbound platform
@@ -199,6 +201,10 @@ Mordaunt, `edithatogo`, or other personal identities.
 ## [x] Track: NZ Government Archive - blocked website browser fallback capture
 *Link: [./archive/govt_archive_blocked_website_browser_fallback_20260702/](./archive/govt_archive_blocked_website_browser_fallback_20260702/)*
 - Complete: Bounded Playwright fallback for eligible public website failures is implemented with triage-driven selection, raw evidence, normalized text, screenshots, shardable GitHub Actions, monthly guarded publication hook, docs, and tests.
+
+## [x] Track: NZ Government Archive - Threads personal-account archive path
+*Link: [./archive/govt_archive_threads_personal_account_archive_20260704/](./archive/govt_archive_threads_personal_account_archive_20260704/)*
+- Complete: Threads guidance now frames the approved personal-account API path as archive-only, with manual seeds as fallback and Instagram/Facebook archive-only lanes deferred.
 
 
 

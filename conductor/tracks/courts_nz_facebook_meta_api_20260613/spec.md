@@ -1,34 +1,32 @@
-# Specification - Courts of New Zealand Facebook Page Meta API Mirror
+# Specification - Courts of New Zealand Facebook Page archive lane
 
 ## Overview
-After Threads is set up, add a separate Facebook Page mirror lane for Courts of
-New Zealand content using official Meta Pages APIs. This track may use the same
-Meta account/admin ownership as Threads where practical, but posts must be made
-as the mirror Page, not a personal Facebook profile.
 
-## Requirements
-1. Account identity:
-   - Use a dedicated Facebook Page identity aligned with `Mirror: Courts of New
-     Zealand`.
-   - Do not post under Dylan Mordaunt, `edithatogo`, or any personal Facebook
-     profile.
-   - Use the same Meta account/admin structure as Threads only for ownership and
-     administration.
-2. API route:
-   - Use official Meta Pages API publishing endpoints.
-   - Store Facebook Page ID, page access token, app ID, and app permissions
-     separately from Threads and Instagram.
-3. Posting contract:
-   - Preserve source text and attribution without commentary.
-   - Use separate duplicate-prevention state.
-   - Start with new forward posts only; historical replay requires a separate
-     review because Facebook Page posts would appear as current posts.
+Keep Facebook as an archive-only lane for Courts of New Zealand content.
+Public-page snapshots are allowed now. Any future authenticated Meta Facebook
+API lane remains deferred until a later business-account decision.
+
+## Functional Requirements
+
+- Describe Facebook as archive-only, not mirroring.
+- Archive public Facebook Page snapshots from the official pages.
+- Do not assume Threads tokens authorize Facebook access.
+- Keep any authenticated API or outbound publishing work deferred.
+- Keep the workflow and operator guidance read-only until an archive action is
+  explicitly run.
+
+## Non-Goals
+
+- Posting to Facebook.
+- Creating or requiring a business account now.
+- Changing the broader Meta access strategy beyond archive-only snapshot
+  capture.
 
 ## Acceptance Criteria
-- A non-posting credential probe validates Page identity and posting permission
-  shape.
-- Secret schema and validation workflow list Facebook-specific secrets.
-- A dry-run payload builder handles text, attribution, and first-image Page
-  publishing constraints.
-- A controlled live post is possible only after explicit config enablement and
-  review.
+
+- Facebook guidance documents the archive-only public snapshot path.
+- The workflow and readiness docs do not require a business account for the
+  current archive lane.
+- Tests and reports distinguish archive-only snapshot capture from any future
+  authenticated API work.
+- Business-account dependent work stays explicitly deferred.

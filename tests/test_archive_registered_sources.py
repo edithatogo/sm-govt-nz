@@ -7,6 +7,7 @@ import scripts.archive_registered_sources as archive_registered_sources
 from scripts.archive_registered_sources import (
     archive_api_source,
     archive_bluesky_source,
+    archive_public_profile_snapshot_source,
     archive_json_feed_source,
     archive_manual_seed_source,
     archive_rss_source,
@@ -150,6 +151,33 @@ def test_archive_rss_source_writes_raw_and_normalized_records(tmp_path):
     assert raw_files
     normalized = (tmp_path / "normalized" / "rss" / "2026-06.jsonl").read_text(encoding="utf-8")
     assert "rss:" in normalized
+    assert "Published update" in normalized
+
+
+def test_archive_medium_feed_source_uses_rss_path(tmp_path):
+    source = {
+        "source_id": "digital-council-medium-feed",
+        "agency_id": "digital-council-aotearoa-new-zealand",
+        "platform": "rss",
+        "source_type": "rss_feed",
+        "url": "https://medium.com/feed/@digitalcouncilnz",
+        "account": "Digital Council for Aotearoa New Zealand",
+        "archive_status": "candidate",
+        "feasibility": "medium",
+    }
+
+    results = archive_rss_source(
+        source,
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        parser=FakeParser(),
+    )
+
+    assert results[0]["status"] == "captured"
+    raw_files = list((tmp_path / "raw" / "rss" / "2026-06").glob("*.json"))
+    assert raw_files
+    normalized = (tmp_path / "normalized" / "rss" / "2026-06.jsonl").read_text(encoding="utf-8")
+    assert "medium.com/feed/@digitalcouncilnz" in normalized
     assert "Published update" in normalized
 
 
@@ -941,8 +969,13 @@ def test_archive_x_api_enabled_missing_credentials_reports_auth_required(tmp_pat
     assert results[0]["status"] == "x_auth_required"
 
 
-def test_archive_x_api_disabled_reports_missing_seed(tmp_path, monkeypatch):
+def test_archive_x_api_disabled_uses_public_snapshot_when_no_seed(tmp_path, monkeypatch):
     monkeypatch.delenv("X_API_CAPTURE_ENABLED", raising=False)
+    monkeypatch.setattr(
+        archive_registered_sources,
+        "fetch_text",
+        lambda url, timeout=30: "<html><head><title>Agency / X</title><meta property='og:description' content='Official agency updates on X'></head></html>",
+    )
     manifest = tmp_path / "manifest.json"
     manifest.write_text(json.dumps({"sources": [x_source()]}), encoding="utf-8")
 
@@ -961,8 +994,9 @@ def test_archive_x_api_disabled_reports_missing_seed(tmp_path, monkeypatch):
         )
     )
 
-    assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
-    assert "X API capture is disabled" in report["results"][0]["reason"]
+    assert report["summary"]["status_counts"] == {"public_snapshot_captured": 1}
+    assert report["results"][0]["status"] == "public_snapshot_captured"
+    assert list((tmp_path / "raw" / "x_public_snapshot" / "2026-07").glob("*.json"))
 
 
 def test_archive_x_public_snapshot_source_writes_profile_snapshot(tmp_path):
@@ -989,7 +1023,6 @@ def test_archive_x_public_snapshot_source_writes_profile_snapshot(tmp_path):
 
 def test_archive_x_api_disabled_uses_public_snapshot_fallback_when_enabled(tmp_path, monkeypatch):
     monkeypatch.delenv("X_API_CAPTURE_ENABLED", raising=False)
-    monkeypatch.setenv("X_PUBLIC_SNAPSHOT_ENABLED", "true")
     monkeypatch.setattr(
         archive_registered_sources,
         "fetch_text",
@@ -1015,6 +1048,54 @@ def test_archive_x_api_disabled_uses_public_snapshot_fallback_when_enabled(tmp_p
     )
 
     assert report["summary"]["status_counts"] == {"public_snapshot_captured": 1}
+
+
+def test_archive_public_profile_snapshot_source_supports_facebook(tmp_path, monkeypatch):
+    result = archive_public_profile_snapshot_source(
+        {
+            "source_id": "agency-facebook",
+            "agency_id": "agency",
+            "platform": "facebook",
+            "source_type": "social_profile",
+            "url": "https://www.facebook.com/agency",
+            "account": "agency",
+        },
+        "facebook",
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        fetcher=lambda url, timeout=30: "<html><head><title>Agency / Facebook</title><meta property='og:description' content='Official updates on Facebook'></head></html>",
+    )
+
+    assert result["status"] == "public_snapshot_captured"
+    assert list((tmp_path / "raw" / "facebook_public_snapshot" / "2026-07").glob("*.json"))
+    record = json.loads((tmp_path / "normalized" / "facebook" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    assert record["source_platform"] == "facebook"
+    assert record["source_kind"] == "public_profile_snapshot"
+    assert record["extraction_method"] == "facebook_public_web_snapshot"
+
+
+def test_archive_public_profile_snapshot_source_supports_instagram(tmp_path):
+    result = archive_public_profile_snapshot_source(
+        {
+            "source_id": "agency-instagram",
+            "agency_id": "agency",
+            "platform": "instagram",
+            "source_type": "social_profile",
+            "url": "https://www.instagram.com/agency/",
+            "account": "agency",
+        },
+        "instagram",
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        fetcher=lambda url, timeout=30: "<html><head><title>Agency / Instagram</title><meta property='og:site_name' content='Instagram'></head></html>",
+    )
+
+    assert result["status"] == "public_snapshot_captured"
+    assert list((tmp_path / "raw" / "instagram_public_snapshot" / "2026-07").glob("*.json"))
+    record = json.loads((tmp_path / "normalized" / "instagram" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    assert record["source_platform"] == "instagram"
+    assert record["source_kind"] == "public_profile_snapshot"
+    assert record["extraction_method"] == "instagram_public_web_snapshot"
 
 
 def threads_source() -> dict[str, str]:
@@ -1051,16 +1132,25 @@ def write_threads_manifest(tmp_path, source=None):
     return manifest
 
 
-def test_archive_threads_api_disabled_reports_missing_seed(tmp_path, monkeypatch):
+def test_archive_threads_api_disabled_uses_public_snapshot_when_no_seed(tmp_path, monkeypatch):
     monkeypatch.delenv("THREADS_API_CAPTURE_ENABLED", raising=False)
+    monkeypatch.setattr(
+        archive_registered_sources,
+        "fetch_text",
+        lambda url, timeout=30: "<html><head><title>Threads / Agency</title><meta property='og:description' content='Public Threads snapshot'></head></html>",
+    )
     manifest = write_threads_manifest(tmp_path)
 
     report = build_report(report_args(tmp_path, manifest))
 
-    assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
+    assert report["summary"]["status_counts"] == {"public_snapshot_captured": 1}
     result = report["results"][0]
-    assert result["status"] == "manual_seed_missing"
-    assert "live API capture is disabled" in result["reason"]
+    assert result["status"] == "public_snapshot_captured"
+    assert list((tmp_path / "raw" / "threads_public_snapshot" / "2026-07").glob("*.json"))
+    record = json.loads((tmp_path / "normalized" / "threads" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    assert record["source_platform"] == "threads"
+    assert record["source_kind"] == "public_profile_snapshot"
+    assert record["extraction_method"] == "threads_public_web_snapshot"
 
 
 def test_archive_threads_api_disabled_archives_authorized_seed(tmp_path, monkeypatch):
@@ -1118,6 +1208,11 @@ def test_archive_threads_api_enabled_reports_permission_error(tmp_path, monkeypa
 def test_archive_threads_api_disabled_never_reports_api_blocker_status(tmp_path, monkeypatch):
     monkeypatch.delenv("THREADS_API_CAPTURE_ENABLED", raising=False)
     monkeypatch.setenv("THREADS_ACCESS_TOKEN", "token")
+    monkeypatch.setattr(
+        archive_registered_sources,
+        "fetch_text",
+        lambda url, timeout=30: "<html><head><title>Threads / Agency</title></head></html>",
+    )
     manifest = write_threads_manifest(tmp_path)
 
     def unexpected_urlopen(request, timeout=30):
@@ -1127,7 +1222,8 @@ def test_archive_threads_api_disabled_never_reports_api_blocker_status(tmp_path,
 
     report = build_report(report_args(tmp_path, manifest))
 
-    assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
+    assert report["summary"]["status_counts"] == {"public_snapshot_captured": 1}
+    assert report["results"][0]["status"] == "public_snapshot_captured"
     assert report["results"][0]["status"] not in {"threads_permission_error", "threads_api_error"}
 
 def test_archive_youtube_video_source_reports_blocked_metadata(tmp_path):

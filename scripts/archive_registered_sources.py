@@ -1299,6 +1299,10 @@ def archive_x_source(
 
 
 def extract_x_public_snapshot_content(body: str, url: str) -> str:
+    return extract_public_profile_snapshot_content(body, url, "x")
+
+
+def extract_public_profile_snapshot_content(body: str, url: str, platform: str) -> str:
     def first_match(pattern: str) -> str:
         match = re.search(pattern, body, flags=re.IGNORECASE | re.DOTALL)
         if not match:
@@ -1312,13 +1316,127 @@ def extract_x_public_snapshot_content(body: str, url: str) -> str:
     og_title = first_match(
         r'<meta[^>]+(?:name|property)=["\'](?:og:title|twitter:title)["\'][^>]+content=["\']([^"\']+)["\']'
     )
+    og_site_name = first_match(
+        r'<meta[^>]+(?:name|property)=["\'](?:og:site_name|twitter:site)["\'][^>]+content=["\']([^"\']+)["\']'
+    )
     parts = []
-    for value in [og_title, title, description, f"Public snapshot URL: {url}"]:
+    for value in [og_site_name, og_title, title, description, f"Public snapshot URL: {url}"]:
         if value and value not in parts:
             parts.append(value)
     if parts:
         return "\n\n".join(parts)
-    return f"Public X profile snapshot captured from {url}; no extractable title or description metadata was present."
+    return f"Public {platform.capitalize()} profile snapshot captured from {url}; no extractable title or description metadata was present."
+
+
+def public_profile_handle_from_source(source: dict[str, Any], platform: str) -> str:
+    account = str(source.get("account") or "").strip().lstrip("@")
+    if account and "/" not in account and " " not in account:
+        return account
+    parsed = urlparse(str(source.get("url") or account or ""))
+    host = parsed.netloc.lower()
+    parts = [part for part in parsed.path.split("/") if part]
+    if platform == "x":
+        if host not in {"x.com", "www.x.com", "twitter.com", "www.twitter.com"}:
+            return ""
+        if not parts or parts[0].lower() in {"home", "share", "intent", "i", "search"}:
+            return ""
+        return parts[0].lstrip("@")
+    if platform == "threads":
+        if "threads.net" not in host:
+            return ""
+        return parts[0].lstrip("@") if parts else ""
+    if platform == "instagram":
+        if "instagram.com" not in host or not parts:
+            return ""
+        if parts[0].lower() in {"p", "reel", "reels", "tv", "stories", "explore"}:
+            return ""
+        return parts[0].lstrip("@")
+    if platform == "facebook":
+        if "facebook.com" not in host or not parts:
+            return ""
+        if parts[0].lower() in {"profile.php", "pages", "photo.php", "watch", "story.php", "groups", "events"}:
+            return ""
+        return parts[0].lstrip("@")
+    return account
+
+
+def archive_public_profile_snapshot_source(
+    source: dict[str, Any],
+    platform: str,
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    *,
+    fetcher: Any | None = None,
+    fetch_timeout: int = 30,
+) -> dict[str, Any]:
+    captured_at = now_iso()
+    handle = public_profile_handle_from_source(source, platform)
+    if not handle:
+        return source_result(source, f"needs_{platform}_handle", f"{platform.capitalize()} public snapshot fallback needs an account handle")
+    default_profile_urls = {
+        "x": f"https://x.com/{handle}",
+        "threads": f"https://www.threads.net/@{handle}",
+        "instagram": f"https://www.instagram.com/{handle}/",
+        "facebook": f"https://www.facebook.com/{handle}",
+    }
+    url = str(source.get("url") or default_profile_urls.get(platform, f"https://{platform}.com/{handle}"))
+    fetch = fetcher or fetch_text
+    try:
+        body = fetch(url, timeout=fetch_timeout)
+    except Exception as exc:  # noqa: BLE001 - per-source report records public page failures.
+        return source_result(source, website_failure_status(exc), website_failure_reason(exc))
+
+    snapshot_key = stable_id(f"{source.get('source_id')}|{url}|{captured_at[:10]}")
+    raw_rel = Path(f"{platform}_public_snapshot") / captured_at[:7] / f"{snapshot_key}.json"
+    raw_path = raw_root / raw_rel
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    if not raw_path.exists():
+        raw_path.write_text(
+            json.dumps(
+                {
+                    "captured_at": captured_at,
+                    "source": source,
+                    "url": url,
+                    "html": body,
+                    "policy": {
+                        "access_method": "unauthenticated_public_http_snapshot",
+                        "no_login": True,
+                        "no_proxy": True,
+                        "no_anti_bot_bypass": True,
+                        "not_post_level_api_equivalent": True,
+                    },
+                },
+                indent=2,
+                sort_keys=True,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+    normalized = build_normalized_record(
+        record_id=f"{platform}_public_snapshot:{snapshot_key}",
+        agency_id=str(source.get("agency_id") or ""),
+        source_platform=platform,
+        source_account=handle,
+        source_kind="public_profile_snapshot",
+        source_url=url,
+        canonical_url=url,
+        original_created_at=captured_at,
+        captured_at=captured_at,
+        content=extract_public_profile_snapshot_content(body, url, platform),
+        raw_path=str(raw_path),
+        extraction_method=f"{platform}_public_web_snapshot",
+        cross_source_ids={
+            "source_id": str(source.get("source_id") or ""),
+            f"{platform}_username": handle,
+            f"{platform}_profile_url": url,
+        },
+    )
+    inserted = append_normalized_record(normalized_root, platform, normalized)
+    return source_result(
+        source,
+        "public_snapshot_captured" if inserted else "already_captured",
+        f"captured public {platform.capitalize()} profile snapshot {normalized['record_id']}" if inserted else f"{platform.capitalize()} public snapshot already present",
+    )
 
 
 def archive_x_public_snapshot_source(
@@ -1603,10 +1721,13 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
         if platform == "x":
             if x_api_capture_enabled():
                 return [source_result(source, "would_capture", "dry run: official X API capture enabled")]
-            if find_manual_seed_path(source, manual_seed_root) is None:
-                if x_public_snapshot_enabled():
-                    return [source_result(source, "would_capture", "dry run: public X snapshot source enabled")]
-                return [source_result(source, "manual_seed_missing", "dry run: manual seed file is not present and public X snapshot source is disabled")]
+            return [source_result(source, "would_capture", "dry run: public X snapshot or manual seed capture")]
+        if platform in {"facebook", "instagram"}:
+            return [source_result(source, "would_capture", f"dry run: public {platform.capitalize()} profile snapshot")]
+        if platform == "threads":
+            if threads_api_capture_enabled():
+                return [source_result(source, "would_capture", "dry run: official Threads API capture enabled")]
+            return [source_result(source, "would_capture", "dry run: public Threads profile snapshot or manual seed capture")]
         if platform == "youtube":
             return [source_result(source, "would_capture", "dry run: public YouTube channel RSS capture")]
         if platform in MANUAL_SEED_PLATFORMS and find_manual_seed_path(source, manual_seed_root) is None:
@@ -1647,16 +1768,31 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 normalized_root,
                 fetch_timeout=getattr(args, "fetch_timeout", 30),
             )
+        if platform in {"facebook", "instagram"}:
+            seed_path = find_manual_seed_path(source, manual_seed_root)
+            if seed_path is not None:
+                return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
+            return [
+                archive_public_profile_snapshot_source(
+                    source,
+                    platform,
+                    raw_root,
+                    normalized_root,
+                    fetch_timeout=getattr(args, "fetch_timeout", 30),
+                )
+            ]
         if platform == "threads":
             seed_path = find_manual_seed_path(source, manual_seed_root)
             if not threads_api_capture_enabled():
                 if seed_path is not None:
                     return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
                 return [
-                    source_result(
+                    archive_public_profile_snapshot_source(
                         source,
-                        "manual_seed_missing",
-                        "Threads live API capture is disabled; no authorized manual seed file is present",
+                        "threads",
+                        raw_root,
+                        normalized_root,
+                        fetch_timeout=getattr(args, "fetch_timeout", 30),
                     )
                 ]
             api_results = archive_threads_source(
@@ -1676,25 +1812,19 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                     result["reason"] = f"official Threads API unavailable; archived authorized manual seed. {result.get('reason', '')}".strip()
                 return seed_results
             return api_results
+        if platform in {"facebook", "instagram"}:
+            return [archive_public_profile_snapshot_source(source, platform, raw_root, normalized_root, fetch_timeout=getattr(args, "fetch_timeout", 30))]
         if platform == "x":
             seed_path = find_manual_seed_path(source, manual_seed_root)
             if not x_api_capture_enabled():
                 if seed_path is not None:
                     return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
-                if x_public_snapshot_enabled():
-                    return [
-                        archive_x_public_snapshot_source(
-                            source,
-                            raw_root,
-                            normalized_root,
-                            fetch_timeout=getattr(args, "fetch_timeout", 30),
-                        )
-                    ]
                 return [
-                    source_result(
+                    archive_x_public_snapshot_source(
                         source,
-                        "manual_seed_missing",
-                        "X API capture is disabled and public X snapshot source is disabled; no authorized manual seed file is present",
+                        raw_root,
+                        normalized_root,
+                        fetch_timeout=getattr(args, "fetch_timeout", 30),
                     )
                 ]
             api_results = archive_x_source(
@@ -1717,7 +1847,7 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 return seed_results
             if (
                 all(result.get("status") in {"x_auth_required", "x_permission_error", "x_billing_required", "x_api_error", "rate_limited"} for result in api_results)
-                and x_public_snapshot_enabled()
+                and seed_path is None
             ):
                 snapshot_result = archive_x_public_snapshot_source(
                     source,

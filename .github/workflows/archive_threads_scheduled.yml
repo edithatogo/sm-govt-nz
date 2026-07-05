@@ -103,7 +103,7 @@ jobs:
           print()
           print("Next steps:")
           print()
-          print("1. For live public Threads capture, deliberately complete Meta business verification and App Review for `threads_profile_discovery` on the app/token used by `THREADS_ACCESS_TOKEN`.")
+          print("1. For live public Threads archive capture, deliberately enable `THREADS_API_CAPTURE_ENABLED=true` with a lawful personal Threads account token.")
           print("2. Otherwise, add operator-authorized seed exports under `manual_archive_seeds/threads/` for the registered sources.")
           print("3. Rerun `Archive Threads Scheduled` or `Archive Threads Manual Seeds`.")
           PY
@@ -126,7 +126,7 @@ jobs:
 
           Current state:
           - No Threads records are archived yet.
-          - Live public Threads API capture is disabled unless `THREADS_API_CAPTURE_ENABLED=true` is deliberately configured.
+          - Live public Threads API capture is disabled unless `THREADS_API_CAPTURE_ENABLED=true` is deliberately configured with a lawful personal Threads account token.
           - Manual seeds remain the active automated capture path.
           - Missing seed inputs are tracked as `manual_seed_missing` in `conductor/threads_archive_report.json`.
           - Future authorized seed files or explicit API enablement will be handled automatically.
