@@ -1,18 +1,18 @@
 # Credentialed Platform Access Readiness
 
-Generated: 2026-07-02T14:20:18+00:00
+Generated: 2026-07-06T07:55:20+00:00
 
 ## Summary
 
-- `selected_sources`: 837
+- `selected_sources`: 839
 - `actionable_configuration_fault_count`: 0
 
 ## Platform status
 
-- `facebook`: {'api_disabled_manual_seed_path': 318}
-- `instagram`: {'api_disabled_manual_seed_path': 181}
+- `facebook`: {'api_disabled_manual_seed_path': 319}
+- `instagram`: {'api_disabled_manual_seed_path': 182}
 - `linkedin`: {'api_disabled_manual_seed_path': 256}
-- `threads`: {'api_disabled_manual_seed_path': 3}
+- `threads`: {'api_enabled_ready': 3}
 - `x`: {'api_disabled_public_or_seed_path': 79}
 
 ## Policy
