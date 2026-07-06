@@ -59,6 +59,45 @@ def test_select_sources_uses_triage_eligible_statuses(tmp_path):
 
     assert [source["source_id"] for source in selected] == ["blocked"]
     assert selected[0]["browser_fallback_trigger"]["status"] == "capture_blocked"
+    assert selected[0]["candidate_id"] == "blocked"
+
+
+def test_select_sources_matches_triage_candidate_ids(tmp_path):
+    manifest = {
+        "sources": [
+            {
+                "candidate_id": "candidate-123",
+                "source_id": "manifest-abc",
+                "agency_id": "a",
+                "platform": "website_page",
+                "source_type": "website_page",
+                "url": "https://agency.example",
+            }
+        ]
+    }
+    triage = tmp_path / "triage.json"
+    triage.write_text(
+        json.dumps(
+            {
+                "items": [
+                    {"source_id": "candidate-123", "platform": "website_page", "status": "capture_blocked"}
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    selected = select_sources(
+        manifest,
+        agency_id="",
+        triage_report=triage,
+        eligible_statuses={"capture_blocked"},
+        include_without_triage=False,
+    )
+
+    assert [source["source_id"] for source in selected] == ["manifest-abc"]
+    assert selected[0]["browser_fallback_trigger"]["status"] == "capture_blocked"
+    assert selected[0]["candidate_id"] == "candidate-123"
 
 
 def test_fixture_capture_writes_raw_and_normalized(tmp_path):

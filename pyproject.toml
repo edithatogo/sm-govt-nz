@@ -5,6 +5,7 @@ description = "Social media archiving for New Zealand government accounts (Blues
 requires-python = ">=3.14"
 dependencies = [
   "loguru>=0.7.2",
+  "playwright>=1.61.0",
 ]
 
 [tool.ruff]

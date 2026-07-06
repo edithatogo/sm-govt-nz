@@ -74,6 +74,48 @@ def test_gap_map_supersedes_http_website_gap_with_browser_success(tmp_path):
     assert gap_map["summary"]["superseded_source_count"] == 1
 
 
+def test_gap_map_supersedes_candidate_id_browser_success(tmp_path):
+    http_report = tmp_path / "website_archive_report.json"
+    browser_report = tmp_path / "website_browser_archive_report.json"
+    http_report.write_text(
+        json.dumps(
+            {
+                "results": [
+                    {
+                        "source_id": "web-candidate",
+                        "platform": "website_page",
+                        "status": "not_acceptable",
+                        "reason": "HTTP 406",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    browser_report.write_text(
+        json.dumps(
+            {
+                "results": [
+                    {
+                        "candidate_id": "web-candidate",
+                        "source_id": "manifest-source",
+                        "platform": "website_page",
+                        "status": "browser_captured",
+                        "reason": "captured public rendered website content",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    gap_map = build_gap_map([http_report, browser_report])
+
+    assert gap_map["summary"]["gap_count"] == 0
+    assert gap_map["summary"]["priority_counts"] == {"archived_or_already_archived": 1}
+    assert gap_map["summary"]["status_counts"] == {"browser_captured": 1}
+
+
 def test_gap_map_keeps_browser_challenge_as_report_only(tmp_path):
     report = tmp_path / "website_browser_archive_report.json"
     report.write_text(

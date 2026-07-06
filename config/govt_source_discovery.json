@@ -54,6 +54,13 @@
       "auth": "operator_or_app_authorized",
       "notes": "Archive capture depends on Meta access and account eligibility."
     },
+    "medium": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "public_html_or_rss",
+      "auth": "none",
+      "notes": "Medium publication pages are public and often expose RSS or readable HTML archives."
+    },
     "threads": {
       "feasibility": "medium",
       "archive_status": "candidate",
@@ -95,6 +102,13 @@
       "access_method": "email_ingress_or_public_archive",
       "auth": "inbox_or_dispatch_token",
       "notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source."
+    },
+    "substack": {
+      "feasibility": "medium",
+      "archive_status": "candidate",
+      "access_method": "public_html_or_rss",
+      "auth": "none",
+      "notes": "Substack publication pages are public and commonly expose RSS feeds for archive ingestion."
     },
     "json_feed": {
       "feasibility": "high",
@@ -186,8 +200,16 @@
         "query": "site:instagram.com {agency_name} {domain}"
       },
       {
+        "platform": "medium",
+        "query": "site:medium.com {agency_name} {domain}"
+      },
+      {
         "platform": "linkedin",
         "query": "site:linkedin.com/company OR site:linkedin.com/school {agency_name} {domain}"
+      },
+      {
+        "platform": "substack",
+        "query": "site:substack.com {agency_name} {domain}"
       },
       {
         "platform": "youtube",

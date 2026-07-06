@@ -1,17 +1,16 @@
 # Website Browser Fallback Archive
 
-Generated: 2026-07-02T12:34:56+00:00
+Generated: 2026-07-03T14:23:16+00:00
 
 ## Summary
 
-- `selected_sources`: 10
-- `result_count`: 10
+- `selected_sources`: 9
+- `result_count`: 9
 
 ## Status counts
 
-- `browser_captcha_or_challenge`: 2
-- `browser_capture_failed`: 1
-- `browser_captured`: 7
+- `browser_already_captured`: 5
+- `browser_captcha_or_challenge`: 4
 
 ## Guardrails
 

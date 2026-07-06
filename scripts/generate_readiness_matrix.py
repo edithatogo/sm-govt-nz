@@ -16,11 +16,11 @@ READINESS_STATES = [
 ]
 SOURCE_TYPES = [
     "website_page", "rss", "bluesky", "youtube", "newsletter",
-    "facebook", "instagram", "threads", "linkedin", "x",
+    "facebook", "instagram", "medium", "substack", "threads", "linkedin", "x",
 ]
-NON_CREDENTIAL_TYPES = {"website_page", "rss", "bluesky", "youtube", "newsletter"}
+NON_CREDENTIAL_TYPES = {"website_page", "rss", "bluesky", "youtube", "newsletter", "medium", "substack"}
 CREDENTIAL_GATED_TYPES = {"facebook", "instagram", "threads", "linkedin", "x"}
-ARCHIVE_ONLY_PLATFORMS = {"linkedin", "newsletter", "rss", "website_page", "youtube"}
+ARCHIVE_ONLY_PLATFORMS = {"linkedin", "newsletter", "rss", "website_page", "youtube", "medium", "substack"}
 MIRROR_CAPABLE_PLATFORMS = {"bluesky", "facebook", "instagram", "threads", "x"}
 DEPENDENCY_GATES = {
     "registry": ["discovered", "registered"],

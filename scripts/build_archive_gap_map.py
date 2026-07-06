@@ -55,7 +55,7 @@ def status_priority(status: str) -> str:
 
 
 def source_key(row: dict[str, Any]) -> str:
-    source_id = str(row.get("source_id") or "")
+    source_id = str(row.get("candidate_id") or row.get("source_id") or "")
     if source_id:
         return source_id
     return f"{row.get('platform') or ''}|{row.get('url') or ''}"

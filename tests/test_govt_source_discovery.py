@@ -2,7 +2,7 @@ import argparse
 import json
 from pathlib import Path
 
-from scripts.discover_govt_source_candidates import build_report, summarize
+from scripts.discover_govt_source_candidates import build_report, detect_platform, summarize
 
 
 def test_discovery_builds_candidate_report_and_archive_manifest(tmp_path):
@@ -154,6 +154,11 @@ def test_discovery_summary_matches_compact_report_shape(tmp_path):
     assert "conductor/govt_source_candidate_report.json" in summary
 
 
+def test_discovery_detects_medium_and_substack_platforms():
+    assert detect_platform("https://nzdefenceforce.medium.com") == "medium"
+    assert detect_platform("https://example.substack.com") == "substack"
+
+
 def test_discovery_workflow_commits_summary_artifact():
     workflow = Path(".github/workflows/govt_source_discovery.yml").read_text(encoding="utf-8")
 
@@ -287,6 +292,88 @@ def test_discovery_scores_configured_account_terms(tmp_path):
     assert by_platform["facebook"]["confidence_score"] > by_platform["instagram"]["confidence_score"]
 
 
+def test_discovery_recognizes_medium_and_substack_social_profiles(tmp_path):
+    registry = tmp_path / "registry.json"
+    config = tmp_path / "config.json"
+    registry.write_text(
+        json.dumps(
+            [
+                {
+                    "agency_id": "agency-one",
+                    "name": "Agency One",
+                    "official_website": "https://agency.example",
+                    "social_profiles": {
+                        "medium": {
+                            "handle": "agency-one",
+                            "url": "https://medium.com/@agency-one",
+                            "status": "active",
+                        },
+                        "substack": {
+                            "handle": "agency-one",
+                            "url": "https://agencyone.substack.com",
+                            "status": "active",
+                        },
+                    },
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    config.write_text(
+        json.dumps(
+            {
+                "homepage_probe": {"common_paths": ["/"]},
+                "platform_archive_policy": {
+                    "medium": {
+                        "feasibility": "medium",
+                        "archive_status": "candidate",
+                        "access_method": "public_html_or_rss",
+                        "auth": "none",
+                    },
+                    "substack": {
+                        "feasibility": "medium",
+                        "archive_status": "candidate",
+                        "access_method": "public_html_or_rss",
+                        "auth": "none",
+                    },
+                    "website_page": {
+                        "feasibility": "high",
+                        "archive_status": "ready",
+                        "access_method": "bounded_public_html",
+                        "auth": "none",
+                    },
+                },
+                "heuristics": {
+                    "platform_search_templates": [
+                        {"platform": "medium", "query": "site:medium.com {agency_name} {domain}"},
+                        {"platform": "substack", "query": "site:substack.com {agency_name} {domain}"},
+                    ]
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report, _manifest = build_report(
+        argparse.Namespace(registry=registry, config=config, probe_homepages=False, max_agencies=0)
+    )
+
+    by_platform = {candidate["platform"]: candidate for candidate in report["candidates"] if candidate["source_type"] == "social_profile"}
+    assert by_platform["medium"]["source_type"] == "social_profile"
+    assert by_platform["substack"]["source_type"] == "social_profile"
+    assert any(item["platform"] == "medium" for item in report["platform_search_queries"][0]["queries"])
+    assert any(item["platform"] == "substack" for item in report["platform_search_queries"][0]["queries"])
+
+
+def test_discovery_detects_medium_and_substack_hosts() -> None:
+    from scripts.discover_govt_source_candidates import detect_platform, looks_like_feed_url
+
+    assert detect_platform("https://medium.com/@agency-one") == "medium"
+    assert detect_platform("https://agencyone.substack.com") == "substack"
+    assert looks_like_feed_url("https://agencyone.substack.com/feed")
+    assert looks_like_feed_url("https://medium.com/feed/agency-one")
+
+
 def test_discovery_scores_feedback_learning_file(tmp_path):
     registry = tmp_path / "registry.json"
     config = tmp_path / "config.json"
@@ -346,3 +433,58 @@ def test_discovery_scores_feedback_learning_file(tmp_path):
     assert len(threads) == 1
     assert "learning_negative" in threads[0]["trust_signals"]
     assert threads[0]["confidence_score"] < 0.5
+
+
+def test_discovery_emits_medium_and_substack_rss_feeds(tmp_path):
+    registry = tmp_path / "registry.json"
+    config = tmp_path / "config.json"
+    registry.write_text(
+        json.dumps(
+            [
+                {
+                    "agency_id": "agency-one",
+                    "name": "Agency One",
+                    "official_website": "https://agency.example",
+                    "social_profiles": {
+                        "medium": {
+                            "handle": "Agency One",
+                            "url": "https://agencyone.medium.com",
+                            "status": "active",
+                        },
+                        "substack": {
+                            "handle": "Agency One",
+                            "url": "https://agencyone.substack.com",
+                            "status": "active",
+                        },
+                    },
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    config.write_text(
+        json.dumps(
+            {
+                "homepage_probe": {"common_paths": ["/"]},
+                "platform_archive_policy": {
+                    "medium": {"archive_status": "candidate"},
+                    "substack": {"archive_status": "candidate"},
+                    "rss": {"archive_status": "ready"},
+                    "website_page": {"archive_status": "ready"},
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report, _manifest = build_report(
+        argparse.Namespace(registry=registry, config=config, probe_homepages=False, max_agencies=0)
+    )
+
+    rss_candidates = [candidate for candidate in report["candidates"] if candidate["source_type"] == "rss_feed"]
+    rss_urls = {candidate["url"] for candidate in rss_candidates}
+
+    assert "https://agencyone.medium.com/feed" in rss_urls
+    assert "https://agencyone.substack.com/feed" in rss_urls
+    assert any(candidate["platform"] == "medium" for candidate in report["candidates"] if candidate["source_type"] == "social_profile")
+    assert any(candidate["platform"] == "substack" for candidate in report["candidates"] if candidate["source_type"] == "social_profile")

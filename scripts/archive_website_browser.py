@@ -66,6 +66,17 @@ def record_key(source: dict[str, Any]) -> str:
     return stable_id(f"{source.get('source_id')}|{source.get('url')}|website_browser")
 
 
+def triage_match_key(source: dict[str, Any]) -> str:
+    return str(source.get("candidate_id") or source.get("source_id") or "")
+
+
+def browser_result(source: dict[str, Any], status: str, reason: str, *, raw_path: Path) -> dict[str, Any]:
+    result = source_result(source, status, reason)
+    result["candidate_id"] = triage_match_key(source)
+    result["raw_path"] = str(raw_path).replace("\\", "/")
+    return result
+
+
 def write_raw_capture(
     *,
     source: dict[str, Any],
@@ -151,7 +162,7 @@ def load_triage_eligible_source_ids(path: Path, statuses: set[str]) -> tuple[set
     for item in report.get("items", []):
         if not isinstance(item, dict):
             continue
-        source_id = str(item.get("source_id") or "")
+        source_id = str(item.get("source_id") or item.get("candidate_id") or "")
         status = str(item.get("status") or "")
         if source_id and item.get("platform") == "website_page" and status in statuses:
             ids.add(source_id)
@@ -174,7 +185,7 @@ def select_sources(
             continue
         if source.get("platform") != "website_page" and source.get("source_type") != "website_page":
             continue
-        source_id = str(source.get("source_id") or "")
+        source_id = triage_match_key(source)
         if not source_is_public_http(source):
             continue
         if eligible_ids and source_id not in eligible_ids:
@@ -183,7 +194,9 @@ def select_sources(
             continue
         enriched = dict(source)
         if source_id in triage_by_id:
-            enriched["browser_fallback_trigger"] = triage_by_id[source_id]
+            trigger = triage_by_id[source_id]
+            enriched["browser_fallback_trigger"] = trigger
+            enriched["candidate_id"] = str(trigger.get("candidate_id") or source_id)
         selected.append(enriched)
     return selected
 
@@ -205,11 +218,16 @@ def capture_fixture_source(source: dict[str, Any], *, html: str, raw_root: Path,
     )
     if blocked:
         status, marker = blocked
-        return source_result(source, status, f"public browser fallback stopped at access marker: {marker}") | {"raw_path": str(raw_path).replace("\\", "/")}
+        return browser_result(source, status, f"public browser fallback stopped at access marker: {marker}", raw_path=raw_path)
     if not text:
-        return source_result(source, "browser_no_visible_content", "public browser fallback produced no visible text") | {"raw_path": str(raw_path).replace("\\", "/")}
+        return browser_result(source, "browser_no_visible_content", "public browser fallback produced no visible text", raw_path=raw_path)
     inserted = normalize_capture(source=source, captured_at=captured_at, final_url=final_url, text=text, raw_path=raw_path, normalized_root=normalized_root)
-    return source_result(source, "browser_captured" if inserted else "browser_already_captured", "captured public rendered website content" if inserted else "browser website record already present") | {"raw_path": str(raw_path).replace("\\", "/")}
+    return browser_result(
+        source,
+        "browser_captured" if inserted else "browser_already_captured",
+        "captured public rendered website content" if inserted else "browser website record already present",
+        raw_path=raw_path,
+    )
 
 
 def capture_live_sources(
@@ -257,12 +275,12 @@ def capture_live_sources(
                 blocked = detect_browser_status(text, html)
                 if blocked:
                     status, marker = blocked
-                    results.append(source_result(source, status, f"public browser fallback stopped at access marker: {marker}") | {"raw_path": str(raw_path).replace("\\", "/")})
+                    results.append(browser_result(source, status, f"public browser fallback stopped at access marker: {marker}", raw_path=raw_path))
                 elif not text:
-                    results.append(source_result(source, "browser_no_visible_content", "public browser fallback produced no visible text") | {"raw_path": str(raw_path).replace("\\", "/")})
+                    results.append(browser_result(source, "browser_no_visible_content", "public browser fallback produced no visible text", raw_path=raw_path))
                 else:
                     inserted = normalize_capture(source=source, captured_at=captured_at, final_url=final_url, text=text, raw_path=raw_path, normalized_root=normalized_root)
-                    results.append(source_result(source, "browser_captured" if inserted else "browser_already_captured", "captured public rendered website content" if inserted else "browser website record already present") | {"raw_path": str(raw_path).replace("\\", "/")})
+                    results.append(browser_result(source, "browser_captured" if inserted else "browser_already_captured", "captured public rendered website content" if inserted else "browser website record already present", raw_path=raw_path))
             except Exception as exc:  # noqa: BLE001 - isolate per-source browser failures.
                 results.append(source_result(source, "browser_capture_failed", str(exc)[:300]))
             finally:

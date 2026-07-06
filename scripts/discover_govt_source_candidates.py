@@ -23,7 +23,9 @@ PLATFORM_HOSTS = {
     "bluesky": ("bsky.app",),
     "facebook": ("facebook.com", "fb.com"),
     "instagram": ("instagram.com",),
+    "medium": ("medium.com",),
     "linkedin": ("linkedin.com",),
+    "substack": ("substack.com",),
     "threads": ("threads.net", "threads.com"),
     "x": ("x.com", "twitter.com"),
     "youtube": ("youtube.com", "youtu.be"),
@@ -33,6 +35,8 @@ PLATFORM_SHARE_PATH_PREFIXES = {
     "bluesky": ("/intent/",),
     "facebook": ("/sharer/", "/share.php", "/dialog/"),
     "linkedin": ("/sharearticle", "/sharing/"),
+    "medium": ("/share",),
+    "substack": ("/share",),
     "threads": ("/intent/",),
     "x": ("/intent/", "/share"),
 }
@@ -185,6 +189,31 @@ def detect_platform(url: str) -> str:
     return ""
 
 
+def platform_feed_url(platform: str, url: str) -> str:
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().removeprefix("www.")
+    path = parsed.path.strip("/")
+    if platform == "medium":
+        if host.endswith("medium.com"):
+            if path.startswith("feed/"):
+                return url
+            if not path:
+                return f"{parsed.scheme or 'https'}://{parsed.netloc}/feed"
+            if path.startswith("@"):
+                return f"{parsed.scheme or 'https'}://{parsed.netloc}/feed/{path}"
+            if path:
+                return f"{parsed.scheme or 'https'}://{parsed.netloc}/feed/{path}"
+    if platform == "substack":
+        if host.endswith("substack.com"):
+            if path.endswith("feed"):
+                return url
+            if not path:
+                return f"{parsed.scheme or 'https'}://{parsed.netloc}/feed"
+            if path:
+                return f"{parsed.scheme or 'https'}://{parsed.netloc}/feed"
+    return ""
+
+
 def bluesky_handle_from_url(url: str) -> str:
     parsed = urlparse(url)
     host = parsed.netloc.lower().removeprefix("www.")
@@ -209,7 +238,10 @@ def looks_like_feed_url(url: str, text: str = "", mime_type: str = "") -> bool:
     if any(token in lower_mime for token in ("rss", "atom", "xml")):
         return True
     path = urlparse(url).path.lower().rstrip("/")
+    host = urlparse(url).netloc.lower().removeprefix("www.")
     segments = url_path_segments(url)
+    if host.endswith("medium.com") and path.startswith("/feed/"):
+        return True
     if path.endswith(("atom.xml", "rss.xml", "feed.xml", "rss-news.xml")):
         return True
     if segments and segments[-1] in {"feed", "rss", "rss2", "atom", "homerss"}:
@@ -392,7 +424,7 @@ def candidate_confidence(source_type, platform, url, origin, config, agency_id="
     elif trust == "medium":
         score += 0.1
         signals.append("trusted_domain_suffix")
-    if platform in {"rss", "json_feed", "website_page", "bluesky", "microformat"}:
+    if platform in {"rss", "json_feed", "website_page", "bluesky", "microformat", "medium", "substack"}:
         score += 0.1
         signals.append("archive_friendly_platform")
     heuristics = config.get("heuristics", {})
@@ -476,6 +508,24 @@ def registry_candidates(agencies: list[dict[str, Any]], config: dict[str, Any]) 
                     discovered_at=profile.get("discovered_at", ""),
                 )
             )
+            feed_url = platform_feed_url(platform, url)
+            if feed_url:
+                found.append(
+                    candidate(
+                        agency,
+                        "rss_feed",
+                        "rss",
+                        feed_url,
+                        "registry.social_profiles.feed",
+                        config,
+                        account=profile.get("handle") or bluesky_handle_from_url(url),
+                        status=profile.get("status", ""),
+                        account_classification=profile.get("account_classification", ""),
+                        syndication_classification=profile.get("syndication_classification", ""),
+                        discovered_at=profile.get("discovered_at", ""),
+                        source_profile_url=url,
+                    )
+                )
     return found
 
 
@@ -651,6 +701,22 @@ def probe_url(agency: dict[str, Any], url: str, config: dict[str, Any]) -> tuple
                     status="discovered",
                 )
             )
+            feed_url = platform_feed_url(platform, href)
+            if feed_url:
+                results.append(
+                    candidate(
+                        agency,
+                        "rss_feed",
+                        "rss",
+                        feed_url,
+                        "homepage.link.feed",
+                        config,
+                        account=bluesky_handle_from_url(href) or link.get("text", ""),
+                        link_text=link.get("text", ""),
+                        source_profile_url=href,
+                        status="discovered",
+                    )
+                )
         if looks_like_feed_url(href, link.get("text", "")) or looks_like_json_feed_url(href, link.get("text", "")):
             source_type = "json_feed" if looks_like_json_feed_url(href, link.get("text", "")) else "rss_feed"
             platform = "json_feed" if source_type == "json_feed" else "rss"
