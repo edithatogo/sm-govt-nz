@@ -57,6 +57,7 @@ Before enabling the scheduled syndicator for the MVP:
 *   **Safety:** Archive-only records maintain separate state from outbound syndication so historical X, LinkedIn, RSS, and email backfills cannot be reposted. LinkedIn is source-only and must not be used for posting in the current roadmap.
 *   **Dataset Publishing:** Normalized shards and raw-source bundles are prepared for Hugging Face Datasets, with Zenodo publication retained as a preservation lane.
 *   **Meta bucket map:** `conductor/meta_archive_bucket_map_20260705.md` records the current archive-now versus seed/API-deferred split for Threads, Instagram, and Facebook.
+*   **LinkedIn intake:** `conductor/linkedin_seed_intake_checklist.md` tracks the operator-authorized seed backlog for LinkedIn sources that remain archive-only pending input.
 
 ### 4. New Archive Platform Tracks
 *   **Bluesky archive:** Capture public source posts and profile evidence under the systematic archive identity contract, separate from any personal Bluesky account.

@@ -37,6 +37,11 @@ It distinguishes account/setup work from live scheduled posting.
 - [`conductor/meta_archive_bucket_map_20260705.json`](conductor/meta_archive_bucket_map_20260705.json)
 - Current split: public snapshot now for Instagram/Facebook; seed/API needed for Threads.
 
+## LinkedIn Seed Intake
+
+- [`conductor/linkedin_seed_intake_checklist.md`](conductor/linkedin_seed_intake_checklist.md)
+- Current split: LinkedIn remains archive-only and needs operator-authorized seed input before it can move from `manual_seed_missing` to archived.
+
 ## Review Findings
 
 1. Bluesky and Threads are the only live scheduled outbound targets.
