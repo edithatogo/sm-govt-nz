@@ -1282,10 +1282,15 @@ def test_archive_threads_api_disabled_never_reports_api_blocker_status(tmp_path,
     assert report["results"][0]["status"] == "public_snapshot_captured"
     assert report["results"][0]["status"] not in {"threads_permission_error", "threads_api_error"}
 
-def test_archive_youtube_video_source_reports_blocked_metadata(tmp_path):
+def test_archive_youtube_video_source_reports_blocked_metadata(tmp_path, monkeypatch):
     def blocked(_url):
         raise HTTPError("https://www.youtube.com/oembed", 401, "Unauthorized", hdrs=None, fp=None)
 
+    def page_fetcher(url, timeout=30):
+        assert url == "https://www.youtube.com/watch?v=abc123"
+        return "<html><head><title>Agency / YouTube</title><meta property='og:description' content='Public video page'></head></html>"
+
+    monkeypatch.setattr(archive_registered_sources, "fetch_text", page_fetcher)
     results = archive_registered_sources.archive_youtube_video_source(
         {
             "source_id": "agency-youtube-video",
@@ -1299,5 +1304,9 @@ def test_archive_youtube_video_source_reports_blocked_metadata(tmp_path):
         metadata_fetcher=blocked,
     )
 
-    assert results[0]["status"] == "youtube_video_metadata_blocked"
+    assert results[0]["status"] == "public_snapshot_captured"
+    assert list((tmp_path / "raw" / "youtube_public_snapshot").glob("*/*.json"))
+    record = json.loads((tmp_path / "normalized" / "youtube" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    assert record["source_kind"] == "public_video_snapshot"
+    assert "Public video page" in record["content"]
 

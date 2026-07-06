@@ -473,6 +473,7 @@ def archive_youtube_video_source(
         return [source_result(source, "source_url_not_channel", "YouTube URL is neither a channel nor a recognized video URL")]
     canonical_url = f"https://www.youtube.com/watch?v={video_id}"
     oembed_url = f"https://www.youtube.com/oembed?url={quote(canonical_url, safe='')}&format=json"
+    page_snapshot_url = canonical_url
     try:
         if metadata_fetcher is None:
             request = Request(
@@ -490,7 +491,68 @@ def archive_youtube_video_source(
         if exc.code == 404:
             return [source_result(source, "youtube_video_not_found", f"HTTP 404: YouTube video metadata not found for {video_id}")]
         if exc.code in {401, 403}:
-            return [source_result(source, "youtube_video_metadata_blocked", f"HTTP {exc.code}: YouTube video metadata unavailable for {video_id}")]
+            try:
+                body = fetch_text(page_snapshot_url, timeout=fetch_timeout)
+            except Exception as snapshot_exc:  # noqa: BLE001 - per-source report records fallback failures.
+                return [source_result(source, "youtube_video_metadata_blocked", f"HTTP {exc.code}: YouTube video metadata unavailable for {video_id}; public page snapshot failed: {str(snapshot_exc)[:240]}")]
+            captured_at = now_iso()
+            record_key = stable_id(f"{source.get('source_id')}|youtube-video-snapshot|{video_id}|{captured_at[:10]}")
+            raw_rel = Path("youtube_public_snapshot") / captured_at[:7] / f"{record_key}.json"
+            raw_path = raw_root / raw_rel
+            raw_path.parent.mkdir(parents=True, exist_ok=True)
+            if not raw_path.exists():
+                raw_path.write_text(
+                    json.dumps(
+                        {
+                            "captured_at": captured_at,
+                            "source": source,
+                            "video_id": video_id,
+                            "canonical_url": canonical_url,
+                            "page_snapshot_url": page_snapshot_url,
+                            "html": body,
+                            "policy": {
+                                "access_method": "unauthenticated_public_http_snapshot",
+                                "no_login": True,
+                                "no_proxy": True,
+                                "no_anti_bot_bypass": True,
+                                "not_post_level_api_equivalent": True,
+                            },
+                        },
+                        indent=2,
+                        sort_keys=True,
+                    )
+                    + "\n",
+                    encoding="utf-8",
+                )
+            normalized = build_normalized_record(
+                record_id=f"youtube_public_snapshot:{record_key}",
+                agency_id=str(source.get("agency_id") or ""),
+                source_platform="youtube",
+                source_account=str(source.get("account") or video_id),
+                source_kind="public_video_snapshot",
+                source_url=str(source.get("url") or canonical_url),
+                canonical_url=canonical_url,
+                original_created_at=captured_at,
+                captured_at=captured_at,
+                content=extract_public_profile_snapshot_content(body, page_snapshot_url, "youtube"),
+                raw_path=str(raw_path),
+                extraction_method="youtube_public_web_snapshot",
+                cross_source_ids={
+                    "source_id": str(source.get("source_id") or ""),
+                    "video_id": video_id,
+                    "snapshot_date": captured_at[:10],
+                },
+            )
+            inserted = append_normalized_record(normalized_root, "youtube", normalized)
+            return [
+                source_result(
+                    source,
+                    "public_snapshot_captured" if inserted else "public_snapshot_already_captured",
+                    f"captured public YouTube video snapshot {normalized['record_id']}"
+                    if inserted
+                    else "public YouTube video snapshot already present",
+                )
+            ]
         return [source_result(source, "capture_failed", f"YouTube video metadata fetch failed: HTTP {exc.code}: {exc.reason}")]
     except Exception as exc:  # noqa: BLE001 - per-source report records metadata failures.
         return [source_result(source, "capture_failed", f"YouTube video metadata fetch failed: {str(exc)[:240]}")]
