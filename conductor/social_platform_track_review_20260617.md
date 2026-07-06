@@ -15,7 +15,7 @@ It distinguishes account/setup work from live scheduled posting.
 | Threads historical replay | `courts_nz_threads_historical_replay_policy_20260613` | Deferred by policy | No backlog replay unless a future explicit review accepts current-feed archive noise. |
 | Instagram archive | `courts_nz_instagram_meta_api_20260613`, `courts_nz_instagram_launch_reconciliation_20260617` | Deferred: no authenticated API path enabled; public-profile snapshot capture is available | Keep archive-only snapshot capture and defer any authenticated API lane until a later business-account decision. |
 | Facebook Page archive | `courts_nz_facebook_meta_api_20260613` | Deferred: no authenticated API path enabled; public-page snapshot capture is available | Keep archive-only snapshot capture and defer any authenticated API lane until a later business-account decision. |
-| LinkedIn source | `courts_nz_multisource_archive_20260612` | Paused/source-only | Remains archive-only pending approved seed/access; no posting. |
+| LinkedIn source | `courts_nz_multisource_archive_20260612` | Paused/source-only | Remains archive-only pending approved seed/access; no posting; no-cost-only tools and accounts only. |
 | RSS/website | `courts_nz_multisource_archive_20260612` | Scheduled archive capture active | Continue source-health monitoring. |
 | Judgments email | `courts_nz_multisource_archive_20260612` | Email bridge scaffold exists; subscription/address confirmation remains open | Resolve the dedicated subscription address lane or keep Pipedream fallback documented. |
 | Hugging Face dataset | `archiver_zenodo_20260610`, `courts_nz_multisource_archive_20260612` | Published once; cadence needs explicit policy | New cadence track: `courts_nz_archive_publication_cadence_20260617`. |

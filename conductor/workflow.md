@@ -65,7 +65,7 @@ Before enabling the scheduled syndicator for the MVP:
 *   **Instagram archive:** Archive public Instagram profile evidence and source snapshots through a separate Meta archive track. Do not assume Threads tokens are sufficient for Instagram access.
 *   **Facebook Page archive:** Archive public Facebook Page evidence and source snapshots through a separate Meta archive track. Do not publish from a personal Facebook profile.
 *   **Credential ownership:** Use `edithatogo@gmail.com` for account administration where practical, but never post under Dylan Mordaunt, `edithatogo`, or any personal identity.
-*   **LinkedIn boundary:** LinkedIn remains an archive/source-ingestion lane only until a later explicit track reopens posting with separate risk review.
+*   **LinkedIn boundary:** LinkedIn remains an archive/source-ingestion lane only until a later explicit track reopens posting with separate risk review. No-cost-only accounts and tools only; paid automation services are excluded from the current plan.
 *   **Granular remaining work:** Bluesky profile evidence, Bluesky archive replay completion, Bluesky launch operations, Threads API credentials, Threads archive launch, and Threads historical replay policy are tracked in separate conductor tracks.
 
 ## 5. Account Inter-Following Convention
