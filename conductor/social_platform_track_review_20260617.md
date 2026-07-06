@@ -40,7 +40,7 @@ It distinguishes account/setup work from live scheduled posting.
 ## LinkedIn Seed Intake
 
 - [`conductor/linkedin_seed_intake_checklist.md`](conductor/linkedin_seed_intake_checklist.md)
-- Current split: LinkedIn remains archive-only and needs operator-authorized seed input before it can move from `manual_seed_missing` to archived.
+- Current split: LinkedIn now has a no-cost public-profile snapshot fallback for archiving, while operator-authorized seed input remains available for richer captures and compliance-sensitive cases.
 
 ## Review Findings
 

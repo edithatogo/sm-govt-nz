@@ -118,8 +118,7 @@ def test_archive_registered_sources_reports_supported_and_pending_sources(tmp_pa
 
     assert report["summary"]["selected_sources"] == 4
     assert report["summary"]["status_counts"] == {
-        "manual_seed_missing": 1,
-        "would_capture": 3,
+        "would_capture": 4,
     }
     assert report["courts_current_sources_report"] == {
         "dry_run": True,
@@ -867,7 +866,7 @@ def test_archive_manual_seed_reports_invalid_seed(tmp_path):
 
     assert results[0]["status"] == "seed_invalid"
     assert "missing url" in results[0]["reason"]
-def test_archive_registered_sources_dry_run_reports_missing_linkedin_seed(tmp_path):
+def test_archive_registered_sources_dry_run_reports_linkedin_public_snapshot(tmp_path):
     manifest = tmp_path / "manifest.json"
     manifest.write_text(
         json.dumps(
@@ -902,8 +901,65 @@ def test_archive_registered_sources_dry_run_reports_missing_linkedin_seed(tmp_pa
         )
     )
 
-    assert report["summary"]["status_counts"] == {"manual_seed_missing": 1}
-    assert report["summary"]["status_by_platform"] == {"linkedin": {"manual_seed_missing": 1}}
+    assert report["summary"]["status_counts"] == {"would_capture": 1}
+    assert report["summary"]["status_by_platform"] == {"linkedin": {"would_capture": 1}}
+
+
+def test_archive_linkedin_api_disabled_uses_public_snapshot_when_no_seed(tmp_path, monkeypatch):
+    monkeypatch.delenv("THREADS_API_CAPTURE_ENABLED", raising=False)
+    monkeypatch.setattr(
+        archive_registered_sources,
+        "fetch_text",
+        lambda url, timeout=30: (
+            "<html><head><title>Agency / LinkedIn</title>"
+            '<meta property="og:description" content="Official LinkedIn updates">'
+            "</head><body></body></html>"
+        ),
+    )
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "sources": [
+                    {
+                        "source_id": "agency-linkedin",
+                        "agency_id": "agency",
+                        "platform": "linkedin",
+                        "source_type": "social_profile",
+                        "url": "https://www.linkedin.com/company/agency",
+                        "account": "Agency",
+                        "archive_status": "manual_seed",
+                        "feasibility": "medium",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            report=tmp_path / "report.json",
+            source_type="linkedin",
+            agency_id="",
+            include_blocked=True,
+            dry_run=False,
+            raw_root=tmp_path / "raw",
+            normalized_root=tmp_path / "normalized",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            fetch_timeout=30,
+        )
+    )
+
+    assert report["summary"]["status_counts"] == {"public_snapshot_captured": 1}
+    raw_path = next((tmp_path / "raw" / "linkedin_public_snapshot" / "2026-07").glob("*.json"))
+    record = json.loads((tmp_path / "normalized" / "linkedin" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    assert raw_path.exists()
+    assert record["source_platform"] == "linkedin"
+    assert record["source_kind"] == "public_profile_snapshot"
+    assert record["extraction_method"] == "linkedin_public_web_snapshot"
+    assert "Official LinkedIn updates" in record["content"]
 
 
 def x_source() -> dict[str, str]:

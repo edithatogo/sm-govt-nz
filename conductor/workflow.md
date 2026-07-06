@@ -57,7 +57,7 @@ Before enabling the scheduled syndicator for the MVP:
 *   **Safety:** Archive-only records maintain separate state from outbound syndication so historical X, LinkedIn, RSS, and email backfills cannot be reposted. LinkedIn is source-only and must not be used for posting in the current roadmap.
 *   **Dataset Publishing:** Normalized shards and raw-source bundles are prepared for Hugging Face Datasets, with Zenodo publication retained as a preservation lane.
 *   **Meta bucket map:** `conductor/meta_archive_bucket_map_20260705.md` records the current archive-now versus seed/API-deferred split for Threads, Instagram, and Facebook.
-*   **LinkedIn intake:** `conductor/linkedin_seed_intake_checklist.md` tracks the operator-authorized seed backlog for LinkedIn sources that remain archive-only pending input.
+*   **LinkedIn intake:** `conductor/linkedin_seed_intake_checklist.md` tracks the operator-authorized seed backlog for LinkedIn sources, while the archive runner now uses a no-cost public-profile snapshot fallback when no authorized seed is present.
 
 ### 4. New Archive Platform Tracks
 *   **Bluesky archive:** Capture public source posts and profile evidence under the systematic archive identity contract, separate from any personal Bluesky account.
@@ -65,7 +65,7 @@ Before enabling the scheduled syndicator for the MVP:
 *   **Instagram archive:** Archive public Instagram profile evidence and source snapshots through a separate Meta archive track. Do not assume Threads tokens are sufficient for Instagram access.
 *   **Facebook Page archive:** Archive public Facebook Page evidence and source snapshots through a separate Meta archive track. Do not publish from a personal Facebook profile.
 *   **Credential ownership:** Use `edithatogo@gmail.com` for account administration where practical, but never post under Dylan Mordaunt, `edithatogo`, or any personal identity.
-*   **LinkedIn boundary:** LinkedIn remains an archive/source-ingestion lane only until a later explicit track reopens posting with separate risk review. No-cost-only accounts and tools only; paid automation services are excluded from the current plan.
+*   **LinkedIn boundary:** LinkedIn remains an archive/source-ingestion lane only until a later explicit track reopens posting with separate risk review. No-cost-only accounts and tools only; paid automation services are excluded from the current plan, and public profile snapshots are the default capture path when no authorized seed exists.
 *   **Granular remaining work:** Bluesky profile evidence, Bluesky archive replay completion, Bluesky launch operations, Threads API credentials, Threads archive launch, and Threads historical replay policy are tracked in separate conductor tracks.
 
 ## 5. Account Inter-Following Convention

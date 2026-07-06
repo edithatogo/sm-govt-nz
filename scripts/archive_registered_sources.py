@@ -1357,6 +1357,16 @@ def public_profile_handle_from_source(source: dict[str, Any], platform: str) -> 
         if parts[0].lower() in {"profile.php", "pages", "photo.php", "watch", "story.php", "groups", "events"}:
             return ""
         return parts[0].lstrip("@")
+    if platform == "linkedin":
+        if "linkedin.com" not in host:
+            return ""
+        if not parts:
+            return account
+        if parts[0].lower() in {"feed", "posts", "jobs", "learning", "search", "checkpoint", "authwall"}:
+            return account
+        if parts[0].lower() in {"company", "school", "in", "pub"} and len(parts) > 1:
+            return parts[1].lstrip("@")
+        return parts[0].lstrip("@")
     return account
 
 
@@ -1378,6 +1388,7 @@ def archive_public_profile_snapshot_source(
         "threads": f"https://www.threads.net/@{handle}",
         "instagram": f"https://www.instagram.com/{handle}/",
         "facebook": f"https://www.facebook.com/{handle}",
+        "linkedin": f"https://www.linkedin.com/company/{handle}",
     }
     url = str(source.get("url") or default_profile_urls.get(platform, f"https://{platform}.com/{handle}"))
     fetch = fetcher or fetch_text
@@ -1728,6 +1739,8 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
             if threads_api_capture_enabled():
                 return [source_result(source, "would_capture", "dry run: official Threads API capture enabled")]
             return [source_result(source, "would_capture", "dry run: public Threads profile snapshot or manual seed capture")]
+        if platform == "linkedin":
+            return [source_result(source, "would_capture", "dry run: public LinkedIn profile snapshot")]
         if platform == "youtube":
             return [source_result(source, "would_capture", "dry run: public YouTube channel RSS capture")]
         if platform in MANUAL_SEED_PLATFORMS and find_manual_seed_path(source, manual_seed_root) is None:
@@ -1776,6 +1789,19 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                 archive_public_profile_snapshot_source(
                     source,
                     platform,
+                    raw_root,
+                    normalized_root,
+                    fetch_timeout=getattr(args, "fetch_timeout", 30),
+                    )
+                ]
+        if platform == "linkedin":
+            seed_path = find_manual_seed_path(source, manual_seed_root)
+            if seed_path is not None:
+                return archive_manual_seed_source(source, raw_root, normalized_root, manual_seed_root)
+            return [
+                archive_public_profile_snapshot_source(
+                    source,
+                    "linkedin",
                     raw_root,
                     normalized_root,
                     fetch_timeout=getattr(args, "fetch_timeout", 30),

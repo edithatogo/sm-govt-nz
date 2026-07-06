@@ -1,6 +1,6 @@
 # LinkedIn seed intake checklist
 
-Use this checklist to track LinkedIn sources that need operator-authorized seed input before the archive lane can capture them. This is archive-only, not mirroring. No-cost-only tools and accounts only; paid LinkedIn automation services are excluded.
+Use this checklist to track LinkedIn sources that need operator-authorized seed input for richer archival coverage. The archive lane now also has a no-cost public-profile snapshot fallback when no seed is present. This is archive-only, not mirroring. No-cost-only tools and accounts only; paid LinkedIn automation services are excluded.
 
 - Total LinkedIn sources: 256
 - Status: manual_seed_missing / needs_authorized_seed_or_api
