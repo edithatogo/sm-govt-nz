@@ -101,6 +101,8 @@ def alternate_website_urls(url: str) -> list[str]:
         for scheme in scheme_variants
         for host_variant in host_variants
     ]
+    if parsed.path not in {"", "/"}:
+        alternatives.append(urlunparse(parsed._replace(path="/", query="", fragment="")))
     return [candidate for candidate in dict.fromkeys(alternatives) if candidate != url]
 
 
@@ -138,7 +140,7 @@ def website_failure_reason(exc: Exception) -> str:
 
 
 def should_try_website_alternates(status: str) -> bool:
-    return status in {"capture_blocked", "method_not_allowed", "not_acceptable", "tls_failed", "dns_failed", "network_timeout"}
+    return status in {"capture_blocked", "method_not_allowed", "not_acceptable", "tls_failed", "dns_failed", "network_timeout", "not_found"}
 
 
 def fetch_website_with_alternates(source_url: str, fetcher: Any, fetch_timeout: int, *, allow_alternates: bool) -> tuple[str, str]:

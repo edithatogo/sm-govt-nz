@@ -628,6 +628,26 @@ def test_fetch_website_with_alternates_tries_http_www_combination_after_405():
     ]
 
 
+def test_fetch_website_with_alternates_uses_root_after_404_on_section_path():
+    seen = []
+
+    def fetcher(url, timeout):
+        seen.append(url)
+        if url == "https://www.agency.example/news":
+            raise HTTPError(url, 404, "Not Found", hdrs=None, fp=None)
+        if url == "https://www.agency.example/":
+            return "<html>fallback</html>"
+        raise HTTPError(url, 404, "Not Found", hdrs=None, fp=None)
+
+    fetched_url, html = fetch_website_with_alternates("https://www.agency.example/news", fetcher, 5, allow_alternates=True)
+
+    assert fetched_url == "https://www.agency.example/"
+    assert html == "<html>fallback</html>"
+    assert seen[0] == "https://www.agency.example/news"
+    assert seen[-1] == "https://www.agency.example/"
+    assert "https://www.agency.example/" in seen
+
+
 def test_archive_youtube_source_reports_missing_handle_as_channel_not_found(tmp_path):
     source = {
         "source_id": "agency-youtube",
