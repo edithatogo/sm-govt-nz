@@ -1,8 +1,8 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-07T10:25:38+00:00",
+  "generated_at": "2026-07-07T17:35:29+00:00",
   "inputs": {
-    "manifest": "conductor\\govt_archive_source_manifest.json",
+    "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "platforms": [
       "facebook",
@@ -12,7 +12,7 @@
       "x",
       "newsletter"
     ],
-    "policy": "config\\manual_seed_onboarding.json"
+    "policy": "config/manual_seed_onboarding.json"
   },
   "items": [
     {
