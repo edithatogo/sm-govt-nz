@@ -143,6 +143,10 @@ def should_try_website_alternates(status: str) -> bool:
     return status in {"capture_blocked", "method_not_allowed", "not_acceptable", "tls_failed", "dns_failed", "network_timeout", "not_found"}
 
 
+def should_try_website_browser_fallback(status: str) -> bool:
+    return status in {"capture_blocked", "method_not_allowed", "not_acceptable", "network_timeout", "network_error"}
+
+
 def fetch_website_with_alternates(source_url: str, fetcher: Any, fetch_timeout: int, *, allow_alternates: bool) -> tuple[str, str]:
     urls = [source_url]
     if allow_alternates:
@@ -245,7 +249,27 @@ def archive_website_source(
             fetched_url = url
             html = fetcher(url)
     except Exception as exc:  # noqa: BLE001 - per-source website report records fetch failures.
-        return source_result(source, website_failure_status(exc), website_failure_reason(exc))
+        status = website_failure_status(exc)
+        reason = website_failure_reason(exc)
+        if should_try_website_browser_fallback(status):
+            try:
+                return [
+                    archive_website_browser_source(
+                        source,
+                        raw_root=raw_root,
+                        normalized_root=normalized_root,
+                        per_page_timeout=fetch_timeout,
+                        wait_after_load_ms=0,
+                        screenshot=False,
+                    )
+                ][0]
+            except Exception as browser_exc:  # noqa: BLE001 - preserve original website failure details.
+                return source_result(
+                    source,
+                    status,
+                    f"{reason}; browser fallback failed: {str(browser_exc)[:240]}",
+                )
+        return source_result(source, status, reason)
     record_key = stable_id(f"{source.get('source_id')}|{url}")
     raw_rel = Path("website") / captured_at[:7] / f"{record_key}.json"
     raw_path = raw_root / raw_rel
@@ -292,6 +316,27 @@ def archive_website_source(
             if inserted
             else "website record already present"
         ),
+    )
+
+
+def archive_website_browser_source(
+    source: dict[str, Any],
+    *,
+    raw_root: Path = DEFAULT_RAW_ROOT,
+    normalized_root: Path = DEFAULT_NORMALIZED_ROOT,
+    per_page_timeout: int = 45,
+    wait_after_load_ms: int = 2500,
+    screenshot: bool = False,
+) -> dict[str, Any]:
+    from scripts.archive_website_browser import capture_source_with_browser
+
+    return capture_source_with_browser(
+        source,
+        raw_root=raw_root,
+        normalized_root=normalized_root,
+        per_page_timeout=per_page_timeout,
+        wait_after_load_ms=wait_after_load_ms,
+        screenshot=screenshot,
     )
 
 

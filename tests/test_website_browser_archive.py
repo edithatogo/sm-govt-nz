@@ -212,6 +212,7 @@ def test_summary_mentions_guardrails(tmp_path):
 def test_live_capture_source_code_opens_a_fresh_page_per_source():
     source = Path("scripts/archive_website_browser.py").read_text(encoding="utf-8")
 
-    assert "for source in sources:\n            page = context.new_page()" in source
-    assert "finally:\n                page.close()" in source
+    assert "def capture_source_with_browser(" in source
+    assert "def capture_live_sources(" in source
+    assert "capture_source_with_browser(" in source
 

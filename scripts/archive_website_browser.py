@@ -148,6 +148,73 @@ def normalize_capture(
     return append_normalized_record(normalized_root, "website", record)
 
 
+def capture_source_with_browser(
+    source: dict[str, Any],
+    *,
+    raw_root: Path,
+    normalized_root: Path,
+    per_page_timeout: int,
+    wait_after_load_ms: int,
+    screenshot: bool,
+) -> dict[str, Any]:
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        try:
+            context = browser.new_context(
+                user_agent="Mozilla/5.0 (compatible; sm-govt-nz-website-browser-fallback/1.0; +https://github.com/edithatogo/sm-govt-nz)"
+            )
+            try:
+                page = context.new_page()
+                page.set_default_timeout(per_page_timeout * 1000)
+                captured_at = now_iso()
+                started = time.monotonic()
+                try:
+                    page.goto(str(source.get("url") or ""), wait_until="domcontentloaded", timeout=per_page_timeout * 1000)
+                    page.wait_for_timeout(wait_after_load_ms)
+                    html = page.content()
+                    text = html_to_visible_text(html)
+                    final_url = page.url
+                    screenshot_path = ""
+                    if screenshot:
+                        png_path = raw_root / "website_browser" / captured_at[:7] / f"{record_key(source)}.png"
+                        png_path.parent.mkdir(parents=True, exist_ok=True)
+                        page.screenshot(path=str(png_path), full_page=True, timeout=15_000)
+                        screenshot_path = str(png_path).replace("\\", "/")
+                    raw_path = write_raw_capture(
+                        source=source,
+                        captured_at=captured_at,
+                        final_url=final_url,
+                        html=html,
+                        text=text,
+                        screenshot_path=screenshot_path,
+                        diagnostics={"elapsed_seconds": round(time.monotonic() - started, 2), "visible_text_length": len(text)},
+                        raw_root=raw_root,
+                    )
+                    blocked = detect_browser_status(text, html)
+                    if blocked:
+                        status, marker = blocked
+                        return browser_result(source, status, f"public browser fallback stopped at access marker: {marker}", raw_path=raw_path)
+                    if not text:
+                        return browser_result(source, "browser_no_visible_content", "public browser fallback produced no visible text", raw_path=raw_path)
+                    inserted = normalize_capture(source=source, captured_at=captured_at, final_url=final_url, text=text, raw_path=raw_path, normalized_root=normalized_root)
+                    return browser_result(
+                        source,
+                        "browser_captured" if inserted else "browser_already_captured",
+                        "captured public rendered website content" if inserted else "browser website record already present",
+                        raw_path=raw_path,
+                    )
+                except Exception as exc:  # noqa: BLE001 - isolate per-source browser failures.
+                    return source_result(source, "browser_capture_failed", str(exc)[:300])
+                finally:
+                    page.close()
+            finally:
+                context.close()
+        finally:
+            browser.close()
+
+
 def source_is_public_http(source: dict[str, Any]) -> bool:
     parsed = urlparse(str(source.get("url") or ""))
     return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
@@ -239,55 +306,17 @@ def capture_live_sources(
     wait_after_load_ms: int,
     screenshot: bool,
 ) -> list[dict[str, Any]]:
-    from playwright.sync_api import sync_playwright
-
-    results: list[dict[str, Any]] = []
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        context = browser.new_context(user_agent="Mozilla/5.0 (compatible; sm-govt-nz-website-browser-fallback/1.0; +https://github.com/edithatogo/sm-govt-nz)")
-        for source in sources:
-            page = context.new_page()
-            page.set_default_timeout(per_page_timeout * 1000)
-            captured_at = now_iso()
-            started = time.monotonic()
-            try:
-                page.goto(str(source.get("url") or ""), wait_until="domcontentloaded", timeout=per_page_timeout * 1000)
-                page.wait_for_timeout(wait_after_load_ms)
-                html = page.content()
-                text = html_to_visible_text(html)
-                final_url = page.url
-                screenshot_path = ""
-                if screenshot:
-                    png_path = raw_root / "website_browser" / captured_at[:7] / f"{record_key(source)}.png"
-                    png_path.parent.mkdir(parents=True, exist_ok=True)
-                    page.screenshot(path=str(png_path), full_page=True, timeout=15_000)
-                    screenshot_path = str(png_path).replace("\\", "/")
-                raw_path = write_raw_capture(
-                    source=source,
-                    captured_at=captured_at,
-                    final_url=final_url,
-                    html=html,
-                    text=text,
-                    screenshot_path=screenshot_path,
-                    diagnostics={"elapsed_seconds": round(time.monotonic() - started, 2), "visible_text_length": len(text)},
-                    raw_root=raw_root,
-                )
-                blocked = detect_browser_status(text, html)
-                if blocked:
-                    status, marker = blocked
-                    results.append(browser_result(source, status, f"public browser fallback stopped at access marker: {marker}", raw_path=raw_path))
-                elif not text:
-                    results.append(browser_result(source, "browser_no_visible_content", "public browser fallback produced no visible text", raw_path=raw_path))
-                else:
-                    inserted = normalize_capture(source=source, captured_at=captured_at, final_url=final_url, text=text, raw_path=raw_path, normalized_root=normalized_root)
-                    results.append(browser_result(source, "browser_captured" if inserted else "browser_already_captured", "captured public rendered website content" if inserted else "browser website record already present", raw_path=raw_path))
-            except Exception as exc:  # noqa: BLE001 - isolate per-source browser failures.
-                results.append(source_result(source, "browser_capture_failed", str(exc)[:300]))
-            finally:
-                page.close()
-        context.close()
-        browser.close()
-    return results
+    return [
+        capture_source_with_browser(
+            source,
+            raw_root=raw_root,
+            normalized_root=normalized_root,
+            per_page_timeout=per_page_timeout,
+            wait_after_load_ms=wait_after_load_ms,
+            screenshot=screenshot,
+        )
+        for source in sources
+    ]
 
 
 def build_report(args: argparse.Namespace) -> dict[str, Any]:
