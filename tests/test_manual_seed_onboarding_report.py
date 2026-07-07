@@ -112,6 +112,80 @@ def test_manual_seed_onboarding_report_marks_missing_and_present_seeds(tmp_path)
     assert queue["items"][0]["preferred_seed_path"].endswith("/facebook/agency-facebook.json")
 
 
+def test_manual_seed_onboarding_report_treats_linkedin_without_seed_as_informational(tmp_path):
+    manifest = tmp_path / "manifest.json"
+    policy = tmp_path / "policy.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "sources": [
+                    {
+                        "source_id": "agency-linkedin",
+                        "agency_id": "agency",
+                        "agency_name": "Agency",
+                        "platform": "linkedin",
+                        "source_type": "social_profile",
+                        "url": "https://linkedin.com/company/agency",
+                        "account": "Agency",
+                    },
+                    {
+                        "source_id": "agency-facebook",
+                        "agency_id": "agency",
+                        "agency_name": "Agency",
+                        "platform": "facebook",
+                        "source_type": "social_profile",
+                        "url": "https://facebook.com/agency",
+                        "account": "Agency",
+                    },
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    policy.write_text(
+        json.dumps(
+            {
+                "platforms": {
+                    "linkedin": {
+                        "acceptable_access_methods": ["approved_linkedin_api", "operator_authorized_seed"],
+                        "required_authorization": "organization_admin_or_approved_app",
+                        "seed_directory": str(tmp_path / "manual_archive_seeds" / "linkedin"),
+                        "seed_schema": "posts[]",
+                        "live_capture_policy": "no public automation",
+                    },
+                    "facebook": {
+                        "acceptable_access_methods": ["meta_graph_api", "operator_authorized_seed"],
+                        "required_authorization": "page_owner_or_approved_app",
+                        "seed_directory": str(tmp_path / "manual_archive_seeds" / "facebook"),
+                        "seed_schema": "posts[]",
+                        "live_capture_policy": "no public scraping",
+                    },
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            policy=policy,
+            report=tmp_path / "report.json",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            platforms="facebook,linkedin",
+        )
+    )
+
+    by_platform = {item["platform"]: item for item in report["items"]}
+    assert by_platform["linkedin"]["onboarding_status"] == "public_fallback_available"
+    assert by_platform["facebook"]["onboarding_status"] == "needs_authorized_seed_or_api"
+    assert report["summary"]["remaining_groups"] == {"facebook": 1}
+    assert report["summary"]["remaining_source_count"] == 1
+    queue = build_work_queue(report)
+    assert queue["summary"]["queue_count"] == 1
+    assert queue["summary"]["platform_counts"] == {"facebook": 1}
+
+
 def test_manual_seed_onboarding_report_writes_summary(tmp_path):
     manifest = tmp_path / "manifest.json"
     policy = tmp_path / "policy.json"

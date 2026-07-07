@@ -1,47 +1,30 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-03T09:44:03+00:00
+Generated: 2026-07-07T10:17:53+00:00
 
 ## Summary
 
-- `selected_sources`: 5441
-- `platform_count`: 12
-- `status_count`: 2
+- `selected_sources`: 188
+- `platform_count`: 1
+- `status_count`: 7
 
 ## Platform counts
 
-- `api`: 513
-- `bluesky`: 18
-- `facebook`: 319
-- `instagram`: 182
-- `json_feed`: 266
-- `linkedin`: 127
-- `newsletter`: 366
-- `rss`: 1723
-- `threads`: 3
-- `website_page`: 1694
-- `x`: 43
-- `youtube`: 187
+- `youtube`: 188
 
 ## Status counts
 
-- `manual_seed_missing`: 997
-- `would_capture`: 4444
+- `already_captured`: 1185
+- `captured`: 867
+- `no_records`: 9
+- `public_snapshot_captured`: 7
+- `source_url_not_channel`: 1
+- `youtube_channel_not_found`: 18
+- `youtube_channel_unresolved`: 1
 
 ## Status by platform
 
-- `api`: {'would_capture': 513}
-- `bluesky`: {'would_capture': 18}
-- `facebook`: {'manual_seed_missing': 319}
-- `instagram`: {'manual_seed_missing': 182}
-- `json_feed`: {'would_capture': 266}
-- `linkedin`: {'manual_seed_missing': 127}
-- `newsletter`: {'manual_seed_missing': 366}
-- `rss`: {'would_capture': 1723}
-- `threads`: {'manual_seed_missing': 3}
-- `website_page`: {'would_capture': 1694}
-- `x`: {'would_capture': 43}
-- `youtube`: {'would_capture': 187}
+- `youtube`: {'already_captured': 1185, 'captured': 867, 'no_records': 9, 'public_snapshot_captured': 7, 'source_url_not_channel': 1, 'youtube_channel_not_found': 18, 'youtube_channel_unresolved': 1}
 
 ## Notes
 

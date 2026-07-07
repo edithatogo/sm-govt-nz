@@ -56,17 +56,24 @@ def seed_present(candidates: list[str]) -> bool:
 def onboarding_item(source: dict[str, Any], policy: dict[str, Any], seed_root: Path) -> dict[str, Any]:
     candidates = [candidate for candidate in seed_candidates(source, policy, seed_root) if candidate]
     present = seed_present(candidates)
+    platform = str(source.get("platform") or "")
+    if present:
+        onboarding_status = "seed_present"
+    elif platform == "linkedin":
+        onboarding_status = "public_fallback_available"
+    else:
+        onboarding_status = "needs_authorized_seed_or_api"
     return {
         "source_id": source.get("source_id", ""),
         "agency_id": source.get("agency_id", ""),
         "agency_name": source.get("agency_name", ""),
-        "platform": source.get("platform", ""),
+        "platform": platform,
         "source_type": source.get("source_type", ""),
         "url": source.get("url", ""),
         "account": source.get("account", ""),
         "archive_status": source.get("archive_status", ""),
         "feasibility": source.get("feasibility", ""),
-        "onboarding_status": "seed_present" if present else "needs_authorized_seed_or_api",
+        "onboarding_status": onboarding_status,
         "acceptable_access_methods": policy.get("acceptable_access_methods", []),
         "required_authorization": policy.get("required_authorization", ""),
         "seed_candidates": candidates,
