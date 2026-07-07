@@ -10,5 +10,6 @@ def test_manual_seed_onboarding_workflow_builds_and_commits_report() -> None:
     assert "conductor/manual_seed_onboarding_summary.md" in workflow
     assert "conductor/manual_seed_work_queue.json" in workflow
     assert "conductor/manual_seed_next_batch_templates.json" in workflow
+    assert "next_batch_limit" in workflow
     assert "scripts/commit_state_updates.py" in workflow
     assert "manual_archive_seeds" not in workflow

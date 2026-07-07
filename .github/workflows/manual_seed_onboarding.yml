@@ -15,6 +15,10 @@ on:
         options:
           - "true"
           - "false"
+      next_batch_limit:
+        description: "Number of sources to include in the deterministic next batch"
+        required: true
+        default: "25"
   schedule:
     - cron: "42 15 * * *"
 
@@ -35,6 +39,7 @@ jobs:
         run: >-
           python scripts/build_manual_seed_onboarding_report.py
           --platforms "${{ inputs.platforms || 'facebook,instagram,threads,linkedin,x,newsletter' }}"
+          --next-batch-limit "${{ inputs.next_batch_limit || '25' }}"
       - name: Commit onboarding report
         if: ${{ github.event_name == 'schedule' || inputs.commit_report == 'true' }}
         run: >-

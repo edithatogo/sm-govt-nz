@@ -375,3 +375,47 @@ def test_manual_seed_work_queue_orders_lowest_friction_platforms_first(tmp_path)
     drop_targets = drop_targets_path.read_text(encoding="utf-8")
     assert "Manual Seed Drop Targets" in drop_targets
     assert "`manual_archive_seeds/threads/threads.json`" in drop_targets
+
+
+def test_manual_seed_summary_respects_custom_next_batch_limit(tmp_path):
+    report = {
+        "generated_at": "2026-07-07T00:00:00Z",
+        "items": [
+            {
+                "source_id": "newsletter-a",
+                "agency_id": "a",
+                "agency_name": "Agency A",
+                "platform": "newsletter",
+                "onboarding_status": "needs_authorized_seed_or_api",
+                "preferred_seed_path": "manual_archive_seeds/newsletter/newsletter-a.json",
+                "seed_candidates": ["manual_archive_seeds/newsletter/newsletter-a.json"],
+                "required_authorization": "public_archive_or_operator_authorized_capture",
+                "acceptable_access_methods": ["public_newsletter_archive", "operator_authorized_seed"],
+            },
+            {
+                "source_id": "newsletter-b",
+                "agency_id": "b",
+                "agency_name": "Agency B",
+                "platform": "newsletter",
+                "onboarding_status": "needs_authorized_seed_or_api",
+                "preferred_seed_path": "manual_archive_seeds/newsletter/newsletter-b.json",
+                "seed_candidates": ["manual_archive_seeds/newsletter/newsletter-b.json"],
+                "required_authorization": "public_archive_or_operator_authorized_capture",
+                "acceptable_access_methods": ["public_newsletter_archive", "operator_authorized_seed"],
+            },
+        ],
+        "summary": {
+            "selected_sources": 3,
+            "remaining_group_count": 1,
+            "remaining_source_count": 3,
+            "remaining_groups": {"newsletter": 3},
+            "status_by_platform": {"newsletter": {"needs_authorized_seed_or_api": 3}},
+        },
+    }
+
+    summary_path = tmp_path / "summary.md"
+    write_summary(summary_path, report, next_batch_limit=1)
+
+    summary = summary_path.read_text(encoding="utf-8")
+    assert summary.count("| Platform | Source | Agency | Preferred seed path |") == 1
+    assert summary.count("`manual_archive_seeds/newsletter/") == 1

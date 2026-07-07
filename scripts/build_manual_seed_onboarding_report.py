@@ -264,10 +264,10 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     }
 
 
-def write_summary(path: Path, report: dict[str, Any]) -> None:
+def write_summary(path: Path, report: dict[str, Any], *, next_batch_limit: int = 25) -> None:
     summary = report.get("summary", {})
     work_queue = build_work_queue(report)
-    next_items = work_queue.get("items", [])[:25]
+    next_items = work_queue.get("items", [])[:next_batch_limit]
     lines = [
         "# Manual/API Source Onboarding",
         "",
@@ -343,13 +343,14 @@ def main() -> None:
     parser.add_argument("--next-batch-templates", type=Path, default=DEFAULT_NEXT_BATCH_TEMPLATES)
     parser.add_argument("--drop-targets", type=Path, default=DEFAULT_DROP_TARGETS)
     parser.add_argument("--manual-seed-root", type=Path, default=DEFAULT_MANUAL_SEED_ROOT)
+    parser.add_argument("--next-batch-limit", type=int, default=25)
     parser.add_argument("--platforms", default=",".join(DEFAULT_PLATFORMS))
     args = parser.parse_args()
     report = build_report(args)
     write_json(args.report, report)
-    write_summary(args.summary, report)
+    write_summary(args.summary, report, next_batch_limit=args.next_batch_limit)
     queue = build_work_queue(report)
-    templates = build_next_batch_templates(report)
+    templates = build_next_batch_templates(report, limit=args.next_batch_limit)
     write_json(args.queue, queue)
     write_json(args.next_batch_templates, templates)
     write_drop_targets(args.drop_targets, templates)
