@@ -22,8 +22,8 @@ DEFAULT_REPORT = Path("conductor/website_browser_archive_report.json")
 DEFAULT_SUMMARY = Path("conductor/website_browser_archive_summary.md")
 DEFAULT_RAW_ROOT = Path("historical_archive_raw")
 DEFAULT_NORMALIZED_ROOT = Path("historical_archive_normalized")
-ELIGIBLE_STATUSES = {"capture_blocked", "method_not_allowed", "not_acceptable", "network_timeout", "network_error"}
-INELIGIBLE_STATUSES = {"dns_failed", "not_found", "tls_failed", "youtube_channel_not_found"}
+ELIGIBLE_STATUSES = {"capture_blocked", "method_not_allowed", "not_acceptable", "network_timeout", "network_error", "not_found"}
+INELIGIBLE_STATUSES = {"dns_failed", "tls_failed", "youtube_channel_not_found"}
 BLOCKED_MARKERS = [
     ("browser_captcha_or_challenge", re.compile(r"captcha|checking your browser|cloudflare|are you human", re.I)),
     ("browser_access_blocked", re.compile(r"access denied|forbidden|request blocked|not authorised|not authorized", re.I)),

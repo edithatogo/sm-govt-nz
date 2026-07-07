@@ -688,6 +688,46 @@ def test_archive_website_source_uses_browser_fallback_after_403(tmp_path, monkey
     assert calls[0][1]["wait_after_load_ms"] == 0
 
 
+def test_archive_website_source_uses_browser_fallback_after_404(tmp_path, monkeypatch):
+    calls = []
+
+    def browser_fallback(source, **kwargs):
+        calls.append((source["url"], kwargs))
+        return {
+            "source_id": source["source_id"],
+            "agency_id": source["agency_id"],
+            "platform": source["platform"],
+            "source_type": source["source_type"],
+            "url": source["url"],
+            "archive_status": source["archive_status"],
+            "feasibility": source["feasibility"],
+            "status": "browser_captured",
+            "reason": "captured public rendered website content",
+        }
+
+    monkeypatch.setattr(archive_registered_sources, "archive_website_browser_source", browser_fallback)
+
+    result = archive_website_source(
+        {
+            "source_id": "agency-website",
+            "agency_id": "agency",
+            "platform": "website_page",
+            "source_type": "website_page",
+            "url": "https://agency.example/news",
+            "archive_status": "ready",
+            "feasibility": "high",
+        },
+        raw_root=tmp_path / "raw",
+        normalized_root=tmp_path / "normalized",
+        website_fetcher=lambda url: (_ for _ in ()).throw(HTTPError(url, 404, "Not Found", hdrs=None, fp=None)),
+    )
+
+    assert result["status"] == "browser_captured"
+    assert calls and calls[0][0] == "https://agency.example/news"
+    assert calls[0][1]["per_page_timeout"] == 30
+    assert calls[0][1]["wait_after_load_ms"] == 0
+
+
 def test_archive_youtube_source_reports_missing_handle_as_channel_not_found(tmp_path):
     source = {
         "source_id": "agency-youtube",

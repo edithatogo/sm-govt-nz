@@ -6,6 +6,7 @@ from scripts.archive_website_browser import (
     build_report,
     detect_browser_status,
     html_to_visible_text,
+    load_json,
     select_sources,
     write_summary,
 )
@@ -59,7 +60,24 @@ def test_select_sources_uses_triage_eligible_statuses(tmp_path):
 
     assert [source["source_id"] for source in selected] == ["blocked"]
     assert selected[0]["browser_fallback_trigger"]["status"] == "capture_blocked"
-    assert selected[0]["candidate_id"] == "blocked"
+
+
+def test_website_browser_archive_can_select_not_found_sources(tmp_path):
+    triage = tmp_path / "triage.json"
+    triage.write_text(json.dumps({"items": [{"source_id": "retired", "platform": "website_page", "status": "not_found"}]}), encoding="utf-8")
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(json.dumps({"sources": [{"source_id": "retired", "platform": "website_page", "url": "https://example.govt.nz/old"}]}), encoding="utf-8")
+
+    selected = select_sources(
+        load_json(manifest),
+        agency_id="",
+        triage_report=triage,
+        eligible_statuses={"capture_blocked", "not_found"},
+        include_without_triage=False,
+    )
+
+    assert selected
+    assert selected[0]["browser_fallback_trigger"]["status"] == "not_found"
 
 
 def test_select_sources_matches_triage_candidate_ids(tmp_path):

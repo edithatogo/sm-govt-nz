@@ -144,7 +144,7 @@ def should_try_website_alternates(status: str) -> bool:
 
 
 def should_try_website_browser_fallback(status: str) -> bool:
-    return status in {"capture_blocked", "method_not_allowed", "not_acceptable", "network_timeout", "network_error"}
+    return status in {"capture_blocked", "method_not_allowed", "not_acceptable", "network_timeout", "network_error", "not_found"}
 
 
 def fetch_website_with_alternates(source_url: str, fetcher: Any, fetch_timeout: int, *, allow_alternates: bool) -> tuple[str, str]:
