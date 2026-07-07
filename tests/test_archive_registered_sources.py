@@ -1170,6 +1170,50 @@ def test_archive_x_api_disabled_uses_public_snapshot_when_no_seed(tmp_path, monk
     assert list((tmp_path / "raw" / "x_public_snapshot" / "2026-07").glob("*.json"))
 
 
+def test_archive_x_api_disabled_archives_authorized_seed(tmp_path, monkeypatch):
+    monkeypatch.delenv("X_API_CAPTURE_ENABLED", raising=False)
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(json.dumps({"sources": [x_source()]}), encoding="utf-8")
+    seed_dir = tmp_path / "manual_archive_seeds" / "x"
+    seed_dir.mkdir(parents=True)
+    (seed_dir / "agency-x.json").write_text(
+        json.dumps(
+            {
+                "posts": [
+                    {
+                        "post_id": "x-seed-1",
+                        "url": "https://x.com/agency/status/1",
+                        "created_at": "2026-06-10T00:00:00Z",
+                        "text": "Authorized X seed",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            report=tmp_path / "report.json",
+            source_type="x",
+            agency_id="",
+            include_blocked=True,
+            dry_run=False,
+            raw_root=tmp_path / "raw",
+            normalized_root=tmp_path / "normalized",
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            max_x_posts=25,
+        )
+    )
+
+    assert report["summary"]["status_counts"] == {"manual_seed_captured": 1}
+    record = json.loads((tmp_path / "normalized" / "x" / "2026-06.jsonl").read_text(encoding="utf-8"))
+    assert record["source_platform"] == "x"
+    assert record["content"] == "Authorized X seed"
+    assert record["cross_source_ids"]["source_id"] == "agency-x"
+
+
 def test_archive_x_public_snapshot_source_writes_profile_snapshot(tmp_path):
     result = archive_x_public_snapshot_source(
         x_source(),
