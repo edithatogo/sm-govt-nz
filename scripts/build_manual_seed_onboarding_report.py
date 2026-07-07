@@ -272,6 +272,7 @@ def write_summary(path: Path, report: dict[str, Any], *, next_batch_limit: int =
         "# Manual/API Source Onboarding",
         "",
         f"Generated: {report.get('generated_at', '')}",
+        f"Next batch limit: {next_batch_limit}",
         "",
         "## Summary",
         "",
@@ -327,6 +328,7 @@ def write_summary(path: Path, report: dict[str, Any], *, next_batch_limit: int =
             "- `needs_authorized_seed_or_api` sources remain in the manual/API remainder set.",
             "- `conductor/manual_seed_work_queue.json` lists the remaining sources in deterministic execution order with preferred seed paths.",
             "- `conductor/manual_seed_next_batch_templates.json` contains source-specific starter JSON for the next deterministic batch without creating live seed files.",
+            "- The next-batch size is configurable via the `next_batch_limit` workflow input and CLI flag.",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)

@@ -417,5 +417,6 @@ def test_manual_seed_summary_respects_custom_next_batch_limit(tmp_path):
     write_summary(summary_path, report, next_batch_limit=1)
 
     summary = summary_path.read_text(encoding="utf-8")
+    assert "Next batch limit: 1" in summary
     assert summary.count("| Platform | Source | Agency | Preferred seed path |") == 1
     assert summary.count("`manual_archive_seeds/newsletter/") == 1
