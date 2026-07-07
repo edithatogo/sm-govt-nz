@@ -1,0 +1,57 @@
+name: Retry Fixable Archive Loop
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_iterations:
+        description: "Maximum retry iterations for the repo-resolvable backlog"
+        required: true
+        default: "2"
+      source_types:
+        description: "Comma-separated source types to retry in the loop"
+        required: true
+        default: "website_page,youtube"
+      commit_changes:
+        description: "Commit any refreshed archive outputs"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: retry-fixable-archive-loop-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - name: Run bounded fixable archive loop
+        run: >-
+          python scripts/retry_fixable_archive_loop.py
+          --max-iterations "${{ inputs.max_iterations || '2' }}"
+          --source-types "${{ inputs.source_types || 'website_page,youtube' }}"
+      - name: Commit refreshed archive outputs
+        if: ${{ inputs.commit_changes == 'true' }}
+        run: |
+          git add -A conductor/archive_gap_map.json conductor/govt_archive_registered_sources_report.json conductor/govt_archive_registered_sources_summary.md historical_archive_raw historical_archive_normalized
+          if git diff --cached --quiet; then
+            echo "No refreshed archive outputs to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(archive): retry fixable backlog loop"
+          git push origin HEAD:${{ github.ref_name }}
