@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-07T17:35:29+00:00",
+  "generated_at": "2026-07-08T17:04:53+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -6048,6 +6048,27 @@
         "email_ingress",
         "operator_authorized_seed"
       ],
+      "account": "https://www.treasury.govt.nz",
+      "agency_id": "the-treasury",
+      "agency_name": "The Treasury (Te Tai \u014changa)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/the-treasury-newsletter-1c8fe5e5.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/the-treasury-newsletter-1c8fe5e5.json",
+        "manual_archive_seeds/newsletter/the-treasury.json"
+      ],
+      "source_id": "the-treasury-newsletter-1c8fe5e5",
+      "url": "https://www.treasury.govt.nz/publications/research-and-commentary/email-alerts-new-research-papers"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
       "account": "https://www.taic.org.nz",
       "agency_id": "transport-accident-investigation-commission",
       "agency_name": "Transport Accident Investigation Commission (Te K\u014dmihana Tirotiro Aitu\u0101 Waka)",
@@ -11991,6 +12012,27 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
+      "account": "QLDC's Facebook page.",
+      "agency_id": "queenstown-lakes-district-council",
+      "agency_name": "Queenstown-Lakes District Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "preferred_seed_path": "manual_archive_seeds/facebook/queenstown-lakes-district-council-facebook-7ec50f94.json",
+      "priority_rank": 40,
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/queenstown-lakes-district-council-facebook-7ec50f94.json",
+        "manual_archive_seeds/facebook/queenstown-lakes-district-council.json"
+      ],
+      "source_id": "queenstown-lakes-district-council-facebook-7ec50f94",
+      "url": "http://www.facebook.com/qldcinfo"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
       "account": "QuotableValue",
       "agency_id": "qv",
       "agency_name": "Quotable Value Limited (Te Tari W\u0101riu)",
@@ -12369,7 +12411,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 6 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 week ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -18309,9 +18351,9 @@
   ],
   "summary": {
     "platform_counts": {
-      "facebook": 320,
+      "facebook": 321,
       "instagram": 182,
-      "newsletter": 366,
+      "newsletter": 367,
       "threads": 3
     },
     "priority_order": [
@@ -18320,6 +18362,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 871
+    "queue_count": 873
   }
 }
