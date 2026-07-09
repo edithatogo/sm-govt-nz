@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-09T06:29:46+00:00",
+  "generated_at": "2026-07-09T07:03:02+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -32,10 +32,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "HTTP 500 THApiException 10 Application does not have permission for this action",
+      "reason": "captured public Threads profile snapshot threads_public_snapshot:90512d2d07d4c8ad917a817c",
       "source_id": "nz-police-threads-newzealandpolice",
       "source_type": "threads",
-      "status": "threads_api_error",
+      "status": "public_snapshot_captured",
       "url": "https://www.threads.net/@newzealandpolice"
     },
     {
@@ -43,10 +43,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "HTTP 500 THApiException 10 Application does not have permission for this action",
+      "reason": "captured public Threads profile snapshot threads_public_snapshot:935d7aeba7ff8dcf44034ad1",
       "source_id": "nzte-threads-nzte",
       "source_type": "threads",
-      "status": "threads_api_error",
+      "status": "public_snapshot_captured",
       "url": "https://www.threads.net/@nzte"
     },
     {
@@ -54,10 +54,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "HTTP 500 THApiException 10 Application does not have permission for this action",
+      "reason": "captured public Threads profile snapshot threads_public_snapshot:e8d559470e6fd8678291531d",
       "source_id": "wellington-city-libraries-threads-wcl-library",
       "source_type": "threads",
-      "status": "threads_api_error",
+      "status": "public_snapshot_captured",
       "url": "https://www.threads.net/@wcl_library"
     }
   ],
@@ -68,12 +68,12 @@
     "selected_sources": 3,
     "status_by_platform": {
       "threads": {
-        "threads_api_error": 3
+        "public_snapshot_captured": 3
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "threads_api_error": 3
+      "public_snapshot_captured": 3
     }
   }
 }
