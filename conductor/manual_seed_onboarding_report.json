@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-08T17:04:53+00:00",
+  "generated_at": "2026-07-09T17:31:02+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -27929,16 +27929,16 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/d66247a4eba6e714.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/westland-district-council-newsletter-104203a3.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/d66247a4eba6e714.json",
+        "manual_archive_seeds/newsletter/westland-district-council-newsletter-104203a3.json",
         "manual_archive_seeds/newsletter/westland-district-council.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "d66247a4eba6e714",
+      "source_id": "westland-district-council-newsletter-104203a3",
       "source_type": "newsletter",
-      "url": "http://www.westlanddc.govt.nz/do-it-online/subscribe/"
+      "url": "https://westlandmatters.buzzit.co.nz/"
     },
     {
       "acceptable_access_methods": [
@@ -27954,16 +27954,16 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/westland-district-council-newsletter-104203a3.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/westland-district-council-newsletter-6f1029ec.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/westland-district-council-newsletter-104203a3.json",
+        "manual_archive_seeds/newsletter/westland-district-council-newsletter-6f1029ec.json",
         "manual_archive_seeds/newsletter/westland-district-council.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "westland-district-council-newsletter-104203a3",
+      "source_id": "westland-district-council-newsletter-6f1029ec",
       "source_type": "newsletter",
-      "url": "https://westlandmatters.buzzit.co.nz/"
+      "url": "http://www.westlanddc.govt.nz/do-it-online/subscribe/"
     },
     {
       "acceptable_access_methods": [
