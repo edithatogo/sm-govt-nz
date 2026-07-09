@@ -1,0 +1,189 @@
+Return-Path: <CourtsofNewZealand-wniuty1hjhddyjkih1d@cmail19.com>
+Received: from mx147.a.outbound.createsend.com (mx147.a.outbound.createsend.com [203.55.21.147])
+ by inbound-smtp.us-east-1.amazonaws.com with SMTP id 8cppngtqlg9eoatjv4091v1427o576asc0uqv481
+ for em4mkapmjakoh5o@upload.pipedream.net;
+ Thu, 09 Jul 2026 04:06:24 +0000 (UTC)
+X-SES-Spam-Verdict: PASS
+X-SES-Virus-Verdict: PASS
+Received-SPF: pass (spfCheck: domain of cmail19.com designates 203.55.21.147 as permitted sender) client-ip=203.55.21.147; envelope-from=CourtsofNewZealand-wniuty1hjhddyjkih1d@cmail19.com; helo=mx147.a.outbound.createsend.com;
+Authentication-Results: amazonses.com;
+ spf=pass (spfCheck: domain of cmail19.com designates 203.55.21.147 as permitted sender) client-ip=203.55.21.147; envelope-from=CourtsofNewZealand-wniuty1hjhddyjkih1d@cmail19.com; helo=mx147.a.outbound.createsend.com;
+ dkim=pass header.i=@dothky.createsend7.com;
+ dkim=pass header.i=@cmail2.com;
+ dmarc=pass header.from=dothky.createsend7.com;
+X-SES-RECEIPT: AEFBQUFBQUFBQUFFUHJxaldRTWZoRG9oMnZjZ09IU0htTDZzdzhHOWEyeWljWU9DdC8va1dDNnlEUjJITkN3N1lUdWJlaGNEWEVKMU9MTXRnMDhDRzI2UmdwM3o3V1NLY1hDdEw5QW9tTmJHN2hWMEhSWDJYWGpBN0hnNEZaME00aTFUNkE5NEJHWHoxUEM4cDBBRlVwM0JZazlDS0VOUFlSTEI4S2V3ZGZqWjAzcHBIUXVUcmJXbEdNU012R25IcmFMVDFXVEtpWjNaQ25yN1hJRS9vempXVHNBbmNDLzdna21ZbUtTV2duWFdUL0VjNWE3Q3ZMbFUwRXBtdXlHd0J5aU5rR0puV1NFdGI3NFVadTdaYVUvVTZyUWxyVFRPTFNnR3RINkxGV2hTTFRJSnlGQnpYNDFmcnBaT1FET2pFTTFVamxuYy9qUTNzQld1TkNWOGx2K0d4TGtIWUtpejI=
+X-SES-DKIM-SIGNATURE: a=rsa-sha256; q=dns/txt; b=rWrKgxmUXCJbDrMVDItTSpWFJT89vHDHUhCiKUF6VsJCmyv7M1SxSeUcrK8O+wDoYoMAxiGQAmShuXN/Yl2/t01YKuaq2oo2+/0YDI+j8FzYZjwJHjhgdtWcCniHIRn2gR/MTVSjwS6AqLaiBhsmz9W2kPqEi0F/1lNXDGuHVB4=; c=relaxed/simple; s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1783569985; v=1; bh=0LEtFE2wE5mCid8iXEo3IE0PrqyadG0bJZCI3BGBNJA=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=k1; d=createsend7.com;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:List-Unsubscribe:
+ List-Unsubscribe-Post:Message-ID; i=admin@dothky.createsend7.com;
+ bh=GTlmAabd89/bxV+SCT+1YPRtYhqzzRyvmJmoIeFN1U8=;
+ b=UOkQDpSkqc1MTDJ0fcBLrcRoE7Mp2V4h6Wvf7NsnMJlVek5e4X2Q+OR6f1ZhBAV7CqTly7n1y4oM
+   LW8JgRW5rVvjwcEYsw+UggK6IZkWK9RjVumEVrIqnmDVuMAHV+e1URvHhsC0B8C6UHJUYbIBMoiZ
+   1zBz2R9DO9wUZ/ImHXs=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cs2013; d=cmail2.com;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:List-Unsubscribe:
+ List-Unsubscribe-Post:Message-ID;
+ bh=GTlmAabd89/bxV+SCT+1YPRtYhqzzRyvmJmoIeFN1U8=;
+ b=M9B+e0U/iHr5qwdgZ6o3X211mYDZkRzgQXcf9uyD99s9T3JykhV5JOEVzqprlpFbh6sptogGKjwa
+   GixNORF3idAIBtW7H8XGI44A/7uMQvYZpTcxMdK1hPqyBTMcPQmGIT5vwQB3fp2EFz2JeRxjKGhu
+   /p7vXtc5QZ35gXfHJWY=
+Subject: New Supreme Court review of registrar's decision
+From: "Courts of New Zealand" <admin@dothky.createsend7.com> 
+To: "em4mkapmjakoh5o@upload.pipedream.net" <em4mkapmjakoh5o@upload.pipedream.net>
+Reply-To: admin@courtsofnz.govt.nz
+Date: Thu, 09 Jul 2026 14:06:22 +1000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_d36554f1-669d-4ded-8e16-e7c749c12624_"; charset=utf-8
+X-Mailer: Create Send
+X-Complaints-To: abuse@cmail19.com
+X-Feedback-ID: CA1-d-wniuty:LI1-d-jlidcu:CL1-d-othky:createSEND
+List-Unsubscribe: <https://unsub.cmail19.com/t/completeheader/d/wniuty/hjhddyjkih/c/>,
+ <mailto:unsubscribe-wniuty2hjhddyjkih2d-DF0291B5@cmail19.com?subject=Unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-ID: <cm.1406220488026.wniuty.hjhddyjkih.d@cmail19.com>
+
+--_d36554f1-669d-4ded-8e16-e7c749c12624_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Courts of New Zealand Supreme Court: Leave Judgment
+
+A new Supreme Court Judgment has been added.
+
+Re Rafiq [2026] NZSC 89, 90, 92, 93, and 94 9 July 2026
+
+Visit: http://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-sup=
+reme to view the decision.
+
+To cancel your subscription, click  here https://courtsofnewzealand.=
+cmail20.com=
+/t/d-u-wniuty-hjhddyjkih-y/.
+
+--_d36554f1-669d-4ded-8e16-e7c749c12624_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8" />
+<style type=3D"text/css">
+body{
+  background: #F2F2F2;
+  font-family: Arial,Helvetica,sans-serif;
+  padding-top: 65px;
+  text-align: center;
+}
+a,
+a:hover {
+  color: #185787
+}
+p {
+  margin: 0;
+  padding: 0 0 13px
+}
+=2Econtainer {
+  background: #FFF;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 34px 0 24px;
+  width: 100%
+}
+=2Einstructions,
+=2Etitle {
+  padding 0 39px;
+  text-align: left
+}
+=2Einstructions h2,
+=2Einstructions h3,
+=2Etitle h2,
+=2Etitle h3 {
+  color: #262626;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0 0 13px;
+  padding: 0
+}
+=2Einstructions h3,
+=2Etitle h3 {
+  font-size: 22px
+}
+=2Einstructions p,
+=2Etitle p {
+  color: #3e434a;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 0;
+  padding: 0 0 21px
+}
+@media (max-width:580px) {
+  body{
+    padding: 1px
+  }
+  .container {
+    padding: 12px 0
+  }
+  .instructions,
+  .title {
+    padding: 0 10px
+  }
+  .instructions h2,
+  .title h2 {
+    font-size: 22px
+  }
+  .instructions h3,
+  .title h3 {
+    font-size: 18px
+  }
+}
+</style>
+</head>
+<body style=3D"background-attachment:scroll;background-color:#F2F2F2;backgr=
+ound-image:none;background-repeat:repeat;background-position:top left;font-=
+family:Arial,Helvetica,sans-serif;padding-top:65px;text-align:center;" >
+  <div class=3D"container" style=3D"background-attachment:scroll;background=
+-color:#FFF;background-image:none;background-repeat:repeat;background-posit=
+ion:top left;border-width:1px;border-style:solid;border-color:#ddd;border-r=
+adius:6px;max-width:580px;margin-top:0;margin-bottom:0;margin-right:auto;ma=
+rgin-left:auto;padding-top:34px;padding-bottom:24px;padding-right:0;padding=
+-left:0;width:100%;" >
+    <div class=3D"col-xs-12">
+      <div>
+        <h1 class=3D"centered">Courts of New Zealand</h1>
+        <h2 class=3D"centered">Supreme Court: Leave Judgment</h2>
+      </div>
+      <p style=3D"margin-top:0;margin-bottom:0;margin-right:0;margin-left:0=
+;padding-top:0;padding-bottom:13px;padding-right:0;padding-left:0;" >A new =
+Supreme Court Judgment has been added.</p><br />
+      Re Rafiq [2026] NZSC 89, 90, 92, 93, and 94 9 July 2026=20
+      <br />
+      <br />
+      <p style=3D"margin-top:0;margin-bottom:0;margin-right:0;margin-left:0=
+;padding-top:0;padding-bottom:13px;padding-right:0;padding-left:0;" >Visit:=
+ http://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme t=
+o view the decision.</p>
+      <p style=3D"margin-top:0;margin-bottom:0;margin-right:0;margin-left:0=
+;padding-top:0;padding-bottom:13px;padding-right:0;padding-left:0;" >To can=
+cel your subscription, click <a href=3D"https://courtsofnewzealand.=
+cmail20.com=
+/t/d-u-wniuty-hjhddyjkih-r/" style=3D"color:#185787;=
+" >here</a>.</p>
+    </div>
+  </div>
+<autoscroll></autoscroll><img src=3D"https://courtsofnewzealand.=
+cmail20.com=
+/t/d-o-wniuty-hjhddyjkih/o.gif"  width=3D"1" height=3D"=
+1" border=3D"0" alt=3D"" style=3D"visibility:hidden !important;display:bloc=
+k !important;height:1px !important;width:1px !important;border-width:0 !imp=
+ortant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !i=
+mportant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0=
+ !important;padding-right:0 !important;padding-left:0 !important;" /></body=
+></html>
+
+
+
+--_d36554f1-669d-4ded-8e16-e7c749c12624_--
