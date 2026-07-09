@@ -1469,3 +1469,89 @@ def test_archive_youtube_video_source_reports_blocked_metadata(tmp_path, monkeyp
     assert record["source_kind"] == "public_video_snapshot"
     assert "Public video page" in record["content"]
 
+
+def test_build_report_retries_only_p1_sources_from_gap_map(tmp_path):
+    manifest = tmp_path / "manifest.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "sources": [
+                    {
+                        "source_id": "website-p1",
+                        "agency_id": "agency",
+                        "platform": "website_page",
+                        "source_type": "website_page",
+                        "url": "https://agency.example/p1",
+                        "archive_status": "ready",
+                        "feasibility": "high",
+                    },
+                    {
+                        "source_id": "website-p4",
+                        "agency_id": "agency",
+                        "platform": "website_page",
+                        "source_type": "website_page",
+                        "url": "https://agency.example/p4",
+                        "archive_status": "ready",
+                        "feasibility": "high",
+                    },
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    gap_map = tmp_path / "gap_map.json"
+    gap_map.write_text(
+        json.dumps(
+            {
+                "gaps": [
+                    {
+                        "source_id": "website-p1",
+                        "priority": "p1_existing_resources",
+                        "status": "not_found",
+                    },
+                    {
+                        "source_id": "website-p4",
+                        "priority": "p4_larger_browser_or_access_project",
+                        "status": "capture_blocked",
+                    },
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = build_report(
+        argparse.Namespace(
+            manifest=manifest,
+            report=tmp_path / "report.json",
+            source_type="website_page",
+            agency_id="",
+            include_blocked=True,
+            dry_run=True,
+            raw_root=tmp_path / "raw",
+            normalized_root=tmp_path / "normalized",
+            retry_failed_from=None,
+            retry_gap_map_from=gap_map,
+            retry_priorities="p1_existing_resources",
+            offset_sources=0,
+            limit_sources=0,
+            manual_seed_root=tmp_path / "manual_archive_seeds",
+            capture_backend="default",
+            max_bluesky_pages=1,
+            max_threads_posts=25,
+            max_x_posts=25,
+            max_scrolls=25,
+            idle_rounds=3,
+            per_account_timeout=120,
+            x_feed_providers="rsshub,nitter",
+            rsshub_base_urls="",
+            nitter_base_urls="",
+            x_feed_timeout=30,
+            x_feed_max_items=25,
+            fetch_timeout=30,
+        )
+    )
+
+    assert report["summary"]["selected_sources"] == 1
+    assert [row["source_id"] for row in report["results"]] == ["website-p1"]
+

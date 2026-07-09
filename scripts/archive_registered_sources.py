@@ -2027,6 +2027,22 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             if row.get("status") == "capture_failed" and row.get("source_id")
         }
         selected = [source for source in selected if str(source.get("source_id")) in failed_source_ids]
+    retry_gap_map_from = getattr(args, "retry_gap_map_from", None)
+    if retry_gap_map_from:
+        gap_map = load_json(Path(retry_gap_map_from))
+        allowed_priorities = {
+            part.strip()
+            for part in str(getattr(args, "retry_priorities", "") or "").split(",")
+            if part.strip()
+        }
+        if not allowed_priorities:
+            allowed_priorities = {"p1_existing_resources"}
+        eligible_source_ids = {
+            str(row.get("source_id"))
+            for row in gap_map.get("gaps", [])
+            if row.get("source_id") and row.get("priority") in allowed_priorities
+        }
+        selected = [source for source in selected if str(source.get("source_id")) in eligible_source_ids]
     offset_sources = int(getattr(args, "offset_sources", 0) or 0)
     if offset_sources > 0:
         selected = selected[offset_sources:]
@@ -2234,6 +2250,8 @@ def main() -> None:
     parser.add_argument("--x-feed-max-items", type=int, default=int(os.getenv("X_FEED_MAX_ITEMS", "25")))
     parser.add_argument("--fetch-timeout", type=int, default=30)
     parser.add_argument("--retry-failed-from", type=Path, default=None)
+    parser.add_argument("--retry-gap-map-from", type=Path, default=None)
+    parser.add_argument("--retry-priorities", default="p1_existing_resources")
     parser.add_argument("--offset-sources", type=int, default=0)
     parser.add_argument("--limit-sources", type=int, default=0)
     args = parser.parse_args()

@@ -46,6 +46,8 @@ def main() -> None:
                     "--source-type",
                     source_type,
                     "--include-blocked",
+                    "--retry-gap-map-from",
+                    str(GAP_MAP),
                 ]
             )
         print("  Rebuilding archive gap map...")
