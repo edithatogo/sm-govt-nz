@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-09T17:31:02+00:00",
+  "generated_at": "2026-07-10T17:23:42+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -21829,6 +21829,31 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-50e9000a.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/health-nz-newsletter-50e9000a.json",
+        "manual_archive_seeds/newsletter/health-nz.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "health-nz-newsletter-50e9000a",
+      "source_type": "newsletter",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/travellers-urged-to-be-on-alert-for-dengue-with-increased-cases-in-the-pacific"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tewhatuora.govt.nz",
+      "agency_id": "health-nz",
+      "agency_name": "Health New Zealand (Te Whatu Ora)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-822b4ab7.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
@@ -26279,14 +26304,14 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/04c53a089679ef0f.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/04c53a089679ef0f.json",
+        "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
         "manual_archive_seeds/newsletter/tertiary-education-commission.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "04c53a089679ef0f",
+      "source_id": "tertiary-education-commission-newsletter-ac936eba",
       "source_type": "newsletter",
       "url": "https://www.tec.govt.nz/alerts"
     },
@@ -26414,6 +26439,31 @@
       "source_id": "transpower-newsletter-608ecc36",
       "source_type": "newsletter",
       "url": "https://www.transpower.co.nz/subscribe"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.upperhuttcity.com",
+      "agency_id": "upper-hutt-city-council",
+      "agency_name": "Upper Hutt City Council (Te Kaunihera o Upera Hutu)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/upper-hutt-city-council-newsletter-3c346dec.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/upper-hutt-city-council-newsletter-3c346dec.json",
+        "manual_archive_seeds/newsletter/upper-hutt-city-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "upper-hutt-city-council-newsletter-3c346dec",
+      "source_type": "newsletter",
+      "url": "https://www.upperhuttlibrary.co.nz/news/fanmail-july-2026"
     },
     {
       "acceptable_access_methods": [
@@ -30400,7 +30450,7 @@
       "facebook": 321,
       "instagram": 182,
       "linkedin": 257,
-      "newsletter": 367,
+      "newsletter": 369,
       "threads": 3,
       "x": 79
     },
@@ -30408,11 +30458,11 @@
     "remaining_groups": {
       "facebook": 321,
       "instagram": 182,
-      "newsletter": 367,
+      "newsletter": 369,
       "threads": 3
     },
-    "remaining_source_count": 873,
-    "selected_sources": 1209,
+    "remaining_source_count": 875,
+    "selected_sources": 1211,
     "status_by_platform": {
       "facebook": {
         "needs_authorized_seed_or_api": 321
@@ -30424,7 +30474,7 @@
         "public_fallback_available": 257
       },
       "newsletter": {
-        "needs_authorized_seed_or_api": 367
+        "needs_authorized_seed_or_api": 369
       },
       "threads": {
         "needs_authorized_seed_or_api": 3
@@ -30434,7 +30484,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 873,
+      "needs_authorized_seed_or_api": 875,
       "public_fallback_available": 257,
       "seed_present": 79
     }

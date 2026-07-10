@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-09T17:31:02+00:00",
+  "generated_at": "2026-07-10T17:23:42+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -2408,6 +2408,27 @@
       ],
       "source_id": "health-nz-newsletter-0df7d090",
       "url": "https://www.tewhatuora.govt.nz/health-alerts/changes-to-public-health-advice-regarding-moa-point"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tewhatuora.govt.nz",
+      "agency_id": "health-nz",
+      "agency_name": "Health New Zealand (Te Whatu Ora)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-50e9000a.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/health-nz-newsletter-50e9000a.json",
+        "manual_archive_seeds/newsletter/health-nz.json"
+      ],
+      "source_id": "health-nz-newsletter-50e9000a",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/travellers-urged-to-be-on-alert-for-dengue-with-increased-cases-in-the-pacific"
     },
     {
       "acceptable_access_methods": [
@@ -5990,14 +6011,14 @@
       "agency_name": "Tertiary Education Commission (Te Amorangi M\u0101tauranga Matua)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/04c53a089679ef0f.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/04c53a089679ef0f.json",
+        "manual_archive_seeds/newsletter/tertiary-education-commission-newsletter-ac936eba.json",
         "manual_archive_seeds/newsletter/tertiary-education-commission.json"
       ],
-      "source_id": "04c53a089679ef0f",
+      "source_id": "tertiary-education-commission-newsletter-ac936eba",
       "url": "https://www.tec.govt.nz/alerts"
     },
     {
@@ -6104,6 +6125,27 @@
       ],
       "source_id": "transpower-newsletter-608ecc36",
       "url": "https://www.transpower.co.nz/subscribe"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.upperhuttcity.com",
+      "agency_id": "upper-hutt-city-council",
+      "agency_name": "Upper Hutt City Council (Te Kaunihera o Upera Hutu)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/upper-hutt-city-council-newsletter-3c346dec.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/upper-hutt-city-council-newsletter-3c346dec.json",
+        "manual_archive_seeds/newsletter/upper-hutt-city-council.json"
+      ],
+      "source_id": "upper-hutt-city-council-newsletter-3c346dec",
+      "url": "https://www.upperhuttlibrary.co.nz/news/fanmail-july-2026"
     },
     {
       "acceptable_access_methods": [
@@ -18353,7 +18395,7 @@
     "platform_counts": {
       "facebook": 321,
       "instagram": 182,
-      "newsletter": 367,
+      "newsletter": 369,
       "threads": 3
     },
     "priority_order": [
@@ -18362,6 +18404,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 873
+    "queue_count": 875
   }
 }
