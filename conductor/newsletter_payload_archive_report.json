@@ -1284,6 +1284,17 @@
       "url": "https://www.tewhatuora.govt.nz/health-alerts/measles-in-wellington"
     },
     {
+      "agency_id": "health-nz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "no newsletter payload matched health-nz-newsletter-50e9000a",
+      "source_id": "health-nz-newsletter-50e9000a",
+      "source_type": "newsletter",
+      "status": "missing_payload",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/travellers-urged-to-be-on-alert-for-dengue-with-increased-cases-in-the-pacific"
+    },
+    {
       "agency_id": "health-quality-and-safety-commission",
       "archive_status": "candidate",
       "feasibility": "medium",
@@ -3202,8 +3213,8 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "newsletter",
-      "reason": "no newsletter payload matched 04c53a089679ef0f",
-      "source_id": "04c53a089679ef0f",
+      "reason": "no newsletter payload matched tertiary-education-commission-newsletter-ac936eba",
+      "source_id": "tertiary-education-commission-newsletter-ac936eba",
       "source_type": "newsletter",
       "status": "missing_payload",
       "url": "https://www.tec.govt.nz/alerts"
@@ -3295,6 +3306,17 @@
       "source_type": "newsletter",
       "status": "missing_payload",
       "url": "https://www.upperhutt.govt.nz/services/roads-and-parking/Road-alerts-and-warnings"
+    },
+    {
+      "agency_id": "upper-hutt-city-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "no newsletter payload matched upper-hutt-city-council-newsletter-3c346dec",
+      "source_id": "upper-hutt-city-council-newsletter-3c346dec",
+      "source_type": "newsletter",
+      "status": "missing_payload",
+      "url": "https://www.upperhuttlibrary.co.nz/news/fanmail-july-2026"
     },
     {
       "agency_id": "waikato-district-council",
@@ -4048,16 +4070,16 @@
   "summary": {
     "payload_count": 0,
     "platform_counts": {
-      "newsletter": 367
+      "newsletter": 369
     },
-    "selected_sources": 367,
+    "selected_sources": 369,
     "status_by_platform": {
       "newsletter": {
-        "missing_payload": 367
+        "missing_payload": 369
       }
     },
     "status_counts": {
-      "missing_payload": 367
+      "missing_payload": 369
     }
   }
 }
