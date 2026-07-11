@@ -1614,118 +1614,6 @@
       "agency_type": "SOE",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "afcf2d7582935a0e",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_title": "Pestoff \u00bb Feed",
-      "mime_type": "application/rss+xml",
-      "official_website": "https://www.pestoff.co.nz",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://pestoff.co.nz/feed/"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.pestoff.co.nz",
-      "agency_id": "animal-control-products",
-      "agency_name": "Animal Control Products (Pestoff)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "9ec941b1b4a5af62",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_title": "oEmbed (JSON)",
-      "mime_type": "application/json+oembed",
-      "official_website": "https://www.pestoff.co.nz",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.pestoff.co.nz",
-      "agency_id": "animal-control-products",
-      "agency_name": "Animal Control Products (Pestoff)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "758209a956979f16",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_title": "oEmbed (XML)",
-      "mime_type": "text/xml+oembed",
-      "official_website": "https://www.pestoff.co.nz",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F&format=xml"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.pestoff.co.nz",
-      "agency_id": "animal-control-products",
-      "agency_name": "Animal Control Products (Pestoff)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "8fb3dc84f2e69aff",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_title": "JSON",
-      "mime_type": "application/json",
-      "official_website": "https://www.pestoff.co.nz",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://pestoff.co.nz/wp-json/wp/v2/pages/2"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.pestoff.co.nz",
-      "agency_id": "animal-control-products",
-      "agency_name": "Animal Control Products (Pestoff)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
       "candidate_id": "f44b74f32571294d",
       "confidence_score": 0.45,
       "domain_trust": "medium",
@@ -34935,6 +34823,78 @@
       "url": "https://www.facebook.com/HamiltonCityCouncil"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "hamilton-city-council",
+      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
+      "agency_type": "City Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "bb181e559f4e3ff9",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.hamilton.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/hamiltoncitycouncil/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram",
+      "agency_id": "hamilton-city-council",
+      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
+      "agency_type": "City Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "59dd87336790dee4",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.hamilton.govt.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/hamilton_city_nz/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "Linkedin",
+      "agency_id": "hamilton-city-council",
+      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
+      "agency_type": "City Council",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "107457abf6530fc6",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.hamilton.govt.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/2758203"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Hamilton City Council",
       "account_classification": "official",
@@ -34961,6 +34921,30 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/company/hamilton-city-council"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "YouTube",
+      "agency_id": "hamilton-city-council",
+      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
+      "agency_type": "City Council",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "be829f7ab524a73e",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.hamilton.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/user/HamiltonCityCouncil"
     },
     {
       "access_method": "bounded_public_html",
@@ -86182,6 +86166,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "92f7f85f4fcd06be",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/OtagoPoly"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "OtagoPolytechnic",
       "account_classification": "official",
       "agency_id": "otago-polytechnic",
@@ -86237,6 +86245,54 @@
       "url": "https://www.instagram.com/otagopolytechnic"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "d32669ba1a66538a",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/otagopolytechnic/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "894173a6864da511",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/213448"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Otago Polytechnic",
       "account_classification": "official",
@@ -86263,6 +86319,30 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/school/otago-polytechnic"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "f8add89960419679",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "http://www.youtube.com/user/OtagoPolytech"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -103246,7 +103326,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 23 hours ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -117566,6 +117646,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Visit TWWoA facebook \r\n                             \r\n     Facebook Logo",
+      "agency_id": "te-whare-wananga-o-awanuiarangi",
+      "agency_name": "Te Whare W\u0101nanga o Awanui\u0101rangi",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "015ade3fa05fce96",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wananga.ac.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/Awanuiarangi/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "twwananga",
       "account_classification": "official",
       "agency_id": "te-whare-wananga-o-awanuiarangi",
@@ -117591,6 +117695,30 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/twwananga"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Visit TWWoA instagram \r\n                             \r\n     Instagram Logo",
+      "agency_id": "te-whare-wananga-o-awanuiarangi",
+      "agency_name": "Te Whare W\u0101nanga o Awanui\u0101rangi",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "615c031467bba39a",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wananga.ac.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/tewharewanangaoawanuiarangi/"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -117635,7 +117763,7 @@
       "domain_trust": "unknown",
       "feasibility": "low",
       "official_website": "https://www.wananga.ac.nz",
-      "origin": "registry.social_profiles",
+      "origin": "homepage.link,registry.social_profiles",
       "platform": "linkedin",
       "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
       "portfolio": "Education",
@@ -117675,6 +117803,30 @@
         "official_term:nz"
       ],
       "url": "https://www.youtube.com/@TeWhareWananga"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "Visit TWWoA youtube \r\n                             \r\n     Youtube Logo",
+      "agency_id": "te-whare-wananga-o-awanuiarangi",
+      "agency_name": "Te Whare W\u0101nanga o Awanui\u0101rangi",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "a97186e8ab4328f5",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wananga.ac.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/@tewharewanangaoawanuiarangi"
     },
     {
       "access_method": "bounded_public_html",
@@ -132877,57 +133029,6 @@
       "url": "https://www.wellington.govt.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.wcl.govt.nz",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "e992daa0fdf06fca",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.wcl.govt.nz",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "a159b229e9fd0a47",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "link_text": "Subscribe on Youtube",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133362,78 +133463,6 @@
       "url": "https://bsky.app/profile/wcllibrary.bsky.social"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Like us on Facebook",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "4c3f179a8402f5aa",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/wellingtoncitylibraries"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Follow us on Instagram",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "f61ccf07bd59e4c0",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://instagram.com/wcl_library"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Subscribe on Youtube",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "98aaf6b9e2d42b19",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133459,33 +133488,6 @@
         "official_term:nz"
       ],
       "url": "https://www.wcl.govt.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.wcl.govt.nz",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "d3a11038ecc7a113",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
     },
     {
       "access_method": "public_rss",
@@ -140592,7 +140594,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-10T18:12:02+00:00",
+  "generated_at": "2026-07-11T17:33:28+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155475,9 +155477,8 @@
     },
     {
       "agency_id": "animal-control-products",
-      "alternates": 4,
-      "links": 942,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.pestoff.co.nz/"
     },
     {
@@ -155535,7 +155536,7 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 66,
+      "links": 68,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
@@ -155582,8 +155583,8 @@
     },
     {
       "agency_id": "central-otago-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.codc.govt.nz/"
     },
     {
@@ -155644,8 +155645,8 @@
     },
     {
       "agency_id": "clutha-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.cluthadc.govt.nz/"
     },
     {
@@ -155784,8 +155785,8 @@
     },
     {
       "agency_id": "environment-southland",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.es.govt.nz/"
     },
     {
@@ -155862,8 +155863,8 @@
     },
     {
       "agency_id": "grey-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.greydc.govt.nz/"
     },
     {
@@ -155875,8 +155876,9 @@
     },
     {
       "agency_id": "hamilton-city-council",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 164,
+      "status": "ok",
       "url": "https://www.hamilton.govt.nz/"
     },
     {
@@ -155957,8 +155959,8 @@
     },
     {
       "agency_id": "hurunui-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.hurunui.govt.nz/"
     },
     {
@@ -155996,14 +155998,14 @@
     },
     {
       "agency_id": "invercargill-city-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.icc.govt.nz/"
     },
     {
       "agency_id": "kaikoura-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.kaikoura.govt.nz/"
     },
     {
@@ -156115,8 +156117,8 @@
     },
     {
       "agency_id": "marlborough-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.marlborough.govt.nz/"
     },
     {
@@ -156128,8 +156130,8 @@
     },
     {
       "agency_id": "masterton-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.mstn.govt.nz/"
     },
     {
@@ -156270,8 +156272,8 @@
     },
     {
       "agency_id": "nelson-city-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.nelson.govt.nz/"
     },
     {
@@ -156290,7 +156292,7 @@
     {
       "agency_id": "new-plymouth-district-council",
       "alternates": 0,
-      "links": 1555,
+      "links": 1554,
       "status": "ok",
       "url": "https://www.npdc.govt.nz/"
     },
@@ -156469,14 +156471,14 @@
     {
       "agency_id": "open-polytechnic",
       "alternates": 0,
-      "links": 377,
+      "links": 376,
       "status": "ok",
       "url": "https://www.openpolytechnic.ac.nz/"
     },
     {
       "agency_id": "opotiki-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.odc.govt.nz/"
     },
     {
@@ -156488,8 +156490,9 @@
     },
     {
       "agency_id": "otago-polytechnic",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 322,
+      "status": "ok",
       "url": "https://www.op.ac.nz/"
     },
     {
@@ -156624,14 +156627,14 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 396,
+      "links": 395,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
     {
       "agency_id": "rotorua-lakes-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.rotorualakescouncil.nz/"
     },
     {
@@ -156689,14 +156692,14 @@
     },
     {
       "agency_id": "south-taranaki-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.southtaranaki.com/"
     },
     {
       "agency_id": "south-waikato-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.southwaikato.govt.nz/"
     },
     {
@@ -156735,8 +156738,8 @@
     },
     {
       "agency_id": "stratford-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.stratford.govt.nz/"
     },
     {
@@ -156788,8 +156791,8 @@
     },
     {
       "agency_id": "taupo-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.taupodc.govt.nz/"
     },
     {
@@ -156856,8 +156859,9 @@
     },
     {
       "agency_id": "te-whare-wananga-o-awanuiarangi",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 135,
+      "status": "ok",
       "url": "https://www.wananga.ac.nz/"
     },
     {
@@ -156997,14 +157001,14 @@
     },
     {
       "agency_id": "waimate-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.waimatedc.govt.nz/"
     },
     {
       "agency_id": "waipa-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.waipadc.govt.nz/"
     },
     {
@@ -157042,9 +157046,8 @@
     },
     {
       "agency_id": "wellington-city-libraries",
-      "alternates": 0,
-      "links": 94,
-      "status": "ok",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
       "url": "https://www.wcl.govt.nz/"
     },
     {
@@ -157056,14 +157059,14 @@
     },
     {
       "agency_id": "west-coast-regional-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.wcrc.govt.nz/"
     },
     {
       "agency_id": "western-bay-of-plenty-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.westernbay.govt.nz/"
     },
     {
@@ -157140,33 +157143,33 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5252,
+    "candidate_count": 5253,
     "feasibility_counts": {
-      "high": 4161,
-      "low": 308,
-      "medium": 783
+      "high": 4156,
+      "low": 310,
+      "medium": 787
     },
-    "known_registry_social_profiles": 447,
+    "known_registry_social_profiles": 446,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 290,
-      "instagram": 160,
-      "linkedin": 233,
+      "facebook": 292,
+      "instagram": 162,
+      "linkedin": 235,
       "medium": 2,
-      "newsletter": 163,
-      "rss": 3829,
-      "website_page": 314,
+      "newsletter": 161,
+      "rss": 3825,
+      "website_page": 313,
       "x": 75,
-      "youtube": 155
+      "youtube": 157
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 163,
-      "rss_feed": 64,
+      "newsletter": 161,
+      "rss_feed": 60,
       "search_seed": 3765,
-      "social_profile": 933,
-      "website_page": 314
+      "social_profile": 941,
+      "website_page": 313
     }
   }
 }
