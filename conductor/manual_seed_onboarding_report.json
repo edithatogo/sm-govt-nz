@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-10T17:23:42+00:00",
+  "generated_at": "2026-07-11T16:30:16+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -5596,7 +5596,32 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 week ago",
+      "account": "View on Facebook",
+      "agency_id": "social-workers-registration-board",
+      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "preferred_seed_path": "manual_archive_seeds/facebook/social-workers-registration-board-facebook-57adcfbe.json",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/social-workers-registration-board-facebook-57adcfbe.json",
+        "manual_archive_seeds/facebook/social-workers-registration-board.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "social-workers-registration-board-facebook-57adcfbe",
+      "source_type": "social_profile",
+      "url": "https://www.facebook.com/102062118004656_1359974566246139"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 23 hours ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "archive_status": "candidate",
@@ -7424,19 +7449,19 @@
       "account": "Like us on Facebook",
       "agency_id": "wellington-city-libraries",
       "agency_name": "Wellington City Libraries",
-      "archive_status": "ready",
+      "archive_status": "candidate",
       "feasibility": "medium",
       "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "facebook",
-      "preferred_seed_path": "manual_archive_seeds/facebook/4c3f179a8402f5aa.json",
+      "preferred_seed_path": "manual_archive_seeds/facebook/wellington-city-libraries-facebook-a313e8a3.json",
       "required_authorization": "page_owner_or_approved_app",
       "seed_candidates": [
-        "manual_archive_seeds/facebook/4c3f179a8402f5aa.json",
+        "manual_archive_seeds/facebook/wellington-city-libraries-facebook-a313e8a3.json",
         "manual_archive_seeds/facebook/wellington-city-libraries.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "4c3f179a8402f5aa",
+      "source_id": "wellington-city-libraries-facebook-a313e8a3",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/wellingtoncitylibraries"
     },
@@ -12199,19 +12224,19 @@
       "account": "Follow us on Instagram",
       "agency_id": "wellington-city-libraries",
       "agency_name": "Wellington City Libraries",
-      "archive_status": "ready",
+      "archive_status": "candidate",
       "feasibility": "medium",
       "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "instagram",
-      "preferred_seed_path": "manual_archive_seeds/instagram/f61ccf07bd59e4c0.json",
+      "preferred_seed_path": "manual_archive_seeds/instagram/wellington-city-libraries-instagram-6bc2e1f3.json",
       "required_authorization": "business_or_creator_account_owner_or_approved_app",
       "seed_candidates": [
-        "manual_archive_seeds/instagram/f61ccf07bd59e4c0.json",
+        "manual_archive_seeds/instagram/wellington-city-libraries-instagram-6bc2e1f3.json",
         "manual_archive_seeds/instagram/wellington-city-libraries.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "f61ccf07bd59e4c0",
+      "source_id": "wellington-city-libraries-instagram-6bc2e1f3",
       "source_type": "social_profile",
       "url": "https://instagram.com/wcl_library"
     },
@@ -27454,14 +27479,14 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/a159b229e9fd0a47.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/wellington-city-libraries-newsletter-4059e65c.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/a159b229e9fd0a47.json",
+        "manual_archive_seeds/newsletter/wellington-city-libraries-newsletter-4059e65c.json",
         "manual_archive_seeds/newsletter/wellington-city-libraries.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "a159b229e9fd0a47",
+      "source_id": "wellington-city-libraries-newsletter-4059e65c",
       "source_type": "newsletter",
       "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
     },
@@ -27479,14 +27504,14 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
-      "preferred_seed_path": "manual_archive_seeds/newsletter/e992daa0fdf06fca.json",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/wellington-city-libraries-newsletter-b9065faa.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
-        "manual_archive_seeds/newsletter/e992daa0fdf06fca.json",
+        "manual_archive_seeds/newsletter/wellington-city-libraries-newsletter-b9065faa.json",
         "manual_archive_seeds/newsletter/wellington-city-libraries.json"
       ],
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "source_id": "e992daa0fdf06fca",
+      "source_id": "wellington-city-libraries-newsletter-b9065faa",
       "source_type": "newsletter",
       "url": "https://www.wcl.govt.nz/news-home/newsletters/"
     },
@@ -30447,7 +30472,7 @@
   },
   "summary": {
     "platform_counts": {
-      "facebook": 321,
+      "facebook": 322,
       "instagram": 182,
       "linkedin": 257,
       "newsletter": 369,
@@ -30456,16 +30481,16 @@
     },
     "remaining_group_count": 4,
     "remaining_groups": {
-      "facebook": 321,
+      "facebook": 322,
       "instagram": 182,
       "newsletter": 369,
       "threads": 3
     },
-    "remaining_source_count": 875,
-    "selected_sources": 1211,
+    "remaining_source_count": 876,
+    "selected_sources": 1212,
     "status_by_platform": {
       "facebook": {
-        "needs_authorized_seed_or_api": 321
+        "needs_authorized_seed_or_api": 322
       },
       "instagram": {
         "needs_authorized_seed_or_api": 182
@@ -30484,7 +30509,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 875,
+      "needs_authorized_seed_or_api": 876,
       "public_fallback_available": 257,
       "seed_present": 79
     }
