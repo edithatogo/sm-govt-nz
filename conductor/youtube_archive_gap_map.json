@@ -25,6 +25,32 @@
       "supersedes_report": "",
       "supersedes_status": "",
       "url": "https://www.youtube.com/@EITHawkesBay"
+    },
+    {
+      "agency_id": "environment-canterbury",
+      "platform": "youtube",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: YouTube video metadata not found for ceTKqFs728w",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "environment-canterbury-youtube-ec7191cd",
+      "status": "youtube_video_not_found",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "http://www.youtube.com/watch/ceTKqFs728w"
+    },
+    {
+      "agency_id": "environment-canterbury",
+      "platform": "youtube",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: YouTube video metadata not found for uC6hC7VDe5c",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "environment-canterbury-youtube-3140d08b",
+      "status": "youtube_video_not_found",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "http://www.youtube.com/watch/uC6hC7VDe5c"
     }
   ],
   "inputs": {
@@ -40,51 +66,55 @@
       "selected_sources": 50,
       "status_by_platform": {
         "youtube": {
-          "already_captured": 357,
-          "captured": 143,
+          "already_captured": 433,
+          "captured": 23,
           "no_records": 1,
+          "public_snapshot_captured": 7,
           "source_url_not_channel": 1,
           "youtube_channel_not_found": 2,
-          "youtube_video_metadata_blocked": 7
+          "youtube_video_not_found": 2
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "already_captured": 357,
-        "captured": 143,
+        "already_captured": 433,
+        "captured": 23,
         "no_records": 1,
+        "public_snapshot_captured": 7,
         "source_url_not_channel": 1,
         "youtube_channel_not_found": 2,
-        "youtube_video_metadata_blocked": 7
+        "youtube_video_not_found": 2
       }
     }
   },
   "summary": {
-    "gap_count": 2,
+    "gap_count": 4,
     "input_status_counts": {
-      "already_captured": 357,
-      "captured": 143,
+      "already_captured": 433,
+      "captured": 23,
       "no_records": 1,
+      "public_snapshot_captured": 7,
       "source_url_not_channel": 1,
       "youtube_channel_not_found": 2,
-      "youtube_video_metadata_blocked": 7
+      "youtube_video_not_found": 2
     },
     "platform_counts": {
       "youtube": 49
     },
     "priority_counts": {
-      "archived_or_already_archived": 39,
-      "monitor_report_only": 8,
+      "archived_or_already_archived": 44,
+      "monitor_report_only": 1,
+      "p1_existing_resources": 2,
       "review": 2
     },
     "status_counts": {
-      "already_captured": 27,
-      "captured": 12,
+      "already_captured": 37,
       "no_records": 1,
+      "public_snapshot_captured": 7,
       "source_url_not_channel": 1,
       "youtube_channel_not_found": 1,
-      "youtube_video_metadata_blocked": 7
+      "youtube_video_not_found": 2
     },
-    "superseded_source_count": 35
+    "superseded_source_count": 32
   }
 }
