@@ -1,0 +1,49 @@
+{
+  "access_method": "playwright_public_browser_no_login",
+  "captured_at": "2026-07-12T12:02:40+00:00",
+  "diagnostics": {
+    "elapsed_seconds": 2.65,
+    "visible_text_length": 105
+  },
+  "final_url": "https://www.aucklandcouncil.govt.nz/media-releases",
+  "guardrails": {
+    "captcha_solving": false,
+    "credential_bypass": false,
+    "login": false,
+    "proxies": false
+  },
+  "html": "<!DOCTYPE html><html><head>\n          <title>406 Not Acceptable</title>\n        </head>\n        <body>\n          <h1>Error 406 Not Acceptable</h1>\n          <p>Not Acceptable</p>\n          <p>Trace-id: dd1bb54d-b9d7-42d3-8bf8-7a5b53d404bd</p>\n        \n      \n    </body></html>",
+  "screenshot_path": "historical_archive_raw/website_browser/2026-07/b09c5b3e49a5274754a5b5d0.png",
+  "source": {
+    "access_method": "public_website",
+    "account": "https://www.aucklandcouncil.govt.nz",
+    "agency_id": "auckland-council",
+    "agency_name": "Auckland Council (Te Kaunihera o T\u0101maki Makaurau)",
+    "archive_status": "ready",
+    "auth": "none",
+    "browser_fallback_trigger": {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "e1edd6a1177114cc",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/media-releases"
+    },
+    "candidate_id": "e1edd6a1177114cc",
+    "created_at": "2026-07-03T06:26:02+00:00",
+    "feasibility": "high",
+    "notes": "Promoted from search_seed using public endpoint heuristics; original_source_type=search_seed",
+    "origin": "configured_common_path",
+    "platform": "website_page",
+    "source_id": "e1edd6a1177114cc",
+    "source_type": "website_page",
+    "url": "https://www.aucklandcouncil.govt.nz/media-releases"
+  },
+  "url": "https://www.aucklandcouncil.govt.nz/media-releases",
+  "visible_text": "406 Not Acceptable Error 406 Not Acceptable Not Acceptable Trace-id: dd1bb54d-b9d7-42d3-8bf8-7a5b53d404bd"
+}
