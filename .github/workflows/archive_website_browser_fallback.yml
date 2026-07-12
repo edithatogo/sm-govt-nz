@@ -120,6 +120,8 @@ jobs:
           --report conductor/website_archive_report.json
           --report conductor/website_browser_archive_report.json
           --output conductor/website_archive_gap_map.json
+      - name: Rebuild global archive gap map
+        run: python scripts/build_archive_gap_map.py --output conductor/archive_gap_map.json
       - name: Commit website browser fallback reports
         run: >-
           python scripts/commit_state_updates.py
@@ -127,6 +129,7 @@ jobs:
           --path conductor/website_browser_archive_report.json
           --path conductor/website_browser_archive_summary.md
           --path conductor/website_archive_gap_map.json
+          --path conductor/archive_gap_map.json
       - name: Commit website browser fallback payloads
         if: ${{ inputs.dry_run != 'true' && inputs.commit_payloads == 'true' }}
         run: >-

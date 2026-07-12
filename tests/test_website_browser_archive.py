@@ -215,6 +215,8 @@ def test_website_browser_workflow_is_bounded_and_guarded():
     assert "--triage-report conductor/website_archive_failure_triage_report.json" in workflow
     assert "--report conductor/website_browser_archive_report.json" in workflow
     assert "--output conductor/website_archive_gap_map.json" in workflow
+    assert "--output conductor/archive_gap_map.json" in workflow
+    assert "--path conductor/archive_gap_map.json" in workflow
     assert "publish == 'true'" in workflow
     assert "playwright install chromium" in workflow
 
