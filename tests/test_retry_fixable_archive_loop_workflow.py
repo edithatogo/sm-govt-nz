@@ -15,6 +15,7 @@ def test_retry_fixable_archive_loop_workflow_wraps_bounded_loop_and_commit() -> 
     assert "conductor/govt_archive_registered_sources_summary.md" in workflow
     assert "historical_archive_raw" in workflow
     assert "historical_archive_normalized" in workflow
+    assert "git add -f historical_archive_raw historical_archive_normalized" in workflow
     assert "retry fixable backlog loop" in workflow
     assert "--retry-gap-map-from" in script
     assert "archive_gap_map.json" in script

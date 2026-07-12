@@ -46,7 +46,8 @@ jobs:
       - name: Commit refreshed archive outputs
         if: ${{ inputs.commit_changes == 'true' }}
         run: |
-          git add -A conductor/archive_gap_map.json conductor/govt_archive_registered_sources_report.json conductor/govt_archive_registered_sources_summary.md historical_archive_raw historical_archive_normalized
+          git add -A conductor/archive_gap_map.json conductor/govt_archive_registered_sources_report.json conductor/govt_archive_registered_sources_summary.md
+          git add -f historical_archive_raw historical_archive_normalized
           if git diff --cached --quiet; then
             echo "No refreshed archive outputs to commit."
             exit 0
