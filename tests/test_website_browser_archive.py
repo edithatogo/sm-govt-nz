@@ -7,6 +7,7 @@ from scripts.archive_website_browser import (
     detect_browser_status,
     html_to_visible_text,
     load_json,
+    merge_report_results,
     select_sources,
     write_summary,
 )
@@ -169,6 +170,17 @@ def test_fixture_capture_writes_raw_and_normalized(tmp_path):
     normalized = list((tmp_path / "normalized" / "website").glob("*.jsonl"))[0].read_text(encoding="utf-8")
     assert "Rendered public government page" in normalized
     assert "playwright_public_browser_fallback" in normalized
+
+
+def test_browser_report_merges_shard_results_by_source_identity():
+    existing = {"results": [{"source_id": "first", "status": "browser_captured"}]}
+    current = {"results": [{"source_id": "second", "status": "browser_already_captured"}]}
+
+    merged = merge_report_results(existing, current)
+
+    assert {item["source_id"] for item in merged["results"]} == {"first", "second"}
+    assert merged["summary"]["result_count"] == 2
+    assert merged["summary"]["status_counts"] == {"browser_already_captured": 1, "browser_captured": 1}
 
 
 def test_fixture_capture_records_access_marker_without_normalized_record(tmp_path):

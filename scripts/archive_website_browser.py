@@ -378,6 +378,35 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     }
 
 
+def merge_report_results(existing_report: dict[str, Any], current_report: dict[str, Any]) -> dict[str, Any]:
+    """Keep browser results from earlier shards while letting current results win."""
+    merged_by_key: dict[str, dict[str, Any]] = {}
+    for result in existing_report.get("results", []):
+        if not isinstance(result, dict):
+            continue
+        key = str(result.get("candidate_id") or result.get("source_id") or result.get("url") or "")
+        if key:
+            merged_by_key[key] = result
+    for result in current_report.get("results", []):
+        if not isinstance(result, dict):
+            continue
+        key = str(result.get("candidate_id") or result.get("source_id") or result.get("url") or "")
+        if key:
+            merged_by_key[key] = result
+    results = list(merged_by_key.values())
+    status_counts = Counter(str(result.get("status") or "") for result in results)
+    merged = dict(current_report)
+    merged["results"] = results
+    merged["summary"] = {
+        "selected_sources": len(results),
+        "result_count": len(results),
+        "status_counts": dict(sorted(status_counts.items())),
+    }
+    merged["inputs"] = dict(current_report.get("inputs", {}))
+    merged["inputs"]["merged_previous_results"] = len(existing_report.get("results", []))
+    return merged
+
+
 def write_summary(path: Path, report: dict[str, Any]) -> None:
     summary = report.get("summary", {})
     lines = [
@@ -426,6 +455,8 @@ def main() -> None:
     parser.add_argument("--screenshot", action="store_true")
     args = parser.parse_args()
     report = build_report(args)
+    if args.report.exists() and not args.dry_run:
+        report = merge_report_results(load_json(args.report), report)
     write_json(args.report, report)
     write_summary(args.summary, report)
     print(f"Website browser fallback report wrote {report['summary']['result_count']} results.")
