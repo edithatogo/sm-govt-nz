@@ -1,15 +1,15 @@
 # Website Browser Fallback Archive
 
-Generated: 2026-07-12T12:15:18+00:00
+Generated: 2026-07-12T12:19:06+00:00
 
 ## Summary
 
-- `selected_sources`: 9
-- `result_count`: 9
+- `selected_sources`: 10
+- `result_count`: 10
 
 ## Status counts
 
-- `browser_captured`: 9
+- `browser_captured`: 10
 
 ## Guardrails
 

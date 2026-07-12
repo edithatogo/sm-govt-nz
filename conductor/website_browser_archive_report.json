@@ -1,6 +1,6 @@
 {
   "dry_run": false,
-  "generated_at": "2026-07-12T12:15:18+00:00",
+  "generated_at": "2026-07-12T12:19:06+00:00",
   "guardrails": {
     "captcha_solving": false,
     "credential_bypass": false,
@@ -10,12 +10,12 @@
   },
   "inputs": {
     "eligible_statuses": [
-      "not_acceptable"
+      "network_timeout"
     ],
     "include_without_triage": false,
     "limit_sources": 10,
     "manifest": "conductor/govt_archive_source_manifest.json",
-    "merged_previous_results": 2,
+    "merged_previous_results": 9,
     "offset_sources": 0,
     "per_page_timeout": 45,
     "screenshot": true,
@@ -138,13 +138,26 @@
       "source_type": "website_page",
       "status": "browser_captured",
       "url": "https://www.aucklandcouncil.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "candidate_id": "01a73b769530cc60",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/f788420661054523d80b393c.json",
+      "reason": "captured public rendered website content",
+      "source_id": "01a73b769530cc60",
+      "source_type": "website_page",
+      "status": "browser_captured",
+      "url": "https://www.boprc.govt.nz"
     }
   ],
   "summary": {
-    "result_count": 9,
-    "selected_sources": 9,
+    "result_count": 10,
+    "selected_sources": 10,
     "status_counts": {
-      "browser_captured": 9
+      "browser_captured": 10
     }
   }
 }
