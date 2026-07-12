@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-11T19:22:19+00:00",
+  "generated_at": "2026-07-12T03:51:10+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -4795,10 +4795,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mqfi3gmr2s2q",
       "source_id": "43382f64450551e1",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/metservice.com"
     },
     {
@@ -8095,10 +8095,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mqfpcrcqms2l",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
@@ -8106,10 +8106,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mqfp4v5a5k2l",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
@@ -8117,10 +8117,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3mqfoyi6v3s2l",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
@@ -17547,12 +17547,14 @@
     "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
-        "already_captured": 1592
+        "already_captured": 1588,
+        "captured": 4
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1592
+      "already_captured": 1588,
+      "captured": 4
     }
   }
 }
