@@ -1,6 +1,6 @@
 {
   "dry_run": false,
-  "generated_at": "2026-07-12T12:08:36+00:00",
+  "generated_at": "2026-07-12T12:10:25+00:00",
   "guardrails": {
     "captcha_solving": false,
     "credential_bypass": false,
@@ -10,10 +10,11 @@
   },
   "inputs": {
     "eligible_statuses": [
+      "network_timeout",
       "not_acceptable"
     ],
     "include_without_triage": false,
-    "limit_sources": 8,
+    "limit_sources": 2,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "offset_sources": 0,
     "per_page_timeout": 45,
@@ -46,91 +47,13 @@
       "source_type": "website_page",
       "status": "browser_captured",
       "url": "https://www.aucklandcouncil.govt.nz/api"
-    },
-    {
-      "agency_id": "auckland-council",
-      "archive_status": "ready",
-      "candidate_id": "23032184b0314e7c",
-      "feasibility": "high",
-      "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-07/9353357b48fa06569af51ac0.json",
-      "reason": "captured public rendered website content",
-      "source_id": "23032184b0314e7c",
-      "source_type": "website_page",
-      "status": "browser_captured",
-      "url": "https://www.aucklandcouncil.govt.nz/media"
-    },
-    {
-      "agency_id": "auckland-council",
-      "archive_status": "ready",
-      "candidate_id": "e1edd6a1177114cc",
-      "feasibility": "high",
-      "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-07/b09c5b3e49a5274754a5b5d0.json",
-      "reason": "captured public rendered website content",
-      "source_id": "e1edd6a1177114cc",
-      "source_type": "website_page",
-      "status": "browser_captured",
-      "url": "https://www.aucklandcouncil.govt.nz/media-releases"
-    },
-    {
-      "agency_id": "auckland-council",
-      "archive_status": "ready",
-      "candidate_id": "4977b1b2e4a3222a",
-      "feasibility": "high",
-      "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-07/f097a29481bef8fe4c676838.json",
-      "reason": "captured public rendered website content",
-      "source_id": "4977b1b2e4a3222a",
-      "source_type": "website_page",
-      "status": "browser_captured",
-      "url": "https://www.aucklandcouncil.govt.nz/news"
-    },
-    {
-      "agency_id": "auckland-council",
-      "archive_status": "ready",
-      "candidate_id": "0b733fec8a3a8ebd",
-      "feasibility": "high",
-      "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-07/0613f7e303ffdf7d5d916e7e.json",
-      "reason": "captured public rendered website content",
-      "source_id": "0b733fec8a3a8ebd",
-      "source_type": "website_page",
-      "status": "browser_captured",
-      "url": "https://www.aucklandcouncil.govt.nz/news-and-events"
-    },
-    {
-      "agency_id": "auckland-council",
-      "archive_status": "ready",
-      "candidate_id": "d3076d1b5e6e58ae",
-      "feasibility": "high",
-      "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-07/adb6363be61312a54d547074.json",
-      "reason": "captured public rendered website content",
-      "source_id": "d3076d1b5e6e58ae",
-      "source_type": "website_page",
-      "status": "browser_captured",
-      "url": "https://www.aucklandcouncil.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "auckland-council",
-      "archive_status": "ready",
-      "candidate_id": "4f6a6ad650674936",
-      "feasibility": "high",
-      "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-07/6cdf49ff7164f103cd4ae506.json",
-      "reason": "captured public rendered website content",
-      "source_id": "4f6a6ad650674936",
-      "source_type": "website_page",
-      "status": "browser_captured",
-      "url": "https://www.aucklandcouncil.govt.nz/publications"
     }
   ],
   "summary": {
-    "result_count": 8,
-    "selected_sources": 8,
+    "result_count": 2,
+    "selected_sources": 2,
     "status_counts": {
-      "browser_captured": 8
+      "browser_captured": 2
     }
   }
 }
