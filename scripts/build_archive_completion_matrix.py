@@ -216,7 +216,8 @@ def dispatch_for(row: dict[str, Any], state: str) -> dict[str, Any]:
     workflow = WORKFLOWS.get(platform, "")
     inputs: dict[str, str] = {}
     if workflow == "archive_registered_sources.yml":
-        inputs = {"source_type": platform, "agency_id": "", "include_blocked": "true", "dry_run": "false", "limit_sources": "100", "offset_sources": "0", "publish": "false", "commit_payloads": "true"}
+        offset = 100 * (int(row.get("_manifest_offset") or 0) // 100)
+        inputs = {"source_type": platform, "agency_id": "", "include_blocked": "true", "dry_run": "false", "limit_sources": "100", "offset_sources": str(offset), "publish": "false", "commit_payloads": "true"}
     elif workflow == "archive_website_browser_fallback.yml":
         inputs = {"agency_id": "", "dry_run": "false", "limit_sources": "10", "offset_sources": "0", "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed", "per_page_timeout": "45", "commit_payloads": "true", "publish": "false"}
     elif workflow == "archive_youtube_scheduled.yml":
@@ -256,12 +257,26 @@ def build_completion_matrix(
     normalized: Counter[str], conductor: Path, prior_matrix: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     readiness_rows = readiness.get("sources", [])
-    manifest_by_id = {source_key(row): row for row in manifest.get("sources", []) if source_key(row)}
+    manifest_rows = manifest.get("sources", [])
+    manifest_by_id = {source_key(row): row for row in manifest_rows if source_key(row)}
     manifest_by_url = {
         canonical_url_key(row.get("url")): row
-        for row in manifest.get("sources", [])
+        for row in manifest_rows
         if canonical_url_key(row.get("url"))
     }
+    manifest_offsets_by_id: dict[str, int] = {}
+    manifest_offsets_by_url: dict[str, int] = {}
+    platform_offsets: Counter[str] = Counter()
+    for manifest_source in manifest_rows:
+        manifest_platform = str(manifest_source.get("platform") or manifest_source.get("source_type") or "unknown")
+        offset = platform_offsets[manifest_platform]
+        platform_offsets[manifest_platform] += 1
+        for identity in {source_key(manifest_source), str(manifest_source.get("source_id") or "")}:
+            if identity:
+                manifest_offsets_by_id[identity] = offset
+        manifest_url = canonical_url_key(manifest_source.get("url"))
+        if manifest_url:
+            manifest_offsets_by_url[manifest_url] = offset
     report_by_url = {
         canonical_url_key(row.get("url")): row
         for row in report_index.values()
@@ -286,12 +301,18 @@ def build_completion_matrix(
             {},
         )
         registered = bool(manifest_row)
-        merged = {**manifest_row, **source}
+        manifest_key = str(manifest_row.get("source_id") or source_key(manifest_row))
+        manifest_offset = manifest_offsets_by_id.get(manifest_key)
+        if manifest_offset is None:
+            manifest_offset = next(
+                (manifest_offsets_by_url[url_key] for url_key in url_keys if url_key in manifest_offsets_by_url),
+                0,
+            )
+        merged = {**manifest_row, **source, "_manifest_offset": manifest_offset}
         evidence = report_index.get(key) or next(
             (report_by_url[url_key] for url_key in url_keys if url_key in report_by_url),
             {},
         )
-        manifest_key = str(manifest_row.get("source_id") or source_key(manifest_row))
         normalized_count = max(normalized[key], normalized[manifest_key])
         state, blocker = classify_state(merged, registered, evidence, normalized_count)
         prior = prior_by_id.get(key, {})
