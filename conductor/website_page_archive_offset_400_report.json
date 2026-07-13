@@ -1,0 +1,268 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-13T13:25:31+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 20,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 400,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "government-house",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "source_id": "2582361c5e0ac21e",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://gg.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "government-house",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "source_id": "a650f450cea595e8",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://gg.govt.nz/publications"
+    },
+    {
+      "agency_id": "government-house",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "source_id": "5fdfc2272cf52543",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://gg.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "89cf8714bcb396ee",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "862970e227a4c0f1",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz/api"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "64e939170104580e",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz/media"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "5f21b33550ad4b65",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "277e0920b89c5429",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz/members/newsletters/"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "f15067cba6a367ba",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz/news"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "14642423b8136a98",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "d313e30d0088d386",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "96720d62649e95f5",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz/publications"
+    },
+    {
+      "agency_id": "government-superannuation-fund",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "0280ebd737fefcb0",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gsfa.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "greater-wellington-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "dafc6318f9295ea3",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gw.govt.nz"
+    },
+    {
+      "agency_id": "greater-wellington-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "5f881544faad0161",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gw.govt.nz/api"
+    },
+    {
+      "agency_id": "greater-wellington-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "df7a4ea61ea1e5bd",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gw.govt.nz/media"
+    },
+    {
+      "agency_id": "greater-wellington-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "7816dc7e27570125",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gw.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "greater-wellington-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "16ce30b3dad1e477",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gw.govt.nz/news"
+    },
+    {
+      "agency_id": "greater-wellington-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "d16c1daf217c5466",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gw.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "greater-wellington-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "5e5460a1f5985b15",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gw.govt.nz/newsletter"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "website_page": 20
+    },
+    "selected_sources": 20,
+    "status_by_platform": {
+      "website_page": {
+        "already_captured": 17,
+        "capture_blocked": 3
+      }
+    },
+    "status_by_provider": {},
+    "status_counts": {
+      "already_captured": 17,
+      "capture_blocked": 3
+    }
+  }
+}

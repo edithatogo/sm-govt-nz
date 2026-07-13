@@ -1,40 +1,85 @@
 {
-  "gaps": [],
+  "gaps": [
+    {
+      "agency_id": "government-house",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "2582361c5e0ac21e",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://gg.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "government-house",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "a650f450cea595e8",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://gg.govt.nz/publications"
+    },
+    {
+      "agency_id": "government-house",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "5fdfc2272cf52543",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://gg.govt.nz/subscribe"
+    }
+  ],
   "inputs": {
     "reports": [
-      "conductor/website_page_archive_offset_480_report.json"
+      "conductor/website_page_archive_offset_400_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/website_page_archive_offset_480_report.json": {
+    "conductor/website_page_archive_offset_400_report.json": {
       "platform_counts": {
         "website_page": 20
       },
       "selected_sources": 20,
       "status_by_platform": {
         "website_page": {
-          "already_captured": 20
+          "already_captured": 17,
+          "capture_blocked": 3
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "already_captured": 20
+        "already_captured": 17,
+        "capture_blocked": 3
       }
     }
   },
   "summary": {
-    "gap_count": 0,
+    "gap_count": 3,
     "input_status_counts": {
-      "already_captured": 20
+      "already_captured": 17,
+      "capture_blocked": 3
     },
     "platform_counts": {
       "website_page": 20
     },
     "priority_counts": {
-      "archived_or_already_archived": 20
+      "archived_or_already_archived": 17,
+      "p4_larger_browser_or_access_project": 3
     },
     "status_counts": {
-      "already_captured": 20
+      "already_captured": 17,
+      "capture_blocked": 3
     },
     "superseded_source_count": 0
   }
