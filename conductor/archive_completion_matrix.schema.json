@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NZ Government Archive Completion Matrix",
+  "type": "object",
+  "required": ["schema_version", "track_id", "generated_at", "summary", "sources"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "track_id": {"const": "govt_archive_all_source_completion_20260713"},
+    "generated_at": {"type": "string"},
+    "summary": {"type": "object"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "platform", "url", "completion_state", "complete", "next_action", "acceptance_condition"],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "platform": {"type": "string", "minLength": 1},
+          "url": {"type": "string"},
+          "completion_state": {"enum": ["discovered", "rejected_not_government", "registered", "scheduled", "capturing", "archived", "terminal_empty", "terminal_deleted", "terminal_invalid", "terminal_external_access", "automation_fault"]},
+          "complete": {"type": "boolean"},
+          "next_action": {"type": "string", "minLength": 1},
+          "acceptance_condition": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

@@ -206,6 +206,12 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./archive/govt_archive_threads_personal_account_archive_20260704/](./archive/govt_archive_threads_personal_account_archive_20260704/)*
 - Complete: Threads guidance now frames the approved personal-account API path as archive-only, with manual seeds as fallback and Instagram/Facebook archive-only lanes deferred.
 
+---
+
+## [~] Track: Complete archival coverage for all identified government sources
+*Link: [./tracks/govt_archive_all_source_completion_20260713/](./tracks/govt_archive_all_source_completion_20260713/)*
+- In progress: canonical 5,602-source completion matrix, deterministic agent queue, daily completion workflow, and evidence-backed terminal-state handling.
+
 
 
 

@@ -454,5 +454,17 @@
         "current_task": "None",
         "next_action": "None",
         "blockers": "None"
+    },
+    {
+        "id": "govt_archive_all_source_completion_20260713",
+        "name": "Complete archival coverage for all identified government sources",
+        "status": "in_progress",
+        "done": 12,
+        "inprogress": 1,
+        "pending": 4,
+        "total": 17,
+        "current_task": "Run remote completion workflow and verify generated state",
+        "next_action": "Commit and push the implementation, then dispatch Archive Completion Loop",
+        "blockers": "3110 actionable sources remain in the generated completion queue"
     }
 ]

@@ -1,0 +1,85 @@
+name: Archive Completion Loop
+
+on:
+  schedule:
+    - cron: "41 4 * * *"
+  workflow_dispatch:
+    inputs:
+      dispatch_actions:
+        description: "Dispatch bounded archive actions after rebuilding state"
+        required: true
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+      max_actions:
+        description: "Maximum deduplicated child workflow dispatches"
+        required: true
+        default: "5"
+      publish:
+        description: "Run the existing monthly guarded publication step"
+        required: true
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+
+concurrency:
+  group: archive-completion-loop-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  completion-loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      ZENODO_DEPOSIT_ENDPOINT: ${{ secrets.ZENODO_DEPOSIT_ENDPOINT }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements-dev.txt
+      - name: Rebuild canonical completion matrix and queue
+        run: python scripts/build_archive_completion_matrix.py
+      - name: Validate completion contract and schema
+        run: |
+          python scripts/build_archive_completion_matrix.py --validate-only
+          python -c "import json, jsonschema; jsonschema.validate(json.load(open('conductor/archive_completion_matrix.json')), json.load(open('conductor/archive_completion_matrix.schema.json')))"
+      - name: Commit completion state
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Refresh government archive completion matrix"
+          --path conductor/archive_completion_matrix.json
+          --path conductor/archive_completion_matrix.md
+          --path conductor/archive_completion_work_queue.json
+      - name: Dispatch bounded completion actions
+        if: ${{ github.event_name == 'schedule' || inputs.dispatch_actions == 'true' }}
+        run: >-
+          python scripts/dispatch_archive_completion_queue.py
+          --queue conductor/archive_completion_work_queue.json
+          --max-actions "${{ inputs.max_actions || '5' }}"
+          --ref "${{ github.ref_name }}"
+          --execute
+      - name: Synchronize actionable automation-fault issue
+        shell: bash
+        run: |
+          count=$(python -c "import json; print(json.load(open('conductor/archive_completion_matrix.json'))['summary']['automation_faults'])")
+          issue=$(gh issue list --state open --search 'Archive completion automation faults in:title' --json number --jq '.[0].number // empty')
+          if [ "$count" -gt 0 ]; then
+            body="The canonical completion matrix currently reports $count actionable automation faults. See conductor/archive_completion_matrix.md and conductor/archive_completion_work_queue.json."
+            if [ -n "$issue" ]; then gh issue comment "$issue" --body "$body"; else gh issue create --title "Archive completion automation faults" --body "$body"; fi
+          elif [ -n "$issue" ]; then
+            gh issue close "$issue" --comment "Automated completion matrix reports no actionable automation faults."
+          fi
+      - name: Publish monthly archive release if requested
+        if: ${{ inputs.publish == 'true' }}
+        run: python scripts/publish_archive_release.py --monthly-guard --status conductor/archive_publication_status.json
