@@ -1,40 +1,59 @@
 {
-  "gaps": [],
+  "gaps": [
+    {
+      "agency_id": "tertiary-education-commission",
+      "platform": "website_page",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "HTTP 301: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Permanently",
+      "report": "conductor/website_page_archive_offset_1460_report.json",
+      "source_id": "65edb5c7c9590664",
+      "status": "http_error",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.tec.govt.nz/newsletter"
+    }
+  ],
   "inputs": {
     "reports": [
-      "conductor/website_page_archive_offset_460_report.json"
+      "conductor/website_page_archive_offset_1460_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/website_page_archive_offset_460_report.json": {
+    "conductor/website_page_archive_offset_1460_report.json": {
       "platform_counts": {
         "website_page": 20
       },
       "selected_sources": 20,
       "status_by_platform": {
         "website_page": {
-          "already_captured": 20
+          "already_captured": 19,
+          "http_error": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "already_captured": 20
+        "already_captured": 19,
+        "http_error": 1
       }
     }
   },
   "summary": {
-    "gap_count": 0,
+    "gap_count": 1,
     "input_status_counts": {
-      "already_captured": 20
+      "already_captured": 19,
+      "http_error": 1
     },
     "platform_counts": {
       "website_page": 20
     },
     "priority_counts": {
-      "archived_or_already_archived": 20
+      "archived_or_already_archived": 19,
+      "review": 1
     },
     "status_counts": {
-      "already_captured": 20
+      "already_captured": 19,
+      "http_error": 1
     },
     "superseded_source_count": 0
   }
