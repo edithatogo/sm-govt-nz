@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "c444c6b091a5153c0565776eed2f481f94119d0495db3ea1824ca887bc65dfc4"
+      "sha256": "dae95c61a7d6dabede57db3eeeab01ed7f5f6f0ea9ef5133aada33d6065c72e2"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24970436,
+      "bytes": 24549861,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "15dc2fce1ce7c4f921a5cddd6b1c6a2aaa5a39338af8194ae7fefe5d60f7af98"
+      "sha256": "8cb894623a0bd85bf1a416de31f38b3b0c442507e9a96e39e99f98d04c473468"
     },
     "normalized_archive.parquet": {
-      "bytes": 39193478,
+      "bytes": 38763553,
       "path": "normalized_archive.parquet",
-      "sha256": "155af97a20ebf00a7abe1b7d0dd1ad1fc3604bee50dc7a01ab3c908e01d4c42b"
+      "sha256": "b7b55d23afc903d5a72e9a92d69b903fd9f0f7ad45fd45db91d32eefd42b7ade"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11240,
+  "normalized_record_count": 11233,
   "normalized_shard_count": 518,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 11342,
+  "raw_file_count": 11347,
   "record_index": [
     {
       "mirror_targets": [
@@ -116725,111 +116725,48 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:44:01+00:00",
-      "source_account": "https://www.nzte.govt.nz",
-      "source_key": "api:https://www.nzte.govt.nz",
+      "original_timestamp": "2026-07-13T11:47:28+00:00",
+      "source_account": "https://www.taupodc.govt.nz",
+      "source_key": "api:https://www.taupodc.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:acf3a27df73afcef9efe01e6",
-      "source_url": "https://www.nzte.govt.nz/openapi.json"
+      "source_record_id": "api:b63558c0a700f1018099e690",
+      "source_url": "https://www.taupodc.govt.nz/openapi.json"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:44:08+00:00",
-      "source_account": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/",
-      "source_key": "api:https://www.parliament.nz/en/about-parliament/office-of-the-clerk/",
+      "original_timestamp": "2026-07-13T11:49:08+00:00",
+      "source_account": "https://www.waimatedc.govt.nz",
+      "source_key": "api:https://www.waimatedc.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:8e870a1152bff1f86c8104ab",
-      "source_url": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/.well-known/webfinger"
+      "source_record_id": "api:558c02bc857f20865099699b",
+      "source_url": "https://www.waimatedc.govt.nz/openapi.json"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:44:09+00:00",
-      "source_account": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/",
-      "source_key": "api:https://www.parliament.nz/en/about-parliament/office-of-the-clerk/",
+      "original_timestamp": "2026-07-13T11:49:10+00:00",
+      "source_account": "https://www.waipadc.govt.nz",
+      "source_key": "api:https://www.waipadc.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:18ad8b4f7e24e6226c2b5514",
-      "source_url": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/openapi.json"
+      "source_record_id": "api:58e9a862124eb00b3b5e3ecf",
+      "source_url": "https://www.waipadc.govt.nz/openapi.json"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:44:30+00:00",
-      "source_account": "https://www.pamu.co.nz",
-      "source_key": "api:https://www.pamu.co.nz",
+      "original_timestamp": "2026-07-13T11:49:33+00:00",
+      "source_account": "https://www.wcrc.govt.nz",
+      "source_key": "api:https://www.wcrc.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:f84f812bdfb679ec6e47ffe8",
-      "source_url": "https://www.pamu.co.nz/.well-known/webfinger"
+      "source_record_id": "api:f783fd12d4ccc65d20d0779f",
+      "source_url": "https://www.wcrc.govt.nz/openapi.json"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:44:31+00:00",
-      "source_account": "https://www.pamu.co.nz",
-      "source_key": "api:https://www.pamu.co.nz",
+      "original_timestamp": "2026-07-13T11:49:34+00:00",
+      "source_account": "https://www.westernbay.govt.nz",
+      "source_key": "api:https://www.westernbay.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:847864ea4fb54866dbd4c5b2",
-      "source_url": "https://www.pamu.co.nz/openapi.json"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:44:34+00:00",
-      "source_account": "https://www.parliament.nz",
-      "source_key": "api:https://www.parliament.nz",
-      "source_platform": "api",
-      "source_record_id": "api:071f26376c0e8a2ab042f02b",
-      "source_url": "https://www.parliament.nz/.well-known/webfinger"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:44:35+00:00",
-      "source_account": "https://www.parliament.nz",
-      "source_key": "api:https://www.parliament.nz",
-      "source_platform": "api",
-      "source_record_id": "api:d280b04b65c8a8baa2861ac8",
-      "source_url": "https://www.parliament.nz/openapi.json"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:44:59+00:00",
-      "source_account": "https://www.airforce.mil.nz",
-      "source_key": "api:https://www.airforce.mil.nz",
-      "source_platform": "api",
-      "source_record_id": "api:904f952e0d26f32ba0462b1b",
-      "source_url": "https://www.airforce.mil.nz/.well-known/webfinger"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:45:01+00:00",
-      "source_account": "https://www.airforce.mil.nz",
-      "source_key": "api:https://www.airforce.mil.nz",
-      "source_platform": "api",
-      "source_record_id": "api:8367c22d7ab285eb48ea4ebe",
-      "source_url": "https://www.airforce.mil.nz/openapi.json"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:45:02+00:00",
-      "source_account": "https://www.navy.mil.nz",
-      "source_key": "api:https://www.navy.mil.nz",
-      "source_platform": "api",
-      "source_record_id": "api:a48870bc22ad881271a09cb7",
-      "source_url": "https://www.navy.mil.nz/.well-known/webfinger"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:45:04+00:00",
-      "source_account": "https://www.navy.mil.nz",
-      "source_key": "api:https://www.navy.mil.nz",
-      "source_platform": "api",
-      "source_record_id": "api:90d9ebee815b8c328485e296",
-      "source_url": "https://www.navy.mil.nz/openapi.json"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-13T11:45:07+00:00",
-      "source_account": "https://www.ruapehudc.govt.nz",
-      "source_key": "api:https://www.ruapehudc.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:de31e8d1c33890fc90646f7d",
-      "source_url": "https://www.ruapehudc.govt.nz/openapi.json"
+      "source_record_id": "api:1ddb407cc3d75515c952d208",
+      "source_url": "https://www.westernbay.govt.nz/openapi.json"
     },
     {
       "mirror_targets": [],
@@ -117027,7 +116964,7 @@
     "nz-government-social-media"
   ],
   "source_counts": {
-    "api": 25,
+    "api": 18,
     "bluesky": 1869,
     "courtsofnz.govt.nz": 11,
     "email": 20,
@@ -117040,7 +116977,7 @@
   },
   "source_date_ranges": {
     "api": {
-      "max_original_created_at": "2026-07-13T11:45:07+00:00",
+      "max_original_created_at": "2026-07-13T11:49:34+00:00",
       "min_original_created_at": "2026-07-01T10:07:40+00:00"
     },
     "bluesky": {
