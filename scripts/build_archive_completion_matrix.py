@@ -214,10 +214,15 @@ def next_action(row: dict[str, Any], state: str) -> tuple[str, str]:
 
 def build_completion_matrix(
     readiness: dict[str, Any], manifest: dict[str, Any], report_index: dict[str, dict[str, Any]],
-    normalized: Counter[str], conductor: Path,
+    normalized: Counter[str], conductor: Path, prior_matrix: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     readiness_rows = readiness.get("sources", [])
     manifest_by_id = {source_key(row): row for row in manifest.get("sources", []) if source_key(row)}
+    prior_by_id = {
+        source_key(row): row
+        for row in (prior_matrix or {}).get("sources", [])
+        if source_key(row)
+    }
     pub_state, pub_evidence = publication_evidence(conductor)
     rows: list[dict[str, Any]] = []
     seen: set[str] = set()
@@ -230,12 +235,25 @@ def build_completion_matrix(
         merged = {**source, **manifest_by_id.get(key, {})}
         evidence = report_index.get(key, {})
         state, blocker = classify_state(merged, registered, evidence, normalized[key])
+        prior = prior_by_id.get(key, {})
+        prior_state = str(prior.get("completion_state") or "")
+        current_status = str(evidence.get("status") or "")
+        reopens_external = current_status in SUCCESS_STATUSES | {"seed_present", "public_fallback_available"}
+        if prior_state in COMPLETE_STATES and state not in COMPLETE_STATES and not reopens_external:
+            state = prior_state
+            blocker = str(prior.get("blocker_class") or "preserved_terminal_evidence")
         if state not in LIFECYCLE_STATES:
             raise ValueError(f"invalid lifecycle state for {key}: {state}")
         action, acceptance = next_action(merged, state)
         platform = str(merged.get("platform") or merged.get("source_type") or "unknown")
         archive_evidence = [str(evidence.get("evidence_report") or "")] if evidence else []
-        archive_evidence = [item for item in archive_evidence if item]
+        archive_evidence = sorted({
+            item for item in [*prior.get("archive_evidence", []), *archive_evidence] if item
+        })
+        record_count = max(int(prior.get("record_count") or 0), normalized[key])
+        row_publication_evidence = sorted({
+            item for item in [*prior.get("publication_evidence", []), *(pub_evidence if state == "archived" else [])] if item
+        })
         row = {
             "source_id": key,
             "candidate_id": str(merged.get("candidate_id") or ""),
@@ -251,9 +269,9 @@ def build_completion_matrix(
             "historical_capture_state": "evidence_present" if normalized[key] or evidence.get("status") in SUCCESS_STATUSES else "no_archive_evidence",
             "ongoing_capture_state": "scheduled" if platform in WORKFLOWS and registered else "not_scheduled",
             "publication_state": pub_state if state == "archived" else "not_applicable_until_archived",
-            "record_count": normalized[key],
+            "record_count": record_count,
             "archive_evidence": archive_evidence,
-            "publication_evidence": pub_evidence if state == "archived" else [],
+            "publication_evidence": row_publication_evidence,
             "latest_status": str(evidence.get("status") or ""),
             "completion_state": state,
             "complete": state in COMPLETE_STATES,
@@ -367,9 +385,11 @@ def main() -> None:
             raise SystemExit("\n".join(errors))
         print(f"Archive completion matrix valid: {args.output}")
         return
+    prior_matrix = load_json(args.output, {})
     matrix, queue = build_completion_matrix(
         load_json(args.readiness, {}), load_json(args.manifest, {}),
         build_report_index(args.conductor), normalized_counts(args.normalized_root), args.conductor,
+        prior_matrix=prior_matrix,
     )
     errors = validate_matrix(matrix)
     if errors:

@@ -70,6 +70,51 @@ def test_generated_workflow_is_daily_bounded_and_monthly_guarded() -> None:
     assert "automation_faults" in workflow
 
 
+def test_prior_terminal_evidence_survives_sharded_report_regression(tmp_path: Path) -> None:
+    conductor = tmp_path / "conductor"
+    conductor.mkdir()
+    (conductor / "archive_publication_status.json").write_text("{}", encoding="utf-8")
+    readiness = {
+        "total_sources": 1,
+        "sources": [{"source_id": "rss", "platform": "rss", "source_type": "rss", "readiness": "resolver_ok"}],
+    }
+    manifest = {"sources": readiness["sources"]}
+    prior = {
+        "sources": [{
+            "source_id": "rss", "completion_state": "archived", "blocker_class": "archive_evidence",
+            "record_count": 4, "archive_evidence": ["old-report.json"],
+            "publication_evidence": ["old-publication.json"],
+        }]
+    }
+
+    matrix, _queue = build_completion_matrix(
+        readiness, manifest, {}, Counter(), conductor, prior_matrix=prior
+    )
+
+    row = matrix["sources"][0]
+    assert row["completion_state"] == "archived"
+    assert row["record_count"] == 4
+    assert "old-report.json" in row["archive_evidence"]
+
+
+def test_new_seed_reopens_prior_external_access_state(tmp_path: Path) -> None:
+    conductor = tmp_path / "conductor"
+    conductor.mkdir()
+    readiness = {
+        "total_sources": 1,
+        "sources": [{"source_id": "x", "platform": "x", "source_type": "social_profile", "readiness": "blocked_credential"}],
+    }
+    manifest = {"sources": readiness["sources"]}
+    prior = {"sources": [{"source_id": "x", "completion_state": "terminal_external_access"}]}
+    reports = {"x": {"source_id": "x", "status": "seed_present", "evidence_report": "seed.json"}}
+
+    matrix, _queue = build_completion_matrix(
+        readiness, manifest, reports, Counter(), conductor, prior_matrix=prior
+    )
+
+    assert matrix["sources"][0]["completion_state"] == "scheduled"
+
+
 def test_completion_schema_accepts_only_declared_states() -> None:
     schema = json.loads(Path("conductor/archive_completion_matrix.schema.json").read_text(encoding="utf-8"))
     states = schema["properties"]["sources"]["items"]["properties"]["completion_state"]["enum"]
