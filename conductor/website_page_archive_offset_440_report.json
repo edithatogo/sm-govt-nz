@@ -1,0 +1,266 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-13T13:13:03+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 20,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 440,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "hamilton-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "7367cc8ae9240b1b",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hamilton.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "55603fc116838fea",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "f069d396e5cdbe0d",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/api"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "ec242d1290715972",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/media"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "8d7da118280e4af3",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "77b510e4af5300d5",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/news"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "cccd4c727848f3b5",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "704f35f0606d2b81",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "08e73cb869518b42",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "fa2af21914dbfecc",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/aquatics-hastings-enewsletter/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "8dbdb67550bd10a8",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-city-art-gallery/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "8a22d5da5c6be4b7",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-district-libraries-newsblast/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "47678493c1260f9f",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/iway-e/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "d1ebbe0a99339ed0",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/my-hastings/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "fe66508553b4b759",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/neighbourhood-support/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "1fa17e7d0ef27a5c",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/residential-development-update/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "64a010aa97d85074",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/splash-planet-newsletter/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "7b472c2f0cad53bb",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/waste-minimisation/"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "15da8b2c5ad74b79",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/publications"
+    },
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "af6060c47934c30d",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/services/rubbish-and-recycling/waste-awareness-newsletter/"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "website_page": 20
+    },
+    "selected_sources": 20,
+    "status_by_platform": {
+      "website_page": {
+        "already_captured": 20
+      }
+    },
+    "status_by_provider": {},
+    "status_counts": {
+      "already_captured": 20
+    }
+  }
+}
