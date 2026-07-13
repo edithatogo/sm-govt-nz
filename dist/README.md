@@ -40,10 +40,10 @@ This dataset package contains normalized New Zealand government social media rec
 - courtsofnz.govt.nz: 11 records
 - email: 20 records
 - json_feed: 16 records
-- linkedin: 60 records
+- linkedin: 50 records
 - rss: 3930 records
 - website_page: 1827 records
-- x: 769 records
+- x: 872 records
 - youtube: 2723 records
 
 ## Provenance
