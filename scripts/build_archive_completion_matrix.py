@@ -7,6 +7,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 TRACK_ID = "govt_archive_all_source_completion_20260713"
@@ -88,6 +89,15 @@ def load_json(path: Path, default: Any = None) -> Any:
 
 def source_key(row: dict[str, Any]) -> str:
     return str(row.get("candidate_id") or row.get("source_id") or "")
+
+
+def canonical_url_key(value: Any) -> str:
+    raw = str(value or "").strip()
+    if not raw:
+        return ""
+    parsed = urlsplit(raw)
+    path = parsed.path.rstrip("/") or "/"
+    return urlunsplit((parsed.scheme.lower(), parsed.netloc.lower(), path, parsed.query, ""))
 
 
 def report_rows(report: dict[str, Any]) -> list[dict[str, Any]]:
@@ -226,6 +236,16 @@ def build_completion_matrix(
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     readiness_rows = readiness.get("sources", [])
     manifest_by_id = {source_key(row): row for row in manifest.get("sources", []) if source_key(row)}
+    manifest_by_url = {
+        canonical_url_key(row.get("url")): row
+        for row in manifest.get("sources", [])
+        if canonical_url_key(row.get("url"))
+    }
+    report_by_url = {
+        canonical_url_key(row.get("url")): row
+        for row in report_index.values()
+        if canonical_url_key(row.get("url"))
+    }
     prior_by_id = {
         source_key(row): row
         for row in (prior_matrix or {}).get("sources", [])
@@ -239,10 +259,14 @@ def build_completion_matrix(
         if not key or key in seen:
             raise ValueError(f"duplicate or missing source identity: {key!r}")
         seen.add(key)
-        registered = key in manifest_by_id
-        merged = {**source, **manifest_by_id.get(key, {})}
-        evidence = report_index.get(key, {})
-        state, blocker = classify_state(merged, registered, evidence, normalized[key])
+        url_key = canonical_url_key(source.get("url"))
+        manifest_row = manifest_by_id.get(key) or manifest_by_url.get(url_key, {})
+        registered = bool(manifest_row)
+        merged = {**source, **manifest_row}
+        evidence = report_index.get(key) or report_by_url.get(url_key, {})
+        manifest_key = str(manifest_row.get("source_id") or source_key(manifest_row))
+        normalized_count = max(normalized[key], normalized[manifest_key])
+        state, blocker = classify_state(merged, registered, evidence, normalized_count)
         prior = prior_by_id.get(key, {})
         prior_state = str(prior.get("completion_state") or "")
         current_status = str(evidence.get("status") or "")
@@ -261,7 +285,7 @@ def build_completion_matrix(
         archive_evidence = sorted({
             item for item in [*prior.get("archive_evidence", []), *archive_evidence] if item
         })
-        record_count = max(int(prior.get("record_count") or 0), normalized[key])
+        record_count = max(int(prior.get("record_count") or 0), normalized_count)
         row_publication_evidence = sorted({
             item for item in [*prior.get("publication_evidence", []), *(pub_evidence if state == "archived" else [])] if item
         })
@@ -277,7 +301,7 @@ def build_completion_matrix(
             "capture_adapter": ADAPTERS.get(platform, "adapter_review_required"),
             "capture_workflow": WORKFLOWS.get(platform, ""),
             "auth": str(merged.get("auth") or "unknown"),
-            "historical_capture_state": "evidence_present" if normalized[key] or evidence.get("status") in SUCCESS_STATUSES else "no_archive_evidence",
+            "historical_capture_state": "evidence_present" if normalized_count or evidence.get("status") in SUCCESS_STATUSES else "no_archive_evidence",
             "ongoing_capture_state": "scheduled" if platform in WORKFLOWS and registered else "not_scheduled",
             "publication_state": pub_state if state == "archived" else "not_applicable_until_archived",
             "record_count": record_count,
