@@ -1,163 +1,59 @@
 {
   "gaps": [
     {
-      "agency_id": "grey-district-council",
+      "agency_id": "tertiary-education-commission",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
-      "source_id": "c9f245a4b9a22cdd",
-      "status": "method_not_allowed",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "HTTP 301: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Permanently",
+      "report": "conductor/website_page_archive_offset_1460_report.json",
+      "source_id": "65edb5c7c9590664",
+      "status": "http_error",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz"
-    },
-    {
-      "agency_id": "grey-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
-      "source_id": "a00f051c6f21aa99",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz/api"
-    },
-    {
-      "agency_id": "grey-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
-      "source_id": "1d36f40c72edefca",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz/media"
-    },
-    {
-      "agency_id": "grey-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
-      "source_id": "c1122577e1e1fd57",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz/media-releases"
-    },
-    {
-      "agency_id": "grey-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
-      "source_id": "c01f5a1c658a752f",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz/news"
-    },
-    {
-      "agency_id": "grey-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
-      "source_id": "d5ca46fb432d11e3",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz/news-and-events"
-    },
-    {
-      "agency_id": "grey-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
-      "source_id": "6bfd1abbdbceb944",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "grey-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
-      "source_id": "e2bb70b46bc01362",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz/publications"
-    },
-    {
-      "agency_id": "grey-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
-      "source_id": "9a614911dd7953f0",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz/subscribe"
+      "url": "https://www.tec.govt.nz/newsletter"
     }
   ],
   "inputs": {
     "reports": [
-      "conductor/website_page_archive_offset_420_report.json"
+      "conductor/website_page_archive_offset_1460_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/website_page_archive_offset_420_report.json": {
+    "conductor/website_page_archive_offset_1460_report.json": {
       "platform_counts": {
         "website_page": 20
       },
       "selected_sources": 20,
       "status_by_platform": {
         "website_page": {
-          "already_captured": 11,
-          "method_not_allowed": 9
+          "already_captured": 19,
+          "http_error": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "already_captured": 11,
-        "method_not_allowed": 9
+        "already_captured": 19,
+        "http_error": 1
       }
     }
   },
   "summary": {
-    "gap_count": 9,
+    "gap_count": 1,
     "input_status_counts": {
-      "already_captured": 11,
-      "method_not_allowed": 9
+      "already_captured": 19,
+      "http_error": 1
     },
     "platform_counts": {
       "website_page": 20
     },
     "priority_counts": {
-      "archived_or_already_archived": 11,
-      "p1_existing_resources": 9
+      "archived_or_already_archived": 19,
+      "review": 1
     },
     "status_counts": {
-      "already_captured": 11,
-      "method_not_allowed": 9
+      "already_captured": 19,
+      "http_error": 1
     },
     "superseded_source_count": 0
   }
