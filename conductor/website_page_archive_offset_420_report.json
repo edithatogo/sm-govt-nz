@@ -1,164 +1,268 @@
 {
-  "gaps": [
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-13T13:17:05+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 20,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 420,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "greater-wellington-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "20f9f08cba78bf0d",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gw.govt.nz/publications"
+    },
+    {
+      "agency_id": "greater-wellington-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "b19f55e77a965c05",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.gw.govt.nz/subscribe"
+    },
     {
       "agency_id": "grey-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
       "source_id": "c9f245a4b9a22cdd",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.greydc.govt.nz"
     },
     {
       "agency_id": "grey-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
       "source_id": "a00f051c6f21aa99",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.greydc.govt.nz/api"
     },
     {
       "agency_id": "grey-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
       "source_id": "1d36f40c72edefca",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.greydc.govt.nz/media"
     },
     {
       "agency_id": "grey-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
       "source_id": "c1122577e1e1fd57",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.greydc.govt.nz/media-releases"
     },
     {
       "agency_id": "grey-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
       "source_id": "c01f5a1c658a752f",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.greydc.govt.nz/news"
     },
     {
       "agency_id": "grey-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
       "source_id": "d5ca46fb432d11e3",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.greydc.govt.nz/news-and-events"
     },
     {
       "agency_id": "grey-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
       "source_id": "6bfd1abbdbceb944",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.greydc.govt.nz/newsletter"
     },
     {
       "agency_id": "grey-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
       "source_id": "e2bb70b46bc01362",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.greydc.govt.nz/publications"
     },
     {
       "agency_id": "grey-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_420_report.json",
       "source_id": "9a614911dd7953f0",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.greydc.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "guardians-of-nz-superannuation",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "596858de34b5ee9b",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.nzsuperfund.nz"
+    },
+    {
+      "agency_id": "hamilton-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "6b379204585cd473",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hamilton.govt.nz"
+    },
+    {
+      "agency_id": "hamilton-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "5da93f0f6783ca0f",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hamilton.govt.nz/api"
+    },
+    {
+      "agency_id": "hamilton-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "862bc82666896aa5",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hamilton.govt.nz/media"
+    },
+    {
+      "agency_id": "hamilton-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "5e8959b132a2f8d4",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hamilton.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "hamilton-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "e3e96131965abb22",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hamilton.govt.nz/news"
+    },
+    {
+      "agency_id": "hamilton-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "e71505009f164ec2",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hamilton.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "hamilton-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "33881a6e714b902c",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hamilton.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "hamilton-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "58d95c9e4838fbf4",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hamilton.govt.nz/publications"
     }
   ],
-  "inputs": {
-    "reports": [
-      "conductor/website_page_archive_offset_420_report.json"
-    ]
-  },
-  "report_summaries": {
-    "conductor/website_page_archive_offset_420_report.json": {
-      "platform_counts": {
-        "website_page": 20
-      },
-      "selected_sources": 20,
-      "status_by_platform": {
-        "website_page": {
-          "already_captured": 11,
-          "method_not_allowed": 9
-        }
-      },
-      "status_by_provider": {},
-      "status_counts": {
-        "already_captured": 11,
-        "method_not_allowed": 9
-      }
-    }
-  },
   "summary": {
-    "gap_count": 9,
-    "input_status_counts": {
-      "already_captured": 11,
-      "method_not_allowed": 9
-    },
     "platform_counts": {
       "website_page": 20
     },
-    "priority_counts": {
-      "archived_or_already_archived": 11,
-      "p1_existing_resources": 9
+    "selected_sources": 20,
+    "status_by_platform": {
+      "website_page": {
+        "already_captured": 11,
+        "method_not_allowed": 9
+      }
     },
+    "status_by_provider": {},
     "status_counts": {
       "already_captured": 11,
       "method_not_allowed": 9
-    },
-    "superseded_source_count": 0
+    }
   }
 }
