@@ -1,168 +1,270 @@
 {
-  "gaps": [
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-13T13:18:21+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 20,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 1400,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
     {
       "agency_id": "taupo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
       "source_id": "3bfdf56b29c41fd8",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.taupodc.govt.nz/api"
     },
     {
       "agency_id": "taupo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
       "source_id": "6cd28ddcf94755d7",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.taupodc.govt.nz/media"
     },
     {
       "agency_id": "taupo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
       "source_id": "9c3128f70a26a462",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.taupodc.govt.nz/media-releases"
     },
     {
       "agency_id": "taupo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
       "source_id": "1d499b3a1dd7ea13",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.taupodc.govt.nz/news"
     },
     {
       "agency_id": "taupo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
       "source_id": "326eb4e83676e316",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.taupodc.govt.nz/news-and-events"
     },
     {
       "agency_id": "taupo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
       "source_id": "8677aa189163c3c7",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.taupodc.govt.nz/newsletter"
     },
     {
       "agency_id": "taupo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
       "source_id": "26eba0266e629268",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.taupodc.govt.nz/publications"
     },
     {
       "agency_id": "taupo-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
       "source_id": "edff26b2da29b018",
+      "source_type": "website_page",
       "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.taupodc.govt.nz/subscribe"
     },
     {
       "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "website record already present",
+      "source_id": "c82c7328bf368343",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tauranga.govt.nz"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "2e6a5e6cd9af15c3",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tauranga.govt.nz/News-and-events/Newsletters"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "568075b97a172175",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tauranga.govt.nz/api"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "649f1cb0c42685df",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tauranga.govt.nz/media"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "333dd85ed55dd6fd",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tauranga.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "7bda8896965b518d",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tauranga.govt.nz/news"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "e8087533ce67c7ad",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tauranga.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "5d05794edfe45d37",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tauranga.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "09cab76a7c58972b",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tauranga.govt.nz/publications"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
       "reason": "URL error: timed out; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
       "source_id": "1cfd104b85114dfa",
+      "source_type": "website_page",
       "status": "network_timeout",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.tauranga.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "te-ara-ahunga-ora",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "6d03673275d7d7d0",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.retirement.govt.nz"
+    },
+    {
+      "agency_id": "te-ara-ahunga-ora",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "40e8de65471ef9ba",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.retirement.govt.nz/api"
     }
   ],
-  "inputs": {
-    "reports": [
-      "conductor/website_page_archive_offset_1400_report.json"
-    ]
-  },
-  "report_summaries": {
-    "conductor/website_page_archive_offset_1400_report.json": {
-      "platform_counts": {
-        "website_page": 20
-      },
-      "selected_sources": 20,
-      "status_by_platform": {
-        "website_page": {
-          "already_captured": 11,
-          "method_not_allowed": 8,
-          "network_timeout": 1
-        }
-      },
-      "status_by_provider": {},
-      "status_counts": {
+  "summary": {
+    "platform_counts": {
+      "website_page": 20
+    },
+    "selected_sources": 20,
+    "status_by_platform": {
+      "website_page": {
         "already_captured": 11,
         "method_not_allowed": 8,
         "network_timeout": 1
       }
-    }
-  },
-  "summary": {
-    "gap_count": 9,
-    "input_status_counts": {
-      "already_captured": 11,
-      "method_not_allowed": 8,
-      "network_timeout": 1
     },
-    "platform_counts": {
-      "website_page": 20
-    },
-    "priority_counts": {
-      "archived_or_already_archived": 11,
-      "p1_existing_resources": 9
-    },
+    "status_by_provider": {},
     "status_counts": {
       "already_captured": 11,
       "method_not_allowed": 8,
       "network_timeout": 1
-    },
-    "superseded_source_count": 0
+    }
   }
 }
