@@ -261,19 +261,6 @@
       "url": "https://www.greydc.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "grey-district-council",
-      "platform": "api",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed",
-      "report": "conductor/api_archive_offset_100_report.json",
-      "source_id": "2ab81fe3c8250d44",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.greydc.govt.nz/openapi.json"
-    },
-    {
       "agency_id": "guardians-of-nz-superannuation",
       "platform": "api",
       "priority": "review",
@@ -573,19 +560,6 @@
       "url": "https://www.hurunui.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "hurunui-district-council",
-      "platform": "api",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed",
-      "report": "conductor/api_archive_offset_100_report.json",
-      "source_id": "0815483b4346209a",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.hurunui.govt.nz/openapi.json"
-    },
-    {
       "agency_id": "hutt-city-council",
       "platform": "api",
       "priority": "p4_larger_browser_or_access_project",
@@ -729,19 +703,6 @@
       "url": "https://www.icc.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "invercargill-city-council",
-      "platform": "api",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed",
-      "report": "conductor/api_archive_offset_100_report.json",
-      "source_id": "32b4ef24710c63df",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.icc.govt.nz/openapi.json"
-    },
-    {
       "agency_id": "kaikoura-district-council",
       "platform": "api",
       "priority": "p4_larger_browser_or_access_project",
@@ -753,19 +714,6 @@
       "supersedes_report": "",
       "supersedes_status": "",
       "url": "https://www.kaikoura.govt.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "kaikoura-district-council",
-      "platform": "api",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed",
-      "report": "conductor/api_archive_offset_100_report.json",
-      "source_id": "e476bf25f9853233",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.kaikoura.govt.nz/openapi.json"
     },
     {
       "agency_id": "kainga-ora",
@@ -1186,10 +1134,9 @@
         "api": {
           "already_captured": 3,
           "capture_blocked": 19,
-          "captured": 7,
+          "captured": 11,
           "dns_failed": 6,
           "invalid": 59,
-          "method_not_allowed": 4,
           "tls_failed": 2
         }
       },
@@ -1197,41 +1144,38 @@
       "status_counts": {
         "already_captured": 3,
         "capture_blocked": 19,
-        "captured": 7,
+        "captured": 11,
         "dns_failed": 6,
         "invalid": 59,
-        "method_not_allowed": 4,
         "tls_failed": 2
       }
     }
   },
   "summary": {
-    "gap_count": 90,
+    "gap_count": 86,
     "input_status_counts": {
       "already_captured": 3,
       "capture_blocked": 19,
-      "captured": 7,
+      "captured": 11,
       "dns_failed": 6,
       "invalid": 59,
-      "method_not_allowed": 4,
       "tls_failed": 2
     },
     "platform_counts": {
       "api": 100
     },
     "priority_counts": {
-      "archived_or_already_archived": 10,
-      "p1_existing_resources": 12,
+      "archived_or_already_archived": 14,
+      "p1_existing_resources": 8,
       "p4_larger_browser_or_access_project": 19,
       "review": 59
     },
     "status_counts": {
       "already_captured": 3,
       "capture_blocked": 19,
-      "captured": 7,
+      "captured": 11,
       "dns_failed": 6,
       "invalid": 59,
-      "method_not_allowed": 4,
       "tls_failed": 2
     },
     "superseded_source_count": 0

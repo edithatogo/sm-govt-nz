@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "197516e1fa5174d35a2807bfcb7af3656fe40af708d16ed6dd0578f7469bcf92"
+      "sha256": "76193db3be159290dc7e06b5adfa30f96f595729b55f108563068109f152ed81"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24585980,
+      "bytes": 24590134,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "173d13c9fe64ebd7818a33725fbadc3aab222df5ace17c240b646daf58aa95f0"
+      "sha256": "5b42c75c8102d21c9e2591010c542e2d66ed67cd93ec5b6f585a8458e3c00ee1"
     },
     "normalized_archive.parquet": {
-      "bytes": 38840304,
+      "bytes": 38789245,
       "path": "normalized_archive.parquet",
-      "sha256": "a99f9d4b891643b2f1bcc24af4d76110fcd76de6ccbec8efa2c27d583a609b05"
+      "sha256": "aa880679b7b020238aa67b3d07bc1862d63266146d096a46983169e229b739d2"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11235,
+  "normalized_record_count": 11239,
   "normalized_shard_count": 518,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 11347,
+  "raw_file_count": 11351,
   "record_index": [
     {
       "mirror_targets": [
@@ -116725,7 +116725,7 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T12:01:25+00:00",
+      "original_timestamp": "2026-07-13T12:04:14+00:00",
       "source_account": "https://www.goredc.govt.nz",
       "source_key": "api:https://www.goredc.govt.nz",
       "source_platform": "api",
@@ -116734,7 +116734,7 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T12:01:26+00:00",
+      "original_timestamp": "2026-07-13T12:04:15+00:00",
       "source_account": "https://www.gsfa.govt.nz",
       "source_key": "api:https://www.gsfa.govt.nz",
       "source_platform": "api",
@@ -116743,7 +116743,7 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T12:01:27+00:00",
+      "original_timestamp": "2026-07-13T12:04:15+00:00",
       "source_account": "https://www.gsfa.govt.nz",
       "source_key": "api:https://www.gsfa.govt.nz",
       "source_platform": "api",
@@ -116752,7 +116752,16 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T12:01:41+00:00",
+      "original_timestamp": "2026-07-13T12:04:20+00:00",
+      "source_account": "https://www.greydc.govt.nz",
+      "source_key": "api:https://www.greydc.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:6e5f5b762939dc1361b41443",
+      "source_url": "https://www.greydc.govt.nz/openapi.json"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T12:04:28+00:00",
       "source_account": "https://www.tewhatuora.govt.nz",
       "source_key": "api:https://www.tewhatuora.govt.nz",
       "source_platform": "api",
@@ -116761,7 +116770,7 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T12:01:44+00:00",
+      "original_timestamp": "2026-07-13T12:04:29+00:00",
       "source_account": "https://www.tewhatuora.govt.nz",
       "source_key": "api:https://www.tewhatuora.govt.nz",
       "source_platform": "api",
@@ -116770,7 +116779,7 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T12:01:49+00:00",
+      "original_timestamp": "2026-07-13T12:04:35+00:00",
       "source_account": "https://www.heritage.org.nz",
       "source_key": "api:https://www.heritage.org.nz",
       "source_platform": "api",
@@ -116779,12 +116788,39 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-13T12:01:50+00:00",
+      "original_timestamp": "2026-07-13T12:04:35+00:00",
       "source_account": "https://www.heritage.org.nz",
       "source_key": "api:https://www.heritage.org.nz",
       "source_platform": "api",
       "source_record_id": "api:8280eedff2cd8016dfa9fb0d",
       "source_url": "https://www.heritage.org.nz/openapi.json"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T12:04:41+00:00",
+      "source_account": "https://www.hurunui.govt.nz",
+      "source_key": "api:https://www.hurunui.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:7ccec11a7443a77c1b92beb8",
+      "source_url": "https://www.hurunui.govt.nz/openapi.json"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T12:04:48+00:00",
+      "source_account": "https://www.icc.govt.nz",
+      "source_key": "api:https://www.icc.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:bcb9ed95bf1e926847691a2d",
+      "source_url": "https://www.icc.govt.nz/openapi.json"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T12:04:49+00:00",
+      "source_account": "https://www.kaikoura.govt.nz",
+      "source_key": "api:https://www.kaikoura.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:938f78b62874036eb3f0e8af",
+      "source_url": "https://www.kaikoura.govt.nz/openapi.json"
     },
     {
       "mirror_targets": [],
@@ -116982,7 +117018,7 @@
     "nz-government-social-media"
   ],
   "source_counts": {
-    "api": 20,
+    "api": 24,
     "bluesky": 1869,
     "courtsofnz.govt.nz": 11,
     "email": 20,
@@ -116995,7 +117031,7 @@
   },
   "source_date_ranges": {
     "api": {
-      "max_original_created_at": "2026-07-13T12:01:50+00:00",
+      "max_original_created_at": "2026-07-13T12:04:49+00:00",
       "min_original_created_at": "2026-07-01T10:07:40+00:00"
     },
     "bluesky": {
