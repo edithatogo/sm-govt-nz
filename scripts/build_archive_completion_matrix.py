@@ -101,6 +101,19 @@ def canonical_url_key(value: Any) -> str:
     return urlunsplit((parsed.scheme.lower(), parsed.netloc.lower(), path, parsed.query, ""))
 
 
+def alternative_capture_url_keys(row: dict[str, Any]) -> list[str]:
+    url = str(row.get("url") or "")
+    platform = str(row.get("platform") or row.get("source_type") or "")
+    keys = [canonical_url_key(url)]
+    if platform == "medium" and url:
+        parsed = urlsplit(url)
+        if parsed.netloc.lower() == "medium.com" and parsed.path.startswith("/@"):
+            keys.append(canonical_url_key(f"https://medium.com/feed{parsed.path.rstrip('/')}"))
+        elif parsed.netloc.lower().endswith(".medium.com"):
+            keys.append(canonical_url_key(f"{url.rstrip('/')}/feed"))
+    return [key for key in dict.fromkeys(keys) if key]
+
+
 def report_rows(report: dict[str, Any]) -> list[dict[str, Any]]:
     rows = report.get("results") or report.get("items") or []
     return [row for row in rows if isinstance(row, dict)]
@@ -267,11 +280,17 @@ def build_completion_matrix(
         if not key or key in seen:
             raise ValueError(f"duplicate or missing source identity: {key!r}")
         seen.add(key)
-        url_key = canonical_url_key(source.get("url"))
-        manifest_row = manifest_by_id.get(key) or manifest_by_url.get(url_key, {})
+        url_keys = alternative_capture_url_keys(source)
+        manifest_row = manifest_by_id.get(key) or next(
+            (manifest_by_url[url_key] for url_key in url_keys if url_key in manifest_by_url),
+            {},
+        )
         registered = bool(manifest_row)
-        merged = {**source, **manifest_row}
-        evidence = report_index.get(key) or report_by_url.get(url_key, {})
+        merged = {**manifest_row, **source}
+        evidence = report_index.get(key) or next(
+            (report_by_url[url_key] for url_key in url_keys if url_key in report_by_url),
+            {},
+        )
         manifest_key = str(manifest_row.get("source_id") or source_key(manifest_row))
         normalized_count = max(normalized[key], normalized[manifest_key])
         state, blocker = classify_state(merged, registered, evidence, normalized_count)
