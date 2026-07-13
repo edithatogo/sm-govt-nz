@@ -170,6 +170,7 @@ def classify_state(
     status = str(evidence.get("status") or "")
     readiness = str(row.get("readiness") or "discovered")
     platform = str(row.get("platform") or row.get("source_type") or "unknown")
+    heuristic_common_path = str(row.get("origin") or "") == "configured_common_path"
     if normalized_count > 0 or status in SUCCESS_STATUSES:
         return "archived", "archive_evidence"
     if status in EMPTY_STATUSES:
@@ -182,6 +183,12 @@ def classify_state(
         return "rejected_not_government", "evidence_backed_scope_rejection"
     if status == "seed_present" or status == "public_fallback_available":
         return "scheduled", "capture_input_available"
+    if heuristic_common_path and status == "dns_failed":
+        return "terminal_deleted", "heuristic_endpoint_domain_unavailable"
+    if heuristic_common_path and status in {"method_not_allowed", "not_acceptable", "tls_failed"}:
+        return "terminal_invalid", "heuristic_endpoint_invalid"
+    if heuristic_common_path and status == "capture_blocked":
+        return "terminal_external_access", "heuristic_endpoint_public_access_blocked"
     if status in ACTIONABLE_FAILURE_STATUSES:
         return "automation_fault", status
     if status in EXTERNAL_STATUSES or readiness in {"blocked_credential", "blocked_legal"}:
