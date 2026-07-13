@@ -131,7 +131,7 @@ def status_rank(status: str) -> int:
     if status in ACTIONABLE_FAILURE_STATUSES:
         return 60
     if status in EXTERNAL_STATUSES:
-        return 50
+        return 70
     return 0
 
 
@@ -202,6 +202,10 @@ def classify_state(
         return "terminal_invalid", "heuristic_endpoint_invalid"
     if heuristic_common_path and status == "capture_blocked":
         return "terminal_external_access", "heuristic_endpoint_public_access_blocked"
+    if platform == "website_page" and status == "dns_failed":
+        return "terminal_deleted", "website_domain_unavailable"
+    if platform == "website_page" and status == "method_not_allowed":
+        return "terminal_invalid", "website_rejected_capture_method_after_fallback"
     if status in ACTIONABLE_FAILURE_STATUSES:
         return "automation_fault", status
     if status in EXTERNAL_STATUSES or readiness in {"blocked_credential", "blocked_legal"}:
