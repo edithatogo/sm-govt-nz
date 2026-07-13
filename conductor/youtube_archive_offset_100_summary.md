@@ -1,25 +1,27 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T06:51:48+00:00
+Generated: 2026-07-13T12:42:10+00:00
 
 ## Summary
 
-- `selected_sources`: 83
+- `selected_sources`: 91
 - `platform_count`: 1
-- `status_count`: 2
+- `status_count`: 4
 
 ## Platform counts
 
-- `youtube`: 83
+- `youtube`: 91
 
 ## Status counts
 
-- `capture_failed`: 13
-- `no_records`: 70
+- `already_captured`: 914
+- `captured`: 115
+- `no_records`: 7
+- `youtube_channel_not_found`: 12
 
 ## Status by platform
 
-- `youtube`: {'capture_failed': 13, 'no_records': 70}
+- `youtube`: {'already_captured': 914, 'captured': 115, 'no_records': 7, 'youtube_channel_not_found': 12}
 
 ## Notes
 
