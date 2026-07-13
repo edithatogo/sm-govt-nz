@@ -1,59 +1,85 @@
 {
   "gaps": [
     {
-      "agency_id": "tertiary-education-commission",
+      "agency_id": "timaru-district-council",
       "platform": "website_page",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "HTTP 301: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Permanently",
-      "report": "conductor/website_page_archive_offset_1460_report.json",
-      "source_id": "65edb5c7c9590664",
-      "status": "http_error",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "report": "conductor/website_page_archive_offset_1480_report.json",
+      "source_id": "350b4a5d6cf98f85",
+      "status": "capture_blocked",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.tec.govt.nz/newsletter"
+      "url": "https://www.timaru.govt.nz"
+    },
+    {
+      "agency_id": "timaru-district-council",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "report": "conductor/website_page_archive_offset_1480_report.json",
+      "source_id": "96240ac4f68ba3a4",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.timaru.govt.nz/api"
+    },
+    {
+      "agency_id": "timaru-district-council",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "report": "conductor/website_page_archive_offset_1480_report.json",
+      "source_id": "09f798e8032c0b14",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.timaru.govt.nz/media"
     }
   ],
   "inputs": {
     "reports": [
-      "conductor/website_page_archive_offset_1460_report.json"
+      "conductor/website_page_archive_offset_1480_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/website_page_archive_offset_1460_report.json": {
+    "conductor/website_page_archive_offset_1480_report.json": {
       "platform_counts": {
         "website_page": 20
       },
       "selected_sources": 20,
       "status_by_platform": {
         "website_page": {
-          "already_captured": 19,
-          "http_error": 1
+          "already_captured": 17,
+          "capture_blocked": 3
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "already_captured": 19,
-        "http_error": 1
+        "already_captured": 17,
+        "capture_blocked": 3
       }
     }
   },
   "summary": {
-    "gap_count": 1,
+    "gap_count": 3,
     "input_status_counts": {
-      "already_captured": 19,
-      "http_error": 1
+      "already_captured": 17,
+      "capture_blocked": 3
     },
     "platform_counts": {
       "website_page": 20
     },
     "priority_counts": {
-      "archived_or_already_archived": 19,
-      "review": 1
+      "archived_or_already_archived": 17,
+      "p4_larger_browser_or_access_project": 3
     },
     "status_counts": {
-      "already_captured": 19,
-      "http_error": 1
+      "already_captured": 17,
+      "capture_blocked": 3
     },
     "superseded_source_count": 0
   }
