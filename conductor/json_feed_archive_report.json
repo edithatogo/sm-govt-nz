@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-13T12:15:29+00:00",
+  "generated_at": "2026-07-13T12:24:12+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -32,10 +32,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "97f951e64bdb2a2d",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.acc.co.nz/feed.json"
     },
     {
@@ -43,10 +43,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 400: Bad Request",
+      "reason": "HTTP 400: candidate JSON Feed endpoint is unavailable",
       "source_id": "3caae6ccb89ff631",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.accreditation.co.nz/feed.json"
     },
     {
@@ -54,10 +54,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "7ce199a7e4b32fd2",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.airways.co.nz/feed.json"
     },
     {
@@ -87,10 +87,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "bbf777aacfa609d8",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.pestoff.co.nz/feed.json"
     },
     {
@@ -98,10 +98,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a66e8704256371d0",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.antarcticanz.govt.nz/feed.json"
     },
     {
@@ -109,10 +109,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5ae05ab118dedb56",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.ara.ac.nz/feed.json"
     },
     {
@@ -120,10 +120,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "adedaec7ab57d7da",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.ashburtondc.govt.nz/feed.json"
     },
     {
@@ -131,10 +131,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "d0880c424c741602",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.asurequality.com/feed.json"
     },
     {
@@ -142,10 +142,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 406: Not Acceptable",
+      "reason": "HTTP 406: Not Acceptable",
       "source_id": "b682a7ddf832e089",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "not_acceptable",
       "url": "https://www.aucklandcouncil.govt.nz/feed.json"
     },
     {
@@ -153,10 +153,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "e07914d349165ef6",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.aucklandlightrail.co.nz/feed.json"
     },
     {
@@ -164,10 +164,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "d2b8818847767547",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.aut.ac.nz/feed.json"
     },
     {
@@ -175,10 +175,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)",
       "source_id": "21bb48693ef10a83",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "tls_failed",
       "url": "https://www.boprc.govt.nz/feed.json"
     },
     {
@@ -186,10 +186,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "682ff4d865dbd9ab",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.beehive.govt.nz/feed.json"
     },
     {
@@ -197,10 +197,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a89252e254cab411",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.bsa.govt.nz/feed.json"
     },
     {
@@ -208,10 +208,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "adbac8378860a3c9",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.bullerdc.govt.nz/feed.json"
     },
     {
@@ -219,10 +219,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "916dd69ed37c6562",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.callaghaninnovation.govt.nz/feed.json"
     },
     {
@@ -230,10 +230,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "f30c0663ee03ad34",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.teaho.govt.nz/feed.json"
     },
     {
@@ -241,10 +241,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "55a7f6bc41d84c0c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.cartertondc.govt.nz/feed.json"
     },
     {
@@ -252,10 +252,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5ebea0bd7c99f7da",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.chbdc.govt.nz/feed.json"
     },
     {
@@ -263,10 +263,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "b47b18fcbf28342d",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.codc.govt.nz/feed.json"
     },
     {
@@ -274,10 +274,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "1c8c3692b074ec61",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.charterschools.govt.nz/feed.json"
     },
     {
@@ -285,10 +285,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "76a1371b3fda068c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.cic.govt.nz/feed.json"
     },
     {
@@ -296,10 +296,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "32f3ffc35017247c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.manamokopuna.org.nz/feed.json"
     },
     {
@@ -307,10 +307,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "c3d10edc3508cb45",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.ccc.govt.nz/feed.json"
     },
     {
@@ -318,10 +318,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "2e75802c5ef2c40c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://my.christchurchcitylibraries.com/feed.json"
     },
     {
@@ -329,10 +329,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "829c7d077bf91bf0",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.cityraillink.co.nz/feed.json"
     },
     {
@@ -340,10 +340,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "3850356ac5c77c57",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.caa.govt.nz/feed.json"
     },
     {
@@ -351,10 +351,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "34e83fd02f4200a1",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.climatecommission.govt.nz/feed.json"
     },
     {
@@ -362,10 +362,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "093a2ee255993aa5",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.cluthadc.govt.nz/feed.json"
     },
     {
@@ -373,10 +373,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "862e58465ac40f18",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.comcom.govt.nz/feed.json"
     },
     {
@@ -384,10 +384,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "e9b557ae5bde6ad3",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.courtsofnz.govt.nz/feed.json"
     },
     {
@@ -395,10 +395,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "7c9a484a443f1610",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.creativenz.govt.nz/feed.json"
     },
     {
@@ -406,10 +406,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "cb877ff0e3c66fbe",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.ccrc.govt.nz/feed.json"
     },
     {
@@ -417,10 +417,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "6ab856ccc3967b23",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.crownirrigation.co.nz/feed.json"
     },
     {
@@ -428,10 +428,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a2179a41b6f05edd",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.crownlaw.govt.nz/feed.json"
     },
     {
@@ -439,10 +439,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "3cceb0796df9907c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.doc.govt.nz/feed.json"
     },
     {
@@ -450,10 +450,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "07955141e1acc8ad",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.corrections.govt.nz/feed.json"
     },
     {
@@ -461,10 +461,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "2c0affcd340df0eb",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.dia.govt.nz/feed.json"
     },
     {
@@ -472,10 +472,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "c882de12c7837056",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.dpmc.govt.nz/feed.json"
     },
     {
@@ -483,10 +483,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "f11a82f28bcea2f7",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.dunedin.govt.nz/feed.json"
     },
     {
@@ -494,10 +494,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "98748e2deb431401",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.enz.govt.nz/feed.json"
     },
     {
@@ -527,10 +527,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "8658255806dc0b41",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.educationpayroll.co.nz/feed.json"
     },
     {
@@ -538,10 +538,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "7c08c1e727cd811e",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.ero.govt.nz/feed.json"
     },
     {
@@ -549,10 +549,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a83ee020868fde80",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.eeca.govt.nz/feed.json"
     },
     {
@@ -560,10 +560,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "79fdf0842cc9c24c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.eit.ac.nz/feed.json"
     },
     {
@@ -593,10 +593,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "d95982299dacb4b8",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.elections.nz/feed.json"
     },
     {
@@ -604,10 +604,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "26f99e9b67ac4dcd",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.ea.govt.nz/feed.json"
     },
     {
@@ -615,10 +615,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 400: Bad Request",
+      "reason": "HTTP 400: candidate JSON Feed endpoint is unavailable",
       "source_id": "51d86fb0b7190b2b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.ecnz.co.nz/feed.json"
     },
     {
@@ -626,10 +626,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5687b25e14ac5faa",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.ecan.govt.nz/feed.json"
     },
     {
@@ -637,10 +637,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "894eb69276638195",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.es.govt.nz/feed.json"
     },
     {
@@ -648,10 +648,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "3217a45a8ad37637",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.epa.govt.nz/feed.json"
     },
     {
@@ -659,10 +659,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "169937c185dabaf4",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.xrb.govt.nz/feed.json"
     },
     {
@@ -670,10 +670,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "902abb90b1a31084",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.fndc.govt.nz/feed.json"
     },
     {
@@ -681,10 +681,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "8c0d0a4d9f04e74c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.fma.govt.nz/feed.json"
     },
     {
@@ -692,10 +692,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "679c7bebaa41a32a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.fireandemergency.nz/feed.json"
     },
     {
@@ -703,10 +703,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "afe9addbf4b04364",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.gcsb.govt.nz/feed.json"
     },
     {
@@ -714,10 +714,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "fd222c4b191c7757",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.gdc.govt.nz/feed.json"
     },
     {
@@ -725,10 +725,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "6b7111051af5c84b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.goredc.govt.nz/feed.json"
     },
     {
@@ -736,10 +736,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "69877f5858c12936",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://gg.govt.nz/feed.json"
     },
     {
@@ -747,10 +747,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 3 column 1 (char 4)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "32f70db672cc03c0",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.gsfa.govt.nz/feed.json"
     },
     {
@@ -758,10 +758,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "0ca4ef4bb0ed012a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.gw.govt.nz/feed.json"
     },
     {
@@ -769,10 +769,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "1b2f5fe2b14336e3",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.greydc.govt.nz/feed.json"
     },
     {
@@ -780,10 +780,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "686a454a4b3cf841",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzsuperfund.nz/feed.json"
     },
     {
@@ -791,10 +791,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "336e94259769367b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.hamilton.govt.nz/feed.json"
     },
     {
@@ -802,10 +802,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "32bc2f5b7a281e84",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.hastingsdc.govt.nz/feed.json"
     },
     {
@@ -813,10 +813,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "78c9a89e8522abd1",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.hbrc.govt.nz/feed.json"
     },
     {
@@ -824,10 +824,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "2dd2ba1472f27dca",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.hdc.org.nz/feed.json"
     },
     {
@@ -835,10 +835,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "4c9687e8c976d34a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tewhatuora.govt.nz/feed.json"
     },
     {
@@ -846,10 +846,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "ad04c0db1ee51e97",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.hqsc.govt.nz/feed.json"
     },
     {
@@ -857,10 +857,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "6fc9836aa517be31",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.hrc.govt.nz/feed.json"
     },
     {
@@ -868,10 +868,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "ec699d798515704f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.herengahenu.nz/feed.json"
     },
     {
@@ -879,10 +879,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "dd226b4e53824306",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.heritage.org.nz/feed.json"
     },
     {
@@ -890,10 +890,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "81e64b74885bc6f3",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.horizons.govt.nz/feed.json"
     },
     {
@@ -901,10 +901,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "b509fdbad0cd08c5",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.horowhenua.govt.nz/feed.json"
     },
     {
@@ -912,10 +912,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "d9ef63487290e169",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.hrc.co.nz/feed.json"
     },
     {
@@ -923,10 +923,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "0c95ff8d9d9f71f7",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.hurunui.govt.nz/feed.json"
     },
     {
@@ -934,10 +934,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "6f58479da8b59257",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.huttcity.govt.nz/feed.json"
     },
     {
@@ -945,10 +945,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "bca6a13bce948b3c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.aroturuki.govt.nz/feed.json"
     },
     {
@@ -956,10 +956,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "2164a1d4533a0cf6",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.ipca.govt.nz/feed.json"
     },
     {
@@ -967,10 +967,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "f3c22e5b38e4778e",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.ird.govt.nz/feed.json"
     },
     {
@@ -978,10 +978,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "794f3b614decc638",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.integritysport.nz/feed.json"
     },
     {
@@ -989,10 +989,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "2c87f3c7e6283609",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.icc.govt.nz/feed.json"
     },
     {
@@ -1000,10 +1000,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "93ab196e19dd5f3d",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.kaikoura.govt.nz/feed.json"
     },
     {
@@ -1011,10 +1011,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "4a52b5e084ff8bd5",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.kaingaora.govt.nz/feed.json"
     },
     {
@@ -1022,10 +1022,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "be740fcad644cd64",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.kaipara.govt.nz/feed.json"
     },
     {
@@ -1033,10 +1033,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "f0c03ac994c3388b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.kapiticoast.govt.nz/feed.json"
     },
     {
@@ -1044,10 +1044,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "276483fca03eac8e",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.kaweraudc.govt.nz/feed.json"
     },
     {
@@ -1055,10 +1055,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "b3f3724e74f64cb5",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.kiwibank.co.nz/feed.json"
     },
     {
@@ -1066,10 +1066,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5094c1111ff02463",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.kiwirail.co.nz/feed.json"
     },
     {
@@ -1077,10 +1077,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "f97374acfa160a89",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.kordia.co.nz/feed.json"
     },
     {
@@ -1088,10 +1088,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "6a03765f3acd2638",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.lawcom.govt.nz/feed.json"
     },
     {
@@ -1099,10 +1099,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "32232210935e6871",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.lincoln.ac.nz/feed.json"
     },
     {
@@ -1110,10 +1110,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "c9c698bb8b5dbead",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.linz.govt.nz/feed.json"
     },
     {
@@ -1121,10 +1121,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lotto.co.nz'. (_ssl.c:1082)>",
+      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lotto.co.nz'. (_ssl.c:1082)",
       "source_id": "1695f7e082658055",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "tls_failed",
       "url": "https://www.lotto.co.nz/feed.json"
     },
     {
@@ -1132,10 +1132,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "1716826a448731e9",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.mackenzie.govt.nz/feed.json"
     },
     {
@@ -1143,10 +1143,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "22eb3a1030dbe1f8",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.mdc.govt.nz/feed.json"
     },
     {
@@ -1154,10 +1154,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "2f91a7d6611e2699",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.manukau.ac.nz/feed.json"
     },
     {
@@ -1187,10 +1187,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "ecbecea7565f4336",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.taurawhiri.govt.nz/feed.json"
     },
     {
@@ -1198,10 +1198,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "222b5e079c3d8b5a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.maritimenz.govt.nz/feed.json"
     },
     {
@@ -1209,10 +1209,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "655d59abf4c286af",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.marlborough.govt.nz/feed.json"
     },
     {
@@ -1220,10 +1220,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "fef268279330e7ba",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.massey.ac.nz/feed.json"
     },
     {
@@ -1231,10 +1231,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "cfa49385a135e6dd",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.mstn.govt.nz/feed.json"
     },
     {
@@ -1242,10 +1242,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "2952e7c87bc56d9e",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.mpdc.govt.nz/feed.json"
     },
     {
@@ -1253,10 +1253,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5c5064514bb84ff9",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.mbie.govt.nz/feed.json"
     },
     {
@@ -1264,10 +1264,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "e874afaaf63b77d0",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.metservice.com/feed.json"
     },
     {
@@ -1275,10 +1275,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "97027383fd2ed8a1",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.mfat.govt.nz/feed.json"
     },
     {
@@ -1286,10 +1286,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "a2606111d6e2cd6d",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.mch.govt.nz/feed.json"
     },
     {
@@ -1297,10 +1297,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "713f8a37083c7b81",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.ethniccommunities.govt.nz/feed.json"
     },
     {
@@ -1308,10 +1308,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "de48de68d4d9003c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.mpp.govt.nz/feed.json"
     },
     {
@@ -1319,10 +1319,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "f04e1ba0c243e9cd",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.mpi.govt.nz/feed.json"
     },
     {
@@ -1330,10 +1330,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "9fc292738bf15f72",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.regulation.govt.nz/feed.json"
     },
     {
@@ -1341,10 +1341,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "f9c7f7a6934e3a70",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.mfe.govt.nz/feed.json"
     },
     {
@@ -1352,10 +1352,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "4310a7c45ea9513d",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.women.govt.nz/feed.json"
     },
     {
@@ -1363,10 +1363,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "53cce4cba4e90c54",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.defence.govt.nz/feed.json"
     },
     {
@@ -1374,10 +1374,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "26bfed9047d30da6",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.education.govt.nz/feed.json"
     },
     {
@@ -1385,10 +1385,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "b9d91b025052cdad",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.health.govt.nz/feed.json"
     },
     {
@@ -1396,10 +1396,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "c569966c55c65c4b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.hud.govt.nz/feed.json"
     },
     {
@@ -1407,10 +1407,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "971747e3b111502a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.justice.govt.nz/feed.json"
     },
     {
@@ -1418,10 +1418,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "0619070ff35add9f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.msd.govt.nz/feed.json"
     },
     {
@@ -1429,10 +1429,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "ac028c1607a52e71",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.transport.govt.nz/feed.json"
     },
     {
@@ -1440,10 +1440,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5f65314c3e5189d0",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.napier.govt.nz/feed.json"
     },
     {
@@ -1451,10 +1451,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "ef9c15c70e7a0a94",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.naturalhazards.govt.nz/feed.json"
     },
     {
@@ -1462,10 +1462,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "4bb45fb14a78ea2f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nelson.govt.nz/feed.json"
     },
     {
@@ -1473,10 +1473,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "5f9489f22e9f3666",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.nema.govt.nz/feed.json"
     },
     {
@@ -1484,10 +1484,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "3506b4e343e5afb9",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.n4l.co.nz/feed.json"
     },
     {
@@ -1517,10 +1517,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "86fcb5ea8d51c92e",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.npdc.govt.nz/feed.json"
     },
     {
@@ -1528,10 +1528,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a6262d6b25b002a2",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nmit.ac.nz/feed.json"
     },
     {
@@ -1539,10 +1539,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "75291458e1733fa0",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.nrc.govt.nz/feed.json"
     },
     {
@@ -1550,10 +1550,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "1d28144e7757244f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.northtec.ac.nz/feed.json"
     },
     {
@@ -1561,10 +1561,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "f8cfcf94ca4e185a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.army.mil.nz/feed.json"
     },
     {
@@ -1572,10 +1572,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "46fa217f13b79e9a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzals.co.nz/feed.json"
     },
     {
@@ -1583,10 +1583,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "90186cf4cf858f10",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzblood.co.nz/feed.json"
     },
     {
@@ -1594,10 +1594,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a87e545d8d469db9",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.customs.govt.nz/feed.json"
     },
     {
@@ -1605,10 +1605,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "1e4f41c57c388d34",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzdf.mil.nz/feed.json"
     },
     {
@@ -1616,10 +1616,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "6702083c2370455a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzfilm.co.nz/feed.json"
     },
     {
@@ -1627,10 +1627,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "1b93d7a0697e5c26",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzgcp.co.nz/feed.json"
     },
     {
@@ -1638,10 +1638,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "2f6fe496a2480ac4",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tewaihanga.govt.nz/feed.json"
     },
     {
@@ -1649,10 +1649,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "239248d1965afb60",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzonair.govt.nz/feed.json"
     },
     {
@@ -1660,10 +1660,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "5d035c0706f20bf4",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.parliament.nz/feed.json"
     },
     {
@@ -1671,10 +1671,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "37aeb9a89230e425",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.police.govt.nz/feed.json"
     },
     {
@@ -1682,10 +1682,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a6340c66b07f0cc6",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzpost.co.nz/feed.json"
     },
     {
@@ -1693,10 +1693,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "81fea30356d58269",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzqa.govt.nz/feed.json"
     },
     {
@@ -1704,10 +1704,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "94c9da339e91f2e0",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.kiwirail.co.nz/feed.json"
     },
     {
@@ -1715,10 +1715,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a42bb6a9fd1e82fd",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzso.co.nz/feed.json"
     },
     {
@@ -1726,10 +1726,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "2cb46671d23d4550",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzte.govt.nz/feed.json"
     },
     {
@@ -1737,10 +1737,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "6b7f60a8c6c1721e",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzsis.govt.nz/feed.json"
     },
     {
@@ -1748,10 +1748,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "f20c4f2e63dcb835",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.classificationoffice.govt.nz/feed.json"
     },
     {
@@ -1759,10 +1759,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "eeb2efe74654cc3f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.oag.govt.nz/feed.json"
     },
     {
@@ -1770,10 +1770,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "32377c55efd946ac",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/feed.json"
     },
     {
@@ -1781,10 +1781,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "d4631b140a351a94",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.ombudsman.parliament.nz/feed.json"
     },
     {
@@ -1792,10 +1792,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "823e89b3780864a7",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.govt.nz/organisations/office-of-treaty-settlements/feed.json"
     },
     {
@@ -1803,10 +1803,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "0aca0963b110b796",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.openpolytechnic.ac.nz/feed.json"
     },
     {
@@ -1814,10 +1814,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "3986f3da15845ae7",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.odc.govt.nz/feed.json"
     },
     {
@@ -1825,10 +1825,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "7dbe214e0f05c38f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.orangatamariki.govt.nz/feed.json"
     },
     {
@@ -1836,10 +1836,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "64bc5c7d00d4c08f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.op.ac.nz/feed.json"
     },
     {
@@ -1847,10 +1847,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "44ccc5ab74658602",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.orc.govt.nz/feed.json"
     },
     {
@@ -1858,10 +1858,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "25604bafc89b5c6b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.otodc.govt.nz/feed.json"
     },
     {
@@ -1869,10 +1869,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "badfba23689fb6b3",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.pncc.govt.nz/feed.json"
     },
     {
@@ -1880,10 +1880,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 2 column 3 (char 3)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "dd2d81047103d70b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.pamu.co.nz/feed.json"
     },
     {
@@ -1891,10 +1891,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "d0e31b49abc5377f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.pce.parliament.nz/feed.json"
     },
     {
@@ -1902,10 +1902,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "d20c57d5d701a26c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.pco.govt.nz/feed.json"
     },
     {
@@ -1913,10 +1913,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "84f973627c0fb508",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.parliament.nz/feed.json"
     },
     {
@@ -1924,10 +1924,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "8fc68187838d7c69",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.pharmac.govt.nz/feed.json"
     },
     {
@@ -1935,10 +1935,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "e0eeac6f8f3d816c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.pcc.govt.nz/feed.json"
     },
     {
@@ -1946,10 +1946,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "382e448e36212c8a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.predatorfree2050.co.nz/feed.json"
     },
     {
@@ -1957,10 +1957,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "d643c2a4dcf2b548",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.privacy.org.nz/feed.json"
     },
     {
@@ -1968,10 +1968,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "91d9169972a5c03a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.publicservice.govt.nz/feed.json"
     },
     {
@@ -1979,10 +1979,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "8ed1e75e95914645",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.publictrust.co.nz/feed.json"
     },
     {
@@ -1990,10 +1990,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "9289dcb60410c333",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.qldc.govt.nz/feed.json"
     },
     {
@@ -2001,10 +2001,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "698b4568b151f643",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.qv.co.nz/feed.json"
     },
     {
@@ -2012,10 +2012,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "39e0f42047616021",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.rangitikei.govt.nz/feed.json"
     },
     {
@@ -2023,10 +2023,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a8024a727da063f8",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.rea.govt.nz/feed.json"
     },
     {
@@ -2034,10 +2034,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "6b0f282951a5f77f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.reannz.co.nz/feed.json"
     },
     {
@@ -2045,10 +2045,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "c9fde77e9f534366",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.rbnz.govt.nz/feed.json"
     },
     {
@@ -2056,10 +2056,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "eccb9592502ed31a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.rnz.co.nz/feed.json"
     },
     {
@@ -2067,10 +2067,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "2533fec845ae8c64",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.rotorualakescouncil.nz/feed.json"
     },
     {
@@ -2078,10 +2078,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "8ae08d79fea5acbd",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.airforce.mil.nz/feed.json"
     },
     {
@@ -2089,10 +2089,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "18061621417894ca",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.navy.mil.nz/feed.json"
     },
     {
@@ -2100,10 +2100,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "Expecting value: line 1 column 1 (char 0)",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "f35bd816f919e04d",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.ruapehudc.govt.nz/feed.json"
     },
     {
@@ -2111,10 +2111,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "8bb4a710fd72c54e",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.selwyn.govt.nz/feed.json"
     },
     {
@@ -2122,10 +2122,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "3eb78798c7c675e7",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.sfo.govt.nz/feed.json"
     },
     {
@@ -2133,10 +2133,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "fdeae978c9bbb2d7",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.sit.ac.nz/feed.json"
     },
     {
@@ -2144,10 +2144,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "9f986dba8068989d",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.socialinvestment.govt.nz/feed.json"
     },
     {
@@ -2177,10 +2177,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "af0d9dec3fb5fbf6",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.swrb.govt.nz/feed.json"
     },
     {
@@ -2188,10 +2188,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "069d6827ac3cf83a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.southtaranaki.com/feed.json"
     },
     {
@@ -2199,10 +2199,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "d1a940370ce7fb0c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.southwaikato.govt.nz/feed.json"
     },
     {
@@ -2232,10 +2232,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "9744851b26bdc831",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.swdc.govt.nz/feed.json"
     },
     {
@@ -2243,10 +2243,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a5b8e7c6ae4489df",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.southernresponse.co.nz/feed.json"
     },
     {
@@ -2254,10 +2254,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "daeb21ad7095d286",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.southlanddc.govt.nz/feed.json"
     },
     {
@@ -2265,10 +2265,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5ccedd0a8b791b9a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.sportnz.org.nz/feed.json"
     },
     {
@@ -2276,10 +2276,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "deb695b997891190",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.stats.govt.nz/feed.json"
     },
     {
@@ -2287,10 +2287,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "9d0e5367f3f012b1",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.stratford.govt.nz/feed.json"
     },
     {
@@ -2298,10 +2298,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "ef3d5fe43556c75d",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tpp.ac.nz/feed.json"
     },
     {
@@ -2309,10 +2309,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "08681b6d95fa7027",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.takeovers.govt.nz/feed.json"
     },
     {
@@ -2320,10 +2320,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "c249fe3ab945d402",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.tamakiredevelopment.co.nz/feed.json"
     },
     {
@@ -2331,10 +2331,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "26a5c7f159fbd8ea",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.trc.govt.nz/feed.json"
     },
     {
@@ -2342,10 +2342,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "7d37d030d34858b9",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.tararuadc.govt.nz/feed.json"
     },
     {
@@ -2353,10 +2353,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "ed6f98b4885ca688",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tasman.govt.nz/feed.json"
     },
     {
@@ -2364,10 +2364,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "dbd7a2e177e916f0",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.taumataarowai.govt.nz/feed.json"
     },
     {
@@ -2375,10 +2375,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "3c158394e65aad0e",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.taupodc.govt.nz/feed.json"
     },
     {
@@ -2386,10 +2386,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "34b54278c95e5ccd",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tauranga.govt.nz/feed.json"
     },
     {
@@ -2397,10 +2397,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "9974260eb8374460",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.retirement.govt.nz/feed.json"
     },
     {
@@ -2408,10 +2408,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5141d9615e81de91",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.mhwc.govt.nz/feed.json"
     },
     {
@@ -2419,10 +2419,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "reason": "URL error: [Errno -2] Name or service not known",
       "source_id": "5b2c40b654943926",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "dns_failed",
       "url": "https://www.temangai.govt.nz/feed.json"
     },
     {
@@ -2430,10 +2430,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "e8cf5c12b1669db1",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tepapa.govt.nz/feed.json"
     },
     {
@@ -2441,10 +2441,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "413e8a6653f093a6",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tpk.govt.nz/feed.json"
     },
     {
@@ -2452,10 +2452,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "ea6b8c0672c36a70",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tetumupaeroa.co.nz/feed.json"
     },
     {
@@ -2463,10 +2463,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "781c7a0427314dfc",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.twoa.ac.nz/feed.json"
     },
     {
@@ -2474,10 +2474,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "20b4d820235260a5",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.wananga.com/feed.json"
     },
     {
@@ -2485,10 +2485,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "3fe0848d47415cd6",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.wananga.ac.nz/feed.json"
     },
     {
@@ -2496,10 +2496,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "705ebcc6cd22b9dd",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tec.govt.nz/feed.json"
     },
     {
@@ -2507,10 +2507,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "092483f522f004cb",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tcdc.govt.nz/feed.json"
     },
     {
@@ -2518,10 +2518,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "0896e1d137e8ef5b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.treasury.govt.nz/feed.json"
     },
     {
@@ -2529,10 +2529,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "8cac98e4374a256a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.timaru.govt.nz/feed.json"
     },
     {
@@ -2540,10 +2540,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "9ac0adec4e1de63a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.toiohomai.ac.nz/feed.json"
     },
     {
@@ -2551,10 +2551,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "fa9ca40c642c2ece",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.tourismnewzealand.com/feed.json"
     },
     {
@@ -2562,10 +2562,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "96a48d307e792bc5",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.taic.org.nz/feed.json"
     },
     {
@@ -2573,10 +2573,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "c8904ee8bc0fe231",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.transpower.co.nz/feed.json"
     },
     {
@@ -2584,10 +2584,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "37e6019700fb010d",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.tvnz.co.nz/feed.json"
     },
     {
@@ -2595,10 +2595,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "ef93b8d201e94ab5",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.ucol.ac.nz/feed.json"
     },
     {
@@ -2606,10 +2606,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "8443669c43cdabe5",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.unitec.ac.nz/feed.json"
     },
     {
@@ -2639,10 +2639,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "83983d9c763f2dc9",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.auckland.ac.nz/feed.json"
     },
     {
@@ -2650,10 +2650,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "bd7bd40180ab5fd2",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.canterbury.ac.nz/feed.json"
     },
     {
@@ -2661,10 +2661,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 403: Forbidden",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "849a451aa635303b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "capture_blocked",
       "url": "https://www.otago.ac.nz/feed.json"
     },
     {
@@ -2672,10 +2672,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "20ee841d65d41e68",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.waikato.ac.nz/feed.json"
     },
     {
@@ -2683,10 +2683,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "e9c9a244e88450f8",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.upperhuttcity.com/feed.json"
     },
     {
@@ -2694,10 +2694,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "310aa5c5a5117597",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.wgtn.ac.nz/feed.json"
     },
     {
@@ -2705,10 +2705,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "0ea19bcc933c3010",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.waikatodistrict.govt.nz/feed.json"
     },
     {
@@ -2716,10 +2716,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "2634c3e95dde0b7a",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.waikatoregion.govt.nz/feed.json"
     },
     {
@@ -2727,10 +2727,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "8b40ba7fbd953235",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.waimakariri.govt.nz/feed.json"
     },
     {
@@ -2738,10 +2738,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "18a2dc0dbdacab5c",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.waimatedc.govt.nz/feed.json"
     },
     {
@@ -2749,10 +2749,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "5a026292efcd7704",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.waipadc.govt.nz/feed.json"
     },
     {
@@ -2760,10 +2760,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "2551f1335dfb0e00",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.wairoadc.govt.nz/feed.json"
     },
     {
@@ -2771,10 +2771,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a53ef685018b1295",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.waitaki.govt.nz/feed.json"
     },
     {
@@ -2782,10 +2782,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "424594836a17efde",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.waitomo.govt.nz/feed.json"
     },
     {
@@ -2793,10 +2793,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "00bf5996c4b184b4",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.nzta.govt.nz/feed.json"
     },
     {
@@ -2804,10 +2804,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "b593537d62cf3faf",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.wellington.govt.nz/feed.json"
     },
     {
@@ -2815,10 +2815,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "9ead139eb16d55f3",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.wcl.govt.nz/feed.json"
     },
     {
@@ -2826,10 +2826,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "f8668d61719f4da5",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.weltec.ac.nz/feed.json"
     },
     {
@@ -2837,10 +2837,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "419b1f0e5a844335",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.wcrc.govt.nz/feed.json"
     },
     {
@@ -2848,10 +2848,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 405: Not Allowed",
+      "reason": "HTTP 405: candidate JSON Feed endpoint is unavailable",
       "source_id": "31b0412192e7527b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.westernbay.govt.nz/feed.json"
     },
     {
@@ -2859,10 +2859,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "7df70d8bf4fe4b4b",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.westlanddc.govt.nz/feed.json"
     },
     {
@@ -2870,10 +2870,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "3c0163a4bb269cbe",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.whaikaha.govt.nz/feed.json"
     },
     {
@@ -2881,10 +2881,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "a029a452dc1ce811",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.whakatane.govt.nz/feed.json"
     },
     {
@@ -2892,10 +2892,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "846db95c822279a6",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.whanganui.govt.nz/feed.json"
     },
     {
@@ -2903,10 +2903,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "6e5841c8afe16a5f",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.wdc.govt.nz/feed.json"
     },
     {
@@ -2914,10 +2914,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "ebedb590fb34fdab",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.whitireia.ac.nz/feed.json"
     },
     {
@@ -2925,10 +2925,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "0237a94669b05641",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.wintec.ac.nz/feed.json"
     },
     {
@@ -2936,10 +2936,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "255d832493e13c58",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.witt.ac.nz/feed.json"
     },
     {
@@ -2947,10 +2947,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP Error 404: Not Found",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "7c64162c7e4e4cd2",
       "source_type": "json_feed",
-      "status": "capture_failed",
+      "status": "invalid",
       "url": "https://www.worksafe.govt.nz/feed.json"
     }
   ],
@@ -2962,13 +2962,21 @@
     "status_by_platform": {
       "json_feed": {
         "already_captured": 16,
-        "capture_failed": 250
+        "capture_blocked": 26,
+        "dns_failed": 12,
+        "invalid": 209,
+        "not_acceptable": 1,
+        "tls_failed": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "already_captured": 16,
-      "capture_failed": 250
+      "capture_blocked": 26,
+      "dns_failed": 12,
+      "invalid": 209,
+      "not_acceptable": 1,
+      "tls_failed": 2
     }
   }
 }
