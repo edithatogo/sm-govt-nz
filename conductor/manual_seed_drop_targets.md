@@ -3,7 +3,7 @@
 Use these paths to place operator-authorized seed JSON files for the next deterministic batch.
 The templates below are derived from `conductor/manual_seed_next_batch_templates.json` and do not create live seed files by themselves.
 
-Generated: 2026-07-12T16:32:01+00:00
+Generated: 2026-07-13T17:34:31+00:00
 
 ## Summary
 
