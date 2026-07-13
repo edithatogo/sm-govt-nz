@@ -62,8 +62,9 @@ def normalize_url_for_fetch(url: str) -> str:
     parsed = urlparse(url)
     if parsed.netloc.lower().endswith("youtube.com") and parsed.path.startswith("/@"):
         handle = parsed.path[2:].replace(" ", "")
-        return urlunparse(parsed._replace(path=f"/@{handle}"))
-    return url
+        parsed = parsed._replace(path=f"/@{handle}")
+    encoded_path = quote(parsed.path, safe="/%:@!$&'()*+,;=~-._")
+    return urlunparse(parsed._replace(path=encoded_path))
 
 
 def fetch_text(url: str, *, timeout: int = 30) -> str:

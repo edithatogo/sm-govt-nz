@@ -40,7 +40,8 @@ ACTIONABLE_FAILURE_STATUSES = {
 REPORT_NAMES = [
     "rss_archive_report.json", "json_feed_archive_report.json", "api_archive_report.json",
     "bluesky_archive_report.json", "youtube_archive_report.json", "website_archive_report.json",
-    "website_browser_archive_report.json", "threads_archive_report.json", "x_feed_archive_report.json",
+    "website_page_archive_report.json", "website_browser_archive_report.json",
+    "threads_archive_report.json", "x_archive_report.json", "x_feed_archive_report.json",
     "x_browser_and_feed_archive_report.json", "linkedin_archive_report.json",
     "newsletter_archive_report.json", "manual_seed_onboarding_report.json",
 ]
