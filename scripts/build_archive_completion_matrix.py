@@ -189,6 +189,12 @@ def dispatch_for(row: dict[str, Any], state: str) -> dict[str, Any]:
         inputs = {"agency_id": "", "dry_run": "false", "limit_sources": "10", "offset_sources": "0", "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed", "per_page_timeout": "45", "commit_payloads": "true", "publish": "false"}
     elif workflow == "archive_youtube_scheduled.yml":
         inputs = {"agency_id": "", "dry_run": "false", "channel_limit": "50"}
+    elif workflow in {
+        "archive_rss_scheduled.yml",
+        "archive_json_feed_scheduled.yml",
+        "archive_bluesky_scheduled.yml",
+    }:
+        inputs = {"agency_id": "", "dry_run": "false", "commit_payloads": "true"}
     return {"workflow": workflow, "inputs": inputs, "dispatchable": bool(workflow and inputs)}
 
 
