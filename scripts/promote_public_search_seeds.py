@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.register_archive_source import load_manifest, upsert_source, write_manifest  # noqa: E402
+from scripts.register_archive_source import load_manifest, write_manifest  # noqa: E402
 
 
 DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
@@ -118,8 +118,8 @@ def promote_manifest(manifest_path: Path) -> dict[str, Any]:
             {
                 **promotion,
                 "notes": (
-                    f"Promoted from search_seed using public endpoint heuristics; "
-                    f"original_source_type=search_seed"
+                    "Promoted from search_seed using public endpoint heuristics; "
+                    "original_source_type=search_seed"
                 ),
             }
         )
