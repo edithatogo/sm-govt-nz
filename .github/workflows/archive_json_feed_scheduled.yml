@@ -51,6 +51,8 @@ jobs:
           args=(
             --source-type json_feed
             --fetch-timeout 10
+            --report conductor/json_feed_archive_report.json
+            --summary conductor/json_feed_archive_summary.md
           )
           if [ "${{ inputs.dry_run || 'false' }}" = "true" ]; then
             args+=(--dry-run)
@@ -65,6 +67,8 @@ jobs:
           python scripts/commit_state_updates.py
           --message "Capture JSON Feed entries from registered government sources"
           --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/json_feed_archive_report.json
+          --path conductor/json_feed_archive_summary.md
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
       - name: Commit JSON Feed payloads

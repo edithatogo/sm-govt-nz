@@ -50,6 +50,8 @@ jobs:
         run: |
           args=(
             --source-type bluesky
+            --report conductor/bluesky_archive_report.json
+            --summary conductor/bluesky_archive_summary.md
           )
           if [ "${{ inputs.dry_run || 'false' }}" = "true" ]; then
             args+=(--dry-run)
@@ -64,6 +66,8 @@ jobs:
           python scripts/commit_state_updates.py
           --message "Capture Bluesky posts from registered government accounts"
           --path conductor/govt_archive_registered_sources_report.json
+          --path conductor/bluesky_archive_report.json
+          --path conductor/bluesky_archive_summary.md
           --path conductor/archive_state.json
           --path conductor/archive_source_health.json
       - name: Commit Bluesky payloads
