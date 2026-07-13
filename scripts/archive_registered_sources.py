@@ -950,7 +950,16 @@ def archive_json_feed_source(
     fetch_timeout: int = 30,
 ) -> list[dict[str, Any]]:
     feed_url = str(source.get("url") or "")
-    payload = json.loads(fetch_text(feed_url, timeout=fetch_timeout))
+    try:
+        payload = json.loads(fetch_text(feed_url, timeout=fetch_timeout))
+    except HTTPError as exc:
+        if exc.code in {400, 404, 405}:
+            return [source_result(source, "invalid", f"HTTP {exc.code}: candidate JSON Feed endpoint is unavailable")]
+        return [source_result(source, website_failure_status(exc), website_failure_reason(exc))]
+    except json.JSONDecodeError as exc:
+        return [source_result(source, "invalid", f"candidate endpoint did not return JSON Feed data: {exc.msg}")]
+    except (URLError, TimeoutError, socket.timeout) as exc:
+        return [source_result(source, website_failure_status(exc), website_failure_reason(exc))]
     items = json_feed_items(payload)
     if not items:
         return [source_result(source, "no_records", "JSON feed parsed but returned no object records")]
