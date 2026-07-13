@@ -30,6 +30,7 @@ INVALID_STATUSES = {"source_url_not_channel", "invalid", "seed_invalid", "seed_e
 EXTERNAL_STATUSES = {
     "needs_authorized_seed_or_api", "manual_seed_missing", "threads_api_error",
     "threads_permission_error", "browser_login_required", "browser_captcha_or_challenge",
+    "auth_required",
 }
 ACTIONABLE_FAILURE_STATUSES = {
     "capture_blocked", "http_error", "network_error", "network_timeout", "not_acceptable",
@@ -185,7 +186,7 @@ def dispatch_for(row: dict[str, Any], state: str) -> dict[str, Any]:
     if workflow == "archive_registered_sources.yml":
         inputs = {"source_type": platform, "agency_id": "", "include_blocked": "true", "dry_run": "false", "limit_sources": "100", "offset_sources": "0", "publish": "false", "commit_payloads": "true"}
     elif workflow == "archive_website_browser_fallback.yml":
-        inputs = {"agency_id": "", "dry_run": "false", "limit_sources": "10", "offset_sources": "0", "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable", "per_page_timeout": "45", "commit_payloads": "true", "publish": "false"}
+        inputs = {"agency_id": "", "dry_run": "false", "limit_sources": "10", "offset_sources": "0", "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed", "per_page_timeout": "45", "commit_payloads": "true", "publish": "false"}
     elif workflow == "archive_youtube_scheduled.yml":
         inputs = {"agency_id": "", "dry_run": "false", "channel_limit": "50"}
     return {"workflow": workflow, "inputs": inputs, "dispatchable": bool(workflow and inputs)}

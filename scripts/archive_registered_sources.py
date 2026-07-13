@@ -144,7 +144,15 @@ def should_try_website_alternates(status: str) -> bool:
 
 
 def should_try_website_browser_fallback(status: str) -> bool:
-    return status in {"capture_blocked", "method_not_allowed", "not_acceptable", "network_timeout", "network_error", "not_found"}
+    return status in {
+        "capture_blocked",
+        "method_not_allowed",
+        "not_acceptable",
+        "network_timeout",
+        "network_error",
+        "not_found",
+        "tls_failed",
+    }
 
 
 def fetch_website_with_alternates(source_url: str, fetcher: Any, fetch_timeout: int, *, allow_alternates: bool) -> tuple[str, str]:
@@ -1017,7 +1025,14 @@ def archive_api_source(
         return [source_result(source, "auth_required", "API endpoint is not marked keyless")]
     captured_at = now_iso()
     url = str(source.get("url") or "")
-    body = fetch_text(url, timeout=fetch_timeout)
+    try:
+        body = fetch_text(url, timeout=fetch_timeout)
+    except HTTPError as exc:
+        if exc.code in {400, 404}:
+            return [source_result(source, "invalid", f"HTTP {exc.code}: candidate API endpoint is unavailable")]
+        return [source_result(source, website_failure_status(exc), website_failure_reason(exc))]
+    except (URLError, TimeoutError, socket.timeout) as exc:
+        return [source_result(source, website_failure_status(exc), website_failure_reason(exc))]
     record_key = stable_id(f"{source.get('source_id')}|{url}")
     raw_rel = Path("api") / captured_at[:7] / f"{record_key}.json"
     raw_path = raw_root / raw_rel

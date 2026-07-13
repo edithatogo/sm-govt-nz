@@ -508,6 +508,47 @@ def test_archive_api_source_reports_auth_required_for_non_keyless_source(tmp_pat
     assert results[0]["status"] == "auth_required"
 
 
+def test_archive_api_source_classifies_missing_heuristic_endpoint_as_invalid(monkeypatch, tmp_path):
+    source = {
+        "source_id": "agency-api",
+        "agency_id": "agency",
+        "platform": "api",
+        "source_type": "api_endpoint",
+        "url": "https://agency.example/openapi.json",
+        "archive_status": "ready",
+        "auth": "none",
+    }
+
+    def missing(url, timeout=30):
+        raise HTTPError(url, 404, "Not Found", {}, None)
+
+    monkeypatch.setattr(archive_registered_sources, "fetch_text", missing)
+    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+
+    assert results[0]["status"] == "invalid"
+    assert "candidate API endpoint is unavailable" in results[0]["reason"]
+
+
+def test_archive_api_source_preserves_actionable_block(monkeypatch, tmp_path):
+    source = {
+        "source_id": "agency-api",
+        "agency_id": "agency",
+        "platform": "api",
+        "source_type": "api_endpoint",
+        "url": "https://agency.example/openapi.json",
+        "archive_status": "ready",
+        "auth": "none",
+    }
+
+    def blocked(url, timeout=30):
+        raise HTTPError(url, 403, "Forbidden", {}, None)
+
+    monkeypatch.setattr(archive_registered_sources, "fetch_text", blocked)
+    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+
+    assert results[0]["status"] == "capture_blocked"
+
+
 def test_archive_rss_source_does_not_rewrite_existing_raw_record(tmp_path):
     source = {
         "source_id": "agency-rss",

@@ -28,7 +28,7 @@ on:
       eligible_statuses:
         description: "Comma-separated HTTP failure statuses eligible for browser fallback"
         required: true
-        default: "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable"
+        default: "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed"
       per_page_timeout:
         description: "Maximum seconds per page"
         required: true
@@ -99,7 +99,7 @@ jobs:
             --triage-report conductor/website_archive_failure_triage_report.json
             --report conductor/website_browser_archive_report.json
             --summary conductor/website_browser_archive_summary.md
-            --eligible-statuses "${ELIGIBLE_STATUSES:-capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable}"
+            --eligible-statuses "${ELIGIBLE_STATUSES:-capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed}"
             --limit-sources "${LIMIT_SOURCES:-10}"
             --offset-sources "${OFFSET_SOURCES:-0}"
             --per-page-timeout "${PER_PAGE_TIMEOUT:-45}"
