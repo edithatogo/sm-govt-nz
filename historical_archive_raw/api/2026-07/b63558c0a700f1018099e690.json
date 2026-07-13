@@ -1,0 +1,21 @@
+{
+  "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title></title>\n    <style>\n        body {\n            font-family: \"Arial\";\n        }\n    </style>\n    <script type=\"text/javascript\">\n    window.awsWafCookieDomainList = [];\n    window.gokuProps = {\n\"key\":\"AQIDAHjcYu/GjX+QlghicBgQ/7bFaQZ+m5FKCMDnO+vTbNg96AFFNc01W0MIpnk3ulznFW5ZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMde/5WVPNqFbGDdjBAgEQgDv02pJcee+mkp+PvDPZjBYsQTZSZwZvvy31Dnephp50YsQOP/fT3J11EvPLarLccnNbiDNrKohN6e96BA==\",\n          \"iv\":\"CgAE/BLM9gAAAKPS\",\n          \"context\":\"2Npah4B/UeKKLkCyI+4hV3/sSVwoKHTFADUakN8IB0SAyLiKzkizJD1jjdk7siw50tZZ+yPP68t4K6KiurKUSqCZYFqo7weJ6OVdbfCdB8whRRqPl9OpJIitr5FrmZf0Pd7okLiwS/gL1wxWXwv74doJadMHE4rELUXGpjxIF9XlYpYF1J7GqWfGPN9pGzWzJQiATCuNp8eU6B1eWWu1Bjs2dAwGwuTzZluYuHJ80kyPMPglaIOckAkjM/PA8XYPa/nJx1oe1gjpL45syaWzGQfvHNqTFSzOxi6EynxmUf0QH7E+JUPiqhWX2qGLQoN/n/H2Bh4Nml9G19N5xUZuA7UC1WylaUwTBdHQ46mo8r2sc4v6B2PD+Zj8GDf/wXXz\"\n};\n    </script>\n    <script src=\"https://5778173872a2.3e429ef6.ap-southeast-2.token.awswaf.com/5778173872a2/d16a8485b8d7/35a33804077a/challenge.js\"></script>\n</head>\n<body>\n    <div id=\"challenge-container\"></div>\n    <script type=\"text/javascript\">\n        AwsWafIntegration.saveReferrer();\n        AwsWafIntegration.checkForceRefresh().then((forceRefresh) => {\n            if (forceRefresh) {\n                AwsWafIntegration.forceRefreshToken().then(() => {\n                    window.location.reload(true);\n                });\n            } else {\n                AwsWafIntegration.getToken().then(() => {\n                    window.location.reload(true);\n                });\n            }\n        });\n    </script>\n    <noscript>\n        <h1>JavaScript is disabled</h1>\n        In order to continue, we need to verify that you're not a robot.\n        This requires JavaScript. Enable JavaScript and then reload the page.\n    </noscript>\n</body>\n</html>",
+  "captured_at": "2026-07-13T11:47:28+00:00",
+  "source": {
+    "access_method": "public_api_or_openapi",
+    "account": "https://www.taupodc.govt.nz",
+    "agency_id": "taupo-district-council",
+    "agency_name": "Taup\u014d District Council",
+    "archive_status": "ready",
+    "auth": "none",
+    "created_at": "2026-07-03T06:26:03+00:00",
+    "feasibility": "high",
+    "notes": "Promoted from search_seed using public endpoint heuristics; original_source_type=search_seed",
+    "origin": "configured_common_path",
+    "platform": "api",
+    "source_id": "d71b3c60f5457e15",
+    "source_type": "api_endpoint",
+    "url": "https://www.taupodc.govt.nz/openapi.json"
+  },
+  "url": "https://www.taupodc.govt.nz/openapi.json"
+}

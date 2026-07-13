@@ -1,0 +1,21 @@
+{
+  "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title></title>\n    <style>\n        body {\n            font-family: \"Arial\";\n        }\n    </style>\n    <script type=\"text/javascript\">\n    window.awsWafCookieDomainList = [];\n    window.gokuProps = {\n\"key\":\"AQIDAHjcYu/GjX+QlghicBgQ/7bFaQZ+m5FKCMDnO+vTbNg96AFFNc01W0MIpnk3ulznFW5ZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMde/5WVPNqFbGDdjBAgEQgDv02pJcee+mkp+PvDPZjBYsQTZSZwZvvy31Dnephp50YsQOP/fT3J11EvPLarLccnNbiDNrKohN6e96BA==\",\n          \"iv\":\"CgAFIhJyFgAAAIIr\",\n          \"context\":\"NQH2X9HvTOl6XG3f5EDL/KrPSAr1Avq8YaAbYrDYUS7qI8nqL5sKgqojPpkbFqE+2Bvr0b0Yd2bdlm5JEm9R/VzMaBP+TDmISqwJTU126CeHjcAzgRY781UEY3iONQ9IVc042vexxhqx/rmMSufzqVpwwGhULQnnuKahRtZOSSI2k0ExaM8uvirlrAMmkoX2NQhO4BBbA+PZkiG8ca5/c5esEhoGh0KDN60DuWngM0geynpTF8knbXW8haX2/1ZSu1GwWTlj17fQbImYtRch4h5t5FjvybBJQr511Xuogqh1S9xLRrdFFssUCWjvR6StVp1CWRIXcmK8GaCOV1yA9belYxkEmOCuGfdc6esy9p7RR2QemXs1iLAKB2MzplqI\"\n};\n    </script>\n    <script src=\"https://5778173872a2.3e429ef6.ap-southeast-2.token.awswaf.com/5778173872a2/d16a8485b8d7/35a33804077a/challenge.js\"></script>\n</head>\n<body>\n    <div id=\"challenge-container\"></div>\n    <script type=\"text/javascript\">\n        AwsWafIntegration.saveReferrer();\n        AwsWafIntegration.checkForceRefresh().then((forceRefresh) => {\n            if (forceRefresh) {\n                AwsWafIntegration.forceRefreshToken().then(() => {\n                    window.location.reload(true);\n                });\n            } else {\n                AwsWafIntegration.getToken().then(() => {\n                    window.location.reload(true);\n                });\n            }\n        });\n    </script>\n    <noscript>\n        <h1>JavaScript is disabled</h1>\n        In order to continue, we need to verify that you're not a robot.\n        This requires JavaScript. Enable JavaScript and then reload the page.\n    </noscript>\n</body>\n</html>",
+  "captured_at": "2026-07-13T11:49:08+00:00",
+  "source": {
+    "access_method": "public_api_or_openapi",
+    "account": "https://www.waimatedc.govt.nz",
+    "agency_id": "waimate-district-council",
+    "agency_name": "Waimate District Council",
+    "archive_status": "ready",
+    "auth": "none",
+    "created_at": "2026-07-03T06:26:04+00:00",
+    "feasibility": "high",
+    "notes": "Promoted from search_seed using public endpoint heuristics; original_source_type=search_seed",
+    "origin": "configured_common_path",
+    "platform": "api",
+    "source_id": "2ba6e0fc90cce314",
+    "source_type": "api_endpoint",
+    "url": "https://www.waimatedc.govt.nz/openapi.json"
+  },
+  "url": "https://www.waimatedc.govt.nz/openapi.json"
+}

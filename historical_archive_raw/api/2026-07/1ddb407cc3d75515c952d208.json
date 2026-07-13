@@ -1,0 +1,21 @@
+{
+  "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title></title>\n    <style>\n        body {\n            font-family: \"Arial\";\n        }\n    </style>\n    <script type=\"text/javascript\">\n    window.awsWafCookieDomainList = [];\n    window.gokuProps = {\n\"key\":\"AQIDAHjcYu/GjX+QlghicBgQ/7bFaQZ+m5FKCMDnO+vTbNg96AFFNc01W0MIpnk3ulznFW5ZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMde/5WVPNqFbGDdjBAgEQgDv02pJcee+mkp+PvDPZjBYsQTZSZwZvvy31Dnephp50YsQOP/fT3J11EvPLarLccnNbiDNrKohN6e96BA==\",\n          \"iv\":\"CgAFoBJfQAAAAHit\",\n          \"context\":\"bBtobIegDMZh92n/nJ04rB+BUrn/yobuUNFe4UPwAuE9aaWgC9w1IDRcxfenF8wpWPhzPOLHi58ZN4jnQE3jfCK6zo3gk/MY1yxelUpc21kAL2U2qydIzl565zH6VunrifLreMUZt6Ab3bEvcL89j0yA8bj6zIf/4xvV5YRYScHETAfROmMv8CrGf//zW+VUfLk3CVayopwvgP7fy8ORHJscippfhJ+SbcogoJJr4c8ZphWE43O6WZYt/tUfqhjZ6nbjbpWW98YflS7Kc8g4vp+OAvT50eOkQXv3oOVvk2/lcDbbe01jAhSQkfLd4zB3mAJUR7piQ6pMDuMp7tcdFSxKKU+Jw6JHcw3thJS4xkiv06yqa25XAZd8aZaVGTOb\"\n};\n    </script>\n    <script src=\"https://5778173872a2.3e429ef6.ap-southeast-2.token.awswaf.com/5778173872a2/d16a8485b8d7/35a33804077a/challenge.js\"></script>\n</head>\n<body>\n    <div id=\"challenge-container\"></div>\n    <script type=\"text/javascript\">\n        AwsWafIntegration.saveReferrer();\n        AwsWafIntegration.checkForceRefresh().then((forceRefresh) => {\n            if (forceRefresh) {\n                AwsWafIntegration.forceRefreshToken().then(() => {\n                    window.location.reload(true);\n                });\n            } else {\n                AwsWafIntegration.getToken().then(() => {\n                    window.location.reload(true);\n                });\n            }\n        });\n    </script>\n    <noscript>\n        <h1>JavaScript is disabled</h1>\n        In order to continue, we need to verify that you're not a robot.\n        This requires JavaScript. Enable JavaScript and then reload the page.\n    </noscript>\n</body>\n</html>",
+  "captured_at": "2026-07-13T11:49:34+00:00",
+  "source": {
+    "access_method": "public_api_or_openapi",
+    "account": "https://www.westernbay.govt.nz",
+    "agency_id": "western-bay-of-plenty-district-council",
+    "agency_name": "Western Bay of Plenty District Council",
+    "archive_status": "ready",
+    "auth": "none",
+    "created_at": "2026-07-03T06:26:04+00:00",
+    "feasibility": "high",
+    "notes": "Promoted from search_seed using public endpoint heuristics; original_source_type=search_seed",
+    "origin": "configured_common_path",
+    "platform": "api",
+    "source_id": "e8797cbc51c4ac43",
+    "source_type": "api_endpoint",
+    "url": "https://www.westernbay.govt.nz/openapi.json"
+  },
+  "url": "https://www.westernbay.govt.nz/openapi.json"
+}
