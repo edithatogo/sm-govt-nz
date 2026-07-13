@@ -1,0 +1,266 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-13T13:13:44+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 20,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 460,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "hastings-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "131efca44255384d",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hastingsdc.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "hawkes-bay-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "f132e7c0956b44aa",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hbrc.govt.nz"
+    },
+    {
+      "agency_id": "hawkes-bay-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "b8069f2de2b4bad6",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hbrc.govt.nz/api"
+    },
+    {
+      "agency_id": "hawkes-bay-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "d35288b0bcf00733",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hbrc.govt.nz/media"
+    },
+    {
+      "agency_id": "hawkes-bay-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "69fd43f16ad1c74c",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hbrc.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "hawkes-bay-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "07544bf044243ad2",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hbrc.govt.nz/news"
+    },
+    {
+      "agency_id": "hawkes-bay-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "7900a42b5b69518a",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hbrc.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "hawkes-bay-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "ad75cc4b9fd7297b",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hbrc.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "hawkes-bay-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "caaff3a079ddb4df",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hbrc.govt.nz/publications"
+    },
+    {
+      "agency_id": "hawkes-bay-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "a790cf954a6f2ab3",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hbrc.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "health-and-disability-commissioner",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "d991fd3a38151fb8",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hdc.org.nz"
+    },
+    {
+      "agency_id": "health-and-disability-commissioner",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "c5a864932ce458b7",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.hdc.org.nz/news-resources/hdc-newsletters/"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "ed8a244fd42a1b87",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tewhatuora.govt.nz"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "fb3c951eb05044b3",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tewhatuora.govt.nz/api"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "21a9d0d5c124819f",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tewhatuora.govt.nz/media"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "318af52d0485a2be",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tewhatuora.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "3cef85bf359189a3",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tewhatuora.govt.nz/news"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "b64898a26b31e4f8",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tewhatuora.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "6c27f8a212642d7a",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tewhatuora.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "f59f3dca7d4075f3",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tewhatuora.govt.nz/publications"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "website_page": 20
+    },
+    "selected_sources": 20,
+    "status_by_platform": {
+      "website_page": {
+        "already_captured": 20
+      }
+    },
+    "status_by_provider": {},
+    "status_counts": {
+      "already_captured": 20
+    }
+  }
+}
