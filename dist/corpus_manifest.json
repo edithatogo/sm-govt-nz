@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "7f4d5802d8b966d790d5c58e03a14e471539728e06dd9f4185079eb86f6a82ab"
+      "sha256": "58ca55e62491ae8b7d2b325ef3effbb35e401b7640867dbed2dd918f5c1f1067"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24545789,
+      "bytes": 24565095,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "3abe9085865a9e6afa3a6a0b41257b1ab682c224e82ac4959070c2c9d22f8e60"
+      "sha256": "588ab1381838685b5e6d1ab0cf641383db84b31e9ffab1df7b196e91b71c1450"
     },
     "normalized_archive.parquet": {
-      "bytes": 38751304,
+      "bytes": 38742071,
       "path": "normalized_archive.parquet",
-      "sha256": "15b9935135bc8dfc9e785a8be0af6b847c95de624fc7e27a0979b25200db7aa0"
+      "sha256": "9829c31cb7bf9c31a087ebbb4b54aa8e88a3652fb9ae204ff7d051a1e47fbdf5"
     }
   },
   "jurisdiction": "nz",
@@ -27,7 +27,7 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11228,
+  "normalized_record_count": 11234,
   "normalized_shard_count": 518,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
   "raw_file_count": 11286,
@@ -116725,6 +116725,60 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-13T11:26:45+00:00",
+      "source_account": "https://www.codc.govt.nz",
+      "source_key": "api:https://www.codc.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:396723525a4dea69a83f0d84",
+      "source_url": "https://www.codc.govt.nz/openapi.json"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T11:26:53+00:00",
+      "source_account": "https://www.ccc.govt.nz",
+      "source_key": "api:https://www.ccc.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:10cbe7f1113ed65d2e60762b",
+      "source_url": "https://www.ccc.govt.nz/.well-known/webfinger"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T11:26:53+00:00",
+      "source_account": "https://www.ccc.govt.nz",
+      "source_key": "api:https://www.ccc.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:262386badf7f1eea20544eb6",
+      "source_url": "https://www.ccc.govt.nz/openapi.json"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T11:27:05+00:00",
+      "source_account": "https://www.cluthadc.govt.nz",
+      "source_key": "api:https://www.cluthadc.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:07a439b604fe2316cba125bb",
+      "source_url": "https://www.cluthadc.govt.nz/openapi.json"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T11:27:10+00:00",
+      "source_account": "https://www.creativenz.govt.nz",
+      "source_key": "api:https://www.creativenz.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:4915f98708499818f68586dc",
+      "source_url": "https://www.creativenz.govt.nz/.well-known/webfinger"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T11:27:49+00:00",
+      "source_account": "https://www.es.govt.nz",
+      "source_key": "api:https://www.es.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:43354f6bb11d53f78dd2ec22",
+      "source_url": "https://www.es.govt.nz/openapi.json"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -116919,7 +116973,7 @@
     "nz-government-social-media"
   ],
   "source_counts": {
-    "api": 13,
+    "api": 19,
     "bluesky": 1869,
     "courtsofnz.govt.nz": 11,
     "email": 20,
@@ -116932,7 +116986,7 @@
   },
   "source_date_ranges": {
     "api": {
-      "max_original_created_at": "2026-07-01T10:07:53+00:00",
+      "max_original_created_at": "2026-07-13T11:27:49+00:00",
       "min_original_created_at": "2026-07-01T10:07:40+00:00"
     },
     "bluesky": {
