@@ -56,6 +56,7 @@ def test_matrix_reconciles_all_readiness_rows_and_orders_work(tmp_path: Path) ->
     assert by_id["fb"]["completion_state"] == "terminal_external_access"
     assert by_id["rss"]["completion_state"] == "archived"
     assert [item["source_id"] for item in queue["items"]] == ["li"]
+    assert queue["items"][0]["dispatch"]["inputs"]["agency_id"] == ""
     assert validate_matrix(matrix) == []
 
 

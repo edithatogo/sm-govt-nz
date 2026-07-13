@@ -180,15 +180,14 @@ def classify_state(
 
 def dispatch_for(row: dict[str, Any], state: str) -> dict[str, Any]:
     platform = str(row.get("platform") or row.get("source_type") or "unknown")
-    agency = str(row.get("agency_id") or "")
     workflow = WORKFLOWS.get(platform, "")
     inputs: dict[str, str] = {}
     if workflow == "archive_registered_sources.yml":
-        inputs = {"source_type": platform, "agency_id": agency, "include_blocked": "true", "dry_run": "false", "limit_sources": "100", "offset_sources": "0", "publish": "false", "commit_payloads": "true"}
+        inputs = {"source_type": platform, "agency_id": "", "include_blocked": "true", "dry_run": "false", "limit_sources": "100", "offset_sources": "0", "publish": "false", "commit_payloads": "true"}
     elif workflow == "archive_website_browser_fallback.yml":
-        inputs = {"agency_id": agency, "dry_run": "false", "limit_sources": "10", "offset_sources": "0", "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable", "per_page_timeout": "45", "commit_payloads": "true", "publish": "false"}
+        inputs = {"agency_id": "", "dry_run": "false", "limit_sources": "10", "offset_sources": "0", "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable", "per_page_timeout": "45", "commit_payloads": "true", "publish": "false"}
     elif workflow == "archive_youtube_scheduled.yml":
-        inputs = {"agency_id": agency, "dry_run": "false", "channel_limit": "50"}
+        inputs = {"agency_id": "", "dry_run": "false", "channel_limit": "50"}
     return {"workflow": workflow, "inputs": inputs, "dispatchable": bool(workflow and inputs)}
 
 
