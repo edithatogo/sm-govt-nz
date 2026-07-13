@@ -88,7 +88,12 @@ def test_prior_terminal_evidence_survives_sharded_report_regression(tmp_path: Pa
     }
 
     matrix, _queue = build_completion_matrix(
-        readiness, manifest, {}, Counter(), conductor, prior_matrix=prior
+        readiness,
+        manifest,
+        {"rss": {"source_id": "rss", "status": "needs_authorized_seed_or_api", "evidence_report": "new-report.json"}},
+        Counter(),
+        conductor,
+        prior_matrix=prior,
     )
 
     row = matrix["sources"][0]

@@ -239,7 +239,10 @@ def build_completion_matrix(
         prior_state = str(prior.get("completion_state") or "")
         current_status = str(evidence.get("status") or "")
         reopens_external = current_status in SUCCESS_STATUSES | {"seed_present", "public_fallback_available"}
-        if prior_state in COMPLETE_STATES and state not in COMPLETE_STATES and not reopens_external:
+        if prior_state == "archived" and state != "archived":
+            state = "archived"
+            blocker = str(prior.get("blocker_class") or "archive_evidence")
+        elif prior_state in COMPLETE_STATES and state not in COMPLETE_STATES and not reopens_external:
             state = prior_state
             blocker = str(prior.get("blocker_class") or "preserved_terminal_evidence")
         if state not in LIFECYCLE_STATES:
