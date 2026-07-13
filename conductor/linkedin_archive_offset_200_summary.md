@@ -1,24 +1,27 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T05:17:05+00:00
+Generated: 2026-07-13T12:34:23+00:00
 
 ## Summary
 
-- `selected_sources`: 56
+- `selected_sources`: 57
 - `platform_count`: 1
-- `status_count`: 1
+- `status_count`: 4
 
 ## Platform counts
 
-- `linkedin`: 56
+- `linkedin`: 57
 
 ## Status counts
 
-- `manual_seed_missing`: 56
+- `capture_failed`: 1
+- `http_error`: 22
+- `not_found`: 2
+- `public_snapshot_captured`: 32
 
 ## Status by platform
 
-- `linkedin`: {'manual_seed_missing': 56}
+- `linkedin`: {'capture_failed': 1, 'http_error': 22, 'not_found': 2, 'public_snapshot_captured': 32}
 
 ## Notes
 
