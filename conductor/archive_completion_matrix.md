@@ -1,6 +1,6 @@
 # NZ Government Archive Completion Matrix
 
-Generated: 2026-07-13T12:39:16+00:00
+Generated: 2026-07-13T13:00:03+00:00
 
 ## Completion
 
@@ -8,23 +8,23 @@ Generated: 2026-07-13T12:39:16+00:00
 | --- | ---: |
 | Total candidates | 5602 |
 | Registered sources | 5602 |
-| Archived sources | 2000 |
-| Terminal evidence sources | 3112 |
-| Incomplete actionable sources | 490 |
-| Automation faults | 171 |
-| Completion | 91.25% |
+| Archived sources | 2006 |
+| Terminal evidence sources | 3313 |
+| Incomplete actionable sources | 283 |
+| Automation faults | 36 |
+| Completion | 94.95% |
 
 ## Lifecycle states
 
 | State | Count |
 | --- | ---: |
-| `archived` | 2000 |
-| `automation_fault` | 171 |
-| `scheduled` | 319 |
-| `terminal_deleted` | 19 |
-| `terminal_empty` | 1689 |
-| `terminal_external_access` | 867 |
-| `terminal_invalid` | 537 |
+| `archived` | 2006 |
+| `automation_fault` | 36 |
+| `scheduled` | 247 |
+| `terminal_deleted` | 86 |
+| `terminal_empty` | 1692 |
+| `terminal_external_access` | 973 |
+| `terminal_invalid` | 562 |
 
 ## Next work
 
@@ -79,34 +79,34 @@ Generated: 2026-07-13T12:39:16+00:00
 | 47 | `linkedin` | `nmit` | `nmit-linkedin-65130349` | `capture_public_linkedin_snapshot` |
 | 48 | `linkedin` | `northtec` | `northtec-linkedin-293156f4` | `capture_public_linkedin_snapshot` |
 | 49 | `linkedin` | `northtec` | `northtec-linkedin-2b9e2a51` | `capture_public_linkedin_snapshot` |
-| 50 | `linkedin` | `open-polytechnic` | `open-polytechnic-linkedin-1fe8de37` | `capture_public_linkedin_snapshot` |
-| 51 | `linkedin` | `open-polytechnic` | `open-polytechnic-linkedin-b0840abe` | `capture_public_linkedin_snapshot` |
-| 52 | `linkedin` | `otago-polytechnic` | `otago-polytechnic-linkedin-a1cbcc99` | `capture_public_linkedin_snapshot` |
-| 53 | `linkedin` | `otago-regional-council` | `otago-regional-council-linkedin-8f6cf63b` | `capture_public_linkedin_snapshot` |
-| 54 | `linkedin` | `otorohanga-district-council` | `otorohanga-district-council-linkedin-ac448de4` | `capture_public_linkedin_snapshot` |
-| 55 | `linkedin` | `palmerston-north-city-council` | `palmerston-north-city-council-linkedin-6488f2d2` | `capture_public_linkedin_snapshot` |
-| 56 | `linkedin` | `pamu` | `pamu-linkedin-51bf1e7c` | `capture_public_linkedin_snapshot` |
-| 57 | `linkedin` | `pamu` | `pamu-linkedin-87b281d5` | `capture_public_linkedin_snapshot` |
-| 58 | `linkedin` | `parliamentary-commissioner-for-environment` | `parliamentary-commissioner-for-environment-linkedin-64217288` | `capture_public_linkedin_snapshot` |
-| 59 | `linkedin` | `parliamentary-commissioner-for-environment` | `parliamentary-commissioner-for-environment-linkedin-dfa622fb` | `capture_public_linkedin_snapshot` |
-| 60 | `linkedin` | `pharmac` | `pharmac-linkedin-d351aa9c` | `capture_public_linkedin_snapshot` |
-| 61 | `linkedin` | `pharmac` | `pharmac-linkedin-ef734451` | `capture_public_linkedin_snapshot` |
-| 62 | `linkedin` | `porirua-city-council` | `porirua-city-council-linkedin-5a0f8550` | `capture_public_linkedin_snapshot` |
-| 63 | `linkedin` | `privacy-commissioner` | `privacy-commissioner-linkedin-8ac3ea1b` | `capture_public_linkedin_snapshot` |
-| 64 | `linkedin` | `public-service-commission` | `public-service-commission-linkedin-9b0206e5` | `capture_public_linkedin_snapshot` |
-| 65 | `linkedin` | `public-service-commission` | `public-service-commission-linkedin-a90ba070` | `capture_public_linkedin_snapshot` |
-| 66 | `linkedin` | `queenstown-lakes-district-council` | `queenstown-lakes-district-council-linkedin-b1b82437` | `capture_public_linkedin_snapshot` |
-| 67 | `linkedin` | `qv` | `qv-linkedin-d8ccee5f` | `capture_public_linkedin_snapshot` |
-| 68 | `linkedin` | `qv` | `qv-linkedin-e291463c` | `capture_public_linkedin_snapshot` |
-| 69 | `linkedin` | `real-estate-authority` | `real-estate-authority-linkedin-a19a2aad` | `capture_public_linkedin_snapshot` |
-| 70 | `linkedin` | `real-estate-authority` | `real-estate-authority-linkedin-fa435a1e` | `capture_public_linkedin_snapshot` |
-| 71 | `linkedin` | `reannz` | `reannz-linkedin-ef152687` | `capture_public_linkedin_snapshot` |
-| 72 | `linkedin` | `reserve-bank-of-nz` | `reserve-bank-of-nz-linkedin-7ec667dd` | `capture_public_linkedin_snapshot` |
-| 73 | `linkedin` | `reserve-bank-of-nz` | `reserve-bank-of-nz-linkedin-f491be60` | `capture_public_linkedin_snapshot` |
-| 74 | `linkedin` | `rotorua-lakes-council` | `rotorua-lakes-council-linkedin-8d789955` | `capture_public_linkedin_snapshot` |
-| 75 | `linkedin` | `royal-nz-air-force` | `royal-nz-air-force-linkedin-277934c3` | `capture_public_linkedin_snapshot` |
-| 76 | `linkedin` | `royal-nz-navy` | `nz-defence-force-linkedin-66352d1b` | `capture_public_linkedin_snapshot` |
-| 77 | `linkedin` | `royal-nz-navy` | `royal-nz-air-force-linkedin-4935a341` | `capture_public_linkedin_snapshot` |
+| 50 | `linkedin` | `nz-defence-force` | `nz-defence-force-linkedin-66352d1b` | `capture_public_linkedin_snapshot` |
+| 51 | `linkedin` | `open-polytechnic` | `open-polytechnic-linkedin-1fe8de37` | `capture_public_linkedin_snapshot` |
+| 52 | `linkedin` | `open-polytechnic` | `open-polytechnic-linkedin-b0840abe` | `capture_public_linkedin_snapshot` |
+| 53 | `linkedin` | `otago-polytechnic` | `otago-polytechnic-linkedin-a1cbcc99` | `capture_public_linkedin_snapshot` |
+| 54 | `linkedin` | `otago-regional-council` | `otago-regional-council-linkedin-8f6cf63b` | `capture_public_linkedin_snapshot` |
+| 55 | `linkedin` | `otorohanga-district-council` | `otorohanga-district-council-linkedin-ac448de4` | `capture_public_linkedin_snapshot` |
+| 56 | `linkedin` | `palmerston-north-city-council` | `palmerston-north-city-council-linkedin-6488f2d2` | `capture_public_linkedin_snapshot` |
+| 57 | `linkedin` | `pamu` | `pamu-linkedin-51bf1e7c` | `capture_public_linkedin_snapshot` |
+| 58 | `linkedin` | `pamu` | `pamu-linkedin-87b281d5` | `capture_public_linkedin_snapshot` |
+| 59 | `linkedin` | `parliamentary-commissioner-for-environment` | `parliamentary-commissioner-for-environment-linkedin-64217288` | `capture_public_linkedin_snapshot` |
+| 60 | `linkedin` | `parliamentary-commissioner-for-environment` | `parliamentary-commissioner-for-environment-linkedin-dfa622fb` | `capture_public_linkedin_snapshot` |
+| 61 | `linkedin` | `pharmac` | `pharmac-linkedin-d351aa9c` | `capture_public_linkedin_snapshot` |
+| 62 | `linkedin` | `pharmac` | `pharmac-linkedin-ef734451` | `capture_public_linkedin_snapshot` |
+| 63 | `linkedin` | `porirua-city-council` | `porirua-city-council-linkedin-5a0f8550` | `capture_public_linkedin_snapshot` |
+| 64 | `linkedin` | `privacy-commissioner` | `privacy-commissioner-linkedin-8ac3ea1b` | `capture_public_linkedin_snapshot` |
+| 65 | `linkedin` | `public-service-commission` | `public-service-commission-linkedin-9b0206e5` | `capture_public_linkedin_snapshot` |
+| 66 | `linkedin` | `public-service-commission` | `public-service-commission-linkedin-a90ba070` | `capture_public_linkedin_snapshot` |
+| 67 | `linkedin` | `queenstown-lakes-district-council` | `queenstown-lakes-district-council-linkedin-b1b82437` | `capture_public_linkedin_snapshot` |
+| 68 | `linkedin` | `qv` | `qv-linkedin-d8ccee5f` | `capture_public_linkedin_snapshot` |
+| 69 | `linkedin` | `qv` | `qv-linkedin-e291463c` | `capture_public_linkedin_snapshot` |
+| 70 | `linkedin` | `real-estate-authority` | `real-estate-authority-linkedin-a19a2aad` | `capture_public_linkedin_snapshot` |
+| 71 | `linkedin` | `real-estate-authority` | `real-estate-authority-linkedin-fa435a1e` | `capture_public_linkedin_snapshot` |
+| 72 | `linkedin` | `reannz` | `reannz-linkedin-ef152687` | `capture_public_linkedin_snapshot` |
+| 73 | `linkedin` | `reserve-bank-of-nz` | `reserve-bank-of-nz-linkedin-7ec667dd` | `capture_public_linkedin_snapshot` |
+| 74 | `linkedin` | `reserve-bank-of-nz` | `reserve-bank-of-nz-linkedin-f491be60` | `capture_public_linkedin_snapshot` |
+| 75 | `linkedin` | `rotorua-lakes-council` | `rotorua-lakes-council-linkedin-8d789955` | `capture_public_linkedin_snapshot` |
+| 76 | `linkedin` | `royal-nz-air-force` | `royal-nz-air-force-linkedin-277934c3` | `capture_public_linkedin_snapshot` |
+| 77 | `linkedin` | `royal-nz-air-force` | `royal-nz-air-force-linkedin-4935a341` | `capture_public_linkedin_snapshot` |
 | 78 | `linkedin` | `royal-nz-navy` | `royal-nz-navy-linkedin-4935a341` | `capture_public_linkedin_snapshot` |
 | 79 | `linkedin` | `royal-nz-navy` | `royal-nz-navy-linkedin-5f46f0be` | `capture_public_linkedin_snapshot` |
 | 80 | `linkedin` | `serious-fraud-office` | `serious-fraud-office-linkedin-1e7c4752` | `capture_public_linkedin_snapshot` |
