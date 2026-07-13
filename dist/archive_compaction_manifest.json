@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T12:41:42+00:00",
+  "generated_at": "2026-07-13T12:42:12+00:00",
   "normalized": [
     {
       "bytes": 1229001,
@@ -4122,11 +4122,11 @@
       "source": "youtube"
     },
     {
-      "bytes": 196255,
+      "bytes": 248601,
       "month": "2026-07",
       "path": "historical_archive_normalized/youtube/2026-07.jsonl",
-      "record_count": 134,
-      "sha256": "a664aacf0d287c6d158aff3ea6205463c06b03be4dc5cb6a4b1cc58ab77a49c5",
+      "record_count": 179,
+      "sha256": "2530050ba5f7bc4a1bb357c87df5974caef1a1edd2d28b2d56aa8a9f70c159ce",
       "source": "youtube"
     }
   ],
@@ -8800,21 +8800,30 @@
       "source": "youtube"
     },
     {
-      "bytes": 263993,
+      "bytes": 396372,
       "digest_mode": "path_size_inventory",
-      "file_count": 68,
+      "file_count": 106,
       "month": "2026-07",
       "path": "historical_archive_raw/youtube/2026-07",
-      "sha256": "ae3de3dc55a5c63f4b6e6f976e60088ec70bc3eaa94a569a98368c6a0aa3e5c4",
+      "sha256": "e4aba8acac3919feafac32370e4ca78711b2a7046daaa47185bda1e7f4894eff",
       "source": "youtube"
+    },
+    {
+      "bytes": 8479379,
+      "digest_mode": "path_size_inventory",
+      "file_count": 7,
+      "month": "2026-07",
+      "path": "historical_archive_raw/youtube_public_snapshot/2026-07",
+      "sha256": "537aa709665c77f5c1ec5ae3bdfbbdd0d70ed96450d5ed9da39e69cd7e53fe73",
+      "source": "youtube_public_snapshot"
     }
   ],
   "totals": {
-    "normalized_bytes": 153107200,
-    "normalized_record_count": 11226,
+    "normalized_bytes": 153159546,
+    "normalized_record_count": 11271,
     "normalized_shard_count": 516,
-    "raw_bytes": 276352313,
-    "raw_file_count": 11707,
-    "raw_shard_count": 519
+    "raw_bytes": 284964071,
+    "raw_file_count": 11752,
+    "raw_shard_count": 520
   }
 }
