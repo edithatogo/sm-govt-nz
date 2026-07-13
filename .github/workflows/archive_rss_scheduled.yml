@@ -71,5 +71,6 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Archive RSS feed raw and normalized payloads"
+          --force
           --path 'historical_archive_raw/rss/**'
           --path 'historical_archive_normalized/rss/**'

@@ -72,5 +72,6 @@ jobs:
         run: >-
           python scripts/commit_state_updates.py
           --message "Archive JSON Feed raw and normalized payloads"
+          --force
           --path 'historical_archive_raw/json_feed/**'
           --path 'historical_archive_normalized/json_feed/**'
