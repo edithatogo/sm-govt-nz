@@ -1,24 +1,25 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T06:51:35+00:00
+Generated: 2026-07-13T01:54:56+00:00
 
 ## Summary
 
-- `selected_sources`: 13
+- `selected_sources`: 100
 - `platform_count`: 1
-- `status_count`: 1
+- `status_count`: 2
 
 ## Platform counts
 
-- `api`: 13
+- `api`: 100
 
 ## Status counts
 
-- `already_captured`: 13
+- `capture_failed`: 97
+- `captured`: 3
 
 ## Status by platform
 
-- `api`: {'already_captured': 13}
+- `api`: {'capture_failed': 97, 'captured': 3}
 
 ## Notes
 
