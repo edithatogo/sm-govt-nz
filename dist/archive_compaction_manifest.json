@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-13T01:54:56+00:00",
+  "generated_at": "2026-07-13T05:29:43+00:00",
   "normalized": [
     {
-      "bytes": 1338758,
+      "bytes": 1229001,
       "month": "2026-07",
       "path": "historical_archive_normalized/api/2026-07.jsonl",
-      "record_count": 16,
-      "sha256": "999f037d34831fbf7963a8288d2a06dffaf123ee4e8f61b3cfd2c0387a139926",
+      "record_count": 13,
+      "sha256": "3339bc4853ca81533c89db7ab18c99634c77bcf1126daf8b7479480453e94c9a",
       "source": "api"
     },
     {
@@ -271,6 +271,14 @@
       "path": "historical_archive_normalized/linkedin/2026-06.jsonl",
       "record_count": 2,
       "sha256": "51039b6e400531bce25b68edfc75b4cacdfb488acefee19fd7860a7e95ffe622",
+      "source": "linkedin"
+    },
+    {
+      "bytes": 69917,
+      "month": "2026-07",
+      "path": "historical_archive_normalized/linkedin/2026-07.jsonl",
+      "record_count": 48,
+      "sha256": "050d3c620fbf6fec567d907262ee1a874d5af0a3fd2590f652e20ca6f99f6f5c",
       "source": "linkedin"
     },
     {
@@ -2378,11 +2386,11 @@
       "source": "website"
     },
     {
-      "bytes": 1352,
+      "bytes": 88572,
       "month": "1971-01",
       "path": "historical_archive_normalized/x/1971-01.jsonl",
-      "record_count": 1,
-      "sha256": "dcd0a32ec5b907ddd141742f834b9242bc673b6db1893799b56f61f5817d5625",
+      "record_count": 65,
+      "sha256": "f388976d7b8442ce08ac40a1e9287fb813b84327105a087d160768171f628a33",
       "source": "x"
     },
     {
@@ -4434,6 +4442,15 @@
       "path": "historical_archive_raw/linkedin/2026-06",
       "sha256": "d320e1c7ab49d04a7ad7414ff2d8904e78d9af09f29b637f92e881714324f472",
       "source": "linkedin"
+    },
+    {
+      "bytes": 17810569,
+      "digest_mode": "path_size_inventory",
+      "file_count": 48,
+      "month": "2026-07",
+      "path": "historical_archive_raw/linkedin_public_snapshot/2026-07",
+      "sha256": "2bfce8295ea625ee2c66c4bfb5640b1e9ab4d1b1391ffb0fad674dd5aa664858",
+      "source": "linkedin_public_snapshot"
     },
     {
       "bytes": 611,
@@ -7694,12 +7711,12 @@
       "source": "x_browser"
     },
     {
-      "bytes": 1650887,
+      "bytes": 1850443,
       "digest_mode": "path_size_inventory",
-      "file_count": 522,
+      "file_count": 587,
       "month": "2026-07",
       "path": "historical_archive_raw/x_feed/2026-07",
-      "sha256": "1395ddee88e0b2f22582285dcec87c49e7dc0ebd987b2a472da1145a6b9edfc1",
+      "sha256": "aba5b261ece784548bef3717be65246d9db4dbb9109183047c978c48b533b17d",
       "source": "x_feed"
     },
     {
@@ -8793,11 +8810,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 153147040,
-    "normalized_record_count": 11181,
-    "normalized_shard_count": 515,
-    "raw_bytes": 224902398,
-    "raw_file_count": 11151,
-    "raw_shard_count": 518
+    "normalized_bytes": 153194420,
+    "normalized_record_count": 11290,
+    "normalized_shard_count": 516,
+    "raw_bytes": 242912523,
+    "raw_file_count": 11264,
+    "raw_shard_count": 519
   }
 }
