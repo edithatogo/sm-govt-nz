@@ -1,0 +1,268 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-13T13:12:58+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 20,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 1480,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "5e5d1cebf00f23f9",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tcdc.govt.nz/api"
+    },
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "0b5795e4f2e13795",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tcdc.govt.nz/media"
+    },
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "8d9f53804fa3bbef",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tcdc.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "5545202ed6e3a957",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tcdc.govt.nz/news"
+    },
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "cd19bd43ed4a3392",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tcdc.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "9ab86a892048d39d",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tcdc.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "57fa4ffdf7887b65",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tcdc.govt.nz/publications"
+    },
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "b5b4e797211d91d0",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.tcdc.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "893f256679f209ae",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.treasury.govt.nz"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "0069a59661012907",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.treasury.govt.nz/api"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "9c1d280bed458f86",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.treasury.govt.nz/media"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "98fb9e0ffe4ed561",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.treasury.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "083d51a647e91d46",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.treasury.govt.nz/news"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "f664ab5da6ad1928",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.treasury.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "3dfea315769efa53",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.treasury.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "ea6e8a43535536da",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.treasury.govt.nz/publications"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "website record already present",
+      "source_id": "0dad40bf44039668",
+      "source_type": "website_page",
+      "status": "already_captured",
+      "url": "https://www.treasury.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "timaru-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "source_id": "350b4a5d6cf98f85",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.timaru.govt.nz"
+    },
+    {
+      "agency_id": "timaru-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "source_id": "96240ac4f68ba3a4",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.timaru.govt.nz/api"
+    },
+    {
+      "agency_id": "timaru-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "source_id": "09f798e8032c0b14",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.timaru.govt.nz/media"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "website_page": 20
+    },
+    "selected_sources": 20,
+    "status_by_platform": {
+      "website_page": {
+        "already_captured": 17,
+        "capture_blocked": 3
+      }
+    },
+    "status_by_provider": {},
+    "status_counts": {
+      "already_captured": 17,
+      "capture_blocked": 3
+    }
+  }
+}
