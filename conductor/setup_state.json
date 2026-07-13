@@ -459,12 +459,12 @@
         "id": "govt_archive_all_source_completion_20260713",
         "name": "Complete archival coverage for all identified government sources",
         "status": "in_progress",
-        "done": 12,
+        "done": 17,
         "inprogress": 1,
-        "pending": 4,
-        "total": 17,
-        "current_task": "Run remote completion workflow and verify generated state",
-        "next_action": "Commit and push the implementation, then dispatch Archive Completion Loop",
-        "blockers": "3110 actionable sources remain in the generated completion queue"
+        "pending": 2,
+        "total": 20,
+        "current_task": "Process bounded queue iterations until all rows are archived or terminal",
+        "next_action": "Allow the daily Archive Completion Loop to process the deterministic queue and refresh evidence",
+        "blockers": "3079 actionable sources remain; 105 automation faults are tracked in GitHub issue 17"
     }
 ]

@@ -210,7 +210,7 @@ Mordaunt, `edithatogo`, or other personal identities.
 
 ## [~] Track: Complete archival coverage for all identified government sources
 *Link: [./tracks/govt_archive_all_source_completion_20260713/](./tracks/govt_archive_all_source_completion_20260713/)*
-- In progress: canonical 5,602-source completion matrix, deterministic agent queue, daily completion workflow, and evidence-backed terminal-state handling.
+- In progress: 5,602 sources reconciled; 1,827 archived and 2,523 complete. The daily deterministic queue is active with 3,079 actionable rows and automation faults tracked in issue 17.
 
 
 

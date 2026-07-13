@@ -25,7 +25,7 @@
 
 ## Phase 5: Verification and Live Completion
 - [x] Task: Run focused unit, schema and YAML validation.
-- [ ] Task: Run the remote completion workflow and verify generated state.
-- [ ] Task: Process bounded queue iterations until all rows are archived or terminal.
+- [x] Task: Run the remote completion workflow and verify generated state.
+- [~] Task: Process bounded queue iterations until all rows are archived or terminal.
 - [ ] Task: Run Conductor review, apply fixes and archive the track.
 - [ ] Task: Conductor - User Manual Verification 'Verification and Live Completion' (Protocol in workflow.md).
