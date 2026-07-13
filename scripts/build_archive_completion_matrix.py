@@ -113,8 +113,9 @@ def status_rank(status: str) -> int:
 
 def build_report_index(conductor: Path) -> dict[str, dict[str, Any]]:
     index: dict[str, dict[str, Any]] = {}
-    for name in REPORT_NAMES:
-        path = conductor / name
+    report_paths = [conductor / name for name in REPORT_NAMES]
+    report_paths.extend(sorted(conductor.glob("*_archive_offset_*_report.json")))
+    for path in dict.fromkeys(report_paths):
         report = load_json(path, {})
         for row in report_rows(report):
             key = source_key(row)
