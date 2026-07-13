@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T05:16:57+00:00
+Generated: 2026-07-13T01:53:08+00:00
 
 ## Summary
 
@@ -15,11 +15,11 @@ Generated: 2026-07-02T05:16:57+00:00
 ## Status counts
 
 - `manual_seed_captured`: 14
-- `no_records`: 65
+- `seed_empty`: 65
 
 ## Status by platform
 
-- `x`: {'manual_seed_captured': 14, 'no_records': 65}
+- `x`: {'manual_seed_captured': 14, 'seed_empty': 65}
 
 ## Notes
 

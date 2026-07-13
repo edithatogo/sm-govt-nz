@@ -1,14 +1,14 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T05:16:57+00:00",
+  "generated_at": "2026-07-13T01:53:08+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
     "include_blocked": true,
-    "limit_sources": 0,
+    "limit_sources": 100,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "max_scrolls": 25,
@@ -35,7 +35,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/antarctica-nz-x-5b64f97c.json",
       "source_id": "antarctica-nz-x-5b64f97c",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/AntarcticaNZ"
     },
     {
@@ -46,7 +46,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/b30b39b6377e603c.json",
       "source_id": "b30b39b6377e603c",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/AntarcticaNZ"
     },
     {
@@ -68,7 +68,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/broadcasting-standards-authority-x-db8d9de8.json",
       "source_id": "broadcasting-standards-authority-x-db8d9de8",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://Twitter.com/BSA_NZ"
     },
     {
@@ -79,7 +79,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/b96b6c0354fff710.json",
       "source_id": "b96b6c0354fff710",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/BSA_NZ"
     },
     {
@@ -90,7 +90,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/central-hawkes-bay-district-council-x-cf5e1d17.json",
       "source_id": "central-hawkes-bay-district-council-x-cf5e1d17",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/chbcouncil"
     },
     {
@@ -101,7 +101,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/e9eeee8dbd553162.json",
       "source_id": "e9eeee8dbd553162",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/ChristchurchCC"
     },
     {
@@ -112,7 +112,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/civil-aviation-authority-x-b696cccf.json",
       "source_id": "civil-aviation-authority-x-b696cccf",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/CivilAviationNZ"
     },
     {
@@ -123,7 +123,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/406f437058619a30.json",
       "source_id": "406f437058619a30",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/CivilAviationNZ"
     },
     {
@@ -145,7 +145,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/ef1314d051b2bc9d.json",
       "source_id": "ef1314d051b2bc9d",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/CreativeNZ"
     },
     {
@@ -156,7 +156,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/8639f10cac690502.json",
       "source_id": "8639f10cac690502",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NZConservation"
     },
     {
@@ -167,7 +167,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/aacd89a62f99a19f.json",
       "source_id": "aacd89a62f99a19f",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/DnCityCouncil"
     },
     {
@@ -178,7 +178,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/eit-x-97f64e17.json",
       "source_id": "eit-x-97f64e17",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "http://twitter.com/EITHB"
     },
     {
@@ -189,7 +189,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/eit-x-e38a3c04.json",
       "source_id": "eit-x-e38a3c04",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/EIT_NZ"
     },
     {
@@ -200,7 +200,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/a4090db8d867dede.json",
       "source_id": "a4090db8d867dede",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/eithawkesbay"
     },
     {
@@ -211,7 +211,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/c66256e39c792af0.json",
       "source_id": "c66256e39c792af0",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/ElectionsNZ"
     },
     {
@@ -244,7 +244,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/44f8fdd2ed75a077.json",
       "source_id": "44f8fdd2ed75a077",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NZSuperFund"
     },
     {
@@ -255,7 +255,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/health-nz-x-fec7719c.json",
       "source_id": "health-nz-x-fec7719c",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/healthnz"
     },
     {
@@ -266,7 +266,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/9f833861045a3020.json",
       "source_id": "9f833861045a3020",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/HQSC_NZ"
     },
     {
@@ -277,7 +277,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/health-research-council-x-47978eb7.json",
       "source_id": "health-research-council-x-47978eb7",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/hrcnewzealand"
     },
     {
@@ -299,7 +299,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/7801e115ce97703b.json",
       "source_id": "7801e115ce97703b",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/HeritageNZ"
     },
     {
@@ -310,7 +310,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/d642f0cadfc26b7f.json",
       "source_id": "d642f0cadfc26b7f",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/HRCNZ"
     },
     {
@@ -321,7 +321,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/independent-police-conduct-authority-x-4c592cf9.json",
       "source_id": "independent-police-conduct-authority-x-4c592cf9",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/ipca_nz"
     },
     {
@@ -332,7 +332,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/379e0bc9d0cb6e3e.json",
       "source_id": "379e0bc9d0cb6e3e",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/IPCA_NZ"
     },
     {
@@ -365,7 +365,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/maritime-nz-x-2217d50b.json",
       "source_id": "maritime-nz-x-2217d50b",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/MaritimeNZ"
     },
     {
@@ -376,7 +376,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/ministry-for-culture-and-heritage-x-46292647.json",
       "source_id": "ministry-for-culture-and-heritage-x-46292647",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/Manatutaonga"
     },
     {
@@ -387,7 +387,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/8ab8dcdd4e653a8e.json",
       "source_id": "8ab8dcdd4e653a8e",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/ManatuTaonga"
     },
     {
@@ -398,7 +398,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/ministry-for-pacific-peoples-x-7f7cdc2d.json",
       "source_id": "ministry-for-pacific-peoples-x-7f7cdc2d",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/Pacific_Peoples"
     },
     {
@@ -431,7 +431,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/ministry-of-justice-x-63923593.json",
       "source_id": "ministry-of-justice-x-63923593",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://www.twitter.com/@justicenzgovt"
     },
     {
@@ -442,7 +442,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/66fc1c573530a3b5.json",
       "source_id": "66fc1c573530a3b5",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/nzjustice"
     },
     {
@@ -453,7 +453,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/ministry-of-social-development-x-51643da8.json",
       "source_id": "ministry-of-social-development-x-51643da8",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/msdgovtnz"
     },
     {
@@ -464,7 +464,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/3ba835f95d4f20ad.json",
       "source_id": "3ba835f95d4f20ad",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/msdgovtnz"
     },
     {
@@ -475,7 +475,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/02ad75759275c2ee.json",
       "source_id": "02ad75759275c2ee",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NapierCouncil"
     },
     {
@@ -486,7 +486,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/new-plymouth-district-council-x-1cebc80b.json",
       "source_id": "new-plymouth-district-council-x-1cebc80b",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/NPDCouncil"
     },
     {
@@ -497,7 +497,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/nz-customs-service-x-9d15a87d.json",
       "source_id": "nz-customs-service-x-9d15a87d",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/NZ_Customs"
     },
     {
@@ -508,7 +508,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/52a4961327f246bd.json",
       "source_id": "52a4961327f246bd",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NZCustoms"
     },
     {
@@ -519,7 +519,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/5adb146d6f4f08f6.json",
       "source_id": "5adb146d6f4f08f6",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NZFilm"
     },
     {
@@ -530,7 +530,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/b2158b46eb9167e3.json",
       "source_id": "b2158b46eb9167e3",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/TeWaihanga"
     },
     {
@@ -541,7 +541,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/b48197e5816cf59b.json",
       "source_id": "b48197e5816cf59b",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NZOnAir"
     },
     {
@@ -563,7 +563,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/nz-post-x-c96e836f.json",
       "source_id": "nz-post-x-c96e836f",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/nzpost/"
     },
     {
@@ -574,7 +574,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/d274869d5a2a6661.json",
       "source_id": "d274869d5a2a6661",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NZPost"
     },
     {
@@ -596,7 +596,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/nz-symphony-orchestra-x-e64a4d6b.json",
       "source_id": "nz-symphony-orchestra-x-e64a4d6b",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/nzso?lang=en"
     },
     {
@@ -607,7 +607,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/3d0353e4ffd70a42.json",
       "source_id": "3d0353e4ffd70a42",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NZSO"
     },
     {
@@ -629,7 +629,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/3a80c44d50cb6deb.json",
       "source_id": "3a80c44d50cb6deb",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/OrangaTamariki"
     },
     {
@@ -640,7 +640,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/pamu-x-2f485c82.json",
       "source_id": "pamu-x-2f485c82",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/pamu_nz"
     },
     {
@@ -651,7 +651,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/0d3847c0306fefed.json",
       "source_id": "0d3847c0306fefed",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/Pamu_NZ"
     },
     {
@@ -662,7 +662,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/171ff2dbc6f56fac.json",
       "source_id": "171ff2dbc6f56fac",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/PCE_Env"
     },
     {
@@ -673,7 +673,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/public-service-commission-x-e2f0f2ee.json",
       "source_id": "public-service-commission-x-e2f0f2ee",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/TeKawaMataaho"
     },
     {
@@ -684,7 +684,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/4811ce166aaeada1.json",
       "source_id": "4811ce166aaeada1",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NZPublicService"
     },
     {
@@ -695,7 +695,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/80aff05ac3e932f6.json",
       "source_id": "80aff05ac3e932f6",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/PublicTrustNZ"
     },
     {
@@ -717,7 +717,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/ad9c132a17a7aa10.json",
       "source_id": "ad9c132a17a7aa10",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/rbnz"
     },
     {
@@ -739,7 +739,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/selwyn-district-council-x-9c211011.json",
       "source_id": "selwyn-district-council-x-9c211011",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/FutureforSelwyn"
     },
     {
@@ -750,7 +750,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/c0acda794588129c.json",
       "source_id": "c0acda794588129c",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/SFONZ"
     },
     {
@@ -761,7 +761,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/sit-x-195c2991.json",
       "source_id": "sit-x-195c2991",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/sit_nz"
     },
     {
@@ -772,7 +772,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/f9f9e587f29a6de3.json",
       "source_id": "f9f9e587f29a6de3",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/Stats_NZ"
     },
     {
@@ -783,7 +783,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/b43338c80000236e.json",
       "source_id": "b43338c80000236e",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/TeMangaiPaho"
     },
     {
@@ -794,7 +794,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/9718c360ca4995d0.json",
       "source_id": "9718c360ca4995d0",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/TePapa"
     },
     {
@@ -805,7 +805,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/8acc720f8cd8ea3a.json",
       "source_id": "8acc720f8cd8ea3a",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/TePuniKokiri"
     },
     {
@@ -816,7 +816,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/te-wananga-o-raukawa-x-a5972859.json",
       "source_id": "te-wananga-o-raukawa-x-a5972859",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/wanangaoraukawa?lang=en"
     },
     {
@@ -827,7 +827,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/waikato-district-council-x-f8e9d0bf.json",
       "source_id": "waikato-district-council-x-f8e9d0bf",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/waikatodistrict"
     },
     {
@@ -838,7 +838,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/waimakariri-district-council-x-4ebd1f60.json",
       "source_id": "waimakariri-district-council-x-4ebd1f60",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://www.twitter.com/waimakariridc"
     },
     {
@@ -849,7 +849,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/f1c6e0bdfdc6ef00.json",
       "source_id": "f1c6e0bdfdc6ef00",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/NZTA"
     },
     {
@@ -860,7 +860,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/whaikaha-x-0fc5e7ba.json",
       "source_id": "whaikaha-x-0fc5e7ba",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/Whaikaha"
     },
     {
@@ -871,7 +871,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/a0bc3c5d6b328a03.json",
       "source_id": "a0bc3c5d6b328a03",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/WhaikahaNZ"
     },
     {
@@ -882,7 +882,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/worksafe-nz-x-51382248.json",
       "source_id": "worksafe-nz-x-51382248",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://twitter.com/WorkSafeNZ"
     },
     {
@@ -893,7 +893,7 @@
       "reason": "manual seed contained no x posts: manual_archive_seeds/x/017e89fc03fa5962.json",
       "source_id": "017e89fc03fa5962",
       "source_type": "social_profile",
-      "status": "no_records",
+      "status": "seed_empty",
       "url": "https://x.com/WorkSafeNZ"
     }
   ],
@@ -905,13 +905,13 @@
     "status_by_platform": {
       "x": {
         "manual_seed_captured": 14,
-        "no_records": 65
+        "seed_empty": 65
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "manual_seed_captured": 14,
-      "no_records": 65
+      "seed_empty": 65
     }
   }
 }
