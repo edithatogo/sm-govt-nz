@@ -1,6 +1,6 @@
 {
   "dry_run": false,
-  "generated_at": "2026-07-14T07:49:47+00:00",
+  "generated_at": "2026-07-14T08:33:09+00:00",
   "guardrails": {
     "captcha_solving": false,
     "credential_bypass": false,
@@ -190,10 +190,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/83820f9ffecc9916190b365d.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "a54312dd7aeb563c",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz/media"
     },
     {
@@ -229,10 +229,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/b2cd5fdb608617a8cd4a2642.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "9fe590830aa19de2",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz/news-and-events"
     },
     {
@@ -255,10 +255,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/1bc2d3904df327dd83a7612a.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "e849cb62a27b0cc9",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz/publications"
     },
     {
@@ -268,10 +268,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/add9724178f77c69c6b03d3d.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "e5cb49183a46927d",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz/subscribe"
     }
   ],
@@ -279,8 +279,8 @@
     "result_count": 19,
     "selected_sources": 19,
     "status_counts": {
-      "browser_captcha_or_challenge": 6,
-      "browser_captured": 13
+      "browser_captcha_or_challenge": 2,
+      "browser_captured": 17
     }
   }
 }
