@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-14T08:32:54+00:00",
+  "generated_at": "2026-07-14T09:22:27+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -670,10 +670,10 @@
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 429: Too Many Requests",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:433b02d3379b2fae3a4db4ff",
       "source_id": "health-nz-linkedin-f4436242",
       "source_type": "social_profile",
-      "status": "http_error",
+      "status": "public_snapshot_captured",
       "url": "https://nz.linkedin.com/company/healthnewzealand"
     },
     {
@@ -681,10 +681,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 429: Too Many Requests",
+      "reason": "HTTP 404: Not Found",
       "source_id": "303af3ca91a8065c",
       "source_type": "social_profile",
-      "status": "http_error",
+      "status": "not_found",
       "url": "https://www.linkedin.com/company/te-whatu-ora-health-new-zealand"
     },
     {
@@ -692,10 +692,10 @@
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 429: Too Many Requests",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:079f047a7df3dd22d28258da",
       "source_id": "health-quality-and-safety-commission-linkedin-a1d22c81",
       "source_type": "social_profile",
-      "status": "http_error",
+      "status": "public_snapshot_captured",
       "url": "https://www.linkedin.com/company/health-quality-&-safety-commission"
     },
     {
@@ -703,10 +703,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 429: Too Many Requests",
+      "reason": "HTTP 404: Not Found",
       "source_id": "6275eac40e9c563e",
       "source_type": "social_profile",
-      "status": "http_error",
+      "status": "not_found",
       "url": "https://www.linkedin.com/company/health-quality-safety-commission"
     },
     {
@@ -714,10 +714,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 429: Too Many Requests",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:dc30c86cf7e63f664622b67f",
       "source_id": "2a7b81abd94891e0",
       "source_type": "social_profile",
-      "status": "http_error",
+      "status": "public_snapshot_captured",
       "url": "https://www.linkedin.com/company/heritage-new-zealand-pouhere-taonga"
     },
     {
@@ -725,10 +725,10 @@
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 429: Too Many Requests",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:0657ba4dba5307ad5f63e445",
       "source_id": "horowhenua-district-council-linkedin-ecb09f5c",
       "source_type": "social_profile",
-      "status": "http_error",
+      "status": "public_snapshot_captured",
       "url": "https://www.linkedin.com/company/horowhenua-district-council"
     },
     {
@@ -736,10 +736,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 429: Too Many Requests",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:b730d59a59e785091d1d5059",
       "source_id": "4f419c504a535eba",
       "source_type": "social_profile",
-      "status": "http_error",
+      "status": "public_snapshot_captured",
       "url": "https://www.linkedin.com/company/hutt-city-council"
     },
     {
@@ -747,10 +747,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 429: Too Many Requests",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:31a3733aa3fddcc883c4aca5",
       "source_id": "b3d9fbe91b6f1d3b",
       "source_type": "social_profile",
-      "status": "http_error",
+      "status": "public_snapshot_captured",
       "url": "https://www.linkedin.com/company/independent-childrens-monitor"
     },
     {
@@ -1135,16 +1135,16 @@
     "selected_sources": 100,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 45,
-        "not_found": 7,
-        "public_snapshot_captured": 48
+        "http_error": 37,
+        "not_found": 9,
+        "public_snapshot_captured": 54
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 45,
-      "not_found": 7,
-      "public_snapshot_captured": 48
+      "http_error": 37,
+      "not_found": 9,
+      "public_snapshot_captured": 54
     }
   }
 }
