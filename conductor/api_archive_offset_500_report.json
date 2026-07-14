@@ -1,211 +1,189 @@
 {
-  "gaps": [
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-14T15:11:41+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 100,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 500,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "api",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
     {
       "agency_id": "whakatane-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "1912b514dcd2ecfb",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.whakatane.govt.nz/openapi.json"
     },
     {
       "agency_id": "whanganui-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "28db42de3709ad81",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.whanganui.govt.nz/.well-known/webfinger"
     },
     {
       "agency_id": "whanganui-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "f71e5b76da9123d5",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.whanganui.govt.nz/openapi.json"
     },
     {
       "agency_id": "whangarei-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "4bfe2b05e07de5de",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.wdc.govt.nz/.well-known/webfinger"
     },
     {
       "agency_id": "whangarei-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "a1f11b604f746070",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.wdc.govt.nz/openapi.json"
     },
     {
       "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "a1cd963dc6797636",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.whitireia.ac.nz/.well-known/webfinger"
     },
     {
       "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "c4bd11f181a74cc5",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.whitireia.ac.nz/openapi.json"
     },
     {
       "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "cdfa17e94f1df343",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.wintec.ac.nz/.well-known/webfinger"
     },
     {
       "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "3ac211133a5ae020",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.wintec.ac.nz/openapi.json"
     },
     {
       "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "f9d0bd3a8daa15a1",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.witt.ac.nz/.well-known/webfinger"
     },
     {
       "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "4981bcdcc8c13fbd",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.witt.ac.nz/openapi.json"
     },
     {
       "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "57005958fe8b39de",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.worksafe.govt.nz/.well-known/webfinger"
     },
     {
       "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
       "platform": "api",
-      "priority": "review",
-      "priority_description": "Needs review.",
       "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "report": "conductor/api_archive_offset_500_report.json",
       "source_id": "00b4f0284a492b7c",
+      "source_type": "api_endpoint",
       "status": "invalid",
-      "supersedes_report": "",
-      "supersedes_status": "",
       "url": "https://www.worksafe.govt.nz/openapi.json"
     }
   ],
-  "inputs": {
-    "reports": [
-      "conductor/api_archive_offset_500_report.json"
-    ]
-  },
-  "report_summaries": {
-    "conductor/api_archive_offset_500_report.json": {
-      "platform_counts": {
-        "api": 13
-      },
-      "selected_sources": 13,
-      "status_by_platform": {
-        "api": {
-          "invalid": 13
-        }
-      },
-      "status_by_provider": {},
-      "status_counts": {
-        "invalid": 13
-      }
-    }
-  },
   "summary": {
-    "gap_count": 13,
-    "input_status_counts": {
-      "invalid": 13
-    },
     "platform_counts": {
       "api": 13
     },
-    "priority_counts": {
-      "review": 13
+    "selected_sources": 13,
+    "status_by_platform": {
+      "api": {
+        "invalid": 13
+      }
     },
+    "status_by_provider": {},
     "status_counts": {
       "invalid": 13
-    },
-    "superseded_source_count": 0
+    }
   }
 }
