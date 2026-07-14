@@ -1,6 +1,6 @@
 {
   "dry_run": false,
-  "generated_at": "2026-07-14T15:11:44+00:00",
+  "generated_at": "2026-07-14T15:11:58+00:00",
   "guardrails": {
     "captcha_solving": false,
     "credential_bypass": false,
@@ -21,7 +21,7 @@
     "limit_sources": 10,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "merged_previous_results": 19,
-    "offset_sources": 0,
+    "offset_sources": 10,
     "per_page_timeout": 45,
     "screenshot": true,
     "triage_report": "conductor/website_archive_failure_triage_report.json"
@@ -164,10 +164,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/2956cc153549f9455ef5a57a.json",
-      "reason": "captured public rendered website content",
+      "reason": "public browser fallback stopped at access marker: Cloudflare",
       "source_id": "f33df640b05e8598",
       "source_type": "website_page",
-      "status": "browser_captured",
+      "status": "browser_captcha_or_challenge",
       "url": "https://www.ashburtondc.govt.nz"
     },
     {
@@ -190,10 +190,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/83820f9ffecc9916190b365d.json",
-      "reason": "captured public rendered website content",
+      "reason": "public browser fallback stopped at access marker: Cloudflare",
       "source_id": "a54312dd7aeb563c",
       "source_type": "website_page",
-      "status": "browser_captured",
+      "status": "browser_captcha_or_challenge",
       "url": "https://www.ashburtondc.govt.nz/media"
     },
     {
@@ -203,10 +203,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/49d9cc585beb35083303530e.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "88a58cb473413007",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz/media-releases"
     },
     {
@@ -216,10 +216,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/e7e6f4e08242c53b4359694b.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "50e64a6da45f8011",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz/news"
     },
     {
@@ -242,10 +242,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/e37e692fe83b77a311918e3e.json",
-      "reason": "captured public rendered website content",
+      "reason": "public browser fallback stopped at access marker: Cloudflare",
       "source_id": "70a13610eec31b6b",
       "source_type": "website_page",
-      "status": "browser_captured",
+      "status": "browser_captcha_or_challenge",
       "url": "https://www.ashburtondc.govt.nz/newsletter"
     },
     {
@@ -273,13 +273,26 @@
       "source_type": "website_page",
       "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "auckland-light-rail",
+      "archive_status": "ready",
+      "candidate_id": "ea7740e611200bed",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/f69d992bf0e1175b131fa185.json",
+      "reason": "captured public rendered website content",
+      "source_id": "ea7740e611200bed",
+      "source_type": "website_page",
+      "status": "browser_captured",
+      "url": "https://www.lightrail.co.nz/"
     }
   ],
   "summary": {
-    "result_count": 19,
-    "selected_sources": 19,
+    "result_count": 20,
+    "selected_sources": 20,
     "status_counts": {
-      "browser_captcha_or_challenge": 4,
+      "browser_captcha_or_challenge": 5,
       "browser_captured": 15
     }
   }
