@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-14T07:50:19+00:00",
+  "generated_at": "2026-07-14T08:33:49+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -461,10 +461,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 405: Not Allowed",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "b91fab6497718087",
       "source_type": "api_endpoint",
-      "status": "method_not_allowed",
+      "status": "captured",
       "url": "https://www.codc.govt.nz/openapi.json"
     },
     {
@@ -659,10 +659,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 405: Not Allowed",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "f5aa4619b04ad877",
       "source_type": "api_endpoint",
-      "status": "method_not_allowed",
+      "status": "captured",
       "url": "https://www.cluthadc.govt.nz/openapi.json"
     },
     {
@@ -1121,10 +1121,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 405: Not Allowed",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "e2cdf29cf41991f4",
       "source_type": "api_endpoint",
-      "status": "method_not_allowed",
+      "status": "captured",
       "url": "https://www.es.govt.nz/openapi.json"
     }
   ],
@@ -1136,10 +1136,9 @@
     "status_by_platform": {
       "api": {
         "capture_blocked": 16,
-        "captured": 3,
+        "captured": 6,
         "dns_failed": 6,
         "invalid": 68,
-        "method_not_allowed": 3,
         "not_acceptable": 2,
         "tls_failed": 2
       }
@@ -1147,10 +1146,9 @@
     "status_by_provider": {},
     "status_counts": {
       "capture_blocked": 16,
-      "captured": 3,
+      "captured": 6,
       "dns_failed": 6,
       "invalid": 68,
-      "method_not_allowed": 3,
       "not_acceptable": 2,
       "tls_failed": 2
     }
