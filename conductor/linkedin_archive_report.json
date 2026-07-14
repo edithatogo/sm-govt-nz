@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-14T10:07:17+00:00",
+  "generated_at": "2026-07-14T15:11:31+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -703,10 +703,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "6275eac40e9c563e",
       "source_type": "social_profile",
-      "status": "not_found",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/health-quality-safety-commission"
     },
     {
@@ -714,10 +714,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:dc30c86cf7e63f664622b67f",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "2a7b81abd94891e0",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/heritage-new-zealand-pouhere-taonga"
     },
     {
@@ -725,10 +725,10 @@
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:0657ba4dba5307ad5f63e445",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "horowhenua-district-council-linkedin-ecb09f5c",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/horowhenua-district-council"
     },
     {
@@ -736,10 +736,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:b730d59a59e785091d1d5059",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "4f419c504a535eba",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/hutt-city-council"
     },
     {
@@ -747,10 +747,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:31a3733aa3fddcc883c4aca5",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "b3d9fbe91b6f1d3b",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/independent-childrens-monitor"
     },
     {
@@ -1033,10 +1033,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "0ffdbd4d6955bde5",
       "source_type": "social_profile",
-      "status": "not_found",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/ministry-for-culture-and-heritage/"
     },
     {
@@ -1135,16 +1135,16 @@
     "selected_sources": 100,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 36,
-        "not_found": 10,
-        "public_snapshot_captured": 54
+        "http_error": 42,
+        "not_found": 8,
+        "public_snapshot_captured": 50
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 36,
-      "not_found": 10,
-      "public_snapshot_captured": 54
+      "http_error": 42,
+      "not_found": 8,
+      "public_snapshot_captured": 50
     }
   }
 }
