@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-14T09:22:27+00:00",
+  "generated_at": "2026-07-14T10:07:17+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -1033,10 +1033,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 429: Too Many Requests",
+      "reason": "HTTP 404: Not Found",
       "source_id": "0ffdbd4d6955bde5",
       "source_type": "social_profile",
-      "status": "http_error",
+      "status": "not_found",
       "url": "https://www.linkedin.com/company/ministry-for-culture-and-heritage/"
     },
     {
@@ -1135,15 +1135,15 @@
     "selected_sources": 100,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 37,
-        "not_found": 9,
+        "http_error": 36,
+        "not_found": 10,
         "public_snapshot_captured": 54
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 37,
-      "not_found": 9,
+      "http_error": 36,
+      "not_found": 10,
       "public_snapshot_captured": 54
     }
   }
