@@ -1,6 +1,6 @@
 # NZ Government Archive Completion Matrix
 
-Generated: 2026-07-14T15:29:17+00:00
+Generated: 2026-07-14T15:36:07+00:00
 
 ## Completion
 
@@ -9,10 +9,10 @@ Generated: 2026-07-14T15:29:17+00:00
 | Total candidates | 5602 |
 | Registered sources | 5602 |
 | Archived sources | 2149 |
-| Terminal evidence sources | 3272 |
-| Incomplete actionable sources | 181 |
+| Terminal evidence sources | 3396 |
+| Incomplete actionable sources | 57 |
 | Automation faults | 11 |
-| Completion | 96.77% |
+| Completion | 98.98% |
 
 ## Lifecycle states
 
@@ -20,115 +20,72 @@ Generated: 2026-07-14T15:29:17+00:00
 | --- | ---: |
 | `archived` | 2149 |
 | `automation_fault` | 11 |
-| `scheduled` | 170 |
+| `scheduled` | 46 |
 | `terminal_deleted` | 104 |
 | `terminal_empty` | 1692 |
-| `terminal_external_access` | 907 |
-| `terminal_invalid` | 569 |
+| `terminal_external_access` | 1021 |
+| `terminal_invalid` | 579 |
 
 ## Next work
 
 | Rank | Platform | Agency | Source | Action |
 | ---: | --- | --- | --- | --- |
-| 1 | `linkedin` | `ara-institute-of-canterbury` | `ara-institute-of-canterbury-linkedin-eb96ebc4` | `capture_public_linkedin_snapshot` |
-| 2 | `linkedin` | `aut-university` | `aut-university-linkedin-a0e8452e` | `capture_public_linkedin_snapshot` |
-| 3 | `linkedin` | `aut-university` | `aut-university-linkedin-ff478bdc` | `capture_public_linkedin_snapshot` |
-| 4 | `linkedin` | `health-quality-and-safety-commission` | `health-quality-and-safety-commission-linkedin-1c1a4f6d` | `capture_public_linkedin_snapshot` |
-| 5 | `linkedin` | `inland-revenue-department` | `inland-revenue-department-linkedin-871c62e3` | `capture_public_linkedin_snapshot` |
-| 6 | `linkedin` | `inland-revenue-department` | `inland-revenue-department-linkedin-92a6b59f` | `capture_public_linkedin_snapshot` |
-| 7 | `linkedin` | `invercargill-city-council` | `invercargill-city-council-linkedin-beb954b9` | `capture_public_linkedin_snapshot` |
-| 8 | `linkedin` | `invercargill-city-council` | `invercargill-city-council-linkedin-d8da10fe` | `capture_public_linkedin_snapshot` |
-| 9 | `linkedin` | `kainga-ora` | `kainga-ora-linkedin-9168d822` | `capture_public_linkedin_snapshot` |
-| 10 | `linkedin` | `kainga-ora` | `kainga-ora-linkedin-b5fc3488` | `capture_public_linkedin_snapshot` |
-| 11 | `linkedin` | `kiwi-group-capital` | `kiwi-group-capital-linkedin-025ef3cc` | `capture_public_linkedin_snapshot` |
-| 12 | `linkedin` | `kiwi-group-capital` | `kiwi-group-capital-linkedin-8808a88b` | `capture_public_linkedin_snapshot` |
-| 13 | `linkedin` | `kiwirail` | `kiwirail-linkedin-1f73c26e` | `capture_public_linkedin_snapshot` |
-| 14 | `linkedin` | `kordia` | `kordia-linkedin-b8ae9eff` | `capture_public_linkedin_snapshot` |
-| 15 | `linkedin` | `kordia` | `kordia-linkedin-e1c3751e` | `capture_public_linkedin_snapshot` |
-| 16 | `linkedin` | `law-commission` | `law-commission-linkedin-003461d1` | `capture_public_linkedin_snapshot` |
-| 17 | `linkedin` | `lincoln-university` | `lincoln-university-linkedin-2b2d9c3d` | `capture_public_linkedin_snapshot` |
-| 18 | `linkedin` | `linz` | `linz-linkedin-57a50977` | `capture_public_linkedin_snapshot` |
-| 19 | `linkedin` | `linz` | `linz-linkedin-c618d0e1` | `capture_public_linkedin_snapshot` |
-| 20 | `linkedin` | `mackenzie-district-council` | `mackenzie-district-council-linkedin-53be0b59` | `capture_public_linkedin_snapshot` |
-| 21 | `linkedin` | `manawatu-district-council` | `manawatu-district-council-linkedin-c2d6eb38` | `capture_public_linkedin_snapshot` |
-| 22 | `linkedin` | `manukau-institute-of-technology` | `manukau-institute-of-technology-linkedin-4a24e858` | `capture_public_linkedin_snapshot` |
-| 23 | `linkedin` | `maritime-nz` | `maritime-nz-linkedin-85b511ce` | `capture_public_linkedin_snapshot` |
-| 24 | `linkedin` | `maritime-nz` | `maritime-nz-linkedin-95122411` | `capture_public_linkedin_snapshot` |
-| 25 | `linkedin` | `marlborough-district-council` | `marlborough-district-council-linkedin-fd3dea73` | `capture_public_linkedin_snapshot` |
-| 26 | `linkedin` | `massey-university` | `massey-university-linkedin-f7cdf1dc` | `capture_public_linkedin_snapshot` |
-| 27 | `linkedin` | `masterton-district-council` | `masterton-district-council-linkedin-ced1041e` | `capture_public_linkedin_snapshot` |
-| 28 | `linkedin` | `mbie` | `mbie-linkedin-759990c6` | `capture_public_linkedin_snapshot` |
-| 29 | `linkedin` | `ministry-for-culture-and-heritage` | `ministry-for-culture-and-heritage-linkedin-a2b2c035` | `capture_public_linkedin_snapshot` |
-| 30 | `linkedin` | `ministry-for-culture-and-heritage` | `ministry-for-culture-and-heritage-linkedin-baaf014e` | `capture_public_linkedin_snapshot` |
-| 31 | `linkedin` | `ministry-for-ethnic-communities` | `ministry-for-ethnic-communities-linkedin-2b18127e` | `capture_public_linkedin_snapshot` |
-| 32 | `linkedin` | `ministry-for-pacific-peoples` | `ministry-for-pacific-peoples-linkedin-2df02a07` | `capture_public_linkedin_snapshot` |
-| 33 | `linkedin` | `ministry-for-pacific-peoples` | `ministry-for-pacific-peoples-linkedin-5083e8eb` | `capture_public_linkedin_snapshot` |
-| 34 | `linkedin` | `ministry-for-regulation` | `ministry-for-regulation-linkedin-af6c2025` | `capture_public_linkedin_snapshot` |
-| 35 | `linkedin` | `ministry-for-regulation` | `ministry-for-regulation-linkedin-b92e856a` | `capture_public_linkedin_snapshot` |
-| 36 | `linkedin` | `ministry-for-the-environment` | `ministry-for-the-environment-linkedin-daa128dd` | `capture_public_linkedin_snapshot` |
-| 37 | `linkedin` | `ministry-for-women` | `ministry-for-women-linkedin-1206a60d` | `capture_public_linkedin_snapshot` |
-| 38 | `linkedin` | `ministry-for-women` | `ministry-for-women-linkedin-353602e9` | `capture_public_linkedin_snapshot` |
-| 39 | `linkedin` | `nmit` | `nmit-linkedin-31aa2e9d` | `capture_public_linkedin_snapshot` |
-| 40 | `linkedin` | `nmit` | `nmit-linkedin-65130349` | `capture_public_linkedin_snapshot` |
-| 41 | `linkedin` | `northtec` | `northtec-linkedin-293156f4` | `capture_public_linkedin_snapshot` |
-| 42 | `linkedin` | `northtec` | `northtec-linkedin-2b9e2a51` | `capture_public_linkedin_snapshot` |
-| 43 | `linkedin` | `nz-defence-force` | `nz-defence-force-linkedin-66352d1b` | `capture_public_linkedin_snapshot` |
-| 44 | `linkedin` | `open-polytechnic` | `open-polytechnic-linkedin-1fe8de37` | `capture_public_linkedin_snapshot` |
-| 45 | `linkedin` | `open-polytechnic` | `open-polytechnic-linkedin-b0840abe` | `capture_public_linkedin_snapshot` |
-| 46 | `linkedin` | `otago-polytechnic` | `otago-polytechnic-linkedin-a1cbcc99` | `capture_public_linkedin_snapshot` |
-| 47 | `linkedin` | `otago-regional-council` | `otago-regional-council-linkedin-8f6cf63b` | `capture_public_linkedin_snapshot` |
-| 48 | `linkedin` | `otorohanga-district-council` | `otorohanga-district-council-linkedin-ac448de4` | `capture_public_linkedin_snapshot` |
-| 49 | `linkedin` | `palmerston-north-city-council` | `palmerston-north-city-council-linkedin-6488f2d2` | `capture_public_linkedin_snapshot` |
-| 50 | `linkedin` | `pamu` | `pamu-linkedin-51bf1e7c` | `capture_public_linkedin_snapshot` |
-| 51 | `linkedin` | `pamu` | `pamu-linkedin-87b281d5` | `capture_public_linkedin_snapshot` |
-| 52 | `linkedin` | `parliamentary-commissioner-for-environment` | `parliamentary-commissioner-for-environment-linkedin-64217288` | `capture_public_linkedin_snapshot` |
-| 53 | `linkedin` | `parliamentary-commissioner-for-environment` | `parliamentary-commissioner-for-environment-linkedin-dfa622fb` | `capture_public_linkedin_snapshot` |
-| 54 | `linkedin` | `pharmac` | `pharmac-linkedin-d351aa9c` | `capture_public_linkedin_snapshot` |
-| 55 | `linkedin` | `pharmac` | `pharmac-linkedin-ef734451` | `capture_public_linkedin_snapshot` |
-| 56 | `linkedin` | `porirua-city-council` | `porirua-city-council-linkedin-5a0f8550` | `capture_public_linkedin_snapshot` |
-| 57 | `linkedin` | `privacy-commissioner` | `privacy-commissioner-linkedin-8ac3ea1b` | `capture_public_linkedin_snapshot` |
-| 58 | `linkedin` | `public-service-commission` | `public-service-commission-linkedin-9b0206e5` | `capture_public_linkedin_snapshot` |
-| 59 | `linkedin` | `public-service-commission` | `public-service-commission-linkedin-a90ba070` | `capture_public_linkedin_snapshot` |
-| 60 | `linkedin` | `queenstown-lakes-district-council` | `queenstown-lakes-district-council-linkedin-b1b82437` | `capture_public_linkedin_snapshot` |
-| 61 | `linkedin` | `qv` | `qv-linkedin-d8ccee5f` | `capture_public_linkedin_snapshot` |
-| 62 | `linkedin` | `qv` | `qv-linkedin-e291463c` | `capture_public_linkedin_snapshot` |
-| 63 | `linkedin` | `real-estate-authority` | `real-estate-authority-linkedin-a19a2aad` | `capture_public_linkedin_snapshot` |
-| 64 | `linkedin` | `real-estate-authority` | `real-estate-authority-linkedin-fa435a1e` | `capture_public_linkedin_snapshot` |
-| 65 | `linkedin` | `reannz` | `reannz-linkedin-ef152687` | `capture_public_linkedin_snapshot` |
-| 66 | `linkedin` | `reserve-bank-of-nz` | `reserve-bank-of-nz-linkedin-7ec667dd` | `capture_public_linkedin_snapshot` |
-| 67 | `linkedin` | `reserve-bank-of-nz` | `reserve-bank-of-nz-linkedin-f491be60` | `capture_public_linkedin_snapshot` |
-| 68 | `linkedin` | `rotorua-lakes-council` | `rotorua-lakes-council-linkedin-8d789955` | `capture_public_linkedin_snapshot` |
-| 69 | `linkedin` | `royal-nz-air-force` | `royal-nz-air-force-linkedin-277934c3` | `capture_public_linkedin_snapshot` |
-| 70 | `linkedin` | `royal-nz-air-force` | `royal-nz-air-force-linkedin-4935a341` | `capture_public_linkedin_snapshot` |
-| 71 | `linkedin` | `royal-nz-navy` | `royal-nz-navy-linkedin-4935a341` | `capture_public_linkedin_snapshot` |
-| 72 | `linkedin` | `royal-nz-navy` | `royal-nz-navy-linkedin-5f46f0be` | `capture_public_linkedin_snapshot` |
-| 73 | `linkedin` | `serious-fraud-office` | `serious-fraud-office-linkedin-1e7c4752` | `capture_public_linkedin_snapshot` |
-| 74 | `linkedin` | `serious-fraud-office` | `serious-fraud-office-linkedin-318d08c7` | `capture_public_linkedin_snapshot` |
-| 75 | `linkedin` | `sit` | `sit-linkedin-8ebf5499` | `capture_public_linkedin_snapshot` |
-| 76 | `linkedin` | `sit` | `sit-linkedin-b5007a47` | `capture_public_linkedin_snapshot` |
-| 77 | `linkedin` | `social-investment-agency` | `social-investment-agency-linkedin-7e43ac35` | `capture_public_linkedin_snapshot` |
-| 78 | `linkedin` | `south-wairarapa-district-council` | `south-wairarapa-district-council-linkedin-311abd59` | `capture_public_linkedin_snapshot` |
-| 79 | `linkedin` | `sport-nz` | `sport-nz-linkedin-32a2203f` | `capture_public_linkedin_snapshot` |
-| 80 | `linkedin` | `sport-nz` | `sport-nz-linkedin-e89f395e` | `capture_public_linkedin_snapshot` |
-| 81 | `linkedin` | `stats-nz` | `stats-nz-linkedin-33d243d9` | `capture_public_linkedin_snapshot` |
-| 82 | `linkedin` | `tai-poutini-polytechnic` | `tai-poutini-polytechnic-linkedin-7afdefda` | `capture_public_linkedin_snapshot` |
-| 83 | `linkedin` | `tai-poutini-polytechnic` | `tai-poutini-polytechnic-linkedin-96ec1d88` | `capture_public_linkedin_snapshot` |
-| 84 | `linkedin` | `taranaki-regional-council` | `taranaki-regional-council-linkedin-7c677ee9` | `capture_public_linkedin_snapshot` |
-| 85 | `linkedin` | `tararua-district-council` | `tararua-district-council-linkedin-1ae56e17` | `capture_public_linkedin_snapshot` |
-| 86 | `linkedin` | `tasman-district-council` | `tasman-district-council-linkedin-533cf654` | `capture_public_linkedin_snapshot` |
-| 87 | `linkedin` | `taumata-arowai` | `taumata-arowai-linkedin-3904b71f` | `capture_public_linkedin_snapshot` |
-| 88 | `linkedin` | `taumata-arowai` | `taumata-arowai-linkedin-5a738f7b` | `capture_public_linkedin_snapshot` |
-| 89 | `linkedin` | `taupo-district-council` | `taupo-district-council-linkedin-22e4cba6` | `capture_public_linkedin_snapshot` |
-| 90 | `linkedin` | `tauranga-city-council` | `tauranga-city-council-linkedin-c3591569` | `capture_public_linkedin_snapshot` |
-| 91 | `linkedin` | `te-ara-ahunga-ora` | `te-ara-ahunga-ora-linkedin-2dd764dc` | `capture_public_linkedin_snapshot` |
-| 92 | `linkedin` | `te-wananga-o-aotearoa` | `te-wananga-o-aotearoa-linkedin-429f5eb3` | `capture_public_linkedin_snapshot` |
-| 93 | `linkedin` | `te-wananga-o-aotearoa` | `te-wananga-o-aotearoa-linkedin-fbd3ee90` | `capture_public_linkedin_snapshot` |
-| 94 | `linkedin` | `te-wananga-o-raukawa` | `te-wananga-o-raukawa-linkedin-96c4f403` | `capture_public_linkedin_snapshot` |
-| 95 | `linkedin` | `te-wananga-o-raukawa` | `te-wananga-o-raukawa-linkedin-f1111bfa` | `capture_public_linkedin_snapshot` |
-| 96 | `linkedin` | `te-whare-wananga-o-awanuiarangi` | `te-whare-wananga-o-awanuiarangi-linkedin-b99951c9` | `capture_public_linkedin_snapshot` |
-| 97 | `linkedin` | `toi-ohomai` | `toi-ohomai-linkedin-c8a26d26` | `capture_public_linkedin_snapshot` |
-| 98 | `linkedin` | `ucol` | `ucol-linkedin-13b10d93` | `capture_public_linkedin_snapshot` |
-| 99 | `linkedin` | `ucol` | `ucol-linkedin-eecc5161` | `capture_public_linkedin_snapshot` |
-| 100 | `linkedin` | `unitec` | `unitec-linkedin-60bb182f` | `capture_public_linkedin_snapshot` |
+| 1 | `website_page` | `carterton-district-council` | `11e053d3ea95d082` | `retry_public_website_capture` |
+| 2 | `website_page` | `carterton-district-council` | `219ad612d51759e0` | `retry_public_website_capture` |
+| 3 | `website_page` | `carterton-district-council` | `7dc3c499db4b46f4` | `retry_public_website_capture` |
+| 4 | `website_page` | `carterton-district-council` | `a7b48197999cde4f` | `retry_public_website_capture` |
+| 5 | `website_page` | `carterton-district-council` | `b2acc7b0c03ccd2b` | `retry_public_website_capture` |
+| 6 | `website_page` | `carterton-district-council` | `d697d266de69d502` | `retry_public_website_capture` |
+| 7 | `website_page` | `carterton-district-council` | `dee0650bd3eb91ca` | `retry_public_website_capture` |
+| 8 | `website_page` | `carterton-district-council` | `e1c07b8159d21adc` | `retry_public_website_capture` |
+| 9 | `website_page` | `civil-aviation-authority` | `1f869efe642abf39` | `retry_public_website_capture` |
+| 10 | `website_page` | `civil-aviation-authority` | `6a7489c7301ca41a` | `retry_public_website_capture` |
+| 11 | `website_page` | `civil-aviation-authority` | `6d6b3f17dafaecf0` | `retry_public_website_capture` |
+| 12 | `website_page` | `civil-aviation-authority` | `91afb96f1bb3935a` | `retry_public_website_capture` |
+| 13 | `website_page` | `civil-aviation-authority` | `95062a951d8398ba` | `retry_public_website_capture` |
+| 14 | `website_page` | `civil-aviation-authority` | `98e1c7e0d08aceae` | `retry_public_website_capture` |
+| 15 | `website_page` | `civil-aviation-authority` | `cea3fade9bf9087b` | `retry_public_website_capture` |
+| 16 | `website_page` | `civil-aviation-authority` | `e83a91ed0b52186c` | `retry_public_website_capture` |
+| 17 | `website_page` | `criminal-cases-review-commission` | `4c2cbf2e37e11ac0` | `retry_public_website_capture` |
+| 18 | `website_page` | `criminal-cases-review-commission` | `56b5d13d289489f1` | `retry_public_website_capture` |
+| 19 | `website_page` | `criminal-cases-review-commission` | `78b66347397b51c7` | `retry_public_website_capture` |
+| 20 | `website_page` | `criminal-cases-review-commission` | `82c9ac8e39ed9dd4` | `retry_public_website_capture` |
+| 21 | `website_page` | `criminal-cases-review-commission` | `af4eab3aaee9ed42` | `retry_public_website_capture` |
+| 22 | `website_page` | `criminal-cases-review-commission` | `b1b901d4f0e0537e` | `retry_public_website_capture` |
+| 23 | `website_page` | `criminal-cases-review-commission` | `d6df0dc74094c160` | `retry_public_website_capture` |
+| 24 | `website_page` | `criminal-cases-review-commission` | `eb7f64ec826d4c21` | `retry_public_website_capture` |
+| 25 | `website_page` | `dpmc` | `4aef7bab2a305781` | `retry_public_website_capture` |
+| 26 | `website_page` | `dpmc` | `830368347004813f` | `retry_public_website_capture` |
+| 27 | `website_page` | `dpmc` | `a0c3f4eaf2d85b6e` | `retry_public_website_capture` |
+| 28 | `website_page` | `dpmc` | `e4b1258b8425d248` | `retry_public_website_capture` |
+| 29 | `website_page` | `education-review-office` | `0061ef17b65e9518` | `retry_public_website_capture` |
+| 30 | `website_page` | `education-review-office` | `1df9f2b07c742d01` | `retry_public_website_capture` |
+| 31 | `website_page` | `education-review-office` | `45019736c545c4fc` | `retry_public_website_capture` |
+| 32 | `website_page` | `education-review-office` | `4d1f56f9c5deaef7` | `retry_public_website_capture` |
+| 33 | `website_page` | `education-review-office` | `742293e6afb9a0f1` | `retry_public_website_capture` |
+| 34 | `website_page` | `education-review-office` | `9b4241ec93b18ab9` | `retry_public_website_capture` |
+| 35 | `website_page` | `education-review-office` | `c3670697db69f415` | `retry_public_website_capture` |
+| 36 | `website_page` | `education-review-office` | `c5389a239ca4fea3` | `retry_public_website_capture` |
+| 37 | `website_page` | `education-review-office` | `education-review-office-website_page-bd13cf94` | `retry_public_website_capture` |
+| 38 | `website_page` | `government-house` | `1e88fd192c0af855` | `retry_public_website_capture` |
+| 39 | `website_page` | `government-house` | `28fde064d265c25f` | `retry_public_website_capture` |
+| 40 | `website_page` | `government-house` | `982c084a3e6d0462` | `retry_public_website_capture` |
+| 41 | `website_page` | `government-house` | `bf4698bd981103f3` | `retry_public_website_capture` |
+| 42 | `website_page` | `ministry-of-education` | `3d96533a759ca232` | `retry_public_website_capture` |
+| 43 | `website_page` | `porirua-city-council` | `porirua-city-council-website_page-dedfde72` | `retry_public_website_capture` |
+| 44 | `website_page` | `predator-free-2050` | `predator-free-2050-website_page-fb3a8c52` | `retry_public_website_capture` |
+| 45 | `website_page` | `selwyn-district-council` | `selwyn-district-council-website_page-ce27b442` | `retry_public_website_capture` |
+| 46 | `website_page` | `te-mangai-paho` | `2fb4e37a2d9d0551` | `retry_public_website_capture` |
+| 47 | `website_page` | `te-mangai-paho` | `52524d2842b1897f` | `retry_public_website_capture` |
+| 48 | `website_page` | `te-mangai-paho` | `743298f0a7fa4e8d` | `retry_public_website_capture` |
+| 49 | `website_page` | `te-mangai-paho` | `90c9ddd4cf6de8cc` | `retry_public_website_capture` |
+| 50 | `website_page` | `te-mangai-paho` | `debaf37a55dde1a0` | `retry_public_website_capture` |
+| 51 | `website_page` | `te-mangai-paho` | `f4d8fe95d6e773b4` | `retry_public_website_capture` |
+| 52 | `website_page` | `tourism-nz` | `tourism-nz-website_page-1c93446d` | `retry_public_website_capture` |
+| 53 | `rss` | `kawerau-district-council` | `21fcb81fa4c3c580` | `run_registered_source_adapter` |
+| 54 | `rss` | `kawerau-district-council` | `c194b53bc0b69b11` | `run_registered_source_adapter` |
+| 55 | `api` | `victoria-university-of-wellington` | `b21a114650cf7c1f` | `run_registered_source_adapter` |
+| 56 | `rss` | `whakatane-district-council` | `1359e749adf17233` | `run_registered_source_adapter` |
+| 57 | `rss` | `whakatane-district-council` | `bd0270e877bc7fa5` | `run_registered_source_adapter` |
 
 The full deterministic queue is in `conductor/archive_completion_work_queue.json`.

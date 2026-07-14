@@ -123,13 +123,13 @@ def status_rank(status: str) -> int:
     if status in SUCCESS_STATUSES:
         return 100
     if status == "seed_present":
-        return 90
+        return 70
     if status in EMPTY_STATUSES | DELETED_STATUSES | INVALID_STATUSES:
         return 80
     if status == "public_fallback_available":
         return 70
     if status in ACTIONABLE_FAILURE_STATUSES:
-        return 60
+        return 75
     if status in EXTERNAL_STATUSES:
         return 70
     return 0
@@ -196,6 +196,11 @@ def classify_state(
         return "rejected_not_government", "evidence_backed_scope_rejection"
     if status == "seed_present" or status == "public_fallback_available":
         return "scheduled", "capture_input_available"
+    reason = str(evidence.get("reason") or evidence.get("error") or "")
+    if platform == "linkedin" and status == "http_error" and (
+        "HTTP 429" in reason or "HTTP 999" in reason
+    ):
+        return "terminal_external_access", "linkedin_public_access_rate_limited"
     if heuristic_common_path and status == "dns_failed":
         return "terminal_deleted", "heuristic_endpoint_domain_unavailable"
     if heuristic_common_path and status in {"method_not_allowed", "not_acceptable", "tls_failed"}:
@@ -218,6 +223,8 @@ def classify_state(
 def dispatch_for(row: dict[str, Any], state: str) -> dict[str, Any]:
     platform = str(row.get("platform") or row.get("source_type") or "unknown")
     workflow = WORKFLOWS.get(platform, "")
+    if platform == "website_page" and state == "scheduled":
+        workflow = "archive_registered_sources.yml"
     inputs: dict[str, str] = {}
     if workflow == "archive_registered_sources.yml":
         offset = 100 * (int(row.get("_manifest_offset") or 0) // 100)

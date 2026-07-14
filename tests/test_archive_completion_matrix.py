@@ -180,3 +180,32 @@ def test_dispatch_offsets_are_bounded_and_shard_specific() -> None:
 
     assert linkedin["inputs"]["offset_sources"] == "200"
     assert website["inputs"]["offset_sources"] == "20"
+
+
+def test_processed_empty_seed_outranks_stale_seed_presence() -> None:
+    assert classify_state(
+        {"platform": "x", "readiness": "blocked_credential"},
+        True,
+        {"status": "seed_empty"},
+        0,
+    )[0] == "terminal_invalid"
+
+
+def test_linkedin_public_rate_limit_is_monitored_external_access() -> None:
+    state, blocker = classify_state(
+        {"platform": "linkedin", "readiness": "resolver_ok"},
+        True,
+        {"status": "http_error", "reason": "HTTP 429: Too Many Requests"},
+        0,
+    )
+    assert state == "terminal_external_access"
+    assert blocker == "linkedin_public_access_rate_limited"
+
+
+def test_unattempted_registered_website_uses_http_capture_first() -> None:
+    dispatch = dispatch_for(
+        {"platform": "website_page", "_manifest_offset": 437}, "scheduled"
+    )
+    assert dispatch["workflow"] == "archive_registered_sources.yml"
+    assert dispatch["inputs"]["source_type"] == "website_page"
+    assert dispatch["inputs"]["offset_sources"] == "400"
