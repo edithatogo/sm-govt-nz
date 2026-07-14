@@ -1,6 +1,6 @@
 {
   "dry_run": false,
-  "generated_at": "2026-07-14T06:59:04+00:00",
+  "generated_at": "2026-07-14T07:49:47+00:00",
   "guardrails": {
     "captcha_solving": false,
     "credential_bypass": false,
@@ -164,10 +164,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/2956cc153549f9455ef5a57a.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "f33df640b05e8598",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz"
     },
     {
@@ -203,10 +203,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/49d9cc585beb35083303530e.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "88a58cb473413007",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz/media-releases"
     },
     {
@@ -279,8 +279,8 @@
     "result_count": 19,
     "selected_sources": 19,
     "status_counts": {
-      "browser_captcha_or_challenge": 8,
-      "browser_captured": 11
+      "browser_captcha_or_challenge": 6,
+      "browser_captured": 13
     }
   }
 }
