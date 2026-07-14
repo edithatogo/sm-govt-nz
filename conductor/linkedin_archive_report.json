@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-14T07:49:08+00:00",
+  "generated_at": "2026-07-14T08:32:54+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -670,10 +670,10 @@
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:433b02d3379b2fae3a4db4ff",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "health-nz-linkedin-f4436242",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://nz.linkedin.com/company/healthnewzealand"
     },
     {
@@ -681,10 +681,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "303af3ca91a8065c",
       "source_type": "social_profile",
-      "status": "not_found",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/te-whatu-ora-health-new-zealand"
     },
     {
@@ -692,10 +692,10 @@
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:079f047a7df3dd22d28258da",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "health-quality-and-safety-commission-linkedin-a1d22c81",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/health-quality-&-safety-commission"
     },
     {
@@ -703,10 +703,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "6275eac40e9c563e",
       "source_type": "social_profile",
-      "status": "not_found",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/health-quality-safety-commission"
     },
     {
@@ -714,10 +714,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:dc30c86cf7e63f664622b67f",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "2a7b81abd94891e0",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/heritage-new-zealand-pouhere-taonga"
     },
     {
@@ -824,10 +824,10 @@
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:6f65c418a19fd10c61e8c1d6",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "kiwi-group-capital-linkedin-8808a88b",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://nz.linkedin.com/company/kiwibank"
     },
     {
@@ -1044,10 +1044,10 @@
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:bac41b0de16263bdcf2aad45",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "ministry-for-ethnic-communities-linkedin-2b18127e",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://linkedin.com/company/ethniccommunitiesgovtnz"
     },
     {
@@ -1077,10 +1077,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:1a28e915f36dd64c2af77c1d",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "647df0be9f9ad9db",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/ministry-for-regulation/"
     },
     {
@@ -1135,16 +1135,16 @@
     "selected_sources": 100,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 37,
-        "not_found": 9,
-        "public_snapshot_captured": 54
+        "http_error": 45,
+        "not_found": 7,
+        "public_snapshot_captured": 48
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 37,
-      "not_found": 9,
-      "public_snapshot_captured": 54
+      "http_error": 45,
+      "not_found": 7,
+      "public_snapshot_captured": 48
     }
   }
 }
