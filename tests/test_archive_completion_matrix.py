@@ -102,6 +102,45 @@ def test_prior_terminal_evidence_survives_sharded_report_regression(tmp_path: Pa
     assert "old-report.json" in row["archive_evidence"]
 
 
+def test_prior_archive_evidence_survives_candidate_identity_drift(tmp_path: Path) -> None:
+    conductor = tmp_path / "conductor"
+    conductor.mkdir()
+    (conductor / "archive_publication_status.json").write_text("{}", encoding="utf-8")
+    readiness = {
+        "total_sources": 1,
+        "sources": [{
+            "candidate_id": "candidate-new", "source_id": "registered-source",
+            "platform": "linkedin", "source_type": "social_profile",
+            "url": "https://www.linkedin.com/company/example/", "readiness": "resolver_ok",
+        }],
+    }
+    manifest = {"sources": [{
+        "source_id": "registered-source", "platform": "linkedin",
+        "url": "https://www.linkedin.com/company/example",
+    }]}
+    prior = {"sources": [{
+        "candidate_id": "candidate-old", "source_id": "registered-source",
+        "url": "https://www.linkedin.com/company/example", "completion_state": "archived",
+        "blocker_class": "archive_evidence", "record_count": 1,
+        "archive_evidence": ["old-report.json"],
+        "publication_evidence": ["old-publication.json"],
+    }]}
+
+    matrix, _queue = build_completion_matrix(
+        readiness,
+        manifest,
+        {"candidate-new": {"candidate_id": "candidate-new", "status": "http_error"}},
+        Counter(),
+        conductor,
+        prior_matrix=prior,
+    )
+
+    row = matrix["sources"][0]
+    assert row["completion_state"] == "archived"
+    assert row["historical_capture_state"] == "evidence_present"
+    assert row["record_count"] == 1
+
+
 def test_new_seed_reopens_prior_external_access_state(tmp_path: Path) -> None:
     conductor = tmp_path / "conductor"
     conductor.mkdir()

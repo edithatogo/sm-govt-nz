@@ -286,11 +286,19 @@ def build_completion_matrix(
         for row in report_index.values()
         if canonical_url_key(row.get("url"))
     }
-    prior_by_id = {
-        source_key(row): row
-        for row in (prior_matrix or {}).get("sources", [])
-        if source_key(row)
-    }
+    prior_by_id: dict[str, dict[str, Any]] = {}
+    prior_by_url: dict[str, dict[str, Any]] = {}
+    for prior_row in (prior_matrix or {}).get("sources", []):
+        for identity in {
+            str(prior_row.get("candidate_id") or ""),
+            str(prior_row.get("source_id") or ""),
+            source_key(prior_row),
+        }:
+            if identity:
+                prior_by_id[identity] = prior_row
+        prior_url = canonical_url_key(prior_row.get("url"))
+        if prior_url:
+            prior_by_url[prior_url] = prior_row
     pub_state, pub_evidence = publication_evidence(conductor)
     rows: list[dict[str, Any]] = []
     seen: set[str] = set()
@@ -319,7 +327,11 @@ def build_completion_matrix(
         )
         normalized_count = max(normalized[key], normalized[manifest_key])
         state, blocker = classify_state(merged, registered, evidence, normalized_count)
-        prior = prior_by_id.get(key, {})
+        prior = (
+            prior_by_id.get(key)
+            or prior_by_id.get(manifest_key)
+            or next((prior_by_url[url_key] for url_key in url_keys if url_key in prior_by_url), {})
+        )
         prior_state = str(prior.get("completion_state") or "")
         current_status = str(evidence.get("status") or "")
         reopens_external = current_status in SUCCESS_STATUSES | {"seed_present", "public_fallback_available"}
@@ -353,7 +365,7 @@ def build_completion_matrix(
             "capture_adapter": ADAPTERS.get(platform, "adapter_review_required"),
             "capture_workflow": WORKFLOWS.get(platform, ""),
             "auth": str(merged.get("auth") or "unknown"),
-            "historical_capture_state": "evidence_present" if normalized_count or evidence.get("status") in SUCCESS_STATUSES else "no_archive_evidence",
+            "historical_capture_state": "evidence_present" if state == "archived" else "no_archive_evidence",
             "ongoing_capture_state": "scheduled" if platform in WORKFLOWS and registered else "not_scheduled",
             "publication_state": pub_state if state == "archived" else "not_applicable_until_archived",
             "record_count": record_count,
