@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "38cd08cad710d4beea18a62842831e0c1dc89bc08dac6484fa0d77ef5f0c09b0"
+      "sha256": "05ecfb9783b7d37fdb4813ebe04883ee5cdc9397171ef1c317368d57e88cb8e4"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24568019,
+      "bytes": 24567242,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "7313be83862569ae3093b2ea9863a79652b9af44c0a6c27ce094c736417b4cc3"
+      "sha256": "9daaf15d08e5c5a4575bc31b33ceff27481e5bef4f614aebafa95b900720b1bc"
     },
     "normalized_archive.parquet": {
-      "bytes": 38815544,
+      "bytes": 38863059,
       "path": "normalized_archive.parquet",
-      "sha256": "09999e701d9613f477b121481db6df7ec0b8a2176396cfbef6257ab96bcb8f87"
+      "sha256": "cc20021d1ac302aca6b77f3809f65a25807af591c3923e37d84508de5a9bca61"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11313,
+  "normalized_record_count": 11262,
   "normalized_shard_count": 518,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 12890,
+  "raw_file_count": 12887,
   "record_index": [
     {
       "mirror_targets": [
@@ -117190,489 +117190,30 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:50+00:00",
-      "source_account": "acc-new-zealand",
-      "source_key": "linkedin:acc-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:1c17517be0f0527e60fd848e",
-      "source_url": "https://www.linkedin.com/company/acc-new-zealand"
+      "original_timestamp": "2026-07-14T09:22:41+00:00",
+      "source_account": "https://www.ccc.govt.nz",
+      "source_key": "api:https://www.ccc.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:10cbe7f1113ed65d2e60762b",
+      "source_url": "https://www.ccc.govt.nz/.well-known/webfinger"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:51+00:00",
-      "source_account": "acc-new-zealand",
-      "source_key": "linkedin:acc-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:540bc12d984c642474c8c88b",
-      "source_url": "https://www.linkedin.com/company/acc-new-zealand/"
+      "original_timestamp": "2026-07-14T09:22:41+00:00",
+      "source_account": "https://www.ccc.govt.nz",
+      "source_key": "api:https://www.ccc.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:262386badf7f1eea20544eb6",
+      "source_url": "https://www.ccc.govt.nz/openapi.json"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:51+00:00",
-      "source_account": "airways-new-zealand",
-      "source_key": "linkedin:airways-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:88533eda7e1a2e4a228d330e",
-      "source_url": "https://www.linkedin.com/company/airways-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:52+00:00",
-      "source_account": "airways-new-zealand",
-      "source_key": "linkedin:airways-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:2577eff4dc434bf0d5cd496d",
-      "source_url": "https://www.linkedin.com/company/airways-new-zealand/?originalSubdomain=nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:53+00:00",
-      "source_account": "antarctica-new-zealand",
-      "source_key": "linkedin:antarctica-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:8a07ba4a4735b1b789766a9f",
-      "source_url": "https://www.linkedin.com/company/antarctica-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:54+00:00",
-      "source_account": "AsureQuality",
-      "source_key": "linkedin:AsureQuality",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:0bccd838d85dac8adcfdc8b0",
-      "source_url": "https://www.linkedin.com/company/asurequality"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:55+00:00",
-      "source_account": "auckland-council",
-      "source_key": "linkedin:auckland-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:94360fbabe248bf7205e29dd",
-      "source_url": "https://www.linkedin.com/company/auckland-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:56+00:00",
-      "source_account": "LinkedIn",
-      "source_key": "linkedin:LinkedIn",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:cb4a4bac014e79018072e793",
-      "source_url": "https://www.linkedin.com/company/buller-district-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:57+00:00",
-      "source_account": "callaghan-innovation",
-      "source_key": "linkedin:callaghan-innovation",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:1c6d860b7d203e93c138995f",
-      "source_url": "https://www.linkedin.com/company/callaghan-innovation"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:58+00:00",
-      "source_account": "central-hawkes-bay-district-council",
-      "source_key": "linkedin:central-hawkes-bay-district-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:6e6a21145dae1c7d3af8058d",
-      "source_url": "https://nz.linkedin.com/company/central-hawkes-bay-district-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:58+00:00",
-      "source_account": "callaghan-innovation",
-      "source_key": "linkedin:callaghan-innovation",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:7337cc0ce93e83a12e4d3a4c",
-      "source_url": "https://www.linkedin.com/company/callaghan-innovation/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:59+00:00",
-      "source_account": "3817133",
-      "source_key": "linkedin:3817133",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:9fdcdc9d7c103edf605c01a6",
-      "source_url": "https://www.linkedin.com/company/3817133/admin/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:21:59+00:00",
-      "source_account": "mana-mokopuna-children-and-young-people-s-commission",
-      "source_key": "linkedin:mana-mokopuna-children-and-young-people-s-commission",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:a0a9891ab48720b0ea58c3ca",
-      "source_url": "https://www.linkedin.com/company/mana-mokopuna-children-and-young-people-s-commission/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:00+00:00",
-      "source_account": "christchurch-city-council",
-      "source_key": "linkedin:christchurch-city-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:cee1c97679d81e5b61e01968",
-      "source_url": "https://www.linkedin.com/company/christchurch-city-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:01+00:00",
-      "source_account": "city-rail-link-ltd",
-      "source_key": "linkedin:city-rail-link-ltd",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:0be51d3de007053bf6d259a0",
-      "source_url": "https://www.linkedin.com/company/city-rail-link-ltd"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:01+00:00",
-      "source_account": "city-rail-link-ltd",
-      "source_key": "linkedin:city-rail-link-ltd",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:6464b9c8b4fd90b8903a45c1",
-      "source_url": "https://www.linkedin.com/company/city-rail-link-ltd/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:02+00:00",
-      "source_account": "civil-aviation-authority-of-new-zealand",
-      "source_key": "linkedin:civil-aviation-authority-of-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:d440aebf3292f569d975245d",
-      "source_url": "https://www.linkedin.com/company/civil-aviation-authority-of-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:03+00:00",
-      "source_account": "Linkedin",
-      "source_key": "linkedin:Linkedin",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:190ac17e1b9f49a4392b2b5e",
-      "source_url": "https://www.linkedin.com/company/civil-aviation-authority-of-new-zealand/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:04+00:00",
-      "source_account": "climate-change-commission",
-      "source_key": "linkedin:climate-change-commission",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:2ab16bfb60018301c2bb5d11",
-      "source_url": "https://www.linkedin.com/company/climate-change-commission/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:04+00:00",
-      "source_account": "clutha-district-council",
-      "source_key": "linkedin:clutha-district-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:a9a8473cbaee92974f69ed9f",
-      "source_url": "https://www.linkedin.com/company/clutha-district-council/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:05+00:00",
-      "source_account": "commerce-commission",
-      "source_key": "linkedin:commerce-commission",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:2f2a2544eddb734e9c8d742b",
-      "source_url": "https://nz.linkedin.com/company/commerce-commission"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:06+00:00",
-      "source_account": "commerce-commission",
-      "source_key": "linkedin:commerce-commission",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:9fca7f239379fd848251c3f8",
-      "source_url": "https://www.linkedin.com/company/commerce-commission"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:06+00:00",
-      "source_account": "courts-of-new-zealand",
-      "source_key": "linkedin:courts-of-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:c327b5e69325cfc5b05aa427",
-      "source_url": "https://www.linkedin.com/company/courts-of-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:07+00:00",
-      "source_account": "courts-of-new-zealand",
-      "source_key": "linkedin:courts-of-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:2c2e21936ed3acfd6d7a58f6",
-      "source_url": "https://www.linkedin.com/company/courts-of-new-zealand/posts/?feedView=all"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:07+00:00",
-      "source_account": "LinkedIn",
-      "source_key": "linkedin:LinkedIn",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:93391950c3e5f5d0d9793b33",
-      "source_url": "https://nz.linkedin.com/company/creative-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:08+00:00",
-      "source_account": "creative-new-zealand",
-      "source_key": "linkedin:creative-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:bde4e40cb6444f8319eec7f9",
-      "source_url": "https://www.linkedin.com/company/creative-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:09+00:00",
-      "source_account": "education-new-zealand",
-      "source_key": "linkedin:education-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:16259e8dc6ef9542e51435ea",
-      "source_url": "https://www.linkedin.com/company/education-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:09+00:00",
-      "source_account": "dunedin-city-council",
-      "source_key": "linkedin:dunedin-city-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:a37da7faf6eaeaa4ffd8137f",
-      "source_url": "https://www.linkedin.com/company/dunedin-city-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:10+00:00",
-      "source_account": "education-review-office",
-      "source_key": "linkedin:education-review-office",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:341365accf2f52ac45562cdc",
-      "source_url": "https://www.linkedin.com/company/education-review-office"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:11+00:00",
-      "source_account": "EECA",
-      "source_key": "linkedin:EECA",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:1fd0cc2ce564b0d97d1ba45a",
-      "source_url": "https://www.linkedin.com/company/eeca"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:11+00:00",
-      "source_account": "LinkedIn",
-      "source_key": "linkedin:LinkedIn",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:8105374912882d0e305f75a7",
-      "source_url": "https://www.linkedin.com/company/energy-efficiency-and-conservation-authority"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:12+00:00",
-      "source_account": "286999",
-      "source_key": "linkedin:286999",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:cc196fed17a228be09f00411",
-      "source_url": "http://www.linkedin.com/company/286999"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:12+00:00",
-      "source_account": "EIT",
-      "source_key": "linkedin:EIT",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:de3d94d4beeab63eb99ba09b",
-      "source_url": "https://www.linkedin.com/company/286999"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:13+00:00",
-      "source_account": "ecnz",
-      "source_key": "linkedin:ecnz",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:bfb5d90e88c0c62557e05b53",
-      "source_url": "https://www.linkedin.com/company/ecnz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:13+00:00",
-      "source_account": "1451242",
-      "source_key": "linkedin:1451242",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:c3cffc46e184707e40005c86",
-      "source_url": "https://www.linkedin.com/company/1451242"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:13+00:00",
-      "source_account": "EIT",
-      "source_key": "linkedin:EIT",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:ed8d36feb67c22d077b9bbce",
-      "source_url": "https://www.linkedin.com/company/eit"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:14+00:00",
-      "source_account": "LinkedIn",
-      "source_key": "linkedin:LinkedIn",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:d36daea023d819d5301d2c34",
-      "source_url": "https://www.linkedin.com/company/environment-canterbury"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:15+00:00",
-      "source_account": "2139834",
-      "source_key": "linkedin:2139834",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:0bfe48addc5fb0ed9acd4619",
-      "source_url": "https://www.linkedin.com/company/2139834/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:15+00:00",
-      "source_account": "environment-southland",
-      "source_key": "linkedin:environment-southland",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:d0c98e849e0d8829a3d3f6a6",
-      "source_url": "https://www.linkedin.com/company/environment-southland"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:16+00:00",
-      "source_account": "external-reporting-board",
-      "source_key": "linkedin:external-reporting-board",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:feffe9cc1ed9e9993457c0ed",
-      "source_url": "https://www.linkedin.com/company/external-reporting-board"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:17+00:00",
-      "source_account": "962042",
-      "source_key": "linkedin:962042",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:57724c0f26fbd566baf9ef12",
-      "source_url": "https://www.linkedin.com/company/962042/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:17+00:00",
-      "source_account": "gore-district-council",
-      "source_key": "linkedin:gore-district-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:8baeb5b12ce9095cc3904e87",
-      "source_url": "https://www.linkedin.com/company/gore-district-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:18+00:00",
-      "source_account": "nz-super-fund",
-      "source_key": "linkedin:nz-super-fund",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:b5b42e1ca39065fcad578fc8",
-      "source_url": "https://www.linkedin.com/company/nz-super-fund"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:19+00:00",
-      "source_account": "hamilton-city-council",
-      "source_key": "linkedin:hamilton-city-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:39cf114b9e466d3691f46609",
-      "source_url": "https://www.linkedin.com/company/hamilton-city-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:19+00:00",
-      "source_account": "Linkedin",
-      "source_key": "linkedin:Linkedin",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:ecc415afb8f5731656075875",
-      "source_url": "https://www.linkedin.com/company/2758203"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:20+00:00",
-      "source_account": "hawkes-bay-regional-council",
-      "source_key": "linkedin:hawkes-bay-regional-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:3976a2a7cba4635cb018c782",
-      "source_url": "https://www.linkedin.com/company/hawkes-bay-regional-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:20+00:00",
-      "source_account": "hastings-district-council",
-      "source_key": "linkedin:hastings-district-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:981fd7092c2ce59155b32563",
-      "source_url": "https://www.linkedin.com/company/hastings-district-council/?originalSubdomain=nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:21+00:00",
-      "source_account": "health-and-disability-commissioner",
-      "source_key": "linkedin:health-and-disability-commissioner",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:be894e1e8d9f9f697c890a54",
-      "source_url": "https://www.linkedin.com/company/health-and-disability-commissioner"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:22+00:00",
-      "source_account": "health-quality-&-safety-commission",
-      "source_key": "linkedin:health-quality-&-safety-commission",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:079f047a7df3dd22d28258da",
-      "source_url": "https://www.linkedin.com/company/health-quality-&-safety-commission"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:22+00:00",
-      "source_account": "healthnewzealand",
-      "source_key": "linkedin:healthnewzealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:433b02d3379b2fae3a4db4ff",
-      "source_url": "https://nz.linkedin.com/company/healthnewzealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:23+00:00",
-      "source_account": "heritage-new-zealand-pouhere-taonga",
-      "source_key": "linkedin:heritage-new-zealand-pouhere-taonga",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:dc30c86cf7e63f664622b67f",
-      "source_url": "https://www.linkedin.com/company/heritage-new-zealand-pouhere-taonga"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:24+00:00",
-      "source_account": "horowhenua-district-council",
-      "source_key": "linkedin:horowhenua-district-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:0657ba4dba5307ad5f63e445",
-      "source_url": "https://www.linkedin.com/company/horowhenua-district-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:24+00:00",
-      "source_account": "hutt-city-council",
-      "source_key": "linkedin:hutt-city-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:b730d59a59e785091d1d5059",
-      "source_url": "https://www.linkedin.com/company/hutt-city-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-14T09:22:25+00:00",
-      "source_account": "independent-childrens-monitor",
-      "source_key": "linkedin:independent-childrens-monitor",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:31a3733aa3fddcc883c4aca5",
-      "source_url": "https://www.linkedin.com/company/independent-childrens-monitor"
+      "original_timestamp": "2026-07-14T09:22:57+00:00",
+      "source_account": "https://www.creativenz.govt.nz",
+      "source_key": "api:https://www.creativenz.govt.nz",
+      "source_platform": "api",
+      "source_record_id": "api:4915f98708499818f68586dc",
+      "source_url": "https://www.creativenz.govt.nz/.well-known/webfinger"
     },
     {
       "mirror_targets": [],
@@ -117870,12 +117411,12 @@
     "nz-government-social-media"
   ],
   "source_counts": {
-    "api": 13,
+    "api": 16,
     "bluesky": 1900,
     "courtsofnz.govt.nz": 11,
     "email": 20,
     "json_feed": 16,
-    "linkedin": 104,
+    "linkedin": 50,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -117883,7 +117424,7 @@
   },
   "source_date_ranges": {
     "api": {
-      "max_original_created_at": "2026-07-01T10:07:53+00:00",
+      "max_original_created_at": "2026-07-14T09:22:57+00:00",
       "min_original_created_at": "2026-07-01T10:07:40+00:00"
     },
     "bluesky": {
@@ -117903,7 +117444,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-14T09:22:25+00:00",
+      "max_original_created_at": "2026-07-13T01:53:31+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
