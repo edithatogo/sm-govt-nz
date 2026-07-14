@@ -1,6 +1,6 @@
 {
   "dry_run": false,
-  "generated_at": "2026-07-13T11:26:53+00:00",
+  "generated_at": "2026-07-14T06:59:04+00:00",
   "guardrails": {
     "captcha_solving": false,
     "credential_bypass": false,
@@ -229,10 +229,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/b2cd5fdb608617a8cd4a2642.json",
-      "reason": "captured public rendered website content",
+      "reason": "public browser fallback stopped at access marker: Cloudflare",
       "source_id": "9fe590830aa19de2",
       "source_type": "website_page",
-      "status": "browser_captured",
+      "status": "browser_captcha_or_challenge",
       "url": "https://www.ashburtondc.govt.nz/news-and-events"
     },
     {
@@ -242,10 +242,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/e37e692fe83b77a311918e3e.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "70a13610eec31b6b",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz/newsletter"
     },
     {
