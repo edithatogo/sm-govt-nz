@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T07:47:57+00:00",
+  "generated_at": "2026-07-14T08:29:51+00:00",
   "items": [
     {
       "acceptance_condition": "archived record or evidence-backed terminal status",
@@ -84,141 +84,6 @@
     },
     {
       "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "health-nz",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 4,
-      "source_id": "health-nz-linkedin-0cd6a5ba",
-      "url": "https://www.linkedin.com/company/te-whatu-ora-health-new-zealand"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "health-nz",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 5,
-      "source_id": "health-nz-linkedin-f4436242",
-      "url": "https://nz.linkedin.com/company/healthnewzealand"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "health-quality-and-safety-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 6,
-      "source_id": "health-quality-and-safety-commission-linkedin-1c1a4f6d",
-      "url": "https://www.linkedin.com/company/health-quality-safety-commission"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "health-quality-and-safety-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 7,
-      "source_id": "health-quality-and-safety-commission-linkedin-a1d22c81",
-      "url": "https://www.linkedin.com/company/health-quality-&-safety-commission"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "heritage-nz",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 8,
-      "source_id": "heritage-nz-linkedin-e5034138",
-      "url": "https://www.linkedin.com/company/heritage-new-zealand-pouhere-taonga"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
       "agency_id": "horowhenua-district-council",
       "completion_state": "scheduled",
       "dispatch": {
@@ -240,7 +105,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 9,
+      "rank": 4,
       "source_id": "horowhenua-district-council-linkedin-ecb09f5c",
       "url": "https://www.linkedin.com/company/horowhenua-district-council"
     },
@@ -267,7 +132,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 10,
+      "rank": 5,
       "source_id": "hutt-city-council-linkedin-4ff33532",
       "url": "https://www.linkedin.com/company/hutt-city-council"
     },
@@ -294,7 +159,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 11,
+      "rank": 6,
       "source_id": "independent-childrens-monitor-linkedin-9993661a",
       "url": "https://www.linkedin.com/company/independent-childrens-monitor"
     },
@@ -321,7 +186,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 12,
+      "rank": 7,
       "source_id": "inland-revenue-department-linkedin-871c62e3",
       "url": "https://www.linkedin.com/company/inland-revenue-nz/"
     },
@@ -348,7 +213,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 13,
+      "rank": 8,
       "source_id": "inland-revenue-department-linkedin-92a6b59f",
       "url": "https://www.linkedin.com/company/inland-revenue-nz/?id=footer"
     },
@@ -375,7 +240,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 14,
+      "rank": 9,
       "source_id": "invercargill-city-council-linkedin-beb954b9",
       "url": "https://nz.linkedin.com/company/invercargill-city-council"
     },
@@ -402,7 +267,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 15,
+      "rank": 10,
       "source_id": "invercargill-city-council-linkedin-d8da10fe",
       "url": "https://www.linkedin.com/company/invercargill-city-council"
     },
@@ -429,7 +294,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 16,
+      "rank": 11,
       "source_id": "kainga-ora-linkedin-9168d822",
       "url": "https://nz.linkedin.com/company/kainga-ora"
     },
@@ -456,7 +321,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 17,
+      "rank": 12,
       "source_id": "kainga-ora-linkedin-b5fc3488",
       "url": "https://www.linkedin.com/company/kainga-ora"
     },
@@ -483,36 +348,9 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 18,
+      "rank": 13,
       "source_id": "kiwi-group-capital-linkedin-025ef3cc",
       "url": "https://www.linkedin.com/company/kiwibank"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "kiwi-group-capital",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 19,
-      "source_id": "kiwi-group-capital-linkedin-8808a88b",
-      "url": "https://nz.linkedin.com/company/kiwibank"
     },
     {
       "acceptance_condition": "archived record or evidence-backed terminal status",
@@ -537,7 +375,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 20,
+      "rank": 14,
       "source_id": "kiwirail-linkedin-1f73c26e",
       "url": "https://www.linkedin.com/company/kiwirail"
     },
@@ -564,7 +402,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 21,
+      "rank": 15,
       "source_id": "kordia-linkedin-b8ae9eff",
       "url": "https://www.linkedin.com/company/kordia"
     },
@@ -591,7 +429,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 22,
+      "rank": 16,
       "source_id": "kordia-linkedin-e1c3751e",
       "url": "https://www.linkedin.com/company/kordia/"
     },
@@ -618,7 +456,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 23,
+      "rank": 17,
       "source_id": "law-commission-linkedin-003461d1",
       "url": "https://www.linkedin.com/company/nzlawcommission"
     },
@@ -645,7 +483,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 24,
+      "rank": 18,
       "source_id": "lincoln-university-linkedin-2b2d9c3d",
       "url": "https://www.linkedin.com/school/lincoln-university-new-zealand"
     },
@@ -672,7 +510,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 25,
+      "rank": 19,
       "source_id": "linz-linkedin-57a50977",
       "url": "https://www.linkedin.com/company/land-information-new-zealand"
     },
@@ -699,7 +537,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 26,
+      "rank": 20,
       "source_id": "linz-linkedin-c618d0e1",
       "url": "https://www.linkedin.com/company/toitu-te-whenua-linz/"
     },
@@ -726,7 +564,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 27,
+      "rank": 21,
       "source_id": "mackenzie-district-council-linkedin-53be0b59",
       "url": "https://nz.linkedin.com/company/mackenzie-district-council"
     },
@@ -753,7 +591,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 28,
+      "rank": 22,
       "source_id": "manawatu-district-council-linkedin-c2d6eb38",
       "url": "https://nz.linkedin.com/company/manawatu-district-council"
     },
@@ -780,7 +618,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 29,
+      "rank": 23,
       "source_id": "manukau-institute-of-technology-linkedin-4a24e858",
       "url": "https://www.linkedin.com/school/manukau-institute-of-technology"
     },
@@ -807,7 +645,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 30,
+      "rank": 24,
       "source_id": "maritime-nz-linkedin-85b511ce",
       "url": "https://www.linkedin.com/company/maritime-new-zealand"
     },
@@ -834,7 +672,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 31,
+      "rank": 25,
       "source_id": "maritime-nz-linkedin-95122411",
       "url": "https://www.linkedin.com/company/1429680"
     },
@@ -861,7 +699,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 32,
+      "rank": 26,
       "source_id": "marlborough-district-council-linkedin-fd3dea73",
       "url": "https://www.linkedin.com/company/marlborough-district-council"
     },
@@ -888,7 +726,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 33,
+      "rank": 27,
       "source_id": "massey-university-linkedin-f7cdf1dc",
       "url": "https://www.linkedin.com/school/massey-university"
     },
@@ -915,7 +753,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 34,
+      "rank": 28,
       "source_id": "masterton-district-council-linkedin-ced1041e",
       "url": "https://www.linkedin.com/company/masterton-district-council/"
     },
@@ -942,7 +780,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 35,
+      "rank": 29,
       "source_id": "mbie-linkedin-759990c6",
       "url": "https://www.linkedin.com/company/ministry-of-business-innovation-and-employment/"
     },
@@ -969,7 +807,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 36,
+      "rank": 30,
       "source_id": "ministry-for-culture-and-heritage-linkedin-a2b2c035",
       "url": "https://www.linkedin.com/company/manatu-taonga-ministry-for-culture-and-heritage/"
     },
@@ -996,36 +834,9 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 37,
+      "rank": 31,
       "source_id": "ministry-for-culture-and-heritage-linkedin-baaf014e",
       "url": "https://www.linkedin.com/company/ministry-for-culture-and-heritage/"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "ministry-for-ethnic-communities",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 38,
-      "source_id": "ministry-for-ethnic-communities-linkedin-2b18127e",
-      "url": "https://linkedin.com/company/ethniccommunitiesgovtnz"
     },
     {
       "acceptance_condition": "archived record or evidence-backed terminal status",
@@ -1050,7 +861,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 39,
+      "rank": 32,
       "source_id": "ministry-for-pacific-peoples-linkedin-2df02a07",
       "url": "https://www.linkedin.com/company/ministry-for-pacific-peoples"
     },
@@ -1077,7 +888,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 40,
+      "rank": 33,
       "source_id": "ministry-for-pacific-peoples-linkedin-5083e8eb",
       "url": "https://linkedin.com/company/ministry-for-pacific-peoples"
     },
@@ -1104,34 +915,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 41,
-      "source_id": "ministry-for-regulation-linkedin-af6c2025",
-      "url": "https://www.linkedin.com/company/ministry-for-regulation/"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "ministry-for-regulation",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 42,
+      "rank": 34,
       "source_id": "ministry-for-regulation-linkedin-b92e856a",
       "url": "https://www.linkedin.com/company/ministry-for-regulation/posts/?feedView=all"
     },
@@ -1158,7 +942,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 43,
+      "rank": 35,
       "source_id": "ministry-for-the-environment-linkedin-daa128dd",
       "url": "https://www.linkedin.com/company/ministry-for-the-environment"
     },
@@ -1185,7 +969,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 44,
+      "rank": 36,
       "source_id": "ministry-for-women-linkedin-1206a60d",
       "url": "https://www.linkedin.com/company/624818/"
     },
@@ -1212,7 +996,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 45,
+      "rank": 37,
       "source_id": "ministry-for-women-linkedin-353602e9",
       "url": "https://www.linkedin.com/company/ministry-for-women-nz/"
     },
@@ -1239,7 +1023,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 46,
+      "rank": 38,
       "source_id": "nmit-linkedin-31aa2e9d",
       "url": "http://www.linkedin.com/edu/school?id=164055&trk=edu-cp-title"
     },
@@ -1266,7 +1050,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 47,
+      "rank": 39,
       "source_id": "nmit-linkedin-65130349",
       "url": "https://www.linkedin.com/school/nelson-marlborough-institute-of-technology"
     },
@@ -1293,7 +1077,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 48,
+      "rank": 40,
       "source_id": "northtec-linkedin-293156f4",
       "url": "https://www.linkedin.com/company/northtec"
     },
@@ -1320,7 +1104,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 49,
+      "rank": 41,
       "source_id": "northtec-linkedin-2b9e2a51",
       "url": "https://www.linkedin.com/school/northtec/"
     },
@@ -1347,7 +1131,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 50,
+      "rank": 42,
       "source_id": "nz-defence-force-linkedin-66352d1b",
       "url": "https://www.linkedin.com/company/new-zealand-defence-force"
     },
@@ -1374,7 +1158,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 51,
+      "rank": 43,
       "source_id": "open-polytechnic-linkedin-1fe8de37",
       "url": "https://www.linkedin.com/school/open-polytechnic"
     },
@@ -1401,7 +1185,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 52,
+      "rank": 44,
       "source_id": "open-polytechnic-linkedin-b0840abe",
       "url": "https://nz.linkedin.com/school/open-polytechnic-of-new-zealand/"
     },
@@ -1428,7 +1212,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 53,
+      "rank": 45,
       "source_id": "otago-polytechnic-linkedin-a1cbcc99",
       "url": "https://www.linkedin.com/school/otago-polytechnic"
     },
@@ -1455,7 +1239,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 54,
+      "rank": 46,
       "source_id": "otago-regional-council-linkedin-8f6cf63b",
       "url": "https://www.linkedin.com/company/otago-regional-council"
     },
@@ -1482,7 +1266,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 55,
+      "rank": 47,
       "source_id": "otorohanga-district-council-linkedin-ac448de4",
       "url": "https://www.linkedin.com/company/otorohanga-district-council"
     },
@@ -1509,7 +1293,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 56,
+      "rank": 48,
       "source_id": "palmerston-north-city-council-linkedin-6488f2d2",
       "url": "https://www.linkedin.com/company/palmerston-north-city-council"
     },
@@ -1536,7 +1320,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 57,
+      "rank": 49,
       "source_id": "pamu-linkedin-51bf1e7c",
       "url": "https://www.linkedin.com/company/647540/"
     },
@@ -1563,7 +1347,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 58,
+      "rank": 50,
       "source_id": "pamu-linkedin-87b281d5",
       "url": "https://www.linkedin.com/company/pamunz"
     },
@@ -1590,7 +1374,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 59,
+      "rank": 51,
       "source_id": "parliamentary-commissioner-for-environment-linkedin-64217288",
       "url": "https://www.linkedin.com/company/parliamentary-commissioner-for-the-environment"
     },
@@ -1617,7 +1401,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 60,
+      "rank": 52,
       "source_id": "parliamentary-commissioner-for-environment-linkedin-dfa622fb",
       "url": "https://nz.linkedin.com/company/parliamentary-commissioner-for-the-environment"
     },
@@ -1644,7 +1428,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 61,
+      "rank": 53,
       "source_id": "pharmac-linkedin-d351aa9c",
       "url": "https://www.linkedin.com/company/pharmaceutical-management-agency/"
     },
@@ -1671,7 +1455,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 62,
+      "rank": 54,
       "source_id": "pharmac-linkedin-ef734451",
       "url": "https://www.linkedin.com/company/pharmac"
     },
@@ -1698,7 +1482,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 63,
+      "rank": 55,
       "source_id": "porirua-city-council-linkedin-5a0f8550",
       "url": "https://www.linkedin.com/company/porirua-city-council"
     },
@@ -1725,7 +1509,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 64,
+      "rank": 56,
       "source_id": "privacy-commissioner-linkedin-8ac3ea1b",
       "url": "https://www.linkedin.com/company/office-of-the-privacy-commissioner"
     },
@@ -1752,7 +1536,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 65,
+      "rank": 57,
       "source_id": "public-service-commission-linkedin-9b0206e5",
       "url": "https://www.linkedin.com/company/te-kawa-mataaho/"
     },
@@ -1779,7 +1563,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 66,
+      "rank": 58,
       "source_id": "public-service-commission-linkedin-a90ba070",
       "url": "https://www.linkedin.com/company/te-kawa-mataaho"
     },
@@ -1806,7 +1590,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 67,
+      "rank": 59,
       "source_id": "queenstown-lakes-district-council-linkedin-b1b82437",
       "url": "https://www.linkedin.com/company/1971267/"
     },
@@ -1833,7 +1617,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 68,
+      "rank": 60,
       "source_id": "qv-linkedin-d8ccee5f",
       "url": "https://www.linkedin.com/company/129423/"
     },
@@ -1860,7 +1644,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 69,
+      "rank": 61,
       "source_id": "qv-linkedin-e291463c",
       "url": "https://www.linkedin.com/company/qv"
     },
@@ -1887,7 +1671,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 70,
+      "rank": 62,
       "source_id": "real-estate-authority-linkedin-a19a2aad",
       "url": "https://www.linkedin.com/company/realestateauthority"
     },
@@ -1914,7 +1698,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 71,
+      "rank": 63,
       "source_id": "real-estate-authority-linkedin-fa435a1e",
       "url": "https://www.linkedin.com/company/real-estate-authority"
     },
@@ -1941,7 +1725,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 72,
+      "rank": 64,
       "source_id": "reannz-linkedin-ef152687",
       "url": "https://www.linkedin.com/company/reannz"
     },
@@ -1968,7 +1752,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 73,
+      "rank": 65,
       "source_id": "reserve-bank-of-nz-linkedin-7ec667dd",
       "url": "https://nz.linkedin.com/company/reserve-bank-of-new-zealand"
     },
@@ -1995,7 +1779,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 74,
+      "rank": 66,
       "source_id": "reserve-bank-of-nz-linkedin-f491be60",
       "url": "https://www.linkedin.com/company/reserve-bank-of-new-zealand"
     },
@@ -2022,7 +1806,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 75,
+      "rank": 67,
       "source_id": "rotorua-lakes-council-linkedin-8d789955",
       "url": "https://www.linkedin.com/company/rotorua-lakes-council"
     },
@@ -2049,7 +1833,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 76,
+      "rank": 68,
       "source_id": "royal-nz-air-force-linkedin-277934c3",
       "url": "https://www.linkedin.com/company/royal-new-zealand-air-force"
     },
@@ -2076,7 +1860,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 77,
+      "rank": 69,
       "source_id": "royal-nz-air-force-linkedin-4935a341",
       "url": "https://www.linkedin.com/company/new-zealand-defence-force/"
     },
@@ -2103,7 +1887,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 78,
+      "rank": 70,
       "source_id": "royal-nz-navy-linkedin-4935a341",
       "url": "https://www.linkedin.com/company/new-zealand-defence-force/"
     },
@@ -2130,7 +1914,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 79,
+      "rank": 71,
       "source_id": "royal-nz-navy-linkedin-5f46f0be",
       "url": "https://www.linkedin.com/company/royal-new-zealand-navy"
     },
@@ -2157,7 +1941,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 80,
+      "rank": 72,
       "source_id": "serious-fraud-office-linkedin-1e7c4752",
       "url": "https://www.linkedin.com/company/serious-fraud-office/"
     },
@@ -2184,7 +1968,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 81,
+      "rank": 73,
       "source_id": "serious-fraud-office-linkedin-318d08c7",
       "url": "https://www.linkedin.com//company/serious-fraud-office/"
     },
@@ -2211,7 +1995,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 82,
+      "rank": 74,
       "source_id": "sit-linkedin-8ebf5499",
       "url": "https://www.linkedin.com/school/southern-institute-of-technology"
     },
@@ -2238,7 +2022,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 83,
+      "rank": 75,
       "source_id": "sit-linkedin-b5007a47",
       "url": "https://nz.linkedin.com/school/southern-institute-of-technology/"
     },
@@ -2265,7 +2049,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 84,
+      "rank": 76,
       "source_id": "social-investment-agency-linkedin-7e43ac35",
       "url": "https://www.linkedin.com/company/social-investment-agency"
     },
@@ -2292,7 +2076,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 85,
+      "rank": 77,
       "source_id": "south-wairarapa-district-council-linkedin-311abd59",
       "url": "https://www.linkedin.com/company/south-wairarapa-district-council/"
     },
@@ -2319,7 +2103,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 86,
+      "rank": 78,
       "source_id": "sport-nz-linkedin-32a2203f",
       "url": "https://www.linkedin.com/company/sport-new-zealand"
     },
@@ -2346,7 +2130,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 87,
+      "rank": 79,
       "source_id": "sport-nz-linkedin-e89f395e",
       "url": "https://nz.linkedin.com/company/sport-new-zealand"
     },
@@ -2373,7 +2157,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 88,
+      "rank": 80,
       "source_id": "stats-nz-linkedin-33d243d9",
       "url": "https://www.linkedin.com/company/statistics-new-zealand/"
     },
@@ -2400,7 +2184,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 89,
+      "rank": 81,
       "source_id": "tai-poutini-polytechnic-linkedin-7afdefda",
       "url": "https://www.linkedin.com/company/tai-poutini-polytechnic"
     },
@@ -2427,7 +2211,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 90,
+      "rank": 82,
       "source_id": "tai-poutini-polytechnic-linkedin-96ec1d88",
       "url": "https://nz.linkedin.com/company/tai-poutini-polytechnic"
     },
@@ -2454,7 +2238,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 91,
+      "rank": 83,
       "source_id": "taranaki-regional-council-linkedin-7c677ee9",
       "url": "https://nz.linkedin.com/company/taranaki-regional-council"
     },
@@ -2481,7 +2265,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 92,
+      "rank": 84,
       "source_id": "tararua-district-council-linkedin-1ae56e17",
       "url": "https://nz.linkedin.com/company/tararua-district-council"
     },
@@ -2508,7 +2292,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 93,
+      "rank": 85,
       "source_id": "tasman-district-council-linkedin-533cf654",
       "url": "https://www.linkedin.com/company/tasmandistrictcouncil/"
     },
@@ -2535,7 +2319,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 94,
+      "rank": 86,
       "source_id": "taumata-arowai-linkedin-3904b71f",
       "url": "https://www.linkedin.com/company/taumata-arowai/"
     },
@@ -2562,7 +2346,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 95,
+      "rank": 87,
       "source_id": "taumata-arowai-linkedin-5a738f7b",
       "url": "https://www.linkedin.com/company/taumata-arowai"
     },
@@ -2589,7 +2373,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 96,
+      "rank": 88,
       "source_id": "taupo-district-council-linkedin-22e4cba6",
       "url": "https://nz.linkedin.com/company/taupo-district-council"
     },
@@ -2616,7 +2400,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 97,
+      "rank": 89,
       "source_id": "tauranga-city-council-linkedin-c3591569",
       "url": "https://www.linkedin.com/company/tauranga-city-council"
     },
@@ -2643,7 +2427,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 98,
+      "rank": 90,
       "source_id": "te-ara-ahunga-ora-linkedin-2dd764dc",
       "url": "https://www.linkedin.com/company/retirement-commission/"
     },
@@ -2670,7 +2454,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 99,
+      "rank": 91,
       "source_id": "te-wananga-o-aotearoa-linkedin-429f5eb3",
       "url": "https://www.linkedin.com/school/te-wananga-o-aotearoa"
     },
@@ -2697,7 +2481,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 100,
+      "rank": 92,
       "source_id": "te-wananga-o-aotearoa-linkedin-fbd3ee90",
       "url": "https://www.linkedin.com/school/te-w\u0101nanga-o-aotearoa-twoa/"
     },
@@ -2724,7 +2508,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 101,
+      "rank": 93,
       "source_id": "te-wananga-o-raukawa-linkedin-96c4f403",
       "url": "https://www.linkedin.com/school/te-wananga-o-raukawa"
     },
@@ -2751,7 +2535,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 102,
+      "rank": 94,
       "source_id": "te-wananga-o-raukawa-linkedin-f1111bfa",
       "url": "https://www.linkedin.com/school/te-w%C4%81nanga-o-raukawa/"
     },
@@ -2778,7 +2562,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 103,
+      "rank": 95,
       "source_id": "te-whare-wananga-o-awanuiarangi-linkedin-b99951c9",
       "url": "https://www.linkedin.com/school/te-whare-wananga-o-awanuiarangi"
     },
@@ -2805,7 +2589,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 104,
+      "rank": 96,
       "source_id": "toi-ohomai-linkedin-c8a26d26",
       "url": "https://www.linkedin.com/school/toi-ohomai-institute-of-technology"
     },
@@ -2832,7 +2616,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 105,
+      "rank": 97,
       "source_id": "ucol-linkedin-13b10d93",
       "url": "https://www.linkedin.com/school/ucol"
     },
@@ -2859,7 +2643,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 106,
+      "rank": 98,
       "source_id": "ucol-linkedin-eecc5161",
       "url": "https://nz.linkedin.com/school/ucolnz/"
     },
@@ -2886,7 +2670,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 107,
+      "rank": 99,
       "source_id": "unitec-linkedin-60bb182f",
       "url": "https://www.linkedin.com/school/unitec-institute-of-technology/"
     },
@@ -2913,7 +2697,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 108,
+      "rank": 100,
       "source_id": "unitec-linkedin-a38d31ed",
       "url": "https://www.linkedin.com/school/unitec"
     },
@@ -2940,7 +2724,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 109,
+      "rank": 101,
       "source_id": "university-of-auckland-linkedin-afb89d4a",
       "url": "https://nz.linkedin.com/school/university-of-auckland/"
     },
@@ -2967,7 +2751,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 110,
+      "rank": 102,
       "source_id": "university-of-auckland-linkedin-c97492e0",
       "url": "https://www.linkedin.com/school/university-of-auckland"
     },
@@ -2994,7 +2778,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 111,
+      "rank": 103,
       "source_id": "university-of-canterbury-linkedin-276949da",
       "url": "https://www.linkedin.com/school/university-of-canterbury"
     },
@@ -3021,7 +2805,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 112,
+      "rank": 104,
       "source_id": "university-of-canterbury-linkedin-6cc08b26",
       "url": "https://nz.linkedin.com/school/university-of-canterbury/"
     },
@@ -3048,7 +2832,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 113,
+      "rank": 105,
       "source_id": "university-of-otago-linkedin-3157a3dd",
       "url": "https://www.linkedin.com/school/university-of-otago"
     },
@@ -3075,7 +2859,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 114,
+      "rank": 106,
       "source_id": "university-of-waikato-linkedin-0dcb699a",
       "url": "https://www.linkedin.com/school/universityofwaikato/"
     },
@@ -3102,7 +2886,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 115,
+      "rank": 107,
       "source_id": "university-of-waikato-linkedin-e68dae21",
       "url": "https://www.linkedin.com/school/university-of-waikato"
     },
@@ -3129,7 +2913,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 116,
+      "rank": 108,
       "source_id": "victoria-university-of-wellington-linkedin-511d5e68",
       "url": "https://www.linkedin.com/school/victoria-university-of-wellington"
     },
@@ -3156,7 +2940,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 117,
+      "rank": 109,
       "source_id": "weltec-linkedin-0873cc2c",
       "url": "https://www.linkedin.com/school/weltec"
     },
@@ -3183,7 +2967,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 118,
+      "rank": 110,
       "source_id": "whitireia-linkedin-181fe837",
       "url": "https://www.linkedin.com/school/whitireia"
     },
@@ -3210,7 +2994,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 119,
+      "rank": 111,
       "source_id": "wintec-linkedin-19f714ad",
       "url": "https://www.linkedin.com/school/wintec"
     },
@@ -3237,7 +3021,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 120,
+      "rank": 112,
       "source_id": "wintec-linkedin-6c469ecb",
       "url": "https://www.linkedin.com/school/waikato-institute-of-technology"
     },
@@ -3264,7 +3048,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 121,
+      "rank": 113,
       "source_id": "witt-linkedin-f45a25fe",
       "url": "https://www.linkedin.com/school/witt"
     },
@@ -3291,7 +3075,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 122,
+      "rank": 114,
       "source_id": "auckland-light-rail-website_page-680a0eb9",
       "url": "https://www.aucklandlightrail.co.nz"
     },
@@ -3318,7 +3102,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 123,
+      "rank": 115,
       "source_id": "11e053d3ea95d082",
       "url": "https://www.cartertondc.govt.nz/news-and-events"
     },
@@ -3345,7 +3129,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 124,
+      "rank": 116,
       "source_id": "219ad612d51759e0",
       "url": "https://www.cartertondc.govt.nz/media-releases"
     },
@@ -3372,7 +3156,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 125,
+      "rank": 117,
       "source_id": "7dc3c499db4b46f4",
       "url": "https://www.cartertondc.govt.nz/media"
     },
@@ -3399,7 +3183,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 126,
+      "rank": 118,
       "source_id": "a7b48197999cde4f",
       "url": "https://www.cartertondc.govt.nz/newsletter"
     },
@@ -3426,7 +3210,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 127,
+      "rank": 119,
       "source_id": "b2acc7b0c03ccd2b",
       "url": "https://www.cartertondc.govt.nz/publications"
     },
@@ -3453,7 +3237,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 128,
+      "rank": 120,
       "source_id": "d697d266de69d502",
       "url": "https://www.cartertondc.govt.nz/news"
     },
@@ -3480,7 +3264,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 129,
+      "rank": 121,
       "source_id": "dee0650bd3eb91ca",
       "url": "https://www.cartertondc.govt.nz/api"
     },
@@ -3507,7 +3291,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 130,
+      "rank": 122,
       "source_id": "e1c07b8159d21adc",
       "url": "https://www.cartertondc.govt.nz/subscribe"
     },
@@ -3534,7 +3318,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 131,
+      "rank": 123,
       "source_id": "1f869efe642abf39",
       "url": "https://www.caa.govt.nz/api"
     },
@@ -3561,7 +3345,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 132,
+      "rank": 124,
       "source_id": "6a7489c7301ca41a",
       "url": "https://www.caa.govt.nz/media-releases"
     },
@@ -3588,7 +3372,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 133,
+      "rank": 125,
       "source_id": "6d6b3f17dafaecf0",
       "url": "https://www.caa.govt.nz/publications"
     },
@@ -3615,7 +3399,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 134,
+      "rank": 126,
       "source_id": "91afb96f1bb3935a",
       "url": "https://www.caa.govt.nz/subscribe"
     },
@@ -3642,7 +3426,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 135,
+      "rank": 127,
       "source_id": "95062a951d8398ba",
       "url": "https://www.caa.govt.nz/media"
     },
@@ -3669,7 +3453,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 136,
+      "rank": 128,
       "source_id": "98e1c7e0d08aceae",
       "url": "https://www.caa.govt.nz/news"
     },
@@ -3696,7 +3480,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 137,
+      "rank": 129,
       "source_id": "cea3fade9bf9087b",
       "url": "https://www.caa.govt.nz/news-and-events"
     },
@@ -3723,7 +3507,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 138,
+      "rank": 130,
       "source_id": "e83a91ed0b52186c",
       "url": "https://www.caa.govt.nz/newsletter"
     },
@@ -3750,7 +3534,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 139,
+      "rank": 131,
       "source_id": "4c2cbf2e37e11ac0",
       "url": "https://www.ccrc.govt.nz/news-and-events"
     },
@@ -3777,7 +3561,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 140,
+      "rank": 132,
       "source_id": "56b5d13d289489f1",
       "url": "https://www.ccrc.govt.nz/publications"
     },
@@ -3804,7 +3588,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 141,
+      "rank": 133,
       "source_id": "78b66347397b51c7",
       "url": "https://www.ccrc.govt.nz/api"
     },
@@ -3831,7 +3615,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 142,
+      "rank": 134,
       "source_id": "82c9ac8e39ed9dd4",
       "url": "https://www.ccrc.govt.nz/subscribe"
     },
@@ -3858,7 +3642,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 143,
+      "rank": 135,
       "source_id": "af4eab3aaee9ed42",
       "url": "https://www.ccrc.govt.nz/media"
     },
@@ -3885,7 +3669,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 144,
+      "rank": 136,
       "source_id": "b1b901d4f0e0537e",
       "url": "https://www.ccrc.govt.nz/media-releases"
     },
@@ -3912,7 +3696,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 145,
+      "rank": 137,
       "source_id": "d6df0dc74094c160",
       "url": "https://www.ccrc.govt.nz/newsletter"
     },
@@ -3939,7 +3723,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 146,
+      "rank": 138,
       "source_id": "eb7f64ec826d4c21",
       "url": "https://www.ccrc.govt.nz/news"
     },
@@ -3966,7 +3750,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 147,
+      "rank": 139,
       "source_id": "department-of-corrections-website_page-9d44d1ec",
       "url": "https://www.corrections.govt.nz"
     },
@@ -3993,7 +3777,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 148,
+      "rank": 140,
       "source_id": "digital-council-aotearoa-new-zealand-website_page-a488e321",
       "url": "https://www.digital.govt.nz"
     },
@@ -4020,7 +3804,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 149,
+      "rank": 141,
       "source_id": "4aef7bab2a305781",
       "url": "https://www.dpmc.govt.nz/subscribe"
     },
@@ -4047,7 +3831,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 150,
+      "rank": 142,
       "source_id": "830368347004813f",
       "url": "https://www.dpmc.govt.nz/api"
     },
@@ -4074,7 +3858,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 151,
+      "rank": 143,
       "source_id": "a0c3f4eaf2d85b6e",
       "url": "https://www.dpmc.govt.nz/newsletter"
     },
@@ -4101,7 +3885,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 152,
+      "rank": 144,
       "source_id": "dpmc-website_page-198dd998",
       "url": "https://www.dpmc.govt.nz"
     },
@@ -4128,7 +3912,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 153,
+      "rank": 145,
       "source_id": "e4b1258b8425d248",
       "url": "https://www.dpmc.govt.nz/news-and-events"
     },
@@ -4155,7 +3939,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 154,
+      "rank": 146,
       "source_id": "dunedin-city-council-website_page-027b6950",
       "url": "https://www.dunedin.govt.nz"
     },
@@ -4182,7 +3966,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 155,
+      "rank": 147,
       "source_id": "0061ef17b65e9518",
       "url": "https://www.ero.govt.nz/news-and-events"
     },
@@ -4209,7 +3993,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 156,
+      "rank": 148,
       "source_id": "1df9f2b07c742d01",
       "url": "https://www.ero.govt.nz/publications"
     },
@@ -4236,7 +4020,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 157,
+      "rank": 149,
       "source_id": "45019736c545c4fc",
       "url": "https://www.ero.govt.nz/newsletter"
     },
@@ -4263,7 +4047,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 158,
+      "rank": 150,
       "source_id": "4d1f56f9c5deaef7",
       "url": "https://www.ero.govt.nz/news"
     },
@@ -4290,7 +4074,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 159,
+      "rank": 151,
       "source_id": "742293e6afb9a0f1",
       "url": "https://www.ero.govt.nz/media-releases"
     },
@@ -4317,7 +4101,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 160,
+      "rank": 152,
       "source_id": "9b4241ec93b18ab9",
       "url": "https://www.ero.govt.nz/api"
     },
@@ -4344,7 +4128,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 161,
+      "rank": 153,
       "source_id": "c3670697db69f415",
       "url": "https://www.ero.govt.nz/subscribe"
     },
@@ -4371,7 +4155,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 162,
+      "rank": 154,
       "source_id": "c5389a239ca4fea3",
       "url": "https://www.ero.govt.nz/media"
     },
@@ -4398,7 +4182,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 163,
+      "rank": 155,
       "source_id": "education-review-office-website_page-bd13cf94",
       "url": "https://www.ero.govt.nz"
     },
@@ -4425,7 +4209,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 164,
+      "rank": 156,
       "source_id": "far-north-district-council-website_page-61244b75",
       "url": "https://www.fndc.govt.nz"
     },
@@ -4452,7 +4236,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 165,
+      "rank": 157,
       "source_id": "gisborne-district-council-website_page-e8ccbd41",
       "url": "https://www.gdc.govt.nz"
     },
@@ -4479,7 +4263,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 166,
+      "rank": 158,
       "source_id": "1e88fd192c0af855",
       "url": "https://gg.govt.nz/media"
     },
@@ -4506,7 +4290,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 167,
+      "rank": 159,
       "source_id": "28fde064d265c25f",
       "url": "https://gg.govt.nz/news"
     },
@@ -4533,7 +4317,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 168,
+      "rank": 160,
       "source_id": "982c084a3e6d0462",
       "url": "https://gg.govt.nz/media-releases"
     },
@@ -4560,7 +4344,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 169,
+      "rank": 161,
       "source_id": "bf4698bd981103f3",
       "url": "https://gg.govt.nz/api"
     },
@@ -4587,7 +4371,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 170,
+      "rank": 162,
       "source_id": "government-house-website_page-07a02cbc",
       "url": "https://gg.govt.nz"
     },
@@ -4614,7 +4398,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 171,
+      "rank": 163,
       "source_id": "hutt-city-council-website_page-38cabab0",
       "url": "https://www.huttcity.govt.nz"
     },
@@ -4641,7 +4425,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 172,
+      "rank": 164,
       "source_id": "lincoln-university-website_page-8c63ff12",
       "url": "https://www.lincoln.ac.nz"
     },
@@ -4668,7 +4452,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 173,
+      "rank": 165,
       "source_id": "mackenzie-district-council-website_page-2dd5544b",
       "url": "https://www.mackenzie.govt.nz/community/newsletters"
     },
@@ -4695,7 +4479,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 174,
+      "rank": 166,
       "source_id": "mackenzie-district-council-website_page-33a769f1",
       "url": "https://www.mackenzie.govt.nz"
     },
@@ -4722,7 +4506,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 175,
+      "rank": 167,
       "source_id": "mackenzie-district-council-website_page-e49e8b80",
       "url": "https://www.mackenzie.govt.nz/home/icon-redirects/row-2/latest-newsletter"
     },
@@ -4749,7 +4533,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 176,
+      "rank": 168,
       "source_id": "mackenzie-district-council-website_page-fa4cbc45",
       "url": "https://www.mackenzie.govt.nz/pages/public-notices/2026/news-and-information-from-mackenzie-district-council-late-june-2026"
     },
@@ -4776,7 +4560,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 177,
+      "rank": 169,
       "source_id": "manawatu-district-council-website_page-a448d8e3",
       "url": "https://www.mdc.govt.nz"
     },
@@ -4803,7 +4587,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 178,
+      "rank": 170,
       "source_id": "manawatu-district-council-website_page-f27f8356",
       "url": "https://www.mdc.govt.nz/projects-and-news/monthly-newsletter"
     },
@@ -4830,7 +4614,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 179,
+      "rank": 171,
       "source_id": "ministry-for-culture-and-heritage-website_page-533336ab",
       "url": "https://www.mch.govt.nz"
     },
@@ -4857,7 +4641,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 180,
+      "rank": 172,
       "source_id": "ministry-for-ethnic-communities-website_page-5c78ee7f",
       "url": "https://www.ethniccommunities.govt.nz"
     },
@@ -4884,7 +4668,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 181,
+      "rank": 173,
       "source_id": "3d96533a759ca232",
       "url": "https://www.education.govt.nz/publications"
     },
@@ -4911,7 +4695,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 182,
+      "rank": 174,
       "source_id": "northland-regional-council-website_page-d4d466ad",
       "url": "https://www.nrc.govt.nz"
     },
@@ -4938,7 +4722,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 183,
+      "rank": 175,
       "source_id": "office-of-the-ombudsman-website_page-55b65658",
       "url": "https://www.ombudsman.parliament.nz"
     },
@@ -4965,7 +4749,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 184,
+      "rank": 176,
       "source_id": "parliamentary-counsel-office-website_page-83eb0c19",
       "url": "https://www.pco.govt.nz"
     },
@@ -4992,7 +4776,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 185,
+      "rank": 177,
       "source_id": "porirua-city-council-website_page-dedfde72",
       "url": "https://www.pcc.govt.nz"
     },
@@ -5019,7 +4803,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 186,
+      "rank": 178,
       "source_id": "predator-free-2050-website_page-fb3a8c52",
       "url": "https://www.predatorfree2050.co.nz"
     },
@@ -5046,7 +4830,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 187,
+      "rank": 179,
       "source_id": "reserve-bank-of-nz-website_page-290ef55a",
       "url": "https://www.rbnz.govt.nz"
     },
@@ -5073,7 +4857,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 188,
+      "rank": 180,
       "source_id": "selwyn-district-council-website_page-ce27b442",
       "url": "https://www.selwyn.govt.nz"
     },
@@ -5100,7 +4884,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 189,
+      "rank": 181,
       "source_id": "tararua-district-council-website_page-763f3e44",
       "url": "https://www.tararuadc.govt.nz"
     },
@@ -5127,7 +4911,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 190,
+      "rank": 182,
       "source_id": "2fb4e37a2d9d0551",
       "url": "https://www.temangai.govt.nz/news"
     },
@@ -5154,7 +4938,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 191,
+      "rank": 183,
       "source_id": "52524d2842b1897f",
       "url": "https://www.temangai.govt.nz/subscribe"
     },
@@ -5181,7 +4965,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 192,
+      "rank": 184,
       "source_id": "743298f0a7fa4e8d",
       "url": "https://www.temangai.govt.nz/newsletter"
     },
@@ -5208,7 +4992,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 193,
+      "rank": 185,
       "source_id": "90c9ddd4cf6de8cc",
       "url": "https://www.temangai.govt.nz/publications"
     },
@@ -5235,7 +5019,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 194,
+      "rank": 186,
       "source_id": "debaf37a55dde1a0",
       "url": "https://www.temangai.govt.nz/media-releases"
     },
@@ -5262,7 +5046,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 195,
+      "rank": 187,
       "source_id": "f4d8fe95d6e773b4",
       "url": "https://www.temangai.govt.nz/news-and-events"
     },
@@ -5289,7 +5073,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 196,
+      "rank": 188,
       "source_id": "timaru-district-council-website_page-aa50445e",
       "url": "https://www.timaru.govt.nz"
     },
@@ -5316,7 +5100,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 197,
+      "rank": 189,
       "source_id": "toi-ohomai-website_page-818df08d",
       "url": "https://www.toiohomai.ac.nz"
     },
@@ -5343,7 +5127,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 198,
+      "rank": 190,
       "source_id": "tourism-nz-website_page-1c93446d",
       "url": "https://www.tourismnewzealand.com"
     },
@@ -5370,7 +5154,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 199,
+      "rank": 191,
       "source_id": "university-of-otago-website_page-e953fe64",
       "url": "https://www.otago.ac.nz"
     },
@@ -5397,7 +5181,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 200,
+      "rank": 192,
       "source_id": "antarctica-nz-x-5b64f97c",
       "url": "https://twitter.com/AntarcticaNZ"
     },
@@ -5424,7 +5208,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 201,
+      "rank": 193,
       "source_id": "broadcasting-standards-authority-x-db8d9de8",
       "url": "https://Twitter.com/BSA_NZ"
     },
@@ -5451,7 +5235,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 202,
+      "rank": 194,
       "source_id": "civil-aviation-authority-x-b696cccf",
       "url": "https://twitter.com/CivilAviationNZ"
     },
@@ -5478,7 +5262,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 203,
+      "rank": 195,
       "source_id": "independent-police-conduct-authority-x-4c592cf9",
       "url": "https://twitter.com/ipca_nz"
     },
@@ -5500,7 +5284,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 204,
+      "rank": 196,
       "source_id": "21fcb81fa4c3c580",
       "url": "https://www.kaweraudc.govt.nz/rss.xml"
     },
@@ -5522,7 +5306,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 205,
+      "rank": 197,
       "source_id": "c194b53bc0b69b11",
       "url": "https://www.kaweraudc.govt.nz/atom.xml"
     },
@@ -5549,7 +5333,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 206,
+      "rank": 198,
       "source_id": "ministry-for-culture-and-heritage-x-46292647",
       "url": "https://twitter.com/Manatutaonga"
     },
@@ -5576,7 +5360,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 207,
+      "rank": 199,
       "source_id": "ministry-of-social-development-x-51643da8",
       "url": "https://twitter.com/msdgovtnz"
     },
@@ -5603,7 +5387,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 208,
+      "rank": 200,
       "source_id": "nz-post-x-c96e836f",
       "url": "https://twitter.com/nzpost/"
     },
@@ -5630,7 +5414,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 209,
+      "rank": 201,
       "source_id": "nz-symphony-orchestra-x-e64a4d6b",
       "url": "https://twitter.com/nzso?lang=en"
     },
@@ -5657,7 +5441,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 210,
+      "rank": 202,
       "source_id": "public-service-commission-x-e2f0f2ee",
       "url": "https://twitter.com/TeKawaMataaho"
     },
@@ -5684,7 +5468,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 211,
+      "rank": 203,
       "source_id": "b21a114650cf7c1f",
       "url": "https://www.wgtn.ac.nz/.well-known/webfinger"
     },
@@ -5706,7 +5490,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 212,
+      "rank": 204,
       "source_id": "1359e749adf17233",
       "url": "https://www.whakatane.govt.nz/rss.xml"
     },
@@ -5733,7 +5517,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 213,
+      "rank": 205,
       "source_id": "1912b514dcd2ecfb",
       "url": "https://www.whakatane.govt.nz/openapi.json"
     },
@@ -5755,7 +5539,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 214,
+      "rank": 206,
       "source_id": "bd0270e877bc7fa5",
       "url": "https://www.whakatane.govt.nz/atom.xml"
     },
@@ -5782,7 +5566,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 215,
+      "rank": 207,
       "source_id": "28db42de3709ad81",
       "url": "https://www.whanganui.govt.nz/.well-known/webfinger"
     },
@@ -5809,7 +5593,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 216,
+      "rank": 208,
       "source_id": "f71e5b76da9123d5",
       "url": "https://www.whanganui.govt.nz/openapi.json"
     },
@@ -5836,7 +5620,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 217,
+      "rank": 209,
       "source_id": "4bfe2b05e07de5de",
       "url": "https://www.wdc.govt.nz/.well-known/webfinger"
     },
@@ -5863,7 +5647,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 218,
+      "rank": 210,
       "source_id": "a1f11b604f746070",
       "url": "https://www.wdc.govt.nz/openapi.json"
     },
@@ -5890,7 +5674,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 219,
+      "rank": 211,
       "source_id": "a1cd963dc6797636",
       "url": "https://www.whitireia.ac.nz/.well-known/webfinger"
     },
@@ -5917,7 +5701,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 220,
+      "rank": 212,
       "source_id": "c4bd11f181a74cc5",
       "url": "https://www.whitireia.ac.nz/openapi.json"
     },
@@ -5944,7 +5728,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 221,
+      "rank": 213,
       "source_id": "3ac211133a5ae020",
       "url": "https://www.wintec.ac.nz/openapi.json"
     },
@@ -5971,7 +5755,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 222,
+      "rank": 214,
       "source_id": "cdfa17e94f1df343",
       "url": "https://www.wintec.ac.nz/.well-known/webfinger"
     },
@@ -5998,7 +5782,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 223,
+      "rank": 215,
       "source_id": "4981bcdcc8c13fbd",
       "url": "https://www.witt.ac.nz/openapi.json"
     },
@@ -6025,7 +5809,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 224,
+      "rank": 216,
       "source_id": "f9d0bd3a8daa15a1",
       "url": "https://www.witt.ac.nz/.well-known/webfinger"
     },
@@ -6052,7 +5836,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 225,
+      "rank": 217,
       "source_id": "00b4f0284a492b7c",
       "url": "https://www.worksafe.govt.nz/openapi.json"
     },
@@ -6079,7 +5863,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 226,
+      "rank": 218,
       "source_id": "57005958fe8b39de",
       "url": "https://www.worksafe.govt.nz/.well-known/webfinger"
     },
@@ -6106,15 +5890,15 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "x",
-      "rank": 227,
+      "rank": 219,
       "source_id": "worksafe-nz-x-51382248",
       "url": "https://twitter.com/WorkSafeNZ"
     }
   ],
   "schema_version": 1,
   "summary": {
-    "dispatchable_count": 227,
-    "queue_count": 227
+    "dispatchable_count": 219,
+    "queue_count": 219
   },
   "track_id": "govt_archive_all_source_completion_20260713"
 }
