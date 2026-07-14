@@ -1,6 +1,6 @@
 {
   "dry_run": false,
-  "generated_at": "2026-07-14T15:11:58+00:00",
+  "generated_at": "2026-07-14T15:12:08+00:00",
   "guardrails": {
     "captcha_solving": false,
     "credential_bypass": false,
@@ -21,7 +21,7 @@
     "limit_sources": 10,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "merged_previous_results": 19,
-    "offset_sources": 10,
+    "offset_sources": 20,
     "per_page_timeout": 45,
     "screenshot": true,
     "triage_report": "conductor/website_archive_failure_triage_report.json"
@@ -275,25 +275,116 @@
       "url": "https://www.ashburtondc.govt.nz/subscribe"
     },
     {
-      "agency_id": "auckland-light-rail",
+      "agency_id": "bay-of-plenty-regional-council",
       "archive_status": "ready",
-      "candidate_id": "ea7740e611200bed",
+      "candidate_id": "18b01bf83376dfb6",
       "feasibility": "high",
       "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-07/f69d992bf0e1175b131fa185.json",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/4be218de42ac8257a224ebb6.json",
       "reason": "captured public rendered website content",
-      "source_id": "ea7740e611200bed",
+      "source_id": "18b01bf83376dfb6",
       "source_type": "website_page",
       "status": "browser_captured",
-      "url": "https://www.lightrail.co.nz/"
+      "url": "https://www.boprc.govt.nz/api"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "candidate_id": "74033a24e08026ce",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/34aed95c4d4892a8d60688a9.json",
+      "reason": "captured public rendered website content",
+      "source_id": "74033a24e08026ce",
+      "source_type": "website_page",
+      "status": "browser_captured",
+      "url": "https://www.boprc.govt.nz/media"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "candidate_id": "ebf964e9f9d977da",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/91cf0a09f254cf515811c0b5.json",
+      "reason": "captured public rendered website content",
+      "source_id": "ebf964e9f9d977da",
+      "source_type": "website_page",
+      "status": "browser_captured",
+      "url": "https://www.boprc.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "candidate_id": "4bf073d8da463117",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/5bac383fc190bd8449dae347.json",
+      "reason": "captured public rendered website content",
+      "source_id": "4bf073d8da463117",
+      "source_type": "website_page",
+      "status": "browser_captured",
+      "url": "https://www.boprc.govt.nz/news"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "candidate_id": "a2c0466ad7d6b0e7",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/7e977ee4d94a6ada1f70f1b3.json",
+      "reason": "captured public rendered website content",
+      "source_id": "a2c0466ad7d6b0e7",
+      "source_type": "website_page",
+      "status": "browser_captured",
+      "url": "https://www.boprc.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "candidate_id": "1018160ab7aece8e",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/37c6b12119a08aacc010b204.json",
+      "reason": "captured public rendered website content",
+      "source_id": "1018160ab7aece8e",
+      "source_type": "website_page",
+      "status": "browser_captured",
+      "url": "https://www.boprc.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "candidate_id": "76ebe030c99021d6",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/9ad7e74b6e292e7b8b88e2f5.json",
+      "reason": "captured public rendered website content",
+      "source_id": "76ebe030c99021d6",
+      "source_type": "website_page",
+      "status": "browser_captured",
+      "url": "https://www.boprc.govt.nz/publications"
+    },
+    {
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "candidate_id": "f13909b5ce47ec80",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/95fd8249db7e2a0cccc76076.json",
+      "reason": "captured public rendered website content",
+      "source_id": "f13909b5ce47ec80",
+      "source_type": "website_page",
+      "status": "browser_captured",
+      "url": "https://www.boprc.govt.nz/subscribe"
     }
   ],
   "summary": {
-    "result_count": 20,
-    "selected_sources": 20,
+    "result_count": 27,
+    "selected_sources": 27,
     "status_counts": {
       "browser_captcha_or_challenge": 5,
-      "browser_captured": 15
+      "browser_captured": 22
     }
   }
 }
