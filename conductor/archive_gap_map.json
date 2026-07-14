@@ -1,86 +1,56 @@
 {
-  "gaps": [
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1420_report.json",
-      "source_id": "074324cf36b9cbe0",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1420_report.json",
-      "source_id": "b8bc0cdce250007a",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/api"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1420_report.json",
-      "source_id": "60b5cc493154608a",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/media"
-    }
-  ],
+  "gaps": [],
   "inputs": {
     "reports": [
-      "conductor/website_page_archive_offset_1420_report.json"
+      "conductor/x_feed_archive_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/website_page_archive_offset_1420_report.json": {
+    "conductor/x_feed_archive_report.json": {
       "platform_counts": {
-        "website_page": 20
+        "x": 65
       },
-      "selected_sources": 20,
+      "selected_sources": 65,
       "status_by_platform": {
-        "website_page": {
-          "already_captured": 17,
-          "dns_failed": 3
+        "x": {
+          "feed_already_captured": 1,
+          "feed_captured": 64,
+          "feed_not_found": 65
         }
       },
-      "status_by_provider": {},
+      "status_by_provider": {
+        "nitter": {
+          "feed_already_captured": 1,
+          "feed_captured": 64
+        },
+        "rsshub": {
+          "feed_not_found": 65
+        }
+      },
       "status_counts": {
-        "already_captured": 17,
-        "dns_failed": 3
+        "feed_already_captured": 1,
+        "feed_captured": 64,
+        "feed_not_found": 65
       }
     }
   },
   "summary": {
-    "gap_count": 3,
+    "gap_count": 0,
     "input_status_counts": {
-      "already_captured": 17,
-      "dns_failed": 3
+      "feed_already_captured": 1,
+      "feed_captured": 64,
+      "feed_not_found": 65
     },
     "platform_counts": {
-      "website_page": 20
+      "x": 65
     },
     "priority_counts": {
-      "archived_or_already_archived": 17,
-      "p1_existing_resources": 3
+      "archived_or_already_archived": 65
     },
     "status_counts": {
-      "already_captured": 17,
-      "dns_failed": 3
+      "feed_already_captured": 1,
+      "feed_captured": 64
     },
-    "superseded_source_count": 0
+    "superseded_source_count": 65
   }
 }
