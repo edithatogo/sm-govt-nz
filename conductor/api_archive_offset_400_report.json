@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-13T11:49:42+00:00",
+  "generated_at": "2026-07-14T15:13:50+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -164,10 +164,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "d71b3c60f5457e15",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.taupodc.govt.nz/openapi.json"
     },
     {
@@ -846,10 +846,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "2ba6e0fc90cce314",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz/openapi.json"
     },
     {
@@ -868,10 +868,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "cf2d33b55a514f09",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz/openapi.json"
     },
     {
@@ -1044,10 +1044,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "3c9f6bb150951f46",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.wcrc.govt.nz/openapi.json"
     },
     {
@@ -1066,10 +1066,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "e8797cbc51c4ac43",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.westernbay.govt.nz/openapi.json"
     },
     {
@@ -1136,18 +1136,18 @@
     "status_by_platform": {
       "api": {
         "capture_blocked": 18,
-        "captured": 5,
         "dns_failed": 4,
         "invalid": 72,
+        "method_not_allowed": 5,
         "network_timeout": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "capture_blocked": 18,
-      "captured": 5,
       "dns_failed": 4,
       "invalid": 72,
+      "method_not_allowed": 5,
       "network_timeout": 1
     }
   }
