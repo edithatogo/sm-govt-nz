@@ -6,6 +6,7 @@ from scripts.build_archive_completion_matrix import (
     COMPLETE_STATES,
     build_completion_matrix,
     classify_state,
+    dispatch_for,
     validate_matrix,
 )
 
@@ -167,3 +168,15 @@ def test_completion_schema_accepts_only_declared_states() -> None:
         "archived", "terminal_empty", "terminal_deleted", "terminal_invalid",
         "terminal_external_access", "automation_fault",
     }
+
+
+def test_dispatch_offsets_are_bounded_and_shard_specific() -> None:
+    linkedin = dispatch_for(
+        {"platform": "linkedin", "_manifest_offset": 237}, "scheduled"
+    )
+    website = dispatch_for(
+        {"platform": "website_page", "_queue_offset": 27}, "automation_fault"
+    )
+
+    assert linkedin["inputs"]["offset_sources"] == "200"
+    assert website["inputs"]["offset_sources"] == "20"

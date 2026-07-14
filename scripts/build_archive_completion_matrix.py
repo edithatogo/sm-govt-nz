@@ -223,7 +223,8 @@ def dispatch_for(row: dict[str, Any], state: str) -> dict[str, Any]:
         offset = 100 * (int(row.get("_manifest_offset") or 0) // 100)
         inputs = {"source_type": platform, "agency_id": "", "include_blocked": "true", "dry_run": "false", "limit_sources": "100", "offset_sources": str(offset), "publish": "false", "commit_payloads": "true"}
     elif workflow == "archive_website_browser_fallback.yml":
-        inputs = {"agency_id": "", "dry_run": "false", "limit_sources": "10", "offset_sources": "0", "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed", "per_page_timeout": "45", "commit_payloads": "true", "publish": "false"}
+        offset = 10 * (int(row.get("_queue_offset") or 0) // 10)
+        inputs = {"agency_id": "", "dry_run": "false", "limit_sources": "10", "offset_sources": str(offset), "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed", "per_page_timeout": "45", "commit_payloads": "true", "publish": "false"}
     elif workflow == "archive_youtube_scheduled.yml":
         inputs = {"agency_id": "", "dry_run": "false", "channel_limit": "50"}
     elif workflow in {
@@ -301,6 +302,7 @@ def build_completion_matrix(
             prior_by_url[prior_url] = prior_row
     pub_state, pub_evidence = publication_evidence(conductor)
     rows: list[dict[str, Any]] = []
+    row_manifest_offsets: dict[str, int] = {}
     seen: set[str] = set()
     for source in readiness_rows:
         key = source_key(source)
@@ -381,6 +383,7 @@ def build_completion_matrix(
             "updated_at": now_iso(),
         }
         rows.append(row)
+        row_manifest_offsets[key] = manifest_offset
     if len(rows) != int(readiness.get("total_sources") or len(readiness_rows)):
         raise ValueError("completion matrix does not reconcile to readiness total")
     state_counts = Counter(row["completion_state"] for row in rows)
@@ -389,11 +392,19 @@ def build_completion_matrix(
     queue_rows = [row for row in rows if not row["complete"]]
     queue_rows.sort(key=lambda row: (PRIORITY.get(row["platform"], 100), row["agency_id"], row["source_id"]))
     queue_items = []
+    queue_platform_offsets: Counter[str] = Counter()
     for rank, row in enumerate(queue_rows, start=1):
+        platform_queue_offset = queue_platform_offsets[row["platform"]]
+        queue_platform_offsets[row["platform"]] += 1
+        dispatch_row = {
+            **row,
+            "_manifest_offset": row_manifest_offsets.get(row["source_id"], 0),
+            "_queue_offset": platform_queue_offset,
+        }
         queue_items.append({
             "rank": rank, "source_id": row["source_id"], "agency_id": row["agency_id"],
             "platform": row["platform"], "url": row["url"], "completion_state": row["completion_state"],
-            "next_action": row["next_action"], "dispatch": dispatch_for(row, row["completion_state"]),
+            "next_action": row["next_action"], "dispatch": dispatch_for(dispatch_row, row["completion_state"]),
             "expected_evidence": row["archive_evidence"] or ["conductor/archive_completion_matrix.json"],
             "acceptance_condition": row["acceptance_condition"],
         })
