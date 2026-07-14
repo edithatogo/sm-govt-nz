@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-13T17:34:31+00:00",
+  "generated_at": "2026-07-14T16:48:38+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -5621,7 +5621,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 3 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 4 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "archive_status": "candidate",
@@ -20846,6 +20846,31 @@
         "email_ingress",
         "operator_authorized_seed"
       ],
+      "account": "https://www.fireandemergency.nz",
+      "agency_id": "fire-and-emergency-nz",
+      "agency_name": "Fire and Emergency New Zealand (Whakaratonga Iwi)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/fire-and-emergency-nz-newsletter-c7b71c3a.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/fire-and-emergency-nz-newsletter-c7b71c3a.json",
+        "manual_archive_seeds/newsletter/fire-and-emergency-nz.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "fire-and-emergency-nz-newsletter-c7b71c3a",
+      "source_type": "newsletter",
+      "url": "https://www.fireandemergency.nz/mi_NZ/incidents-and-news/emergency-mobile-alerts/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
       "account": "https://www.goredc.govt.nz",
       "agency_id": "gore-district-council",
       "agency_name": "Gore District Council",
@@ -23929,6 +23954,31 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/ministry-of-education-newsletter-4e92a35d.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/ministry-of-education-newsletter-4e92a35d.json",
+        "manual_archive_seeds/newsletter/ministry-of-education.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "ministry-of-education-newsletter-4e92a35d",
+      "source_type": "newsletter",
+      "url": "https://www.education.govt.nz/news/kia-manawaroa-matariki-special"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.education.govt.nz",
+      "agency_id": "ministry-of-education",
+      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/ministry-of-education-newsletter-e686fdc8.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
@@ -24339,6 +24389,31 @@
       "source_id": "network-for-learning-newsletter-9661be5a",
       "source_type": "newsletter",
       "url": "https://www.n4l.co.nz/category/alerts/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.npdc.govt.nz",
+      "agency_id": "new-plymouth-district-council",
+      "agency_name": "New Plymouth District Council (Te Kaunihera o Ng\u0101motu)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/new-plymouth-district-council-newsletter-73d990cd.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/new-plymouth-district-council-newsletter-73d990cd.json",
+        "manual_archive_seeds/newsletter/new-plymouth-district-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "new-plymouth-district-council-newsletter-73d990cd",
+      "source_type": "newsletter",
+      "url": "https://confirmsubscription.com/h/y/0AB408D1AD7CCE19"
     },
     {
       "acceptable_access_methods": [
@@ -26114,6 +26189,31 @@
       "source_id": "taranaki-regional-council-newsletter-ee494531",
       "source_type": "newsletter",
       "url": "https://mailchi.mp/trc.govt.nz/gardens-newsletter"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tasman.govt.nz",
+      "agency_id": "tasman-district-council",
+      "agency_name": "Tasman District Council (Te Kaunihera o te tai o Aorere)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/tasman-district-council-newsletter-e6800ba3.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/tasman-district-council-newsletter-e6800ba3.json",
+        "manual_archive_seeds/newsletter/tasman-district-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "tasman-district-council-newsletter-e6800ba3",
+      "source_type": "newsletter",
+      "url": "https://www.tasman.govt.nz/do-it-online/contact-us/learn-more-about-the-antenno-app"
     },
     {
       "acceptable_access_methods": [
@@ -30475,7 +30575,7 @@
       "facebook": 322,
       "instagram": 182,
       "linkedin": 257,
-      "newsletter": 369,
+      "newsletter": 373,
       "threads": 3,
       "x": 79
     },
@@ -30483,11 +30583,11 @@
     "remaining_groups": {
       "facebook": 322,
       "instagram": 182,
-      "newsletter": 369,
+      "newsletter": 373,
       "threads": 3
     },
-    "remaining_source_count": 876,
-    "selected_sources": 1212,
+    "remaining_source_count": 880,
+    "selected_sources": 1216,
     "status_by_platform": {
       "facebook": {
         "needs_authorized_seed_or_api": 322
@@ -30499,7 +30599,7 @@
         "public_fallback_available": 257
       },
       "newsletter": {
-        "needs_authorized_seed_or_api": 369
+        "needs_authorized_seed_or_api": 373
       },
       "threads": {
         "needs_authorized_seed_or_api": 3
@@ -30509,7 +30609,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 876,
+      "needs_authorized_seed_or_api": 880,
       "public_fallback_available": 257,
       "seed_present": 79
     }
