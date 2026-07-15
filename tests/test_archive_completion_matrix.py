@@ -67,8 +67,19 @@ def test_generated_workflow_is_daily_bounded_and_monthly_guarded() -> None:
     assert "scripts/build_archive_completion_matrix.py" in workflow
     assert "scripts/dispatch_archive_completion_queue.py" in workflow
     assert "--max-actions" in workflow
-    assert "--monthly-guard" in workflow
+    assert "gh workflow run publish_archives.yml" in workflow
+    assert "publication_target=all" in workflow
+    assert "publish_archive_release.py" not in workflow
     assert "automation_faults" in workflow
+
+
+def test_website_fallback_dispatches_canonical_publication_workflow() -> None:
+    workflow = Path(".github/workflows/archive_website_browser_fallback.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "actions: write" in workflow
+    assert "gh workflow run publish_archives.yml" in workflow
+    assert "publish_archive_release.py" not in workflow
 
 
 def test_prior_terminal_evidence_survives_sharded_report_regression(tmp_path: Path) -> None:

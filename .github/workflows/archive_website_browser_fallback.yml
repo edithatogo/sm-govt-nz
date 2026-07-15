@@ -52,6 +52,7 @@ on:
           - "true"
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -64,6 +65,7 @@ jobs:
     timeout-minutes: 45
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+      GH_TOKEN: ${{ github.token }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
       HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
       ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -141,6 +143,7 @@ jobs:
       - name: Publish monthly external release if requested
         if: ${{ inputs.dry_run != 'true' && inputs.publish == 'true' }}
         run: >-
-          python scripts/publish_archive_release.py
-          --monthly-guard
-          --status conductor/archive_publication_status.json
+          gh workflow run publish_archives.yml
+          --ref "${{ github.ref_name }}"
+          --field publish=true
+          --field publication_target=all

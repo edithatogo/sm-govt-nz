@@ -82,4 +82,8 @@ jobs:
           fi
       - name: Publish monthly archive release if requested
         if: ${{ inputs.publish == 'true' }}
-        run: python scripts/publish_archive_release.py --monthly-guard --status conductor/archive_publication_status.json
+        run: >-
+          gh workflow run publish_archives.yml
+          --ref "${{ github.ref_name }}"
+          --field publish=true
+          --field publication_target=all
