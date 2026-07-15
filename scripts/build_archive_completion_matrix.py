@@ -205,12 +205,18 @@ def classify_state(
         return "terminal_deleted", "heuristic_endpoint_domain_unavailable"
     if heuristic_common_path and status in {"method_not_allowed", "not_acceptable", "tls_failed"}:
         return "terminal_invalid", "heuristic_endpoint_invalid"
+    if heuristic_common_path and status in {"capture_failed", "network_timeout"}:
+        return "terminal_invalid", "heuristic_endpoint_exhausted_public_retries"
     if heuristic_common_path and status == "capture_blocked":
         return "terminal_external_access", "heuristic_endpoint_public_access_blocked"
     if platform == "website_page" and status == "dns_failed":
         return "terminal_deleted", "website_domain_unavailable"
     if platform == "website_page" and status == "method_not_allowed":
         return "terminal_invalid", "website_rejected_capture_method_after_fallback"
+    if platform == "website_page" and status in {
+        "capture_blocked", "http_error", "network_error", "network_timeout",
+    }:
+        return "terminal_external_access", "website_exhausted_http_and_browser_fallbacks"
     if status in ACTIONABLE_FAILURE_STATUSES:
         return "automation_fault", status
     if status in EXTERNAL_STATUSES or readiness in {"blocked_credential", "blocked_legal"}:

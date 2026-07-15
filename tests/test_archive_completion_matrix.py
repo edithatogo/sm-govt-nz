@@ -209,3 +209,25 @@ def test_unattempted_registered_website_uses_http_capture_first() -> None:
     assert dispatch["workflow"] == "archive_registered_sources.yml"
     assert dispatch["inputs"]["source_type"] == "website_page"
     assert dispatch["inputs"]["offset_sources"] == "400"
+
+
+def test_exhausted_heuristic_endpoint_is_terminal_invalid() -> None:
+    state, blocker = classify_state(
+        {"platform": "rss", "origin": "configured_common_path"},
+        True,
+        {"status": "capture_failed"},
+        0,
+    )
+    assert state == "terminal_invalid"
+    assert blocker == "heuristic_endpoint_exhausted_public_retries"
+
+
+def test_exhausted_website_fallback_is_terminal_external_access() -> None:
+    state, blocker = classify_state(
+        {"platform": "website_page", "origin": "registered"},
+        True,
+        {"status": "network_error"},
+        0,
+    )
+    assert state == "terminal_external_access"
+    assert blocker == "website_exhausted_http_and_browser_fallbacks"
