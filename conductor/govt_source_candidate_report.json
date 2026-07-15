@@ -15608,6 +15608,32 @@
       "url": "https://www.cluthadc.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.comcom.govt.nz",
+      "agency_id": "commerce-commission",
+      "agency_name": "Commerce Commission (Te K\u014dmihana Tauhokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "9ed12711336d330e",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Subscribe and follow us",
+      "official_website": "https://www.comcom.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.comcom.govt.nz/news-and-media/subscribe-and-follow-us/"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.comcom.govt.nz",
       "agency_id": "commerce-commission",
@@ -16013,6 +16039,54 @@
       "url": "https://www.comcom.govt.nz/subscribe"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "commerce-commission",
+      "agency_name": "Commerce Commission (Te K\u014dmihana Tauhokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "cce482b3cf8ec11d",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.comcom.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/CommerceCommission"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "commerce-commission",
+      "agency_name": "Commerce Commission (Te K\u014dmihana Tauhokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "c4e7578731b904c6",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.comcom.govt.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://nz.linkedin.com/company/commerce-commission"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Commerce Commission",
       "account_classification": "official",
@@ -16039,6 +16113,30 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/company/commerce-commission"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "commerce-commission",
+      "agency_name": "Commerce Commission (Te K\u014dmihana Tauhokohoko)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "6b509fd2e41ac5ee",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.comcom.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Commerce and Consumer Affairs",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/user/CommerceCommission"
     },
     {
       "access_method": "bounded_public_html",
@@ -26944,6 +27042,30 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "Strategy and Policy Committee 15 July 2026",
+      "agency_id": "environment-canterbury",
+      "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "a8f8fce1f7bf18d5",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.ecan.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "http://www.youtube.com/watch/NNZWhC_YkKE"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
       "account": "Regional Delivery Committee 13 May 2026",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
@@ -26968,13 +27090,13 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Annual Plan 2026/27",
+      "account": "Wintering barns for dairy farmers",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
       "agency_type": "Regional Council",
       "archive_status": "candidate",
       "auth": "none",
-      "candidate_id": "43f875788c75e49e",
+      "candidate_id": "cb7d0dfbe65b1ed2",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -26988,17 +27110,17 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "http://www.youtube.com/watch/eQteirnHqDg"
+      "url": "http://www.youtube.com/watch/WqPKwaHTEms"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Regulation Hearing Committee 24 June 2026",
+      "account": "15 July 2026 (Briefings/Workshops \u2013 Afternoon)",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
       "agency_type": "Regional Council",
       "archive_status": "candidate",
       "auth": "none",
-      "candidate_id": "8063913d25554880",
+      "candidate_id": "5d429e2f87c1d180",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -27012,31 +27134,7 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "http://www.youtube.com/watch/gRqlMhAmmJA"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "25 June 2026 (Briefings/Workshops \u2013 Morning)",
-      "agency_id": "environment-canterbury",
-      "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
-      "agency_type": "Regional Council",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "da18507c25c413ac",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.ecan.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "http://www.youtube.com/watch/sdvdzpVunWQ"
+      "url": "http://www.youtube.com/watch/f5JhWR9hAW0"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -27702,6 +27800,32 @@
         "official_term:nz"
       ],
       "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/delivering-progress-for-hazardous-substances/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.epa.govt.nz",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "aac661c6d095f7ac",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "EPA seeks feedback on proposal to ban two insecticides",
+      "official_website": "https://www.epa.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Environment",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-seeks-feedback-on-proposal-to-ban-two-insecticides/"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -29929,7 +30053,7 @@
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "c10439f6bc359f92",
+      "candidate_id": "783b061cad53b157",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -29944,7 +30068,7 @@
       "trust_signals": [
         "official_term:new zealand"
       ],
-      "url": "https://www.fireandemergency.nz/incidents-and-news/emergency-mobile-alerts/"
+      "url": "https://www.fireandemergency.nz/mi_NZ/incidents-and-news/emergency-mobile-alerts/"
     },
     {
       "access_method": "public_rss",
@@ -37339,11 +37463,11 @@
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "cc8a85a8f6bcf166",
+      "candidate_id": "0e221b5e473c4fba",
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
-      "link_text": "Lifted \n                        \n                             16 June 2026 \n                        \n                    \n                    \n                         All New Zealand, Wellington, Hutt and Kapiti \n                         Multiple Locations \n                    \n                 \n                 \n                     Measles in Wellington",
+      "link_text": "Active \n                        \n                             22 November 2024 \n                        \n                    \n                    \n                         National \n                         National \n                    \n                 \n                 \n                     Pertussis (whooping cough) epidemic across Aotearoa New Zealand",
       "official_website": "https://www.tewhatuora.govt.nz",
       "origin": "homepage.link",
       "platform": "newsletter",
@@ -37355,7 +37479,7 @@
         "high_trust_domain_suffix",
         "official_term:new zealand"
       ],
-      "url": "https://www.tewhatuora.govt.nz/health-alerts/measles-in-wellington"
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/pertussis-whooping-cough-epidemic-across-aotearoa-new-zealand"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -68987,31 +69111,6 @@
         "official_term:nz"
       ],
       "url": "https://www.n4l.co.nz"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.npdc.govt.nz",
-      "agency_id": "new-plymouth-district-council",
-      "agency_name": "New Plymouth District Council (Te Kaunihera o Ng\u0101motu)",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "f22af9a146c82a0e",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "link_text": "Subscribe to In Touch - Te Kawenga K\u014drero",
-      "official_website": "https://www.npdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://confirmsubscription.com/h/y/0AB408D1AD7CCE19"
     },
     {
       "access_method": "public_rss",
@@ -103366,7 +103465,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 5 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 hour ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -103396,7 +103495,7 @@
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "operator_or_app_authorized",
-      "candidate_id": "4e79e8da4ae9811b",
+      "candidate_id": "1b74030bfaf8a6b2",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -103410,7 +103509,7 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "https://www.facebook.com/102062118004656_1359974566246139"
+      "url": "https://www.facebook.com/102062118004656_1364625979114331"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -109134,6 +109233,160 @@
       "url": "https://www.tamakiredevelopment.co.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "c3e05e1d45db6ec8",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "link_text": "Subscribe",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://TaranakiRC.formstack.com/forms/trc_subscription_form"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "5e70c0b0b259ab50",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "link_text": "Subscribe",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://mailchi.mp/trc.govt.nz/gardens-newsletter"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "a192d56ce3be2093",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Talking Taranaki",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.trc.govt.nz/council/news-and-events/talking-taranaki-newsletter"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "9a14dbaffa501c62",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Newsletters",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.trc.govt.nz/environment/farmhub/biosecurity-biodiversity/newsletter"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "c2b04f0af549e99e",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Enviroschools Taranaki newsletters",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.trc.govt.nz/environment/working-together/environmental-education/enviroschools-taranaki/enviroschools-taranaki-newsletters"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "f6f98b172d9e0d94",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Newsletter",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.trc.govt.nz/environment/working-together/towards-predator-free-taranaki/newsletter"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.trc.govt.nz",
       "agency_id": "taranaki-regional-council",
@@ -109540,6 +109793,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook (external link)",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "df832a72c52d9d6c",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "http://facebook.com/TaranakiRegionalCouncil"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "TaranakiRegionalCouncil",
       "account_classification": "official",
       "agency_id": "taranaki-regional-council",
@@ -109567,6 +109844,54 @@
       "url": "https://www.facebook.com/TaranakiRegionalCouncil"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram (external link)",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "84d92160ede12b09",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://instagram.com/taranakiregionalcouncil"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "LinkedIn (external link)",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "46f4c225f7480806",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://nz.linkedin.com/company/taranaki-regional-council"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.trc.govt.nz",
       "agency_id": "taranaki-regional-council",
@@ -109592,6 +109917,114 @@
         "official_term:nz"
       ],
       "url": "https://www.trc.govt.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "0c9e3c9b625c454c",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Talking Taranaki",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.trc.govt.nz/council/news-and-events/talking-taranaki-newsletter"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "cda8e4c1c810db01",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Newsletters",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.trc.govt.nz/environment/farmhub/biosecurity-biodiversity/newsletter"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "e1508e8bb51198b3",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Enviroschools Taranaki newsletters",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.trc.govt.nz/environment/working-together/environmental-education/enviroschools-taranaki/enviroschools-taranaki-newsletters"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.trc.govt.nz",
+      "agency_id": "taranaki-regional-council",
+      "agency_name": "Taranaki Regional Council",
+      "agency_type": "Regional Council",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "dad4927b5d444886",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Newsletter",
+      "official_website": "https://www.trc.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.trc.govt.nz/environment/working-together/towards-predator-free-taranaki/newsletter"
     },
     {
       "access_method": "public_rss",
@@ -134765,6 +135198,32 @@
       "agency_type": "District Council",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
+      "candidate_id": "d66247a4eba6e714",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Subscribe \r\n\r\n                             \r\n                                 Subscribe to our text alerts, our newsletter and more. \r\n                             \r\n\r\n                             \r\n                                 \r\n                                     \r\n                                    Subscribe",
+      "official_website": "https://www.westlanddc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "http://www.westlanddc.govt.nz/do-it-online/subscribe/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.westlanddc.govt.nz",
+      "agency_id": "westland-district-council",
+      "agency_name": "Westland District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
       "candidate_id": "51615684f68cdda2",
       "confidence_score": 0.5,
       "domain_trust": "medium",
@@ -134782,32 +135241,6 @@
         "official_term:nz"
       ],
       "url": "https://westlandmatters.buzzit.co.nz/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.westlanddc.govt.nz",
-      "agency_id": "westland-district-council",
-      "agency_name": "Westland District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "18e734958d624e21",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Subscribe \r\n\r\n                             \r\n                                 Subscribe to our text alerts, our newsletter and more. \r\n                             \r\n\r\n                             \r\n                                 \r\n                                     \r\n                                    Subscribe",
-      "official_website": "https://www.westlanddc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.westlanddc.govt.nz/do-it-online/subscribe/"
     },
     {
       "access_method": "public_rss",
@@ -140326,7 +140759,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-14T17:44:22+00:00",
+  "generated_at": "2026-07-15T13:56:42+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155269,7 +155702,7 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 68,
+      "links": 66,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
@@ -155310,7 +155743,7 @@
     {
       "agency_id": "central-hawkes-bay-district-council",
       "alternates": 0,
-      "links": 502,
+      "links": 503,
       "status": "ok",
       "url": "https://www.chbdc.govt.nz/"
     },
@@ -155351,7 +155784,7 @@
     {
       "agency_id": "christchurch-city-libraries",
       "alternates": 6,
-      "links": 323,
+      "links": 322,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
@@ -155384,8 +155817,9 @@
     },
     {
       "agency_id": "commerce-commission",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 147,
+      "status": "ok",
       "url": "https://www.comcom.govt.nz/"
     },
     {
@@ -155551,7 +155985,7 @@
     {
       "agency_id": "fire-and-emergency-nz",
       "alternates": 0,
-      "links": 134,
+      "links": 132,
       "status": "ok",
       "url": "https://www.fireandemergency.nz/"
     },
@@ -155589,7 +156023,7 @@
     {
       "agency_id": "greater-wellington-regional-council",
       "alternates": 0,
-      "links": 174,
+      "links": 172,
       "status": "ok",
       "url": "https://www.gw.govt.nz/"
     },
@@ -155671,7 +156105,7 @@
     {
       "agency_id": "horizons-regional-council",
       "alternates": 0,
-      "links": 151,
+      "links": 153,
       "status": "ok",
       "url": "https://www.horizons.govt.nz/"
     },
@@ -155757,14 +156191,14 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 105,
+      "links": 104,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
     {
       "agency_id": "kawerau-district-council",
       "alternates": 0,
-      "links": 814,
+      "links": 815,
       "status": "ok",
       "url": "https://www.kaweraudc.govt.nz/"
     },
@@ -155928,7 +156362,7 @@
     {
       "agency_id": "ministry-for-women",
       "alternates": 0,
-      "links": 198,
+      "links": 195,
       "status": "ok",
       "url": "https://www.women.govt.nz/"
     },
@@ -156024,7 +156458,7 @@
     {
       "agency_id": "new-plymouth-district-council",
       "alternates": 0,
-      "links": 1556,
+      "links": 1555,
       "status": "ok",
       "url": "https://www.npdc.govt.nz/"
     },
@@ -156183,9 +156617,8 @@
     },
     {
       "agency_id": "office-of-the-clerk",
-      "alternates": 0,
-      "links": 0,
-      "status": "ok",
+      "error": "HTTP Error 404: Not Found",
+      "status": "failed",
       "url": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/"
     },
     {
@@ -156223,14 +156656,14 @@
     {
       "agency_id": "otago-polytechnic",
       "alternates": 0,
-      "links": 322,
+      "links": 323,
       "status": "ok",
       "url": "https://www.op.ac.nz/"
     },
     {
       "agency_id": "otago-regional-council",
       "alternates": 0,
-      "links": 656,
+      "links": 658,
       "status": "ok",
       "url": "https://www.orc.govt.nz/"
     },
@@ -156318,7 +156751,7 @@
     {
       "agency_id": "queenstown-lakes-district-council",
       "alternates": 0,
-      "links": 646,
+      "links": 645,
       "status": "ok",
       "url": "https://www.qldc.govt.nz/"
     },
@@ -156332,7 +156765,7 @@
     {
       "agency_id": "rangitikei-district-council",
       "alternates": 0,
-      "links": 142,
+      "links": 139,
       "status": "ok",
       "url": "https://www.rangitikei.govt.nz/"
     },
@@ -156359,7 +156792,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 402,
+      "links": 403,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156418,7 +156851,7 @@
     {
       "agency_id": "social-workers-registration-board",
       "alternates": 5,
-      "links": 112,
+      "links": 113,
       "status": "ok",
       "url": "https://www.swrb.govt.nz/"
     },
@@ -156437,7 +156870,7 @@
     {
       "agency_id": "south-wairarapa-district-council",
       "alternates": 3,
-      "links": 249,
+      "links": 248,
       "status": "ok",
       "url": "https://www.swdc.govt.nz/"
     },
@@ -156496,8 +156929,9 @@
     },
     {
       "agency_id": "taranaki-regional-council",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 1410,
+      "status": "ok",
       "url": "https://www.trc.govt.nz/"
     },
     {
@@ -156556,7 +156990,7 @@
     {
       "agency_id": "te-papa",
       "alternates": 0,
-      "links": 101,
+      "links": 100,
       "status": "ok",
       "url": "https://www.tepapa.govt.nz/"
     },
@@ -156598,14 +157032,14 @@
     {
       "agency_id": "tertiary-education-commission",
       "alternates": 0,
-      "links": 384,
+      "links": 383,
       "status": "ok",
       "url": "https://www.tec.govt.nz/"
     },
     {
       "agency_id": "thames-coromandel-district-council",
       "alternates": 0,
-      "links": 274,
+      "links": 273,
       "status": "ok",
       "url": "https://www.tcdc.govt.nz/"
     },
@@ -156692,14 +157126,14 @@
     {
       "agency_id": "university-of-waikato",
       "alternates": 0,
-      "links": 352,
+      "links": 353,
       "status": "ok",
       "url": "https://www.waikato.ac.nz/"
     },
     {
       "agency_id": "upper-hutt-city-council",
       "alternates": 0,
-      "links": 317,
+      "links": 313,
       "status": "ok",
       "url": "https://www.upperhuttcity.com/"
     },
@@ -156712,7 +157146,7 @@
     {
       "agency_id": "waikato-district-council",
       "alternates": 0,
-      "links": 79,
+      "links": 77,
       "status": "ok",
       "url": "https://www.waikatodistrict.govt.nz/"
     },
@@ -156759,7 +157193,7 @@
     {
       "agency_id": "waitomo-district-council",
       "alternates": 0,
-      "links": 105,
+      "links": 106,
       "status": "ok",
       "url": "https://www.waitomo.govt.nz/"
     },
@@ -156817,21 +157251,21 @@
     {
       "agency_id": "whakatane-district-council",
       "alternates": 0,
-      "links": 588,
+      "links": 589,
       "status": "ok",
       "url": "https://www.whakatane.govt.nz/"
     },
     {
       "agency_id": "whanganui-district-council",
       "alternates": 0,
-      "links": 319,
+      "links": 320,
       "status": "ok",
       "url": "https://www.whanganui.govt.nz/"
     },
     {
       "agency_id": "whangarei-district-council",
       "alternates": 0,
-      "links": 336,
+      "links": 337,
       "status": "ok",
       "url": "https://www.wdc.govt.nz/"
     },
@@ -156874,33 +157308,33 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5242,
+    "candidate_count": 5259,
     "feasibility_counts": {
-      "high": 4156,
-      "low": 309,
-      "medium": 777
+      "high": 4160,
+      "low": 311,
+      "medium": 788
     },
     "known_registry_social_profiles": 446,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 290,
-      "instagram": 161,
-      "linkedin": 234,
+      "facebook": 292,
+      "instagram": 162,
+      "linkedin": 236,
       "medium": 2,
-      "newsletter": 156,
+      "newsletter": 163,
       "rss": 3829,
-      "website_page": 309,
+      "website_page": 313,
       "x": 75,
-      "youtube": 155
+      "youtube": 156
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 156,
+      "newsletter": 163,
       "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 935,
-      "website_page": 309
+      "social_profile": 941,
+      "website_page": 313
     }
   }
 }
