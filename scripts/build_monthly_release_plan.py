@@ -29,7 +29,10 @@ def _iter_normalized_records(root: Path) -> list[tuple[str, dict[str, Any]]]:
         if not path.is_file():
             continue
         source = path.parent.name
-        for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        content = path.read_text(encoding="utf-8")
+        if content.startswith("version https://git-lfs.github.com/spec/v1\n"):
+            continue
+        for line_number, line in enumerate(content.splitlines(), start=1):
             if not line.strip():
                 continue
             try:
