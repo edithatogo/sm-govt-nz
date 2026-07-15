@@ -1,978 +1,6 @@
 {
-  "generated_at": "2026-07-15T06:59:33+00:00",
+  "generated_at": "2026-07-15T11:35:28+00:00",
   "items": [
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "carterton-district-council",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 1,
-      "source_id": "11e053d3ea95d082",
-      "url": "https://www.cartertondc.govt.nz/news-and-events"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "carterton-district-council",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 2,
-      "source_id": "219ad612d51759e0",
-      "url": "https://www.cartertondc.govt.nz/media-releases"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "carterton-district-council",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 3,
-      "source_id": "7dc3c499db4b46f4",
-      "url": "https://www.cartertondc.govt.nz/media"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "carterton-district-council",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 4,
-      "source_id": "a7b48197999cde4f",
-      "url": "https://www.cartertondc.govt.nz/newsletter"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "carterton-district-council",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 5,
-      "source_id": "b2acc7b0c03ccd2b",
-      "url": "https://www.cartertondc.govt.nz/publications"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "carterton-district-council",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 6,
-      "source_id": "d697d266de69d502",
-      "url": "https://www.cartertondc.govt.nz/news"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "carterton-district-council",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 7,
-      "source_id": "dee0650bd3eb91ca",
-      "url": "https://www.cartertondc.govt.nz/api"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "carterton-district-council",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 8,
-      "source_id": "e1c07b8159d21adc",
-      "url": "https://www.cartertondc.govt.nz/subscribe"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "civil-aviation-authority",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "100",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 9,
-      "source_id": "1f869efe642abf39",
-      "url": "https://www.caa.govt.nz/api"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "civil-aviation-authority",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "100",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 10,
-      "source_id": "6a7489c7301ca41a",
-      "url": "https://www.caa.govt.nz/media-releases"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "civil-aviation-authority",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "100",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 11,
-      "source_id": "6d6b3f17dafaecf0",
-      "url": "https://www.caa.govt.nz/publications"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "civil-aviation-authority",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "100",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 12,
-      "source_id": "91afb96f1bb3935a",
-      "url": "https://www.caa.govt.nz/subscribe"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "civil-aviation-authority",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "100",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 13,
-      "source_id": "95062a951d8398ba",
-      "url": "https://www.caa.govt.nz/media"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "civil-aviation-authority",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "100",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 14,
-      "source_id": "98e1c7e0d08aceae",
-      "url": "https://www.caa.govt.nz/news"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "civil-aviation-authority",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "100",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 15,
-      "source_id": "cea3fade9bf9087b",
-      "url": "https://www.caa.govt.nz/news-and-events"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "civil-aviation-authority",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "100",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 16,
-      "source_id": "e83a91ed0b52186c",
-      "url": "https://www.caa.govt.nz/newsletter"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "criminal-cases-review-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 17,
-      "source_id": "4c2cbf2e37e11ac0",
-      "url": "https://www.ccrc.govt.nz/news-and-events"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "criminal-cases-review-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 18,
-      "source_id": "56b5d13d289489f1",
-      "url": "https://www.ccrc.govt.nz/publications"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "criminal-cases-review-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 19,
-      "source_id": "78b66347397b51c7",
-      "url": "https://www.ccrc.govt.nz/api"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "criminal-cases-review-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 20,
-      "source_id": "82c9ac8e39ed9dd4",
-      "url": "https://www.ccrc.govt.nz/subscribe"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "criminal-cases-review-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 21,
-      "source_id": "af4eab3aaee9ed42",
-      "url": "https://www.ccrc.govt.nz/media"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "criminal-cases-review-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 22,
-      "source_id": "b1b901d4f0e0537e",
-      "url": "https://www.ccrc.govt.nz/media-releases"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "criminal-cases-review-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 23,
-      "source_id": "d6df0dc74094c160",
-      "url": "https://www.ccrc.govt.nz/newsletter"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "criminal-cases-review-commission",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 24,
-      "source_id": "eb7f64ec826d4c21",
-      "url": "https://www.ccrc.govt.nz/news"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "dpmc",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 25,
-      "source_id": "4aef7bab2a305781",
-      "url": "https://www.dpmc.govt.nz/subscribe"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "dpmc",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 26,
-      "source_id": "830368347004813f",
-      "url": "https://www.dpmc.govt.nz/api"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "dpmc",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 27,
-      "source_id": "a0c3f4eaf2d85b6e",
-      "url": "https://www.dpmc.govt.nz/newsletter"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "dpmc",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 28,
-      "source_id": "e4b1258b8425d248",
-      "url": "https://www.dpmc.govt.nz/news-and-events"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "education-review-office",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 29,
-      "source_id": "0061ef17b65e9518",
-      "url": "https://www.ero.govt.nz/news-and-events"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "education-review-office",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 30,
-      "source_id": "1df9f2b07c742d01",
-      "url": "https://www.ero.govt.nz/publications"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "education-review-office",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 31,
-      "source_id": "45019736c545c4fc",
-      "url": "https://www.ero.govt.nz/newsletter"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "education-review-office",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 32,
-      "source_id": "4d1f56f9c5deaef7",
-      "url": "https://www.ero.govt.nz/news"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "education-review-office",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 33,
-      "source_id": "742293e6afb9a0f1",
-      "url": "https://www.ero.govt.nz/media-releases"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "education-review-office",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 34,
-      "source_id": "9b4241ec93b18ab9",
-      "url": "https://www.ero.govt.nz/api"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "education-review-office",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 35,
-      "source_id": "c3670697db69f415",
-      "url": "https://www.ero.govt.nz/subscribe"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "education-review-office",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "200",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 36,
-      "source_id": "c5389a239ca4fea3",
-      "url": "https://www.ero.govt.nz/media"
-    },
     {
       "acceptance_condition": "archived browser/HTTP record or terminal evidence",
       "agency_id": "education-review-office",
@@ -985,129 +13,22 @@
           "dry_run": "false",
           "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed",
           "limit_sources": "10",
-          "offset_sources": "30",
+          "offset_sources": "0",
           "per_page_timeout": "45",
           "publish": "false"
         },
         "workflow": "archive_website_browser_fallback.yml"
       },
       "expected_evidence": [
+        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/website_page_archive_offset_200_report.json",
         "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/website_page_archive_report.json",
         "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/website_page_archive_report.json"
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 37,
+      "rank": 1,
       "source_id": "education-review-office-website_page-bd13cf94",
       "url": "https://www.ero.govt.nz"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "government-house",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "300",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 38,
-      "source_id": "1e88fd192c0af855",
-      "url": "https://gg.govt.nz/media"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "government-house",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "300",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 39,
-      "source_id": "28fde064d265c25f",
-      "url": "https://gg.govt.nz/news"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "government-house",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "300",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 40,
-      "source_id": "982c084a3e6d0462",
-      "url": "https://gg.govt.nz/media-releases"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "government-house",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "300",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 41,
-      "source_id": "bf4698bd981103f3",
-      "url": "https://gg.govt.nz/api"
     },
     {
       "acceptance_condition": "archived browser/HTTP record or terminal evidence",
@@ -1121,7 +42,7 @@
           "dry_run": "false",
           "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed",
           "limit_sources": "10",
-          "offset_sources": "40",
+          "offset_sources": "0",
           "per_page_timeout": "45",
           "publish": "false"
         },
@@ -1133,7 +54,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 42,
+      "rank": 2,
       "source_id": "3d96533a759ca232",
       "url": "https://www.education.govt.nz/publications"
     },
@@ -1149,7 +70,7 @@
           "dry_run": "false",
           "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed",
           "limit_sources": "10",
-          "offset_sources": "40",
+          "offset_sources": "0",
           "per_page_timeout": "45",
           "publish": "false"
         },
@@ -1161,7 +82,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 43,
+      "rank": 3,
       "source_id": "porirua-city-council-website_page-dedfde72",
       "url": "https://www.pcc.govt.nz"
     },
@@ -1177,7 +98,7 @@
           "dry_run": "false",
           "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed",
           "limit_sources": "10",
-          "offset_sources": "40",
+          "offset_sources": "0",
           "per_page_timeout": "45",
           "publish": "false"
         },
@@ -1189,7 +110,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 44,
+      "rank": 4,
       "source_id": "predator-free-2050-website_page-fb3a8c52",
       "url": "https://www.predatorfree2050.co.nz"
     },
@@ -1205,19 +126,20 @@
           "dry_run": "false",
           "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed",
           "limit_sources": "10",
-          "offset_sources": "40",
+          "offset_sources": "0",
           "per_page_timeout": "45",
           "publish": "false"
         },
         "workflow": "archive_website_browser_fallback.yml"
       },
       "expected_evidence": [
+        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/website_page_archive_offset_1200_report.json",
         "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/website_page_archive_offset_200_report.json",
         "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/website_page_archive_offset_200_report.json"
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 45,
+      "rank": 5,
       "source_id": "selwyn-district-council-website_page-ce27b442",
       "url": "https://www.selwyn.govt.nz"
     },
@@ -1244,7 +166,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 46,
+      "rank": 6,
       "source_id": "2fb4e37a2d9d0551",
       "url": "https://www.temangai.govt.nz/news"
     },
@@ -1271,7 +193,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 47,
+      "rank": 7,
       "source_id": "52524d2842b1897f",
       "url": "https://www.temangai.govt.nz/subscribe"
     },
@@ -1298,7 +220,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 48,
+      "rank": 8,
       "source_id": "743298f0a7fa4e8d",
       "url": "https://www.temangai.govt.nz/newsletter"
     },
@@ -1325,7 +247,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 49,
+      "rank": 9,
       "source_id": "90c9ddd4cf6de8cc",
       "url": "https://www.temangai.govt.nz/publications"
     },
@@ -1352,7 +274,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 50,
+      "rank": 10,
       "source_id": "debaf37a55dde1a0",
       "url": "https://www.temangai.govt.nz/media-releases"
     },
@@ -1379,7 +301,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 51,
+      "rank": 11,
       "source_id": "f4d8fe95d6e773b4",
       "url": "https://www.temangai.govt.nz/news-and-events"
     },
@@ -1395,19 +317,20 @@
           "dry_run": "false",
           "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed",
           "limit_sources": "10",
-          "offset_sources": "50",
+          "offset_sources": "10",
           "per_page_timeout": "45",
           "publish": "false"
         },
         "workflow": "archive_website_browser_fallback.yml"
       },
       "expected_evidence": [
+        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/website_page_archive_offset_1500_report.json",
         "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/website_page_archive_offset_200_report.json",
         "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/website_page_archive_offset_200_report.json"
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 52,
+      "rank": 12,
       "source_id": "tourism-nz-website_page-1c93446d",
       "url": "https://www.tourismnewzealand.com"
     },
@@ -1430,7 +353,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 53,
+      "rank": 13,
       "source_id": "21fcb81fa4c3c580",
       "url": "https://www.kaweraudc.govt.nz/rss.xml"
     },
@@ -1453,7 +376,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 54,
+      "rank": 14,
       "source_id": "c194b53bc0b69b11",
       "url": "https://www.kaweraudc.govt.nz/atom.xml"
     },
@@ -1481,7 +404,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 55,
+      "rank": 15,
       "source_id": "b21a114650cf7c1f",
       "url": "https://www.wgtn.ac.nz/.well-known/webfinger"
     },
@@ -1504,7 +427,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 56,
+      "rank": 16,
       "source_id": "1359e749adf17233",
       "url": "https://www.whakatane.govt.nz/rss.xml"
     },
@@ -1527,15 +450,15 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 57,
+      "rank": 17,
       "source_id": "bd0270e877bc7fa5",
       "url": "https://www.whakatane.govt.nz/atom.xml"
     }
   ],
   "schema_version": 1,
   "summary": {
-    "dispatchable_count": 57,
-    "queue_count": 57
+    "dispatchable_count": 17,
+    "queue_count": 17
   },
   "track_id": "govt_archive_all_source_completion_20260713"
 }
