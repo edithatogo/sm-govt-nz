@@ -3,9 +3,11 @@ import json
 from pathlib import Path
 
 import pyarrow.parquet as pq
+import pytest
 
 from scripts.publish_archives import (
     BundleManifest,
+    _load_normalized_records,
     create_archive_bundle,
     publish_to_hugging_face,
     publish_to_zenodo,
@@ -24,6 +26,29 @@ class FakeUploader:
     def upload_file(self, url, token, file_path, metadata):
         self.calls.append((url, token, file_path, metadata))
         return {"url": url, "filename": file_path.name}
+
+
+def test_load_normalized_records_skips_unhydrated_git_lfs_pointer(tmp_path) -> None:
+    pointer = tmp_path / "pointer.jsonl"
+    pointer.write_text(
+        "version https://git-lfs.github.com/spec/v1\n"
+        "oid sha256:0123456789abcdef\n"
+        "size 1234\n",
+        encoding="utf-8",
+    )
+    records = tmp_path / "records.jsonl"
+    expected = {"record_id": "website:1"}
+    records.write_text(json.dumps(expected) + "\n", encoding="utf-8")
+
+    assert _load_normalized_records([pointer, records]) == [expected]
+
+
+def test_load_normalized_records_rejects_malformed_jsonl(tmp_path) -> None:
+    records = tmp_path / "records.jsonl"
+    records.write_text("not-json\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="Invalid JSONL"):
+        _load_normalized_records([records])
 
 
 def test_create_archive_bundle_writes_tar_gz_and_manifest(tmp_path) -> None:

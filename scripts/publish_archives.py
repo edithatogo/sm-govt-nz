@@ -649,7 +649,10 @@ def _env_flag(name: str, *, default: bool) -> bool:
 def _load_normalized_records(paths: list[Path]) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     for path in paths:
-        for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        content = path.read_text(encoding="utf-8")
+        if content.startswith("version https://git-lfs.github.com/spec/v1\n"):
+            continue
+        for line_number, line in enumerate(content.splitlines(), start=1):
             if not line.strip():
                 continue
             try:
