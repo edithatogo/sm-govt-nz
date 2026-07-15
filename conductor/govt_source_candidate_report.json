@@ -30053,7 +30053,7 @@
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "783b061cad53b157",
+      "candidate_id": "c10439f6bc359f92",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -30068,7 +30068,7 @@
       "trust_signals": [
         "official_term:new zealand"
       ],
-      "url": "https://www.fireandemergency.nz/mi_NZ/incidents-and-news/emergency-mobile-alerts/"
+      "url": "https://www.fireandemergency.nz/incidents-and-news/emergency-mobile-alerts/"
     },
     {
       "access_method": "public_rss",
@@ -86305,30 +86305,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "92f7f85f4fcd06be",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/OtagoPoly"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "OtagoPolytechnic",
       "account_classification": "official",
       "agency_id": "otago-polytechnic",
@@ -86384,54 +86360,6 @@
       "url": "https://www.instagram.com/otagopolytechnic"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "d32669ba1a66538a",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/otagopolytechnic/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "894173a6864da511",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/213448"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Otago Polytechnic",
       "account_classification": "official",
@@ -86458,30 +86386,6 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/school/otago-polytechnic"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "f8add89960419679",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "http://www.youtube.com/user/OtagoPolytech"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -116768,58 +116672,6 @@
       "agency_type": "W\u0101nanga",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "11a78d2214034ae6",
-      "confidence_score": 0.45,
-      "domain_trust": "unknown",
-      "feasibility": "high",
-      "link_title": "",
-      "mime_type": "application/atom+xml",
-      "official_website": "https://www.wananga.com",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Education",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "archive_friendly_platform"
-      ],
-      "url": "https://www.wananga.com/feed/atom"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.wananga.com",
-      "agency_id": "te-wananga-o-raukawa",
-      "agency_name": "Te W\u0101nanga o Raukawa",
-      "agency_type": "W\u0101nanga",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "ae1cd3f5189a989d",
-      "confidence_score": 0.45,
-      "domain_trust": "unknown",
-      "feasibility": "high",
-      "link_title": "",
-      "mime_type": "application/rss+xml",
-      "official_website": "https://www.wananga.com",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Education",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "archive_friendly_platform"
-      ],
-      "url": "https://www.wananga.com/feed/rss2"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.wananga.com",
-      "agency_id": "te-wananga-o-raukawa",
-      "agency_name": "Te W\u0101nanga o Raukawa",
-      "agency_type": "W\u0101nanga",
-      "archive_status": "ready",
-      "auth": "none",
       "candidate_id": "9c6884ca830444a8",
       "confidence_score": 0.45,
       "domain_trust": "unknown",
@@ -117190,28 +117042,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "te-wananga-o-raukawa",
-      "agency_name": "Te W\u0101nanga o Raukawa",
-      "agency_type": "W\u0101nanga",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "dd8f820f7c81a585",
-      "confidence_score": 0.35,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wananga.com",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [],
-      "url": "https://www.facebook.com/TeWanangaoRaukawa"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "tewanangao raukawa",
       "account_classification": "official",
       "agency_id": "te-wananga-o-raukawa",
@@ -117236,50 +117066,6 @@
         "registry_known"
       ],
       "url": "https://www.facebook.com/tewanangao raukawa"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "te-wananga-o-raukawa",
-      "agency_name": "Te W\u0101nanga o Raukawa",
-      "agency_type": "W\u0101nanga",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "43eb98f68414e897",
-      "confidence_score": 0.35,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wananga.com",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [],
-      "url": "https://www.instagram.com/wanangaoraukawa/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "te-wananga-o-raukawa",
-      "agency_name": "Te W\u0101nanga o Raukawa",
-      "agency_type": "W\u0101nanga",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "dd43d68a82131b33",
-      "confidence_score": 0.35,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.wananga.com",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [],
-      "url": "https://www.linkedin.com/school/te-w%C4%81nanga-o-raukawa/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -117309,28 +117095,6 @@
       "url": "https://www.linkedin.com/school/te-wananga-o-raukawa"
     },
     {
-      "access_method": "public_archive_or_lawful_export",
-      "account": "",
-      "agency_id": "te-wananga-o-raukawa",
-      "agency_name": "Te W\u0101nanga o Raukawa",
-      "agency_type": "W\u0101nanga",
-      "archive_status": "degraded",
-      "auth": "operator_authorized_if_browser_capture",
-      "candidate_id": "c54d2b6d96952ff1",
-      "confidence_score": 0.35,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.wananga.com",
-      "origin": "homepage.link",
-      "platform": "x",
-      "policy_notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [],
-      "url": "https://twitter.com/wanangaoraukawa?lang=en"
-    },
-    {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
       "account": "tewanangao raukawa",
       "account_classification": "official",
@@ -117356,28 +117120,6 @@
         "registry_known"
       ],
       "url": "https://www.youtube.com/@tewanangao raukawa"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
-      "agency_id": "te-wananga-o-raukawa",
-      "agency_name": "Te W\u0101nanga o Raukawa",
-      "agency_type": "W\u0101nanga",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "96fb660731bc28b4",
-      "confidence_score": 0.35,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wananga.com",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [],
-      "url": "https://www.youtube.com/channel/UCLYAv6bf5CCnH2QS0F9he1A"
     },
     {
       "access_method": "bounded_public_html",
@@ -140759,7 +140501,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-15T13:56:42+00:00",
+  "generated_at": "2026-07-15T13:59:33+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155749,8 +155491,8 @@
     },
     {
       "agency_id": "central-otago-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.codc.govt.nz/"
     },
     {
@@ -155811,8 +155553,8 @@
     },
     {
       "agency_id": "clutha-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.cluthadc.govt.nz/"
     },
     {
@@ -155951,8 +155693,8 @@
     },
     {
       "agency_id": "environment-southland",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.es.govt.nz/"
     },
     {
@@ -156029,8 +155771,8 @@
     },
     {
       "agency_id": "grey-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.greydc.govt.nz/"
     },
     {
@@ -156125,8 +155867,8 @@
     },
     {
       "agency_id": "hurunui-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.hurunui.govt.nz/"
     },
     {
@@ -156164,14 +155906,14 @@
     },
     {
       "agency_id": "invercargill-city-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.icc.govt.nz/"
     },
     {
       "agency_id": "kaikoura-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.kaikoura.govt.nz/"
     },
     {
@@ -156283,8 +156025,8 @@
     },
     {
       "agency_id": "marlborough-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.marlborough.govt.nz/"
     },
     {
@@ -156296,8 +156038,8 @@
     },
     {
       "agency_id": "masterton-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.mstn.govt.nz/"
     },
     {
@@ -156438,8 +156180,8 @@
     },
     {
       "agency_id": "nelson-city-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.nelson.govt.nz/"
     },
     {
@@ -156642,8 +156384,8 @@
     },
     {
       "agency_id": "opotiki-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.odc.govt.nz/"
     },
     {
@@ -156655,9 +156397,8 @@
     },
     {
       "agency_id": "otago-polytechnic",
-      "alternates": 0,
-      "links": 323,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.op.ac.nz/"
     },
     {
@@ -156798,8 +156539,8 @@
     },
     {
       "agency_id": "rotorua-lakes-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.rotorualakescouncil.nz/"
     },
     {
@@ -156857,14 +156598,14 @@
     },
     {
       "agency_id": "south-taranaki-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.southtaranaki.com/"
     },
     {
       "agency_id": "south-waikato-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.southwaikato.govt.nz/"
     },
     {
@@ -156903,8 +156644,8 @@
     },
     {
       "agency_id": "stratford-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.stratford.govt.nz/"
     },
     {
@@ -156956,8 +156697,8 @@
     },
     {
       "agency_id": "taupo-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.taupodc.govt.nz/"
     },
     {
@@ -157017,9 +156758,8 @@
     },
     {
       "agency_id": "te-wananga-o-raukawa",
-      "alternates": 2,
-      "links": 130,
-      "status": "ok",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>",
+      "status": "failed",
       "url": "https://www.wananga.com/"
     },
     {
@@ -157085,7 +156825,7 @@
     {
       "agency_id": "tvnz",
       "alternates": 0,
-      "links": 144,
+      "links": 145,
       "status": "ok",
       "url": "https://www.tvnz.co.nz/"
     },
@@ -157166,14 +156906,14 @@
     },
     {
       "agency_id": "waimate-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.waimatedc.govt.nz/"
     },
     {
       "agency_id": "waipa-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.waipadc.govt.nz/"
     },
     {
@@ -157224,14 +156964,14 @@
     },
     {
       "agency_id": "west-coast-regional-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.wcrc.govt.nz/"
     },
     {
       "agency_id": "western-bay-of-plenty-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "error": "HTTP Error 405: Not Allowed",
+      "status": "failed",
       "url": "https://www.westernbay.govt.nz/"
     },
     {
@@ -157308,32 +157048,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5259,
+    "candidate_count": 5248,
     "feasibility_counts": {
-      "high": 4160,
-      "low": 311,
-      "medium": 788
+      "high": 4158,
+      "low": 308,
+      "medium": 782
     },
     "known_registry_social_profiles": 446,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 292,
-      "instagram": 162,
-      "linkedin": 236,
+      "facebook": 290,
+      "instagram": 160,
+      "linkedin": 234,
       "medium": 2,
       "newsletter": 163,
-      "rss": 3829,
+      "rss": 3827,
       "website_page": 313,
-      "x": 75,
-      "youtube": 156
+      "x": 74,
+      "youtube": 154
     },
     "source_type_counts": {
       "api_endpoint": 13,
       "newsletter": 163,
-      "rss_feed": 64,
+      "rss_feed": 62,
       "search_seed": 3765,
-      "social_profile": 941,
+      "social_profile": 932,
       "website_page": 313
     }
   }
