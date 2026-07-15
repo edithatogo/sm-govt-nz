@@ -19,7 +19,7 @@ def test_commit_selected_paths_skips_when_no_selected_changes(monkeypatch) -> No
     assert ["commit", "-m", "Update state"] not in calls
 
 
-def test_commit_selected_paths_skips_unmatched_globs(monkeypatch, capsys) -> None:
+def test_commit_selected_paths_skips_unmatched_globs(monkeypatch, capsys, tmp_path) -> None:
     calls = []
 
     def fake_run_git(args, check=True):
@@ -30,11 +30,11 @@ def test_commit_selected_paths_skips_unmatched_globs(monkeypatch, capsys) -> Non
 
     committed = commit_state.commit_selected_paths(
         "Archive empty platform",
-        ["historical_archive_raw/threads/**", "historical_archive_normalized/threads/**"],
+        [str(tmp_path / "raw" / "**"), str(tmp_path / "normalized" / "**")],
     )
 
     assert committed is False
-    assert "Skipping unmatched state path glob: historical_archive_raw/threads/**" in capsys.readouterr().out
+    assert f"Skipping unmatched state path glob: {tmp_path / 'raw' / '**'}" in capsys.readouterr().out
     assert not any(call[:1] == ["add"] for call in calls)
 
 

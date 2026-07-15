@@ -404,7 +404,7 @@ def build_completion_matrix(
     registered_count = sum(row["registry_state"] == "registered" for row in rows)
     queue_rows = [row for row in rows if not row["complete"]]
     queue_rows.sort(key=lambda row: (PRIORITY.get(row["platform"], 100), row["agency_id"], row["source_id"]))
-    queue_items = []
+    queue_items: list[dict[str, Any]] = []
     queue_platform_offsets: Counter[str] = Counter()
     for rank, row in enumerate(queue_rows, start=1):
         platform_queue_offset = queue_platform_offsets[row["platform"]]

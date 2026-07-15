@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 from scripts.add_person_record import append_person_records
@@ -200,7 +201,7 @@ def test_add_person_record_cli_validate_only(tmp_path):
 
     result = subprocess.run(
         [
-            "python",
+            sys.executable,
             "scripts/add_person_record.py",
             "--registry-dir",
             str(registry_dir),
