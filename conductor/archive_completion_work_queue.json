@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T11:36:35+00:00",
+  "generated_at": "2026-07-15T12:18:26+00:00",
   "items": [
     {
       "acceptance_condition": "archived browser/HTTP record or terminal evidence",
@@ -145,168 +145,6 @@
     },
     {
       "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "te-mangai-paho",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "1400",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 6,
-      "source_id": "2fb4e37a2d9d0551",
-      "url": "https://www.temangai.govt.nz/news"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "te-mangai-paho",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "1400",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 7,
-      "source_id": "52524d2842b1897f",
-      "url": "https://www.temangai.govt.nz/subscribe"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "te-mangai-paho",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "1400",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 8,
-      "source_id": "743298f0a7fa4e8d",
-      "url": "https://www.temangai.govt.nz/newsletter"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "te-mangai-paho",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "1400",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 9,
-      "source_id": "90c9ddd4cf6de8cc",
-      "url": "https://www.temangai.govt.nz/publications"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "te-mangai-paho",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "1400",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 10,
-      "source_id": "debaf37a55dde1a0",
-      "url": "https://www.temangai.govt.nz/media-releases"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
-      "agency_id": "te-mangai-paho",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "1400",
-          "publish": "false",
-          "source_type": "website_page"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "conductor/archive_completion_matrix.json"
-      ],
-      "next_action": "retry_public_website_capture",
-      "platform": "website_page",
-      "rank": 11,
-      "source_id": "f4d8fe95d6e773b4",
-      "url": "https://www.temangai.govt.nz/news-and-events"
-    },
-    {
-      "acceptance_condition": "archived browser/HTTP record or terminal evidence",
       "agency_id": "tourism-nz",
       "completion_state": "automation_fault",
       "dispatch": {
@@ -317,7 +155,7 @@
           "dry_run": "false",
           "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed",
           "limit_sources": "10",
-          "offset_sources": "10",
+          "offset_sources": "0",
           "per_page_timeout": "45",
           "publish": "false"
         },
@@ -330,7 +168,7 @@
       ],
       "next_action": "retry_public_website_capture",
       "platform": "website_page",
-      "rank": 12,
+      "rank": 6,
       "source_id": "tourism-nz-website_page-1c93446d",
       "url": "https://www.tourismnewzealand.com"
     },
@@ -353,7 +191,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 13,
+      "rank": 7,
       "source_id": "21fcb81fa4c3c580",
       "url": "https://www.kaweraudc.govt.nz/rss.xml"
     },
@@ -376,7 +214,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 14,
+      "rank": 8,
       "source_id": "c194b53bc0b69b11",
       "url": "https://www.kaweraudc.govt.nz/atom.xml"
     },
@@ -404,7 +242,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "api",
-      "rank": 15,
+      "rank": 9,
       "source_id": "b21a114650cf7c1f",
       "url": "https://www.wgtn.ac.nz/.well-known/webfinger"
     },
@@ -427,7 +265,7 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 16,
+      "rank": 10,
       "source_id": "1359e749adf17233",
       "url": "https://www.whakatane.govt.nz/rss.xml"
     },
@@ -450,15 +288,15 @@
       ],
       "next_action": "run_registered_source_adapter",
       "platform": "rss",
-      "rank": 17,
+      "rank": 11,
       "source_id": "bd0270e877bc7fa5",
       "url": "https://www.whakatane.govt.nz/atom.xml"
     }
   ],
   "schema_version": 1,
   "summary": {
-    "dispatchable_count": 17,
-    "queue_count": 17
+    "dispatchable_count": 11,
+    "queue_count": 11
   },
   "track_id": "govt_archive_all_source_completion_20260713"
 }
