@@ -36,7 +36,7 @@ jobs:
           --json-output dist/multisource_blockers.json
           --markdown-output dist/multisource_blockers.md
       - name: Upload blocker status
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: multisource-blocker-status
           path: |

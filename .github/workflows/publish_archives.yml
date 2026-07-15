@@ -179,7 +179,7 @@ jobs:
 
       - name: Upload generated corpus bundle
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: corpus-social-media-government-nz
           path: |

@@ -166,7 +166,7 @@ jobs:
           fi
           "${args[@]}"
       - name: Upload generated corpus bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: threads-manual-seed-archive-corpus
           path: |

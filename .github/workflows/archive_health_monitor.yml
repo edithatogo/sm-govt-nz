@@ -81,7 +81,7 @@ jobs:
               });
             }
       - name: Upload health report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: archive-health-report
           path: conductor/archive_health_report.json

@@ -413,7 +413,7 @@ jobs:
           "${args[@]}"
       - name: Upload generated corpus bundle
         if: ${{ inputs.dry_run == 'false' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: registered-government-source-archive-corpus
           path: |

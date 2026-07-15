@@ -91,7 +91,7 @@ jobs:
           --path dist/README.md
       - name: Upload generated corpus bundle
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: retrospective-monthly-archive-corpus
           path: |

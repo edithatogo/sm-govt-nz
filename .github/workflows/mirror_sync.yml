@@ -43,7 +43,7 @@ jobs:
           python scripts/validate_git_mirrors.py --branch master --compare-head --output mirror_validation_report.json
       - name: Upload mirror validation report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: mirror-validation-report
           path: mirror_validation_report.json

@@ -26,7 +26,7 @@ jobs:
       - name: Refresh follow status cache
         run: python scripts/check_follow_status.py
       - name: Upload follow status report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: follow-sync-state
           path: conductor/follow_sync_state.json
