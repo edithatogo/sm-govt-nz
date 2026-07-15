@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-14T16:48:38+00:00",
+  "generated_at": "2026-07-15T16:53:14+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -1391,6 +1391,27 @@
       "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-dd2c8e3a.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-dd2c8e3a.json",
+        "manual_archive_seeds/newsletter/environmental-protection-authority.json"
+      ],
+      "source_id": "environmental-protection-authority-newsletter-dd2c8e3a",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-seeks-feedback-on-proposal-to-ban-two-insecticides/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.epa.govt.nz",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-e48fa635.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
@@ -2504,6 +2525,27 @@
       "agency_name": "Health New Zealand (Te Whatu Ora)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-e086220a.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/health-nz-newsletter-e086220a.json",
+        "manual_archive_seeds/newsletter/health-nz.json"
+      ],
+      "source_id": "health-nz-newsletter-e086220a",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/pertussis-whooping-cough-epidemic-across-aotearoa-new-zealand"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tewhatuora.govt.nz",
+      "agency_id": "health-nz",
+      "agency_name": "Health New Zealand (Te Whatu Ora)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-eba91af6.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
@@ -2597,6 +2639,27 @@
       ],
       "source_id": "health-and-disability-commissioner-newsletter-4b76b3dc",
       "url": "https://www.hdc.org.nz/news-resources/hdc-newsletters/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.horizons.govt.nz",
+      "agency_id": "horizons-regional-council",
+      "agency_name": "Horizons Regional Council (Manawat\u016b-Whanganui)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/horizons-regional-council-newsletter-b3eeca74.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/horizons-regional-council-newsletter-b3eeca74.json",
+        "manual_archive_seeds/newsletter/horizons-regional-council.json"
+      ],
+      "source_id": "horizons-regional-council-newsletter-b3eeca74",
+      "url": "https://www.horizons.govt.nz/news/new-connect-website-launched-to-improve-access-to-public-transport-information/"
     },
     {
       "acceptable_access_methods": [
@@ -9492,7 +9555,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Horizons Facebook",
+      "account": "Facebook",
       "agency_id": "horizons-regional-council",
       "agency_name": "Horizons Regional Council (Manawat\u016b-Whanganui)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -12558,7 +12621,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 4 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 hour ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -12593,6 +12656,27 @@
       ],
       "source_id": "social-workers-registration-board-facebook-6c3382b9",
       "url": "https://www.facebook.com/102062118004656_1347582970818632"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "View on Facebook",
+      "agency_id": "social-workers-registration-board",
+      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "preferred_seed_path": "manual_archive_seeds/facebook/social-workers-registration-board-facebook-997011cd.json",
+      "priority_rank": 40,
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/social-workers-registration-board-facebook-997011cd.json",
+        "manual_archive_seeds/facebook/social-workers-registration-board.json"
+      ],
+      "source_id": "social-workers-registration-board-facebook-997011cd",
+      "url": "https://www.facebook.com/102062118004656_1364625979114331"
     },
     {
       "acceptable_access_methods": [
@@ -15582,7 +15666,7 @@
         "account_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Horizons Instagram",
+      "account": "www.instagram.com",
       "agency_id": "horizons-regional-council",
       "agency_name": "Horizons Regional Council (Manawat\u016b-Whanganui)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -18498,9 +18582,9 @@
   ],
   "summary": {
     "platform_counts": {
-      "facebook": 322,
+      "facebook": 323,
       "instagram": 182,
-      "newsletter": 373,
+      "newsletter": 376,
       "threads": 3
     },
     "priority_order": [
@@ -18509,6 +18593,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 880
+    "queue_count": 884
   }
 }
