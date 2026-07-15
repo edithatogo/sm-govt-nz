@@ -1,12 +1,12 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T06:54:22+00:00
+Generated: 2026-07-15T07:30:32+00:00
 
 ## Summary
 
 - `selected_sources`: 100
 - `platform_count`: 1
-- `status_count`: 6
+- `status_count`: 7
 
 ## Platform counts
 
@@ -14,16 +14,17 @@ Generated: 2026-07-02T06:54:22+00:00
 
 ## Status counts
 
+- `already_captured`: 63
 - `capture_blocked`: 9
-- `captured`: 80
-- `dns_failed`: 4
-- `method_not_allowed`: 5
+- `dns_failed`: 9
+- `network_error`: 1
 - `network_timeout`: 1
-- `not_acceptable`: 1
+- `not_acceptable`: 9
+- `tls_failed`: 8
 
 ## Status by platform
 
-- `website_page`: {'capture_blocked': 9, 'captured': 80, 'dns_failed': 4, 'method_not_allowed': 5, 'network_timeout': 1, 'not_acceptable': 1}
+- `website_page`: {'already_captured': 63, 'capture_blocked': 9, 'dns_failed': 9, 'network_error': 1, 'network_timeout': 1, 'not_acceptable': 9, 'tls_failed': 8}
 
 ## Notes
 
