@@ -1,26 +1,28 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-13T13:18:21+00:00
+Generated: 2026-07-15T12:16:52+00:00
 
 ## Summary
 
-- `selected_sources`: 20
+- `selected_sources`: 100
 - `platform_count`: 1
-- `status_count`: 3
+- `status_count`: 5
 
 ## Platform counts
 
-- `website_page`: 20
+- `website_page`: 100
 
 ## Status counts
 
-- `already_captured`: 11
-- `method_not_allowed`: 8
-- `network_timeout`: 1
+- `already_captured`: 79
+- `capture_blocked`: 2
+- `dns_failed`: 9
+- `http_error`: 1
+- `method_not_allowed`: 9
 
 ## Status by platform
 
-- `website_page`: {'already_captured': 11, 'method_not_allowed': 8, 'network_timeout': 1}
+- `website_page`: {'already_captured': 79, 'capture_blocked': 2, 'dns_failed': 9, 'http_error': 1, 'method_not_allowed': 9}
 
 ## Notes
 
