@@ -2,6 +2,7 @@ import argparse
 import hashlib
 import html
 import json
+from concurrent.futures import ThreadPoolExecutor
 from collections import Counter
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -812,13 +813,19 @@ def probe_candidates(agencies: list[dict[str, Any]], config: dict[str, Any], max
     probe_config = config.get("homepage_probe", {})
     max_pages = int(probe_config.get("max_pages_per_agency", 1))
     common_paths = probe_config.get("common_paths", ["/"])
-    for agency in agencies[:max_agencies or len(agencies)]:
+    selected_agencies = agencies[:max_agencies or len(agencies)]
+    jobs: list[tuple[dict[str, Any], str]] = []
+    for agency in selected_agencies:
         base = agency.get("official_website")
         if not base:
             continue
         urls = [urljoin(base.rstrip("/") + "/", suffix.lstrip("/")) for suffix in common_paths[:max_pages]]
         for url in dict.fromkeys(urls):
-            candidates, status = probe_url(agency, url, config)
+            jobs.append((agency, url))
+    max_workers = max(1, int(probe_config.get("max_workers", 16)))
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        results = executor.map(lambda item: probe_url(item[0], item[1], config), jobs)
+        for (agency, _url), (candidates, status) in zip(jobs, results, strict=True):
             found.extend(candidates)
             probe_log.append({"agency_id": agency["agency_id"], **status})
     return found, probe_log

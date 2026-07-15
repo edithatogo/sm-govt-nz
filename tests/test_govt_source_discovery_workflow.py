@@ -11,3 +11,4 @@ def test_govt_source_discovery_workflow_uses_manual_inputs() -> None:
     assert "if [ \"${{ inputs.probe_homepages || 'true' }}\" = \"true\" ]; then" in workflow
     assert "python scripts/discover_govt_source_candidates.py \"${args[@]}\"" in workflow
     assert "--probe-homepages --max-agencies 0" not in workflow
+    assert "timeout-minutes: 30" in workflow

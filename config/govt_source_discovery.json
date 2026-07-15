@@ -4,6 +4,7 @@
   "homepage_probe": {
     "enabled": true,
     "timeout_seconds": 5,
+    "max_workers": 16,
     "max_pages_per_agency": 1,
     "user_agent": "sm-govt-nz-source-discovery/1.0 (+https://github.com/edithatogo/sm-govt-nz)",
     "common_paths": [
