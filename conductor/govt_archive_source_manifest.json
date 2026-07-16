@@ -1,6 +1,6 @@
 {
   "description": "Archive onboarding manifest generated from the government source candidate report.",
-  "generated_at": "2026-07-16T10:52:58.374Z",
+  "generated_at": "2026-07-16T11:01:21.233Z",
   "sources": [
     {
       "access_method": "public_api_or_openapi",
@@ -45826,6 +45826,22 @@
       "url": "https://www.napier.govt.nz/rss.xml"
     },
     {
+      "source_id": "napier-city-council-roadworks-rss",
+      "agency_id": "napier-city-council",
+      "agency_name": "Napier City Council (Te Kaunihera o Ahurire)",
+      "platform": "rss",
+      "source_type": "rss",
+      "url": "https://www.napier.govt.nz/services/roads-and-streets/road-works/rss",
+      "account": "https://www.napier.govt.nz",
+      "feasibility": "high",
+      "archive_status": "ready",
+      "access_method": "public_rss",
+      "auth": "none",
+      "origin": "public_newsletter_feed_discovery",
+      "notes": "Verified public RSS endpoint discovered from externally gated newsletter or alert page; archive-only capture.",
+      "created_at": "2026-07-16T11:01:21.233Z"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.napier.govt.nz",
       "agency_id": "napier-city-council",
@@ -47414,6 +47430,22 @@
       "url": "https://www.n4l.co.nz/atom.xml"
     },
     {
+      "source_id": "network-for-learning-alerts-rss",
+      "agency_id": "network-for-learning",
+      "agency_name": "Network for Learning Limited (N4L)",
+      "platform": "rss",
+      "source_type": "rss",
+      "url": "https://www.n4l.co.nz/category/alerts/feed/",
+      "account": "https://www.n4l.co.nz",
+      "feasibility": "high",
+      "archive_status": "ready",
+      "access_method": "public_rss",
+      "auth": "none",
+      "origin": "public_newsletter_feed_discovery",
+      "notes": "Verified public RSS endpoint discovered from externally gated newsletter or alert page; archive-only capture.",
+      "created_at": "2026-07-16T11:01:21.233Z"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.n4l.co.nz",
       "agency_id": "network-for-learning",
@@ -47458,16 +47490,17 @@
       "auth": "none",
       "candidate_id": "9f0846ea976d087e",
       "feasibility": "high",
-      "notes": "Promoted from discovery: confidence=0.6; trust=trusted_domain_suffix,archive_friendly_platform,official_term:nz",
-      "origin": "homepage.link_alternate",
+      "notes": "Verified public RSS endpoint discovered from externally gated newsletter or alert page; archive-only capture.",
+      "origin": "public_newsletter_feed_discovery",
       "party_id": "",
       "person_id": "",
       "platform": "rss",
       "registry_record_kind": "agency",
-      "source_id": "9f0846ea976d087e",
-      "source_type": "rss_feed",
-      "updated_at": "2026-07-15T17:45:06+00:00",
-      "url": "https://www.n4l.co.nz/feed/"
+      "source_id": "network-for-learning-general-rss",
+      "source_type": "rss",
+      "updated_at": "2026-07-16T11:01:21.233Z",
+      "url": "https://www.n4l.co.nz/feed/",
+      "created_at": "2026-07-16T11:01:21.233Z"
     },
     {
       "access_method": "public_rss",
@@ -63730,6 +63763,22 @@
       "source_id": "c382a0be748dd54d",
       "source_type": "search_seed",
       "url": "https://www.privacy.org.nz/subscribe"
+    },
+    {
+      "source_id": "privacy-commissioner-subscription-rss",
+      "agency_id": "privacy-commissioner",
+      "agency_name": "Privacy Commissioner (Te Mana Mātāpono Matapopore)",
+      "platform": "rss",
+      "source_type": "rss",
+      "url": "https://www.privacy.org.nz/subscribe/rss/",
+      "account": "https://www.privacy.org.nz",
+      "feasibility": "high",
+      "archive_status": "ready",
+      "access_method": "public_rss",
+      "auth": "none",
+      "origin": "public_newsletter_feed_discovery",
+      "notes": "Verified public RSS endpoint discovered from externally gated newsletter or alert page; archive-only capture.",
+      "created_at": "2026-07-16T11:01:21.233Z"
     },
     {
       "access_method": "bounded_public_html",
@@ -92964,6 +93013,22 @@
       "url": "https://www.westlanddc.govt.nz/do-it-online/subscribe/"
     },
     {
+      "source_id": "westland-matters-rss",
+      "agency_id": "westland-district-council",
+      "agency_name": "Westland District Council",
+      "platform": "rss",
+      "source_type": "rss",
+      "url": "https://westlandmatters.buzzit.co.nz/feed/",
+      "account": "https://westlandmatters.buzzit.co.nz",
+      "feasibility": "high",
+      "archive_status": "ready",
+      "access_method": "public_rss",
+      "auth": "none",
+      "origin": "public_newsletter_feed_discovery",
+      "notes": "Verified public RSS endpoint discovered from externally gated newsletter or alert page; archive-only capture.",
+      "created_at": "2026-07-16T11:01:21.233Z"
+    },
+    {
       "access_method": "public_rss_feed",
       "account": "https://www.westlanddc.govt.nz",
       "agency_id": "westland-district-council",
@@ -96531,12 +96596,12 @@
     }
   ],
   "summary": {
-    "total_sources": 5644,
+    "total_sources": 5648,
     "archive_status_counts": {
       "candidate": 783,
       "degraded": 40,
       "manual_seed": 132,
-      "ready": 4689
+      "ready": 4693
     }
   }
 }
