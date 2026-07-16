@@ -1,14 +1,14 @@
 # Courts of New Zealand Email Ingress Fallback Decision
 
 ## Decision
-Cloudflare Email Routing Worker remains the default ingress route for Courts of
-New Zealand judgments of public interest subscription messages.
+Cloudflare Email Routing Worker remains a staged, deferred ingress route for
+Courts of New Zealand judgments of public interest subscription messages.
 
 Manual `Archive Email` workflow dispatch is active as the zero-cost operational
 fallback while the dedicated Cloudflare-routed address is blocked by domain
 ownership or delegation.
 
-Pipedream Email Trigger is the recommended zero-cost automated fallback while
+Pipedream Email Trigger is the active zero-cost automated route while
 there is no owned domain for Cloudflare Email Routing. Pipedream can provide a
 workflow-specific email address, receive the Courts of NZ subscription message,
 and call the same GitHub `repository_dispatch` event as the Cloudflare Worker.
@@ -19,6 +19,13 @@ webhook-style inbound delivery is unavailable.
 
 The machine-readable contract is
 `config/courts_nz_email_ingress.json`.
+
+The operating cost policy is strictly zero-cost: do not register or purchase a
+domain, add a payment method, upgrade a plan, or enable a metered product.
+Cloudflare may remain deployed on its free plan as staged code, but its routing
+rule must remain disabled until a suitable already-owned and delegated domain
+exists. The active automated route is Pipedream, subject to its free-tier
+limits; manual GitHub dispatch remains the no-service fallback.
 
 ## Dedicated Address
 The planned dedicated subscription address is:

@@ -80,11 +80,18 @@
     "must_not_enable_metered_paid_products_without_explicit_approval": true
   },
   "default_route": {
-    "provider": "cloudflare_email_routing_worker",
+    "provider": "pipedream_email_trigger",
+    "cost_policy": "zero_cost_only",
+    "status": "active_pending_source_subscription_confirmation",
     "workflow": "Archive Email",
     "repository_dispatch_event_type": "courts_nz_email_received",
     "raw_output_root": "historical_archive_raw/email",
-    "normalized_output_root": "historical_archive_normalized/email"
+    "normalized_output_root": "historical_archive_normalized/email",
+    "deferred_routes": [
+      "cloudflare_email_routing_worker",
+      "mailgun_inbound_parse",
+      "scheduled_mailbox_polling"
+    ]
   },
   "fallback_routes": [
     {

@@ -5,7 +5,7 @@
 The `Archive Email` workflow receives email notifications through GitHub
 `repository_dispatch` events of type `courts_nz_email_received`.
 
-The default route, fallback order, planned dedicated address, and archive-only
+The active route, deferred fallback order, planned dedicated address, and archive-only
 guardrails are recorded in `config/courts_nz_email_ingress.json`. The fallback
 decision note is `docs/courts-nz-email-ingress-fallbacks.md`.
 
@@ -37,12 +37,12 @@ the Cloudflare route. It is suitable for capturing Courts of NZ subscription
 messages that are received through another mailbox and manually exported or
 forwarded into JSON form.
 
-## Zero-Cost Automated Fallback
+## Zero-Cost Automated Route
 
 If automation is needed before an owned domain is available, use a Pipedream
 Email trigger workflow before paid inbound email services.
 
-Pipedream should receive the Courts of NZ subscription message at its generated
+Pipedream receives the Courts of NZ subscription message at its generated
 workflow email address and call the same GitHub `repository_dispatch` event used
 by the Cloudflare Worker:
 
