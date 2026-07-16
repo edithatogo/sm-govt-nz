@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-15T16:53:14+00:00",
+  "generated_at": "2026-07-16T16:51:36+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -5621,7 +5621,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 hour ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 18 hours ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "archive_status": "candidate",
@@ -25596,6 +25596,31 @@
         "email_ingress",
         "operator_authorized_seed"
       ],
+      "account": "https://www.rea.govt.nz",
+      "agency_id": "real-estate-authority",
+      "agency_name": "Real Estate Authority (Te Mana Papawhenua)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/real-estate-authority-newsletter-f3a55ce2.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/real-estate-authority-newsletter-f3a55ce2.json",
+        "manual_archive_seeds/newsletter/real-estate-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "real-estate-authority-newsletter-f3a55ce2",
+      "source_type": "newsletter",
+      "url": "https://mail.rea.govt.nz/t/j-6F526951653549882540EF23F30FEDED"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
       "account": "https://www.reannz.co.nz",
       "agency_id": "reannz",
       "agency_name": "Research and Education Advanced Network NZ Limited (REANNZ)",
@@ -30700,7 +30725,7 @@
       "facebook": 323,
       "instagram": 182,
       "linkedin": 258,
-      "newsletter": 376,
+      "newsletter": 377,
       "threads": 3,
       "x": 79
     },
@@ -30708,11 +30733,11 @@
     "remaining_groups": {
       "facebook": 323,
       "instagram": 182,
-      "newsletter": 376,
+      "newsletter": 377,
       "threads": 3
     },
-    "remaining_source_count": 884,
-    "selected_sources": 1221,
+    "remaining_source_count": 885,
+    "selected_sources": 1222,
     "status_by_platform": {
       "facebook": {
         "needs_authorized_seed_or_api": 323
@@ -30724,7 +30749,7 @@
         "public_fallback_available": 258
       },
       "newsletter": {
-        "needs_authorized_seed_or_api": 376
+        "needs_authorized_seed_or_api": 377
       },
       "threads": {
         "needs_authorized_seed_or_api": 3
@@ -30734,7 +30759,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 884,
+      "needs_authorized_seed_or_api": 885,
       "public_fallback_available": 258,
       "seed_present": 79
     }
