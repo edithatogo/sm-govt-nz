@@ -1,25 +1,25 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-16T11:06:50+00:00
+Generated: 2026-07-16T11:09:28+00:00
 
 ## Summary
 
-- `selected_sources`: 7
+- `selected_sources`: 15
 - `platform_count`: 1
 - `status_count`: 2
 
 ## Platform counts
 
-- `rss`: 7
+- `rss`: 15
 
 ## Status counts
 
-- `captured`: 412
-- `no_records`: 6
+- `captured`: 1
+- `no_records`: 14
 
 ## Status by platform
 
-- `rss`: {'captured': 412, 'no_records': 6}
+- `rss`: {'captured': 1, 'no_records': 14}
 
 ## Notes
 
