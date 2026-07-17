@@ -212,6 +212,11 @@ Mordaunt, `edithatogo`, or other personal identities.
 *Link: [./archive/govt_archive_all_source_completion_20260713/](./archive/govt_archive_all_source_completion_20260713/)*
 - Complete: all 5,602 identified sources have archived evidence or an evidence-backed terminal state. The deterministic queue is empty; daily capture and automatic reopening remain active.
 
+---
+
+- [ ] **Track: Resolve credentialed read-only access for Facebook and LinkedIn and complete Bluesky validation**
+*Link: [./tracks/govt_credentialed_readonly_access_resolution_20260717/](./tracks/govt_credentialed_readonly_access_resolution_20260717/)*
+
 
 
 
