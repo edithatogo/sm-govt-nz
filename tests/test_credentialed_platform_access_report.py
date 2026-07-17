@@ -143,6 +143,17 @@ def test_credentialed_report_writes_summary(tmp_path):
     assert "Disabled live API gates are report-only" in summary
 
 
+def test_normal_password_variables_are_reported_as_hygiene_faults(tmp_path, monkeypatch):
+    monkeypatch.setenv("FACEBOOK_PASSWORD", "must-not-be-used")
+    monkeypatch.delenv("LINKEDIN_PASSWORD", raising=False)
+    manifest, policy = write_inputs(tmp_path)
+
+    report = build_report(report_args(tmp_path, manifest, policy))
+
+    assert report["credential_hygiene_faults"] == ["FACEBOOK_PASSWORD"]
+    assert report["summary"]["credential_hygiene_fault_count"] == 1
+
+
 def test_workflow_uses_gates_and_only_issues_for_enabled_missing_secrets():
     workflow = Path(".github/workflows/credentialed_platform_access_report.yml").read_text(encoding="utf-8")
 

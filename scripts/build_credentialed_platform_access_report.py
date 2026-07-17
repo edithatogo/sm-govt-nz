@@ -12,6 +12,7 @@ DEFAULT_REPORT = Path("conductor/credentialed_platform_access_report.json")
 DEFAULT_SUMMARY = Path("conductor/credentialed_platform_access_summary.md")
 DEFAULT_MANUAL_SEED_ROOT = Path("manual_archive_seeds")
 DEFAULT_PLATFORMS = ["threads", "x", "linkedin", "facebook", "instagram"]
+FORBIDDEN_PASSWORD_ENV_NAMES = ("FACEBOOK_PASSWORD", "LINKEDIN_PASSWORD", "THREADS_PASSWORD", "X_PASSWORD")
 
 
 def now_iso() -> str:
@@ -38,6 +39,11 @@ def secret_set_present(secret_set: list[str]) -> bool:
 
 def matching_secret_sets(required_secret_sets: list[list[str]]) -> list[list[str]]:
     return [secret_set for secret_set in required_secret_sets if secret_set_present(secret_set)]
+
+
+def credential_hygiene_faults() -> list[str]:
+    """Return ordinary password variable names that must never drive capture."""
+    return [name for name in FORBIDDEN_PASSWORD_ENV_NAMES if os.getenv(name, "").strip()]
 
 
 def seed_candidates(source: dict[str, Any], seed_directory: str) -> list[str]:
@@ -124,6 +130,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
 
     actionable_statuses = {"api_enabled_missing_secret"}
     actionable_items = [item for item in items if item["readiness_status"] in actionable_statuses]
+    hygiene_faults = credential_hygiene_faults()
     return {
         "generated_at": now_iso(),
         "description": "Credentialed platform live-capture readiness. Disabled gates are report-only states; enabled gates with missing credentials are actionable configuration faults.",
@@ -141,9 +148,11 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "live_capture_enabled_by_platform": dict(sorted(enabled_by_platform.items())),
             "seed_present_by_platform": dict(sorted(seed_present_by_platform.items())),
             "actionable_configuration_fault_count": len(actionable_items),
+            "credential_hygiene_fault_count": len(hygiene_faults),
         },
         "platform_policies": {platform: platform_policy[platform] for platform in requested if platform in platform_policy},
         "actionable_configuration_faults": sorted(actionable_items, key=lambda item: (item["platform"], item["agency_id"], item["source_id"])),
+        "credential_hygiene_faults": hygiene_faults,
         "items": sorted(items, key=lambda item: (item["platform"], item["agency_id"], item["source_id"])),
     }
 
@@ -159,6 +168,7 @@ def write_summary(path: Path, report: dict[str, Any]) -> None:
         "",
         f"- `selected_sources`: {summary.get('selected_sources', 0)}",
         f"- `actionable_configuration_fault_count`: {summary.get('actionable_configuration_fault_count', 0)}",
+        f"- `credential_hygiene_fault_count`: {summary.get('credential_hygiene_fault_count', 0)}",
         "",
         "## Platform status",
         "",
@@ -172,6 +182,7 @@ def write_summary(path: Path, report: dict[str, Any]) -> None:
         "- Disabled live API gates are report-only states and must not open blocker issues.",
         "- Enabled live API gates with missing required secrets are actionable configuration faults.",
         "- Registered-but-unseeded credentialed accounts are not described as archived until records exist.",
+        "- Ordinary password environment variables are forbidden; use platform-issued read tokens or authorised exports.",
     ])
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")

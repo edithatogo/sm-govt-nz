@@ -2,23 +2,23 @@
 
 ## Phase 1: Credential hygiene and read-only contract
 
-- [ ] Task: Remove normal Facebook and LinkedIn passwords from repository secrets and document rotation.
-    - [ ] Add validation rejecting password-shaped configuration for archival workflows.
-    - [ ] Confirm no workflow references password secrets.
-- [ ] Task: Add tests asserting capture-only behavior and disabled write/mirror scopes.
+- [x] Task: Remove normal Facebook and LinkedIn passwords from repository secrets and document rotation.
+    - [x] Add validation rejecting password-shaped configuration for archival workflows.
+    - [x] Confirm no workflow references password secrets.
+- [x] Task: Add tests asserting capture-only behavior and disabled write/mirror scopes.
 - [ ] Task: Conductor - User Manual Verification 'Credential hygiene and read-only contract' (Protocol in workflow.md)
 
 ## Phase 2: Bluesky completion
 
-- [ ] Task: Validate the dedicated Bluesky app-password configuration.
-    - [ ] Run the scheduled archive workflow with the registered source manifest.
-    - [ ] Confirm records, diagnostics, and publication state.
-- [ ] Task: Fix any manifest, adapter, or workflow faults and rerun the bounded proof.
+- [x] Task: Validate the dedicated Bluesky app-password configuration.
+    - [x] Run the scheduled archive workflow with the registered source manifest.
+    - [x] Confirm records, diagnostics, and publication state.
+- [x] Task: Fix any manifest, adapter, or workflow faults and rerun the bounded proof.
 - [ ] Task: Conductor - User Manual Verification 'Bluesky completion' (Protocol in workflow.md)
 
 ## Phase 3: Facebook Page access
 
-- [ ] Task: Detect and report whether `edithatogo@gmail.com` manages any registered government Pages.
+- [x] Task: Detect and report whether `edithatogo@gmail.com` manages any registered government Pages.
 - [ ] Task: Add the Page ID and read-only Page Access Token only after authorised Page administration exists.
     - [ ] Keep `FACEBOOK_GRAPH_CAPTURE_ENABLED` false until validation passes.
     - [ ] Run a dry-run and one-Page capture proof before expanding.
@@ -27,11 +27,11 @@
 
 ## Phase 4: LinkedIn developer access
 
-- [ ] Task: Inspect the logged-in developer console without creating an app or Page without an authorised association.
+- [x] Task: Inspect the logged-in developer console without creating an app or Page without an authorised association.
 - [ ] Task: If an authorised LinkedIn Page exists, configure a zero-cost app with privacy URL, logo, and read-only product approval.
     - [ ] Store only the approved read token as `LINKEDIN_ACCESS_TOKEN`.
     - [ ] Run a dry-run and one-organisation capture proof.
-- [ ] Task: Otherwise document the authorised export intake path and retain `terminal_external_access` status.
+- [x] Task: Otherwise document the authorised export intake path and retain `terminal_external_access` status.
 - [ ] Task: Conductor - User Manual Verification 'LinkedIn developer access' (Protocol in workflow.md)
 
 ## Phase 5: Coverage, publication, and closeout
