@@ -2,45 +2,55 @@
   "gaps": [],
   "inputs": {
     "reports": [
-      "conductor/rss_archive_report.json"
+      "conductor/x_feed_archive_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/rss_archive_report.json": {
+    "conductor/x_feed_archive_report.json": {
       "platform_counts": {
-        "rss": 5
+        "x": 65
       },
-      "selected_sources": 5,
+      "selected_sources": 65,
       "status_by_platform": {
-        "rss": {
-          "captured": 10,
-          "no_records": 4
+        "x": {
+          "feed_already_captured": 1,
+          "feed_captured": 64,
+          "feed_not_found": 65
         }
       },
-      "status_by_provider": {},
+      "status_by_provider": {
+        "nitter": {
+          "feed_already_captured": 1,
+          "feed_captured": 64
+        },
+        "rsshub": {
+          "feed_not_found": 65
+        }
+      },
       "status_counts": {
-        "captured": 10,
-        "no_records": 4
+        "feed_already_captured": 1,
+        "feed_captured": 64,
+        "feed_not_found": 65
       }
     }
   },
   "summary": {
     "gap_count": 0,
     "input_status_counts": {
-      "captured": 10,
-      "no_records": 4
+      "feed_already_captured": 1,
+      "feed_captured": 64,
+      "feed_not_found": 65
     },
     "platform_counts": {
-      "rss": 5
+      "x": 65
     },
     "priority_counts": {
-      "archived_or_already_archived": 1,
-      "monitor_report_only": 4
+      "archived_or_already_archived": 65
     },
     "status_counts": {
-      "captured": 1,
-      "no_records": 4
+      "feed_already_captured": 1,
+      "feed_captured": 64
     },
-    "superseded_source_count": 1
+    "superseded_source_count": 65
   }
 }
