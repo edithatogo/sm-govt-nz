@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-17T05:33:53+00:00",
+  "generated_at": "2026-07-18T05:16:05+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -912,10 +912,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: [Errno 101] Network is unreachable",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "d9ef63487290e169",
       "source_type": "json_feed",
-      "status": "network_error",
+      "status": "invalid",
       "url": "https://www.hrc.co.nz/feed.json"
     },
     {
@@ -1572,10 +1572,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: [Errno 104] Connection reset by peer",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "46fa217f13b79e9a",
       "source_type": "json_feed",
-      "status": "network_error",
+      "status": "invalid",
       "url": "https://www.nzals.co.nz/feed.json"
     },
     {
@@ -2562,10 +2562,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: [Errno 104] Connection reset by peer",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "96a48d307e792bc5",
       "source_type": "json_feed",
-      "status": "network_error",
+      "status": "invalid",
       "url": "https://www.taic.org.nz/feed.json"
     },
     {
@@ -2964,8 +2964,7 @@
         "already_captured": 16,
         "capture_blocked": 26,
         "dns_failed": 12,
-        "invalid": 206,
-        "network_error": 3,
+        "invalid": 209,
         "not_acceptable": 1,
         "tls_failed": 2
       }
@@ -2975,8 +2974,7 @@
       "already_captured": 16,
       "capture_blocked": 26,
       "dns_failed": 12,
-      "invalid": 206,
-      "network_error": 3,
+      "invalid": 209,
       "not_acceptable": 1,
       "tls_failed": 2
     }
