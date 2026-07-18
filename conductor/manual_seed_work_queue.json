@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-17T16:43:26+00:00",
+  "generated_at": "2026-07-18T16:33:01+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -12689,6 +12689,27 @@
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "facebook",
+      "preferred_seed_path": "manual_archive_seeds/facebook/social-workers-registration-board-facebook-7f279841.json",
+      "priority_rank": 40,
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/social-workers-registration-board-facebook-7f279841.json",
+        "manual_archive_seeds/facebook/social-workers-registration-board.json"
+      ],
+      "source_id": "social-workers-registration-board-facebook-7f279841",
+      "url": "https://www.facebook.com/102062118004656_1365482045695391"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "View on Facebook",
+      "agency_id": "social-workers-registration-board",
+      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
       "preferred_seed_path": "manual_archive_seeds/facebook/social-workers-registration-board-facebook-997011cd.json",
       "priority_rank": 40,
       "required_authorization": "page_owner_or_approved_app",
@@ -18603,7 +18624,7 @@
   ],
   "summary": {
     "platform_counts": {
-      "facebook": 323,
+      "facebook": 324,
       "instagram": 182,
       "newsletter": 377,
       "threads": 3
@@ -18614,6 +18635,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 885
+    "queue_count": 886
   }
 }
