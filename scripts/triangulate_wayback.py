@@ -12,8 +12,8 @@ import os
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import quote, urlencode
-from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]

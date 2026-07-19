@@ -1,5 +1,4 @@
 import json
-from io import BytesIO
 from pathlib import Path
 
 from scripts.triangulate_wayback import query_wayback, triangulate
@@ -38,7 +37,7 @@ def test_triangulation_is_metadata_only_and_reports_unsupported_urls(monkeypatch
     report = triangulate({"sources": [
         {"source_id": "web", "platform": "website_page", "url": "https://example.govt.nz/"},
         {"source_id": "invalid", "platform": "unknown", "url": "mailto:test@example.govt.nz"},
-    ]), limit=10, delay=0)
+    ]}, limit=10, delay=0)
     assert report["snapshot_downloaded"] is False
     assert report["summary"] == {
         "sources_checked": 2,
