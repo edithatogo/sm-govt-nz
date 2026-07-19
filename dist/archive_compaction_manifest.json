@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T03:53:00+00:00",
+  "generated_at": "2026-07-19T03:55:55+00:00",
   "normalized": [
     {
       "bytes": 1229001,
@@ -194,6 +194,14 @@
       "source": "email"
     },
     {
+      "bytes": 308888,
+      "month": "2026-07",
+      "path": "historical_archive_normalized/facebook/2026-07.jsonl",
+      "record_count": 323,
+      "sha256": "117cb20cdfad61f1f616cae97fe574468baa4d24c2074e1a4c4d36a7b4a301be",
+      "source": "facebook"
+    },
+    {
       "bytes": 721,
       "month": "2010-10",
       "path": "historical_archive_normalized/json_feed/2010-10.jsonl",
@@ -274,11 +282,11 @@
       "source": "linkedin"
     },
     {
-      "bytes": 120524,
+      "bytes": 69917,
       "month": "2026-07",
       "path": "historical_archive_normalized/linkedin/2026-07.jsonl",
-      "record_count": 82,
-      "sha256": "da2aa004c4afb6268c70b2fdc5b62151c260008b554e151ece99d94166984fac",
+      "record_count": 48,
+      "sha256": "050d3c620fbf6fec567d907262ee1a874d5af0a3fd2590f652e20ca6f99f6f5c",
       "source": "linkedin"
     },
     {
@@ -4354,6 +4362,15 @@
       "source": "email"
     },
     {
+      "bytes": 148199742,
+      "digest_mode": "path_size_inventory",
+      "file_count": 323,
+      "month": "2026-07",
+      "path": "historical_archive_raw/facebook_public_snapshot/2026-07",
+      "sha256": "e701c02157c9d8760c126cc909eabf8b1ccf21ab7a1e1e8309e643ef48c71551",
+      "source": "facebook_public_snapshot"
+    },
+    {
       "bytes": 3024,
       "digest_mode": "path_size_inventory",
       "file_count": 1,
@@ -4444,12 +4461,12 @@
       "source": "linkedin"
     },
     {
-      "bytes": 99921524,
+      "bytes": 89164562,
       "digest_mode": "path_size_inventory",
-      "file_count": 293,
+      "file_count": 259,
       "month": "2026-07",
       "path": "historical_archive_raw/linkedin_public_snapshot/2026-07",
-      "sha256": "69287fe321812cb1f3ac3e0b51a32c53a86c9d353f0c7eda2757fdcae1fc1c33",
+      "sha256": "4a57dd1dc8659046d26a6fc0efcc9bd9097aa43125563fc9e739aedcc52b2a75",
       "source": "linkedin_public_snapshot"
     },
     {
@@ -8819,11 +8836,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 153414014,
-    "normalized_record_count": 11477,
-    "normalized_shard_count": 516,
-    "raw_bytes": 525051806,
-    "raw_file_count": 14198,
-    "raw_shard_count": 520
+    "normalized_bytes": 153672295,
+    "normalized_record_count": 11766,
+    "normalized_shard_count": 517,
+    "raw_bytes": 662494586,
+    "raw_file_count": 14487,
+    "raw_shard_count": 521
   }
 }

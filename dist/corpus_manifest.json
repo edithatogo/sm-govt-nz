@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "3edb006812136f83b8054754771f6f53ac978f421ceb600ebcbd9a63fa1a5bc4"
+      "sha256": "aeafb259a57d85afa99027ce488945a827d48fefd11a3bc34902c59562a7e22f"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24610701,
+      "bytes": 24638705,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "fc0e4d4b6bdd3986e3aa8a0f67e563764a18c5abc12498999434fff3723107a1"
+      "sha256": "e7c9cbdf34921b1f38b486d97231b8776acd7aaef6b3be243582b29735f88720"
     },
     "normalized_archive.parquet": {
-      "bytes": 38931562,
+      "bytes": 39048971,
       "path": "normalized_archive.parquet",
-      "sha256": "896c098d863f19fb6f9501d1430e8b4946bd2b6fe1173881112b9ad27cf15f22"
+      "sha256": "f4027651667befe2db549f24363155213c0a32303644c92f452a1213b785aa58"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11479,
-  "normalized_shard_count": 518,
+  "normalized_record_count": 11768,
+  "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 14207,
+  "raw_file_count": 14496,
   "record_index": [
     {
       "mirror_targets": [
@@ -119974,309 +119974,2910 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:36+00:00",
-      "source_account": "acc-new-zealand",
-      "source_key": "linkedin:acc-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:1dc216d401157ad47a73051a",
-      "source_url": "https://www.linkedin.com/company/acc-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:36+00:00",
-      "source_account": "airways-new-zealand",
-      "source_key": "linkedin:airways-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:7d42f3a14cb63a1f5381caa8",
-      "source_url": "https://www.linkedin.com/company/airways-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:37+00:00",
-      "source_account": "antarctica-new-zealand",
-      "source_key": "linkedin:antarctica-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:d0fa6fe53c9dd059751bca0b",
-      "source_url": "https://www.linkedin.com/company/antarctica-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:38+00:00",
-      "source_account": "AsureQuality",
-      "source_key": "linkedin:AsureQuality",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:07f5266e64aee8e52a5bb162",
-      "source_url": "https://www.linkedin.com/company/asurequality"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:39+00:00",
-      "source_account": "auckland-council",
-      "source_key": "linkedin:auckland-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:9b1e0d988c4f79cee4272a39",
-      "source_url": "https://www.linkedin.com/company/auckland-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:40+00:00",
-      "source_account": "callaghan-innovation",
-      "source_key": "linkedin:callaghan-innovation",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:11c50b6e1a746d0b28b5c6e5",
-      "source_url": "https://www.linkedin.com/company/callaghan-innovation"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:40+00:00",
-      "source_account": "christchurch-city-council",
-      "source_key": "linkedin:christchurch-city-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:cc58e3c5c48392a0b36c53c0",
-      "source_url": "https://www.linkedin.com/company/christchurch-city-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:41+00:00",
-      "source_account": "city-rail-link-ltd",
-      "source_key": "linkedin:city-rail-link-ltd",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:6ea25fcace5275c51524aa31",
-      "source_url": "https://www.linkedin.com/company/city-rail-link-ltd"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:42+00:00",
-      "source_account": "commerce-commission",
-      "source_key": "linkedin:commerce-commission",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:12f97599162ac31ec4b3fadc",
-      "source_url": "https://www.linkedin.com/company/commerce-commission"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:42+00:00",
-      "source_account": "civil-aviation-authority-of-new-zealand",
-      "source_key": "linkedin:civil-aviation-authority-of-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:7dce953eb9f21100684522eb",
-      "source_url": "https://www.linkedin.com/company/civil-aviation-authority-of-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:43+00:00",
-      "source_account": "courts-of-new-zealand",
-      "source_key": "linkedin:courts-of-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:841d6c3534f8d628d185f254",
-      "source_url": "https://www.linkedin.com/company/courts-of-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:44+00:00",
-      "source_account": "dunedin-city-council",
-      "source_key": "linkedin:dunedin-city-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:d725c0353809b2cbc0b27352",
-      "source_url": "https://www.linkedin.com/company/dunedin-city-council"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:44+00:00",
-      "source_account": "creative-new-zealand",
-      "source_key": "linkedin:creative-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:fe1e0eeac27aaf2c91912d2c",
-      "source_url": "https://www.linkedin.com/company/creative-new-zealand"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:45+00:00",
-      "source_account": "education-new-zealand",
-      "source_key": "linkedin:education-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:41393a09c76407d434111247",
-      "source_url": "https://www.linkedin.com/company/education-new-zealand"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:46+00:00",
-      "source_account": "EIT",
-      "source_key": "linkedin:EIT",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:779bdee367baa6318c2ab22f",
-      "source_url": "https://www.linkedin.com/company/eit"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:46+00:00",
-      "source_account": "EECA",
-      "source_key": "linkedin:EECA",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:77db3bfa3be544257b1ce9bc",
-      "source_url": "https://www.linkedin.com/company/eeca"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:46+00:00",
-      "source_account": "education-review-office",
-      "source_key": "linkedin:education-review-office",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:e35b8de89fa7689d9f41ce5e",
-      "source_url": "https://www.linkedin.com/company/education-review-office"
+      "source_account": "ACCNewZealand",
+      "source_key": "facebook:ACCNewZealand",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:445f0645db7c6791ab514882",
+      "source_url": "https://www.facebook.com/ACCNewZealand"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:47+00:00",
-      "source_account": "nz-super-fund",
-      "source_key": "linkedin:nz-super-fund",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:57dbd28ec6d1fa44e66805c6",
-      "source_url": "https://www.linkedin.com/company/nz-super-fund"
+      "source_account": "AirwaysNZ",
+      "source_key": "facebook:AirwaysNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:194a961cbae0e5b773636b7d",
+      "source_url": "https://www.facebook.com/AirwaysNZ/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:52:47+00:00",
+      "source_account": "Antarctica.New.Zealand",
+      "source_key": "facebook:Antarctica.New.Zealand",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a721dcc9c5e335cf984dc95e",
+      "source_url": "https://www.facebook.com/Antarctica.New.Zealand/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:48+00:00",
-      "source_account": "hamilton-city-council",
-      "source_key": "linkedin:hamilton-city-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:01a38e90577303e4eab8fad6",
-      "source_url": "https://www.linkedin.com/company/hamilton-city-council"
+      "source_account": "AraCanterbury",
+      "source_key": "facebook:AraCanterbury",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:99705592bbd10e8a53a20079",
+      "source_url": "https://www.facebook.com/AraCanterbury"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:52:48+00:00",
+      "source_account": "AntarcticaNZ",
+      "source_key": "facebook:AntarcticaNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:faee40a604470cbcb0e690ab",
+      "source_url": "https://www.facebook.com/AntarcticaNZ"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:49+00:00",
-      "source_account": "health-and-disability-commissioner",
-      "source_key": "linkedin:health-and-disability-commissioner",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:7204876b8bcf8d0fab3610a5",
-      "source_url": "https://www.linkedin.com/company/health-and-disability-commissioner"
+      "source_account": "AraInstitute",
+      "source_key": "facebook:AraInstitute",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:9778012f9f826b7c486a8d9a",
+      "source_url": "https://www.facebook.com/AraInstitute"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:50+00:00",
-      "source_account": "heritage-new-zealand-pouhere-taonga",
-      "source_key": "linkedin:heritage-new-zealand-pouhere-taonga",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:0e618617858740aa5644b6d4",
-      "source_url": "https://www.linkedin.com/company/heritage-new-zealand-pouhere-taonga"
+      "source_account": "AsureQualityLtd",
+      "source_key": "facebook:AsureQualityLtd",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2d72d4fd87648dd614dae1dc",
+      "source_url": "https://www.facebook.com/AsureQualityLtd"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:50+00:00",
-      "source_account": "hutt-city-council",
-      "source_key": "linkedin:hutt-city-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:3f53c69fc4d1e0c7f5c137b7",
-      "source_url": "https://www.linkedin.com/company/hutt-city-council"
+      "source_account": "AshburtonDistrictCouncil",
+      "source_key": "facebook:AshburtonDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5a861f525b50bdc564b806dd",
+      "source_url": "https://www.facebook.com/AshburtonDistrictCouncil"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:51+00:00",
-      "source_account": "inland-revenue-nz",
-      "source_key": "linkedin:inland-revenue-nz",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:0eb477adcafe3d83e83006d7",
-      "source_url": "https://www.linkedin.com/company/inland-revenue-nz/"
+      "source_account": "AUTUniversity",
+      "source_key": "facebook:AUTUniversity",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:398f50291f062c983e35ef09",
+      "source_url": "https://www.facebook.com/AUTUniversity"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:51+00:00",
-      "source_account": "independent-childrens-monitor",
-      "source_key": "linkedin:independent-childrens-monitor",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:20aff92b203db7cab6d3876c",
-      "source_url": "https://www.linkedin.com/company/independent-childrens-monitor"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T03:52:51+00:00",
-      "source_account": "invercargill-city-council",
-      "source_key": "linkedin:invercargill-city-council",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:e931694e35f77e64beccc041",
-      "source_url": "https://www.linkedin.com/company/invercargill-city-council"
+      "source_account": "aklcouncil",
+      "source_key": "facebook:aklcouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:4059d314b36f5a06c486a37a",
+      "source_url": "https://www.facebook.com/aklcouncil"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:52+00:00",
-      "source_account": "kainga-ora",
-      "source_key": "linkedin:kainga-ora",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:64656c8a206fecfb854e03ac",
-      "source_url": "https://www.linkedin.com/company/kainga-ora"
+      "source_account": "BayofPlentyRegionalCouncil",
+      "source_key": "facebook:BayofPlentyRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:efd8e18f7f33b3e0696fd151",
+      "source_url": "https://www.facebook.com/BayofPlentyRegionalCouncil"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:53+00:00",
-      "source_account": "KiwiRail",
-      "source_key": "linkedin:KiwiRail",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:d770724a8131b944536eeaeb",
-      "source_url": "https://www.linkedin.com/company/kiwirail"
+      "source_account": "CallaghanInnovation",
+      "source_key": "facebook:CallaghanInnovation",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:46cc736eeb3e7f7c2a1449e3",
+      "source_url": "https://www.facebook.com/CallaghanInnovation"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:53+00:00",
-      "source_account": "Kiwibank",
-      "source_key": "linkedin:Kiwibank",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:f833d2173eac567f44831112",
-      "source_url": "https://www.linkedin.com/company/kiwibank"
+      "source_account": "BullerDistrictCouncil",
+      "source_key": "facebook:BullerDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:dd079ec066d4572e6671fe52",
+      "source_url": "https://www.facebook.com/BullerDistrictCouncil"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:54+00:00",
-      "source_account": "Kordia",
-      "source_key": "linkedin:Kordia",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:da3560d5203ace765dd294e0",
-      "source_url": "https://www.linkedin.com/company/kordia"
+      "source_account": "callaghaninnovationnz",
+      "source_key": "facebook:callaghaninnovationnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:1508a08d494607e8bba3108e",
+      "source_url": "https://www.facebook.com/callaghaninnovationnz/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:52:54+00:00",
+      "source_account": "CartertonDistrictCouncil",
+      "source_key": "facebook:CartertonDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:93d6ac0ecb9863448d09e0c0",
+      "source_url": "https://www.facebook.com/CartertonDistrictCouncil"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:55+00:00",
-      "source_account": "maritime-new-zealand",
-      "source_key": "linkedin:maritime-new-zealand",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:9715a909d6d6a49038b0c710",
-      "source_url": "https://www.linkedin.com/company/maritime-new-zealand"
+      "source_account": "CentralHawkesBayDistrictCouncil",
+      "source_key": "facebook:CentralHawkesBayDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b4b4f2699d7effc614b4c286",
+      "source_url": "https://www.facebook.com/CentralHawkesBayDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:52:55+00:00",
+      "source_account": "CHBDistrictCouncil",
+      "source_key": "facebook:CHBDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e6b9de392b587cebbdadeed7",
+      "source_url": "https://www.facebook.com/CHBDistrictCouncil/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:56+00:00",
-      "source_account": "ministry-of-business-innovation-and-employment",
-      "source_key": "linkedin:ministry-of-business-innovation-and-employment",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:cc0121bf41f5d81661279d13",
-      "source_url": "https://www.linkedin.com/company/ministry-of-business-innovation-and-employment/"
+      "source_account": "sharer.php",
+      "source_key": "facebook:sharer.php",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:f3bf495d93cd22e26fbff775",
+      "source_url": "https://www.facebook.com/sharer.php?u=https://www.chbdc.govt.nz/"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:57+00:00",
-      "source_account": "ministry-for-pacific-peoples",
-      "source_key": "linkedin:ministry-for-pacific-peoples",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:cfb9eb7f9675322dd23788ab",
-      "source_url": "https://www.linkedin.com/company/ministry-for-pacific-peoples"
+      "source_account": "CentralOtagoDistrictCouncil",
+      "source_key": "facebook:CentralOtagoDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:26dc488444d2aad4b22f9be7",
+      "source_url": "https://www.facebook.com/CentralOtagoDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:52:57+00:00",
+      "source_account": "CICNZ",
+      "source_key": "facebook:CICNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:af3126ee3949bb3fd488bb86",
+      "source_url": "https://www.facebook.com/CICNZ"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:58+00:00",
-      "source_account": "ministry-for-regulation",
-      "source_key": "linkedin:ministry-for-regulation",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:04988da51ef7e9228ba7de87",
-      "source_url": "https://www.linkedin.com/company/ministry-for-regulation/"
+      "source_account": "ChathamIslandsCouncil",
+      "source_key": "facebook:ChathamIslandsCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:41c95c48ac37d174434daf5a",
+      "source_url": "https://www.facebook.com/ChathamIslandsCouncil"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-07-19T03:52:58+00:00",
-      "source_account": "ministry-for-the-environment",
-      "source_key": "linkedin:ministry-for-the-environment",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:5fc415a1a3aae278f687a2dc",
-      "source_url": "https://www.linkedin.com/company/ministry-for-the-environment"
+      "source_account": "CICNZ",
+      "source_key": "facebook:CICNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c2444ef51d3078849bf5dd6c",
+      "source_url": "https://www.facebook.com/CICNZ/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:52:59+00:00",
+      "source_account": "ChildrenandYoungPeoplesCommissionNZ",
+      "source_key": "facebook:ChildrenandYoungPeoplesCommissionNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d6e7e22a67c314521f750ec2",
+      "source_url": "https://www.facebook.com/ChildrenandYoungPeoplesCommissionNZ/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:52:59+00:00",
+      "source_account": "ChristchurchCityCouncil",
+      "source_key": "facebook:ChristchurchCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:fac2ce3c86dc9fb92a071cf4",
+      "source_url": "https://www.facebook.com/ChristchurchCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:00+00:00",
+      "source_account": "ChristchurchCityLibraries",
+      "source_key": "facebook:ChristchurchCityLibraries",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7f55056c10ebaace34456b08",
+      "source_url": "https://www.facebook.com/ChristchurchCityLibraries"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:00+00:00",
+      "source_account": "cityraillink",
+      "source_key": "facebook:cityraillink",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:84cf65e1cc0e4056c7723c30",
+      "source_url": "http://www.facebook.com/cityraillink"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:01+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:bd0654a6f6ff14fd0e84b5f3",
+      "source_url": "https://www.facebook.com/akltransport/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:01+00:00",
+      "source_account": "CityRailLink",
+      "source_key": "facebook:CityRailLink",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d243097d29edcd3b613b1a9c",
+      "source_url": "https://www.facebook.com/CityRailLink"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:02+00:00",
+      "source_account": "CAA",
+      "source_key": "facebook:CAA",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:00d4718274dbaf8c6cc65d5c",
+      "source_url": "https://www.facebook.com/CivilAviationAuthority"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:02+00:00",
+      "source_account": "AvSecNZ",
+      "source_key": "facebook:AvSecNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:4b4634b32df9793bb1ea32d2",
+      "source_url": "https://www.facebook.com/AvSecNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:03+00:00",
+      "source_account": "CivilAviationNZ",
+      "source_key": "facebook:CivilAviationNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e4ce4fb37d2cb16a312b618b",
+      "source_url": "https://www.facebook.com/CivilAviationNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:04+00:00",
+      "source_account": "CluthaDistrictCouncil",
+      "source_key": "facebook:CluthaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:85ae797e3718534b8314fa30",
+      "source_url": "https://www.facebook.com/CluthaDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:04+00:00",
+      "source_account": "CommerceCommission",
+      "source_key": "facebook:CommerceCommission",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d708ab387abea10ff1b9a924",
+      "source_url": "https://www.facebook.com/CommerceCommission"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:05+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:f33bdcfbced56ad3e4c43133",
+      "source_url": "https://facebook.com/creativenz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:06+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:07eac2093d5c8b0ae7819f0f",
+      "source_url": "https://www.facebook.com/NgaToiMaoriCNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:06+00:00",
+      "source_account": "CreativeNZ",
+      "source_key": "facebook:CreativeNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e1e6fca74d89140fabf62dbe",
+      "source_url": "https://www.facebook.com/CreativeNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:07+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:633cf3b305970e80fbd9c5df",
+      "source_url": "https://www.facebook.com/cnzpacificarts"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:07+00:00",
+      "source_account": "DOCgovtnz",
+      "source_key": "facebook:DOCgovtnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:92c4e35d0722b38cfcdcd02a",
+      "source_url": "https://www.facebook.com/DOCgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:08+00:00",
+      "source_account": "DIAgovtnz",
+      "source_key": "facebook:DIAgovtnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:398f9fe1d6cc8bc953d789eb",
+      "source_url": "https://www.facebook.com/DIAgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:08+00:00",
+      "source_account": "CorrectionsNZ",
+      "source_key": "facebook:CorrectionsNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:92838dd0eeeb0a61a5350fb3",
+      "source_url": "https://www.facebook.com/CorrectionsNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:09+00:00",
+      "source_account": "studywithnewzealand",
+      "source_key": "facebook:studywithnewzealand",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:1c855c3e280b6ed256df326a",
+      "source_url": "https://www.facebook.com/studywithnewzealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:09+00:00",
+      "source_account": "DunedinCityCouncil",
+      "source_key": "facebook:DunedinCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8775e859430d44b4babd036c",
+      "source_url": "https://www.facebook.com/DunedinCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:10+00:00",
+      "source_account": "EECA",
+      "source_key": "facebook:EECA",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:33febac95b8878f9d21a3143",
+      "source_url": "https://www.facebook.com/EECA"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:11+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8a261ec83ff337a0c4abf1eb",
+      "source_url": "https://www.facebook.com/EECANZ/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:11+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b44659798f51ab95b66a050a",
+      "source_url": "http://www.facebook.com/home.php?#!/eithawkesbay"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:12+00:00",
+      "source_account": "EITHawkesBay",
+      "source_key": "facebook:EITHawkesBay",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:25feb5974f4f72f14ea4e5c7",
+      "source_url": "https://www.facebook.com/EITHawkesBay"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:13+00:00",
+      "source_account": "eithawkesbay",
+      "source_key": "facebook:eithawkesbay",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:286866548f197b8696faf901",
+      "source_url": "https://www.facebook.com/eithawkesbay/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:13+00:00",
+      "source_account": "eithawkesbay",
+      "source_key": "facebook:eithawkesbay",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:da01a74017f5dc229d3a6340",
+      "source_url": "https://www.facebook.com/eithawkesbay/events/?ref=page_internal"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:15+00:00",
+      "source_account": "eittairawhiti",
+      "source_key": "facebook:eittairawhiti",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c8fe0fba4c3a150dfa9e81d4",
+      "source_url": "https://www.facebook.com/eittairawhiti"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:16+00:00",
+      "source_account": "eittairawhiti",
+      "source_key": "facebook:eittairawhiti",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:91821a05c4c132bb14d4e1fd",
+      "source_url": "https://www.facebook.com/eittairawhiti/events/?ref=page_internal"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:17+00:00",
+      "source_account": "EnvironmentCanterbury",
+      "source_key": "facebook:EnvironmentCanterbury",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5675137dcffe7a3ca8100ffd",
+      "source_url": "https://www.facebook.com/EnvironmentCanterbury"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:17+00:00",
+      "source_account": "ElectoralCommissionNZ",
+      "source_key": "facebook:ElectoralCommissionNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:69752371be00850d611d9416",
+      "source_url": "https://www.facebook.com/ElectoralCommissionNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:18+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:11a28538fd3bcb13a65b82ce",
+      "source_url": "https://www.facebook.com/EnvironmentCanterbury/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:18+00:00",
+      "source_account": "environmentsouthland",
+      "source_key": "facebook:environmentsouthland",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:ca5a7312eb409a38e303216d",
+      "source_url": "https://facebook.com/environmentsouthland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:19+00:00",
+      "source_account": "EnvironmentSouthland",
+      "source_key": "facebook:EnvironmentSouthland",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d22a7321b762492049046aab",
+      "source_url": "https://www.facebook.com/EnvironmentSouthland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:20+00:00",
+      "source_account": "FarNorthDistrictCouncil",
+      "source_key": "facebook:FarNorthDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8c693758be3fd0e343afaaf7",
+      "source_url": "https://www.facebook.com/FarNorthDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:20+00:00",
+      "source_account": "EPAgovtNZ",
+      "source_key": "facebook:EPAgovtNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e166d5a50592a5a99c21645e",
+      "source_url": "https://www.facebook.com/EPAgovtNZ/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:21+00:00",
+      "source_account": "FireandEmergencyNZ",
+      "source_key": "facebook:FireandEmergencyNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b27c03934e703019e1c3b980",
+      "source_url": "https://www.facebook.com/FireandEmergencyNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:22+00:00",
+      "source_account": "GoreDC",
+      "source_key": "facebook:GoreDC",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:35caf8a119c896b229d7c17e",
+      "source_url": "https://www.facebook.com/GoreDC/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:22+00:00",
+      "source_account": "GisborneDistrictCouncil",
+      "source_key": "facebook:GisborneDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:ef15934a9e117f9cef07f2c9",
+      "source_url": "https://www.facebook.com/GisborneDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:23+00:00",
+      "source_account": "GoreDistrictCouncil",
+      "source_key": "facebook:GoreDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:73e517544b214dd5df76df54",
+      "source_url": "https://www.facebook.com/GoreDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:23+00:00",
+      "source_account": "GreaterWellington",
+      "source_key": "facebook:GreaterWellington",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d95c022f113d5dc7eb3ef12f",
+      "source_url": "https://www.facebook.com/GreaterWellington/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:24+00:00",
+      "source_account": "GreaterWellingtonRegionalCouncil",
+      "source_key": "facebook:GreaterWellingtonRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8d0dfe31c81cea8d045847ff",
+      "source_url": "https://www.facebook.com/GreaterWellingtonRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:25+00:00",
+      "source_account": "GreyDistrictCouncil",
+      "source_key": "facebook:GreyDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:aaae13cad7f8be605fbf1943",
+      "source_url": "https://www.facebook.com/GreyDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:25+00:00",
+      "source_account": "GreyDC",
+      "source_key": "facebook:GreyDC",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d2961da81f0b965fed1f632c",
+      "source_url": "https://www.facebook.com/GreyDC"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:26+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:dac8ad78e886c323d76c5d54",
+      "source_url": "https://www.facebook.com/hamiltoncitycouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:26+00:00",
+      "source_account": "HamiltonCityCouncil",
+      "source_key": "facebook:HamiltonCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:f29ff459398eb92c36a6b53f",
+      "source_url": "https://www.facebook.com/HamiltonCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:27+00:00",
+      "source_account": "HastingsDistrictCouncil",
+      "source_key": "facebook:HastingsDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:37000a69e3905bddb14b9701",
+      "source_url": "https://www.facebook.com/HastingsDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:27+00:00",
+      "source_account": "hastingsdc",
+      "source_key": "facebook:hastingsdc",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:98555444be03a39169bccf78",
+      "source_url": "https://www.facebook.com/hastingsdc/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:28+00:00",
+      "source_account": "HBRegionalCouncil",
+      "source_key": "facebook:HBRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:cf6df5811622639ce13044ae",
+      "source_url": "https://www.facebook.com/HBRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:29+00:00",
+      "source_account": "HawkesBayRegionalCouncil",
+      "source_key": "facebook:HawkesBayRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:1c808331209a782faf53f64d",
+      "source_url": "https://www.facebook.com/HawkesBayRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:29+00:00",
+      "source_account": "HealthinstitutionsNZ",
+      "source_key": "facebook:HealthinstitutionsNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:881231132b45fd7e9425f7df",
+      "source_url": "https://www.facebook.com/HealthNewZealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:30+00:00",
+      "source_account": "HeritageNZ",
+      "source_key": "facebook:HeritageNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:1569ba0069975b124cf9d404",
+      "source_url": "https://www.facebook.com/HeritageNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:30+00:00",
+      "source_account": "HQSCNZ",
+      "source_key": "facebook:HQSCNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:98de6fd141b85b230c3fdcaa",
+      "source_url": "https://www.facebook.com/HQSCNZ/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:31+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:145b28714806aea3103b335b",
+      "source_url": "https://www.facebook.com/HorizonsRegionalCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:31+00:00",
+      "source_account": "HorizonsRegionalCouncil",
+      "source_key": "facebook:HorizonsRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:902217ec766c89aa438f705c",
+      "source_url": "https://www.facebook.com/HorizonsRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:32+00:00",
+      "source_account": "HorowhenuaDistrictCouncil",
+      "source_key": "facebook:HorowhenuaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:4c051fcfb3fdb1f1351527e2",
+      "source_url": "https://www.facebook.com/HorowhenuaDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:32+00:00",
+      "source_account": "nzhumanrightscommission",
+      "source_key": "facebook:nzhumanrightscommission",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e4519ed3226e9017b3137baf",
+      "source_url": "https://www.facebook.com/nzhumanrightscommission"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:33+00:00",
+      "source_account": "HurunuiDistrictCouncil",
+      "source_key": "facebook:HurunuiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:30fc7c7f6d827c16e4e9a6c3",
+      "source_url": "https://www.facebook.com/HurunuiDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:34+00:00",
+      "source_account": "HuttCityCouncil",
+      "source_key": "facebook:HuttCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8d35f6fe97abe252023e109b",
+      "source_url": "https://www.facebook.com/HuttCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:34+00:00",
+      "source_account": "HurunuiDistrictCouncil",
+      "source_key": "facebook:HurunuiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:df680bb7f9f9d457c23eab4e",
+      "source_url": "https://www.facebook.com/HurunuiDistrictCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:35+00:00",
+      "source_account": "IPCANZ",
+      "source_key": "facebook:IPCANZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0118c99827fa3a50240fe5c7",
+      "source_url": "https://www.facebook.com/IPCANZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:35+00:00",
+      "source_account": "facebook",
+      "source_key": "facebook:facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:6af5a1ea63dc71eceb9e9e07",
+      "source_url": "https://www.facebook.com/Independent-Police-Conduct-Authority-305326716260135/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:36+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3ff03fff9d3890b7e184dd97",
+      "source_url": "https://www.facebook.com/IRDNZ/?id=footer"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:37+00:00",
+      "source_account": "InlandRevenueNZ",
+      "source_key": "facebook:InlandRevenueNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:185679090b656614b1203ad6",
+      "source_url": "https://www.facebook.com/InlandRevenueNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:38+00:00",
+      "source_account": "InvercargillCityCouncil",
+      "source_key": "facebook:InvercargillCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:6d65c23f2b1dc063d67a1629",
+      "source_url": "https://www.facebook.com/InvercargillCityCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:38+00:00",
+      "source_account": "InvercargillCityCouncil",
+      "source_key": "facebook:InvercargillCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7bc1367a2ed6449a29456c04",
+      "source_url": "https://www.facebook.com/InvercargillCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:39+00:00",
+      "source_account": "share",
+      "source_key": "facebook:share",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:1141b83533252e8263fda43c",
+      "source_url": "https://www.facebook.com/share/p/HLJsxDqwHFZRCMX2/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:39+00:00",
+      "source_account": "KaikouraDistrictCouncil",
+      "source_key": "facebook:KaikouraDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:80d294bf060567ee26fd5dba",
+      "source_url": "https://www.facebook.com/KaikouraDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:40+00:00",
+      "source_account": "kaingaora",
+      "source_key": "facebook:kaingaora",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c90fbec1126a5cb4c1dc246c",
+      "source_url": "https://www.facebook.com/kaingaora"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:41+00:00",
+      "source_account": "KaiparaDistrictCouncil",
+      "source_key": "facebook:KaiparaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0f3199b11f933d9babeca30d",
+      "source_url": "https://www.facebook.com/KaiparaDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:41+00:00",
+      "source_account": "kaingaoragovtnz",
+      "source_key": "facebook:kaingaoragovtnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:ab6055f428d1601b2913f976",
+      "source_url": "https://www.facebook.com/kaingaoragovtnz/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:42+00:00",
+      "source_account": "KaiparaDistrictCouncil",
+      "source_key": "facebook:KaiparaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:4171d403dbcb96c87c4e1582",
+      "source_url": "https://www.facebook.com/KaiparaDistrictCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:43+00:00",
+      "source_account": "kapiticoastdistrictcouncil",
+      "source_key": "facebook:kapiticoastdistrictcouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:092f39fa2f9c905365d7a5f5",
+      "source_url": "https://www.facebook.com/kapiticoastdistrictcouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:43+00:00",
+      "source_account": "KapitiCoastDistrictCouncil",
+      "source_key": "facebook:KapitiCoastDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0b5292755b5005164ca670aa",
+      "source_url": "https://www.facebook.com/KapitiCoastDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:44+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:63fd28d5a11e2a4d62e5d01b",
+      "source_url": "https://www.facebook.com/KawerauDistrictCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:44+00:00",
+      "source_account": "KawerauDistrictCouncil",
+      "source_key": "facebook:KawerauDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c8b9f7b350a615a89ede6ba2",
+      "source_url": "https://www.facebook.com/KawerauDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:45+00:00",
+      "source_account": "KiwibankNZ",
+      "source_key": "facebook:KiwibankNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c41bb553ccffb390095af3b9",
+      "source_url": "https://www.facebook.com/KiwibankNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:45+00:00",
+      "source_account": "Kiwibank",
+      "source_key": "facebook:Kiwibank",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e7b286457f9e99bdfa5e6d54",
+      "source_url": "https://www.facebook.com/Kiwibank"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:46+00:00",
+      "source_account": "KiwiRail",
+      "source_key": "facebook:KiwiRail",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0905a82a879fd80d7a55c81f",
+      "source_url": "https://www.facebook.com/KiwiRail"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:46+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:89ef6e580568e9f11de22b91",
+      "source_url": "https://www.facebook.com/KiwiRailNewZealand/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:47+00:00",
+      "source_account": "nzlawcommission",
+      "source_key": "facebook:nzlawcommission",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2ed5769c6c1e54495f227d4e",
+      "source_url": "https://www.facebook.com/nzlawcommission/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:47+00:00",
+      "source_account": "LincolnUniversityNZ",
+      "source_key": "facebook:LincolnUniversityNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5730825d12b1f80985f9cc87",
+      "source_url": "https://www.facebook.com/LincolnUniversityNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:48+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7b4470a7e4ac3bd861c48ab8",
+      "source_url": "https://www.facebook.com/landinformationnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:49+00:00",
+      "source_account": "linzgovtnz",
+      "source_key": "facebook:linzgovtnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:65420a076cb848657927293e",
+      "source_url": "https://www.facebook.com/linzgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:49+00:00",
+      "source_account": "LOTTO.nz",
+      "source_key": "facebook:LOTTO.nz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:da690cccba9d1cd1f752c2b6",
+      "source_url": "https://www.facebook.com/LOTTO.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:50+00:00",
+      "source_account": "mackenziedistrict",
+      "source_key": "facebook:mackenziedistrict",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:230b1d367478c1951b2c8963",
+      "source_url": "https://www.facebook.com/mackenziedistrict/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:50+00:00",
+      "source_account": "MackenzieDistrictCouncil",
+      "source_key": "facebook:MackenzieDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a88de1e965974c08d274c315",
+      "source_url": "https://www.facebook.com/MackenzieDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:51+00:00",
+      "source_account": "manawatudc",
+      "source_key": "facebook:manawatudc",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3b2f7c651cf936a453eae984",
+      "source_url": "https://facebook.com/manawatudc"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:51+00:00",
+      "source_account": "ManawatuDistrictCouncil",
+      "source_key": "facebook:ManawatuDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c0d32c73a371915fe9fc63c5",
+      "source_url": "https://www.facebook.com/ManawatuDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:52+00:00",
+      "source_account": "TeTauraWhiri",
+      "source_key": "facebook:TeTauraWhiri",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:903eeab2df619bdf769a2a38",
+      "source_url": "https://www.facebook.com/TeTauraWhiri"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:52+00:00",
+      "source_account": "ManukauInstitute",
+      "source_key": "facebook:ManukauInstitute",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c97f98b49bffe47f976fea39",
+      "source_url": "https://www.facebook.com/ManukauInstitute"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:53+00:00",
+      "source_account": "maritimenz",
+      "source_key": "facebook:maritimenz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c5b1288f6778c3924eb4e966",
+      "source_url": "https://www.facebook.com/maritimenz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:54+00:00",
+      "source_account": "MarlDistCouncil",
+      "source_key": "facebook:MarlDistCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5ccc99f37c39f3cda4cb2382",
+      "source_url": "https://www.facebook.com/MarlDistCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:54+00:00",
+      "source_account": "MarlboroughDistrictCouncil",
+      "source_key": "facebook:MarlboroughDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:976ecad81c4679f4e25db7ab",
+      "source_url": "https://www.facebook.com/MarlboroughDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:55+00:00",
+      "source_account": "MastertonDC",
+      "source_key": "facebook:MastertonDC",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0ada6195c90667940b658433",
+      "source_url": "https://www.facebook.com/MastertonDC"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:55+00:00",
+      "source_account": "MasseyUni",
+      "source_key": "facebook:MasseyUni",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8de8a1b6db541b85b503e22b",
+      "source_url": "https://www.facebook.com/MasseyUni"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:56+00:00",
+      "source_account": "MastertonDistrictCouncil",
+      "source_key": "facebook:MastertonDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:4fd8e2f59602e66842293622",
+      "source_url": "https://www.facebook.com/MastertonDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:57+00:00",
+      "source_account": "MBIEgovtnz",
+      "source_key": "facebook:MBIEgovtnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:17f41523f184c566a5300a44",
+      "source_url": "https://www.facebook.com/MBIEgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:57+00:00",
+      "source_account": "MatamataPiakoDistrictCouncil",
+      "source_key": "facebook:MatamataPiakoDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:37e7cc63c092c9d6dee71d78",
+      "source_url": "https://www.facebook.com/MatamataPiakoDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:58+00:00",
+      "source_account": "MfatNZ",
+      "source_key": "facebook:MfatNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3d80752a4ea574ee28caa89d",
+      "source_url": "https://www.facebook.com/MfatNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:58+00:00",
+      "source_account": "manatutaonga",
+      "source_key": "facebook:manatutaonga",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:f5e016e657992e3ae0453292",
+      "source_url": "https://www.facebook.com/manatutaonga"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:59+00:00",
+      "source_account": "ethniccommunities.govt.nz",
+      "source_key": "facebook:ethniccommunities.govt.nz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2985396f0f8815fe190b3649",
+      "source_url": "https://www.facebook.com/ethniccommunities.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:53:59+00:00",
+      "source_account": "MinistryforPacificPeoples",
+      "source_key": "facebook:MinistryforPacificPeoples",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:dd7c336f7bde499fced6f4fd",
+      "source_url": "https://www.facebook.com/MinistryforPacificPeoples/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:00+00:00",
+      "source_account": "ministryforwomen",
+      "source_key": "facebook:ministryforwomen",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7018b8c33111ec65554c1b49",
+      "source_url": "https://www.facebook.com/ministryforwomen/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:00+00:00",
+      "source_account": "MPIgovtnz",
+      "source_key": "facebook:MPIgovtnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:97cade97e2951d8757704c58",
+      "source_url": "https://www.facebook.com/MPIgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:01+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8a113a9ded5be483836f4df3",
+      "source_url": "https://www.facebook.com/EducationGovtNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:01+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:ec38ecac93e5efab44b8975c",
+      "source_url": "https://www.facebook.com/womenofnewzealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:02+00:00",
+      "source_account": "mineducationnz",
+      "source_key": "facebook:mineducationnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:20a7d0a94826873607bbacd3",
+      "source_url": "https://www.facebook.com/mineducationnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:03+00:00",
+      "source_account": "minhealthnz",
+      "source_key": "facebook:minhealthnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3d62babb711e3a1f4a81a705",
+      "source_url": "https://www.facebook.com/minhealthnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:03+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:f292bd1b54fc8685da98ad2f",
+      "source_url": "https://www.facebook.com/minhealthnz/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:04+00:00",
+      "source_account": "HUDNZ",
+      "source_key": "facebook:HUDNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:1e74fb5f8bb2b16dc549a031",
+      "source_url": "https://www.facebook.com/HUDNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:04+00:00",
+      "source_account": "HUDgovtnz",
+      "source_key": "facebook:HUDgovtnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:50092320e6baefb13cf89725",
+      "source_url": "https://www.facebook.com/HUDgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:05+00:00",
+      "source_account": "MCERTNZ",
+      "source_key": "facebook:MCERTNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3c2e37cae4318afc10eaeacb",
+      "source_url": "https://www.facebook.com/MCERTNZ/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:05+00:00",
+      "source_account": "MinistryofJusticeNZ",
+      "source_key": "facebook:MinistryofJusticeNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:94f739e0a7c0a580e6662494",
+      "source_url": "https://www.facebook.com/MinistryofJusticeNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:06+00:00",
+      "source_account": "MSDgovtnz",
+      "source_key": "facebook:MSDgovtnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2cb1914199d37c6ffc7b439a",
+      "source_url": "https://www.facebook.com/MSDgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:06+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b99f920511b8a78c041c660f",
+      "source_url": "https://www.facebook.com/MSDNewZealand/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:07+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c449d97cbb9f369525bf76aa",
+      "source_url": "https://www.facebook.com/Ministryoftransportnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:08+00:00",
+      "source_account": "NapierCityCouncil",
+      "source_key": "facebook:NapierCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:23e9fbed05b36fdebc04bdfe",
+      "source_url": "https://www.facebook.com/NapierCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:08+00:00",
+      "source_account": "transportgovtnz",
+      "source_key": "facebook:transportgovtnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e26cdfc3f4a7dcd23491504a",
+      "source_url": "https://www.facebook.com/transportgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:09+00:00",
+      "source_account": "NHC.TokaTuAke",
+      "source_key": "facebook:NHC.TokaTuAke",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:17b5d6c7210d73c07c569a0f",
+      "source_url": "https://www.facebook.com/NHC.TokaTuAke"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:09+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a3da98b98ad48d1183fcddbc",
+      "source_url": "https://www.facebook.com/naturalhazardscommission"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:10+00:00",
+      "source_account": "nelsoncitycouncil",
+      "source_key": "facebook:nelsoncitycouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:501d103a74185cb1b0b6259b",
+      "source_url": "https://facebook.com/nelsoncitycouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:11+00:00",
+      "source_account": "NelsonCityCouncil",
+      "source_key": "facebook:NelsonCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:509424b5e61b48c5e015b463",
+      "source_url": "https://www.facebook.com/NelsonCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:11+00:00",
+      "source_account": "N4LNZ",
+      "source_key": "facebook:N4LNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e22606d47db62c950e053315",
+      "source_url": "https://www.facebook.com/N4LNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:12+00:00",
+      "source_account": "NewPlymouthDistrictCouncil",
+      "source_key": "facebook:NewPlymouthDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:66e704fe2ff7898b335b6d83",
+      "source_url": "https://www.facebook.com/NewPlymouthDistrictCouncil/?fref=ts"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:12+00:00",
+      "source_account": "NewPlymouthDistrictCouncil",
+      "source_key": "facebook:NewPlymouthDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7e064e02d4d9f81753d9ca95",
+      "source_url": "https://www.facebook.com/NewPlymouthDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:13+00:00",
+      "source_account": "NorthlandRegionalCouncil",
+      "source_key": "facebook:NorthlandRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:4dea04afb3d4dc872c6674ef",
+      "source_url": "https://www.facebook.com/NorthlandRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:13+00:00",
+      "source_account": "NMITNZ",
+      "source_key": "facebook:NMITNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:65f35e80d389cf7aacebd37d",
+      "source_url": "https://www.facebook.com/NMITNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:14+00:00",
+      "source_account": "NorthTecNZ",
+      "source_key": "facebook:NorthTecNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2297eb85f4f740b842fe132f",
+      "source_url": "https://www.facebook.com/NorthTecNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:15+00:00",
+      "source_account": "NZArmy",
+      "source_key": "facebook:NZArmy",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8b27416f24dfb8f4bcdd7f5f",
+      "source_url": "https://www.facebook.com/NZArmy"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:15+00:00",
+      "source_account": "NorthTecOnline",
+      "source_key": "facebook:NorthTecOnline",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b8a3b6fe257a1b601dcdbf6a",
+      "source_url": "https://www.facebook.com/NorthTecOnline"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:16+00:00",
+      "source_account": "Peke-Waihanga-Artificial-Limb-Service-306700359982541",
+      "source_key": "facebook:Peke-Waihanga-Artificial-Limb-Service-306700359982541",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b41844fe4d5d32529e3fd001",
+      "source_url": "https://www.facebook.com/Peke-Waihanga-Artificial-Limb-Service-306700359982541"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:16+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d3b97a1e8564e478cbe18327",
+      "source_url": "https://www.facebook.com/NZDefenceForce/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:17+00:00",
+      "source_account": "NewZealandBloodService  ",
+      "source_key": "facebook:NewZealandBloodService  ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:00a67da0778ff30975c668d6",
+      "source_url": "https://www.facebook.com/NewZealandBloodService  "
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:17+00:00",
+      "source_account": "NZCustoms",
+      "source_key": "facebook:NZCustoms",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:132f685e188d12f7c2032838",
+      "source_url": "https://www.facebook.com/NZCustoms"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:18+00:00",
+      "source_account": "NZDefenceForce",
+      "source_key": "facebook:NZDefenceForce",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c68fb6917de9620b3712a602",
+      "source_url": "https://www.facebook.com/NZDefenceForce"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:19+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:175b0058a9053cdee1996502",
+      "source_url": "https://www.facebook.com/NZDefenceForce/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:19+00:00",
+      "source_account": "nzfilm",
+      "source_key": "facebook:nzfilm",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:384a148e22d359a5ceb902ad",
+      "source_url": "https://www.facebook.com/nzfilm"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:20+00:00",
+      "source_account": "TeWaihanga",
+      "source_key": "facebook:TeWaihanga",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:70ef735c1cb55516b0d206b5",
+      "source_url": "https://www.facebook.com/TeWaihanga"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:20+00:00",
+      "source_account": "nzfilm",
+      "source_key": "facebook:nzfilm",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:f544592095084fda8d7ad5b7",
+      "source_url": "https://www.facebook.com/nzfilm/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:21+00:00",
+      "source_account": "NZOnAir",
+      "source_key": "facebook:NZOnAir",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b7fd3cd14298d69f2de70b41",
+      "source_url": "https://www.facebook.com/NZOnAir"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:22+00:00",
+      "source_account": "nzonair",
+      "source_key": "facebook:nzonair",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:82a245863adca8cb101df1ab",
+      "source_url": "https://www.facebook.com/nzonair/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:22+00:00",
+      "source_account": "nzonairmusic",
+      "source_key": "facebook:nzonairmusic",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:fee73370e259dea4c12d7209",
+      "source_url": "https://www.facebook.com/nzonairmusic/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:23+00:00",
+      "source_account": "NZParliament",
+      "source_key": "facebook:NZParliament",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0ed92d56bc5986f28b56fe35",
+      "source_url": "https://www.facebook.com/NZParliament"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:23+00:00",
+      "source_account": "nzpolice",
+      "source_key": "facebook:nzpolice",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0fe6f56e5a2f965a3921ce89",
+      "source_url": "https://www.facebook.com/nzpolice"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:24+00:00",
+      "source_account": "NewZealandPost",
+      "source_key": "facebook:NewZealandPost",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:034a5d34a6d6574686f6530f",
+      "source_url": "https://www.facebook.com/NewZealandPost/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:24+00:00",
+      "source_account": "NZPost",
+      "source_key": "facebook:NZPost",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8d0c31f63b33634a3ea27b1d",
+      "source_url": "https://www.facebook.com/NZPost"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:25+00:00",
+      "source_account": "NZQAofficial",
+      "source_key": "facebook:NZQAofficial",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:42d181e29654bf6a790ca6ba",
+      "source_url": "https://www.facebook.com/NZQAofficial/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:25+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:812815fd90367f36d810e603",
+      "source_url": "https://www.facebook.com/KiwiRailNewZealand/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:26+00:00",
+      "source_account": "newzealandsymphonyorchestra",
+      "source_key": "facebook:newzealandsymphonyorchestra",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0dcd710b525daee95cb4b0c3",
+      "source_url": "https://www.facebook.com/newzealandsymphonyorchestra"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:26+00:00",
+      "source_account": "NZSO",
+      "source_key": "facebook:NZSO",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a776c47bbe89fe320a1554e0",
+      "source_url": "https://www.facebook.com/NZSO"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:27+00:00",
+      "source_account": "nztenews",
+      "source_key": "facebook:nztenews",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0bdc4e4ef00dbfd556a4d574",
+      "source_url": "https://www.facebook.com/nztenews"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:28+00:00",
+      "source_account": "NZOFLC",
+      "source_key": "facebook:NZOFLC",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:74bd4c381c1f19b51866e416",
+      "source_url": "https://www.facebook.com/NZOFLC/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:28+00:00",
+      "source_account": "auditorgeneralnz",
+      "source_key": "facebook:auditorgeneralnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a39d2ea785d75a2e712a80de",
+      "source_url": "https://facebook.com//auditorgeneralnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:29+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:6694455e5d17b76023ea1cd0",
+      "source_url": "https://www.facebook.com/ombudsmannz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:29+00:00",
+      "source_account": "openpolytechnic",
+      "source_key": "facebook:openpolytechnic",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a12bab059c7759a0d2c8ed23",
+      "source_url": "http://www.facebook.com/openpolytechnic"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:30+00:00",
+      "source_account": "OpenPolytechnicNZ",
+      "source_key": "facebook:OpenPolytechnicNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:50598d96a6721585706e6ce2",
+      "source_url": "https://www.facebook.com/OpenPolytechnicNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:31+00:00",
+      "source_account": "OpotikiDistrictCouncil",
+      "source_key": "facebook:OpotikiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:6c90383fa372f73c54a8c8bd",
+      "source_url": "https://www.facebook.com/OpotikiDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:31+00:00",
+      "source_account": "OpotikiDistrictCouncil",
+      "source_key": "facebook:OpotikiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e8d3ee2d56fd568b0cf77896",
+      "source_url": "https://www.facebook.com/OpotikiDistrictCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:32+00:00",
+      "source_account": "OrangaTamariki",
+      "source_key": "facebook:OrangaTamariki",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:051bcd1f3fbf118f8219b045",
+      "source_url": "https://www.facebook.com/OrangaTamariki"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:32+00:00",
+      "source_account": "OtagoPoly",
+      "source_key": "facebook:OtagoPoly",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:671ff92c8dc2e451cf50b8ca",
+      "source_url": "https://www.facebook.com/OtagoPoly"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:33+00:00",
+      "source_account": "OtagoPolytechnic",
+      "source_key": "facebook:OtagoPolytechnic",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a3513e5bd67b437010028067",
+      "source_url": "https://www.facebook.com/OtagoPolytechnic"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:34+00:00",
+      "source_account": "OtagoRegionalCouncil",
+      "source_key": "facebook:OtagoRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:60bff00ba95557757cf2cef6",
+      "source_url": "https://www.facebook.com/OtagoRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:34+00:00",
+      "source_account": "OtagoRegionalCouncil",
+      "source_key": "facebook:OtagoRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:78e1ba6d0498c7953b5c1575",
+      "source_url": "http://www.facebook.com/OtagoRegionalCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:35+00:00",
+      "source_account": "PNCityCouncil",
+      "source_key": "facebook:PNCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2beb450ee4890a35a916bf9c",
+      "source_url": "https://www.facebook.com/PNCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:35+00:00",
+      "source_account": "OtorohangaDistrictCouncil",
+      "source_key": "facebook:OtorohangaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2c14a95a00da781f9a822bac",
+      "source_url": "https://www.facebook.com/OtorohangaDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:36+00:00",
+      "source_account": "PalmerstonNorthCityCouncil",
+      "source_key": "facebook:PalmerstonNorthCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5283d0ce6e41ec00c4b30be3",
+      "source_url": "https://www.facebook.com/PalmerstonNorthCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:36+00:00",
+      "source_account": "PamuNZ",
+      "source_key": "facebook:PamuNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b8c89475c43c6fbd1d0bab99",
+      "source_url": "https://www.facebook.com/PamuNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:37+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0700815e595db27d6dd1a8be",
+      "source_url": "https://www.facebook.com/pamunewzealand/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:38+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0e2bbaba7f371a46edf21c03",
+      "source_url": "https://facebook.com/PHARMACnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:38+00:00",
+      "source_account": "PHARMAC",
+      "source_key": "facebook:PHARMAC",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:4a088d90432cbe16ba764679",
+      "source_url": "https://www.facebook.com/pharmacnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:39+00:00",
+      "source_account": "PoriruaCityCouncil",
+      "source_key": "facebook:PoriruaCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5c1a68d043fb02be91514246",
+      "source_url": "https://www.facebook.com/PoriruaCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:39+00:00",
+      "source_account": "PredatorFree2050",
+      "source_key": "facebook:PredatorFree2050",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:657597abaa954b211f089bd9",
+      "source_url": "https://www.facebook.com/PredatorFree2050"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:40+00:00",
+      "source_account": "PublicServiceCommissionNZ",
+      "source_key": "facebook:PublicServiceCommissionNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5741fa279f737bdfd8949b9d",
+      "source_url": "https://www.facebook.com/PublicServiceCommissionNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:41+00:00",
+      "source_account": "PublicTrustNZ",
+      "source_key": "facebook:PublicTrustNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d0e7e5f9c4a1fcbdf017a5ee",
+      "source_url": "https://www.facebook.com/PublicTrustNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:41+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e14779d375ac77d59192a3b3",
+      "source_url": "https://www.facebook.com/TeKawaMataaho"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:42+00:00",
+      "source_account": "qldcinfo",
+      "source_key": "facebook:qldcinfo",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:1854d0b87dc38c3975c539c7",
+      "source_url": "http://www.facebook.com/qldcinfo"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:42+00:00",
+      "source_account": "QLDCSportRec",
+      "source_key": "facebook:QLDCSportRec",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:9a24143a4c9917cc475624bc",
+      "source_url": "https://www.facebook.com/QLDCSportRec"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:43+00:00",
+      "source_account": "QueenstownLakesDistrictCouncil",
+      "source_key": "facebook:QueenstownLakesDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:799f5df2541569298361eb53",
+      "source_url": "https://www.facebook.com/QueenstownLakesDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:43+00:00",
+      "source_account": "QLDCinfo",
+      "source_key": "facebook:QLDCinfo",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d3d8ae5fcc3403301983bf73",
+      "source_url": "https://www.facebook.com/QLDCinfo/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:44+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:48cbdb54e7fd7e54170cedc1",
+      "source_url": "https://www.facebook.com/QV.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:44+00:00",
+      "source_account": "Libraries",
+      "source_key": "facebook:Libraries",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b3d2368dc21da2b73daaad3a",
+      "source_url": "https://www.facebook.com/qtlakeslibraries"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:45+00:00",
+      "source_account": "QuotableValue",
+      "source_key": "facebook:QuotableValue",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:07b4aee4c4f2535813068355",
+      "source_url": "https://www.facebook.com/QuotableValue"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:46+00:00",
+      "source_account": "RangitikeiDC",
+      "source_key": "facebook:RangitikeiDC",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:64f205a45c4ce32ac3b5a552",
+      "source_url": "https://www.facebook.com/RangitikeiDC"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:47+00:00",
+      "source_account": "RangitikeiDistrictCouncil",
+      "source_key": "facebook:RangitikeiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2212fbf1dffb25c545f65e17",
+      "source_url": "https://www.facebook.com/RangitikeiDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:47+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3ef273b639ed53770b3ca11a",
+      "source_url": "https://www.facebook.com/ReserveBankofNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:48+00:00",
+      "source_account": "RNZ",
+      "source_key": "facebook:RNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:4f62ab03682bbf2448b43743",
+      "source_url": "https://www.facebook.com/RNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:48+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c3e4cf8ce3d935f15ee66a42",
+      "source_url": "https://www.facebook.com/rnznewzealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:49+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:4b28e9cbf2ab167514b615ce",
+      "source_url": "https://www.facebook.com/rnznewzealand/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:49+00:00",
+      "source_account": "RotoruaLakesCouncil",
+      "source_key": "facebook:RotoruaLakesCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c1e11efa20d7b762a18e2af4",
+      "source_url": "https://www.facebook.com/RotoruaLakesCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:50+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0e8fcb0d0593418a1d4e20a6",
+      "source_url": "https://www.facebook.com/NZDefenceForce/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:51+00:00",
+      "source_account": "RNZAirForce",
+      "source_key": "facebook:RNZAirForce",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3c35f91e4c1f9c5f4556b9cd",
+      "source_url": "https://www.facebook.com/RNZAirForce"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:51+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:fa397e3437d7e3b323daf96f",
+      "source_url": "https://www.facebook.com/NZDefenceForce/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:52+00:00",
+      "source_account": "RNZNavy",
+      "source_key": "facebook:RNZNavy",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:1455a8bfa832c23239ffb824",
+      "source_url": "https://www.facebook.com/RNZNavy"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:52+00:00",
+      "source_account": "RuapehuDistrictCouncil",
+      "source_key": "facebook:RuapehuDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:bf860e83de4be77f1879e0eb",
+      "source_url": "https://www.facebook.com/RuapehuDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:53+00:00",
+      "source_account": "ruapehudc",
+      "source_key": "facebook:ruapehudc",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5e6df55c5d1fd5c97537f736",
+      "source_url": "https://www.facebook.com/ruapehudc"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:53+00:00",
+      "source_account": "SelwynDistrictCouncil",
+      "source_key": "facebook:SelwynDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d76ac1ae3e03485c15b18f00",
+      "source_url": "https://www.facebook.com/SelwynDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:54+00:00",
+      "source_account": "SelwynDistrictCouncil",
+      "source_key": "facebook:SelwynDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7bebead0c77efdc77431d7b9",
+      "source_url": "https://www.facebook.com/SelwynDistrictCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:54+00:00",
+      "source_account": "SIT.NZ",
+      "source_key": "facebook:SIT.NZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a0e7b04443cbf536bda2dd11",
+      "source_url": "https://www.facebook.com/SIT.NZ/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:55+00:00",
+      "source_account": "102062118004656",
+      "source_key": "facebook:102062118004656",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b9408fe01b8e21e9fe8cb73f",
+      "source_url": "https://facebook.com/102062118004656"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:55+00:00",
+      "source_account": "SITNZ",
+      "source_key": "facebook:SITNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:ce23264c865d5bc3af4bdd56",
+      "source_url": "https://www.facebook.com/SITNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:56+00:00",
+      "source_account": "102062118004656_1347582970818632",
+      "source_key": "facebook:102062118004656_1347582970818632",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:49ea513f28022159e2135b21",
+      "source_url": "https://www.facebook.com/102062118004656_1347582970818632"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:56+00:00",
+      "source_account": "102062118004656_1351917083718554",
+      "source_key": "facebook:102062118004656_1351917083718554",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7a63e8d19d7ae9118e81c220",
+      "source_url": "https://www.facebook.com/102062118004656_1351917083718554"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:57+00:00",
+      "source_account": "102062118004656_1359974566246139",
+      "source_key": "facebook:102062118004656_1359974566246139",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e6de09fbef06e18720c51f22",
+      "source_url": "https://www.facebook.com/102062118004656_1359974566246139"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:58+00:00",
+      "source_account": "102062118004656_1365482045695391",
+      "source_key": "facebook:102062118004656_1365482045695391",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3e5256cef43e82c00b4981ac",
+      "source_url": "https://www.facebook.com/102062118004656_1365482045695391"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:58+00:00",
+      "source_account": "102062118004656_1364625979114331",
+      "source_key": "facebook:102062118004656_1364625979114331",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d8775eb635d9c7fd46535575",
+      "source_url": "https://www.facebook.com/102062118004656_1364625979114331"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:59+00:00",
+      "source_account": "SouthTaranakiDistrictCouncil",
+      "source_key": "facebook:SouthTaranakiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:27b25ca487d7c057861b0ea6",
+      "source_url": "http://facebook.com/SouthTaranakiDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:54:59+00:00",
+      "source_account": "SWRB",
+      "source_key": "facebook:SWRB",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:83c0656a276b2b519fcdd06c",
+      "source_url": "https://www.facebook.com/SWRB"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:00+00:00",
+      "source_account": "SouthTaranakiDistrictCouncil",
+      "source_key": "facebook:SouthTaranakiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3b57f260b3fca91bd58d7383",
+      "source_url": "https://www.facebook.com/SouthTaranakiDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:00+00:00",
+      "source_account": "SouthWaikatoDistrictCouncil",
+      "source_key": "facebook:SouthWaikatoDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:3dd0e7a8494a650b8f01891a",
+      "source_url": "https://www.facebook.com/SouthWaikatoDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:01+00:00",
+      "source_account": "SouthWairarapaDistrictCouncil",
+      "source_key": "facebook:SouthWairarapaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:1503db70b740eba03b9a6b20",
+      "source_url": "https://www.facebook.com/SouthWairarapaDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:01+00:00",
+      "source_account": "SouthernResponse",
+      "source_key": "facebook:SouthernResponse",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c395f0f1f42b14ee2120462c",
+      "source_url": "https://www.facebook.com/SouthernResponse"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:02+00:00",
+      "source_account": "SouthlandDistrictCouncil",
+      "source_key": "facebook:SouthlandDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:33a64007d7467753c69f3824",
+      "source_url": "https://www.facebook.com/SouthlandDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:03+00:00",
+      "source_account": "SportNZ",
+      "source_key": "facebook:SportNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:33a43f7d4e64ec07fd5c827c",
+      "source_url": "https://www.facebook.com/SportNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:03+00:00",
+      "source_account": "StratfordDistrictCouncil",
+      "source_key": "facebook:StratfordDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d04172918ec61d6c52dc0f0d",
+      "source_url": "https://www.facebook.com/StratfordDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:04+00:00",
+      "source_account": "TaiPoutiniPolytechnic",
+      "source_key": "facebook:TaiPoutiniPolytechnic",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:44009b3ac7c2a34df80dd71b",
+      "source_url": "https://www.facebook.com/TaiPoutiniPolytechnic"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:04+00:00",
+      "source_account": "TaiPoutiniPoly",
+      "source_key": "facebook:TaiPoutiniPoly",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d1076a7e3c18a243e0563018",
+      "source_url": "https://www.facebook.com/TaiPoutiniPoly"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:05+00:00",
+      "source_account": "TaranakiRegionalCouncil",
+      "source_key": "facebook:TaranakiRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:46bca56e0c56eeca1d50c751",
+      "source_url": "http://facebook.com/TaranakiRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:06+00:00",
+      "source_account": "TararuaDC",
+      "source_key": "facebook:TararuaDC",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:175d0424abfeea4abff458a7",
+      "source_url": "https://www.facebook.com/TararuaDC"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:06+00:00",
+      "source_account": "TaranakiRegionalCouncil",
+      "source_key": "facebook:TaranakiRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8ea84fcea0886625a56f0f6a",
+      "source_url": "https://www.facebook.com/TaranakiRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:07+00:00",
+      "source_account": "TasmanDistrictCouncil",
+      "source_key": "facebook:TasmanDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:30f8e5adbce5c92ec0042bd6",
+      "source_url": "https://www.facebook.com/TasmanDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:07+00:00",
+      "source_account": "TararuaDistrictCouncil",
+      "source_key": "facebook:TararuaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a18923c81cb00da4519edd78",
+      "source_url": "https://www.facebook.com/TararuaDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:08+00:00",
+      "source_account": "TaupoDistrictCouncil",
+      "source_key": "facebook:TaupoDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c6db3a812fd87e26048e4645",
+      "source_url": "https://www.facebook.com/TaupoDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:08+00:00",
+      "source_account": "TaupoDistrictCouncil",
+      "source_key": "facebook:TaupoDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d1f84391774a203dadbb1afb",
+      "source_url": "https://www.facebook.com/TaupoDistrictCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:09+00:00",
+      "source_account": "TaurangaCityCouncil",
+      "source_key": "facebook:TaurangaCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a4d4aad5cf6a71fa1e4d98e2",
+      "source_url": "https://www.facebook.com/TaurangaCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:10+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:6dfe93fd511fa66ead0fb4e6",
+      "source_url": "https://www.facebook.com/retirement.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:10+00:00",
+      "source_account": "SortedNZ",
+      "source_key": "facebook:SortedNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:9f4c626c4c01a4123e8650fc",
+      "source_url": "https://www.facebook.com/SortedNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:11+00:00",
+      "source_account": "TePuniKokiri",
+      "source_key": "facebook:TePuniKokiri",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:28a1aadff3a656e7ef7ef0c7",
+      "source_url": "https://www.facebook.com/TePuniKokiri"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:11+00:00",
+      "source_account": "TePapa",
+      "source_key": "facebook:TePapa",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:437728f38be7d61d6adaf774",
+      "source_url": "https://www.facebook.com/TePapa"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:12+00:00",
+      "source_account": "TeTumuPaeroa",
+      "source_key": "facebook:TeTumuPaeroa",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:39299823d652c68a4e301563",
+      "source_url": "https://www.facebook.com/TeTumuPaeroa"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:13+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:f1bab539a9e769f2b680a8b6",
+      "source_url": "https://www.facebook.com/TeTumuPaeroa/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:13+00:00",
+      "source_account": "TeWanangaoAotearoa",
+      "source_key": "facebook:TeWanangaoAotearoa",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:fee2fc5e3002ac9b59c45a8b",
+      "source_url": "https://www.facebook.com/TeWanangaoAotearoa/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:14+00:00",
+      "source_account": "Share",
+      "source_key": "facebook:Share",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:6fad3aeb880b63a2f54c4fa6",
+      "source_url": "https://www.facebook.com/sharer.php?text=Home&u=https://www.twoa.ac.nz/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:14+00:00",
+      "source_account": "tewanangaoaotearoa",
+      "source_key": "facebook:tewanangaoaotearoa",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7873549233ffe0a345fefed5",
+      "source_url": "https://www.facebook.com/tewanangaoaotearoa"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:15+00:00",
+      "source_account": "tewanangao raukawa",
+      "source_key": "facebook:tewanangao raukawa",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8789da56b469ee64f6ac6078",
+      "source_url": "https://www.facebook.com/tewanangao raukawa"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:15+00:00",
+      "source_account": "TeWanangaoRaukawa",
+      "source_key": "facebook:TeWanangaoRaukawa",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b862e0039d16aff8eed577c2",
+      "source_url": "https://www.facebook.com/TeWanangaoRaukawa"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:16+00:00",
+      "source_account": "Awanuiarangi",
+      "source_key": "facebook:Awanuiarangi",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:304b1a3c0504390d3306e9e0",
+      "source_url": "https://www.facebook.com/Awanuiarangi/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:17+00:00",
+      "source_account": "ThamesCoromandelDistrictCouncil",
+      "source_key": "facebook:ThamesCoromandelDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:538bebebf6ab2ed9bc2dc97d",
+      "source_url": "https://www.facebook.com/ThamesCoromandelDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:17+00:00",
+      "source_account": "twwananga",
+      "source_key": "facebook:twwananga",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:9e53df90dcc0f49c5e1e9d7f",
+      "source_url": "https://www.facebook.com/twwananga"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:18+00:00",
+      "source_account": "ThamesCoromandelDistrictCouncil",
+      "source_key": "facebook:ThamesCoromandelDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2e5a4833f85aa47196bd5e4a",
+      "source_url": "https://www.facebook.com/ThamesCoromandelDistrictCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:20+00:00",
+      "source_account": "TimaruDC",
+      "source_key": "facebook:TimaruDC",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:142d1cc43a39b8c72059e41a",
+      "source_url": "https://www.facebook.com/TimaruDC"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:20+00:00",
+      "source_account": "TimaruDistrictCouncil",
+      "source_key": "facebook:TimaruDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:f0e9dba89ddd092df8159376",
+      "source_url": "https://www.facebook.com/TimaruDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:21+00:00",
+      "source_account": "ToiOhomai",
+      "source_key": "facebook:ToiOhomai",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:023eb851ebfc6366b813b2d1",
+      "source_url": "https://www.facebook.com/ToiOhomai"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:21+00:00",
+      "source_account": "TourismNZ",
+      "source_key": "facebook:TourismNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:34b671b0fbf209331415182d",
+      "source_url": "https://www.facebook.com/TourismNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:22+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:50dd35243b573cb2a48590e2",
+      "source_url": "https://www.facebook.com/nztaic"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:22+00:00",
+      "source_account": "TAIC.nz",
+      "source_key": "facebook:TAIC.nz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a67ca63eaf37b99540ac01cc",
+      "source_url": "https://www.facebook.com/TAIC.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:23+00:00",
+      "source_account": "TranspowerNZ",
+      "source_key": "facebook:TranspowerNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0b3d7664a569c196337f60ce",
+      "source_url": "https://www.facebook.com/TranspowerNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:24+00:00",
+      "source_account": "tvnz",
+      "source_key": "facebook:tvnz",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a86e7d33668a4989b286d34a",
+      "source_url": "https://www.facebook.com/tvnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:24+00:00",
+      "source_account": "TVNZPlus",
+      "source_key": "facebook:TVNZPlus",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:d48a726a3340a989e9074870",
+      "source_url": "https://www.facebook.com/TVNZPlus"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:25+00:00",
+      "source_account": "UCOLNZ",
+      "source_key": "facebook:UCOLNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:a48f4a9b12a1d0314a5c0b6c",
+      "source_url": "https://www.facebook.com/UCOLNZ/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:25+00:00",
+      "source_account": "UCOLNZ",
+      "source_key": "facebook:UCOLNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c83e2fa091e4a34f19e7a3e8",
+      "source_url": "https://www.facebook.com/UCOLNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:26+00:00",
+      "source_account": "UnitecNZ",
+      "source_key": "facebook:UnitecNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:21ab1d860cbd0b651d717084",
+      "source_url": "https://www.facebook.com/UnitecNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:26+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:ca447ee3eca03af3831eece7",
+      "source_url": "https://www.facebook.com/UniversityofAkld/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:27+00:00",
+      "source_account": "universityofauckland",
+      "source_key": "facebook:universityofauckland",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:74b7bdaeff398cd44c5a6bf9",
+      "source_url": "https://www.facebook.com/universityofauckland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:28+00:00",
+      "source_account": "universitycanterbury",
+      "source_key": "facebook:universitycanterbury",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:695824a3506eded179332f2b",
+      "source_url": "https://www.facebook.com/universitycanterbury"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:28+00:00",
+      "source_account": "UniversityofCanterbury",
+      "source_key": "facebook:UniversityofCanterbury",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:fa6a8970283d29926306315f",
+      "source_url": "https://www.facebook.com/UniversityofCanterbury"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:29+00:00",
+      "source_account": "uniotago",
+      "source_key": "facebook:uniotago",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:6b3a3d32fe20dd4d475015b8",
+      "source_url": "https://www.facebook.com/uniotago"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:29+00:00",
+      "source_account": "UniversityofWaikato",
+      "source_key": "facebook:UniversityofWaikato",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7847e38f542014c6788d19a7",
+      "source_url": "https://www.facebook.com/UniversityofWaikato"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:30+00:00",
+      "source_account": "UpperHuttCityCouncil",
+      "source_key": "facebook:UpperHuttCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b4446c6079a12eb20c61a48d",
+      "source_url": "https://www.facebook.com/UpperHuttCityCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:30+00:00",
+      "source_account": "WaikatoUniversity",
+      "source_key": "facebook:WaikatoUniversity",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:f5cedf028238bd9e14380e08",
+      "source_url": "https://www.facebook.com/WaikatoUniversity"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:31+00:00",
+      "source_account": "UpperHuttCityCouncil",
+      "source_key": "facebook:UpperHuttCityCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0abbbf2eb03cb6236c64ebe4",
+      "source_url": "https://www.facebook.com/UpperHuttCityCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:31+00:00",
+      "source_account": "victoriauniversityofwellington",
+      "source_key": "facebook:victoriauniversityofwellington",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:716cefd3b8e45f5ba86e47c5",
+      "source_url": "https://www.facebook.com/victoriauniversityofwellington"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:32+00:00",
+      "source_account": "WaikatoDistrictCouncil",
+      "source_key": "facebook:WaikatoDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:857e860682c1531d318f95da",
+      "source_url": "https://www.facebook.com/WaikatoDistrictCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:32+00:00",
+      "source_account": "WaikatoDistrictCouncil",
+      "source_key": "facebook:WaikatoDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e79acd7c8cf5834657ed49f2",
+      "source_url": "https://www.facebook.com/WaikatoDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:33+00:00",
+      "source_account": "WaikatoRegion",
+      "source_key": "facebook:WaikatoRegion",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:891d03b3bcc6533c906a7c6b",
+      "source_url": "https://www.facebook.com/WaikatoRegion"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:34+00:00",
+      "source_account": "WaikatoRegionalCouncil",
+      "source_key": "facebook:WaikatoRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:214a3f8272a4aa360d7f17b3",
+      "source_url": "https://www.facebook.com/WaikatoRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:34+00:00",
+      "source_account": "WaimakaririDistrictCouncil",
+      "source_key": "facebook:WaimakaririDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:61cf1b1ccf520bc1dae2f4c5",
+      "source_url": "https://www.facebook.com/WaimakaririDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:35+00:00",
+      "source_account": "WaimateDistrictCouncil",
+      "source_key": "facebook:WaimateDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0604492cd4e59c4d4555c444",
+      "source_url": "https://www.facebook.com/WaimateDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:35+00:00",
+      "source_account": "WaipaDistrictCouncil",
+      "source_key": "facebook:WaipaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:35e8fcb1b0c878720baf3ee0",
+      "source_url": "https://www.facebook.com/WaipaDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:36+00:00",
+      "source_account": "WaipaDistrictCouncil",
+      "source_key": "facebook:WaipaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0b6b2c15aa6af5b27ee8f41b",
+      "source_url": "https://www.facebook.com/WaipaDistrictCouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:36+00:00",
+      "source_account": "WairoaDistrictCouncil",
+      "source_key": "facebook:WairoaDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:523778eee708528e72ea132e",
+      "source_url": "https://www.facebook.com/WairoaDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:37+00:00",
+      "source_account": "wairoadistrictcouncil",
+      "source_key": "facebook:wairoadistrictcouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2869e31b363756ffcdc7a7bc",
+      "source_url": "https://www.facebook.com/wairoadistrictcouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:38+00:00",
+      "source_account": "WaitomoDistrictCouncil",
+      "source_key": "facebook:WaitomoDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:aef213bc5e613fbaea6c8c70",
+      "source_url": "https://www.facebook.com/WaitomoDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:38+00:00",
+      "source_account": "WaitakiDistrictCouncil",
+      "source_key": "facebook:WaitakiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:de9734c8c3444f9c160bf21b",
+      "source_url": "https://www.facebook.com/WaitakiDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:39+00:00",
+      "source_account": "nztransportagency",
+      "source_key": "facebook:nztransportagency",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:c9771f1e4da23f42fcb9f1bc",
+      "source_url": "https://www.facebook.com/nztransportagency"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:39+00:00",
+      "source_account": "waitomodistrict",
+      "source_key": "facebook:waitomodistrict",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:da9008908166ba0252f902cd",
+      "source_url": "https://www.facebook.com/waitomodistrict"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:40+00:00",
+      "source_account": "WgtnCouncil",
+      "source_key": "facebook:WgtnCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8c98e3d43a5c2d3c04059c2e",
+      "source_url": "https://www.facebook.com/WgtnCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:40+00:00",
+      "source_account": "wellingtoncitylibraries",
+      "source_key": "facebook:wellingtoncitylibraries",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:b1c3a4c6caa55f28b9a20fb6",
+      "source_url": "https://www.facebook.com/wellingtoncitylibraries"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:41+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:642574a6a8162c40cc0ef188",
+      "source_url": "https://www.facebook.com/whitireiaandweltec/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:41+00:00",
+      "source_account": "WelTecNZ",
+      "source_key": "facebook:WelTecNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:83dc83692c1754a717c716df",
+      "source_url": "https://www.facebook.com/WelTecNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:42+00:00",
+      "source_account": "WestCoastRegionalCouncil",
+      "source_key": "facebook:WestCoastRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5967281d0e4b878595f24a71",
+      "source_url": "https://www.facebook.com/WestCoastRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:43+00:00",
+      "source_account": "WesternBayofPlentyDistrictCouncil",
+      "source_key": "facebook:WesternBayofPlentyDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0f44cbfd13322972d2fe3a89",
+      "source_url": "https://www.facebook.com/WesternBayofPlentyDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:43+00:00",
+      "source_account": "WestCoastRegionalCouncil",
+      "source_key": "facebook:WestCoastRegionalCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:641086ef9b9fae6e4254ce02",
+      "source_url": "https://www.facebook.com/WestCoastRegionalCouncil/?ref=bookmarks"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:44+00:00",
+      "source_account": "westernbaycouncil",
+      "source_key": "facebook:westernbaycouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:0dc712cb4e31d7446b554d90",
+      "source_url": "https://www.facebook.com/westernbaycouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:45+00:00",
+      "source_account": "emergencywestcoast",
+      "source_key": "facebook:emergencywestcoast",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:38c7ae687e1701e6eb95668b",
+      "source_url": "https://www.facebook.com/emergencywestcoast"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:45+00:00",
+      "source_account": "WestlandDistrictCouncil",
+      "source_key": "facebook:WestlandDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:5e1a95b13f705fadb8d12908",
+      "source_url": "https://www.facebook.com/WestlandDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:46+00:00",
+      "source_account": "westlanddistrictcouncil",
+      "source_key": "facebook:westlanddistrictcouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:402a54ba7fb90b67c958cb30",
+      "source_url": "https://www.facebook.com/westlanddistrictcouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:46+00:00",
+      "source_account": "WhaikahaNZ",
+      "source_key": "facebook:WhaikahaNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:dffec98f15180a0004900288",
+      "source_url": "https://www.facebook.com/WhaikahaNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:47+00:00",
+      "source_account": "whaikaha.govt",
+      "source_key": "facebook:whaikaha.govt",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:9b8d9778dc286a47b8ef9e30",
+      "source_url": "https://www.facebook.com/whaikaha.govt"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:48+00:00",
+      "source_account": "WhanganuiDistrictCouncil",
+      "source_key": "facebook:WhanganuiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:47d3d3ac54b2b1f2eb7c2472",
+      "source_url": "https://www.facebook.com/WhanganuiDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:48+00:00",
+      "source_account": "WhakataneDistrictCouncil",
+      "source_key": "facebook:WhakataneDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:8755cb1e41dc4f5520526146",
+      "source_url": "https://www.facebook.com/WhakataneDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:49+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:113b62c661f0ca9411009418",
+      "source_url": "https://www.facebook.com/WhangareiDC"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:49+00:00",
+      "source_account": "whanganuidistrictcouncil",
+      "source_key": "facebook:whanganuidistrictcouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:ed2a5ffa21a0ac3f1af7af1a",
+      "source_url": "https://www.facebook.com/whanganuidistrictcouncil/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:50+00:00",
+      "source_account": "WhitireiaNZ",
+      "source_key": "facebook:WhitireiaNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:75d0623ba512ff749aa99ec2",
+      "source_url": "https://www.facebook.com/WhitireiaNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:50+00:00",
+      "source_account": "WhangareiDistrictCouncil",
+      "source_key": "facebook:WhangareiDistrictCouncil",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e51f1b5e7f3bad04c2d2646d",
+      "source_url": "https://www.facebook.com/WhangareiDistrictCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:51+00:00",
+      "source_account": "WintecNZ",
+      "source_key": "facebook:WintecNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:2a7ba08dfad99417049c12ff",
+      "source_url": "https://www.facebook.com/WintecNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:51+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e77cc410fcb10208e60767ca",
+      "source_url": "https://www.facebook.com/whitireiaandweltec/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:52+00:00",
+      "source_account": "wintec",
+      "source_key": "facebook:wintec",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:7c244d800bac8ad67178ad20",
+      "source_url": "https://www.facebook.com/wintec"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:53+00:00",
+      "source_account": "Facebook",
+      "source_key": "facebook:Facebook",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:91cc27867dfbc824e1b43a56",
+      "source_url": "https://www.facebook.com/witttaranaki"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:53+00:00",
+      "source_account": "WITTNZ",
+      "source_key": "facebook:WITTNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:e7dc9a3876bfe2f7938e876c",
+      "source_url": "https://www.facebook.com/WITTNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:54+00:00",
+      "source_account": "worksafeNZ",
+      "source_key": "facebook:worksafeNZ",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:78b33d9c9ef3788f2d4edef9",
+      "source_url": "https://www.facebook.com/worksafeNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T03:55:54+00:00",
+      "source_account": "nzworksafe",
+      "source_key": "facebook:nzworksafe",
+      "source_platform": "facebook",
+      "source_record_id": "facebook_public_snapshot:debe75cf61a9ddddc75e076b",
+      "source_url": "https://www.facebook.com/nzworksafe"
     },
     {
       "mirror_targets": [],
@@ -120478,8 +123079,9 @@
     "bluesky": 2085,
     "courtsofnz.govt.nz": 11,
     "email": 21,
+    "facebook": 323,
     "json_feed": 16,
-    "linkedin": 84,
+    "linkedin": 50,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -120502,12 +123104,16 @@
       "max_original_created_at": "2026-07-16T02:45:43Z",
       "min_original_created_at": "2026-06-14T06:34:00Z"
     },
+    "facebook": {
+      "max_original_created_at": "2026-07-19T03:55:54+00:00",
+      "min_original_created_at": "2026-07-19T03:52:46+00:00"
+    },
     "json_feed": {
       "max_original_created_at": "2026-07-01T10:07:59+00:00",
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-19T03:52:58+00:00",
+      "max_original_created_at": "2026-07-13T01:53:31+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
