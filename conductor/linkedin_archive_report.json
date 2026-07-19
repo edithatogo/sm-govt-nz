@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:21:10+00:00",
+  "generated_at": "2026-07-19T04:21:14+00:00",
   "inputs": {
-    "agency_id": "mackenzie-district-council",
+    "agency_id": "ministry-for-culture-and-heritage",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,29 +28,42 @@
   },
   "results": [
     {
-      "agency_id": "mackenzie-district-council",
+      "agency_id": "ministry-for-culture-and-heritage",
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:2f4f4479379ad8596e35ef3a",
-      "source_id": "mackenzie-district-council-linkedin-53be0b59",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:0db3fa12faac81af3fd032b2",
+      "source_id": "ministry-for-culture-and-heritage-linkedin-a2b2c035",
       "source_type": "social_profile",
       "status": "public_snapshot_captured",
-      "url": "https://nz.linkedin.com/company/mackenzie-district-council"
+      "url": "https://www.linkedin.com/company/manatu-taonga-ministry-for-culture-and-heritage/"
+    },
+    {
+      "agency_id": "ministry-for-culture-and-heritage",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 404: Not Found",
+      "source_id": "0ffdbd4d6955bde5",
+      "source_type": "social_profile",
+      "status": "not_found",
+      "url": "https://www.linkedin.com/company/ministry-for-culture-and-heritage/"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
+        "not_found": 1,
         "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
+      "not_found": 1,
       "public_snapshot_captured": 1
     }
   }
