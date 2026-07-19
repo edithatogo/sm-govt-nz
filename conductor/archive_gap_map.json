@@ -1,17 +1,17 @@
 {
   "gaps": [
     {
-      "agency_id": "ministry-for-women",
+      "agency_id": "ara-institute-of-canterbury",
       "platform": "linkedin",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 404: Not Found",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "HTTP 999: <none>",
       "report": "conductor/linkedin_archive_report.json",
-      "source_id": "ec4a0cb09cd93e51",
-      "status": "not_found",
+      "source_id": "2046be7ce24fc8a8",
+      "status": "http_error",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.linkedin.com/company/ministry-for-women-nz/"
+      "url": "https://www.linkedin.com/school/ara-institute-of-canterbury"
     }
   ],
   "inputs": {
@@ -22,38 +22,33 @@
   "report_summaries": {
     "conductor/linkedin_archive_report.json": {
       "platform_counts": {
-        "linkedin": 2
+        "linkedin": 1
       },
-      "selected_sources": 2,
+      "selected_sources": 1,
       "status_by_platform": {
         "linkedin": {
-          "not_found": 1,
-          "public_snapshot_captured": 1
+          "http_error": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "not_found": 1,
-        "public_snapshot_captured": 1
+        "http_error": 1
       }
     }
   },
   "summary": {
     "gap_count": 1,
     "input_status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "http_error": 1
     },
     "platform_counts": {
-      "linkedin": 2
+      "linkedin": 1
     },
     "priority_counts": {
-      "archived_or_already_archived": 1,
-      "p1_existing_resources": 1
+      "review": 1
     },
     "status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "http_error": 1
     },
     "superseded_source_count": 0
   }

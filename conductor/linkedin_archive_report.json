@@ -1,14 +1,14 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:11:39+00:00",
+  "generated_at": "2026-07-19T04:18:57+00:00",
   "inputs": {
-    "agency_id": "ministry-for-women",
+    "agency_id": "ara-institute-of-canterbury",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
     "include_blocked": true,
-    "limit_sources": 10,
+    "limit_sources": 100,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "max_scrolls": 25,
@@ -28,43 +28,30 @@
   },
   "results": [
     {
-      "agency_id": "ministry-for-women",
-      "archive_status": "manual_seed",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:64a292b936efb2f73433550c",
-      "source_id": "ministry-for-women-linkedin-1206a60d",
-      "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/624818/"
-    },
-    {
-      "agency_id": "ministry-for-women",
+      "agency_id": "ara-institute-of-canterbury",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
-      "source_id": "ec4a0cb09cd93e51",
+      "reason": "HTTP 999: <none>",
+      "source_id": "2046be7ce24fc8a8",
       "source_type": "social_profile",
-      "status": "not_found",
-      "url": "https://www.linkedin.com/company/ministry-for-women-nz/"
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/ara-institute-of-canterbury"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 2
+      "linkedin": 1
     },
-    "selected_sources": 2,
+    "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "not_found": 1,
-        "public_snapshot_captured": 1
+        "http_error": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "http_error": 1
     }
   }
 }
