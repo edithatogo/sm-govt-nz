@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T08:25:17+00:00",
+  "generated_at": "2026-07-19T08:28:42+00:00",
   "inputs": {
     "agency_id": "ministry-for-regulation",
     "capture_backend": "default",
@@ -32,10 +32,10 @@
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:04988da51ef7e9228ba7de87",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "647df0be9f9ad9db",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
+      "status": "http_error",
       "url": "https://www.linkedin.com/company/ministry-for-regulation/"
     },
     {
@@ -57,12 +57,14 @@
     "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "public_snapshot_captured": 2
+        "http_error": 1,
+        "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "public_snapshot_captured": 2
+      "http_error": 1,
+      "public_snapshot_captured": 1
     }
   }
 }
