@@ -41,7 +41,7 @@ This dataset package contains normalized New Zealand government social media rec
 - email: 21 records
 - facebook: 323 records
 - json_feed: 16 records
-- linkedin: 51 records
+- linkedin: 50 records
 - rss: 3930 records
 - website_page: 1827 records
 - x: 769 records
