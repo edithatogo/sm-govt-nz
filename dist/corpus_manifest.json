@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "3331305852e6a71dcc7fbebbef6710d135da2e4db33f6735f0dbdc4f001bcc98"
+      "sha256": "07d4cffdf45cb6cf212b1ec3ed4e954fdcbca5a012e141612d67c2b3060ddaac"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638705,
+      "bytes": 24638710,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "47ca716c88f290d506ba5a8313c6345c8a711082e66775256648426d61270d3e"
+      "sha256": "2c9893b4d286060bae89995b7cbc25e2cd88eefa8f9b1bed454a643788bbbf41"
     },
     "normalized_archive.parquet": {
-      "bytes": 39048971,
+      "bytes": 38930863,
       "path": "normalized_archive.parquet",
-      "sha256": "f4027651667befe2db549f24363155213c0a32303644c92f452a1213b785aa58"
+      "sha256": "cec3f8664d025ac101128adea7fcf63fef50b1ab49acec9115fdb2fcd4f908f8"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11768,
+  "normalized_record_count": 11769,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 14608,
+  "raw_file_count": 14609,
   "record_index": [
     {
       "mirror_targets": [
@@ -122881,6 +122881,15 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-19T04:21:19+00:00",
+      "source_account": "marlborough-district-council",
+      "source_key": "linkedin:marlborough-district-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:08da00bc18a5bc7034c3bdf7",
+      "source_url": "https://www.linkedin.com/company/marlborough-district-council"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -123081,7 +123090,7 @@
     "email": 21,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 50,
+    "linkedin": 51,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -123113,7 +123122,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-13T01:53:31+00:00",
+      "max_original_created_at": "2026-07-19T04:21:19+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {

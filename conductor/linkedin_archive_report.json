@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:21:18+00:00",
+  "generated_at": "2026-07-19T04:21:20+00:00",
   "inputs": {
-    "agency_id": "manukau-institute-of-technology",
+    "agency_id": "marlborough-district-council",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,15 +28,15 @@
   },
   "results": [
     {
-      "agency_id": "manukau-institute-of-technology",
-      "archive_status": "ready",
+      "agency_id": "marlborough-district-council",
+      "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "f77d729a901b0464",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:08da00bc18a5bc7034c3bdf7",
+      "source_id": "marlborough-district-council-linkedin-fd3dea73",
       "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/manukau-institute-of-technology"
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/marlborough-district-council"
     }
   ],
   "summary": {
@@ -46,12 +46,12 @@
     "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1
+        "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1
+      "public_snapshot_captured": 1
     }
   }
 }
