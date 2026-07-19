@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:29:18+00:00",
+  "generated_at": "2026-07-19T04:29:25+00:00",
   "inputs": {
-    "agency_id": "invercargill-city-council",
+    "agency_id": "law-commission",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,41 +28,30 @@
   },
   "results": [
     {
-      "agency_id": "invercargill-city-council",
+      "agency_id": "law-commission",
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:979a3817b21ad6c1ef434e72",
-      "source_id": "invercargill-city-council-linkedin-beb954b9",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:b38cc65aa34e7260e19dade8",
+      "source_id": "law-commission-linkedin-003461d1",
       "source_type": "social_profile",
       "status": "public_snapshot_captured",
-      "url": "https://nz.linkedin.com/company/invercargill-city-council"
-    },
-    {
-      "agency_id": "invercargill-city-council",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:e931694e35f77e64beccc041",
-      "source_id": "286478ae010979fa",
-      "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/invercargill-city-council"
+      "url": "https://www.linkedin.com/company/nzlawcommission"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 2
+      "linkedin": 1
     },
-    "selected_sources": 2,
+    "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "public_snapshot_captured": 2
+        "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "public_snapshot_captured": 2
+      "public_snapshot_captured": 1
     }
   }
 }
