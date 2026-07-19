@@ -34,6 +34,8 @@ def test_archive_registered_sources_dry_run_commits_only_report() -> None:
     assert "inputs.offset_sources || '0'" in workflow
     assert "Resolve archive report paths" in workflow
     assert "ARCHIVE_REPORT_PATH=$report_path" in workflow
+    assert "safe_agency_id" in workflow
+    assert "${safe_source_type}_archive_${safe_agency_id}_report.json" in workflow
     assert "archive_offset_${offset_sources}_report.json" in workflow
     assert "--report \"$ARCHIVE_REPORT_PATH\"" in workflow
     assert "--summary \"$ARCHIVE_SUMMARY_PATH\"" in workflow

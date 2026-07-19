@@ -5,6 +5,7 @@ from pathlib import Path
 from scripts.build_archive_completion_matrix import (
     COMPLETE_STATES,
     build_completion_matrix,
+    build_report_index,
     classify_state,
     dispatch_for,
     validate_matrix,
@@ -192,6 +193,24 @@ def test_registered_source_workflow_serializes_shared_source_type_state() -> Non
     assert "inputs.source_type || 'scheduled'" in workflow
     assert "inputs.agency_id || 'all'" not in workflow
     assert "cancel-in-progress: false" in workflow
+
+
+def test_matrix_discovers_agency_sharded_reports(tmp_path: Path) -> None:
+    conductor = tmp_path / "conductor"
+    conductor.mkdir()
+    report = conductor / "linkedin_archive_aut-university_report.json"
+    report.write_text(json.dumps({
+        "results": [{
+            "source_id": "aut-source",
+            "url": "https://www.linkedin.com/company/aut",
+            "status": "http_error",
+            "reason": "HTTP 999: blocked",
+        }]
+    }), encoding="utf-8")
+
+    indexed = build_report_index(conductor)
+
+    assert indexed["aut-source"]["status"] == "http_error"
 
 
 def test_website_fallback_dispatches_canonical_publication_workflow() -> None:

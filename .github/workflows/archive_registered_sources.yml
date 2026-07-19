@@ -223,7 +223,12 @@ jobs:
             summary_path="conductor/govt_archive_registered_sources_summary.md"
           else
             safe_source_type="${source_type//[^A-Za-z0-9_]/_}"
-            if [ "$offset_sources" != "0" ]; then
+            agency_id="${{ inputs.agency_id || '' }}"
+            safe_agency_id="${agency_id//[^A-Za-z0-9_]/_}"
+            if [ -n "$safe_agency_id" ]; then
+              report_path="conductor/${safe_source_type}_archive_${safe_agency_id}_report.json"
+              summary_path="conductor/${safe_source_type}_archive_${safe_agency_id}_summary.md"
+            elif [ "$offset_sources" != "0" ]; then
               report_path="conductor/${safe_source_type}_archive_offset_${offset_sources}_report.json"
               summary_path="conductor/${safe_source_type}_archive_offset_${offset_sources}_summary.md"
             else
