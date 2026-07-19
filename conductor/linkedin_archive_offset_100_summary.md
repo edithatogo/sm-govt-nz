@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-14T15:11:37+00:00
+Generated: 2026-07-19T04:08:17+00:00
 
 ## Summary
 
@@ -14,13 +14,13 @@ Generated: 2026-07-14T15:11:37+00:00
 
 ## Status counts
 
-- `http_error`: 52
-- `not_found`: 8
-- `public_snapshot_captured`: 40
+- `http_error`: 42
+- `not_found`: 9
+- `public_snapshot_captured`: 49
 
 ## Status by platform
 
-- `linkedin`: {'http_error': 52, 'not_found': 8, 'public_snapshot_captured': 40}
+- `linkedin`: {'http_error': 42, 'not_found': 9, 'public_snapshot_captured': 49}
 
 ## Notes
 
