@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T11:25:02+00:00",
+  "generated_at": "2026-07-19T23:48:21+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -1594,10 +1594,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "The read operation timed out",
       "source_id": "a87e545d8d469db9",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_timeout",
       "url": "https://www.customs.govt.nz/feed.json"
     },
     {
@@ -2964,7 +2964,8 @@
         "already_captured": 16,
         "capture_blocked": 26,
         "dns_failed": 12,
-        "invalid": 209,
+        "invalid": 208,
+        "network_timeout": 1,
         "not_acceptable": 1,
         "tls_failed": 2
       }
@@ -2974,7 +2975,8 @@
       "already_captured": 16,
       "capture_blocked": 26,
       "dns_failed": 12,
-      "invalid": 209,
+      "invalid": 208,
+      "network_timeout": 1,
       "not_acceptable": 1,
       "tls_failed": 2
     }
