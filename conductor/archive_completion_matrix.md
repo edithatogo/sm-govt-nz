@@ -1,6 +1,6 @@
 # NZ Government Archive Completion Matrix
 
-Generated: 2026-07-19T05:22:41+00:00
+Generated: 2026-07-19T05:38:16+00:00
 
 ## Completion
 
@@ -9,18 +9,18 @@ Generated: 2026-07-19T05:22:41+00:00
 | Total candidates | 5602 |
 | Registered sources | 5602 |
 | Archived sources | 2520 |
-| Terminal evidence sources | 3058 |
-| Incomplete actionable sources | 24 |
+| Terminal evidence sources | 3059 |
+| Incomplete actionable sources | 23 |
 | Automation faults | 0 |
-| Completion | 99.57% |
+| Completion | 99.59% |
 
 ## Lifecycle states
 
 | State | Count |
 | --- | ---: |
 | `archived` | 2520 |
-| `scheduled` | 24 |
-| `terminal_deleted` | 124 |
+| `scheduled` | 23 |
+| `terminal_deleted` | 125 |
 | `terminal_empty` | 1678 |
 | `terminal_external_access` | 672 |
 | `terminal_invalid` | 584 |
@@ -29,29 +29,28 @@ Generated: 2026-07-19T05:22:41+00:00
 
 | Rank | Platform | Agency | Source | Action |
 | ---: | --- | --- | --- | --- |
-| 1 | `linkedin` | `environmental-protection-authority` | `environmental-protection-authority-linkedin-c0274593` | `capture_public_linkedin_snapshot` |
-| 2 | `linkedin` | `financial-markets-authority` | `financial-markets-authority-linkedin-a028753e` | `capture_public_linkedin_snapshot` |
-| 3 | `linkedin` | `health-nz` | `health-nz-linkedin-0cd6a5ba` | `capture_public_linkedin_snapshot` |
-| 4 | `linkedin` | `health-quality-and-safety-commission` | `health-quality-and-safety-commission-linkedin-1c1a4f6d` | `capture_public_linkedin_snapshot` |
-| 5 | `linkedin` | `inland-revenue-department` | `inland-revenue-department-linkedin-92a6b59f` | `capture_public_linkedin_snapshot` |
-| 6 | `linkedin` | `invercargill-city-council` | `invercargill-city-council-linkedin-beb954b9` | `capture_public_linkedin_snapshot` |
-| 7 | `linkedin` | `kainga-ora` | `kainga-ora-linkedin-9168d822` | `capture_public_linkedin_snapshot` |
-| 8 | `linkedin` | `kiwi-group-capital` | `kiwi-group-capital-linkedin-8808a88b` | `capture_public_linkedin_snapshot` |
-| 9 | `linkedin` | `kordia` | `kordia-linkedin-b8ae9eff` | `capture_public_linkedin_snapshot` |
-| 10 | `linkedin` | `kordia` | `kordia-linkedin-e1c3751e` | `capture_public_linkedin_snapshot` |
-| 11 | `linkedin` | `law-commission` | `law-commission-linkedin-003461d1` | `capture_public_linkedin_snapshot` |
-| 12 | `linkedin` | `lincoln-university` | `lincoln-university-linkedin-2b2d9c3d` | `capture_public_linkedin_snapshot` |
-| 13 | `linkedin` | `linz` | `linz-linkedin-57a50977` | `capture_public_linkedin_snapshot` |
-| 14 | `linkedin` | `linz` | `linz-linkedin-c618d0e1` | `capture_public_linkedin_snapshot` |
-| 15 | `linkedin` | `mackenzie-district-council` | `mackenzie-district-council-linkedin-53be0b59` | `capture_public_linkedin_snapshot` |
-| 16 | `linkedin` | `manawatu-district-council` | `manawatu-district-council-linkedin-c2d6eb38` | `capture_public_linkedin_snapshot` |
-| 17 | `linkedin` | `manukau-institute-of-technology` | `manukau-institute-of-technology-linkedin-4a24e858` | `capture_public_linkedin_snapshot` |
-| 18 | `linkedin` | `maritime-nz` | `maritime-nz-linkedin-95122411` | `capture_public_linkedin_snapshot` |
-| 19 | `linkedin` | `massey-university` | `massey-university-linkedin-f7cdf1dc` | `capture_public_linkedin_snapshot` |
-| 20 | `linkedin` | `masterton-district-council` | `masterton-district-council-linkedin-ced1041e` | `capture_public_linkedin_snapshot` |
-| 21 | `linkedin` | `ministry-for-culture-and-heritage` | `ministry-for-culture-and-heritage-linkedin-baaf014e` | `capture_public_linkedin_snapshot` |
-| 22 | `linkedin` | `ministry-for-ethnic-communities` | `ministry-for-ethnic-communities-linkedin-2b18127e` | `capture_public_linkedin_snapshot` |
-| 23 | `linkedin` | `ministry-for-pacific-peoples` | `ministry-for-pacific-peoples-linkedin-5083e8eb` | `capture_public_linkedin_snapshot` |
-| 24 | `linkedin` | `ministry-for-regulation` | `ministry-for-regulation-linkedin-b92e856a` | `capture_public_linkedin_snapshot` |
+| 1 | `linkedin` | `financial-markets-authority` | `financial-markets-authority-linkedin-a028753e` | `capture_public_linkedin_snapshot` |
+| 2 | `linkedin` | `health-nz` | `health-nz-linkedin-0cd6a5ba` | `capture_public_linkedin_snapshot` |
+| 3 | `linkedin` | `health-quality-and-safety-commission` | `health-quality-and-safety-commission-linkedin-1c1a4f6d` | `capture_public_linkedin_snapshot` |
+| 4 | `linkedin` | `inland-revenue-department` | `inland-revenue-department-linkedin-92a6b59f` | `capture_public_linkedin_snapshot` |
+| 5 | `linkedin` | `invercargill-city-council` | `invercargill-city-council-linkedin-beb954b9` | `capture_public_linkedin_snapshot` |
+| 6 | `linkedin` | `kainga-ora` | `kainga-ora-linkedin-9168d822` | `capture_public_linkedin_snapshot` |
+| 7 | `linkedin` | `kiwi-group-capital` | `kiwi-group-capital-linkedin-8808a88b` | `capture_public_linkedin_snapshot` |
+| 8 | `linkedin` | `kordia` | `kordia-linkedin-b8ae9eff` | `capture_public_linkedin_snapshot` |
+| 9 | `linkedin` | `kordia` | `kordia-linkedin-e1c3751e` | `capture_public_linkedin_snapshot` |
+| 10 | `linkedin` | `law-commission` | `law-commission-linkedin-003461d1` | `capture_public_linkedin_snapshot` |
+| 11 | `linkedin` | `lincoln-university` | `lincoln-university-linkedin-2b2d9c3d` | `capture_public_linkedin_snapshot` |
+| 12 | `linkedin` | `linz` | `linz-linkedin-57a50977` | `capture_public_linkedin_snapshot` |
+| 13 | `linkedin` | `linz` | `linz-linkedin-c618d0e1` | `capture_public_linkedin_snapshot` |
+| 14 | `linkedin` | `mackenzie-district-council` | `mackenzie-district-council-linkedin-53be0b59` | `capture_public_linkedin_snapshot` |
+| 15 | `linkedin` | `manawatu-district-council` | `manawatu-district-council-linkedin-c2d6eb38` | `capture_public_linkedin_snapshot` |
+| 16 | `linkedin` | `manukau-institute-of-technology` | `manukau-institute-of-technology-linkedin-4a24e858` | `capture_public_linkedin_snapshot` |
+| 17 | `linkedin` | `maritime-nz` | `maritime-nz-linkedin-95122411` | `capture_public_linkedin_snapshot` |
+| 18 | `linkedin` | `massey-university` | `massey-university-linkedin-f7cdf1dc` | `capture_public_linkedin_snapshot` |
+| 19 | `linkedin` | `masterton-district-council` | `masterton-district-council-linkedin-ced1041e` | `capture_public_linkedin_snapshot` |
+| 20 | `linkedin` | `ministry-for-culture-and-heritage` | `ministry-for-culture-and-heritage-linkedin-baaf014e` | `capture_public_linkedin_snapshot` |
+| 21 | `linkedin` | `ministry-for-ethnic-communities` | `ministry-for-ethnic-communities-linkedin-2b18127e` | `capture_public_linkedin_snapshot` |
+| 22 | `linkedin` | `ministry-for-pacific-peoples` | `ministry-for-pacific-peoples-linkedin-5083e8eb` | `capture_public_linkedin_snapshot` |
+| 23 | `linkedin` | `ministry-for-regulation` | `ministry-for-regulation-linkedin-b92e856a` | `capture_public_linkedin_snapshot` |
 
 The full deterministic queue is in `conductor/archive_completion_work_queue.json`.
