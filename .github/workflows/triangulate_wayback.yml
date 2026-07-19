@@ -9,10 +9,30 @@ on:
         description: "Maximum source URLs to query"
         required: true
         default: "100"
+      offset:
+        description: "Offset within the deterministic source shard"
+        required: true
+        default: "0"
+      shard_index:
+        description: "Zero-based deterministic shard index"
+        required: true
+        default: "0"
+      shard_count:
+        description: "Number of deterministic shards"
+        required: true
+        default: "1"
       delay:
         description: "Delay between CDX requests in seconds"
         required: true
         default: "0.25"
+      retries:
+        description: "Maximum attempts for transient provider errors"
+        required: true
+        default: "3"
+      backoff:
+        description: "Initial retry backoff in seconds"
+        required: true
+        default: "1"
 
 permissions:
   contents: write
@@ -36,7 +56,12 @@ jobs:
         run: >-
           python scripts/triangulate_wayback.py
           --limit "${{ inputs.limit || '100' }}"
+          --offset "${{ inputs.offset || '0' }}"
+          --shard-index "${{ inputs.shard_index || '0' }}"
+          --shard-count "${{ inputs.shard_count || '1' }}"
           --delay "${{ inputs.delay || '0.25' }}"
+          --retries "${{ inputs.retries || '3' }}"
+          --backoff "${{ inputs.backoff || '1' }}"
       - name: Commit triangulation report
         run: >-
           python scripts/commit_state_updates.py

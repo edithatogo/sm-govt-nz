@@ -21,3 +21,16 @@ of New Zealand web collections, and official agency archives.
 `triangulate_common_crawl.py` queries the current Common Crawl CDX index and
 stores only index metadata. A Common Crawl hit is independent corroboration,
 not proof that the canonical source capture is complete.
+
+Both providers support deterministic bounded batches with `--offset`,
+`--shard-index`, and `--shard-count`. Sharding uses a SHA-256 bucket of the
+stable source ID (falling back to the URL), so scheduled runs can cover the
+whole matrix without depending on its ordering. Reports merge selected rows
+by `source_id` rather than replacing prior batches. Each report records the
+batch, selected count, cumulative count, GitHub run ID, and matrix revision
+when available.
+
+Transient timeouts, connection failures, rate limits, and 5xx responses use a
+bounded exponential retry policy. Deterministic 404/no-capture responses are
+not retried. The workflows expose the batch and retry controls for manual
+dispatch; the archive payload and publication workflows are unaffected.
