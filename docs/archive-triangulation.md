@@ -17,3 +17,7 @@ Anna's Archive is intentionally excluded as an ingestion or corroboration
 provider because its provenance and rights status are not suitable for this
 government archive. Lawful alternatives include Common Crawl, National Library
 of New Zealand web collections, and official agency archives.
+
+`triangulate_common_crawl.py` queries the current Common Crawl CDX index and
+stores only index metadata. A Common Crawl hit is independent corroboration,
+not proof that the canonical source capture is complete.
