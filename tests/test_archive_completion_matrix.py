@@ -148,6 +148,11 @@ def test_generated_workflow_is_daily_bounded_and_monthly_guarded() -> None:
     assert "automation_faults" in workflow
 
 
+def test_registered_source_workflow_separates_agency_shards() -> None:
+    workflow = Path(".github/workflows/archive_registered_sources.yml").read_text(encoding="utf-8")
+    assert "inputs.agency_id || 'all'" in workflow
+
+
 def test_website_fallback_dispatches_canonical_publication_workflow() -> None:
     workflow = Path(".github/workflows/archive_website_browser_fallback.yml").read_text(
         encoding="utf-8"
