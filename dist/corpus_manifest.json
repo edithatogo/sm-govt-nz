@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "750b80997c5c77e771430324220b66a469c2b6fd4866511d804eac7930acc0eb"
+      "sha256": "dc17c509ebb512c9a93433c8aa7b677819eab91ea9a2371d5a1360a779e08fa4"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638719,
+      "bytes": 24638705,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "8d35ac518beecefbf7e6ae3a583deeab956b17d3e8e19a4825910501e8a60ce2"
+      "sha256": "d1994f093324830929aa634563dc9152955b70bd94519ad5a8e72af4b5429553"
     },
     "normalized_archive.parquet": {
-      "bytes": 38932114,
+      "bytes": 38930810,
       "path": "normalized_archive.parquet",
-      "sha256": "c7aaed7a479732be4a9d7e1ea1a70a7a2dc65226d3a7b7f1ebd337814f9eab87"
+      "sha256": "a7769a1e25169cb2e4ca0fb4d80ad1511a17024da41e9b283c677b92f2c35a38"
     }
   },
   "jurisdiction": "nz",
@@ -30,7 +30,7 @@
   "normalized_record_count": 11769,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 14619,
+  "raw_file_count": 14618,
   "record_index": [
     {
       "mirror_targets": [
@@ -122881,12 +122881,12 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-19T04:29:24+00:00",
-      "source_account": "nzlawcommission",
-      "source_key": "linkedin:nzlawcommission",
+      "original_timestamp": "2026-07-19T04:29:16+00:00",
+      "source_account": "health-quality-&-safety-commission",
+      "source_key": "linkedin:health-quality-&-safety-commission",
       "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:b38cc65aa34e7260e19dade8",
-      "source_url": "https://www.linkedin.com/company/nzlawcommission"
+      "source_record_id": "linkedin_public_snapshot:1f690d2b09bb3afdd97f009c",
+      "source_url": "https://www.linkedin.com/company/health-quality-&-safety-commission"
     },
     {
       "mirror_targets": [],
@@ -123122,7 +123122,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-19T04:29:24+00:00",
+      "max_original_created_at": "2026-07-19T04:29:16+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
