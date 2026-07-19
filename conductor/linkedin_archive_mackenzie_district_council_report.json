@@ -1,0 +1,57 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-19T06:35:57+00:00",
+  "inputs": {
+    "agency_id": "mackenzie-district-council",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 100,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "linkedin",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "mackenzie-district-council",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:2f4f4479379ad8596e35ef3a",
+      "source_id": "mackenzie-district-council-linkedin-53be0b59",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://nz.linkedin.com/company/mackenzie-district-council"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "linkedin": 1
+    },
+    "selected_sources": 1,
+    "status_by_platform": {
+      "linkedin": {
+        "public_snapshot_captured": 1
+      }
+    },
+    "status_by_provider": {},
+    "status_counts": {
+      "public_snapshot_captured": 1
+    }
+  }
+}
