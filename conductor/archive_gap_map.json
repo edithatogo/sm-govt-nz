@@ -1,30 +1,17 @@
 {
   "gaps": [
     {
-      "agency_id": "aut-university",
+      "agency_id": "crown-law-office",
       "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "HTTP 999: <none>",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
       "report": "conductor/linkedin_archive_report.json",
-      "source_id": "aut-university-linkedin-ff478bdc",
-      "status": "http_error",
+      "source_id": "34db903d02ea6b0b",
+      "status": "not_found",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.linkedin.com/edu/school?id=15502"
-    },
-    {
-      "agency_id": "aut-university",
-      "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "HTTP 999: <none>",
-      "report": "conductor/linkedin_archive_report.json",
-      "source_id": "377642ad810ba36f",
-      "status": "http_error",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.linkedin.com/school/auckland-university-of-technology"
+      "url": "https://www.linkedin.com/company/crown-law-office-new-zealand"
     }
   ],
   "inputs": {
@@ -35,33 +22,33 @@
   "report_summaries": {
     "conductor/linkedin_archive_report.json": {
       "platform_counts": {
-        "linkedin": 2
+        "linkedin": 1
       },
-      "selected_sources": 2,
+      "selected_sources": 1,
       "status_by_platform": {
         "linkedin": {
-          "http_error": 2
+          "not_found": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "http_error": 2
+        "not_found": 1
       }
     }
   },
   "summary": {
-    "gap_count": 2,
+    "gap_count": 1,
     "input_status_counts": {
-      "http_error": 2
+      "not_found": 1
     },
     "platform_counts": {
-      "linkedin": 2
+      "linkedin": 1
     },
     "priority_counts": {
-      "review": 2
+      "p1_existing_resources": 1
     },
     "status_counts": {
-      "http_error": 2
+      "not_found": 1
     },
     "superseded_source_count": 0
   }
