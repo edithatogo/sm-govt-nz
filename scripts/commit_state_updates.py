@@ -1,7 +1,9 @@
 import argparse
 import glob
 import os
+import random
 import subprocess
+import time
 from dataclasses import dataclass
 
 
@@ -85,6 +87,10 @@ def commit_selected_paths(message: str, paths: list[str], *, force: bool = False
 
 def push_with_rebase(branch: str, max_attempts: int = 3) -> None:
     for attempt in range(1, max_attempts + 1):
+        if attempt > 1:
+            delay = min(10.0, attempt * 0.5) + random.random()
+            print(f"Remote moved; waiting {delay:.2f}s before retry {attempt}.")
+            time.sleep(delay)
         if has_worktree_changes():
             run_git(["stash", "push", "--include-untracked", "--message", "commit-state-updates-autostash"], check=False)
         run_git(["fetch", "origin", branch])

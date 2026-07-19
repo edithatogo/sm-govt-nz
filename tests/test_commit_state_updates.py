@@ -57,3 +57,22 @@ def test_push_with_rebase_retries_when_remote_moves(monkeypatch) -> None:
     assert push_attempts["count"] == 2
     assert calls.count(["fetch", "origin", "master"]) == 2
     assert calls.count(["rebase", "origin/master"]) == 2
+
+
+def test_push_with_rebase_delays_only_after_a_failed_push(monkeypatch) -> None:
+    sleeps = []
+    monkeypatch.setattr(commit_state.time, "sleep", sleeps.append)
+    push_attempts = {"count": 0}
+
+    def fake_run_git(args, check=True):
+        if args[:2] == ["push", "origin"]:
+            push_attempts["count"] += 1
+            if push_attempts["count"] == 1:
+                return commit_state.GitResult(returncode=1, stdout="", stderr="remote moved")
+        return commit_state.GitResult(returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(commit_state, "run_git", fake_run_git)
+    commit_state.push_with_rebase("master", max_attempts=2)
+
+    assert len(sleeps) == 1
+    assert 1.0 <= sleeps[0] <= 3.0
