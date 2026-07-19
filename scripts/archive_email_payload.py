@@ -148,13 +148,19 @@ def _upsert_normalized_record(record: NormalizedArchiveRecord, normalized_root: 
                 continue
             payload = json.loads(line)
             existing[str(payload["record_id"])] = payload
-    existing[record["record_id"]] = dict(record)
+    candidate = dict(record)
+    if existing.get(record["record_id"]) == candidate:
+        return
+    existing[record["record_id"]] = candidate
     shard_path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
         json.dumps(existing[key], ensure_ascii=False, sort_keys=True)
         for key in sorted(existing)
     ]
-    shard_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    rendered = "\n".join(lines) + "\n"
+    if shard_path.exists() and shard_path.read_text(encoding="utf-8") == rendered:
+        return
+    shard_path.write_text(rendered, encoding="utf-8")
 
 
 def _existing_normalized_record(record_id: str, shard_path: Path) -> dict[str, Any]:
