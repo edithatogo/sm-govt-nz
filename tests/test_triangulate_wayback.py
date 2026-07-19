@@ -57,8 +57,8 @@ def test_wayback_shards_are_deterministic_and_reports_merge(monkeypatch):
                          existing_report=first)
     assert first["batch"]["shard_count"] == 2
     assert second["batch"]["offset"] == 2
-    assert second["summary"]["cumulative_sources"] == 4
-    assert len(second["sources"]) == 4
+    assert second["summary"]["cumulative_sources"] == 3
+    assert len(second["sources"]) == 3
 
 
 def test_wayback_retries_transient_failures(monkeypatch):

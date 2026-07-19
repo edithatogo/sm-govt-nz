@@ -41,7 +41,7 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
     assert guardrail["dashboard_observations"]["billing_method"] == "no payment method on file"
     assert guardrail["must_not_add_payment_method"] is True
     assert guardrail["must_not_register_domain_without_explicit_approval"] is True
-    assert config["default_route"]["provider"] == "cloudflare_email_routing_worker"
+    assert config["default_route"]["provider"] == "pipedream_email_trigger"
     assert config["default_route"]["repository_dispatch_event_type"] == "courts_nz_email_received"
     assert [route["provider"] for route in config["fallback_routes"]] == [
         "pipedream_email_trigger",

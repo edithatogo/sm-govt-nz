@@ -36,7 +36,7 @@ def archive_email_payload(
     normalized_path = Path(normalized_root) / f"{month}.jsonl"
     source_platform = str(payload.get("source_platform") or payload.get("platform") or "email")
     existing_record = _existing_normalized_record(f"{source_platform}:{record_id}", normalized_path)
-    if existing_record:
+    if existing_record and existing_record.get("content") == _normalized_content(payload):
         if report_path is not None:
             _write_email_report(existing_record, Path(report_path))
         return existing_record
