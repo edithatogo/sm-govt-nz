@@ -1,5 +1,19 @@
 {
-  "gaps": [],
+  "gaps": [
+    {
+      "agency_id": "dpmc",
+      "platform": "linkedin",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "report": "conductor/linkedin_archive_report.json",
+      "source_id": "ca6bebd5306e06ac",
+      "status": "not_found",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.linkedin.com/company/department-of-the-prime-minister-and-cabinet-nz"
+    }
+  ],
   "inputs": {
     "reports": [
       "conductor/linkedin_archive_report.json"
@@ -13,28 +27,28 @@
       "selected_sources": 1,
       "status_by_platform": {
         "linkedin": {
-          "public_snapshot_captured": 1
+          "not_found": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "public_snapshot_captured": 1
+        "not_found": 1
       }
     }
   },
   "summary": {
-    "gap_count": 0,
+    "gap_count": 1,
     "input_status_counts": {
-      "public_snapshot_captured": 1
+      "not_found": 1
     },
     "platform_counts": {
       "linkedin": 1
     },
     "priority_counts": {
-      "archived_or_already_archived": 1
+      "p1_existing_resources": 1
     },
     "status_counts": {
-      "public_snapshot_captured": 1
+      "not_found": 1
     },
     "superseded_source_count": 0
   }
