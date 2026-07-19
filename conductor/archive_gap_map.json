@@ -1,17 +1,17 @@
 {
   "gaps": [
     {
-      "agency_id": "ara-institute-of-canterbury",
+      "agency_id": "electricity-authority",
       "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "HTTP 999: <none>",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
       "report": "conductor/linkedin_archive_report.json",
-      "source_id": "2046be7ce24fc8a8",
-      "status": "http_error",
+      "source_id": "4331aa09fccdb391",
+      "status": "not_found",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.linkedin.com/school/ara-institute-of-canterbury"
+      "url": "https://www.linkedin.com/company/electricity-authority-nz"
     }
   ],
   "inputs": {
@@ -22,33 +22,38 @@
   "report_summaries": {
     "conductor/linkedin_archive_report.json": {
       "platform_counts": {
-        "linkedin": 1
+        "linkedin": 2
       },
-      "selected_sources": 1,
+      "selected_sources": 2,
       "status_by_platform": {
         "linkedin": {
-          "http_error": 1
+          "not_found": 1,
+          "public_snapshot_captured": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "http_error": 1
+        "not_found": 1,
+        "public_snapshot_captured": 1
       }
     }
   },
   "summary": {
     "gap_count": 1,
     "input_status_counts": {
-      "http_error": 1
+      "not_found": 1,
+      "public_snapshot_captured": 1
     },
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
     "priority_counts": {
-      "review": 1
+      "archived_or_already_archived": 1,
+      "p1_existing_resources": 1
     },
     "status_counts": {
-      "http_error": 1
+      "not_found": 1,
+      "public_snapshot_captured": 1
     },
     "superseded_source_count": 0
   }
