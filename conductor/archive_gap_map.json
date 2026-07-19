@@ -1,17 +1,17 @@
 {
   "gaps": [
     {
-      "agency_id": "financial-markets-authority",
+      "agency_id": "ministry-for-culture-and-heritage",
       "platform": "linkedin",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 404: Not Found",
       "report": "conductor/linkedin_archive_report.json",
-      "source_id": "aa13bd00f4ab3134",
+      "source_id": "0ffdbd4d6955bde5",
       "status": "not_found",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.linkedin.com/company/financial-markets-authority-nz"
+      "url": "https://www.linkedin.com/company/ministry-for-culture-and-heritage/"
     }
   ],
   "inputs": {
@@ -22,33 +22,38 @@
   "report_summaries": {
     "conductor/linkedin_archive_report.json": {
       "platform_counts": {
-        "linkedin": 1
+        "linkedin": 2
       },
-      "selected_sources": 1,
+      "selected_sources": 2,
       "status_by_platform": {
         "linkedin": {
-          "not_found": 1
+          "not_found": 1,
+          "public_snapshot_captured": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "not_found": 1
+        "not_found": 1,
+        "public_snapshot_captured": 1
       }
     }
   },
   "summary": {
     "gap_count": 1,
     "input_status_counts": {
-      "not_found": 1
+      "not_found": 1,
+      "public_snapshot_captured": 1
     },
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
     "priority_counts": {
+      "archived_or_already_archived": 1,
       "p1_existing_resources": 1
     },
     "status_counts": {
-      "not_found": 1
+      "not_found": 1,
+      "public_snapshot_captured": 1
     },
     "superseded_source_count": 0
   }
