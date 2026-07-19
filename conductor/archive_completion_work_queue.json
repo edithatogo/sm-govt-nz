@@ -1,36 +1,6 @@
 {
-  "generated_at": "2026-07-19T08:17:42+00:00",
+  "generated_at": "2026-07-19T08:20:07+00:00",
   "items": [
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "ministry-for-ethnic-communities",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "ministry-for-ethnic-communities",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 1,
-      "source_id": "ministry-for-ethnic-communities-linkedin-2b18127e",
-      "url": "https://linkedin.com/company/ethniccommunitiesgovtnz"
-    },
     {
       "acceptance_condition": "archived record or evidence-backed terminal status",
       "agency_id": "ministry-for-pacific-peoples",
@@ -57,7 +27,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 2,
+      "rank": 1,
       "source_id": "ministry-for-pacific-peoples-linkedin-5083e8eb",
       "url": "https://linkedin.com/company/ministry-for-pacific-peoples"
     },
@@ -87,15 +57,15 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 3,
+      "rank": 2,
       "source_id": "ministry-for-regulation-linkedin-b92e856a",
       "url": "https://www.linkedin.com/company/ministry-for-regulation/posts/?feedView=all"
     }
   ],
   "schema_version": 1,
   "summary": {
-    "dispatchable_count": 3,
-    "queue_count": 3
+    "dispatchable_count": 2,
+    "queue_count": 2
   },
   "track_id": "govt_archive_all_source_completion_20260713"
 }
