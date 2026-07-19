@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:20:49+00:00",
+  "generated_at": "2026-07-19T04:20:54+00:00",
   "inputs": {
-    "agency_id": "childrens-commissioner",
+    "agency_id": "health-quality-and-safety-commission",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,26 +28,26 @@
   },
   "results": [
     {
-      "agency_id": "childrens-commissioner",
+      "agency_id": "health-quality-and-safety-commission",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:1f690d2b09bb3afdd97f009c",
+      "source_id": "health-quality-and-safety-commission-linkedin-a1d22c81",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/health-quality-&-safety-commission"
+    },
+    {
+      "agency_id": "health-quality-and-safety-commission",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 404: Not Found",
-      "source_id": "d9530aa6d002e1e2",
+      "source_id": "6275eac40e9c563e",
       "source_type": "social_profile",
       "status": "not_found",
-      "url": "https://www.linkedin.com/company/childrens-commissioner-mana-mokopuna"
-    },
-    {
-      "agency_id": "childrens-commissioner",
-      "archive_status": "manual_seed",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:3f000e35bc6266e5bd8751e0",
-      "source_id": "childrens-commissioner-linkedin-4e7dccd7",
-      "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/mana-mokopuna-children-and-young-people-s-commission/"
+      "url": "https://www.linkedin.com/company/health-quality-safety-commission"
     }
   ],
   "summary": {
