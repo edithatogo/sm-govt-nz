@@ -19,7 +19,13 @@ def select_dispatches(queue: dict[str, Any], max_actions: int) -> list[dict[str,
         dispatch = item.get("dispatch") or {}
         if not dispatch.get("dispatchable"):
             continue
-        signature = json.dumps(dispatch, sort_keys=True)
+        inputs = dispatch.get("inputs") or {}
+        concurrency_lane = {
+            "workflow": dispatch.get("workflow"),
+            "source_type": inputs.get("source_type"),
+            "offset_sources": inputs.get("offset_sources", "0"),
+        }
+        signature = json.dumps(concurrency_lane, sort_keys=True)
         if signature in seen:
             continue
         seen.add(signature)
