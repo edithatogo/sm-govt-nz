@@ -1,6 +1,6 @@
 # NZ Government Archive Completion Matrix
 
-Generated: 2026-07-19T08:24:34+00:00
+Generated: 2026-07-19T08:27:08+00:00
 
 ## Completion
 
@@ -8,18 +8,17 @@ Generated: 2026-07-19T08:24:34+00:00
 | --- | ---: |
 | Total candidates | 5602 |
 | Registered sources | 5602 |
-| Archived sources | 2534 |
+| Archived sources | 2535 |
 | Terminal evidence sources | 3067 |
-| Incomplete actionable sources | 1 |
+| Incomplete actionable sources | 0 |
 | Automation faults | 0 |
-| Completion | 99.98% |
+| Completion | 100.0% |
 
 ## Lifecycle states
 
 | State | Count |
 | --- | ---: |
-| `archived` | 2534 |
-| `scheduled` | 1 |
+| `archived` | 2535 |
 | `terminal_deleted` | 129 |
 | `terminal_empty` | 1678 |
 | `terminal_external_access` | 676 |
@@ -29,6 +28,5 @@ Generated: 2026-07-19T08:24:34+00:00
 
 | Rank | Platform | Agency | Source | Action |
 | ---: | --- | --- | --- | --- |
-| 1 | `linkedin` | `ministry-for-regulation` | `ministry-for-regulation-linkedin-b92e856a` | `capture_public_linkedin_snapshot` |
 
 The full deterministic queue is in `conductor/archive_completion_work_queue.json`.
