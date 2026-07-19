@@ -1,54 +1,59 @@
 {
   "gaps": [
     {
-      "agency_id": "lincoln-university",
+      "agency_id": "linz",
       "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "HTTP 999: <none>",
-      "report": "conductor/linkedin_archive_lincoln_university_report.json",
-      "source_id": "5b070f37d132d016",
-      "status": "http_error",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "report": "conductor/linkedin_archive_linz_report.json",
+      "source_id": "0d94aac6adf85d9f",
+      "status": "not_found",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.linkedin.com/school/lincoln-university-new-zealand"
+      "url": "https://www.linkedin.com/company/toitu-te-whenua-linz/"
     }
   ],
   "inputs": {
     "reports": [
-      "conductor/linkedin_archive_lincoln_university_report.json"
+      "conductor/linkedin_archive_linz_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/linkedin_archive_lincoln_university_report.json": {
+    "conductor/linkedin_archive_linz_report.json": {
       "platform_counts": {
-        "linkedin": 1
+        "linkedin": 2
       },
-      "selected_sources": 1,
+      "selected_sources": 2,
       "status_by_platform": {
         "linkedin": {
-          "http_error": 1
+          "not_found": 1,
+          "public_snapshot_captured": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "http_error": 1
+        "not_found": 1,
+        "public_snapshot_captured": 1
       }
     }
   },
   "summary": {
     "gap_count": 1,
     "input_status_counts": {
-      "http_error": 1
+      "not_found": 1,
+      "public_snapshot_captured": 1
     },
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
     "priority_counts": {
-      "review": 1
+      "archived_or_already_archived": 1,
+      "p1_existing_resources": 1
     },
     "status_counts": {
-      "http_error": 1
+      "not_found": 1,
+      "public_snapshot_captured": 1
     },
     "superseded_source_count": 0
   }
