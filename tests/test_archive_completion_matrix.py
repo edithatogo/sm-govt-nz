@@ -136,6 +136,45 @@ def test_url_report_matching_prefers_success_over_onboarding_fallback(tmp_path: 
     assert matrix["sources"][0]["latest_status"] == "public_snapshot_captured"
 
 
+def test_url_report_matching_can_override_lower_ranked_direct_source_report(tmp_path: Path) -> None:
+    conductor = tmp_path / "conductor"
+    conductor.mkdir()
+    (conductor / "archive_publication_status.json").write_text("{}", encoding="utf-8")
+    readiness = {
+        "total_sources": 1,
+        "sources": [{
+            "source_id": "candidate-linkedin",
+            "platform": "linkedin",
+            "source_type": "social_profile",
+            "url": "https://www.linkedin.com/company/example",
+            "readiness": "registered",
+        }],
+    }
+    manifest = {"sources": readiness["sources"]}
+    reports = {
+        "candidate-linkedin": {
+            "source_id": "candidate-linkedin",
+            "url": "https://www.linkedin.com/company/example",
+            "status": "public_fallback_available",
+            "evidence_report": "manual_seed_onboarding_report.json",
+        },
+        "registered-linkedin": {
+            "source_id": "registered-linkedin",
+            "url": "https://www.linkedin.com/company/example/",
+            "status": "http_error",
+            "reason": "HTTP 999: blocked",
+            "evidence_report": "linkedin_archive_report.json",
+        },
+    }
+
+    matrix, _queue = build_completion_matrix(
+        readiness, manifest, reports, Counter(), conductor
+    )
+
+    assert matrix["sources"][0]["completion_state"] == "terminal_external_access"
+    assert matrix["sources"][0]["latest_status"] == "http_error"
+
+
 def test_generated_workflow_is_daily_bounded_and_monthly_guarded() -> None:
     workflow = Path(".github/workflows/archive_completion_loop.yml").read_text(encoding="utf-8")
     assert 'cron: "41 4 * * *"' in workflow

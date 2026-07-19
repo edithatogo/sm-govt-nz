@@ -343,9 +343,14 @@ def build_completion_matrix(
                 0,
             )
         merged = {**manifest_row, **source, "_manifest_offset": manifest_offset}
-        evidence = report_index.get(key) or next(
-            (report_by_url[url_key] for url_key in url_keys if url_key in report_by_url),
-            {},
+        evidence_candidates = [report_index[key]] if key in report_index else []
+        evidence_candidates.extend(
+            report_by_url[url_key] for url_key in url_keys if url_key in report_by_url
+        )
+        evidence = max(
+            evidence_candidates,
+            key=lambda candidate: status_rank(str(candidate.get("status") or "")),
+            default={},
         )
         normalized_count = max(normalized[key], normalized[manifest_key])
         state, blocker = classify_state(merged, registered, evidence, normalized_count)
