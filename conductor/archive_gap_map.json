@@ -1,59 +1,54 @@
 {
   "gaps": [
     {
-      "agency_id": "environmental-protection-authority",
+      "agency_id": "financial-markets-authority",
       "platform": "linkedin",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 404: Not Found",
-      "report": "conductor/linkedin_archive_environmental_protection_authority_report.json",
-      "source_id": "1f6f2117c0dd66a8",
+      "report": "conductor/linkedin_archive_financial_markets_authority_report.json",
+      "source_id": "aa13bd00f4ab3134",
       "status": "not_found",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.linkedin.com/company/environmental-protection-authority-nz"
+      "url": "https://www.linkedin.com/company/financial-markets-authority-nz"
     }
   ],
   "inputs": {
     "reports": [
-      "conductor/linkedin_archive_environmental_protection_authority_report.json"
+      "conductor/linkedin_archive_financial_markets_authority_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/linkedin_archive_environmental_protection_authority_report.json": {
+    "conductor/linkedin_archive_financial_markets_authority_report.json": {
       "platform_counts": {
-        "linkedin": 2
+        "linkedin": 1
       },
-      "selected_sources": 2,
+      "selected_sources": 1,
       "status_by_platform": {
         "linkedin": {
-          "not_found": 1,
-          "public_snapshot_captured": 1
+          "not_found": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "not_found": 1,
-        "public_snapshot_captured": 1
+        "not_found": 1
       }
     }
   },
   "summary": {
     "gap_count": 1,
     "input_status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "not_found": 1
     },
     "platform_counts": {
-      "linkedin": 2
+      "linkedin": 1
     },
     "priority_counts": {
-      "archived_or_already_archived": 1,
       "p1_existing_resources": 1
     },
     "status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "not_found": 1
     },
     "superseded_source_count": 0
   }

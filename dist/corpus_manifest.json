@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "4cbb7d4cecb68c1bf21d3e8538e1b844a677083dca5767aecdb5c7b66eecbcbd"
+      "sha256": "42fa98ccde119d1961a7e0f2868c630b16f47cd5e9e179a88dac0f3c39a09466"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638703,
+      "bytes": 24638705,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "8c36bba438fec8f7234d9ae73a83d5b6b66127186816dcc5874308228f45dd7e"
+      "sha256": "b2347160f0c774be0a9a07aa4d9ea7c273e0580ce0df7739c627c3d0152bb531"
     },
     "normalized_archive.parquet": {
-      "bytes": 38933060,
+      "bytes": 39048971,
       "path": "normalized_archive.parquet",
-      "sha256": "b2608cb3c84a3ac6e00f044ee4c6eb8a1884cc6f48a4924f9af99ee409bbf46a"
+      "sha256": "f4027651667befe2db549f24363155213c0a32303644c92f452a1213b785aa58"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11769,
+  "normalized_record_count": 11768,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 14689,
+  "raw_file_count": 14716,
   "record_index": [
     {
       "mirror_targets": [
@@ -122881,15 +122881,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-19T05:23:27+00:00",
-      "source_account": "2139834",
-      "source_key": "linkedin:2139834",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:79f245424964fdea0987d007",
-      "source_url": "https://www.linkedin.com/company/2139834/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -123090,7 +123081,7 @@
     "email": 21,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 51,
+    "linkedin": 50,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -123122,7 +123113,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-19T05:23:27+00:00",
+      "max_original_created_at": "2026-07-13T01:53:31+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
