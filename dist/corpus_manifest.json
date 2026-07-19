@@ -9,14 +9,14 @@
       "sha256": "e77d46bebd3d9f10c5ae72017f009b5fdb01a897d414abb197685489d619fb8e"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638705,
+      "bytes": 24638742,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "b143624a2798ddd3a47ff9fe3d04ca1afb4c119d57c7ffcdf9056d5d1eac5528"
+      "sha256": "b9586ca12c032b091a9acb81e3e8b02cefb090e348e33420339fe25a53066f42"
     },
     "normalized_archive.parquet": {
-      "bytes": 39048971,
+      "bytes": 38928717,
       "path": "normalized_archive.parquet",
-      "sha256": "f4027651667befe2db549f24363155213c0a32303644c92f452a1213b785aa58"
+      "sha256": "4a5a389a37c8aef797af46a4fdb642fa312b5159ac1e7a8edfe4c4111c432490"
     }
   },
   "jurisdiction": "nz",
@@ -27,7 +27,7 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11768,
+  "normalized_record_count": 11770,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
   "raw_file_count": 14618,
@@ -122881,6 +122881,24 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-19T04:29:35+00:00",
+      "source_account": "ministry-for-regulation",
+      "source_key": "linkedin:ministry-for-regulation",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:04988da51ef7e9228ba7de87",
+      "source_url": "https://www.linkedin.com/company/ministry-for-regulation/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T04:29:36+00:00",
+      "source_account": "LinkedIn",
+      "source_key": "linkedin:LinkedIn",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:796d7bbb821d8d475b4dc629",
+      "source_url": "https://www.linkedin.com/company/ministry-for-regulation/posts/?feedView=all"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -123081,7 +123099,7 @@
     "email": 21,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 50,
+    "linkedin": 52,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -123113,7 +123131,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-13T01:53:31+00:00",
+      "max_original_created_at": "2026-07-19T04:29:36+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {

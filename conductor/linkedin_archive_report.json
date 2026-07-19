@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:29:37+00:00",
+  "generated_at": "2026-07-19T04:29:36+00:00",
   "inputs": {
-    "agency_id": "massey-university",
+    "agency_id": "ministry-for-regulation",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,30 +28,41 @@
   },
   "results": [
     {
-      "agency_id": "massey-university",
+      "agency_id": "ministry-for-regulation",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "5c870226ca582324",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:04988da51ef7e9228ba7de87",
+      "source_id": "647df0be9f9ad9db",
       "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/massey-university"
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/ministry-for-regulation/"
+    },
+    {
+      "agency_id": "ministry-for-regulation",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:796d7bbb821d8d475b4dc629",
+      "source_id": "ministry-for-regulation-linkedin-b92e856a",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/ministry-for-regulation/posts/?feedView=all"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1
+        "public_snapshot_captured": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1
+      "public_snapshot_captured": 2
     }
   }
 }

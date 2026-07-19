@@ -1,19 +1,5 @@
 {
-  "gaps": [
-    {
-      "agency_id": "massey-university",
-      "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "HTTP 999: <none>",
-      "report": "conductor/linkedin_archive_report.json",
-      "source_id": "5c870226ca582324",
-      "status": "http_error",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.linkedin.com/school/massey-university"
-    }
-  ],
+  "gaps": [],
   "inputs": {
     "reports": [
       "conductor/linkedin_archive_report.json"
@@ -22,33 +8,33 @@
   "report_summaries": {
     "conductor/linkedin_archive_report.json": {
       "platform_counts": {
-        "linkedin": 1
+        "linkedin": 2
       },
-      "selected_sources": 1,
+      "selected_sources": 2,
       "status_by_platform": {
         "linkedin": {
-          "http_error": 1
+          "public_snapshot_captured": 2
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "http_error": 1
+        "public_snapshot_captured": 2
       }
     }
   },
   "summary": {
-    "gap_count": 1,
+    "gap_count": 0,
     "input_status_counts": {
-      "http_error": 1
+      "public_snapshot_captured": 2
     },
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
     "priority_counts": {
-      "review": 1
+      "archived_or_already_archived": 2
     },
     "status_counts": {
-      "http_error": 1
+      "public_snapshot_captured": 2
     },
     "superseded_source_count": 0
   }
