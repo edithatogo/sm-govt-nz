@@ -1,22 +1,815 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-19T05:36:09+00:00",
+  "generated_at": "2026-07-19T10:35:01+00:00",
   "provider": "common_crawl_index",
   "purpose": "independent historical corroboration metadata; not canonical capture",
   "snapshot_downloaded": false,
   "index_url": "https://index.commoncrawl.org/CC-MAIN-2026-25-index",
-  "source_limit": 1,
+  "source_limit": 100,
   "summary": {
-    "sources_checked": 1,
+    "sources_checked": 100,
     "capture_metadata_sources": 0,
-    "no_capture_sources": 1,
-    "provider_errors": 0
+    "no_capture_sources": 99,
+    "provider_errors": 1
   },
   "sources": [
     {
       "source_id": "9635209a748b4790",
       "platform": "api",
       "url": "https://www.acc.co.nz/.well-known/webfinger",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "cec34ffc95773934",
+      "platform": "api",
+      "url": "https://www.acc.co.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accident-compensation-corporation-facebook-a4eafd5a",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/ACCNewZealand",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accident-compensation-corporation-instagram-ebbf541a",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/accnewzealand",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accident-compensation-corporation-instagram-41dd3f71",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/accnewzealand/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "97f951e64bdb2a2d",
+      "platform": "json_feed",
+      "url": "https://www.acc.co.nz/feed.json",
+      "common_crawl_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out"
+    },
+    {
+      "source_id": "accident-compensation-corporation-linkedin-757de80b",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/acc-new-zealand",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accident-compensation-corporation-linkedin-7a8ccc14",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/acc-new-zealand/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accident-compensation-corporation-newsletter-a2c2ad5b",
+      "platform": "newsletter",
+      "url": "https://www.acc.co.nz/for-business/get-to-know-us/working-with-business",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "1131fcf3fe0cf49f",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/api",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "2762e32ff6a8c6c1",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/atom.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "71cb57cc0ecd072d",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/feed",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "449cd0c1cdacdb1e",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/media",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "7560a8eb75e336e7",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "81388bc7560e029b",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/news",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "7c087238ec96250f",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/news-and-events",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "244ba566c890c0ed",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/newsletter",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "96368d3e0b990eb7",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/publications",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "4fbdc49489686365",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/rss",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "2e15eff2e8c1924a",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "8d1291b4b47c3025",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/subscribe",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accident-compensation-corporation-website_page-2f4e753e",
+      "platform": "website_page",
+      "url": "https://www.acc.co.nz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accident-compensation-corporation-youtube-27f8304b",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@accnz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accident-compensation-corporation-youtube-07699fd4",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "09ac8da8255b089e",
+      "platform": "api",
+      "url": "https://www.accreditation.co.nz/.well-known/webfinger",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "425ebd857705b53b",
+      "platform": "api",
+      "url": "https://www.accreditation.co.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "3caae6ccb89ff631",
+      "platform": "json_feed",
+      "url": "https://www.accreditation.co.nz/feed.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "3455485d0c451fdf",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/api",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "707a2a7261f0fc41",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/atom.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "b946587fd3a6104a",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/feed",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "d80d26d70622f584",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/media",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "459fd75a866a8bcf",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "f1788672275781bb",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/news",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e8b4cbcde8eeeeae",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/news-and-events",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e7f8d559fa5e635e",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/newsletter",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "701d2ff1b3546abf",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/publications",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "7ee5f10698aabbe9",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/rss",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "31e6f23e891646be",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "250dbc73984ed112",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/subscribe",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accreditation-council-website_page-5d885a8f",
+      "platform": "website_page",
+      "url": "https://www.accreditation.co.nz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "c5a5ba0f2acc6aa5",
+      "platform": "api",
+      "url": "https://www.airways.co.nz/.well-known/webfinger",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e435af5750cfb7e4",
+      "platform": "api",
+      "url": "https://www.airways.co.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "airways-nz-facebook-2e76afae",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/AirwaysNZ/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "airways-nz-instagram-424df104",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/airwaysnz/?hl=en",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "7ce199a7e4b32fd2",
+      "platform": "json_feed",
+      "url": "https://www.airways.co.nz/feed.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "airways-nz-linkedin-5cd4e4eb",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/airways-new-zealand",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "airways-nz-linkedin-99c4b2d6",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/airways-new-zealand/?originalSubdomain=nz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "6c5611f7f191d4a9",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/api",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "fc66b7d868ec936f",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/atom.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "b109ec08a3e1ada6",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/feed",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "3fa6c52658591fd0",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/media",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "b0b7ccc3cdefef04",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "df8eafca2854688a",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/news",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e622fd4a4675e9b2",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/news-and-events",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "426ed61d17805571",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/newsletter",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "b180280541d8bd0b",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/publications",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "ce726548fc74548c",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/rss",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "a4e96c596f10e291",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "af56c37dab273c8b",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/subscribe",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "airways-nz-website_page-8f2cead0",
+      "platform": "website_page",
+      "url": "https://www.airways.co.nz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "f44b74f32571294d",
+      "platform": "api",
+      "url": "https://www.pestoff.co.nz/.well-known/webfinger",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "290f972006bac13d",
+      "platform": "api",
+      "url": "https://www.pestoff.co.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "animal-control-products-json_feed-ea8b84d5",
+      "platform": "json_feed",
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "animal-control-products-json_feed-17f27f26",
+      "platform": "json_feed",
+      "url": "https://pestoff.co.nz/wp-json/wp/v2/pages/2",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "bbf777aacfa609d8",
+      "platform": "json_feed",
+      "url": "https://www.pestoff.co.nz/feed.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "afcf2d7582935a0e",
+      "platform": "rss",
+      "url": "https://pestoff.co.nz/feed/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "9ec941b1b4a5af62",
+      "platform": "rss",
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "758209a956979f16",
+      "platform": "rss",
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F&format=xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "8fb3dc84f2e69aff",
+      "platform": "rss",
+      "url": "https://pestoff.co.nz/wp-json/wp/v2/pages/2",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "d6a26a2ca3fb1f0d",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/api",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "ab7ed23916f98c24",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/atom.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "b185b7477af7a768",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/feed",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "ad7210b1b7b02829",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/media",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "8de1c571151b9246",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "501c8cb59c2c771e",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/news",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "f8bf97a6c435bb84",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/news-and-events",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "1e7a9057608cc3d3",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/newsletter",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "4216d14ad0fb06e4",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/publications",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "726201313eed2d46",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/rss",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e77c1f4da75f3899",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "dee68e0ebc974055",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/subscribe",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "animal-control-products-website_page-15dfd90e",
+      "platform": "website_page",
+      "url": "https://www.pestoff.co.nz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "4bdccc3719c4c083",
+      "platform": "api",
+      "url": "https://www.antarcticanz.govt.nz/.well-known/webfinger",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "2d5d03bdae8f52ad",
+      "platform": "api",
+      "url": "https://www.antarcticanz.govt.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "antarctica-nz-facebook-6494d1ed",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/Antarctica.New.Zealand/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "antarctica-nz-facebook-d81b995d",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/AntarcticaNZ",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "antarctica-nz-instagram-6ead4fe3",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/antarctica.nz/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "antarctica-nz-instagram-e4af56d7",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/antarcticanz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "a66e8704256371d0",
+      "platform": "json_feed",
+      "url": "https://www.antarcticanz.govt.nz/feed.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "antarctica-nz-linkedin-e7a28b13",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/antarctica-new-zealand",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "8697662c8cb53994",
+      "platform": "rss",
+      "url": "https://www.antarcticanz.govt.nz/atom.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "3786d0f11f9bd517",
+      "platform": "rss",
+      "url": "https://www.antarcticanz.govt.nz/feed",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "96ad296436c6a852",
+      "platform": "rss",
+      "url": "https://www.antarcticanz.govt.nz/rss",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e9f86a8898c8141c",
+      "platform": "rss",
+      "url": "https://www.antarcticanz.govt.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "antarctica-nz-website_page-1cd1a2ba",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "848ae72b5ddd2f0c",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/api",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "60cdcbd500daadb1",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/media",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "cf7529f187d846b1",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "6a77126dfac2a760",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/news",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "26512b65170cc30d",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/news-and-events",
       "common_crawl_status": "no_capture_found",
       "capture_count": 0,
       "captures": []
