@@ -85,8 +85,11 @@ def triangulate(matrix: dict, *, limit: int = 100, delay: float = 0.25) -> dict:
                 result["capture_count"] = len(captures)
                 result["common_crawl_status"] = "capture_metadata_found" if captures else "no_capture_found"
             except Exception as exc:
-                result["common_crawl_status"] = "provider_error"
-                result["error"] = f"{type(exc).__name__}: {exc}"
+                if getattr(exc, "code", None) == 404:
+                    result["common_crawl_status"] = "no_capture_found"
+                else:
+                    result["common_crawl_status"] = "provider_error"
+                    result["error"] = f"{type(exc).__name__}: {exc}"
         rows.append(result)
         if delay:
             time.sleep(delay)
