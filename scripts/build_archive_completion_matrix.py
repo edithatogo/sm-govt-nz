@@ -235,7 +235,8 @@ def dispatch_for(row: dict[str, Any], state: str) -> dict[str, Any]:
     inputs: dict[str, str] = {}
     if workflow == "archive_registered_sources.yml":
         offset = 100 * (int(row.get("_manifest_offset") or 0) // 100)
-        inputs = {"source_type": platform, "agency_id": "", "include_blocked": "true", "dry_run": "false", "limit_sources": "100", "offset_sources": str(offset), "publish": "false", "commit_payloads": "true"}
+        agency_id = str(row.get("agency_id") or "") if platform == "linkedin" else ""
+        inputs = {"source_type": platform, "agency_id": agency_id, "include_blocked": "true", "dry_run": "false", "limit_sources": "100", "offset_sources": "0" if agency_id else str(offset), "publish": "false", "commit_payloads": "true"}
     elif workflow == "archive_website_browser_fallback.yml":
         offset = 10 * (int(row.get("_queue_offset") or 0) // 10)
         inputs = {"agency_id": "", "dry_run": "false", "limit_sources": "10", "offset_sources": str(offset), "eligible_statuses": "capture_blocked,method_not_allowed,network_error,network_timeout,not_acceptable,tls_failed", "per_page_timeout": "45", "commit_payloads": "true", "publish": "false"}

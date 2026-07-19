@@ -265,6 +265,13 @@ def test_dispatch_offsets_are_bounded_and_shard_specific() -> None:
     )
 
     assert linkedin["inputs"]["offset_sources"] == "200"
+    linkedin["inputs"]["agency_id"] = "example-agency"
+    linkedin["inputs"]["offset_sources"] = "237"
+    targeted = dispatch_for(
+        {"platform": "linkedin", "agency_id": "example-agency", "_manifest_offset": 237}, "scheduled"
+    )
+    assert targeted["inputs"]["agency_id"] == "example-agency"
+    assert targeted["inputs"]["offset_sources"] == "0"
     assert website["inputs"]["offset_sources"] == "20"
 
 
