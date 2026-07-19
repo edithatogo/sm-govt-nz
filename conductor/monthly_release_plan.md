@@ -1,15 +1,15 @@
 # Monthly Release Plan
 
-Generated: 2026-07-15T18:44:01+00:00
+Generated: 2026-07-19T13:28:06+00:00
 
 Each monthly release is cumulative: it bundles all archived accounts and source types present in the repository at release time.
 
 ## Summary
 
 - `months_with_records`: 262
-- `total_records`: 9503
-- `published_months`: 4
-- `candidate_months`: 258
+- `total_records`: 9928
+- `published_months`: 5
+- `candidate_months`: 257
 
 ## Months
 
@@ -17,7 +17,7 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | --- | --- | ---: | ---: | --- |
 | 1971-01 | published | 1 | 1 | x: 1 |
 | 2004-05 | published | 1 | 1 | rss: 1 |
-| 2004-06 | candidate | 1 | 1 | rss: 1 |
+| 2004-06 | published | 1 | 1 | rss: 1 |
 | 2004-07 | candidate | 4 | 1 | rss: 4 |
 | 2004-08 | candidate | 4 | 1 | rss: 4 |
 | 2004-09 | candidate | 2 | 1 | rss: 2 |
@@ -275,5 +275,5 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2026-04 | candidate | 299 | 47 | bluesky: 126, rss: 35, x: 1, youtube: 137 |
 | 2026-05 | candidate | 617 | 77 | bluesky: 188, rss: 54, x: 9, youtube: 366 |
 | 2026-06 | published | 1518 | 102 | bluesky: 698, email: 12, linkedin: 2, rss: 102, x: 3, youtube: 701 |
-| 2026-07 | published | 635 | 104 | api: 13, bluesky: 390, email: 8, json_feed: 8, linkedin: 48, rss: 33, x: 1, youtube: 134 |
+| 2026-07 | published | 1060 | 364 | api: 13, bluesky: 491, email: 9, facebook: 323, json_feed: 8, linkedin: 48, rss: 33, x: 1, youtube: 134 |
 | unknown | candidate | 20 | 1 | rss: 20 |
