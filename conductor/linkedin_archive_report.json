@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:41:44+00:00",
+  "generated_at": "2026-07-19T04:50:38+00:00",
   "inputs": {
-    "agency_id": "ara-institute-of-canterbury",
+    "agency_id": "aut-university",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,30 +28,41 @@
   },
   "results": [
     {
-      "agency_id": "ara-institute-of-canterbury",
+      "agency_id": "aut-university",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 999: <none>",
+      "source_id": "aut-university-linkedin-ff478bdc",
+      "source_type": "social_profile",
+      "status": "http_error",
+      "url": "https://www.linkedin.com/edu/school?id=15502"
+    },
+    {
+      "agency_id": "aut-university",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "2046be7ce24fc8a8",
+      "source_id": "377642ad810ba36f",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/ara-institute-of-canterbury"
+      "url": "https://www.linkedin.com/school/auckland-university-of-technology"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1
+        "http_error": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1
+      "http_error": 2
     }
   }
 }

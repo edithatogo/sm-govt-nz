@@ -1,56 +1,68 @@
 {
-  "gaps": [],
+  "gaps": [
+    {
+      "agency_id": "aut-university",
+      "platform": "linkedin",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "HTTP 999: <none>",
+      "report": "conductor/linkedin_archive_report.json",
+      "source_id": "aut-university-linkedin-ff478bdc",
+      "status": "http_error",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.linkedin.com/edu/school?id=15502"
+    },
+    {
+      "agency_id": "aut-university",
+      "platform": "linkedin",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "HTTP 999: <none>",
+      "report": "conductor/linkedin_archive_report.json",
+      "source_id": "377642ad810ba36f",
+      "status": "http_error",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.linkedin.com/school/auckland-university-of-technology"
+    }
+  ],
   "inputs": {
     "reports": [
-      "conductor/x_feed_archive_report.json"
+      "conductor/linkedin_archive_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/x_feed_archive_report.json": {
+    "conductor/linkedin_archive_report.json": {
       "platform_counts": {
-        "x": 65
+        "linkedin": 2
       },
-      "selected_sources": 65,
+      "selected_sources": 2,
       "status_by_platform": {
-        "x": {
-          "feed_already_captured": 1,
-          "feed_captured": 64,
-          "feed_not_found": 65
+        "linkedin": {
+          "http_error": 2
         }
       },
-      "status_by_provider": {
-        "nitter": {
-          "feed_already_captured": 1,
-          "feed_captured": 64
-        },
-        "rsshub": {
-          "feed_not_found": 65
-        }
-      },
+      "status_by_provider": {},
       "status_counts": {
-        "feed_already_captured": 1,
-        "feed_captured": 64,
-        "feed_not_found": 65
+        "http_error": 2
       }
     }
   },
   "summary": {
-    "gap_count": 0,
+    "gap_count": 2,
     "input_status_counts": {
-      "feed_already_captured": 1,
-      "feed_captured": 64,
-      "feed_not_found": 65
+      "http_error": 2
     },
     "platform_counts": {
-      "x": 65
+      "linkedin": 2
     },
     "priority_counts": {
-      "archived_or_already_archived": 65
+      "review": 2
     },
     "status_counts": {
-      "feed_already_captured": 1,
-      "feed_captured": 64
+      "http_error": 2
     },
-    "superseded_source_count": 65
+    "superseded_source_count": 0
   }
 }
