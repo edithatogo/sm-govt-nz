@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T04:28:25+00:00",
+  "generated_at": "2026-07-19T04:33:49+00:00",
   "items": [
     {
       "acceptance_condition": "archived record or evidence-backed terminal status",
@@ -836,66 +836,6 @@
     },
     {
       "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "ministry-for-culture-and-heritage",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "ministry-for-culture-and-heritage",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 29,
-      "source_id": "ministry-for-culture-and-heritage-linkedin-a2b2c035",
-      "url": "https://www.linkedin.com/company/manatu-taonga-ministry-for-culture-and-heritage/"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "ministry-for-culture-and-heritage",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "ministry-for-culture-and-heritage",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 30,
-      "source_id": "ministry-for-culture-and-heritage-linkedin-baaf014e",
-      "url": "https://www.linkedin.com/company/ministry-for-culture-and-heritage/"
-    },
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
       "agency_id": "ministry-for-ethnic-communities",
       "completion_state": "scheduled",
       "dispatch": {
@@ -920,7 +860,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 31,
+      "rank": 29,
       "source_id": "ministry-for-ethnic-communities-linkedin-2b18127e",
       "url": "https://linkedin.com/company/ethniccommunitiesgovtnz"
     },
@@ -950,7 +890,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 32,
+      "rank": 30,
       "source_id": "ministry-for-pacific-peoples-linkedin-5083e8eb",
       "url": "https://linkedin.com/company/ministry-for-pacific-peoples"
     },
@@ -980,7 +920,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 33,
+      "rank": 31,
       "source_id": "ministry-for-regulation-linkedin-b92e856a",
       "url": "https://www.linkedin.com/company/ministry-for-regulation/posts/?feedView=all"
     },
@@ -1010,15 +950,15 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 34,
+      "rank": 32,
       "source_id": "te-ara-ahunga-ora-linkedin-2dd764dc",
       "url": "https://www.linkedin.com/company/retirement-commission/"
     }
   ],
   "schema_version": 1,
   "summary": {
-    "dispatchable_count": 34,
-    "queue_count": 34
+    "dispatchable_count": 32,
+    "queue_count": 32
   },
   "track_id": "govt_archive_all_source_completion_20260713"
 }
