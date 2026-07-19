@@ -1,59 +1,54 @@
 {
   "gaps": [
     {
-      "agency_id": "climate-change-commission",
+      "agency_id": "crown-law-office",
       "platform": "linkedin",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 404: Not Found",
-      "report": "conductor/linkedin_archive_climate_change_commission_report.json",
-      "source_id": "103d7fe6adc21997",
+      "report": "conductor/linkedin_archive_crown_law_office_report.json",
+      "source_id": "34db903d02ea6b0b",
       "status": "not_found",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.linkedin.com/company/climate-change-commission-nz"
+      "url": "https://www.linkedin.com/company/crown-law-office-new-zealand"
     }
   ],
   "inputs": {
     "reports": [
-      "conductor/linkedin_archive_climate_change_commission_report.json"
+      "conductor/linkedin_archive_crown_law_office_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/linkedin_archive_climate_change_commission_report.json": {
+    "conductor/linkedin_archive_crown_law_office_report.json": {
       "platform_counts": {
-        "linkedin": 2
+        "linkedin": 1
       },
-      "selected_sources": 2,
+      "selected_sources": 1,
       "status_by_platform": {
         "linkedin": {
-          "not_found": 1,
-          "public_snapshot_captured": 1
+          "not_found": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "not_found": 1,
-        "public_snapshot_captured": 1
+        "not_found": 1
       }
     }
   },
   "summary": {
     "gap_count": 1,
     "input_status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "not_found": 1
     },
     "platform_counts": {
-      "linkedin": 2
+      "linkedin": 1
     },
     "priority_counts": {
-      "archived_or_already_archived": 1,
       "p1_existing_resources": 1
     },
     "status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "not_found": 1
     },
     "superseded_source_count": 0
   }
