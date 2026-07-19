@@ -1,36 +1,6 @@
 {
-  "generated_at": "2026-07-19T04:40:54+00:00",
+  "generated_at": "2026-07-19T04:43:29+00:00",
   "items": [
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "ara-institute-of-canterbury",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "ara-institute-of-canterbury",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 1,
-      "source_id": "ara-institute-of-canterbury-linkedin-eb96ebc4",
-      "url": "https://www.linkedin.com/school/ara-institute-of-canterbury"
-    },
     {
       "acceptance_condition": "archived record or evidence-backed terminal status",
       "agency_id": "aut-university",
@@ -57,7 +27,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 2,
+      "rank": 1,
       "source_id": "aut-university-linkedin-a0e8452e",
       "url": "https://www.linkedin.com/school/auckland-university-of-technology"
     },
@@ -87,7 +57,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 3,
+      "rank": 2,
       "source_id": "aut-university-linkedin-ff478bdc",
       "url": "https://www.linkedin.com/edu/school?id=15502"
     },
@@ -116,7 +86,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 4,
+      "rank": 3,
       "source_id": "childrens-commissioner-linkedin-c1e90ab4",
       "url": "https://www.linkedin.com/company/childrens-commissioner-mana-mokopuna"
     },
@@ -145,7 +115,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 5,
+      "rank": 4,
       "source_id": "climate-change-commission-linkedin-9ce75c4e",
       "url": "https://www.linkedin.com/company/climate-change-commission-nz"
     },
@@ -174,7 +144,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 6,
+      "rank": 5,
       "source_id": "crown-law-office-linkedin-85a7e5e4",
       "url": "https://www.linkedin.com/company/crown-law-office-new-zealand"
     },
@@ -203,7 +173,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 7,
+      "rank": 6,
       "source_id": "dpmc-linkedin-3441dacc",
       "url": "https://www.linkedin.com/company/department-of-the-prime-minister-and-cabinet-nz"
     },
@@ -232,7 +202,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 8,
+      "rank": 7,
       "source_id": "electricity-authority-linkedin-4f0d43ca",
       "url": "https://www.linkedin.com/company/electricity-authority-nz"
     },
@@ -261,7 +231,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 9,
+      "rank": 8,
       "source_id": "environmental-protection-authority-linkedin-c0274593",
       "url": "https://www.linkedin.com/company/environmental-protection-authority-nz"
     },
@@ -290,7 +260,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 10,
+      "rank": 9,
       "source_id": "financial-markets-authority-linkedin-a028753e",
       "url": "https://www.linkedin.com/company/financial-markets-authority-nz"
     },
@@ -320,7 +290,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 11,
+      "rank": 10,
       "source_id": "health-nz-linkedin-0cd6a5ba",
       "url": "https://www.linkedin.com/company/te-whatu-ora-health-new-zealand"
     },
@@ -350,7 +320,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 12,
+      "rank": 11,
       "source_id": "health-quality-and-safety-commission-linkedin-1c1a4f6d",
       "url": "https://www.linkedin.com/company/health-quality-safety-commission"
     },
@@ -380,7 +350,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 13,
+      "rank": 12,
       "source_id": "inland-revenue-department-linkedin-92a6b59f",
       "url": "https://www.linkedin.com/company/inland-revenue-nz/?id=footer"
     },
@@ -410,7 +380,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 14,
+      "rank": 13,
       "source_id": "invercargill-city-council-linkedin-beb954b9",
       "url": "https://nz.linkedin.com/company/invercargill-city-council"
     },
@@ -440,7 +410,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 15,
+      "rank": 14,
       "source_id": "kainga-ora-linkedin-9168d822",
       "url": "https://nz.linkedin.com/company/kainga-ora"
     },
@@ -470,7 +440,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 16,
+      "rank": 15,
       "source_id": "kiwi-group-capital-linkedin-8808a88b",
       "url": "https://nz.linkedin.com/company/kiwibank"
     },
@@ -500,7 +470,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 17,
+      "rank": 16,
       "source_id": "kordia-linkedin-b8ae9eff",
       "url": "https://www.linkedin.com/company/kordia"
     },
@@ -530,7 +500,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 18,
+      "rank": 17,
       "source_id": "kordia-linkedin-e1c3751e",
       "url": "https://www.linkedin.com/company/kordia/"
     },
@@ -560,7 +530,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 19,
+      "rank": 18,
       "source_id": "law-commission-linkedin-003461d1",
       "url": "https://www.linkedin.com/company/nzlawcommission"
     },
@@ -590,7 +560,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 20,
+      "rank": 19,
       "source_id": "lincoln-university-linkedin-2b2d9c3d",
       "url": "https://www.linkedin.com/school/lincoln-university-new-zealand"
     },
@@ -620,7 +590,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 21,
+      "rank": 20,
       "source_id": "linz-linkedin-57a50977",
       "url": "https://www.linkedin.com/company/land-information-new-zealand"
     },
@@ -650,7 +620,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 22,
+      "rank": 21,
       "source_id": "linz-linkedin-c618d0e1",
       "url": "https://www.linkedin.com/company/toitu-te-whenua-linz/"
     },
@@ -680,7 +650,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 23,
+      "rank": 22,
       "source_id": "mackenzie-district-council-linkedin-53be0b59",
       "url": "https://nz.linkedin.com/company/mackenzie-district-council"
     },
@@ -710,7 +680,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 24,
+      "rank": 23,
       "source_id": "manawatu-district-council-linkedin-c2d6eb38",
       "url": "https://nz.linkedin.com/company/manawatu-district-council"
     },
@@ -740,7 +710,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 25,
+      "rank": 24,
       "source_id": "manukau-institute-of-technology-linkedin-4a24e858",
       "url": "https://www.linkedin.com/school/manukau-institute-of-technology"
     },
@@ -770,7 +740,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 26,
+      "rank": 25,
       "source_id": "maritime-nz-linkedin-95122411",
       "url": "https://www.linkedin.com/company/1429680"
     },
@@ -800,7 +770,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 27,
+      "rank": 26,
       "source_id": "massey-university-linkedin-f7cdf1dc",
       "url": "https://www.linkedin.com/school/massey-university"
     },
@@ -830,7 +800,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 28,
+      "rank": 27,
       "source_id": "masterton-district-council-linkedin-ced1041e",
       "url": "https://www.linkedin.com/company/masterton-district-council/"
     },
@@ -860,7 +830,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 29,
+      "rank": 28,
       "source_id": "ministry-for-culture-and-heritage-linkedin-baaf014e",
       "url": "https://www.linkedin.com/company/ministry-for-culture-and-heritage/"
     },
@@ -890,7 +860,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 30,
+      "rank": 29,
       "source_id": "ministry-for-ethnic-communities-linkedin-2b18127e",
       "url": "https://linkedin.com/company/ethniccommunitiesgovtnz"
     },
@@ -920,7 +890,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 31,
+      "rank": 30,
       "source_id": "ministry-for-pacific-peoples-linkedin-5083e8eb",
       "url": "https://linkedin.com/company/ministry-for-pacific-peoples"
     },
@@ -950,15 +920,15 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 32,
+      "rank": 31,
       "source_id": "ministry-for-regulation-linkedin-b92e856a",
       "url": "https://www.linkedin.com/company/ministry-for-regulation/posts/?feedView=all"
     }
   ],
   "schema_version": 1,
   "summary": {
-    "dispatchable_count": 32,
-    "queue_count": 32
+    "dispatchable_count": 31,
+    "queue_count": 31
   },
   "track_id": "govt_archive_all_source_completion_20260713"
 }
