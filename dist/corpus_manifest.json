@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "e77d46bebd3d9f10c5ae72017f009b5fdb01a897d414abb197685489d619fb8e"
+      "sha256": "4a9e5359008afb45193b227dc888c813cb36d1bc89d2fd5d0ce6e5c769bc95c4"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638742,
+      "bytes": 24638695,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "b9586ca12c032b091a9acb81e3e8b02cefb090e348e33420339fe25a53066f42"
+      "sha256": "9f8459dbcc00c9c4269f9c29db8ce9760cea0dadb6f5bc3059bf8869f1df9e4d"
     },
     "normalized_archive.parquet": {
-      "bytes": 38928717,
+      "bytes": 38933053,
       "path": "normalized_archive.parquet",
-      "sha256": "4a5a389a37c8aef797af46a4fdb642fa312b5159ac1e7a8edfe4c4111c432490"
+      "sha256": "9c363eaca0f19c93c3ce474ff299090f9e8b04cbda2fcf9e90b6b5406cd57a5d"
     }
   },
   "jurisdiction": "nz",
@@ -27,7 +27,7 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11770,
+  "normalized_record_count": 11769,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
   "raw_file_count": 14618,
@@ -122881,21 +122881,12 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-19T04:29:35+00:00",
-      "source_account": "ministry-for-regulation",
-      "source_key": "linkedin:ministry-for-regulation",
+      "original_timestamp": "2026-07-19T04:29:22+00:00",
+      "source_account": "2139834",
+      "source_key": "linkedin:2139834",
       "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:04988da51ef7e9228ba7de87",
-      "source_url": "https://www.linkedin.com/company/ministry-for-regulation/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-19T04:29:36+00:00",
-      "source_account": "LinkedIn",
-      "source_key": "linkedin:LinkedIn",
-      "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:796d7bbb821d8d475b4dc629",
-      "source_url": "https://www.linkedin.com/company/ministry-for-regulation/posts/?feedView=all"
+      "source_record_id": "linkedin_public_snapshot:79f245424964fdea0987d007",
+      "source_url": "https://www.linkedin.com/company/2139834/"
     },
     {
       "mirror_targets": [],
@@ -123099,7 +123090,7 @@
     "email": 21,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 52,
+    "linkedin": 51,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -123131,7 +123122,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-19T04:29:36+00:00",
+      "max_original_created_at": "2026-07-19T04:29:22+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
