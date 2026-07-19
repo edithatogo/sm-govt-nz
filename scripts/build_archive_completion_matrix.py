@@ -296,11 +296,16 @@ def build_completion_matrix(
         manifest_url = canonical_url_key(manifest_source.get("url"))
         if manifest_url:
             manifest_offsets_by_url[manifest_url] = offset
-    report_by_url = {
-        canonical_url_key(row.get("url")): row
-        for row in report_index.values()
-        if canonical_url_key(row.get("url"))
-    }
+    report_by_url: dict[str, dict[str, Any]] = {}
+    for report_row in report_index.values():
+        url_key = canonical_url_key(report_row.get("url"))
+        if not url_key:
+            continue
+        existing = report_by_url.get(url_key)
+        if existing is None or status_rank(str(report_row.get("status") or "")) >= status_rank(
+            str(existing.get("status") or "")
+        ):
+            report_by_url[url_key] = report_row
     prior_by_id: dict[str, dict[str, Any]] = {}
     prior_by_url: dict[str, dict[str, Any]] = {}
     for prior_row in (prior_matrix or {}).get("sources", []):

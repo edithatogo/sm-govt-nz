@@ -98,6 +98,44 @@ def test_public_platform_report_matches_candidate_by_canonical_url(tmp_path: Pat
     assert queue["summary"]["queue_count"] == 0
 
 
+def test_url_report_matching_prefers_success_over_onboarding_fallback(tmp_path: Path) -> None:
+    conductor = tmp_path / "conductor"
+    conductor.mkdir()
+    (conductor / "archive_publication_status.json").write_text("{}", encoding="utf-8")
+    readiness = {
+        "total_sources": 1,
+        "sources": [{
+            "source_id": "candidate-linkedin",
+            "platform": "linkedin",
+            "source_type": "social_profile",
+            "url": "https://www.linkedin.com/company/example",
+            "readiness": "registered",
+        }],
+    }
+    manifest = {"sources": readiness["sources"]}
+    reports = {
+        "onboarding": {
+            "source_id": "onboarding-id",
+            "url": "https://www.linkedin.com/company/example/",
+            "status": "public_fallback_available",
+            "evidence_report": "manual_seed_onboarding_report.json",
+        },
+        "capture": {
+            "source_id": "registered-id",
+            "url": "https://www.linkedin.com/company/example",
+            "status": "public_snapshot_captured",
+            "evidence_report": "linkedin_archive_report.json",
+        },
+    }
+
+    matrix, _queue = build_completion_matrix(
+        readiness, manifest, reports, Counter(), conductor
+    )
+
+    assert matrix["sources"][0]["completion_state"] == "archived"
+    assert matrix["sources"][0]["latest_status"] == "public_snapshot_captured"
+
+
 def test_generated_workflow_is_daily_bounded_and_monthly_guarded() -> None:
     workflow = Path(".github/workflows/archive_completion_loop.yml").read_text(encoding="utf-8")
     assert 'cron: "41 4 * * *"' in workflow
