@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:29:34+00:00",
+  "generated_at": "2026-07-19T04:29:47+00:00",
   "inputs": {
-    "agency_id": "masterton-district-council",
+    "agency_id": "maritime-nz",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,30 +28,41 @@
   },
   "results": [
     {
-      "agency_id": "masterton-district-council",
+      "agency_id": "maritime-nz",
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:b47efe96c58e6833da22e73b",
-      "source_id": "masterton-district-council-linkedin-ced1041e",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:35294f85efba951f81c8ec65",
+      "source_id": "maritime-nz-linkedin-95122411",
       "source_type": "social_profile",
       "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/masterton-district-council/"
+      "url": "https://www.linkedin.com/company/1429680"
+    },
+    {
+      "agency_id": "maritime-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:9715a909d6d6a49038b0c710",
+      "source_id": "9572e55a863db1d8",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/maritime-new-zealand"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "public_snapshot_captured": 1
+        "public_snapshot_captured": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "public_snapshot_captured": 1
+      "public_snapshot_captured": 2
     }
   }
 }

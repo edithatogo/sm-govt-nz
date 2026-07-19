@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "54226c27fca097c100aaedee1063a8adbb301f606edeff3aa93933a2955026c2"
+      "sha256": "4632ee3cf761f16a672a7f5c252e2a14e4cd6f37f5bea00a0066d984d7158ffb"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638696,
+      "bytes": 24638757,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "2c2e2d39c846e0b26fd310ca358662add75140237be668ca479a7e59911f85e3"
+      "sha256": "0210158dd45162507495b1d93bd0aa7392a76dd10acaf4d91b778f11040b4bb0"
     },
     "normalized_archive.parquet": {
-      "bytes": 38930912,
+      "bytes": 38928977,
       "path": "normalized_archive.parquet",
-      "sha256": "69045eaa20344473690ce0be3222d1ebe969017085e08fc4b0451d1b6b35f60a"
+      "sha256": "a53299e9f26790abe0274a6f165b735833e5bd48960fa9df1f46532d0dd89e79"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11769,
+  "normalized_record_count": 11770,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 14618,
+  "raw_file_count": 14619,
   "record_index": [
     {
       "mirror_targets": [
@@ -122881,12 +122881,21 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-19T04:29:34+00:00",
-      "source_account": "masterton-district-council",
-      "source_key": "linkedin:masterton-district-council",
+      "original_timestamp": "2026-07-19T04:29:46+00:00",
+      "source_account": "1429680",
+      "source_key": "linkedin:1429680",
       "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:b47efe96c58e6833da22e73b",
-      "source_url": "https://www.linkedin.com/company/masterton-district-council/"
+      "source_record_id": "linkedin_public_snapshot:35294f85efba951f81c8ec65",
+      "source_url": "https://www.linkedin.com/company/1429680"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T04:29:47+00:00",
+      "source_account": "maritime-new-zealand",
+      "source_key": "linkedin:maritime-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:9715a909d6d6a49038b0c710",
+      "source_url": "https://www.linkedin.com/company/maritime-new-zealand"
     },
     {
       "mirror_targets": [],
@@ -123090,7 +123099,7 @@
     "email": 21,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 51,
+    "linkedin": 52,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -123122,7 +123131,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-19T04:29:34+00:00",
+      "max_original_created_at": "2026-07-19T04:29:47+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
