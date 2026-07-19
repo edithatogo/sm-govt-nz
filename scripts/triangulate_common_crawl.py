@@ -7,6 +7,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlencode
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,12 +41,17 @@ def query_index(index_url: str, url: str, *, timeout: int = 30, opener=urlopen) 
         f"{index_url}?{urlencode(params, doseq=True)}",
         headers={"User-Agent": "sm-govt-nz/common-crawl-triangulation"},
     )
-    with opener(request, timeout=timeout) as response:
-        rows = []
-        for line in response.read().decode("utf-8").splitlines():
-            if line.strip():
-                rows.append(json.loads(line))
-        return rows
+    try:
+        with opener(request, timeout=timeout) as response:
+            rows = []
+            for line in response.read().decode("utf-8").splitlines():
+                if line.strip():
+                    rows.append(json.loads(line))
+            return rows
+    except HTTPError as exc:
+        if exc.code == 404:
+            return []
+        raise
 
 
 def triangulate(matrix: dict, *, limit: int = 100, delay: float = 0.25) -> dict:

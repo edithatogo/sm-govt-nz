@@ -1,4 +1,5 @@
 import json
+from urllib.error import HTTPError
 
 from scripts.triangulate_common_crawl import latest_index, query_index, triangulate
 
@@ -33,3 +34,10 @@ def test_common_crawl_triangulation_does_not_download_snapshots(monkeypatch):
     report = triangulate({"sources": [{"source_id": "x", "platform": "website_page", "url": "https://example.govt.nz/"}]}, limit=1, delay=0)
     assert report["snapshot_downloaded"] is False
     assert report["summary"]["no_capture_sources"] == 1
+
+
+def test_common_crawl_404_is_an_empty_result():
+    def opener(request, timeout):
+        raise HTTPError(request.full_url, 404, "not indexed", {}, None)
+
+    assert query_index("https://index.test", "https://example.govt.nz/", opener=opener) == []
