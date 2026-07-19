@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "2405c274c0b0116e9dc4596fa2cd0bb1912f8d91c45520e631b47bc9f06678bf"
+      "sha256": "10fa6fce428991d6199a833fb6a9d061a8a7023b24d2c39cde56112c91f559b4"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638736,
+      "bytes": 24638745,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "566028d673c9fae05f4981a3ce3397dc89e1703a4a4fd3bd5a9889e51965f0de"
+      "sha256": "57b59c91c214883c0e0bd4d0f2c3501896972aaec70adf3d08c60eb2ee828b7c"
     },
     "normalized_archive.parquet": {
-      "bytes": 38928799,
+      "bytes": 38928831,
       "path": "normalized_archive.parquet",
-      "sha256": "e069e2efad9b875414d82615fd5ba5162adc90eb6c2def56f16cec050dc080ea"
+      "sha256": "e90b087e3531a7bfc27c287d245aa23a69be08e4e7b0b84aace5f053e72d247e"
     }
   },
   "jurisdiction": "nz",
@@ -30,7 +30,7 @@
   "normalized_record_count": 11770,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 14619,
+  "raw_file_count": 14618,
   "record_index": [
     {
       "mirror_targets": [
@@ -122881,21 +122881,21 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-19T04:29:17+00:00",
-      "source_account": "inland-revenue-nz",
-      "source_key": "linkedin:inland-revenue-nz",
+      "original_timestamp": "2026-07-19T04:29:21+00:00",
+      "source_account": "kiwibank",
+      "source_key": "linkedin:kiwibank",
       "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:0eb477adcafe3d83e83006d7",
-      "source_url": "https://www.linkedin.com/company/inland-revenue-nz/"
+      "source_record_id": "linkedin_public_snapshot:5324ac141f5890ecce64d03a",
+      "source_url": "https://nz.linkedin.com/company/kiwibank"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-19T04:29:18+00:00",
-      "source_account": "LinkedIn",
-      "source_key": "linkedin:LinkedIn",
+      "original_timestamp": "2026-07-19T04:29:21+00:00",
+      "source_account": "Kiwibank",
+      "source_key": "linkedin:Kiwibank",
       "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:afe478f5f5132ebf97cfc17a",
-      "source_url": "https://www.linkedin.com/company/inland-revenue-nz/?id=footer"
+      "source_record_id": "linkedin_public_snapshot:f833d2173eac567f44831112",
+      "source_url": "https://www.linkedin.com/company/kiwibank"
     },
     {
       "mirror_targets": [],
@@ -123131,7 +123131,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-19T04:29:18+00:00",
+      "max_original_created_at": "2026-07-19T04:29:21+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
