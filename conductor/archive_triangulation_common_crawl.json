@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-19T05:30:31+00:00",
+  "provider": "common_crawl_index",
+  "purpose": "independent historical corroboration metadata; not canonical capture",
+  "snapshot_downloaded": false,
+  "index_url": "https://index.commoncrawl.org/CC-MAIN-2026-25-index",
+  "source_limit": 1,
+  "summary": {
+    "sources_checked": 1,
+    "capture_metadata_sources": 0,
+    "no_capture_sources": 0,
+    "provider_errors": 1
+  },
+  "sources": [
+    {
+      "source_id": "9635209a748b4790",
+      "platform": "api",
+      "url": "https://www.acc.co.nz/.well-known/webfinger",
+      "common_crawl_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}
