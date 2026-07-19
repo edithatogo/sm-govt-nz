@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:29:53+00:00",
+  "generated_at": "2026-07-19T04:29:44+00:00",
   "inputs": {
-    "agency_id": "te-ara-ahunga-ora",
+    "agency_id": "manukau-institute-of-technology",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,15 +28,15 @@
   },
   "results": [
     {
-      "agency_id": "te-ara-ahunga-ora",
-      "archive_status": "manual_seed",
+      "agency_id": "manukau-institute-of-technology",
+      "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:6a3ced72432a5238c7671feb",
-      "source_id": "te-ara-ahunga-ora-linkedin-2dd764dc",
+      "reason": "HTTP 999: <none>",
+      "source_id": "f77d729a901b0464",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/retirement-commission/"
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/manukau-institute-of-technology"
     }
   ],
   "summary": {
@@ -46,12 +46,12 @@
     "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "public_snapshot_captured": 1
+        "http_error": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "public_snapshot_captured": 1
+      "http_error": 1
     }
   }
 }
