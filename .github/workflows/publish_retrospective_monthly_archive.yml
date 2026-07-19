@@ -58,7 +58,7 @@ jobs:
           --raw-dir historical_archive_raw
           --output-dir dist
           --manifest dist/archive_manifest.json
-          --status-report conductor/archive_publication_status.json
+          --status-report dist/archive_publication_status_retrospective.json
           --release-version "${{ steps.next-release.outputs.release_version }}"
           --publish
           --publish-target all
@@ -66,7 +66,7 @@ jobs:
         if: ${{ steps.next-release.outputs.should_publish == 'true' }}
         run: >-
           python scripts/record_monthly_release.py
-          --status-report conductor/archive_publication_status.json
+          --status-report dist/archive_publication_status_retrospective.json
           --ledger conductor/monthly_release_ledger.json
       - name: Refresh monthly release plan
         run: >-
@@ -81,12 +81,12 @@ jobs:
           python scripts/commit_state_updates.py
           --message "Record retrospective monthly archive release"
           --force
-          --path conductor/archive_publication_status.json
           --path conductor/monthly_release_ledger.json
           --path conductor/monthly_release_plan.json
           --path conductor/monthly_release_plan.md
           --path dist/archive_manifest.json
           --path dist/archive_compaction_manifest.json
+          --path dist/archive_publication_status_retrospective.json
           --path dist/corpus_manifest.json
           --path dist/README.md
       - name: Upload generated corpus bundle
@@ -96,6 +96,7 @@ jobs:
           name: retrospective-monthly-archive-corpus
           path: |
             conductor/archive_publication_status.json
+            dist/archive_publication_status_retrospective.json
             conductor/monthly_release_ledger.json
             conductor/monthly_release_plan.json
             conductor/monthly_release_plan.md
