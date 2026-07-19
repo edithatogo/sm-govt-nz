@@ -4,21 +4,21 @@ Generated: 2026-07-19T04:29:18+00:00
 
 ## Summary
 
-- `selected_sources`: 1
+- `selected_sources`: 2
 - `platform_count`: 1
 - `status_count`: 1
 
 ## Platform counts
 
-- `linkedin`: 1
+- `linkedin`: 2
 
 ## Status counts
 
-- `http_error`: 1
+- `public_snapshot_captured`: 2
 
 ## Status by platform
 
-- `linkedin`: {'http_error': 1}
+- `linkedin`: {'public_snapshot_captured': 2}
 
 ## Notes
 

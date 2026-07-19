@@ -3,7 +3,7 @@
   "dry_run": false,
   "generated_at": "2026-07-19T04:29:18+00:00",
   "inputs": {
-    "agency_id": "childrens-commissioner",
+    "agency_id": "inland-revenue-department",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,26 +28,26 @@
   },
   "results": [
     {
-      "agency_id": "childrens-commissioner",
+      "agency_id": "inland-revenue-department",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
-      "source_id": "d9530aa6d002e1e2",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:0eb477adcafe3d83e83006d7",
+      "source_id": "96ef485ce78f737c",
       "source_type": "social_profile",
-      "status": "not_found",
-      "url": "https://www.linkedin.com/company/childrens-commissioner-mana-mokopuna"
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/inland-revenue-nz/"
     },
     {
-      "agency_id": "childrens-commissioner",
+      "agency_id": "inland-revenue-department",
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:3f000e35bc6266e5bd8751e0",
-      "source_id": "childrens-commissioner-linkedin-4e7dccd7",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:afe478f5f5132ebf97cfc17a",
+      "source_id": "inland-revenue-department-linkedin-92a6b59f",
       "source_type": "social_profile",
       "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/mana-mokopuna-children-and-young-people-s-commission/"
+      "url": "https://www.linkedin.com/company/inland-revenue-nz/?id=footer"
     }
   ],
   "summary": {
@@ -57,14 +57,12 @@
     "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "not_found": 1,
-        "public_snapshot_captured": 1
+        "public_snapshot_captured": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "public_snapshot_captured": 2
     }
   }
 }

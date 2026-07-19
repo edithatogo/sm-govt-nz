@@ -9,14 +9,14 @@
       "sha256": "2405c274c0b0116e9dc4596fa2cd0bb1912f8d91c45520e631b47bc9f06678bf"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638734,
+      "bytes": 24638736,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "cb4d99d55b2f440a70244051c8f79144419a6f6ea4f975979585dc1b73a56866"
+      "sha256": "566028d673c9fae05f4981a3ce3397dc89e1703a4a4fd3bd5a9889e51965f0de"
     },
     "normalized_archive.parquet": {
-      "bytes": 38931715,
+      "bytes": 38928799,
       "path": "normalized_archive.parquet",
-      "sha256": "465c87f967ff8c9f254f01af5968cc377568a23d84453303e8fa2936053ca630"
+      "sha256": "e069e2efad9b875414d82615fd5ba5162adc90eb6c2def56f16cec050dc080ea"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11769,
+  "normalized_record_count": 11770,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 14618,
+  "raw_file_count": 14619,
   "record_index": [
     {
       "mirror_targets": [
@@ -122881,12 +122881,21 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-19T04:29:18+00:00",
-      "source_account": "mana-mokopuna-children-and-young-people-s-commission",
-      "source_key": "linkedin:mana-mokopuna-children-and-young-people-s-commission",
+      "original_timestamp": "2026-07-19T04:29:17+00:00",
+      "source_account": "inland-revenue-nz",
+      "source_key": "linkedin:inland-revenue-nz",
       "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:3f000e35bc6266e5bd8751e0",
-      "source_url": "https://www.linkedin.com/company/mana-mokopuna-children-and-young-people-s-commission/"
+      "source_record_id": "linkedin_public_snapshot:0eb477adcafe3d83e83006d7",
+      "source_url": "https://www.linkedin.com/company/inland-revenue-nz/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T04:29:18+00:00",
+      "source_account": "LinkedIn",
+      "source_key": "linkedin:LinkedIn",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:afe478f5f5132ebf97cfc17a",
+      "source_url": "https://www.linkedin.com/company/inland-revenue-nz/?id=footer"
     },
     {
       "mirror_targets": [],
@@ -123090,7 +123099,7 @@
     "email": 21,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 51,
+    "linkedin": 52,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,

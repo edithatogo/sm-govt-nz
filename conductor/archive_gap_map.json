@@ -1,19 +1,5 @@
 {
-  "gaps": [
-    {
-      "agency_id": "childrens-commissioner",
-      "platform": "linkedin",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 404: Not Found",
-      "report": "conductor/linkedin_archive_report.json",
-      "source_id": "d9530aa6d002e1e2",
-      "status": "not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.linkedin.com/company/childrens-commissioner-mana-mokopuna"
-    }
-  ],
+  "gaps": [],
   "inputs": {
     "reports": [
       "conductor/linkedin_archive_report.json"
@@ -27,33 +13,28 @@
       "selected_sources": 2,
       "status_by_platform": {
         "linkedin": {
-          "not_found": 1,
-          "public_snapshot_captured": 1
+          "public_snapshot_captured": 2
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "not_found": 1,
-        "public_snapshot_captured": 1
+        "public_snapshot_captured": 2
       }
     }
   },
   "summary": {
-    "gap_count": 1,
+    "gap_count": 0,
     "input_status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "public_snapshot_captured": 2
     },
     "platform_counts": {
       "linkedin": 2
     },
     "priority_counts": {
-      "archived_or_already_archived": 1,
-      "p1_existing_resources": 1
+      "archived_or_already_archived": 2
     },
     "status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "public_snapshot_captured": 2
     },
     "superseded_source_count": 0
   }
