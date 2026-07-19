@@ -1,0 +1,68 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-19T05:57:44+00:00",
+  "inputs": {
+    "agency_id": "kainga-ora",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 100,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "per_account_timeout": 120,
+    "raw_root": "historical_archive_raw",
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_type": "linkedin",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "kainga-ora",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:1a8a43db50f74a6858149dc4",
+      "source_id": "kainga-ora-linkedin-9168d822",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://nz.linkedin.com/company/kainga-ora"
+    },
+    {
+      "agency_id": "kainga-ora",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:64656c8a206fecfb854e03ac",
+      "source_id": "d86b6584e73a7544",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/kainga-ora"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "linkedin": 2
+    },
+    "selected_sources": 2,
+    "status_by_platform": {
+      "linkedin": {
+        "public_snapshot_captured": 2
+      }
+    },
+    "status_by_provider": {},
+    "status_counts": {
+      "public_snapshot_captured": 2
+    }
+  }
+}
