@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "4e519a712eb6a1dbe372dbf8bcb19f9306cbeee9f5e5077e7e3427b8eeeb5e71"
+      "sha256": "b766635b4d2a7a7662241aaf4f152c17be3994b5c47ed145ef0a43384fd90947"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638764,
+      "bytes": 24638751,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "222bcf9443f6806858aefc6ff470b4615377cf553e3b8fe399aa06010769235c"
+      "sha256": "5c8caeeca212691fddbf68b10d9b304b3d105bb250dd2db3954444f12e5b5736"
     },
     "normalized_archive.parquet": {
-      "bytes": 38930841,
+      "bytes": 38928738,
       "path": "normalized_archive.parquet",
-      "sha256": "662ca374447b0e0564db98dc8147e3758b60aed19af5cbd68d244955dbc2e404"
+      "sha256": "a16c5dfc7e5448fc5674078290940b184ae3e31e5913c33cde9ffc84e7580382"
     }
   },
   "jurisdiction": "nz",
@@ -27,7 +27,7 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11769,
+  "normalized_record_count": 11770,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
   "raw_file_count": 14719,
@@ -122881,12 +122881,21 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-19T08:21:44+00:00",
-      "source_account": "ministry-for-pacific-peoples",
-      "source_key": "linkedin:ministry-for-pacific-peoples",
+      "original_timestamp": "2026-07-19T08:25:16+00:00",
+      "source_account": "ministry-for-regulation",
+      "source_key": "linkedin:ministry-for-regulation",
       "source_platform": "linkedin",
-      "source_record_id": "linkedin_public_snapshot:13b197a30928f12a06e1ddd7",
-      "source_url": "https://linkedin.com/company/ministry-for-pacific-peoples"
+      "source_record_id": "linkedin_public_snapshot:04988da51ef7e9228ba7de87",
+      "source_url": "https://www.linkedin.com/company/ministry-for-regulation/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T08:25:17+00:00",
+      "source_account": "LinkedIn",
+      "source_key": "linkedin:LinkedIn",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:796d7bbb821d8d475b4dc629",
+      "source_url": "https://www.linkedin.com/company/ministry-for-regulation/posts/?feedView=all"
     },
     {
       "mirror_targets": [],
@@ -123090,7 +123099,7 @@
     "email": 21,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 51,
+    "linkedin": 52,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -123122,7 +123131,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-19T08:21:44+00:00",
+      "max_original_created_at": "2026-07-19T08:25:17+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
