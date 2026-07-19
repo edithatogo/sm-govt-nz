@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:29:33+00:00",
+  "generated_at": "2026-07-19T04:29:24+00:00",
   "inputs": {
-    "agency_id": "lincoln-university",
+    "agency_id": "dpmc",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,15 +28,15 @@
   },
   "results": [
     {
-      "agency_id": "lincoln-university",
+      "agency_id": "dpmc",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "5b070f37d132d016",
+      "reason": "HTTP 404: Not Found",
+      "source_id": "ca6bebd5306e06ac",
       "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/lincoln-university-new-zealand"
+      "status": "not_found",
+      "url": "https://www.linkedin.com/company/department-of-the-prime-minister-and-cabinet-nz"
     }
   ],
   "summary": {
@@ -46,12 +46,12 @@
     "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1
+        "not_found": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1
+      "not_found": 1
     }
   }
 }

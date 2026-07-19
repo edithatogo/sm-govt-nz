@@ -1,17 +1,17 @@
 {
   "gaps": [
     {
-      "agency_id": "lincoln-university",
+      "agency_id": "dpmc",
       "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "HTTP 999: <none>",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
       "report": "conductor/linkedin_archive_report.json",
-      "source_id": "5b070f37d132d016",
-      "status": "http_error",
+      "source_id": "ca6bebd5306e06ac",
+      "status": "not_found",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.linkedin.com/school/lincoln-university-new-zealand"
+      "url": "https://www.linkedin.com/company/department-of-the-prime-minister-and-cabinet-nz"
     }
   ],
   "inputs": {
@@ -27,28 +27,28 @@
       "selected_sources": 1,
       "status_by_platform": {
         "linkedin": {
-          "http_error": 1
+          "not_found": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "http_error": 1
+        "not_found": 1
       }
     }
   },
   "summary": {
     "gap_count": 1,
     "input_status_counts": {
-      "http_error": 1
+      "not_found": 1
     },
     "platform_counts": {
       "linkedin": 1
     },
     "priority_counts": {
-      "review": 1
+      "p1_existing_resources": 1
     },
     "status_counts": {
-      "http_error": 1
+      "not_found": 1
     },
     "superseded_source_count": 0
   }
