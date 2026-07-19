@@ -1,36 +1,6 @@
 {
-  "generated_at": "2026-07-19T06:41:56+00:00",
+  "generated_at": "2026-07-19T06:44:33+00:00",
   "items": [
-    {
-      "acceptance_condition": "archived record or evidence-backed terminal status",
-      "agency_id": "manukau-institute-of-technology",
-      "completion_state": "scheduled",
-      "dispatch": {
-        "dispatchable": true,
-        "inputs": {
-          "agency_id": "manukau-institute-of-technology",
-          "commit_payloads": "true",
-          "dry_run": "false",
-          "include_blocked": "true",
-          "limit_sources": "100",
-          "offset_sources": "0",
-          "publish": "false",
-          "source_type": "linkedin"
-        },
-        "workflow": "archive_registered_sources.yml"
-      },
-      "expected_evidence": [
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "/home/runner/work/sm-govt-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/linkedin_archive_report.json",
-        "C:/Users/60217257/OneDrive - Flinders/repos/legal-nz/sm-govt-nz/conductor/manual_seed_onboarding_report.json"
-      ],
-      "next_action": "capture_public_linkedin_snapshot",
-      "platform": "linkedin",
-      "rank": 1,
-      "source_id": "manukau-institute-of-technology-linkedin-4a24e858",
-      "url": "https://www.linkedin.com/school/manukau-institute-of-technology"
-    },
     {
       "acceptance_condition": "archived record or evidence-backed terminal status",
       "agency_id": "maritime-nz",
@@ -57,7 +27,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 2,
+      "rank": 1,
       "source_id": "maritime-nz-linkedin-95122411",
       "url": "https://www.linkedin.com/company/1429680"
     },
@@ -87,7 +57,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 3,
+      "rank": 2,
       "source_id": "massey-university-linkedin-f7cdf1dc",
       "url": "https://www.linkedin.com/school/massey-university"
     },
@@ -117,7 +87,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 4,
+      "rank": 3,
       "source_id": "masterton-district-council-linkedin-ced1041e",
       "url": "https://www.linkedin.com/company/masterton-district-council/"
     },
@@ -147,7 +117,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 5,
+      "rank": 4,
       "source_id": "ministry-for-culture-and-heritage-linkedin-baaf014e",
       "url": "https://www.linkedin.com/company/ministry-for-culture-and-heritage/"
     },
@@ -177,7 +147,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 6,
+      "rank": 5,
       "source_id": "ministry-for-ethnic-communities-linkedin-2b18127e",
       "url": "https://linkedin.com/company/ethniccommunitiesgovtnz"
     },
@@ -207,7 +177,7 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 7,
+      "rank": 6,
       "source_id": "ministry-for-pacific-peoples-linkedin-5083e8eb",
       "url": "https://linkedin.com/company/ministry-for-pacific-peoples"
     },
@@ -237,15 +207,15 @@
       ],
       "next_action": "capture_public_linkedin_snapshot",
       "platform": "linkedin",
-      "rank": 8,
+      "rank": 7,
       "source_id": "ministry-for-regulation-linkedin-b92e856a",
       "url": "https://www.linkedin.com/company/ministry-for-regulation/posts/?feedView=all"
     }
   ],
   "schema_version": 1,
   "summary": {
-    "dispatchable_count": 8,
-    "queue_count": 8
+    "dispatchable_count": 7,
+    "queue_count": 7
   },
   "track_id": "govt_archive_all_source_completion_20260713"
 }
