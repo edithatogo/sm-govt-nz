@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:29:36+00:00",
+  "generated_at": "2026-07-19T04:29:26+00:00",
   "inputs": {
-    "agency_id": "ministry-for-ethnic-communities",
+    "agency_id": "linz",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,29 +28,42 @@
   },
   "results": [
     {
-      "agency_id": "ministry-for-ethnic-communities",
+      "agency_id": "linz",
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:477587568100ad436935b8f8",
-      "source_id": "ministry-for-ethnic-communities-linkedin-2b18127e",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:87a344af3574c1cd5a93dee1",
+      "source_id": "linz-linkedin-57a50977",
       "source_type": "social_profile",
       "status": "public_snapshot_captured",
-      "url": "https://linkedin.com/company/ethniccommunitiesgovtnz"
+      "url": "https://www.linkedin.com/company/land-information-new-zealand"
+    },
+    {
+      "agency_id": "linz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 404: Not Found",
+      "source_id": "0d94aac6adf85d9f",
+      "source_type": "social_profile",
+      "status": "not_found",
+      "url": "https://www.linkedin.com/company/toitu-te-whenua-linz/"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
+        "not_found": 1,
         "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
+      "not_found": 1,
       "public_snapshot_captured": 1
     }
   }
