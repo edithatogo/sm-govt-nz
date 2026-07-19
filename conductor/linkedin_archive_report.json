@@ -3,7 +3,7 @@
   "dry_run": false,
   "generated_at": "2026-07-19T04:20:49+00:00",
   "inputs": {
-    "agency_id": "dpmc",
+    "agency_id": "childrens-commissioner",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,30 +28,43 @@
   },
   "results": [
     {
-      "agency_id": "dpmc",
+      "agency_id": "childrens-commissioner",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 404: Not Found",
-      "source_id": "ca6bebd5306e06ac",
+      "source_id": "d9530aa6d002e1e2",
       "source_type": "social_profile",
       "status": "not_found",
-      "url": "https://www.linkedin.com/company/department-of-the-prime-minister-and-cabinet-nz"
+      "url": "https://www.linkedin.com/company/childrens-commissioner-mana-mokopuna"
+    },
+    {
+      "agency_id": "childrens-commissioner",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:3f000e35bc6266e5bd8751e0",
+      "source_id": "childrens-commissioner-linkedin-4e7dccd7",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/mana-mokopuna-children-and-young-people-s-commission/"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "not_found": 1
+        "not_found": 1,
+        "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "not_found": 1
+      "not_found": 1,
+      "public_snapshot_captured": 1
     }
   }
 }
