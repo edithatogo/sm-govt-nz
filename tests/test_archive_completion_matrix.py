@@ -148,9 +148,11 @@ def test_generated_workflow_is_daily_bounded_and_monthly_guarded() -> None:
     assert "automation_faults" in workflow
 
 
-def test_registered_source_workflow_separates_agency_shards() -> None:
+def test_registered_source_workflow_serializes_shared_source_type_state() -> None:
     workflow = Path(".github/workflows/archive_registered_sources.yml").read_text(encoding="utf-8")
-    assert "inputs.agency_id || 'all'" in workflow
+    assert "inputs.source_type || 'scheduled'" in workflow
+    assert "inputs.agency_id || 'all'" not in workflow
+    assert "cancel-in-progress: false" in workflow
 
 
 def test_website_fallback_dispatches_canonical_publication_workflow() -> None:

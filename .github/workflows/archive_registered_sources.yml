@@ -148,7 +148,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: archive-state-${{ github.workflow }}-${{ github.ref }}-${{ inputs.source_type || 'scheduled' }}-${{ inputs.agency_id || 'all' }}-${{ inputs.offset_sources || '0' }}
+  group: archive-state-${{ github.workflow }}-${{ github.ref }}-${{ inputs.source_type || 'scheduled' }}-${{ inputs.offset_sources || '0' }}
   cancel-in-progress: false
 
 jobs:
