@@ -1,17 +1,30 @@
 {
   "gaps": [
     {
-      "agency_id": "electricity-authority",
+      "agency_id": "aut-university",
       "platform": "linkedin",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 404: Not Found",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "HTTP 999: <none>",
       "report": "conductor/linkedin_archive_report.json",
-      "source_id": "4331aa09fccdb391",
-      "status": "not_found",
+      "source_id": "aut-university-linkedin-ff478bdc",
+      "status": "http_error",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.linkedin.com/company/electricity-authority-nz"
+      "url": "https://www.linkedin.com/edu/school?id=15502"
+    },
+    {
+      "agency_id": "aut-university",
+      "platform": "linkedin",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "HTTP 999: <none>",
+      "report": "conductor/linkedin_archive_report.json",
+      "source_id": "377642ad810ba36f",
+      "status": "http_error",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.linkedin.com/school/auckland-university-of-technology"
     }
   ],
   "inputs": {
@@ -27,33 +40,28 @@
       "selected_sources": 2,
       "status_by_platform": {
         "linkedin": {
-          "not_found": 1,
-          "public_snapshot_captured": 1
+          "http_error": 2
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "not_found": 1,
-        "public_snapshot_captured": 1
+        "http_error": 2
       }
     }
   },
   "summary": {
-    "gap_count": 1,
+    "gap_count": 2,
     "input_status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "http_error": 2
     },
     "platform_counts": {
       "linkedin": 2
     },
     "priority_counts": {
-      "archived_or_already_archived": 1,
-      "p1_existing_resources": 1
+      "review": 2
     },
     "status_counts": {
-      "not_found": 1,
-      "public_snapshot_captured": 1
+      "http_error": 2
     },
     "superseded_source_count": 0
   }
