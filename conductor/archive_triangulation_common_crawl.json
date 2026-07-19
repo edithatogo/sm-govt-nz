@@ -1,16 +1,25 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-19T10:35:01+00:00",
+  "generated_at": "2026-07-19T10:53:20+00:00",
+  "run_id": "29684091573",
+  "matrix_revision": "135b43b26df0fe4fd8b47d6cea0c50d7f99f6e6f",
   "provider": "common_crawl_index",
   "purpose": "independent historical corroboration metadata; not canonical capture",
   "snapshot_downloaded": false,
   "index_url": "https://index.commoncrawl.org/CC-MAIN-2026-25-index",
   "source_limit": 100,
+  "batch": {
+    "offset": 0,
+    "shard_index": 0,
+    "shard_count": 10,
+    "selected_sources": 100
+  },
   "summary": {
     "sources_checked": 100,
-    "capture_metadata_sources": 0,
-    "no_capture_sources": 99,
-    "provider_errors": 1
+    "capture_metadata_sources": 7,
+    "no_capture_sources": 93,
+    "provider_errors": 0,
+    "cumulative_sources": 191
   },
   "sources": [
     {
@@ -810,6 +819,838 @@
       "source_id": "26512b65170cc30d",
       "platform": "website_page",
       "url": "https://www.antarcticanz.govt.nz/news-and-events",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "5ae05ab118dedb56",
+      "platform": "json_feed",
+      "url": "https://www.ara.ac.nz/feed.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "4ab9920f5d097b20",
+      "platform": "rss",
+      "url": "https://www.ara.ac.nz/publications",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "asurequality-rss-32701f4d",
+      "platform": "rss",
+      "url": "https://www.asurequality.com/home/changes",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "0de8a8de0e954de5",
+      "platform": "rss",
+      "url": "https://www.asurequality.com/media",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "c15a11714fa023de",
+      "platform": "rss",
+      "url": "https://www.asurequality.com/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "auckland-council-website_page-3bc00b81",
+      "platform": "website_page",
+      "url": "https://www.aucklandcouncil.govt.nz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "auckland-council-x-70668f29",
+      "platform": "x",
+      "url": "https://x.com/AklCouncil",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "7644ac0cd8122dc2",
+      "platform": "rss",
+      "url": "https://www.aucklandlightrail.co.nz/api",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "a432b51e1d5cd86b",
+      "platform": "rss",
+      "url": "https://www.aut.ac.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "1992013bcbae6ac9",
+      "platform": "api",
+      "url": "https://www.boprc.govt.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "1018160ab7aece8e",
+      "platform": "website_page",
+      "url": "https://www.boprc.govt.nz/newsletter",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "beehive-nz-bluesky-13942513",
+      "platform": "bluesky",
+      "url": "https://bsky.app/profile/beehivenz.bsky.social",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "81e6fb190f555cab",
+      "platform": "rss",
+      "url": "https://www.beehive.govt.nz/atom.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "b2199a412635019c",
+      "platform": "rss",
+      "url": "https://www.bsa.govt.nz/atom.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "broadcasting-standards-authority-x-cbcc970f",
+      "platform": "x",
+      "url": "https://x.com/BSA_NZ",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "broadcasting-standards-authority-youtube-acb2e172",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/yt/about/policies/#community-guidelines",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "787a86a41b650f04",
+      "platform": "api",
+      "url": "https://www.bullerdc.govt.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "buller-district-council-newsletter-70d4a94b",
+      "platform": "newsletter",
+      "url": "http://bullerdc.govt.nz/do-it-online/newsletter-sign-up/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "callaghan-innovation-instagram-b4c10f4f",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/callaghaninnovation/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "130c10d9acd58485",
+      "platform": "rss",
+      "url": "https://www.callaghaninnovation.govt.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "callaghan-innovation-website_page-71d92453",
+      "platform": "website_page",
+      "url": "https://www.callaghaninnovation.govt.nz",
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 1,
+      "captures": [
+        {
+          "urlkey": "nz,govt,callaghaninnovation)/",
+          "timestamp": "20260607114753",
+          "url": "https://www.callaghaninnovation.govt.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "7G2ZMJVRYHFNYWDZORS5KHUJCPLUNUK5",
+          "length": "36402",
+          "offset": "550606172",
+          "filename": "crawl-data/CC-MAIN-2026-25/segments/1780687572320.30/warc/CC-MAIN-20260607101131-20260607131131-00410.warc.gz",
+          "languages": "eng",
+          "encoding": "UTF-8"
+        }
+      ]
+    },
+    {
+      "source_id": "beb0eae49d70e791",
+      "platform": "rss",
+      "url": "https://www.teaho.govt.nz/rss",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "cancer-control-agency-website_page-5055e200",
+      "platform": "website_page",
+      "url": "https://www.teaho.govt.nz",
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 1,
+      "captures": [
+        {
+          "urlkey": "nz,govt,teaho)/",
+          "timestamp": "20260611225746",
+          "url": "https://teaho.govt.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "KZTDNJKRBOBBJPTLWE3TVFDM2S46U27A",
+          "length": "15103",
+          "offset": "462346515",
+          "filename": "crawl-data/CC-MAIN-2026-25/segments/1780687572675.25/warc/CC-MAIN-20260611215417-20260612005417-00162.warc.gz",
+          "languages": "eng,mri",
+          "encoding": "UTF-8"
+        }
+      ]
+    },
+    {
+      "source_id": "fb2406f712c1e137",
+      "platform": "api",
+      "url": "https://www.cartertondc.govt.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "a7b48197999cde4f",
+      "platform": "website_page",
+      "url": "https://www.cartertondc.govt.nz/newsletter",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "65cb02578b5d2a80",
+      "platform": "api",
+      "url": "https://www.chbdc.govt.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "central-hawkes-bay-district-council-facebook-a13483ae",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/sharer.php?u=https://www.chbdc.govt.nz/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "5ebea0bd7c99f7da",
+      "platform": "json_feed",
+      "url": "https://www.chbdc.govt.nz/feed.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "325ac82ad726d01d",
+      "platform": "rss",
+      "url": "https://www.chbdc.govt.nz/feed",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "central-otago-district-council-facebook-70f2c191",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/CentralOtagoDistrictCouncil",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "central-otago-district-council-newsletter-196ab35e",
+      "platform": "newsletter",
+      "url": "https://www.codc.govt.nz/your-council/alerts",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "central-otago-district-council-website_page-d2fc9f64",
+      "platform": "website_page",
+      "url": "https://www.codc.govt.nz",
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 1,
+      "captures": [
+        {
+          "urlkey": "nz,govt,codc)/",
+          "timestamp": "20260615050719",
+          "url": "https://www.codc.govt.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "UZS6Z2BFHTFC6SHI3I7N4WFP4BDGEDOL",
+          "length": "12339",
+          "offset": "574838441",
+          "filename": "crawl-data/CC-MAIN-2026-25/segments/1780687573283.57/warc/CC-MAIN-20260615040637-20260615070637-00887.warc.gz",
+          "languages": "eng",
+          "encoding": "UTF-8"
+        }
+      ]
+    },
+    {
+      "source_id": "a33d52c7b954a067",
+      "platform": "website_page",
+      "url": "https://www.charterschools.govt.nz/news-and-events",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "76a1371b3fda068c",
+      "platform": "json_feed",
+      "url": "https://www.cic.govt.nz/feed.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "childrens-commissioner-instagram-9fad850e",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/childrenscommnz/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "1782917f6821ecfe",
+      "platform": "rss",
+      "url": "https://www.manamokopuna.org.nz/api",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "87742cef1dff881d",
+      "platform": "rss",
+      "url": "https://www.manamokopuna.org.nz/atom.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "da1b7b5dfcfaf8f5",
+      "platform": "rss",
+      "url": "https://www.manamokopuna.org.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "01184924d5799a3b",
+      "platform": "rss",
+      "url": "https://www.manamokopuna.org.nz/rss",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "christchurch-city-council-facebook-97a01ba4",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/ChristchurchCityCouncil",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "4817b55ce4d40841",
+      "platform": "api",
+      "url": "https://my.christchurchcitylibraries.com/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "christchurch-city-libraries-instagram-83b94b38",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/christchurchlib/",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "37428999e9ef3940",
+      "platform": "rss",
+      "url": "https://my.christchurchcitylibraries.com/feed",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e618b5e330cc621c",
+      "platform": "rss",
+      "url": "https://my.christchurchcitylibraries.com/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "5c1183f09f541e34",
+      "platform": "rss",
+      "url": "https://my.christchurchcitylibraries.com/news",
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 1,
+      "captures": [
+        {
+          "urlkey": "com,christchurchcitylibraries,my)/news",
+          "timestamp": "20260617185518",
+          "url": "https://my.christchurchcitylibraries.com/news/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "AYYE426QFO2MTL6PQJ6Y3A3JAAFHAZMK",
+          "length": "78460",
+          "offset": "316869406",
+          "filename": "crawl-data/CC-MAIN-2026-25/segments/1780687864363.99/warc/CC-MAIN-20260617183948-20260617213948-00680.warc.gz",
+          "languages": "eng",
+          "encoding": "UTF-8"
+        }
+      ]
+    },
+    {
+      "source_id": "389881a9724adf04",
+      "platform": "rss",
+      "url": "https://my.christchurchcitylibraries.com/subscribe",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "christchurch-city-libraries-rss-0715f2b2",
+      "platform": "rss",
+      "url": "https://my.christchurchcitylibraries.com/wp-json/wp/v2/pages/9562050",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "christchurch-city-libraries-website_page-309c6bbb",
+      "platform": "website_page",
+      "url": "https://my.christchurchcitylibraries.com",
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 1,
+      "captures": [
+        {
+          "urlkey": "com,christchurchcitylibraries,my)/",
+          "timestamp": "20260611234119",
+          "url": "https://my.christchurchcitylibraries.com/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "BB3NXCCAY3R2RAHNMO5KIBE3YXJVBAWV",
+          "length": "93536",
+          "offset": "311890632",
+          "filename": "crawl-data/CC-MAIN-2026-25/segments/1780687572675.25/warc/CC-MAIN-20260611215417-20260612005417-00572.warc.gz",
+          "languages": "eng",
+          "encoding": "UTF-8"
+        }
+      ]
+    },
+    {
+      "source_id": "city-rail-link-facebook-8b1cc184",
+      "platform": "facebook",
+      "url": "http://www.facebook.com/cityraillink",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "9ffd172c321f147d",
+      "platform": "rss",
+      "url": "https://www.cityraillink.co.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "2c80b9693e6a2a71",
+      "platform": "rss",
+      "url": "https://www.cityraillink.co.nz/publications",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "c31efd96a1f2eb3c",
+      "platform": "rss",
+      "url": "https://www.cityraillink.co.nz/subscribe",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e0c6802767a9d1ed",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/c/CivilAviationAuthorityNZ",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "7b40915e68d8b4e0",
+      "platform": "website_page",
+      "url": "https://www.climatecommission.govt.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "clutha-district-council-newsletter-e1306dc5",
+      "platform": "newsletter",
+      "url": "https://www.cluthadc.govt.nz/council/alerts?item=id%3A2wx2owvge1cxbybsu6g4",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "83d74014b2d4903b",
+      "platform": "rss",
+      "url": "https://www.cluthadc.govt.nz/rss",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "2cc7b9e3d143f490",
+      "platform": "rss",
+      "url": "https://www.cluthadc.govt.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "commerce-commission-facebook-329ea8ce",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/CommerceCommission",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "a1cbe76117cb175b",
+      "platform": "rss",
+      "url": "https://www.comcom.govt.nz/rss",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "1466ecde6effd445",
+      "platform": "website_page",
+      "url": "https://www.comcom.govt.nz/newsletter",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "courts-of-nz-newsletter-9b3176be",
+      "platform": "newsletter",
+      "url": "https://www.courtsofnz.govt.nz/subscribe",
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 1,
+      "captures": [
+        {
+          "urlkey": "nz,govt,courtsofnz)/subscribe",
+          "timestamp": "20260611033551",
+          "url": "https://www.courtsofnz.govt.nz/subscribe",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "F5JPRRL5ZVJBQM6FYYEGYIIPXCGKET2B",
+          "length": "10113",
+          "offset": "571154774",
+          "filename": "crawl-data/CC-MAIN-2026-25/segments/1780687572613.18/warc/CC-MAIN-20260611030515-20260611060515-00803.warc.gz",
+          "languages": "eng",
+          "encoding": "UTF-8"
+        }
+      ]
+    },
+    {
+      "source_id": "creative-nz-facebook-ce1004b6",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/NgaToiMaoriCNZ",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "creative-nz-linkedin-c2650b0f",
+      "platform": "linkedin",
+      "url": "https://nz.linkedin.com/company/creative-new-zealand",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "creative-nz-newsletter-7844e992",
+      "platform": "newsletter",
+      "url": "https://govt.us2.list-manage.com/subscribe?u=8b885a8ef81783c75c1d9cc8f&id=817361bc26",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "cf4e2ddc7b76f9a7",
+      "platform": "rss",
+      "url": "https://www.ccrc.govt.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "2543048acbf12ab3",
+      "platform": "api",
+      "url": "https://www.crownirrigation.co.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "420ae288cec4b53e",
+      "platform": "rss",
+      "url": "https://www.crownirrigation.co.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "b02b17ba8fc504db",
+      "platform": "website_page",
+      "url": "https://www.crownlaw.govt.nz/publications",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "c764c6b0ab173eb9",
+      "platform": "website_page",
+      "url": "https://www.crownlaw.govt.nz/subscribe",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "5d435d124a056eb1",
+      "platform": "api",
+      "url": "https://www.dia.govt.nz/openapi.json",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "department-of-internal-affairs-facebook-c50a95bd",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/DIAgovtnz",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "77a985d539526bb2",
+      "platform": "rss",
+      "url": "https://www.dia.govt.nz/atom.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "4ab566dd2e40d88e",
+      "platform": "website_page",
+      "url": "https://www.dia.govt.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "digital-council-aotearoa-new-zealand-website_page-a488e321",
+      "platform": "website_page",
+      "url": "https://www.digital.govt.nz",
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 1,
+      "captures": [
+        {
+          "urlkey": "nz,govt,digital)/",
+          "timestamp": "20260617010103",
+          "url": "https://digital.govt.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "Z546DIFW65RQMCSSNCDESTNQWGZOAU5X",
+          "length": "959",
+          "offset": "133099577",
+          "filename": "crawl-data/CC-MAIN-2026-25/segments/1780687861610.98/warc/CC-MAIN-20260616235429-20260617025429-00793.warc.gz",
+          "encoding": "UTF-8"
+        }
+      ]
+    },
+    {
+      "source_id": "eecf40518f1235a7",
+      "platform": "rss",
+      "url": "https://www.dpmc.govt.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "830368347004813f",
+      "platform": "website_page",
+      "url": "https://www.dpmc.govt.nz/api",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "9920f563d499381b",
+      "platform": "website_page",
+      "url": "https://www.dunedin.govt.nz/media",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "9fb6dd281ac8e9ff",
+      "platform": "website_page",
+      "url": "https://www.dunedin.govt.nz/publications",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "4e3293f62b8c92ab",
+      "platform": "website_page",
+      "url": "https://www.dunedin.govt.nz/subscribe",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e9adbe3bbe6ff504",
+      "platform": "rss",
+      "url": "https://www.enz.govt.nz/feed",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "6716f9f66cc8f2bb",
+      "platform": "rss",
+      "url": "https://www.enz.govt.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "3cf760ac623abab4",
+      "platform": "rss",
+      "url": "https://educationpayroll.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Feducationpayroll.co.nz%2F",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "fed5cb852b3d7241",
+      "platform": "rss",
+      "url": "https://www.educationpayroll.co.nz/news",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "ff1b1666158eef38",
+      "platform": "rss",
+      "url": "https://www.educationpayroll.co.nz/news-and-events",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "595f9f1ef6cc69eb",
+      "platform": "rss",
+      "url": "https://www.educationpayroll.co.nz/rss.xml",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "education-review-office-linkedin-b293d70e",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/education-review-office",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "e792861e5ddcca8a",
+      "platform": "website_page",
+      "url": "https://www.eeca.govt.nz/media-releases",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "1997a1965f210f96",
+      "platform": "website_page",
+      "url": "https://www.eeca.govt.nz/news",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "86d41b9e6011063b",
+      "platform": "api",
+      "url": "https://www.eit.ac.nz/.well-known/webfinger",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "fb334228d92c2602",
+      "platform": "rss",
+      "url": "https://www.eit.ac.nz/api",
+      "common_crawl_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "548a22289c0481eb",
+      "platform": "rss",
+      "url": "https://www.eit.ac.nz/feed",
       "common_crawl_status": "no_capture_found",
       "capture_count": 0,
       "captures": []
