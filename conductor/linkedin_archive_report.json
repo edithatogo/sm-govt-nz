@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:21:20+00:00",
+  "generated_at": "2026-07-19T04:29:07+00:00",
   "inputs": {
-    "agency_id": "marlborough-district-council",
+    "agency_id": "aut-university",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,30 +28,41 @@
   },
   "results": [
     {
-      "agency_id": "marlborough-district-council",
+      "agency_id": "aut-university",
       "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:08da00bc18a5bc7034c3bdf7",
-      "source_id": "marlborough-district-council-linkedin-fd3dea73",
+      "reason": "HTTP 999: <none>",
+      "source_id": "aut-university-linkedin-ff478bdc",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/marlborough-district-council"
+      "status": "http_error",
+      "url": "https://www.linkedin.com/edu/school?id=15502"
+    },
+    {
+      "agency_id": "aut-university",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 999: <none>",
+      "source_id": "377642ad810ba36f",
+      "source_type": "social_profile",
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/auckland-university-of-technology"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "public_snapshot_captured": 1
+        "http_error": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "public_snapshot_captured": 1
+      "http_error": 2
     }
   }
 }
