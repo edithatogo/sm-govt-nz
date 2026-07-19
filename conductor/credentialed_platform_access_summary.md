@@ -1,15 +1,16 @@
 # Credentialed Platform Access Readiness
 
-Generated: 2026-07-17T13:21:19+00:00
+Generated: 2026-07-19T10:49:01+00:00
 
 ## Summary
 
-- `selected_sources`: 845
+- `selected_sources`: 846
 - `actionable_configuration_fault_count`: 0
+- `credential_hygiene_fault_count`: 0
 
 ## Platform status
 
-- `facebook`: {'api_disabled_manual_seed_path': 323}
+- `facebook`: {'api_disabled_manual_seed_path': 324}
 - `instagram`: {'api_disabled_manual_seed_path': 182}
 - `linkedin`: {'api_disabled_manual_seed_path': 258}
 - `threads`: {'api_disabled_manual_seed_path': 3}
@@ -20,3 +21,4 @@ Generated: 2026-07-17T13:21:19+00:00
 - Disabled live API gates are report-only states and must not open blocker issues.
 - Enabled live API gates with missing required secrets are actionable configuration faults.
 - Registered-but-unseeded credentialed accounts are not described as archived until records exist.
+- Ordinary password environment variables are forbidden; use platform-issued read tokens or authorised exports.
