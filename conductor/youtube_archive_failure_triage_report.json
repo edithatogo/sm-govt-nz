@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T11:26:20+00:00",
+  "generated_at": "2026-07-19T05:32:34+00:00",
   "inputs": {
     "reports": [
       "conductor/youtube_archive_report.json"
@@ -51,7 +51,7 @@
       "platform": "youtube",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "captured public YouTube video snapshot youtube_public_snapshot:34ccfa312680bae58140deea",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:1d9601cfd0471241155589f5",
       "recommended_action": "review",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-2dae092d",
@@ -64,7 +64,7 @@
       "platform": "youtube",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "captured public YouTube video snapshot youtube_public_snapshot:498aca520e900cf7ebe39e7c",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:806e768613290e924893ace0",
       "recommended_action": "review",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-d7c4a070",
@@ -77,7 +77,33 @@
       "platform": "youtube",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "captured public YouTube video snapshot youtube_public_snapshot:cb7a2d1a3de6ea8db0dc6013",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:b20ecddbf3796404444d5038",
+      "recommended_action": "review",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "environment-canterbury-youtube-4940b24d",
+      "status": "public_snapshot_captured",
+      "url": "http://www.youtube.com/watch/NNZWhC_YkKE"
+    },
+    {
+      "agency_id": "environment-canterbury",
+      "fixability_class": "review",
+      "platform": "youtube",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:3bdf8f8053a0833d7e14d2fd",
+      "recommended_action": "review",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "environment-canterbury-youtube-409a963e",
+      "status": "public_snapshot_captured",
+      "url": "http://www.youtube.com/watch/TXHu3bxNx1M"
+    },
+    {
+      "agency_id": "environment-canterbury",
+      "fixability_class": "review",
+      "platform": "youtube",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:1dbf2b5478003ca794ae8727",
       "recommended_action": "review",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-4c9e496b",
@@ -90,7 +116,7 @@
       "platform": "youtube",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "captured public YouTube video snapshot youtube_public_snapshot:9ce9a51788c03ca9fb1a2a9c",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:7f8e36bb946f9ebc10da99f1",
       "recommended_action": "review",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-bdd2a5f4",
@@ -116,7 +142,20 @@
       "platform": "youtube",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "captured public YouTube video snapshot youtube_public_snapshot:9cc1700a98c12344f8797593",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:ae526d125e19bcee0d683b9d",
+      "recommended_action": "review",
+      "report": "conductor/youtube_archive_report.json",
+      "source_id": "environment-canterbury-youtube-362fb5f0",
+      "status": "public_snapshot_captured",
+      "url": "http://www.youtube.com/watch/f5JhWR9hAW0"
+    },
+    {
+      "agency_id": "environment-canterbury",
+      "fixability_class": "review",
+      "platform": "youtube",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:682c37a8ffd06c741a969fdd",
       "recommended_action": "review",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-b08cb22a",
@@ -129,7 +168,7 @@
       "platform": "youtube",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "captured public YouTube video snapshot youtube_public_snapshot:35c4c2365cef2266a88c22b6",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:26b0c6ceefd46f29995e4848",
       "recommended_action": "review",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-3b868f65",
@@ -155,7 +194,7 @@
       "platform": "youtube",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "captured public YouTube video snapshot youtube_public_snapshot:2c2d47b3bbe2621baba33d1d",
+      "reason": "captured public YouTube video snapshot youtube_public_snapshot:bff70d3f9f7d43f00825bda1",
       "recommended_action": "review",
       "report": "conductor/youtube_archive_report.json",
       "source_id": "environment-canterbury-youtube-ad2102eb",
@@ -182,7 +221,7 @@
   "report_summaries": {
     "conductor/youtube_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-07-13T11:26:20+00:00",
+      "generated_at": "2026-07-19T05:32:34+00:00",
       "summary": {
         "platform_counts": {
           "youtube": 50
@@ -190,10 +229,10 @@
         "selected_sources": 50,
         "status_by_platform": {
           "youtube": {
-            "already_captured": 433,
-            "captured": 23,
+            "already_captured": 361,
+            "captured": 50,
             "no_records": 1,
-            "public_snapshot_captured": 7,
+            "public_snapshot_captured": 10,
             "source_url_not_channel": 1,
             "youtube_channel_not_found": 2,
             "youtube_video_not_found": 2
@@ -201,10 +240,10 @@
         },
         "status_by_provider": {},
         "status_counts": {
-          "already_captured": 433,
-          "captured": 23,
+          "already_captured": 361,
+          "captured": 50,
           "no_records": 1,
-          "public_snapshot_captured": 7,
+          "public_snapshot_captured": 10,
           "source_url_not_channel": 1,
           "youtube_channel_not_found": 2,
           "youtube_video_not_found": 2
@@ -213,13 +252,13 @@
     }
   },
   "summary": {
-    "failure_count": 12,
+    "failure_count": 15,
     "platform_counts": {
-      "youtube": 12
+      "youtube": 15
     },
     "priority_counts": {
       "p1_existing_resources": 2,
-      "review": 10
+      "review": 13
     },
     "report_only_count": 1,
     "report_only_platform_counts": {
@@ -232,7 +271,7 @@
       "no_records": 1
     },
     "status_counts": {
-      "public_snapshot_captured": 7,
+      "public_snapshot_captured": 10,
       "source_url_not_channel": 1,
       "youtube_channel_not_found": 2,
       "youtube_video_not_found": 2
