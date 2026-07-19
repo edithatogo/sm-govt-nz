@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-19T05:30:31+00:00",
+  "generated_at": "2026-07-19T05:32:40+00:00",
   "provider": "common_crawl_index",
   "purpose": "independent historical corroboration metadata; not canonical capture",
   "snapshot_downloaded": false,
@@ -9,18 +9,17 @@
   "summary": {
     "sources_checked": 1,
     "capture_metadata_sources": 0,
-    "no_capture_sources": 0,
-    "provider_errors": 1
+    "no_capture_sources": 1,
+    "provider_errors": 0
   },
   "sources": [
     {
       "source_id": "9635209a748b4790",
       "platform": "api",
       "url": "https://www.acc.co.nz/.well-known/webfinger",
-      "common_crawl_status": "provider_error",
+      "common_crawl_status": "no_capture_found",
       "capture_count": 0,
-      "captures": [],
-      "error": "HTTPError: HTTP Error 404: Not Found"
+      "captures": []
     }
   ]
 }
