@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-19T05:28:02+00:00",
+  "provider": "internet_archive_wayback_cdx",
+  "purpose": "independent historical corroboration metadata; not canonical capture",
+  "snapshot_downloaded": false,
+  "source_limit": 1,
+  "summary": {
+    "sources_checked": 1,
+    "capture_metadata_sources": 0,
+    "no_capture_sources": 0,
+    "provider_errors": 1
+  },
+  "sources": [
+    {
+      "source_id": "9635209a748b4790",
+      "platform": "api",
+      "url": "https://www.acc.co.nz/.well-known/webfinger",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "TimeoutError: The read operation timed out"
+    }
+  ]
+}
