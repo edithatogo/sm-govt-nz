@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "1c8599d7a5e5fed49975a8614ab11300121c0e4966e76bfae72fd25329c1a897"
+      "sha256": "3973ee2c9f0a17e03f26030a4ae0d2ad69243c3e1177f1a90d5ef23db8e9f15c"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638705,
+      "bytes": 24638685,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "4503f2299e2a272e25ee321b84de6990416e72eaeff5483c2d9ec87c5c696b0d"
+      "sha256": "63e12e9495e3d7347dbb1992d078d10c9e64d4b21a25352335545de9cb35ba1f"
     },
     "normalized_archive.parquet": {
-      "bytes": 39048971,
+      "bytes": 38930922,
       "path": "normalized_archive.parquet",
-      "sha256": "f4027651667befe2db549f24363155213c0a32303644c92f452a1213b785aa58"
+      "sha256": "3619ae8fc0b41c0cbd8b5b0ebef0bc427b010204d61ed2c7b4a8f40ba37e297e"
     }
   },
   "jurisdiction": "nz",
@@ -27,7 +27,7 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11768,
+  "normalized_record_count": 11769,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
   "raw_file_count": 14719,
@@ -122881,6 +122881,15 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-19T07:16:07+00:00",
+      "source_account": "masterton-district-council",
+      "source_key": "linkedin:masterton-district-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:b47efe96c58e6833da22e73b",
+      "source_url": "https://www.linkedin.com/company/masterton-district-council/"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -123081,7 +123090,7 @@
     "email": 21,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 50,
+    "linkedin": 51,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -123113,7 +123122,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-13T01:53:31+00:00",
+      "max_original_created_at": "2026-07-19T07:16:07+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
