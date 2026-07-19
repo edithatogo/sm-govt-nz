@@ -1,0 +1,44 @@
+name: Triangulate Sources with Internet Archive
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Maximum source URLs to query"
+        required: true
+        default: "100"
+      delay:
+        description: "Delay between CDX requests in seconds"
+        required: true
+        default: "0.25"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wayback-triangulation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  triangulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements-dev.txt
+      - name: Collect Wayback CDX metadata
+        run: >-
+          python scripts/triangulate_wayback.py
+          --limit "${{ inputs.limit || '100' }}"
+          --delay "${{ inputs.delay || '0.25' }}"
+      - name: Commit triangulation report
+        run: >-
+          python scripts/commit_state_updates.py
+          --message "Refresh Internet Archive triangulation metadata"
+          --path conductor/archive_triangulation_wayback.json
