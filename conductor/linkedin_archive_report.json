@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:29:24+00:00",
+  "generated_at": "2026-07-19T04:29:40+00:00",
   "inputs": {
-    "agency_id": "dpmc",
+    "agency_id": "ministry-for-pacific-peoples",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,30 +28,41 @@
   },
   "results": [
     {
-      "agency_id": "dpmc",
+      "agency_id": "ministry-for-pacific-peoples",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:13b197a30928f12a06e1ddd7",
+      "source_id": "ministry-for-pacific-peoples-linkedin-5083e8eb",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://linkedin.com/company/ministry-for-pacific-peoples"
+    },
+    {
+      "agency_id": "ministry-for-pacific-peoples",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
-      "source_id": "ca6bebd5306e06ac",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:cfb9eb7f9675322dd23788ab",
+      "source_id": "2f800b09ea2b7beb",
       "source_type": "social_profile",
-      "status": "not_found",
-      "url": "https://www.linkedin.com/company/department-of-the-prime-minister-and-cabinet-nz"
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/ministry-for-pacific-peoples"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "not_found": 1
+        "public_snapshot_captured": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "not_found": 1
+      "public_snapshot_captured": 2
     }
   }
 }

@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "408df902d538c556e80ed3a571037cbbd4974d86aadfcdd425b88faf09d2ee34"
+      "sha256": "ee50bd4fab549db74d40ed0cc4a9cec4f8ea9746cc0fe666be83cc3e787566a0"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24638705,
+      "bytes": 24638722,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "19052d4c412317901a5cf306d270db361b01de5aa24223d58ffa87a64ca6c219"
+      "sha256": "406cf7788469d6060216bc333e03a3f39b819905e2914f724451eba3c7e70164"
     },
     "normalized_archive.parquet": {
-      "bytes": 39048971,
+      "bytes": 38929070,
       "path": "normalized_archive.parquet",
-      "sha256": "f4027651667befe2db549f24363155213c0a32303644c92f452a1213b785aa58"
+      "sha256": "615c3be6ad36bb129e6dd40d58300daa634ef63f8de0250d255bfcba98fa839c"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 11768,
+  "normalized_record_count": 11770,
   "normalized_shard_count": 519,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 14618,
+  "raw_file_count": 14619,
   "record_index": [
     {
       "mirror_targets": [
@@ -122881,6 +122881,24 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-19T04:29:39+00:00",
+      "source_account": "ministry-for-pacific-peoples",
+      "source_key": "linkedin:ministry-for-pacific-peoples",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:13b197a30928f12a06e1ddd7",
+      "source_url": "https://linkedin.com/company/ministry-for-pacific-peoples"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T04:29:40+00:00",
+      "source_account": "ministry-for-pacific-peoples",
+      "source_key": "linkedin:ministry-for-pacific-peoples",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:cfb9eb7f9675322dd23788ab",
+      "source_url": "https://www.linkedin.com/company/ministry-for-pacific-peoples"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -123081,7 +123099,7 @@
     "email": 21,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 50,
+    "linkedin": 52,
     "rss": 3930,
     "website_page": 1827,
     "x": 769,
@@ -123113,7 +123131,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-13T01:53:31+00:00",
+      "max_original_created_at": "2026-07-19T04:29:40+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
