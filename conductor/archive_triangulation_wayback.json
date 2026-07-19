@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-19T05:28:02+00:00",
+  "generated_at": "2026-07-19T09:00:36+00:00",
   "provider": "internet_archive_wayback_cdx",
   "purpose": "independent historical corroboration metadata; not canonical capture",
   "snapshot_downloaded": false,
-  "source_limit": 1,
+  "source_limit": 100,
   "summary": {
-    "sources_checked": 1,
-    "capture_metadata_sources": 0,
-    "no_capture_sources": 0,
-    "provider_errors": 1
+    "sources_checked": 100,
+    "capture_metadata_sources": 4,
+    "no_capture_sources": 22,
+    "provider_errors": 74
   },
   "sources": [
     {
@@ -19,7 +19,1324 @@
       "wayback_status": "provider_error",
       "capture_count": 0,
       "captures": [],
+      "error": "HTTPError: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "source_id": "cec34ffc95773934",
+      "platform": "api",
+      "url": "https://www.acc.co.nz/openapi.json",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "HTTPError: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "source_id": "accident-compensation-corporation-facebook-a4eafd5a",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/ACCNewZealand",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "HTTPError: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "source_id": "accident-compensation-corporation-instagram-ebbf541a",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/accnewzealand",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
       "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "source_id": "accident-compensation-corporation-instagram-41dd3f71",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/accnewzealand/",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "97f951e64bdb2a2d",
+      "platform": "json_feed",
+      "url": "https://www.acc.co.nz/feed.json",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "accident-compensation-corporation-linkedin-757de80b",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/acc-new-zealand",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "accident-compensation-corporation-linkedin-7a8ccc14",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/acc-new-zealand/",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "accident-compensation-corporation-newsletter-a2c2ad5b",
+      "platform": "newsletter",
+      "url": "https://www.acc.co.nz/for-business/get-to-know-us/working-with-business",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "1131fcf3fe0cf49f",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/api",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error _ssl.c:1064: The handshake operation timed out>"
+    },
+    {
+      "source_id": "2762e32ff6a8c6c1",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/atom.xml",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "source_id": "71cb57cc0ecd072d",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/feed",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "source_id": "449cd0c1cdacdb1e",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/media",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "7560a8eb75e336e7",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/media-releases",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "81388bc7560e029b",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/news",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "7c087238ec96250f",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/news-and-events",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "244ba566c890c0ed",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/newsletter",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "96368d3e0b990eb7",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/publications",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "4fbdc49489686365",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/rss",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "2e15eff2e8c1924a",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/rss.xml",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error _ssl.c:1064: The handshake operation timed out>"
+    },
+    {
+      "source_id": "8d1291b4b47c3025",
+      "platform": "rss",
+      "url": "https://www.acc.co.nz/subscribe",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "accident-compensation-corporation-website_page-2f4e753e",
+      "platform": "website_page",
+      "url": "https://www.acc.co.nz",
+      "wayback_status": "capture_metadata_found",
+      "capture_count": 20,
+      "captures": [
+        {
+          "timestamp": "19981201202238",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "L4UAWMYQ6NMPEBA2F2IDT3VTTY62OIWS"
+        },
+        {
+          "timestamp": "20000229034544",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "C2HW5N6QP7SBGFIGUWWWXAZVVCSUWRMX"
+        },
+        {
+          "timestamp": "20000618152348",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "HOPKLXTXW45AMWLQB4MUQJJ3IOQ5CGSS"
+        },
+        {
+          "timestamp": "20000819020327",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "3P3L3D7QFWAEOLHYX33SUHTCDNLTBQ3L"
+        },
+        {
+          "timestamp": "20001203041800",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "73D6LIO3UZDZ5XUZSU4IWETB2FLRSMRP"
+        },
+        {
+          "timestamp": "20010331194619",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "F2QFZ3SAGSBHVUUL3WLL4ISRG7JJHMBF"
+        },
+        {
+          "timestamp": "20010405171411",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "NAHGQ6VMU76G5RRRCHPMQZ2FACW2GYM2"
+        },
+        {
+          "timestamp": "20020327022808",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "QPERUVNUBEADGL2YDUEAYFWNK6Y3SDTK"
+        },
+        {
+          "timestamp": "20031130214457",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "QZER5WS5GIK6F55YT7E7UT5TXDH5XVXZ"
+        },
+        {
+          "timestamp": "20040131233005",
+          "original": "http://acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "QPERUVNUBEADGL2YDUEAYFWNK6Y3SDTK"
+        },
+        {
+          "timestamp": "20040322132901",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "JKS6M2SR4USDEAVJZR7LEKWAPFE6MGQT"
+        },
+        {
+          "timestamp": "20040401023331",
+          "original": "http://acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "MMSFAA644R27QZSCFNFSVL75VICHKXQJ"
+        },
+        {
+          "timestamp": "20040716073848",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "5N3HDQVUNCJEALYXFZLPJKQI6R6GQDMT"
+        },
+        {
+          "timestamp": "20040725083249",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "CXGE2QSQVNUTH32EZN6BERXNEDYFIM3Q"
+        },
+        {
+          "timestamp": "20040726080324",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "RNN7ERDE2XP3YC3YF2EPEFZWAEEVOAN2"
+        },
+        {
+          "timestamp": "20040810021223",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "VU7EZ3FM2H2UPF6PQSLB6HDZREPLR4UX"
+        },
+        {
+          "timestamp": "20040828034506",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "MNSEJFUTTYY4T274K6D3WDTM3FGPBVD6"
+        },
+        {
+          "timestamp": "20040915074902",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "AGASKD3NVOPZF2BDBP6LHTSMJV5DDPFS"
+        },
+        {
+          "timestamp": "20040916075050",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "USGQCIMYZS4HJNADNYGTTJ5SCCCH66SK"
+        },
+        {
+          "timestamp": "20040917080722",
+          "original": "http://www.acc.co.nz:80/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "SK3IU4QO4UYW5KPQA7L5KRLQNF7NBVRO"
+        }
+      ]
+    },
+    {
+      "source_id": "accident-compensation-corporation-youtube-27f8304b",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@accnz",
+      "wayback_status": "capture_metadata_found",
+      "capture_count": 4,
+      "captures": [
+        {
+          "timestamp": "20230331025454",
+          "original": "https://www.youtube.com/@accnz",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "ZOROC6CZ7SKMLMUUEJW4MHPWL3OQGWBF"
+        },
+        {
+          "timestamp": "20240604170829",
+          "original": "https://www.youtube.com/@accnz",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "JCLQNKDHEIP7L63QS7DH2J6EF6NNOUIW"
+        },
+        {
+          "timestamp": "20240819204142",
+          "original": "https://www.youtube.com/@accnz",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "WARD52MH6FZ3E3QEGYUKL7D65IPNVDGR"
+        },
+        {
+          "timestamp": "20250526131040",
+          "original": "https://www.youtube.com/@accnz",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "2PNJ6P4IZWLLFCGWQHXGANGSDEABAOSZ"
+        }
+      ]
+    },
+    {
+      "source_id": "accident-compensation-corporation-youtube-07699fd4",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+      "wayback_status": "capture_metadata_found",
+      "capture_count": 20,
+      "captures": [
+        {
+          "timestamp": "20180731105406",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "YRBRCHO2JQONLW26O4I6QKXNNZQ3GGMW"
+        },
+        {
+          "timestamp": "20180801134646",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "DF6QLSGVQ2MACPDND3T3XNBMFT75RWSF"
+        },
+        {
+          "timestamp": "20180802140910",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "AVQUHBQF7XVKZZCTFQHDNROYZRZBQSOD"
+        },
+        {
+          "timestamp": "20180803153809",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "DE5OQF4TRNXCPNCYUMLU2A2MWV4YTF3K"
+        },
+        {
+          "timestamp": "20180804160842",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "2HWTCOLANGAFKM26LGDDEGDEURJ4OOWG"
+        },
+        {
+          "timestamp": "20180805163141",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "NCFPEPOVKPX4X5434ECY77QS2TGP4DTB"
+        },
+        {
+          "timestamp": "20180806171626",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "3HEA6GZPAWJPFXB7DCMVDVXQEXLBOSOZ"
+        },
+        {
+          "timestamp": "20180807173253",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "6YAB7CVIAA5C6P7Y3DJNARVBOTO36624"
+        },
+        {
+          "timestamp": "20180808181334",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "ACMDN76NPZ4NHYRBGF2ESOZM4FZMVHST"
+        },
+        {
+          "timestamp": "20180809190102",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "NHYV7BN3NN62QHWLNQQUTAUQMCJ77PYU"
+        },
+        {
+          "timestamp": "20180810204139",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "QPJK32K34L2SAWVN5QGVJT3K5Z5F2CTN"
+        },
+        {
+          "timestamp": "20180811203739",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "PCZKXRVIPHMJDJW44PV2EWIM4NUG4RIQ"
+        },
+        {
+          "timestamp": "20180812224904",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "5UR2E2CLRTTH2J37LKWAFJEU5KNABARE"
+        },
+        {
+          "timestamp": "20180813231248",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "E6NG2NSJDAQPIH3UKIIXHMHZG2BUCQH6"
+        },
+        {
+          "timestamp": "20180814234932",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "OE5EXX26NQN4LLBV6ZPZCBVSNPMTAE3P"
+        },
+        {
+          "timestamp": "20180816004710",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "37B2WUJMC2PPEM7PQQKEHPP3T6NFGLEH"
+        },
+        {
+          "timestamp": "20180817004811",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "DUC4QN6OFG4NIBLXVVQNPIIXKA7YQRWH"
+        },
+        {
+          "timestamp": "20180818012111",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "DX7HVDGDAOD2VTQ45XIDKR4J7RJES6ZV"
+        },
+        {
+          "timestamp": "20180819020700",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "QHW4HY4DZ3AA7VWZRNSLSEILH5EZ7ZS5"
+        },
+        {
+          "timestamp": "20180820023109",
+          "original": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "CUCKIZJ5RU7WDUKJLCVXY6SZZJ76CXPF"
+        }
+      ]
+    },
+    {
+      "source_id": "09ac8da8255b089e",
+      "platform": "api",
+      "url": "https://www.accreditation.co.nz/.well-known/webfinger",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "425ebd857705b53b",
+      "platform": "api",
+      "url": "https://www.accreditation.co.nz/openapi.json",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "3caae6ccb89ff631",
+      "platform": "json_feed",
+      "url": "https://www.accreditation.co.nz/feed.json",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "3455485d0c451fdf",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/api",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "707a2a7261f0fc41",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/atom.xml",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "b946587fd3a6104a",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/feed",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "d80d26d70622f584",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/media",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "459fd75a866a8bcf",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/media-releases",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "f1788672275781bb",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/news",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "e8b4cbcde8eeeeae",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/news-and-events",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "e7f8d559fa5e635e",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/newsletter",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "701d2ff1b3546abf",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/publications",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "7ee5f10698aabbe9",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/rss",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "31e6f23e891646be",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/rss.xml",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "250dbc73984ed112",
+      "platform": "rss",
+      "url": "https://www.accreditation.co.nz/subscribe",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "accreditation-council-website_page-5d885a8f",
+      "platform": "website_page",
+      "url": "https://www.accreditation.co.nz",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "c5a5ba0f2acc6aa5",
+      "platform": "api",
+      "url": "https://www.airways.co.nz/.well-known/webfinger",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "e435af5750cfb7e4",
+      "platform": "api",
+      "url": "https://www.airways.co.nz/openapi.json",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "airways-nz-facebook-2e76afae",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/AirwaysNZ/",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "airways-nz-instagram-424df104",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/airwaysnz/?hl=en",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "7ce199a7e4b32fd2",
+      "platform": "json_feed",
+      "url": "https://www.airways.co.nz/feed.json",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "airways-nz-linkedin-5cd4e4eb",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/airways-new-zealand",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "airways-nz-linkedin-99c4b2d6",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/airways-new-zealand/?originalSubdomain=nz",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "6c5611f7f191d4a9",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/api",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "source_id": "fc66b7d868ec936f",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/atom.xml",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "b109ec08a3e1ada6",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/feed",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "source_id": "3fa6c52658591fd0",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/media",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "b0b7ccc3cdefef04",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/media-releases",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "df8eafca2854688a",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/news",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "e622fd4a4675e9b2",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/news-and-events",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "426ed61d17805571",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/newsletter",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "b180280541d8bd0b",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/publications",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "ce726548fc74548c",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/rss",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error _ssl.c:1064: The handshake operation timed out>"
+    },
+    {
+      "source_id": "a4e96c596f10e291",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/rss.xml",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "af56c37dab273c8b",
+      "platform": "rss",
+      "url": "https://www.airways.co.nz/subscribe",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "airways-nz-website_page-8f2cead0",
+      "platform": "website_page",
+      "url": "https://www.airways.co.nz",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error _ssl.c:1064: The handshake operation timed out>"
+    },
+    {
+      "source_id": "f44b74f32571294d",
+      "platform": "api",
+      "url": "https://www.pestoff.co.nz/.well-known/webfinger",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "290f972006bac13d",
+      "platform": "api",
+      "url": "https://www.pestoff.co.nz/openapi.json",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "animal-control-products-json_feed-ea8b84d5",
+      "platform": "json_feed",
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "animal-control-products-json_feed-17f27f26",
+      "platform": "json_feed",
+      "url": "https://pestoff.co.nz/wp-json/wp/v2/pages/2",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "bbf777aacfa609d8",
+      "platform": "json_feed",
+      "url": "https://www.pestoff.co.nz/feed.json",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "afcf2d7582935a0e",
+      "platform": "rss",
+      "url": "https://pestoff.co.nz/feed/",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "9ec941b1b4a5af62",
+      "platform": "rss",
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error _ssl.c:1064: The handshake operation timed out>"
+    },
+    {
+      "source_id": "758209a956979f16",
+      "platform": "rss",
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F&format=xml",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "8fb3dc84f2e69aff",
+      "platform": "rss",
+      "url": "https://pestoff.co.nz/wp-json/wp/v2/pages/2",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "d6a26a2ca3fb1f0d",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/api",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "ab7ed23916f98c24",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/atom.xml",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "b185b7477af7a768",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/feed",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "ad7210b1b7b02829",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/media",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "8de1c571151b9246",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/media-releases",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "501c8cb59c2c771e",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/news",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "f8bf97a6c435bb84",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/news-and-events",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "1e7a9057608cc3d3",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/newsletter",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "4216d14ad0fb06e4",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/publications",
+      "wayback_status": "capture_metadata_found",
+      "capture_count": 20,
+      "captures": [
+        {
+          "timestamp": "20150312070047",
+          "original": "http://www.pestoff.co.nz:80/publications",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "WBNBYQTULP5ZK3T3LB4JDAQOWBHINWD2"
+        },
+        {
+          "timestamp": "20150726164108",
+          "original": "http://www.pestoff.co.nz:80/publications",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "N6CUBCCQCYSL6H4DVADCB7A3P63LUALP"
+        },
+        {
+          "timestamp": "20160122065913",
+          "original": "http://pestoff.co.nz/publications",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "T3J3RGWFZED226JWTU64LFBRFJ2CFTNX"
+        },
+        {
+          "timestamp": "20160314030026",
+          "original": "http://www.pestoff.co.nz/publications",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "XJRPYXW7V5NDEXNBCPTSIQ75URR2NNIX"
+        },
+        {
+          "timestamp": "20160404014912",
+          "original": "http://pestoff.co.nz/publications",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "T3J3RGWFZED226JWTU64LFBRFJ2CFTNX"
+        },
+        {
+          "timestamp": "20160809124238",
+          "original": "http://www.pestoff.co.nz:80/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "QKWTBOZ4YXRYZ6NOJGJKH54F4LHTTXAM"
+        },
+        {
+          "timestamp": "20160904090201",
+          "original": "http://www.pestoff.co.nz:80/publications",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "YXZBJRL5WMNA24ORWCE74GEQVKIP77UR"
+        },
+        {
+          "timestamp": "20161006013555",
+          "original": "http://www.pestoff.co.nz:80/publications",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "ORIR462GX3XYHIQYLJ7NIKVGFY4THNAS"
+        },
+        {
+          "timestamp": "20161009192607",
+          "original": "http://www.pestoff.co.nz:80/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "XFB4G3EJZYYWLC5DCAYQWYBQFMB5PDBH"
+        },
+        {
+          "timestamp": "20161013163940",
+          "original": "http://pestoff.co.nz/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "FK7AT7Q5WQ6UHZGBVTNRMWIROFDDG7NK"
+        },
+        {
+          "timestamp": "20161111221125",
+          "original": "http://www.pestoff.co.nz:80/publications",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "CG7I4K5Z5WVQIEEIEYE36KPYTAROJINR"
+        },
+        {
+          "timestamp": "20170403220203",
+          "original": "http://www.pestoff.co.nz:80/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "WN6GYRWC44WCIWM67ZBMD5NG5XRA5TYZ"
+        },
+        {
+          "timestamp": "20170406034659",
+          "original": "http://pestoff.co.nz/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "ENCVJVBOH4LPXLKOED2IHBQZIWIFOTQJ"
+        },
+        {
+          "timestamp": "20180120195239",
+          "original": "https://pestoff.co.nz/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "STH6XHNWOMHVIXNRDTZTHRZ4CHGCPCJR"
+        },
+        {
+          "timestamp": "20180126224848",
+          "original": "https://www.pestoff.co.nz/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "OTU2V634NCFFSCLM5ZZMIQQL6BFOYNA6"
+        },
+        {
+          "timestamp": "20190115024442",
+          "original": "https://www.pestoff.co.nz/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "4OJ5IBYP2ZZZAHRRITD36KM3W5X5HMW2"
+        },
+        {
+          "timestamp": "20190121221859",
+          "original": "https://www.pestoff.co.nz/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "D4UYOYMXIWMFJ3CROV3EW3MGTYWH7ERQ"
+        },
+        {
+          "timestamp": "20190724093241",
+          "original": "https://pestoff.co.nz/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "QF7HTTI54HZXHUV742MRORIOORMXVQL3"
+        },
+        {
+          "timestamp": "20190823102203",
+          "original": "https://pestoff.co.nz/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "JPS3FDUJRIJ5QHZYEJ2OVLXVACME6PBP"
+        },
+        {
+          "timestamp": "20190915130500",
+          "original": "https://pestoff.co.nz/publications/",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "LQTJDSO7EPYKKZ334EKNMRAEAJBBJCP6"
+        }
+      ]
+    },
+    {
+      "source_id": "726201313eed2d46",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/rss",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "e77c1f4da75f3899",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/rss.xml",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "dee68e0ebc974055",
+      "platform": "rss",
+      "url": "https://www.pestoff.co.nz/subscribe",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "animal-control-products-website_page-15dfd90e",
+      "platform": "website_page",
+      "url": "https://www.pestoff.co.nz",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "4bdccc3719c4c083",
+      "platform": "api",
+      "url": "https://www.antarcticanz.govt.nz/.well-known/webfinger",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "2d5d03bdae8f52ad",
+      "platform": "api",
+      "url": "https://www.antarcticanz.govt.nz/openapi.json",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "antarctica-nz-facebook-6494d1ed",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/Antarctica.New.Zealand/",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "antarctica-nz-facebook-d81b995d",
+      "platform": "facebook",
+      "url": "https://www.facebook.com/AntarcticaNZ",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "antarctica-nz-instagram-6ead4fe3",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/antarctica.nz/",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error _ssl.c:1064: The handshake operation timed out>"
+    },
+    {
+      "source_id": "antarctica-nz-instagram-e4af56d7",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/antarcticanz",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "a66e8704256371d0",
+      "platform": "json_feed",
+      "url": "https://www.antarcticanz.govt.nz/feed.json",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "antarctica-nz-linkedin-e7a28b13",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/antarctica-new-zealand",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "8697662c8cb53994",
+      "platform": "rss",
+      "url": "https://www.antarcticanz.govt.nz/atom.xml",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "3786d0f11f9bd517",
+      "platform": "rss",
+      "url": "https://www.antarcticanz.govt.nz/feed",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "96ad296436c6a852",
+      "platform": "rss",
+      "url": "https://www.antarcticanz.govt.nz/rss",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "e9f86a8898c8141c",
+      "platform": "rss",
+      "url": "https://www.antarcticanz.govt.nz/rss.xml",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "antarctica-nz-website_page-1cd1a2ba",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "848ae72b5ddd2f0c",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/api",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "60cdcbd500daadb1",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/media",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "cf7529f187d846b1",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/media-releases",
+      "wayback_status": "no_capture_found",
+      "capture_count": 0,
+      "captures": []
+    },
+    {
+      "source_id": "6a77126dfac2a760",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/news",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "source_id": "26512b65170cc30d",
+      "platform": "website_page",
+      "url": "https://www.antarcticanz.govt.nz/news-and-events",
+      "wayback_status": "provider_error",
+      "capture_count": 0,
+      "captures": [],
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>"
     }
   ]
 }
