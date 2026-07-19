@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:20:51+00:00",
+  "generated_at": "2026-07-19T04:21:01+00:00",
   "inputs": {
-    "agency_id": "crown-law-office",
+    "agency_id": "manawatu-district-council",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,15 +28,15 @@
   },
   "results": [
     {
-      "agency_id": "crown-law-office",
-      "archive_status": "ready",
+      "agency_id": "manawatu-district-council",
+      "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
-      "source_id": "34db903d02ea6b0b",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:54043e5ef96e275e2147e81b",
+      "source_id": "manawatu-district-council-linkedin-c2d6eb38",
       "source_type": "social_profile",
-      "status": "not_found",
-      "url": "https://www.linkedin.com/company/crown-law-office-new-zealand"
+      "status": "public_snapshot_captured",
+      "url": "https://nz.linkedin.com/company/manawatu-district-council"
     }
   ],
   "summary": {
@@ -46,12 +46,12 @@
     "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "not_found": 1
+        "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "not_found": 1
+      "public_snapshot_captured": 1
     }
   }
 }
