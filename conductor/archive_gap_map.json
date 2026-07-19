@@ -1,40 +1,54 @@
 {
-  "gaps": [],
+  "gaps": [
+    {
+      "agency_id": "manukau-institute-of-technology",
+      "platform": "linkedin",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "HTTP 999: <none>",
+      "report": "conductor/linkedin_archive_manukau_institute_of_technology_report.json",
+      "source_id": "f77d729a901b0464",
+      "status": "http_error",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.linkedin.com/school/manukau-institute-of-technology"
+    }
+  ],
   "inputs": {
     "reports": [
-      "conductor/linkedin_archive_manawatu_district_council_report.json"
+      "conductor/linkedin_archive_manukau_institute_of_technology_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/linkedin_archive_manawatu_district_council_report.json": {
+    "conductor/linkedin_archive_manukau_institute_of_technology_report.json": {
       "platform_counts": {
         "linkedin": 1
       },
       "selected_sources": 1,
       "status_by_platform": {
         "linkedin": {
-          "public_snapshot_captured": 1
+          "http_error": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "public_snapshot_captured": 1
+        "http_error": 1
       }
     }
   },
   "summary": {
-    "gap_count": 0,
+    "gap_count": 1,
     "input_status_counts": {
-      "public_snapshot_captured": 1
+      "http_error": 1
     },
     "platform_counts": {
       "linkedin": 1
     },
     "priority_counts": {
-      "archived_or_already_archived": 1
+      "review": 1
     },
     "status_counts": {
-      "public_snapshot_captured": 1
+      "http_error": 1
     },
     "superseded_source_count": 0
   }
