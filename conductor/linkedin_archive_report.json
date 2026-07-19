@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:29:08+00:00",
+  "generated_at": "2026-07-19T04:29:09+00:00",
   "inputs": {
-    "agency_id": "crown-law-office",
+    "agency_id": "climate-change-commission",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,30 +28,43 @@
   },
   "results": [
     {
-      "agency_id": "crown-law-office",
+      "agency_id": "climate-change-commission",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 404: Not Found",
-      "source_id": "34db903d02ea6b0b",
+      "source_id": "103d7fe6adc21997",
       "source_type": "social_profile",
       "status": "not_found",
-      "url": "https://www.linkedin.com/company/crown-law-office-new-zealand"
+      "url": "https://www.linkedin.com/company/climate-change-commission-nz"
+    },
+    {
+      "agency_id": "climate-change-commission",
+      "archive_status": "manual_seed",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:d60abf9666ca11cb9eb6d546",
+      "source_id": "climate-change-commission-linkedin-fb2a365a",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/climate-change-commission/"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "not_found": 1
+        "not_found": 1,
+        "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "not_found": 1
+      "not_found": 1,
+      "public_snapshot_captured": 1
     }
   }
 }
