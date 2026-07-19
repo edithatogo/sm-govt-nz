@@ -1,6 +1,6 @@
 # NZ Government Archive Completion Matrix
 
-Generated: 2026-07-19T04:20:01+00:00
+Generated: 2026-07-19T04:27:31+00:00
 
 ## Completion
 
@@ -8,18 +8,18 @@ Generated: 2026-07-19T04:20:01+00:00
 | --- | ---: |
 | Total candidates | 5602 |
 | Registered sources | 5602 |
-| Archived sources | 2514 |
+| Archived sources | 2515 |
 | Terminal evidence sources | 3053 |
-| Incomplete actionable sources | 35 |
+| Incomplete actionable sources | 34 |
 | Automation faults | 0 |
-| Completion | 99.38% |
+| Completion | 99.39% |
 
 ## Lifecycle states
 
 | State | Count |
 | --- | ---: |
-| `archived` | 2514 |
-| `scheduled` | 35 |
+| `archived` | 2515 |
+| `scheduled` | 34 |
 | `terminal_deleted` | 119 |
 | `terminal_empty` | 1674 |
 | `terminal_external_access` | 676 |
@@ -55,14 +55,13 @@ Generated: 2026-07-19T04:20:01+00:00
 | 24 | `linkedin` | `manawatu-district-council` | `manawatu-district-council-linkedin-c2d6eb38` | `capture_public_linkedin_snapshot` |
 | 25 | `linkedin` | `manukau-institute-of-technology` | `manukau-institute-of-technology-linkedin-4a24e858` | `capture_public_linkedin_snapshot` |
 | 26 | `linkedin` | `maritime-nz` | `maritime-nz-linkedin-95122411` | `capture_public_linkedin_snapshot` |
-| 27 | `linkedin` | `marlborough-district-council` | `marlborough-district-council-linkedin-fd3dea73` | `capture_public_linkedin_snapshot` |
-| 28 | `linkedin` | `massey-university` | `massey-university-linkedin-f7cdf1dc` | `capture_public_linkedin_snapshot` |
-| 29 | `linkedin` | `masterton-district-council` | `masterton-district-council-linkedin-ced1041e` | `capture_public_linkedin_snapshot` |
-| 30 | `linkedin` | `ministry-for-culture-and-heritage` | `ministry-for-culture-and-heritage-linkedin-a2b2c035` | `capture_public_linkedin_snapshot` |
-| 31 | `linkedin` | `ministry-for-culture-and-heritage` | `ministry-for-culture-and-heritage-linkedin-baaf014e` | `capture_public_linkedin_snapshot` |
-| 32 | `linkedin` | `ministry-for-ethnic-communities` | `ministry-for-ethnic-communities-linkedin-2b18127e` | `capture_public_linkedin_snapshot` |
-| 33 | `linkedin` | `ministry-for-pacific-peoples` | `ministry-for-pacific-peoples-linkedin-5083e8eb` | `capture_public_linkedin_snapshot` |
-| 34 | `linkedin` | `ministry-for-regulation` | `ministry-for-regulation-linkedin-b92e856a` | `capture_public_linkedin_snapshot` |
-| 35 | `linkedin` | `te-ara-ahunga-ora` | `te-ara-ahunga-ora-linkedin-2dd764dc` | `capture_public_linkedin_snapshot` |
+| 27 | `linkedin` | `massey-university` | `massey-university-linkedin-f7cdf1dc` | `capture_public_linkedin_snapshot` |
+| 28 | `linkedin` | `masterton-district-council` | `masterton-district-council-linkedin-ced1041e` | `capture_public_linkedin_snapshot` |
+| 29 | `linkedin` | `ministry-for-culture-and-heritage` | `ministry-for-culture-and-heritage-linkedin-a2b2c035` | `capture_public_linkedin_snapshot` |
+| 30 | `linkedin` | `ministry-for-culture-and-heritage` | `ministry-for-culture-and-heritage-linkedin-baaf014e` | `capture_public_linkedin_snapshot` |
+| 31 | `linkedin` | `ministry-for-ethnic-communities` | `ministry-for-ethnic-communities-linkedin-2b18127e` | `capture_public_linkedin_snapshot` |
+| 32 | `linkedin` | `ministry-for-pacific-peoples` | `ministry-for-pacific-peoples-linkedin-5083e8eb` | `capture_public_linkedin_snapshot` |
+| 33 | `linkedin` | `ministry-for-regulation` | `ministry-for-regulation-linkedin-b92e856a` | `capture_public_linkedin_snapshot` |
+| 34 | `linkedin` | `te-ara-ahunga-ora` | `te-ara-ahunga-ora-linkedin-2dd764dc` | `capture_public_linkedin_snapshot` |
 
 The full deterministic queue is in `conductor/archive_completion_work_queue.json`.
