@@ -1,9 +1,9 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-19T04:29:23+00:00",
+  "generated_at": "2026-07-19T04:29:34+00:00",
   "inputs": {
-    "agency_id": "financial-markets-authority",
+    "agency_id": "masterton-district-council",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
@@ -28,15 +28,15 @@
   },
   "results": [
     {
-      "agency_id": "financial-markets-authority",
-      "archive_status": "ready",
+      "agency_id": "masterton-district-council",
+      "archive_status": "manual_seed",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
-      "source_id": "aa13bd00f4ab3134",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:b47efe96c58e6833da22e73b",
+      "source_id": "masterton-district-council-linkedin-ced1041e",
       "source_type": "social_profile",
-      "status": "not_found",
-      "url": "https://www.linkedin.com/company/financial-markets-authority-nz"
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/masterton-district-council/"
     }
   ],
   "summary": {
@@ -46,12 +46,12 @@
     "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "not_found": 1
+        "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "not_found": 1
+      "public_snapshot_captured": 1
     }
   }
 }
