@@ -1,6 +1,6 @@
 {
   "dry_run": false,
-  "generated_at": "2026-07-19T23:43:39+00:00",
+  "generated_at": "2026-07-20T23:58:13+00:00",
   "guardrails": {
     "captcha_solving": false,
     "credential_bypass": false,
@@ -18,10 +18,10 @@
       "tls_failed"
     ],
     "include_without_triage": false,
-    "limit_sources": 10,
+    "limit_sources": 1,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "merged_previous_results": 28,
-    "offset_sources": 30,
+    "offset_sources": 0,
     "per_page_timeout": 45,
     "screenshot": true,
     "triage_report": "conductor/website_archive_failure_triage_report.json"
@@ -164,10 +164,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "raw_path": "historical_archive_raw/website_browser/2026-07/2956cc153549f9455ef5a57a.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "reason": "captured public rendered website content",
       "source_id": "f33df640b05e8598",
       "source_type": "website_page",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz"
     },
     {
@@ -396,8 +396,8 @@
     "result_count": 28,
     "selected_sources": 28,
     "status_counts": {
-      "browser_captcha_or_challenge": 9,
-      "browser_captured": 19
+      "browser_captcha_or_challenge": 8,
+      "browser_captured": 20
     }
   }
 }
