@@ -1614,118 +1614,6 @@
       "agency_type": "SOE",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "afcf2d7582935a0e",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_title": "Pestoff \u00bb Feed",
-      "mime_type": "application/rss+xml",
-      "official_website": "https://www.pestoff.co.nz",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://pestoff.co.nz/feed/"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.pestoff.co.nz",
-      "agency_id": "animal-control-products",
-      "agency_name": "Animal Control Products (Pestoff)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "9ec941b1b4a5af62",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_title": "oEmbed (JSON)",
-      "mime_type": "application/json+oembed",
-      "official_website": "https://www.pestoff.co.nz",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.pestoff.co.nz",
-      "agency_id": "animal-control-products",
-      "agency_name": "Animal Control Products (Pestoff)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "758209a956979f16",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_title": "oEmbed (XML)",
-      "mime_type": "text/xml+oembed",
-      "official_website": "https://www.pestoff.co.nz",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F&format=xml"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.pestoff.co.nz",
-      "agency_id": "animal-control-products",
-      "agency_name": "Animal Control Products (Pestoff)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "8fb3dc84f2e69aff",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_title": "JSON",
-      "mime_type": "application/json",
-      "official_website": "https://www.pestoff.co.nz",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Agriculture",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://pestoff.co.nz/wp-json/wp/v2/pages/2"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://www.pestoff.co.nz",
-      "agency_id": "animal-control-products",
-      "agency_name": "Animal Control Products (Pestoff)",
-      "agency_type": "SOE",
-      "archive_status": "ready",
-      "auth": "none",
       "candidate_id": "f44b74f32571294d",
       "confidence_score": 0.45,
       "domain_trust": "medium",
@@ -40283,6 +40171,32 @@
       "url": "https://www.horizons.govt.nz/news/new-connect-website-launched-to-improve-access-to-public-transport-information/"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.horizons.govt.nz",
+      "agency_id": "horizons-regional-council",
+      "agency_name": "Horizons Regional Council (Manawat\u016b-Whanganui)",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "e1b57ae76a864f03",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Newsletters",
+      "official_website": "https://www.horizons.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.horizons.govt.nz/newsletters/"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.horizons.govt.nz",
       "agency_id": "horizons-regional-council",
@@ -40813,6 +40727,33 @@
         "official_term:nz"
       ],
       "url": "https://www.horizons.govt.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.horizons.govt.nz",
+      "agency_id": "horizons-regional-council",
+      "agency_name": "Horizons Regional Council (Manawat\u016b-Whanganui)",
+      "agency_type": "Regional Council",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "3d063bbff5ec2304",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Newsletters",
+      "official_website": "https://www.horizons.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.horizons.govt.nz/newsletters/"
     },
     {
       "access_method": "public_rss",
@@ -86305,6 +86246,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "92f7f85f4fcd06be",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/OtagoPoly"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "OtagoPolytechnic",
       "account_classification": "official",
       "agency_id": "otago-polytechnic",
@@ -86360,6 +86325,54 @@
       "url": "https://www.instagram.com/otagopolytechnic"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "d32669ba1a66538a",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/otagopolytechnic/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "894173a6864da511",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/213448"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Otago Polytechnic",
       "account_classification": "official",
@@ -86386,6 +86399,30 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/school/otago-polytechnic"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "f8add89960419679",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "http://www.youtube.com/user/OtagoPolytech"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -94288,7 +94325,7 @@
       "agency_type": "District Council",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "42459725f5de4ed5",
+      "candidate_id": "bf31a81239caf4d4",
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
@@ -94304,7 +94341,7 @@
         "high_trust_domain_suffix",
         "official_term:nz"
       ],
-      "url": "https://www.qldc.govt.nz/do-it-online/community-text-alert-sign-up/"
+      "url": "https://www.qldc.govt.nz/do-it-online/community-text-alert-sign-up"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -94314,7 +94351,7 @@
       "agency_type": "District Council",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "ee19bd078a2158d0",
+      "candidate_id": "4bf0177ab1b23710",
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
@@ -94330,7 +94367,7 @@
         "high_trust_domain_suffix",
         "official_term:nz"
       ],
-      "url": "https://www.qldc.govt.nz/do-it-online/lets-talk-korero-mai/"
+      "url": "https://www.qldc.govt.nz/do-it-online/lets-talk-korero-mai"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -94340,7 +94377,7 @@
       "agency_type": "District Council",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "56efe6f45cd060f2",
+      "candidate_id": "ccae96834e59a438",
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
@@ -94356,7 +94393,7 @@
         "high_trust_domain_suffix",
         "official_term:nz"
       ],
-      "url": "https://www.qldc.govt.nz/do-it-online/newsletter-sign-up/"
+      "url": "https://www.qldc.govt.nz/do-it-online/newsletter-sign-up"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -94366,7 +94403,7 @@
       "agency_type": "District Council",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "27edb2701c48f28f",
+      "candidate_id": "d1f43da7e3130882",
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
@@ -94382,7 +94419,7 @@
         "high_trust_domain_suffix",
         "official_term:nz"
       ],
-      "url": "https://www.qldc.govt.nz/your-council/district-plan/planning-matters-planning-development-newsletter/"
+      "url": "https://www.qldc.govt.nz/your-council/district-plan/planning-matters-planning-development-newsletter"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -94392,7 +94429,7 @@
       "agency_type": "District Council",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "285f05046fcb6767",
+      "candidate_id": "a2f646da503a9bc1",
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
@@ -94408,7 +94445,7 @@
         "high_trust_domain_suffix",
         "official_term:nz"
       ],
-      "url": "https://www.qldc.govt.nz/your-council/newsletter-archive/"
+      "url": "https://www.qldc.govt.nz/your-council/newsletter-archive"
     },
     {
       "access_method": "public_rss",
@@ -95022,7 +95059,7 @@
       "agency_type": "District Council",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "5e3177cfbb527331",
+      "candidate_id": "1aaa6454533a55c8",
       "confidence_score": 0.7,
       "domain_trust": "high",
       "feasibility": "high",
@@ -95039,7 +95076,7 @@
         "archive_friendly_platform",
         "official_term:nz"
       ],
-      "url": "https://www.qldc.govt.nz/do-it-online/lets-talk-korero-mai/"
+      "url": "https://www.qldc.govt.nz/do-it-online/lets-talk-korero-mai"
     },
     {
       "access_method": "bounded_public_html",
@@ -95049,7 +95086,7 @@
       "agency_type": "District Council",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "5e8f35c2cddd6e9f",
+      "candidate_id": "7072cf9d0cd732dd",
       "confidence_score": 0.7,
       "domain_trust": "high",
       "feasibility": "high",
@@ -95066,7 +95103,7 @@
         "archive_friendly_platform",
         "official_term:nz"
       ],
-      "url": "https://www.qldc.govt.nz/your-council/district-plan/planning-matters-planning-development-newsletter/"
+      "url": "https://www.qldc.govt.nz/your-council/district-plan/planning-matters-planning-development-newsletter"
     },
     {
       "access_method": "bounded_public_html",
@@ -95076,7 +95113,7 @@
       "agency_type": "District Council",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "6f9a8844e113de7c",
+      "candidate_id": "13ac0670a1f12e88",
       "confidence_score": 0.7,
       "domain_trust": "high",
       "feasibility": "high",
@@ -95093,7 +95130,7 @@
         "archive_friendly_platform",
         "official_term:nz"
       ],
-      "url": "https://www.qldc.govt.nz/your-council/newsletter-archive/"
+      "url": "https://www.qldc.govt.nz/your-council/newsletter-archive"
     },
     {
       "access_method": "public_rss",
@@ -140664,7 +140701,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-19T23:42:30+00:00",
+  "generated_at": "2026-07-20T18:27:39+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155547,9 +155584,8 @@
     },
     {
       "agency_id": "animal-control-products",
-      "alternates": 4,
-      "links": 942,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.pestoff.co.nz/"
     },
     {
@@ -155607,7 +155643,7 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 68,
+      "links": 71,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
@@ -155628,7 +155664,7 @@
     {
       "agency_id": "callaghan-innovation",
       "alternates": 0,
-      "links": 114,
+      "links": 112,
       "status": "ok",
       "url": "https://www.callaghaninnovation.govt.nz/"
     },
@@ -155689,7 +155725,7 @@
     {
       "agency_id": "christchurch-city-libraries",
       "alternates": 6,
-      "links": 329,
+      "links": 327,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
@@ -155890,7 +155926,7 @@
     {
       "agency_id": "fire-and-emergency-nz",
       "alternates": 0,
-      "links": 131,
+      "links": 132,
       "status": "ok",
       "url": "https://www.fireandemergency.nz/"
     },
@@ -156010,7 +156046,7 @@
     {
       "agency_id": "horizons-regional-council",
       "alternates": 0,
-      "links": 153,
+      "links": 155,
       "status": "ok",
       "url": "https://www.horizons.govt.nz/"
     },
@@ -156096,7 +156132,7 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 102,
+      "links": 103,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
@@ -156330,7 +156366,7 @@
     {
       "agency_id": "napier-city-council",
       "alternates": 1,
-      "links": 723,
+      "links": 726,
       "status": "ok",
       "url": "https://www.napier.govt.nz/"
     },
@@ -156363,7 +156399,7 @@
     {
       "agency_id": "new-plymouth-district-council",
       "alternates": 0,
-      "links": 1558,
+      "links": 1557,
       "status": "ok",
       "url": "https://www.npdc.govt.nz/"
     },
@@ -156390,7 +156426,7 @@
     {
       "agency_id": "nz-army",
       "alternates": 0,
-      "links": 77,
+      "links": 78,
       "status": "ok",
       "url": "https://www.army.mil.nz/"
     },
@@ -156418,7 +156454,7 @@
     {
       "agency_id": "nz-defence-force",
       "alternates": 0,
-      "links": 44,
+      "links": 45,
       "status": "ok",
       "url": "https://www.nzdf.mil.nz/"
     },
@@ -156541,7 +156577,7 @@
     {
       "agency_id": "open-polytechnic",
       "alternates": 0,
-      "links": 376,
+      "links": 375,
       "status": "ok",
       "url": "https://www.openpolytechnic.ac.nz/"
     },
@@ -156560,8 +156596,9 @@
     },
     {
       "agency_id": "otago-polytechnic",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 323,
+      "status": "ok",
       "url": "https://www.op.ac.nz/"
     },
     {
@@ -156696,7 +156733,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 400,
+      "links": 402,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156709,14 +156746,14 @@
     {
       "agency_id": "royal-nz-air-force",
       "alternates": 0,
-      "links": 76,
+      "links": 77,
       "status": "ok",
       "url": "https://www.airforce.mil.nz/"
     },
     {
       "agency_id": "royal-nz-navy",
       "alternates": 0,
-      "links": 77,
+      "links": 78,
       "status": "ok",
       "url": "https://www.navy.mil.nz/"
     },
@@ -156774,7 +156811,7 @@
     {
       "agency_id": "south-wairarapa-district-council",
       "alternates": 3,
-      "links": 248,
+      "links": 249,
       "status": "ok",
       "url": "https://www.swdc.govt.nz/"
     },
@@ -156943,7 +156980,7 @@
     {
       "agency_id": "thames-coromandel-district-council",
       "alternates": 0,
-      "links": 276,
+      "links": 275,
       "status": "ok",
       "url": "https://www.tcdc.govt.nz/"
     },
@@ -157037,7 +157074,7 @@
     {
       "agency_id": "upper-hutt-city-council",
       "alternates": 0,
-      "links": 313,
+      "links": 311,
       "status": "ok",
       "url": "https://www.upperhuttcity.com/"
     },
@@ -157057,7 +157094,7 @@
     {
       "agency_id": "waikato-regional-council",
       "alternates": 0,
-      "links": 649,
+      "links": 661,
       "status": "ok",
       "url": "https://www.waikatoregion.govt.nz/"
     },
@@ -157212,33 +157249,33 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5255,
+    "candidate_count": 5257,
     "feasibility_counts": {
-      "high": 4161,
-      "low": 310,
-      "medium": 784
+      "high": 4158,
+      "low": 311,
+      "medium": 788
     },
     "known_registry_social_profiles": 446,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 291,
-      "instagram": 161,
-      "linkedin": 235,
+      "facebook": 292,
+      "instagram": 162,
+      "linkedin": 236,
       "medium": 2,
-      "newsletter": 162,
-      "rss": 3830,
-      "website_page": 313,
+      "newsletter": 163,
+      "rss": 3826,
+      "website_page": 314,
       "x": 75,
-      "youtube": 155
+      "youtube": 156
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 162,
-      "rss_feed": 65,
+      "newsletter": 163,
+      "rss_feed": 61,
       "search_seed": 3765,
-      "social_profile": 937,
-      "website_page": 313
+      "social_profile": 941,
+      "website_page": 314
     }
   }
 }
