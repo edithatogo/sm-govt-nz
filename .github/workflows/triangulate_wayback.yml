@@ -33,6 +33,10 @@ on:
         description: "Initial retry backoff in seconds"
         required: true
         default: "1"
+      request_timeout:
+        description: "Maximum seconds for each Internet Archive request"
+        required: true
+        default: "10"
 
 permissions:
   contents: write
@@ -62,6 +66,7 @@ jobs:
           --delay "${{ inputs.delay || '0.25' }}"
           --retries "${{ inputs.retries || '3' }}"
           --backoff "${{ inputs.backoff || '1' }}"
+          --request-timeout "${{ inputs.request_timeout || '10' }}"
       - name: Commit triangulation report
         run: >-
           python scripts/commit_state_updates.py

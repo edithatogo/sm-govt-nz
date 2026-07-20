@@ -53,6 +53,16 @@ def is_transient(exc: Exception) -> bool:
     return isinstance(exc, (TimeoutError, URLError)) or code in {408, 425, 429, 500, 502, 503, 504}
 
 
+def query_with_timeout(url: str, timeout: int) -> list[dict[str, str]]:
+    """Call the provider with a bounded timeout while keeping fixture seams simple."""
+    try:
+        return query_wayback(url, timeout=timeout)
+    except TypeError as exc:
+        if "timeout" not in str(exc):
+            raise
+        return query_wayback(url)
+
+
 def with_retries(operation, *, retries: int = 3, backoff: float = 1.0, max_backoff: float = 30.0):
     attempts = max(1, retries)
     for attempt in range(attempts):
@@ -83,7 +93,8 @@ def merge_report(existing: dict | None, selected: list[dict], *, metadata: dict)
 
 def triangulate(matrix: dict, *, limit: int = 100, offset: int = 0, shard_index: int = 0,
                shard_count: int = 1, delay: float = 0.25, retries: int = 3,
-               backoff: float = 1.0, existing_report: dict | None = None) -> dict:
+               backoff: float = 1.0, request_timeout: int = 10,
+               existing_report: dict | None = None) -> dict:
     if shard_count < 1 or not 0 <= shard_index < shard_count:
         raise ValueError("shard_index must be within shard_count")
     sources = matrix.get("sources") or []
@@ -104,7 +115,11 @@ def triangulate(matrix: dict, *, limit: int = 100, offset: int = 0, shard_index:
             result["wayback_status"] = "unsupported_url"
         else:
             try:
-                captures = with_retries(lambda: query_wayback(url), retries=retries, backoff=backoff)
+                captures = with_retries(
+                    lambda: query_with_timeout(url, max(1, request_timeout)),
+                    retries=retries,
+                    backoff=backoff,
+                )
                 result["captures"] = captures
                 result["capture_count"] = len(captures)
                 result["wayback_status"] = "capture_metadata_found" if captures else "no_capture_found"
@@ -148,12 +163,14 @@ def main() -> int:
     parser.add_argument("--delay", type=float, default=0.25)
     parser.add_argument("--retries", type=int, default=3)
     parser.add_argument("--backoff", type=float, default=1.0)
+    parser.add_argument("--request-timeout", type=int, default=10)
     args = parser.parse_args()
     existing = load_json(args.output) if args.output.exists() else None
     report = triangulate(load_json(args.matrix), limit=max(0, args.limit), offset=max(0, args.offset),
                          shard_index=args.shard_index, shard_count=args.shard_count,
                          delay=max(0, args.delay), retries=max(1, args.retries),
-                         backoff=max(0, args.backoff), existing_report=existing)
+                         backoff=max(0, args.backoff),
+                         request_timeout=max(1, args.request_timeout), existing_report=existing)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
     print(json.dumps(report["summary"], sort_keys=True))
