@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-19T09:00:36+00:00",
+  "generated_at": "2026-07-20T14:46:12+00:00",
+  "run_id": "29752048007",
+  "matrix_revision": "e19cfc69404c537778ea888a2c20ea3ca2f7a1d0",
   "provider": "internet_archive_wayback_cdx",
   "purpose": "independent historical corroboration metadata; not canonical capture",
   "snapshot_downloaded": false,
-  "source_limit": 100,
+  "source_limit": 1,
+  "batch": {
+    "offset": 0,
+    "shard_index": 0,
+    "shard_count": 10,
+    "selected_sources": 1
+  },
   "summary": {
-    "sources_checked": 100,
-    "capture_metadata_sources": 4,
-    "no_capture_sources": 22,
-    "provider_errors": 74
+    "sources_checked": 1,
+    "capture_metadata_sources": 0,
+    "no_capture_sources": 0,
+    "provider_errors": 1,
+    "cumulative_sources": 100
   },
   "sources": [
     {
@@ -28,7 +37,7 @@
       "wayback_status": "provider_error",
       "capture_count": 0,
       "captures": [],
-      "error": "HTTPError: HTTP Error 503: Service Unavailable"
+      "error": "TimeoutError: The read operation timed out"
     },
     {
       "source_id": "accident-compensation-corporation-facebook-a4eafd5a",
