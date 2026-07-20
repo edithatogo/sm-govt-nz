@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-20T00:02:05+00:00",
-  "run_id": "29708801048",
-  "matrix_revision": "bbf1d3d9ed046e7af56790717ebf4e492066252f",
+  "generated_at": "2026-07-20T08:28:31+00:00",
+  "run_id": "29727919437",
+  "matrix_revision": "620b4100e4defd94668ca426a29ad36abe3c39b9",
   "provider": "common_crawl_index",
   "purpose": "independent historical corroboration metadata; not canonical capture",
   "snapshot_downloaded": false,
@@ -10,14 +10,14 @@
   "source_limit": 100,
   "batch": {
     "offset": 0,
-    "shard_index": 3,
-    "shard_count": 10,
+    "shard_index": 0,
+    "shard_count": 1,
     "selected_sources": 100
   },
   "summary": {
     "sources_checked": 100,
-    "capture_metadata_sources": 5,
-    "no_capture_sources": 95,
+    "capture_metadata_sources": 0,
+    "no_capture_sources": 100,
     "provider_errors": 0,
     "cumulative_sources": 462
   },
@@ -66,10 +66,9 @@
       "source_id": "97f951e64bdb2a2d",
       "platform": "json_feed",
       "url": "https://www.acc.co.nz/feed.json",
-      "common_crawl_status": "provider_error",
+      "common_crawl_status": "no_capture_found",
       "capture_count": 0,
-      "captures": [],
-      "error": "HTTPError: HTTP Error 504: Gateway Time-out"
+      "captures": []
     },
     {
       "source_id": "accident-compensation-corporation-linkedin-757de80b",
