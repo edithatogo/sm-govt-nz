@@ -103,7 +103,7 @@ def write_raw_capture(
                     "visible_text": text,
                     "screenshot_path": screenshot_path,
                     "diagnostics": diagnostics,
-                    "access_method": "playwright_public_browser_no_login",
+                    "access_method": "seleniumbase_cdp_playwright_public_browser_no_login",
                     "guardrails": {
                         "login": False,
                         "captcha_solving": False,
@@ -142,10 +142,53 @@ def normalize_capture(
         captured_at=captured_at,
         content=text[:100_000],
         raw_path=str(raw_path).replace("\\", "/"),
-        extraction_method="playwright_public_browser_fallback",
+        extraction_method="seleniumbase_cdp_playwright_public_browser_fallback",
         cross_source_ids={"source_id": str(source.get("source_id") or "")},
     )
     return append_normalized_record(normalized_root, "website", record)
+
+
+class BrowserSession:
+    """Launch SeleniumBase's hardened Chrome and attach Playwright over CDP."""
+
+    def __init__(self) -> None:
+        self.sb = None
+        self.playwright = None
+        self.browser = None
+        self.page = None
+
+    def __enter__(self) -> "BrowserSession":
+        from playwright.sync_api import sync_playwright
+        from seleniumbase import sb_cdp
+
+        last_error: Exception | None = None
+        for attempt in range(3):
+            try:
+                self.sb = sb_cdp.Chrome()
+                endpoint_url = self.sb.get_endpoint_url()
+                self.playwright = sync_playwright().start()
+                self.browser = self.playwright.chromium.connect_over_cdp(endpoint_url, timeout=60_000)
+                context = self.browser.contexts[0] if self.browser.contexts else self.browser.new_context()
+                self.page = context.pages[0] if context.pages else context.new_page()
+                self.page.set_default_timeout(15_000)
+                return self
+            except Exception as exc:  # noqa: BLE001 - browser startup can be transient under Xvfb.
+                last_error = exc
+                self.__exit__(None, None, None)
+                time.sleep(5 * (attempt + 1))
+        raise RuntimeError(f"Failed to start SeleniumBase CDP browser after retries: {last_error}")
+
+    def __exit__(self, *_exc: object) -> None:
+        for item in [self.browser, self.playwright, self.sb]:
+            try:
+                if hasattr(item, "close"):
+                    item.close()
+                elif hasattr(item, "stop"):
+                    item.stop()
+                elif hasattr(item, "quit"):
+                    item.quit()
+            except Exception:
+                pass
 
 
 def capture_source_with_browser(
@@ -156,63 +199,61 @@ def capture_source_with_browser(
     per_page_timeout: int,
     wait_after_load_ms: int,
     screenshot: bool,
+    session: BrowserSession | None = None,
 ) -> dict[str, Any]:
-    from playwright.sync_api import sync_playwright
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+    owned_session = session is None
+    browser_session = session or BrowserSession()
+    if owned_session:
+        browser_session.__enter__()
+    try:
+        page = browser_session.page
+        if page is None:
+            raise RuntimeError("SeleniumBase CDP session did not expose a Playwright page")
+        page.set_default_timeout(per_page_timeout * 1000)
+        captured_at = now_iso()
+        started = time.monotonic()
         try:
-            context = browser.new_context(
-                user_agent="Mozilla/5.0 (compatible; sm-govt-nz-website-browser-fallback/1.0; +https://github.com/edithatogo/sm-govt-nz)"
+            page.goto(str(source.get("url") or ""), wait_until="domcontentloaded", timeout=per_page_timeout * 1000)
+            page.wait_for_timeout(wait_after_load_ms)
+            html = page.content()
+            text = html_to_visible_text(html)
+            final_url = page.url
+            screenshot_path = ""
+            if screenshot:
+                png_path = raw_root / "website_browser" / captured_at[:7] / f"{record_key(source)}.png"
+                png_path.parent.mkdir(parents=True, exist_ok=True)
+                page.screenshot(path=str(png_path), full_page=True, timeout=15_000)
+                screenshot_path = str(png_path).replace("\\", "/")
+            raw_path = write_raw_capture(
+                source=source,
+                captured_at=captured_at,
+                final_url=final_url,
+                html=html,
+                text=text,
+                screenshot_path=screenshot_path,
+                diagnostics={"elapsed_seconds": round(time.monotonic() - started, 2), "visible_text_length": len(text)},
+                raw_root=raw_root,
             )
-            try:
-                page = context.new_page()
-                page.set_default_timeout(per_page_timeout * 1000)
-                captured_at = now_iso()
-                started = time.monotonic()
-                try:
-                    page.goto(str(source.get("url") or ""), wait_until="domcontentloaded", timeout=per_page_timeout * 1000)
-                    page.wait_for_timeout(wait_after_load_ms)
-                    html = page.content()
-                    text = html_to_visible_text(html)
-                    final_url = page.url
-                    screenshot_path = ""
-                    if screenshot:
-                        png_path = raw_root / "website_browser" / captured_at[:7] / f"{record_key(source)}.png"
-                        png_path.parent.mkdir(parents=True, exist_ok=True)
-                        page.screenshot(path=str(png_path), full_page=True, timeout=15_000)
-                        screenshot_path = str(png_path).replace("\\", "/")
-                    raw_path = write_raw_capture(
-                        source=source,
-                        captured_at=captured_at,
-                        final_url=final_url,
-                        html=html,
-                        text=text,
-                        screenshot_path=screenshot_path,
-                        diagnostics={"elapsed_seconds": round(time.monotonic() - started, 2), "visible_text_length": len(text)},
-                        raw_root=raw_root,
-                    )
-                    blocked = detect_browser_status(text, html)
-                    if blocked:
-                        status, marker = blocked
-                        return browser_result(source, status, f"public browser fallback stopped at access marker: {marker}", raw_path=raw_path)
-                    if not text:
-                        return browser_result(source, "browser_no_visible_content", "public browser fallback produced no visible text", raw_path=raw_path)
-                    inserted = normalize_capture(source=source, captured_at=captured_at, final_url=final_url, text=text, raw_path=raw_path, normalized_root=normalized_root)
-                    return browser_result(
-                        source,
-                        "browser_captured" if inserted else "browser_already_captured",
-                        "captured public rendered website content" if inserted else "browser website record already present",
-                        raw_path=raw_path,
-                    )
-                except Exception as exc:  # noqa: BLE001 - isolate per-source browser failures.
-                    return source_result(source, "browser_capture_failed", str(exc)[:300])
-                finally:
-                    page.close()
-            finally:
-                context.close()
+            blocked = detect_browser_status(text, html)
+            if blocked:
+                status, marker = blocked
+                return browser_result(source, status, f"public browser fallback stopped at access marker: {marker}", raw_path=raw_path)
+            if not text:
+                return browser_result(source, "browser_no_visible_content", "public browser fallback produced no visible text", raw_path=raw_path)
+            inserted = normalize_capture(source=source, captured_at=captured_at, final_url=final_url, text=text, raw_path=raw_path, normalized_root=normalized_root)
+            return browser_result(
+                source,
+                "browser_captured" if inserted else "browser_already_captured",
+                "captured public rendered website content" if inserted else "browser website record already present",
+                raw_path=raw_path,
+            )
+        except Exception as exc:  # noqa: BLE001 - isolate per-source browser failures.
+            return source_result(source, "browser_capture_failed", str(exc)[:300])
         finally:
-            browser.close()
+            page.close()
+    finally:
+        if owned_session:
+            browser_session.__exit__(None, None, None)
 
 
 def source_is_public_http(source: dict[str, Any]) -> bool:
@@ -306,17 +347,19 @@ def capture_live_sources(
     wait_after_load_ms: int,
     screenshot: bool,
 ) -> list[dict[str, Any]]:
-    return [
-        capture_source_with_browser(
-            source,
-            raw_root=raw_root,
-            normalized_root=normalized_root,
-            per_page_timeout=per_page_timeout,
-            wait_after_load_ms=wait_after_load_ms,
-            screenshot=screenshot,
-        )
-        for source in sources
-    ]
+    with BrowserSession() as session:
+        return [
+            capture_source_with_browser(
+                source,
+                raw_root=raw_root,
+                normalized_root=normalized_root,
+                per_page_timeout=per_page_timeout,
+                wait_after_load_ms=wait_after_load_ms,
+                screenshot=screenshot,
+                session=session,
+            )
+            for source in sources
+        ]
 
 
 def build_report(args: argparse.Namespace) -> dict[str, Any]:

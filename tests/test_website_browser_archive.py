@@ -169,7 +169,7 @@ def test_fixture_capture_writes_raw_and_normalized(tmp_path):
     assert list((tmp_path / "raw" / "website_browser").glob("*/*.json"))
     normalized = list((tmp_path / "normalized" / "website").glob("*.jsonl"))[0].read_text(encoding="utf-8")
     assert "Rendered public government page" in normalized
-    assert "playwright_public_browser_fallback" in normalized
+    assert "seleniumbase_cdp_playwright_public_browser_fallback" in normalized
 
 
 def test_browser_report_merges_shard_results_by_source_identity():
