@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-19T06:05:26+00:00
+Generated: 2026-07-20T06:20:44+00:00
 
 ## Summary
 
@@ -16,12 +16,12 @@ Generated: 2026-07-19T06:05:26+00:00
 
 - `already_captured`: 305
 - `capture_failed`: 4
-- `captured`: 805
-- `no_records`: 1687
+- `captured`: 817
+- `no_records`: 1688
 
 ## Status by platform
 
-- `rss`: {'already_captured': 305, 'capture_failed': 4, 'captured': 805, 'no_records': 1687}
+- `rss`: {'already_captured': 305, 'capture_failed': 4, 'captured': 817, 'no_records': 1688}
 
 ## Notes
 
