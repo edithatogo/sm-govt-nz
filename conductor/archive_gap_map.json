@@ -14873,19 +14873,6 @@
       "url": "https://nz.linkedin.com/school/southern-institute-of-technology/"
     },
     {
-      "agency_id": "social-investment-agency",
-      "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "",
-      "report": "conductor/manual_seed_onboarding_report.json",
-      "source_id": "0291f95fc48d72a6",
-      "status": "public_fallback_available",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.linkedin.com/company/social-investment-agency"
-    },
-    {
       "agency_id": "south-wairarapa-district-council",
       "platform": "linkedin",
       "priority": "review",
@@ -19543,11 +19530,19 @@
       }
     },
     "conductor/linkedin_archive_paced_retry_report.json": {
-      "platform_counts": {},
-      "selected_sources": 0,
-      "status_by_platform": {},
+      "platform_counts": {
+        "linkedin": 1
+      },
+      "selected_sources": 1,
+      "status_by_platform": {
+        "linkedin": {
+          "public_snapshot_captured": 1
+        }
+      },
       "status_by_provider": {},
-      "status_counts": {}
+      "status_counts": {
+        "public_snapshot_captured": 1
+      }
     },
     "conductor/linkedin_archive_report.json": {
       "platform_counts": {
@@ -19783,7 +19778,7 @@
     }
   },
   "summary": {
-    "gap_count": 1494,
+    "gap_count": 1493,
     "input_status_counts": {
       "already_captured": 2186,
       "browser_captcha_or_challenge": 9,
@@ -19805,7 +19800,7 @@
       "no_records": 1688,
       "not_acceptable": 12,
       "public_fallback_available": 258,
-      "public_snapshot_captured": 13,
+      "public_snapshot_captured": 14,
       "seed_present": 79,
       "source_url_not_channel": 1,
       "tls_failed": 12,
@@ -19827,12 +19822,12 @@
       "youtube": 49
     },
     "priority_counts": {
-      "archived_or_already_archived": 250,
+      "archived_or_already_archived": 251,
       "monitor_report_only": 1697,
       "p1_existing_resources": 31,
       "p2_existing_system_needs_seed_input": 883,
       "p4_larger_browser_or_access_project": 43,
-      "review": 537
+      "review": 536
     },
     "status_counts": {
       "already_captured": 71,
@@ -19846,14 +19841,14 @@
       "needs_authorized_seed_or_api": 883,
       "no_records": 1688,
       "not_acceptable": 3,
-      "public_fallback_available": 258,
-      "public_snapshot_captured": 13,
+      "public_fallback_available": 257,
+      "public_snapshot_captured": 14,
       "seed_present": 79,
       "source_url_not_channel": 1,
       "tls_failed": 4,
       "youtube_channel_not_found": 1,
       "youtube_video_not_found": 2
     },
-    "superseded_source_count": 284
+    "superseded_source_count": 285
   }
 }
