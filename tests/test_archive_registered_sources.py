@@ -468,6 +468,30 @@ def test_archive_json_feed_source_archives_single_json_object(tmp_path, monkeypa
     assert "Public API-backed page body" in normalized
 
 
+def test_archive_json_feed_source_tries_public_endpoint_variants(tmp_path, monkeypatch):
+    source = {
+        "source_id": "agency-json-variant",
+        "agency_id": "agency",
+        "platform": "json_feed",
+        "source_type": "json_feed",
+        "url": "https://agency.example/news",
+        "archive_status": "ready",
+    }
+    seen = []
+
+    def fetch(url, timeout=30):
+        seen.append(url)
+        if url == "https://agency.example/feed.json":
+            return json.dumps({"items": [{"id": "1", "title": "Recovered feed"}]})
+        raise HTTPError(url, 404, "Not Found", {}, None)
+
+    monkeypatch.setattr(archive_registered_sources, "fetch_text", fetch)
+    results = archive_json_feed_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+
+    assert results[0]["status"] == "captured"
+    assert "https://agency.example/feed.json" in seen
+
+
 def test_archive_api_source_archives_keyless_public_snapshot(tmp_path, monkeypatch):
     source = {
         "source_id": "agency-api",
@@ -490,6 +514,32 @@ def test_archive_api_source_archives_keyless_public_snapshot(tmp_path, monkeypat
     normalized = (tmp_path / "normalized" / "api" / "2026-07.jsonl").read_text(encoding="utf-8")
     assert "api:" in normalized
     assert "generic_keyless_api_snapshot" in normalized
+
+
+def test_archive_api_source_tries_openapi_variants(tmp_path, monkeypatch):
+    source = {
+        "source_id": "agency-api-variant",
+        "agency_id": "agency",
+        "platform": "api",
+        "source_type": "api_endpoint",
+        "url": "https://agency.example/developer",
+        "archive_status": "ready",
+        "auth": "none",
+    }
+    seen = []
+
+    def fetch(url, timeout=30):
+        seen.append(url)
+        if url == "https://agency.example/openapi.json":
+            return '{"openapi":"3.1.0"}'
+        raise HTTPError(url, 404, "Not Found", {}, None)
+
+    monkeypatch.setattr(archive_registered_sources, "fetch_text", fetch)
+    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+
+    assert results[0]["status"] == "captured"
+    assert "https://agency.example/openapi.json" in seen
+    assert "https://agency.example/" not in seen
 
 
 def test_archive_api_source_reports_auth_required_for_non_keyless_source(tmp_path):

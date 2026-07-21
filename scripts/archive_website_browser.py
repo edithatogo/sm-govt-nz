@@ -13,7 +13,13 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.archive_registered_sources import append_normalized_record, load_json, source_result, stable_id  # noqa: E402
+from scripts.archive_registered_sources import (  # noqa: E402
+    alternate_website_urls,
+    append_normalized_record,
+    load_json,
+    source_result,
+    stable_id,
+)
 from src.archive_schema import build_normalized_record  # noqa: E402
 
 DEFAULT_MANIFEST = Path("conductor/govt_archive_source_manifest.json")
@@ -155,7 +161,7 @@ class BrowserSession:
         self.sb = None
         self.playwright = None
         self.browser = None
-        self.page = None
+        self.context = None
 
     def __enter__(self) -> "BrowserSession":
         from playwright.sync_api import sync_playwright
@@ -168,9 +174,7 @@ class BrowserSession:
                 endpoint_url = self.sb.get_endpoint_url()
                 self.playwright = sync_playwright().start()
                 self.browser = self.playwright.chromium.connect_over_cdp(endpoint_url, timeout=60_000)
-                context = self.browser.contexts[0] if self.browser.contexts else self.browser.new_context()
-                self.page = context.pages[0] if context.pages else context.new_page()
-                self.page.set_default_timeout(15_000)
+                self.context = self.browser.contexts[0] if self.browser.contexts else self.browser.new_context()
                 return self
             except Exception as exc:  # noqa: BLE001 - browser startup can be transient under Xvfb.
                 last_error = exc
@@ -206,14 +210,26 @@ def capture_source_with_browser(
     if owned_session:
         browser_session.__enter__()
     try:
-        page = browser_session.page
-        if page is None:
-            raise RuntimeError("SeleniumBase CDP session did not expose a Playwright page")
+        if browser_session.context is None:
+            raise RuntimeError("SeleniumBase CDP session did not expose a Playwright context")
+        page = browser_session.context.new_page()
         page.set_default_timeout(per_page_timeout * 1000)
         captured_at = now_iso()
         started = time.monotonic()
         try:
-            page.goto(str(source.get("url") or ""), wait_until="domcontentloaded", timeout=per_page_timeout * 1000)
+            source_url = str(source.get("url") or "")
+            last_navigation_error: Exception | None = None
+            attempted_urls: list[str] = []
+            for candidate_url in [source_url, *alternate_website_urls(source_url)]:
+                attempted_urls.append(candidate_url)
+                try:
+                    page.goto(candidate_url, wait_until="domcontentloaded", timeout=per_page_timeout * 1000)
+                    last_navigation_error = None
+                    break
+                except Exception as exc:  # noqa: BLE001 - try bounded public URL variants.
+                    last_navigation_error = exc
+            if last_navigation_error is not None:
+                raise last_navigation_error
             page.wait_for_timeout(wait_after_load_ms)
             html = page.content()
             text = html_to_visible_text(html)
@@ -231,7 +247,11 @@ def capture_source_with_browser(
                 html=html,
                 text=text,
                 screenshot_path=screenshot_path,
-                diagnostics={"elapsed_seconds": round(time.monotonic() - started, 2), "visible_text_length": len(text)},
+                diagnostics={
+                    "elapsed_seconds": round(time.monotonic() - started, 2),
+                    "visible_text_length": len(text),
+                    "attempted_urls": attempted_urls,
+                },
                 raw_root=raw_root,
             )
             blocked = detect_browser_status(text, html)

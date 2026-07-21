@@ -2,7 +2,29 @@ import argparse
 import json
 from pathlib import Path
 
-from scripts.discover_govt_source_candidates import build_report, detect_platform, summarize
+from scripts.discover_govt_source_candidates import (
+    build_report,
+    detect_platform,
+    looks_like_json_feed_url,
+    looks_like_public_newsletter_archive,
+    summarize,
+)
+
+
+def test_discovery_recognizes_public_json_feeds_and_newsletter_archives() -> None:
+    assert looks_like_json_feed_url(
+        "https://agency.example/updates.json",
+        "News feed",
+        "application/json",
+    )
+    assert looks_like_public_newsletter_archive(
+        "https://agency.example/newsletters",
+        "Past issues",
+    )
+    assert looks_like_public_newsletter_archive(
+        "https://agency.createsend.com/t/ViewEmailArchive/r/123",
+        "Email archive",
+    )
 
 
 def test_discovery_builds_candidate_report_and_archive_manifest(tmp_path):

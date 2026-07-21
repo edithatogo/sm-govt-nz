@@ -247,4 +247,7 @@ def test_live_capture_source_code_opens_a_fresh_page_per_source():
     assert "def capture_source_with_browser(" in source
     assert "def capture_live_sources(" in source
     assert "capture_source_with_browser(" in source
+    assert "browser_session.context.new_page()" in source
+    assert "alternate_website_urls(source_url)" in source
+    assert '"attempted_urls": attempted_urls' in source
 

@@ -179,6 +179,7 @@ def default_reports() -> list[Path]:
         path = conductor / name
         if path.is_file():
             paths.append(path)
+    paths.extend(sorted(conductor.glob("*_archive_paced_retry_report.json")))
     return list(dict.fromkeys(paths))
 
 

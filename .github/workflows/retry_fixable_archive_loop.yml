@@ -1,16 +1,54 @@
 name: Retry Fixable Archive Loop
 
 on:
+  schedule:
+    - cron: "23 17 * * *"
   workflow_dispatch:
     inputs:
       max_iterations:
         description: "Maximum retry iterations for the repo-resolvable backlog"
         required: true
-        default: "2"
+        default: "1"
       source_types:
         description: "Comma-separated source types to retry in the loop"
         required: true
-        default: "website_page,youtube"
+        default: "api_endpoint,json_feed,website_page,linkedin"
+      source_limit:
+        description: "Maximum sources per type in the deterministic shard"
+        required: true
+        default: "5"
+      shard_count:
+        description: "Number of rotating deterministic shards"
+        required: true
+        default: "16"
+      shard_index:
+        description: "Shard index; -1 rotates using the GitHub run number"
+        required: true
+        default: "-1"
+      fetch_timeout:
+        description: "Per-request timeout in seconds"
+        required: true
+        default: "12"
+      per_source_delay:
+        description: "Polite delay between sources in seconds"
+        required: true
+        default: "3"
+      retry_attempts:
+        description: "Bounded attempts for transient public failures"
+        required: true
+        default: "2"
+      retry_backoff:
+        description: "Initial exponential backoff in seconds"
+        required: true
+        default: "2"
+      discover_newsletters:
+        description: "Probe official sites for public newsletter archives"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
       commit_changes:
         description: "Commit any refreshed archive outputs"
         required: true
@@ -38,15 +76,34 @@ jobs:
       - uses: ./.github/actions/setup-python-uv
         with:
           requirements: requirements.txt
-      - name: Run bounded fixable archive loop
-        run: >-
-          python scripts/retry_fixable_archive_loop.py
-          --max-iterations "${{ inputs.max_iterations || '2' }}"
-          --source-types "${{ inputs.source_types || 'website_page,youtube' }}"
-      - name: Commit refreshed archive outputs
-        if: ${{ inputs.commit_changes == 'true' }}
+      - name: Install browser runtime dependencies
         run: |
-          git add -A conductor/archive_gap_map.json conductor/govt_archive_registered_sources_report.json conductor/govt_archive_registered_sources_summary.md
+          sudo apt-get update
+          sudo apt-get install -y xvfb xauth libnss3 libatk-bridge2.0-0 libgtk-3-0 libgbm1 libasound2t64
+          python -m playwright install chromium
+      - name: Run bounded fixable archive loop
+        run: |
+          args=(
+            --max-iterations "${{ inputs.max_iterations || '1' }}"
+            --source-types "${{ inputs.source_types || 'api_endpoint,json_feed,website_page,linkedin' }}"
+            --source-limit "${{ inputs.source_limit || '5' }}"
+            --shard-count "${{ inputs.shard_count || '16' }}"
+            --shard-index "${{ inputs.shard_index || '-1' }}"
+            --fetch-timeout "${{ inputs.fetch_timeout || '12' }}"
+            --per-source-delay "${{ inputs.per_source_delay || '3' }}"
+            --retry-attempts "${{ inputs.retry_attempts || '2' }}"
+            --retry-backoff "${{ inputs.retry_backoff || '2' }}"
+          )
+          if [ "${{ inputs.discover_newsletters || 'true' }}" = "true" ]; then
+            args+=(--discover-newsletters)
+          fi
+          xvfb-run -a python scripts/retry_fixable_archive_loop.py "${args[@]}"
+      - name: Commit refreshed archive outputs
+        if: ${{ inputs.commit_changes == 'true' || github.event_name == 'schedule' }}
+        run: |
+          git add -A conductor/archive_gap_map.json conductor/archive_completion_matrix.json conductor/archive_completion_work_queue.json
+          git add -A conductor/govt_archive_registered_sources_report.json conductor/govt_archive_registered_sources_summary.md
+          git add -A conductor
           git add -f historical_archive_raw historical_archive_normalized
           if git diff --cached --quiet; then
             echo "No refreshed archive outputs to commit."

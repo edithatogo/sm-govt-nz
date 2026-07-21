@@ -178,6 +178,17 @@ def test_default_reports_excludes_stale_offset_shards(tmp_path, monkeypatch):
     assert reports == ["conductor/youtube_archive_report.json"]
 
 
+def test_default_reports_includes_paced_retry_evidence(tmp_path, monkeypatch):
+    conductor = tmp_path / "conductor"
+    conductor.mkdir()
+    (conductor / "api_archive_paced_retry_report.json").write_text("{}", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+
+    reports = [Path(path).as_posix() for path in default_reports()]
+
+    assert reports == ["conductor/api_archive_paced_retry_report.json"]
+
+
 def test_gap_map_reads_manual_seed_onboarding_items(tmp_path):
     report = tmp_path / "manual_seed_onboarding_report.json"
     report.write_text(

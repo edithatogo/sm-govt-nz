@@ -10,6 +10,7 @@ import secrets
 import socket
 import ssl
 import sys
+import time
 from collections import Counter
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -105,6 +106,50 @@ def alternate_website_urls(url: str) -> list[str]:
     if parsed.path not in {"", "/"}:
         alternatives.append(urlunparse(parsed._replace(path="/", query="", fragment="")))
     return [candidate for candidate in dict.fromkeys(alternatives) if candidate != url]
+
+
+def alternate_endpoint_urls(url: str, endpoint_type: str) -> list[str]:
+    """Return conservative public endpoint variants without changing domains."""
+    url = normalize_url_for_fetch(url)
+    parsed = urlparse(url)
+    if not parsed.netloc:
+        return []
+    candidates: list[str] = []
+    root = parsed._replace(path="/", query="", fragment="")
+    parent_path = parsed.path.rsplit("/", 1)[0].rstrip("/")
+    suffixes = (
+        ["/feed.json", "/index.json"]
+        if endpoint_type == "json_feed"
+        else ["/openapi.json", "/swagger.json", "/api.json"]
+    )
+    for base_path in ["", parent_path]:
+        for suffix in suffixes:
+            candidates.append(urlunparse(root._replace(path=f"{base_path}{suffix}")))
+    candidates.extend(
+        candidate
+        for candidate in alternate_website_urls(url)
+        if urlparse(candidate).path == parsed.path
+    )
+    return [candidate for candidate in dict.fromkeys(candidates) if candidate != url]
+
+
+def fetch_endpoint_with_variants(
+    url: str,
+    endpoint_type: str,
+    *,
+    fetch_timeout: int,
+    parser: Any | None = None,
+) -> tuple[str, Any]:
+    last_exc: Exception | None = None
+    for candidate in [url, *alternate_endpoint_urls(url, endpoint_type)]:
+        try:
+            body = fetch_text(candidate, timeout=fetch_timeout)
+            return candidate, parser(body) if parser else body
+        except Exception as exc:  # noqa: BLE001 - final failure is classified by the caller.
+            last_exc = exc
+    if last_exc is None:
+        raise RuntimeError("no endpoint URL candidates were available")
+    raise last_exc
 
 
 def website_failure_status(exc: Exception) -> str:
@@ -950,9 +995,14 @@ def archive_json_feed_source(
     *,
     fetch_timeout: int = 30,
 ) -> list[dict[str, Any]]:
-    feed_url = str(source.get("url") or "")
+    source_url = str(source.get("url") or "")
     try:
-        payload = json.loads(fetch_text(feed_url, timeout=fetch_timeout))
+        feed_url, payload = fetch_endpoint_with_variants(
+            source_url,
+            "json_feed",
+            fetch_timeout=fetch_timeout,
+            parser=json.loads,
+        )
     except HTTPError as exc:
         if exc.code in {400, 404, 405}:
             return [source_result(source, "invalid", f"HTTP {exc.code}: candidate JSON Feed endpoint is unavailable")]
@@ -1034,9 +1084,13 @@ def archive_api_source(
     if not api_keyless(source):
         return [source_result(source, "auth_required", "API endpoint is not marked keyless")]
     captured_at = now_iso()
-    url = str(source.get("url") or "")
+    source_url = str(source.get("url") or "")
     try:
-        body = fetch_text(url, timeout=fetch_timeout)
+        url, body = fetch_endpoint_with_variants(
+            source_url,
+            "api",
+            fetch_timeout=fetch_timeout,
+        )
     except HTTPError as exc:
         if exc.code in {400, 404}:
             return [source_result(source, "invalid", f"HTTP {exc.code}: candidate API endpoint is unavailable")]
@@ -1068,7 +1122,7 @@ def archive_api_source(
         source_platform="api",
         source_account=str(source.get("account") or url),
         source_kind=str(source.get("source_type") or "api_endpoint"),
-        source_url=url,
+        source_url=source_url,
         canonical_url=url,
         original_created_at=captured_at,
         captured_at=captured_at,
@@ -1512,6 +1566,8 @@ def archive_public_profile_snapshot_source(
     *,
     fetcher: Any | None = None,
     fetch_timeout: int = 30,
+    retry_attempts: int = 1,
+    retry_backoff: float = 0.0,
 ) -> dict[str, Any]:
     captured_at = now_iso()
     handle = public_profile_handle_from_source(source, platform)
@@ -1526,10 +1582,22 @@ def archive_public_profile_snapshot_source(
     }
     url = str(source.get("url") or default_profile_urls.get(platform, f"https://{platform}.com/{handle}"))
     fetch = fetcher or fetch_text
-    try:
-        body = fetch(url, timeout=fetch_timeout)
-    except Exception as exc:  # noqa: BLE001 - per-source report records public page failures.
-        return source_result(source, website_failure_status(exc), website_failure_reason(exc))
+    body = ""
+    last_exc: Exception | None = None
+    for attempt in range(max(1, retry_attempts)):
+        try:
+            body = fetch(url, timeout=fetch_timeout)
+            last_exc = None
+            break
+        except Exception as exc:  # noqa: BLE001 - per-source report records public page failures.
+            last_exc = exc
+            status = website_failure_status(exc)
+            if status not in {"capture_blocked", "http_error", "network_error", "network_timeout"}:
+                break
+            if attempt + 1 < max(1, retry_attempts) and retry_backoff > 0:
+                time.sleep(retry_backoff * (2**attempt))
+    if last_exc is not None:
+        return source_result(source, website_failure_status(last_exc), website_failure_reason(last_exc))
 
     snapshot_key = stable_id(f"{source.get('source_id')}|{url}|{captured_at[:10]}")
     raw_rel = Path(f"{platform}_public_snapshot") / captured_at[:7] / f"{snapshot_key}.json"
@@ -1939,6 +2007,8 @@ def capture_registered_source(source: dict[str, Any], args: argparse.Namespace) 
                     raw_root,
                     normalized_root,
                     fetch_timeout=getattr(args, "fetch_timeout", 30),
+                    retry_attempts=getattr(args, "retry_attempts", 1),
+                    retry_backoff=getattr(args, "retry_backoff", 0.0),
                 )
             ]
         if platform == "threads":
@@ -2041,6 +2111,13 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         source_type=args.source_type,
         only_ready=only_ready,
     )
+    source_ids = {
+        part.strip()
+        for part in str(getattr(args, "source_ids", "") or "").split(",")
+        if part.strip()
+    }
+    if source_ids:
+        selected = [source for source in selected if str(source.get("source_id") or "") in source_ids]
     if args.source_type == "x" and capture_backend in x_special_backends:
         selected = dedupe_x_sources(selected)
     retry_failed_from = getattr(args, "retry_failed_from", None)
@@ -2125,6 +2202,9 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
                         "manifested for onboarding but not captured by the current archive runner",
                     )
                 )
+            per_source_delay = float(getattr(args, "per_source_delay", 0.0) or 0.0)
+            if per_source_delay > 0:
+                time.sleep(per_source_delay)
     status_counts = Counter(row["status"] for row in results)
     platform_counts = Counter(str(source.get("platform") or "unknown") for source in selected)
     status_by_platform: dict[str, dict[str, int]] = {}
@@ -2164,6 +2244,10 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "retry_failed_from": str(getattr(args, "retry_failed_from", "") or ""),
             "offset_sources": getattr(args, "offset_sources", 0),
             "limit_sources": getattr(args, "limit_sources", 0),
+            "source_ids": sorted(source_ids),
+            "per_source_delay": getattr(args, "per_source_delay", 0.0),
+            "retry_attempts": getattr(args, "retry_attempts", 1),
+            "retry_backoff": getattr(args, "retry_backoff", 0.0),
         },
         "summary": {
             "selected_sources": len(selected),
@@ -2279,6 +2363,10 @@ def main() -> None:
     parser.add_argument("--retry-priorities", default="p1_existing_resources")
     parser.add_argument("--offset-sources", type=int, default=0)
     parser.add_argument("--limit-sources", type=int, default=0)
+    parser.add_argument("--source-ids", default="")
+    parser.add_argument("--per-source-delay", type=float, default=0.0)
+    parser.add_argument("--retry-attempts", type=int, default=1)
+    parser.add_argument("--retry-backoff", type=float, default=0.0)
     args = parser.parse_args()
 
     report = build_report(args)

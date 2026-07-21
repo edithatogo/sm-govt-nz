@@ -44,7 +44,19 @@ PLATFORM_SHARE_PATH_PREFIXES = {
 
 NEWSLETTER_TERMS = ("newsletter", "subscribe", "email updates", "alerts", "mailing list")
 NEWSLETTER_SUBSCRIPTION_TERMS = ("subscribe", "sign-up", "signup", "sign up", "mailing list", "alerts")
-PUBLIC_NEWSLETTER_ARCHIVE_TERMS = ("newsletter", "newsletters", "campaign-archive.com", "createsend.com", "mailchi.mp")
+PUBLIC_NEWSLETTER_ARCHIVE_TERMS = (
+    "newsletter",
+    "newsletters",
+    "past issues",
+    "email archive",
+    "campaign archive",
+    "campaign-archive.com",
+    "createsend.com",
+    "campaignmonitor.com",
+    "list-manage.com",
+    "mailchi.mp",
+    "substack.com/archive",
+)
 FEED_TERMS = ("rss", "atom", "feed.xml", "feed.json", "json feed")
 API_TERMS = ("api", "openapi", "swagger", "developer", "data service")
 MICROFORMAT_TERMS = ("h-feed", "h-entry", "microformat", "microformats")
@@ -260,7 +272,11 @@ def looks_like_json_feed_url(url: str, text: str = "", mime_type: str = "") -> b
     lower_mime = mime_type.lower()
     if "wp-json" in lower_url or "oembed" in lower_url:
         return False
-    return "feed+json" in lower_mime or lower_url.rstrip("/").endswith("/feed.json") or "json feed" in lower_text
+    path = urlparse(url).path.lower().rstrip("/")
+    explicit_json_mime = "feed+json" in lower_mime
+    generic_json_feed_link = "application/json" in lower_mime and any(term in lower_text for term in ("feed", "news", "updates"))
+    known_path = path.endswith(("/feed.json", "/index.json", "/jsonfeed"))
+    return explicit_json_mime or generic_json_feed_link or known_path or "json feed" in lower_text
 
 
 def looks_like_api_url(url: str, text: str = "") -> bool:
