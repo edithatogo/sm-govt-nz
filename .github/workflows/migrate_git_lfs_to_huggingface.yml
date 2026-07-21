@@ -10,6 +10,10 @@ on:
         description: "Hugging Face dataset repository"
         required: true
         default: "edithatogo/corpus-social-media-government-nz"
+      source_artifact_id:
+        description: "Retained LFS-enabled GitHub Pages artifact ID"
+        required: true
+        default: "8479483821"
 
 permissions:
   contents: write
@@ -33,6 +37,27 @@ jobs:
       - uses: ./.github/actions/setup-python-uv
         with:
           requirements: requirements.txt
+      - name: Download retained LFS-enabled archive artifact
+        id: source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          artifact_root="$RUNNER_TEMP/lfs-source"
+          mkdir -p "$artifact_root/download" "$artifact_root/content"
+          gh api "repos/${{ github.repository }}/actions/artifacts/${{ inputs.source_artifact_id }}/zip" > "$artifact_root/artifact.zip"
+          unzip -q "$artifact_root/artifact.zip" -d "$artifact_root/download"
+          artifact_tar="$(find "$artifact_root/download" -type f -name 'artifact.tar' -print -quit)"
+          if [ -n "$artifact_tar" ]; then
+            tar -xf "$artifact_tar" -C "$artifact_root/content"
+          else
+            cp -R "$artifact_root/download/." "$artifact_root/content/"
+          fi
+          bundle="$(find "$artifact_root/content" -type f -name 'historical_archive.tar.gz' -print -quit)"
+          if [ -z "$bundle" ]; then
+            echo "The retained artifact did not contain historical_archive.tar.gz." >&2
+            exit 1
+          fi
+          echo "bundle=$bundle" >> "$GITHUB_OUTPUT"
       - name: Verify, transfer, and remove Git LFS pointers
         run: >-
           python scripts/migrate_git_lfs_to_huggingface.py migrate
@@ -41,6 +66,8 @@ jobs:
           --normalized-root historical_archive_normalized
           --manifest conductor/huggingface_lfs_migration_manifest.json
           --destination-prefix archive
+          --local-bundle "${{ steps.source.outputs.bundle }}"
+          --source-description "github-actions-artifact:${{ inputs.source_artifact_id }}"
           --cleanup
       - name: Commit LFS-free repository state
         run: |

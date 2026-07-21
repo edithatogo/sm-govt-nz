@@ -130,6 +130,8 @@ def migrate_lfs_payloads(
     attributes_path: Path = Path(".gitattributes"),
     download: Callable[[str, str, str | None], Path] = default_download,
     api: Any | None = None,
+    local_bundle: Path | None = None,
+    source_description: str = "",
 ) -> dict[str, Any]:
     pointers = discover_lfs_pointers(normalized_root)
     if not pointers:
@@ -139,7 +141,9 @@ def migrate_lfs_payloads(
     if not token:
         raise RuntimeError("HF_TOKEN is required for Git LFS migration.")
 
-    bundle_path = download(repo_id, bundle_path_in_repo, token)
+    bundle_path = local_bundle or download(repo_id, bundle_path_in_repo, token)
+    if not bundle_path.is_file():
+        raise RuntimeError(f"Migration source bundle does not exist: {bundle_path}")
     with tempfile.TemporaryDirectory(prefix="sm-govt-nz-lfs-") as temporary_directory:
         temporary_root = Path(temporary_directory)
         extracted_root = temporary_root / "extracted"
@@ -159,6 +163,7 @@ def migrate_lfs_payloads(
             "migrated_at": datetime.now(UTC).isoformat(),
             "dataset_repo_id": repo_id,
             "source_bundle_path": bundle_path_in_repo,
+            "source_description": source_description or f"huggingface:{repo_id}/{bundle_path_in_repo}",
             "source_bundle_sha256": sha256_file(bundle_path),
             "destination_prefix": destination_prefix,
             "entries": entries,
@@ -291,6 +296,8 @@ def main() -> None:
     migrate.add_argument("--normalized-root", type=Path, default=Path("historical_archive_normalized"))
     migrate.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     migrate.add_argument("--destination-prefix", default="archive")
+    migrate.add_argument("--local-bundle", type=Path)
+    migrate.add_argument("--source-description", default="")
     migrate.add_argument("--cleanup", action="store_true")
 
     hydrate = subparsers.add_parser("hydrate")
@@ -308,6 +315,8 @@ def main() -> None:
             destination_prefix=args.destination_prefix,
             token=os.getenv("HF_TOKEN", ""),
             cleanup=args.cleanup,
+            local_bundle=args.local_bundle,
+            source_description=args.source_description,
         )
     else:
         result = hydrate_archive(

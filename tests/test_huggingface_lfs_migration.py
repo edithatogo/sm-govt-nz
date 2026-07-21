@@ -133,4 +133,6 @@ def test_publication_workflows_hydrate_without_git_lfs_checkout() -> None:
     migration = Path(".github/workflows/migrate_git_lfs_to_huggingface.yml").read_text(encoding="utf-8")
     assert "transfer-git-lfs-to-hugging-face" in migration
     assert "lfs: false" in migration
+    assert "source_artifact_id" in migration
+    assert "--local-bundle" in migration
     assert "--cleanup" in migration
