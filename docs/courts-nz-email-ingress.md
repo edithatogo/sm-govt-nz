@@ -213,6 +213,15 @@ Setup outline:
 External setup for the dedicated address is tracked in
 https://github.com/edithatogo/sm-govt-nz/issues/5.
 
+On 2026-07-21 the free Worker was redeployed successfully as version
+`397f9ddf-45e7-41f8-99b1-a1c6520944c7`, including its GitHub dispatch secret.
+The routing probe still returned `blocked_zone_not_found` for
+`archive.edithatogo.com`; Wrangler consequently reported no deployment target.
+This is an expected external domain-ownership gate, not an archive automation
+fault. The dedicated Cloudflare enhancement is report-only until an already
+owned domain is delegated or domain registration is separately approved. The
+zero-cost Pipedream ingress remains the active archive-only route.
+
 For local deployment, copy `cloudflare/wrangler.courts-nz-email.toml.example`
 to `cloudflare/wrangler.toml`, replace `ALLOWED_RECIPIENTS`, and set
 `GITHUB_TOKEN` as a Worker secret:

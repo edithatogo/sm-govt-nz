@@ -3,7 +3,7 @@
   "contract_id": "courts-nz-email-judgments",
   "archive_only": true,
   "dedicated_subscription_address": {
-    "status": "pending_external_setup",
+    "status": "worker_deployed_domain_external_gate",
     "address": "courts-nz-judgments@archive.edithatogo.com",
     "purpose": "Courts of New Zealand judgments of public interest subscription capture",
     "provider": "cloudflare_email_routing",
@@ -15,10 +15,17 @@
       "match": "to:courts-nz-judgments@archive.edithatogo.com",
       "action": "worker:courts-nz-email-archive",
       "priority": 0,
-      "last_verified": "2026-06-15",
+      "last_verified": "2026-07-21",
       "verified_with": "npx -y wrangler email routing rules get edithatogo.com 4fbe93480e834fd786a1959020c8a526"
     },
     "tracking_issue": "https://github.com/edithatogo/sm-govt-nz/issues/5",
+    "worker_deployment": {
+      "status": "deployed_no_routing_target",
+      "version_id": "397f9ddf-45e7-41f8-99b1-a1c6520944c7",
+      "workflow_run": "https://github.com/edithatogo/sm-govt-nz/actions/runs/29824927534",
+      "deployed_at": "2026-07-21",
+      "notes": "Worker code and GITHUB_TOKEN secret are deployed. Cloudflare reported no deployment target because no eligible owned/delegated email-routing zone exists."
+    },
     "allowed_recipients": [
       "courts-nz-judgments@archive.edithatogo.com"
     ]
@@ -59,8 +66,8 @@
       "jocelyn.ns.cloudflare.com",
       "joel.ns.cloudflare.com"
     ],
-    "latest_workflow_run": "https://github.com/edithatogo/sm-govt-nz/actions/runs/27537168028",
-    "last_verified": "2026-06-15",
+    "latest_workflow_run": "https://github.com/edithatogo/sm-govt-nz/actions/runs/29824929426",
+    "last_verified": "2026-07-21",
     "notes": "Public DNS and RDAP returned NXDOMAIN/not found for edithatogo.com on 2026-06-15. Register the root domain or switch this ingress lane to a registered domain before enabling Cloudflare Email Routing."
   },
   "cloudflare_cost_guardrail": {
