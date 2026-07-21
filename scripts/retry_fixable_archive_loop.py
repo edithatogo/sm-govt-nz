@@ -61,7 +61,7 @@ def retryable_source_ids(
         str(row.get("source_id"))
         for row in matrix.get("sources", [])
         if row.get("source_id")
-        and str(row.get("platform") or row.get("source_type")) == platform
+        and platform in {str(row.get("platform") or ""), str(row.get("source_type") or "")}
         and str(row.get("blocker_class") or "") in blockers
         and stable_shard(str(row.get("source_id")), shard_count) == shard_index
     )

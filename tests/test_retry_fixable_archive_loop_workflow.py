@@ -35,6 +35,7 @@ def test_retryable_source_ids_selects_only_public_recovery_blockers() -> None:
     rows = [
         {
             "source_id": "linkedin-rate-limit",
+            "source_type": "social_profile",
             "platform": "linkedin",
             "blocker_class": "linkedin_public_access_rate_limited",
         },
