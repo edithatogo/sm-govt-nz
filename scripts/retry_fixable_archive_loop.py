@@ -54,6 +54,7 @@ def retryable_source_ids(
     shard_index: int,
     shard_count: int,
     limit: int,
+    rotation_index: int = 0,
 ) -> list[str]:
     platform = SOURCE_TYPE_TO_PLATFORM.get(source_type, source_type)
     blockers = RETRYABLE_BLOCKERS.get(platform, set())
@@ -65,7 +66,10 @@ def retryable_source_ids(
         and str(row.get("blocker_class") or "") in blockers
         and stable_shard(source_id, shard_count) == shard_index
     )
-    return source_ids[:limit] if limit > 0 else source_ids
+    if limit <= 0 or len(source_ids) <= limit:
+        return source_ids
+    start = (max(0, rotation_index) * limit) % len(source_ids)
+    return (source_ids + source_ids)[start : start + limit]
 
 
 def archive_retry_shard(
@@ -135,6 +139,7 @@ def main() -> None:
     parser.add_argument("--source-limit", type=int, default=5)
     parser.add_argument("--shard-count", type=int, default=16)
     parser.add_argument("--shard-index", type=int, default=-1)
+    parser.add_argument("--rotation-index", type=int, default=-1)
     parser.add_argument("--fetch-timeout", type=int, default=12)
     parser.add_argument("--per-source-delay", type=float, default=3.0)
     parser.add_argument("--retry-attempts", type=int, default=2)
@@ -149,6 +154,7 @@ def main() -> None:
     shard_count = max(1, args.shard_count)
     run_number = int(os.getenv("GITHUB_RUN_NUMBER", "0") or 0)
     shard_index = args.shard_index if args.shard_index >= 0 else run_number % shard_count
+    rotation_index = args.rotation_index if args.rotation_index >= 0 else run_number // shard_count
     if shard_index >= shard_count:
         raise SystemExit("shard_index must be lower than shard_count")
 
@@ -157,7 +163,10 @@ def main() -> None:
         discover_public_newsletter_archives(max(0, args.newsletter_max_agencies))
 
     for iteration in range(1, max(1, args.max_iterations) + 1):
-        print(f"Iteration {iteration}/{max(1, args.max_iterations)}; shard={shard_index}/{shard_count}")
+        print(
+            f"Iteration {iteration}/{max(1, args.max_iterations)}; "
+            f"shard={shard_index}/{shard_count}; rotation={rotation_index}"
+        )
         matrix = load_json(COMPLETION_MATRIX)
         attempted = 0
         for source_type in source_types:
@@ -167,6 +176,7 @@ def main() -> None:
                 shard_index=shard_index,
                 shard_count=shard_count,
                 limit=max(0, args.source_limit),
+                rotation_index=rotation_index + iteration - 1,
             )
             attempted += len(source_ids)
             print(f"  Retrying {len(source_ids)} {source_type} sources...")

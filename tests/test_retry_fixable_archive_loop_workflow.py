@@ -26,6 +26,7 @@ def test_retry_fixable_archive_loop_workflow_wraps_bounded_loop_and_commit() -> 
     assert "--per-source-delay" in workflow
     assert "--retry-attempts" in workflow
     assert "--retry-backoff" in workflow
+    assert "--rotation-index" in workflow
     assert "--discover-newsletters" in workflow
     assert "xvfb-run -a" in workflow
     assert "_archive_paced_retry_report.json" in script
@@ -63,3 +64,35 @@ def test_retryable_source_ids_selects_only_public_recovery_blockers() -> None:
     )
 
     assert selected == ["manifest-linkedin-rate-limit"]
+
+
+def test_retryable_source_ids_rotates_over_shard_overflow() -> None:
+    rows = [
+        {
+            "candidate_id": f"linkedin-{index}",
+            "platform": "linkedin",
+            "blocker_class": "linkedin_public_access_rate_limited",
+        }
+        for index in range(7)
+    ]
+
+    first = retryable_source_ids(
+        {"sources": rows},
+        "linkedin",
+        shard_index=0,
+        shard_count=1,
+        limit=5,
+        rotation_index=0,
+    )
+    second = retryable_source_ids(
+        {"sources": rows},
+        "linkedin",
+        shard_index=0,
+        shard_count=1,
+        limit=5,
+        rotation_index=1,
+    )
+
+    assert first == ["linkedin-0", "linkedin-1", "linkedin-2", "linkedin-3", "linkedin-4"]
+    assert second == ["linkedin-5", "linkedin-6", "linkedin-0", "linkedin-1", "linkedin-2"]
+    assert set(first + second) == {f"linkedin-{index}" for index in range(7)}

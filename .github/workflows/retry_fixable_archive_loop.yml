@@ -25,6 +25,10 @@ on:
         description: "Shard index; -1 rotates using the GitHub run number"
         required: true
         default: "-1"
+      rotation_index:
+        description: "Window rotation within a shard; -1 derives it from the GitHub run number"
+        required: true
+        default: "-1"
       fetch_timeout:
         description: "Per-request timeout in seconds"
         required: true
@@ -89,6 +93,7 @@ jobs:
             --source-limit "${{ inputs.source_limit || '5' }}"
             --shard-count "${{ inputs.shard_count || '16' }}"
             --shard-index "${{ inputs.shard_index || '-1' }}"
+            --rotation-index "${{ inputs.rotation_index || '-1' }}"
             --fetch-timeout "${{ inputs.fetch_timeout || '12' }}"
             --per-source-delay "${{ inputs.per_source_delay || '3' }}"
             --retry-attempts "${{ inputs.retry_attempts || '2' }}"
