@@ -58,6 +58,8 @@ jobs:
         id: candidate_issue
         run: >-
           python scripts/build_source_candidate_issue.py
+          --manifest conductor/govt_archive_source_manifest.json
+          --completion-matrix conductor/archive_completion_matrix.json
           --body-output .tmp/source_candidate_issue.md
       - name: Create or update candidate review issue
         if: steps.candidate_issue.outputs.has_candidates == 'true'
@@ -96,3 +98,20 @@ jobs:
               --label needs-review \
               --body-file .tmp/source_candidate_issue.md
           fi
+      - name: Close reconciled candidate review issues
+        if: steps.candidate_issue.outputs.has_candidates != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue list \
+            --repo "${{ github.repository }}" \
+            --state open \
+            --label source-discovery \
+            --label needs-review \
+            --json number \
+            --jq '.[].number' \
+          | while read -r issue; do
+              [ -z "$issue" ] || gh issue close "$issue" \
+                --repo "${{ github.repository }}" \
+                --comment "Automated reconciliation found no discovery candidates outside the registered manifest and canonical completion matrix. Future new candidates will reopen this issue automatically."
+            done

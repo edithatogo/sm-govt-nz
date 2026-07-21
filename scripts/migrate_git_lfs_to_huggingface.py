@@ -15,6 +15,7 @@ LFS_HEADER = "version https://git-lfs.github.com/spec/v1"
 DEFAULT_REPO_ID = "edithatogo/corpus-social-media-government-nz"
 DEFAULT_BUNDLE_PATH = "bundles/historical_archive.tar.gz"
 DEFAULT_MANIFEST = Path("conductor/huggingface_lfs_migration_manifest.json")
+DEFAULT_ROLLOVER_THRESHOLD_MB = 50
 
 
 def sha256_file(path: Path) -> str:
@@ -233,6 +234,137 @@ def merge_jsonl(baseline: Path, delta: Path, destination: Path) -> None:
     temporary.replace(destination)
 
 
+def rollover_large_deltas(
+    *,
+    repo_id: str,
+    normalized_root: Path,
+    manifest_path: Path,
+    destination_prefix: str,
+    threshold_bytes: int,
+    token: str,
+    cleanup: bool,
+    download: Callable[[str, str, str | None], Path] = default_download,
+    api: Any | None = None,
+) -> dict[str, Any]:
+    candidates = [
+        path
+        for path in sorted(normalized_root.rglob("*.jsonl"))
+        if path.is_file()
+        and not parse_lfs_pointer(path)
+        and path.stat().st_size >= threshold_bytes
+    ]
+    if not candidates:
+        return {
+            "status": "no_rollover_needed",
+            "threshold_bytes": threshold_bytes,
+            "rollover_count": 0,
+        }
+    if not token:
+        raise RuntimeError("HF_TOKEN is required when archive deltas need rollover.")
+
+    if manifest_path.is_file():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    else:
+        manifest = {
+            "schema_version": 1,
+            "dataset_repo_id": repo_id,
+            "destination_prefix": destination_prefix,
+            "entries": [],
+        }
+    if str(manifest.get("dataset_repo_id", repo_id)) != repo_id:
+        raise RuntimeError("Rollover repository does not match the migration manifest.")
+
+    existing_entries = {
+        str(entry["relative_path"]): entry
+        for entry in manifest.get("entries", [])
+        if entry.get("relative_path")
+    }
+    if api is None:
+        from huggingface_hub import HfApi
+
+        api = HfApi(token=token)
+    api.create_repo(repo_id=repo_id, repo_type="dataset", exist_ok=True)
+
+    rolled_over = []
+    with tempfile.TemporaryDirectory(prefix="sm-govt-nz-rollover-") as temporary_directory:
+        temporary_root = Path(temporary_directory)
+        for delta in candidates:
+            relative_path = delta.relative_to(normalized_root).as_posix()
+            hf_path = (
+                f"{destination_prefix.rstrip('/')}/{normalized_root.as_posix()}/"
+                f"{relative_path}"
+            )
+            merged = temporary_root / relative_path
+            existing = existing_entries.get(relative_path)
+            if existing:
+                baseline = download(repo_id, str(existing["hf_path"]), token)
+                expected_size = int(existing["size"])
+                expected_sha256 = str(existing["oid"])
+                if baseline.stat().st_size != expected_size or sha256_file(baseline) != expected_sha256:
+                    raise RuntimeError(
+                        f"Hugging Face baseline failed verification before rollover: {existing['hf_path']}"
+                    )
+                merge_jsonl(baseline, delta, merged)
+            else:
+                merged.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(delta, merged)
+
+            entry = {
+                **(existing or {}),
+                "path": delta.as_posix(),
+                "relative_path": relative_path,
+                "hf_path": hf_path,
+                "oid": sha256_file(merged),
+                "size": merged.stat().st_size,
+                "verified_sha256": sha256_file(merged),
+                "verified_size": merged.stat().st_size,
+                "rolled_over_at": datetime.now(UTC).isoformat(),
+            }
+            api.upload_file(
+                path_or_fileobj=str(merged),
+                path_in_repo=hf_path,
+                repo_id=repo_id,
+                repo_type="dataset",
+                commit_message="Rollover normalized archive delta",
+            )
+            existing_entries[relative_path] = entry
+            rolled_over.append(entry)
+
+        manifest.update(
+            {
+                "schema_version": 1,
+                "dataset_repo_id": repo_id,
+                "destination_prefix": destination_prefix,
+                "last_rollover_at": datetime.now(UTC).isoformat(),
+                "entries": [existing_entries[key] for key in sorted(existing_entries)],
+            }
+        )
+        temporary_manifest = temporary_root / "git_lfs_migration_manifest.json"
+        temporary_manifest.write_text(
+            json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        api.upload_file(
+            path_or_fileobj=str(temporary_manifest),
+            path_in_repo="metadata/git_lfs_migration_manifest.json",
+            repo_id=repo_id,
+            repo_type="dataset",
+            commit_message="Record normalized archive rollover",
+        )
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(temporary_manifest, manifest_path)
+
+    if cleanup:
+        for path in candidates:
+            path.unlink()
+    return {
+        "status": "rolled_over",
+        "threshold_bytes": threshold_bytes,
+        "rollover_count": len(rolled_over),
+        "entries": rolled_over,
+    }
+
+
 def hydrate_archive(
     *,
     manifest_path: Path,
@@ -305,6 +437,14 @@ def main() -> None:
     hydrate.add_argument("--source-root", type=Path, default=Path("historical_archive_normalized"))
     hydrate.add_argument("--output-root", type=Path, default=Path("dist/hydrated_archive_normalized"))
 
+    rollover = subparsers.add_parser("rollover")
+    rollover.add_argument("--repo-id", default=DEFAULT_REPO_ID)
+    rollover.add_argument("--normalized-root", type=Path, default=Path("historical_archive_normalized"))
+    rollover.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
+    rollover.add_argument("--destination-prefix", default="archive")
+    rollover.add_argument("--threshold-mb", type=int, default=DEFAULT_ROLLOVER_THRESHOLD_MB)
+    rollover.add_argument("--cleanup", action="store_true")
+
     args = parser.parse_args()
     if args.command == "migrate":
         result = migrate_lfs_payloads(
@@ -318,12 +458,22 @@ def main() -> None:
             local_bundle=args.local_bundle,
             source_description=args.source_description,
         )
-    else:
+    elif args.command == "hydrate":
         result = hydrate_archive(
             manifest_path=args.manifest,
             source_root=args.source_root,
             output_root=args.output_root,
             token=os.getenv("HF_TOKEN") or None,
+        )
+    else:
+        result = rollover_large_deltas(
+            repo_id=args.repo_id,
+            normalized_root=args.normalized_root,
+            manifest_path=args.manifest,
+            destination_prefix=args.destination_prefix,
+            threshold_bytes=args.threshold_mb * 1024 * 1024,
+            token=os.getenv("HF_TOKEN", ""),
+            cleanup=args.cleanup,
         )
     print(json.dumps(result, indent=2, sort_keys=True))
 

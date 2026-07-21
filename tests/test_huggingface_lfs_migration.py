@@ -4,7 +4,11 @@ import json
 import tarfile
 from pathlib import Path
 
-from scripts.migrate_git_lfs_to_huggingface import hydrate_archive, migrate_lfs_payloads
+from scripts.migrate_git_lfs_to_huggingface import (
+    hydrate_archive,
+    migrate_lfs_payloads,
+    rollover_large_deltas,
+)
 
 
 class FakeApi:
@@ -116,6 +120,58 @@ def test_hydration_merges_hugging_face_baseline_with_git_delta(tmp_path) -> None
     ]
 
 
+def test_rollover_merges_existing_baseline_and_removes_committed_delta(tmp_path) -> None:
+    source_root = tmp_path / "historical_archive_normalized"
+    delta = source_root / "website/2026-07.jsonl"
+    delta.parent.mkdir(parents=True)
+    delta.write_text(
+        '{"record_id":"website:1","text":"duplicate"}\n'
+        '{"record_id":"website:2","text":"new"}\n',
+        encoding="utf-8",
+    )
+    baseline = tmp_path / "baseline.jsonl"
+    baseline.write_text('{"record_id":"website:1","text":"archived"}\n', encoding="utf-8")
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(
+        json.dumps(
+            {
+                "dataset_repo_id": "owner/dataset",
+                "entries": [
+                    {
+                        "relative_path": "website/2026-07.jsonl",
+                        "hf_path": "archive/historical_archive_normalized/website/2026-07.jsonl",
+                        "oid": hashlib.sha256(baseline.read_bytes()).hexdigest(),
+                        "size": baseline.stat().st_size,
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    api = FakeApi()
+
+    result = rollover_large_deltas(
+        repo_id="owner/dataset",
+        normalized_root=source_root,
+        manifest_path=manifest_path,
+        destination_prefix="archive",
+        threshold_bytes=1,
+        token="test-token",
+        cleanup=True,
+        download=lambda repo_id, path, token: baseline,
+        api=api,
+    )
+
+    updated = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert result["rollover_count"] == 1
+    assert updated["entries"][0]["size"] > baseline.stat().st_size
+    assert not delta.exists()
+    assert [upload["path_in_repo"] for upload in api.uploads] == [
+        "archive/historical_archive_normalized/website/2026-07.jsonl",
+        "metadata/git_lfs_migration_manifest.json",
+    ]
+
+
 def test_publication_workflows_hydrate_without_git_lfs_checkout() -> None:
     workflows = [
         ".github/workflows/pages.yml",
@@ -136,3 +192,9 @@ def test_publication_workflows_hydrate_without_git_lfs_checkout() -> None:
     assert "source_artifact_id" in migration
     assert "--local-bundle" in migration
     assert "--cleanup" in migration
+
+    rollover = Path(".github/workflows/rollover_large_archive_deltas.yml").read_text(encoding="utf-8")
+    assert 'cron: "17 5 * * *"' in rollover
+    assert " rollover" in rollover
+    assert "--threshold-mb" in rollover
+    assert "--cleanup" in rollover

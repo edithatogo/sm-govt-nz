@@ -1,0 +1,56 @@
+name: Rollover Large Archive Deltas to Hugging Face
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+    inputs:
+      threshold_mb:
+        description: "Rollover normalized JSONL files at or above this size"
+        required: true
+        default: "50"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-state-hugging-face-rollover-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  rollover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_DATASET_REPO_ID: ${{ secrets.HF_DATASET_REPO_ID }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          lfs: false
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - name: Merge and rollover large normalized deltas
+        run: >-
+          python scripts/migrate_git_lfs_to_huggingface.py rollover
+          --repo-id "${HF_DATASET_REPO_ID:-edithatogo/corpus-social-media-government-nz}"
+          --normalized-root historical_archive_normalized
+          --manifest conductor/huggingface_lfs_migration_manifest.json
+          --destination-prefix archive
+          --threshold-mb "${{ inputs.threshold_mb || '50' }}"
+          --cleanup
+      - name: Commit rollover state
+        run: |
+          git add -A conductor/huggingface_lfs_migration_manifest.json
+          git add -u historical_archive_normalized
+          if git diff --cached --quiet; then
+            echo "No archive deltas required rollover."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(archive): rollover large deltas to Hugging Face"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"

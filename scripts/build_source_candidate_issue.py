@@ -3,6 +3,7 @@ import json
 from collections import Counter
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit, urlunsplit
 
 
 REVIEW_SOURCE_TYPES = {
@@ -21,7 +22,39 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def review_candidates(report: dict[str, Any]) -> list[dict[str, Any]]:
+def canonical_url(value: str) -> str:
+    value = value.strip()
+    if not value:
+        return ""
+    parsed = urlsplit(value)
+    return urlunsplit(
+        (
+            parsed.scheme.lower(),
+            parsed.netloc.lower(),
+            parsed.path.rstrip("/"),
+            parsed.query,
+            "",
+        )
+    )
+
+
+def governed_identities(documents: list[dict[str, Any]]) -> set[str]:
+    identities: set[str] = set()
+    for document in documents:
+        for item in document.get("sources", []):
+            for key in ("source_id", "candidate_id"):
+                if item.get(key):
+                    identities.add(f"id:{item[key]}")
+            url = canonical_url(str(item.get("url", "")))
+            if url:
+                identities.add(f"url:{url}")
+    return identities
+
+
+def review_candidates(
+    report: dict[str, Any], governed: set[str] | None = None
+) -> list[dict[str, Any]]:
+    governed = governed or set()
     candidates = []
     for item in report.get("candidates", []):
         if item.get("source_type") not in REVIEW_SOURCE_TYPES:
@@ -29,6 +62,12 @@ def review_candidates(report: dict[str, Any]) -> list[dict[str, Any]]:
         if "registry.social_profiles" in str(item.get("origin", "")):
             continue
         if item.get("archive_status") in {"blocked", "degraded"}:
+            continue
+        candidate_id = str(item.get("candidate_id", ""))
+        url = canonical_url(str(item.get("url", "")))
+        if (candidate_id and f"id:{candidate_id}" in governed) or (
+            url and f"url:{url}" in governed
+        ):
             continue
         candidates.append(item)
     return sorted(
@@ -122,12 +161,19 @@ def write_github_output(path: Path, has_candidates: bool, count: int, title: str
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a GitHub issue body for source discovery candidates.")
     parser.add_argument("--report", type=Path, default=Path("conductor/govt_source_candidate_report.json"))
+    parser.add_argument("--manifest", type=Path, default=Path("conductor/govt_archive_source_manifest.json"))
+    parser.add_argument("--completion-matrix", type=Path, default=Path("conductor/archive_completion_matrix.json"))
     parser.add_argument("--body-output", type=Path, required=True)
     parser.add_argument("--limit", type=int, default=40)
     args = parser.parse_args()
 
     report = load_json(args.report)
-    candidates = review_candidates(report)
+    governed_documents = [
+        load_json(path)
+        for path in (args.manifest, args.completion_matrix)
+        if path.is_file()
+    ]
+    candidates = review_candidates(report, governed_identities(governed_documents))
     title = "Review newly discovered NZ government public-source candidates"
     args.body_output.parent.mkdir(parents=True, exist_ok=True)
     args.body_output.write_text(build_body(report, candidates, args.limit), encoding="utf-8")

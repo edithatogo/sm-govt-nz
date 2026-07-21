@@ -21,6 +21,14 @@ Publication and Pages workflows hydrate a temporary normalized tree from the
 migration manifest. New Git-resident records are merged with the Hugging Face
 baseline by record identifier, without modifying or recommitting the baseline.
 
+The daily `Rollover Large Archive Deltas to Hugging Face` workflow prevents new
+Git-resident normalized JSONL deltas from approaching GitHub's blob limit. At
+50 MiB it verifies and downloads any existing Hugging Face baseline, merges the
+delta by record identifier, uploads the replacement baseline, updates the
+migration manifest, and only then removes the Git copy. Runs with no qualifying
+files are successful no-ops. The threshold is deliberately below GitHub's hard
+limit so ordinary daily capture commits retain operational headroom.
+
 The migration never posts or mirrors social-media content. It only changes
 archive storage and publication transport.
 
