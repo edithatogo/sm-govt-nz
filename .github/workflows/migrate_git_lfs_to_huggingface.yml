@@ -1,0 +1,56 @@
+name: Migrate Git LFS Archive to Hugging Face
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type transfer-git-lfs-to-hugging-face"
+        required: true
+      dataset_repo_id:
+        description: "Hugging Face dataset repository"
+        required: true
+        default: "edithatogo/corpus-social-media-government-nz"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-state-git-lfs-migration-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    if: ${{ inputs.confirm == 'transfer-git-lfs-to-hugging-face' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          lfs: false
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - name: Verify, transfer, and remove Git LFS pointers
+        run: >-
+          python scripts/migrate_git_lfs_to_huggingface.py migrate
+          --repo-id "${{ inputs.dataset_repo_id }}"
+          --bundle-path bundles/historical_archive.tar.gz
+          --normalized-root historical_archive_normalized
+          --manifest conductor/huggingface_lfs_migration_manifest.json
+          --destination-prefix archive
+          --cleanup
+      - name: Commit LFS-free repository state
+        run: |
+          git add -A .gitattributes conductor/huggingface_lfs_migration_manifest.json historical_archive_normalized/website
+          if git diff --cached --quiet; then
+            echo "Git LFS migration was already committed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(archive): move Git LFS baseline to Hugging Face"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"

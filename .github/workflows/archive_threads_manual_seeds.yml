@@ -75,10 +75,16 @@ jobs:
           python -m scripts.archive_registered_sources
           --source-type threads
           --report conductor/threads_archive_report.json
+      - name: Hydrate migrated archive baseline from Hugging Face
+        run: >-
+          python scripts/migrate_git_lfs_to_huggingface.py hydrate
+          --manifest conductor/huggingface_lfs_migration_manifest.json
+          --source-root historical_archive_normalized
+          --output-root dist/hydrated_archive_normalized
       - name: Build archive compaction manifest
         run: >-
           python scripts/build_archive_compaction_manifest.py
-          --normalized-dir historical_archive_normalized
+          --normalized-dir dist/hydrated_archive_normalized
           --raw-dir historical_archive_raw
           --output dist/archive_compaction_manifest.json
       - name: Check monthly publication guard
@@ -104,7 +110,7 @@ jobs:
           args=(
             python scripts/publish_archives.py
             --archive-dir historical_archive
-            --normalized-dir historical_archive_normalized
+            --normalized-dir dist/hydrated_archive_normalized
             --raw-dir historical_archive_raw
             --output-dir dist
             --manifest dist/archive_manifest.json

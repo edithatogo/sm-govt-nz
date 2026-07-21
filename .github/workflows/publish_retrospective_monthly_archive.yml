@@ -32,11 +32,17 @@ jobs:
       - uses: ./.github/actions/setup-python-uv
         with:
           requirements: requirements.txt
+      - name: Hydrate migrated archive baseline from Hugging Face
+        run: >-
+          python scripts/migrate_git_lfs_to_huggingface.py hydrate
+          --manifest conductor/huggingface_lfs_migration_manifest.json
+          --source-root historical_archive_normalized
+          --output-root dist/hydrated_archive_normalized
       - name: Resolve next retrospective monthly release
         id: next-release
         run: >-
           python scripts/resolve_next_monthly_release.py
-          --normalized-root historical_archive_normalized
+          --normalized-root dist/hydrated_archive_normalized
           --status-report conductor/archive_publication_status.json
           --ledger conductor/monthly_release_ledger.json
       - name: Stop when no retrospective candidate exists
@@ -46,7 +52,7 @@ jobs:
         if: ${{ steps.next-release.outputs.should_publish == 'true' }}
         run: >-
           python scripts/build_archive_compaction_manifest.py
-          --normalized-dir historical_archive_normalized
+          --normalized-dir dist/hydrated_archive_normalized
           --raw-dir historical_archive_raw
           --output dist/archive_compaction_manifest.json
       - name: Publish next retrospective monthly release
@@ -54,7 +60,7 @@ jobs:
         run: >-
           python scripts/publish_archives.py
           --archive-dir historical_archive
-          --normalized-dir historical_archive_normalized
+          --normalized-dir dist/hydrated_archive_normalized
           --raw-dir historical_archive_raw
           --output-dir dist
           --manifest dist/archive_manifest.json
@@ -71,7 +77,7 @@ jobs:
       - name: Refresh monthly release plan
         run: >-
           python scripts/build_monthly_release_plan.py
-          --normalized-root historical_archive_normalized
+          --normalized-root dist/hydrated_archive_normalized
           --status-report conductor/archive_publication_status.json
           --ledger conductor/monthly_release_ledger.json
           --output conductor/monthly_release_plan.json

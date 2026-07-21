@@ -76,17 +76,24 @@ jobs:
         with:
           requirements: requirements.txt
 
+      - name: Hydrate migrated archive baseline from Hugging Face
+        run: >-
+          python scripts/migrate_git_lfs_to_huggingface.py hydrate
+          --manifest conductor/huggingface_lfs_migration_manifest.json
+          --source-root historical_archive_normalized
+          --output-root dist/hydrated_archive_normalized
+
       - name: Build archive compaction manifest
         run: >-
           python scripts/build_archive_compaction_manifest.py
-          --normalized-dir historical_archive_normalized
+          --normalized-dir dist/hydrated_archive_normalized
           --raw-dir historical_archive_raw
           --output dist/archive_compaction_manifest.json
 
       - name: Build monthly release plan
         run: >-
           python scripts/build_monthly_release_plan.py
-          --normalized-root historical_archive_normalized
+          --normalized-root dist/hydrated_archive_normalized
           --status-report conductor/archive_publication_status.json
           --ledger conductor/monthly_release_ledger.json
           --output conductor/monthly_release_plan.json
@@ -134,7 +141,7 @@ jobs:
           fi
           base_args=(
             --archive-dir historical_archive
-            --normalized-dir historical_archive_normalized
+            --normalized-dir dist/hydrated_archive_normalized
             --raw-dir historical_archive_raw
             --output-dir dist
             --manifest dist/archive_manifest.json

@@ -16,6 +16,7 @@ concurrency:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
 
 jobs:
   deploy:
@@ -26,16 +27,22 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          lfs: true
+          lfs: false
       - name: Set up Python
         uses: ./.github/actions/setup-python-uv
         with:
           requirements: requirements.txt
+      - name: Hydrate migrated archive baseline from Hugging Face
+        run: >-
+          python scripts/migrate_git_lfs_to_huggingface.py hydrate
+          --manifest conductor/huggingface_lfs_migration_manifest.json
+          --source-root historical_archive_normalized
+          --output-root dist/hydrated_archive_normalized
       - name: Bundle historical archive
         run: >-
           python scripts/publish_archives.py
           --archive-dir historical_archive
-          --normalized-dir historical_archive_normalized
+          --normalized-dir dist/hydrated_archive_normalized
           --raw-dir historical_archive_raw
           --output-dir dist
           --manifest dist/archive_manifest.json
