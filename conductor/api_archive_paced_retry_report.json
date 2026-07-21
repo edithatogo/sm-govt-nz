@@ -1,11 +1,11 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-21T10:00:38+00:00",
+  "generated_at": "2026-07-21T18:44:29+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
-    "fetch_timeout": 10,
+    "fetch_timeout": 12,
     "idle_rounds": 3,
     "include_blocked": true,
     "limit_sources": 0,
@@ -17,14 +17,14 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
     "per_account_timeout": 120,
-    "per_source_delay": 1.0,
+    "per_source_delay": 3.0,
     "raw_root": "historical_archive_raw",
-    "retry_attempts": 1,
-    "retry_backoff": 1.0,
+    "retry_attempts": 2,
+    "retry_backoff": 2.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "002e3f3a6d3df965"
+      "d58c4799197d538f"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -34,15 +34,15 @@
   },
   "results": [
     {
-      "agency_id": "office-of-the-ombudsman",
+      "agency_id": "department-of-corrections",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "002e3f3a6d3df965",
+      "source_id": "d58c4799197d538f",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.ombudsman.parliament.nz/openapi.json"
+      "url": "https://www.corrections.govt.nz/.well-known/webfinger"
     }
   ],
   "summary": {

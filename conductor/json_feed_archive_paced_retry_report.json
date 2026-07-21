@@ -1,11 +1,11 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-21T10:00:40+00:00",
+  "generated_at": "2026-07-21T18:44:36+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
-    "fetch_timeout": 10,
+    "fetch_timeout": 12,
     "idle_rounds": 3,
     "include_blocked": true,
     "limit_sources": 0,
@@ -17,14 +17,14 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
     "per_account_timeout": 120,
-    "per_source_delay": 1.0,
+    "per_source_delay": 3.0,
     "raw_root": "historical_archive_raw",
-    "retry_attempts": 1,
-    "retry_backoff": 1.0,
+    "retry_attempts": 2,
+    "retry_backoff": 2.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "07955141e1acc8ad"
+      "849a451aa635303b"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -34,15 +34,15 @@
   },
   "results": [
     {
-      "agency_id": "department-of-corrections",
+      "agency_id": "university-of-otago",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "07955141e1acc8ad",
+      "source_id": "849a451aa635303b",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.corrections.govt.nz/feed.json"
+      "url": "https://www.otago.ac.nz/feed.json"
     }
   ],
   "summary": {

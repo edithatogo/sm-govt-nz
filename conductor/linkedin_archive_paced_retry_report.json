@@ -1,11 +1,11 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-21T10:11:16+00:00",
+  "generated_at": "2026-07-21T18:46:34+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
-    "fetch_timeout": 10,
+    "fetch_timeout": 12,
     "idle_rounds": 3,
     "include_blocked": true,
     "limit_sources": 0,
@@ -17,14 +17,17 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
     "per_account_timeout": 120,
-    "per_source_delay": 1.0,
+    "per_source_delay": 3.0,
     "raw_root": "historical_archive_raw",
-    "retry_attempts": 1,
-    "retry_backoff": 1.0,
+    "retry_attempts": 2,
+    "retry_backoff": 2.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "0576ebdf8faec985"
+      "2046be7ce24fc8a8",
+      "289676a40b7008ff",
+      "3b847668ea93a3b9",
+      "948347df35bd9ed4"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -34,30 +37,54 @@
   },
   "results": [
     {
-      "agency_id": "whitireia",
+      "agency_id": "ara-institute-of-canterbury",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
-      "source_id": "0576ebdf8faec985",
+      "reason": "HTTP 999: <none>",
+      "source_id": "2046be7ce24fc8a8",
       "source_type": "social_profile",
-      "status": "not_found",
-      "url": "https://www.linkedin.com/school/whitireia"
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/ara-institute-of-canterbury"
+    },
+    {
+      "agency_id": "privacy-commissioner",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:b6e742046da126d5a367e489",
+      "source_id": "3b847668ea93a3b9",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/office-of-the-privacy-commissioner"
+    },
+    {
+      "agency_id": "reannz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:79540fa338ee77957904cba3",
+      "source_id": "948347df35bd9ed4",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/reannz"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 3
     },
-    "selected_sources": 1,
+    "selected_sources": 3,
     "status_by_platform": {
       "linkedin": {
-        "not_found": 1
+        "http_error": 1,
+        "public_snapshot_captured": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "not_found": 1
+      "http_error": 1,
+      "public_snapshot_captured": 2
     }
   }
 }

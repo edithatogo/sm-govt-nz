@@ -526,11 +526,11 @@
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
-      "report": "conductor/json_feed_archive_paced_retry_report.json",
+      "report": "conductor/json_feed_archive_report.json",
       "source_id": "07955141e1acc8ad",
       "status": "capture_blocked",
-      "supersedes_report": "conductor/json_feed_archive_report.json",
-      "supersedes_status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
       "url": "https://www.corrections.govt.nz/feed.json"
     },
     {
@@ -2957,11 +2957,11 @@
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
-      "report": "conductor/json_feed_archive_report.json",
+      "report": "conductor/json_feed_archive_paced_retry_report.json",
       "source_id": "849a451aa635303b",
       "status": "capture_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
+      "supersedes_report": "conductor/json_feed_archive_report.json",
+      "supersedes_status": "capture_blocked",
       "url": "https://www.otago.ac.nz/feed.json"
     },
     {
@@ -4179,11 +4179,11 @@
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
-      "report": "conductor/api_archive_report.json",
+      "report": "conductor/api_archive_paced_retry_report.json",
       "source_id": "d58c4799197d538f",
       "status": "capture_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
+      "supersedes_report": "conductor/api_archive_report.json",
+      "supersedes_status": "capture_blocked",
       "url": "https://www.corrections.govt.nz/.well-known/webfinger"
     },
     {
@@ -12550,12 +12550,12 @@
       "platform": "linkedin",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "",
-      "report": "conductor/manual_seed_onboarding_report.json",
+      "reason": "HTTP 999: <none>",
+      "report": "conductor/linkedin_archive_paced_retry_report.json",
       "source_id": "2046be7ce24fc8a8",
-      "status": "public_fallback_available",
-      "supersedes_report": "",
-      "supersedes_status": "",
+      "status": "http_error",
+      "supersedes_report": "conductor/manual_seed_onboarding_report.json",
+      "supersedes_status": "public_fallback_available",
       "url": "https://www.linkedin.com/school/ara-institute-of-canterbury"
     },
     {
@@ -14613,19 +14613,6 @@
       "url": "https://www.linkedin.com/company/porirua-city-council"
     },
     {
-      "agency_id": "privacy-commissioner",
-      "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "",
-      "report": "conductor/manual_seed_onboarding_report.json",
-      "source_id": "3b847668ea93a3b9",
-      "status": "public_fallback_available",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.linkedin.com/company/office-of-the-privacy-commissioner"
-    },
-    {
       "agency_id": "public-service-commission",
       "platform": "linkedin",
       "priority": "review",
@@ -14715,19 +14702,6 @@
       "supersedes_report": "",
       "supersedes_status": "",
       "url": "https://www.linkedin.com/company/realestateauthority"
-    },
-    {
-      "agency_id": "reannz",
-      "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "",
-      "report": "conductor/manual_seed_onboarding_report.json",
-      "source_id": "948347df35bd9ed4",
-      "status": "public_fallback_available",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.linkedin.com/company/reannz"
     },
     {
       "agency_id": "reserve-bank-of-nz",
@@ -15746,14 +15720,14 @@
     {
       "agency_id": "whitireia",
       "platform": "linkedin",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 404: Not Found",
-      "report": "conductor/linkedin_archive_paced_retry_report.json",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "",
+      "report": "conductor/manual_seed_onboarding_report.json",
       "source_id": "0576ebdf8faec985",
-      "status": "not_found",
-      "supersedes_report": "conductor/manual_seed_onboarding_report.json",
-      "supersedes_status": "public_fallback_available",
+      "status": "public_fallback_available",
+      "supersedes_report": "",
+      "supersedes_status": "",
       "url": "https://www.linkedin.com/school/whitireia"
     },
     {
@@ -16093,6 +16067,19 @@
       "supersedes_report": "",
       "supersedes_status": "",
       "url": "https://www.hrc.govt.nz/news-and-events/newsletters"
+    },
+    {
+      "agency_id": "horizons-regional-council",
+      "platform": "newsletter",
+      "priority": "p2_existing_system_needs_seed_input",
+      "priority_description": "Existing archive system is ready, but operator-authorized seed input is missing.",
+      "reason": "authorized seed, owner export, or approved API access is required",
+      "report": "conductor/manual_seed_onboarding_report.json",
+      "source_id": "horizons-regional-council-newsletter-a79eb842",
+      "status": "needs_authorized_seed_or_api",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.horizons.govt.nz/newsletters/"
     },
     {
       "agency_id": "horizons-regional-council",
@@ -17830,11 +17817,63 @@
       "priority_description": "Existing archive system is ready, but operator-authorized seed input is missing.",
       "reason": "authorized seed, owner export, or approved API access is required",
       "report": "conductor/manual_seed_onboarding_report.json",
+      "source_id": "queenstown-lakes-district-council-newsletter-0a9b1881",
+      "status": "needs_authorized_seed_or_api",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.qldc.govt.nz/do-it-online/lets-talk-korero-mai"
+    },
+    {
+      "agency_id": "queenstown-lakes-district-council",
+      "platform": "newsletter",
+      "priority": "p2_existing_system_needs_seed_input",
+      "priority_description": "Existing archive system is ready, but operator-authorized seed input is missing.",
+      "reason": "authorized seed, owner export, or approved API access is required",
+      "report": "conductor/manual_seed_onboarding_report.json",
+      "source_id": "queenstown-lakes-district-council-newsletter-199e2bf8",
+      "status": "needs_authorized_seed_or_api",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.qldc.govt.nz/do-it-online/community-text-alert-sign-up"
+    },
+    {
+      "agency_id": "queenstown-lakes-district-council",
+      "platform": "newsletter",
+      "priority": "p2_existing_system_needs_seed_input",
+      "priority_description": "Existing archive system is ready, but operator-authorized seed input is missing.",
+      "reason": "authorized seed, owner export, or approved API access is required",
+      "report": "conductor/manual_seed_onboarding_report.json",
       "source_id": "queenstown-lakes-district-council-newsletter-1bf643da",
       "status": "needs_authorized_seed_or_api",
       "supersedes_report": "",
       "supersedes_status": "",
       "url": "https://www.qldc.govt.nz/your-council/district-plan/planning-matters-planning-development-newsletter/"
+    },
+    {
+      "agency_id": "queenstown-lakes-district-council",
+      "platform": "newsletter",
+      "priority": "p2_existing_system_needs_seed_input",
+      "priority_description": "Existing archive system is ready, but operator-authorized seed input is missing.",
+      "reason": "authorized seed, owner export, or approved API access is required",
+      "report": "conductor/manual_seed_onboarding_report.json",
+      "source_id": "queenstown-lakes-district-council-newsletter-37bc9ed3",
+      "status": "needs_authorized_seed_or_api",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.qldc.govt.nz/do-it-online/newsletter-sign-up"
+    },
+    {
+      "agency_id": "queenstown-lakes-district-council",
+      "platform": "newsletter",
+      "priority": "p2_existing_system_needs_seed_input",
+      "priority_description": "Existing archive system is ready, but operator-authorized seed input is missing.",
+      "reason": "authorized seed, owner export, or approved API access is required",
+      "report": "conductor/manual_seed_onboarding_report.json",
+      "source_id": "queenstown-lakes-district-council-newsletter-4f9862b6",
+      "status": "needs_authorized_seed_or_api",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.qldc.govt.nz/your-council/district-plan/planning-matters-planning-development-newsletter"
     },
     {
       "agency_id": "queenstown-lakes-district-council",
@@ -17882,11 +17921,37 @@
       "priority_description": "Existing archive system is ready, but operator-authorized seed input is missing.",
       "reason": "authorized seed, owner export, or approved API access is required",
       "report": "conductor/manual_seed_onboarding_report.json",
+      "source_id": "queenstown-lakes-district-council-newsletter-eda91ce8",
+      "status": "needs_authorized_seed_or_api",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.qldc.govt.nz/your-council/newsletter-archive"
+    },
+    {
+      "agency_id": "queenstown-lakes-district-council",
+      "platform": "newsletter",
+      "priority": "p2_existing_system_needs_seed_input",
+      "priority_description": "Existing archive system is ready, but operator-authorized seed input is missing.",
+      "reason": "authorized seed, owner export, or approved API access is required",
+      "report": "conductor/manual_seed_onboarding_report.json",
       "source_id": "queenstown-lakes-district-council-newsletter-f410d49d",
       "status": "needs_authorized_seed_or_api",
       "supersedes_report": "",
       "supersedes_status": "",
       "url": "https://www.qldc.govt.nz/do-it-online/newsletter-sign-up/"
+    },
+    {
+      "agency_id": "real-estate-authority",
+      "platform": "newsletter",
+      "priority": "p2_existing_system_needs_seed_input",
+      "priority_description": "Existing archive system is ready, but operator-authorized seed input is missing.",
+      "reason": "authorized seed, owner export, or approved API access is required",
+      "report": "conductor/manual_seed_onboarding_report.json",
+      "source_id": "real-estate-authority-newsletter-0d83b98a",
+      "status": "needs_authorized_seed_or_api",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.rea.govt.nz/about-rea/news/industry-newsletters/"
     },
     {
       "agency_id": "real-estate-authority",
@@ -19410,17 +19475,30 @@
       "url": "https://www.worksafe.govt.nz/about-us/news-and-media/high-hazards-newsletter-june-2026/"
     },
     {
-      "agency_id": "office-of-the-ombudsman",
-      "platform": "api",
+      "agency_id": "selwyn-district-council",
+      "platform": "website_page",
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
-      "report": "conductor/api_archive_paced_retry_report.json",
-      "source_id": "002e3f3a6d3df965",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_paced_retry_report.json",
+      "source_id": "054e421afe90e4d2",
       "status": "capture_blocked",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.ombudsman.parliament.nz/openapi.json"
+      "url": "https://www.selwyn.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "tourism-nz",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_paced_retry_report.json",
+      "source_id": "c0935e556b4fd982",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.tourismnewzealand.com"
     }
   ],
   "inputs": {
@@ -19492,14 +19570,14 @@
       "selected_sources": 18,
       "status_by_platform": {
         "bluesky": {
-          "already_captured": 1497,
-          "captured": 109
+          "already_captured": 1494,
+          "captured": 112
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "already_captured": 1497,
-        "captured": 109
+        "already_captured": 1494,
+        "captured": 112
       }
     },
     "conductor/json_feed_archive_paced_retry_report.json": {
@@ -19544,17 +19622,19 @@
     },
     "conductor/linkedin_archive_paced_retry_report.json": {
       "platform_counts": {
-        "linkedin": 1
+        "linkedin": 3
       },
-      "selected_sources": 1,
+      "selected_sources": 3,
       "status_by_platform": {
         "linkedin": {
-          "not_found": 1
+          "http_error": 1,
+          "public_snapshot_captured": 2
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "not_found": 1
+        "http_error": 1,
+        "public_snapshot_captured": 2
       }
     },
     "conductor/linkedin_archive_report.json": {
@@ -19577,7 +19657,7 @@
         "facebook": 324,
         "instagram": 182,
         "linkedin": 258,
-        "newsletter": 377,
+        "newsletter": 384,
         "threads": 3,
         "x": 79
       },
@@ -19585,11 +19665,11 @@
       "remaining_groups": {
         "facebook": 324,
         "instagram": 182,
-        "newsletter": 377,
+        "newsletter": 384,
         "threads": 3
       },
-      "remaining_source_count": 886,
-      "selected_sources": 1223,
+      "remaining_source_count": 893,
+      "selected_sources": 1230,
       "status_by_platform": {
         "facebook": {
           "needs_authorized_seed_or_api": 324
@@ -19601,7 +19681,7 @@
           "public_fallback_available": 258
         },
         "newsletter": {
-          "needs_authorized_seed_or_api": 377
+          "needs_authorized_seed_or_api": 384
         },
         "threads": {
           "needs_authorized_seed_or_api": 3
@@ -19611,7 +19691,7 @@
         }
       },
       "status_counts": {
-        "needs_authorized_seed_or_api": 886,
+        "needs_authorized_seed_or_api": 893,
         "public_fallback_available": 258,
         "seed_present": 79
       }
@@ -19702,17 +19782,19 @@
     },
     "conductor/website_page_archive_paced_retry_report.json": {
       "platform_counts": {
-        "website_page": 1
+        "website_page": 3
       },
-      "selected_sources": 1,
+      "selected_sources": 3,
       "status_by_platform": {
         "website_page": {
-          "browser_captcha_or_challenge": 1
+          "browser_captcha_or_challenge": 1,
+          "capture_blocked": 2
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "browser_captcha_or_challenge": 1
+        "browser_captcha_or_challenge": 1,
+        "capture_blocked": 2
       }
     },
     "conductor/x_browser_and_feed_archive_report.json": {
@@ -19791,30 +19873,29 @@
     }
   },
   "summary": {
-    "gap_count": 1494,
+    "gap_count": 1500,
     "input_status_counts": {
-      "already_captured": 2186,
+      "already_captured": 2183,
       "browser_captcha_or_challenge": 9,
       "browser_captured": 20,
       "browser_no_visible_posts": 10,
-      "capture_blocked": 53,
+      "capture_blocked": 55,
       "capture_failed": 4,
-      "captured": 1013,
+      "captured": 1016,
       "dns_failed": 18,
       "feed_already_captured": 2,
       "feed_captured": 73,
       "feed_not_found": 75,
-      "http_error": 2,
+      "http_error": 3,
       "invalid": 277,
       "manual_seed_missing": 100,
-      "needs_authorized_seed_or_api": 886,
+      "needs_authorized_seed_or_api": 893,
       "network_error": 1,
       "network_timeout": 1,
       "no_records": 1688,
       "not_acceptable": 12,
-      "not_found": 1,
       "public_fallback_available": 258,
-      "public_snapshot_captured": 13,
+      "public_snapshot_captured": 15,
       "seed_present": 79,
       "source_url_not_channel": 1,
       "tls_failed": 12,
@@ -19822,48 +19903,48 @@
       "youtube_video_not_found": 2
     },
     "platform_counts": {
-      "api": 101,
+      "api": 100,
       "bluesky": 18,
       "facebook": 324,
       "instagram": 182,
       "json_feed": 266,
       "linkedin": 258,
-      "newsletter": 377,
+      "newsletter": 384,
       "rss": 1734,
       "threads": 3,
-      "website_page": 50,
+      "website_page": 52,
       "x": 79,
       "youtube": 49
     },
     "priority_counts": {
-      "archived_or_already_archived": 250,
+      "archived_or_already_archived": 252,
       "monitor_report_only": 1697,
-      "p1_existing_resources": 32,
-      "p2_existing_system_needs_seed_input": 883,
-      "p4_larger_browser_or_access_project": 43,
-      "review": 536
+      "p1_existing_resources": 31,
+      "p2_existing_system_needs_seed_input": 890,
+      "p4_larger_browser_or_access_project": 44,
+      "review": 535
     },
     "status_counts": {
       "already_captured": 71,
       "browser_captcha_or_challenge": 9,
       "browser_captured": 20,
-      "capture_blocked": 43,
+      "capture_blocked": 44,
       "capture_failed": 4,
       "captured": 67,
       "dns_failed": 18,
+      "http_error": 1,
       "invalid": 277,
-      "needs_authorized_seed_or_api": 883,
+      "needs_authorized_seed_or_api": 890,
       "no_records": 1688,
       "not_acceptable": 3,
-      "not_found": 1,
-      "public_fallback_available": 257,
-      "public_snapshot_captured": 13,
+      "public_fallback_available": 255,
+      "public_snapshot_captured": 15,
       "seed_present": 79,
       "source_url_not_channel": 1,
       "tls_failed": 4,
       "youtube_channel_not_found": 1,
       "youtube_video_not_found": 2
     },
-    "superseded_source_count": 285
+    "superseded_source_count": 288
   }
 }
