@@ -33,7 +33,7 @@
   "active_subscription_address": {
     "address": "em4mkapmjakoh5o@upload.pipedream.net",
     "provider": "pipedream_email_trigger",
-    "status": "active_subscription_requested_pending_confirmation",
+    "status": "active",
     "purpose": "Active automated subscription address for Courts of New Zealand judgments of public interest capture while the Cloudflare dedicated address is deferred pending domain registration approval",
     "subscribed_lists": [
       "Supreme Court decisions",
@@ -43,11 +43,15 @@
     ],
     "subscription_requested_at": "2026-06-17",
     "subscription_confirmation": {
-      "status": "pending",
-      "last_verified": "2026-06-21",
-      "verification_method": "GitHub Actions Archive Email workflow runs reviewed between 2026-06-17 and 2026-06-21",
-      "confirmation_archive_runs_observed": [],
-      "notes": "No Archive Email repository_dispatch runs were observed after the 2026-06-17 subscription request. The last Archive Email run was 27624118414 on 2026-06-16 (a deployed test). Courts of NZ may require a visible browser session to complete list confirmation, or confirmation emails may not have been sent yet."
+      "status": "confirmed",
+      "last_verified": "2026-07-21",
+      "verification_method": "Successful GitHub Actions Archive Email repository_dispatch runs containing Courts of New Zealand judgment notifications",
+      "confirmation_archive_runs_observed": [
+        "28989891687",
+        "28993272667",
+        "29714370840"
+      ],
+      "notes": "The Pipedream subscription is active. Courts of New Zealand judgment emails were archived successfully, including Re Easton, Re Rafiq, and Goel v R notifications."
     },
     "tracking_issue": "https://github.com/edithatogo/sm-govt-nz/issues/5"
   },
@@ -89,7 +93,7 @@
   "default_route": {
     "provider": "pipedream_email_trigger",
     "cost_policy": "zero_cost_only",
-    "status": "active_pending_source_subscription_confirmation",
+    "status": "active_verified",
     "workflow": "Archive Email",
     "repository_dispatch_event_type": "courts_nz_email_received",
     "raw_output_root": "historical_archive_raw/email",
@@ -103,7 +107,7 @@
   "fallback_routes": [
     {
       "provider": "pipedream_email_trigger",
-      "status": "active_verified_subscription_requested_pending_confirmation",
+      "status": "active_verified_subscription_confirmed",
       "activation_condition": "Use as the preferred automated zero-cost fallback while the dedicated Cloudflare-routed address is blocked by domain ownership/delegation.",
       "receiver_contract": "Create a Pipedream workflow with its built-in Email trigger, subscribe the generated workflow email address to the Courts of NZ judgments of public interest list, and have the workflow call the same GitHub repository_dispatch event type with the Archive Email payload shape.",
       "workflow": {
@@ -148,10 +152,14 @@
               "Supreme Court Leave and Recall Judgments"
             ],
             "result": "form_post_returned_http_200_redirect_root",
-            "confirmation_archive_runs_observed": [],
-            "last_verified": "2026-06-21",
-            "verification_notes": "Reviewed GitHub Actions Archive Email workflow runs between 2026-06-17 and 2026-06-21. No new repository_dispatch runs were observed after the subscription request, so list confirmation remains unverified. The last Archive Email run was 27624118414 on 2026-06-16 (a deployed test).",
-            "notes": "The official form states each selected list sends a separate email confirmation request. No new Archive Email repository_dispatch runs were observed immediately after submission, so list confirmation remains unverified."
+            "confirmation_archive_runs_observed": [
+              "28989891687",
+              "28993272667",
+              "29714370840"
+            ],
+            "last_verified": "2026-07-21",
+            "verification_notes": "Multiple Courts of New Zealand judgment notifications have arrived through Pipedream and completed the Archive Email repository_dispatch workflow successfully.",
+            "notes": "Subscription delivery is confirmed by archived production judgment notifications."
           }
         ]
       },

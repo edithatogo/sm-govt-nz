@@ -101,21 +101,19 @@ public interest capture, deployed, verified with two test dispatch runs, and
 subscribed to all four available judgment lists via the official Courts of NZ
 subscribe form on 2026-06-17.
 
-Subscription confirmation was verified pending on 2026-06-21: the GitHub Actions
-`Archive Email` workflow runs were reviewed between 2026-06-17 and 2026-06-21,
-and no new `repository_dispatch` runs occurred after the subscription request.
-The last `Archive Email` run was `27624118414` on 2026-06-16 (a deployed test).
-Courts of NZ may require a visible browser session to complete list
-confirmation, or confirmation emails may not have been sent yet.
+Subscription delivery was confirmed on 2026-07-21 from successful production
+`Archive Email` repository-dispatch runs. Evidence includes runs `28989891687`,
+`28993272667`, and `29714370840`, which archived Courts of New Zealand judgment
+notifications for Re Easton, Re Rafiq, and Goel v R. The latest inspected run
+stored the raw email evidence and a normalized `courts-nz` record. No browser
+resubscription or confirmation action remains.
 
 The machine-readable contract for the active address, subscription state, and
 confirmation verification is the `active_subscription_address` field in
 `config/courts_nz_email_ingress.json`.
 
-The remaining activation step is to confirm that the Courts of NZ confirmation
-emails arrive through Pipedream and are archived. If they do not arrive, repeat
-the subscription in a visible browser session and complete any site-side
-validation or confirmation step.
+The Pipedream route is active and verified. Continue treating each message as
+archive-only input; it must not create or mirror social-media posts.
 
 Observed Courts of NZ volume is well below the level that should normally create
 paid usage for a short, dedicated email-trigger workflow: recent Bluesky records
