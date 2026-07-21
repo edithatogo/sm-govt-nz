@@ -1,0 +1,63 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-21T10:00:38+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 10,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 0,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "per_account_timeout": 120,
+    "per_source_delay": 1.0,
+    "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 1.0,
+    "retry_failed_from": "",
+    "rsshub_base_urls": "",
+    "source_ids": [
+      "002e3f3a6d3df965"
+    ],
+    "source_type": "api_endpoint",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "office-of-the-ombudsman",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "002e3f3a6d3df965",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.ombudsman.parliament.nz/openapi.json"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "api": 1
+    },
+    "selected_sources": 1,
+    "status_by_platform": {
+      "api": {
+        "capture_blocked": 1
+      }
+    },
+    "status_by_provider": {},
+    "status_counts": {
+      "capture_blocked": 1
+    }
+  }
+}

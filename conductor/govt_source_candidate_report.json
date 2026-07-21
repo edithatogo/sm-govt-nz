@@ -1614,6 +1614,118 @@
       "agency_type": "SOE",
       "archive_status": "ready",
       "auth": "none",
+      "candidate_id": "afcf2d7582935a0e",
+      "confidence_score": 0.6,
+      "domain_trust": "medium",
+      "feasibility": "high",
+      "link_title": "Pestoff \u00bb Feed",
+      "mime_type": "application/rss+xml",
+      "official_website": "https://www.pestoff.co.nz",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Agriculture",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "trusted_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://pestoff.co.nz/feed/"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.pestoff.co.nz",
+      "agency_id": "animal-control-products",
+      "agency_name": "Animal Control Products (Pestoff)",
+      "agency_type": "SOE",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "9ec941b1b4a5af62",
+      "confidence_score": 0.6,
+      "domain_trust": "medium",
+      "feasibility": "high",
+      "link_title": "oEmbed (JSON)",
+      "mime_type": "application/json+oembed",
+      "official_website": "https://www.pestoff.co.nz",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Agriculture",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "trusted_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.pestoff.co.nz",
+      "agency_id": "animal-control-products",
+      "agency_name": "Animal Control Products (Pestoff)",
+      "agency_type": "SOE",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "758209a956979f16",
+      "confidence_score": 0.6,
+      "domain_trust": "medium",
+      "feasibility": "high",
+      "link_title": "oEmbed (XML)",
+      "mime_type": "text/xml+oembed",
+      "official_website": "https://www.pestoff.co.nz",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Agriculture",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "trusted_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://pestoff.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpestoff.co.nz%2F&format=xml"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.pestoff.co.nz",
+      "agency_id": "animal-control-products",
+      "agency_name": "Animal Control Products (Pestoff)",
+      "agency_type": "SOE",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "8fb3dc84f2e69aff",
+      "confidence_score": 0.6,
+      "domain_trust": "medium",
+      "feasibility": "high",
+      "link_title": "JSON",
+      "mime_type": "application/json",
+      "official_website": "https://www.pestoff.co.nz",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Agriculture",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "trusted_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://pestoff.co.nz/wp-json/wp/v2/pages/2"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.pestoff.co.nz",
+      "agency_id": "animal-control-products",
+      "agency_name": "Animal Control Products (Pestoff)",
+      "agency_type": "SOE",
+      "archive_status": "ready",
+      "auth": "none",
       "candidate_id": "f44b74f32571294d",
       "confidence_score": 0.45,
       "domain_trust": "medium",
@@ -22092,7 +22204,7 @@
       "domain_trust": "unknown",
       "feasibility": "low",
       "official_website": "https://www.enz.govt.nz",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "linkedin",
       "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
       "portfolio": "Education",
@@ -26906,30 +27018,6 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Council Meeting   24 June 2026",
-      "agency_id": "environment-canterbury",
-      "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
-      "agency_type": "Regional Council",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "ed3e03f1b5adbb3f",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.ecan.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "http://www.youtube.com/watch/N14d3fChziY"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
       "account": "Strategy and Policy Committee 15 July 2026",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
@@ -26954,13 +27042,13 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "16 July 2026 (Briefings/Workshops \u2013 Morning)",
+      "account": "Regional Delivery Committee 13 May 2026",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
       "agency_type": "Regional Council",
       "archive_status": "candidate",
       "auth": "none",
-      "candidate_id": "e89c79b256847a7e",
+      "candidate_id": "911d6d03c54beea8",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -26974,7 +27062,7 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "http://www.youtube.com/watch/TXHu3bxNx1M"
+      "url": "http://www.youtube.com/watch/Ulb-wbEyO6g"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -26999,6 +27087,30 @@
         "official_term:nz"
       ],
       "url": "http://www.youtube.com/watch/WqPKwaHTEms"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "Annual Plan 2026/27",
+      "agency_id": "environment-canterbury",
+      "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "43f875788c75e49e",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.ecan.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "http://www.youtube.com/watch/eQteirnHqDg"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -40143,32 +40255,6 @@
         "official_term:new zealand"
       ],
       "url": "https://www.heritage.org.nz"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.horizons.govt.nz",
-      "agency_id": "horizons-regional-council",
-      "agency_name": "Horizons Regional Council (Manawat\u016b-Whanganui)",
-      "agency_type": "Regional Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "4f00638765434996",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Transport \r\n                         1 min read \r\n                 \r\n\r\n                 \r\n                     New Connect website launched to improve access to public transport information \r\n                 \r\n\r\n                 \r\n                     Horizons Regional Council has launched a new Connect website for its public transport network, giving passengers across the Horizons Region a single place to plan journeys, access public transport information and view service updates and alerts. \r\n                 \r\n                 \r\n                     Read more",
-      "official_website": "https://www.horizons.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.horizons.govt.nz/news/new-connect-website-launched-to-improve-access-to-public-transport-information/"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -96187,11 +96273,11 @@
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "6de2ac0e68f8a859",
+      "candidate_id": "0b671759d4e3f498",
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
-      "link_text": "latest industry newsletter here",
+      "link_text": "Industry newsletters",
       "official_website": "https://www.rea.govt.nz",
       "origin": "homepage.link",
       "platform": "newsletter",
@@ -96203,7 +96289,7 @@
         "high_trust_domain_suffix",
         "official_term:nz"
       ],
-      "url": "https://mail.rea.govt.nz/t/j-6F526951653549882540EF23F30FEDED"
+      "url": "https://www.rea.govt.nz/about-rea/news/industry-newsletters/"
     },
     {
       "access_method": "public_rss",
@@ -96670,33 +96756,6 @@
       "agency_type": "Crown Agent",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "07f86d2fef1a7bcf",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "latest industry newsletter here",
-      "official_website": "https://www.rea.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Housing and Urban Development",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://mail.rea.govt.nz/t/j-6F526951653549882540EF23F30FEDED"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.rea.govt.nz",
-      "agency_id": "real-estate-authority",
-      "agency_name": "Real Estate Authority (Te Mana Papawhenua)",
-      "agency_type": "Crown Agent",
-      "archive_status": "ready",
-      "auth": "none",
       "candidate_id": "26725508e3b44fdb",
       "confidence_score": 0.95,
       "domain_trust": "high",
@@ -96715,6 +96774,33 @@
         "official_term:nz"
       ],
       "url": "https://www.rea.govt.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.rea.govt.nz",
+      "agency_id": "real-estate-authority",
+      "agency_name": "Real Estate Authority (Te Mana Papawhenua)",
+      "agency_type": "Crown Agent",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "97327b8d92d9098a",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Industry newsletters",
+      "official_website": "https://www.rea.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Housing and Urban Development",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.rea.govt.nz/about-rea/news/industry-newsletters/"
     },
     {
       "access_method": "public_api_or_openapi",
@@ -103433,7 +103519,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 4 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 5 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -125117,54 +125203,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Facebook icon",
-      "agency_id": "university-of-canterbury",
-      "agency_name": "University of Canterbury (Te Whare W\u0101nanga o Waitaha)",
-      "agency_type": "University",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "2762f057dd3edace",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.canterbury.ac.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/universitycanterbury"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Instagram icon",
-      "agency_id": "university-of-canterbury",
-      "agency_name": "University of Canterbury (Te Whare W\u0101nanga o Waitaha)",
-      "agency_type": "University",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "f0106e80026f9a30",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.canterbury.ac.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/ucnz/"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "universityofcanterbury",
       "account_classification": "official",
       "agency_id": "university-of-canterbury",
@@ -125190,30 +125228,6 @@
         "official_term:nz"
       ],
       "url": "https://www.instagram.com/universityofcanterbury"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "LinkedIn icon",
-      "agency_id": "university-of-canterbury",
-      "agency_name": "University of Canterbury (Te Whare W\u0101nanga o Waitaha)",
-      "agency_type": "University",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "7dc310b6b6677c32",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.canterbury.ac.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving should use approved API access, owner export, or bounded user-authorized seed capture.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://nz.linkedin.com/school/university-of-canterbury/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -125270,30 +125284,6 @@
         "official_term:nz"
       ],
       "url": "https://www.youtube.com/@universityofcanterbury"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "YouTube icon",
-      "agency_id": "university-of-canterbury",
-      "agency_name": "University of Canterbury (Te Whare W\u0101nanga o Waitaha)",
-      "agency_type": "University",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "e860c8027e988bf3",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.canterbury.ac.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/user/UniversityCanterbury"
     },
     {
       "access_method": "bounded_public_html",
@@ -140701,7 +140691,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-20T18:27:39+00:00",
+  "generated_at": "2026-07-21T10:00:36+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155564,7 +155554,7 @@
     {
       "agency_id": "accident-compensation-corporation",
       "alternates": 0,
-      "links": 200,
+      "links": 201,
       "status": "ok",
       "url": "https://www.acc.co.nz/"
     },
@@ -155584,8 +155574,9 @@
     },
     {
       "agency_id": "animal-control-products",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 4,
+      "links": 942,
+      "status": "ok",
       "url": "https://www.pestoff.co.nz/"
     },
     {
@@ -155643,7 +155634,7 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 71,
+      "links": 69,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
@@ -155813,7 +155804,7 @@
     {
       "agency_id": "department-of-internal-affairs",
       "alternates": 0,
-      "links": 80,
+      "links": 79,
       "status": "ok",
       "url": "https://www.dia.govt.nz/"
     },
@@ -155831,9 +155822,8 @@
     },
     {
       "agency_id": "education-nz",
-      "alternates": 0,
-      "links": 98,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.enz.govt.nz/"
     },
     {
@@ -155919,7 +155909,7 @@
     {
       "agency_id": "financial-markets-authority",
       "alternates": 0,
-      "links": 230,
+      "links": 229,
       "status": "ok",
       "url": "https://www.fma.govt.nz/"
     },
@@ -155991,7 +155981,7 @@
     {
       "agency_id": "hastings-district-council",
       "alternates": 0,
-      "links": 774,
+      "links": 775,
       "status": "ok",
       "url": "https://www.hastingsdc.govt.nz/"
     },
@@ -156019,7 +156009,7 @@
     {
       "agency_id": "health-quality-and-safety-commission",
       "alternates": 0,
-      "links": 225,
+      "links": 235,
       "status": "ok",
       "url": "https://www.hqsc.govt.nz/"
     },
@@ -156059,9 +156049,8 @@
     },
     {
       "agency_id": "human-rights-commission",
-      "alternates": 0,
-      "links": 1,
-      "status": "ok",
+      "error": "<urlopen error [Errno 101] Network is unreachable>",
+      "status": "failed",
       "url": "https://www.hrc.co.nz/"
     },
     {
@@ -156132,7 +156121,7 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 103,
+      "links": 104,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
@@ -156289,7 +156278,7 @@
     {
       "agency_id": "ministry-for-regulation",
       "alternates": 0,
-      "links": 111,
+      "links": 109,
       "status": "ok",
       "url": "https://www.regulation.govt.nz/"
     },
@@ -156399,14 +156388,14 @@
     {
       "agency_id": "new-plymouth-district-council",
       "alternates": 0,
-      "links": 1557,
+      "links": 1561,
       "status": "ok",
       "url": "https://www.npdc.govt.nz/"
     },
     {
       "agency_id": "nmit",
       "alternates": 0,
-      "links": 168,
+      "links": 170,
       "status": "ok",
       "url": "https://www.nmit.ac.nz/"
     },
@@ -156577,7 +156566,7 @@
     {
       "agency_id": "open-polytechnic",
       "alternates": 0,
-      "links": 375,
+      "links": 376,
       "status": "ok",
       "url": "https://www.openpolytechnic.ac.nz/"
     },
@@ -156604,7 +156593,7 @@
     {
       "agency_id": "otago-regional-council",
       "alternates": 0,
-      "links": 656,
+      "links": 655,
       "status": "ok",
       "url": "https://www.orc.govt.nz/"
     },
@@ -156713,7 +156702,7 @@
     {
       "agency_id": "real-estate-authority",
       "alternates": 0,
-      "links": 214,
+      "links": 327,
       "status": "ok",
       "url": "https://www.rea.govt.nz/"
     },
@@ -156733,7 +156722,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 402,
+      "links": 400,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156811,7 +156800,7 @@
     {
       "agency_id": "south-wairarapa-district-council",
       "alternates": 3,
-      "links": 249,
+      "links": 247,
       "status": "ok",
       "url": "https://www.swdc.govt.nz/"
     },
@@ -156938,14 +156927,14 @@
     {
       "agency_id": "te-puni-kokiri",
       "alternates": 0,
-      "links": 90,
+      "links": 97,
       "status": "ok",
       "url": "https://www.tpk.govt.nz/"
     },
     {
       "agency_id": "te-tumu-paeroa",
       "alternates": 0,
-      "links": 94,
+      "links": 95,
       "status": "ok",
       "url": "https://www.tetumupaeroa.co.nz/"
     },
@@ -157033,7 +157022,7 @@
     {
       "agency_id": "ucol",
       "alternates": 0,
-      "links": 79,
+      "links": 80,
       "status": "ok",
       "url": "https://www.ucol.ac.nz/"
     },
@@ -157053,9 +157042,8 @@
     },
     {
       "agency_id": "university-of-canterbury",
-      "alternates": 0,
-      "links": 332,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.canterbury.ac.nz/"
     },
     {
@@ -157087,14 +157075,14 @@
     {
       "agency_id": "waikato-district-council",
       "alternates": 0,
-      "links": 77,
+      "links": 78,
       "status": "ok",
       "url": "https://www.waikatodistrict.govt.nz/"
     },
     {
       "agency_id": "waikato-regional-council",
       "alternates": 0,
-      "links": 661,
+      "links": 663,
       "status": "ok",
       "url": "https://www.waikatoregion.govt.nz/"
     },
@@ -157134,7 +157122,7 @@
     {
       "agency_id": "waitomo-district-council",
       "alternates": 0,
-      "links": 107,
+      "links": 108,
       "status": "ok",
       "url": "https://www.waitomo.govt.nz/"
     },
@@ -157249,32 +157237,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5257,
+    "candidate_count": 5256,
     "feasibility_counts": {
-      "high": 4158,
-      "low": 311,
-      "medium": 788
+      "high": 4162,
+      "low": 310,
+      "medium": 784
     },
-    "known_registry_social_profiles": 446,
+    "known_registry_social_profiles": 447,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 292,
-      "instagram": 162,
-      "linkedin": 236,
+      "facebook": 291,
+      "instagram": 161,
+      "linkedin": 235,
       "medium": 2,
-      "newsletter": 163,
-      "rss": 3826,
+      "newsletter": 162,
+      "rss": 3830,
       "website_page": 314,
       "x": 75,
-      "youtube": 156
+      "youtube": 155
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 163,
-      "rss_feed": 61,
+      "newsletter": 162,
+      "rss_feed": 65,
       "search_seed": 3765,
-      "social_profile": 941,
+      "social_profile": 937,
       "website_page": 314
     }
   }

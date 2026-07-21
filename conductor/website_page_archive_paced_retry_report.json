@@ -1,0 +1,65 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-07-21T10:00:51+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 10,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 0,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 0,
+    "per_account_timeout": 120,
+    "per_source_delay": 1.0,
+    "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 1.0,
+    "retry_failed_from": "",
+    "rsshub_base_urls": "",
+    "source_ids": [
+      "0061ef17b65e9518"
+    ],
+    "source_type": "website_page",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "education-review-office",
+      "archive_status": "ready",
+      "candidate_id": "0061ef17b65e9518",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/7c3c1e49383db460e61a9a88.json",
+      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "source_id": "0061ef17b65e9518",
+      "source_type": "website_page",
+      "status": "browser_captcha_or_challenge",
+      "url": "https://www.ero.govt.nz/news-and-events"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "website_page": 1
+    },
+    "selected_sources": 1,
+    "status_by_platform": {
+      "website_page": {
+        "browser_captcha_or_challenge": 1
+      }
+    },
+    "status_by_provider": {},
+    "status_counts": {
+      "browser_captcha_or_challenge": 1
+    }
+  }
+}
