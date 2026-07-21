@@ -7,23 +7,30 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
 
     assert config["agency_id"] == "courts-nz"
     assert config["archive_only"] is True
-    assert config["dedicated_subscription_address"]["status"] == "pending_external_setup"
+    assert config["dedicated_subscription_address"]["status"] == "worker_deployed_domain_external_gate"
     assert config["dedicated_subscription_address"]["address"].startswith("courts-nz-judgments@")
     assert config["dedicated_subscription_address"]["tracking_issue"].endswith("/issues/5")
     active = config["active_subscription_address"]
     assert active["address"].endswith("@upload.pipedream.net")
     assert active["provider"] == "pipedream_email_trigger"
-    assert active["status"] == "active_subscription_requested_pending_confirmation"
+    assert active["status"] == "active"
     assert active["subscription_requested_at"] == "2026-06-17"
-    assert active["subscription_confirmation"]["status"] == "pending"
-    assert active["subscription_confirmation"]["last_verified"] == "2026-06-21"
-    assert active["subscription_confirmation"]["confirmation_archive_runs_observed"] == []
+    assert active["subscription_confirmation"]["status"] == "confirmed"
+    assert active["subscription_confirmation"]["last_verified"] == "2026-07-21"
+    assert active["subscription_confirmation"]["confirmation_archive_runs_observed"] == [
+        "28989891687",
+        "28993272667",
+        "29714370840",
+    ]
     assert active["tracking_issue"].endswith("/issues/5")
     rule = config["dedicated_subscription_address"]["cloudflare_rule"]
     assert rule["id"] == "4fbe93480e834fd786a1959020c8a526"
     assert rule["enabled"] is False
     assert rule["match"] == "to:courts-nz-judgments@archive.edithatogo.com"
     assert rule["action"] == "worker:courts-nz-email-archive"
+    worker = config["dedicated_subscription_address"]["worker_deployment"]
+    assert worker["status"] == "deployed_no_routing_target"
+    assert worker["version_id"] == "397f9ddf-45e7-41f8-99b1-a1c6520944c7"
     assert config["domain_setup"]["root_domain"] == "edithatogo.com"
     assert config["domain_setup"]["status"] == "pending_domain_registration_or_delegation"
     assert config["domain_setup"]["cloudflare_zone_status"] == "email_routing_unconfigured"
@@ -50,7 +57,7 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
         "scheduled_mailbox_polling",
     ]
     pipedream_route = config["fallback_routes"][0]
-    assert pipedream_route["status"] == "active_verified_subscription_requested_pending_confirmation"
+    assert pipedream_route["status"] == "active_verified_subscription_confirmed"
     assert pipedream_route["workflow"]["generated_email_address"].endswith("@upload.pipedream.net")
     assert pipedream_route["workflow"]["code_source"] == "pipedream/courts_nz_email_dispatch.mjs"
     assert pipedream_route["workflow"]["code_step_secret"] == "GITHUB_DISPATCH_TOKEN"
@@ -65,8 +72,12 @@ def test_email_ingress_config_documents_default_and_fallback_routes() -> None:
     subscription_requests = pipedream_route["workflow"]["subscription_requests"]
     assert subscription_requests[0]["method"] == "official_courtsofnz_subscribe_form"
     assert subscription_requests[0]["target_email"].endswith("@upload.pipedream.net")
-    assert subscription_requests[0]["confirmation_archive_runs_observed"] == []
-    assert subscription_requests[0]["last_verified"] == "2026-06-21"
+    assert subscription_requests[0]["confirmation_archive_runs_observed"] == [
+        "28989891687",
+        "28993272667",
+        "29714370840",
+    ]
+    assert subscription_requests[0]["last_verified"] == "2026-07-21"
     assert "verification_notes" in subscription_requests[0]
     assert pipedream_route["cost"].startswith("$0 expected")
     assert pipedream_route["usage_assessment"]["risk_of_paid_usage"].startswith("low")
