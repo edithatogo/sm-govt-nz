@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-21T10:07:01+00:00",
+  "generated_at": "2026-07-21T10:11:16+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,7 +24,7 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "0291f95fc48d72a6"
+      "0576ebdf8faec985"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -34,15 +34,15 @@
   },
   "results": [
     {
-      "agency_id": "social-investment-agency",
+      "agency_id": "whitireia",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:8f4aff6ababb062f4620182c",
-      "source_id": "0291f95fc48d72a6",
+      "reason": "HTTP 404: Not Found",
+      "source_id": "0576ebdf8faec985",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/social-investment-agency"
+      "status": "not_found",
+      "url": "https://www.linkedin.com/school/whitireia"
     }
   ],
   "summary": {
@@ -52,12 +52,12 @@
     "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "public_snapshot_captured": 1
+        "not_found": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "public_snapshot_captured": 1
+      "not_found": 1
     }
   }
 }

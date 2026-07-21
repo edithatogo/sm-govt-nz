@@ -14873,6 +14873,19 @@
       "url": "https://nz.linkedin.com/school/southern-institute-of-technology/"
     },
     {
+      "agency_id": "social-investment-agency",
+      "platform": "linkedin",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "",
+      "report": "conductor/manual_seed_onboarding_report.json",
+      "source_id": "0291f95fc48d72a6",
+      "status": "public_fallback_available",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.linkedin.com/company/social-investment-agency"
+    },
+    {
       "agency_id": "south-wairarapa-district-council",
       "platform": "linkedin",
       "priority": "review",
@@ -15733,14 +15746,14 @@
     {
       "agency_id": "whitireia",
       "platform": "linkedin",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "",
-      "report": "conductor/manual_seed_onboarding_report.json",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 404: Not Found",
+      "report": "conductor/linkedin_archive_paced_retry_report.json",
       "source_id": "0576ebdf8faec985",
-      "status": "public_fallback_available",
-      "supersedes_report": "",
-      "supersedes_status": "",
+      "status": "not_found",
+      "supersedes_report": "conductor/manual_seed_onboarding_report.json",
+      "supersedes_status": "public_fallback_available",
       "url": "https://www.linkedin.com/school/whitireia"
     },
     {
@@ -19536,12 +19549,12 @@
       "selected_sources": 1,
       "status_by_platform": {
         "linkedin": {
-          "public_snapshot_captured": 1
+          "not_found": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "public_snapshot_captured": 1
+        "not_found": 1
       }
     },
     "conductor/linkedin_archive_report.json": {
@@ -19778,7 +19791,7 @@
     }
   },
   "summary": {
-    "gap_count": 1493,
+    "gap_count": 1494,
     "input_status_counts": {
       "already_captured": 2186,
       "browser_captcha_or_challenge": 9,
@@ -19799,8 +19812,9 @@
       "network_timeout": 1,
       "no_records": 1688,
       "not_acceptable": 12,
+      "not_found": 1,
       "public_fallback_available": 258,
-      "public_snapshot_captured": 14,
+      "public_snapshot_captured": 13,
       "seed_present": 79,
       "source_url_not_channel": 1,
       "tls_failed": 12,
@@ -19822,9 +19836,9 @@
       "youtube": 49
     },
     "priority_counts": {
-      "archived_or_already_archived": 251,
+      "archived_or_already_archived": 250,
       "monitor_report_only": 1697,
-      "p1_existing_resources": 31,
+      "p1_existing_resources": 32,
       "p2_existing_system_needs_seed_input": 883,
       "p4_larger_browser_or_access_project": 43,
       "review": 536
@@ -19841,8 +19855,9 @@
       "needs_authorized_seed_or_api": 883,
       "no_records": 1688,
       "not_acceptable": 3,
+      "not_found": 1,
       "public_fallback_available": 257,
-      "public_snapshot_captured": 14,
+      "public_snapshot_captured": 13,
       "seed_present": 79,
       "source_url_not_channel": 1,
       "tls_failed": 4,

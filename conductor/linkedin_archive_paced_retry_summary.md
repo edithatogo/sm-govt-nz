@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-21T10:07:01+00:00
+Generated: 2026-07-21T10:11:16+00:00
 
 ## Summary
 
@@ -14,11 +14,11 @@ Generated: 2026-07-21T10:07:01+00:00
 
 ## Status counts
 
-- `public_snapshot_captured`: 1
+- `not_found`: 1
 
 ## Status by platform
 
-- `linkedin`: {'public_snapshot_captured': 1}
+- `linkedin`: {'not_found': 1}
 
 ## Notes
 
