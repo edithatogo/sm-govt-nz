@@ -34,6 +34,7 @@ def test_retry_fixable_archive_loop_workflow_wraps_bounded_loop_and_commit() -> 
 def test_retryable_source_ids_selects_only_public_recovery_blockers() -> None:
     rows = [
         {
+            "candidate_id": "manifest-linkedin-rate-limit",
             "source_id": "linkedin-rate-limit",
             "source_type": "social_profile",
             "platform": "linkedin",
@@ -51,7 +52,7 @@ def test_retryable_source_ids_selects_only_public_recovery_blockers() -> None:
         },
     ]
     shard_count = 8
-    shard_index = stable_shard("linkedin-rate-limit", shard_count)
+    shard_index = stable_shard("manifest-linkedin-rate-limit", shard_count)
 
     selected = retryable_source_ids(
         {"sources": rows},
@@ -61,4 +62,4 @@ def test_retryable_source_ids_selects_only_public_recovery_blockers() -> None:
         limit=5,
     )
 
-    assert selected == ["linkedin-rate-limit"]
+    assert selected == ["manifest-linkedin-rate-limit"]

@@ -58,12 +58,12 @@ def retryable_source_ids(
     platform = SOURCE_TYPE_TO_PLATFORM.get(source_type, source_type)
     blockers = RETRYABLE_BLOCKERS.get(platform, set())
     source_ids = sorted(
-        str(row.get("source_id"))
+        source_id
         for row in matrix.get("sources", [])
-        if row.get("source_id")
+        if (source_id := str(row.get("candidate_id") or row.get("source_id") or ""))
         and platform in {str(row.get("platform") or ""), str(row.get("source_type") or "")}
         and str(row.get("blocker_class") or "") in blockers
-        and stable_shard(str(row.get("source_id")), shard_count) == shard_index
+        and stable_shard(source_id, shard_count) == shard_index
     )
     return source_ids[:limit] if limit > 0 else source_ids
 
