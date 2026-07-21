@@ -71,7 +71,8 @@ jobs:
           --cleanup
       - name: Commit LFS-free repository state
         run: |
-          git add -A .gitattributes conductor/huggingface_lfs_migration_manifest.json historical_archive_normalized/website
+          git add -A .gitattributes conductor/huggingface_lfs_migration_manifest.json
+          git add -u historical_archive_normalized/website
           if git diff --cached --quiet; then
             echo "Git LFS migration was already committed."
             exit 0
