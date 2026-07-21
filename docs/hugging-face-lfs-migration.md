@@ -23,3 +23,13 @@ baseline by record identifier, without modifying or recommitting the baseline.
 
 The migration never posts or mirrors social-media content. It only changes
 archive storage and publication transport.
+
+## GitHub quota after migration
+
+The current branch no longer references Git LFS and no workflow requests an LFS
+checkout. GitHub nevertheless retains historical LFS objects and continues to
+count them toward storage quota. GitHub documents repository recreation or a
+GitHub Support purge as the mechanisms for removing those remote objects. This
+project does not rewrite history, delete, or recreate the repository
+automatically because those operations would disrupt commit, issue, fork, and
+release continuity.
