@@ -291,7 +291,7 @@ def rollover_large_deltas(
         for delta in candidates:
             relative_path = delta.relative_to(normalized_root).as_posix()
             hf_path = (
-                f"{destination_prefix.rstrip('/')}/{normalized_root.as_posix()}/"
+                f"{destination_prefix.rstrip('/')}/{normalized_root.name}/"
                 f"{relative_path}"
             )
             merged = temporary_root / relative_path
