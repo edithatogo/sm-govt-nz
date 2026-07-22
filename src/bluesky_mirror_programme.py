@@ -301,6 +301,7 @@ def load_archive_records(
     account: Mapping[str, Any], root: str | Path = "historical_archive_normalized"
 ) -> list[MirrorRecord]:
     source_ids = set(account.get("source_ids") or [])
+    excluded_source_urls = set(account.get("excluded_source_urls") or [])
     agency_id = str(account["agency_id"])
     records: dict[str, MirrorRecord] = {}
     archive_root = Path(root)
@@ -327,6 +328,8 @@ def load_archive_records(
                 continue
             content = str(raw.get("content") or raw.get("text") or raw.get("title") or "").strip()
             source_url = str(raw.get("source_url") or raw.get("canonical_url") or raw.get("url") or "")
+            if source_url in excluded_source_urls:
+                continue
             record_id = str(raw.get("record_id") or raw.get("post_id") or "")
             if not record_id or not content or not source_url:
                 continue
