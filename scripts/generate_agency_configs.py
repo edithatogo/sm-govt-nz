@@ -118,33 +118,70 @@ def write_agency_config(aid, agency_sources, rss_by_agency, registry_by_id, conf
     name = reg.get("name", aid) or aid
     website = reg.get("official_website", "") or ""
     sources = agency_sources.get(aid, [])
+    config_path = config_dir / (aid + "_sources.json")
+    existing_contracts_by_id = {}
+    if config_path.exists():
+        try:
+            existing_contracts_by_id = {
+                c.get("id"): c
+                for c in load_json(config_path).get("contracts", [])
+                if c.get("id")
+            }
+        except (OSError, json.JSONDecodeError):
+            existing_contracts_by_id = {}
+
     contracts = []
+    generated_prefixes = (aid + "-bluesky", aid + "-rss-website", aid + "-website-pages")
+    for contract_id, contract in existing_contracts_by_id.items():
+        if not contract_id.startswith(generated_prefixes) or contract_id == "courts-of-nz-rss-website":
+            contracts.append(contract)
 
     for s in sources:
         if s.get("platform") == "bluesky" and s.get("archive_status") == "ready":
             acct = s.get("account", "") or bluesky_handle_from_source_url(s.get("url", ""))
             if not acct:
                 continue
-            contracts.append(bluesky_contract(aid, name, acct, s.get("url", "")))
+            if aid + "-bluesky" not in existing_contracts_by_id:
+                contracts.append(bluesky_contract(aid, name, acct, s.get("url", "")))
 
     rss_feeds = rss_by_agency.get(aid, set())
+    existing_feeds = []
+    existing_seed_pages = []
+    rss_path = config_dir / (aid + "_rss_feeds.json")
+    if rss_path.exists():
+        try:
+            existing_rss = load_json(rss_path)
+            existing_feeds = existing_rss.get("feeds", [])
+            existing_seed_pages = existing_rss.get("seed_pages", [])
+            rss_feeds.update(f.get("feed_url") for f in existing_feeds if f.get("feed_url"))
+        except (OSError, json.JSONDecodeError):
+            existing_feeds = []
+            existing_seed_pages = []
+
     has_rss = False
     if rss_feeds:
-        contracts.append(rss_contract(aid, name, website, sorted(rss_feeds)))
+        if aid + "-rss-website" not in existing_contracts_by_id:
+            contracts.append(rss_contract(aid, name, website, sorted(rss_feeds)))
         has_rss = True
-        rss_config = {"agency_id": aid, "feed_count": len(rss_feeds),
-            "feeds": [{"discovery_method": "manifest.archive_registered_sources",
+        existing_feed_urls = {f.get("feed_url") for f in existing_feeds}
+        new_feeds = [{"discovery_method": "manifest.archive_registered_sources",
                 "feed_type": "application/rss+xml", "feed_url": url, "seed_page": url,
-                "title": "RSS Feed"} for url in sorted(rss_feeds)],
-            "generated_at": generated_at, "seed_page_count": len(rss_feeds),
-            "seed_pages": [{"error": "", "feed_count": 1, "seed_page": url,
-                "status": "healthy"} for url in sorted(rss_feeds)]}
+                "title": "RSS Feed"} for url in sorted(rss_feeds) if url not in existing_feed_urls]
+        all_feeds = sorted(existing_feeds + new_feeds, key=lambda item: item.get("feed_url", ""))
+        existing_seed_urls = {p.get("seed_page") for p in existing_seed_pages}
+        new_seed_pages = [{"error": "", "feed_count": 1, "seed_page": url,
+                "status": "healthy"} for url in sorted(rss_feeds) if url not in existing_seed_urls]
+        all_seed_pages = sorted(existing_seed_pages + new_seed_pages, key=lambda item: item.get("seed_page", ""))
+        rss_config = {"agency_id": aid, "feed_count": len(all_feeds),
+            "feeds": all_feeds, "generated_at": generated_at,
+            "seed_page_count": len(all_seed_pages), "seed_pages": all_seed_pages}
         write_newline(config_dir / (aid + "_rss_feeds.json"), rss_config)
 
     wp_urls = [s.get("url", "") for s in sources
         if s.get("platform") == "website_page" and s.get("url")]
     if wp_urls and website and not has_rss:
-        contracts.append(website_contract(aid, name, website, wp_urls))
+        if aid + "-website-pages" not in existing_contracts_by_id:
+            contracts.append(website_contract(aid, name, website, wp_urls))
 
     if not contracts:
         return False
@@ -189,6 +226,26 @@ def main():
             if aid not in processed:
                 if write_agency_config(aid, agency_sources, rss_by_agency, registry_by_id, config_dir, generated_at):
                     processed.add(aid)
+
+    agencies_index = []
+    for aid in sorted(processed):
+        data = load_json(config_dir / (aid + "_sources.json"))
+        contracts = data.get("contracts", [])
+        source_kinds = sorted({c.get("source_kind") for c in contracts if c.get("source_kind")})
+        agencies_index.append({
+            "agency_id": aid,
+            "agency_name": data.get("agency_name"),
+            "profile": source_kinds[0] + "-only" if len(source_kinds) == 1 else "multi-source",
+            "source_count": len(contracts),
+            "source_kinds": source_kinds,
+            "capture_priority": "high" if "social_feed" in source_kinds else "medium",
+            "cadence": "hourly" if "social_feed" in source_kinds else "daily",
+        })
+    write_newline(config_dir / "agencies_index.json", {
+        "agencies": agencies_index,
+        "generated_at": generated_at,
+        "total": len(agencies_index),
+    })
 
     print()
     print("Generated configs for " + str(len(processed)) + " agencies:")
