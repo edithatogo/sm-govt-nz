@@ -8,6 +8,7 @@ from src.bluesky_mirror_programme import (
     build_registry_from_manifest,
     handle_candidates,
     load_archive_records,
+    render_thread,
     publish_next,
     preflight_account,
     render_record,
@@ -136,6 +137,15 @@ def test_long_linkedin_posts_are_faithful_bounded_excerpts() -> None:
     assert len(text) <= 300
     assert text.startswith("[Archived 2026-07-22] [linkedin]")
     assert "Original: https://www.linkedin.com/posts/example-1" in text
+
+
+def test_long_linkedin_posts_can_be_planned_as_bounded_numbered_thread() -> None:
+    record = MirrorRecord("linkedin-2", "agency", "linkedin-source", "linkedin", "2026-07-22", "word " * 500, "https://www.linkedin.com/posts/example-2")
+    parts = render_thread(record, historical=True)
+    assert 1 < len(parts) <= 4
+    assert parts[0].startswith("[Archived 2026-07-22] [linkedin] [1/")
+    assert all(len(part) <= 300 for part in parts)
+    assert parts[-1].endswith("https://www.linkedin.com/posts/example-2")
 
 
 def test_publish_dry_run_never_calls_sender(tmp_path: Path) -> None:

@@ -362,6 +362,48 @@ def render_record(record: MirrorRecord, *, historical: bool, limit: int = 300) -
     return f"{prefix}{body}{suffix}"
 
 
+def render_thread(
+    record: MirrorRecord,
+    *,
+    historical: bool,
+    limit: int = 300,
+    threshold: int = 280,
+    max_parts: int = 4,
+) -> list[str]:
+    """Plan a bounded numbered thread without posting it.
+
+    Threading is currently a planning primitive. Callers must explicitly opt
+    in to posting the returned parts and persist one idempotency key for the
+    complete thread before doing so.
+    """
+    single = render_record(record, historical=historical, limit=limit)
+    if record.source_platform.casefold() != "linkedin" or len(single) <= threshold:
+        return [single]
+    prefix = f"[Archived {record.created_at[:10] or 'unknown date'}] [linkedin] " if historical else "[linkedin] "
+    suffix = f"\n\nOriginal: {record.source_url}"
+    available = max(1, limit - len(prefix) - len(suffix) - 12)
+    words = record.content.split()
+    chunks: list[str] = []
+    current: list[str] = []
+    for word in words:
+        candidate = " ".join(current + [word])
+        if current and len(candidate) > available:
+            chunks.append(" ".join(current))
+            current = [word]
+        else:
+            current.append(word)
+    if current:
+        chunks.append(" ".join(current))
+    chunks = chunks[:max_parts]
+    if not chunks:
+        return [single]
+    total = len(chunks)
+    return [
+        f"{prefix}[{index}/{total}] {chunk}{suffix if index == total else ''}"
+        for index, chunk in enumerate(chunks, 1)
+    ]
+
+
 def publish_next(
     registry: Mapping[str, Any],
     mirror_id: str,
