@@ -131,10 +131,8 @@ def write_agency_config(aid, agency_sources, rss_by_agency, registry_by_id, conf
             existing_contracts_by_id = {}
 
     contracts = []
-    generated_prefixes = (aid + "-bluesky", aid + "-rss-website", aid + "-website-pages")
     for contract_id, contract in existing_contracts_by_id.items():
-        if not contract_id.startswith(generated_prefixes) or contract_id == "courts-of-nz-rss-website":
-            contracts.append(contract)
+        contracts.append(contract)
 
     for s in sources:
         if s.get("platform") == "bluesky" and s.get("archive_status") == "ready":
@@ -227,20 +225,41 @@ def main():
                 if write_agency_config(aid, agency_sources, rss_by_agency, registry_by_id, config_dir, generated_at):
                     processed.add(aid)
 
+    existing_index = {}
+    index_path = config_dir / "agencies_index.json"
+    if index_path.exists():
+        try:
+            existing_index = {
+                item.get("agency_id"): item
+                for item in load_json(index_path).get("agencies", [])
+                if item.get("agency_id")
+            }
+        except (OSError, json.JSONDecodeError):
+            existing_index = {}
+
     agencies_index = []
     for aid in sorted(processed):
         data = load_json(config_dir / (aid + "_sources.json"))
         contracts = data.get("contracts", [])
         source_kinds = sorted({c.get("source_kind") for c in contracts if c.get("source_kind")})
+        platforms = sorted({c.get("source_platform") for c in contracts if c.get("source_platform")})
+        rss_config_file = aid + "_rss_feeds.json" if "rss" in platforms else None
         agencies_index.append({
             "agency_id": aid,
             "agency_name": data.get("agency_name"),
-            "profile": source_kinds[0] + "-only" if len(source_kinds) == 1 else "multi-source",
-            "source_count": len(contracts),
-            "source_kinds": source_kinds,
-            "capture_priority": "high" if "social_feed" in source_kinds else "medium",
-            "cadence": "hourly" if "social_feed" in source_kinds else "daily",
+            "archival_cadence": "every-6h" if "social_feed" in source_kinds else "daily",
+            "capture_priority": "high",
+            "config_file": aid + "_sources.json",
+            "contract_count": len(contracts),
+            "platforms": platforms,
+            "rss_config_file": rss_config_file,
+            "source_types": source_kinds,
+            "workflow_pattern": source_kinds[0] + "-only" if len(source_kinds) == 1 else "multi-source",
         })
+    for agency_id, item in existing_index.items():
+        if agency_id not in {entry["agency_id"] for entry in agencies_index}:
+            agencies_index.append(item)
+    agencies_index.sort(key=lambda item: item["agency_id"])
     write_newline(config_dir / "agencies_index.json", {
         "agencies": agencies_index,
         "generated_at": generated_at,
