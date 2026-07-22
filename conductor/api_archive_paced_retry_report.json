@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-21T18:44:29+00:00",
+  "generated_at": "2026-07-22T18:38:05+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,7 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "d58c4799197d538f"
+      "270b12f28776608f",
+      "b8e488ee9490ed5a",
+      "c5d8bc4b61a1d9a8",
+      "e690cf595a5feab6",
+      "f1b33eea34525da9"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -34,30 +38,76 @@
   },
   "results": [
     {
-      "agency_id": "department-of-corrections",
+      "agency_id": "gisborne-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "d58c4799197d538f",
+      "source_id": "e690cf595a5feab6",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.corrections.govt.nz/.well-known/webfinger"
+      "url": "https://www.gdc.govt.nz/.well-known/webfinger"
+    },
+    {
+      "agency_id": "marlborough-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "f1b33eea34525da9",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.marlborough.govt.nz/.well-known/webfinger"
+    },
+    {
+      "agency_id": "south-waikato-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 405: Not Allowed",
+      "source_id": "c5d8bc4b61a1d9a8",
+      "source_type": "api_endpoint",
+      "status": "method_not_allowed",
+      "url": "https://www.southwaikato.govt.nz/openapi.json"
+    },
+    {
+      "agency_id": "tararua-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "270b12f28776608f",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.tararuadc.govt.nz/openapi.json"
+    },
+    {
+      "agency_id": "west-coast-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "b8e488ee9490ed5a",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.wcrc.govt.nz/.well-known/webfinger"
     }
   ],
   "summary": {
     "platform_counts": {
-      "api": 1
+      "api": 5
     },
-    "selected_sources": 1,
+    "selected_sources": 5,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 1
+        "capture_blocked": 4,
+        "method_not_allowed": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 1
+      "capture_blocked": 4,
+      "method_not_allowed": 1
     }
   }
 }

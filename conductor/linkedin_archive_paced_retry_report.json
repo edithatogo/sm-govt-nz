@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-21T18:46:34+00:00",
+  "generated_at": "2026-07-22T18:38:21+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,9 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "2046be7ce24fc8a8",
-      "289676a40b7008ff",
-      "3b847668ea93a3b9",
-      "948347df35bd9ed4"
+      "09b952f7ef4b6fe3",
+      "33154c4cfc035f97",
+      "d13defcbff6b5f65"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -37,54 +36,41 @@
   },
   "results": [
     {
-      "agency_id": "ara-institute-of-canterbury",
+      "agency_id": "open-polytechnic",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "2046be7ce24fc8a8",
+      "source_id": "d13defcbff6b5f65",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/ara-institute-of-canterbury"
+      "url": "https://www.linkedin.com/school/open-polytechnic"
     },
     {
-      "agency_id": "privacy-commissioner",
+      "agency_id": "otago-polytechnic",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:b6e742046da126d5a367e489",
-      "source_id": "3b847668ea93a3b9",
+      "reason": "HTTP 999: <none>",
+      "source_id": "33154c4cfc035f97",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/office-of-the-privacy-commissioner"
-    },
-    {
-      "agency_id": "reannz",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:79540fa338ee77957904cba3",
-      "source_id": "948347df35bd9ed4",
-      "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/reannz"
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/otago-polytechnic"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 3
+      "linkedin": 2
     },
-    "selected_sources": 3,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1,
-        "public_snapshot_captured": 2
+        "http_error": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1,
-      "public_snapshot_captured": 2
+      "http_error": 2
     }
   }
 }

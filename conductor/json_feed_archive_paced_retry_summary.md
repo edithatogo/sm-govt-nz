@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-21T18:44:36+00:00
+Generated: 2026-07-22T18:38:09+00:00
 
 ## Summary
 
@@ -14,11 +14,11 @@ Generated: 2026-07-21T18:44:36+00:00
 
 ## Status counts
 
-- `capture_blocked`: 1
+- `not_acceptable`: 1
 
 ## Status by platform
 
-- `json_feed`: {'capture_blocked': 1}
+- `json_feed`: {'not_acceptable': 1}
 
 ## Notes
 
