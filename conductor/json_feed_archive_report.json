@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-21T05:42:47+00:00",
+  "generated_at": "2026-07-22T06:01:38+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "",
+    "source_ids": [],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -43,10 +47,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 400: candidate JSON Feed endpoint is unavailable",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "3caae6ccb89ff631",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "http_error",
       "url": "https://www.accreditation.co.nz/feed.json"
     },
     {
@@ -153,10 +157,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "e07914d349165ef6",
       "source_type": "json_feed",
-      "status": "dns_failed",
+      "status": "network_error",
       "url": "https://www.aucklandlightrail.co.nz/feed.json"
     },
     {
@@ -175,10 +179,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)",
+      "reason": "URL error: timed out",
       "source_id": "21bb48693ef10a83",
       "source_type": "json_feed",
-      "status": "tls_failed",
+      "status": "network_timeout",
       "url": "https://www.boprc.govt.nz/feed.json"
     },
     {
@@ -318,10 +322,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "2e75802c5ef2c40c",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://my.christchurchcitylibraries.com/feed.json"
     },
     {
@@ -615,10 +619,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 400: candidate JSON Feed endpoint is unavailable",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "51d86fb0b7190b2b",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "http_error",
       "url": "https://www.ecnz.co.nz/feed.json"
     },
     {
@@ -1121,10 +1125,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lotto.co.nz'. (_ssl.c:1082)",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "1695f7e082658055",
       "source_type": "json_feed",
-      "status": "tls_failed",
+      "status": "invalid",
       "url": "https://www.lotto.co.nz/feed.json"
     },
     {
@@ -1154,10 +1158,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "URL error: timed out",
       "source_id": "2f91a7d6611e2699",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_timeout",
       "url": "https://www.manukau.ac.nz/feed.json"
     },
     {
@@ -1242,10 +1246,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 403: Forbidden",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "2952e7c87bc56d9e",
       "source_type": "json_feed",
-      "status": "capture_blocked",
+      "status": "invalid",
       "url": "https://www.mpdc.govt.nz/feed.json"
     },
     {
@@ -1473,10 +1477,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "5f9489f22e9f3666",
       "source_type": "json_feed",
-      "status": "dns_failed",
+      "status": "invalid",
       "url": "https://www.nema.govt.nz/feed.json"
     },
     {
@@ -1660,10 +1664,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "5d035c0706f20bf4",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://www.parliament.nz/feed.json"
     },
     {
@@ -1693,7 +1697,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "81fea30356d58269",
       "source_type": "json_feed",
       "status": "invalid",
@@ -1715,10 +1719,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "URL error: timed out",
       "source_id": "a42bb6a9fd1e82fd",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_timeout",
       "url": "https://www.nzso.co.nz/feed.json"
     },
     {
@@ -1770,10 +1774,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "32377c55efd946ac",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/feed.json"
     },
     {
@@ -1792,10 +1796,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "823e89b3780864a7",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://www.govt.nz/organisations/office-of-treaty-settlements/feed.json"
     },
     {
@@ -1913,10 +1917,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "84f973627c0fb508",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://www.parliament.nz/feed.json"
     },
     {
@@ -1924,10 +1928,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "URL error: [Errno 111] Connection refused",
       "source_id": "8fc68187838d7c69",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://www.pharmac.govt.nz/feed.json"
     },
     {
@@ -1935,10 +1939,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "e0eeac6f8f3d816c",
       "source_type": "json_feed",
-      "status": "dns_failed",
+      "status": "network_error",
       "url": "https://www.pcc.govt.nz/feed.json"
     },
     {
@@ -1946,10 +1950,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "382e448e36212c8a",
       "source_type": "json_feed",
-      "status": "dns_failed",
+      "status": "network_error",
       "url": "https://www.predatorfree2050.co.nz/feed.json"
     },
     {
@@ -1990,7 +1994,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "9289dcb60410c333",
       "source_type": "json_feed",
       "status": "invalid",
@@ -2782,7 +2786,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "424594836a17efde",
       "source_type": "json_feed",
       "status": "invalid",
@@ -2962,21 +2966,25 @@
     "status_by_platform": {
       "json_feed": {
         "already_captured": 16,
-        "capture_blocked": 26,
-        "dns_failed": 12,
-        "invalid": 209,
-        "not_acceptable": 1,
-        "tls_failed": 2
+        "capture_blocked": 25,
+        "dns_failed": 8,
+        "http_error": 2,
+        "invalid": 202,
+        "network_error": 9,
+        "network_timeout": 3,
+        "not_acceptable": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "already_captured": 16,
-      "capture_blocked": 26,
-      "dns_failed": 12,
-      "invalid": 209,
-      "not_acceptable": 1,
-      "tls_failed": 2
+      "capture_blocked": 25,
+      "dns_failed": 8,
+      "http_error": 2,
+      "invalid": 202,
+      "network_error": 9,
+      "network_timeout": 3,
+      "not_acceptable": 1
     }
   }
 }
