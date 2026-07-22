@@ -23,4 +23,4 @@ jobs:
       - name: Vale prose lint
         run: docker run --rm -v "$PWD:/work" -w /work jdkato/vale:latest SETUP_GUIDE.md docs conductor
       - name: Tests
-        run: python -m pytest tests -q
+        run: python -m pytest tests -q -s
