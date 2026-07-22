@@ -32,7 +32,7 @@
       "required_authorization": "organization_admin_or_approved_app",
       "seed_directory": "manual_archive_seeds/linkedin",
       "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
-      "live_capture_policy": "Do not automate public LinkedIn pages. Use approved API access, organization-admin export, or explicit operator seed JSON only."
+      "live_capture_policy": "Public LinkedIn capture may be used when technically available and lawful, subject to platform controls, bounded rate limits, no-login operation, and no CAPTCHA or access-control bypass. Approved API access, organization-admin export, and operator seed JSON remain supported alternatives."
     },
     "x": {
       "family": "x",
