@@ -122,6 +122,22 @@ def test_rendered_history_is_bounded_and_attributed() -> None:
     assert "Original: https://x.com/a/status/1" in text
 
 
+def test_long_linkedin_posts_are_faithful_bounded_excerpts() -> None:
+    record = MirrorRecord(
+        "linkedin-1",
+        "agency",
+        "linkedin-source",
+        "linkedin",
+        "2026-07-22T00:00:00Z",
+        "Long LinkedIn post " * 100,
+        "https://www.linkedin.com/posts/example-1",
+    )
+    text = render_record(record, historical=True)
+    assert len(text) <= 300
+    assert text.startswith("[Archived 2026-07-22] [linkedin]")
+    assert "Original: https://www.linkedin.com/posts/example-1" in text
+
+
 def test_publish_dry_run_never_calls_sender(tmp_path: Path) -> None:
     archive = tmp_path / "historical_archive_normalized" / "x"
     archive.mkdir(parents=True)

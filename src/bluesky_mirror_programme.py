@@ -25,6 +25,7 @@ SOCIAL_PLATFORMS = {
     "bluesky",
     "facebook",
     "instagram",
+    "linkedin",
     "medium",
     "substack",
     "threads",
@@ -351,7 +352,8 @@ def load_archive_records(
 
 def render_record(record: MirrorRecord, *, historical: bool, limit: int = 300) -> str:
     date = record.created_at[:10] or "unknown date"
-    prefix = f"[Archived {date}] " if historical else ""
+    platform = "[linkedin] " if record.source_platform.casefold() == "linkedin" else ""
+    prefix = (f"[Archived {date}] " if historical else "") + platform
     suffix = f"\n\nOriginal: {record.source_url}"
     available = max(0, limit - len(prefix) - len(suffix))
     body = record.content
