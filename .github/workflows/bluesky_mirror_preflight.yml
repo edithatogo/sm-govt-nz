@@ -1,0 +1,48 @@
+name: Bluesky Mirror Preflight
+
+on:
+  workflow_dispatch:
+    inputs:
+      mirror_id:
+        description: Canonical mirror ID
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - id: matrix
+        run: python scripts/manage_bluesky_mirror_programme.py matrix --mode preflight --mirror-id '${{ inputs.mirror_id }}' --github-output
+      - run: python scripts/manage_bluesky_mirror_programme.py validate
+
+  preflight:
+    needs: plan
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    environment: ${{ matrix.environment }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - name: Validate isolated account credentials without posting
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+        run: |
+          test "$BLUESKY_HANDLE" = '${{ matrix.handle }}'
+          test -n "$BLUESKY_APP_PASSWORD"
+          python scripts/manage_bluesky_mirror_programme.py preflight --mirror-id '${{ matrix.mirror_id }}'
+          BLUESKY_MIRRORING_ENABLED=false python scripts/manage_bluesky_mirror_programme.py publish --mode backfill --mirror-id '${{ matrix.mirror_id }}' --dry-run

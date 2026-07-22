@@ -1,16 +1,10 @@
-name: Mirror Follow Sync
+name: Legacy Mirror Follow Audit
 
 on:
   workflow_dispatch:
-    inputs:
-      execute_live_following:
-        description: "Execute Bluesky follows after the read-only probe and dry-run"
-        required: true
-        type: boolean
-        default: false
 
 permissions:
-  contents: write
+  contents: read
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
@@ -34,14 +28,5 @@ jobs:
         env:
           BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
         run: python scripts/sync_mirror_follows.py --dry-run
-      - name: Commit refreshed follow state
-        run: >-
-          python scripts/commit_state_updates.py
-          --message "Refresh mirror follow sync state"
-          --path conductor/follow_sync_state.json
-      - name: Execute supported follow sync
-        if: ${{ inputs.execute_live_following }}
-        env:
-          BLUESKY_MIRROR_HANDLE: ${{ secrets.BLUESKY_MIRROR_HANDLE }}
-          BLUESKY_MIRROR_APP_PASSWORD: ${{ secrets.BLUESKY_MIRROR_APP_PASSWORD }}
-        run: python scripts/sync_mirror_follows.py --execute
+      - name: Explain follow policy
+        run: echo "Live following is operator-supervised during onboarding; this legacy workflow is read-only."

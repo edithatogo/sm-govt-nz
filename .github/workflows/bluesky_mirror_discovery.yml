@@ -1,0 +1,30 @@
+name: Bluesky Mirror Discovery
+
+on:
+  schedule:
+    - cron: "23 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: bluesky-mirror-discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - run: python scripts/manage_bluesky_mirror_programme.py build-registry
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/sync_bluesky_onboarding_issues.py --parent 23 --cohort-size 50 --limit 50
+      - run: python scripts/commit_state_updates.py --message "Refresh Bluesky mirror onboarding queue" --path config/mirror_accounts.json --path conductor/bluesky_mirror_programme_report.json

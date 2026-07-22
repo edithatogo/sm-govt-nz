@@ -1,0 +1,30 @@
+name: Bluesky Mirror Emergency Pause
+
+on:
+  workflow_dispatch:
+    inputs:
+      mirror_id:
+        description: Mirror ID or all
+        required: true
+        default: all
+        type: string
+      reason:
+        description: Incident reason
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  pause:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - run: python scripts/manage_bluesky_mirror_programme.py pause --mirror-id '${{ inputs.mirror_id }}' --reason '${{ inputs.reason }}'
+      - run: python scripts/commit_state_updates.py --message "Pause Bluesky mirror posting" --path conductor/bluesky_mirror_runtime_state.json

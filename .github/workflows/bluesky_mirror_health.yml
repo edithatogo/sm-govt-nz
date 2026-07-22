@@ -1,0 +1,52 @@
+name: Bluesky Mirror Health
+
+on:
+  schedule:
+    - cron: "41 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - id: matrix
+        run: python scripts/manage_bluesky_mirror_programme.py matrix --mode health --github-output
+
+  credential-health:
+    needs: plan
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    environment: ${{ matrix.environment }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+        run: python scripts/manage_bluesky_mirror_programme.py preflight --mirror-id '${{ matrix.mirror_id }}'
+
+  public-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - run: python scripts/manage_bluesky_mirror_programme.py health
+      - run: python scripts/commit_state_updates.py --message "Refresh Bluesky mirror health" --path conductor/bluesky_mirror_health_report.json
