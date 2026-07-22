@@ -7,6 +7,7 @@ from src.bluesky_mirror_programme import (
     MirrorRecord,
     build_registry_from_manifest,
     handle_candidates,
+    load_archive_records,
     publish_next,
     preflight_account,
     render_record,
@@ -176,3 +177,15 @@ def test_archive_workflows_do_not_receive_posting_credentials() -> None:
         text = workflow.read_text(encoding="utf-8")
         assert "BLUESKY_APP_PASSWORD" not in text
         assert "manage_bluesky_mirror_programme.py publish" not in text
+
+
+def test_source_allowlist_excludes_retired_sibling_records(tmp_path: Path) -> None:
+    shard = tmp_path / "x" / "2026-07.jsonl"
+    shard.parent.mkdir(parents=True)
+    rows = [
+        {"agency_id": "agency", "source_id": "current", "record_id": "r1", "content": "current", "source_url": "https://x.example/current", "original_created_at": "2026-07-01"},
+        {"agency_id": "agency", "source_id": "retired", "record_id": "r2", "content": "retired", "source_url": "https://x.example/retired", "original_created_at": "2017-01-01"},
+    ]
+    shard.write_text("\n".join(json.dumps(row) for row in rows) + "\n", encoding="utf-8")
+    records = load_archive_records({"agency_id": "agency", "source_ids": ["current"]}, tmp_path)
+    assert [record.record_id for record in records] == ["r1"]

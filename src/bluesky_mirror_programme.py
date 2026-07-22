@@ -313,7 +313,13 @@ def load_archive_records(
             raw = json.loads(line)
             raw_source_id = str(raw.get("source_id") or "")
             raw_agency_id = slugify(str(raw.get("agency_id") or ""))
-            if raw_source_id not in source_ids and raw_agency_id != agency_id:
+            # A mirror's source allowlist is authoritative. Do not fall back
+            # to agency_id when a record has a source_id: that would re-enable
+            # retired or stale sibling accounts after registry removal.
+            if raw_source_id:
+                if raw_source_id not in source_ids:
+                    continue
+            elif raw_agency_id != agency_id:
                 continue
             visibility = str(raw.get("visibility") or "public").casefold()
             status = str(raw.get("status") or raw.get("archive_status") or "").casefold()
