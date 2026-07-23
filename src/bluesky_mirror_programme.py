@@ -323,6 +323,12 @@ def load_archive_records(
                     continue
             elif raw_agency_id != agency_id:
                 continue
+            raw_platform = str(raw.get("source_platform") or shard.parent.name).casefold()
+            allowed_platforms = {
+                str(value).casefold() for value in (account.get("source_platforms") or [])
+            }
+            if allowed_platforms and raw_platform not in allowed_platforms:
+                continue
             visibility = str(raw.get("visibility") or "public").casefold()
             status = str(raw.get("status") or raw.get("archive_status") or "").casefold()
             if visibility != "public" or status in TERMINAL_SOURCE_STATES or raw.get("deleted"):
