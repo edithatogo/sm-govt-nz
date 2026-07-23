@@ -1,24 +1,25 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-22T18:38:21+00:00
+Generated: 2026-07-23T18:42:10+00:00
 
 ## Summary
 
-- `selected_sources`: 2
+- `selected_sources`: 4
 - `platform_count`: 1
-- `status_count`: 1
+- `status_count`: 2
 
 ## Platform counts
 
-- `linkedin`: 2
+- `linkedin`: 4
 
 ## Status counts
 
-- `http_error`: 2
+- `http_error`: 3
+- `public_snapshot_captured`: 1
 
 ## Status by platform
 
-- `linkedin`: {'http_error': 2}
+- `linkedin`: {'http_error': 3, 'public_snapshot_captured': 1}
 
 ## Notes
 

@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-22T18:38:21+00:00",
+  "generated_at": "2026-07-23T18:42:10+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,10 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "09b952f7ef4b6fe3",
-      "33154c4cfc035f97",
-      "d13defcbff6b5f65"
+      "2bf194805365b358",
+      "5c870226ca582324",
+      "89283019bf39aab1",
+      "d99b572191966e5b"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -36,41 +37,65 @@
   },
   "results": [
     {
-      "agency_id": "open-polytechnic",
+      "agency_id": "massey-university",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "d13defcbff6b5f65",
+      "source_id": "5c870226ca582324",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/open-polytechnic"
+      "url": "https://www.linkedin.com/school/massey-university"
     },
     {
-      "agency_id": "otago-polytechnic",
+      "agency_id": "sport-nz",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:65a130047b6a4eca268e5d9d",
+      "source_id": "89283019bf39aab1",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/sport-new-zealand"
+    },
+    {
+      "agency_id": "university-of-canterbury",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "33154c4cfc035f97",
+      "source_id": "2bf194805365b358",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/otago-polytechnic"
+      "url": "https://www.linkedin.com/school/university-of-canterbury"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 999: <none>",
+      "source_id": "d99b572191966e5b",
+      "source_type": "social_profile",
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/wintec"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 2
+      "linkedin": 4
     },
-    "selected_sources": 2,
+    "selected_sources": 4,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 2
+        "http_error": 3,
+        "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 2
+      "http_error": 3,
+      "public_snapshot_captured": 1
     }
   }
 }
