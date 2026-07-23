@@ -592,7 +592,16 @@ def _account(registry: Mapping[str, Any], mirror_id: str) -> Mapping[str, Any]:
 
 
 def _public_readback(uri: str) -> bool:
-    return any(str(post.get("uri") or "") == uri for post in BlueskyApiClient().fetch_posts([uri]))
+    client = BlueskyApiClient(base_url="https://public.api.bsky.app", timeout_seconds=15)
+    for attempt in range(3):
+        try:
+            if any(str(post.get("uri") or "") == uri for post in client.fetch_posts([uri])):
+                return True
+        except Exception:
+            pass
+        if attempt < 2:
+            time.sleep(2**attempt)
+    return False
 
 
 def _exact_bluesky_sender(
