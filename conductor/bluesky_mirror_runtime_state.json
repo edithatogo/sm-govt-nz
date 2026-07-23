@@ -1,9 +1,15 @@
 {
   "accounts": {
     "accident-compensation-corporation": {
+      "backfill_complete": false,
+      "last_success_at": "2026-07-23T01:53:30.912588+00:00",
+      "last_uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u",
       "pause_reason": "ACC stale post deleted; readback retry fix deployed",
       "paused": false,
       "paused_at": null,
+      "posted_record_ids": [
+        "youtube:440d229a196af17663e35d9f"
+      ],
       "recovery_evidence": "ACC mirror post at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrabow6nh72j deleted 2026-07-23 via authenticated visible browser"
     },
     "courts-of-nz": {
