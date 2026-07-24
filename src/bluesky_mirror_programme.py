@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
 from src.bluesky import BlueskyApiClient, BlueskyPost
@@ -20,6 +20,7 @@ STATE_PATH = Path("conductor/bluesky_mirror_runtime_state.json")
 AUDIT_PATH = Path("conductor/bluesky_mirror_post_audit.jsonl")
 DEAD_LETTER_PATH = Path("conductor/bluesky_mirror_dead_letter.jsonl")
 REPORT_PATH = Path("conductor/bluesky_mirror_programme_report.json")
+ELIGIBILITY_REPORT_DIR = Path("conductor/bluesky_mirror_eligibility")
 SOCIAL_PLATFORMS = {
     "activitypub",
     "bluesky",
@@ -59,6 +60,17 @@ class MirrorRecord:
     source_platform: str
     created_at: str
     content: str
+    source_url: str
+
+
+@dataclass(frozen=True)
+class SourceEligibilityResult:
+    eligible: bool
+    reason: str
+    record_id: str
+    source_id: str
+    agency_id: str
+    source_platform: str
     source_url: str
 
 
@@ -322,61 +334,167 @@ def preflight_account(
 
 
 def load_archive_records(
-    account: Mapping[str, Any], root: str | Path = "historical_archive_normalized"
+    account: Mapping[str, Any],
+    root: str | Path = "historical_archive_normalized",
+    *,
+    eligibility_report_path: str | Path | None = None,
 ) -> list[MirrorRecord]:
-    source_ids = set(account.get("source_ids") or [])
-    excluded_source_urls = set(account.get("excluded_source_urls") or [])
     agency_id = str(account["agency_id"])
     records: dict[str, MirrorRecord] = {}
+    decisions: list[SourceEligibilityResult] = []
     archive_root = Path(root)
     if not archive_root.exists():
+        if eligibility_report_path:
+            write_eligibility_report(account, decisions, eligibility_report_path)
         return []
     for shard in sorted(archive_root.rglob("*.jsonl")):
         for line in shard.read_text(encoding="utf-8").splitlines():
             if not line.strip():
                 continue
             raw = json.loads(line)
-            raw_source_id = str(raw.get("source_id") or "")
-            raw_agency_id = slugify(str(raw.get("agency_id") or ""))
-            # A mirror's source allowlist is authoritative. Do not fall back
-            # to agency_id when a record has a source_id: that would re-enable
-            # retired or stale sibling accounts after registry removal.
-            if raw_source_id:
-                if raw_source_id not in source_ids:
-                    continue
-            elif raw_agency_id != agency_id:
-                continue
-            raw_platform = str(raw.get("source_platform") or shard.parent.name).casefold()
-            allowed_platforms = {
-                str(value).casefold() for value in (account.get("source_platforms") or [])
-            }
-            if allowed_platforms and raw_platform not in allowed_platforms:
-                continue
-            visibility = str(raw.get("visibility") or "public").casefold()
-            status = str(raw.get("status") or raw.get("archive_status") or "").casefold()
-            if visibility != "public" or status in TERMINAL_SOURCE_STATES or raw.get("deleted"):
+            decision = evaluate_source_eligibility(account, raw)
+            decisions.append(decision)
+            if not decision.eligible:
                 continue
             content = str(raw.get("content") or raw.get("text") or raw.get("title") or "").strip()
-            source_url = str(raw.get("source_url") or raw.get("canonical_url") or raw.get("url") or "")
-            if source_url in excluded_source_urls:
-                continue
             record_id = str(raw.get("record_id") or raw.get("post_id") or "")
-            if not record_id or not content or not source_url:
+            if not record_id or not content:
                 continue
             record = MirrorRecord(
                 record_id=record_id,
                 agency_id=agency_id,
-                source_id=raw_source_id,
-                source_platform=str(raw.get("source_platform") or shard.parent.name),
+                source_id=decision.source_id,
+                source_platform=decision.source_platform,
                 created_at=str(raw.get("original_created_at") or raw.get("created_at") or ""),
                 content=content,
-                source_url=source_url,
+                source_url=decision.source_url,
             )
             fingerprint = hashlib.sha256(
                 f"{agency_id}\0{record.created_at[:10]}\0{content.casefold()}".encode()
             ).hexdigest()
             records.setdefault(fingerprint, record)
+    if eligibility_report_path:
+        write_eligibility_report(account, decisions, eligibility_report_path)
     return sorted(records.values(), key=lambda row: (row.created_at, row.record_id))
+
+
+def normalize_source_platform(value: str) -> str:
+    """Normalize supported source-platform aliases."""
+    platform = value.strip().casefold()
+    return {"twitter": "x"}.get(platform, platform)
+
+
+def canonicalize_source_url(value: str) -> str:
+    """Canonicalize a public source URL for policy comparison."""
+    parsed = urlsplit(value.strip())
+    if parsed.scheme.casefold() not in {"http", "https"} or not parsed.hostname:
+        return ""
+    host = parsed.hostname.casefold()
+    if host.startswith("www."):
+        host = host[4:]
+    if host == "twitter.com":
+        host = "x.com"
+    path = re.sub(r"/+", "/", parsed.path).rstrip("/") or "/"
+    return urlunsplit(("https", host, path, "", ""))
+
+
+def evaluate_source_eligibility(
+    account: Mapping[str, Any], raw: Mapping[str, Any]
+) -> SourceEligibilityResult:
+    """Evaluate one archive record against an explicit mirror allowlist."""
+    source_id = str(raw.get("source_id") or "")
+    agency_id = slugify(str(raw.get("agency_id") or ""))
+    platform = normalize_source_platform(str(raw.get("source_platform") or ""))
+    source_url = str(
+        raw.get("source_url") or raw.get("canonical_url") or raw.get("url") or ""
+    )
+    canonical_url = canonicalize_source_url(source_url)
+    record_id = str(raw.get("record_id") or raw.get("post_id") or "")
+    allowed_ids = {str(value) for value in (account.get("source_ids") or [])}
+    allowed_platforms = {
+        normalize_source_platform(str(value))
+        for value in (account.get("source_platforms") or [])
+    }
+    allowed_hosts = {
+        urlsplit(canonical).hostname
+        for value in (account.get("source_urls") or [])
+        if (canonical := canonicalize_source_url(str(value)))
+    }
+    excluded_urls = {
+        canonicalize_source_url(str(value))
+        for value in (account.get("excluded_source_urls") or [])
+    }
+    visibility = str(raw.get("visibility") or "").casefold()
+    status = str(raw.get("status") or raw.get("archive_status") or "").casefold()
+    reason = "accepted"
+    if not source_id:
+        reason = "missing_source_id"
+    elif source_id not in allowed_ids:
+        reason = "source_id_not_allowed"
+    elif not agency_id or agency_id != str(account["agency_id"]):
+        reason = "agency_mismatch"
+    elif not platform:
+        reason = "missing_source_platform"
+    elif platform not in allowed_platforms:
+        reason = "source_platform_not_allowed"
+    elif not visibility:
+        reason = "missing_visibility"
+    elif visibility != "public":
+        reason = "visibility_not_public"
+    elif status in TERMINAL_SOURCE_STATES or bool(raw.get("deleted")):
+        reason = "terminal_source_state"
+    elif not source_url:
+        reason = "missing_source_url"
+    elif not canonical_url:
+        reason = "invalid_source_url"
+    elif canonical_url in excluded_urls:
+        reason = "source_url_excluded"
+    elif allowed_hosts and urlsplit(canonical_url).hostname not in allowed_hosts:
+        reason = "source_host_not_allowed"
+    return SourceEligibilityResult(
+        eligible=reason == "accepted",
+        reason=reason,
+        record_id=record_id,
+        source_id=source_id,
+        agency_id=agency_id,
+        source_platform=platform,
+        source_url=source_url,
+    )
+
+
+def write_eligibility_report(
+    account: Mapping[str, Any],
+    decisions: list[SourceEligibilityResult],
+    path: str | Path,
+) -> dict[str, Any]:
+    """Persist bounded acceptance and rejection evidence for one mirror."""
+    rejected = [decision for decision in decisions if not decision.eligible]
+    reason_counts: dict[str, int] = {}
+    for decision in rejected:
+        reason_counts[decision.reason] = reason_counts.get(decision.reason, 0) + 1
+    report = {
+        "schema_version": 1,
+        "generated_at": _now(),
+        "mirror_id": str(account["mirror_id"]),
+        "scanned": len(decisions),
+        "accepted": sum(decision.eligible for decision in decisions),
+        "rejected": len(rejected),
+        "rejection_reason_counts": dict(sorted(reason_counts.items())),
+        "rejection_examples": [
+            {
+                "record_id": decision.record_id,
+                "source_id": decision.source_id,
+                "agency_id": decision.agency_id,
+                "source_platform": decision.source_platform,
+                "source_url": decision.source_url,
+                "reason": decision.reason,
+            }
+            for decision in rejected[:100]
+        ],
+        "rejection_examples_truncated": max(0, len(rejected) - 100),
+    }
+    _write_json(Path(path), report)
+    return report
 
 
 def render_record(record: MirrorRecord, *, historical: bool, limit: int = 300) -> str:
@@ -443,6 +561,7 @@ def publish_next(
     state_path: str | Path = STATE_PATH,
     audit_path: str | Path = AUDIT_PATH,
     dead_letter_path: str | Path = DEAD_LETTER_PATH,
+    eligibility_report_path: str | Path | None = None,
     sender: Callable[[BlueskyPost], SyndicationResult] | None = None,
     readback: Callable[[str], bool] | None = None,
 ) -> dict[str, Any]:
@@ -458,7 +577,11 @@ def publish_next(
         if not account.get("enabled"):
             return {"mirror_id": mirror_id, "status": "account_disabled", "posted": 0}
 
-    records = load_archive_records(account, archive_root)
+    records = load_archive_records(
+        account,
+        archive_root,
+        eligibility_report_path=eligibility_report_path,
+    )
     posted_ids = set(account_state.get("posted_record_ids") or [])
     activated_at = str(account.get("activated_at") or "")
     historical = mode == "backfill"

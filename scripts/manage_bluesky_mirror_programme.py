@@ -7,6 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.bluesky_mirror_programme import (
+    ELIGIBILITY_REPORT_DIR,
     STATE_PATH,
     build_registry_from_manifest,
     health_report,
@@ -76,7 +77,15 @@ def main() -> None:
             with Path(output).open("a", encoding="utf-8") as stream:
                 stream.write(f"matrix={json.dumps(result, separators=(',', ':'))}\n")
     elif args.command == "publish":
-        result = publish_next(load_registry(), args.mirror_id, mode=args.mode, dry_run=args.dry_run)
+        result = publish_next(
+            load_registry(),
+            args.mirror_id,
+            mode=args.mode,
+            dry_run=args.dry_run,
+            eligibility_report_path=(
+                ELIGIBILITY_REPORT_DIR / f"{args.mirror_id}.json"
+            ),
+        )
     elif args.command == "health":
         result = health_report(load_registry())
         Path(args.output).write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")

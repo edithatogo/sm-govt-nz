@@ -5,7 +5,9 @@ import pytest
 
 from src.bluesky_mirror_programme import (
     MirrorRecord,
+    canonicalize_source_url,
     build_registry_from_manifest,
+    evaluate_source_eligibility,
     handle_candidates,
     load_archive_records,
     render_thread,
@@ -228,9 +230,99 @@ def test_source_allowlist_excludes_retired_sibling_records(tmp_path: Path) -> No
     shard = tmp_path / "x" / "2026-07.jsonl"
     shard.parent.mkdir(parents=True)
     rows = [
-        {"agency_id": "agency", "source_id": "current", "record_id": "r1", "content": "current", "source_url": "https://x.example/current", "original_created_at": "2026-07-01"},
-        {"agency_id": "agency", "source_id": "retired", "record_id": "r2", "content": "retired", "source_url": "https://x.example/retired", "original_created_at": "2017-01-01"},
+        {"agency_id": "agency", "source_id": "current", "source_platform": "x", "visibility": "public", "record_id": "r1", "content": "current", "source_url": "https://x.example/current", "original_created_at": "2026-07-01"},
+        {"agency_id": "agency", "source_id": "retired", "source_platform": "x", "visibility": "public", "record_id": "r2", "content": "retired", "source_url": "https://x.example/retired", "original_created_at": "2017-01-01"},
     ]
     shard.write_text("\n".join(json.dumps(row) for row in rows) + "\n", encoding="utf-8")
-    records = load_archive_records({"agency_id": "agency", "source_ids": ["current"]}, tmp_path)
+    records = load_archive_records(
+        {
+            "mirror_id": "agency",
+            "agency_id": "agency",
+            "source_ids": ["current"],
+            "source_platforms": ["x"],
+            "source_urls": ["https://x.example/current"],
+        },
+        tmp_path,
+    )
     assert [record.record_id for record in records] == ["r1"]
+
+
+def test_source_eligibility_fails_closed_and_normalizes_urls() -> None:
+    account = registry_row(
+        source_ids=["linkedin-current"],
+        source_platforms=["linkedin"],
+        source_urls=["https://www.linkedin.com/company/agency/?trk=public"],
+        excluded_source_urls=["https://linkedin.com/posts/retired/?tracking=1"],
+    )
+    valid = {
+        "record_id": "valid",
+        "agency_id": "agency",
+        "source_id": "linkedin-current",
+        "source_platform": "linkedin",
+        "visibility": "public",
+        "source_url": "https://www.linkedin.com/posts/current/?tracking=1",
+    }
+    assert evaluate_source_eligibility(account, valid).eligible is True
+    assert canonicalize_source_url("http://WWW.TWITTER.COM/a/?x=1") == "https://x.com/a"
+
+    fixtures = [
+        ({**valid, "source_id": ""}, "missing_source_id"),
+        ({**valid, "source_platform": "x"}, "source_platform_not_allowed"),
+        ({**valid, "agency_id": "sibling"}, "agency_mismatch"),
+        (
+            {
+                **valid,
+                "source_url": "http://www.linkedin.com/posts/retired#fragment",
+            },
+            "source_url_excluded",
+        ),
+        ({key: value for key, value in valid.items() if key != "visibility"}, "missing_visibility"),
+    ]
+    for raw, reason in fixtures:
+        decision = evaluate_source_eligibility(account, raw)
+        assert decision.eligible is False
+        assert decision.reason == reason
+
+
+def test_eligibility_report_records_bounded_rejection_reasons(tmp_path: Path) -> None:
+    shard = tmp_path / "linkedin" / "2026-07.jsonl"
+    shard.parent.mkdir(parents=True)
+    rows = [
+        {
+            "record_id": "valid",
+            "agency_id": "agency",
+            "source_id": "linkedin-current",
+            "source_platform": "linkedin",
+            "visibility": "public",
+            "content": "Public update",
+            "source_url": "https://linkedin.com/posts/current",
+        },
+        {
+            "record_id": "legacy",
+            "agency_id": "agency",
+            "source_platform": "linkedin",
+            "visibility": "public",
+            "content": "Legacy update",
+            "source_url": "https://linkedin.com/posts/legacy",
+        },
+    ]
+    shard.write_text(
+        "\n".join(json.dumps(row) for row in rows) + "\n", encoding="utf-8"
+    )
+    report_path = tmp_path / "eligibility.json"
+    records = load_archive_records(
+        {
+            "mirror_id": "agency",
+            "agency_id": "agency",
+            "source_ids": ["linkedin-current"],
+            "source_platforms": ["linkedin"],
+            "source_urls": ["https://linkedin.com/company/agency"],
+        },
+        tmp_path,
+        eligibility_report_path=report_path,
+    )
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    assert [record.record_id for record in records] == ["valid"]
+    assert report["accepted"] == 1
+    assert report["rejected"] == 1
+    assert report["rejection_reason_counts"] == {"missing_source_id": 1}
