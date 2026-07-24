@@ -58,3 +58,13 @@ def test_credential_workflows_declare_app_password_mode_and_nonsecret_report() -
     assert "BLUESKY_CREDENTIAL_MODE: app_password" in health
     assert "credential-health --mirror-id" in health
     assert "bluesky_mirror_credential_health/${{ matrix.mirror_id }}.json" in health
+
+
+def test_cleanup_verification_workflow_has_no_delete_or_write_credentials() -> None:
+    text = Path(
+        ".github/workflows/bluesky_mirror_cleanup_verification.yml"
+    ).read_text(encoding="utf-8")
+    assert "--reconcile-programme" in text
+    assert "BLUESKY_APP_PASSWORD" not in text
+    assert "delete" not in text.casefold()
+    assert "conductor/bluesky_mirror_cleanup/${{ matrix.mirror_id }}.json" in text
