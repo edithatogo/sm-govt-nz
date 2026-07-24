@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-21T18:46:13+00:00",
+  "generated_at": "2026-07-24T18:52:54+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "054e421afe90e4d2",
-      "c0935e556b4fd982",
-      "c5389a239ca4fea3"
+      "4d1f56f9c5deaef7",
+      "97c47f7e3f99bdc5"
     ],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
@@ -38,15 +37,15 @@
     {
       "agency_id": "education-review-office",
       "archive_status": "ready",
-      "candidate_id": "c5389a239ca4fea3",
+      "candidate_id": "4d1f56f9c5deaef7",
       "feasibility": "high",
       "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-07/fbf482f9b8fcc0b1aa04aed8.json",
-      "reason": "public browser fallback stopped at access marker: cloudflare",
-      "source_id": "c5389a239ca4fea3",
+      "raw_path": "historical_archive_raw/website_browser/2026-07/b94e33b3a3a1c8707753fa61.json",
+      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "source_id": "4d1f56f9c5deaef7",
       "source_type": "website_page",
       "status": "browser_captcha_or_challenge",
-      "url": "https://www.ero.govt.nz/media"
+      "url": "https://www.ero.govt.nz/news"
     },
     {
       "agency_id": "selwyn-district-council",
@@ -54,38 +53,27 @@
       "feasibility": "high",
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "054e421afe90e4d2",
+      "source_id": "97c47f7e3f99bdc5",
       "source_type": "website_page",
       "status": "capture_blocked",
-      "url": "https://www.selwyn.govt.nz/news-and-events"
-    },
-    {
-      "agency_id": "tourism-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "c0935e556b4fd982",
-      "source_type": "website_page",
-      "status": "capture_blocked",
-      "url": "https://www.tourismnewzealand.com"
+      "url": "https://www.selwyn.govt.nz/newsletter"
     }
   ],
   "summary": {
     "platform_counts": {
-      "website_page": 3
+      "website_page": 2
     },
-    "selected_sources": 3,
+    "selected_sources": 2,
     "status_by_platform": {
       "website_page": {
         "browser_captcha_or_challenge": 1,
-        "capture_blocked": 2
+        "capture_blocked": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "browser_captcha_or_challenge": 1,
-      "capture_blocked": 2
+      "capture_blocked": 1
     }
   }
 }

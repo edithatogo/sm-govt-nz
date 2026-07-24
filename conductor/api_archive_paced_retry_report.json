@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-23T18:41:41+00:00",
+  "generated_at": "2026-07-24T18:50:57+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,10 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "081df578aa197749",
-      "1c65955147cebfe4",
-      "55eb86618ab08838",
-      "9dd73ddbd97dece1",
-      "b5dc696c8aaabbb3"
+      "2bf8ae08db376193",
+      "413d054a39b70324",
+      "5881803134ae031c",
+      "61ff31ee6d113093"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -38,76 +37,63 @@
   },
   "results": [
     {
-      "agency_id": "invercargill-city-council",
+      "agency_id": "mackenzie-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "081df578aa197749",
+      "source_id": "2bf8ae08db376193",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.icc.govt.nz/.well-known/webfinger"
+      "url": "https://www.mackenzie.govt.nz/openapi.json"
     },
     {
-      "agency_id": "marlborough-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 405: Not Allowed",
-      "source_id": "9dd73ddbd97dece1",
-      "source_type": "api_endpoint",
-      "status": "method_not_allowed",
-      "url": "https://www.marlborough.govt.nz/openapi.json"
-    },
-    {
-      "agency_id": "nelson-city-council",
+      "agency_id": "selwyn-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "55eb86618ab08838",
+      "source_id": "5881803134ae031c",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.nelson.govt.nz/.well-known/webfinger"
+      "url": "https://www.selwyn.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "tourism-nz",
+      "agency_id": "south-waikato-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "b5dc696c8aaabbb3",
+      "source_id": "61ff31ee6d113093",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.tourismnewzealand.com/.well-known/webfinger"
+      "url": "https://www.southwaikato.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "transpower",
+      "agency_id": "timaru-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "1c65955147cebfe4",
+      "source_id": "413d054a39b70324",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.transpower.co.nz/.well-known/webfinger"
+      "url": "https://www.timaru.govt.nz/.well-known/webfinger"
     }
   ],
   "summary": {
     "platform_counts": {
-      "api": 5
+      "api": 4
     },
-    "selected_sources": 5,
+    "selected_sources": 4,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 4,
-        "method_not_allowed": 1
+        "capture_blocked": 4
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 4,
-      "method_not_allowed": 1
+      "capture_blocked": 4
     }
   }
 }

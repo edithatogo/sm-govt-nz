@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-23T18:42:10+00:00",
+  "generated_at": "2026-07-24T18:53:07+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,10 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "2bf194805365b358",
-      "5c870226ca582324",
-      "89283019bf39aab1",
-      "d99b572191966e5b"
+      "486abec993d8285f",
+      "7d53ef0e51f046a1",
+      "ee88e93d8e0fd60c",
+      "f030c2942dbe0eaf"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -37,65 +37,54 @@
   },
   "results": [
     {
-      "agency_id": "massey-university",
+      "agency_id": "nmit",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "5c870226ca582324",
+      "source_id": "7d53ef0e51f046a1",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/massey-university"
+      "url": "https://www.linkedin.com/school/nelson-marlborough-institute-of-technology"
     },
     {
-      "agency_id": "sport-nz",
+      "agency_id": "qv",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:65a130047b6a4eca268e5d9d",
-      "source_id": "89283019bf39aab1",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:9107cf09a3554d05b465f5f0",
+      "source_id": "486abec993d8285f",
       "source_type": "social_profile",
       "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/sport-new-zealand"
+      "url": "https://www.linkedin.com/company/qv"
     },
     {
-      "agency_id": "university-of-canterbury",
+      "agency_id": "tai-poutini-polytechnic",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "2bf194805365b358",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:bfc37feb465a096e83dfcb89",
+      "source_id": "f030c2942dbe0eaf",
       "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/university-of-canterbury"
-    },
-    {
-      "agency_id": "wintec",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "d99b572191966e5b",
-      "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/wintec"
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/tai-poutini-polytechnic"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 4
+      "linkedin": 3
     },
-    "selected_sources": 4,
+    "selected_sources": 3,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 3,
-        "public_snapshot_captured": 1
+        "http_error": 1,
+        "public_snapshot_captured": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 3,
-      "public_snapshot_captured": 1
+      "http_error": 1,
+      "public_snapshot_captured": 2
     }
   }
 }
