@@ -1,0 +1,190 @@
+Return-Path: <CourtsofNewZealand-wqlyjy1hjhddyjkid1d@cmail19.com>
+Received: from mx150.a.outbound.createsend.com (mx150.a.outbound.createsend.com [203.55.21.150])
+ by inbound-smtp.us-east-1.amazonaws.com with SMTP id b6aeds70ecs0shv2reroavner4s9n1moth3tbqo1
+ for em4mkapmjakoh5o@upload.pipedream.net;
+ Fri, 24 Jul 2026 05:24:35 +0000 (UTC)
+X-SES-Spam-Verdict: PASS
+X-SES-Virus-Verdict: PASS
+Received-SPF: pass (spfCheck: domain of cmail19.com designates 203.55.21.150 as permitted sender) client-ip=203.55.21.150; envelope-from=CourtsofNewZealand-wqlyjy1hjhddyjkid1d@cmail19.com; helo=mx150.a.outbound.createsend.com;
+Authentication-Results: amazonses.com;
+ spf=pass (spfCheck: domain of cmail19.com designates 203.55.21.150 as permitted sender) client-ip=203.55.21.150; envelope-from=CourtsofNewZealand-wqlyjy1hjhddyjkid1d@cmail19.com; helo=mx150.a.outbound.createsend.com;
+ dkim=pass header.i=@dothky.createsend7.com;
+ dkim=pass header.i=@cmail2.com;
+ dmarc=pass header.from=dothky.createsend7.com;
+X-SES-RECEIPT: AEFBQUFBQUFBQUFHV21FTTc3d1VhTmlmc2RHZUtCMkNsU2dzR01WeFVKb0pxMnNYSlFJdlpMdDB5dnpZWEE3NFBtOFVBbE5DRTN0S25rOEFNRjdJakY5QlRIRDU1b2k4NnliclNKc2FMaWJMOGpCWTNJZUNVcEdXRGFoOVpRZmE3d1luQVhHSHVKbnptZ2NhUFVFMTVGSWdzVlZzZTI4K3Jwb2FYWlhESWN3NEc3TWp4Rm5EeEpjUHQ5TXlza0FOSnRCeFJ0YkRJM1ZkVzBHZ0F3UWVaTTZoaGZoRE9naTQ1ZGVwcENwTEgyQXJNcks2N01oN0dERnMzc2czVm92bUtjWCtZZ244VE5STEUxK0IweEtqY2lrTFQ5S2tWUmRqaXlHRUFiUXVLd1Vnc25NYXBwOVhvajRLanY5MkFsZ3pwQjdyUDZyeHhQR0oxZlpMU0VPWmRBRE5pM3MzS2s3Skw=
+X-SES-DKIM-SIGNATURE: a=rsa-sha256; q=dns/txt; b=A7XX/Nmr7qx5Xwni2ywhnPkX/pGSsB0HkXoiBKPP0pW8i59AyxtXtDRmnhdBLKvV5M5bVF4fUx7pVCZjoHIIhjwgpZcKcpZMxVeHv4aP3XU0t4zcNq4I652I/2dUBaiEvqmmN4pePXdA3AiPJl+WXx9mzk1ZkR1x2iyBW5rBh80=; c=relaxed/simple; s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1784870676; v=1; bh=Ins4Mg8Zuw77po1oJw/onuz06wPyiu/yqkZMfx4E32Q=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=k1; d=createsend7.com;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:List-Unsubscribe:
+ List-Unsubscribe-Post:Message-ID; i=admin@dothky.createsend7.com;
+ bh=fdxRUY58P38kcdt3RVvEDXmmjowKkgqMIZrOGomtILI=;
+ b=MOtiwILglajKq8sTxK6l3r+UR4objooXm9eYz8omX6ZfYTOhd7vydQqMrqx/s9ihezEzNIuzC12C
+   Si8bfS0SCZb1fImK/WlKT3Mh5rXjIW+StfjPnoz14MVyAFPPaxEsnyPyQ8RxG7cvd7LvAjVUEqox
+   ShFAfRzmiAtgidfFziE=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cs2013; d=cmail2.com;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:List-Unsubscribe:
+ List-Unsubscribe-Post:Message-ID;
+ bh=fdxRUY58P38kcdt3RVvEDXmmjowKkgqMIZrOGomtILI=;
+ b=EvvzfqFSgXc7t73axPFD3bdTsL8emUSrM5YSBM9iEx47HqUapVse6f2MZsMaTG88ep7FVnVP7MFI
+   x3bFbRKYAiR8E+Hhq/jqOEod92HWYrbzezOwLrsr4svUKFFTlf6zXYcqbeQ8FzWvamqyQ6Y/CdQj
+   mGecOkMG0bCvWFbUKD8=
+Subject: New High Court Judgment of Public Interest available online
+From: "Courts of New Zealand" <admin@dothky.createsend7.com> 
+To: "em4mkapmjakoh5o@upload.pipedream.net" <em4mkapmjakoh5o@upload.pipedream.net>
+Reply-To: admin@courtsofnz.govt.nz
+Date: Fri, 24 Jul 2026 15:24:32 +1000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_eea1e26c-a488-4ba8-b4fc-2156ebd1fcea_"; charset=utf-8
+X-Mailer: Create Send
+X-Complaints-To: abuse@cmail19.com
+X-Feedback-ID: CA1-d-wqlyjy:LI1-d-giuw:CL1-d-othky:createSEND
+List-Unsubscribe: <https://unsub.cmail19.com/t/completeheader/d/wqlyjy/hjhddyjkid/c/>,
+ <mailto:unsubscribe-wqlyjy2hjhddyjkid2d-13A8912B@cmail19.com?subject=Unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-ID: <cm.1524326490360.wqlyjy.hjhddyjkid.d@cmail19.com>
+
+--_eea1e26c-a488-4ba8-b4fc-2156ebd1fcea_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Courts of New Zealand High Court Judgment of Public Interest
+
+A new High Court Judgment of Public Interest has been added.
+
+R v Tasker [2026] NZHC 2140 24 July 2026
+
+Visit:  [http://www.courtsofnz.govt.nz/judgments/high-court] to view the d=
+ecision.
+
+To cancel your subscription, click  here https://courtsofnewzealand.=
+cmail19.com=
+/t/d-u-wqlyjy-hjhddyjkid-j/.
+
+--_eea1e26c-a488-4ba8-b4fc-2156ebd1fcea_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8" />
+<style type=3D"text/css">
+body{
+  background: #F2F2F2;
+  font-family: Arial,Helvetica,sans-serif;
+  padding-top: 65px;
+  text-align: center;
+}
+a,
+a:hover {
+  color: #185787
+}
+p {
+  margin: 0;
+  padding: 0 0 13px
+}
+=2Econtainer {
+  background: #FFF;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 34px 0 24px;
+  width: 100%
+}
+=2Einstructions,
+=2Etitle {
+  padding 0 39px;
+  text-align: left
+}
+=2Einstructions h2,
+=2Einstructions h3,
+=2Etitle h2,
+=2Etitle h3 {
+  color: #262626;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0 0 13px;
+  padding: 0
+}
+=2Einstructions h3,
+=2Etitle h3 {
+  font-size: 22px
+}
+=2Einstructions p,
+=2Etitle p {
+  color: #3e434a;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 0;
+  padding: 0 0 21px
+}
+@media (max-width:580px) {
+  body{
+    padding: 1px
+  }
+  .container {
+    padding: 12px 0
+  }
+  .instructions,
+  .title {
+    padding: 0 10px
+  }
+  .instructions h2,
+  .title h2 {
+    font-size: 22px
+  }
+  .instructions h3,
+  .title h3 {
+    font-size: 18px
+  }
+}
+</style>
+</head>
+<body style=3D"background-attachment:scroll;background-color:#F2F2F2;backgr=
+ound-image:none;background-repeat:repeat;background-position:top left;font-=
+family:Arial,Helvetica,sans-serif;padding-top:65px;text-align:center;" >
+  <div class=3D"container" style=3D"background-attachment:scroll;background=
+-color:#FFF;background-image:none;background-repeat:repeat;background-posit=
+ion:top left;border-width:1px;border-style:solid;border-color:#ddd;border-r=
+adius:6px;max-width:580px;margin-top:0;margin-bottom:0;margin-right:auto;ma=
+rgin-left:auto;padding-top:34px;padding-bottom:24px;padding-right:0;padding=
+-left:0;width:100%;" >
+    <div class=3D"col-xs-12">
+      <div>
+        <h1 class=3D"centered">Courts of New Zealand</h1>
+        <h2 class=3D"centered">High Court Judgment of Public Interest</h2>
+      </div>
+      <p style=3D"margin-top:0;margin-bottom:0;margin-right:0;margin-left:0=
+;padding-top:0;padding-bottom:13px;padding-right:0;padding-left:0;" >A new =
+High Court Judgment of Public Interest has been added.</p><br />
+      R v Tasker [2026] NZHC 2140 24 July 2026
+      <br />
+      <p style=3D"margin-top:0;margin-bottom:0;margin-right:0;margin-left:0=
+;padding-top:0;padding-bottom:13px;padding-right:0;padding-left:0;" >Visit:=
+ <a href=3D"https://courtsofnewzealand.cmail19.com=
+/t/d-l-wqlyjy=
+-hjhddyjkid-y/" style=3D"color:#185787;" >http://www.courtsofnz.gov=
+t.nz/judgments/high-court</a> to view the decision.</p>
+      <p style=3D"margin-top:0;margin-bottom:0;margin-right:0;margin-left:0=
+;padding-top:0;padding-bottom:13px;padding-right:0;padding-left:0;" >To can=
+cel your subscription, click <a href=3D"https://courtsofnewzealand.=
+cmail19.com=
+/t/d-u-wqlyjy-hjhddyjkid-r/" style=3D"color:#185787;=
+" >here</a>.</p>
+    </div>
+  </div>
+<autoscroll></autoscroll><img src=3D"https://courtsofnewzealand.=
+cmail19.com=
+/t/d-o-wqlyjy-hjhddyjkid/o.gif"  width=3D"1" height=3D"=
+1" border=3D"0" alt=3D"" style=3D"visibility:hidden !important;display:bloc=
+k !important;height:1px !important;width:1px !important;border-width:0 !imp=
+ortant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !i=
+mportant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0=
+ !important;padding-right:0 !important;padding-left:0 !important;" /></body=
+></html>
+
+
+
+--_eea1e26c-a488-4ba8-b4fc-2156ebd1fcea_--
