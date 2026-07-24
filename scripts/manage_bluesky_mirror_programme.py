@@ -16,6 +16,7 @@ from src.bluesky_mirror_programme import (
     pause,
     preflight_account,
     publish_next,
+    recover_account,
     validate_registry,
     workflow_matrix,
     write_programme_report,
@@ -44,6 +45,9 @@ def main() -> None:
     stop = sub.add_parser("pause")
     stop.add_argument("--mirror-id", required=True)
     stop.add_argument("--reason", required=True)
+    recover = sub.add_parser("recover")
+    recover.add_argument("--mirror-id", required=True)
+    recover.add_argument("--apply", action="store_true")
     args = parser.parse_args()
 
     if args.command == "build-registry":
@@ -90,8 +94,14 @@ def main() -> None:
     elif args.command == "health":
         result = health_report(load_registry(), runtime_state=load_runtime_state())
         Path(args.output).write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    else:
+    elif args.command == "pause":
         result = pause(STATE_PATH, args.mirror_id, args.reason)
+    else:
+        result = recover_account(
+            load_registry(),
+            args.mirror_id,
+            apply=args.apply,
+        )
     print(json.dumps(result, indent=2, sort_keys=True))
 
 

@@ -34,3 +34,14 @@ def test_posting_workflows_commit_only_account_partitioned_state() -> None:
         assert "conductor/bluesky_mirror_state/${{ matrix.mirror_id }}.json" in text
         assert "conductor/bluesky_mirror_audit/${{ matrix.mirror_id }}.jsonl" in text
         assert "conductor/bluesky_mirror_runtime_state.json" not in text
+
+
+def test_recovery_workflow_is_read_only_by_default_and_mirror_scoped() -> None:
+    text = Path(".github/workflows/bluesky_mirror_recovery.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "default: false" in text
+    assert "bluesky-mirror-recovery-${{ inputs.mirror_id }}" in text
+    assert "conductor/bluesky_mirror_state/${{ inputs.mirror_id }}.json" in text
+    assert "BLUESKY_APP_PASSWORD" not in text
+    assert " publish " not in text

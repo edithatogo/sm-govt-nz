@@ -27,4 +27,4 @@ jobs:
         with:
           requirements: requirements.txt
       - run: python scripts/manage_bluesky_mirror_programme.py pause --mirror-id '${{ inputs.mirror_id }}' --reason '${{ inputs.reason }}'
-      - run: python scripts/commit_state_updates.py --message "Pause Bluesky mirror posting" --path conductor/bluesky_mirror_runtime_state.json
+      - run: python scripts/commit_state_updates.py --message "Pause Bluesky mirror posting" --path "conductor/bluesky_mirror_state/*.json"

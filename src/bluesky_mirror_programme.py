@@ -22,6 +22,7 @@ DEAD_LETTER_PATH = Path("conductor/bluesky_mirror_dead_letter.jsonl")
 STATE_DIR = Path("conductor/bluesky_mirror_state")
 AUDIT_DIR = Path("conductor/bluesky_mirror_audit")
 DEAD_LETTER_DIR = Path("conductor/bluesky_mirror_dead_letter")
+RECOVERY_REPORT_DIR = Path("conductor/bluesky_mirror_recovery")
 REPORT_PATH = Path("conductor/bluesky_mirror_programme_report.json")
 ELIGIBILITY_REPORT_DIR = Path("conductor/bluesky_mirror_eligibility")
 SOCIAL_PLATFORMS = {
@@ -935,6 +936,111 @@ def pause(state_path: str | Path, mirror_id: str, reason: str) -> dict[str, Any]
     return aggregate
 
 
+def recover_account(
+    registry: Mapping[str, Any],
+    mirror_id: str,
+    *,
+    apply: bool = False,
+    state_path: str | Path = STATE_PATH,
+    report_path: str | Path | None = None,
+    probe: Callable[[str], str] | None = None,
+) -> dict[str, Any]:
+    """Diagnose a paused mirror and resume only with deterministic evidence."""
+    _account(registry, mirror_id)
+    state_file = _runtime_state_file(Path(state_path), mirror_id)
+    state = _load_json(state_file, {"accounts": {}})
+    account_state = state.setdefault("accounts", {}).setdefault(mirror_id, {})
+    publications = account_state.get("publications") or {}
+    check = probe or _public_recovery_probe
+    evidence = []
+    unresolved = False
+    changed = False
+    for key, raw_publication in sorted(publications.items()):
+        publication = dict(raw_publication)
+        uri = str(publication.get("uri") or "")
+        publication_state = str(publication.get("state") or "")
+        if publication_state == "reconciled":
+            classification = "reconciled"
+        elif not uri:
+            classification = "ambiguous_missing_uri"
+            unresolved = True
+        else:
+            classification = check(uri)
+            if classification == "reconciled":
+                if apply:
+                    publication.update(
+                        {
+                            "state": "reconciled",
+                            "reconciled_at": _now(),
+                            "last_reconciliation_at": _now(),
+                        }
+                    )
+                    publications[key] = publication
+                    record_id = str(publication.get("record_id") or "")
+                    posted_ids = account_state.setdefault("posted_record_ids", [])
+                    if record_id and record_id not in posted_ids:
+                        posted_ids.append(record_id)
+                    changed = True
+            else:
+                unresolved = True
+        evidence.append(
+            {
+                "idempotency_key": key,
+                "record_id": str(publication.get("record_id") or ""),
+                "uri": uri,
+                "publication_state": publication_state,
+                "classification": classification,
+            }
+        )
+
+    pause_reason = str(account_state.get("pause_reason") or "")
+    recoverable_reason = pause_reason in {
+        "public readback failed",
+        "publication reconciliation exhausted",
+    }
+    can_resume = bool(account_state.get("paused")) and recoverable_reason and not unresolved
+    resumed = False
+    if apply and can_resume:
+        account_state.update(
+            {
+                "paused": False,
+                "pause_reason": "",
+                "resumed_at": _now(),
+                "recovery_evidence_count": len(evidence),
+            }
+        )
+        resumed = True
+        changed = True
+    if changed:
+        _write_json(state_file, state)
+    result = {
+        "schema_version": 1,
+        "mirror_id": mirror_id,
+        "diagnosed_at": _now(),
+        "apply_requested": apply,
+        "paused": bool(account_state.get("paused")),
+        "pause_reason": pause_reason,
+        "recoverable_reason": recoverable_reason,
+        "can_resume": can_resume,
+        "resumed": resumed,
+        "evidence": evidence,
+        "status": (
+            "resumed"
+            if resumed
+            else "ready_to_resume"
+            if can_resume
+            else "recovery_blocked"
+            if account_state.get("paused")
+            else "not_paused"
+        ),
+    }
+    output = Path(
+        report_path or (RECOVERY_REPORT_DIR / f"{slugify(mirror_id, maximum=80)}.json")
+    )
+    _write_json(output, result)
+    return result
+
+
 def health_report(
     registry: Mapping[str, Any],
     *,
@@ -1083,6 +1189,17 @@ def _public_readback(uri: str) -> bool:
         if attempt < 5:
             time.sleep(2**attempt)
     return False
+
+
+def _public_recovery_probe(uri: str) -> str:
+    client = BlueskyApiClient(base_url="https://public.api.bsky.app", timeout_seconds=15)
+    try:
+        posts = client.fetch_posts([uri])
+    except Exception:
+        return "ambiguous"
+    if any(str(post.get("uri") or "") == uri for post in posts):
+        return "reconciled"
+    return "deleted_or_missing"
 
 
 def _exact_bluesky_sender(

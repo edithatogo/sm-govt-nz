@@ -15,6 +15,7 @@ from src.bluesky_mirror_programme import (
     render_thread,
     publish_next,
     preflight_account,
+    recover_account,
     render_record,
     validate_registry,
     workflow_matrix,
@@ -528,6 +529,122 @@ def test_partitioned_runtime_updates_preserve_unrelated_accounts(tmp_path: Path)
 
     assert aggregate["accounts"]["agency-a"]["paused"] is False
     assert aggregate["accounts"]["agency-b"]["paused"] is False
+
+
+def test_recovery_resumes_only_after_all_publications_reconcile(tmp_path: Path) -> None:
+    state_path = tmp_path / "agency.json"
+    state_path.write_text(
+        json.dumps(
+            {
+                "accounts": {
+                    "agency": {
+                        "paused": True,
+                        "pause_reason": "publication reconciliation exhausted",
+                        "publications": {
+                            "key": {
+                                "state": "pending_reconciliation",
+                                "record_id": "r1",
+                                "uri": "at://did:plc:a/app.bsky.feed.post/1",
+                            }
+                        },
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    report_path = tmp_path / "recovery.json"
+
+    diagnosis = recover_account(
+        registry(registry_row()),
+        "agency",
+        state_path=state_path,
+        report_path=report_path,
+        probe=lambda _uri: "reconciled",
+    )
+    applied = recover_account(
+        registry(registry_row()),
+        "agency",
+        apply=True,
+        state_path=state_path,
+        report_path=report_path,
+        probe=lambda _uri: "reconciled",
+    )
+
+    assert diagnosis["status"] == "ready_to_resume"
+    assert diagnosis["resumed"] is False
+    assert applied["status"] == "resumed"
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    assert state["accounts"]["agency"]["paused"] is False
+    assert (
+        state["accounts"]["agency"]["publications"]["key"]["state"] == "reconciled"
+    )
+
+
+@pytest.mark.parametrize(
+    ("pause_reason", "publication", "classification"),
+    [
+        (
+            "publication reconciliation exhausted",
+            {"state": "pending_reconciliation", "record_id": "r1", "uri": ""},
+            "ambiguous_missing_uri",
+        ),
+        (
+            "publication reconciliation exhausted",
+            {
+                "state": "pending_reconciliation",
+                "record_id": "r1",
+                "uri": "at://did:plc:a/app.bsky.feed.post/1",
+            },
+            "deleted",
+        ),
+        (
+            "authentication failed",
+            {
+                "state": "pending_reconciliation",
+                "record_id": "r1",
+                "uri": "at://did:plc:a/app.bsky.feed.post/1",
+            },
+            "reconciled",
+        ),
+    ],
+)
+def test_recovery_keeps_ambiguous_deleted_and_nonrecoverable_pauses(
+    tmp_path: Path,
+    pause_reason: str,
+    publication: dict,
+    classification: str,
+) -> None:
+    state_path = tmp_path / "agency.json"
+    state_path.write_text(
+        json.dumps(
+            {
+                "accounts": {
+                    "agency": {
+                        "paused": True,
+                        "pause_reason": pause_reason,
+                        "publications": {"key": publication},
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = recover_account(
+        registry(registry_row()),
+        "agency",
+        apply=True,
+        state_path=state_path,
+        report_path=tmp_path / "recovery.json",
+        probe=lambda _uri: classification,
+    )
+
+    assert result["status"] == "recovery_blocked"
+    assert result["resumed"] is False
+    assert json.loads(state_path.read_text(encoding="utf-8"))["accounts"]["agency"][
+        "paused"
+    ] is True
 
 
 def test_archive_workflows_do_not_receive_posting_credentials() -> None:
