@@ -7,6 +7,12 @@ def test_plan_is_deterministic_without_history() -> None:
     assert choose_plan(default_state()).name == "headed_uc_cdp"
 
 
+def test_plan_scoring_ignores_non_plan_metadata() -> None:
+    state = default_state()
+    state["plans"]["schema_version"] = 1
+    assert choose_plan(state).name == "headed_uc_cdp"
+
+
 def test_learning_is_sanitized_and_persistent(tmp_path) -> None:
     state = default_state()
     event = record_event(state, "agency", "preflight_passed", "headed_uc_cdp")

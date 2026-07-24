@@ -67,18 +67,31 @@ def save_state(state: Mapping[str, Any], path: str | Path = DEFAULT_STATE) -> No
     target.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def _score(stats: Mapping[str, Any]) -> float:
+def _score(stats: Mapping[str, Any], total_attempts: int) -> float:
     attempts = int(stats.get("attempts", 0))
     successes = int(stats.get("successes", 0))
     # Upper-confidence bound: explore plans with little evidence while
     # preferring plans with a strong observed completion rate.
-    total = max(1, sum(int(v.get("attempts", 0)) for v in stats.values())) if isinstance(stats, dict) else 1
-    return (successes + 1) / (attempts + 2) + math.sqrt(2 * math.log(total + 1) / (attempts + 1))
+    total = max(1, total_attempts)
+    return (successes + 1) / (attempts + 2) + math.sqrt(
+        2 * math.log(total + 1) / (attempts + 1)
+    )
 
 
 def choose_plan(state: Mapping[str, Any]) -> Plan:
     plans = state.get("plans", {})
-    name = max(PLANS, key=lambda item: _score(plans.get(item, {})))
+    total_attempts = sum(
+        int(value.get("attempts", 0))
+        for value in plans.values()
+        if isinstance(value, Mapping)
+    )
+    name = max(
+        PLANS,
+        key=lambda item: _score(
+            plans.get(item, {}) if isinstance(plans.get(item), Mapping) else {},
+            total_attempts,
+        ),
+    )
     steps = {
         "headed_uc_cdp": (
             "launch headed SeleniumBase UC browser",
