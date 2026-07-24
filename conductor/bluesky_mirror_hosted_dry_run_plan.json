@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-24",
+  "repository": "edithatogo/sm-govt-nz",
+  "source_branch": "codex/bluesky-reliability-hardening",
+  "global_invariants": {
+    "live_posting_allowed": false,
+    "bluesky_mirroring_enabled": false,
+    "secret_values_in_artifacts": false,
+    "destructive_cleanup_allowed": false,
+    "each_external_action_requires_separate_approval": true
+  },
+  "stages": [
+    {
+      "order": 1,
+      "action": "push_branch",
+      "target": "refs/heads/codex/bluesky-reliability-hardening",
+      "status": "awaiting_explicit_approval",
+      "acceptance": [
+        "remote branch SHA equals local HEAD",
+        "no update to refs/heads/master",
+        "push-triggered CI completes successfully"
+      ]
+    },
+    {
+      "order": 2,
+      "action": "workflow_dispatch",
+      "workflow": "bluesky_mirror_historical_backfill.yml",
+      "ref": "codex/bluesky-reliability-hardening",
+      "inputs": {
+        "dry_run": true
+      },
+      "status": "awaiting_separate_approval",
+      "acceptance": [
+        "BLUESKY_MIRRORING_ENABLED resolves to false",
+        "posted equals 0",
+        "eligibility report is generated",
+        "no Bluesky create-record request occurs"
+      ]
+    },
+    {
+      "order": 3,
+      "action": "workflow_dispatch",
+      "workflow": "bluesky_mirror_recovery.yml",
+      "inputs": {
+        "mirror_id": "courts-of-nz",
+        "apply": false
+      },
+      "prerequisite": "workflow definition is registered on the default branch",
+      "status": "awaiting_separate_approval",
+      "acceptance": [
+        "recovery report is generated",
+        "resumed equals false",
+        "no runtime pause is cleared",
+        "no posting credentials are read"
+      ]
+    },
+    {
+      "order": 4,
+      "action": "workflow_dispatch",
+      "workflow": "bluesky_mirror_cleanup_verification.yml",
+      "prerequisite": "workflow definition is registered on the default branch",
+      "status": "awaiting_separate_approval",
+      "acceptance": [
+        "cleanup report is generated",
+        "destructive_action_performed equals false",
+        "every cleanup candidate requires exact URI approval",
+        "no deletion request occurs"
+      ]
+    },
+    {
+      "order": 5,
+      "action": "workflow_dispatch",
+      "workflow": "bluesky_mirror_preflight.yml",
+      "inputs": {
+        "mirror_id": "courts-of-nz"
+      },
+      "prerequisite": "operator approves isolated credential use",
+      "status": "awaiting_separate_approval",
+      "acceptance": [
+        "app-password format validation passes",
+        "profile compliance validation passes",
+        "dry-run publication posts zero records",
+        "no secret value appears in logs or artifacts"
+      ]
+    }
+  ]
+}
