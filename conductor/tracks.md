@@ -23,3 +23,4 @@
 - [ ] `bluesky_mirror_recovery_automation_20260724` - evidence-backed pause recovery
 - [ ] `bluesky_mirror_credential_hygiene_20260724` - app-password-only automation and rotation
 - [ ] `bluesky_mirror_cleanup_verification_20260724` - duplicate cleanup and regression evidence
+- [ ] `bluesky_mirror_handle_lifecycle_20260724` - abbreviation registry, DID identity, and controlled handle migration

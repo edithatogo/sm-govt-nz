@@ -15,9 +15,31 @@ Archival is read-only. Only workflows named `Bluesky Mirror ...` may publish, an
    `gog --account edithatogo@gmail.com gmail search 'to:edithatogo+bluesky-<agency-id>@gmail.com'`.
    Complete verification only for the matching agency alias; never use another account implicitly.
 7. Apply archive branding, unofficial disclosure, official-source links, and the Bluesky bot label.
-8. Store the primary password in Windows Credential Manager.
-9. Create GitHub Environment `bluesky-mirror-<agency-id>` and set `BLUESKY_HANDLE` and `BLUESKY_APP_PASSWORD` without logging values.
-10. Run `Bluesky Mirror Preflight`. Keep `enabled=false` until it passes.
+8. Store the primary password only in Windows Credential Manager. Do not keep it in persistent environment variables.
+9. Create a dedicated Bluesky app password for automation.
+10. Create GitHub Environment `bluesky-mirror-<agency-id>` and set `BLUESKY_HANDLE` and `BLUESKY_APP_PASSWORD` without logging values.
+11. Run `Bluesky Mirror Preflight`. Keep `enabled=false` until it passes.
+
+## Handle policy and migration
+
+Primary handles use `<organisation-abbreviation>-<country-or-jurisdiction>-arc.bsky.social`. Numbered collisions use `<organisation-abbreviation>-<country-or-jurisdiction>-arc-<number>.bsky.social`.
+
+The canonical abbreviation and immutable account DID are recorded in `config/bluesky_mirror_abbreviations.json`. The DID, not the handle, is the permanent identity.
+
+Before a handle migration:
+
+```powershell
+uv run python scripts/manage_bluesky_mirror_handle.py plan --mirror-id accident-compensation-corporation --old-handle accident-comp-arc.bsky.social
+```
+
+After the account, registry, and GitHub Environment are updated:
+
+```powershell
+uv run python scripts/manage_bluesky_mirror_handle.py verify --mirror-id accident-compensation-corporation
+uv run python scripts/manage_bluesky_mirror_handle.py stale-links --old-handle accident-comp-arc.bsky.social
+```
+
+Append a nonsecret event to `conductor/bluesky_mirror_handle_history.jsonl`. Every event records the old handle, new handle, DID, reason, timestamp, and public verification evidence. A handle migration is incomplete until the non-posting preflight passes.
 
 ## Launch
 

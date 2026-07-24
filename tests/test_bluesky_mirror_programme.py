@@ -71,8 +71,12 @@ def test_registry_builder_groups_sources_by_agency() -> None:
 
 def test_handle_policy_and_matrix_are_deterministic() -> None:
     assert handle_candidates("Agency One") == [
-        "agency-one-archive.bsky.social",
-        "nzgov-agency-one-archive.bsky.social",
+        "agency-one-nz-arc.bsky.social",
+        "agency-one-nz-arc-2.bsky.social",
+    ]
+    assert handle_candidates("Accident Compensation Corporation", abbreviation="ACC") == [
+        "acc-nz-arc.bsky.social",
+        "acc-nz-arc-2.bsky.social",
     ]
     assert workflow_matrix(registry(registry_row()), mode="backfill")["include"][0]["mirror_id"] == "agency"
     assert workflow_matrix(
@@ -80,6 +84,21 @@ def test_handle_policy_and_matrix_are_deterministic() -> None:
         mode="backfill",
         runtime_state={"accounts": {"agency": {"backfill_complete": True}}},
     ) == {"include": []}
+
+
+def test_jurisdictional_handle_policy_requires_abbreviation_jurisdiction_and_did() -> None:
+    acc = registry_row(
+        handle="acc-nz-arc.bsky.social",
+        handle_policy_version=1,
+        organisation_abbreviation="acc",
+        jurisdiction="nz",
+        account_did="did:plc:vxltrdhni2dfsm4actryhj4n",
+    )
+    validate_registry(registry(acc))
+    with pytest.raises(ValueError, match="jurisdictional handle policy"):
+        validate_registry(registry({**acc, "handle": "accident-comp-archive.bsky.social"}))
+    with pytest.raises(ValueError, match="invalid AT Protocol DID"):
+        validate_registry(registry({**acc, "account_did": "not-a-did"}))
 
 
 def test_preflight_requires_archive_disclosure_and_bot_label() -> None:

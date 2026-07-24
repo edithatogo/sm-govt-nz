@@ -24,6 +24,7 @@ jobs:
       - id: matrix
         run: python scripts/manage_bluesky_mirror_programme.py matrix --mode preflight --mirror-id '${{ inputs.mirror_id }}' --github-output
       - run: python scripts/manage_bluesky_mirror_programme.py validate
+      - run: python scripts/manage_bluesky_mirror_handle.py validate
 
   preflight:
     needs: plan
@@ -44,5 +45,6 @@ jobs:
         run: |
           test "$BLUESKY_HANDLE" = '${{ matrix.handle }}'
           test -n "$BLUESKY_APP_PASSWORD"
+          python scripts/manage_bluesky_mirror_handle.py verify --mirror-id '${{ matrix.mirror_id }}'
           python scripts/manage_bluesky_mirror_programme.py preflight --mirror-id '${{ matrix.mirror_id }}'
           BLUESKY_MIRRORING_ENABLED=false python scripts/manage_bluesky_mirror_programme.py publish --mode backfill --mirror-id '${{ matrix.mirror_id }}' --dry-run

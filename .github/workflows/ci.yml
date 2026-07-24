@@ -18,6 +18,8 @@ jobs:
           requirements: requirements-dev.txt
       - name: Validate CI secret schema
         run: python scripts/validate_secrets.py --mode ci
+      - name: Validate Bluesky handle registry
+        run: python scripts/manage_bluesky_mirror_handle.py validate
       - name: Ruff check
         run: ruff check --no-cache src tests scripts
       - name: Vale prose lint

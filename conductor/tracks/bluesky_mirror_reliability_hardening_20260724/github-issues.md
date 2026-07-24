@@ -28,3 +28,5 @@ Body:
    Conductor: `bluesky_mirror_credential_hygiene_20260724`
 8. `Reconcile and clean duplicate or excluded mirror posts`
    Conductor: `bluesky_mirror_cleanup_verification_20260724`
+9. `Make Bluesky mirror handles DID-safe and migration-aware`
+   Conductor: `bluesky_mirror_handle_lifecycle_20260724`

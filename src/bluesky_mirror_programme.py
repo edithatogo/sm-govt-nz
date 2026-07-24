@@ -34,6 +34,11 @@ SOCIAL_PLATFORMS = {
 }
 TERMINAL_SOURCE_STATES = {"deleted", "private", "withdrawn", "unverifiable"}
 SECRET_FIELD_PATTERN = re.compile(r"password|secret|token|cookie|verification", re.I)
+JURISDICTIONAL_HANDLE_PATTERN = re.compile(
+    r"^[a-z0-9](?:[a-z0-9-]{0,58}[a-z0-9])?-"
+    r"[a-z0-9](?:[a-z0-9-]{0,12}[a-z0-9])?-arc(?:-[2-9][0-9]*)?\.bsky\.social$"
+)
+ATPROTO_DID_PATTERN = re.compile(r"^did:[a-z0-9]+:[A-Za-z0-9._:%-]+$")
 VALID_STATES = {
     "candidate",
     "operator_onboarding",
@@ -62,9 +67,16 @@ def slugify(value: str, *, maximum: int = 40) -> str:
     return slug[:maximum].rstrip("-") or "agency"
 
 
-def handle_candidates(agency_id: str) -> list[str]:
-    slug = slugify(agency_id, maximum=38)
-    return [f"{slug}-archive.bsky.social", f"nzgov-{slug}-archive.bsky.social"]
+def handle_candidates(
+    agency_id: str,
+    *,
+    abbreviation: str | None = None,
+    jurisdiction: str = "nz",
+) -> list[str]:
+    organisation = slugify(abbreviation or agency_id, maximum=42)
+    jurisdiction_slug = slugify(jurisdiction, maximum=14)
+    base = f"{organisation}-{jurisdiction_slug}-arc"
+    return [f"{base}.bsky.social", f"{base}-2.bsky.social"]
 
 
 def load_registry(path: str | Path = REGISTRY_PATH) -> dict[str, Any]:
@@ -93,10 +105,21 @@ def validate_registry(registry: Mapping[str, Any]) -> None:
         mirror_id = str(mirror.get("mirror_id") or "")
         handle = str(mirror.get("handle") or "")
         state = str(mirror.get("lifecycle_state") or "")
+        account_did = str(mirror.get("account_did") or "")
+        handle_policy_version = mirror.get("handle_policy_version")
         if not mirror_id or mirror_id in seen_ids:
             raise ValueError(f"Missing or duplicate mirror_id: {mirror_id}")
         if handle and handle in seen_handles:
             raise ValueError(f"Duplicate mirror handle: {handle}")
+        if handle_policy_version == 1:
+            if not JURISDICTIONAL_HANDLE_PATTERN.fullmatch(handle):
+                raise ValueError(f"Mirror {mirror_id} violates jurisdictional handle policy: {handle}")
+            if not str(mirror.get("organisation_abbreviation") or ""):
+                raise ValueError(f"Mirror {mirror_id} lacks an organisation abbreviation.")
+            if not str(mirror.get("jurisdiction") or ""):
+                raise ValueError(f"Mirror {mirror_id} lacks a jurisdiction.")
+        if account_did and not ATPROTO_DID_PATTERN.fullmatch(account_did):
+            raise ValueError(f"Mirror {mirror_id} has an invalid AT Protocol DID.")
         if state not in VALID_STATES:
             raise ValueError(f"Invalid lifecycle state for {mirror_id}: {state}")
         if mirror.get("enabled") and state not in {"backfilling", "live"}:
