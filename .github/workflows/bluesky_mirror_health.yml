@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "41 2 * * *"
   workflow_dispatch:
+    inputs:
+      mirror_id:
+        description: "Canonical mirror ID. Required for manual runs."
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -21,7 +26,16 @@ jobs:
         with:
           requirements: requirements.txt
       - id: matrix
-        run: python scripts/manage_bluesky_mirror_programme.py matrix --mode health --github-output
+        run: python scripts/manage_bluesky_mirror_programme.py matrix --mode health --mirror-id '${{ inputs.mirror_id }}' --github-output
+      - env:
+          SELECTED_MATRIX: ${{ steps.matrix.outputs.matrix }}
+        run: |
+          {
+            echo "## Selected mirror matrix"
+            echo '```json'
+            echo "$SELECTED_MATRIX"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
   credential-health:
     needs: plan
@@ -31,6 +45,9 @@ jobs:
       matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
     runs-on: ubuntu-latest
     environment: ${{ matrix.environment }}
+    concurrency:
+      group: bluesky-mirror-health-${{ matrix.mirror_id }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/setup-python-uv

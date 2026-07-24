@@ -5,6 +5,10 @@ on:
     - cron: "17 */6 * * *"
   workflow_dispatch:
     inputs:
+      mirror_id:
+        description: "Canonical mirror ID. Required for manual runs."
+        required: true
+        type: string
       dry_run:
         description: "Evaluate eligibility without posting."
         required: true
@@ -29,7 +33,16 @@ jobs:
         with:
           requirements: requirements.txt
       - id: matrix
-        run: python scripts/manage_bluesky_mirror_programme.py matrix --mode backfill --github-output
+        run: python scripts/manage_bluesky_mirror_programme.py matrix --mode backfill --mirror-id '${{ inputs.mirror_id }}' --github-output
+      - env:
+          SELECTED_MATRIX: ${{ steps.matrix.outputs.matrix }}
+        run: |
+          {
+            echo "## Selected mirror matrix"
+            echo '```json'
+            echo "$SELECTED_MATRIX"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
   publish:
     if: ${{ (github.event_name == 'workflow_dispatch' && inputs.dry_run == true) || vars.BLUESKY_MIRRORING_ENABLED == 'true' }}
@@ -40,6 +53,9 @@ jobs:
       matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
     runs-on: ubuntu-latest
     environment: ${{ matrix.environment }}
+    concurrency:
+      group: bluesky-mirror-${{ matrix.mirror_id }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v5
         with:

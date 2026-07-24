@@ -7,9 +7,9 @@
 
 ## Phase 2: Publication reliability
 - [x] Task: Implement `bluesky_mirror_reconciliation_idempotency_20260724`.
-- [ ] Task: Implement `bluesky_mirror_workflow_isolation_20260724`.
+- [x] Task: Implement `bluesky_mirror_workflow_isolation_20260724`.
 - [x] Task: Implement `bluesky_mirror_state_concurrency_20260724`.
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
 ## Phase 3: Operations and security
 - [x] Task: Implement `bluesky_mirror_recovery_automation_20260724`.
@@ -30,7 +30,7 @@
 - Completed and archived: source eligibility, content contracts,
   reconciliation/idempotency, state concurrency, recovery automation, cleanup
   verification, and handle lifecycle.
-- Active implementation gap: workflow isolation.
+- No local implementation gaps remain.
 - External action: rotate ACC primary credentials and replace the isolated
   GitHub Environment app password.
 - Hosted dry-runs, issue updates, and pushes remain separate approval gates.

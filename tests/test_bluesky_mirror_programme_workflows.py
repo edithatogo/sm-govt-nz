@@ -68,3 +68,38 @@ def test_cleanup_verification_workflow_has_no_delete_or_write_credentials() -> N
     assert "BLUESKY_APP_PASSWORD" not in text
     assert "delete" not in text.casefold()
     assert "conductor/bluesky_mirror_cleanup/${{ matrix.mirror_id }}.json" in text
+
+
+def test_manual_matrix_workflows_are_mirror_scoped_and_summarized() -> None:
+    modes = {
+        "bluesky_mirror_preflight.yml": "preflight",
+        "bluesky_mirror_ongoing.yml": "ongoing",
+        "bluesky_mirror_historical_backfill.yml": "backfill",
+        "bluesky_mirror_health.yml": "health",
+    }
+    for name, mode in modes.items():
+        text = (Path(".github/workflows") / name).read_text(encoding="utf-8")
+        assert "mirror_id:" in text
+        assert "required: true" in text
+        assert (
+            f"matrix --mode {mode} --mirror-id '${{{{ inputs.mirror_id }}}}'"
+            in text
+        )
+        assert "GITHUB_STEP_SUMMARY" in text
+
+
+def test_posting_workflow_jobs_use_account_specific_concurrency() -> None:
+    for name in (
+        "bluesky_mirror_ongoing.yml",
+        "bluesky_mirror_historical_backfill.yml",
+    ):
+        text = (Path(".github/workflows") / name).read_text(encoding="utf-8")
+        assert "group: bluesky-mirror-${{ matrix.mirror_id }}" in text
+
+
+def test_recovery_workflow_discloses_selected_mirror() -> None:
+    text = Path(".github/workflows/bluesky_mirror_recovery.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "GITHUB_STEP_SUMMARY" in text
+    assert "`${{ inputs.mirror_id }}`" in text

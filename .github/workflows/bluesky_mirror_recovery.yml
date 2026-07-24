@@ -31,6 +31,11 @@ jobs:
         with:
           requirements: requirements.txt
       - run: |
+          {
+            echo "## Selected mirror"
+            echo '`${{ inputs.mirror_id }}`'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - run: |
           args=(python scripts/manage_bluesky_mirror_programme.py recover --mirror-id '${{ inputs.mirror_id }}')
           if [ "${{ inputs.apply }}" = "true" ]; then
             args+=(--apply)

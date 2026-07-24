@@ -23,6 +23,15 @@ jobs:
           requirements: requirements.txt
       - id: matrix
         run: python scripts/manage_bluesky_mirror_programme.py matrix --mode preflight --mirror-id '${{ inputs.mirror_id }}' --github-output
+      - env:
+          SELECTED_MATRIX: ${{ steps.matrix.outputs.matrix }}
+        run: |
+          {
+            echo "## Selected mirror matrix"
+            echo '```json'
+            echo "$SELECTED_MATRIX"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
       - run: python scripts/manage_bluesky_mirror_programme.py validate
       - run: python scripts/manage_bluesky_mirror_handle.py validate
 

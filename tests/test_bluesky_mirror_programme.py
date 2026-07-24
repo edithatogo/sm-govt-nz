@@ -131,6 +131,19 @@ def test_handle_policy_and_matrix_are_deterministic() -> None:
     ) == {"include": []}
 
 
+def test_workflow_matrix_manual_selector_is_account_isolated() -> None:
+    selected = workflow_matrix(
+        registry(
+            registry_row(mirror_id="acc", agency_id="acc"),
+            registry_row(mirror_id="courts", agency_id="courts"),
+        ),
+        mode="backfill",
+        mirror_id="acc",
+    )
+
+    assert [row["mirror_id"] for row in selected["include"]] == ["acc"]
+
+
 def test_jurisdictional_handle_policy_requires_abbreviation_jurisdiction_and_did() -> None:
     acc = registry_row(
         handle="acc-nz-arc.bsky.social",
