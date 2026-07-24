@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-24",
+  "parent_track": "bluesky_mirror_reliability_hardening_20260724",
+  "github_issue": 36,
+  "completed_children": [
+    "bluesky_mirror_cleanup_verification_20260724",
+    "bluesky_mirror_content_contracts_20260724",
+    "bluesky_mirror_handle_lifecycle_20260724",
+    "bluesky_mirror_reconciliation_idempotency_20260724",
+    "bluesky_mirror_recovery_automation_20260724",
+    "bluesky_mirror_source_eligibility_20260724",
+    "bluesky_mirror_state_concurrency_20260724"
+  ],
+  "pending_children": [
+    {
+      "track_id": "bluesky_mirror_workflow_isolation_20260724",
+      "blocker": "implementation_pending"
+    }
+  ],
+  "external_action_children": [
+    {
+      "track_id": "bluesky_mirror_credential_hygiene_20260724",
+      "blocker": "operator_credential_rotation_and_environment_replacement"
+    }
+  ],
+  "hosted_actions_approved": false,
+  "live_posting_performed": false
+}
