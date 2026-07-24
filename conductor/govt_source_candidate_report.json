@@ -27018,7 +27018,7 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Environment Canterbury Livestream",
+      "account": "Council Meeting 22 July 2026",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
       "agency_type": "Regional Council",
@@ -27066,7 +27066,7 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Environment Canterbury Livestream",
+      "account": "23 July 2026 (Briefings/Workshops \u2013 Morning)",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
       "agency_type": "Regional Council",
@@ -48133,6 +48133,30 @@
       "url": "https://www.facebook.com/KawerauDistrictCouncil/"
     },
     {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "the recording is now available online.",
+      "agency_id": "kawerau-district-council",
+      "agency_name": "Kawerau District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "3cad99699dc90011",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.kaweraudc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://youtu.be/nUeCYuu6iWY?si=J9LUAmG0RNg6yTkj"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.kaweraudc.govt.nz",
       "agency_id": "kawerau-district-council",
@@ -62423,6 +62447,32 @@
       "url": "https://www.education.govt.nz/bulletins"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.education.govt.nz",
+      "agency_id": "ministry-of-education",
+      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
+      "agency_type": "Department",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "2db9433d3eae60af",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Kia Manawaroa issue 17 out now 24 July 2026 Welcome to Issue 17 of Kia Manawaroa, our monthly newsletter for wh\u0101nau M\u0101ori. Find out more",
+      "official_website": "https://www.education.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Education",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-17-out-now"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.education.govt.nz",
       "agency_id": "ministry-of-education",
@@ -63088,6 +63138,33 @@
         "official_term:nz"
       ],
       "url": "https://www.education.govt.nz/bulletins"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.education.govt.nz",
+      "agency_id": "ministry-of-education",
+      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
+      "agency_type": "Department",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "9aca81e5206c0003",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Kia Manawaroa issue 17 out now 24 July 2026 Welcome to Issue 17 of Kia Manawaroa, our monthly newsletter for wh\u0101nau M\u0101ori. Find out more",
+      "official_website": "https://www.education.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Education",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-17-out-now"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -72482,78 +72559,6 @@
         "unverified_search_seed"
       ],
       "url": "https://www.nzals.co.nz/subscribe"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Go to our Facebook page",
-      "agency_id": "nz-artificial-limb-service",
-      "agency_name": "New Zealand Artificial Limb Service (Peke Waihanga)",
-      "agency_type": "Autonomous Crown Entity",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "a47ec5fdd11ecf33",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.nzals.co.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Health",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.facebook.com/Peke-Waihanga-Artificial-Limb-Service-306700359982541"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "View our Instagram feed",
-      "agency_id": "nz-artificial-limb-service",
-      "agency_name": "New Zealand Artificial Limb Service (Peke Waihanga)",
-      "agency_type": "Autonomous Crown Entity",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "99efed868d03734c",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.nzals.co.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Health",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.instagram.com/pekewaihanga"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "Find us on LinkedIn",
-      "agency_id": "nz-artificial-limb-service",
-      "agency_name": "New Zealand Artificial Limb Service (Peke Waihanga)",
-      "agency_type": "Autonomous Crown Entity",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "0abd9c926b0229e0",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.nzals.co.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
-      "portfolio": "Health",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.linkedin.com/company/new-zealand-artificial-limb-service"
     },
     {
       "access_method": "bounded_public_html",
@@ -96143,6 +96148,32 @@
       "url": "https://www.rangitikei.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.rea.govt.nz",
+      "agency_id": "real-estate-authority",
+      "agency_name": "Real Estate Authority (Te Mana Papawhenua)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "0b671759d4e3f498",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Industry newsletters",
+      "official_website": "https://www.rea.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Housing and Urban Development",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.rea.govt.nz/about-rea/news/industry-newsletters/"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.rea.govt.nz",
       "agency_id": "real-estate-authority",
@@ -96576,6 +96607,30 @@
       "url": "https://www.linkedin.com/company/real-estate-authority"
     },
     {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "LinkedIn",
+      "agency_id": "real-estate-authority",
+      "agency_name": "Real Estate Authority (Te Mana Papawhenua)",
+      "agency_type": "Crown Agent",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "86cc1ff648f5890a",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.rea.govt.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Housing and Urban Development",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/realestateauthority"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.rea.govt.nz",
       "agency_id": "real-estate-authority",
@@ -96603,6 +96658,33 @@
       "url": "https://www.rea.govt.nz"
     },
     {
+      "access_method": "bounded_public_html",
+      "account": "https://www.rea.govt.nz",
+      "agency_id": "real-estate-authority",
+      "agency_name": "Real Estate Authority (Te Mana Papawhenua)",
+      "agency_type": "Crown Agent",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "97327b8d92d9098a",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Industry newsletters",
+      "official_website": "https://www.rea.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Housing and Urban Development",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.rea.govt.nz/about-rea/news/industry-newsletters/"
+    },
+    {
       "access_method": "public_api_or_openapi",
       "account": "https://www.reannz.co.nz",
       "agency_id": "reannz",
@@ -96627,32 +96709,6 @@
         "official_term:nz"
       ],
       "url": "https://www.reannz.co.nz/products-and-services/data-services"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.reannz.co.nz",
-      "agency_id": "reannz",
-      "agency_name": "Research and Education Advanced Network NZ Limited (REANNZ)",
-      "agency_type": "Schedule 4a Company",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "f58f1297fbcf0589",
-      "confidence_score": 0.5,
-      "domain_trust": "medium",
-      "feasibility": "medium",
-      "link_text": "",
-      "official_website": "https://www.reannz.co.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Science and Innovation",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.reannz.co.nz/news-and-events/training-newsletter-june"
     },
     {
       "access_method": "public_rss",
@@ -97113,33 +97169,6 @@
         "official_term:nz"
       ],
       "url": "https://www.reannz.co.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.reannz.co.nz",
-      "agency_id": "reannz",
-      "agency_name": "Research and Education Advanced Network NZ Limited (REANNZ)",
-      "agency_type": "Schedule 4a Company",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "172f34ee7549477e",
-      "confidence_score": 0.6,
-      "domain_trust": "medium",
-      "feasibility": "high",
-      "link_text": "",
-      "official_website": "https://www.reannz.co.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Science and Innovation",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.reannz.co.nz/news-and-events/training-newsletter-june"
     },
     {
       "access_method": "public_rss",
@@ -103319,7 +103348,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 7 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 week ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -120876,32 +120905,6 @@
       "url": "https://www.tourismnewzealand.com"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.taic.org.nz",
-      "agency_id": "transport-accident-investigation-commission",
-      "agency_name": "Transport Accident Investigation Commission (Te K\u014dmihana Tirotiro Aitu\u0101 Waka)",
-      "agency_type": "Independent Crown Entity",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "525db5c768c6ce8c",
-      "confidence_score": 0.5,
-      "domain_trust": "medium",
-      "feasibility": "medium",
-      "link_text": "Sign up for newsletter",
-      "official_website": "https://www.taic.org.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Transport",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "trusted_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.taic.org.nz/newsletter-sign-up"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.taic.org.nz",
       "agency_id": "transport-accident-investigation-commission",
@@ -121333,30 +121336,6 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/TAIC.nz"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Facebook",
-      "agency_id": "transport-accident-investigation-commission",
-      "agency_name": "Transport Accident Investigation Commission (Te K\u014dmihana Tirotiro Aitu\u0101 Waka)",
-      "agency_type": "Independent Crown Entity",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "43354f1ca1484822",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.taic.org.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Transport",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/nztaic"
     },
     {
       "access_method": "bounded_public_html",
@@ -140534,7 +140513,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-23T18:40:55+00:00",
+  "generated_at": "2026-07-24T17:58:02+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155464,7 +155443,7 @@
     {
       "agency_id": "aut-university",
       "alternates": 0,
-      "links": 187,
+      "links": 188,
       "status": "ok",
       "url": "https://www.aut.ac.nz/"
     },
@@ -155477,7 +155456,7 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 68,
+      "links": 72,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
@@ -155559,7 +155538,7 @@
     {
       "agency_id": "christchurch-city-libraries",
       "alternates": 6,
-      "links": 327,
+      "links": 330,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
@@ -155706,7 +155685,7 @@
     {
       "agency_id": "electricity-authority",
       "alternates": 0,
-      "links": 288,
+      "links": 289,
       "status": "ok",
       "url": "https://www.ea.govt.nz/"
     },
@@ -155760,7 +155739,7 @@
     {
       "agency_id": "fire-and-emergency-nz",
       "alternates": 0,
-      "links": 132,
+      "links": 131,
       "status": "ok",
       "url": "https://www.fireandemergency.nz/"
     },
@@ -155798,7 +155777,7 @@
     {
       "agency_id": "greater-wellington-regional-council",
       "alternates": 0,
-      "links": 172,
+      "links": 174,
       "status": "ok",
       "url": "https://www.gw.govt.nz/"
     },
@@ -155818,7 +155797,7 @@
     {
       "agency_id": "hamilton-city-council",
       "alternates": 0,
-      "links": 164,
+      "links": 165,
       "status": "ok",
       "url": "https://www.hamilton.govt.nz/"
     },
@@ -155893,9 +155872,8 @@
     },
     {
       "agency_id": "human-rights-commission",
-      "alternates": 0,
-      "links": 1,
-      "status": "ok",
+      "error": "<urlopen error [Errno 101] Network is unreachable>",
+      "status": "failed",
       "url": "https://www.hrc.co.nz/"
     },
     {
@@ -155966,14 +155944,14 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 102,
+      "links": 108,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
     {
       "agency_id": "kawerau-district-council",
       "alternates": 0,
-      "links": 798,
+      "links": 799,
       "status": "ok",
       "url": "https://www.kaweraudc.govt.nz/"
     },
@@ -156137,7 +156115,7 @@
     {
       "agency_id": "ministry-for-women",
       "alternates": 0,
-      "links": 201,
+      "links": 211,
       "status": "ok",
       "url": "https://www.women.govt.nz/"
     },
@@ -156233,7 +156211,7 @@
     {
       "agency_id": "new-plymouth-district-council",
       "alternates": 0,
-      "links": 1559,
+      "links": 1563,
       "status": "ok",
       "url": "https://www.npdc.govt.nz/"
     },
@@ -156266,9 +156244,8 @@
     },
     {
       "agency_id": "nz-artificial-limb-service",
-      "alternates": 0,
-      "links": 107,
-      "status": "ok",
+      "error": "<urlopen error _ssl.c:1064: The handshake operation timed out>",
+      "status": "failed",
       "url": "https://www.nzals.co.nz/"
     },
     {
@@ -156386,7 +156363,7 @@
     {
       "agency_id": "office-of-the-auditor-general",
       "alternates": 4,
-      "links": 32,
+      "links": 33,
       "status": "ok",
       "url": "https://www.oag.govt.nz/"
     },
@@ -156411,7 +156388,7 @@
     {
       "agency_id": "open-polytechnic",
       "alternates": 0,
-      "links": 375,
+      "links": 376,
       "status": "ok",
       "url": "https://www.openpolytechnic.ac.nz/"
     },
@@ -156545,8 +156522,9 @@
     },
     {
       "agency_id": "real-estate-authority",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 327,
+      "status": "ok",
       "url": "https://www.rea.govt.nz/"
     },
     {
@@ -156565,7 +156543,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 403,
+      "links": 401,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156643,7 +156621,7 @@
     {
       "agency_id": "south-wairarapa-district-council",
       "alternates": 3,
-      "links": 247,
+      "links": 246,
       "status": "ok",
       "url": "https://www.swdc.govt.nz/"
     },
@@ -156703,7 +156681,7 @@
     {
       "agency_id": "taranaki-regional-council",
       "alternates": 0,
-      "links": 1411,
+      "links": 1413,
       "status": "ok",
       "url": "https://www.trc.govt.nz/"
     },
@@ -156763,7 +156741,7 @@
     {
       "agency_id": "te-papa",
       "alternates": 0,
-      "links": 100,
+      "links": 99,
       "status": "ok",
       "url": "https://www.tepapa.govt.nz/"
     },
@@ -156843,9 +156821,8 @@
     },
     {
       "agency_id": "transport-accident-investigation-commission",
-      "alternates": 0,
-      "links": 50,
-      "status": "ok",
+      "error": "<urlopen error _ssl.c:1064: The handshake operation timed out>",
+      "status": "failed",
       "url": "https://www.taic.org.nz/"
     },
     {
@@ -156926,7 +156903,7 @@
     {
       "agency_id": "waikato-regional-council",
       "alternates": 0,
-      "links": 663,
+      "links": 668,
       "status": "ok",
       "url": "https://www.waikatoregion.govt.nz/"
     },
@@ -156952,7 +156929,7 @@
     {
       "agency_id": "wairoa-district-council",
       "alternates": 0,
-      "links": 337,
+      "links": 336,
       "status": "ok",
       "url": "https://www.wairoadc.govt.nz/"
     },
@@ -157081,33 +157058,33 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5250,
+    "candidate_count": 5249,
     "feasibility_counts": {
-      "high": 4159,
+      "high": 4160,
       "low": 309,
-      "medium": 782
+      "medium": 780
     },
     "known_registry_social_profiles": 446,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 291,
-      "instagram": 161,
+      "facebook": 289,
+      "instagram": 160,
       "linkedin": 234,
       "medium": 2,
       "newsletter": 160,
       "rss": 3829,
-      "website_page": 312,
+      "website_page": 313,
       "x": 75,
-      "youtube": 155
+      "youtube": 156
     },
     "source_type_counts": {
       "api_endpoint": 13,
       "newsletter": 160,
       "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 936,
-      "website_page": 312
+      "social_profile": 934,
+      "website_page": 313
     }
   }
 }
