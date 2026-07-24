@@ -226,6 +226,25 @@ def test_archive_workflows_do_not_receive_posting_credentials() -> None:
         assert "manage_bluesky_mirror_programme.py publish" not in text
 
 
+def test_manual_mirror_workflows_default_to_non_posting_dry_run() -> None:
+    for name in (
+        "bluesky_mirror_ongoing.yml",
+        "bluesky_mirror_historical_backfill.yml",
+    ):
+        text = (Path(".github/workflows") / name).read_text(encoding="utf-8")
+        assert "dry_run:" in text
+        assert "default: true" in text
+        assert 'args+=(--dry-run)' in text
+        assert (
+            "github.event_name == 'workflow_dispatch' && inputs.dry_run == true"
+            in text
+        )
+        assert (
+            "inputs.dry_run == true && 'false' || vars.BLUESKY_MIRRORING_ENABLED"
+            in text
+        )
+
+
 def test_source_allowlist_excludes_retired_sibling_records(tmp_path: Path) -> None:
     shard = tmp_path / "x" / "2026-07.jsonl"
     shard.parent.mkdir(parents=True)

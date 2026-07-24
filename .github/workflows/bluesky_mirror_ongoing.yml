@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Evaluate eligibility without posting."
+        required: true
+        default: true
+        type: boolean
 
 permissions:
   contents: write
@@ -26,7 +32,7 @@ jobs:
         run: python scripts/manage_bluesky_mirror_programme.py matrix --mode ongoing --github-output
 
   publish:
-    if: ${{ vars.BLUESKY_MIRRORING_ENABLED == 'true' }}
+    if: ${{ (github.event_name == 'workflow_dispatch' && inputs.dry_run == true) || vars.BLUESKY_MIRRORING_ENABLED == 'true' }}
     needs: plan
     strategy:
       fail-fast: false
@@ -45,8 +51,13 @@ jobs:
         with:
           requirements: requirements.txt
       - env:
-          BLUESKY_MIRRORING_ENABLED: ${{ vars.BLUESKY_MIRRORING_ENABLED }}
+          BLUESKY_MIRRORING_ENABLED: ${{ inputs.dry_run == true && 'false' || vars.BLUESKY_MIRRORING_ENABLED }}
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
-        run: python scripts/manage_bluesky_mirror_programme.py publish --mode ongoing --mirror-id '${{ matrix.mirror_id }}'
+        run: |
+          args=(python scripts/manage_bluesky_mirror_programme.py publish --mode ongoing --mirror-id '${{ matrix.mirror_id }}')
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            args+=(--dry-run)
+          fi
+          "${args[@]}"
       - run: python scripts/commit_state_updates.py --message "Update Bluesky mirror state" --path conductor/bluesky_mirror_runtime_state.json --path conductor/bluesky_mirror_post_audit.jsonl --path conductor/bluesky_mirror_dead_letter.jsonl --path conductor/bluesky_mirror_eligibility
