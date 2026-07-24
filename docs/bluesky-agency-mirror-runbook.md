@@ -41,6 +41,24 @@ uv run python scripts/manage_bluesky_mirror_handle.py stale-links --old-handle a
 
 Append a nonsecret event to `conductor/bluesky_mirror_handle_history.jsonl`. Every event records the old handle, new handle, DID, reason, timestamp, and public verification evidence. A handle migration is incomplete until the non-posting preflight passes.
 
+Organisation abbreviations are never inferred automatically. Add one only after
+operator review, record its approval date and evidence, and preserve the old
+handle in `retired_handles`.
+
+The daily health workflow checks retired handles through the public identity API.
+Any retained alias, unexpected registration, or monitoring failure is actionable;
+an unregistered retired handle is healthy.
+
+Custom-domain handles are deferred. Generate a non-operative readiness plan with:
+
+```powershell
+uv run python scripts/manage_bluesky_mirror_handle.py custom-domain-plan --agency-id accident-compensation-corporation
+```
+
+Migration remains disabled until domain control, DNS or well-known resolution,
+public DID resolution, non-posting preflight, and explicit operator approval are
+all evidenced.
+
 ## Launch
 
 Set the account to `backfilling`, add `activated_at`, and enable it only after preflight. Set repository variable `BLUESKY_MIRRORING_ENABLED=true` only when at least one account is approved for posting. The historical workflow posts once every six hours, while ongoing records are checked every 15 minutes.

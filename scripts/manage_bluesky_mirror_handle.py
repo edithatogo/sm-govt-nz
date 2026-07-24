@@ -11,9 +11,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.bluesky_handle_lifecycle import (
     DEFAULT_ABBREVIATION_REGISTRY,
     DEFAULT_MIRROR_REGISTRY,
+    DEFAULT_RETIRED_HANDLE_REPORT,
     DEFAULT_STALE_LINK_REPORT,
+    custom_domain_readiness_plan,
     load_json,
     migration_plan,
+    retired_handle_report,
     stale_link_report,
     validate_abbreviation_registry,
     verify_handle_identity,
@@ -50,6 +53,16 @@ def main() -> int:
     stale.add_argument("--root", type=Path, default=Path("."))
     stale.add_argument("--output", type=Path, default=DEFAULT_STALE_LINK_REPORT)
 
+    availability = subparsers.add_parser("availability")
+    availability.add_argument("--handle", required=True)
+
+    retired = subparsers.add_parser("monitor-retired")
+    retired.add_argument("--output", type=Path, default=DEFAULT_RETIRED_HANDLE_REPORT)
+    retired.add_argument("--fail-on-actionable", action="store_true")
+
+    custom_domain = subparsers.add_parser("custom-domain-plan")
+    custom_domain.add_argument("--agency-id", required=True)
+
     args = parser.parse_args()
     abbreviations = load_json(args.abbreviations)
     validate_abbreviation_registry(abbreviations)
@@ -65,6 +78,29 @@ def main() -> int:
             json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
         )
         print(json.dumps(report))
+        return 0
+    if args.command == "availability":
+        from src.bluesky_handle_lifecycle import probe_handle
+
+        result = probe_handle(args.handle)
+        print(json.dumps(result, sort_keys=True))
+        return 0 if result["state"] != "probe_failed" else 1
+    if args.command == "monitor-retired":
+        report = retired_handle_report(abbreviations)
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(
+            json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
+        print(json.dumps(report, sort_keys=True))
+        return 1 if args.fail_on_actionable and report["actionable_count"] else 0
+    if args.command == "custom-domain-plan":
+        print(
+            json.dumps(
+                custom_domain_readiness_plan(abbreviations, args.agency_id),
+                indent=2,
+                sort_keys=True,
+            )
+        )
         return 0
 
     mirror = _mirror(mirrors["mirrors"], args.mirror_id)

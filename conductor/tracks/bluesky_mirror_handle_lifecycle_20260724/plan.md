@@ -16,6 +16,9 @@
 ## Phase 3: Automation and documentation
 - [x] Task: Gate CI and preflight on the handle registry.
 - [x] Task: Document app-password-only automation and handle migration.
+- [x] Task: Require explicit abbreviation approval evidence.
+- [x] Task: Add scheduled retired-handle monitoring.
+- [x] Task: Add fail-closed custom-domain migration readiness policy.
 - [ ] Task: Rotate the ACC primary password and remove the persistent local primary-password variable.
 - [ ] Task: Publish and cross-reference the approved GitHub subissue.
 - [ ] Task: Run Conductor review and archive the track.

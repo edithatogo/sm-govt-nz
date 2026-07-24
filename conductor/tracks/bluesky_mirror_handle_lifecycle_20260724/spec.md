@@ -16,6 +16,8 @@ Make Bluesky mirror handles deterministic, jurisdiction-aware, and safely migrat
 - Detect stale references without scanning archive payloads.
 - Recheck availability immediately before migration and verify the DID immediately afterwards.
 - Monitor retired handles for unexpected re-registration or misleading impersonation.
+- Require explicit, evidenced approval for every organisation abbreviation.
+- Keep custom-domain migration disabled until domain-control evidence and operator approval exist.
 - Update GitHub Environment handles and pass non-posting preflight before completion.
 - Keep primary passwords out of persistent environment variables.
 
@@ -25,6 +27,8 @@ Make Bluesky mirror handles deterministic, jurisdiction-aware, and safely migrat
 - CI rejects malformed handles, duplicate abbreviations, duplicate handles, and invalid DIDs.
 - Migration plans contain no credentials.
 - Stale-link reports are bounded and machine-readable.
+- Retired-handle monitoring distinguishes unregistered handles, retained aliases, unexpected registrations, and monitoring faults.
+- Custom-domain plans are non-operative and cannot authorize automatic migration.
 - The ACC GitHub Environment passes preflight with the new handle.
 
 ## Out of Scope

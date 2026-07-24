@@ -3,8 +3,10 @@ from pathlib import Path
 import pytest
 
 from src.bluesky_handle_lifecycle import (
+    custom_domain_readiness_plan,
     find_stale_handle_references,
     migration_plan,
+    retired_handle_report,
     validate_abbreviation_registry,
 )
 
@@ -14,13 +16,28 @@ def abbreviation_registry(**overrides):
         "agency_id": "accident-compensation-corporation",
         "canonical_name": "Accident Compensation Corporation",
         "organisation_abbreviation": "acc",
+        "abbreviation_status": "approved",
+        "abbreviation_approved_at": "2026-07-24",
+        "abbreviation_approval_evidence": "operator-approved migration",
         "jurisdiction": "nz",
         "approved_handle": "acc-nz-arc.bsky.social",
         "account_did": "did:plc:vxltrdhni2dfsm4actryhj4n",
         "retired_handles": ["accident-comp-arc.bsky.social"],
     }
     entry.update(overrides)
-    return {"schema_version": 1, "entries": [entry]}
+    return {
+        "schema_version": 1,
+        "abbreviation_policy": {
+            "approval_required": True,
+            "automatic_inference_allowed": False,
+        },
+        "custom_domain_migration": {
+            "enabled": False,
+            "automatic_migration_allowed": False,
+            "required_evidence": ["operator_approval"],
+        },
+        "entries": [entry],
+    }
 
 
 def test_abbreviation_registry_enforces_handle_and_did_contract() -> None:
@@ -34,6 +51,10 @@ def test_abbreviation_registry_enforces_handle_and_did_contract() -> None:
     with pytest.raises(ValueError, match="also retired"):
         validate_abbreviation_registry(
             abbreviation_registry(retired_handles=["acc-nz-arc.bsky.social"])
+        )
+    with pytest.raises(ValueError, match="not approved"):
+        validate_abbreviation_registry(
+            abbreviation_registry(abbreviation_status="proposed")
         )
 
 
@@ -74,3 +95,29 @@ def test_stale_link_scan_is_bounded_and_excludes_archives(tmp_path: Path) -> Non
             "actionable": True,
         }
     ]
+
+
+def test_retired_handle_monitoring_detects_reuse() -> None:
+    registry = abbreviation_registry()
+
+    def missing(_handle: str) -> str:
+        raise __import__("urllib.error").error.HTTPError(
+            "https://example.invalid", 400, "missing", {}, None
+        )
+
+    healthy = retired_handle_report(registry, resolver=missing)
+    assert healthy["actionable_count"] == 0
+    reused = retired_handle_report(
+        registry, resolver=lambda _handle: "did:plc:aaaaaaaaaaaaaaaaaaaaaaaa"
+    )
+    assert reused["actionable_count"] == 1
+    assert reused["results"][0]["classification"] == "unexpected_registration"
+
+
+def test_custom_domain_plan_is_non_operative() -> None:
+    plan = custom_domain_readiness_plan(
+        abbreviation_registry(), "accident-compensation-corporation"
+    )
+    assert plan["enabled"] is False
+    assert plan["automatic_migration_allowed"] is False
+    assert plan["state"] == "deferred_pending_operator_approval"

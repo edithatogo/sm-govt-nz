@@ -49,4 +49,6 @@ jobs:
         with:
           requirements: requirements.txt
       - run: python scripts/manage_bluesky_mirror_programme.py health
+      - run: python scripts/manage_bluesky_mirror_handle.py monitor-retired --fail-on-actionable
       - run: python scripts/commit_state_updates.py --message "Refresh Bluesky mirror health" --path conductor/bluesky_mirror_health_report.json
+      - run: python scripts/commit_state_updates.py --message "Refresh retired Bluesky handle health" --path conductor/bluesky_retired_handle_report.json

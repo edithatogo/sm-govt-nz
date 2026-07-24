@@ -3,7 +3,8 @@ from __future__ import annotations
 import json
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Callable, Mapping
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -12,6 +13,7 @@ from src.bluesky_mirror_programme import ATPROTO_DID_PATTERN, handle_candidates,
 DEFAULT_ABBREVIATION_REGISTRY = Path("config/bluesky_mirror_abbreviations.json")
 DEFAULT_MIRROR_REGISTRY = Path("config/mirror_accounts.json")
 DEFAULT_STALE_LINK_REPORT = Path("conductor/bluesky_mirror_stale_handle_report.json")
+DEFAULT_RETIRED_HANDLE_REPORT = Path("conductor/bluesky_retired_handle_report.json")
 SCANNABLE_SUFFIXES = {".json", ".jsonl", ".md", ".py", ".yaml", ".yml"}
 EXCLUDED_PARTS = {
     ".git",
@@ -38,6 +40,18 @@ def validate_abbreviation_registry(registry: Mapping[str, Any]) -> None:
     entries = registry.get("entries")
     if not isinstance(entries, list):
         raise ValueError("Abbreviation registry must contain an entries list.")
+    abbreviation_policy = registry.get("abbreviation_policy")
+    if not isinstance(abbreviation_policy, Mapping):
+        raise ValueError("Abbreviation registry must define abbreviation_policy.")
+    if abbreviation_policy.get("approval_required") is not True:
+        raise ValueError("Abbreviation approval must be required.")
+    if abbreviation_policy.get("automatic_inference_allowed") is not False:
+        raise ValueError("Automatic abbreviation inference must remain disabled.")
+    custom_domain_policy = registry.get("custom_domain_migration")
+    if not isinstance(custom_domain_policy, Mapping):
+        raise ValueError("Abbreviation registry must define custom_domain_migration.")
+    if custom_domain_policy.get("automatic_migration_allowed") is not False:
+        raise ValueError("Automatic custom-domain migration must remain disabled.")
     seen_agencies: set[str] = set()
     seen_abbreviations: set[tuple[str, str]] = set()
     seen_handles: set[str] = set()
@@ -48,6 +62,9 @@ def validate_abbreviation_registry(registry: Mapping[str, Any]) -> None:
         jurisdiction = slugify(str(entry.get("jurisdiction") or ""))
         handle = str(entry.get("approved_handle") or "")
         account_did = str(entry.get("account_did") or "")
+        abbreviation_status = str(entry.get("abbreviation_status") or "")
+        abbreviation_approved_at = str(entry.get("abbreviation_approved_at") or "")
+        approval_evidence = str(entry.get("abbreviation_approval_evidence") or "")
         retired_handles = {
             str(value) for value in (entry.get("retired_handles") or [])
         }
@@ -56,6 +73,10 @@ def validate_abbreviation_registry(registry: Mapping[str, Any]) -> None:
         key = (abbreviation, jurisdiction)
         if not abbreviation or not jurisdiction or key in seen_abbreviations:
             raise ValueError(f"Missing or duplicate abbreviation/jurisdiction: {key}")
+        if abbreviation_status != "approved":
+            raise ValueError(f"Abbreviation is not approved for {agency_id}.")
+        if not abbreviation_approved_at or not approval_evidence:
+            raise ValueError(f"Abbreviation approval evidence is missing for {agency_id}.")
         if handle not in handle_candidates(
             agency_id, abbreviation=abbreviation, jurisdiction=jurisdiction
         ):
@@ -94,6 +115,89 @@ def verify_handle_identity(handle: str, expected_did: str) -> dict[str, Any]:
         "actual_did": actual_did,
         "valid": bool(actual_did and actual_did == expected_did),
         "verified_at": datetime.now(UTC).isoformat(),
+    }
+
+
+def probe_handle(
+    handle: str, *, resolver: Callable[[str], str] = resolve_handle
+) -> dict[str, Any]:
+    try:
+        did = resolver(handle)
+    except HTTPError as error:
+        if error.code in {400, 404}:
+            return {"handle": handle, "state": "unregistered", "did": ""}
+        return {
+            "handle": handle,
+            "state": "probe_failed",
+            "did": "",
+            "error": f"http_{error.code}",
+        }
+    except (TimeoutError, URLError) as error:
+        return {
+            "handle": handle,
+            "state": "probe_failed",
+            "did": "",
+            "error": type(error).__name__,
+        }
+    return {
+        "handle": handle,
+        "state": "registered" if did else "probe_failed",
+        "did": did,
+    }
+
+
+def retired_handle_report(
+    registry: Mapping[str, Any],
+    *,
+    resolver: Callable[[str], str] = resolve_handle,
+) -> dict[str, Any]:
+    results: list[dict[str, Any]] = []
+    for entry in registry["entries"]:
+        expected_did = str(entry.get("account_did") or "")
+        for handle in entry.get("retired_handles") or []:
+            result = probe_handle(str(handle), resolver=resolver)
+            if result["state"] == "unregistered":
+                classification = "retired_unregistered"
+                actionable = False
+            elif result["state"] == "registered" and result["did"] == expected_did:
+                classification = "retired_alias_still_resolves"
+                actionable = True
+            elif result["state"] == "registered":
+                classification = "unexpected_registration"
+                actionable = True
+            else:
+                classification = "monitoring_fault"
+                actionable = True
+            results.append(
+                {
+                    **result,
+                    "agency_id": entry["agency_id"],
+                    "expected_did": expected_did,
+                    "classification": classification,
+                    "actionable": actionable,
+                }
+            )
+    return {
+        "generated_at": datetime.now(UTC).isoformat(),
+        "result_count": len(results),
+        "actionable_count": sum(1 for row in results if row["actionable"]),
+        "results": results,
+    }
+
+
+def custom_domain_readiness_plan(
+    registry: Mapping[str, Any], agency_id: str
+) -> dict[str, Any]:
+    entry = next(row for row in registry["entries"] if row["agency_id"] == agency_id)
+    policy = registry["custom_domain_migration"]
+    return {
+        "agency_id": agency_id,
+        "account_did": entry["account_did"],
+        "current_handle": entry["approved_handle"],
+        "enabled": policy["enabled"],
+        "automatic_migration_allowed": policy["automatic_migration_allowed"],
+        "required_evidence": policy["required_evidence"],
+        "state": "deferred_pending_operator_approval",
     }
 
 

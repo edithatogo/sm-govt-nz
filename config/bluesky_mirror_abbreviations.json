@@ -3,11 +3,30 @@
   "default_jurisdiction": "nz",
   "handle_pattern": "<organisation-abbreviation>-<country-or-jurisdiction>-arc.bsky.social",
   "collision_pattern": "<organisation-abbreviation>-<country-or-jurisdiction>-arc-<number>.bsky.social",
+  "abbreviation_policy": {
+    "approval_required": true,
+    "automatic_inference_allowed": false,
+    "ambiguous_abbreviations_require_operator_review": true
+  },
+  "custom_domain_migration": {
+    "enabled": false,
+    "automatic_migration_allowed": false,
+    "required_evidence": [
+      "domain_control",
+      "dns_or_well_known_resolution",
+      "public_did_resolution",
+      "non_posting_preflight",
+      "operator_approval"
+    ]
+  },
   "entries": [
     {
       "agency_id": "accident-compensation-corporation",
       "canonical_name": "Accident Compensation Corporation",
       "organisation_abbreviation": "acc",
+      "abbreviation_status": "approved",
+      "abbreviation_approved_at": "2026-07-24",
+      "abbreviation_approval_evidence": "operator-approved jurisdictional handle migration",
       "jurisdiction": "nz",
       "approved_handle": "acc-nz-arc.bsky.social",
       "account_did": "did:plc:vxltrdhni2dfsm4actryhj4n",
