@@ -15,7 +15,7 @@
 - [ ] Task: Implement `bluesky_mirror_recovery_automation_20260724`.
 - [ ] Task: Implement `bluesky_mirror_credential_hygiene_20260724`.
 - [ ] Task: Implement `bluesky_mirror_cleanup_verification_20260724`.
-- [ ] Task: Implement `bluesky_mirror_handle_lifecycle_20260724`.
+- [x] Task: Implement and archive `bluesky_mirror_handle_lifecycle_20260724`, GitHub #37.
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
 ## Phase 4: Programme closeout

@@ -14,7 +14,7 @@
 - [ ] `bluesky_mirror_safety_observability_20260721` - safety and health controls, GitHub #24
 
 ## Bluesky Mirror Reliability Hardening (2026-07-24)
-- [ ] `bluesky_mirror_reliability_hardening_20260724` - parent reliability programme; proposed subissue of GitHub #19
+- [ ] `bluesky_mirror_reliability_hardening_20260724` - parent reliability programme, GitHub #36; subissue of #19
 - [ ] `bluesky_mirror_source_eligibility_20260724` - fail-closed source provenance and allowlists
 - [ ] `bluesky_mirror_content_contracts_20260724` - post-level eligibility, naming, and rendering contracts
 - [ ] `bluesky_mirror_reconciliation_idempotency_20260724` - pending reconciliation and duplicate prevention
@@ -23,4 +23,3 @@
 - [ ] `bluesky_mirror_recovery_automation_20260724` - evidence-backed pause recovery
 - [ ] `bluesky_mirror_credential_hygiene_20260724` - app-password-only automation and rotation
 - [ ] `bluesky_mirror_cleanup_verification_20260724` - duplicate cleanup and regression evidence
-- [ ] `bluesky_mirror_handle_lifecycle_20260724` - abbreviation registry, DID identity, and controlled handle migration

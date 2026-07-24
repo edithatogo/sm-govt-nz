@@ -20,8 +20,8 @@
 - [x] Task: Add scheduled retired-handle monitoring.
 - [x] Task: Add fail-closed custom-domain migration readiness policy.
 - [x] Task: Remove the persistent local primary-password variable.
-- [ ] Task: Rotate the ACC primary password (external operator action).
-- [ ] Task: Publish and cross-reference the approved GitHub subissue.
+- [x] Task: Defer ACC primary-password rotation to `bluesky_mirror_credential_hygiene_20260724`.
+- [x] Task: Publish and cross-reference GitHub #37 beneath #36.
 - [x] Task: Run Conductor review; apply fail-closed HTTP classification and availability fixes.
-- [ ] Task: Archive the track after external evidence is recorded.
+- [x] Task: Archive the track after external evidence is recorded.
 - [x] Task: Phase Verification & Checkpoint (Refer to workflow.md).

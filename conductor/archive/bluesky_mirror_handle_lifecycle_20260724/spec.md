@@ -1,5 +1,7 @@
 # Specification
 
+Status: completed and archived on 2026-07-24.
+
 ## Overview
 
 Make Bluesky mirror handles deterministic, jurisdiction-aware, and safely migratable while treating the account DID as permanent identity.

@@ -1,5 +1,7 @@
 # Review Report: Bluesky Mirror Handle Lifecycle
 
+Status: accepted and archived on 2026-07-24.
+
 ## Summary
 
 The implementation satisfies the local identity-governance contract after

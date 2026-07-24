@@ -1,8 +1,16 @@
 # Draft GitHub Issue Hierarchy
 
-These payloads are drafts. Publishing them requires separate approval for `edithatogo/sm-govt-nz`.
+Issues #36 and #37 were published with explicit approval. All remaining payloads
+are drafts and require separate approval for `edithatogo/sm-govt-nz`.
 
-## Parent subissue of #19
+## Published evidence
+
+- [#36](https://github.com/edithatogo/sm-govt-nz/issues/36), native subissue of #19:
+  `Bluesky mirror reliability hardening`.
+- [#37](https://github.com/edithatogo/sm-govt-nz/issues/37), native subissue of #36:
+  `Make Bluesky mirror handles DID-safe and migration-aware`.
+
+## Published parent subissue of #19
 
 Title: `Bluesky mirror reliability hardening`
 
@@ -28,5 +36,5 @@ Body:
    Conductor: `bluesky_mirror_credential_hygiene_20260724`
 8. `Reconcile and clean duplicate or excluded mirror posts`
    Conductor: `bluesky_mirror_cleanup_verification_20260724`
-9. `Make Bluesky mirror handles DID-safe and migration-aware`
+9. `Make Bluesky mirror handles DID-safe and migration-aware` - published as #37
    Conductor: `bluesky_mirror_handle_lifecycle_20260724`
