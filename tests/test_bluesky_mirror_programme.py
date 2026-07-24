@@ -188,6 +188,63 @@ def test_publish_dry_run_never_calls_sender(tmp_path: Path) -> None:
     assert called is False
 
 
+def test_paused_account_dry_run_writes_eligibility_without_sending(
+    tmp_path: Path,
+) -> None:
+    archive = tmp_path / "historical_archive_normalized" / "x"
+    archive.mkdir(parents=True)
+    (archive / "2026-07.jsonl").write_text(
+        json.dumps(
+            {
+                "record_id": "r1",
+                "agency_id": "agency",
+                "source_id": "source-1",
+                "source_platform": "x",
+                "content": "Public update",
+                "original_created_at": "2020-01-02T00:00:00Z",
+                "source_url": "https://x.com/a/status/1",
+                "visibility": "public",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    state_path = tmp_path / "state.json"
+    state_path.write_text(
+        json.dumps({"accounts": {"agency": {"paused": True}}}),
+        encoding="utf-8",
+    )
+    report_path = tmp_path / "eligibility.json"
+    called = False
+
+    def sender(_post):
+        nonlocal called
+        called = True
+        raise AssertionError("paused dry-run posted")
+
+    result = publish_next(
+        registry(
+            registry_row(
+                source_urls=["https://x.com/a"],
+            )
+        ),
+        "agency",
+        mode="backfill",
+        dry_run=True,
+        archive_root=archive,
+        state_path=state_path,
+        audit_path=tmp_path / "audit.jsonl",
+        eligibility_report_path=report_path,
+        sender=sender,
+    )
+
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    assert result["status"] == "dry_run"
+    assert result["posted"] == 0
+    assert report["accepted"] == 1
+    assert called is False
+
+
 def test_live_sender_receives_one_already_attributed_rendering(
     tmp_path: Path, monkeypatch
 ) -> None:

@@ -569,7 +569,7 @@ def publish_next(
     state_file = Path(state_path)
     state = _load_json(state_file, {"accounts": {}})
     account_state = state.setdefault("accounts", {}).setdefault(mirror_id, {})
-    if account_state.get("paused"):
+    if account_state.get("paused") and not dry_run:
         return {"mirror_id": mirror_id, "status": "paused", "posted": 0}
     if not dry_run:
         if os.getenv("BLUESKY_MIRRORING_ENABLED", "").casefold() != "true":
