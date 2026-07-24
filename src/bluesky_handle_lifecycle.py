@@ -31,10 +31,12 @@ POLICY_CONFIG_PATHS = {"config/bluesky_mirror_abbreviations.json"}
 
 
 def load_json(path: str | Path) -> dict[str, Any]:
+    """Load a UTF-8 JSON object from ``path``."""
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
 def validate_abbreviation_registry(registry: Mapping[str, Any]) -> None:
+    """Validate abbreviation, handle, DID, and migration policy invariants."""
     if registry.get("schema_version") != 1:
         raise ValueError("Abbreviation registry schema_version must be 1.")
     entries = registry.get("entries")
@@ -97,6 +99,7 @@ def validate_abbreviation_registry(registry: Mapping[str, Any]) -> None:
 
 
 def resolve_handle(handle: str, *, timeout: int = 20) -> str:
+    """Resolve a public Bluesky handle to its immutable DID."""
     query = urlencode({"handle": handle})
     request = Request(
         f"https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?{query}",
@@ -108,6 +111,7 @@ def resolve_handle(handle: str, *, timeout: int = 20) -> str:
 
 
 def verify_handle_identity(handle: str, expected_did: str) -> dict[str, Any]:
+    """Return public evidence that ``handle`` resolves to ``expected_did``."""
     actual_did = resolve_handle(handle)
     return {
         "handle": handle,
@@ -121,16 +125,32 @@ def verify_handle_identity(handle: str, expected_did: str) -> dict[str, Any]:
 def probe_handle(
     handle: str, *, resolver: Callable[[str], str] = resolve_handle
 ) -> dict[str, Any]:
+    """Classify a handle as registered, unregistered, or probe-failed."""
     try:
         did = resolver(handle)
     except HTTPError as error:
-        if error.code in {400, 404}:
-            return {"handle": handle, "state": "unregistered", "did": ""}
+        try:
+            payload = json.loads(error.read().decode("utf-8"))
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            payload = {}
+        error_name = str(payload.get("error") or "")
+        message = str(payload.get("message") or "")
+        explanation = f"{error_name} {message}".casefold()
+        if error.code in {400, 404} and any(
+            marker in explanation
+            for marker in ("unable to resolve handle", "handle not found", "not found")
+        ):
+            return {
+                "handle": handle,
+                "state": "unregistered",
+                "did": "",
+                "error": error_name or f"http_{error.code}",
+            }
         return {
             "handle": handle,
             "state": "probe_failed",
             "did": "",
-            "error": f"http_{error.code}",
+            "error": error_name or f"http_{error.code}",
         }
     except (TimeoutError, URLError) as error:
         return {
@@ -151,6 +171,7 @@ def retired_handle_report(
     *,
     resolver: Callable[[str], str] = resolve_handle,
 ) -> dict[str, Any]:
+    """Build an evidence report for every reserved retired handle."""
     results: list[dict[str, Any]] = []
     for entry in registry["entries"]:
         expected_did = str(entry.get("account_did") or "")
@@ -188,6 +209,7 @@ def retired_handle_report(
 def custom_domain_readiness_plan(
     registry: Mapping[str, Any], agency_id: str
 ) -> dict[str, Any]:
+    """Return a non-operative custom-domain migration readiness plan."""
     entry = next(row for row in registry["entries"] if row["agency_id"] == agency_id)
     policy = registry["custom_domain_migration"]
     return {
@@ -207,6 +229,7 @@ def migration_plan(
     *,
     old_handle: str,
 ) -> dict[str, Any]:
+    """Return the ordered, nonsecret steps for a handle migration."""
     return {
         "mirror_id": mirror["mirror_id"],
         "account_did": abbreviation_entry["account_did"],
@@ -230,6 +253,7 @@ def migration_plan(
 def find_stale_handle_references(
     root: str | Path, old_handles: list[str]
 ) -> list[dict[str, Any]]:
+    """Find actionable retired-handle references outside archive payloads."""
     base = Path(root)
     matches: list[dict[str, Any]] = []
     for path in sorted(base.rglob("*")):
@@ -274,6 +298,7 @@ def find_stale_handle_references(
 
 
 def stale_link_report(root: str | Path, old_handles: list[str]) -> dict[str, Any]:
+    """Summarize bounded stale-handle scan results."""
     matches = find_stale_handle_references(root, old_handles)
     actionable = [row for row in matches if row["actionable"]]
     return {

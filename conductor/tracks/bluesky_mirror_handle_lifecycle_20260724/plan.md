@@ -4,14 +4,14 @@
 - [x] Task: Add canonical abbreviation and jurisdiction registry.
 - [x] Task: Pin ACC to its immutable DID.
 - [x] Task: Enforce jurisdictional handle validation and collision suffixes.
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
 ## Phase 2: Migration operations
 - [x] Task: Add nonsecret migration-plan generation.
 - [x] Task: Add public DID verification.
 - [x] Task: Add bounded stale-link reporting.
 - [x] Task: Add append-only handle-history evidence.
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
 ## Phase 3: Automation and documentation
 - [x] Task: Gate CI and preflight on the handle registry.
@@ -19,7 +19,9 @@
 - [x] Task: Require explicit abbreviation approval evidence.
 - [x] Task: Add scheduled retired-handle monitoring.
 - [x] Task: Add fail-closed custom-domain migration readiness policy.
-- [ ] Task: Rotate the ACC primary password and remove the persistent local primary-password variable.
+- [x] Task: Remove the persistent local primary-password variable.
+- [ ] Task: Rotate the ACC primary password (external operator action).
 - [ ] Task: Publish and cross-reference the approved GitHub subissue.
-- [ ] Task: Run Conductor review and archive the track.
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
+- [x] Task: Run Conductor review; apply fail-closed HTTP classification and availability fixes.
+- [ ] Task: Archive the track after external evidence is recorded.
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md).

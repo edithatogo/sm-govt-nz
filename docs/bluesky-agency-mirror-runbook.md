@@ -29,8 +29,13 @@ The canonical abbreviation and immutable account DID are recorded in `config/blu
 Before a handle migration:
 
 ```powershell
+uv run python scripts/manage_bluesky_mirror_handle.py availability --handle <new-handle> --require-unregistered
 uv run python scripts/manage_bluesky_mirror_handle.py plan --mirror-id accident-compensation-corporation --old-handle accident-comp-arc.bsky.social
 ```
+
+The availability command fails closed unless the public resolver specifically
+reports that the proposed handle cannot be resolved. A generic HTTP error is not
+evidence that a handle is available.
 
 After the account, registry, and GitHub Environment are updated:
 

@@ -1,4 +1,7 @@
+import io
+import json
 from pathlib import Path
+from urllib.error import HTTPError
 
 import pytest
 
@@ -101,8 +104,16 @@ def test_retired_handle_monitoring_detects_reuse() -> None:
     registry = abbreviation_registry()
 
     def missing(_handle: str) -> str:
-        raise __import__("urllib.error").error.HTTPError(
-            "https://example.invalid", 400, "missing", {}, None
+        body = io.BytesIO(
+            json.dumps(
+                {
+                    "error": "InvalidRequest",
+                    "message": "Unable to resolve handle",
+                }
+            ).encode()
+        )
+        raise HTTPError(
+            "https://example.invalid", 400, "missing", {}, body
         )
 
     healthy = retired_handle_report(registry, resolver=missing)
@@ -112,6 +123,25 @@ def test_retired_handle_monitoring_detects_reuse() -> None:
     )
     assert reused["actionable_count"] == 1
     assert reused["results"][0]["classification"] == "unexpected_registration"
+
+
+def test_generic_bad_request_is_not_proof_handle_is_unregistered() -> None:
+    registry = abbreviation_registry()
+
+    def invalid(_handle: str) -> str:
+        body = io.BytesIO(
+            json.dumps(
+                {
+                    "error": "InvalidRequest",
+                    "message": "Handle syntax is invalid",
+                }
+            ).encode()
+        )
+        raise HTTPError("https://example.invalid", 400, "invalid", {}, body)
+
+    report = retired_handle_report(registry, resolver=invalid)
+    assert report["actionable_count"] == 1
+    assert report["results"][0]["classification"] == "monitoring_fault"
 
 
 def test_custom_domain_plan_is_non_operative() -> None:

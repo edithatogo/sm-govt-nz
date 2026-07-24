@@ -55,6 +55,7 @@ def main() -> int:
 
     availability = subparsers.add_parser("availability")
     availability.add_argument("--handle", required=True)
+    availability.add_argument("--require-unregistered", action="store_true")
 
     retired = subparsers.add_parser("monitor-retired")
     retired.add_argument("--output", type=Path, default=DEFAULT_RETIRED_HANDLE_REPORT)
@@ -84,6 +85,8 @@ def main() -> int:
 
         result = probe_handle(args.handle)
         print(json.dumps(result, sort_keys=True))
+        if args.require_unregistered:
+            return 0 if result["state"] == "unregistered" else 1
         return 0 if result["state"] != "probe_failed" else 1
     if args.command == "monitor-retired":
         report = retired_handle_report(abbreviations)
