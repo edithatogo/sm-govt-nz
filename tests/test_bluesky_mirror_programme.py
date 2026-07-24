@@ -6,6 +6,7 @@ import pytest
 from src.bluesky_mirror_programme import (
     MirrorRecord,
     canonicalize_source_url,
+    credential_health_report,
     build_registry_from_manifest,
     evaluate_source_eligibility,
     handle_candidates,
@@ -152,7 +153,7 @@ def test_preflight_requires_archive_disclosure_and_bot_label() -> None:
         registry(registry_row()),
         "agency",
         handle="agency-archive.bsky.social",
-        app_password="app-password",
+        app_password="abcd-efgh-ijkl-mnop",
         login=lambda handle, password: logged_in.append((handle, password)),
         fetch_profile=lambda _handle: {
             "did": "did:plc:agency",
@@ -163,7 +164,7 @@ def test_preflight_requires_archive_disclosure_and_bot_label() -> None:
     )
 
     assert result["valid"] is True
-    assert logged_in == [("agency-archive.bsky.social", "app-password")]
+    assert logged_in == [("agency-archive.bsky.social", "abcd-efgh-ijkl-mnop")]
 
 
 def test_preflight_rejects_ambiguous_profile() -> None:
@@ -172,7 +173,7 @@ def test_preflight_rejects_ambiguous_profile() -> None:
             registry(registry_row()),
             "agency",
             handle="agency-archive.bsky.social",
-            app_password="app-password",
+            app_password="abcd-efgh-ijkl-mnop",
             login=lambda _handle, _password: None,
             fetch_profile=lambda _handle: {"displayName": "Agency", "description": "Official updates", "labels": []},
         )
@@ -328,7 +329,7 @@ def test_live_sender_receives_one_already_attributed_rendering(
     sent = []
     monkeypatch.setenv("BLUESKY_MIRRORING_ENABLED", "true")
     monkeypatch.setenv("BLUESKY_HANDLE", "agency-archive.bsky.social")
-    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "app-password")
+    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "abcd-efgh-ijkl-mnop")
 
     result = publish_next(
         registry(registry_row()),
@@ -370,7 +371,7 @@ def test_delayed_readback_resumes_without_duplicate_submission(
     )
     monkeypatch.setenv("BLUESKY_MIRRORING_ENABLED", "true")
     monkeypatch.setenv("BLUESKY_HANDLE", "agency-archive.bsky.social")
-    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "app-password")
+    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "abcd-efgh-ijkl-mnop")
     state_path = tmp_path / "state.json"
     sent = []
     visible = iter((False, True))
@@ -439,7 +440,7 @@ def test_ambiguous_submission_failure_is_reserved_and_not_retried(
     )
     monkeypatch.setenv("BLUESKY_MIRRORING_ENABLED", "true")
     monkeypatch.setenv("BLUESKY_HANDLE", "agency-archive.bsky.social")
-    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "app-password")
+    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "abcd-efgh-ijkl-mnop")
     state_path = tmp_path / "state.json"
     calls = 0
 
@@ -645,6 +646,31 @@ def test_recovery_keeps_ambiguous_deleted_and_nonrecoverable_pauses(
     assert json.loads(state_path.read_text(encoding="utf-8"))["accounts"]["agency"][
         "paused"
     ] is True
+
+
+def test_preflight_rejects_primary_password_shape() -> None:
+    with pytest.raises(RuntimeError, match="primary passwords are forbidden"):
+        preflight_account(
+            registry(registry_row()),
+            "agency",
+            handle="agency-archive.bsky.social",
+            app_password="Auckland01!!!",
+            login=lambda _handle, _password: None,
+        )
+
+
+def test_credential_health_report_never_exposes_secret_value() -> None:
+    secret = "abcd-efgh-ijkl-mnop"
+    result = credential_health_report(
+        registry(registry_row()),
+        "agency",
+        handle="agency-archive.bsky.social",
+        app_password=secret,
+    )
+
+    assert result["valid"] is True
+    assert result["credential_mode"] == "app_password"
+    assert secret not in json.dumps(result)
 
 
 def test_archive_workflows_do_not_receive_posting_credentials() -> None:

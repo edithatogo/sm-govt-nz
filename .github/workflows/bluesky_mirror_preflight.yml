@@ -40,10 +40,12 @@ jobs:
           requirements: requirements.txt
       - name: Validate isolated account credentials without posting
         env:
+          BLUESKY_CREDENTIAL_MODE: app_password
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
         run: |
           test "$BLUESKY_HANDLE" = '${{ matrix.handle }}'
+          test "$BLUESKY_CREDENTIAL_MODE" = 'app_password'
           test -n "$BLUESKY_APP_PASSWORD"
           python scripts/manage_bluesky_mirror_handle.py verify --mirror-id '${{ matrix.mirror_id }}'
           python scripts/manage_bluesky_mirror_programme.py preflight --mirror-id '${{ matrix.mirror_id }}'

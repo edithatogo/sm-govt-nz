@@ -15,6 +15,8 @@ jobs:
       matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - uses: ./.github/actions/setup-python-uv
         with:
           requirements: requirements.txt
@@ -35,9 +37,13 @@ jobs:
         with:
           requirements: requirements.txt
       - env:
+          BLUESKY_CREDENTIAL_MODE: app_password
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
-        run: python scripts/manage_bluesky_mirror_programme.py preflight --mirror-id '${{ matrix.mirror_id }}'
+        run: |
+          python scripts/manage_bluesky_mirror_programme.py credential-health --mirror-id '${{ matrix.mirror_id }}' --output 'conductor/bluesky_mirror_credential_health/${{ matrix.mirror_id }}.json'
+          python scripts/manage_bluesky_mirror_programme.py preflight --mirror-id '${{ matrix.mirror_id }}'
+      - run: python scripts/commit_state_updates.py --message "Refresh Bluesky credential health (${{ matrix.mirror_id }})" --path "conductor/bluesky_mirror_credential_health/${{ matrix.mirror_id }}.json"
 
   public-health:
     runs-on: ubuntu-latest

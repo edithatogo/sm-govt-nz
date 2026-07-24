@@ -47,6 +47,10 @@ JURISDICTIONAL_HANDLE_PATTERN = re.compile(
     r"[a-z0-9](?:[a-z0-9-]{0,12}[a-z0-9])?-arc(?:-[2-9][0-9]*)?\.bsky\.social$"
 )
 ATPROTO_DID_PATTERN = re.compile(r"^did:[a-z0-9]+:[A-Za-z0-9._:%-]+$")
+BLUESKY_APP_PASSWORD_PATTERN = re.compile(
+    r"^[a-z0-9]{4}(?:-[a-z0-9]{4}){3}$",
+    re.I,
+)
 VALID_STATES = {
     "candidate",
     "operator_onboarding",
@@ -327,6 +331,11 @@ def preflight_account(
     account = _account(registry, mirror_id)
     if not handle or not app_password or handle != account.get("handle"):
         raise RuntimeError("Isolated Bluesky credentials are missing or mismatched.")
+    if not BLUESKY_APP_PASSWORD_PATTERN.fullmatch(app_password):
+        raise RuntimeError(
+            "Bluesky automation requires a four-group app password; "
+            "primary passwords are forbidden."
+        )
     if login is None:
         from atproto import Client
 
@@ -1039,6 +1048,32 @@ def recover_account(
     )
     _write_json(output, result)
     return result
+
+
+def credential_health_report(
+    registry: Mapping[str, Any],
+    mirror_id: str,
+    *,
+    handle: str,
+    app_password: str,
+) -> dict[str, Any]:
+    """Return nonsecret credential configuration evidence."""
+    account = _account(registry, mirror_id)
+    handle_matches = bool(handle and handle == account.get("handle"))
+    app_password_format = bool(
+        app_password and BLUESKY_APP_PASSWORD_PATTERN.fullmatch(app_password)
+    )
+    return {
+        "schema_version": 1,
+        "mirror_id": mirror_id,
+        "checked_at": _now(),
+        "credential_mode": "app_password" if app_password_format else "invalid",
+        "handle_present": bool(handle),
+        "handle_matches_registry": handle_matches,
+        "app_password_present": bool(app_password),
+        "app_password_format_valid": app_password_format,
+        "valid": handle_matches and app_password_format,
+    }
 
 
 def health_report(

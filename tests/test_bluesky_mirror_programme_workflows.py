@@ -45,3 +45,16 @@ def test_recovery_workflow_is_read_only_by_default_and_mirror_scoped() -> None:
     assert "conductor/bluesky_mirror_state/${{ inputs.mirror_id }}.json" in text
     assert "BLUESKY_APP_PASSWORD" not in text
     assert " publish " not in text
+
+
+def test_credential_workflows_declare_app_password_mode_and_nonsecret_report() -> None:
+    preflight = Path(".github/workflows/bluesky_mirror_preflight.yml").read_text(
+        encoding="utf-8"
+    )
+    health = Path(".github/workflows/bluesky_mirror_health.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "BLUESKY_CREDENTIAL_MODE: app_password" in preflight
+    assert "BLUESKY_CREDENTIAL_MODE: app_password" in health
+    assert "credential-health --mirror-id" in health
+    assert "bluesky_mirror_credential_health/${{ matrix.mirror_id }}.json" in health

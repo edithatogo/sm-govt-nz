@@ -10,6 +10,7 @@ from src.bluesky_mirror_programme import (
     ELIGIBILITY_REPORT_DIR,
     STATE_PATH,
     build_registry_from_manifest,
+    credential_health_report,
     health_report,
     load_runtime_state,
     load_registry,
@@ -30,6 +31,9 @@ def main() -> None:
     sub.add_parser("validate")
     preflight = sub.add_parser("preflight")
     preflight.add_argument("--mirror-id", required=True)
+    credential_health = sub.add_parser("credential-health")
+    credential_health.add_argument("--mirror-id", required=True)
+    credential_health.add_argument("--output", required=True)
     build = sub.add_parser("build-registry")
     build.add_argument("--manifest", default="conductor/govt_archive_source_manifest.json")
     matrix = sub.add_parser("matrix")
@@ -66,6 +70,17 @@ def main() -> None:
             args.mirror_id,
             handle=os.environ.get("BLUESKY_HANDLE", ""),
             app_password=os.environ.get("BLUESKY_APP_PASSWORD", ""),
+        )
+    elif args.command == "credential-health":
+        result = credential_health_report(
+            load_registry(),
+            args.mirror_id,
+            handle=os.environ.get("BLUESKY_HANDLE", ""),
+            app_password=os.environ.get("BLUESKY_APP_PASSWORD", ""),
+        )
+        Path(args.output).write_text(
+            json.dumps(result, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
         )
     elif args.command == "matrix":
         state = load_runtime_state()
