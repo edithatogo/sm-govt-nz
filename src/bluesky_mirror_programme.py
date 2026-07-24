@@ -19,6 +19,9 @@ REGISTRY_PATH = Path("config/mirror_accounts.json")
 STATE_PATH = Path("conductor/bluesky_mirror_runtime_state.json")
 AUDIT_PATH = Path("conductor/bluesky_mirror_post_audit.jsonl")
 DEAD_LETTER_PATH = Path("conductor/bluesky_mirror_dead_letter.jsonl")
+STATE_DIR = Path("conductor/bluesky_mirror_state")
+AUDIT_DIR = Path("conductor/bluesky_mirror_audit")
+DEAD_LETTER_DIR = Path("conductor/bluesky_mirror_dead_letter")
 REPORT_PATH = Path("conductor/bluesky_mirror_programme_report.json")
 ELIGIBILITY_REPORT_DIR = Path("conductor/bluesky_mirror_eligibility")
 SOCIAL_PLATFORMS = {
@@ -627,7 +630,14 @@ def publish_next(
     readback: Callable[[str], bool] | None = None,
 ) -> dict[str, Any]:
     account = _account(registry, mirror_id)
-    state_file = Path(state_path)
+    state_file = _runtime_state_file(Path(state_path), mirror_id)
+    audit_file = _account_event_file(Path(audit_path), AUDIT_PATH, AUDIT_DIR, mirror_id)
+    dead_letter_file = _account_event_file(
+        Path(dead_letter_path),
+        DEAD_LETTER_PATH,
+        DEAD_LETTER_DIR,
+        mirror_id,
+    )
     state = _load_json(state_file, {"accounts": {}})
     account_state = state.setdefault("accounts", {}).setdefault(mirror_id, {})
     if account_state.get("paused") and not dry_run:
@@ -652,7 +662,7 @@ def publish_next(
         if row.record_id not in posted_ids
         and (historical or not activated_at or row.created_at >= activated_at)
     ]
-    if historical and _posts_today(Path(audit_path), mirror_id) >= 4:
+    if historical and _posts_today(audit_file, mirror_id) >= 4:
         return {"mirror_id": mirror_id, "status": "daily_cap_reached", "posted": 0}
     if not eligible:
         if historical:
@@ -695,7 +705,7 @@ def publish_next(
             account_state=account_state,
             publication=dict(existing),
             idempotency_key=idempotency_key,
-            audit_path=Path(audit_path),
+            audit_path=audit_file,
             audit=audit,
             readback=readback or _public_readback,
         )
@@ -709,7 +719,7 @@ def publish_next(
         "cid": "",
     }
     publications[idempotency_key] = publication
-    _append_jsonl(Path(audit_path), {**publication, "status": "planned"})
+    _append_jsonl(audit_file, {**publication, "status": "planned"})
     _write_json(state_file, state)
 
     post: BlueskyPost = {
@@ -725,7 +735,7 @@ def publish_next(
     }
     send = sender or _exact_bluesky_sender(handle, password)
     publication.update({"state": "submitted", "submitted_at": _now()})
-    _append_jsonl(Path(audit_path), {**publication, "status": "submitted"})
+    _append_jsonl(audit_file, {**publication, "status": "submitted"})
     _write_json(state_file, state)
     try:
         result = send(post)
@@ -739,7 +749,7 @@ def publish_next(
             }
         )
         _append_jsonl(
-            Path(audit_path),
+            audit_file,
             {**publication, "status": "pending_reconciliation"},
         )
         _write_json(state_file, state)
@@ -755,7 +765,7 @@ def publish_next(
         account_state.update(
             {"paused": True, "pause_reason": detail, "paused_at": _now()}
         )
-        _append_jsonl(Path(dead_letter_path), {**publication, "status": "failed"})
+        _append_jsonl(dead_letter_file, {**publication, "status": "failed"})
         _write_json(state_file, state)
         return {**audit, "status": "failed_paused", "posted": 0, "detail": detail}
 
@@ -768,7 +778,7 @@ def publish_next(
         }
     )
     _append_jsonl(
-        Path(audit_path),
+        audit_file,
         {**publication, "status": "pending_reconciliation"},
     )
     _write_json(state_file, state)
@@ -782,7 +792,7 @@ def publish_next(
             }
         )
         _append_jsonl(
-            Path(audit_path),
+            audit_file,
             {**publication, "status": "pending_reconciliation"},
         )
         _write_json(state_file, state)
@@ -798,7 +808,7 @@ def publish_next(
         account_state=account_state,
         publication=publication,
         idempotency_key=idempotency_key,
-        audit_path=Path(audit_path),
+        audit_path=audit_file,
         audit=audit,
     )
 
@@ -907,28 +917,42 @@ def _mark_publication_reconciled(
 
 def pause(state_path: str | Path, mirror_id: str, reason: str) -> dict[str, Any]:
     path = Path(state_path)
-    state = _load_json(path, {"accounts": {}})
     targets: Iterable[str]
     if mirror_id == "all":
         registry = load_registry()
         targets = [row["mirror_id"] for row in registry["mirrors"]]
     else:
         targets = [mirror_id]
+    aggregate = {"accounts": {}}
     for target in targets:
+        target_path = _runtime_state_file(path, target)
+        state = _load_json(target_path, {"accounts": {}})
         state.setdefault("accounts", {}).setdefault(target, {}).update(
             {"paused": True, "pause_reason": reason, "paused_at": _now()}
         )
-    _write_json(path, state)
-    return state
+        _write_json(target_path, state)
+        aggregate["accounts"][target] = state["accounts"][target]
+    return aggregate
 
 
-def health_report(registry: Mapping[str, Any]) -> dict[str, Any]:
+def health_report(
+    registry: Mapping[str, Any],
+    *,
+    runtime_state: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
     client = BlueskyApiClient()
+    runtime_accounts = (runtime_state or load_runtime_state()).get("accounts", {})
     rows = []
     for account in registry["mirrors"]:
         handle = str(account.get("handle") or "")
         if not handle:
-            rows.append({"mirror_id": account["mirror_id"], "status": "account_not_created"})
+            rows.append(
+                {
+                    "mirror_id": account["mirror_id"],
+                    "status": "account_not_created",
+                    "runtime_state": runtime_accounts.get(account["mirror_id"], {}),
+                }
+            )
             continue
         try:
             feed = client.fetch_author_feed(handle, limit=1)
@@ -938,11 +962,78 @@ def health_report(registry: Mapping[str, Any]) -> dict[str, Any]:
                     "handle": handle,
                     "status": "publicly_resolvable",
                     "visible_posts": len(feed),
+                    "runtime_state": runtime_accounts.get(account["mirror_id"], {}),
                 }
             )
         except Exception as error:
-            rows.append({"mirror_id": account["mirror_id"], "handle": handle, "status": "fault", "detail": str(error)})
+            rows.append(
+                {
+                    "mirror_id": account["mirror_id"],
+                    "handle": handle,
+                    "status": "fault",
+                    "detail": str(error),
+                    "runtime_state": runtime_accounts.get(account["mirror_id"], {}),
+                }
+            )
+    rows.sort(key=lambda row: str(row["mirror_id"]))
     return {"generated_at": _now(), "accounts": rows}
+
+
+def migrate_runtime_state(
+    monolithic_path: str | Path = STATE_PATH,
+    state_dir: str | Path = STATE_DIR,
+) -> dict[str, Any]:
+    """Partition a legacy state file without overwriting existing account state."""
+    source = Path(monolithic_path)
+    destination = Path(state_dir)
+    legacy = _load_json(source, {"accounts": {}})
+    migrated = []
+    preserved = []
+    for mirror_id, account_state in sorted(legacy.get("accounts", {}).items()):
+        target = destination / f"{slugify(str(mirror_id), maximum=80)}.json"
+        if target.exists():
+            preserved.append(str(mirror_id))
+            continue
+        _write_json(
+            target,
+            {
+                "schema_version": 1,
+                "mirror_id": str(mirror_id),
+                "accounts": {str(mirror_id): account_state},
+            },
+        )
+        migrated.append(str(mirror_id))
+    return {
+        "schema_version": 1,
+        "migrated": migrated,
+        "preserved": preserved,
+        "source": str(source),
+        "state_dir": str(destination),
+    }
+
+
+def load_runtime_state(
+    monolithic_path: str | Path = STATE_PATH,
+    state_dir: str | Path = STATE_DIR,
+) -> dict[str, Any]:
+    """Load deterministic aggregate runtime state from account partitions."""
+    source = Path(monolithic_path)
+    directory = Path(state_dir)
+    if source.exists():
+        migrate_runtime_state(source, directory)
+    accounts: dict[str, Any] = {}
+    if directory.exists():
+        for path in sorted(directory.glob("*.json")):
+            partition = _load_json(path, {"accounts": {}})
+            for mirror_id, account_state in partition.get("accounts", {}).items():
+                if mirror_id in accounts:
+                    raise ValueError(f"Duplicate runtime state partition: {mirror_id}")
+                accounts[str(mirror_id)] = account_state
+    return {
+        "schema_version": 1,
+        "generated_at": _now(),
+        "accounts": dict(sorted(accounts.items())),
+    }
 
 
 def write_programme_report(registry: Mapping[str, Any], path: str | Path = REPORT_PATH) -> dict[str, Any]:
@@ -1036,6 +1127,25 @@ def _posts_today(path: Path, mirror_id: str) -> int:
 
 def _load_json(path: Path, default: dict[str, Any]) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
+
+
+def _runtime_state_file(base_path: Path, mirror_id: str) -> Path:
+    if base_path == STATE_PATH:
+        if STATE_PATH.exists():
+            migrate_runtime_state()
+        return STATE_DIR / f"{slugify(mirror_id, maximum=80)}.json"
+    return base_path
+
+
+def _account_event_file(
+    requested_path: Path,
+    legacy_path: Path,
+    directory: Path,
+    mirror_id: str,
+) -> Path:
+    if requested_path == legacy_path:
+        return directory / f"{slugify(mirror_id, maximum=80)}.jsonl"
+    return requested_path
 
 
 def _write_json(path: Path, value: Mapping[str, Any]) -> None:

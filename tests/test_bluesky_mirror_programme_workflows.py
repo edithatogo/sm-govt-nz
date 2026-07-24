@@ -23,3 +23,14 @@ def test_legacy_follow_workflow_is_read_only() -> None:
 
 def test_retired_syndicate_workflow_is_absent() -> None:
     assert not Path(".github/workflows/syndicate.yml").exists()
+
+
+def test_posting_workflows_commit_only_account_partitioned_state() -> None:
+    for name in (
+        "bluesky_mirror_ongoing.yml",
+        "bluesky_mirror_historical_backfill.yml",
+    ):
+        text = (Path(".github/workflows") / name).read_text(encoding="utf-8")
+        assert "conductor/bluesky_mirror_state/${{ matrix.mirror_id }}.json" in text
+        assert "conductor/bluesky_mirror_audit/${{ matrix.mirror_id }}.jsonl" in text
+        assert "conductor/bluesky_mirror_runtime_state.json" not in text

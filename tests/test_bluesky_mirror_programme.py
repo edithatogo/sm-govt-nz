@@ -10,6 +10,8 @@ from src.bluesky_mirror_programme import (
     evaluate_source_eligibility,
     handle_candidates,
     load_archive_records,
+    load_runtime_state,
+    migrate_runtime_state,
     render_thread,
     publish_next,
     preflight_account,
@@ -472,6 +474,60 @@ def test_ambiguous_submission_failure_is_reserved_and_not_retried(
     assert json.loads(state_path.read_text(encoding="utf-8"))["accounts"]["agency"].get(
         "paused"
     ) is not True
+
+
+def test_monolithic_runtime_state_migrates_without_overwriting_partitions(
+    tmp_path: Path,
+) -> None:
+    legacy = tmp_path / "state.json"
+    state_dir = tmp_path / "state"
+    legacy.write_text(
+        json.dumps(
+            {
+                "accounts": {
+                    "agency-a": {"paused": True},
+                    "agency-b": {"backfill_complete": True},
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    state_dir.mkdir()
+    (state_dir / "agency-a.json").write_text(
+        json.dumps({"accounts": {"agency-a": {"paused": False}}}),
+        encoding="utf-8",
+    )
+
+    result = migrate_runtime_state(legacy, state_dir)
+    aggregate = load_runtime_state(legacy, state_dir)
+
+    assert result["preserved"] == ["agency-a"]
+    assert result["migrated"] == ["agency-b"]
+    assert aggregate["accounts"]["agency-a"]["paused"] is False
+    assert aggregate["accounts"]["agency-b"]["backfill_complete"] is True
+
+
+def test_partitioned_runtime_updates_preserve_unrelated_accounts(tmp_path: Path) -> None:
+    state_dir = tmp_path / "state"
+    migrate_runtime_state(
+        tmp_path / "missing-legacy.json",
+        state_dir,
+    )
+    for mirror_id, value in (("agency-a", True), ("agency-b", False)):
+        path = state_dir / f"{mirror_id}.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps({"accounts": {mirror_id: {"paused": value}}}),
+            encoding="utf-8",
+        )
+
+    agency_a = json.loads((state_dir / "agency-a.json").read_text(encoding="utf-8"))
+    agency_a["accounts"]["agency-a"]["paused"] = False
+    (state_dir / "agency-a.json").write_text(json.dumps(agency_a), encoding="utf-8")
+    aggregate = load_runtime_state(tmp_path / "missing-legacy.json", state_dir)
+
+    assert aggregate["accounts"]["agency-a"]["paused"] is False
+    assert aggregate["accounts"]["agency-b"]["paused"] is False
 
 
 def test_archive_workflows_do_not_receive_posting_credentials() -> None:

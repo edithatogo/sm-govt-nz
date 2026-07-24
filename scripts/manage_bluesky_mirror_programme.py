@@ -11,6 +11,7 @@ from src.bluesky_mirror_programme import (
     STATE_PATH,
     build_registry_from_manifest,
     health_report,
+    load_runtime_state,
     load_registry,
     pause,
     preflight_account,
@@ -63,7 +64,7 @@ def main() -> None:
             app_password=os.environ.get("BLUESKY_APP_PASSWORD", ""),
         )
     elif args.command == "matrix":
-        state = json.loads(STATE_PATH.read_text(encoding="utf-8")) if STATE_PATH.exists() else {}
+        state = load_runtime_state()
         result = workflow_matrix(
             load_registry(),
             mode=args.mode,
@@ -87,7 +88,7 @@ def main() -> None:
             ),
         )
     elif args.command == "health":
-        result = health_report(load_registry())
+        result = health_report(load_registry(), runtime_state=load_runtime_state())
         Path(args.output).write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     else:
         result = pause(STATE_PATH, args.mirror_id, args.reason)

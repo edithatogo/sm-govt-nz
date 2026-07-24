@@ -60,4 +60,4 @@ jobs:
             args+=(--dry-run)
           fi
           "${args[@]}"
-      - run: python scripts/commit_state_updates.py --message "Update Bluesky mirror state" --path conductor/bluesky_mirror_runtime_state.json --path conductor/bluesky_mirror_post_audit.jsonl --path conductor/bluesky_mirror_dead_letter.jsonl --path conductor/bluesky_mirror_eligibility
+      - run: python scripts/commit_state_updates.py --message "Update Bluesky mirror state (${{ matrix.mirror_id }})" --path "conductor/bluesky_mirror_state/${{ matrix.mirror_id }}.json" --path "conductor/bluesky_mirror_audit/${{ matrix.mirror_id }}.jsonl" --path "conductor/bluesky_mirror_dead_letter/${{ matrix.mirror_id }}.jsonl" --path "conductor/bluesky_mirror_eligibility/${{ matrix.mirror_id }}.json"
