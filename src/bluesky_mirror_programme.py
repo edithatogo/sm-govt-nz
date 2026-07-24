@@ -53,6 +53,8 @@ VALID_STATES = {
     "paused",
     "retired",
 }
+PUBLICATION_STATE_VERSION = 1
+MAX_RECONCILIATION_ATTEMPTS = 12
 
 
 @dataclass(frozen=True)
@@ -661,10 +663,17 @@ def publish_next(
     record = eligible[0]
     text = render_record(record, historical=historical)
     rendered_hash = hashlib.sha256(text.encode()).hexdigest()
+    idempotency_key = hashlib.sha256(
+        (
+            f"v{PUBLICATION_STATE_VERSION}\0{mirror_id}\0{record.source_id}\0"
+            f"{record.record_id}\0{rendered_hash}"
+        ).encode()
+    ).hexdigest()
     audit = {
         "mirror_id": mirror_id,
         "record_id": record.record_id,
         "source_id": record.source_id,
+        "idempotency_key": idempotency_key,
         "rendered_hash": rendered_hash,
         "mode": mode,
         "attempted_at": _now(),
@@ -677,6 +686,32 @@ def publish_next(
     password = os.environ.get("BLUESKY_APP_PASSWORD", "")
     if not handle or not password or handle != account.get("handle"):
         raise RuntimeError("Account-isolated BLUESKY_HANDLE/BLUESKY_APP_PASSWORD are missing or mismatched.")
+    publications = account_state.setdefault("publications", {})
+    existing = publications.get(idempotency_key)
+    if isinstance(existing, Mapping):
+        return _reconcile_reserved_publication(
+            state_file=state_file,
+            state=state,
+            account_state=account_state,
+            publication=dict(existing),
+            idempotency_key=idempotency_key,
+            audit_path=Path(audit_path),
+            audit=audit,
+            readback=readback or _public_readback,
+        )
+
+    publication = {
+        **audit,
+        "state": "planned",
+        "planned_at": _now(),
+        "reconciliation_attempts": 0,
+        "uri": "",
+        "cid": "",
+    }
+    publications[idempotency_key] = publication
+    _append_jsonl(Path(audit_path), {**publication, "status": "planned"})
+    _write_json(state_file, state)
+
     post: BlueskyPost = {
         "post_id": record.record_id,
         "uri": "",
@@ -689,38 +724,182 @@ def publish_next(
         "images": [],
     }
     send = sender or _exact_bluesky_sender(handle, password)
-    result: SyndicationResult | None = None
-    failure = ""
-    for attempt in range(1, 4):
-        try:
-            result = send(post)
-            if result.success and not result.skipped:
-                break
-            failure = result.detail or "posting failed"
-        except Exception as error:  # bounded workflow isolation
-            failure = str(error)
-        if attempt < 3:
-            time.sleep(2 ** (attempt - 1))
-    if result is None or not result.success or result.skipped:
-        account_state.update({"paused": True, "pause_reason": failure, "paused_at": _now()})
-        _append_jsonl(Path(dead_letter_path), {**audit, "status": "failed", "detail": failure})
-        _write_json(state_file, state)
-        return {**audit, "status": "failed_paused", "posted": 0, "detail": failure}
-
-    uri = result.detail
-    verify = readback or _public_readback
-    reconciled = bool(uri.startswith("at://") and verify(uri))
-    status = "posted" if reconciled else "reconcile_failed"
-    _append_jsonl(Path(audit_path), {**audit, "status": status, "uri": uri, "reconciled": reconciled})
-    if not reconciled:
-        account_state.update(
-            {"paused": True, "pause_reason": "public readback failed", "paused_at": _now()}
+    publication.update({"state": "submitted", "submitted_at": _now()})
+    _append_jsonl(Path(audit_path), {**publication, "status": "submitted"})
+    _write_json(state_file, state)
+    try:
+        result = send(post)
+    except Exception as error:
+        publication.update(
+            {
+                "state": "pending_reconciliation",
+                "detail": str(error),
+                "reconciliation_attempts": 1,
+                "last_reconciliation_at": _now(),
+            }
+        )
+        _append_jsonl(
+            Path(audit_path),
+            {**publication, "status": "pending_reconciliation"},
         )
         _write_json(state_file, state)
-        return {**audit, "status": "reconcile_failed_paused", "posted": 0, "uri": uri}
-    account_state.setdefault("posted_record_ids", []).append(record.record_id)
+        return {
+            **audit,
+            "status": "pending_reconciliation",
+            "posted": 0,
+            "detail": str(error),
+        }
+    if not result.success or result.skipped:
+        detail = result.detail or "posting was not accepted"
+        publication.update({"state": "failed", "detail": detail, "failed_at": _now()})
+        account_state.update(
+            {"paused": True, "pause_reason": detail, "paused_at": _now()}
+        )
+        _append_jsonl(Path(dead_letter_path), {**publication, "status": "failed"})
+        _write_json(state_file, state)
+        return {**audit, "status": "failed_paused", "posted": 0, "detail": detail}
+
+    uri = result.detail
+    publication.update(
+        {
+            "state": "pending_reconciliation",
+            "uri": uri,
+            "submitted_at": _now(),
+        }
+    )
+    _append_jsonl(
+        Path(audit_path),
+        {**publication, "status": "pending_reconciliation"},
+    )
+    _write_json(state_file, state)
+    verify = readback or _public_readback
+    reconciled = bool(uri.startswith("at://") and verify(uri))
+    if not reconciled:
+        publication.update(
+            {
+                "reconciliation_attempts": 1,
+                "last_reconciliation_at": _now(),
+            }
+        )
+        _append_jsonl(
+            Path(audit_path),
+            {**publication, "status": "pending_reconciliation"},
+        )
+        _write_json(state_file, state)
+        return {
+            **audit,
+            "status": "pending_reconciliation",
+            "posted": 0,
+            "uri": uri,
+        }
+    return _mark_publication_reconciled(
+        state_file=state_file,
+        state=state,
+        account_state=account_state,
+        publication=publication,
+        idempotency_key=idempotency_key,
+        audit_path=Path(audit_path),
+        audit=audit,
+    )
+
+
+def _reconcile_reserved_publication(
+    *,
+    state_file: Path,
+    state: dict[str, Any],
+    account_state: dict[str, Any],
+    publication: dict[str, Any],
+    idempotency_key: str,
+    audit_path: Path,
+    audit: Mapping[str, Any],
+    readback: Callable[[str], bool],
+) -> dict[str, Any]:
+    """Resume a durable reservation without issuing another create request."""
+    status = str(publication.get("state") or "")
+    uri = str(publication.get("uri") or "")
+    if status == "reconciled":
+        return {
+            **audit,
+            "status": "already_reconciled",
+            "posted": 0,
+            "uri": uri,
+        }
+    attempts = int(publication.get("reconciliation_attempts") or 0) + 1
+    reconciled = bool(uri.startswith("at://") and readback(uri))
+    if reconciled:
+        return _mark_publication_reconciled(
+            state_file=state_file,
+            state=state,
+            account_state=account_state,
+            publication=publication,
+            idempotency_key=idempotency_key,
+            audit_path=audit_path,
+            audit=audit,
+        )
+    publication.update(
+        {
+            "state": "pending_reconciliation",
+            "reconciliation_attempts": attempts,
+            "last_reconciliation_at": _now(),
+        }
+    )
+    account_state.setdefault("publications", {})[idempotency_key] = publication
+    if attempts >= MAX_RECONCILIATION_ATTEMPTS:
+        publication.update({"state": "failed", "failed_at": _now()})
+        account_state.update(
+            {
+                "paused": True,
+                "pause_reason": "publication reconciliation exhausted",
+                "paused_at": _now(),
+            }
+        )
+        result_status = "reconciliation_exhausted_paused"
+    else:
+        result_status = "pending_reconciliation"
+    _append_jsonl(audit_path, {**publication, "status": result_status})
+    _write_json(state_file, state)
+    return {
+        **audit,
+        "status": result_status,
+        "posted": 0,
+        "uri": uri,
+        "reconciliation_attempts": attempts,
+    }
+
+
+def _mark_publication_reconciled(
+    *,
+    state_file: Path,
+    state: dict[str, Any],
+    account_state: dict[str, Any],
+    publication: dict[str, Any],
+    idempotency_key: str,
+    audit_path: Path,
+    audit: Mapping[str, Any],
+) -> dict[str, Any]:
+    uri = str(publication.get("uri") or "")
+    publication.update(
+        {
+            "state": "reconciled",
+            "reconciled_at": _now(),
+            "last_reconciliation_at": _now(),
+        }
+    )
+    account_state.setdefault("publications", {})[idempotency_key] = publication
+    posted_ids = account_state.setdefault("posted_record_ids", [])
+    if audit["record_id"] not in posted_ids:
+        posted_ids.append(audit["record_id"])
     account_state.update(
         {"last_success_at": _now(), "last_uri": uri, "backfill_complete": False}
+    )
+    _append_jsonl(
+        audit_path,
+        {
+            **publication,
+            "publication_state": "reconciled",
+            "status": "posted",
+            "reconciled": True,
+        },
     )
     _write_json(state_file, state)
     return {**audit, "status": "posted", "posted": 1, "uri": uri}

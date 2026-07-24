@@ -343,6 +343,135 @@ def test_live_sender_receives_one_already_attributed_rendering(
     assert sent[0]["text"].count("Original:") == 1
 
 
+def test_delayed_readback_resumes_without_duplicate_submission(
+    tmp_path: Path, monkeypatch
+) -> None:
+    archive = tmp_path / "historical_archive_normalized" / "x"
+    archive.mkdir(parents=True)
+    (archive / "2026-07.jsonl").write_text(
+        json.dumps(
+            {
+                "record_id": "r1",
+                "agency_id": "agency",
+                "source_id": "source-1",
+                "source_platform": "x",
+                "content": "Public update",
+                "original_created_at": "2020-01-02T00:00:00Z",
+                "source_url": "https://x.com/a/status/1",
+                "visibility": "public",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setenv("BLUESKY_MIRRORING_ENABLED", "true")
+    monkeypatch.setenv("BLUESKY_HANDLE", "agency-archive.bsky.social")
+    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "app-password")
+    state_path = tmp_path / "state.json"
+    sent = []
+    visible = iter((False, True))
+
+    first = publish_next(
+        registry(registry_row()),
+        "agency",
+        mode="backfill",
+        archive_root=archive,
+        state_path=state_path,
+        audit_path=tmp_path / "audit.jsonl",
+        sender=lambda post: sent.append(post)
+        or __import__("src.syndication", fromlist=["SyndicationResult"]).SyndicationResult(
+            "bluesky", True, detail="at://did:plc:a/app.bsky.feed.post/1"
+        ),
+        readback=lambda _uri: next(visible),
+    )
+    second = publish_next(
+        registry(registry_row()),
+        "agency",
+        mode="backfill",
+        archive_root=archive,
+        state_path=state_path,
+        audit_path=tmp_path / "audit.jsonl",
+        sender=lambda _post: (_ for _ in ()).throw(
+            AssertionError("reserved publication was submitted twice")
+        ),
+        readback=lambda _uri: next(visible),
+    )
+
+    assert first["status"] == "pending_reconciliation"
+    assert second["status"] == "posted"
+    assert len(sent) == 1
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    publication = next(iter(state["accounts"]["agency"]["publications"].values()))
+    assert publication["state"] == "reconciled"
+    audit_rows = [
+        json.loads(line)
+        for line in (tmp_path / "audit.jsonl").read_text(encoding="utf-8").splitlines()
+    ]
+    assert audit_rows[-1]["status"] == "posted"
+    assert audit_rows[-1]["publication_state"] == "reconciled"
+
+
+def test_ambiguous_submission_failure_is_reserved_and_not_retried(
+    tmp_path: Path, monkeypatch
+) -> None:
+    archive = tmp_path / "historical_archive_normalized" / "x"
+    archive.mkdir(parents=True)
+    (archive / "2026-07.jsonl").write_text(
+        json.dumps(
+            {
+                "record_id": "r1",
+                "agency_id": "agency",
+                "source_id": "source-1",
+                "source_platform": "x",
+                "content": "Public update",
+                "original_created_at": "2020-01-02T00:00:00Z",
+                "source_url": "https://x.com/a/status/1",
+                "visibility": "public",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setenv("BLUESKY_MIRRORING_ENABLED", "true")
+    monkeypatch.setenv("BLUESKY_HANDLE", "agency-archive.bsky.social")
+    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "app-password")
+    state_path = tmp_path / "state.json"
+    calls = 0
+
+    def ambiguous_sender(_post):
+        nonlocal calls
+        calls += 1
+        raise TimeoutError("response lost after submission")
+
+    first = publish_next(
+        registry(registry_row()),
+        "agency",
+        mode="backfill",
+        archive_root=archive,
+        state_path=state_path,
+        audit_path=tmp_path / "audit.jsonl",
+        sender=ambiguous_sender,
+        readback=lambda _uri: False,
+    )
+    second = publish_next(
+        registry(registry_row()),
+        "agency",
+        mode="backfill",
+        archive_root=archive,
+        state_path=state_path,
+        audit_path=tmp_path / "audit.jsonl",
+        sender=ambiguous_sender,
+        readback=lambda _uri: False,
+    )
+
+    assert first["status"] == "pending_reconciliation"
+    assert second["status"] == "pending_reconciliation"
+    assert calls == 1
+    assert json.loads(state_path.read_text(encoding="utf-8"))["accounts"]["agency"].get(
+        "paused"
+    ) is not True
+
+
 def test_archive_workflows_do_not_receive_posting_credentials() -> None:
     root = Path(".github/workflows")
     for workflow in root.glob("archive*.yml"):
