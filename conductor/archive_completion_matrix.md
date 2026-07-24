@@ -1,6 +1,6 @@
 # NZ Government Archive Completion Matrix
 
-Generated: 2026-07-23T18:42:10+00:00
+Generated: 2026-07-24T07:17:13+00:00
 
 ## Completion
 
@@ -8,8 +8,8 @@ Generated: 2026-07-23T18:42:10+00:00
 | --- | ---: |
 | Total candidates | 5602 |
 | Registered sources | 5602 |
-| Archived sources | 2539 |
-| Terminal evidence sources | 3063 |
+| Archived sources | 2541 |
+| Terminal evidence sources | 3061 |
 | Incomplete actionable sources | 0 |
 | Automation faults | 0 |
 | Completion | 100.0% |
@@ -18,11 +18,11 @@ Generated: 2026-07-23T18:42:10+00:00
 
 | State | Count |
 | --- | ---: |
-| `archived` | 2539 |
+| `archived` | 2541 |
 | `terminal_deleted` | 128 |
-| `terminal_empty` | 1678 |
+| `terminal_empty` | 1680 |
 | `terminal_external_access` | 671 |
-| `terminal_invalid` | 586 |
+| `terminal_invalid` | 582 |
 
 ## Next work
 
