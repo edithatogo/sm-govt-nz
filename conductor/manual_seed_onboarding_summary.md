@@ -1,19 +1,19 @@
 # Manual/API Source Onboarding
 
-Generated: 2026-07-24T17:10:00+00:00
+Generated: 2026-07-25T16:29:40+00:00
 Next batch limit: 25
 
 ## Summary
 
-- `selected_sources`: 1232
+- `selected_sources`: 1233
 - `remaining_group_count`: 4
-- `remaining_source_count`: 895
+- `remaining_source_count`: 896
 
 ## Remaining groups
 
 - `facebook`: 324
 - `instagram`: 182
-- `newsletter`: 386
+- `newsletter`: 387
 - `threads`: 3
 
 ## Platform status
@@ -21,7 +21,7 @@ Next batch limit: 25
 - `facebook`: {'needs_authorized_seed_or_api': 324}
 - `instagram`: {'needs_authorized_seed_or_api': 182}
 - `linkedin`: {'public_fallback_available': 258}
-- `newsletter`: {'needs_authorized_seed_or_api': 386}
+- `newsletter`: {'needs_authorized_seed_or_api': 387}
 - `threads`: {'needs_authorized_seed_or_api': 3}
 - `x`: {'seed_present': 79}
 

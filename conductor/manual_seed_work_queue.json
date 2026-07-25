@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-24T17:10:00+00:00",
+  "generated_at": "2026-07-25T16:29:40+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -4340,6 +4340,27 @@
       ],
       "source_id": "ministry-of-education-newsletter-4e92a35d",
       "url": "https://www.education.govt.nz/news/kia-manawaroa-matariki-special"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.education.govt.nz",
+      "agency_id": "ministry-of-education",
+      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/ministry-of-education-newsletter-8e2f24d1.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/ministry-of-education-newsletter-8e2f24d1.json",
+        "manual_archive_seeds/newsletter/ministry-of-education.json"
+      ],
+      "source_id": "ministry-of-education-newsletter-8e2f24d1",
+      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-17-out-now"
     },
     {
       "acceptable_access_methods": [
@@ -12831,7 +12852,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 7 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 week ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -18815,7 +18836,7 @@
     "platform_counts": {
       "facebook": 324,
       "instagram": 182,
-      "newsletter": 386,
+      "newsletter": 387,
       "threads": 3
     },
     "priority_order": [
@@ -18824,6 +18845,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 895
+    "queue_count": 896
   }
 }

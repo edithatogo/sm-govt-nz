@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-24T17:10:00+00:00",
+  "generated_at": "2026-07-25T16:29:40+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -5621,7 +5621,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 7 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 week ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "archive_status": "candidate",
@@ -24204,6 +24204,31 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/ministry-of-education-newsletter-8e2f24d1.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/ministry-of-education-newsletter-8e2f24d1.json",
+        "manual_archive_seeds/newsletter/ministry-of-education.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "ministry-of-education-newsletter-8e2f24d1",
+      "source_type": "newsletter",
+      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-17-out-now"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.education.govt.nz",
+      "agency_id": "ministry-of-education",
+      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/ministry-of-education-newsletter-e686fdc8.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
@@ -30975,7 +31000,7 @@
       "facebook": 324,
       "instagram": 182,
       "linkedin": 258,
-      "newsletter": 386,
+      "newsletter": 387,
       "threads": 3,
       "x": 79
     },
@@ -30983,11 +31008,11 @@
     "remaining_groups": {
       "facebook": 324,
       "instagram": 182,
-      "newsletter": 386,
+      "newsletter": 387,
       "threads": 3
     },
-    "remaining_source_count": 895,
-    "selected_sources": 1232,
+    "remaining_source_count": 896,
+    "selected_sources": 1233,
     "status_by_platform": {
       "facebook": {
         "needs_authorized_seed_or_api": 324
@@ -30999,7 +31024,7 @@
         "public_fallback_available": 258
       },
       "newsletter": {
-        "needs_authorized_seed_or_api": 386
+        "needs_authorized_seed_or_api": 387
       },
       "threads": {
         "needs_authorized_seed_or_api": 3
@@ -31009,7 +31034,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 895,
+      "needs_authorized_seed_or_api": 896,
       "public_fallback_available": 258,
       "seed_present": 79
     }
