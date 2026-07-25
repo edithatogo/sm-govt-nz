@@ -36,12 +36,12 @@ This dataset package contains normalized New Zealand government social media rec
 ## Source Coverage
 
 - api: 13 records
-- bluesky: 2316 records
+- bluesky: 2370 records
 - courtsofnz.govt.nz: 11 records
-- email: 22 records
+- email: 23 records
 - facebook: 323 records
 - json_feed: 16 records
-- linkedin: 54 records
+- linkedin: 56 records
 - rss: 3930 records
 - website_page: 1827 records
 - x: 833 records
