@@ -1,12 +1,12 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-24T06:10:46+00:00
+Generated: 2026-07-25T05:57:12+00:00
 
 ## Summary
 
 - `selected_sources`: 266
 - `platform_count`: 1
-- `status_count`: 9
+- `status_count`: 8
 
 ## Platform counts
 
@@ -16,17 +16,16 @@ Generated: 2026-07-24T06:10:46+00:00
 
 - `already_captured`: 16
 - `capture_blocked`: 25
-- `capture_failed`: 2
 - `dns_failed`: 8
-- `http_error`: 2
-- `invalid`: 199
+- `http_error`: 3
+- `invalid`: 202
 - `network_error`: 9
-- `network_timeout`: 4
+- `network_timeout`: 2
 - `not_acceptable`: 1
 
 ## Status by platform
 
-- `json_feed`: {'already_captured': 16, 'capture_blocked': 25, 'capture_failed': 2, 'dns_failed': 8, 'http_error': 2, 'invalid': 199, 'network_error': 9, 'network_timeout': 4, 'not_acceptable': 1}
+- `json_feed`: {'already_captured': 16, 'capture_blocked': 25, 'dns_failed': 8, 'http_error': 3, 'invalid': 202, 'network_error': 9, 'network_timeout': 2, 'not_acceptable': 1}
 
 ## Notes
 
