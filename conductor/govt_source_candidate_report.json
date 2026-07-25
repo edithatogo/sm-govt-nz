@@ -84661,6 +84661,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "open-polytechnic",
+      "agency_name": "Open Polytechnic of New Zealand",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "7da9afed952b33ca",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.openpolytechnic.ac.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "http://www.facebook.com/openpolytechnic"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "OpenPolytechnicNZ",
       "account_classification": "official",
       "agency_id": "open-polytechnic",
@@ -84686,6 +84710,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.facebook.com/OpenPolytechnicNZ"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "open-polytechnic",
+      "agency_name": "Open Polytechnic of New Zealand",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "ae7fcdb095605670",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.openpolytechnic.ac.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "http://www.instagram.com/openpolytechnic"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -84717,6 +84765,30 @@
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "open-polytechnic",
+      "agency_name": "Open Polytechnic of New Zealand",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "289676a40b7008ff",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.openpolytechnic.ac.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://nz.linkedin.com/school/open-polytechnic-of-new-zealand/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
       "account": "Open Polytechnic",
       "account_classification": "official",
       "agency_id": "open-polytechnic",
@@ -84742,6 +84814,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.linkedin.com/school/open-polytechnic"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "open-polytechnic",
+      "agency_name": "Open Polytechnic of New Zealand",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "88f87386a0fdfbc4",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.openpolytechnic.ac.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "http://www.youtube.com/user/OpenPolytechnic"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -140635,7 +140731,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-24T18:50:37+00:00",
+  "generated_at": "2026-07-25T17:28:51+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -156216,8 +156312,9 @@
     },
     {
       "agency_id": "ministry-for-primary-industries",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 0,
+      "status": "ok",
       "url": "https://www.mpi.govt.nz/"
     },
     {
@@ -156510,8 +156607,9 @@
     },
     {
       "agency_id": "open-polytechnic",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 377,
+      "status": "ok",
       "url": "https://www.openpolytechnic.ac.nz/"
     },
     {
@@ -157182,32 +157280,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5254,
+    "candidate_count": 5258,
     "feasibility_counts": {
       "high": 4160,
-      "low": 310,
-      "medium": 784
+      "low": 311,
+      "medium": 787
     },
     "known_registry_social_profiles": 446,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 291,
-      "instagram": 161,
-      "linkedin": 235,
+      "facebook": 292,
+      "instagram": 162,
+      "linkedin": 236,
       "medium": 2,
       "newsletter": 161,
       "rss": 3829,
       "website_page": 313,
       "x": 75,
-      "youtube": 156
+      "youtube": 157
     },
     "source_type_counts": {
       "api_endpoint": 13,
       "newsletter": 161,
       "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 938,
+      "social_profile": 942,
       "website_page": 313
     }
   }
