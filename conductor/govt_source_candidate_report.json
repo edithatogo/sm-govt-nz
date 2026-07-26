@@ -4789,7 +4789,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.aucklandcouncil.govt.nz",
-      "origin": "registry.social_profiles",
+      "origin": "homepage.link,registry.social_profiles",
       "platform": "facebook",
       "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
       "portfolio": "Local Government",
@@ -4831,6 +4831,30 @@
       "url": "https://www.instagram.com/aklcouncil/"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "auckland-council",
+      "agency_name": "Auckland Council (Te Kaunihera o T\u0101maki Makaurau)",
+      "agency_type": "Unitary Authority",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "38ca97869442f450",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.aucklandcouncil.govt.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/aklcouncil/?hl=en"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Auckland Council",
       "account_classification": "official",
@@ -4845,7 +4869,7 @@
       "domain_trust": "unknown",
       "feasibility": "low",
       "official_website": "https://www.aucklandcouncil.govt.nz",
-      "origin": "registry.social_profiles",
+      "origin": "homepage.link,registry.social_profiles",
       "platform": "linkedin",
       "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
       "portfolio": "Local Government",
@@ -4885,6 +4909,30 @@
         "official_term:nz"
       ],
       "url": "https://x.com/AklCouncil"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "auckland-council",
+      "agency_name": "Auckland Council (Te Kaunihera o T\u0101maki Makaurau)",
+      "agency_type": "Unitary Authority",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "64ca95a42675ed26",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.aucklandcouncil.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/user/AklCouncil"
     },
     {
       "access_method": "bounded_public_html",
@@ -50001,6 +50049,58 @@
       "url": "https://www.kordia.co.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.lawcom.govt.nz",
+      "agency_id": "law-commission",
+      "agency_name": "Law Commission (Te Aka Matua o te Ture)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "1fc874187224cad3",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Newsletter | Te Aka K\u014drero No.33",
+      "official_website": "https://www.lawcom.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Justice",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.lawcom.govt.nz/about-us/news-and-media/newsletter-te-aka-korero-no-33"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.lawcom.govt.nz",
+      "agency_id": "law-commission",
+      "agency_name": "Law Commission (Te Aka Matua o te Ture)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "764d484f5d431056",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Subscribe for updates",
+      "official_website": "https://www.lawcom.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Justice",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.lawcom.govt.nz/about-us/subscribe-to-updates"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.lawcom.govt.nz",
       "agency_id": "law-commission",
@@ -50406,6 +50506,78 @@
       "url": "https://www.lawcom.govt.nz/subscribe"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "law-commission",
+      "agency_name": "Law Commission (Te Aka Matua o te Ture)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "64d1dcbded263e53",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.lawcom.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Justice",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/nzlawcommission/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "law-commission",
+      "agency_name": "Law Commission (Te Aka Matua o te Ture)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "62cf402907fe1b45",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.lawcom.govt.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Justice",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/nzlawcommission"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "law-commission",
+      "agency_name": "Law Commission (Te Aka Matua o te Ture)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "8fda02243a33eb5b",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.lawcom.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Justice",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/channel/UC9cFSwSgwv9hrw0naL2j4HA"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.lawcom.govt.nz",
       "agency_id": "law-commission",
@@ -50431,6 +50603,33 @@
         "official_term:nz"
       ],
       "url": "https://www.lawcom.govt.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.lawcom.govt.nz",
+      "agency_id": "law-commission",
+      "agency_name": "Law Commission (Te Aka Matua o te Ture)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "7edde16986b1d957",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Newsletter | Te Aka K\u014drero No.33",
+      "official_website": "https://www.lawcom.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Justice",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.lawcom.govt.nz/about-us/news-and-media/newsletter-te-aka-korero-no-33"
     },
     {
       "access_method": "public_rss",
@@ -71799,6 +71998,54 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "nz-army",
+      "agency_name": "New Zealand Army (Ng\u0101ti T\u016bmatauenga)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "351a9ff67d0e904e",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.army.mil.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.facebook.com/NZDefenceForce/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram",
+      "agency_id": "nz-army",
+      "agency_name": "New Zealand Army (Ng\u0101ti T\u016bmatauenga)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "6e05a587912e1632",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.army.mil.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.instagram.com/NZDefenceForce/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "nzarmy",
       "account_classification": "official",
       "agency_id": "nz-army",
@@ -71854,6 +72101,30 @@
       "url": "https://www.linkedin.com/company/new-zealand-army"
     },
     {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "LinkedIn",
+      "agency_id": "nz-army",
+      "agency_name": "New Zealand Army (Ng\u0101ti T\u016bmatauenga)",
+      "agency_type": "NZDF",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "2b66a18541922229",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.army.mil.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.linkedin.com/company/new-zealand-defence-force/"
+    },
+    {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
       "account": "nzarmy",
       "account_classification": "official",
@@ -71880,6 +72151,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.youtube.com/@nzarmy"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "YouTube",
+      "agency_id": "nz-army",
+      "agency_name": "New Zealand Army (Ng\u0101ti T\u016bmatauenga)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "4e51309d98f101eb",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.army.mil.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
       "access_method": "bounded_public_html",
@@ -72312,6 +72607,78 @@
         "unverified_search_seed"
       ],
       "url": "https://www.nzals.co.nz/subscribe"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Go to our Facebook page",
+      "agency_id": "nz-artificial-limb-service",
+      "agency_name": "New Zealand Artificial Limb Service (Peke Waihanga)",
+      "agency_type": "Autonomous Crown Entity",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "a47ec5fdd11ecf33",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzals.co.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.facebook.com/Peke-Waihanga-Artificial-Limb-Service-306700359982541"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "View our Instagram feed",
+      "agency_id": "nz-artificial-limb-service",
+      "agency_name": "New Zealand Artificial Limb Service (Peke Waihanga)",
+      "agency_type": "Autonomous Crown Entity",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "99efed868d03734c",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzals.co.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.instagram.com/pekewaihanga"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "Find us on LinkedIn",
+      "agency_id": "nz-artificial-limb-service",
+      "agency_name": "New Zealand Artificial Limb Service (Peke Waihanga)",
+      "agency_type": "Autonomous Crown Entity",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "0abd9c926b0229e0",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.nzals.co.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.linkedin.com/company/new-zealand-artificial-limb-service"
     },
     {
       "access_method": "bounded_public_html",
@@ -73946,6 +74313,54 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "nz-defence-force",
+      "agency_name": "New Zealand Defence Force (Te Ope K\u0101tua o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "223f2f0fabb4dff5",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzdf.mil.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.facebook.com/NZDefenceForce/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram",
+      "agency_id": "nz-defence-force",
+      "agency_name": "New Zealand Defence Force (Te Ope K\u0101tua o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "d50ca58ce717d080",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzdf.mil.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.instagram.com/NZDefenceForce/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "nzdefenceforce",
       "account_classification": "official",
       "agency_id": "nz-defence-force",
@@ -73999,6 +74414,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.linkedin.com/company/new-zealand-defence-force"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "LinkedIn",
+      "agency_id": "nz-defence-force",
+      "agency_name": "New Zealand Defence Force (Te Ope K\u0101tua o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "8828267487115f18",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.nzdf.mil.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.linkedin.com/company/new-zealand-defence-force/"
     },
     {
       "access_method": "public_html_or_rss",
@@ -74056,6 +74495,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.youtube.com/@nzdefenceforce"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "YouTube",
+      "agency_id": "nz-defence-force",
+      "agency_name": "New Zealand Defence Force (Te Ope K\u0101tua o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "f745d7aef1b1b60e",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzdf.mil.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
       "access_method": "bounded_public_html",
@@ -85967,30 +86430,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "92f7f85f4fcd06be",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/OtagoPoly"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "OtagoPolytechnic",
       "account_classification": "official",
       "agency_id": "otago-polytechnic",
@@ -86046,54 +86485,6 @@
       "url": "https://www.instagram.com/otagopolytechnic"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "d32669ba1a66538a",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/otagopolytechnic/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "894173a6864da511",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/213448"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Otago Polytechnic",
       "account_classification": "official",
@@ -86120,30 +86511,6 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/school/otago-polytechnic"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "f8add89960419679",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "http://www.youtube.com/user/OtagoPolytech"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -98994,6 +99361,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "royal-nz-air-force",
+      "agency_name": "Royal New Zealand Air Force (Te Tauaarangi o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "07cf7a30afe4496d",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.airforce.mil.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.facebook.com/NZDefenceForce/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "RNZAirForce",
       "account_classification": "official",
       "agency_id": "royal-nz-air-force",
@@ -99022,6 +99413,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram",
+      "agency_id": "royal-nz-air-force",
+      "agency_name": "Royal New Zealand Air Force (Te Tauaarangi o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "538f994de75eb5c6",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.airforce.mil.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.instagram.com/NZDefenceForce/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "royalnzairforce",
       "account_classification": "official",
       "agency_id": "royal-nz-air-force",
@@ -99047,6 +99462,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.instagram.com/royalnzairforce"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "LinkedIn",
+      "agency_id": "royal-nz-air-force",
+      "agency_name": "Royal New Zealand Air Force (Te Tauaarangi o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "398d89fdde558b26",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.airforce.mil.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.linkedin.com/company/new-zealand-defence-force/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -99103,6 +99542,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.youtube.com/@royalnzairforce"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "YouTube",
+      "agency_id": "royal-nz-air-force",
+      "agency_name": "Royal New Zealand Air Force (Te Tauaarangi o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "e1fdd2add36d1092",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.airforce.mil.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
       "access_method": "bounded_public_html",
@@ -99538,6 +100001,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "royal-nz-navy",
+      "agency_name": "Royal New Zealand Navy (Te Taua Moana o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "647a712244fb0c21",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.navy.mil.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.facebook.com/NZDefenceForce/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "RNZNavy",
       "account_classification": "official",
       "agency_id": "royal-nz-navy",
@@ -99566,6 +100053,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram",
+      "agency_id": "royal-nz-navy",
+      "agency_name": "Royal New Zealand Navy (Te Taua Moana o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "b055a8bfbe12a2f5",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.navy.mil.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.instagram.com/NZDefenceForce/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "royalnznavy",
       "account_classification": "official",
       "agency_id": "royal-nz-navy",
@@ -99591,6 +100102,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.instagram.com/royalnznavy"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "LinkedIn",
+      "agency_id": "royal-nz-navy",
+      "agency_name": "Royal New Zealand Navy (Te Taua Moana o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "c291cbe0fa7d8124",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.navy.mil.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.linkedin.com/company/new-zealand-defence-force/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -99647,6 +100182,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.youtube.com/@royalnznavy"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "YouTube",
+      "agency_id": "royal-nz-navy",
+      "agency_name": "Royal New Zealand Navy (Te Taua Moana o Aotearoa)",
+      "agency_type": "NZDF",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "a2cc0fe309c2df53",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.navy.mil.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Defence",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
       "access_method": "bounded_public_html",
@@ -120466,6 +121025,32 @@
       "url": "https://www.tourismnewzealand.com"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.taic.org.nz",
+      "agency_id": "transport-accident-investigation-commission",
+      "agency_name": "Transport Accident Investigation Commission (Te K\u014dmihana Tirotiro Aitu\u0101 Waka)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "525db5c768c6ce8c",
+      "confidence_score": 0.5,
+      "domain_trust": "medium",
+      "feasibility": "medium",
+      "link_text": "Sign up for newsletter",
+      "official_website": "https://www.taic.org.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Transport",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "trusted_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.taic.org.nz/newsletter-sign-up"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.taic.org.nz",
       "agency_id": "transport-accident-investigation-commission",
@@ -120897,6 +121482,30 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/TAIC.nz"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "transport-accident-investigation-commission",
+      "agency_name": "Transport Accident Investigation Commission (Te K\u014dmihana Tirotiro Aitu\u0101 Waka)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "43354f1ca1484822",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.taic.org.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Transport",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/nztaic"
     },
     {
       "access_method": "bounded_public_html",
@@ -140074,7 +140683,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-26T17:32:32+00:00",
+  "generated_at": "2026-07-26T18:15:26+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -154991,8 +155600,9 @@
     },
     {
       "agency_id": "auckland-council",
-      "error": "HTTP Error 406: Not Acceptable",
-      "status": "failed",
+      "alternates": 0,
+      "links": 77,
+      "status": "ok",
       "url": "https://www.aucklandcouncil.govt.nz/"
     },
     {
@@ -155433,8 +156043,9 @@
     },
     {
       "agency_id": "human-rights-commission",
-      "error": "<urlopen error [Errno 101] Network is unreachable>",
-      "status": "failed",
+      "alternates": 0,
+      "links": 1,
+      "status": "ok",
       "url": "https://www.hrc.co.nz/"
     },
     {
@@ -155539,8 +156150,9 @@
     },
     {
       "agency_id": "law-commission",
-      "error": "HTTP Error 429: Too Many Requests",
-      "status": "failed",
+      "alternates": 0,
+      "links": 55,
+      "status": "ok",
       "url": "https://www.lawcom.govt.nz/"
     },
     {
@@ -155797,14 +156409,16 @@
     },
     {
       "agency_id": "nz-army",
-      "error": "HTTP Error 429: Too Many Requests",
-      "status": "failed",
+      "alternates": 0,
+      "links": 78,
+      "status": "ok",
       "url": "https://www.army.mil.nz/"
     },
     {
       "agency_id": "nz-artificial-limb-service",
-      "error": "<urlopen error _ssl.c:1064: The handshake operation timed out>",
-      "status": "failed",
+      "alternates": 0,
+      "links": 107,
+      "status": "ok",
       "url": "https://www.nzals.co.nz/"
     },
     {
@@ -155823,8 +156437,9 @@
     },
     {
       "agency_id": "nz-defence-force",
-      "error": "HTTP Error 429: Too Many Requests",
-      "status": "failed",
+      "alternates": 0,
+      "links": 45,
+      "status": "ok",
       "url": "https://www.nzdf.mil.nz/"
     },
     {
@@ -155965,9 +156580,8 @@
     },
     {
       "agency_id": "otago-polytechnic",
-      "alternates": 0,
-      "links": 324,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.op.ac.nz/"
     },
     {
@@ -156102,7 +156716,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 400,
+      "links": 398,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156114,14 +156728,16 @@
     },
     {
       "agency_id": "royal-nz-air-force",
-      "error": "HTTP Error 429: Too Many Requests",
-      "status": "failed",
+      "alternates": 0,
+      "links": 77,
+      "status": "ok",
       "url": "https://www.airforce.mil.nz/"
     },
     {
       "agency_id": "royal-nz-navy",
-      "error": "HTTP Error 429: Too Many Requests",
-      "status": "failed",
+      "alternates": 0,
+      "links": 78,
+      "status": "ok",
       "url": "https://www.navy.mil.nz/"
     },
     {
@@ -156378,8 +156994,9 @@
     },
     {
       "agency_id": "transport-accident-investigation-commission",
-      "error": "<urlopen error _ssl.c:1064: The handshake operation timed out>",
-      "status": "failed",
+      "alternates": 0,
+      "links": 50,
+      "status": "ok",
       "url": "https://www.taic.org.nz/"
     },
     {
@@ -156615,33 +157232,33 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5231,
+    "candidate_count": 5256,
     "feasibility_counts": {
-      "high": 4159,
-      "low": 305,
-      "medium": 767
+      "high": 4160,
+      "low": 310,
+      "medium": 786
     },
-    "known_registry_social_profiles": 446,
+    "known_registry_social_profiles": 444,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 285,
-      "instagram": 157,
-      "linkedin": 230,
+      "facebook": 291,
+      "instagram": 162,
+      "linkedin": 235,
       "medium": 2,
-      "newsletter": 158,
+      "newsletter": 161,
       "rss": 3829,
-      "website_page": 312,
+      "website_page": 313,
       "x": 75,
-      "youtube": 152
+      "youtube": 157
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 158,
+      "newsletter": 161,
       "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 919,
-      "website_page": 312
+      "social_profile": 940,
+      "website_page": 313
     }
   }
 }
