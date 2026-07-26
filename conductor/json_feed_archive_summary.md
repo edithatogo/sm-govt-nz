@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-25T05:57:12+00:00
+Generated: 2026-07-26T06:17:23+00:00
 
 ## Summary
 
@@ -16,16 +16,16 @@ Generated: 2026-07-25T05:57:12+00:00
 
 - `already_captured`: 16
 - `capture_blocked`: 25
-- `dns_failed`: 8
-- `http_error`: 3
-- `invalid`: 202
-- `network_error`: 9
+- `dns_failed`: 9
+- `http_error`: 2
+- `invalid`: 203
+- `network_error`: 8
 - `network_timeout`: 2
 - `not_acceptable`: 1
 
 ## Status by platform
 
-- `json_feed`: {'already_captured': 16, 'capture_blocked': 25, 'dns_failed': 8, 'http_error': 3, 'invalid': 202, 'network_error': 9, 'network_timeout': 2, 'not_acceptable': 1}
+- `json_feed`: {'already_captured': 16, 'capture_blocked': 25, 'dns_failed': 9, 'http_error': 2, 'invalid': 203, 'network_error': 8, 'network_timeout': 2, 'not_acceptable': 1}
 
 ## Notes
 
