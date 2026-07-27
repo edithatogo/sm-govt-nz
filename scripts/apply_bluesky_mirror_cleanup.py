@@ -5,10 +5,13 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import sys
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Callable, Mapping
 from urllib.request import Request, urlopen
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.bluesky import BlueskyApiClient, extract_post_id
 from src.bluesky_mirror_programme import (
