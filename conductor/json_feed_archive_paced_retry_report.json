@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-26T18:16:34+00:00",
+  "generated_at": "2026-07-27T18:52:12+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,8 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "21bb48693ef10a83",
-      "a2606111d6e2cd6d"
+      "0896e1d137e8ef5b",
+      "20b4d820235260a5"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -35,26 +35,26 @@
   },
   "results": [
     {
-      "agency_id": "bay-of-plenty-regional-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "json_feed",
-      "reason": "URL error: timed out",
-      "source_id": "21bb48693ef10a83",
-      "source_type": "json_feed",
-      "status": "network_timeout",
-      "url": "https://www.boprc.govt.nz/feed.json"
-    },
-    {
-      "agency_id": "ministry-for-culture-and-heritage",
+      "agency_id": "te-wananga-o-raukawa",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "a2606111d6e2cd6d",
+      "source_id": "20b4d820235260a5",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.mch.govt.nz/feed.json"
+      "url": "https://www.wananga.com/feed.json"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "json_feed",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "0896e1d137e8ef5b",
+      "source_type": "json_feed",
+      "status": "capture_blocked",
+      "url": "https://www.treasury.govt.nz/feed.json"
     }
   ],
   "summary": {
@@ -64,14 +64,12 @@
     "selected_sources": 2,
     "status_by_platform": {
       "json_feed": {
-        "capture_blocked": 1,
-        "network_timeout": 1
+        "capture_blocked": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 1,
-      "network_timeout": 1
+      "capture_blocked": 2
     }
   }
 }

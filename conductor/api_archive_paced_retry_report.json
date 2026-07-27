@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-26T18:16:02+00:00",
+  "generated_at": "2026-07-27T18:52:02+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "490090e90edba38d",
-      "7a288baf36de6242",
-      "80834bff790603eb",
-      "84ed44c234356287",
-      "93fa390a41776bb1"
+      "1992013bcbae6ac9",
+      "a51d2622f8cee24f",
+      "a9ba4a477203b149",
+      "bae151be12cac896",
+      "ee0fcc4ea8d60602"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -38,59 +38,59 @@
   },
   "results": [
     {
-      "agency_id": "central-hawkes-bay-district-council",
+      "agency_id": "bay-of-plenty-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "URL error: timed out",
+      "source_id": "1992013bcbae6ac9",
+      "source_type": "api_endpoint",
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/openapi.json"
+    },
+    {
+      "agency_id": "central-otago-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "84ed44c234356287",
+      "source_id": "a9ba4a477203b149",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.chbdc.govt.nz/.well-known/webfinger"
+      "url": "https://www.codc.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "dunedin-city-council",
+      "agency_id": "environment-southland",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "80834bff790603eb",
+      "source_id": "bae151be12cac896",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.dunedin.govt.nz/openapi.json"
+      "url": "https://www.es.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "hastings-district-council",
+      "agency_id": "ministry-for-ethnic-communities",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "93fa390a41776bb1",
+      "source_id": "a51d2622f8cee24f",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.hastingsdc.govt.nz/.well-known/webfinger"
+      "url": "https://www.ethniccommunities.govt.nz/openapi.json"
     },
     {
-      "agency_id": "manawatu-district-council",
+      "agency_id": "university-of-otago",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "490090e90edba38d",
+      "source_id": "ee0fcc4ea8d60602",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.mdc.govt.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "rotorua-lakes-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 405: Not Allowed",
-      "source_id": "7a288baf36de6242",
-      "source_type": "api_endpoint",
-      "status": "method_not_allowed",
-      "url": "https://www.rotorualakescouncil.nz/openapi.json"
+      "url": "https://www.otago.ac.nz/openapi.json"
     }
   ],
   "summary": {
@@ -101,13 +101,13 @@
     "status_by_platform": {
       "api": {
         "capture_blocked": 4,
-        "method_not_allowed": 1
+        "network_timeout": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "capture_blocked": 4,
-      "method_not_allowed": 1
+      "network_timeout": 1
     }
   }
 }

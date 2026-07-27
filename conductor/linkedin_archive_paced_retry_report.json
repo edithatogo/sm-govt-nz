@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-26T18:18:53+00:00",
+  "generated_at": "2026-07-27T18:53:19+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,10 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "48c45819377b49a1",
-      "8b6b19798f88990a",
-      "e2b5857226df92d7",
-      "fef4dc99e8ec0126"
+      "0576ebdf8faec985",
+      "6730dfb1060c7703",
+      "b26fc4367206aae5",
+      "f77d729a901b0464"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -37,42 +37,53 @@
   },
   "results": [
     {
-      "agency_id": "serious-fraud-office",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:4e63dcc747fc18814f13bf9e",
-      "source_id": "8b6b19798f88990a",
-      "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/serious-fraud-office/"
-    },
-    {
-      "agency_id": "university-of-waikato",
+      "agency_id": "manukau-institute-of-technology",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "48c45819377b49a1",
+      "source_id": "f77d729a901b0464",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/university-of-waikato"
+      "url": "https://www.linkedin.com/school/manukau-institute-of-technology"
+    },
+    {
+      "agency_id": "real-estate-authority",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:0de2398e99f66f6c0a4e56ab",
+      "source_id": "6730dfb1060c7703",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/real-estate-authority"
+    },
+    {
+      "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 999: <none>",
+      "source_id": "0576ebdf8faec985",
+      "source_type": "social_profile",
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/whitireia"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 2
+      "linkedin": 3
     },
-    "selected_sources": 2,
+    "selected_sources": 3,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1,
+        "http_error": 2,
         "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1,
+      "http_error": 2,
       "public_snapshot_captured": 1
     }
   }
