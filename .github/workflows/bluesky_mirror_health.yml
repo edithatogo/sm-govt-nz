@@ -130,9 +130,13 @@ jobs:
             --evaluated-at "$OBSERVED_AT" \
             --output conductor/bluesky_mirror_observation_status.json
           python scripts/build_bluesky_mirror_hosted_plan.py
+          python scripts/close_bluesky_mirror_observation.py --apply-if-ready
       - run: |
           python scripts/commit_state_updates.py \
             --message "Record Bluesky mirror observation (${{ github.run_id }})" \
             --path conductor/bluesky_mirror_observations \
             --path conductor/bluesky_mirror_observation_status.json \
-            --path conductor/bluesky_mirror_hosted_dry_run_plan.json
+            --path conductor/bluesky_mirror_hosted_dry_run_plan.json \
+            --path conductor/tracks.md \
+            --path conductor/tracks \
+            --path conductor/archive/bluesky_mirror_reliability_hardening_20260724
