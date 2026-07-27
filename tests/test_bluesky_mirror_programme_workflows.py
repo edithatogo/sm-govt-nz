@@ -191,3 +191,10 @@ def test_posting_workflows_treat_empty_matrices_as_successful_noops() -> None:
         assert "no-eligible-mirrors:" in text
         assert "needs.plan.outputs.has_targets != 'true'" in text
         assert "needs.plan.outputs.has_targets == 'true'" in text
+
+def test_discovery_workflow_refreshes_deterministic_pilot_plan() -> None:
+    text = Path(".github/workflows/bluesky_mirror_discovery.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "scripts/build_bluesky_mirror_hosted_plan.py" in text
+    assert "conductor/bluesky_mirror_hosted_dry_run_plan.json" in text

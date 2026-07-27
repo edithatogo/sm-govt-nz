@@ -2,8 +2,8 @@
 
 ## Summary
 
-All local controls are complete and verified; remote credential rotation remains
-an explicit operator action.
+All local controls and operator-supervised credential rotation are complete and
+verified without retaining credential values.
 
 ## Verification Checks
 
@@ -24,11 +24,9 @@ Run `30238209314` passed on 2026-07-27:
 - credential authentication and DID resolution passed; and
 - dry-run publication completed without posting.
 
-## External Gate
+## Operator Completion Evidence
 
-- Rotate the ACC primary password.
-- Replace the isolated GitHub Environment app password through operator entry.
-- Revoke the superseded app password.
-
-GitHub still reports the environment secret was last updated on 2026-07-22.
-The successful preflight proves current validity, not replacement or revocation.
+On 2026-07-27, the operator confirmed that the ACC primary password was rotated,
+the isolated GitHub Environment app password was replaced, and the superseded
+app password was revoked. This attestation closes the external gate without
+storing secret values.

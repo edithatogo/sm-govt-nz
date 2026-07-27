@@ -16,6 +16,6 @@
 ## Bluesky Mirror Reliability Hardening (2026-07-24)
 - [ ] `bluesky_mirror_reliability_hardening_20260724` - parent reliability programme, GitHub #36; subissue of #19
 - [x] `bluesky_mirror_workflow_isolation_20260724` - account-scoped manual workflow dispatch
-- [ ] `bluesky_mirror_credential_hygiene_20260724` - app-password-only automation and rotation
+- [x] `bluesky_mirror_credential_hygiene_20260724` - app-password-only automation and rotation
 - [x] `bluesky_mirror_empty_matrix_noop_20260727` - expected empty matrices complete as successful no-ops
 - [x] `bluesky_mirror_cleanup_report_findings_20260727` - preserve and commit non-destructive cleanup findings
