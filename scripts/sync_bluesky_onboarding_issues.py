@@ -27,23 +27,44 @@ def gh(*args: str) -> str:
     return result.stdout.strip()
 
 
-def load_remote_issues(repo: str) -> list[dict[str, Any]]:
+def _paged_rest(endpoint: str) -> list[dict[str, Any]]:
     payload = gh(
-        "issue",
-        "list",
-        "--repo",
-        repo,
-        "--state",
-        "all",
-        "--limit",
-        "1000",
-        "--json",
-        "number,title,body,state,url",
+        "api",
+        "--method",
+        "GET",
+        endpoint,
+        "--paginate",
+        "--slurp",
     )
-    value = json.loads(payload)
-    if not isinstance(value, list):
-        raise ValueError("GitHub issue inventory must be a list")
-    return value
+    pages = json.loads(payload)
+    if not isinstance(pages, list):
+        raise ValueError("GitHub paginated response must be a list")
+    return [row for page in pages for row in page if isinstance(row, dict)]
+
+
+def load_remote_issues(repo: str) -> list[dict[str, Any]]:
+    rows = _paged_rest(f"repos/{repo}/issues?state=all&per_page=100")
+    return [
+        {
+            "number": int(row["number"]),
+            "title": str(row.get("title") or ""),
+            "body": str(row.get("body") or ""),
+            "state": str(row.get("state") or "").upper(),
+            "url": str(row.get("html_url") or ""),
+        }
+        for row in rows
+        if "pull_request" not in row
+    ]
+
+
+def load_cohort_memberships(repo: str, cohort_issue_numbers: list[int]) -> dict[int, set[int]]:
+    return {
+        cohort_issue: {
+            int(row["number"])
+            for row in _paged_rest(f"repos/{repo}/issues/{cohort_issue}/sub_issues?per_page=100")
+        }
+        for cohort_issue in cohort_issue_numbers
+    }
 
 
 def _mirror_id(issue: Mapping[str, Any]) -> str:
@@ -63,6 +84,7 @@ def build_issue_plan(
     parent: int,
     cohort_size: int,
     generated_at: str,
+    cohort_memberships: Mapping[int, set[int]] | None = None,
 ) -> dict[str, Any]:
     if not 1 <= cohort_size <= 50:
         raise ValueError("cohort_size must be between 1 and 50")
@@ -117,6 +139,12 @@ def build_issue_plan(
             }
         )
 
+    cohort_issue_numbers = {row["cohort_number"]: row["issue_number"] for row in cohorts}
+    parent_by_child = {
+        child: cohort_issue
+        for cohort_issue, children in (cohort_memberships or {}).items()
+        for child in children
+    }
     onboarding: list[dict[str, Any]] = []
     for position, mirror in enumerate(mirrors):
         mirror_id = str(mirror["mirror_id"])
@@ -139,6 +167,17 @@ def build_issue_plan(
         else:
             status = "proposed"
             issue_number = None
+        expected_cohort_issue = cohort_issue_numbers.get(cohort_number)
+        if cohort_memberships is None or issue_number is None:
+            hierarchy_status = "not_evaluated" if issue_number else "pending"
+        elif expected_cohort_issue is None:
+            hierarchy_status = "cohort_pending"
+        elif parent_by_child.get(issue_number) == expected_cohort_issue:
+            hierarchy_status = "correct"
+        elif issue_number not in parent_by_child:
+            hierarchy_status = "missing"
+        else:
+            hierarchy_status = "wrong_parent"
         onboarding.append(
             {
                 "position": position,
@@ -150,6 +189,9 @@ def build_issue_plan(
                 "registry_issue_number": registry_issue,
                 "issue_number": issue_number,
                 "status": status,
+                "hierarchy_status": hierarchy_status,
+                "expected_cohort_issue_number": expected_cohort_issue,
+                "actual_cohort_issue_number": parent_by_child.get(issue_number),
                 "remote_matches": sorted(int(issue["number"]) for issue in matches),
             }
         )
@@ -162,8 +204,10 @@ def build_issue_plan(
         "existing_closed": sum(row["status"] == "existing_closed" for row in onboarding),
         "registry_repairs": sum(row["status"] == "registry_repair" for row in onboarding),
         "proposed": sum(row["status"] == "proposed" for row in onboarding),
+        "hierarchy_repairs": sum(row["hierarchy_status"] == "missing" for row in onboarding),
         "blockers": sum(row["status"] in blocker_states for row in onboarding)
-        + sum(row["status"] in blocker_states for row in cohorts),
+        + sum(row["status"] in blocker_states for row in cohorts)
+        + sum(row["hierarchy_status"] == "wrong_parent" for row in onboarding),
     }
     return {
         "schema_version": 1,
@@ -174,36 +218,41 @@ def build_issue_plan(
         "dry_run": True,
         "summary": summary,
         "cohorts": cohorts,
+        "cohort_memberships": {
+            str(key): sorted(value) for key, value in (cohort_memberships or {}).items()
+        },
         "onboarding": onboarding,
         "registry_write_performed": False,
         "github_write_performed": False,
     }
 
 
-def _node_id(repo: str, issue_number: int) -> str:
-    return gh("api", f"repos/{repo}/issues/{issue_number}", "--jq", ".node_id")
-
-
 def _attach_subissue(repo: str, parent: int, child: int) -> None:
-    query = (
-        "mutation($issue:ID!,$sub:ID!){addSubIssue(input:"
-        "{issueId:$issue,subIssueId:$sub}){issue{number}}}"
-    )
+    child_id = gh("api", f"repos/{repo}/issues/{child}", "--jq", ".id")
     gh(
         "api",
-        "graphql",
-        "-f",
-        f"query={query}",
-        "-f",
-        f"issue={_node_id(repo, parent)}",
-        "-f",
-        f"sub={_node_id(repo, child)}",
+        "--method",
+        "POST",
+        f"repos/{repo}/issues/{parent}/sub_issues",
+        "-F",
+        f"sub_issue_id={child_id}",
     )
 
 
 def _create_issue(repo: str, title: str, body: str) -> tuple[int, str]:
-    url = gh("issue", "create", "--repo", repo, "--title", title, "--body", body)
-    return int(url.rsplit("/", 1)[-1]), url
+    payload = json.loads(
+        gh(
+            "api",
+            "--method",
+            "POST",
+            f"repos/{repo}/issues",
+            "-f",
+            f"title={title}",
+            "-f",
+            f"body={body}",
+        )
+    )
+    return int(payload["number"]), str(payload["html_url"])
 
 
 def apply_issue_plan(
@@ -223,6 +272,7 @@ def apply_issue_plan(
     created_cohorts = 0
     created_onboarding = 0
     repaired = 0
+    hierarchy_repaired = 0
 
     selected_proposals = [row for row in plan["onboarding"] if row["status"] == "proposed"][:limit]
     required_cohorts = {row["cohort_key"] for row in selected_proposals}
@@ -256,6 +306,11 @@ def apply_issue_plan(
                 if url not in mirror.setdefault("evidence", []):
                     mirror["evidence"].append(url)
                 repaired += 1
+            if row.get("hierarchy_status") == "missing":
+                cohort_issue = int(cohorts[row["cohort_key"]])
+                _attach_subissue(repo, cohort_issue, int(row["issue_number"]))
+                row["hierarchy_status"] = "repaired"
+                hierarchy_repaired += 1
             continue
         if row["status"] != "proposed" or row["mirror_id"] not in selected_mirror_ids:
             continue
@@ -283,6 +338,7 @@ def apply_issue_plan(
         "created_cohorts": created_cohorts,
         "created_onboarding": created_onboarding,
         "registry_repairs": repaired,
+        "hierarchy_repairs": hierarchy_repaired,
         "limit": limit,
     }
     return plan
@@ -310,12 +366,17 @@ def main() -> None:
 
     registry = json.loads(args.registry.read_text(encoding="utf-8"))
     remote_issues = load_remote_issues(args.repo)
+    cohort_issue_numbers = sorted(
+        {int(issue["number"]) for issue in remote_issues if _cohort_number(issue) is not None}
+    )
+    cohort_memberships = load_cohort_memberships(args.repo, cohort_issue_numbers)
     plan = build_issue_plan(
         registry,
         remote_issues,
         parent=args.parent,
         cohort_size=args.cohort_size,
         generated_at="live_github_reconciliation",
+        cohort_memberships=cohort_memberships,
     )
     if args.apply:
         apply_issue_plan(registry, plan, repo=args.repo, limit=args.limit)

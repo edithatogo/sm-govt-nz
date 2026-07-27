@@ -55,6 +55,7 @@ def test_plan_is_read_only_and_classifies_existing_repair_and_proposed() -> None
         "existing_closed": 0,
         "registry_repairs": 1,
         "proposed": 1,
+        "hierarchy_repairs": 0,
         "blockers": 0,
     }
     states = {row["mirror_id"]: row["status"] for row in plan["onboarding"]}
@@ -127,6 +128,7 @@ def test_apply_repairs_registry_and_creates_only_bounded_proposals(monkeypatch) 
         "created_cohorts": 0,
         "created_onboarding": 1,
         "registry_repairs": 1,
+        "hierarchy_repairs": 0,
         "limit": 1,
     }
     assert len(created) == 1
@@ -157,3 +159,56 @@ def test_zero_limit_performs_no_github_writes(monkeypatch) -> None:
     assert result["apply_result"]["created_cohorts"] == 0
     assert result["apply_result"]["created_onboarding"] == 0
     assert result["github_write_performed"] is False
+
+
+def test_apply_repairs_missing_hierarchy_after_interrupted_creation(monkeypatch) -> None:
+    registry = {
+        "mirrors": [mirror("alpha")],
+        "onboarding_cohorts": {"cohort-01": 10},
+    }
+    remote = [
+        issue(10, "[Cohort 01] Bluesky archive mirror onboarding"),
+        issue(11, "Alpha", "Mirror ID: `alpha`"),
+    ]
+    plan = sync.build_issue_plan(
+        registry,
+        remote,
+        parent=23,
+        cohort_size=50,
+        generated_at="fixed",
+        cohort_memberships={10: set()},
+    )
+    attached: list[tuple[int, int]] = []
+    monkeypatch.setattr(
+        sync,
+        "_attach_subissue",
+        lambda _repo, parent, child: attached.append((parent, child)),
+    )
+
+    assert plan["summary"]["hierarchy_repairs"] == 1
+    result = sync.apply_issue_plan(registry, plan, repo="example/repo", limit=0)
+    assert attached == [(10, 11)]
+    assert result["apply_result"]["hierarchy_repairs"] == 1
+    assert registry["mirrors"][0]["issue_number"] == 11
+
+
+def test_wrong_cohort_parent_is_a_blocker() -> None:
+    registry = {
+        "mirrors": [mirror("alpha", 11)],
+        "onboarding_cohorts": {"cohort-01": 10},
+    }
+    remote = [
+        issue(10, "[Cohort 01] Bluesky archive mirror onboarding"),
+        issue(20, "[Cohort 02] Bluesky archive mirror onboarding"),
+        issue(11, "Alpha", "Mirror ID: `alpha`"),
+    ]
+    plan = sync.build_issue_plan(
+        registry,
+        remote,
+        parent=23,
+        cohort_size=50,
+        generated_at="fixed",
+        cohort_memberships={10: set(), 20: {11}},
+    )
+    assert plan["onboarding"][0]["hierarchy_status"] == "wrong_parent"
+    assert plan["summary"]["blockers"] == 1

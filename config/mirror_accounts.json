@@ -3,6 +3,7 @@
   "global_enabled_variable": "BLUESKY_MIRRORING_ENABLED",
   "mirrors": [
     {
+      "account_did": "did:plc:vxltrdhni2dfsm4actryhj4n",
       "account_role": "agency_mirror",
       "activated_at": "2026-07-23T01:53:27.403947+00:00",
       "agency_id": "accident-compensation-corporation",
@@ -15,6 +16,9 @@
         "https://github.com/edithatogo/sm-govt-nz/issues/26",
         "https://github.com/edithatogo/sm-govt-nz/actions/runs/30238209314"
       ],
+      "excluded_source_urls": [
+        "https://www.youtube.com/@accnz"
+      ],
       "handle": "acc-nz-arc.bsky.social",
       "handle_candidates": [
         "acc-nz-arc.bsky.social",
@@ -25,6 +29,7 @@
       "issue_number": 26,
       "jurisdiction": "nz",
       "lifecycle_state": "live",
+      "long_post_mode": "numbered_thread",
       "mirror_id": "accident-compensation-corporation",
       "organisation_abbreviation": "acc",
       "profile_disclosure": "Unofficial automated archive mirror. Not Accident Compensation Corporation (Te Kaporeihana \u0100whina Hunga Whara).",
@@ -39,14 +44,9 @@
       "source_urls": [
         "https://www.linkedin.com/company/acc-new-zealand"
       ],
+      "thread_max_parts": 4,
       "track_id": "bluesky_historical_backfill_rollout_20260721",
-      "url": "https://bsky.app/profile/acc-nz-arc.bsky.social",
-      "account_did": "did:plc:vxltrdhni2dfsm4actryhj4n",
-      "excluded_source_urls": [
-        "https://www.youtube.com/@accnz"
-      ],
-      "long_post_mode": "numbered_thread",
-      "thread_max_parts": 4
+      "url": "https://bsky.app/profile/acc-nz-arc.bsky.social"
     },
     {
       "account_role": "agency_mirror",
@@ -1199,6 +1199,7 @@
       "url": ""
     },
     {
+      "account_did": "did:plc:t3qwfrzz4lvxcmuo4sh2g4uw",
       "account_role": "agency_mirror",
       "activated_at": "2026-07-22T08:21:31.764772+00:00",
       "agency_id": "courts-of-nz",
@@ -1223,6 +1224,7 @@
       "health_state": "healthy",
       "issue_number": 72,
       "jurisdiction": "nz",
+      "legacy_handle_exception": "Pre-programme Courts canary retained pending governed migration.",
       "lifecycle_state": "live",
       "mirror_id": "courts-of-nz",
       "organisation_abbreviation": "courts-of-nz",
@@ -1242,9 +1244,7 @@
         "https://x.com/courtsofnz"
       ],
       "track_id": "bluesky_historical_backfill_rollout_20260721",
-      "url": "https://bsky.app/profile/mirnzcourts.bsky.social",
-      "account_did": "did:plc:t3qwfrzz4lvxcmuo4sh2g4uw",
-      "legacy_handle_exception": "Pre-programme Courts canary retained pending governed migration."
+      "url": "https://bsky.app/profile/mirnzcourts.bsky.social"
     },
     {
       "account_role": "agency_mirror",
@@ -2622,7 +2622,9 @@
       "display_name": "Hawke's Bay Regional Council (Te Kaunihera \u0101 Rohe o Te Matau-a-M\u0101ui) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-hawkes-bay-regional-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/123"
+      ],
       "handle": "",
       "handle_candidates": [
         "hawkes-bay-regional-council-nz-arc.bsky.social",
@@ -2630,7 +2632,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 123,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "hawkes-bay-regional-council",
@@ -2667,7 +2669,9 @@
       "display_name": "Health and Disability Commissioner (Te Toihau Hauora, Hau\u0101tanga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-health-and-disability-commissioner",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/124"
+      ],
       "handle": "",
       "handle_candidates": [
         "health-and-disability-commissioner-nz-arc.bsky.social",
@@ -2675,7 +2679,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 124,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "health-and-disability-commissioner",
@@ -2704,7 +2708,9 @@
       "display_name": "Health New Zealand (Te Whatu Ora) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-health-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/125"
+      ],
       "handle": "",
       "handle_candidates": [
         "health-nz-nz-arc.bsky.social",
@@ -2712,7 +2718,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 125,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "health-nz",
@@ -2758,7 +2764,9 @@
       "display_name": "Health Quality and Safety Commission (Te T\u0101h\u016b Hauora) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-health-quality-and-safety-commission",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/126"
+      ],
       "handle": "",
       "handle_candidates": [
         "health-quality-and-safety-commission-nz-arc.bsky.social",
@@ -2766,7 +2774,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 126,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "health-quality-and-safety-commission",
@@ -2809,7 +2817,9 @@
       "display_name": "Health Research Council of New Zealand Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-health-research-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/127"
+      ],
       "handle": "",
       "handle_candidates": [
         "health-research-council-nz-arc.bsky.social",
@@ -2817,7 +2827,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 127,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "health-research-council",
@@ -2848,7 +2858,9 @@
       "display_name": "Herenga \u0101 Nuku Aotearoa (Outdoor Access Commission) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-herenge-a-nuku",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/128"
+      ],
       "handle": "",
       "handle_candidates": [
         "herenge-a-nuku-nz-arc.bsky.social",
@@ -2856,7 +2868,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 128,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "herenge-a-nuku",
@@ -2885,7 +2897,9 @@
       "display_name": "Heritage New Zealand (Pouhere Taonga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-heritage-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/129"
+      ],
       "handle": "",
       "handle_candidates": [
         "heritage-nz-nz-arc.bsky.social",
@@ -2893,7 +2907,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 129,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "heritage-nz",
@@ -2931,7 +2945,9 @@
       "display_name": "Horizons Regional Council (Manawat\u016b-Whanganui) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-horizons-regional-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/130"
+      ],
       "handle": "",
       "handle_candidates": [
         "horizons-regional-council-nz-arc.bsky.social",
@@ -2939,7 +2955,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 130,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "horizons-regional-council",
@@ -2976,7 +2992,9 @@
       "display_name": "Horowhenua District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-horowhenua-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/131"
+      ],
       "handle": "",
       "handle_candidates": [
         "horowhenua-district-council-nz-arc.bsky.social",
@@ -2984,7 +3002,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 131,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "horowhenua-district-council",
@@ -3021,7 +3039,9 @@
       "display_name": "Human Rights Commission (Te K\u0101hui Tika Tangata) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-human-rights-commission",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/132"
+      ],
       "handle": "",
       "handle_candidates": [
         "human-rights-commission-nz-arc.bsky.social",
@@ -3029,7 +3049,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 132,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "human-rights-commission",
@@ -3061,7 +3081,9 @@
       "display_name": "Hurunui District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-hurunui-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/133"
+      ],
       "handle": "",
       "handle_candidates": [
         "hurunui-district-council-nz-arc.bsky.social",
@@ -3069,7 +3091,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 133,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "hurunui-district-council",
@@ -3100,7 +3122,9 @@
       "display_name": "Hutt City Council (Te Awa Kairangi ki Tai) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-hutt-city-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/134"
+      ],
       "handle": "",
       "handle_candidates": [
         "hutt-city-council-nz-arc.bsky.social",
@@ -3108,7 +3132,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 134,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "hutt-city-council",
@@ -3143,7 +3167,9 @@
       "display_name": "Independent Children's Monitor (Aroturuki Tamariki) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-independent-childrens-monitor",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/135"
+      ],
       "handle": "",
       "handle_candidates": [
         "independent-childrens-monitor-nz-arc.bsky.social",
@@ -3151,7 +3177,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 135,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "independent-childrens-monitor",
@@ -3180,7 +3206,9 @@
       "display_name": "Independent Police Conduct Authority (Mana Whanonga Pirimana Motuhake) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-independent-police-conduct-authority",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/136"
+      ],
       "handle": "",
       "handle_candidates": [
         "independent-police-conduct-authority-nz-arc.bsky.social",
@@ -3188,7 +3216,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 136,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "independent-police-conduct-authority",
@@ -3224,7 +3252,9 @@
       "display_name": "Inland Revenue Department (Te Tari Taake) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-inland-revenue-department",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/137"
+      ],
       "handle": "",
       "handle_candidates": [
         "inland-revenue-department-nz-arc.bsky.social",
@@ -3232,7 +3262,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 137,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "inland-revenue-department",
@@ -3273,7 +3303,9 @@
       "display_name": "Invercargill City Council (Te Kaunihera o Waih\u014dpai) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-invercargill-city-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/138"
+      ],
       "handle": "",
       "handle_candidates": [
         "invercargill-city-council-nz-arc.bsky.social",
@@ -3281,7 +3313,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 138,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "invercargill-city-council",
@@ -3323,7 +3355,9 @@
       "display_name": "Kaik\u014dura District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-kaikoura-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/139"
+      ],
       "handle": "",
       "handle_candidates": [
         "kaikoura-district-council-nz-arc.bsky.social",
@@ -3331,7 +3365,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 139,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "kaikoura-district-council",
@@ -3362,7 +3396,9 @@
       "display_name": "K\u0101inga Ora \u2013 Homes and Communities Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-kainga-ora",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/140"
+      ],
       "handle": "",
       "handle_candidates": [
         "kainga-ora-nz-arc.bsky.social",
@@ -3370,7 +3406,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 140,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "kainga-ora",
@@ -3409,7 +3445,9 @@
       "display_name": "Kaipara District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-kaipara-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/141"
+      ],
       "handle": "",
       "handle_candidates": [
         "kaipara-district-council-nz-arc.bsky.social",
@@ -3417,7 +3455,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 141,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "kaipara-district-council",
@@ -3448,7 +3486,9 @@
       "display_name": "K\u0101piti Coast District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-kapiti-coast-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/142"
+      ],
       "handle": "",
       "handle_candidates": [
         "kapiti-coast-district-council-nz-arc.bsky.social",
@@ -3456,7 +3496,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 142,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "kapiti-coast-district-council",
@@ -3493,7 +3533,9 @@
       "display_name": "Kawerau District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-kawerau-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/143"
+      ],
       "handle": "",
       "handle_candidates": [
         "kawerau-district-council-nz-arc.bsky.social",
@@ -3501,7 +3543,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 143,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "kawerau-district-council",
@@ -3535,7 +3577,9 @@
       "display_name": "Kiwi Group Capital Limited (Kiwibank) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-kiwi-group-capital",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/144"
+      ],
       "handle": "",
       "handle_candidates": [
         "kiwi-group-capital-nz-arc.bsky.social",
@@ -3543,7 +3587,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 144,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "kiwi-group-capital",
@@ -3587,7 +3631,9 @@
       "display_name": "KiwiRail Holdings Limited Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-kiwirail",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/145"
+      ],
       "handle": "",
       "handle_candidates": [
         "kiwirail-nz-arc.bsky.social",
@@ -3595,7 +3641,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 145,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "kiwirail",
@@ -3641,7 +3687,9 @@
       "display_name": "Kordia Group Limited Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-kordia",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/146"
+      ],
       "handle": "",
       "handle_candidates": [
         "kordia-nz-arc.bsky.social",
@@ -3649,7 +3697,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 146,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "kordia",
@@ -3683,7 +3731,9 @@
       "display_name": "Law Commission (Te Aka Matua o te Ture) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-law-commission",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/147"
+      ],
       "handle": "",
       "handle_candidates": [
         "law-commission-nz-arc.bsky.social",
@@ -3691,7 +3741,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 147,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "law-commission",
@@ -3726,7 +3776,9 @@
       "display_name": "Lincoln University (Te Whare W\u0101naka o Aoraki) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-lincoln-university",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/148"
+      ],
       "handle": "",
       "handle_candidates": [
         "lincoln-university-nz-arc.bsky.social",
@@ -3734,7 +3786,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 148,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "lincoln-university",
@@ -3772,7 +3824,9 @@
       "display_name": "Land Information New Zealand (Toit\u016b te Whenua) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-linz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/149"
+      ],
       "handle": "",
       "handle_candidates": [
         "linz-nz-arc.bsky.social",
@@ -3780,7 +3834,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 149,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "linz",
@@ -3821,7 +3875,9 @@
       "display_name": "New Zealand Lotteries Commission (Lotto NZ) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-lotto-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/150"
+      ],
       "handle": "",
       "handle_candidates": [
         "lotto-nz-nz-arc.bsky.social",
@@ -3829,7 +3885,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 150,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "lotto-nz",
@@ -3864,7 +3920,9 @@
       "display_name": "Mackenzie District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-mackenzie-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/151"
+      ],
       "handle": "",
       "handle_candidates": [
         "mackenzie-district-council-nz-arc.bsky.social",
@@ -3872,7 +3930,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 151,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "mackenzie-district-council",
@@ -3912,7 +3970,9 @@
       "display_name": "Manawat\u016b District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-manawatu-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/152"
+      ],
       "handle": "",
       "handle_candidates": [
         "manawatu-district-council-nz-arc.bsky.social",
@@ -3920,7 +3980,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 152,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "manawatu-district-council",
@@ -3957,7 +4017,9 @@
       "display_name": "Manukau Institute of Technology Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-manukau-institute-of-technology",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/153"
+      ],
       "handle": "",
       "handle_candidates": [
         "manukau-institute-of-technology-nz-arc.bsky.social",
@@ -3965,7 +4027,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 153,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "manukau-institute-of-technology",
@@ -4003,7 +4065,9 @@
       "display_name": "Te Taura Whiri i te Reo M\u0101ori (M\u0101ori Language Commission) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-maori-language-commission",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/154"
+      ],
       "handle": "",
       "handle_candidates": [
         "maori-language-commission-nz-arc.bsky.social",
@@ -4011,7 +4075,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 154,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "maori-language-commission",
@@ -4043,7 +4107,9 @@
       "display_name": "Maritime New Zealand (N\u014d te rere moana Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-maritime-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/155"
+      ],
       "handle": "",
       "handle_candidates": [
         "maritime-nz-nz-arc.bsky.social",
@@ -4051,7 +4117,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 155,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "maritime-nz",
@@ -4088,7 +4154,9 @@
       "display_name": "Marlborough District Council (Te Kaunihera o te Wairau) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-marlborough-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/156"
+      ],
       "handle": "",
       "handle_candidates": [
         "marlborough-district-council-nz-arc.bsky.social",
@@ -4096,7 +4164,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 156,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "marlborough-district-council",
@@ -4136,7 +4204,9 @@
       "display_name": "Massey University (Te Kunenga ki P\u016brehuroa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-massey-university",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/157"
+      ],
       "handle": "",
       "handle_candidates": [
         "massey-university-nz-arc.bsky.social",
@@ -4144,7 +4214,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 157,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "massey-university",
@@ -4182,7 +4252,9 @@
       "display_name": "Masterton District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-masterton-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/158"
+      ],
       "handle": "",
       "handle_candidates": [
         "masterton-district-council-nz-arc.bsky.social",
@@ -4190,7 +4262,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 158,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "masterton-district-council",
@@ -4230,7 +4302,9 @@
       "display_name": "Matamata-Piako District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-matamata-piako-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/159"
+      ],
       "handle": "",
       "handle_candidates": [
         "matamata-piako-district-council-nz-arc.bsky.social",
@@ -4238,7 +4312,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 159,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "matamata-piako-district-council",
@@ -4267,7 +4341,9 @@
       "display_name": "Ministry of Business, Innovation and Employment (H\u012bkina Whakatutuki) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-mbie",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/160"
+      ],
       "handle": "",
       "handle_candidates": [
         "mbie-nz-arc.bsky.social",
@@ -4275,7 +4351,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 160,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "mbie",
@@ -4310,7 +4386,9 @@
       "display_name": "Meteorological Service of New Zealand (MetService NZ) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-metservice-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/161"
+      ],
       "handle": "",
       "handle_candidates": [
         "metservice-nz-nz-arc.bsky.social",
@@ -4318,7 +4396,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 161,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "metservice-nz",
@@ -4347,7 +4425,9 @@
       "display_name": "Ministry of Foreign Affairs and Trade (Te Manat\u016b Aorere) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-mfat",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/162"
+      ],
       "handle": "",
       "handle_candidates": [
         "mfat-nz-arc.bsky.social",
@@ -4355,7 +4435,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 162,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "mfat",
@@ -4384,7 +4464,9 @@
       "display_name": "Ministry for Culture and Heritage (Te Manat\u016b Taonga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-for-culture-and-heritage",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/163"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-for-culture-and-heritage-nz-arc.bsky.social",
@@ -4392,7 +4474,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 163,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-for-culture-and-heritage",
@@ -4439,7 +4521,9 @@
       "display_name": "Ministry for Ethnic Communities (Te Tari M\u0101t\u0101waka) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-for-ethnic-communities",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/164"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-for-ethnic-communities-nz-arc.bsky.social",
@@ -4447,7 +4531,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 164,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-for-ethnic-communities",
@@ -4485,7 +4569,9 @@
       "display_name": "Ministry for Pacific Peoples (Te Manat\u016b m\u014d ng\u0101 Iwi o te Moana-nui-\u0101-Kiwa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-for-pacific-peoples",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/165"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-for-pacific-peoples-nz-arc.bsky.social",
@@ -4493,7 +4579,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 165,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-for-pacific-peoples",
@@ -4536,7 +4622,9 @@
       "display_name": "Ministry for Primary Industries (Manat\u016b Ahu Matua) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-for-primary-industries",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/166"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-for-primary-industries-nz-arc.bsky.social",
@@ -4544,7 +4632,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 166,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-for-primary-industries",
@@ -4573,7 +4661,9 @@
       "display_name": "Ministry for Regulation (Te Manat\u016b Waeture) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-for-regulation",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/167"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-for-regulation-nz-arc.bsky.social",
@@ -4581,7 +4671,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 167,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-for-regulation",
@@ -4612,7 +4702,9 @@
       "display_name": "Ministry for the Environment (Manat\u016b M\u014d Te Taiao) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-for-the-environment",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/168"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-for-the-environment-nz-arc.bsky.social",
@@ -4620,7 +4712,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 168,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-for-the-environment",
@@ -4649,7 +4741,9 @@
       "display_name": "Ministry for Women (Manat\u016b W\u0101hine) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-for-women",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/169"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-for-women-nz-arc.bsky.social",
@@ -4657,7 +4751,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 169,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-for-women",
@@ -4698,7 +4792,9 @@
       "display_name": "Ministry of Defence (Manat\u016b Kaupapa Waonga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-of-defence",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/170"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-of-defence-nz-arc.bsky.social",
@@ -4706,7 +4802,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 170,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-of-defence",
@@ -4735,7 +4831,9 @@
       "display_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-of-education",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/171"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-of-education-nz-arc.bsky.social",
@@ -4743,7 +4841,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 171,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-of-education",
@@ -4789,7 +4887,9 @@
       "display_name": "Ministry of Health (Manat\u016b Hauora) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-of-health",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/172"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-of-health-nz-arc.bsky.social",
@@ -4797,7 +4897,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 172,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-of-health",
@@ -4844,7 +4944,9 @@
       "display_name": "Ministry of Housing and Urban Development (Te T\u016b\u0101papa Kura K\u0101inga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-of-housing-and-urban-developmen",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/174"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-of-housing-and-urban-developmen-nz-arc.bsky.social",
@@ -4852,7 +4954,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 174,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-of-housing-and-urban-developmen",
@@ -4892,7 +4994,9 @@
       "display_name": "Ministry of Justice (T\u0101h\u016b o te Ture) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-of-justice",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/175"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-of-justice-nz-arc.bsky.social",
@@ -4900,7 +5004,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 175,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-of-justice",
@@ -4944,7 +5048,9 @@
       "display_name": "Ministry of Social Development (Te Manat\u016b Whakahiato Ora) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-of-social-development",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/176"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-of-social-development-nz-arc.bsky.social",
@@ -4952,7 +5058,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 176,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-of-social-development",
@@ -4991,7 +5097,9 @@
       "display_name": "Ministry of Transport (Te Manat\u016b Waka) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ministry-of-transport",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/177"
+      ],
       "handle": "",
       "handle_candidates": [
         "ministry-of-transport-nz-arc.bsky.social",
@@ -4999,7 +5107,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 177,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ministry-of-transport",
@@ -5035,7 +5143,9 @@
       "display_name": "Napier City Council (Te Kaunihera o Ahurire) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-napier-city-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/178"
+      ],
       "handle": "",
       "handle_candidates": [
         "napier-city-council-nz-arc.bsky.social",
@@ -5043,7 +5153,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 178,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "napier-city-council",
@@ -5083,7 +5193,9 @@
       "display_name": "Natural Hazards Commission (Toka T\u016b Ake) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-natural-hazards-commission",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/179"
+      ],
       "handle": "",
       "handle_candidates": [
         "natural-hazards-commission-nz-arc.bsky.social",
@@ -5091,7 +5203,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 179,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "natural-hazards-commission",
@@ -5132,7 +5244,9 @@
       "display_name": "Nelson City Council (Whakat\u016b) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nelson-city-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/180"
+      ],
       "handle": "",
       "handle_candidates": [
         "nelson-city-council-nz-arc.bsky.social",
@@ -5140,7 +5254,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 180,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nelson-city-council",
@@ -5182,7 +5296,9 @@
       "display_name": "Network for Learning Limited (N4L) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-network-for-learning",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/181"
+      ],
       "handle": "",
       "handle_candidates": [
         "network-for-learning-nz-arc.bsky.social",
@@ -5190,7 +5306,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 181,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "network-for-learning",
@@ -5228,7 +5344,9 @@
       "display_name": "New Plymouth District Council (Te Kaunihera o Ng\u0101motu) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-new-plymouth-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/182"
+      ],
       "handle": "",
       "handle_candidates": [
         "new-plymouth-district-council-nz-arc.bsky.social",
@@ -5236,7 +5354,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 182,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "new-plymouth-district-council",
@@ -5276,7 +5394,9 @@
       "display_name": "Nelson Marlborough Institute of Technology (NMIT) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nmit",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/183"
+      ],
       "handle": "",
       "handle_candidates": [
         "nmit-nz-arc.bsky.social",
@@ -5284,7 +5404,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 183,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nmit",
@@ -5328,7 +5448,9 @@
       "display_name": "Northland Regional Council (Te Kaitiaki Taiao m\u014d te Taitokerau) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-northland-regional-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/184"
+      ],
       "handle": "",
       "handle_candidates": [
         "northland-regional-council-nz-arc.bsky.social",
@@ -5336,7 +5458,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 184,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "northland-regional-council",
@@ -5374,7 +5496,9 @@
       "display_name": "NorthTec Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-northtec",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/185"
+      ],
       "handle": "",
       "handle_candidates": [
         "northtec-nz-arc.bsky.social",
@@ -5382,7 +5506,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 185,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "northtec",
@@ -5428,7 +5552,9 @@
       "display_name": "New Zealand Army (Ng\u0101ti T\u016bmatauenga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-army",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/186"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-army-nz-arc.bsky.social",
@@ -5436,7 +5562,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 186,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-army",
@@ -5482,7 +5608,9 @@
       "display_name": "New Zealand Artificial Limb Service (Peke Waihanga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-artificial-limb-service",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/187"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-artificial-limb-service-nz-arc.bsky.social",
@@ -5490,7 +5618,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 187,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-artificial-limb-service",
@@ -5525,7 +5653,9 @@
       "display_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-blood-service",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/188"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-blood-service-nz-arc.bsky.social",
@@ -5533,7 +5663,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 188,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-blood-service",
@@ -5571,7 +5701,9 @@
       "display_name": "New Zealand Customs Service (Te Mana Arai o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-customs-service",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/189"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-customs-service-nz-arc.bsky.social",
@@ -5579,7 +5711,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 189,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-customs-service",
@@ -5619,7 +5751,9 @@
       "display_name": "New Zealand Defence Force (Te Ope K\u0101tua o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-defence-force",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/190"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-defence-force-nz-arc.bsky.social",
@@ -5627,7 +5761,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 190,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-defence-force",
@@ -5676,7 +5810,9 @@
       "display_name": "New Zealand Film Commission (Te Tumu Whakaata Taonga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-film-commission",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/192"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-film-commission-nz-arc.bsky.social",
@@ -5684,7 +5820,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 192,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-film-commission",
@@ -5728,7 +5864,9 @@
       "display_name": "New Zealand Infrastructure Commission (Te Waihanga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-infrastructure-commission",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/193"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-infrastructure-commission-nz-arc.bsky.social",
@@ -5736,7 +5874,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 193,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-infrastructure-commission",
@@ -5771,7 +5909,9 @@
       "display_name": "NZ On Air (Irirangi Te Motu) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-on-air",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/194"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-on-air-nz-arc.bsky.social",
@@ -5779,7 +5919,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 194,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-on-air",
@@ -5832,7 +5972,9 @@
       "display_name": "New Zealand Parliament (P\u0101remata Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-parliament",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/195"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-parliament-nz-arc.bsky.social",
@@ -5840,7 +5982,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 195,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-parliament",
@@ -5878,7 +6020,9 @@
       "display_name": "New Zealand Police (Ng\u0101 Pirihimana o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-police",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/196"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-police-nz-arc.bsky.social",
@@ -5886,7 +6030,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 196,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-police",
@@ -5929,7 +6073,9 @@
       "display_name": "New Zealand Post Limited (Tukurau Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-post",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/197"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-post-nz-arc.bsky.social",
@@ -5937,7 +6083,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 197,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-post",
@@ -5984,7 +6130,9 @@
       "display_name": "New Zealand Qualifications Authority (Mana Tohu M\u0101tauranga o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-qualifications-authority",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/198"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-qualifications-authority-nz-arc.bsky.social",
@@ -5992,7 +6140,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 198,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-qualifications-authority",
@@ -6032,7 +6180,9 @@
       "display_name": "New Zealand Railways Corporation Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-railways-corporation",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/199"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-railways-corporation-nz-arc.bsky.social",
@@ -6040,7 +6190,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 199,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-railways-corporation",
@@ -6077,7 +6227,9 @@
       "display_name": "New Zealand Symphony Orchestra (Te Tira P\u016boro o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-symphony-orchestra",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/200"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-symphony-orchestra-nz-arc.bsky.social",
@@ -6085,7 +6237,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 200,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-symphony-orchestra",
@@ -6134,7 +6286,9 @@
       "display_name": "New Zealand Trade and Enterprise (Te Taurapa T\u016bhono) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-nz-trade-and-enterprise",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/201"
+      ],
       "handle": "",
       "handle_candidates": [
         "nz-trade-and-enterprise-nz-arc.bsky.social",
@@ -6142,7 +6296,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 201,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "nz-trade-and-enterprise",
@@ -6188,14 +6342,16 @@
       "display_name": "NZ Government Social Media Archive Index",
       "enabled": false,
       "environment": "bluesky-mirror-nzgov-social-archive-index",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/202"
+      ],
       "handle": "",
       "handle_candidates": [
         "nzgov-social-archive.bsky.social",
         "nzgov-social-corpus-archive.bsky.social"
       ],
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 202,
       "lifecycle_state": "candidate",
       "mirror_id": "nzgov-social-archive-index",
       "profile_disclosure": "Unofficial index for automated government archive mirrors.",
@@ -6216,7 +6372,9 @@
       "display_name": "Office of Film and Literature Classification (Te Tari Whakar\u014dp\u016b Tukuata, Tuhituhinga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-office-of-film-and-literature-classifica",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/203"
+      ],
       "handle": "",
       "handle_candidates": [
         "office-of-film-and-literature-classifica-nz-arc.bsky.social",
@@ -6224,7 +6382,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 203,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "office-of-film-and-literature-classifica",
@@ -6259,7 +6417,9 @@
       "display_name": "Office of the Controller and Auditor-General (Tumuaki o te Mana Arotake) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-office-of-the-auditor-general",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/204"
+      ],
       "handle": "",
       "handle_candidates": [
         "office-of-the-auditor-general-nz-arc.bsky.social",
@@ -6267,7 +6427,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 204,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "office-of-the-auditor-general",
@@ -6304,7 +6464,9 @@
       "display_name": "Office of the Ombudsman (Kaitiaki Mana Tangata) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-office-of-the-ombudsman",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/205"
+      ],
       "handle": "",
       "handle_candidates": [
         "office-of-the-ombudsman-nz-arc.bsky.social",
@@ -6312,7 +6474,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 205,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "office-of-the-ombudsman",
@@ -6349,7 +6511,9 @@
       "display_name": "Office of Treaty Settlements (Te Tari Whakatau) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-office-of-treaty-settlements",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/206"
+      ],
       "handle": "",
       "handle_candidates": [
         "office-of-treaty-settlements-nz-arc.bsky.social",
@@ -6357,7 +6521,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 206,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "office-of-treaty-settlements",
@@ -6386,7 +6550,9 @@
       "display_name": "Open Polytechnic of New Zealand Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-open-polytechnic",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/207"
+      ],
       "handle": "",
       "handle_candidates": [
         "open-polytechnic-nz-arc.bsky.social",
@@ -6394,7 +6560,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 207,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "open-polytechnic",
@@ -6440,7 +6606,9 @@
       "display_name": "\u014cp\u014dtiki District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-opotiki-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/208"
+      ],
       "handle": "",
       "handle_candidates": [
         "opotiki-district-council-nz-arc.bsky.social",
@@ -6448,7 +6616,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 208,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "opotiki-district-council",
@@ -6485,7 +6653,9 @@
       "display_name": "Oranga Tamariki\u2014Ministry for Children Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-oranga-tamariki",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/209"
+      ],
       "handle": "",
       "handle_candidates": [
         "oranga-tamariki-nz-arc.bsky.social",
@@ -6493,7 +6663,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 209,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "oranga-tamariki",
@@ -6533,7 +6703,9 @@
       "display_name": "Otago Polytechnic Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-otago-polytechnic",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/210"
+      ],
       "handle": "",
       "handle_candidates": [
         "otago-polytechnic-nz-arc.bsky.social",
@@ -6541,7 +6713,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 210,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "otago-polytechnic",
@@ -6587,7 +6759,9 @@
       "display_name": "Otago Regional Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-otago-regional-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/211"
+      ],
       "handle": "",
       "handle_candidates": [
         "otago-regional-council-nz-arc.bsky.social",
@@ -6595,7 +6769,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 211,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "otago-regional-council",
@@ -6632,7 +6806,9 @@
       "display_name": "\u014ctorohanga District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-otorohanga-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/212"
+      ],
       "handle": "",
       "handle_candidates": [
         "otorohanga-district-council-nz-arc.bsky.social",
@@ -6640,7 +6816,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 212,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "otorohanga-district-council",
@@ -6675,7 +6851,9 @@
       "display_name": "Palmerston North City Council (Te Kaunihera o Papaioea) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-palmerston-north-city-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/213"
+      ],
       "handle": "",
       "handle_candidates": [
         "palmerston-north-city-council-nz-arc.bsky.social",
@@ -6683,7 +6861,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 213,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "palmerston-north-city-council",
@@ -6723,7 +6901,9 @@
       "display_name": "Landcorp Farming Limited (P\u0101mu) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-pamu",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/214"
+      ],
       "handle": "",
       "handle_candidates": [
         "pamu-nz-arc.bsky.social",
@@ -6731,7 +6911,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 214,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "pamu",
@@ -6782,7 +6962,9 @@
       "display_name": "Parliamentary Commissioner for the Environment (Te Kaitiaki Taiao a Te Whare P\u0101remata) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-parliamentary-commissioner-for-environme",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/215"
+      ],
       "handle": "",
       "handle_candidates": [
         "parliamentary-commissioner-for-environme-nz-arc.bsky.social",
@@ -6790,7 +6972,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 215,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "parliamentary-commissioner-for-environme",
@@ -6829,7 +7011,9 @@
       "display_name": "Green Party of Aotearoa New Zealand Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-party-green-party",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/216"
+      ],
       "handle": "",
       "handle_candidates": [
         "party-green-party-nz-arc.bsky.social",
@@ -6837,7 +7021,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 216,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "party-green-party",
@@ -6866,7 +7050,9 @@
       "display_name": "Aaron Hawkins Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-person-aaron-hawkins",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/217"
+      ],
       "handle": "",
       "handle_candidates": [
         "person-aaron-hawkins-nz-arc.bsky.social",
@@ -6874,7 +7060,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 217,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "person-aaron-hawkins",
@@ -6903,7 +7089,9 @@
       "display_name": "Andrew James Little Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-person-andrew-little",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/218"
+      ],
       "handle": "",
       "handle_candidates": [
         "person-andrew-little-nz-arc.bsky.social",
@@ -6911,7 +7099,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 218,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "person-andrew-little",
@@ -6940,7 +7128,9 @@
       "display_name": "Ben McNulty Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-person-ben-mcnulty",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/219"
+      ],
       "handle": "",
       "handle_candidates": [
         "person-ben-mcnulty-nz-arc.bsky.social",
@@ -6948,7 +7138,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 219,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "person-ben-mcnulty",
@@ -6977,7 +7167,9 @@
       "display_name": "Geordie Rogers Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-person-geordie-rogers",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/220"
+      ],
       "handle": "",
       "handle_candidates": [
         "person-geordie-rogers-nz-arc.bsky.social",
@@ -6985,7 +7177,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 220,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "person-geordie-rogers",
@@ -7014,7 +7206,9 @@
       "display_name": "Julie Fairey Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-person-julie-fairey",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/221"
+      ],
       "handle": "",
       "handle_candidates": [
         "person-julie-fairey-nz-arc.bsky.social",
@@ -7022,7 +7216,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 221,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "person-julie-fairey",
@@ -7051,7 +7245,9 @@
       "display_name": "Lan Pham Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-person-lan-pham",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/222"
+      ],
       "handle": "",
       "handle_candidates": [
         "person-lan-pham-nz-arc.bsky.social",
@@ -7059,7 +7255,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 222,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "person-lan-pham",
@@ -7088,7 +7284,9 @@
       "display_name": "Rachel Brooking Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-person-rachel-brooking",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/223"
+      ],
       "handle": "",
       "handle_candidates": [
         "person-rachel-brooking-nz-arc.bsky.social",
@@ -7096,7 +7294,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 223,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "person-rachel-brooking",
@@ -7125,7 +7323,9 @@
       "display_name": "Rebecca Matthews Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-person-rebecca-matthews",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/224"
+      ],
       "handle": "",
       "handle_candidates": [
         "person-rebecca-matthews-nz-arc.bsky.social",
@@ -7133,7 +7333,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 224,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "person-rebecca-matthews",
@@ -7162,7 +7362,9 @@
       "display_name": "Richard Hills Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-person-richard-hills-auckland",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/225"
+      ],
       "handle": "",
       "handle_candidates": [
         "person-richard-hills-auckland-nz-arc.bsky.social",
@@ -7170,7 +7372,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 225,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "person-richard-hills-auckland",
@@ -7199,7 +7401,9 @@
       "display_name": "Pharmaceutical Management Agency (Pharmac, Te P\u0101taka Whaioranga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-pharmac",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/226"
+      ],
       "handle": "",
       "handle_candidates": [
         "pharmac-nz-arc.bsky.social",
@@ -7207,7 +7411,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 226,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "pharmac",
@@ -7243,7 +7447,9 @@
       "display_name": "Porirua City Council (Te Kaunihera o Porirua) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-porirua-city-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/227"
+      ],
       "handle": "",
       "handle_candidates": [
         "porirua-city-council-nz-arc.bsky.social",
@@ -7251,7 +7457,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 227,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "porirua-city-council",
@@ -7286,7 +7492,9 @@
       "display_name": "Predator Free 2050 Limited Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-predator-free-2050",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/228"
+      ],
       "handle": "",
       "handle_candidates": [
         "predator-free-2050-nz-arc.bsky.social",
@@ -7294,7 +7502,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 228,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "predator-free-2050",
@@ -7326,7 +7534,9 @@
       "display_name": "Privacy Commissioner (Te Mana M\u0101t\u0101pono Matapopore) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-privacy-commissioner",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/229"
+      ],
       "handle": "",
       "handle_candidates": [
         "privacy-commissioner-nz-arc.bsky.social",
@@ -7334,7 +7544,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 229,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "privacy-commissioner",
@@ -7363,7 +7573,9 @@
       "display_name": "Public Service Commission (Te Kawa Mataaho) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-public-service-commission",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/230"
+      ],
       "handle": "",
       "handle_candidates": [
         "public-service-commission-nz-arc.bsky.social",
@@ -7371,7 +7583,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 230,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "public-service-commission",
@@ -7417,7 +7629,9 @@
       "display_name": "Public Trust (Te Tari Kaitiaki T\u016bmatanui) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-public-trust",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/231"
+      ],
       "handle": "",
       "handle_candidates": [
         "public-trust-nz-arc.bsky.social",
@@ -7425,7 +7639,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 231,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "public-trust",
@@ -7460,7 +7674,9 @@
       "display_name": "Queenstown-Lakes District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-queenstown-lakes-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/232"
+      ],
       "handle": "",
       "handle_candidates": [
         "queenstown-lakes-district-council-nz-arc.bsky.social",
@@ -7468,7 +7684,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 232,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "queenstown-lakes-district-council",
@@ -7514,7 +7730,9 @@
       "display_name": "Quotable Value Limited (Te Tari W\u0101riu) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-qv",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/233"
+      ],
       "handle": "",
       "handle_candidates": [
         "qv-nz-arc.bsky.social",
@@ -7522,7 +7740,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 233,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "qv",
@@ -7558,7 +7776,9 @@
       "display_name": "Rangit\u012bkei District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-rangitikei-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/234"
+      ],
       "handle": "",
       "handle_candidates": [
         "rangitikei-district-council-nz-arc.bsky.social",
@@ -7566,7 +7786,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 234,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "rangitikei-district-council",
@@ -7597,7 +7817,9 @@
       "display_name": "Real Estate Authority (Te Mana Papawhenua) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-real-estate-authority",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/235"
+      ],
       "handle": "",
       "handle_candidates": [
         "real-estate-authority-nz-arc.bsky.social",
@@ -7605,7 +7827,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 235,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "real-estate-authority",
@@ -7636,7 +7858,9 @@
       "display_name": "Research and Education Advanced Network NZ Limited (REANNZ) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-reannz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/236"
+      ],
       "handle": "",
       "handle_candidates": [
         "reannz-nz-arc.bsky.social",
@@ -7644,7 +7868,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 236,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "reannz",
@@ -7673,7 +7897,9 @@
       "display_name": "Reserve Bank of New Zealand (Te P\u016btea Matua) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-reserve-bank-of-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/237"
+      ],
       "handle": "",
       "handle_candidates": [
         "reserve-bank-of-nz-nz-arc.bsky.social",
@@ -7681,7 +7907,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 237,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "reserve-bank-of-nz",
@@ -7726,7 +7952,9 @@
       "display_name": "Radio New Zealand Limited (Te Reo Irirangi o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-rnz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/238"
+      ],
       "handle": "",
       "handle_candidates": [
         "rnz-nz-arc.bsky.social",
@@ -7734,7 +7962,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 238,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "rnz",
@@ -7780,7 +8008,9 @@
       "display_name": "Rotorua Lakes Council (Te Kaunihera o ng\u0101 Roto o Rotorua) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-rotorua-lakes-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/239"
+      ],
       "handle": "",
       "handle_candidates": [
         "rotorua-lakes-council-nz-arc.bsky.social",
@@ -7788,7 +8018,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 239,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "rotorua-lakes-council",
@@ -7826,7 +8056,9 @@
       "display_name": "Royal New Zealand Air Force (Te Tauaarangi o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-royal-nz-air-force",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/240"
+      ],
       "handle": "",
       "handle_candidates": [
         "royal-nz-air-force-nz-arc.bsky.social",
@@ -7834,7 +8066,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 240,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "royal-nz-air-force",
@@ -7880,7 +8112,9 @@
       "display_name": "Royal New Zealand Navy (Te Taua Moana o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-royal-nz-navy",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/241"
+      ],
       "handle": "",
       "handle_candidates": [
         "royal-nz-navy-nz-arc.bsky.social",
@@ -7888,7 +8122,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 241,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "royal-nz-navy",
@@ -7934,7 +8168,9 @@
       "display_name": "Ruapehu District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ruapehu-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/243"
+      ],
       "handle": "",
       "handle_candidates": [
         "ruapehu-district-council-nz-arc.bsky.social",
@@ -7942,7 +8178,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 243,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ruapehu-district-council",
@@ -7976,7 +8212,9 @@
       "display_name": "Selwyn District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-selwyn-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/244"
+      ],
       "handle": "",
       "handle_candidates": [
         "selwyn-district-council-nz-arc.bsky.social",
@@ -7984,7 +8222,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 244,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "selwyn-district-council",
@@ -8021,7 +8259,9 @@
       "display_name": "Serious Fraud Office (Te Tari Hara Taware) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-serious-fraud-office",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/245"
+      ],
       "handle": "",
       "handle_candidates": [
         "serious-fraud-office-nz-arc.bsky.social",
@@ -8029,7 +8269,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 245,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "serious-fraud-office",
@@ -8063,7 +8303,9 @@
       "display_name": "Southern Institute of Technology (SIT) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-sit",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/246"
+      ],
       "handle": "",
       "handle_candidates": [
         "sit-nz-arc.bsky.social",
@@ -8071,7 +8313,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 246,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "sit",
@@ -8120,7 +8362,9 @@
       "display_name": "Social Investment Agency (Toi Hau T\u0101ngata) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-social-investment-agency",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/247"
+      ],
       "handle": "",
       "handle_candidates": [
         "social-investment-agency-nz-arc.bsky.social",
@@ -8128,7 +8372,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 247,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "social-investment-agency",
@@ -8157,7 +8401,9 @@
       "display_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-social-workers-registration-board",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/248"
+      ],
       "handle": "",
       "handle_candidates": [
         "social-workers-registration-board-nz-arc.bsky.social",
@@ -8165,7 +8411,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 248,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "social-workers-registration-board",
@@ -8206,7 +8452,9 @@
       "display_name": "South Taranaki District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-south-taranaki-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/249"
+      ],
       "handle": "",
       "handle_candidates": [
         "south-taranaki-district-council-nz-arc.bsky.social",
@@ -8214,7 +8462,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 249,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "south-taranaki-district-council",
@@ -8248,7 +8496,9 @@
       "display_name": "South Waikato District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-south-waikato-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/250"
+      ],
       "handle": "",
       "handle_candidates": [
         "south-waikato-district-council-nz-arc.bsky.social",
@@ -8256,7 +8506,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 250,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "south-waikato-district-council",
@@ -8288,7 +8538,9 @@
       "display_name": "South Wairarapa District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-south-wairarapa-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/251"
+      ],
       "handle": "",
       "handle_candidates": [
         "south-wairarapa-district-council-nz-arc.bsky.social",
@@ -8296,7 +8548,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 251,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "south-wairarapa-district-council",
@@ -8334,7 +8586,9 @@
       "display_name": "Southern Response Earthquake Services Limited (Urupare ki te Tonga) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-southern-response",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/252"
+      ],
       "handle": "",
       "handle_candidates": [
         "southern-response-nz-arc.bsky.social",
@@ -8342,7 +8596,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 252,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "southern-response",
@@ -8371,7 +8625,9 @@
       "display_name": "Southland District Council (Te Kaunihera o Murihiku) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-southland-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/253"
+      ],
       "handle": "",
       "handle_candidates": [
         "southland-district-council-nz-arc.bsky.social",
@@ -8379,7 +8635,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 253,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "southland-district-council",
@@ -8408,7 +8664,9 @@
       "display_name": "Sport New Zealand (Ihi Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-sport-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/254"
+      ],
       "handle": "",
       "handle_candidates": [
         "sport-nz-nz-arc.bsky.social",
@@ -8416,7 +8674,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 254,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "sport-nz",
@@ -8456,7 +8714,9 @@
       "display_name": "Statistics New Zealand (Tatauranga Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-stats-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/255"
+      ],
       "handle": "",
       "handle_candidates": [
         "stats-nz-nz-arc.bsky.social",
@@ -8464,7 +8724,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 255,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "stats-nz",
@@ -8496,7 +8756,9 @@
       "display_name": "Stratford District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-stratford-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/256"
+      ],
       "handle": "",
       "handle_candidates": [
         "stratford-district-council-nz-arc.bsky.social",
@@ -8504,7 +8766,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 256,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "stratford-district-council",
@@ -8536,7 +8798,9 @@
       "display_name": "Tai Poutini Polytechnic Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-tai-poutini-polytechnic",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/257"
+      ],
       "handle": "",
       "handle_candidates": [
         "tai-poutini-polytechnic-nz-arc.bsky.social",
@@ -8544,7 +8808,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 257,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "tai-poutini-polytechnic",
@@ -8588,7 +8852,9 @@
       "display_name": "Taranaki Regional Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-taranaki-regional-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/258"
+      ],
       "handle": "",
       "handle_candidates": [
         "taranaki-regional-council-nz-arc.bsky.social",
@@ -8596,7 +8862,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 258,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "taranaki-regional-council",
@@ -8633,7 +8899,9 @@
       "display_name": "Tararua District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-tararua-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/259"
+      ],
       "handle": "",
       "handle_candidates": [
         "tararua-district-council-nz-arc.bsky.social",
@@ -8641,7 +8909,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 259,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "tararua-district-council",
@@ -8681,7 +8949,9 @@
       "display_name": "Tasman District Council (Te Kaunihera o te tai o Aorere) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-tasman-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/260"
+      ],
       "handle": "",
       "handle_candidates": [
         "tasman-district-council-nz-arc.bsky.social",
@@ -8689,7 +8959,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 260,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "tasman-district-council",
@@ -8726,7 +8996,9 @@
       "display_name": "Taumata Arowai (Water Services Authority) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-taumata-arowai",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/261"
+      ],
       "handle": "",
       "handle_candidates": [
         "taumata-arowai-nz-arc.bsky.social",
@@ -8734,7 +9006,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 261,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "taumata-arowai",
@@ -8765,7 +9037,9 @@
       "display_name": "Taup\u014d District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-taupo-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/262"
+      ],
       "handle": "",
       "handle_candidates": [
         "taupo-district-council-nz-arc.bsky.social",
@@ -8773,7 +9047,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 262,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "taupo-district-council",
@@ -8813,7 +9087,9 @@
       "display_name": "Tauranga City Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-tauranga-city-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/263"
+      ],
       "handle": "",
       "handle_candidates": [
         "tauranga-city-council-nz-arc.bsky.social",
@@ -8821,7 +9097,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 263,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "tauranga-city-council",
@@ -8859,7 +9135,9 @@
       "display_name": "Te Ara Ahunga Ora (Retirement Commission) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-te-ara-ahunga-ora",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/264"
+      ],
       "handle": "",
       "handle_candidates": [
         "te-ara-ahunga-ora-nz-arc.bsky.social",
@@ -8867,7 +9145,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 264,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "te-ara-ahunga-ora",
@@ -8904,7 +9182,9 @@
       "display_name": "Te Hiringa Mahara (Mental Health and Wellbeing Commission) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-te-hiringa-mahara",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/265"
+      ],
       "handle": "",
       "handle_candidates": [
         "te-hiringa-mahara-nz-arc.bsky.social",
@@ -8912,7 +9192,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 265,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "te-hiringa-mahara",
@@ -8946,7 +9226,9 @@
       "display_name": "Te M\u0101ngai P\u0101ho Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-te-mangai-paho",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/266"
+      ],
       "handle": "",
       "handle_candidates": [
         "te-mangai-paho-nz-arc.bsky.social",
@@ -8954,7 +9236,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 266,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "te-mangai-paho",
@@ -8983,7 +9265,9 @@
       "display_name": "Museum of New Zealand Te Papa Tongarewa Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-te-papa",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/267"
+      ],
       "handle": "",
       "handle_candidates": [
         "te-papa-nz-arc.bsky.social",
@@ -8991,7 +9275,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 267,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "te-papa",
@@ -9036,7 +9320,9 @@
       "display_name": "Te Puni K\u014dkiri (Ministry of M\u0101ori Development) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-te-puni-kokiri",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/268"
+      ],
       "handle": "",
       "handle_candidates": [
         "te-puni-kokiri-nz-arc.bsky.social",
@@ -9044,7 +9330,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 268,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "te-puni-kokiri",
@@ -9084,7 +9370,9 @@
       "display_name": "Te Tumu Paeroa (Office of the M\u0101ori Trustee) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-te-tumu-paeroa",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/269"
+      ],
       "handle": "",
       "handle_candidates": [
         "te-tumu-paeroa-nz-arc.bsky.social",
@@ -9092,7 +9380,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 269,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "te-tumu-paeroa",
@@ -9131,7 +9419,9 @@
       "display_name": "Te W\u0101nanga o Aotearoa Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-te-wananga-o-aotearoa",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/270"
+      ],
       "handle": "",
       "handle_candidates": [
         "te-wananga-o-aotearoa-nz-arc.bsky.social",
@@ -9139,7 +9429,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 270,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "te-wananga-o-aotearoa",
@@ -9189,7 +9479,9 @@
       "display_name": "Te W\u0101nanga o Raukawa Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-te-wananga-o-raukawa",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/271"
+      ],
       "handle": "",
       "handle_candidates": [
         "te-wananga-o-raukawa-nz-arc.bsky.social",
@@ -9197,7 +9489,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 271,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "te-wananga-o-raukawa",
@@ -9244,7 +9536,9 @@
       "display_name": "Te Whare W\u0101nanga o Awanui\u0101rangi Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-te-whare-wananga-o-awanuiarangi",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/272"
+      ],
       "handle": "",
       "handle_candidates": [
         "te-whare-wananga-o-awanuiarangi-nz-arc.bsky.social",
@@ -9252,7 +9546,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 272,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "te-whare-wananga-o-awanuiarangi",
@@ -9296,7 +9590,9 @@
       "display_name": "Tertiary Education Commission (Te Amorangi M\u0101tauranga Matua) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-tertiary-education-commission",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/273"
+      ],
       "handle": "",
       "handle_candidates": [
         "tertiary-education-commission-nz-arc.bsky.social",
@@ -9304,7 +9600,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 273,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "tertiary-education-commission",
@@ -9333,7 +9629,9 @@
       "display_name": "Thames-Coromandel District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-thames-coromandel-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/274"
+      ],
       "handle": "",
       "handle_candidates": [
         "thames-coromandel-district-council-nz-arc.bsky.social",
@@ -9341,7 +9639,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 274,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "thames-coromandel-district-council",
@@ -9381,7 +9679,9 @@
       "display_name": "The Treasury (Te Tai \u014changa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-the-treasury",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/275"
+      ],
       "handle": "",
       "handle_candidates": [
         "the-treasury-nz-arc.bsky.social",
@@ -9389,7 +9689,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 275,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "the-treasury",
@@ -9423,7 +9723,9 @@
       "display_name": "Timaru District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-timaru-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/276"
+      ],
       "handle": "",
       "handle_candidates": [
         "timaru-district-council-nz-arc.bsky.social",
@@ -9431,7 +9733,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 276,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "timaru-district-council",
@@ -9468,7 +9770,9 @@
       "display_name": "Toi Ohomai Institute of Technology Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-toi-ohomai",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/277"
+      ],
       "handle": "",
       "handle_candidates": [
         "toi-ohomai-nz-arc.bsky.social",
@@ -9476,7 +9780,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 277,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "toi-ohomai",
@@ -9514,7 +9818,9 @@
       "display_name": "New Zealand Tourism Board (Tourism New Zealand) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-tourism-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/278"
+      ],
       "handle": "",
       "handle_candidates": [
         "tourism-nz-nz-arc.bsky.social",
@@ -9522,7 +9828,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 278,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "tourism-nz",
@@ -9557,7 +9863,9 @@
       "display_name": "Transport Accident Investigation Commission (Te K\u014dmihana Tirotiro Aitu\u0101 Waka) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-transport-accident-investigation-commiss",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/279"
+      ],
       "handle": "",
       "handle_candidates": [
         "transport-accident-investigation-commiss-nz-arc.bsky.social",
@@ -9565,7 +9873,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 279,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "transport-accident-investigation-commiss",
@@ -9596,7 +9904,9 @@
       "display_name": "Transpower New Zealand Limited Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-transpower",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/280"
+      ],
       "handle": "",
       "handle_candidates": [
         "transpower-nz-arc.bsky.social",
@@ -9604,7 +9914,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 280,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "transpower",
@@ -9643,7 +9953,9 @@
       "display_name": "Television New Zealand Limited (Te Reo T\u0101taki o Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-tvnz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/281"
+      ],
       "handle": "",
       "handle_candidates": [
         "tvnz-nz-arc.bsky.social",
@@ -9651,7 +9963,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 281,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "tvnz",
@@ -9691,7 +10003,9 @@
       "display_name": "Universal College of Learning (UCOL) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-ucol",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/282"
+      ],
       "handle": "",
       "handle_candidates": [
         "ucol-nz-arc.bsky.social",
@@ -9699,7 +10013,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 282,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "ucol",
@@ -9745,7 +10059,9 @@
       "display_name": "Unitec Institute of Technology Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-unitec",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/283"
+      ],
       "handle": "",
       "handle_candidates": [
         "unitec-nz-arc.bsky.social",
@@ -9753,7 +10069,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 283,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "unitec",
@@ -9797,7 +10113,9 @@
       "display_name": "University of Auckland (Waipapa Taumata Rau) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-university-of-auckland",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/284"
+      ],
       "handle": "",
       "handle_candidates": [
         "university-of-auckland-nz-arc.bsky.social",
@@ -9805,7 +10123,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 284,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "university-of-auckland",
@@ -9851,7 +10169,9 @@
       "display_name": "University of Canterbury (Te Whare W\u0101nanga o Waitaha) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-university-of-canterbury",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/285"
+      ],
       "handle": "",
       "handle_candidates": [
         "university-of-canterbury-nz-arc.bsky.social",
@@ -9859,7 +10179,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 285,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "university-of-canterbury",
@@ -9905,7 +10225,9 @@
       "display_name": "University of Otago (Te Whare W\u0101nanga o Ot\u0101go) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-university-of-otago",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/286"
+      ],
       "handle": "",
       "handle_candidates": [
         "university-of-otago-nz-arc.bsky.social",
@@ -9913,7 +10235,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 286,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "university-of-otago",
@@ -9951,7 +10273,9 @@
       "display_name": "University of Waikato (Te Whare W\u0101nanga o Waikato) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-university-of-waikato",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/287"
+      ],
       "handle": "",
       "handle_candidates": [
         "university-of-waikato-nz-arc.bsky.social",
@@ -9959,7 +10283,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 287,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "university-of-waikato",
@@ -10005,7 +10329,9 @@
       "display_name": "Upper Hutt City Council (Te Kaunihera o Upera Hutu) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-upper-hutt-city-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/288"
+      ],
       "handle": "",
       "handle_candidates": [
         "upper-hutt-city-council-nz-arc.bsky.social",
@@ -10013,7 +10339,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 288,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "upper-hutt-city-council",
@@ -10049,7 +10375,9 @@
       "display_name": "Victoria University of Wellington (Te Herenga Waka) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-victoria-university-of-wellington",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/289"
+      ],
       "handle": "",
       "handle_candidates": [
         "victoria-university-of-wellington-nz-arc.bsky.social",
@@ -10057,7 +10385,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 289,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "victoria-university-of-wellington",
@@ -10095,7 +10423,9 @@
       "display_name": "Waikato District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-waikato-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/290"
+      ],
       "handle": "",
       "handle_candidates": [
         "waikato-district-council-nz-arc.bsky.social",
@@ -10103,7 +10433,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 290,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "waikato-district-council",
@@ -10143,7 +10473,9 @@
       "display_name": "Waikato Regional Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-waikato-regional-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/291"
+      ],
       "handle": "",
       "handle_candidates": [
         "waikato-regional-council-nz-arc.bsky.social",
@@ -10151,7 +10483,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 291,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "waikato-regional-council",
@@ -10191,7 +10523,9 @@
       "display_name": "Waimakariri District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-waimakariri-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/292"
+      ],
       "handle": "",
       "handle_candidates": [
         "waimakariri-district-council-nz-arc.bsky.social",
@@ -10199,7 +10533,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 292,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "waimakariri-district-council",
@@ -10240,7 +10574,9 @@
       "display_name": "Waimate District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-waimate-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/293"
+      ],
       "handle": "",
       "handle_candidates": [
         "waimate-district-council-nz-arc.bsky.social",
@@ -10248,7 +10584,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 293,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "waimate-district-council",
@@ -10277,7 +10613,9 @@
       "display_name": "Waipa District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-waipa-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/294"
+      ],
       "handle": "",
       "handle_candidates": [
         "waipa-district-council-nz-arc.bsky.social",
@@ -10285,7 +10623,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 294,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "waipa-district-council",
@@ -10325,7 +10663,9 @@
       "display_name": "Wairoa District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-wairoa-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/295"
+      ],
       "handle": "",
       "handle_candidates": [
         "wairoa-district-council-nz-arc.bsky.social",
@@ -10333,7 +10673,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 295,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "wairoa-district-council",
@@ -10367,7 +10707,9 @@
       "display_name": "Waitaki District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-waitaki-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/296"
+      ],
       "handle": "",
       "handle_candidates": [
         "waitaki-district-council-nz-arc.bsky.social",
@@ -10375,7 +10717,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 296,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "waitaki-district-council",
@@ -10413,7 +10755,9 @@
       "display_name": "Waitomo District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-waitomo-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/297"
+      ],
       "handle": "",
       "handle_candidates": [
         "waitomo-district-council-nz-arc.bsky.social",
@@ -10421,7 +10765,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 297,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "waitomo-district-council",
@@ -10452,7 +10796,9 @@
       "display_name": "New Zealand Transport Agency (Waka Kotahi) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-waka-kotahi",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/298"
+      ],
       "handle": "",
       "handle_candidates": [
         "waka-kotahi-nz-arc.bsky.social",
@@ -10460,7 +10806,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 298,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "waka-kotahi",
@@ -10498,7 +10844,9 @@
       "display_name": "Wellington City Council (Te Kaunihera o P\u014dneke) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-wellington-city-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/299"
+      ],
       "handle": "",
       "handle_candidates": [
         "wellington-city-council-nz-arc.bsky.social",
@@ -10506,7 +10854,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 299,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "wellington-city-council",
@@ -10541,7 +10889,9 @@
       "display_name": "Wellington City Libraries Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-wellington-city-libraries",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/300"
+      ],
       "handle": "",
       "handle_candidates": [
         "wellington-city-libraries-nz-arc.bsky.social",
@@ -10549,7 +10899,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 300,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "wellington-city-libraries",
@@ -10590,7 +10940,9 @@
       "display_name": "Wellington Institute of Technology (WelTec) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-weltec",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/301"
+      ],
       "handle": "",
       "handle_candidates": [
         "weltec-nz-arc.bsky.social",
@@ -10598,7 +10950,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 301,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "weltec",
@@ -10642,7 +10994,9 @@
       "display_name": "West Coast Regional Council (Te Tai o Poutini) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-west-coast-regional-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/302"
+      ],
       "handle": "",
       "handle_candidates": [
         "west-coast-regional-council-nz-arc.bsky.social",
@@ -10650,7 +11004,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 302,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "west-coast-regional-council",
@@ -10684,7 +11038,9 @@
       "display_name": "Western Bay of Plenty District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-western-bay-of-plenty-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/303"
+      ],
       "handle": "",
       "handle_candidates": [
         "western-bay-of-plenty-district-council-nz-arc.bsky.social",
@@ -10692,7 +11048,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 303,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "western-bay-of-plenty-district-council",
@@ -10732,7 +11088,9 @@
       "display_name": "Westland District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-westland-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/304"
+      ],
       "handle": "",
       "handle_candidates": [
         "westland-district-council-nz-arc.bsky.social",
@@ -10740,7 +11098,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 304,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "westland-district-council",
@@ -10776,7 +11134,9 @@
       "display_name": "Whaikaha \u2013 Ministry of Disabled People Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-whaikaha",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/305"
+      ],
       "handle": "",
       "handle_candidates": [
         "whaikaha-nz-arc.bsky.social",
@@ -10784,7 +11144,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 305,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "whaikaha",
@@ -10828,7 +11188,9 @@
       "display_name": "Whakat\u0101ne District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-whakatane-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/306"
+      ],
       "handle": "",
       "handle_candidates": [
         "whakatane-district-council-nz-arc.bsky.social",
@@ -10836,7 +11198,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 306,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "whakatane-district-council",
@@ -10876,7 +11238,9 @@
       "display_name": "Whanganui District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-whanganui-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/307"
+      ],
       "handle": "",
       "handle_candidates": [
         "whanganui-district-council-nz-arc.bsky.social",
@@ -10884,7 +11248,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 307,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "whanganui-district-council",
@@ -10924,7 +11288,9 @@
       "display_name": "Whang\u0101rei District Council Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-whangarei-district-council",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/308"
+      ],
       "handle": "",
       "handle_candidates": [
         "whangarei-district-council-nz-arc.bsky.social",
@@ -10932,7 +11298,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 308,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "whangarei-district-council",
@@ -10972,7 +11338,9 @@
       "display_name": "Whitireia New Zealand Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-whitireia",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/309"
+      ],
       "handle": "",
       "handle_candidates": [
         "whitireia-nz-arc.bsky.social",
@@ -10980,7 +11348,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 309,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "whitireia",
@@ -11024,7 +11392,9 @@
       "display_name": "Waikato Institute of Technology (Wintec) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-wintec",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/310"
+      ],
       "handle": "",
       "handle_candidates": [
         "wintec-nz-arc.bsky.social",
@@ -11032,7 +11402,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 310,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "wintec",
@@ -11078,7 +11448,9 @@
       "display_name": "Western Institute of Technology at Taranaki (WITT) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-witt",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/311"
+      ],
       "handle": "",
       "handle_candidates": [
         "witt-nz-arc.bsky.social",
@@ -11086,7 +11458,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 311,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "witt",
@@ -11128,7 +11500,9 @@
       "display_name": "WorkSafe New Zealand (Mahi Haumaru Aotearoa) Archive Mirror",
       "enabled": false,
       "environment": "bluesky-mirror-worksafe-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/312"
+      ],
       "handle": "",
       "handle_candidates": [
         "worksafe-nz-nz-arc.bsky.social",
@@ -11136,7 +11510,7 @@
       ],
       "handle_policy_version": null,
       "health_state": "not_checked",
-      "issue_number": null,
+      "issue_number": 312,
       "jurisdiction": "nz",
       "lifecycle_state": "candidate",
       "mirror_id": "worksafe-nz",
@@ -11179,7 +11553,10 @@
   ],
   "onboarding_cohorts": {
     "cohort-01": 25,
-    "cohort-02": 97
+    "cohort-02": 97,
+    "cohort-03": 122,
+    "cohort-04": 173,
+    "cohort-05": 242
   },
   "policy": {
     "account_creation_per_day": 1,
