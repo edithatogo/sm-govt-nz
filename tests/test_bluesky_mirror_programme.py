@@ -595,6 +595,75 @@ def test_recovery_resumes_only_after_all_publications_reconcile(tmp_path: Path) 
     )
 
 
+def test_recovery_requires_public_evidence_for_legacy_last_uri(tmp_path: Path) -> None:
+    state_path = tmp_path / "agency.json"
+    state_path.write_text(
+        json.dumps(
+            {
+                "accounts": {
+                    "agency": {
+                        "paused": True,
+                        "pause_reason": "public readback failed",
+                        "last_uri": "at://did:plc:a/app.bsky.feed.post/1",
+                        "posted_record_ids": ["r1"],
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    applied = recover_account(
+        registry(registry_row()),
+        "agency",
+        apply=True,
+        state_path=state_path,
+        report_path=tmp_path / "recovery.json",
+        probe=lambda _uri: "reconciled",
+    )
+
+    assert applied["status"] == "resumed"
+    assert applied["resumed"] is True
+    assert applied["evidence"] == [
+        {
+            "idempotency_key": "",
+            "record_id": "r1",
+            "uri": "at://did:plc:a/app.bsky.feed.post/1",
+            "publication_state": "legacy_last_uri",
+            "classification": "reconciled",
+        }
+    ]
+
+
+def test_recovery_blocks_legacy_state_without_last_uri(tmp_path: Path) -> None:
+    state_path = tmp_path / "agency.json"
+    state_path.write_text(
+        json.dumps(
+            {
+                "accounts": {
+                    "agency": {
+                        "paused": True,
+                        "pause_reason": "public readback failed",
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = recover_account(
+        registry(registry_row()),
+        "agency",
+        apply=True,
+        state_path=state_path,
+        report_path=tmp_path / "recovery.json",
+    )
+
+    assert result["status"] == "recovery_blocked"
+    assert result["resumed"] is False
+    assert result["evidence"][0]["classification"] == "ambiguous_missing_uri"
+
+
 @pytest.mark.parametrize(
     ("pause_reason", "publication", "classification"),
     [
