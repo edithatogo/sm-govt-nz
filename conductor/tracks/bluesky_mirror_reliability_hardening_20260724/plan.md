@@ -20,7 +20,7 @@
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
 ## Phase 4: Programme closeout
-- [ ] Task: Run Conductor review for every child track.
+- [x] Task: Run Conductor review for every child track.
 - [ ] Task: Reconcile GitHub issue/subissue evidence.
 - [x] Task: Archive completed child tracks and update parent programme evidence.
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
