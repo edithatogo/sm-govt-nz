@@ -3,7 +3,7 @@
 - [x] Task: Add app-password-only configuration assertions.
 - [x] Task: Add nonsecret credential-health reporting.
 - [x] Task: Remove persistent primary-password environment usage.
-- [ ] Task: Rotate the ACC primary password when secure operator entry is available.
+- [x] Task: Rotate the ACC primary password when secure operator entry is available.
 - [x] Task: Document rotation and incident response.
 - [x] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
@@ -26,5 +26,6 @@
 - Hosted preflight run `30238209314` passed against the isolated ACC
   environment without posting and verified that the currently configured app
   password authenticates successfully.
-- GitHub reports `BLUESKY_APP_PASSWORD` was last updated on 2026-07-22, so
-  replacement and revocation of the prior app password remain unverified.
+- On 2026-07-27, the operator confirmed primary-password rotation, isolated
+  GitHub Environment app-password replacement, and revocation of the superseded
+  app password. No credential value is retained in repository evidence.
