@@ -8,7 +8,7 @@
 ## Bluesky Government Archive Mirror Programme (2026-07-21)
 - [ ] `bluesky_government_mirror_programme_20260721` - parent programme, GitHub #19
 - [ ] `bluesky_mirror_identity_governance_20260721` - identity registry, GitHub #20
-- [ ] `bluesky_local_account_onboarding_agent_20260721` - local supervised onboarding, GitHub #21
+- [x] `bluesky_local_account_onboarding_agent_20260721` - local supervised onboarding, GitHub #21
 - [x] `bluesky_multi_account_runtime_20260721` - isolated AT Protocol runtime, GitHub #22
 - [ ] `bluesky_historical_backfill_rollout_20260721` - four-per-day sequential replay, GitHub #23
 - [ ] `bluesky_mirror_safety_observability_20260721` - safety and health controls, GitHub #24
