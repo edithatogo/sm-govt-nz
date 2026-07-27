@@ -35,7 +35,7 @@ jobs:
         run: |
           {
             echo "## Selected mirror"
-            printf '`%s`\n' "$SELECTED_MIRROR"
+            printf '%s\n' "$SELECTED_MIRROR"
           } >> "$GITHUB_STEP_SUMMARY"
       - run: |
           args=(python scripts/manage_bluesky_mirror_programme.py recover --mirror-id '${{ inputs.mirror_id }}')
