@@ -26,6 +26,9 @@ def build_hosted_plan(
 ) -> dict[str, Any]:
     preflight = reliability.get("hosted_preflight") or {}
     cleanup = reliability.get("hosted_cleanup") or {}
+    cleanup_succeeded = cleanup.get("conclusion") == "success"
+    cleanup_complete = cleanup_succeeded and cleanup.get("findings_valid") is True
+    cleanup_action_required = cleanup_succeeded and cleanup.get("findings_valid") is False
     rotation_verified = bool(credential.get("rotation_verified"))
     recovery_status = recovery.get("status")
     recovery_complete = bool(
@@ -71,7 +74,13 @@ def build_hosted_plan(
         {
             "action": "cleanup_reconciliation",
             "run_id": cleanup.get("run_id"),
-            "status": "completed" if cleanup_complete else "pending",
+            "status": (
+                "completed"
+                if cleanup_complete
+                else "external_action_required"
+                if cleanup_action_required
+                else "pending"
+            ),
             "findings_valid": cleanup.get("findings_valid"),
             "posting_performed": False,
             "reports_committed": cleanup.get("reports_committed", []),

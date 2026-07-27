@@ -80,6 +80,7 @@ def test_successful_runs_do_not_override_failed_closed_evidence() -> None:
             "hosted_cleanup": {
                 "conclusion": "success",
                 "findings_valid": False,
+                "run_id": 4,
             },
         },
         {},
@@ -95,5 +96,7 @@ def test_successful_runs_do_not_override_failed_closed_evidence() -> None:
         "run_id": None,
         "status": "pending",
     }
-    assert stages["cleanup_reconciliation"]["status"] == "pending"
+    assert stages["cleanup_reconciliation"]["status"] == "external_action_required"
     assert stages["cleanup_reconciliation"]["findings_valid"] is False
+    assert stages["cleanup_reconciliation"]["posting_performed"] is False
+    assert plan["summary"]["external_action_required"] == 1
