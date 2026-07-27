@@ -39,6 +39,14 @@ def build_hosted_plan(
             )
         )
     )
+    preflight_complete = bool(
+        preflight.get("conclusion") == "success"
+        and preflight.get("posted", 0) == 0
+    )
+    cleanup_complete = bool(
+        cleanup.get("conclusion") == "success"
+        and cleanup.get("findings_valid") is True
+    )
     stages = [
         {
             "action": "historical_backfill_empty_matrix_proof",
@@ -57,14 +65,15 @@ def build_hosted_plan(
         {
             "action": "credential_preflight",
             "run_id": preflight.get("run_id"),
-            "status": "completed" if preflight.get("conclusion") == "success" else "pending",
+            "status": "completed" if preflight_complete else "pending",
             "posting_performed": bool(preflight.get("posted", 0)),
         },
         {
             "action": "cleanup_reconciliation",
             "run_id": cleanup.get("run_id"),
-            "status": "completed" if cleanup.get("conclusion") == "success" else "pending",
-            "posting_performed": bool(cleanup.get("posted", 0)),
+            "status": "completed" if cleanup_complete else "pending",
+            "findings_valid": cleanup.get("findings_valid"),
+            "posting_performed": False,
             "reports_committed": cleanup.get("reports_committed", []),
         },
         {
@@ -126,6 +135,7 @@ def main() -> None:
         _load(args.recovery),
         _load(args.credential),
     )
+    args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(plan, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(plan["summary"], sort_keys=True))
 
