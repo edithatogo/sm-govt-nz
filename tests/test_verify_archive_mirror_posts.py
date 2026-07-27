@@ -149,6 +149,10 @@ def test_acc_incident_sequence_generates_exact_uri_cleanup_packet(tmp_path) -> N
         item["requires_exact_uri_approval"]
         for item in result["cleanup_approval_packet"]["candidates"]
     )
+    assert result["duplicates"][0]["keeper_uri"].endswith("/two")
+    assert result["duplicates"][0]["duplicate_uris"] == [
+        "at://did:plc:acc/app.bsky.feed.post/one"
+    ]
 
 
 def test_cleanup_report_classifies_missing_audit_and_deleted_posts(tmp_path) -> None:
@@ -195,6 +199,81 @@ def test_cleanup_report_classifies_missing_audit_and_deleted_posts(tmp_path) -> 
 
     assert result["deleted_or_missing"][0]["uri"].endswith("/deleted")
     assert result["missing_audit"][0]["uri"].endswith("/untracked")
+
+
+def test_cleanup_prefers_reconciled_post_as_duplicate_keeper(tmp_path) -> None:
+    registry = tmp_path / "registry.json"
+    registry.write_text(
+        json.dumps(
+            {
+                "mirrors": [
+                    {
+                        "mirror_id": "agency",
+                        "handle": "agency.bsky.social",
+                        "source_ids": ["agency-x-feed"],
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    failed_uri = "at://did:plc:a/app.bsky.feed.post/z-failed"
+    posted_uri = "at://did:plc:a/app.bsky.feed.post/a-posted"
+    audit = tmp_path / "audit.jsonl"
+    audit.write_text(
+        "\n".join(
+            json.dumps(row)
+            for row in [
+                {
+                    "mirror_id": "agency",
+                    "record_id": "x:123",
+                    "rendered_hash": "same",
+                    "source_id": "agency-x-feed",
+                    "uri": failed_uri,
+                    "reconciled": False,
+                    "status": "reconcile_failed",
+                    "attempted_at": "2026-07-22T00:00:00Z",
+                },
+                {
+                    "mirror_id": "agency",
+                    "record_id": "x:123",
+                    "rendered_hash": "same",
+                    "source_id": "agency-x-feed",
+                    "uri": posted_uri,
+                    "reconciled": True,
+                    "status": "posted",
+                    "attempted_at": "2026-07-22T00:01:00Z",
+                },
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    result = reconcile_programme_audit(
+        registry_path=registry,
+        mirror_id="agency",
+        audit_paths=[audit],
+        client=FakeProgrammeClient(visible=[failed_uri, posted_uri]),
+    )
+
+    assert result["duplicates"] == [
+        {
+            "record_id": "x:123",
+            "rendered_hash": "same",
+            "keeper_uri": posted_uri,
+            "duplicate_uris": [failed_uri],
+            "uris": sorted([failed_uri, posted_uri]),
+        }
+    ]
+    assert result["cleanup_approval_packet"]["candidates"] == [
+        {
+            "uri": failed_uri,
+            "reasons": ["duplicate"],
+            "requires_exact_uri_approval": True,
+            "action": "review_for_deletion",
+        }
+    ]
 
 
 def test_cleanup_infers_unique_legacy_source_id_from_record_platform(tmp_path) -> None:

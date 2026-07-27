@@ -85,7 +85,7 @@ def reconcile_programme_audit(
     feed_posts = _author_feed_posts(lookup, str(account.get("handle") or ""))
     audit_uri_set = set(known_uris)
 
-    grouped: dict[tuple[str, str], set[str]] = defaultdict(set)
+    grouped: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for row in audit_rows:
         uri = str(row.get("uri") or "")
         if uri:
@@ -94,16 +94,34 @@ def reconcile_programme_audit(
                     str(row.get("record_id") or ""),
                     str(row.get("rendered_hash") or ""),
                 )
-            ].add(uri)
-    duplicates = [
-        {
-            "record_id": record_id,
-            "rendered_hash": rendered_hash,
-            "uris": sorted(uris),
+            ].append(row)
+    duplicates = []
+    for (record_id, rendered_hash), rows in sorted(grouped.items()):
+        rows_by_uri = {
+            str(row.get("uri") or ""): row
+            for row in rows
+            if str(row.get("uri") or "")
         }
-        for (record_id, rendered_hash), uris in sorted(grouped.items())
-        if len(uris) > 1
-    ]
+        if len(rows_by_uri) < 2:
+            continue
+        keeper_uri = max(
+            rows_by_uri,
+            key=lambda uri: (
+                rows_by_uri[uri].get("reconciled") is True,
+                str(rows_by_uri[uri].get("status") or "") == "posted",
+                str(rows_by_uri[uri].get("attempted_at") or ""),
+                uri,
+            ),
+        )
+        duplicates.append(
+            {
+                "record_id": record_id,
+                "rendered_hash": rendered_hash,
+                "keeper_uri": keeper_uri,
+                "duplicate_uris": sorted(set(rows_by_uri) - {keeper_uri}),
+                "uris": sorted(rows_by_uri),
+            }
+        )
     allowed_source_ids = {str(value) for value in account.get("source_ids", [])}
     classified_rows = [
         (row, _effective_source_id(row, allowed_source_ids)) for row in audit_rows
@@ -139,7 +157,7 @@ def reconcile_programme_audit(
 
     actions: dict[str, set[str]] = defaultdict(set)
     for duplicate in duplicates:
-        for uri in duplicate["uris"][1:]:
+        for uri in duplicate["duplicate_uris"]:
             actions[uri].add("duplicate")
     for excluded in excluded_sources:
         uri = excluded["uri"]
