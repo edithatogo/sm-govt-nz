@@ -17,10 +17,13 @@ def test_registry_submission_manifest_matches_verified_publication_state() -> No
     registries = {entry["registry_id"]: entry for entry in manifest["registries"]}
 
     assert manifest["artifact"]["license"] == "other"
-    assert registries["hugging_face"]["submission_status"] == (
-        "published_metadata_sync_pending"
-    )
+    assert registries["hugging_face"]["submission_status"] == "published"
     assert registries["hugging_face"]["verified_at"] == "2026-07-27"
+    hf_requirements = {
+        item["id"]: item["status"]
+        for item in registries["hugging_face"]["requirements"]
+    }
+    assert hf_requirements["dataset-card"] == "verified"
     assert registries["zenodo"]["submission_status"] == "published"
     assert registries["zenodo"]["doi"] == "10.5281/zenodo.21383327"
     assert registries["zenodo"]["verified_at"] == "2026-07-27"

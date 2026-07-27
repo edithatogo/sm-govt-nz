@@ -1,6 +1,6 @@
 # Archive Registry Readiness
 
-Status: `published_evidence_verified_metadata_sync_pending`
+Status: `complete_external_evidence_verified`
 
 Roadmap: `archive_registry_readiness_20260721`
 
@@ -29,10 +29,14 @@ Verified on 2026-07-27:
 - Zenodo record:
   `https://zenodo.org/records/21383327` is published with DOI
   `10.5281/zenodo.21383327`, open access, and five files.
+- DataCite:
+  `https://api.datacite.org/dois/10.5281/zenodo.21383327` reports the DOI as
+  findable and identifies the resource as a dataset.
 
-## Remaining external boundary
+## External synchronization evidence
 
 The generated Hugging Face card now includes rights, intended-use, limitations,
-and cadence disclosures. Those changes are repository-ready but are not claimed
-as externally synchronized until a reviewed publication workflow updates the
-public dataset README and the resulting card is read back.
+and cadence disclosures. Hugging Face dataset pull request #2 was merged on
+2026-07-27. Public read-back confirmed all four sections on `main`, and the
+Croissant endpoint continued to return successfully. No dataset files or Zenodo
+record content were changed by the metadata synchronization.

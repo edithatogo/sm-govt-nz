@@ -1,8 +1,8 @@
 # Project Tracks
 
-## [ ] Track: archive_registry_readiness_20260721
+## [x] Track: archive_registry_readiness_20260721
 
-[Specification and plan](./tracks/archive_registry_readiness_20260721/)
+[Specification and plan](./archive/archive_registry_readiness_20260721/)
 
 
 ## Bluesky Government Archive Mirror Programme (2026-07-21)

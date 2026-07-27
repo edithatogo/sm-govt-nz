@@ -13,7 +13,7 @@ TARGETS = ROOT / "docs" / "publication-target-setup.md"
 def check() -> None:
     text = DOC.read_text(encoding="utf-8") if DOC.is_file() else ""
     required = (
-        "published_evidence_verified_metadata_sync_pending",
+        "complete_external_evidence_verified",
         "license: other",
         "#32",
         "#33",
@@ -21,7 +21,8 @@ def check() -> None:
         "Hugging Face Croissant",
         "10.5281/zenodo.21383327",
         "repository owner has approved",
-        "externally synchronized",
+        "DataCite",
+        "Public read-back confirmed",
     )
     missing = [fragment for fragment in required if fragment not in text]
     if missing:
