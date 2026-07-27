@@ -20,8 +20,9 @@
 - [x] Task: Complete `bluesky_mirror_cleanup_report_findings_20260727`;
   PR #43 and hosted run 30239062374 preserved both reports.
 - [x] Task: Implement and archive `bluesky_mirror_handle_lifecycle_20260724`, GitHub #37.
-- [ ] Task: Delete the three still-visible ACC cleanup URIs and regenerate a
-  valid reconciliation report; two other dry-run candidates are already absent.
+- [x] Task: Delete the three still-visible ACC cleanup URIs and regenerate a
+  valid reconciliation report; apply run 30251127441 and verification run
+  30252454725 completed without remaining candidates.
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
 ## Phase 4: Programme closeout
@@ -36,10 +37,12 @@
   reconciliation/idempotency, state concurrency, recovery automation, cleanup,
   handle lifecycle, and empty-matrix no-op.
 - Hosted run 30236905723 proved the empty-matrix successful no-op behavior.
-- Cleanup run 30239062374 preserved ACC and Courts reconciliation reports; ACC
-  remains invalid. The later guarded dry run evaluated five candidate URIs,
-  found two already absent, and confirmed three still publicly visible. No
-  destructive action was performed.
+- Cleanup apply run 30251127441 deleted three approved ACC records and confirmed
+  two approved records were already absent. It recorded no credential material.
+- Verification run 30252454725 committed valid ACC and Courts reports. ACC now
+  records five approved tombstones, zero still-visible approved deletions, zero
+  unexplained missing records, and zero cleanup candidates.
+- The seven-day post-remediation observation window runs through 2026-08-03.
 - Hosted preflight run 30238209314 validated the configured ACC app password,
   expected handle, DID, and dry-run publication without posting.
 - GitHub Environment metadata still dates `BLUESKY_APP_PASSWORD` to

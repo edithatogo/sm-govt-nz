@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T08:50:34.077744+00:00",
+  "generated_at": "2026-07-27T09:11:37.265786+00:00",
   "global_invariants": {
     "destructive_cleanup_allowed": false,
     "external_mutations_require_separate_approval": true,
@@ -32,14 +32,14 @@
     },
     {
       "action": "cleanup_reconciliation",
-      "findings_valid": false,
+      "findings_valid": true,
       "posting_performed": false,
       "reports_committed": [
         "accident-compensation-corporation",
         "courts-of-nz"
       ],
-      "run_id": 30239062374,
-      "status": "external_action_required"
+      "run_id": 30252454725,
+      "status": "completed"
     },
     {
       "action": "credential_rotation_and_revocation",
@@ -49,8 +49,8 @@
     }
   ],
   "summary": {
-    "completed": 3,
-    "external_action_required": 2,
+    "completed": 4,
+    "external_action_required": 1,
     "pending": 0
   }
 }
