@@ -420,6 +420,8 @@ def load_archive_records(
             if not line.strip():
                 continue
             raw = json.loads(line)
+            if slugify(str(raw.get("agency_id") or "")) != agency_id:
+                continue
             decision = evaluate_source_eligibility(account, raw)
             decisions.append(decision)
             if not decision.eligible:

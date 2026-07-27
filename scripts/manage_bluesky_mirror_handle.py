@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +17,7 @@ from src.bluesky_handle_lifecycle import (
     custom_domain_readiness_plan,
     load_json,
     migration_plan,
+    probe_handle,
     retired_handle_report,
     stale_link_report,
     validate_abbreviation_registry,
@@ -55,6 +57,26 @@ def _mirror(rows: list[dict[str, Any]], mirror_id: str) -> dict[str, Any]:
     return next(row for row in rows if row.get("mirror_id") == mirror_id)
 
 
+def candidate_availability_report(
+    mirror: dict[str, Any],
+    *,
+    probe=probe_handle,
+    checked_at: str = "",
+) -> dict[str, Any]:
+    candidates = [str(value) for value in mirror.get("handle_candidates") or []]
+    if not candidates or len(candidates) != len(set(candidates)):
+        raise ValueError("candidate handles must be nonempty and unique")
+    probes = [probe(handle) for handle in candidates]
+    return {
+        "schema_version": 1,
+        "checked_at": checked_at or datetime.now(UTC).isoformat(),
+        "mirror_id": mirror["mirror_id"],
+        "probes": probes,
+        "all_unregistered": all(row.get("state") == "unregistered" for row in probes),
+        "secret_values_recorded": False,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Manage Bluesky mirror handle lifecycle.")
     parser.add_argument(
@@ -81,6 +103,10 @@ def main() -> int:
     availability.add_argument("--handle", required=True)
     availability.add_argument("--require-unregistered", action="store_true")
 
+    candidate_availability = subparsers.add_parser("candidate-availability")
+    candidate_availability.add_argument("--mirror-id", required=True)
+    candidate_availability.add_argument("--output", type=Path, required=True)
+
     retired = subparsers.add_parser("monitor-retired")
     retired.add_argument("--output", type=Path, default=DEFAULT_RETIRED_HANDLE_REPORT)
     retired.add_argument("--fail-on-actionable", action="store_true")
@@ -105,13 +131,20 @@ def main() -> int:
         print(json.dumps(report))
         return 0
     if args.command == "availability":
-        from src.bluesky_handle_lifecycle import probe_handle
-
         result = probe_handle(args.handle)
         print(json.dumps(result, sort_keys=True))
         if args.require_unregistered:
             return 0 if result["state"] == "unregistered" else 1
         return 0 if result["state"] != "probe_failed" else 1
+    if args.command == "candidate-availability":
+        mirror = _mirror(mirrors["mirrors"], args.mirror_id)
+        report = candidate_availability_report(mirror)
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(
+            json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
+        print(json.dumps(report, sort_keys=True))
+        return 0 if report["all_unregistered"] else 1
     if args.command == "monitor-retired":
         report = retired_handle_report(abbreviations)
         args.output.parent.mkdir(parents=True, exist_ok=True)

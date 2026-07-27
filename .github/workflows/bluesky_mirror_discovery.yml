@@ -25,6 +25,7 @@ jobs:
           requirements: requirements.txt
       - run: python scripts/manage_bluesky_mirror_programme.py build-registry
       - run: python scripts/manage_bluesky_mirror_programme.py pilot-candidates
+      - run: python scripts/build_bluesky_mirror_readiness.py inventory --output conductor/bluesky_mirror_candidate_readiness.json
       - run: python scripts/build_bluesky_mirror_hosted_plan.py
       - env:
           GH_TOKEN: ${{ github.token }}
@@ -35,4 +36,5 @@ jobs:
             --path config/mirror_accounts.json \
             --path conductor/bluesky_mirror_programme_report.json \
             --path conductor/bluesky_mirror_pilot_candidates.json \
+            --path conductor/bluesky_mirror_candidate_readiness.json \
             --path conductor/bluesky_mirror_hosted_dry_run_plan.json
