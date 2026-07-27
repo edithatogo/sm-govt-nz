@@ -201,7 +201,15 @@ def test_reconciliation_findings_remain_strict_unless_report_only() -> None:
     result = {"valid": False}
 
     assert result_exit_code(result) == 1
-    assert result_exit_code(result, report_only=True) == 0
+    assert result_exit_code(
+        result, report_only=True, reconciliation=True
+    ) == 0
+    try:
+        result_exit_code(result, report_only=True)
+    except ValueError as exc:
+        assert str(exc) == "report-only mode requires programme reconciliation"
+    else:
+        raise AssertionError("report-only mode must fail closed outside reconciliation")
     assert result_exit_code({"valid": True}) == 0
 
 
