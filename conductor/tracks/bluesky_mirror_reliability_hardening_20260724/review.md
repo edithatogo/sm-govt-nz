@@ -2,14 +2,14 @@
 
 ## Summary
 
-The reliability implementation and credential controls are sound, but the track
-must remain externally gated until three still-visible ACC cleanup candidates
-are deleted and public reconciliation becomes valid.
+The reliability implementation and local credential controls are sound, but the
+track remains externally gated by both three still-visible ACC cleanup records
+and unverified credential rotation, replacement, and revocation.
 
 ## Verification Checks
 
-- [x] **Plan Compliance**: Partial - all implementation and credential tasks are
-  complete; destructive cleanup evidence remains outstanding.
+- [x] **Plan Compliance**: Partial - implementation is complete; destructive
+  cleanup and operator credential actions remain outstanding.
 - [x] **Style Compliance**: Pass.
 - [x] **New Tests**: Yes.
 - [x] **Test Coverage**: Yes for hosted status, recovery, credentials, source
@@ -31,6 +31,11 @@ are deleted and public reconciliation becomes valid.
 
 ## Remaining External Gate
 
+- GitHub's nonsecret Environment metadata reports `BLUESKY_APP_PASSWORD` was
+  last updated at `2026-07-22T11:18:54Z`; this does not verify the claimed
+  2026-07-27 replacement or superseded-password revocation.
+- Credential completion requires operator-controlled rotation, isolated
+  Environment replacement, revocation, and a replacement-credential preflight.
 - The ACC cleanup report identified five candidate URIs across three duplicate
   groups and four excluded-source findings.
 - The guarded dry-run receipt found two candidates already absent and these

@@ -11,11 +11,14 @@
   "github_issue_status": "published",
   "last_reconciled_at": "2026-07-27",
   "completion_summary": {
-    "completed_children": 11,
+    "completed_children": 10,
     "pending_children": [],
-    "external_action_children": [],
+    "external_action_children": [
+      "bluesky_mirror_credential_hygiene_20260724"
+    ],
     "external_actions": [
-      "Approve and delete the three still-visible ACC cleanup URIs, then regenerate a valid reconciliation report."
+      "Approve and delete the three still-visible ACC cleanup URIs, then regenerate a valid reconciliation report.",
+      "Rotate and replace the ACC credentials through operator-controlled entry, revoke the superseded app password, and rerun non-posting preflight."
     ]
   },
   "child_tracks": [
@@ -34,6 +37,6 @@
   "hosted_preflight_run": 30238209314,
   "hosted_preflight_conclusion": "success",
   "hosted_cleanup_run": 30239062374,
-  "credential_rotation_verified": true,
+  "credential_rotation_verified": false,
   "cleanup_findings_valid": false
 }

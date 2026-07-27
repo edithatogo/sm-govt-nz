@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T08:33:10.781269+00:00",
+  "generated_at": "2026-07-27T08:50:34.077744+00:00",
   "global_invariants": {
     "destructive_cleanup_allowed": false,
     "external_mutations_require_separate_approval": true,
@@ -43,14 +43,14 @@
     },
     {
       "action": "credential_rotation_and_revocation",
-      "instructions": "",
+      "instructions": "Rotate the ACC primary password, replace the per-account GitHub Environment app password, and revoke the superseded app password through operator-controlled entry.",
       "posting_performed": false,
-      "status": "completed"
+      "status": "external_action_required"
     }
   ],
   "summary": {
-    "completed": 4,
-    "external_action_required": 1,
+    "completed": 3,
+    "external_action_required": 2,
     "pending": 0
   }
 }
