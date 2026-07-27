@@ -12,7 +12,17 @@ TARGETS = ROOT / "docs" / "publication-target-setup.md"
 
 def check() -> None:
     text = DOC.read_text(encoding="utf-8") if DOC.is_file() else ""
-    required = ("repository_ready_external_gates_pending", "license: other", "#32", "#33", "#34", "Hugging Face", "Zenodo")
+    required = (
+        "published_evidence_verified_metadata_sync_pending",
+        "license: other",
+        "#32",
+        "#33",
+        "#34",
+        "Hugging Face Croissant",
+        "10.5281/zenodo.21383327",
+        "repository owner has approved",
+        "externally synchronized",
+    )
     missing = [fragment for fragment in required if fragment not in text]
     if missing:
         raise AssertionError("Archive registry readiness document missing: " + ", ".join(missing))

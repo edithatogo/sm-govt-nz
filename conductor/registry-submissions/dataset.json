@@ -4,8 +4,8 @@
     "name": "sm-govt-nz",
     "owning_repo": "sm-govt-nz",
     "artifact_type": "dataset",
-    "version": "0.1.0",
-    "license": "TBD",
+    "version": "2004-05",
+    "license": "other",
     "public_contracts": [
       "dataset card",
       "schema fields",
@@ -18,31 +18,42 @@
     {
       "registry_id": "hugging_face",
       "registry_kind": "dataset_archive",
-      "submission_status": "not_started",
+      "submission_status": "published_metadata_sync_pending",
       "requirements": [
         {
           "id": "dataset-card",
           "description": "Dataset card documents provenance, rights, intended use, limitations, and update cadence.",
-          "status": "pending"
+          "status": "prepared_for_sync"
         },
         {
           "id": "viewer-health",
           "description": "Viewer, parquet conversion, config, split, and first-row checks are reviewed.",
-          "status": "pending"
+          "status": "verified"
+        },
+        {
+          "id": "croissant",
+          "description": "Public Croissant endpoint returns metadata.",
+          "status": "verified"
         }
-      ]
+      ],
+      "target": "edithatogo/corpus-social-media-government-nz",
+      "verified_at": "2026-07-27",
+      "croissant_url": "https://huggingface.co/api/datasets/edithatogo/corpus-social-media-government-nz/croissant"
     },
     {
       "registry_id": "zenodo",
       "registry_kind": "doi_archive",
-      "submission_status": "not_started",
+      "submission_status": "published",
       "requirements": [
         {
           "id": "doi-metadata",
           "description": "Creators, title, description, license, related identifiers, and files are ready for DOI archival.",
-          "status": "pending"
+          "status": "verified"
         }
-      ]
+      ],
+      "target": "https://zenodo.org/records/21383327",
+      "doi": "10.5281/zenodo.21383327",
+      "verified_at": "2026-07-27"
     },
     {
       "registry_id": "osf",
@@ -72,13 +83,15 @@
   "quality_gates": [
     {
       "name": "Schema validation",
-      "command_or_workflow": "owning repo schema validation command",
-      "status": "pending"
+      "command_or_workflow": "python scripts/verify_registry_compilation.py",
+      "status": "verified",
+      "evidence": "registry/government_directory.json and registry/government_directory.db matched on 2026-07-27"
     },
     {
       "name": "Sample export validation",
-      "command_or_workflow": "owning repo dataset sample validation command",
-      "status": "pending"
+      "command_or_workflow": "pytest tests/test_publish_archives.py",
+      "status": "verified",
+      "evidence": "Focused publication suite passed on 2026-07-27"
     }
   ],
   "security_gates": [
@@ -88,14 +101,14 @@
     },
     {
       "name": "Rights and provenance review",
-      "status": "pending"
+      "status": "approved"
     }
   ],
   "submission_workflow": {
     "phases": [
       {
         "name": "Dataset registry inventory",
-        "status": "in_progress",
+        "status": "complete",
         "tasks": [
           "Map Hugging Face, Zenodo, GitHub Releases, and OSF requirements.",
           "Record source visibility and redistribution constraints."
@@ -103,11 +116,11 @@
       },
       {
         "name": "Publication",
-        "status": "blocked",
+        "status": "published_metadata_sync_pending",
         "tasks": [
-          "Publish only after review approval and external-write approval."
+          "Synchronize the generated dataset card and verify public read-back."
         ],
-        "blocker": "External-write approval required."
+        "blocker": "Public Hugging Face card does not yet contain the repository-ready disclosures."
       }
     ],
     "commit_policy": "Commit manifest and evidence in the owning corpus repo only.",

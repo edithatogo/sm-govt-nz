@@ -22,6 +22,8 @@ The generated dataset card includes:
 - `language: en`
 - tags: `corpus`, `social-media`, `government`, `new-zealand`,
   `public-records`, `rss`, `bluesky`
+- explicit rights and source-specific licensing boundaries
+- intended use, limitations, and update/persistence disclosures
 
 The publication workflow uploads:
 
@@ -34,6 +36,11 @@ The publication workflow uploads:
 Hugging Face Collections are not configured in repository metadata. If a remote
 HF Collection is created later, the dataset should be added to that collection
 out-of-band while keeping this dataset slug unchanged.
+
+The repository owner has approved the corpus publication scope. The
+`license: other` value is intentional because source-specific rights, notices,
+and platform terms remain attached to record provenance and are not replaced by
+the repository code licence.
 
 ## Zenodo
 
