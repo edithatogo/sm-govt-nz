@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-07-27",
+  "mode": "sanitized_evidence_reconciliation",
+  "credential_material_recorded": false,
+  "browser_artifacts_recorded": false,
+  "exercises": [
+    {
+      "mirror_id": "courts-of-nz",
+      "exercise": "existing_canary_no_registration",
+      "plan": "operator_manual",
+      "outcomes": [
+        "preflight_passed"
+      ],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/30239757167",
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/30240273274",
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/30240335227",
+        "https://bsky.app/profile/mirnzcourts.bsky.social"
+      ],
+      "registration_submitted_during_exercise": false
+    },
+    {
+      "mirror_id": "accident-compensation-corporation",
+      "exercise": "operator_supervised_pilot_reconciliation",
+      "plan": "operator_manual",
+      "outcomes": [
+        "account_created",
+        "profile_compliance_passed",
+        "credential_handoff_passed",
+        "preflight_passed"
+      ],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/issues/26",
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/30238209314",
+        "https://bsky.app/profile/acc-nz-arc.bsky.social"
+      ],
+      "registration_submitted_during_exercise": false
+    }
+  ],
+  "sanitized_event_state": "conductor/bluesky_onboarding_heuristic_state.json"
+}
