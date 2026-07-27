@@ -1,4 +1,7 @@
 import json
+import subprocess
+import sys
+from pathlib import Path
 
 import pytest
 
@@ -197,3 +200,17 @@ def test_authenticated_delete_uses_exact_repo_collection_and_rkey(
         },
         "not-recorded",
     )
+
+
+def test_cleanup_script_supports_direct_execution() -> None:
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(Path("scripts/apply_bluesky_mirror_cleanup.py")),
+            "--help",
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stderr
