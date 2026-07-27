@@ -11,7 +11,7 @@ mode so it cannot suppress failures outside programme reconciliation.
 - [x] **Style Compliance**: Pass - Ruff passed; `ty` was unavailable in the local environment.
 - [x] **New Tests**: Yes
 - [x] **Test Coverage**: Yes - strict, report-only, and fail-closed modes are covered.
-- [x] **Test Results**: Passed - 20 targeted tests, Ruff, YAML parsing, and Actionlint.
+- [x] **Test Results**: Passed - 50 integrated tests, Ruff, YAML parsing, and Actionlint.
 
 ## Findings
 
