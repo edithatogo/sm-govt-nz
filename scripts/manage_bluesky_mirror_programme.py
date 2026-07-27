@@ -52,6 +52,17 @@ def github_matrix_outputs(result: dict[str, object]) -> dict[str, object]:
     }
 
 
+def public_health_faults(result: dict[str, object]) -> list[str]:
+    accounts = result.get("accounts", [])
+    if not isinstance(accounts, list):
+        raise ValueError("health report accounts must be a list")
+    return sorted(
+        str(account["mirror_id"])
+        for account in accounts
+        if isinstance(account, dict) and account.get("status") == "fault"
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Operate the Bluesky agency mirror programme.")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -64,7 +75,9 @@ def main() -> None:
     build = sub.add_parser("build-registry")
     build.add_argument("--manifest", default="conductor/govt_archive_source_manifest.json")
     matrix = sub.add_parser("matrix")
-    matrix.add_argument("--mode", choices=("preflight", "ongoing", "backfill", "health"), required=True)
+    matrix.add_argument(
+        "--mode", choices=("preflight", "ongoing", "backfill", "health"), required=True
+    )
     matrix.add_argument("--mirror-id", default="")
     matrix.add_argument("--github-output", action="store_true")
     publish = sub.add_parser("publish")
@@ -73,6 +86,7 @@ def main() -> None:
     publish.add_argument("--dry-run", action="store_true")
     health = sub.add_parser("health")
     health.add_argument("--output", default="conductor/bluesky_mirror_health_report.json")
+    health.add_argument("--fail-on-fault", action="store_true")
     pilots = sub.add_parser("pilot-candidates")
     pilots.add_argument("--limit", type=int, default=10)
     pilots.add_argument("--archive-root", default="historical_archive_normalized")
@@ -124,9 +138,7 @@ def main() -> None:
                 raise RuntimeError("GITHUB_OUTPUT is required with --github-output.")
             outputs = github_matrix_outputs(result)
             with Path(output).open("a", encoding="utf-8") as stream:
-                stream.write(
-                    f"matrix={json.dumps(outputs['matrix'], separators=(',', ':'))}\n"
-                )
+                stream.write(f"matrix={json.dumps(outputs['matrix'], separators=(',', ':'))}\n")
                 stream.write(
                     "selected_matrix="
                     f"{json.dumps(outputs['selected_matrix'], separators=(',', ':'))}\n"
@@ -138,13 +150,14 @@ def main() -> None:
             args.mirror_id,
             mode=args.mode,
             dry_run=args.dry_run,
-            eligibility_report_path=(
-                ELIGIBILITY_REPORT_DIR / f"{args.mirror_id}.json"
-            ),
+            eligibility_report_path=(ELIGIBILITY_REPORT_DIR / f"{args.mirror_id}.json"),
         )
     elif args.command == "health":
         result = health_report(load_registry(), runtime_state=load_runtime_state())
         write_json_report(args.output, result)
+        faults = public_health_faults(result)
+        if args.fail_on_fault and faults:
+            raise RuntimeError("Public Bluesky health failed for: " + ", ".join(sorted(faults)))
     elif args.command == "pilot-candidates":
         result = pilot_candidate_report(
             load_registry(),

@@ -2,7 +2,7 @@
 
 - [x] Repair the Conductor index and create native GitHub issue hierarchy.
 - [x] Implement canonical registry, local agents/skills, posting boundary, workflows, and reports.
-- [ ] Repair and preflight the Courts canary with an isolated GitHub Environment.
+- [x] Repair and preflight the Courts canary with an isolated GitHub Environment.
 - [ ] Onboard two deterministic small-backlog pilots through operator-supervised registration.
 - [ ] Observe each pilot for seven healthy days.
 - [ ] Continue the one-account-per-day sequential rollout.
@@ -19,8 +19,8 @@
 ## Current rollout evidence (2026-07-27)
 
 - Courts is repaired, live, healthy, and backfill-complete.
-- ACC is live, healthy, and backfill-complete; three exact-approval cleanup
-  candidates and post-remediation observation remain.
+- ACC is live, healthy, backfill-complete, and exact-approved cleanup is
+  verified complete; post-remediation observation remains through 2026-08-03.
 - Deterministic fail-closed backlog ranking selects Electoral Commission
   (`#85`) as the next pilot with one eligible unique record.
 - The remaining lifecycle gates are not advanced until account registration,

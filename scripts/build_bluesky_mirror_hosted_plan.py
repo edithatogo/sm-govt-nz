@@ -21,6 +21,7 @@ def build_hosted_plan(
     empty_matrix: Mapping[str, Any],
     recovery: Mapping[str, Any],
     credential: Mapping[str, Any],
+    observation: Mapping[str, Any] | None = None,
     *,
     generated_at: str = "",
 ) -> dict[str, Any]:
@@ -43,13 +44,12 @@ def build_hosted_plan(
         )
     )
     preflight_complete = bool(
-        preflight.get("conclusion") == "success"
-        and preflight.get("posted", 0) == 0
+        preflight.get("conclusion") == "success" and preflight.get("posted", 0) == 0
     )
     cleanup_complete = bool(
-        cleanup.get("conclusion") == "success"
-        and cleanup.get("findings_valid") is True
+        cleanup.get("conclusion") == "success" and cleanup.get("findings_valid") is True
     )
+    observation = observation or {}
     stages = [
         {
             "action": "historical_backfill_empty_matrix_proof",
@@ -84,6 +84,14 @@ def build_hosted_plan(
             "findings_valid": cleanup.get("findings_valid"),
             "posting_performed": False,
             "reports_committed": cleanup.get("reports_committed", []),
+        },
+        {
+            "action": "post_remediation_observation",
+            "status": "completed" if observation.get("complete") is True else "pending",
+            "deadline_at": observation.get("deadline_at"),
+            "accepted_run_ids": observation.get("accepted_run_ids", []),
+            "missing_dates": observation.get("missing_dates", []),
+            "posting_performed": False,
         },
         {
             "action": "credential_rotation_and_revocation",
@@ -135,6 +143,11 @@ def main() -> None:
         default=Path("conductor/tracks/bluesky_mirror_credential_hygiene_20260724/metadata.json"),
     )
     parser.add_argument(
+        "--observation",
+        type=Path,
+        default=Path("conductor/bluesky_mirror_observation_status.json"),
+    )
+    parser.add_argument(
         "--output", type=Path, default=Path("conductor/bluesky_mirror_hosted_dry_run_plan.json")
     )
     args = parser.parse_args()
@@ -143,6 +156,7 @@ def main() -> None:
         _load(args.empty_matrix),
         _load(args.recovery),
         _load(args.credential),
+        _load(args.observation),
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(plan, indent=2, sort_keys=True) + "\n", encoding="utf-8")

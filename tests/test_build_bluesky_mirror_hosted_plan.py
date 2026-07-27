@@ -27,7 +27,7 @@ def test_hosted_plan_uses_durable_evidence_and_leaves_rotation_external() -> Non
     assert plan["summary"] == {
         "completed": 4,
         "external_action_required": 1,
-        "pending": 0,
+        "pending": 1,
     }
     assert plan["global_invariants"]["live_posting_performed"] is False
     assert plan["stages"][-1]["status"] == "external_action_required"
@@ -45,7 +45,7 @@ def test_missing_evidence_remains_pending_and_rotation_can_complete() -> None:
     assert plan["summary"] == {
         "completed": 1,
         "external_action_required": 0,
-        "pending": 4,
+        "pending": 5,
     }
 
 
@@ -100,3 +100,22 @@ def test_successful_runs_do_not_override_failed_closed_evidence() -> None:
     assert stages["cleanup_reconciliation"]["findings_valid"] is False
     assert stages["cleanup_reconciliation"]["posting_performed"] is False
     assert plan["summary"]["external_action_required"] == 1
+
+
+def test_completed_observation_closes_only_the_observation_stage() -> None:
+    plan = build_hosted_plan(
+        {},
+        {},
+        {},
+        {"rotation_verified": False},
+        {
+            "complete": True,
+            "deadline_at": "2026-08-03T09:15:55+00:00",
+            "accepted_run_ids": [1, 2, 3, 4, 5, 6, 7],
+            "missing_dates": [],
+        },
+        generated_at="fixed",
+    )
+    stages = {stage["action"]: stage for stage in plan["stages"]}
+    assert stages["post_remediation_observation"]["status"] == "completed"
+    assert stages["credential_rotation_and_revocation"]["status"] == "external_action_required"
