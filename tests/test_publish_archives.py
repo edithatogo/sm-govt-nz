@@ -7,6 +7,7 @@ import pytest
 
 from scripts.publish_archives import (
     BundleManifest,
+    _build_dataset_card,
     _load_normalized_records,
     create_archive_bundle,
     publish_to_hugging_face,
@@ -17,6 +18,25 @@ from scripts.publish_archives import (
     write_publication_status_report,
     _requested_publish_targets,
 )
+
+
+def test_dataset_card_discloses_rights_use_limitations_and_cadence() -> None:
+    card = _build_dataset_card(
+        {
+            "source_counts": {"bluesky": 2},
+            "known_gaps": ["Example gap."],
+            "provenance": "Example provenance.",
+        }
+    )
+
+    assert "license: other" in card
+    assert "## Rights and Licensing" in card
+    assert "repository owner has approved this corpus for publication" in card
+    assert "source-specific rights" in card
+    assert "## Intended Use" in card
+    assert "## Limitations" in card
+    assert "## Update Cadence and Persistence" in card
+    assert "Zenodo provides immutable versioned snapshots" in card
 
 
 class FakeUploader:

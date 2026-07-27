@@ -39,6 +39,12 @@ web captures used for discovery, provenance, and source context. Source-specific
 terms should be checked before redistribution. Raw payloads are included for
 provenance unless size or platform terms require a manual or gated upload.
 
+The repository owner has approved this corpus for publication. The dataset card
+must preserve `license: other`, explain that source-specific rights remain
+attached to provenance, identify research and preservation as intended uses,
+state material coverage limitations, and distinguish the rolling Hugging Face
+surface from immutable Zenodo DOI snapshots.
+
 ## Publication Cadence
 
 The machine-readable cadence contract is
