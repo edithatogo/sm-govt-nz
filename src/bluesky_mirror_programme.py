@@ -33,6 +33,9 @@ SOCIAL_PLATFORMS = {
     "x",
     "youtube",
 }
+MIRRORABLE_SOURCE_KINDS = frozenset(
+    {"post", "social_post", "social_feed", "status", "feed_item"}
+)
 TERMINAL_SOURCE_STATES = {"deleted", "private", "withdrawn", "unverifiable"}
 SECRET_FIELD_PATTERN = re.compile(r"password|secret|token|cookie|verification", re.I)
 JURISDICTIONAL_HANDLE_PATTERN = re.compile(
@@ -61,6 +64,7 @@ class MirrorRecord:
     created_at: str
     content: str
     source_url: str
+    public_name: str = ""
 
 
 @dataclass(frozen=True)
@@ -71,6 +75,7 @@ class SourceEligibilityResult:
     source_id: str
     agency_id: str
     source_platform: str
+    source_kind: str
     source_url: str
 
 
@@ -130,6 +135,11 @@ def validate_registry(registry: Mapping[str, Any]) -> None:
                 raise ValueError(f"Mirror {mirror_id} lacks an organisation abbreviation.")
             if not str(mirror.get("jurisdiction") or ""):
                 raise ValueError(f"Mirror {mirror_id} lacks a jurisdiction.")
+            public_name = str(mirror.get("public_name") or "").strip()
+            if not public_name:
+                raise ValueError(f"Mirror {mirror_id} lacks a public name.")
+            if len(public_name) > 64:
+                raise ValueError(f"Mirror {mirror_id} public name exceeds 64 characters.")
         if account_did and not ATPROTO_DID_PATTERN.fullmatch(account_did):
             raise ValueError(f"Mirror {mirror_id} has an invalid AT Protocol DID.")
         if state not in VALID_STATES:
@@ -173,20 +183,31 @@ def build_registry_from_manifest(
     mirrors: list[dict[str, Any]] = []
     for agency_id, group in sorted(agencies.items()):
         row = current.get(agency_id, {})
-        candidates = handle_candidates(agency_id)
+        public_name = str(row.get("public_name") or group["agency_name"])
+        abbreviation = str(row.get("organisation_abbreviation") or agency_id)
+        jurisdiction = str(row.get("jurisdiction") or "nz")
+        candidates = handle_candidates(
+            agency_id,
+            abbreviation=abbreviation,
+            jurisdiction=jurisdiction,
+        )
         handle = str(row.get("handle") or "")
         mirrors.append(
             {
                 "mirror_id": agency_id,
                 "agency_id": agency_id,
                 "agency_name": group["agency_name"],
+                "public_name": public_name,
                 "handle": handle,
                 "handle_candidates": candidates,
+                "handle_policy_version": row.get("handle_policy_version"),
+                "organisation_abbreviation": abbreviation,
+                "jurisdiction": jurisdiction,
                 "url": str(row.get("url") or (f"https://bsky.app/profile/{handle}" if handle else "")),
                 "environment": f"bluesky-mirror-{agency_id}",
                 "registration_alias_slug": agency_id,
                 "display_name": str(
-                    row.get("display_name") or f"{group['agency_name']} Archive Mirror"
+                    row.get("display_name") or f"{public_name} Archive Mirror"
                 ),
                 "profile_disclosure": str(
                     row.get("profile_disclosure")
@@ -212,6 +233,7 @@ def build_registry_from_manifest(
                 "mirror_id": "nzgov-social-archive-index",
                 "agency_id": "nzgov-social-archive-index",
                 "agency_name": "New Zealand Government Social Media Corpus",
+                "public_name": "NZ Government Social Media Archive",
                 "handle": "",
                 "handle_candidates": [
                     "nzgov-social-archive.bsky.social",
@@ -368,6 +390,9 @@ def load_archive_records(
                 created_at=str(raw.get("original_created_at") or raw.get("created_at") or ""),
                 content=content,
                 source_url=decision.source_url,
+                public_name=str(
+                    account.get("public_name") or account.get("agency_name") or ""
+                ),
             )
             fingerprint = hashlib.sha256(
                 f"{agency_id}\0{record.created_at[:10]}\0{content.casefold()}".encode()
@@ -382,6 +407,11 @@ def normalize_source_platform(value: str) -> str:
     """Normalize supported source-platform aliases."""
     platform = value.strip().casefold()
     return {"twitter": "x"}.get(platform, platform)
+
+
+def normalize_source_kind(value: str) -> str:
+    """Normalize post-like record type aliases."""
+    return value.strip().casefold().replace("-", "_")
 
 
 def canonicalize_source_url(value: str) -> str:
@@ -405,6 +435,14 @@ def evaluate_source_eligibility(
     source_id = str(raw.get("source_id") or "")
     agency_id = slugify(str(raw.get("agency_id") or ""))
     platform = normalize_source_platform(str(raw.get("source_platform") or ""))
+    source_kind = normalize_source_kind(
+        str(
+            raw.get("source_kind")
+            or raw.get("record_type")
+            or raw.get("content_type")
+            or ""
+        )
+    )
     source_url = str(
         raw.get("source_url") or raw.get("canonical_url") or raw.get("url") or ""
     )
@@ -437,6 +475,10 @@ def evaluate_source_eligibility(
         reason = "missing_source_platform"
     elif platform not in allowed_platforms:
         reason = "source_platform_not_allowed"
+    elif not source_kind:
+        reason = "missing_source_kind"
+    elif source_kind not in MIRRORABLE_SOURCE_KINDS:
+        reason = "source_kind_not_mirrorable"
     elif not visibility:
         reason = "missing_visibility"
     elif visibility != "public":
@@ -458,6 +500,7 @@ def evaluate_source_eligibility(
         source_id=source_id,
         agency_id=agency_id,
         source_platform=platform,
+        source_kind=source_kind,
         source_url=source_url,
     )
 
@@ -486,6 +529,7 @@ def write_eligibility_report(
                 "source_id": decision.source_id,
                 "agency_id": decision.agency_id,
                 "source_platform": decision.source_platform,
+                "source_kind": decision.source_kind,
                 "source_url": decision.source_url,
                 "reason": decision.reason,
             }
@@ -499,8 +543,9 @@ def write_eligibility_report(
 
 def render_record(record: MirrorRecord, *, historical: bool, limit: int = 300) -> str:
     date = record.created_at[:10] or "unknown date"
+    public_name = f"[{record.public_name}] " if record.public_name else ""
     platform = "[linkedin] " if record.source_platform.casefold() == "linkedin" else ""
-    prefix = (f"[Archived {date}] " if historical else "") + platform
+    prefix = (f"[Archived {date}] " if historical else "") + public_name + platform
     suffix = f"\n\nOriginal: {record.source_url}"
     available = max(0, limit - len(prefix) - len(suffix))
     body = record.content
@@ -526,10 +571,21 @@ def render_thread(
     single = render_record(record, historical=historical, limit=limit)
     if record.source_platform.casefold() != "linkedin" or len(single) <= threshold:
         return [single]
-    prefix = f"[Archived {record.created_at[:10] or 'unknown date'}] [linkedin] " if historical else "[linkedin] "
+    public_name = f"[{record.public_name}] " if record.public_name else ""
+    prefix = (
+        (
+            f"[Archived {record.created_at[:10] or 'unknown date'}] "
+            if historical
+            else ""
+        )
+        + public_name
+        + "[linkedin] "
+    )
     suffix = f"\n\nOriginal: {record.source_url}"
     available = max(1, limit - len(prefix) - len(suffix) - 12)
     words = record.content.split()
+    if any(len(word) > available for word in words):
+        return [single]
     chunks: list[str] = []
     current: list[str] = []
     for word in words:

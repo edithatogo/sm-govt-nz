@@ -24,6 +24,7 @@ def registry_row(**overrides):
         "mirror_id": "agency",
         "agency_id": "agency",
         "agency_name": "Agency",
+        "public_name": "Agency",
         "handle": "agency-archive.bsky.social",
         "environment": "bluesky-mirror-agency",
         "registration_alias_slug": "agency",
@@ -69,6 +70,44 @@ def test_registry_builder_groups_sources_by_agency() -> None:
     )
     assert agency["source_ids"] == ["b-1", "x-1"]
     assert index["account_role"] == "corpus_index"
+
+
+def test_registry_builder_preserves_public_name_and_acc_handle_policy() -> None:
+    manifest = {
+        "sources": [
+            {
+                "agency_id": "Accident Compensation Corporation",
+                "agency_name": "Accident Compensation Corporation",
+                "platform": "linkedin",
+                "source_id": "acc-linkedin",
+                "url": "https://www.linkedin.com/company/acc-new-zealand",
+            }
+        ]
+    }
+    existing = registry(
+        registry_row(
+            mirror_id="accident-compensation-corporation",
+            agency_id="accident-compensation-corporation",
+            agency_name="Accident Compensation Corporation",
+            public_name="ACC",
+            organisation_abbreviation="acc",
+            jurisdiction="nz",
+            handle_policy_version=1,
+            handle="acc-nz-arc.bsky.social",
+        )
+    )
+    result = build_registry_from_manifest(manifest, existing)
+    acc = next(
+        row
+        for row in result["mirrors"]
+        if row["mirror_id"] == "accident-compensation-corporation"
+    )
+    assert acc["public_name"] == "ACC"
+    assert acc["handle"] == "acc-nz-arc.bsky.social"
+    assert acc["handle_candidates"] == [
+        "acc-nz-arc.bsky.social",
+        "acc-nz-arc-2.bsky.social",
+    ]
 
 
 def test_handle_policy_and_matrix_are_deterministic() -> None:
@@ -161,19 +200,46 @@ def test_long_linkedin_posts_are_faithful_bounded_excerpts() -> None:
 
 
 def test_long_linkedin_posts_can_be_planned_as_bounded_numbered_thread() -> None:
-    record = MirrorRecord("linkedin-2", "agency", "linkedin-source", "linkedin", "2026-07-22", "word " * 500, "https://www.linkedin.com/posts/example-2")
+    record = MirrorRecord(
+        "linkedin-2",
+        "agency",
+        "linkedin-source",
+        "linkedin",
+        "2026-07-22",
+        "word " * 500,
+        "https://www.linkedin.com/posts/example-2",
+        public_name="ACC",
+    )
     parts = render_thread(record, historical=True)
     assert 1 < len(parts) <= 4
-    assert parts[0].startswith("[Archived 2026-07-22] [linkedin] [1/")
+    assert parts[0].startswith("[Archived 2026-07-22] [ACC] [linkedin] [1/")
     assert all(len(part) <= 300 for part in parts)
     assert parts[-1].endswith("https://www.linkedin.com/posts/example-2")
+    assert parts == render_thread(record, historical=True)
+
+
+def test_long_unbroken_content_falls_back_to_a_bounded_excerpt() -> None:
+    record = MirrorRecord(
+        "linkedin-3",
+        "agency",
+        "linkedin-source",
+        "linkedin",
+        "2026-07-22",
+        "A" * 1000,
+        "https://www.linkedin.com/posts/example-3",
+        public_name="ACC",
+    )
+    parts = render_thread(record, historical=True)
+    assert len(parts) == 1
+    assert len(parts[0]) <= 300
+    assert parts[0].endswith("https://www.linkedin.com/posts/example-3")
 
 
 def test_publish_dry_run_never_calls_sender(tmp_path: Path) -> None:
     archive = tmp_path / "historical_archive_normalized" / "x"
     archive.mkdir(parents=True)
     (archive / "2026-07.jsonl").write_text(
-        json.dumps({"record_id": "r1", "agency_id": "agency", "source_id": "source-1", "source_platform": "x", "content": "Public update", "original_created_at": "2020-01-02T00:00:00Z", "source_url": "https://x.com/a/status/1", "visibility": "public"}) + "\n",
+        json.dumps({"record_id": "r1", "agency_id": "agency", "source_id": "source-1", "source_platform": "x", "source_kind": "post", "content": "Public update", "original_created_at": "2020-01-02T00:00:00Z", "source_url": "https://x.com/a/status/1", "visibility": "public"}) + "\n",
         encoding="utf-8",
     )
     called = False
@@ -199,7 +265,8 @@ def test_paused_account_dry_run_writes_eligibility_without_sending(
                 "record_id": "r1",
                 "agency_id": "agency",
                 "source_id": "source-1",
-                "source_platform": "x",
+                    "source_platform": "x",
+                    "source_kind": "post",
                 "content": "Public update",
                 "original_created_at": "2020-01-02T00:00:00Z",
                 "source_url": "https://x.com/a/status/1",
@@ -251,7 +318,7 @@ def test_live_sender_receives_one_already_attributed_rendering(
     archive = tmp_path / "historical_archive_normalized" / "x"
     archive.mkdir(parents=True)
     (archive / "2026-07.jsonl").write_text(
-        json.dumps({"record_id": "r1", "agency_id": "agency", "source_id": "source-1", "source_platform": "x", "content": "Public update", "original_created_at": "2020-01-02T00:00:00Z", "source_url": "https://x.com/a/status/1", "visibility": "public"}) + "\n",
+            json.dumps({"record_id": "r1", "agency_id": "agency", "source_id": "source-1", "source_platform": "x", "source_kind": "post", "content": "Public update", "original_created_at": "2020-01-02T00:00:00Z", "source_url": "https://x.com/a/status/1", "visibility": "public"}) + "\n",
         encoding="utf-8",
     )
     sent = []
@@ -306,8 +373,8 @@ def test_source_allowlist_excludes_retired_sibling_records(tmp_path: Path) -> No
     shard = tmp_path / "x" / "2026-07.jsonl"
     shard.parent.mkdir(parents=True)
     rows = [
-        {"agency_id": "agency", "source_id": "current", "source_platform": "x", "visibility": "public", "record_id": "r1", "content": "current", "source_url": "https://x.example/current", "original_created_at": "2026-07-01"},
-        {"agency_id": "agency", "source_id": "retired", "source_platform": "x", "visibility": "public", "record_id": "r2", "content": "retired", "source_url": "https://x.example/retired", "original_created_at": "2017-01-01"},
+        {"agency_id": "agency", "source_id": "current", "source_platform": "x", "source_kind": "post", "visibility": "public", "record_id": "r1", "content": "current", "source_url": "https://x.example/current", "original_created_at": "2026-07-01"},
+        {"agency_id": "agency", "source_id": "retired", "source_platform": "x", "source_kind": "post", "visibility": "public", "record_id": "r2", "content": "retired", "source_url": "https://x.example/retired", "original_created_at": "2017-01-01"},
     ]
     shard.write_text("\n".join(json.dumps(row) for row in rows) + "\n", encoding="utf-8")
     records = load_archive_records(
@@ -335,6 +402,7 @@ def test_source_eligibility_fails_closed_and_normalizes_urls() -> None:
         "agency_id": "agency",
         "source_id": "linkedin-current",
         "source_platform": "linkedin",
+        "source_kind": "social_feed",
         "visibility": "public",
         "source_url": "https://www.linkedin.com/posts/current/?tracking=1",
     }
@@ -345,6 +413,8 @@ def test_source_eligibility_fails_closed_and_normalizes_urls() -> None:
         ({**valid, "source_id": ""}, "missing_source_id"),
         ({**valid, "source_platform": "x"}, "source_platform_not_allowed"),
         ({**valid, "agency_id": "sibling"}, "agency_mismatch"),
+        ({**valid, "source_kind": "public_profile_snapshot"}, "source_kind_not_mirrorable"),
+        ({key: value for key, value in valid.items() if key != "source_kind"}, "missing_source_kind"),
         (
             {
                 **valid,
@@ -369,6 +439,7 @@ def test_eligibility_report_records_bounded_rejection_reasons(tmp_path: Path) ->
             "agency_id": "agency",
             "source_id": "linkedin-current",
             "source_platform": "linkedin",
+            "source_kind": "social_feed",
             "visibility": "public",
             "content": "Public update",
             "source_url": "https://linkedin.com/posts/current",
