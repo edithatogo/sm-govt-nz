@@ -5,6 +5,6 @@
 - [x] Add explicit successful no-op jobs.
 - [x] Add empty and non-empty regression tests.
 - [x] Run targeted tests, Ruff, YAML parsing, Actionlint, and exact matrix simulation.
-- [ ] Merge the fix through a reviewed pull request.
-- [ ] Rerun the Courts historical-backfill dry-run and record successful no-op evidence.
-- [ ] Run Conductor review and archive the track.
+- [x] Merge the fix through reviewed PR #39.
+- [x] Rerun the Courts historical-backfill dry-run; run 30236905723 completed as a successful no-op.
+- [x] Run Conductor review and archive the track.
