@@ -998,6 +998,7 @@
     },
     {
       "account_role": "agency_mirror",
+      "account_did": "did:plc:t3qwfrzz4lvxcmuo4sh2g4uw",
       "activated_at": null,
       "agency_id": "courts-of-nz",
       "agency_name": "Courts of New Zealand (Ng\u0101 K\u014dti o Aotearoa)",
@@ -1005,8 +1006,12 @@
       "display_name": "Courts of New Zealand Archive Mirror",
       "enabled": true,
       "environment": "bluesky-mirror-courts-of-nz",
-      "evidence": [],
+      "evidence": [
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/29903079610"
+      ],
       "handle": "mirnzcourts.bsky.social",
+      "handle_policy_version": 0,
+      "legacy_handle_exception": "Pre-programme Courts canary retained pending governed migration.",
       "handle_candidates": [
         "courts-of-nz-archive.bsky.social",
         "nzgov-courts-of-nz-archive.bsky.social"

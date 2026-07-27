@@ -24,7 +24,31 @@ from src.bluesky_handle_lifecycle import (
 
 
 def _entry(rows: list[dict[str, Any]], agency_id: str) -> dict[str, Any]:
-    return next(row for row in rows if row.get("agency_id") == agency_id)
+    try:
+        return next(row for row in rows if row.get("agency_id") == agency_id)
+    except StopIteration as exc:
+        raise ValueError(f"No approved handle lifecycle entry for {agency_id}") from exc
+
+
+def _verification_identity(
+    mirror: dict[str, Any],
+    entries: list[dict[str, Any]],
+) -> tuple[str, str]:
+    matching = [row for row in entries if row.get("agency_id") == mirror.get("agency_id")]
+    if matching:
+        return str(matching[0]["approved_handle"]), str(matching[0]["account_did"])
+    if mirror.get("handle_policy_version") != 0:
+        raise ValueError(
+            f"Mirror {mirror.get('mirror_id')} lacks an approved handle lifecycle entry"
+        )
+    evidence = str(mirror.get("legacy_handle_exception") or "").strip()
+    handle = str(mirror.get("handle") or "").strip()
+    account_did = str(mirror.get("account_did") or "").strip()
+    if not evidence or not handle or not account_did:
+        raise ValueError(
+            f"Legacy mirror {mirror.get('mirror_id')} lacks exception evidence, handle, or DID"
+        )
+    return handle, account_did
 
 
 def _mirror(rows: list[dict[str, Any]], mirror_id: str) -> dict[str, Any]:
@@ -107,12 +131,15 @@ def main() -> int:
         return 0
 
     mirror = _mirror(mirrors["mirrors"], args.mirror_id)
-    entry = _entry(abbreviations["entries"], mirror["agency_id"])
     if args.command == "verify":
-        result = verify_handle_identity(entry["approved_handle"], entry["account_did"])
+        handle, account_did = _verification_identity(
+            mirror, abbreviations["entries"]
+        )
+        result = verify_handle_identity(handle, account_did)
         print(json.dumps(result, sort_keys=True))
         return 0 if result["valid"] else 1
     if args.command == "plan":
+        entry = _entry(abbreviations["entries"], mirror["agency_id"])
         print(json.dumps(migration_plan(mirror, entry, old_handle=args.old_handle), indent=2))
         return 0
     raise AssertionError(f"Unhandled command: {args.command}")
