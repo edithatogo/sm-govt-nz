@@ -15,9 +15,7 @@ class PostLookupClient(Protocol):
     def fetch_posts(self, uris: list[str]) -> list[Mapping[str, Any]]:
         """Return public post records for AT Protocol post URIs."""
 
-    def fetch_author_feed(
-        self, actor: str, *, limit: int = 100
-    ) -> list[Mapping[str, Any]]:
+    def fetch_author_feed(self, actor: str, *, limit: int = 100) -> list[Mapping[str, Any]]:
         """Return public feed records for one mirror account."""
 
 
@@ -63,12 +61,11 @@ def reconcile_programme_audit(
     mirror_id: str,
     audit_paths: list[str | Path],
     client: PostLookupClient | None = None,
+    cleanup_apply_path: str | Path | None = None,
 ) -> dict[str, Any]:
     """Build a non-destructive cleanup and reconciliation report."""
     registry = json.loads(Path(registry_path).read_text(encoding="utf-8"))
-    account = next(
-        row for row in registry.get("mirrors", []) if row.get("mirror_id") == mirror_id
-    )
+    account = next(row for row in registry.get("mirrors", []) if row.get("mirror_id") == mirror_id)
     audit_rows = _load_audit_rows(audit_paths, mirror_id)
     known_uris = sorted(
         {
@@ -79,14 +76,18 @@ def reconcile_programme_audit(
     )
     lookup = client or BlueskyApiClient()
     visible_posts = lookup.fetch_posts(known_uris) if known_uris else []
-    visible_uris = {
-        str(post.get("uri") or "") for post in visible_posts if post.get("uri")
-    }
+    visible_uris = {str(post.get("uri") or "") for post in visible_posts if post.get("uri")}
+    confirmed_cleanup_uris = _confirmed_cleanup_uris(
+        cleanup_apply_path,
+        mirror_id,
+    )
+    resolved_cleanup_uris = confirmed_cleanup_uris - visible_uris
+    active_audit_rows = [row for row in audit_rows if row.get("uri") not in resolved_cleanup_uris]
     feed_posts = _author_feed_posts(lookup, str(account.get("handle") or ""))
     audit_uri_set = set(known_uris)
 
     grouped: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
-    for row in audit_rows:
+    for row in active_audit_rows:
         uri = str(row.get("uri") or "")
         if uri:
             grouped[
@@ -97,11 +98,7 @@ def reconcile_programme_audit(
             ].append(row)
     duplicates = []
     for (record_id, rendered_hash), rows in sorted(grouped.items()):
-        rows_by_uri = {
-            str(row.get("uri") or ""): row
-            for row in rows
-            if str(row.get("uri") or "")
-        }
+        rows_by_uri = {str(row.get("uri") or ""): row for row in rows if str(row.get("uri") or "")}
         if len(rows_by_uri) < 2:
             continue
         keeper_uri = max(
@@ -124,7 +121,7 @@ def reconcile_programme_audit(
         )
     allowed_source_ids = {str(value) for value in account.get("source_ids", [])}
     classified_rows = [
-        (row, _effective_source_id(row, allowed_source_ids)) for row in audit_rows
+        (row, _effective_source_id(row, allowed_source_ids)) for row in active_audit_rows
     ]
     excluded_sources = [
         {
@@ -141,6 +138,14 @@ def reconcile_programme_audit(
         for uri in known_uris
         if uri not in visible_uris
     ]
+    resolved_cleanup_deletions = [
+        {"uri": uri, "reason": "confirmed_cleanup_receipt"}
+        for uri in sorted(resolved_cleanup_uris)
+        if uri in audit_uri_set
+    ]
+    unexpected_missing = [
+        item for item in deleted_or_missing if item["uri"] not in resolved_cleanup_uris
+    ]
     activation = str(account.get("activated_at") or "")
     post_activation_feed_uris = {
         uri
@@ -151,9 +156,7 @@ def reconcile_programme_audit(
         {"uri": uri, "reason": "public_post_missing_audit"}
         for uri in sorted(post_activation_feed_uris - audit_uri_set)
     ]
-    pre_activation_posts_ignored = sorted(
-        set(feed_posts) - post_activation_feed_uris
-    )
+    pre_activation_posts_ignored = sorted(set(feed_posts) - post_activation_feed_uris)
 
     actions: dict[str, set[str]] = defaultdict(set)
     for duplicate in duplicates:
@@ -180,22 +183,45 @@ def reconcile_programme_audit(
         "duplicates": duplicates,
         "excluded_sources": excluded_sources,
         "deleted_or_missing": deleted_or_missing,
+        "resolved_cleanup_deletions": resolved_cleanup_deletions,
+        "unexpected_missing": unexpected_missing,
         "missing_audit": missing_audit,
         "pre_activation_posts_ignored": pre_activation_posts_ignored,
         "cleanup_approval_packet": {
             "destructive_action_performed": False,
-            "requires_exact_uri_approval": True,
+            "requires_exact_uri_approval": bool(cleanup_candidates),
             "candidates": cleanup_candidates,
         },
-        "valid": not (
-            duplicates or excluded_sources or deleted_or_missing or missing_audit
-        ),
+        "valid": not (duplicates or excluded_sources or unexpected_missing or missing_audit),
     }
 
 
-def _load_audit_rows(
-    audit_paths: list[str | Path], mirror_id: str
-) -> list[dict[str, Any]]:
+def _confirmed_cleanup_uris(
+    cleanup_apply_path: str | Path | None,
+    mirror_id: str,
+) -> set[str]:
+    if cleanup_apply_path is None:
+        return set()
+    path = Path(cleanup_apply_path)
+    if not path.exists():
+        return set()
+    receipt = json.loads(path.read_text(encoding="utf-8"))
+    if (
+        receipt.get("mirror_id") != mirror_id
+        or receipt.get("apply_requested") is not True
+        or receipt.get("status") != "apply_completed"
+        or receipt.get("credential_material_recorded") is not False
+    ):
+        return set()
+    return {
+        str(uri)
+        for key in ("delete_requests_succeeded", "already_missing")
+        for uri in receipt.get(key, [])
+        if str(uri).startswith("at://")
+    }
+
+
+def _load_audit_rows(audit_paths: list[str | Path], mirror_id: str) -> list[dict[str, Any]]:
     paths: list[Path] = []
     for value in audit_paths:
         path = Path(value)
@@ -213,9 +239,7 @@ def _load_audit_rows(
     return rows
 
 
-def _effective_source_id(
-    row: Mapping[str, Any], allowed_source_ids: set[str]
-) -> str:
+def _effective_source_id(row: Mapping[str, Any], allowed_source_ids: set[str]) -> str:
     source_id = str(row.get("source_id") or "")
     if source_id:
         return source_id
@@ -244,11 +268,7 @@ def _author_feed_posts(client: PostLookupClient, handle: str) -> dict[str, str]:
         uri = str(post.get("uri") or "")
         if uri:
             record = post.get("record")
-            created_at = (
-                str(record.get("createdAt") or "")
-                if isinstance(record, Mapping)
-                else ""
-            )
+            created_at = str(record.get("createdAt") or "") if isinstance(record, Mapping) else ""
             posts[uri] = created_at or str(post.get("indexedAt") or "")
     return posts
 
@@ -264,6 +284,7 @@ def _is_at_or_after_activation(created_at: str, activated_at: str) -> bool:
     if created.tzinfo is None or activated.tzinfo is None:
         return True
     return created >= activated
+
 
 def _load_deliveries(state_path: Path, *, target: str) -> list[dict[str, str]]:
     if not state_path.exists():
@@ -322,6 +343,7 @@ def main() -> None:
         action="append",
         default=[],
     )
+    parser.add_argument("--cleanup-apply-path", default="")
     parser.add_argument("--output", default="")
     parser.add_argument(
         "--report-only",
@@ -341,6 +363,8 @@ def main() -> None:
                 "conductor/bluesky_mirror_post_audit.jsonl",
                 "conductor/bluesky_mirror_audit",
             ],
+            cleanup_apply_path=args.cleanup_apply_path
+            or (f"conductor/bluesky_mirror_cleanup_apply/{args.mirror_id}.json"),
         )
         output = Path(args.output)
         output.parent.mkdir(parents=True, exist_ok=True)

@@ -150,9 +150,7 @@ def test_acc_incident_sequence_generates_exact_uri_cleanup_packet(tmp_path) -> N
         for item in result["cleanup_approval_packet"]["candidates"]
     )
     assert result["duplicates"][0]["keeper_uri"].endswith("/two")
-    assert result["duplicates"][0]["duplicate_uris"] == [
-        "at://did:plc:acc/app.bsky.feed.post/one"
-    ]
+    assert result["duplicates"][0]["duplicate_uris"] == ["at://did:plc:acc/app.bsky.feed.post/one"]
 
 
 def test_cleanup_report_classifies_missing_audit_and_deleted_posts(tmp_path) -> None:
@@ -198,7 +196,107 @@ def test_cleanup_report_classifies_missing_audit_and_deleted_posts(tmp_path) -> 
     )
 
     assert result["deleted_or_missing"][0]["uri"].endswith("/deleted")
+    assert result["resolved_cleanup_deletions"] == []
+    assert result["unexpected_missing"] == result["deleted_or_missing"]
     assert result["missing_audit"][0]["uri"].endswith("/untracked")
+
+
+def test_cleanup_receipt_resolves_only_confirmed_missing_records(tmp_path) -> None:
+    registry = tmp_path / "registry.json"
+    registry.write_text(
+        json.dumps(
+            {
+                "mirrors": [
+                    {
+                        "mirror_id": "agency",
+                        "handle": "agency.bsky.social",
+                        "source_ids": ["allowed"],
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    keeper = "at://did:plc:a/app.bsky.feed.post/keeper"
+    deleted = "at://did:plc:a/app.bsky.feed.post/deleted"
+    audit = tmp_path / "audit.jsonl"
+    audit.write_text(
+        "\n".join(
+            json.dumps(row)
+            for row in (
+                {
+                    "mirror_id": "agency",
+                    "record_id": "r1",
+                    "rendered_hash": "same",
+                    "source_id": "allowed",
+                    "uri": keeper,
+                    "status": "posted",
+                },
+                {
+                    "mirror_id": "agency",
+                    "record_id": "r1",
+                    "rendered_hash": "same",
+                    "source_id": "retired",
+                    "uri": deleted,
+                    "status": "posted",
+                },
+            )
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    receipt = tmp_path / "cleanup-apply.json"
+    receipt.write_text(
+        json.dumps(
+            {
+                "mirror_id": "agency",
+                "apply_requested": True,
+                "status": "apply_completed",
+                "credential_material_recorded": False,
+                "delete_requests_succeeded": [deleted],
+                "already_missing": [],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = reconcile_programme_audit(
+        registry_path=registry,
+        mirror_id="agency",
+        audit_paths=[audit],
+        client=FakeProgrammeClient(visible=[keeper], feed=[keeper]),
+        cleanup_apply_path=receipt,
+    )
+
+    assert result["duplicates"] == []
+    assert result["excluded_sources"] == []
+    assert result["resolved_cleanup_deletions"] == [
+        {"uri": deleted, "reason": "confirmed_cleanup_receipt"}
+    ]
+    assert result["unexpected_missing"] == []
+    assert result["cleanup_approval_packet"]["candidates"] == []
+    assert result["cleanup_approval_packet"]["requires_exact_uri_approval"] is False
+    assert result["valid"] is True
+
+
+def test_dry_run_receipt_does_not_resolve_missing_record(tmp_path) -> None:
+    receipt = tmp_path / "cleanup-apply.json"
+    receipt.write_text(
+        json.dumps(
+            {
+                "mirror_id": "agency",
+                "apply_requested": False,
+                "status": "dry_run",
+                "credential_material_recorded": False,
+                "already_missing": ["at://did:plc:a/app.bsky.feed.post/missing"],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    from scripts.verify_archive_mirror_posts import _confirmed_cleanup_uris
+
+    assert _confirmed_cleanup_uris(receipt, "agency") == set()
 
 
 def test_cleanup_prefers_reconciled_post_as_duplicate_keeper(tmp_path) -> None:
@@ -310,9 +408,7 @@ def test_cleanup_infers_unique_legacy_source_id_from_record_platform(tmp_path) -
         registry_path=registry,
         mirror_id="agency",
         audit_paths=[audit],
-        client=FakeProgrammeClient(
-            visible=["at://did:plc:a/app.bsky.feed.post/tracked"]
-        ),
+        client=FakeProgrammeClient(visible=["at://did:plc:a/app.bsky.feed.post/tracked"]),
     )
 
     assert result["excluded_sources"] == []
@@ -360,9 +456,7 @@ def test_cleanup_ignores_only_proven_pre_activation_feed_posts(tmp_path) -> None
         client=client,
     )
 
-    assert result["pre_activation_posts_ignored"] == [
-        "at://did:plc:a/app.bsky.feed.post/legacy"
-    ]
+    assert result["pre_activation_posts_ignored"] == ["at://did:plc:a/app.bsky.feed.post/legacy"]
     assert result["missing_audit"] == [
         {
             "uri": "at://did:plc:a/app.bsky.feed.post/current",
@@ -375,9 +469,7 @@ def test_reconciliation_findings_remain_strict_unless_report_only() -> None:
     result = {"valid": False}
 
     assert result_exit_code(result) == 1
-    assert result_exit_code(
-        result, report_only=True, reconciliation=True
-    ) == 0
+    assert result_exit_code(result, report_only=True, reconciliation=True) == 0
     try:
         result_exit_code(result, report_only=True)
     except ValueError as exc:
