@@ -10,10 +10,10 @@
 
 - [x] [Issue #32](https://github.com/edithatogo/sm-govt-nz/issues/32)
 - [x] [Issue #33](https://github.com/edithatogo/sm-govt-nz/issues/33)
-- [ ] [Issue #34](https://github.com/edithatogo/sm-govt-nz/issues/34)
+- [x] [Issue #34](https://github.com/edithatogo/sm-govt-nz/issues/34)
 
 ## Phase 3: Reconciliation and closeout
 
 - [x] Reconcile Conductor status, issue state, project state, and external evidence.
 - [x] Run the repository's documented validation workflow.
-- [ ] Archive this track only after all automatable work is complete and every remaining external gate is explicit.
+- [x] Archive this track only after all automatable work is complete and every remaining external gate is explicit.

@@ -18,12 +18,12 @@
     {
       "registry_id": "hugging_face",
       "registry_kind": "dataset_archive",
-      "submission_status": "published_metadata_sync_pending",
+      "submission_status": "published",
       "requirements": [
         {
           "id": "dataset-card",
           "description": "Dataset card documents provenance, rights, intended use, limitations, and update cadence.",
-          "status": "prepared_for_sync"
+          "status": "verified"
         },
         {
           "id": "viewer-health",
@@ -116,11 +116,10 @@
       },
       {
         "name": "Publication",
-        "status": "published_metadata_sync_pending",
+        "status": "complete",
         "tasks": [
-          "Synchronize the generated dataset card and verify public read-back."
-        ],
-        "blocker": "Public Hugging Face card does not yet contain the repository-ready disclosures."
+          "Maintain rolling Hugging Face updates and immutable Zenodo snapshots."
+        ]
       }
     ],
     "commit_policy": "Commit manifest and evidence in the owning corpus repo only.",
