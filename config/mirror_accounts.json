@@ -999,15 +999,18 @@
     {
       "account_role": "agency_mirror",
       "account_did": "did:plc:t3qwfrzz4lvxcmuo4sh2g4uw",
-      "activated_at": null,
+      "activated_at": "2026-07-22T08:21:31.764772+00:00",
       "agency_id": "courts-of-nz",
       "agency_name": "Courts of New Zealand (Ng\u0101 K\u014dti o Aotearoa)",
-      "backfill_state": "ready",
+      "backfill_state": "complete",
       "display_name": "Courts of New Zealand Archive Mirror",
       "enabled": true,
       "environment": "bluesky-mirror-courts-of-nz",
       "evidence": [
-        "https://github.com/edithatogo/sm-govt-nz/actions/runs/29903079610"
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/29903079610",
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/30239757167",
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/30240273274",
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/30240335227"
       ],
       "handle": "mirnzcourts.bsky.social",
       "handle_policy_version": 0,
@@ -1016,9 +1019,9 @@
         "courts-of-nz-archive.bsky.social",
         "nzgov-courts-of-nz-archive.bsky.social"
       ],
-      "health_state": "preflight_passed",
+      "health_state": "healthy",
       "issue_number": null,
-      "lifecycle_state": "backfilling",
+      "lifecycle_state": "live",
       "mirror_id": "courts-of-nz",
       "profile_disclosure": "Unofficial automated archive mirror. Not the Courts of New Zealand.",
       "registration_alias_slug": "courts-of-nz",
