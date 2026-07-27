@@ -3,8 +3,8 @@
 ## Summary
 
 The reliability implementation and credential controls are sound, but the track
-must remain externally gated until five approved ACC cleanup candidates are
-removed and public reconciliation becomes valid.
+must remain externally gated until three still-visible ACC cleanup candidates
+are deleted and public reconciliation becomes valid.
 
 ## Verification Checks
 
@@ -31,11 +31,17 @@ removed and public reconciliation becomes valid.
 
 ## Remaining External Gate
 
-- ACC cleanup report contains three duplicate groups and four excluded-source
-  findings represented by five exact URI candidates.
-- The apply receipt is `dry_run`, `apply_requested=false`, and records no
-  credential material.
-- Deletion requires separate exact-URI approval, followed by public read-back
-  and a regenerated reconciliation report with `valid=true`.
+- The ACC cleanup report identified five candidate URIs across three duplicate
+  groups and four excluded-source findings.
+- The guarded dry-run receipt found two candidates already absent and these
+  three candidates still publicly visible:
+  - `at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbn6rnwin2s`
+  - `at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u`
+  - `at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a`
+- The receipt records `status=dry_run`, `apply_requested=false`, no successful
+  delete requests, and no credential material.
+- Deleting the three visible records requires separate exact-URI approval,
+  followed by public read-back and a regenerated reconciliation report with
+  `valid=true`.
 - Issue #36 remains open. No issue update, deletion, workflow dispatch, or
   Bluesky posting is authorized by this review.
