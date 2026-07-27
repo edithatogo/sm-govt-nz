@@ -4789,7 +4789,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.aucklandcouncil.govt.nz",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "facebook",
       "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
       "portfolio": "Local Government",
@@ -4831,30 +4831,6 @@
       "url": "https://www.instagram.com/aklcouncil/"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "auckland-council",
-      "agency_name": "Auckland Council (Te Kaunihera o T\u0101maki Makaurau)",
-      "agency_type": "Unitary Authority",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "38ca97869442f450",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.aucklandcouncil.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/aklcouncil/?hl=en"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Auckland Council",
       "account_classification": "official",
@@ -4869,7 +4845,7 @@
       "domain_trust": "unknown",
       "feasibility": "low",
       "official_website": "https://www.aucklandcouncil.govt.nz",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "linkedin",
       "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
       "portfolio": "Local Government",
@@ -4909,30 +4885,6 @@
         "official_term:nz"
       ],
       "url": "https://x.com/AklCouncil"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
-      "agency_id": "auckland-council",
-      "agency_name": "Auckland Council (Te Kaunihera o T\u0101maki Makaurau)",
-      "agency_type": "Unitary Authority",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "64ca95a42675ed26",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.aucklandcouncil.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/user/AklCouncil"
     },
     {
       "access_method": "bounded_public_html",
@@ -13780,7 +13732,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.cityraillink.co.nz",
-      "origin": "registry.social_profiles",
+      "origin": "homepage.link,registry.social_profiles",
       "platform": "facebook",
       "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
       "portfolio": "Transport",
@@ -13894,6 +13846,30 @@
       "url": "https://www.instagram.com/cityraillink"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram",
+      "agency_id": "city-rail-link",
+      "agency_name": "City Rail Link Limited",
+      "agency_type": "Schedule 4a Company",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "7248ef875cf0d195",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.cityraillink.co.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Transport",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/cityraillink/"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "City Rail Link Ltd",
       "account_classification": "official",
@@ -13947,7 +13923,7 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
+      "account": "YouTube.",
       "agency_id": "city-rail-link",
       "agency_name": "City Rail Link Limited",
       "agency_type": "Schedule 4a Company",
@@ -62469,58 +62445,6 @@
       "url": "https://www.defence.govt.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.education.govt.nz",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "31e1504f0781644c",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Bulletins and newsletters",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Education",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.education.govt.nz/bulletins"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.education.govt.nz",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "2db9433d3eae60af",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Kia Manawaroa issue 17 out now 24 July 2026 Welcome to Issue 17 of Kia Manawaroa, our monthly newsletter for wh\u0101nau M\u0101ori. Find out more",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Education",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-17-out-now"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.education.govt.nz",
       "agency_id": "ministry-of-education",
@@ -62927,30 +62851,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Facebook",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "f6d452b09c7113e8",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/EducationGovtNZ"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "mineducationnz",
       "account_classification": "official",
       "agency_id": "ministry-of-education",
@@ -62979,30 +62879,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Instagram",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "cc8aaa2bf08a2976",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/educationgovtnz"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "nzeducation",
       "account_classification": "official",
       "agency_id": "ministry-of-education",
@@ -63028,30 +62904,6 @@
         "official_term:nz"
       ],
       "url": "https://www.instagram.com/nzeducation/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "LinkedIn",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "2112a9fd1ab47e4b",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/educationgovtnz/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -63110,30 +62962,6 @@
       "url": "https://www.youtube.com/@nzeducation"
     },
     {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "YouTube",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "978471dd146af328",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/EducationGovtNewZealand"
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.education.govt.nz",
       "agency_id": "ministry-of-education",
@@ -63159,60 +62987,6 @@
         "official_term:nz"
       ],
       "url": "https://www.education.govt.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.education.govt.nz",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "0bd64998dc6ccffc",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Bulletins and newsletters",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Education",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.education.govt.nz/bulletins"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.education.govt.nz",
-      "agency_id": "ministry-of-education",
-      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
-      "agency_type": "Department",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "9aca81e5206c0003",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Kia Manawaroa issue 17 out now 24 July 2026 Welcome to Issue 17 of Kia Manawaroa, our monthly newsletter for wh\u0101nau M\u0101ori. Find out more",
-      "official_website": "https://www.education.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Education",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-17-out-now"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -76816,6 +76590,54 @@
       "url": "https://www.youtube.com/channel/UChUcrXfC-Uf-y0Bwes_hb5Q"
     },
     {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "LEAO",
+      "agency_id": "nz-on-air",
+      "agency_name": "NZ On Air (Irirangi Te Motu)",
+      "agency_type": "Autonomous Crown Entity",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "8eb2f1fd50d210ed",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzonair.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Broadcasting",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/watch?v=9BdVZttPyPA"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "TEEKS",
+      "agency_id": "nz-on-air",
+      "agency_name": "NZ On Air (Irirangi Te Motu)",
+      "agency_type": "Autonomous Crown Entity",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "4b7867a5de8e545b",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzonair.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Broadcasting",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/watch?v=hAQlsFPvhSY"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.nzonair.govt.nz",
       "agency_id": "nz-on-air",
@@ -86430,6 +86252,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "92f7f85f4fcd06be",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/OtagoPoly"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "OtagoPolytechnic",
       "account_classification": "official",
       "agency_id": "otago-polytechnic",
@@ -86485,6 +86331,54 @@
       "url": "https://www.instagram.com/otagopolytechnic"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "d32669ba1a66538a",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/otagopolytechnic/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "894173a6864da511",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/213448"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Otago Polytechnic",
       "account_classification": "official",
@@ -86511,6 +86405,30 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/school/otago-polytechnic"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "otago-polytechnic",
+      "agency_name": "Otago Polytechnic",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "f8add89960419679",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.op.ac.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "http://www.youtube.com/user/OtagoPolytech"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -103468,7 +103386,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 week ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 weeks ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -115841,30 +115759,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Facebook",
-      "agency_id": "te-tumu-paeroa",
-      "agency_name": "Te Tumu Paeroa (Office of the M\u0101ori Trustee)",
-      "agency_type": "Department",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "541fcf47a4bd44ff",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.tetumupaeroa.co.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "M\u0101ori Development",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/TeTumuPaeroa/"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "tetumupaeroa",
       "account_classification": "official",
       "agency_id": "te-tumu-paeroa",
@@ -115878,7 +115772,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.tetumupaeroa.co.nz",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "instagram",
       "policy_notes": "Archive capture depends on Meta access and account eligibility.",
       "portfolio": "M\u0101ori Development",
@@ -115890,30 +115784,6 @@
         "official_term:nz"
       ],
       "url": "https://www.instagram.com/tetumupaeroa/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "LinkedIn",
-      "agency_id": "te-tumu-paeroa",
-      "agency_name": "Te Tumu Paeroa (Office of the M\u0101ori Trustee)",
-      "agency_type": "Department",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "c0aa4e7a27c5a135",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.tetumupaeroa.co.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
-      "portfolio": "M\u0101ori Development",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/maori-trustee/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -140683,7 +140553,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-26T18:15:26+00:00",
+  "generated_at": "2026-07-27T18:01:24+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155600,9 +155470,8 @@
     },
     {
       "agency_id": "auckland-council",
-      "alternates": 0,
-      "links": 77,
-      "status": "ok",
+      "error": "HTTP Error 406: Not Acceptable",
+      "status": "failed",
       "url": "https://www.aucklandcouncil.govt.nz/"
     },
     {
@@ -155627,7 +155496,7 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 72,
+      "links": 66,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
@@ -155668,7 +155537,7 @@
     {
       "agency_id": "central-hawkes-bay-district-council",
       "alternates": 0,
-      "links": 500,
+      "links": 501,
       "status": "ok",
       "url": "https://www.chbdc.govt.nz/"
     },
@@ -155709,14 +155578,14 @@
     {
       "agency_id": "christchurch-city-libraries",
       "alternates": 6,
-      "links": 330,
+      "links": 329,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
     {
       "agency_id": "city-rail-link",
       "alternates": 0,
-      "links": 95,
+      "links": 100,
       "status": "ok",
       "url": "https://www.cityraillink.co.nz/"
     },
@@ -155750,7 +155619,7 @@
     {
       "agency_id": "courts-of-nz",
       "alternates": 1,
-      "links": 162,
+      "links": 163,
       "status": "ok",
       "url": "https://www.courtsofnz.govt.nz/"
     },
@@ -155883,7 +155752,7 @@
     {
       "agency_id": "environmental-protection-authority",
       "alternates": 0,
-      "links": 260,
+      "links": 258,
       "status": "ok",
       "url": "https://www.epa.govt.nz/"
     },
@@ -155910,7 +155779,7 @@
     {
       "agency_id": "fire-and-emergency-nz",
       "alternates": 0,
-      "links": 131,
+      "links": 132,
       "status": "ok",
       "url": "https://www.fireandemergency.nz/"
     },
@@ -156030,14 +155899,14 @@
     {
       "agency_id": "horizons-regional-council",
       "alternates": 0,
-      "links": 155,
+      "links": 156,
       "status": "ok",
       "url": "https://www.horizons.govt.nz/"
     },
     {
       "agency_id": "horowhenua-district-council",
       "alternates": 0,
-      "links": 236,
+      "links": 238,
       "status": "ok",
       "url": "https://www.horowhenua.govt.nz/"
     },
@@ -156109,14 +155978,14 @@
     {
       "agency_id": "kaipara-district-council",
       "alternates": 0,
-      "links": 210,
+      "links": 209,
       "status": "ok",
       "url": "https://www.kaipara.govt.nz/"
     },
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 107,
+      "links": 105,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
@@ -156300,9 +156169,8 @@
     },
     {
       "agency_id": "ministry-of-education",
-      "alternates": 0,
-      "links": 59,
-      "status": "ok",
+      "error": "HTTP Error 500: Internal Server Error",
+      "status": "failed",
       "url": "https://www.education.govt.nz/"
     },
     {
@@ -156466,7 +156334,7 @@
     {
       "agency_id": "nz-on-air",
       "alternates": 0,
-      "links": 73,
+      "links": 77,
       "status": "ok",
       "url": "https://www.nzonair.govt.nz/"
     },
@@ -156480,7 +156348,7 @@
     {
       "agency_id": "nz-police",
       "alternates": 0,
-      "links": 200,
+      "links": 201,
       "status": "ok",
       "url": "https://www.police.govt.nz/"
     },
@@ -156580,8 +156448,9 @@
     },
     {
       "agency_id": "otago-polytechnic",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 324,
+      "status": "ok",
       "url": "https://www.op.ac.nz/"
     },
     {
@@ -156675,7 +156544,7 @@
     {
       "agency_id": "queenstown-lakes-district-council",
       "alternates": 0,
-      "links": 646,
+      "links": 647,
       "status": "ok",
       "url": "https://www.qldc.govt.nz/"
     },
@@ -156762,7 +156631,7 @@
     {
       "agency_id": "sit",
       "alternates": 0,
-      "links": 359,
+      "links": 358,
       "status": "ok",
       "url": "https://www.sit.ac.nz/"
     },
@@ -156921,15 +156790,14 @@
     {
       "agency_id": "te-puni-kokiri",
       "alternates": 0,
-      "links": 95,
+      "links": 87,
       "status": "ok",
       "url": "https://www.tpk.govt.nz/"
     },
     {
       "agency_id": "te-tumu-paeroa",
-      "alternates": 0,
-      "links": 95,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.tetumupaeroa.co.nz/"
     },
     {
@@ -157103,7 +156971,7 @@
     {
       "agency_id": "wairoa-district-council",
       "alternates": 0,
-      "links": 336,
+      "links": 338,
       "status": "ok",
       "url": "https://www.wairoadc.govt.nz/"
     },
@@ -157142,7 +157010,7 @@
     {
       "agency_id": "weltec",
       "alternates": 0,
-      "links": 119,
+      "links": 113,
       "status": "ok",
       "url": "https://www.weltec.ac.nz/"
     },
@@ -157189,14 +157057,14 @@
     {
       "agency_id": "whangarei-district-council",
       "alternates": 0,
-      "links": 334,
+      "links": 335,
       "status": "ok",
       "url": "https://www.wdc.govt.nz/"
     },
     {
       "agency_id": "whitireia",
       "alternates": 0,
-      "links": 119,
+      "links": 113,
       "status": "ok",
       "url": "https://www.whitireia.ac.nz/"
     },
@@ -157210,7 +157078,7 @@
     {
       "agency_id": "witt",
       "alternates": 0,
-      "links": 194,
+      "links": 197,
       "status": "ok",
       "url": "https://www.witt.ac.nz/"
     },
@@ -157232,33 +157100,33 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5256,
+    "candidate_count": 5251,
     "feasibility_counts": {
-      "high": 4160,
-      "low": 310,
-      "medium": 786
+      "high": 4158,
+      "low": 309,
+      "medium": 784
     },
-    "known_registry_social_profiles": 444,
+    "known_registry_social_profiles": 446,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 291,
+      "facebook": 290,
       "instagram": 162,
-      "linkedin": 235,
+      "linkedin": 234,
       "medium": 2,
-      "newsletter": 161,
+      "newsletter": 159,
       "rss": 3829,
-      "website_page": 313,
+      "website_page": 311,
       "x": 75,
-      "youtube": 157
+      "youtube": 158
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 161,
+      "newsletter": 159,
       "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 940,
-      "website_page": 313
+      "social_profile": 939,
+      "website_page": 311
     }
   }
 }
