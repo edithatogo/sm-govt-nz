@@ -964,6 +964,25 @@ def recover_account(
     evidence = []
     unresolved = False
     changed = False
+    if not publications:
+        last_uri = str(account_state.get("last_uri") or "")
+        posted_ids = account_state.get("posted_record_ids") or []
+        record_id = str(posted_ids[-1]) if posted_ids else ""
+        if last_uri:
+            classification = check(last_uri)
+            unresolved = classification != "reconciled"
+        else:
+            classification = "ambiguous_missing_uri"
+            unresolved = True
+        evidence.append(
+            {
+                "idempotency_key": "",
+                "record_id": record_id,
+                "uri": last_uri,
+                "publication_state": "legacy_last_uri",
+                "classification": classification,
+            }
+        )
     for key, raw_publication in sorted(publications.items()):
         publication = dict(raw_publication)
         uri = str(publication.get("uri") or "")
@@ -1007,7 +1026,12 @@ def recover_account(
         "public readback failed",
         "publication reconciliation exhausted",
     }
-    can_resume = bool(account_state.get("paused")) and recoverable_reason and not unresolved
+    can_resume = (
+        bool(account_state.get("paused"))
+        and recoverable_reason
+        and bool(evidence)
+        and not unresolved
+    )
     resumed = False
     if apply and can_resume:
         account_state.update(
