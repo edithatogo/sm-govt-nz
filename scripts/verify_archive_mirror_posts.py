@@ -2,6 +2,7 @@ import argparse
 from collections import defaultdict
 import json
 import sys
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Mapping, Protocol
 
@@ -81,7 +82,7 @@ def reconcile_programme_audit(
     visible_uris = {
         str(post.get("uri") or "") for post in visible_posts if post.get("uri")
     }
-    feed_uris = _author_feed_uris(lookup, str(account.get("handle") or ""))
+    feed_posts = _author_feed_posts(lookup, str(account.get("handle") or ""))
     audit_uri_set = set(known_uris)
 
     grouped: dict[tuple[str, str], set[str]] = defaultdict(set)
@@ -104,25 +105,37 @@ def reconcile_programme_audit(
         if len(uris) > 1
     ]
     allowed_source_ids = {str(value) for value in account.get("source_ids", [])}
+    classified_rows = [
+        (row, _effective_source_id(row, allowed_source_ids)) for row in audit_rows
+    ]
     excluded_sources = [
         {
             "record_id": str(row.get("record_id") or ""),
-            "source_id": str(row.get("source_id") or ""),
+            "source_id": source_id,
             "uri": str(row.get("uri") or ""),
             "reason": "source_id_not_allowed",
         }
-        for row in audit_rows
-        if str(row.get("source_id") or "") not in allowed_source_ids
+        for row, source_id in classified_rows
+        if source_id not in allowed_source_ids
     ]
     deleted_or_missing = [
         {"uri": uri, "reason": "not_visible_via_public_api"}
         for uri in known_uris
         if uri not in visible_uris
     ]
+    activation = str(account.get("activated_at") or "")
+    post_activation_feed_uris = {
+        uri
+        for uri, created_at in feed_posts.items()
+        if _is_at_or_after_activation(created_at, activation)
+    }
     missing_audit = [
         {"uri": uri, "reason": "public_post_missing_audit"}
-        for uri in sorted(feed_uris - audit_uri_set)
+        for uri in sorted(post_activation_feed_uris - audit_uri_set)
     ]
+    pre_activation_posts_ignored = sorted(
+        set(feed_posts) - post_activation_feed_uris
+    )
 
     actions: dict[str, set[str]] = defaultdict(set)
     for duplicate in duplicates:
@@ -150,6 +163,7 @@ def reconcile_programme_audit(
         "excluded_sources": excluded_sources,
         "deleted_or_missing": deleted_or_missing,
         "missing_audit": missing_audit,
+        "pre_activation_posts_ignored": pre_activation_posts_ignored,
         "cleanup_approval_packet": {
             "destructive_action_performed": False,
             "requires_exact_uri_approval": True,
@@ -181,20 +195,57 @@ def _load_audit_rows(
     return rows
 
 
-def _author_feed_uris(client: PostLookupClient, handle: str) -> set[str]:
+def _effective_source_id(
+    row: Mapping[str, Any], allowed_source_ids: set[str]
+) -> str:
+    source_id = str(row.get("source_id") or "")
+    if source_id:
+        return source_id
+    record_namespace = str(row.get("record_id") or "").partition(":")[0]
+    platform = record_namespace.partition("_")[0].casefold()
+    if not platform:
+        return ""
+    candidates = [
+        candidate
+        for candidate in allowed_source_ids
+        if f"-{platform}-" in f"-{candidate.casefold()}-"
+    ]
+    return candidates[0] if len(candidates) == 1 else ""
+
+
+def _author_feed_posts(client: PostLookupClient, handle: str) -> dict[str, str]:
     if not handle or not hasattr(client, "fetch_author_feed"):
-        return set()
+        return {}
     try:
         feed = client.fetch_author_feed(handle, limit=100)
     except Exception:
-        return set()
-    uris = set()
+        return {}
+    posts = {}
     for item in feed:
         post = item.get("post") if isinstance(item.get("post"), Mapping) else item
         uri = str(post.get("uri") or "")
         if uri:
-            uris.add(uri)
-    return uris
+            record = post.get("record")
+            created_at = (
+                str(record.get("createdAt") or "")
+                if isinstance(record, Mapping)
+                else ""
+            )
+            posts[uri] = created_at or str(post.get("indexedAt") or "")
+    return posts
+
+
+def _is_at_or_after_activation(created_at: str, activated_at: str) -> bool:
+    if not activated_at or not created_at:
+        return True
+    try:
+        created = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+        activated = datetime.fromisoformat(activated_at.replace("Z", "+00:00"))
+    except ValueError:
+        return True
+    if created.tzinfo is None or activated.tzinfo is None:
+        return True
+    return created >= activated
 
 def _load_deliveries(state_path: Path, *, target: str) -> list[dict[str, str]]:
     if not state_path.exists():
@@ -285,7 +336,7 @@ def main() -> None:
             target=args.target,
             limit=args.limit,
         )
-    if args.json or not result["valid"]:
+    if args.json or args.reconcile_programme or not result["valid"]:
         print(json.dumps(result, indent=2, sort_keys=True))
     else:
         print(f"Verified {result['checked']} archive mirror posts for {result['target']}.")

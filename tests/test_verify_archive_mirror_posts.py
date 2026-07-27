@@ -197,6 +197,101 @@ def test_cleanup_report_classifies_missing_audit_and_deleted_posts(tmp_path) -> 
     assert result["missing_audit"][0]["uri"].endswith("/untracked")
 
 
+def test_cleanup_infers_unique_legacy_source_id_from_record_platform(tmp_path) -> None:
+    registry = tmp_path / "registry.json"
+    registry.write_text(
+        json.dumps(
+            {
+                "mirrors": [
+                    {
+                        "mirror_id": "agency",
+                        "handle": "agency.bsky.social",
+                        "source_ids": ["agency-linkedin-feed"],
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    audit = tmp_path / "audit.jsonl"
+    audit.write_text(
+        json.dumps(
+            {
+                "mirror_id": "agency",
+                "record_id": "linkedin_public_snapshot:123",
+                "rendered_hash": "hash",
+                "source_id": "",
+                "uri": "at://did:plc:a/app.bsky.feed.post/tracked",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    result = reconcile_programme_audit(
+        registry_path=registry,
+        mirror_id="agency",
+        audit_paths=[audit],
+        client=FakeProgrammeClient(
+            visible=["at://did:plc:a/app.bsky.feed.post/tracked"]
+        ),
+    )
+
+    assert result["excluded_sources"] == []
+
+
+def test_cleanup_ignores_only_proven_pre_activation_feed_posts(tmp_path) -> None:
+    registry = tmp_path / "registry.json"
+    registry.write_text(
+        json.dumps(
+            {
+                "mirrors": [
+                    {
+                        "mirror_id": "agency",
+                        "handle": "agency.bsky.social",
+                        "source_ids": [],
+                        "activated_at": "2026-07-22T08:00:00+00:00",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    client = FakeProgrammeClient(
+        visible=[],
+        feed=[
+            {
+                "post": {
+                    "uri": "at://did:plc:a/app.bsky.feed.post/legacy",
+                    "record": {"createdAt": "2026-07-22T07:59:59Z"},
+                }
+            },
+            {
+                "post": {
+                    "uri": "at://did:plc:a/app.bsky.feed.post/current",
+                    "record": {"createdAt": "2026-07-22T08:00:00Z"},
+                }
+            },
+        ],
+    )
+
+    result = reconcile_programme_audit(
+        registry_path=registry,
+        mirror_id="agency",
+        audit_paths=[],
+        client=client,
+    )
+
+    assert result["pre_activation_posts_ignored"] == [
+        "at://did:plc:a/app.bsky.feed.post/legacy"
+    ]
+    assert result["missing_audit"] == [
+        {
+            "uri": "at://did:plc:a/app.bsky.feed.post/current",
+            "reason": "public_post_missing_audit",
+        }
+    ]
+
+
 def test_reconciliation_findings_remain_strict_unless_report_only() -> None:
     result = {"valid": False}
 
@@ -214,9 +309,16 @@ def test_reconciliation_findings_remain_strict_unless_report_only() -> None:
 
 
 class FakeProgrammeClient(FakePostClient):
-    def __init__(self, visible: list[str], feed: list[str] | None = None) -> None:
+    def __init__(
+        self,
+        visible: list[str],
+        feed: list[str | dict] | None = None,
+    ) -> None:
         super().__init__(visible)
         self.feed = feed or visible
 
     def fetch_author_feed(self, actor: str, *, limit: int = 100):
-        return [{"post": {"uri": uri}} for uri in self.feed[:limit]]
+        return [
+            item if isinstance(item, dict) else {"post": {"uri": item}}
+            for item in self.feed[:limit]
+        ]
