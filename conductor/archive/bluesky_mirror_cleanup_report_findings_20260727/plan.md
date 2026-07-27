@@ -6,6 +6,6 @@
 - [x] Run targeted tests, Ruff, YAML parsing, and Actionlint.
 - [x] Run the integrated reliability suite: 50 tests passed.
 - [x] Run Conductor review and apply the fail-closed report-mode fix.
-- [ ] Review and merge through the repository pull-request process.
-- [ ] Rerun cleanup verification and retain both per-mirror reports.
-- [ ] Run Conductor review and archive the track.
+- [x] Review and merge through PR #43.
+- [x] Rerun cleanup verification; hosted run 30239062374 retained both per-mirror reports.
+- [x] Run Conductor review and archive the track.

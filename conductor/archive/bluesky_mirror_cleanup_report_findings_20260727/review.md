@@ -2,12 +2,12 @@
 
 ## Summary
 
-The local implementation is ready for hosted proof after tightening report-only
-mode so it cannot suppress failures outside programme reconciliation.
+The implementation and hosted evidence are complete. Report-only mode preserves
+findings without suppressing failures outside programme reconciliation.
 
 ## Verification Checks
 
-- [x] **Plan Compliance**: Partial - local implementation is complete; hosted proof and report commits remain pending.
+- [x] **Plan Compliance**: Pass - implementation and hosted proof are complete.
 - [x] **Style Compliance**: Pass - Ruff passed; `ty` was unavailable in the local environment.
 - [x] **New Tests**: Yes
 - [x] **Test Coverage**: Yes - strict, report-only, and fail-closed modes are covered.
@@ -23,5 +23,5 @@ mode so it cannot suppress failures outside programme reconciliation.
 
 ## Decision
 
-No Critical or High findings remain. The track must stay active until the workflow
-is merged and a hosted cleanup run commits reports for both enabled mirrors.
+No Critical or High findings remain. PR #43 merged the fix and hosted run
+`30239062374` committed reports for ACC and Courts. Approved for archive.
