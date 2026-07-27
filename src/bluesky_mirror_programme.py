@@ -202,14 +202,27 @@ def build_registry_from_manifest(
             jurisdiction=jurisdiction,
         )
         handle = str(row.get("handle") or "")
+        lifecycle_state = str(row.get("lifecycle_state") or "candidate")
+        operational = bool(row.get("enabled")) or lifecycle_state in {
+            "preflight_ready",
+            "backfilling",
+            "live",
+            "paused",
+            "retired",
+        }
         mirrors.append(
             {
+                **row,
                 "mirror_id": agency_id,
                 "agency_id": agency_id,
                 "agency_name": group["agency_name"],
                 "public_name": public_name,
                 "handle": handle,
-                "handle_candidates": candidates,
+                "handle_candidates": (
+                    list(row.get("handle_candidates") or candidates)
+                    if operational
+                    else candidates
+                ),
                 "handle_policy_version": row.get("handle_policy_version"),
                 "organisation_abbreviation": abbreviation,
                 "jurisdiction": jurisdiction,
@@ -223,10 +236,22 @@ def build_registry_from_manifest(
                     row.get("profile_disclosure")
                     or f"Unofficial automated archive mirror. Not {group['agency_name']}."
                 ),
-                "source_ids": sorted(group["source_ids"]),
-                "source_urls": sorted(group["source_urls"]),
-                "source_platforms": sorted(group["source_platforms"]),
-                "lifecycle_state": str(row.get("lifecycle_state") or "candidate"),
+                "source_ids": (
+                    list(row.get("source_ids") or [])
+                    if operational
+                    else sorted(group["source_ids"])
+                ),
+                "source_urls": (
+                    list(row.get("source_urls") or [])
+                    if operational
+                    else sorted(group["source_urls"])
+                ),
+                "source_platforms": (
+                    list(row.get("source_platforms") or [])
+                    if operational
+                    else sorted(group["source_platforms"])
+                ),
+                "lifecycle_state": lifecycle_state,
                 "enabled": bool(row.get("enabled", False)),
                 "backfill_state": str(row.get("backfill_state") or "not_started"),
                 "health_state": str(row.get("health_state") or "not_checked"),

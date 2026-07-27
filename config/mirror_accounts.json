@@ -31,31 +31,22 @@
       "public_name": "ACC",
       "registration_alias_slug": "accident-compensation-corporation",
       "source_ids": [
-        "113723d0196a9eaf",
-        "23e64e51777e62c3",
-        "8f453dd941b2dade",
-        "accident-compensation-corporation-instagram-41dd3f71",
-        "accident-compensation-corporation-linkedin-7a8ccc14",
-        "accident-compensation-corporation-youtube-07699fd4",
-        "fc8c94dc594b1c0c"
+        "accident-compensation-corporation-linkedin-acc-new-zealand"
       ],
       "source_platforms": [
-        "facebook",
-        "instagram",
-        "linkedin",
-        "youtube"
+        "linkedin"
       ],
       "source_urls": [
-        "https://www.facebook.com/ACCNewZealand",
-        "https://www.instagram.com/accnewzealand",
-        "https://www.instagram.com/accnewzealand/",
-        "https://www.linkedin.com/company/acc-new-zealand",
-        "https://www.linkedin.com/company/acc-new-zealand/",
-        "https://www.youtube.com/@accnz",
-        "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+        "https://www.linkedin.com/company/acc-new-zealand"
       ],
       "track_id": "bluesky_historical_backfill_rollout_20260721",
-      "url": "https://bsky.app/profile/acc-nz-arc.bsky.social"
+      "url": "https://bsky.app/profile/acc-nz-arc.bsky.social",
+      "account_did": "did:plc:vxltrdhni2dfsm4actryhj4n",
+      "excluded_source_urls": [
+        "https://www.youtube.com/@accnz"
+      ],
+      "long_post_mode": "numbered_thread",
+      "thread_max_parts": 4
     },
     {
       "account_role": "agency_mirror",
@@ -1225,8 +1216,8 @@
       ],
       "handle": "mirnzcourts.bsky.social",
       "handle_candidates": [
-        "courts-of-nz-nz-arc.bsky.social",
-        "courts-of-nz-nz-arc-2.bsky.social"
+        "courts-of-nz-archive.bsky.social",
+        "nzgov-courts-of-nz-archive.bsky.social"
       ],
       "handle_policy_version": 0,
       "health_state": "healthy",
@@ -1240,23 +1231,20 @@
       "registration_alias_slug": "courts-of-nz",
       "source_ids": [
         "00f0a9a884c8fc92",
-        "34f1061d0b6bb826",
-        "courts-of-nz-linkedin-35a0f3f2",
         "courts-of-nz-x-7aebef2c"
       ],
       "source_platforms": [
         "bluesky",
-        "linkedin",
         "x"
       ],
       "source_urls": [
         "https://bsky.app/profile/courtsofnz.bsky.social",
-        "https://www.linkedin.com/company/courts-of-new-zealand",
-        "https://www.linkedin.com/company/courts-of-new-zealand/posts/?feedView=all",
         "https://x.com/courtsofnz"
       ],
       "track_id": "bluesky_historical_backfill_rollout_20260721",
-      "url": "https://bsky.app/profile/mirnzcourts.bsky.social"
+      "url": "https://bsky.app/profile/mirnzcourts.bsky.social",
+      "account_did": "did:plc:t3qwfrzz4lvxcmuo4sh2g4uw",
+      "legacy_handle_exception": "Pre-programme Courts canary retained pending governed migration."
     },
     {
       "account_role": "agency_mirror",
