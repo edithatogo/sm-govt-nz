@@ -1,6 +1,10 @@
+import json
 from pathlib import Path
 
-from scripts.manage_bluesky_mirror_programme import github_matrix_outputs
+from scripts.manage_bluesky_mirror_programme import (
+    github_matrix_outputs,
+    write_json_report,
+)
 
 
 def test_posting_workflows_use_account_environments_and_kill_switch() -> None:
@@ -125,6 +129,15 @@ def test_manual_inputs_are_not_interpolated_directly_into_shell_commands() -> No
         )
         for fragment in forbidden:
             assert fragment not in text, f"{name}: {fragment}"
+
+
+def test_json_report_writer_creates_missing_parent_directories(tmp_path: Path) -> None:
+    output = tmp_path / "nested" / "credential-health.json"
+
+    write_json_report(output, {"valid": True})
+
+    assert json.loads(output.read_text(encoding="utf-8")) == {"valid": True}
+
 
 def test_empty_matrix_outputs_are_safe_and_report_the_true_selection() -> None:
     outputs = github_matrix_outputs({"include": []})
