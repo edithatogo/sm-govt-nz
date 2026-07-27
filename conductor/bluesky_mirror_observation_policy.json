@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "window_start": "2026-07-28",
+  "window_end": "2026-08-03",
+  "deadline_at": "2026-08-03T09:15:55+00:00",
+  "expected_mirror_ids": [
+    "accident-compensation-corporation",
+    "courts-of-nz"
+  ],
+  "day_zero_anchor_run_ids": [30253109107, 30253111190],
+  "day_zero_anchor_date": "2026-07-27",
+  "requirements": {
+    "all_public_health_checks_pass": true,
+    "all_credential_health_checks_pass": true,
+    "one_unique_hosted_run_per_required_date": true,
+    "posting_performed": false,
+    "secret_values_recorded": false
+  }
+}

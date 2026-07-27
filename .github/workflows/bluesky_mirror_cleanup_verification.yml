@@ -38,5 +38,5 @@ jobs:
       - uses: ./.github/actions/setup-python-uv
         with:
           requirements: requirements.txt
-      - run: python scripts/verify_archive_mirror_posts.py --reconcile-programme --mirror-id '${{ matrix.mirror_id }}' --audit-path conductor/bluesky_mirror_post_audit.jsonl --audit-path conductor/bluesky_mirror_audit --output 'conductor/bluesky_mirror_cleanup/${{ matrix.mirror_id }}.json' --json --report-only
+      - run: python scripts/verify_archive_mirror_posts.py --reconcile-programme --mirror-id '${{ matrix.mirror_id }}' --audit-path conductor/bluesky_mirror_post_audit.jsonl --audit-path conductor/bluesky_mirror_audit --output 'conductor/bluesky_mirror_cleanup/${{ matrix.mirror_id }}.json' --json
       - run: python scripts/commit_state_updates.py --message "Refresh Bluesky cleanup verification (${{ matrix.mirror_id }})" --path "conductor/bluesky_mirror_cleanup/${{ matrix.mirror_id }}.json"

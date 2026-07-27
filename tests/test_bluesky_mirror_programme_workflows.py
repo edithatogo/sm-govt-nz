@@ -3,14 +3,13 @@ from pathlib import Path
 
 from scripts.manage_bluesky_mirror_programme import (
     github_matrix_outputs,
+    public_health_faults,
     write_json_report,
 )
 
 
 def test_discovery_refreshes_deterministic_pilot_candidates() -> None:
-    workflow = Path(".github/workflows/bluesky_mirror_discovery.yml").read_text(
-        encoding="utf-8"
-    )
+    workflow = Path(".github/workflows/bluesky_mirror_discovery.yml").read_text(encoding="utf-8")
 
     assert "pilot-candidates" in workflow
     assert "--path conductor/bluesky_mirror_pilot_candidates.json" in workflow
@@ -25,7 +24,9 @@ def test_posting_workflows_use_account_environments_and_kill_switch() -> None:
 
 
 def test_backfill_is_four_per_day_and_serial() -> None:
-    text = Path(".github/workflows/bluesky_mirror_historical_backfill.yml").read_text(encoding="utf-8")
+    text = Path(".github/workflows/bluesky_mirror_historical_backfill.yml").read_text(
+        encoding="utf-8"
+    )
     assert 'cron: "17 */6 * * *"' in text
     assert "max-parallel: 1" in text
 
@@ -52,9 +53,7 @@ def test_posting_workflows_commit_only_account_partitioned_state() -> None:
 
 
 def test_recovery_workflow_is_read_only_by_default_and_mirror_scoped() -> None:
-    text = Path(".github/workflows/bluesky_mirror_recovery.yml").read_text(
-        encoding="utf-8"
-    )
+    text = Path(".github/workflows/bluesky_mirror_recovery.yml").read_text(encoding="utf-8")
     assert "default: false" in text
     assert "bluesky-mirror-recovery-${{ inputs.mirror_id }}" in text
     assert "conductor/bluesky_mirror_state/${{ inputs.mirror_id }}.json" in text
@@ -63,24 +62,37 @@ def test_recovery_workflow_is_read_only_by_default_and_mirror_scoped() -> None:
 
 
 def test_credential_workflows_declare_app_password_mode_and_nonsecret_report() -> None:
-    preflight = Path(".github/workflows/bluesky_mirror_preflight.yml").read_text(
-        encoding="utf-8"
-    )
-    health = Path(".github/workflows/bluesky_mirror_health.yml").read_text(
-        encoding="utf-8"
-    )
+    preflight = Path(".github/workflows/bluesky_mirror_preflight.yml").read_text(encoding="utf-8")
+    health = Path(".github/workflows/bluesky_mirror_health.yml").read_text(encoding="utf-8")
     assert "BLUESKY_CREDENTIAL_MODE: app_password" in preflight
     assert "BLUESKY_CREDENTIAL_MODE: app_password" in health
     assert "credential-health --mirror-id" in health
     assert "bluesky_mirror_credential_health/${{ matrix.mirror_id }}.json" in health
 
 
+def test_health_workflow_records_scheduled_observation_after_health_jobs() -> None:
+    health = Path(".github/workflows/bluesky_mirror_health.yml").read_text(encoding="utf-8")
+    assert "selected_matrix: ${{ steps.matrix.outputs.selected_matrix }}" in health
+    assert "github.event_name == 'schedule'" in health
+    assert "needs.credential-health.result == 'success'" in health
+    assert "needs.public-health.result == 'success'" in health
+    assert "has_targets: ${{ steps.matrix.outputs.has_targets }}" in health
+    assert "needs.plan.outputs.has_targets != 'true'" in health
+    assert "group: bluesky-mirror-public-health" in health
+    assert "health --fail-on-fault" in health
+    assert "record_bluesky_mirror_observation.py record" in health
+    assert "record_bluesky_mirror_observation.py evaluate" in health
+    assert "conductor/bluesky_mirror_observations" in health
+    assert "conductor/bluesky_mirror_hosted_dry_run_plan.json" in health
+
+
 def test_cleanup_verification_workflow_has_no_delete_or_write_credentials() -> None:
-    text = Path(
-        ".github/workflows/bluesky_mirror_cleanup_verification.yml"
-    ).read_text(encoding="utf-8")
+    text = Path(".github/workflows/bluesky_mirror_cleanup_verification.yml").read_text(
+        encoding="utf-8"
+    )
     assert "--reconcile-programme" in text
-    assert "--report-only" in text
+    assert "--report-only" not in text
+    assert " --json" in text
     assert "BLUESKY_APP_PASSWORD" not in text
     assert "delete" not in text.casefold()
     assert "conductor/bluesky_mirror_cleanup/${{ matrix.mirror_id }}.json" in text
@@ -112,9 +124,7 @@ def test_posting_workflow_jobs_use_account_specific_concurrency() -> None:
 
 
 def test_recovery_workflow_discloses_selected_mirror() -> None:
-    text = Path(".github/workflows/bluesky_mirror_recovery.yml").read_text(
-        encoding="utf-8"
-    )
+    text = Path(".github/workflows/bluesky_mirror_recovery.yml").read_text(encoding="utf-8")
     assert "GITHUB_STEP_SUMMARY" in text
     assert "SELECTED_MIRROR: ${{ inputs.mirror_id }}" in text
     assert "printf '%s\\n' \"$SELECTED_MIRROR\"" in text
@@ -146,6 +156,17 @@ def test_json_report_writer_creates_missing_parent_directories(tmp_path: Path) -
     write_json_report(output, {"valid": True})
 
     assert json.loads(output.read_text(encoding="utf-8")) == {"valid": True}
+
+
+def test_public_health_faults_are_reported_deterministically() -> None:
+    report = {
+        "accounts": [
+            {"mirror_id": "courts-of-nz", "status": "publicly_resolvable"},
+            {"mirror_id": "zeta", "status": "fault"},
+            {"mirror_id": "alpha", "status": "fault"},
+        ]
+    }
+    assert public_health_faults(report) == ["alpha", "zeta"]
 
 
 def test_empty_matrix_outputs_are_safe_and_report_the_true_selection() -> None:
@@ -192,9 +213,8 @@ def test_posting_workflows_treat_empty_matrices_as_successful_noops() -> None:
         assert "needs.plan.outputs.has_targets != 'true'" in text
         assert "needs.plan.outputs.has_targets == 'true'" in text
 
+
 def test_discovery_workflow_refreshes_deterministic_pilot_plan() -> None:
-    text = Path(".github/workflows/bluesky_mirror_discovery.yml").read_text(
-        encoding="utf-8"
-    )
+    text = Path(".github/workflows/bluesky_mirror_discovery.yml").read_text(encoding="utf-8")
     assert "scripts/build_bluesky_mirror_hosted_plan.py" in text
     assert "conductor/bluesky_mirror_hosted_dry_run_plan.json" in text
