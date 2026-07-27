@@ -36,12 +36,12 @@ This dataset package contains normalized New Zealand government social media rec
 ## Source Coverage
 
 - api: 13 records
-- bluesky: 2411 records
+- bluesky: 2430 records
 - courtsofnz.govt.nz: 11 records
 - email: 23 records
 - facebook: 323 records
 - json_feed: 16 records
-- linkedin: 56 records
+- linkedin: 57 records
 - rss: 3930 records
 - website_page: 1827 records
 - x: 833 records
@@ -50,6 +50,22 @@ This dataset package contains normalized New Zealand government social media rec
 ## Provenance
 
 Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.
+
+## Rights and Licensing
+
+The repository owner has approved this corpus for publication. The `license: other` metadata is intentional: repository code licensing does not replace source-specific rights, notices, or platform terms attached to individual records. Provenance fields identify the source and capture method so downstream users can assess reuse conditions.
+
+## Intended Use
+
+This corpus supports research, public-record preservation, reproducibility, and auditing of New Zealand government communications. It is not an authoritative government record, an endorsement of archived content, or a basis for automated decisions about individuals.
+
+## Limitations
+
+Coverage varies by agency, platform, source availability, and capture method. Deleted, edited, access-controlled, or platform-restricted material may be absent. Users should validate records against authoritative sources when accuracy or currency is material.
+
+## Update Cadence and Persistence
+
+Hugging Face is the rolling dataset surface updated through reviewed publication workflows. Zenodo provides immutable versioned snapshots with DOIs; the current release evidence is recorded in the owning repository.
 
 ## Known Gaps
 
