@@ -114,6 +114,73 @@ def test_registry_builder_preserves_public_name_and_acc_handle_policy() -> None:
     ]
 
 
+def test_registry_builder_preserves_operational_identity_and_source_bounds() -> None:
+    manifest = {
+        "sources": [
+            {
+                "agency_id": "agency",
+                "agency_name": "Agency",
+                "platform": "youtube",
+                "source_id": "new-youtube-source",
+                "url": "https://youtube.com/@agency",
+            }
+        ]
+    }
+    existing = registry(
+        registry_row(
+            account_did="did:plc:agency",
+            source_ids=["curated-linkedin-source"],
+            source_urls=["https://linkedin.com/company/agency"],
+            handle_candidates=["legacy-agency.bsky.social"],
+            handle_policy_version=0,
+            legacy_handle_exception="Pre-programme account.",
+            source_platforms=["linkedin"],
+            excluded_source_urls=["https://youtube.com/@agency"],
+            long_post_mode="numbered_thread",
+            thread_max_parts=4,
+            operational_note="preserve validated nonsecret metadata",
+        )
+    )
+
+    result = build_registry_from_manifest(manifest, existing)
+    agency = next(row for row in result["mirrors"] if row["mirror_id"] == "agency")
+
+    assert agency["account_did"] == "did:plc:agency"
+    assert agency["handle_candidates"] == ["legacy-agency.bsky.social"]
+    assert agency["handle_policy_version"] == 0
+    assert agency["legacy_handle_exception"] == "Pre-programme account."
+    assert agency["source_ids"] == ["curated-linkedin-source"]
+    assert agency["source_urls"] == ["https://linkedin.com/company/agency"]
+    assert agency["source_platforms"] == ["linkedin"]
+    assert agency["excluded_source_urls"] == ["https://youtube.com/@agency"]
+    assert agency["long_post_mode"] == "numbered_thread"
+    assert agency["thread_max_parts"] == 4
+    assert agency["operational_note"] == "preserve validated nonsecret metadata"
+
+
+def test_registry_builder_refreshes_candidate_source_inventory() -> None:
+    manifest = {
+        "sources": [
+            {
+                "agency_id": "agency",
+                "agency_name": "Agency",
+                "platform": "youtube",
+                "source_id": "new-youtube-source",
+                "url": "https://youtube.com/@agency",
+            }
+        ]
+    }
+    existing = registry(
+        registry_row(enabled=False, lifecycle_state="candidate")
+    )
+
+    result = build_registry_from_manifest(manifest, existing)
+    agency = next(row for row in result["mirrors"] if row["mirror_id"] == "agency")
+
+    assert agency["source_ids"] == ["new-youtube-source"]
+    assert agency["source_platforms"] == ["youtube"]
+
+
 def test_handle_policy_and_matrix_are_deterministic() -> None:
     assert handle_candidates("Agency One") == [
         "agency-one-nz-arc.bsky.social",
