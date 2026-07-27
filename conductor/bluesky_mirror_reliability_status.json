@@ -4,6 +4,7 @@
   "parent_track": "bluesky_mirror_reliability_hardening_20260724",
   "github_issue": 36,
   "completed_children": [
+    "bluesky_mirror_cleanup_report_findings_20260727",
     "bluesky_mirror_cleanup_verification_20260724",
     "bluesky_mirror_content_contracts_20260724",
     "bluesky_mirror_empty_matrix_noop_20260727",
@@ -14,12 +15,7 @@
     "bluesky_mirror_state_concurrency_20260724",
     "bluesky_mirror_workflow_isolation_20260724"
   ],
-  "pending_children": [
-    {
-      "track_id": "bluesky_mirror_cleanup_report_findings_20260727",
-      "blocker": "hosted_cleanup_reports_pending"
-    }
-  ],
+  "pending_children": [],
   "external_action_children": [
     {
       "track_id": "bluesky_mirror_credential_hygiene_20260724",
@@ -36,5 +32,14 @@
     "credential_mode": "app_password",
     "observed_secret_updated_at": "2026-07-22T11:18:54Z",
     "rotation_verification": "unverified"
+  },
+  "hosted_cleanup": {
+    "run_id": 30239062374,
+    "conclusion": "success",
+    "reports_committed": [
+      "accident-compensation-corporation",
+      "courts-of-nz"
+    ],
+    "findings_valid": false
   }
 }
