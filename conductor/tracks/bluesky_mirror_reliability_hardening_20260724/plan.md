@@ -14,8 +14,8 @@
 
 ## Phase 3: Operations and security
 - [x] Task: Implement `bluesky_mirror_recovery_automation_20260724`.
-- [x] Task: Complete `bluesky_mirror_credential_hygiene_20260724`;
-  operator-confirmed rotation and revocation were recorded on 2026-07-27.
+- [ ] Task: Complete `bluesky_mirror_credential_hygiene_20260724`;
+  Environment replacement and revocation remain externally unverified.
 - [x] Task: Implement `bluesky_mirror_cleanup_verification_20260724`.
 - [x] Task: Complete `bluesky_mirror_cleanup_report_findings_20260727`;
   PR #43 and hosted run 30239062374 preserved both reports.
@@ -42,7 +42,7 @@
   destructive action was performed.
 - Hosted preflight run 30238209314 validated the configured ACC app password,
   expected handle, DID, and dry-run publication without posting.
-- On 2026-07-27, the operator confirmed primary-password rotation, isolated
-  Environment app-password replacement, and superseded app-password revocation;
-  no secret values are retained.
+- GitHub Environment metadata still dates `BLUESKY_APP_PASSWORD` to
+  `2026-07-22T11:18:54Z`; primary-password rotation, Environment replacement,
+  and superseded app-password revocation remain unverified.
 - Issue updates, pushes, and any live posting remain separate approval gates.

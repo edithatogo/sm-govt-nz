@@ -2,8 +2,9 @@
 
 ## Summary
 
-All local controls and operator-supervised credential rotation are complete and
-verified without retaining credential values.
+All local credential controls are complete. Operator-supervised primary-password
+rotation, GitHub Environment app-password replacement, and superseded
+app-password revocation remain unverified external actions.
 
 ## Verification Checks
 
@@ -24,9 +25,13 @@ Run `30238209314` passed on 2026-07-27:
 - credential authentication and DID resolution passed; and
 - dry-run publication completed without posting.
 
-## Operator Completion Evidence
+## Remaining External Gate
 
-On 2026-07-27, the operator confirmed that the ACC primary password was rotated,
-the isolated GitHub Environment app password was replaced, and the superseded
-app password was revoked. This attestation closes the external gate without
-storing secret values.
+GitHub's nonsecret Environment metadata reports `BLUESKY_APP_PASSWORD` was last
+updated at `2026-07-22T11:18:54Z`. This predates the claimed 2026-07-27
+replacement and cannot verify rotation or revocation. Completion requires:
+
+- operator-controlled primary-password rotation;
+- replacement of the isolated Environment app password;
+- revocation of the superseded app password; and
+- a non-posting preflight using the replacement credential.
