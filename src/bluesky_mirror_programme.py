@@ -597,9 +597,12 @@ def render_thread(
             current.append(word)
     if current:
         chunks.append(" ".join(current))
+    truncated = len(chunks) > max_parts
     chunks = chunks[:max_parts]
     if not chunks:
         return [single]
+    if truncated:
+        chunks[-1] = chunks[-1][: available - 1].rstrip() + "…"
     total = len(chunks)
     return [
         f"{prefix}[{index}/{total}] {chunk}{suffix if index == total else ''}"

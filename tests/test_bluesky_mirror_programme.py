@@ -214,6 +214,7 @@ def test_long_linkedin_posts_can_be_planned_as_bounded_numbered_thread() -> None
     assert 1 < len(parts) <= 4
     assert parts[0].startswith("[Archived 2026-07-22] [ACC] [linkedin] [1/")
     assert all(len(part) <= 300 for part in parts)
+    assert "…\n\nOriginal:" in parts[-1]
     assert parts[-1].endswith("https://www.linkedin.com/posts/example-2")
     assert parts == render_thread(record, historical=True)
 
