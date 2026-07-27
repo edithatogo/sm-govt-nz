@@ -13,6 +13,7 @@ from src.bluesky_mirror_programme import (
     load_archive_records,
     load_runtime_state,
     migrate_runtime_state,
+    pilot_candidate_report,
     render_thread,
     publish_next,
     preflight_account,
@@ -908,6 +909,126 @@ def test_source_eligibility_fails_closed_and_normalizes_urls() -> None:
         decision = evaluate_source_eligibility(account, raw)
         assert decision.eligible is False
         assert decision.reason == reason
+
+
+def test_normalized_public_capture_contract_is_explicit_and_fail_closed() -> None:
+    account = registry_row(
+        source_ids=["youtube-current"],
+        source_platforms=["youtube"],
+        source_urls=["https://www.youtube.com/@agency"],
+    )
+    normalized = {
+        "record_id": "video-1",
+        "agency_id": "agency",
+        "source_platform": "youtube",
+        "source_kind": "social_profile",
+        "source_url": "https://www.youtube.com/watch?v=1",
+        "extraction_method": "generic_registered_youtube_channel_rss",
+        "cross_source_ids": {"source_id": "youtube-current"},
+    }
+
+    decision = evaluate_source_eligibility(account, normalized)
+    assert decision.eligible is True
+    assert decision.source_id == "youtube-current"
+    assert decision.source_kind == "feed_item"
+
+    private = evaluate_source_eligibility(
+        account,
+        {**normalized, "visibility": "private"},
+    )
+    assert private.eligible is False
+    assert private.reason == "visibility_not_public"
+
+    unknown = evaluate_source_eligibility(
+        account,
+        {**normalized, "extraction_method": "unknown_capture"},
+    )
+    assert unknown.eligible is False
+    assert unknown.reason == "source_kind_not_mirrorable"
+
+    mismatched = evaluate_source_eligibility(
+        registry_row(
+            source_ids=["youtube-current"],
+            source_platforms=["x"],
+            source_urls=["https://x.com/agency"],
+        ),
+        {**normalized, "source_platform": "x", "source_url": "https://x.com/agency"},
+    )
+    assert mismatched.eligible is False
+    assert mismatched.reason == "source_kind_not_mirrorable"
+
+
+def test_pilot_candidate_report_ranks_positive_unique_backlogs(tmp_path: Path) -> None:
+    shard = tmp_path / "youtube" / "2026-07.jsonl"
+    shard.parent.mkdir(parents=True)
+    rows = [
+        {
+            "record_id": "small-1",
+            "agency_id": "small",
+            "source_platform": "youtube",
+            "source_kind": "social_profile",
+            "source_url": "https://www.youtube.com/watch?v=1",
+            "original_created_at": "2026-07-01T00:00:00Z",
+            "content": "Small backlog",
+            "extraction_method": "generic_registered_youtube_channel_rss",
+            "cross_source_ids": {"source_id": "small-youtube"},
+        },
+        {
+            "record_id": "large-1",
+            "agency_id": "large",
+            "source_platform": "youtube",
+            "source_kind": "social_profile",
+            "source_url": "https://www.youtube.com/watch?v=2",
+            "original_created_at": "2026-07-01T00:00:00Z",
+            "content": "Large one",
+            "extraction_method": "generic_registered_youtube_channel_rss",
+            "cross_source_ids": {"source_id": "large-youtube"},
+        },
+        {
+            "record_id": "large-2",
+            "agency_id": "large",
+            "source_platform": "youtube",
+            "source_kind": "social_profile",
+            "source_url": "https://www.youtube.com/watch?v=3",
+            "original_created_at": "2026-07-02T00:00:00Z",
+            "content": "Large two",
+            "extraction_method": "generic_registered_youtube_channel_rss",
+            "cross_source_ids": {"source_id": "large-youtube"},
+        },
+    ]
+    shard.write_text(
+        "\n".join(json.dumps(row) for row in rows) + "\n",
+        encoding="utf-8",
+    )
+    mirrors = registry(
+        registry_row(
+            mirror_id="large",
+            agency_id="large",
+            agency_name="Large",
+            lifecycle_state="candidate",
+            enabled=False,
+            source_ids=["large-youtube"],
+            source_platforms=["youtube"],
+            source_urls=["https://www.youtube.com/@large"],
+        ),
+        registry_row(
+            mirror_id="small",
+            agency_id="small",
+            agency_name="Small",
+            lifecycle_state="candidate",
+            enabled=False,
+            source_ids=["small-youtube"],
+            source_platforms=["youtube"],
+            source_urls=["https://www.youtube.com/@small"],
+        ),
+    )
+
+    report = pilot_candidate_report(mirrors, tmp_path)
+
+    assert [row["mirror_id"] for row in report["candidates"]] == ["small", "large"]
+    assert [row["eligible_backlog"] for row in report["candidates"]] == [1, 2]
+    assert report["eligible_candidate_count"] == 2
+    assert report["selection_policy"] == "eligible_backlog_ascending_then_mirror_id"
 
 
 def test_eligibility_report_records_bounded_rejection_reasons(tmp_path: Path) -> None:
