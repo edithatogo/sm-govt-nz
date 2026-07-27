@@ -25,6 +25,12 @@ from src.bluesky_mirror_programme import (
 )
 
 
+def write_json_report(path: str | Path, result: dict[str, object]) -> None:
+    output = Path(path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
 def github_matrix_outputs(result: dict[str, object]) -> dict[str, object]:
     has_targets = bool(result.get("include"))
     safe_matrix = result
@@ -98,10 +104,7 @@ def main() -> None:
             handle=os.environ.get("BLUESKY_HANDLE", ""),
             app_password=os.environ.get("BLUESKY_APP_PASSWORD", ""),
         )
-        Path(args.output).write_text(
-            json.dumps(result, indent=2, sort_keys=True) + "\n",
-            encoding="utf-8",
-        )
+        write_json_report(args.output, result)
     elif args.command == "matrix":
         state = load_runtime_state()
         result = workflow_matrix(
@@ -136,7 +139,7 @@ def main() -> None:
         )
     elif args.command == "health":
         result = health_report(load_registry(), runtime_state=load_runtime_state())
-        Path(args.output).write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        write_json_report(args.output, result)
     elif args.command == "pause":
         result = pause(STATE_PATH, args.mirror_id, args.reason)
     else:
