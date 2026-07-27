@@ -15,6 +15,10 @@ def test_discovery_refreshes_deterministic_pilot_candidates() -> None:
     assert "--path conductor/bluesky_mirror_pilot_candidates.json" in workflow
     assert "build_bluesky_mirror_readiness.py inventory" in workflow
     assert "--path conductor/bluesky_mirror_candidate_readiness.json" in workflow
+    assert "--plan-output conductor/bluesky_onboarding_issue_plan.json" in workflow
+    assert "--path conductor/bluesky_onboarding_issue_plan.json" in workflow
+    assert "sync_bluesky_onboarding_issues.py" in workflow
+    assert "--apply" not in workflow
 
 
 def test_posting_workflows_use_account_environments_and_kill_switch() -> None:

@@ -13,6 +13,34 @@ def load_json(path: str) -> dict:
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
+def handle_readiness() -> dict:
+    return {
+        "probes": [
+            {
+                "handle": "electoral-commission-nz-arc.bsky.social",
+                "state": "unregistered",
+            },
+            {
+                "handle": "electoral-commission-nz-arc-2.bsky.social",
+                "state": "unregistered",
+            },
+        ]
+    }
+
+
+def environment_readiness() -> dict:
+    return {
+        "name": "bluesky-mirror-electoral-commission",
+        "exists": True,
+        "secrets_configured": False,
+        "deployment_branch_policy": {
+            "protected_branches": False,
+            "custom_branch_policies": True,
+        },
+        "allowed_branches": ["master"],
+    }
+
+
 def test_full_inventory_is_untruncated_and_reconciles_every_candidate() -> None:
     inventory = build_candidate_readiness_inventory(
         load_registry(), "historical_archive_normalized", generated_at="fixed"
@@ -42,8 +70,8 @@ def test_electoral_packet_is_source_exact_secret_free_and_operator_gated() -> No
         registry,
         inventory,
         load_json("config/bluesky_mirror_abbreviations.json"),
-        load_json("conductor/bluesky_handle_readiness/electoral-commission.json"),
-        load_json("conductor/bluesky_environment_readiness/electoral-commission.json"),
+        handle_readiness(),
+        environment_readiness(),
         "electoral-commission",
         generated_at="fixed",
     )
@@ -62,15 +90,13 @@ def test_electoral_packet_is_source_exact_secret_free_and_operator_gated() -> No
 
 def test_packet_fails_closed_when_environment_evidence_is_missing() -> None:
     inventory = load_json("conductor/bluesky_mirror_candidate_readiness.json")
-    environment = copy.deepcopy(
-        load_json("conductor/bluesky_environment_readiness/electoral-commission.json")
-    )
+    environment = copy.deepcopy(environment_readiness())
     environment["exists"] = False
     packet = build_account_packet(
         load_registry(),
         inventory,
         load_json("config/bluesky_mirror_abbreviations.json"),
-        load_json("conductor/bluesky_handle_readiness/electoral-commission.json"),
+        handle_readiness(),
         environment,
         "electoral-commission",
         generated_at="fixed",
