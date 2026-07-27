@@ -9,6 +9,7 @@
 - [x] Task: Implement `bluesky_mirror_reconciliation_idempotency_20260724`.
 - [x] Task: Implement `bluesky_mirror_workflow_isolation_20260724`.
 - [x] Task: Implement `bluesky_mirror_state_concurrency_20260724`.
+- [ ] Task: Complete `bluesky_mirror_empty_matrix_noop_20260727`; hosted no-op proof remains pending.
 - [x] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
 ## Phase 3: Operations and security
@@ -30,7 +31,7 @@
 - Completed and archived: source eligibility, content contracts,
   reconciliation/idempotency, state concurrency, recovery automation, cleanup
   verification, and handle lifecycle.
-- No local implementation gaps remain.
+- Local empty-matrix no-op fix is implemented; hosted proof remains pending.
 - External action: rotate ACC primary credentials and replace the isolated
   GitHub Environment app password.
 - Hosted dry-runs, issue updates, and pushes remain separate approval gates.

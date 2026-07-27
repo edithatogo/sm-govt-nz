@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-27",
   "parent_track": "bluesky_mirror_reliability_hardening_20260724",
   "github_issue": 36,
   "completed_children": [
@@ -13,7 +13,12 @@
     "bluesky_mirror_state_concurrency_20260724",
     "bluesky_mirror_workflow_isolation_20260724"
   ],
-  "pending_children": [],
+  "pending_children": [
+    {
+      "track_id": "bluesky_mirror_empty_matrix_noop_20260727",
+      "blocker": "hosted_noop_proof_pending"
+    }
+  ],
   "external_action_children": [
     {
       "track_id": "bluesky_mirror_credential_hygiene_20260724",
