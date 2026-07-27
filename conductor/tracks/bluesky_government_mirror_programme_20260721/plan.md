@@ -15,3 +15,13 @@
 - Credential hygiene local controls are complete; operator rotation and remote
   Environment replacement remain externally gated.
 - No hosted dry-run or live posting is inferred from local completion.
+
+## Current rollout evidence (2026-07-27)
+
+- Courts is repaired, live, healthy, and backfill-complete.
+- ACC is live, healthy, and backfill-complete; three exact-approval cleanup
+  candidates and post-remediation observation remain.
+- Deterministic fail-closed backlog ranking selects Electoral Commission
+  (`#85`) as the next pilot with one eligible unique record.
+- The remaining lifecycle gates are not advanced until account registration,
+  isolated credentials, compliant profile preflight, and public readback exist.

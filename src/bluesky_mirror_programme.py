@@ -40,6 +40,12 @@ SOCIAL_PLATFORMS = {
 MIRRORABLE_SOURCE_KINDS = frozenset(
     {"post", "social_post", "social_feed", "status", "feed_item"}
 )
+PUBLIC_NORMALIZED_EXTRACTION_CONTRACTS = {
+    "generic_registered_bluesky_public_api": ("social_post", "bluesky"),
+    "generic_registered_youtube_channel_rss": ("feed_item", "youtube"),
+    "generic_registered_youtube_video_oembed": ("feed_item", "youtube"),
+    "x_nitter_feed": ("feed_item", "x"),
+}
 TERMINAL_SOURCE_STATES = {"deleted", "private", "withdrawn", "unverifiable"}
 SECRET_FIELD_PATTERN = re.compile(r"password|secret|token|cookie|verification", re.I)
 JURISDICTIONAL_HANDLE_PATTERN = re.compile(
@@ -468,21 +474,42 @@ def canonicalize_source_url(value: str) -> str:
     return urlunsplit(("https", host, path, "", ""))
 
 
+def normalized_archive_source_contract(
+    raw: Mapping[str, Any],
+) -> tuple[str, str, str]:
+    """Resolve explicit normalized provenance without weakening unknown records."""
+    cross_source_ids = raw.get("cross_source_ids")
+    nested_source_id = (
+        str(cross_source_ids.get("source_id") or "")
+        if isinstance(cross_source_ids, Mapping)
+        else ""
+    )
+    source_id = str(raw.get("source_id") or nested_source_id)
+    source_kind = normalize_source_kind(str(raw.get("source_kind") or ""))
+    visibility = str(raw.get("visibility") or "").casefold()
+    public_contract = PUBLIC_NORMALIZED_EXTRACTION_CONTRACTS.get(
+        str(raw.get("extraction_method") or "")
+    )
+    platform = normalize_source_platform(str(raw.get("source_platform") or ""))
+    if public_contract and platform == public_contract[1]:
+        if source_kind not in MIRRORABLE_SOURCE_KINDS:
+            source_kind = public_contract[0]
+        if not visibility:
+            visibility = "public"
+    return source_id, source_kind, visibility
+
+
 def evaluate_source_eligibility(
     account: Mapping[str, Any], raw: Mapping[str, Any]
 ) -> SourceEligibilityResult:
     """Evaluate one archive record against an explicit mirror allowlist."""
-    source_id = str(raw.get("source_id") or "")
+    source_id, source_kind, visibility = normalized_archive_source_contract(raw)
     agency_id = slugify(str(raw.get("agency_id") or ""))
     platform = normalize_source_platform(str(raw.get("source_platform") or ""))
-    source_kind = normalize_source_kind(
-        str(
-            raw.get("source_kind")
-            or raw.get("record_type")
-            or raw.get("content_type")
-            or ""
+    if not source_kind:
+        source_kind = normalize_source_kind(
+            str(raw.get("record_type") or raw.get("content_type") or "")
         )
-    )
     source_url = str(
         raw.get("source_url") or raw.get("canonical_url") or raw.get("url") or ""
     )
@@ -502,7 +529,6 @@ def evaluate_source_eligibility(
         canonicalize_source_url(str(value))
         for value in (account.get("excluded_source_urls") or [])
     }
-    visibility = str(raw.get("visibility") or "").casefold()
     status = str(raw.get("status") or raw.get("archive_status") or "").casefold()
     reason = "accepted"
     if not source_id:
@@ -579,6 +605,80 @@ def write_eligibility_report(
     }
     _write_json(Path(path), report)
     return report
+
+
+def pilot_candidate_report(
+    registry: Mapping[str, Any],
+    archive_root: str | Path = "historical_archive_normalized",
+    *,
+    limit: int = 10,
+) -> dict[str, Any]:
+    """Rank evidence-backed candidates by eligible unique backlog, then mirror ID."""
+    candidates = {
+        str(row["agency_id"]): row
+        for row in registry["mirrors"]
+        if row.get("lifecycle_state") == "candidate" and not row.get("enabled")
+    }
+    fingerprints: dict[str, set[str]] = {
+        agency_id: set() for agency_id in candidates
+    }
+    scanned: dict[str, int] = {agency_id: 0 for agency_id in candidates}
+    root = Path(archive_root)
+    if root.exists():
+        for shard in sorted(root.rglob("*.jsonl")):
+            for line in shard.read_text(encoding="utf-8").splitlines():
+                if not line.strip():
+                    continue
+                raw = json.loads(line)
+                agency_id = slugify(str(raw.get("agency_id") or ""))
+                account = candidates.get(agency_id)
+                if account is None:
+                    continue
+                scanned[agency_id] += 1
+                decision = evaluate_source_eligibility(account, raw)
+                if not decision.eligible:
+                    continue
+                content = str(
+                    raw.get("content") or raw.get("text") or raw.get("title") or ""
+                ).strip()
+                record_id = str(raw.get("record_id") or raw.get("post_id") or "")
+                if not record_id or not content:
+                    continue
+                created_at = str(
+                    raw.get("original_created_at") or raw.get("created_at") or ""
+                )
+                fingerprints[agency_id].add(
+                    hashlib.sha256(
+                        f"{agency_id}\0{created_at[:10]}\0{content.casefold()}".encode()
+                    ).hexdigest()
+                )
+    ranked = sorted(
+        (
+            {
+                "mirror_id": agency_id,
+                "agency_name": str(account["agency_name"]),
+                "eligible_backlog": len(fingerprints[agency_id]),
+                "scanned_records": scanned[agency_id],
+                "issue_number": account.get("issue_number"),
+                "environment": str(account["environment"]),
+                "handle_candidates": list(account.get("handle_candidates") or []),
+            }
+            for agency_id, account in candidates.items()
+            if fingerprints[agency_id]
+        ),
+        key=lambda row: (row["eligible_backlog"], row["mirror_id"]),
+    )
+    bounded_limit = max(0, limit)
+    return {
+        "schema_version": 1,
+        "generated_at": _now(),
+        "candidate_count": len(candidates),
+        "eligible_candidate_count": len(ranked),
+        "zero_eligible_candidate_count": len(candidates) - len(ranked),
+        "selection_policy": "eligible_backlog_ascending_then_mirror_id",
+        "candidates": ranked[:bounded_limit],
+        "truncated": max(0, len(ranked) - bounded_limit),
+    }
 
 
 def render_record(record: MirrorRecord, *, historical: bool, limit: int = 300) -> str:

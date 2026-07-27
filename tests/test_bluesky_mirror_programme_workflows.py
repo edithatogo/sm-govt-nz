@@ -7,6 +7,15 @@ from scripts.manage_bluesky_mirror_programme import (
 )
 
 
+def test_discovery_refreshes_deterministic_pilot_candidates() -> None:
+    workflow = Path(".github/workflows/bluesky_mirror_discovery.yml").read_text(
+        encoding="utf-8"
+    )
+
+    assert "pilot-candidates" in workflow
+    assert "--path conductor/bluesky_mirror_pilot_candidates.json" in workflow
+
+
 def test_posting_workflows_use_account_environments_and_kill_switch() -> None:
     for name in ("bluesky_mirror_ongoing.yml", "bluesky_mirror_historical_backfill.yml"):
         text = (Path(".github/workflows") / name).read_text(encoding="utf-8")

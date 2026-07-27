@@ -15,6 +15,7 @@ from src.bluesky_mirror_programme import (
     load_runtime_state,
     load_registry,
     pause,
+    pilot_candidate_report,
     preflight_account,
     publish_next,
     recover_account,
@@ -72,6 +73,10 @@ def main() -> None:
     publish.add_argument("--dry-run", action="store_true")
     health = sub.add_parser("health")
     health.add_argument("--output", default="conductor/bluesky_mirror_health_report.json")
+    pilots = sub.add_parser("pilot-candidates")
+    pilots.add_argument("--limit", type=int, default=10)
+    pilots.add_argument("--archive-root", default="historical_archive_normalized")
+    pilots.add_argument("--output", default="conductor/bluesky_mirror_pilot_candidates.json")
     stop = sub.add_parser("pause")
     stop.add_argument("--mirror-id", required=True)
     stop.add_argument("--reason", required=True)
@@ -139,6 +144,13 @@ def main() -> None:
         )
     elif args.command == "health":
         result = health_report(load_registry(), runtime_state=load_runtime_state())
+        write_json_report(args.output, result)
+    elif args.command == "pilot-candidates":
+        result = pilot_candidate_report(
+            load_registry(),
+            args.archive_root,
+            limit=args.limit,
+        )
         write_json_report(args.output, result)
     elif args.command == "pause":
         result = pause(STATE_PATH, args.mirror_id, args.reason)
