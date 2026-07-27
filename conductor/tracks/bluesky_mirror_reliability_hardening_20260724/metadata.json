@@ -17,8 +17,10 @@
       "bluesky_mirror_credential_hygiene_20260724"
     ],
     "external_actions": [
-      "Approve and delete the three still-visible ACC cleanup URIs, then regenerate a valid reconciliation report.",
       "Rotate and replace the ACC credentials through operator-controlled entry, revoke the superseded app password, and rerun non-posting preflight."
+    ],
+    "pending_actions": [
+      "Complete the seven-day post-remediation observation window through 2026-08-03."
     ]
   },
   "child_tracks": [
@@ -36,7 +38,8 @@
   ],
   "hosted_preflight_run": 30238209314,
   "hosted_preflight_conclusion": "success",
-  "hosted_cleanup_run": 30239062374,
+  "hosted_cleanup_run": 30252454725,
+  "hosted_cleanup_apply_run": 30251127441,
   "credential_rotation_verified": false,
-  "cleanup_findings_valid": false
+  "cleanup_findings_valid": true
 }
