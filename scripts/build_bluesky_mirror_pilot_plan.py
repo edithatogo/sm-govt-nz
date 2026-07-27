@@ -21,9 +21,7 @@ def _values(value: object) -> set[str]:
 def _record_identity(record: Mapping[str, Any]) -> tuple[set[str], set[str]]:
     cross = record.get("cross_source_ids")
     cross = cross if isinstance(cross, Mapping) else {}
-    source_ids = _values(cross.get("source_id")) | _values(
-        cross.get("duplicate_source_ids")
-    )
+    source_ids = _values(cross.get("source_id")) | _values(cross.get("duplicate_source_ids"))
     urls = {
         str(record.get(key) or "").rstrip("/")
         for key in ("source_url", "canonical_url")
@@ -36,9 +34,7 @@ def iter_normalized_records(root: Path) -> Iterable[Mapping[str, Any]]:
     if not root.exists():
         return
     for path in sorted(root.rglob("*.jsonl")):
-        for line_number, line in enumerate(
-            path.read_text(encoding="utf-8").splitlines(), start=1
-        ):
+        for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
             if not line.strip():
                 continue
             try:
@@ -117,20 +113,22 @@ def build_pilot_plan(
     )
     selected = eligible[: max(0, pilot_count)]
     selected_ids = {row["mirror_id"] for row in selected}
-    for row in candidates:
+    for row in eligible:
         row["selected"] = row["mirror_id"] in selected_ids
+    blocker_counts = Counter(blocker for row in candidates for blocker in row.get("blockers", []))
     return {
         "schema_version": 1,
         "generated_at": generated_at or datetime.now(UTC).isoformat(),
         "selection_policy": "smallest_archive_record_count_then_agency_id",
         "pilot_count": pilot_count,
         "selected": selected,
+        "eligible_candidates": eligible,
+        "blocker_counts": dict(sorted(blocker_counts.items())),
         "summary": {
             "candidate_count": len(candidates),
             "eligible_count": len(eligible),
             "selected_count": len(selected),
         },
-        "candidates": sorted(candidates, key=lambda row: row["agency_id"]),
     }
 
 
@@ -144,7 +142,7 @@ def render_markdown(plan: Mapping[str, Any]) -> str:
         "| Selected | Agency | Mirror ID | Records | Issue | Blockers |",
         "|---|---|---|---:|---:|---|",
     ]
-    for row in plan.get("candidates", []):
+    for row in plan.get("eligible_candidates", []):
         lines.append(
             "| {selected} | {agency} | `{mirror}` | {records} | {issue} | {blockers} |".format(
                 selected="yes" if row.get("selected") else "",

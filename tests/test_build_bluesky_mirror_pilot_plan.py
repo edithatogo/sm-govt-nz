@@ -65,11 +65,12 @@ def test_fails_closed_without_issue_sources_or_archived_records() -> None:
     plan = build_pilot_plan(registry, [record("one", "one")], generated_at="fixed")
 
     assert plan["selected"] == []
-    blockers = {row["mirror_id"]: row["blockers"] for row in plan["candidates"]}
-    assert blockers["no-issue"] == ["onboarding_issue_missing"]
-    assert blockers["no-source"] == ["registered_sources_missing", "archived_records_missing"]
-    assert blockers["no-records"] == ["archived_records_missing"]
-    assert "index" not in blockers
+    assert plan["eligible_candidates"] == []
+    assert plan["blocker_counts"] == {
+        "archived_records_missing": 2,
+        "onboarding_issue_missing": 1,
+        "registered_sources_missing": 1,
+    }
 
 
 def test_matches_normalized_source_urls_and_renders_operator_summary() -> None:

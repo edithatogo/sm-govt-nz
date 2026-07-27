@@ -46,3 +46,24 @@ def test_missing_evidence_remains_pending_and_rotation_can_complete() -> None:
         "external_action_required": 0,
         "pending": 4,
     }
+
+
+def test_applied_recovery_requires_explicit_resumed_terminal_evidence() -> None:
+    common = ({}, {}, {"rotation_verified": True})
+    completed = build_hosted_plan(
+        common[0],
+        common[1],
+        {"apply_requested": True, "resumed": True, "status": "resumed"},
+        common[2],
+        generated_at="fixed",
+    )
+    ambiguous = build_hosted_plan(
+        common[0],
+        common[1],
+        {"apply_requested": True, "resumed": False, "status": "resumed"},
+        common[2],
+        generated_at="fixed",
+    )
+
+    assert completed["stages"][1]["status"] == "completed"
+    assert ambiguous["stages"][1]["status"] == "pending"

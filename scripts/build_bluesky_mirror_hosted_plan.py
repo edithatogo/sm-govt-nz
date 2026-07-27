@@ -27,6 +27,18 @@ def build_hosted_plan(
     preflight = reliability.get("hosted_preflight") or {}
     cleanup = reliability.get("hosted_cleanup") or {}
     rotation_verified = bool(credential.get("rotation_verified"))
+    recovery_status = recovery.get("status")
+    recovery_complete = bool(
+        recovery_status
+        and (
+            recovery.get("apply_requested") is False
+            or (
+                recovery.get("apply_requested") is True
+                and recovery.get("resumed") is True
+                and recovery_status in {"completed", "recovered", "resumed"}
+            )
+        )
+    )
     stages = [
         {
             "action": "historical_backfill_empty_matrix_proof",
@@ -37,9 +49,7 @@ def build_hosted_plan(
         {
             "action": "recovery_diagnostic",
             "mirror_id": recovery.get("mirror_id", "courts-of-nz"),
-            "status": "completed"
-            if recovery.get("apply_requested") is False and recovery.get("status")
-            else "pending",
+            "status": "completed" if recovery_complete else "pending",
             "apply_requested": recovery.get("apply_requested"),
             "resumed": recovery.get("resumed"),
             "posting_performed": False,
