@@ -13,3 +13,7 @@
 - Production registry validation: 225 mirror rows accepted.
 - ACC contract: `public_name=ACC`; handle `acc-nz-arc.bsky.social`.
 - Repository-wide pytest collection remains affected by the existing Python 3.14 capture teardown error.
+
+## Phase: Review Fixes
+
+- [x] Task: Apply review suggestions `e0784a18`
