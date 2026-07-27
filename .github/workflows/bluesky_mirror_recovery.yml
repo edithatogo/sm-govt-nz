@@ -37,9 +37,12 @@ jobs:
             echo "## Selected mirror"
             printf '%s\n' "$SELECTED_MIRROR"
           } >> "$GITHUB_STEP_SUMMARY"
-      - run: |
-          args=(python scripts/manage_bluesky_mirror_programme.py recover --mirror-id '${{ inputs.mirror_id }}')
-          if [ "${{ inputs.apply }}" = "true" ]; then
+      - env:
+          APPLY_CHANGES: ${{ inputs.apply }}
+          MIRROR_ID: ${{ inputs.mirror_id }}
+        run: |
+          args=(python scripts/manage_bluesky_mirror_programme.py recover --mirror-id "$MIRROR_ID")
+          if [ "$APPLY_CHANGES" = "true" ]; then
             args+=(--apply)
           fi
           "${args[@]}"

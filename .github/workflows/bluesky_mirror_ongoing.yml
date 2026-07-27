@@ -33,7 +33,9 @@ jobs:
         with:
           requirements: requirements.txt
       - id: matrix
-        run: python scripts/manage_bluesky_mirror_programme.py matrix --mode ongoing --mirror-id '${{ inputs.mirror_id }}' --github-output
+        env:
+          MIRROR_ID: ${{ inputs.mirror_id }}
+        run: python scripts/manage_bluesky_mirror_programme.py matrix --mode ongoing --mirror-id "$MIRROR_ID" --github-output
       - env:
           SELECTED_MATRIX: ${{ steps.matrix.outputs.matrix }}
         run: |
@@ -67,9 +69,11 @@ jobs:
           BLUESKY_MIRRORING_ENABLED: ${{ inputs.dry_run == true && 'false' || vars.BLUESKY_MIRRORING_ENABLED }}
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          MIRROR_ID: ${{ matrix.mirror_id }}
         run: |
-          args=(python scripts/manage_bluesky_mirror_programme.py publish --mode ongoing --mirror-id '${{ matrix.mirror_id }}')
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
+          args=(python scripts/manage_bluesky_mirror_programme.py publish --mode ongoing --mirror-id "$MIRROR_ID")
+          if [ "$DRY_RUN" = "true" ]; then
             args+=(--dry-run)
           fi
           "${args[@]}"

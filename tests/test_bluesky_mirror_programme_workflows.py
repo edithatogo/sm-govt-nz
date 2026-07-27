@@ -81,10 +81,8 @@ def test_manual_matrix_workflows_are_mirror_scoped_and_summarized() -> None:
         text = (Path(".github/workflows") / name).read_text(encoding="utf-8")
         assert "mirror_id:" in text
         assert "required: true" in text
-        assert (
-            f"matrix --mode {mode} --mirror-id '${{{{ inputs.mirror_id }}}}'"
-            in text
-        )
+        assert "MIRROR_ID: ${{ inputs.mirror_id }}" in text
+        assert f'matrix --mode {mode} --mirror-id "$MIRROR_ID"' in text
         assert "GITHUB_STEP_SUMMARY" in text
 
 
@@ -104,3 +102,23 @@ def test_recovery_workflow_discloses_selected_mirror() -> None:
     assert "GITHUB_STEP_SUMMARY" in text
     assert "SELECTED_MIRROR: ${{ inputs.mirror_id }}" in text
     assert "printf '%s\\n' \"$SELECTED_MIRROR\"" in text
+
+
+def test_manual_inputs_are_not_interpolated_directly_into_shell_commands() -> None:
+    names = (
+        "bluesky_mirror_emergency_pause.yml",
+        "bluesky_mirror_health.yml",
+        "bluesky_mirror_historical_backfill.yml",
+        "bluesky_mirror_ongoing.yml",
+        "bluesky_mirror_preflight.yml",
+        "bluesky_mirror_recovery.yml",
+    )
+    for name in names:
+        text = (Path(".github/workflows") / name).read_text(encoding="utf-8")
+        forbidden = (
+            "--mirror-id '${{ inputs.",
+            "--reason '${{ inputs.",
+            'if [ "${{ inputs.',
+        )
+        for fragment in forbidden:
+            assert fragment not in text, f"{name}: {fragment}"
