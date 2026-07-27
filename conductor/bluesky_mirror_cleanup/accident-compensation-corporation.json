@@ -1,143 +1,25 @@
 {
+  "approved_deletion_tombstones": [
+    "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mra7pajok22s",
+    "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrabow6nh72j",
+    "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbn6rnwin2s",
+    "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u",
+    "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a"
+  ],
+  "approved_deletions_still_visible": [],
   "checked_audit_rows": 7,
   "cleanup_approval_packet": {
-    "candidates": [
-      {
-        "action": "review_for_deletion",
-        "reasons": [
-          "duplicate",
-          "excluded_source"
-        ],
-        "requires_exact_uri_approval": true,
-        "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mra7pajok22s"
-      },
-      {
-        "action": "review_for_deletion",
-        "reasons": [
-          "excluded_source"
-        ],
-        "requires_exact_uri_approval": true,
-        "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrabow6nh72j"
-      },
-      {
-        "action": "review_for_deletion",
-        "reasons": [
-          "duplicate",
-          "excluded_source"
-        ],
-        "requires_exact_uri_approval": true,
-        "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbn6rnwin2s"
-      },
-      {
-        "action": "review_for_deletion",
-        "reasons": [
-          "excluded_source"
-        ],
-        "requires_exact_uri_approval": true,
-        "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u"
-      },
-      {
-        "action": "review_for_deletion",
-        "reasons": [
-          "duplicate"
-        ],
-        "requires_exact_uri_approval": true,
-        "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a"
-      }
-    ],
+    "candidates": [],
     "destructive_action_performed": false,
     "requires_exact_uri_approval": true
   },
-  "deleted_or_missing": [
-    {
-      "reason": "not_visible_via_public_api",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mra7pajok22s"
-    },
-    {
-      "reason": "not_visible_via_public_api",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrabow6nh72j"
-    },
-    {
-      "reason": "not_visible_via_public_api",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbn6rnwin2s"
-    },
-    {
-      "reason": "not_visible_via_public_api",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u"
-    },
-    {
-      "reason": "not_visible_via_public_api",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a"
-    }
-  ],
-  "duplicates": [
-    {
-      "duplicate_uris": [
-        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a"
-      ],
-      "keeper_uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrc2wcspzf2y",
-      "record_id": "linkedin_public_snapshot:b12a387e325d79c3ab2bc945",
-      "rendered_hash": "1a6119f7847296f7ae97b3c7da08af842ffe1e9c0ee48b5b3473d443835f36a1",
-      "uris": [
-        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a",
-        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrc2wcspzf2y"
-      ]
-    },
-    {
-      "duplicate_uris": [
-        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbn6rnwin2s"
-      ],
-      "keeper_uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u",
-      "record_id": "youtube:440d229a196af17663e35d9f",
-      "rendered_hash": "16fd7130569e376a5582c8c9f6d8b3c3d5289745cbabb5a9bd5f2a68b8ec2f61",
-      "uris": [
-        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbn6rnwin2s",
-        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u"
-      ]
-    },
-    {
-      "duplicate_uris": [
-        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mra7pajok22s"
-      ],
-      "keeper_uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrabow6nh72j",
-      "record_id": "youtube:a29900afed65e5dde019f232",
-      "rendered_hash": "a437339d17ed9ed8836f7e74aba1da3bb5d22012051e987d9bbd2b9b788c938a",
-      "uris": [
-        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mra7pajok22s",
-        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrabow6nh72j"
-      ]
-    }
-  ],
-  "excluded_sources": [
-    {
-      "reason": "source_id_not_allowed",
-      "record_id": "youtube:a29900afed65e5dde019f232",
-      "source_id": "",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mra7pajok22s"
-    },
-    {
-      "reason": "source_id_not_allowed",
-      "record_id": "youtube:a29900afed65e5dde019f232",
-      "source_id": "",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrabow6nh72j"
-    },
-    {
-      "reason": "source_id_not_allowed",
-      "record_id": "youtube:440d229a196af17663e35d9f",
-      "source_id": "",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbn6rnwin2s"
-    },
-    {
-      "reason": "source_id_not_allowed",
-      "record_id": "youtube:440d229a196af17663e35d9f",
-      "source_id": "",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u"
-    }
-  ],
+  "deleted_or_missing": [],
+  "duplicates": [],
+  "excluded_sources": [],
   "mirror_id": "accident-compensation-corporation",
   "missing_audit": [],
   "pre_activation_posts_ignored": [],
   "schema_version": 1,
-  "valid": false,
+  "valid": true,
   "visible_known_posts": 2
 }
