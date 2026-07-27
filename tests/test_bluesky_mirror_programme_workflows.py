@@ -102,4 +102,5 @@ def test_recovery_workflow_discloses_selected_mirror() -> None:
         encoding="utf-8"
     )
     assert "GITHUB_STEP_SUMMARY" in text
-    assert "`${{ inputs.mirror_id }}`" in text
+    assert "SELECTED_MIRROR: ${{ inputs.mirror_id }}" in text
+    assert "printf '`%s`\\n' \"$SELECTED_MIRROR\"" in text
