@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any, Mapping
 
 DEFAULT_STATE = Path("conductor/bluesky_onboarding_heuristic_state.json")
+DEFAULT_PILOT_REPORT = Path("conductor/bluesky_mirror_pilot_candidates.json")
 OUTCOMES = {
     "account_created",
     "challenge_operator_required",
@@ -59,6 +60,18 @@ def load_state(path: str | Path = DEFAULT_STATE) -> dict[str, Any]:
     if state.get("schema_version") != 1 or not isinstance(state.get("events"), list):
         raise ValueError("Invalid onboarding heuristic state")
     return state
+
+
+def load_pilot_report(path: str | Path = DEFAULT_PILOT_REPORT) -> dict[str, Any]:
+    target = Path(path)
+    if not target.exists():
+        return {"schema_version": 1, "candidates": []}
+    report = json.loads(target.read_text(encoding="utf-8"))
+    if report.get("schema_version") != 1 or not isinstance(
+        report.get("candidates"), list
+    ):
+        raise ValueError("Invalid Bluesky pilot candidate report")
+    return report
 
 
 def save_state(state: Mapping[str, Any], path: str | Path = DEFAULT_STATE) -> None:
@@ -117,14 +130,43 @@ def choose_plan(state: Mapping[str, Any]) -> Plan:
     return Plan(name, steps[name])
 
 
-def rank_candidates(registry: Mapping[str, Any], state: Mapping[str, Any]) -> list[dict[str, Any]]:
+def rank_candidates(
+    registry: Mapping[str, Any],
+    state: Mapping[str, Any],
+    pilot_report: Mapping[str, Any] | None = None,
+) -> list[dict[str, Any]]:
     events = state.get("events", [])
     failures: dict[str, int] = {}
     for event in events:
-        if event.get("outcome", "").endswith("failed") or event.get("outcome") == "blocked_external":
-            failures[event.get("mirror_id", "")] = failures.get(event.get("mirror_id", ""), 0) + 1
-    rows = [row for row in registry.get("mirrors", []) if row.get("lifecycle_state") in {"candidate", "operator_onboarding"}]
-    return sorted(rows, key=lambda row: (failures.get(str(row.get("mirror_id")), 0), str(row.get("mirror_id"))))
+        if (
+            event.get("outcome", "").endswith("failed")
+            or event.get("outcome") == "blocked_external"
+        ):
+            mirror_id = str(event.get("mirror_id") or "")
+            failures[mirror_id] = failures.get(mirror_id, 0) + 1
+    ranked_backlogs = {
+        str(row.get("mirror_id")): int(row.get("eligible_backlog", 0))
+        for row in (pilot_report or {}).get("candidates", [])
+        if (
+            isinstance(row, Mapping)
+            and int(row.get("eligible_backlog", 0)) > 0
+            and isinstance(row.get("issue_number"), int)
+        )
+    }
+    rows = [
+        row
+        for row in registry.get("mirrors", [])
+        if row.get("lifecycle_state") in {"candidate", "operator_onboarding"}
+    ]
+    return sorted(
+        rows,
+        key=lambda row: (
+            failures.get(str(row.get("mirror_id")), 0),
+            0 if str(row.get("mirror_id")) in ranked_backlogs else 1,
+            ranked_backlogs.get(str(row.get("mirror_id")), 0),
+            str(row.get("mirror_id")),
+        ),
+    )
 
 
 def record_event(state: dict[str, Any], mirror_id: str, outcome: str, plan: str) -> dict[str, Any]:
