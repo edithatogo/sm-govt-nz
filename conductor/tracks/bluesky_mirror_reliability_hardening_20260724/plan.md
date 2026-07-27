@@ -17,6 +17,8 @@
 - [ ] Task: Complete `bluesky_mirror_credential_hygiene_20260724`;
   local controls are verified, operator rotation remains external.
 - [x] Task: Implement `bluesky_mirror_cleanup_verification_20260724`.
+- [ ] Task: Complete `bluesky_mirror_cleanup_report_findings_20260727`;
+  local fix is validated and hosted proof remains pending.
 - [x] Task: Implement and archive `bluesky_mirror_handle_lifecycle_20260724`, GitHub #37.
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
@@ -32,6 +34,10 @@
   reconciliation/idempotency, state concurrency, recovery automation, cleanup,
   handle lifecycle, and empty-matrix no-op.
 - Hosted run 30236905723 proved the empty-matrix successful no-op behavior.
-- External action: rotate ACC primary credentials and replace the isolated
-  GitHub Environment app password.
-- Hosted dry-runs, issue updates, and pushes remain separate approval gates.
+- Cleanup run 30237376115 found genuine reconciliation discrepancies but failed
+  before committing its non-destructive reports; the report-only fix is local.
+- Hosted preflight run 30238209314 validated the configured ACC app password,
+  expected handle, DID, and dry-run publication without posting.
+- GitHub still dates `BLUESKY_APP_PASSWORD` to 2026-07-22; replacement and
+  revocation evidence remains external.
+- Issue updates, pushes, and any live posting remain separate approval gates.

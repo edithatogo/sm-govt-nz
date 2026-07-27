@@ -2,6 +2,7 @@ import json
 
 from scripts.verify_archive_mirror_posts import (
     reconcile_programme_audit,
+    result_exit_code,
     verify_archive_mirror_posts,
 )
 
@@ -194,6 +195,22 @@ def test_cleanup_report_classifies_missing_audit_and_deleted_posts(tmp_path) -> 
 
     assert result["deleted_or_missing"][0]["uri"].endswith("/deleted")
     assert result["missing_audit"][0]["uri"].endswith("/untracked")
+
+
+def test_reconciliation_findings_remain_strict_unless_report_only() -> None:
+    result = {"valid": False}
+
+    assert result_exit_code(result) == 1
+    assert result_exit_code(
+        result, report_only=True, reconciliation=True
+    ) == 0
+    try:
+        result_exit_code(result, report_only=True)
+    except ValueError as exc:
+        assert str(exc) == "report-only mode requires programme reconciliation"
+    else:
+        raise AssertionError("report-only mode must fail closed outside reconciliation")
+    assert result_exit_code({"valid": True}) == 0
 
 
 class FakeProgrammeClient(FakePostClient):

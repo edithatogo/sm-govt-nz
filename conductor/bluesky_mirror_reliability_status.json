@@ -6,6 +6,7 @@
   "completed_children": [
     "bluesky_mirror_cleanup_verification_20260724",
     "bluesky_mirror_content_contracts_20260724",
+    "bluesky_mirror_empty_matrix_noop_20260727",
     "bluesky_mirror_handle_lifecycle_20260724",
     "bluesky_mirror_reconciliation_idempotency_20260724",
     "bluesky_mirror_recovery_automation_20260724",
@@ -15,17 +16,25 @@
   ],
   "pending_children": [
     {
-      "track_id": "bluesky_mirror_empty_matrix_noop_20260727",
-      "blocker": "hosted_noop_proof_pending"
+      "track_id": "bluesky_mirror_cleanup_report_findings_20260727",
+      "blocker": "hosted_cleanup_reports_pending"
     }
   ],
   "external_action_children": [
     {
       "track_id": "bluesky_mirror_credential_hygiene_20260724",
-      "blocker": "operator_credential_rotation_and_environment_replacement"
+      "blocker": "environment_app_password_replacement_and_revocation_unverified"
     }
   ],
-  "hosted_actions_approved": false,
+  "hosted_actions_approved": true,
   "hosted_dry_run_plan": "conductor/bluesky_mirror_hosted_dry_run_plan.json",
-  "live_posting_performed": false
+  "live_posting_performed": false,
+  "hosted_preflight": {
+    "run_id": 30238209314,
+    "conclusion": "success",
+    "posted": 0,
+    "credential_mode": "app_password",
+    "observed_secret_updated_at": "2026-07-22T11:18:54Z",
+    "rotation_verification": "unverified"
+  }
 }

@@ -227,6 +227,18 @@ def _load_deliveries(state_path: Path, *, target: str) -> list[dict[str, str]]:
     return deliveries
 
 
+def result_exit_code(
+    result: Mapping[str, Any],
+    *,
+    report_only: bool = False,
+    reconciliation: bool = False,
+) -> int:
+    """Keep strict verification by default while allowing evidence-only reports."""
+    if report_only and not reconciliation:
+        raise ValueError("report-only mode requires programme reconciliation")
+    return 0 if report_only or result["valid"] else 1
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Verify sampled archive mirror posts exist.")
     parser.add_argument("--state-path", default="conductor/archive_mirror_state.json")
@@ -242,6 +254,11 @@ def main() -> None:
         default=[],
     )
     parser.add_argument("--output", default="")
+    parser.add_argument(
+        "--report-only",
+        action="store_true",
+        help="Write and print findings without treating reconciliation findings as an execution fault.",
+    )
     args = parser.parse_args()
 
     if args.reconcile_programme:
@@ -272,7 +289,13 @@ def main() -> None:
         print(json.dumps(result, indent=2, sort_keys=True))
     else:
         print(f"Verified {result['checked']} archive mirror posts for {result['target']}.")
-    raise SystemExit(0 if result["valid"] else 1)
+    raise SystemExit(
+        result_exit_code(
+            result,
+            report_only=args.report_only,
+            reconciliation=args.reconcile_programme,
+        )
+    )
 
 
 if __name__ == "__main__":

@@ -67,6 +67,7 @@ def test_cleanup_verification_workflow_has_no_delete_or_write_credentials() -> N
         ".github/workflows/bluesky_mirror_cleanup_verification.yml"
     ).read_text(encoding="utf-8")
     assert "--reconcile-programme" in text
+    assert "--report-only" in text
     assert "BLUESKY_APP_PASSWORD" not in text
     assert "delete" not in text.casefold()
     assert "conductor/bluesky_mirror_cleanup/${{ matrix.mirror_id }}.json" in text

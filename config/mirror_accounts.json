@@ -5,15 +5,16 @@
     {
       "account_role": "agency_mirror",
       "account_did": "did:plc:vxltrdhni2dfsm4actryhj4n",
-      "activated_at": null,
+      "activated_at": "2026-07-23T01:53:27.403947+00:00",
       "agency_id": "accident-compensation-corporation",
       "agency_name": "Accident Compensation Corporation (Te Kaporeihana \u0100whina Hunga Whara)",
-      "backfill_state": "ready",
+      "backfill_state": "complete",
       "display_name": "ACC NZ Archive Mirror",
       "enabled": true,
       "environment": "bluesky-mirror-accident-compensation-corporation",
       "evidence": [
-        "https://github.com/edithatogo/sm-govt-nz/issues/26"
+        "https://github.com/edithatogo/sm-govt-nz/issues/26",
+        "https://github.com/edithatogo/sm-govt-nz/actions/runs/30238209314"
       ],
       "long_post_mode": "numbered_thread",
       "thread_max_parts": 4,
@@ -26,10 +27,10 @@
         "acc-nz-arc.bsky.social",
         "acc-nz-arc-2.bsky.social"
       ],
-      "health_state": "preflight_passed",
+      "health_state": "healthy",
       "issue_number": 26,
       "jurisdiction": "nz",
-      "lifecycle_state": "backfilling",
+      "lifecycle_state": "live",
       "mirror_id": "accident-compensation-corporation",
       "organisation_abbreviation": "acc",
       "public_name": "ACC",
@@ -45,7 +46,7 @@
     "https://www.linkedin.com/company/acc-new-zealand"
   ],
       "track_id": "bluesky_historical_backfill_rollout_20260721",
-      "url": ""
+      "url": "https://bsky.app/profile/acc-nz-arc.bsky.social"
     },
     {
       "account_role": "agency_mirror",
