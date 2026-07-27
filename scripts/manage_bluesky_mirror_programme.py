@@ -25,6 +25,26 @@ from src.bluesky_mirror_programme import (
 )
 
 
+def github_matrix_outputs(result: dict[str, object]) -> dict[str, object]:
+    has_targets = bool(result.get("include"))
+    safe_matrix = result
+    if not has_targets:
+        safe_matrix = {
+            "include": [
+                {
+                    "skip": True,
+                    "mirror_id": "__no_eligible_mirror__",
+                    "environment": "__no_environment__",
+                }
+            ]
+        }
+    return {
+        "matrix": safe_matrix,
+        "selected_matrix": result,
+        "has_targets": has_targets,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Operate the Bluesky agency mirror programme.")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -94,8 +114,16 @@ def main() -> None:
             output = os.environ.get("GITHUB_OUTPUT")
             if not output:
                 raise RuntimeError("GITHUB_OUTPUT is required with --github-output.")
+            outputs = github_matrix_outputs(result)
             with Path(output).open("a", encoding="utf-8") as stream:
-                stream.write(f"matrix={json.dumps(result, separators=(',', ':'))}\n")
+                stream.write(
+                    f"matrix={json.dumps(outputs['matrix'], separators=(',', ':'))}\n"
+                )
+                stream.write(
+                    "selected_matrix="
+                    f"{json.dumps(outputs['selected_matrix'], separators=(',', ':'))}\n"
+                )
+                stream.write(f"has_targets={str(outputs['has_targets']).lower()}\n")
     elif args.command == "publish":
         result = publish_next(
             load_registry(),

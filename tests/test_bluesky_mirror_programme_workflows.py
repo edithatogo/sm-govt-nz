@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from scripts.manage_bluesky_mirror_programme import github_matrix_outputs
+
 
 def test_posting_workflows_use_account_environments_and_kill_switch() -> None:
     for name in ("bluesky_mirror_ongoing.yml", "bluesky_mirror_historical_backfill.yml"):
@@ -122,3 +124,47 @@ def test_manual_inputs_are_not_interpolated_directly_into_shell_commands() -> No
         )
         for fragment in forbidden:
             assert fragment not in text, f"{name}: {fragment}"
+
+def test_empty_matrix_outputs_are_safe_and_report_the_true_selection() -> None:
+    outputs = github_matrix_outputs({"include": []})
+
+    assert outputs["has_targets"] is False
+    assert outputs["selected_matrix"] == {"include": []}
+    assert outputs["matrix"] == {
+        "include": [
+            {
+                "skip": True,
+                "mirror_id": "__no_eligible_mirror__",
+                "environment": "__no_environment__",
+            }
+        ]
+    }
+
+
+def test_nonempty_matrix_outputs_are_unchanged() -> None:
+    matrix = {
+        "include": [
+            {
+                "mirror_id": "agency",
+                "environment": "bluesky-mirror-agency",
+            }
+        ]
+    }
+    outputs = github_matrix_outputs(matrix)
+
+    assert outputs["has_targets"] is True
+    assert outputs["selected_matrix"] == matrix
+    assert outputs["matrix"] == matrix
+
+
+def test_posting_workflows_treat_empty_matrices_as_successful_noops() -> None:
+    for name in (
+        "bluesky_mirror_ongoing.yml",
+        "bluesky_mirror_historical_backfill.yml",
+    ):
+        text = (Path(".github/workflows") / name).read_text(encoding="utf-8")
+        assert "selected_matrix: ${{ steps.matrix.outputs.selected_matrix }}" in text
+        assert "has_targets: ${{ steps.matrix.outputs.has_targets }}" in text
+        assert "no-eligible-mirrors:" in text
+        assert "needs.plan.outputs.has_targets != 'true'" in text
+        assert "needs.plan.outputs.has_targets == 'true'" in text

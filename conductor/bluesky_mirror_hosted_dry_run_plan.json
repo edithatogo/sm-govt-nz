@@ -26,16 +26,25 @@
       "order": 2,
       "action": "workflow_dispatch",
       "workflow": "bluesky_mirror_historical_backfill.yml",
-      "ref": "codex/bluesky-reliability-hardening",
+      "ref": "master",
       "inputs": {
-        "dry_run": true
+        "dry_run": true,
+        "mirror_id": "courts-of-nz"
       },
-      "status": "awaiting_separate_approval",
+      "status": "failed_safe_empty_matrix",
       "acceptance": [
         "BLUESKY_MIRRORING_ENABLED resolves to false",
         "posted equals 0",
         "eligibility report is generated",
         "no Bluesky create-record request occurs"
+      ],
+      "run_url": "https://github.com/edithatogo/sm-govt-nz/actions/runs/30236002914",
+      "evidence": [
+        "selected matrix was empty",
+        "publish job did not start",
+        "no credentials were read",
+        "no Bluesky write request occurred",
+        "workflow-level no-op handling requires correction and rerun"
       ]
     },
     {
