@@ -39,27 +39,10 @@
       {
         "action": "review_for_deletion",
         "reasons": [
-          "excluded_source"
-        ],
-        "requires_exact_uri_approval": true,
-        "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a"
-      },
-      {
-        "action": "review_for_deletion",
-        "reasons": [
-          "duplicate",
-          "excluded_source"
+          "duplicate"
         ],
         "requires_exact_uri_approval": true,
         "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrc2wcspzf2y"
-      },
-      {
-        "action": "review_for_deletion",
-        "reasons": [
-          "excluded_source"
-        ],
-        "requires_exact_uri_approval": true,
-        "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrccbtkgrr22"
       }
     ],
     "destructive_action_performed": false,
@@ -125,28 +108,13 @@
       "record_id": "youtube:440d229a196af17663e35d9f",
       "source_id": "",
       "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u"
-    },
-    {
-      "reason": "source_id_not_allowed",
-      "record_id": "linkedin_public_snapshot:b12a387e325d79c3ab2bc945",
-      "source_id": "",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a"
-    },
-    {
-      "reason": "source_id_not_allowed",
-      "record_id": "linkedin_public_snapshot:b12a387e325d79c3ab2bc945",
-      "source_id": "",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrc2wcspzf2y"
-    },
-    {
-      "reason": "source_id_not_allowed",
-      "record_id": "linkedin_public_snapshot:a59d208dcc496a7cb2d3eb8f",
-      "source_id": "",
-      "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrccbtkgrr22"
     }
   ],
   "mirror_id": "accident-compensation-corporation",
   "missing_audit": [],
+  "pre_activation_posts_ignored": [
+    "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbn6rnwin2s"
+  ],
   "schema_version": 1,
   "valid": false,
   "visible_known_posts": 5
