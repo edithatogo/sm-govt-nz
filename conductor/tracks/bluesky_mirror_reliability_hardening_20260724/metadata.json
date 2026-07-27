@@ -2,7 +2,7 @@
   "id": "bluesky_mirror_reliability_hardening_20260724",
   "title": "Bluesky Mirror Reliability Hardening",
   "type": "programme",
-  "status": "external_action_required",
+  "status": "observation_in_progress",
   "created_at": "2026-07-24",
   "parent_track": "bluesky_government_mirror_programme_20260721",
   "github_parent_issue": 19,
@@ -11,16 +11,12 @@
   "github_issue_status": "published",
   "last_reconciled_at": "2026-07-27",
   "completion_summary": {
-    "completed_children": 10,
+    "completed_children": 11,
     "pending_children": [],
-    "external_action_children": [
-      "bluesky_mirror_credential_hygiene_20260724"
-    ],
-    "external_actions": [
-      "Rotate and replace the ACC credentials through operator-controlled entry, revoke the superseded app password, and rerun non-posting preflight."
-    ],
+    "external_action_children": [],
+    "external_actions": [],
     "pending_actions": [
-      "Complete the seven-day post-remediation observation window through 2026-08-03."
+      "Collect healthy daily ACC and Courts observations for every UTC date from 2026-07-28 through 2026-08-03."
     ]
   },
   "child_tracks": [
@@ -40,6 +36,8 @@
   "hosted_preflight_conclusion": "success",
   "hosted_cleanup_run": 30252454725,
   "hosted_cleanup_apply_run": 30251127441,
-  "credential_rotation_verified": false,
-  "cleanup_findings_valid": true
+  "credential_rotation_verified": true,
+  "cleanup_findings_valid": true,
+  "observation_start": "2026-07-28",
+  "observation_not_before": "2026-08-03"
 }
