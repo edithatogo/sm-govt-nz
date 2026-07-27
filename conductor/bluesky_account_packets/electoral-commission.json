@@ -1,0 +1,100 @@
+{
+  "environment": {
+    "allowed_branches": [
+      "master"
+    ],
+    "deployment_branch_policy": {
+      "custom_branch_policies": true,
+      "protected_branches": false
+    },
+    "evidence_url": "https://api.github.com/repos/edithatogo/sm-govt-nz/environments/bluesky-mirror-electoral-commission",
+    "exists": true,
+    "name": "bluesky-mirror-electoral-commission",
+    "secrets_configured": false
+  },
+  "gates": {
+    "abbreviation_approved": true,
+    "account_registered": false,
+    "app_password_configured": false,
+    "backfill_approved": false,
+    "candidate_handles_unregistered": true,
+    "eligible_backlog_present": true,
+    "empty_isolated_environment_exists": true,
+    "non_posting_preflight_passed": false,
+    "profile_configured": false
+  },
+  "generated_at": "2026-07-27T09:55:48.205447+00:00",
+  "handle": {
+    "approval_evidence": "Owner-approved issue #85 handle candidates and programme continuation approval",
+    "approved_abbreviation": "electoral-commission",
+    "availability_evidence": [
+      {
+        "did": "",
+        "error": "InvalidRequest",
+        "handle": "electoral-commission-nz-arc.bsky.social",
+        "state": "unregistered"
+      },
+      {
+        "did": "",
+        "error": "InvalidRequest",
+        "handle": "electoral-commission-nz-arc-2.bsky.social",
+        "state": "unregistered"
+      }
+    ],
+    "candidates": [
+      "electoral-commission-nz-arc.bsky.social",
+      "electoral-commission-nz-arc-2.bsky.social"
+    ],
+    "selected": "electoral-commission-nz-arc.bsky.social"
+  },
+  "identity": {
+    "agency_id": "electoral-commission",
+    "agency_name": "Electoral Commission (Te Kaitiaki Take K\u014dwhiri)",
+    "bot_label_required": true,
+    "display_name": "Electoral Commission (Te Kaitiaki Take K\u014dwhiri) Archive Mirror",
+    "profile_disclosure": "Unofficial automated archive mirror. Not Electoral Commission (Te Kaitiaki Take K\u014dwhiri).",
+    "public_name": "Electoral Commission (Te Kaitiaki Take K\u014dwhiri)"
+  },
+  "issue_number": 85,
+  "mirror_id": "electoral-commission",
+  "operator_checkpoints": [
+    "register the selected handle and complete platform challenges",
+    "apply the archive display name, unofficial disclosure, and bot label",
+    "create an app password and populate the isolated GitHub Environment",
+    "run non-posting preflight and record the public DID",
+    "obtain separate approval before any historical backfill or live posting"
+  ],
+  "posting_performed": false,
+  "pre_registration_ready": true,
+  "schema_version": 1,
+  "secret_values_recorded": false,
+  "source_contract": {
+    "accepted_contract_records": 1,
+    "eligible_backlog": 1,
+    "rejected_records": 2,
+    "rejection_reason_counts": {
+      "source_id_not_allowed": 1,
+      "source_kind_not_mirrorable": 1
+    },
+    "scanned_records": 3,
+    "source_ids": [
+      "5879d5fff2d730e0",
+      "82a12a1529b700f1",
+      "c66256e39c792af0",
+      "d4f1c34f38e2deac"
+    ],
+    "source_platforms": [
+      "facebook",
+      "instagram",
+      "x",
+      "youtube"
+    ],
+    "source_urls": [
+      "https://www.facebook.com/ElectoralCommissionNZ",
+      "https://www.instagram.com/electionsnz",
+      "https://www.youtube.com/@ElectionsNZ",
+      "https://x.com/ElectionsNZ"
+    ]
+  },
+  "status": "operator_registration_required"
+}

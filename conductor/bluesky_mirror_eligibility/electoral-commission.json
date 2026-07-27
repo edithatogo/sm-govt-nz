@@ -1,0 +1,33 @@
+{
+  "accepted": 1,
+  "generated_at": "2026-07-27T09:55:48.143665+00:00",
+  "mirror_id": "electoral-commission",
+  "rejected": 2,
+  "rejection_examples": [
+    {
+      "agency_id": "electoral-commission",
+      "reason": "source_kind_not_mirrorable",
+      "record_id": "facebook_public_snapshot:69752371be00850d611d9416",
+      "source_id": "5879d5fff2d730e0",
+      "source_kind": "public_profile_snapshot",
+      "source_platform": "facebook",
+      "source_url": "https://www.facebook.com/ElectoralCommissionNZ"
+    },
+    {
+      "agency_id": "electoral-commission",
+      "reason": "source_id_not_allowed",
+      "record_id": "youtube:21ba6b393917a105be0b43e7",
+      "source_id": "electoral-commission-youtube-7f89caef",
+      "source_kind": "feed_item",
+      "source_platform": "youtube",
+      "source_url": "https://www.youtube.com/@ElectionsNZ"
+    }
+  ],
+  "rejection_examples_truncated": 0,
+  "rejection_reason_counts": {
+    "source_id_not_allowed": 1,
+    "source_kind_not_mirrorable": 1
+  },
+  "scanned": 3,
+  "schema_version": 1
+}
