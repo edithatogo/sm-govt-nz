@@ -150,9 +150,7 @@ def test_acc_incident_sequence_generates_exact_uri_cleanup_packet(tmp_path) -> N
         for item in result["cleanup_approval_packet"]["candidates"]
     )
     assert result["duplicates"][0]["keeper_uri"].endswith("/two")
-    assert result["duplicates"][0]["duplicate_uris"] == [
-        "at://did:plc:acc/app.bsky.feed.post/one"
-    ]
+    assert result["duplicates"][0]["duplicate_uris"] == ["at://did:plc:acc/app.bsky.feed.post/one"]
 
 
 def test_cleanup_report_classifies_missing_audit_and_deleted_posts(tmp_path) -> None:
@@ -310,9 +308,7 @@ def test_cleanup_infers_unique_legacy_source_id_from_record_platform(tmp_path) -
         registry_path=registry,
         mirror_id="agency",
         audit_paths=[audit],
-        client=FakeProgrammeClient(
-            visible=["at://did:plc:a/app.bsky.feed.post/tracked"]
-        ),
+        client=FakeProgrammeClient(visible=["at://did:plc:a/app.bsky.feed.post/tracked"]),
     )
 
     assert result["excluded_sources"] == []
@@ -360,9 +356,7 @@ def test_cleanup_ignores_only_proven_pre_activation_feed_posts(tmp_path) -> None
         client=client,
     )
 
-    assert result["pre_activation_posts_ignored"] == [
-        "at://did:plc:a/app.bsky.feed.post/legacy"
-    ]
+    assert result["pre_activation_posts_ignored"] == ["at://did:plc:a/app.bsky.feed.post/legacy"]
     assert result["missing_audit"] == [
         {
             "uri": "at://did:plc:a/app.bsky.feed.post/current",
@@ -375,9 +369,7 @@ def test_reconciliation_findings_remain_strict_unless_report_only() -> None:
     result = {"valid": False}
 
     assert result_exit_code(result) == 1
-    assert result_exit_code(
-        result, report_only=True, reconciliation=True
-    ) == 0
+    assert result_exit_code(result, report_only=True, reconciliation=True) == 0
     try:
         result_exit_code(result, report_only=True)
     except ValueError as exc:
@@ -401,3 +393,77 @@ class FakeProgrammeClient(FakePostClient):
             item if isinstance(item, dict) else {"post": {"uri": item}}
             for item in self.feed[:limit]
         ]
+
+
+def test_approved_cleanup_receipt_creates_terminal_tombstones(tmp_path) -> None:
+    registry = tmp_path / "registry.json"
+    registry.write_text(
+        json.dumps(
+            {
+                "mirrors": [
+                    {
+                        "mirror_id": "agency",
+                        "handle": "agency.bsky.social",
+                        "source_ids": ["source"],
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    deleted_uri = "at://did:plc:a/app.bsky.feed.post/deleted"
+    audit = tmp_path / "audit.jsonl"
+    audit.write_text(
+        json.dumps(
+            {
+                "mirror_id": "agency",
+                "record_id": "r1",
+                "rendered_hash": "hash",
+                "source_id": "excluded-source",
+                "uri": deleted_uri,
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    receipt = tmp_path / "cleanup-apply.json"
+    receipt.write_text(
+        json.dumps(
+            {
+                "mirror_id": "agency",
+                "status": "apply_completed",
+                "apply_requested": True,
+                "approved_uris": [deleted_uri],
+                "delete_requests_succeeded": [deleted_uri],
+                "already_missing": [],
+                "credential_material_recorded": False,
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = reconcile_programme_audit(
+        registry_path=registry,
+        mirror_id="agency",
+        audit_paths=[audit],
+        cleanup_apply_path=receipt,
+        client=FakeProgrammeClient(visible=[]),
+    )
+
+    assert result["valid"] is True
+    assert result["approved_deletion_tombstones"] == [deleted_uri]
+    assert result["deleted_or_missing"] == []
+    assert result["excluded_sources"] == []
+    assert result["cleanup_approval_packet"]["candidates"] == []
+
+    still_visible = reconcile_programme_audit(
+        registry_path=registry,
+        mirror_id="agency",
+        audit_paths=[audit],
+        cleanup_apply_path=receipt,
+        client=FakeProgrammeClient(visible=[deleted_uri]),
+    )
+    assert still_visible["valid"] is False
+    assert still_visible["approved_deletion_tombstones"] == []
+    assert still_visible["approved_deletions_still_visible"] == [deleted_uri]
+    assert still_visible["cleanup_approval_packet"]["candidates"][0]["uri"] == deleted_uri
