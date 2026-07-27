@@ -29,7 +29,7 @@ jobs:
       - run: python scripts/build_bluesky_mirror_hosted_plan.py
       - env:
           GH_TOKEN: ${{ github.token }}
-        run: python scripts/sync_bluesky_onboarding_issues.py --parent 23 --cohort-size 50 --limit 50
+        run: python scripts/sync_bluesky_onboarding_issues.py --parent 23 --cohort-size 50 --limit 50 --plan-output conductor/bluesky_onboarding_issue_plan.json
       - run: |
           python scripts/commit_state_updates.py \
             --message "Refresh Bluesky mirror onboarding queue" \
@@ -37,4 +37,5 @@ jobs:
             --path conductor/bluesky_mirror_programme_report.json \
             --path conductor/bluesky_mirror_pilot_candidates.json \
             --path conductor/bluesky_mirror_candidate_readiness.json \
-            --path conductor/bluesky_mirror_hosted_dry_run_plan.json
+            --path conductor/bluesky_mirror_hosted_dry_run_plan.json \
+            --path conductor/bluesky_onboarding_issue_plan.json
