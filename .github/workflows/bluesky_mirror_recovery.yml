@@ -1,0 +1,49 @@
+name: Bluesky Mirror Recovery
+
+on:
+  workflow_dispatch:
+    inputs:
+      mirror_id:
+        description: "Mirror ID to diagnose."
+        required: true
+        type: string
+      apply:
+        description: "Clear a recoverable pause after deterministic checks."
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bluesky-mirror-recovery-${{ inputs.mirror_id }}
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup-python-uv
+        with:
+          requirements: requirements.txt
+      - env:
+          SELECTED_MIRROR: ${{ inputs.mirror_id }}
+        run: |
+          {
+            echo "## Selected mirror"
+            printf '%s\n' "$SELECTED_MIRROR"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - env:
+          APPLY_CHANGES: ${{ inputs.apply }}
+          MIRROR_ID: ${{ inputs.mirror_id }}
+        run: |
+          args=(python scripts/manage_bluesky_mirror_programme.py recover --mirror-id "$MIRROR_ID")
+          if [ "$APPLY_CHANGES" = "true" ]; then
+            args+=(--apply)
+          fi
+          "${args[@]}"
+      - run: python scripts/commit_state_updates.py --message "Record Bluesky mirror recovery (${{ inputs.mirror_id }})" --path "conductor/bluesky_mirror_recovery/${{ inputs.mirror_id }}.json" --path "conductor/bluesky_mirror_state/${{ inputs.mirror_id }}.json"

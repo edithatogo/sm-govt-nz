@@ -10,11 +10,14 @@ from src.bluesky_mirror_programme import (
     ELIGIBILITY_REPORT_DIR,
     STATE_PATH,
     build_registry_from_manifest,
+    credential_health_report,
     health_report,
+    load_runtime_state,
     load_registry,
     pause,
     preflight_account,
     publish_next,
+    recover_account,
     validate_registry,
     workflow_matrix,
     write_programme_report,
@@ -28,6 +31,9 @@ def main() -> None:
     sub.add_parser("validate")
     preflight = sub.add_parser("preflight")
     preflight.add_argument("--mirror-id", required=True)
+    credential_health = sub.add_parser("credential-health")
+    credential_health.add_argument("--mirror-id", required=True)
+    credential_health.add_argument("--output", required=True)
     build = sub.add_parser("build-registry")
     build.add_argument("--manifest", default="conductor/govt_archive_source_manifest.json")
     matrix = sub.add_parser("matrix")
@@ -43,6 +49,9 @@ def main() -> None:
     stop = sub.add_parser("pause")
     stop.add_argument("--mirror-id", required=True)
     stop.add_argument("--reason", required=True)
+    recover = sub.add_parser("recover")
+    recover.add_argument("--mirror-id", required=True)
+    recover.add_argument("--apply", action="store_true")
     args = parser.parse_args()
 
     if args.command == "build-registry":
@@ -62,8 +71,19 @@ def main() -> None:
             handle=os.environ.get("BLUESKY_HANDLE", ""),
             app_password=os.environ.get("BLUESKY_APP_PASSWORD", ""),
         )
+    elif args.command == "credential-health":
+        result = credential_health_report(
+            load_registry(),
+            args.mirror_id,
+            handle=os.environ.get("BLUESKY_HANDLE", ""),
+            app_password=os.environ.get("BLUESKY_APP_PASSWORD", ""),
+        )
+        Path(args.output).write_text(
+            json.dumps(result, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
     elif args.command == "matrix":
-        state = json.loads(STATE_PATH.read_text(encoding="utf-8")) if STATE_PATH.exists() else {}
+        state = load_runtime_state()
         result = workflow_matrix(
             load_registry(),
             mode=args.mode,
@@ -87,10 +107,16 @@ def main() -> None:
             ),
         )
     elif args.command == "health":
-        result = health_report(load_registry())
+        result = health_report(load_registry(), runtime_state=load_runtime_state())
         Path(args.output).write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    else:
+    elif args.command == "pause":
         result = pause(STATE_PATH, args.mirror_id, args.reason)
+    else:
+        result = recover_account(
+            load_registry(),
+            args.mirror_id,
+            apply=args.apply,
+        )
     print(json.dumps(result, indent=2, sort_keys=True))
 
 

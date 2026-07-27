@@ -1,4 +1,5 @@
 import argparse
+from collections import defaultdict
 import json
 import sys
 from pathlib import Path
@@ -12,6 +13,11 @@ from src.bluesky import BlueskyApiClient
 class PostLookupClient(Protocol):
     def fetch_posts(self, uris: list[str]) -> list[Mapping[str, Any]]:
         """Return public post records for AT Protocol post URIs."""
+
+    def fetch_author_feed(
+        self, actor: str, *, limit: int = 100
+    ) -> list[Mapping[str, Any]]:
+        """Return public feed records for one mirror account."""
 
 
 def verify_archive_mirror_posts(
@@ -28,7 +34,6 @@ def verify_archive_mirror_posts(
         str(post.get("uri") or ""): post
         for post in (client or BlueskyApiClient()).fetch_posts(uris)
     }
-
     results: list[dict[str, Any]] = []
     for delivery in sampled:
         uri = delivery["detail"]
@@ -50,6 +55,146 @@ def verify_archive_mirror_posts(
         "valid": not failures,
     }
 
+
+def reconcile_programme_audit(
+    *,
+    registry_path: str | Path,
+    mirror_id: str,
+    audit_paths: list[str | Path],
+    client: PostLookupClient | None = None,
+) -> dict[str, Any]:
+    """Build a non-destructive cleanup and reconciliation report."""
+    registry = json.loads(Path(registry_path).read_text(encoding="utf-8"))
+    account = next(
+        row for row in registry.get("mirrors", []) if row.get("mirror_id") == mirror_id
+    )
+    audit_rows = _load_audit_rows(audit_paths, mirror_id)
+    known_uris = sorted(
+        {
+            str(row.get("uri") or "")
+            for row in audit_rows
+            if str(row.get("uri") or "").startswith("at://")
+        }
+    )
+    lookup = client or BlueskyApiClient()
+    visible_posts = lookup.fetch_posts(known_uris) if known_uris else []
+    visible_uris = {
+        str(post.get("uri") or "") for post in visible_posts if post.get("uri")
+    }
+    feed_uris = _author_feed_uris(lookup, str(account.get("handle") or ""))
+    audit_uri_set = set(known_uris)
+
+    grouped: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for row in audit_rows:
+        uri = str(row.get("uri") or "")
+        if uri:
+            grouped[
+                (
+                    str(row.get("record_id") or ""),
+                    str(row.get("rendered_hash") or ""),
+                )
+            ].add(uri)
+    duplicates = [
+        {
+            "record_id": record_id,
+            "rendered_hash": rendered_hash,
+            "uris": sorted(uris),
+        }
+        for (record_id, rendered_hash), uris in sorted(grouped.items())
+        if len(uris) > 1
+    ]
+    allowed_source_ids = {str(value) for value in account.get("source_ids", [])}
+    excluded_sources = [
+        {
+            "record_id": str(row.get("record_id") or ""),
+            "source_id": str(row.get("source_id") or ""),
+            "uri": str(row.get("uri") or ""),
+            "reason": "source_id_not_allowed",
+        }
+        for row in audit_rows
+        if str(row.get("source_id") or "") not in allowed_source_ids
+    ]
+    deleted_or_missing = [
+        {"uri": uri, "reason": "not_visible_via_public_api"}
+        for uri in known_uris
+        if uri not in visible_uris
+    ]
+    missing_audit = [
+        {"uri": uri, "reason": "public_post_missing_audit"}
+        for uri in sorted(feed_uris - audit_uri_set)
+    ]
+
+    actions: dict[str, set[str]] = defaultdict(set)
+    for duplicate in duplicates:
+        for uri in duplicate["uris"][1:]:
+            actions[uri].add("duplicate")
+    for excluded in excluded_sources:
+        uri = excluded["uri"]
+        if uri.startswith("at://"):
+            actions[uri].add("excluded_source")
+    cleanup_candidates = [
+        {
+            "uri": uri,
+            "reasons": sorted(reasons),
+            "requires_exact_uri_approval": True,
+            "action": "review_for_deletion",
+        }
+        for uri, reasons in sorted(actions.items())
+    ]
+    return {
+        "schema_version": 1,
+        "mirror_id": mirror_id,
+        "checked_audit_rows": len(audit_rows),
+        "visible_known_posts": len(visible_uris),
+        "duplicates": duplicates,
+        "excluded_sources": excluded_sources,
+        "deleted_or_missing": deleted_or_missing,
+        "missing_audit": missing_audit,
+        "cleanup_approval_packet": {
+            "destructive_action_performed": False,
+            "requires_exact_uri_approval": True,
+            "candidates": cleanup_candidates,
+        },
+        "valid": not (
+            duplicates or excluded_sources or deleted_or_missing or missing_audit
+        ),
+    }
+
+
+def _load_audit_rows(
+    audit_paths: list[str | Path], mirror_id: str
+) -> list[dict[str, Any]]:
+    paths: list[Path] = []
+    for value in audit_paths:
+        path = Path(value)
+        paths.extend(sorted(path.glob("*.jsonl")) if path.is_dir() else [path])
+    rows = []
+    for path in paths:
+        if not path.exists():
+            continue
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            if row.get("mirror_id") == mirror_id:
+                rows.append(row)
+    return rows
+
+
+def _author_feed_uris(client: PostLookupClient, handle: str) -> set[str]:
+    if not handle or not hasattr(client, "fetch_author_feed"):
+        return set()
+    try:
+        feed = client.fetch_author_feed(handle, limit=100)
+    except Exception:
+        return set()
+    uris = set()
+    for item in feed:
+        post = item.get("post") if isinstance(item.get("post"), Mapping) else item
+        uri = str(post.get("uri") or "")
+        if uri:
+            uris.add(uri)
+    return uris
 
 def _load_deliveries(state_path: Path, *, target: str) -> list[dict[str, str]]:
     if not state_path.exists():
@@ -88,13 +233,41 @@ def main() -> None:
     parser.add_argument("--target", default="bluesky")
     parser.add_argument("--limit", type=int, default=5)
     parser.add_argument("--json", action="store_true")
+    parser.add_argument("--reconcile-programme", action="store_true")
+    parser.add_argument("--registry", default="config/mirror_accounts.json")
+    parser.add_argument("--mirror-id", default="")
+    parser.add_argument(
+        "--audit-path",
+        action="append",
+        default=[],
+    )
+    parser.add_argument("--output", default="")
     args = parser.parse_args()
 
-    result = verify_archive_mirror_posts(
-        state_path=args.state_path,
-        target=args.target,
-        limit=args.limit,
-    )
+    if args.reconcile_programme:
+        if not args.mirror_id or not args.output:
+            raise SystemExit("--mirror-id and --output are required.")
+        result = reconcile_programme_audit(
+            registry_path=args.registry,
+            mirror_id=args.mirror_id,
+            audit_paths=args.audit_path
+            or [
+                "conductor/bluesky_mirror_post_audit.jsonl",
+                "conductor/bluesky_mirror_audit",
+            ],
+        )
+        output = Path(args.output)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(
+            json.dumps(result, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+    else:
+        result = verify_archive_mirror_posts(
+            state_path=args.state_path,
+            target=args.target,
+            limit=args.limit,
+        )
     if args.json or not result["valid"]:
         print(json.dumps(result, indent=2, sort_keys=True))
     else:

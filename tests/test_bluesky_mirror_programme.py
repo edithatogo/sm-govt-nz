@@ -6,13 +6,17 @@ import pytest
 from src.bluesky_mirror_programme import (
     MirrorRecord,
     canonicalize_source_url,
+    credential_health_report,
     build_registry_from_manifest,
     evaluate_source_eligibility,
     handle_candidates,
     load_archive_records,
+    load_runtime_state,
+    migrate_runtime_state,
     render_thread,
     publish_next,
     preflight_account,
+    recover_account,
     render_record,
     validate_registry,
     workflow_matrix,
@@ -127,6 +131,19 @@ def test_handle_policy_and_matrix_are_deterministic() -> None:
     ) == {"include": []}
 
 
+def test_workflow_matrix_manual_selector_is_account_isolated() -> None:
+    selected = workflow_matrix(
+        registry(
+            registry_row(mirror_id="acc", agency_id="acc"),
+            registry_row(mirror_id="courts", agency_id="courts"),
+        ),
+        mode="backfill",
+        mirror_id="acc",
+    )
+
+    assert [row["mirror_id"] for row in selected["include"]] == ["acc"]
+
+
 def test_jurisdictional_handle_policy_requires_abbreviation_jurisdiction_and_did() -> None:
     acc = registry_row(
         handle="acc-nz-arc.bsky.social",
@@ -149,7 +166,7 @@ def test_preflight_requires_archive_disclosure_and_bot_label() -> None:
         registry(registry_row()),
         "agency",
         handle="agency-archive.bsky.social",
-        app_password="app-password",
+        app_password="abcd-efgh-ijkl-mnop",
         login=lambda handle, password: logged_in.append((handle, password)),
         fetch_profile=lambda _handle: {
             "did": "did:plc:agency",
@@ -160,7 +177,7 @@ def test_preflight_requires_archive_disclosure_and_bot_label() -> None:
     )
 
     assert result["valid"] is True
-    assert logged_in == [("agency-archive.bsky.social", "app-password")]
+    assert logged_in == [("agency-archive.bsky.social", "abcd-efgh-ijkl-mnop")]
 
 
 def test_preflight_rejects_ambiguous_profile() -> None:
@@ -169,7 +186,7 @@ def test_preflight_rejects_ambiguous_profile() -> None:
             registry(registry_row()),
             "agency",
             handle="agency-archive.bsky.social",
-            app_password="app-password",
+            app_password="abcd-efgh-ijkl-mnop",
             login=lambda _handle, _password: None,
             fetch_profile=lambda _handle: {"displayName": "Agency", "description": "Official updates", "labels": []},
         )
@@ -325,7 +342,7 @@ def test_live_sender_receives_one_already_attributed_rendering(
     sent = []
     monkeypatch.setenv("BLUESKY_MIRRORING_ENABLED", "true")
     monkeypatch.setenv("BLUESKY_HANDLE", "agency-archive.bsky.social")
-    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "app-password")
+    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "abcd-efgh-ijkl-mnop")
 
     result = publish_next(
         registry(registry_row()),
@@ -341,6 +358,332 @@ def test_live_sender_receives_one_already_attributed_rendering(
 
     assert result["posted"] == 1
     assert sent[0]["text"].count("Original:") == 1
+
+
+def test_delayed_readback_resumes_without_duplicate_submission(
+    tmp_path: Path, monkeypatch
+) -> None:
+    archive = tmp_path / "historical_archive_normalized" / "x"
+    archive.mkdir(parents=True)
+    (archive / "2026-07.jsonl").write_text(
+        json.dumps(
+            {
+                "record_id": "r1",
+                "agency_id": "agency",
+                "source_id": "source-1",
+                "source_platform": "x",
+                "source_kind": "post",
+                "content": "Public update",
+                "original_created_at": "2020-01-02T00:00:00Z",
+                "source_url": "https://x.com/a/status/1",
+                "visibility": "public",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setenv("BLUESKY_MIRRORING_ENABLED", "true")
+    monkeypatch.setenv("BLUESKY_HANDLE", "agency-archive.bsky.social")
+    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "abcd-efgh-ijkl-mnop")
+    state_path = tmp_path / "state.json"
+    sent = []
+    visible = iter((False, True))
+
+    first = publish_next(
+        registry(registry_row()),
+        "agency",
+        mode="backfill",
+        archive_root=archive,
+        state_path=state_path,
+        audit_path=tmp_path / "audit.jsonl",
+        sender=lambda post: sent.append(post)
+        or __import__("src.syndication", fromlist=["SyndicationResult"]).SyndicationResult(
+            "bluesky", True, detail="at://did:plc:a/app.bsky.feed.post/1"
+        ),
+        readback=lambda _uri: next(visible),
+    )
+    second = publish_next(
+        registry(registry_row()),
+        "agency",
+        mode="backfill",
+        archive_root=archive,
+        state_path=state_path,
+        audit_path=tmp_path / "audit.jsonl",
+        sender=lambda _post: (_ for _ in ()).throw(
+            AssertionError("reserved publication was submitted twice")
+        ),
+        readback=lambda _uri: next(visible),
+    )
+
+    assert first["status"] == "pending_reconciliation"
+    assert second["status"] == "posted"
+    assert len(sent) == 1
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    publication = next(iter(state["accounts"]["agency"]["publications"].values()))
+    assert publication["state"] == "reconciled"
+    audit_rows = [
+        json.loads(line)
+        for line in (tmp_path / "audit.jsonl").read_text(encoding="utf-8").splitlines()
+    ]
+    assert audit_rows[-1]["status"] == "posted"
+    assert audit_rows[-1]["publication_state"] == "reconciled"
+
+
+def test_ambiguous_submission_failure_is_reserved_and_not_retried(
+    tmp_path: Path, monkeypatch
+) -> None:
+    archive = tmp_path / "historical_archive_normalized" / "x"
+    archive.mkdir(parents=True)
+    (archive / "2026-07.jsonl").write_text(
+        json.dumps(
+            {
+                "record_id": "r1",
+                "agency_id": "agency",
+                "source_id": "source-1",
+                "source_platform": "x",
+                "source_kind": "post",
+                "content": "Public update",
+                "original_created_at": "2020-01-02T00:00:00Z",
+                "source_url": "https://x.com/a/status/1",
+                "visibility": "public",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setenv("BLUESKY_MIRRORING_ENABLED", "true")
+    monkeypatch.setenv("BLUESKY_HANDLE", "agency-archive.bsky.social")
+    monkeypatch.setenv("BLUESKY_APP_PASSWORD", "abcd-efgh-ijkl-mnop")
+    state_path = tmp_path / "state.json"
+    calls = 0
+
+    def ambiguous_sender(_post):
+        nonlocal calls
+        calls += 1
+        raise TimeoutError("response lost after submission")
+
+    first = publish_next(
+        registry(registry_row()),
+        "agency",
+        mode="backfill",
+        archive_root=archive,
+        state_path=state_path,
+        audit_path=tmp_path / "audit.jsonl",
+        sender=ambiguous_sender,
+        readback=lambda _uri: False,
+    )
+    second = publish_next(
+        registry(registry_row()),
+        "agency",
+        mode="backfill",
+        archive_root=archive,
+        state_path=state_path,
+        audit_path=tmp_path / "audit.jsonl",
+        sender=ambiguous_sender,
+        readback=lambda _uri: False,
+    )
+
+    assert first["status"] == "pending_reconciliation"
+    assert second["status"] == "pending_reconciliation"
+    assert calls == 1
+    assert json.loads(state_path.read_text(encoding="utf-8"))["accounts"]["agency"].get(
+        "paused"
+    ) is not True
+
+
+def test_monolithic_runtime_state_migrates_without_overwriting_partitions(
+    tmp_path: Path,
+) -> None:
+    legacy = tmp_path / "state.json"
+    state_dir = tmp_path / "state"
+    legacy.write_text(
+        json.dumps(
+            {
+                "accounts": {
+                    "agency-a": {"paused": True},
+                    "agency-b": {"backfill_complete": True},
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    state_dir.mkdir()
+    (state_dir / "agency-a.json").write_text(
+        json.dumps({"accounts": {"agency-a": {"paused": False}}}),
+        encoding="utf-8",
+    )
+
+    result = migrate_runtime_state(legacy, state_dir)
+    aggregate = load_runtime_state(legacy, state_dir)
+
+    assert result["preserved"] == ["agency-a"]
+    assert result["migrated"] == ["agency-b"]
+    assert aggregate["accounts"]["agency-a"]["paused"] is False
+    assert aggregate["accounts"]["agency-b"]["backfill_complete"] is True
+
+
+def test_partitioned_runtime_updates_preserve_unrelated_accounts(tmp_path: Path) -> None:
+    state_dir = tmp_path / "state"
+    migrate_runtime_state(
+        tmp_path / "missing-legacy.json",
+        state_dir,
+    )
+    for mirror_id, value in (("agency-a", True), ("agency-b", False)):
+        path = state_dir / f"{mirror_id}.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps({"accounts": {mirror_id: {"paused": value}}}),
+            encoding="utf-8",
+        )
+
+    agency_a = json.loads((state_dir / "agency-a.json").read_text(encoding="utf-8"))
+    agency_a["accounts"]["agency-a"]["paused"] = False
+    (state_dir / "agency-a.json").write_text(json.dumps(agency_a), encoding="utf-8")
+    aggregate = load_runtime_state(tmp_path / "missing-legacy.json", state_dir)
+
+    assert aggregate["accounts"]["agency-a"]["paused"] is False
+    assert aggregate["accounts"]["agency-b"]["paused"] is False
+
+
+def test_recovery_resumes_only_after_all_publications_reconcile(tmp_path: Path) -> None:
+    state_path = tmp_path / "agency.json"
+    state_path.write_text(
+        json.dumps(
+            {
+                "accounts": {
+                    "agency": {
+                        "paused": True,
+                        "pause_reason": "publication reconciliation exhausted",
+                        "publications": {
+                            "key": {
+                                "state": "pending_reconciliation",
+                                "record_id": "r1",
+                                "uri": "at://did:plc:a/app.bsky.feed.post/1",
+                            }
+                        },
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    report_path = tmp_path / "recovery.json"
+
+    diagnosis = recover_account(
+        registry(registry_row()),
+        "agency",
+        state_path=state_path,
+        report_path=report_path,
+        probe=lambda _uri: "reconciled",
+    )
+    applied = recover_account(
+        registry(registry_row()),
+        "agency",
+        apply=True,
+        state_path=state_path,
+        report_path=report_path,
+        probe=lambda _uri: "reconciled",
+    )
+
+    assert diagnosis["status"] == "ready_to_resume"
+    assert diagnosis["resumed"] is False
+    assert applied["status"] == "resumed"
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    assert state["accounts"]["agency"]["paused"] is False
+    assert (
+        state["accounts"]["agency"]["publications"]["key"]["state"] == "reconciled"
+    )
+
+
+@pytest.mark.parametrize(
+    ("pause_reason", "publication", "classification"),
+    [
+        (
+            "publication reconciliation exhausted",
+            {"state": "pending_reconciliation", "record_id": "r1", "uri": ""},
+            "ambiguous_missing_uri",
+        ),
+        (
+            "publication reconciliation exhausted",
+            {
+                "state": "pending_reconciliation",
+                "record_id": "r1",
+                "uri": "at://did:plc:a/app.bsky.feed.post/1",
+            },
+            "deleted",
+        ),
+        (
+            "authentication failed",
+            {
+                "state": "pending_reconciliation",
+                "record_id": "r1",
+                "uri": "at://did:plc:a/app.bsky.feed.post/1",
+            },
+            "reconciled",
+        ),
+    ],
+)
+def test_recovery_keeps_ambiguous_deleted_and_nonrecoverable_pauses(
+    tmp_path: Path,
+    pause_reason: str,
+    publication: dict,
+    classification: str,
+) -> None:
+    state_path = tmp_path / "agency.json"
+    state_path.write_text(
+        json.dumps(
+            {
+                "accounts": {
+                    "agency": {
+                        "paused": True,
+                        "pause_reason": pause_reason,
+                        "publications": {"key": publication},
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = recover_account(
+        registry(registry_row()),
+        "agency",
+        apply=True,
+        state_path=state_path,
+        report_path=tmp_path / "recovery.json",
+        probe=lambda _uri: classification,
+    )
+
+    assert result["status"] == "recovery_blocked"
+    assert result["resumed"] is False
+    assert json.loads(state_path.read_text(encoding="utf-8"))["accounts"]["agency"][
+        "paused"
+    ] is True
+
+
+def test_preflight_rejects_primary_password_shape() -> None:
+    with pytest.raises(RuntimeError, match="primary passwords are forbidden"):
+        preflight_account(
+            registry(registry_row()),
+            "agency",
+            handle="agency-archive.bsky.social",
+            app_password="Auckland01!!!",
+            login=lambda _handle, _password: None,
+        )
+
+
+def test_credential_health_report_never_exposes_secret_value() -> None:
+    secret = "abcd-efgh-ijkl-mnop"
+    result = credential_health_report(
+        registry(registry_row()),
+        "agency",
+        handle="agency-archive.bsky.social",
+        app_password=secret,
+    )
+
+    assert result["valid"] is True
+    assert result["credential_mode"] == "app_password"
+    assert secret not in json.dumps(result)
 
 
 def test_archive_workflows_do_not_receive_posting_credentials() -> None:

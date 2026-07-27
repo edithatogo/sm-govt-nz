@@ -15,9 +15,5 @@
 
 ## Bluesky Mirror Reliability Hardening (2026-07-24)
 - [ ] `bluesky_mirror_reliability_hardening_20260724` - parent reliability programme, GitHub #36; subissue of #19
-- [ ] `bluesky_mirror_reconciliation_idempotency_20260724` - pending reconciliation and duplicate prevention
-- [ ] `bluesky_mirror_workflow_isolation_20260724` - account-scoped manual workflow dispatch
-- [ ] `bluesky_mirror_state_concurrency_20260724` - partitioned state and conflict-safe updates
-- [ ] `bluesky_mirror_recovery_automation_20260724` - evidence-backed pause recovery
+- [x] `bluesky_mirror_workflow_isolation_20260724` - account-scoped manual workflow dispatch
 - [ ] `bluesky_mirror_credential_hygiene_20260724` - app-password-only automation and rotation
-- [ ] `bluesky_mirror_cleanup_verification_20260724` - duplicate cleanup and regression evidence

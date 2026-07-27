@@ -26,5 +26,8 @@ jobs:
       - uses: ./.github/actions/setup-python-uv
         with:
           requirements: requirements.txt
-      - run: python scripts/manage_bluesky_mirror_programme.py pause --mirror-id '${{ inputs.mirror_id }}' --reason '${{ inputs.reason }}'
-      - run: python scripts/commit_state_updates.py --message "Pause Bluesky mirror posting" --path conductor/bluesky_mirror_runtime_state.json
+      - env:
+          MIRROR_ID: ${{ inputs.mirror_id }}
+          PAUSE_REASON: ${{ inputs.reason }}
+        run: python scripts/manage_bluesky_mirror_programme.py pause --mirror-id "$MIRROR_ID" --reason "$PAUSE_REASON"
+      - run: python scripts/commit_state_updates.py --message "Pause Bluesky mirror posting" --path "conductor/bluesky_mirror_state/*.json"
