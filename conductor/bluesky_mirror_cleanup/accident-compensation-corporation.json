@@ -5,6 +5,7 @@
       {
         "action": "review_for_deletion",
         "reasons": [
+          "duplicate",
           "excluded_source"
         ],
         "requires_exact_uri_approval": true,
@@ -13,7 +14,6 @@
       {
         "action": "review_for_deletion",
         "reasons": [
-          "duplicate",
           "excluded_source"
         ],
         "requires_exact_uri_approval": true,
@@ -22,6 +22,7 @@
       {
         "action": "review_for_deletion",
         "reasons": [
+          "duplicate",
           "excluded_source"
         ],
         "requires_exact_uri_approval": true,
@@ -30,7 +31,6 @@
       {
         "action": "review_for_deletion",
         "reasons": [
-          "duplicate",
           "excluded_source"
         ],
         "requires_exact_uri_approval": true,
@@ -42,7 +42,7 @@
           "duplicate"
         ],
         "requires_exact_uri_approval": true,
-        "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrc2wcspzf2y"
+        "uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a"
       }
     ],
     "destructive_action_performed": false,
@@ -60,6 +60,10 @@
   ],
   "duplicates": [
     {
+      "duplicate_uris": [
+        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbqcvym3w2a"
+      ],
+      "keeper_uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrc2wcspzf2y",
       "record_id": "linkedin_public_snapshot:b12a387e325d79c3ab2bc945",
       "rendered_hash": "1a6119f7847296f7ae97b3c7da08af842ffe1e9c0ee48b5b3473d443835f36a1",
       "uris": [
@@ -68,6 +72,10 @@
       ]
     },
     {
+      "duplicate_uris": [
+        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbn6rnwin2s"
+      ],
+      "keeper_uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrbq4xt3bx2u",
       "record_id": "youtube:440d229a196af17663e35d9f",
       "rendered_hash": "16fd7130569e376a5582c8c9f6d8b3c3d5289745cbabb5a9bd5f2a68b8ec2f61",
       "uris": [
@@ -76,6 +84,10 @@
       ]
     },
     {
+      "duplicate_uris": [
+        "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mra7pajok22s"
+      ],
+      "keeper_uri": "at://did:plc:vxltrdhni2dfsm4actryhj4n/app.bsky.feed.post/3mrabow6nh72j",
       "record_id": "youtube:a29900afed65e5dde019f232",
       "rendered_hash": "a437339d17ed9ed8836f7e74aba1da3bb5d22012051e987d9bbd2b9b788c938a",
       "uris": [
