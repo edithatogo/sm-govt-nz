@@ -14,6 +14,8 @@ def test_discovery_refreshes_deterministic_pilot_candidates() -> None:
 
     assert "pilot-candidates" in workflow
     assert "--path conductor/bluesky_mirror_pilot_candidates.json" in workflow
+    assert "build_bluesky_mirror_hosted_plan.py" in workflow
+    assert "--path conductor/bluesky_mirror_hosted_dry_run_plan.json" in workflow
 
 
 def test_posting_workflows_use_account_environments_and_kill_switch() -> None:

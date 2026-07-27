@@ -1,97 +1,56 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-07-24",
-  "repository": "edithatogo/sm-govt-nz",
-  "source_branch": "codex/bluesky-reliability-hardening",
+  "generated_at": "2026-07-27T08:18:27.630763+00:00",
   "global_invariants": {
-    "live_posting_allowed": false,
-    "bluesky_mirroring_enabled": false,
-    "secret_values_in_artifacts": false,
     "destructive_cleanup_allowed": false,
-    "each_external_action_requires_separate_approval": true
+    "external_mutations_require_separate_approval": true,
+    "live_posting_allowed": false,
+    "live_posting_performed": false,
+    "secret_values_in_artifacts": false
   },
+  "repository": "edithatogo/sm-govt-nz",
+  "schema_version": 2,
   "stages": [
     {
-      "order": 1,
-      "action": "push_branch",
-      "target": "refs/heads/codex/bluesky-reliability-hardening",
-      "status": "awaiting_explicit_approval",
-      "acceptance": [
-        "remote branch SHA equals local HEAD",
-        "no update to refs/heads/master",
-        "push-triggered CI completes successfully"
-      ]
+      "action": "historical_backfill_empty_matrix_proof",
+      "posting_performed": false,
+      "run_id": 30236905723,
+      "status": "completed"
     },
     {
-      "order": 2,
-      "action": "workflow_dispatch",
-      "workflow": "bluesky_mirror_historical_backfill.yml",
-      "ref": "master",
-      "inputs": {
-        "dry_run": true,
-        "mirror_id": "courts-of-nz"
-      },
-      "status": "failed_safe_empty_matrix",
-      "acceptance": [
-        "BLUESKY_MIRRORING_ENABLED resolves to false",
-        "posted equals 0",
-        "eligibility report is generated",
-        "no Bluesky create-record request occurs"
+      "action": "recovery_diagnostic",
+      "apply_requested": true,
+      "mirror_id": "courts-of-nz",
+      "posting_performed": false,
+      "resumed": true,
+      "status": "completed"
+    },
+    {
+      "action": "credential_preflight",
+      "posting_performed": false,
+      "run_id": 30238209314,
+      "status": "completed"
+    },
+    {
+      "action": "cleanup_reconciliation",
+      "findings_valid": false,
+      "posting_performed": false,
+      "reports_committed": [
+        "accident-compensation-corporation",
+        "courts-of-nz"
       ],
-      "run_url": "https://github.com/edithatogo/sm-govt-nz/actions/runs/30236002914",
-      "evidence": [
-        "selected matrix was empty",
-        "publish job did not start",
-        "no credentials were read",
-        "no Bluesky write request occurred",
-        "workflow-level no-op handling requires correction and rerun"
-      ]
+      "run_id": 30239062374,
+      "status": "pending"
     },
     {
-      "order": 3,
-      "action": "workflow_dispatch",
-      "workflow": "bluesky_mirror_recovery.yml",
-      "inputs": {
-        "mirror_id": "courts-of-nz",
-        "apply": false
-      },
-      "prerequisite": "workflow definition is registered on the default branch",
-      "status": "awaiting_separate_approval",
-      "acceptance": [
-        "recovery report is generated",
-        "resumed equals false",
-        "no runtime pause is cleared",
-        "no posting credentials are read"
-      ]
-    },
-    {
-      "order": 4,
-      "action": "workflow_dispatch",
-      "workflow": "bluesky_mirror_cleanup_verification.yml",
-      "prerequisite": "workflow definition is registered on the default branch",
-      "status": "awaiting_separate_approval",
-      "acceptance": [
-        "cleanup report is generated",
-        "destructive_action_performed equals false",
-        "every cleanup candidate requires exact URI approval",
-        "no deletion request occurs"
-      ]
-    },
-    {
-      "order": 5,
-      "action": "workflow_dispatch",
-      "workflow": "bluesky_mirror_preflight.yml",
-      "inputs": {
-        "mirror_id": "courts-of-nz"
-      },
-      "prerequisite": "operator approves isolated credential use",
-      "status": "awaiting_separate_approval",
-      "acceptance": [
-        "app-password format validation passes",
-        "profile compliance validation passes",
-        "dry-run publication posts zero records",
-        "no secret value appears in logs or artifacts"
-      ]
+      "action": "credential_rotation_and_revocation",
+      "instructions": "Rotate the ACC primary password and replace the per-account GitHub Environment app password through operator-controlled entry.",
+      "posting_performed": false,
+      "status": "external_action_required"
     }
-  ]
+  ],
+  "summary": {
+    "completed": 3,
+    "external_action_required": 1,
+    "pending": 1
+  }
 }
