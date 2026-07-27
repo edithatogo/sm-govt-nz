@@ -23,4 +23,8 @@
 
 - Targeted Bluesky, workflow, and secret-validation tests: 57 passed.
 - Ruff passed for the changed Python implementation and tests.
-- The track remains open solely for the explicit operator rotation task.
+- Hosted preflight run `30238209314` passed against the isolated ACC
+  environment without posting and verified that the currently configured app
+  password authenticates successfully.
+- GitHub reports `BLUESKY_APP_PASSWORD` was last updated on 2026-07-22, so
+  replacement and revocation of the prior app password remain unverified.
