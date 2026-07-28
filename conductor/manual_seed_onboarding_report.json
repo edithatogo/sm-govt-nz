@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-27T17:20:26+00:00",
+  "generated_at": "2026-07-28T17:05:42+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -5621,7 +5621,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 week ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 weeks ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "archive_status": "candidate",
@@ -8614,6 +8614,31 @@
       "source_id": "city-rail-link-instagram-0fa8b2b2",
       "source_type": "social_profile",
       "url": "https://www.instagram.com/akltransport/"
+    },
+    {
+      "acceptable_access_methods": [
+        "instagram_graph_api",
+        "account_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "Instagram",
+      "agency_id": "city-rail-link",
+      "agency_name": "City Rail Link Limited",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Instagram Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "instagram",
+      "preferred_seed_path": "manual_archive_seeds/instagram/city-rail-link-instagram-5595c922.json",
+      "required_authorization": "business_or_creator_account_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/instagram/city-rail-link-instagram-5595c922.json",
+        "manual_archive_seeds/instagram/city-rail-link.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "city-rail-link-instagram-5595c922",
+      "source_type": "social_profile",
+      "url": "https://www.instagram.com/cityraillink/"
     },
     {
       "acceptable_access_methods": [
@@ -30998,7 +31023,7 @@
   "summary": {
     "platform_counts": {
       "facebook": 324,
-      "instagram": 182,
+      "instagram": 183,
       "linkedin": 258,
       "newsletter": 387,
       "threads": 3,
@@ -31007,18 +31032,18 @@
     "remaining_group_count": 4,
     "remaining_groups": {
       "facebook": 324,
-      "instagram": 182,
+      "instagram": 183,
       "newsletter": 387,
       "threads": 3
     },
-    "remaining_source_count": 896,
-    "selected_sources": 1233,
+    "remaining_source_count": 897,
+    "selected_sources": 1234,
     "status_by_platform": {
       "facebook": {
         "needs_authorized_seed_or_api": 324
       },
       "instagram": {
-        "needs_authorized_seed_or_api": 182
+        "needs_authorized_seed_or_api": 183
       },
       "linkedin": {
         "public_fallback_available": 258
@@ -31034,7 +31059,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 896,
+      "needs_authorized_seed_or_api": 897,
       "public_fallback_available": 258,
       "seed_present": 79
     }
