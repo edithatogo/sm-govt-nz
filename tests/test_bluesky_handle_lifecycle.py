@@ -6,9 +6,11 @@ from urllib.error import HTTPError
 import pytest
 
 from src.bluesky_handle_lifecycle import (
+    candidate_handle_error,
     custom_domain_readiness_plan,
     find_stale_handle_references,
     migration_plan,
+    probe_handle,
     retired_handle_report,
     validate_abbreviation_registry,
 )
@@ -142,6 +144,22 @@ def test_generic_bad_request_is_not_proof_handle_is_unregistered() -> None:
     report = retired_handle_report(registry, resolver=invalid)
     assert report["actionable_count"] == 1
     assert report["results"][0]["classification"] == "monitoring_fault"
+
+
+def test_candidate_handle_length_fails_before_network_probe() -> None:
+    handle = "electoral-commission-nz-arc.bsky.social"
+    assert candidate_handle_error(handle) == "username_label_too_long"
+    report = probe_handle(
+        handle,
+        resolver=lambda _handle: pytest.fail("invalid handles must not reach the resolver"),
+    )
+    assert report == {
+        "handle": handle,
+        "state": "invalid_candidate",
+        "did": "",
+        "error": "username_label_too_long",
+    }
+    assert candidate_handle_error("elect-com-nz-arc.bsky.social") == ""
 
 
 def test_custom_domain_plan_is_non_operative() -> None:

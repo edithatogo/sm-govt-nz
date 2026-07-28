@@ -28,6 +28,21 @@ HISTORICAL_EVIDENCE_PATHS = {"conductor/bluesky_mirror_handle_history.jsonl"}
 MIGRATION_DOCUMENTATION_PATHS = {"docs/bluesky-agency-mirror-runbook.md"}
 GENERATED_REPORT_PATHS = {"conductor/bluesky_mirror_stale_handle_report.json"}
 POLICY_CONFIG_PATHS = {"config/bluesky_mirror_abbreviations.json"}
+BSKY_SOCIAL_SUFFIX = ".bsky.social"
+BSKY_USERNAME_MAX_LENGTH = 18
+
+
+def candidate_handle_error(handle: str) -> str:
+    """Return a deterministic validation error for a Bluesky service handle."""
+    normalized = handle.casefold().strip()
+    if not normalized.endswith(BSKY_SOCIAL_SUFFIX):
+        return "unsupported_handle_domain"
+    label = normalized.removesuffix(BSKY_SOCIAL_SUFFIX)
+    if not label:
+        return "username_label_missing"
+    if len(label) > BSKY_USERNAME_MAX_LENGTH:
+        return "username_label_too_long"
+    return ""
 
 
 def load_json(path: str | Path) -> dict[str, Any]:
@@ -126,6 +141,14 @@ def probe_handle(
     handle: str, *, resolver: Callable[[str], str] = resolve_handle
 ) -> dict[str, Any]:
     """Classify a handle as registered, unregistered, or probe-failed."""
+    candidate_error = candidate_handle_error(handle)
+    if candidate_error:
+        return {
+            "handle": handle,
+            "state": "invalid_candidate",
+            "did": "",
+            "error": candidate_error,
+        }
     try:
         did = resolver(handle)
     except HTTPError as error:

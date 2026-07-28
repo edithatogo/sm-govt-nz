@@ -12,7 +12,10 @@ from typing import Any, Mapping
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.bluesky_handle_lifecycle import validate_abbreviation_registry
+from src.bluesky_handle_lifecycle import (
+    candidate_handle_error,
+    validate_abbreviation_registry,
+)
 from src.bluesky_mirror_programme import (
     evaluate_source_eligibility,
     load_archive_records,
@@ -165,9 +168,15 @@ def build_account_packet(
     candidates = list(account.get("handle_candidates") or [])
     probes = list(handle_readiness.get("probes") or [])
     probe_handles = [str(row.get("handle") or "") for row in probes]
+    candidate_errors = {
+        handle: error
+        for handle in candidates
+        if (error := candidate_handle_error(handle))
+    }
     handles_ready = (
         probe_handles == candidates
         and bool(candidates)
+        and not candidate_errors
         and all(row.get("state") == "unregistered" for row in probes)
     )
     branch_policy = environment_readiness.get("deployment_branch_policy") or {}
@@ -209,6 +218,7 @@ def build_account_packet(
             "selected": candidates[0] if candidates else "",
             "candidates": candidates,
             "availability_evidence": probes,
+            "validation_errors": candidate_errors,
             "approved_abbreviation": (
                 abbreviation.get("organisation_abbreviation") if abbreviation else None
             ),

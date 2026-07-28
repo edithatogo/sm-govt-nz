@@ -17,11 +17,11 @@ def handle_readiness() -> dict:
     return {
         "probes": [
             {
-                "handle": "electoral-commission-nz-arc.bsky.social",
+                "handle": "elect-com-nz-arc.bsky.social",
                 "state": "unregistered",
             },
             {
-                "handle": "electoral-commission-nz-arc-2.bsky.social",
+                "handle": "elect-com-nz-arc-2.bsky.social",
                 "state": "unregistered",
             },
         ]
@@ -83,6 +83,7 @@ def test_electoral_packet_is_source_exact_secret_free_and_operator_gated() -> No
     assert packet["source_contract"]["source_platforms"] == account["source_platforms"]
     assert packet["source_contract"]["source_urls"] == account["source_urls"]
     assert packet["secret_values_recorded"] is False
+    assert packet["handle"]["validation_errors"] == {}
     assert "@gmail.com" not in json.dumps(packet).casefold()
     assert packet["gates"]["account_registered"] is False
     assert packet["gates"]["backfill_approved"] is False
