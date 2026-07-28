@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-27T18:52:12+00:00",
+  "generated_at": "2026-07-28T18:51:36+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,8 +24,9 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "0896e1d137e8ef5b",
-      "20b4d820235260a5"
+      "1716826a448731e9",
+      "6f58479da8b59257",
+      "8cac98e4374a256a"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -35,41 +36,52 @@
   },
   "results": [
     {
-      "agency_id": "te-wananga-o-raukawa",
+      "agency_id": "hutt-city-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "20b4d820235260a5",
+      "source_id": "6f58479da8b59257",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.wananga.com/feed.json"
+      "url": "https://www.huttcity.govt.nz/feed.json"
     },
     {
-      "agency_id": "the-treasury",
+      "agency_id": "mackenzie-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "0896e1d137e8ef5b",
+      "source_id": "1716826a448731e9",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.treasury.govt.nz/feed.json"
+      "url": "https://www.mackenzie.govt.nz/feed.json"
+    },
+    {
+      "agency_id": "timaru-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "json_feed",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "8cac98e4374a256a",
+      "source_type": "json_feed",
+      "status": "capture_blocked",
+      "url": "https://www.timaru.govt.nz/feed.json"
     }
   ],
   "summary": {
     "platform_counts": {
-      "json_feed": 2
+      "json_feed": 3
     },
-    "selected_sources": 2,
+    "selected_sources": 3,
     "status_by_platform": {
       "json_feed": {
-        "capture_blocked": 2
+        "capture_blocked": 3
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 2
+      "capture_blocked": 3
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-27T18:53:19+00:00",
+  "generated_at": "2026-07-28T18:53:58+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "0576ebdf8faec985",
-      "6730dfb1060c7703",
-      "b26fc4367206aae5",
-      "f77d729a901b0464"
+      "46f4c225f7480806",
+      "4c6866a4406cfdba",
+      "ad208c179b1e6d2c",
+      "b1d8a75d46201be4",
+      "bb31f30030ea0744"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -37,53 +38,42 @@
   },
   "results": [
     {
-      "agency_id": "manukau-institute-of-technology",
+      "agency_id": "stats-nz",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "f77d729a901b0464",
-      "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/manukau-institute-of-technology"
-    },
-    {
-      "agency_id": "real-estate-authority",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:0de2398e99f66f6c0a4e56ab",
-      "source_id": "6730dfb1060c7703",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:bf5b8b3d6d2a91cf9682d344",
+      "source_id": "bb31f30030ea0744",
       "source_type": "social_profile",
       "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/real-estate-authority"
+      "url": "https://www.linkedin.com/company/statistics-new-zealand/"
     },
     {
-      "agency_id": "whitireia",
+      "agency_id": "toi-ohomai",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "0576ebdf8faec985",
+      "source_id": "b1d8a75d46201be4",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/whitireia"
+      "url": "https://www.linkedin.com/school/toi-ohomai-institute-of-technology"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 3
+      "linkedin": 2
     },
-    "selected_sources": 3,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 2,
+        "http_error": 1,
         "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 2,
+      "http_error": 1,
       "public_snapshot_captured": 1
     }
   }
