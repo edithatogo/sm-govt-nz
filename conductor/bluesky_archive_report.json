@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-28T08:48:59+00:00",
+  "generated_at": "2026-07-28T14:31:11+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -31,6 +31,28 @@
     "x_feed_timeout": 30
   },
   "results": [
+    {
+      "agency_id": "beehive-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mrphuao3qk2n",
+      "source_id": "dc2d30e0772e3af0",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "agency_id": "beehive-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mrpb7ezwqm2h",
+      "source_id": "dc2d30e0772e3af0",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
     {
       "agency_id": "beehive-nz",
       "archive_status": "ready",
@@ -106,28 +128,6 @@
       "source_id": "dc2d30e0772e3af0",
       "source_type": "social_profile",
       "status": "captured",
-      "url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "agency_id": "beehive-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "dc2d30e0772e3af0",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "agency_id": "beehive-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "dc2d30e0772e3af0",
-      "source_type": "social_profile",
-      "status": "already_captured",
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
@@ -17782,14 +17782,14 @@
     "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
-        "already_captured": 1588,
-        "captured": 25
+        "already_captured": 1586,
+        "captured": 27
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1588,
-      "captured": 25
+      "already_captured": 1586,
+      "captured": 27
     }
   }
 }
