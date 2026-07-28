@@ -29,6 +29,24 @@
       "outcome": "preflight_passed",
       "plan": "operator_manual",
       "recorded_at": "2026-07-27T05:52:01.369650+00:00"
+    },
+    {
+      "mirror_id": "electoral-commission",
+      "outcome": "handle_length_gate_added",
+      "plan": "operator_manual",
+      "recorded_at": "2026-07-29T00:00:00+00:00"
+    },
+    {
+      "mirror_id": "electoral-commission",
+      "outcome": "gogcli_exact_alias_verified",
+      "plan": "operator_manual",
+      "recorded_at": "2026-07-29T00:00:01+00:00"
+    },
+    {
+      "mirror_id": "electoral-commission",
+      "outcome": "operator_age_verification_completed",
+      "plan": "operator_manual",
+      "recorded_at": "2026-07-29T00:00:02+00:00"
     }
   ],
   "plans": {
@@ -41,11 +59,11 @@
       "successes": 0
     },
     "operator_manual": {
-      "attempts": 5,
-      "successes": 5
+      "attempts": 8,
+      "successes": 8
     }
   },
   "policy": "bounded_uc_cdp_operator_supervision",
   "schema_version": 1,
-  "updated_at": "2026-07-27T05:52:01.369687+00:00"
+  "updated_at": "2026-07-29T00:00:02+00:00"
 }

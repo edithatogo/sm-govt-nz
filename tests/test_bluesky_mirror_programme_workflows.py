@@ -21,6 +21,23 @@ def test_discovery_refreshes_deterministic_pilot_candidates() -> None:
     assert "--apply" not in workflow
 
 
+def test_onboarding_skill_uses_cli_email_and_handle_length_gate() -> None:
+    skill = Path("agent_framework/skills/bluesky_browser_onboarding.md").read_text(
+        encoding="utf-8"
+    )
+    agent = Path("agent_framework/agents/bluesky_onboarding_operator.md").read_text(
+        encoding="utf-8"
+    )
+    assert "gog gmail search" in skill
+    assert "--readonly" in skill
+    assert "exact generated alias" in skill
+    assert "longer than 18 characters" in skill
+    assert "never browse the mailbox" in agent.casefold()
+    assert "non-posting preflight" in agent
+    assert "configure_bluesky_mirror_account.py" in skill
+    assert "Do not use browser UI for post-registration configuration" in skill
+
+
 def test_posting_workflows_use_account_environments_and_kill_switch() -> None:
     for name in ("bluesky_mirror_ongoing.yml", "bluesky_mirror_historical_backfill.yml"):
         text = (Path(".github/workflows") / name).read_text(encoding="utf-8")
