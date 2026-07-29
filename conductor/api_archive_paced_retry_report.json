@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-28T18:51:26+00:00",
+  "generated_at": "2026-07-29T18:17:39+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "1ef1dce81ad8db2e",
-      "80b6358c07dca06b",
-      "8550bc4bca878237",
-      "cf17ceefcb7efbc5",
-      "e68d464915781350"
+      "4dbb37456a3d189e",
+      "551acb47a8e68099",
+      "a13bfe63b19af2a5",
+      "a35b238fb622ccb2",
+      "ecf5d3808a2dfdea"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -38,15 +38,15 @@
   },
   "results": [
     {
-      "agency_id": "far-north-district-council",
+      "agency_id": "education-review-office",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "8550bc4bca878237",
+      "source_id": "4dbb37456a3d189e",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.fndc.govt.nz/.well-known/webfinger"
+      "url": "https://www.ero.govt.nz/openapi.json"
     },
     {
       "agency_id": "government-house",
@@ -54,43 +54,43 @@
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "80b6358c07dca06b",
+      "source_id": "a35b238fb622ccb2",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://gg.govt.nz/openapi.json"
+      "url": "https://gg.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "lotto-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "source_id": "cf17ceefcb7efbc5",
-      "source_type": "api_endpoint",
-      "status": "invalid",
-      "url": "https://www.lotto.co.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "office-of-the-ombudsman",
+      "agency_id": "mackenzie-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "e68d464915781350",
+      "source_id": "551acb47a8e68099",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.ombudsman.parliament.nz/.well-known/webfinger"
+      "url": "https://www.mackenzie.govt.nz/.well-known/webfinger"
+    },
+    {
+      "agency_id": "ministry-for-culture-and-heritage",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "a13bfe63b19af2a5",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.mch.govt.nz/.well-known/webfinger"
     },
     {
       "agency_id": "south-taranaki-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 405: Not Allowed",
-      "source_id": "1ef1dce81ad8db2e",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "ecf5d3808a2dfdea",
       "source_type": "api_endpoint",
-      "status": "method_not_allowed",
-      "url": "https://www.southtaranaki.com/openapi.json"
+      "status": "capture_blocked",
+      "url": "https://www.southtaranaki.com/.well-known/webfinger"
     }
   ],
   "summary": {
@@ -100,16 +100,12 @@
     "selected_sources": 5,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 3,
-        "invalid": 1,
-        "method_not_allowed": 1
+        "capture_blocked": 5
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 3,
-      "invalid": 1,
-      "method_not_allowed": 1
+      "capture_blocked": 5
     }
   }
 }

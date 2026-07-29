@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-28T18:51:36+00:00",
+  "generated_at": "2026-07-29T18:17:55+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,9 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "1716826a448731e9",
-      "6f58479da8b59257",
-      "8cac98e4374a256a"
+      "9ac0adec4e1de63a",
+      "adedaec7ab57d7da",
+      "fd222c4b191c7757"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -36,37 +36,37 @@
   },
   "results": [
     {
-      "agency_id": "hutt-city-council",
+      "agency_id": "ashburton-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "6f58479da8b59257",
+      "source_id": "adedaec7ab57d7da",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.huttcity.govt.nz/feed.json"
+      "url": "https://www.ashburtondc.govt.nz/feed.json"
     },
     {
-      "agency_id": "mackenzie-district-council",
+      "agency_id": "gisborne-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "1716826a448731e9",
+      "source_id": "fd222c4b191c7757",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.mackenzie.govt.nz/feed.json"
+      "url": "https://www.gdc.govt.nz/feed.json"
     },
     {
-      "agency_id": "timaru-district-council",
+      "agency_id": "toi-ohomai",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "8cac98e4374a256a",
+      "source_id": "9ac0adec4e1de63a",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.timaru.govt.nz/feed.json"
+      "url": "https://www.toiohomai.ac.nz/feed.json"
     }
   ],
   "summary": {

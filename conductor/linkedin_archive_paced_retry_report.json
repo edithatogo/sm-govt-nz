@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-28T18:53:58+00:00",
+  "generated_at": "2026-07-29T18:18:25+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "46f4c225f7480806",
-      "4c6866a4406cfdba",
-      "ad208c179b1e6d2c",
-      "b1d8a75d46201be4",
-      "bb31f30030ea0744"
+      "288cf6d2b2a2bb99",
+      "2b4b7857ce9bf44a",
+      "31280e3dfdd0e9da",
+      "e31bc686ca91b0cf",
+      "fe550d4e1897ba07"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -38,42 +38,66 @@
   },
   "results": [
     {
-      "agency_id": "stats-nz",
+      "agency_id": "porirua-city-council",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:bf5b8b3d6d2a91cf9682d344",
-      "source_id": "bb31f30030ea0744",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:46c5e265f8fd0513d16e595e",
+      "source_id": "e31bc686ca91b0cf",
       "source_type": "social_profile",
       "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/statistics-new-zealand/"
+      "url": "https://www.linkedin.com/company/porirua-city-council"
     },
     {
-      "agency_id": "toi-ohomai",
+      "agency_id": "royal-nz-air-force",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 404: Not Found",
+      "source_id": "fe550d4e1897ba07",
+      "source_type": "social_profile",
+      "status": "not_found",
+      "url": "https://www.linkedin.com/company/royal-new-zealand-air-force"
+    },
+    {
+      "agency_id": "sit",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "b1d8a75d46201be4",
+      "source_id": "2b4b7857ce9bf44a",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/toi-ohomai-institute-of-technology"
+      "url": "https://www.linkedin.com/school/southern-institute-of-technology"
+    },
+    {
+      "agency_id": "unitec",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 999: <none>",
+      "source_id": "31280e3dfdd0e9da",
+      "source_type": "social_profile",
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/unitec"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 2
+      "linkedin": 4
     },
-    "selected_sources": 2,
+    "selected_sources": 4,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1,
+        "http_error": 2,
+        "not_found": 1,
         "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1,
+      "http_error": 2,
+      "not_found": 1,
       "public_snapshot_captured": 1
     }
   }
