@@ -1,19 +1,19 @@
 # Manual/API Source Onboarding
 
-Generated: 2026-07-28T17:05:42+00:00
+Generated: 2026-07-29T16:54:08+00:00
 Next batch limit: 25
 
 ## Summary
 
-- `selected_sources`: 1234
+- `selected_sources`: 1237
 - `remaining_group_count`: 4
-- `remaining_source_count`: 897
+- `remaining_source_count`: 900
 
 ## Remaining groups
 
 - `facebook`: 324
 - `instagram`: 183
-- `newsletter`: 387
+- `newsletter`: 390
 - `threads`: 3
 
 ## Platform status
@@ -21,7 +21,7 @@ Next batch limit: 25
 - `facebook`: {'needs_authorized_seed_or_api': 324}
 - `instagram`: {'needs_authorized_seed_or_api': 183}
 - `linkedin`: {'public_fallback_available': 258}
-- `newsletter`: {'needs_authorized_seed_or_api': 387}
+- `newsletter`: {'needs_authorized_seed_or_api': 390}
 - `threads`: {'needs_authorized_seed_or_api': 3}
 - `x`: {'seed_present': 79}
 
@@ -34,6 +34,7 @@ Next batch limit: 25
 | `threads` | `wellington-city-libraries-threads-wcl-library` | Wellington City Libraries | `manual_archive_seeds/threads/wellington-city-libraries-threads-wcl-library.json` |
 | `newsletter` | `accident-compensation-corporation-newsletter-a2c2ad5b` | Accident Compensation Corporation (Te Kaporeihana Āwhina Hunga Whara) | `manual_archive_seeds/newsletter/accident-compensation-corporation-newsletter-a2c2ad5b.json` |
 | `newsletter` | `creative-nz-newsletter-7844e992` | Arts Council of New Zealand (Creative New Zealand) | `manual_archive_seeds/newsletter/creative-nz-newsletter-7844e992.json` |
+| `newsletter` | `buller-district-council-newsletter-0ccf7aef` | Buller District Council | `manual_archive_seeds/newsletter/buller-district-council-newsletter-0ccf7aef.json` |
 | `newsletter` | `buller-district-council-newsletter-70d4a94b` | Buller District Council | `manual_archive_seeds/newsletter/buller-district-council-newsletter-70d4a94b.json` |
 | `newsletter` | `cancer-control-agency-newsletter-000607de` | Cancer Control Agency (Te Aho o Te Kahu) | `manual_archive_seeds/newsletter/cancer-control-agency-newsletter-000607de.json` |
 | `newsletter` | `central-hawkes-bay-district-council-newsletter-26505743` | Central Hawke's Bay District Council | `manual_archive_seeds/newsletter/central-hawkes-bay-district-council-newsletter-26505743.json` |
@@ -53,7 +54,6 @@ Next batch limit: 25
 | `newsletter` | `central-otago-district-council-newsletter-d8acb969` | Central Otago District Council | `manual_archive_seeds/newsletter/central-otago-district-council-newsletter-d8acb969.json` |
 | `newsletter` | `central-otago-district-council-newsletter-de23a81e` | Central Otago District Council | `manual_archive_seeds/newsletter/central-otago-district-council-newsletter-de23a81e.json` |
 | `newsletter` | `chatham-islands-council-newsletter-1e57736f` | Chatham Islands Council (Te Kaunihera o Wharekauri) | `manual_archive_seeds/newsletter/chatham-islands-council-newsletter-1e57736f.json` |
-| `newsletter` | `chatham-islands-council-newsletter-fdb26d29` | Chatham Islands Council (Te Kaunihera o Wharekauri) | `manual_archive_seeds/newsletter/chatham-islands-council-newsletter-fdb26d29.json` |
 
 ## Notes
 

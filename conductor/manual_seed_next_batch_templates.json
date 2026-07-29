@@ -1,6 +1,6 @@
 {
   "description": "Source-specific starter templates for the next deterministic manual seed batch. These are not seed files and do not mark sources as seed_present.",
-  "generated_at": "2026-07-28T17:05:42+00:00",
+  "generated_at": "2026-07-29T16:54:08+00:00",
   "summary": {
     "limit": 25,
     "platform_counts": {
@@ -134,6 +134,31 @@
       "source_id": "creative-nz-newsletter-7844e992",
       "source_url": "https://govt.us2.list-manage.com/subscribe?u=8b885a8ef81783c75c1d9cc8f&id=817361bc26",
       "target_path": "manual_archive_seeds/newsletter/creative-nz-newsletter-7844e992.json"
+    },
+    {
+      "account": "https://www.bullerdc.govt.nz",
+      "agency_id": "buller-district-council",
+      "agency_name": "Buller District Council",
+      "authorization_note": "Replace this template with operator-authorized export data before placing it under manual_archive_seeds/.",
+      "platform": "newsletter",
+      "posts": [
+        {
+          "created_at": "2026-07-01T00:00:00Z",
+          "media": [
+            {
+              "alt_text": "Optional description",
+              "media_type": "image",
+              "url": "https://example.govt.nz/media.jpg"
+            }
+          ],
+          "post_id": "stable-platform-id-or-operator-id",
+          "text": "Archived public or operator-authorized content.",
+          "url": "https://example.govt.nz/or/platform/post"
+        }
+      ],
+      "source_id": "buller-district-council-newsletter-0ccf7aef",
+      "source_url": "https://www.bullerdc.govt.nz/media/dlugmyu2/connect-newsletter-145-july-final-web.pdf",
+      "target_path": "manual_archive_seeds/newsletter/buller-district-council-newsletter-0ccf7aef.json"
     },
     {
       "account": "https://www.bullerdc.govt.nz",
@@ -609,31 +634,6 @@
       "source_id": "chatham-islands-council-newsletter-1e57736f",
       "source_url": "http://eepurl.com/hcVHxj",
       "target_path": "manual_archive_seeds/newsletter/chatham-islands-council-newsletter-1e57736f.json"
-    },
-    {
-      "account": "https://www.cic.govt.nz",
-      "agency_id": "chatham-islands-council",
-      "agency_name": "Chatham Islands Council (Te Kaunihera o Wharekauri)",
-      "authorization_note": "Replace this template with operator-authorized export data before placing it under manual_archive_seeds/.",
-      "platform": "newsletter",
-      "posts": [
-        {
-          "created_at": "2026-07-01T00:00:00Z",
-          "media": [
-            {
-              "alt_text": "Optional description",
-              "media_type": "image",
-              "url": "https://example.govt.nz/media.jpg"
-            }
-          ],
-          "post_id": "stable-platform-id-or-operator-id",
-          "text": "Archived public or operator-authorized content.",
-          "url": "https://example.govt.nz/or/platform/post"
-        }
-      ],
-      "source_id": "chatham-islands-council-newsletter-fdb26d29",
-      "source_url": "https://us17.campaign-archive.com/home/?u=0d7d1b7e2a53c8cd46868914d&id=35e8af1465",
-      "target_path": "manual_archive_seeds/newsletter/chatham-islands-council-newsletter-fdb26d29.json"
     }
   ]
 }

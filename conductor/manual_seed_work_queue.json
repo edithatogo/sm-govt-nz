@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-28T17:05:42+00:00",
+  "generated_at": "2026-07-29T16:54:08+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -119,6 +119,27 @@
       ],
       "source_id": "creative-nz-newsletter-7844e992",
       "url": "https://govt.us2.list-manage.com/subscribe?u=8b885a8ef81783c75c1d9cc8f&id=817361bc26"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.bullerdc.govt.nz",
+      "agency_id": "buller-district-council",
+      "agency_name": "Buller District Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/buller-district-council-newsletter-0ccf7aef.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/buller-district-council-newsletter-0ccf7aef.json",
+        "manual_archive_seeds/newsletter/buller-district-council.json"
+      ],
+      "source_id": "buller-district-council-newsletter-0ccf7aef",
+      "url": "https://www.bullerdc.govt.nz/media/dlugmyu2/connect-newsletter-145-july-final-web.pdf"
     },
     {
       "acceptable_access_methods": [
@@ -2294,6 +2315,27 @@
       "agency_name": "Hastings District Council",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/hastings-district-council-newsletter-5d087f04.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/hastings-district-council-newsletter-5d087f04.json",
+        "manual_archive_seeds/newsletter/hastings-district-council.json"
+      ],
+      "source_id": "hastings-district-council-newsletter-5d087f04",
+      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/simplifying-local-government/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.hastingsdc.govt.nz",
+      "agency_id": "hastings-district-council",
+      "agency_name": "Hastings District Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/hastings-district-council-newsletter-72dcfe49.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
@@ -2492,6 +2534,27 @@
       ],
       "source_id": "health-nz-newsletter-822b4ab7",
       "url": "https://www.tewhatuora.govt.nz/health-alerts/marine-biotoxin-in-shellfish-in-banks-peninsula"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tewhatuora.govt.nz",
+      "agency_id": "health-nz",
+      "agency_name": "Health New Zealand (Te Whatu Ora)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-a8bdbdd8.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/health-nz-newsletter-a8bdbdd8.json",
+        "manual_archive_seeds/newsletter/health-nz.json"
+      ],
+      "source_id": "health-nz-newsletter-a8bdbdd8",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/cyanobacteria-health-warning-lake-rotoroa-hamilton-lake"
     },
     {
       "acceptable_access_methods": [
@@ -18857,7 +18920,7 @@
     "platform_counts": {
       "facebook": 324,
       "instagram": 183,
-      "newsletter": 387,
+      "newsletter": 390,
       "threads": 3
     },
     "priority_order": [
@@ -18866,6 +18929,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 897
+    "queue_count": 900
   }
 }
