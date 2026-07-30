@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-30T08:45:55+00:00",
+  "generated_at": "2026-07-30T14:28:13+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -31,6 +31,17 @@
     "x_feed_timeout": 30
   },
   "results": [
+    {
+      "agency_id": "beehive-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mru5sa32we2v",
+      "source_id": "dc2d30e0772e3af0",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
     {
       "agency_id": "beehive-nz",
       "archive_status": "ready",
@@ -128,17 +139,6 @@
       "source_id": "dc2d30e0772e3af0",
       "source_type": "social_profile",
       "status": "captured",
-      "url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "agency_id": "beehive-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "dc2d30e0772e3af0",
-      "source_type": "social_profile",
-      "status": "already_captured",
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
@@ -8242,6 +8242,17 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mru4rq2nck2a",
+      "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "agency_id": "person-aaron-hawkins",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
       "reason": "captured bluesky post bluesky:3mrtwnqzai22h",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
@@ -8334,17 +8345,6 @@
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
       "status": "captured",
-      "url": "https://bsky.app/profile/ahawkins.bsky.social"
-    },
-    {
-      "agency_id": "person-aaron-hawkins",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
-      "source_type": "social_profile",
-      "status": "already_captured",
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
@@ -17804,14 +17804,14 @@
     "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
-        "already_captured": 1581,
-        "captured": 34
+        "already_captured": 1579,
+        "captured": 36
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1581,
-      "captured": 34
+      "already_captured": 1579,
+      "captured": 36
     }
   }
 }
