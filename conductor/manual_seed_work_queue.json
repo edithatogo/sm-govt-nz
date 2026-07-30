@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-29T16:54:08+00:00",
+  "generated_at": "2026-07-30T17:07:10+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -1211,6 +1211,27 @@
       ],
       "source_id": "environment-southland-newsletter-5dc8f66b",
       "url": "https://www.es.govt.nz/about-us/alerts"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.epa.govt.nz",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-055f387e.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-055f387e.json",
+        "manual_archive_seeds/newsletter/environmental-protection-authority.json"
+      ],
+      "source_id": "environmental-protection-authority-newsletter-055f387e",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-proposes-to-amend-group-standard-for-art-materials/"
     },
     {
       "acceptable_access_methods": [
@@ -18920,7 +18941,7 @@
     "platform_counts": {
       "facebook": 324,
       "instagram": 183,
-      "newsletter": 390,
+      "newsletter": 391,
       "threads": 3
     },
     "priority_order": [
@@ -18929,6 +18950,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 900
+    "queue_count": 901
   }
 }

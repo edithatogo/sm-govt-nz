@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-29T16:54:08+00:00",
+  "generated_at": "2026-07-30T17:07:10+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -20504,6 +20504,31 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-055f387e.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-055f387e.json",
+        "manual_archive_seeds/newsletter/environmental-protection-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "environmental-protection-authority-newsletter-055f387e",
+      "source_type": "newsletter",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-proposes-to-amend-group-standard-for-art-materials/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.epa.govt.nz",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-0cd8537b.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
@@ -31100,7 +31125,7 @@
       "facebook": 324,
       "instagram": 183,
       "linkedin": 258,
-      "newsletter": 390,
+      "newsletter": 391,
       "threads": 3,
       "x": 79
     },
@@ -31108,11 +31133,11 @@
     "remaining_groups": {
       "facebook": 324,
       "instagram": 183,
-      "newsletter": 390,
+      "newsletter": 391,
       "threads": 3
     },
-    "remaining_source_count": 900,
-    "selected_sources": 1237,
+    "remaining_source_count": 901,
+    "selected_sources": 1238,
     "status_by_platform": {
       "facebook": {
         "needs_authorized_seed_or_api": 324
@@ -31124,7 +31149,7 @@
         "public_fallback_available": 258
       },
       "newsletter": {
-        "needs_authorized_seed_or_api": 390
+        "needs_authorized_seed_or_api": 391
       },
       "threads": {
         "needs_authorized_seed_or_api": 3
@@ -31134,7 +31159,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 900,
+      "needs_authorized_seed_or_api": 901,
       "public_fallback_available": 258,
       "seed_present": 79
     }
