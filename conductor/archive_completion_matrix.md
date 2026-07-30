@@ -1,6 +1,6 @@
 # NZ Government Archive Completion Matrix
 
-Generated: 2026-07-30T07:19:59+00:00
+Generated: 2026-07-30T18:53:58+00:00
 
 ## Completion
 
@@ -19,9 +19,9 @@ Generated: 2026-07-30T07:19:59+00:00
 | State | Count |
 | --- | ---: |
 | `archived` | 2547 |
-| `terminal_deleted` | 130 |
+| `terminal_deleted` | 129 |
 | `terminal_empty` | 1680 |
-| `terminal_external_access` | 664 |
+| `terminal_external_access` | 665 |
 | `terminal_invalid` | 581 |
 
 ## Next work

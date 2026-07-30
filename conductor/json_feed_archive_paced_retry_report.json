@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-29T18:17:55+00:00",
+  "generated_at": "2026-07-30T18:52:16+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "9ac0adec4e1de63a",
-      "adedaec7ab57d7da",
-      "fd222c4b191c7757"
+      "07955141e1acc8ad",
+      "2f91a7d6611e2699"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -36,52 +35,43 @@
   },
   "results": [
     {
-      "agency_id": "ashburton-district-council",
+      "agency_id": "department-of-corrections",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "adedaec7ab57d7da",
+      "source_id": "07955141e1acc8ad",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.ashburtondc.govt.nz/feed.json"
+      "url": "https://www.corrections.govt.nz/feed.json"
     },
     {
-      "agency_id": "gisborne-district-council",
+      "agency_id": "manukau-institute-of-technology",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "fd222c4b191c7757",
+      "reason": "URL error: timed out",
+      "source_id": "2f91a7d6611e2699",
       "source_type": "json_feed",
-      "status": "capture_blocked",
-      "url": "https://www.gdc.govt.nz/feed.json"
-    },
-    {
-      "agency_id": "toi-ohomai",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "json_feed",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "9ac0adec4e1de63a",
-      "source_type": "json_feed",
-      "status": "capture_blocked",
-      "url": "https://www.toiohomai.ac.nz/feed.json"
+      "status": "network_timeout",
+      "url": "https://www.manukau.ac.nz/feed.json"
     }
   ],
   "summary": {
     "platform_counts": {
-      "json_feed": 3
+      "json_feed": 2
     },
-    "selected_sources": 3,
+    "selected_sources": 2,
     "status_by_platform": {
       "json_feed": {
-        "capture_blocked": 3
+        "capture_blocked": 1,
+        "network_timeout": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 3
+      "capture_blocked": 1,
+      "network_timeout": 1
     }
   }
 }
