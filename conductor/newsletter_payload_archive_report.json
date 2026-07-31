@@ -1343,6 +1343,17 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "newsletter",
+      "reason": "no newsletter payload matched health-nz-newsletter-4daf0bcb",
+      "source_id": "health-nz-newsletter-4daf0bcb",
+      "source_type": "newsletter",
+      "status": "missing_payload",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/measles-in-palmerston-north"
+    },
+    {
+      "agency_id": "health-nz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
       "reason": "no newsletter payload matched health-nz-newsletter-ecf2ea82",
       "source_id": "health-nz-newsletter-ecf2ea82",
       "source_type": "newsletter",
@@ -4312,16 +4323,16 @@
   "summary": {
     "payload_count": 0,
     "platform_counts": {
-      "newsletter": 391
+      "newsletter": 392
     },
-    "selected_sources": 391,
+    "selected_sources": 392,
     "status_by_platform": {
       "newsletter": {
-        "missing_payload": 391
+        "missing_payload": 392
       }
     },
     "status_counts": {
-      "missing_payload": 391
+      "missing_payload": 392
     }
   }
 }
