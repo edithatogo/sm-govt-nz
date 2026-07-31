@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-07-30T17:07:10+00:00",
+  "generated_at": "2026-07-31T17:09:22+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -22079,6 +22079,31 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-4daf0bcb.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/health-nz-newsletter-4daf0bcb.json",
+        "manual_archive_seeds/newsletter/health-nz.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "health-nz-newsletter-4daf0bcb",
+      "source_type": "newsletter",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/measles-in-palmerston-north"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tewhatuora.govt.nz",
+      "agency_id": "health-nz",
+      "agency_name": "Health New Zealand (Te Whatu Ora)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-50e9000a.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
@@ -31125,7 +31150,7 @@
       "facebook": 324,
       "instagram": 183,
       "linkedin": 258,
-      "newsletter": 391,
+      "newsletter": 392,
       "threads": 3,
       "x": 79
     },
@@ -31133,11 +31158,11 @@
     "remaining_groups": {
       "facebook": 324,
       "instagram": 183,
-      "newsletter": 391,
+      "newsletter": 392,
       "threads": 3
     },
-    "remaining_source_count": 901,
-    "selected_sources": 1238,
+    "remaining_source_count": 902,
+    "selected_sources": 1239,
     "status_by_platform": {
       "facebook": {
         "needs_authorized_seed_or_api": 324
@@ -31149,7 +31174,7 @@
         "public_fallback_available": 258
       },
       "newsletter": {
-        "needs_authorized_seed_or_api": 391
+        "needs_authorized_seed_or_api": 392
       },
       "threads": {
         "needs_authorized_seed_or_api": 3
@@ -31159,7 +31184,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 901,
+      "needs_authorized_seed_or_api": 902,
       "public_fallback_available": 258,
       "seed_present": 79
     }

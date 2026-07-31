@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-07-30T17:07:10+00:00",
+  "generated_at": "2026-07-31T17:09:22+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -2513,6 +2513,27 @@
       ],
       "source_id": "health-nz-newsletter-0df7d090",
       "url": "https://www.tewhatuora.govt.nz/health-alerts/changes-to-public-health-advice-regarding-moa-point"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.tewhatuora.govt.nz",
+      "agency_id": "health-nz",
+      "agency_name": "Health New Zealand (Te Whatu Ora)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/health-nz-newsletter-4daf0bcb.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/health-nz-newsletter-4daf0bcb.json",
+        "manual_archive_seeds/newsletter/health-nz.json"
+      ],
+      "source_id": "health-nz-newsletter-4daf0bcb",
+      "url": "https://www.tewhatuora.govt.nz/health-alerts/measles-in-palmerston-north"
     },
     {
       "acceptable_access_methods": [
@@ -18941,7 +18962,7 @@
     "platform_counts": {
       "facebook": 324,
       "instagram": 183,
-      "newsletter": 391,
+      "newsletter": 392,
       "threads": 3
     },
     "priority_order": [
@@ -18950,6 +18971,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 901
+    "queue_count": 902
   }
 }
