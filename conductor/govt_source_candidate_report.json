@@ -115958,6 +115958,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "te-tumu-paeroa",
+      "agency_name": "Te Tumu Paeroa (Office of the M\u0101ori Trustee)",
+      "agency_type": "Department",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "541fcf47a4bd44ff",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.tetumupaeroa.co.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "M\u0101ori Development",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/TeTumuPaeroa/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "tetumupaeroa",
       "account_classification": "official",
       "agency_id": "te-tumu-paeroa",
@@ -115971,7 +115995,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.tetumupaeroa.co.nz",
-      "origin": "registry.social_profiles",
+      "origin": "homepage.link,registry.social_profiles",
       "platform": "instagram",
       "policy_notes": "Archive capture depends on Meta access and account eligibility.",
       "portfolio": "M\u0101ori Development",
@@ -115983,6 +116007,30 @@
         "official_term:nz"
       ],
       "url": "https://www.instagram.com/tetumupaeroa/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "LinkedIn",
+      "agency_id": "te-tumu-paeroa",
+      "agency_name": "Te Tumu Paeroa (Office of the M\u0101ori Trustee)",
+      "agency_type": "Department",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "c0aa4e7a27c5a135",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.tetumupaeroa.co.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "M\u0101ori Development",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/maori-trustee/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -140752,7 +140800,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-07-31T18:01:29+00:00",
+  "generated_at": "2026-07-31T18:48:55+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -156997,8 +157045,9 @@
     },
     {
       "agency_id": "te-tumu-paeroa",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 96,
+      "status": "ok",
       "url": "https://www.tetumupaeroa.co.nz/"
     },
     {
@@ -157301,19 +157350,19 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5259,
+    "candidate_count": 5261,
     "feasibility_counts": {
       "high": 4159,
-      "low": 310,
-      "medium": 790
+      "low": 311,
+      "medium": 791
     },
-    "known_registry_social_profiles": 446,
+    "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 292,
+      "facebook": 293,
       "instagram": 163,
-      "linkedin": 235,
+      "linkedin": 236,
       "medium": 2,
       "newsletter": 161,
       "rss": 3829,
@@ -157326,7 +157375,7 @@
       "newsletter": 161,
       "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 944,
+      "social_profile": 946,
       "website_page": 312
     }
   }

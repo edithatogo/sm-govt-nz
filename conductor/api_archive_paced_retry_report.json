@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-30T18:51:41+00:00",
+  "generated_at": "2026-07-31T18:49:17+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,10 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "08a3f6188eecbaa3",
-      "105802efa78f9cda",
-      "e4982b7f51e3d317",
-      "e4c2222bb359b2a6",
-      "fd7d8700850a7e2a"
+      "38d4918b091c22a2",
+      "628f40276130d1e0",
+      "ee6276caf0fcc06b",
+      "f76dceddb0f4e587"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -43,69 +42,60 @@
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "105802efa78f9cda",
+      "source_id": "f76dceddb0f4e587",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.dpmc.govt.nz/openapi.json"
+      "url": "https://www.dpmc.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "education-review-office",
+      "agency_id": "ministry-for-culture-and-heritage",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "e4982b7f51e3d317",
+      "source_id": "ee6276caf0fcc06b",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.ero.govt.nz/.well-known/webfinger"
+      "url": "https://www.mch.govt.nz/openapi.json"
     },
     {
-      "agency_id": "grey-district-council",
+      "agency_id": "ruapehu-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "captured keyless public API/source documentation snapshot",
+      "source_id": "38d4918b091c22a2",
+      "source_type": "api_endpoint",
+      "status": "captured",
+      "url": "https://www.ruapehudc.govt.nz/.well-known/webfinger"
+    },
+    {
+      "agency_id": "tararua-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "fd7d8700850a7e2a",
+      "source_id": "628f40276130d1e0",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.greydc.govt.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "university-of-otago",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "e4c2222bb359b2a6",
-      "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.otago.ac.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "western-bay-of-plenty-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "08a3f6188eecbaa3",
-      "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.westernbay.govt.nz/.well-known/webfinger"
+      "url": "https://www.tararuadc.govt.nz/.well-known/webfinger"
     }
   ],
   "summary": {
     "platform_counts": {
-      "api": 5
+      "api": 4
     },
-    "selected_sources": 5,
+    "selected_sources": 4,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 5
+        "capture_blocked": 3,
+        "captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 5
+      "capture_blocked": 3,
+      "captured": 1
     }
   }
 }

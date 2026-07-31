@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-30T18:52:16+00:00",
+  "generated_at": "2026-07-31T18:49:21+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,8 +24,7 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "07955141e1acc8ad",
-      "2f91a7d6611e2699"
+      "d4631b140a351a94"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -35,43 +34,30 @@
   },
   "results": [
     {
-      "agency_id": "department-of-corrections",
+      "agency_id": "office-of-the-ombudsman",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "07955141e1acc8ad",
+      "source_id": "d4631b140a351a94",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.corrections.govt.nz/feed.json"
-    },
-    {
-      "agency_id": "manukau-institute-of-technology",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "json_feed",
-      "reason": "URL error: timed out",
-      "source_id": "2f91a7d6611e2699",
-      "source_type": "json_feed",
-      "status": "network_timeout",
-      "url": "https://www.manukau.ac.nz/feed.json"
+      "url": "https://www.ombudsman.parliament.nz/feed.json"
     }
   ],
   "summary": {
     "platform_counts": {
-      "json_feed": 2
+      "json_feed": 1
     },
-    "selected_sources": 2,
+    "selected_sources": 1,
     "status_by_platform": {
       "json_feed": {
-        "capture_blocked": 1,
-        "network_timeout": 1
+        "capture_blocked": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 1,
-      "network_timeout": 1
+      "capture_blocked": 1
     }
   }
 }

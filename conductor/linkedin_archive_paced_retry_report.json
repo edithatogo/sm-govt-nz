@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-30T18:53:57+00:00",
+  "generated_at": "2026-07-31T18:49:31+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,9 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "86cc1ff648f5890a",
-      "907bb31d36c878a0",
-      "dd43d68a82131b33"
+      "2f4321feb9c7f4dc",
+      "94787ee17f3cda73",
+      "eee6017886d87b59"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -36,30 +36,43 @@
   },
   "results": [
     {
-      "agency_id": "victoria-university-of-wellington",
+      "agency_id": "public-service-commission",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:940f0d84dc4e06e675dd8e63",
+      "source_id": "94787ee17f3cda73",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/te-kawa-mataaho/"
+    },
+    {
+      "agency_id": "te-whare-wananga-o-awanuiarangi",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "907bb31d36c878a0",
+      "source_id": "2f4321feb9c7f4dc",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/victoria-university-of-wellington"
+      "url": "https://www.linkedin.com/school/te-whare-wananga-o-awanuiarangi"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1
+        "http_error": 1,
+        "public_snapshot_captured": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1
+      "http_error": 1,
+      "public_snapshot_captured": 1
     }
   }
 }
