@@ -1,6 +1,6 @@
 {
   "description": "Cumulative monthly release plan. Each release bundles all archived accounts and sources present in the repository at release time.",
-  "generated_at": "2026-07-19T13:28:06+00:00",
+  "generated_at": "2026-08-01T17:38:25+00:00",
   "months": [
     {
       "account_count": 1,
@@ -2675,9 +2675,10 @@
       "account_count": 8,
       "month": "2023-11",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2023-11 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 28,
+      "record_count": 29,
       "release_version": "2023-11",
       "source_counts": {
+        "courtsofnz.govt.nz": 1,
         "rss": 20,
         "youtube": 8
       },
@@ -2791,9 +2792,10 @@
       "account_count": 11,
       "month": "2024-08",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2024-08 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 45,
+      "record_count": 46,
       "release_version": "2024-08",
       "source_counts": {
+        "courtsofnz.govt.nz": 1,
         "rss": 27,
         "x": 6,
         "youtube": 12
@@ -3007,10 +3009,11 @@
       "account_count": 34,
       "month": "2025-12",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2025-12 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 157,
+      "record_count": 158,
       "release_version": "2025-12",
       "source_counts": {
         "bluesky": 35,
+        "courtsofnz.govt.nz": 1,
         "rss": 44,
         "youtube": 78
       },
@@ -3034,10 +3037,11 @@
       "account_count": 32,
       "month": "2026-02",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-02 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 173,
+      "record_count": 174,
       "release_version": "2026-02",
       "source_counts": {
         "bluesky": 78,
+        "courtsofnz.govt.nz": 1,
         "rss": 14,
         "x": 1,
         "youtube": 80
@@ -3048,10 +3052,11 @@
       "account_count": 48,
       "month": "2026-03",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-03 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 238,
+      "record_count": 241,
       "release_version": "2026-03",
       "source_counts": {
         "bluesky": 103,
+        "courtsofnz.govt.nz": 3,
         "rss": 37,
         "x": 1,
         "youtube": 97
@@ -3062,10 +3067,11 @@
       "account_count": 47,
       "month": "2026-04",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-04 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 299,
+      "record_count": 302,
       "release_version": "2026-04",
       "source_counts": {
         "bluesky": 126,
+        "courtsofnz.govt.nz": 3,
         "rss": 35,
         "x": 1,
         "youtube": 137
@@ -3087,39 +3093,53 @@
       "status": "candidate"
     },
     {
-      "account_count": 102,
+      "account_count": 313,
       "month": "2026-06",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-06 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 1518,
+      "record_count": 1738,
       "release_version": "2026-06",
       "source_counts": {
         "bluesky": 698,
+        "courtsofnz.govt.nz": 1,
         "email": 12,
         "linkedin": 2,
         "rss": 102,
+        "website_page": 219,
         "x": 3,
         "youtube": 701
       },
       "status": "published"
     },
     {
-      "account_count": 364,
+      "account_count": 598,
       "month": "2026-07",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-07 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 1060,
+      "record_count": 3207,
       "release_version": "2026-07",
       "source_counts": {
-        "api": 13,
-        "bluesky": 491,
-        "email": 9,
+        "api": 14,
+        "bluesky": 1014,
+        "email": 13,
         "facebook": 323,
         "json_feed": 8,
-        "linkedin": 48,
+        "linkedin": 59,
         "rss": 33,
+        "website_page": 1608,
         "x": 1,
         "youtube": 134
       },
       "status": "published"
+    },
+    {
+      "account_count": 5,
+      "month": "2026-08",
+      "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-08 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
+      "record_count": 9,
+      "release_version": "2026-08",
+      "source_counts": {
+        "bluesky": 9
+      },
+      "status": "candidate"
     },
     {
       "account_count": 1,
@@ -3141,9 +3161,9 @@
     "2026-07"
   ],
   "summary": {
-    "candidate_months": 257,
-    "months_with_records": 262,
+    "candidate_months": 258,
+    "months_with_records": 263,
     "published_months": 5,
-    "total_records": 9928
+    "total_records": 12314
   }
 }

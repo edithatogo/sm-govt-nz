@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T04:51:41+00:00",
+  "generated_at": "2026-08-01T17:38:22+00:00",
   "normalized": [
     {
       "bytes": 1232184,
@@ -170,11 +170,19 @@
       "source": "bluesky"
     },
     {
-      "bytes": 1190556,
+      "bytes": 1199092,
       "month": "2026-07",
       "path": "dist/hydrated_archive_normalized/bluesky/2026-07.jsonl",
-      "record_count": 1007,
-      "sha256": "1f89d53ec623b3b0ff15319ddd3f759c3746aa5b876e96f6d38b01b7be0b2388",
+      "record_count": 1014,
+      "sha256": "b052f46b17c83181a26d9099401c0bf88f6b1f4d41afcf0f5774b95407a02e21",
+      "source": "bluesky"
+    },
+    {
+      "bytes": 11038,
+      "month": "2026-08",
+      "path": "dist/hydrated_archive_normalized/bluesky/2026-08.jsonl",
+      "record_count": 9,
+      "sha256": "311c3903bb4799bde08c7dfc5293939255242ee6fd063e55030fc0719f401f63",
       "source": "bluesky"
     },
     {
@@ -2394,11 +2402,11 @@
       "source": "website"
     },
     {
-      "bytes": 88572,
+      "bytes": 1352,
       "month": "1971-01",
       "path": "dist/hydrated_archive_normalized/x/1971-01.jsonl",
-      "record_count": 65,
-      "sha256": "ea61b91225728c9acabbe395c443977a5e916b6784b96363183433c39117d850",
+      "record_count": 1,
+      "sha256": "dcd0a32ec5b907ddd141742f834b9242bc673b6db1893799b56f61f5817d5625",
       "source": "x"
     },
     {
@@ -4335,12 +4343,21 @@
       "source": "bluesky"
     },
     {
-      "bytes": 1578700,
+      "bytes": 1590051,
       "digest_mode": "path_size_inventory",
-      "file_count": 1007,
+      "file_count": 1014,
       "month": "2026-07",
       "path": "historical_archive_raw/bluesky/2026-07",
-      "sha256": "f76a6682171e24510a345e5915975970731a6d47954b1813cb32764fcc81892f",
+      "sha256": "4e7baf6bf530d869b2fd5f85a264f6e0c50111b1a6780897e71199415109f6cf",
+      "source": "bluesky"
+    },
+    {
+      "bytes": 14666,
+      "digest_mode": "path_size_inventory",
+      "file_count": 9,
+      "month": "2026-08",
+      "path": "historical_archive_raw/bluesky/2026-08",
+      "sha256": "dd3cb92cb4b4c14f85e3c4728ae14e116a061bb589bf16b58daf235917f1b57a",
       "source": "bluesky"
     },
     {
@@ -8845,11 +8862,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 154390396,
-    "normalized_record_count": 12362,
-    "normalized_shard_count": 517,
-    "raw_bytes": 715523259,
-    "raw_file_count": 16125,
-    "raw_shard_count": 522
+    "normalized_bytes": 154322750,
+    "normalized_record_count": 12314,
+    "normalized_shard_count": 518,
+    "raw_bytes": 715549276,
+    "raw_file_count": 16141,
+    "raw_shard_count": 523
   }
 }
