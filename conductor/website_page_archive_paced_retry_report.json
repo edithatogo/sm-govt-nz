@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-30T18:53:50+00:00",
+  "generated_at": "2026-08-01T18:17:26+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,10 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "8ea2689241f7a267",
-      "982c084a3e6d0462",
-      "a9da02fbaefa8cc2"
+      "28fde064d265c25f",
+      "45019736c545c4fc",
+      "b6eef4a659033728",
+      "c3670697db69f415"
     ],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
@@ -38,15 +39,26 @@
     {
       "agency_id": "education-review-office",
       "archive_status": "ready",
-      "candidate_id": "a9da02fbaefa8cc2",
+      "candidate_id": "45019736c545c4fc",
       "feasibility": "high",
       "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-07/21eb775946bca05137725d4e.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
-      "source_id": "a9da02fbaefa8cc2",
+      "raw_path": "historical_archive_raw/website_browser/2026-08/1b59cc244d009a9a981ad1ee.json",
+      "reason": "public browser fallback stopped at access marker: cloudflare",
+      "source_id": "45019736c545c4fc",
       "source_type": "website_page",
       "status": "browser_captcha_or_challenge",
-      "url": "https://www.ero.govt.nz"
+      "url": "https://www.ero.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "education-review-office",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "source_id": "c3670697db69f415",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.ero.govt.nz/subscribe"
     },
     {
       "agency_id": "government-house",
@@ -54,10 +66,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "982c084a3e6d0462",
+      "source_id": "28fde064d265c25f",
       "source_type": "website_page",
       "status": "capture_blocked",
-      "url": "https://gg.govt.nz/media-releases"
+      "url": "https://gg.govt.nz/news"
     },
     {
       "agency_id": "selwyn-district-council",
@@ -65,27 +77,27 @@
       "feasibility": "high",
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "8ea2689241f7a267",
+      "source_id": "b6eef4a659033728",
       "source_type": "website_page",
       "status": "capture_blocked",
-      "url": "https://www.selwyn.govt.nz/media-releases"
+      "url": "https://www.selwyn.govt.nz/news"
     }
   ],
   "summary": {
     "platform_counts": {
-      "website_page": 3
+      "website_page": 4
     },
-    "selected_sources": 3,
+    "selected_sources": 4,
     "status_by_platform": {
       "website_page": {
         "browser_captcha_or_challenge": 1,
-        "capture_blocked": 2
+        "capture_blocked": 3
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "browser_captcha_or_challenge": 1,
-      "capture_blocked": 2
+      "capture_blocked": 3
     }
   }
 }
