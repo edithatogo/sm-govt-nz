@@ -1,234 +1,234 @@
 {
   "gaps": [
     {
-      "agency_id": "west-coast-regional-council",
+      "agency_id": "office-of-the-ombudsman",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "281fa421a4252f54",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.ombudsman.parliament.nz/api"
+    },
+    {
+      "agency_id": "office-of-the-ombudsman",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "a7768698a696f433",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.ombudsman.parliament.nz/media"
+    },
+    {
+      "agency_id": "office-of-the-ombudsman",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "3402991dcf8cf5bc",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.ombudsman.parliament.nz/media-releases"
+    },
+    {
+      "agency_id": "office-of-the-ombudsman",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "f526352b0fd5aa79",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.ombudsman.parliament.nz/news"
+    },
+    {
+      "agency_id": "office-of-the-ombudsman",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "ce7cc3b62f9a8935",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.ombudsman.parliament.nz/news-and-events"
+    },
+    {
+      "agency_id": "office-of-the-ombudsman",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "bae59bb8e0747dd8",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.ombudsman.parliament.nz/newsletter"
+    },
+    {
+      "agency_id": "office-of-the-ombudsman",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "8611505eb751cda6",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.ombudsman.parliament.nz/publications"
+    },
+    {
+      "agency_id": "office-of-the-ombudsman",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "b41c668fbdc7bdb7",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://www.ombudsman.parliament.nz/subscribe"
+    },
+    {
+      "agency_id": "opotiki-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "1eec52bb3bb69d05",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "7a2733b8af5581a3",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.wcrc.govt.nz/api"
+      "url": "https://www.odc.govt.nz"
     },
     {
-      "agency_id": "west-coast-regional-council",
+      "agency_id": "opotiki-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "cb3a2e5d5c3efcc0",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "a77b7c453e98ec0e",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.wcrc.govt.nz/media"
+      "url": "https://www.odc.govt.nz/api"
     },
     {
-      "agency_id": "west-coast-regional-council",
+      "agency_id": "opotiki-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "2c8367c27b9e30d4",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "039bd51cd7fd8b71",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.wcrc.govt.nz/media-releases"
+      "url": "https://www.odc.govt.nz/media"
     },
     {
-      "agency_id": "west-coast-regional-council",
+      "agency_id": "opotiki-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "e22e49a2ac7eab76",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "7d18afbaecff6736",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.wcrc.govt.nz/news"
+      "url": "https://www.odc.govt.nz/media-releases"
     },
     {
-      "agency_id": "west-coast-regional-council",
+      "agency_id": "opotiki-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "2252185370bae244",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "b9404df11e7110c4",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.wcrc.govt.nz/news-and-events"
+      "url": "https://www.odc.govt.nz/news"
     },
     {
-      "agency_id": "west-coast-regional-council",
+      "agency_id": "opotiki-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "72b179ce38d5fe75",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "cf992029c4dd2f0f",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.wcrc.govt.nz/newsletter"
+      "url": "https://www.odc.govt.nz/news-and-events"
     },
     {
-      "agency_id": "west-coast-regional-council",
+      "agency_id": "opotiki-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "21379909baee2e92",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "20350c92df04f8e7",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.wcrc.govt.nz/publications"
+      "url": "https://www.odc.govt.nz/newsletter"
     },
     {
-      "agency_id": "west-coast-regional-council",
+      "agency_id": "opotiki-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "0c1f8180c0cb8c42",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "2e1670bbc628321e",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.wcrc.govt.nz/subscribe"
+      "url": "https://www.odc.govt.nz/publications"
     },
     {
-      "agency_id": "western-bay-of-plenty-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "c922863927e4d8ac",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.westernbay.govt.nz"
-    },
-    {
-      "agency_id": "western-bay-of-plenty-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "972b6b521fcaa8fa",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.westernbay.govt.nz/api"
-    },
-    {
-      "agency_id": "western-bay-of-plenty-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "50eb508c164aae75",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.westernbay.govt.nz/media"
-    },
-    {
-      "agency_id": "western-bay-of-plenty-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "3b45b6f706b8392a",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.westernbay.govt.nz/media-releases"
-    },
-    {
-      "agency_id": "western-bay-of-plenty-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "52ce799189d37b71",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.westernbay.govt.nz/news"
-    },
-    {
-      "agency_id": "western-bay-of-plenty-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "fb397294956d0cdb",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.westernbay.govt.nz/news-and-events"
-    },
-    {
-      "agency_id": "western-bay-of-plenty-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "4c6f79a484df8d4d",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.westernbay.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "western-bay-of-plenty-district-council",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "62dc8fb10313474d",
-      "status": "method_not_allowed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.westernbay.govt.nz/publications"
-    },
-    {
-      "agency_id": "western-bay-of-plenty-district-council",
+      "agency_id": "opotiki-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
-      "report": "conductor/website_page_archive_offset_1600_report.json",
-      "source_id": "250268edc4b1ca6a",
+      "report": "conductor/website_page_archive_offset_1000_report.json",
+      "source_id": "18ce713985a58899",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.westernbay.govt.nz/subscribe"
+      "url": "https://www.odc.govt.nz/subscribe"
     }
   ],
   "inputs": {
     "reports": [
-      "conductor/website_page_archive_offset_1600_report.json"
+      "conductor/website_page_archive_offset_1000_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/website_page_archive_offset_1600_report.json": {
+    "conductor/website_page_archive_offset_1000_report.json": {
       "platform_counts": {
         "website_page": 100
       },
@@ -236,15 +236,17 @@
       "status_by_platform": {
         "website_page": {
           "browser_captcha_or_challenge": 1,
+          "capture_blocked": 8,
           "captured": 82,
-          "method_not_allowed": 17
+          "method_not_allowed": 9
         }
       },
       "status_by_provider": {},
       "status_counts": {
         "browser_captcha_or_challenge": 1,
+        "capture_blocked": 8,
         "captured": 82,
-        "method_not_allowed": 17
+        "method_not_allowed": 9
       }
     }
   },
@@ -252,8 +254,9 @@
     "gap_count": 17,
     "input_status_counts": {
       "browser_captcha_or_challenge": 1,
+      "capture_blocked": 8,
       "captured": 82,
-      "method_not_allowed": 17
+      "method_not_allowed": 9
     },
     "platform_counts": {
       "website_page": 100
@@ -261,12 +264,14 @@
     "priority_counts": {
       "archived_or_already_archived": 82,
       "monitor_report_only": 1,
-      "p1_existing_resources": 17
+      "p1_existing_resources": 9,
+      "p4_larger_browser_or_access_project": 8
     },
     "status_counts": {
       "browser_captcha_or_challenge": 1,
+      "capture_blocked": 8,
       "captured": 82,
-      "method_not_allowed": 17
+      "method_not_allowed": 9
     },
     "superseded_source_count": 0
   }
