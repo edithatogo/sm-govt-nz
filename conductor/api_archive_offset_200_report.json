@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-13T12:01:38+00:00",
+  "generated_at": "2026-08-02T06:29:12+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 200,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "api",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -120,10 +124,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "4f3a3b69e3173e9a",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
+      "status": "captured",
       "url": "https://www.mpdc.govt.nz/openapi.json"
     },
     {
@@ -571,10 +575,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "528131a990725f86",
       "source_type": "api_endpoint",
-      "status": "dns_failed",
+      "status": "captured",
       "url": "https://www.nema.govt.nz/.well-known/webfinger"
     },
     {
@@ -582,10 +586,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "579e85bb11a58678",
       "source_type": "api_endpoint",
-      "status": "dns_failed",
+      "status": "captured",
       "url": "https://www.nema.govt.nz/openapi.json"
     },
     {
@@ -956,10 +960,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "nz-post-api-56cb4d9c",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/label-api"
     },
     {
@@ -967,10 +971,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "nz-post-api-14fee8a4",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/locator-api"
     },
     {
@@ -978,10 +982,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "nz-post-api-2ce1bff3",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/rate-finder-api"
     },
     {
@@ -989,10 +993,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "nz-post-api-75a112a6",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/tracking-api"
     },
     {
@@ -1000,10 +1004,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "nz-post-api-d2a9d258",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/tracking-notification-api"
     },
     {
@@ -1011,10 +1015,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "nz-post-api-50edce23",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.nzpost.co.nz/business/terms-and-conditions/addressing-api"
     },
     {
@@ -1022,10 +1026,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "nz-post-api-182e744a",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.nzpost.co.nz/business/terms-and-conditions/developer-centre-api-terms-conditions"
     },
     {
@@ -1033,10 +1037,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "nz-post-api-083d3e9c",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.nzpost.co.nz/business/terms-and-conditions/shipping-api"
     },
     {
@@ -1044,10 +1048,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "nz-post-api-ccc71c01",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.nzpost.co.nz/business/terms-and-conditions/terms-and-conditions-for-api-use"
     },
     {
@@ -1066,10 +1070,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "a4ed6da18dc52b6d",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.nzqa.govt.nz/.well-known/webfinger"
     },
     {
@@ -1077,10 +1081,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "515d74df1a77e4d8",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.nzqa.govt.nz/openapi.json"
     },
     {
@@ -1135,21 +1139,17 @@
     "selected_sources": 100,
     "status_by_platform": {
       "api": {
-        "already_captured": 9,
-        "capture_blocked": 14,
-        "captured": 6,
-        "dns_failed": 2,
-        "invalid": 66,
+        "capture_blocked": 13,
+        "captured": 20,
+        "invalid": 64,
         "method_not_allowed": 3
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 9,
-      "capture_blocked": 14,
-      "captured": 6,
-      "dns_failed": 2,
-      "invalid": 66,
+      "capture_blocked": 13,
+      "captured": 20,
+      "invalid": 64,
       "method_not_allowed": 3
     }
   }
