@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T06:30:57+00:00",
+  "generated_at": "2026-08-02T06:32:42+00:00",
   "normalized": [
     {
       "bytes": 1232184,
@@ -7,14 +7,6 @@
       "path": "dist/hydrated_archive_normalized/api/2026-07.jsonl",
       "record_count": 14,
       "sha256": "e628b556ca3f2f6e30b2dea324a453bd78088956d787bfe82371c24a15a90ad7",
-      "source": "api"
-    },
-    {
-      "bytes": 123421,
-      "month": "2026-08",
-      "path": "dist/hydrated_archive_normalized/api/2026-08.jsonl",
-      "record_count": 9,
-      "sha256": "c72bf483b8910c5dbdf810a4d6ea4b4b35ed1aa85cdc0b9890c73d9bc65629ec",
       "source": "api"
     },
     {
@@ -287,6 +279,14 @@
       "path": "dist/hydrated_archive_normalized/json_feed/2026-07.jsonl",
       "record_count": 8,
       "sha256": "8b04f197a3728cf440db5d6484abfb004abfabd1fee94fe96878d79e9912c630",
+      "source": "json_feed"
+    },
+    {
+      "bytes": 3527,
+      "month": "2026-08",
+      "path": "dist/hydrated_archive_normalized/json_feed/2026-08.jsonl",
+      "record_count": 4,
+      "sha256": "74f65de6a4fc11a2b49788afd98f1fcdbf65583f88f076c9758b47b68c1358df",
       "source": "json_feed"
     },
     {
@@ -4179,15 +4179,6 @@
       "source": "api"
     },
     {
-      "bytes": 132674,
-      "digest_mode": "path_size_inventory",
-      "file_count": 9,
-      "month": "2026-08",
-      "path": "historical_archive_raw/api/2026-08",
-      "sha256": "f700fff3df98c9de93c5c0bbbd72d2e851558d113407fd3d018029407bbbde38",
-      "source": "api"
-    },
-    {
       "bytes": 1329,
       "digest_mode": "path_size_inventory",
       "file_count": 1,
@@ -4491,6 +4482,15 @@
       "month": "2026-07",
       "path": "historical_archive_raw/json_feed/2026-07",
       "sha256": "c752f12581bc7e86f82425610987542571bac685a13c7a656a100d7133c67463",
+      "source": "json_feed"
+    },
+    {
+      "bytes": 12965,
+      "digest_mode": "path_size_inventory",
+      "file_count": 4,
+      "month": "2026-08",
+      "path": "historical_archive_raw/json_feed/2026-08",
+      "sha256": "d7c0aed0daeacff9170c009c22c1ced5494d85905ea604258221f84297e8b52b",
       "source": "json_feed"
     },
     {
@@ -8905,11 +8905,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 154465041,
-    "normalized_record_count": 12341,
+    "normalized_bytes": 154345147,
+    "normalized_record_count": 12336,
     "normalized_shard_count": 520,
-    "raw_bytes": 715997088,
-    "raw_file_count": 16247,
+    "raw_bytes": 715877379,
+    "raw_file_count": 16242,
     "raw_shard_count": 526
   }
 }

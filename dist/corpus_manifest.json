@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "bf776ad3c8352133b9f87c5d93af62a7b0b2b428604f360ea84916778a4b9a70"
+      "sha256": "b46c0f4d849c7c258397b3eeba0fa785562b8aa65b9174b7c9075911207e04b4"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24797064,
+      "bytes": 24779784,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "74c84fd7522787e7051f2925c059c9543f6e6f921957e9511fd5cc6df4397967"
+      "sha256": "992198848427f1f2ffcf4826033cf335fb0806626d242238bbe17861c692601d"
     },
     "normalized_archive.parquet": {
-      "bytes": 39180895,
+      "bytes": 39167695,
       "path": "normalized_archive.parquet",
-      "sha256": "bddcafd3e332b3064823b5cb3a1314f0be830b693b545a56ff77d70943221837"
+      "sha256": "569557a602ba2f8a2a02a504f973119e4c569d7565cb2e9cf0122390c195d683"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12343,
+  "normalized_record_count": 12338,
   "normalized_shard_count": 522,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 16256,
+  "raw_file_count": 16251,
   "record_index": [
     {
       "mirror_targets": [
@@ -131167,84 +131167,39 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:12:37+00:00",
-      "source_account": "https://www.acc.co.nz",
-      "source_key": "api:https://www.acc.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:cda07dfbbbcd79fa5bcd125e",
-      "source_url": "https://www.acc.co.nz/.well-known/webfinger"
+      "original_timestamp": "2026-08-02T06:17:59+00:00",
+      "source_account": "https://www.manukau.ac.nz",
+      "source_key": "json_feed:https://www.manukau.ac.nz",
+      "source_platform": "json_feed",
+      "source_record_id": "json_feed:ccd60d19943347f1cd844ea2",
+      "source_url": "https://www.manukau.ac.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.manukau.ac.nz%2F"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:12:43+00:00",
-      "source_account": "https://www.acc.co.nz",
-      "source_key": "api:https://www.acc.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:f127fe5c3f02439e24adc9d0",
-      "source_url": "https://www.acc.co.nz/openapi.json"
+      "original_timestamp": "2026-08-02T06:23:48+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "json_feed:https://www.n4l.co.nz",
+      "source_platform": "json_feed",
+      "source_record_id": "json_feed:e9362a3fa4b1b72186c4e53a",
+      "source_url": "https://www.n4l.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.n4l.co.nz%2F"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:12:47+00:00",
-      "source_account": "https://www.airways.co.nz",
-      "source_key": "api:https://www.airways.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:5bf04b10b55a7ae85af2b70d",
-      "source_url": "https://www.airways.co.nz/.well-known/webfinger"
+      "original_timestamp": "2026-08-02T06:32:11+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "json_feed:https://www.swrb.govt.nz",
+      "source_platform": "json_feed",
+      "source_record_id": "json_feed:11d9ecad23c4ddd3b95d59f6",
+      "source_url": "https://swrb.govt.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswrb.govt.nz%2F"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:12:50+00:00",
-      "source_account": "https://www.airways.co.nz",
-      "source_key": "api:https://www.airways.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:89f3f2a51d71ab555b8fb4a2",
-      "source_url": "https://www.airways.co.nz/openapi.json"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:21:03+00:00",
-      "source_account": "https://www.callaghaninnovation.govt.nz",
-      "source_key": "api:https://www.callaghaninnovation.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:3b5562f295e0f7f991339759",
-      "source_url": "https://www.callaghaninnovation.govt.nz/.well-known/webfinger"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:21:06+00:00",
-      "source_account": "https://www.callaghaninnovation.govt.nz",
-      "source_key": "api:https://www.callaghaninnovation.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:524c5484b5e2013e4cdc4f6b",
-      "source_url": "https://www.callaghaninnovation.govt.nz/openapi.json"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:22:27+00:00",
-      "source_account": "https://www.ccc.govt.nz",
-      "source_key": "api:https://www.ccc.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:10cbe7f1113ed65d2e60762b",
-      "source_url": "https://www.ccc.govt.nz/.well-known/webfinger"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:22:27+00:00",
-      "source_account": "https://www.ccc.govt.nz",
-      "source_key": "api:https://www.ccc.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:262386badf7f1eea20544eb6",
-      "source_url": "https://www.ccc.govt.nz/openapi.json"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:24:04+00:00",
-      "source_account": "https://www.creativenz.govt.nz",
-      "source_key": "api:https://www.creativenz.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:4915f98708499818f68586dc",
-      "source_url": "https://www.creativenz.govt.nz/.well-known/webfinger"
+      "original_timestamp": "2026-08-02T06:32:36+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "json_feed:https://www.swdc.govt.nz",
+      "source_platform": "json_feed",
+      "source_record_id": "json_feed:91a553fcfbf5e25b6ad04fbc",
+      "source_url": "https://swdc.govt.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswdc.govt.nz%2F"
     },
     {
       "mirror_targets": [],
@@ -131442,12 +131397,12 @@
     "nz-government-social-media"
   ],
   "source_counts": {
-    "api": 23,
+    "api": 14,
     "bluesky": 2617,
     "courtsofnz.govt.nz": 11,
     "email": 25,
     "facebook": 323,
-    "json_feed": 16,
+    "json_feed": 20,
     "linkedin": 61,
     "rss": 3930,
     "website_page": 1827,
@@ -131456,7 +131411,7 @@
   },
   "source_date_ranges": {
     "api": {
-      "max_original_created_at": "2026-08-02T06:24:04+00:00",
+      "max_original_created_at": "2026-07-31T18:49:09+00:00",
       "min_original_created_at": "2026-07-01T10:07:40+00:00"
     },
     "bluesky": {
@@ -131476,7 +131431,7 @@
       "min_original_created_at": "2026-07-19T03:52:46+00:00"
     },
     "json_feed": {
-      "max_original_created_at": "2026-07-01T10:07:59+00:00",
+      "max_original_created_at": "2026-08-02T06:32:36+00:00",
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
