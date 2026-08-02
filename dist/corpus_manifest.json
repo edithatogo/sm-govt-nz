@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "168e58df8071732605c70d33a7f496e4e8d1f3367d8b0e992dd9ad5149025871"
+      "sha256": "4a25acfa2eec45d55d79a280f8e3e4cad03a491af14d4c1565d0fac63d8966f2"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24783719,
+      "bytes": 24822955,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "fd07a84d275fa633dcee2d927c7158391668a7abe7b41707b6ecc374588a51a5"
+      "sha256": "2561cd4787d8d2101f42a1051e6c1c2add2c9b4a8aa807f6e919f5910c2f47cb"
     },
     "normalized_archive.parquet": {
-      "bytes": 39166035,
+      "bytes": 39196090,
       "path": "normalized_archive.parquet",
-      "sha256": "0b8aca23092d1fb53966e03b48533a720090dee286fba3277c96cbb08c5d11ca"
+      "sha256": "7b1690c2e2894d19ab7643bf6d6bc357b33c37fc58353e81ae08cee97ce78ed0"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12357,
+  "normalized_record_count": 12516,
   "normalized_shard_count": 521,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 16251,
+  "raw_file_count": 16331,
   "record_index": [
     {
       "mirror_targets": [
@@ -34053,15 +34053,6 @@
       "source_url": "https://www.wananga.com/feed/atom"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2022-01-15T08:14:58+00:00",
-      "source_account": "https://www.xrb.govt.nz",
-      "source_key": "rss:https://www.xrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:dd39c21c462df9ce781e23a4",
-      "source_url": "https://www.xrb.govt.nz/news/accounting-alerts/changes/"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3moscd6l3fw2s",
@@ -34075,15 +34066,6 @@
       "source_platform": "x",
       "source_record_id": "x:1483542608911941632",
       "source_url": "https://x.com/CourtsofNZ/status/1483542608911941632"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2022-01-18T00:38:06+00:00",
-      "source_account": "https://www.xrb.govt.nz",
-      "source_key": "rss:https://www.xrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:323e45276bdd7e178b710afe",
-      "source_url": "https://www.xrb.govt.nz/news/accounting-alerts/changes/"
     },
     {
       "mirror_targets": [
@@ -58420,15 +58402,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2025-12-09T23:09:57+00:00",
-      "source_account": "https://www.xrb.govt.nz",
-      "source_key": "rss:https://www.xrb.govt.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:323e45276bdd7e178b710afe",
-      "source_url": "https://www.xrb.govt.nz/news/accounting-alerts/changes/"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2025-12-10T00:47:50+00:00",
       "source_account": "nzpost",
       "source_key": "youtube:nzpost",
@@ -67718,11 +67691,29 @@
     {
       "mirror_targets": [],
       "original_timestamp": "2026-04-19T23:44:50+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3e7624075a678d74939aff01",
+      "source_url": "https://www.youtube.com/@accnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-04-19T23:44:50+00:00",
       "source_account": "ACC New Zealand on YouTube",
       "source_key": "youtube:ACC New Zealand on YouTube",
       "source_platform": "youtube",
       "source_record_id": "youtube:50f66e0e5d334105ad6b0f28",
       "source_url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-04-19T23:45:20+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:1bde1ac8127185862bae53f1",
+      "source_url": "https://www.youtube.com/@accnz"
     },
     {
       "mirror_targets": [],
@@ -68320,6 +68311,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mk4gf4vt5s2u",
       "source_url": "https://bsky.app/profile/courtsofnz.bsky.social/post/3mk4gf4vt5s2u"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-04-22T21:38:59+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:35dd59ed778beefc4a6c1f9f",
+      "source_url": "https://www.youtube.com/@accnz"
     },
     {
       "mirror_targets": [],
@@ -69583,12 +69583,39 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-05-03T23:19:13+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:833fd497f317dca39cb13497",
+      "source_url": "https://www.youtube.com/@accnz"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2026-05-03T23:19:18+00:00",
       "source_account": "ACC New Zealand on YouTube",
       "source_key": "youtube:ACC New Zealand on YouTube",
       "source_platform": "youtube",
       "source_record_id": "youtube:59f030833c3b6c4924153b6f",
       "source_url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-05-03T23:19:18+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e6998a47f20a02f870183d66",
+      "source_url": "https://www.youtube.com/@accnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-05-03T23:19:23+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:08b87d2f137d64755dda9427",
+      "source_url": "https://www.youtube.com/@accnz"
     },
     {
       "mirror_targets": [],
@@ -70945,12 +70972,39 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-05-11T22:20:36+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:36820bf50ea532676f7d61fa",
+      "source_url": "https://www.youtube.com/@accnz"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2026-05-11T22:20:58+00:00",
       "source_account": "ACC New Zealand on YouTube",
       "source_key": "youtube:ACC New Zealand on YouTube",
       "source_platform": "youtube",
       "source_record_id": "youtube:ab195b460fc9b1c9d6d75b81",
       "source_url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-05-11T22:20:58+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:ff6b33a17e05a9d9296edb02",
+      "source_url": "https://www.youtube.com/@accnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-05-11T22:21:05+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:65c113d02a2487cb4c46c5cf",
+      "source_url": "https://www.youtube.com/@accnz"
     },
     {
       "mirror_targets": [],
@@ -70969,6 +71023,15 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:dca7a11003f476c5584eb6a6",
       "source_url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-05-11T22:21:14+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:fb70ea7cd00e05aada85edc3",
+      "source_url": "https://www.youtube.com/@accnz"
     },
     {
       "mirror_targets": [],
@@ -75493,6 +75556,15 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:12153376ed75612a418ca027",
       "source_url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-05-28T21:18:58+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:2cb6c4359f64aa91748502a8",
+      "source_url": "https://www.youtube.com/@accnz"
     },
     {
       "mirror_targets": [
@@ -85450,24 +85522,6 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-06-18T21:06:09+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:910373190d07ec26a87f95fe",
-      "source_url": "https://www.eit.ac.nz/feed"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-18T21:06:09+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:fa55821ee60910fcdd3b4462",
-      "source_url": "https://www.eit.ac.nz/rss"
-    },
-    {
-      "mirror_targets": [],
       "original_timestamp": "2026-06-18T21:11:54+00:00",
       "source_account": "UCl2tDcl2hHFL_cx2f-Q-eQQ",
       "source_key": "youtube:UCl2tDcl2hHFL_cx2f-Q-eQQ",
@@ -87388,24 +87442,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:9936bcd1d3793e180c70fc97",
       "source_url": "https://www.youtube.com/user/linzvideoofficial"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-22T21:51:37+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:406f241d6aa66c34c6cdb96b",
-      "source_url": "https://www.eit.ac.nz/feed"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-22T21:51:37+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:c9db3e477661dd5cca84f2ac",
-      "source_url": "https://www.eit.ac.nz/rss"
     },
     {
       "mirror_targets": [
@@ -94275,6 +94311,15 @@
       "source_url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-06-28T21:53:00+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:d8971a3dc95b55070b08cb62",
+      "source_url": "https://www.youtube.com/@accnz"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -94549,24 +94594,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mpfx2idexp2r",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-29T09:24:31+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:2f2b71b91f13f548ea0627cd",
-      "source_url": "https://www.eit.ac.nz/feed"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-29T09:24:31+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:a0427a3dcfa291817711a690",
-      "source_url": "https://www.eit.ac.nz/rss"
     },
     {
       "mirror_targets": [
@@ -95106,24 +95133,6 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-30T00:12:21+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:53968854c11f93e71f4ba9ef",
-      "source_url": "https://www.eit.ac.nz/feed"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-30T00:12:21+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:75a13baa595fda717b54b7d4",
-      "source_url": "https://www.eit.ac.nz/rss"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -95422,24 +95431,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mphxy556ek24",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-30T02:43:33+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:12c98dc8e61fa9410c87e0d8",
-      "source_url": "https://www.eit.ac.nz/rss"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-30T02:43:33+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:95ebe78af79243496d1079c1",
-      "source_url": "https://www.eit.ac.nz/feed"
     },
     {
       "mirror_targets": [
@@ -100216,24 +100207,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:30eac72468b669c25cc4537a",
       "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-06T20:33:15+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:5571198f0e950f2b3d88f6d6",
-      "source_url": "https://www.eit.ac.nz/feed"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-06T20:33:15+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:83491aaf19e1f0ff05b5b90c",
-      "source_url": "https://www.eit.ac.nz/rss"
     },
     {
       "mirror_targets": [],
@@ -115470,6 +115443,24 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-07T22:34:54+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:d4904e91c63ef9b27f54a5a6",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-07T22:55:52+00:00",
+      "source_account": "LincolnUniversityNZ",
+      "source_key": "youtube:LincolnUniversityNZ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:23cf2ae6b206e5ed377014ce",
+      "source_url": "https://www.youtube.com/@LincolnUniversityNZ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -115530,6 +115521,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T00:20:47+00:00",
+      "source_account": "UCq5hXvb8XFkwNrEXsw9MC8Q",
+      "source_key": "youtube:UCq5hXvb8XFkwNrEXsw9MC8Q",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:5a8235cb995a1a0b7113f9ca",
+      "source_url": "https://www.youtube.com/channel/UCq5hXvb8XFkwNrEXsw9MC8Q"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -115560,6 +115560,33 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T01:40:50+00:00",
+      "source_account": "LincolnUniversityNZ",
+      "source_key": "youtube:LincolnUniversityNZ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:648c9a63a4fce450c3370f4a",
+      "source_url": "https://www.youtube.com/@LincolnUniversityNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T01:42:48+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:050a5cc68639e78be315b762",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T02:05:29+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:8d856d30794c574a1460e503",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -115588,6 +115615,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mq44dc6d722b",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T03:31:32+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:d4fe2637e44d38bdc53c444a",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T03:41:20+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:bfe2094bed2f74977a07cac7",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
     },
     {
       "mirror_targets": [
@@ -115693,6 +115738,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mq4fi64hec2f",
       "source_url": "https://bsky.app/profile/lanpham.greens.org.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T13:29:28+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:94e43e1999949e73df910d07",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
     },
     {
       "mirror_targets": [
@@ -115846,6 +115900,51 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-08T23:31:15+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:2663d018f8ab78c75ccc8b38",
+      "source_url": "https://www.youtube.com/channel/UCn008_LQ4z89psIuaDBLyFg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T23:31:21+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3d09fc5ca587bb1421c8eac9",
+      "source_url": "https://www.youtube.com/channel/UCn008_LQ4z89psIuaDBLyFg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T23:31:29+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:9b47005f27300241f543e2df",
+      "source_url": "https://www.youtube.com/channel/UCn008_LQ4z89psIuaDBLyFg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T23:34:53+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:6ff8c051945785fb3c2a7181",
+      "source_url": "https://www.youtube.com/channel/UCn008_LQ4z89psIuaDBLyFg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-08T23:34:58+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:cdc1779df4696b07ea67982a",
+      "source_url": "https://www.youtube.com/channel/UCn008_LQ4z89psIuaDBLyFg"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2026-07-08T23:46:02Z",
       "source_account": "em4mkapmjakoh5o@upload.pipedream.net",
       "source_key": "email:em4mkapmjakoh5o@upload.pipedream.net",
@@ -115899,6 +115998,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T00:00:08+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:a36a5e565e389eaac3ae4263",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -115914,6 +116022,24 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T00:38:25+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:506887f8054f5b86c916e316",
+      "source_url": "https://www.youtube.com/@accnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T00:38:25+00:00",
+      "source_account": "ACC New Zealand on YouTube",
+      "source_key": "youtube:ACC New Zealand on YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:879f4d63d3060f385501c90b",
+      "source_url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -115927,6 +116053,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mq6fqbu2d224",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T00:54:07+00:00",
+      "source_account": "LincolnUniversityNZ",
+      "source_key": "youtube:LincolnUniversityNZ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:6606107d4715f1a3993d5ccf",
+      "source_url": "https://www.youtube.com/@LincolnUniversityNZ"
     },
     {
       "mirror_targets": [
@@ -115974,6 +116109,24 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T01:59:02+00:00",
+      "source_account": "FENZ YouTube",
+      "source_key": "youtube:FENZ YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:0c7dd02272ae13900bda8b66",
+      "source_url": "https://www.youtube.com/channel/UCQu-E5AwQWpXspT446EvbNw"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T01:59:02+00:00",
+      "source_account": "Fire and Emergency NZ",
+      "source_key": "youtube:Fire and Emergency NZ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:f78c4f053a00fb11673a6624",
+      "source_url": "https://www.youtube.com/@FireandEmergencyNZ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -115987,6 +116140,33 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mq6jxtnjwe2z",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T02:23:26+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3aeb32012698061f6bf04465",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T02:25:03+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:81f48a1d77d221eaa70466fc",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T02:28:14+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:b524f5234e65dc388f2a8cd2",
+      "source_url": "http://www.youtube.com/centralotagodc"
     },
     {
       "mirror_targets": [],
@@ -116014,12 +116194,57 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-09T03:35:25+00:00",
+      "source_account": "UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_key": "youtube:UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:850d94103a89f024799442c3",
+      "source_url": "https://www.youtube.com/user/CommerceCommission"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T03:35:26+00:00",
+      "source_account": "UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_key": "youtube:UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:64f537473b61151c8d92bc75",
+      "source_url": "https://www.youtube.com/user/CommerceCommission"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T03:35:28+00:00",
+      "source_account": "UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_key": "youtube:UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:a7a4feae128b0c022963c2f8",
+      "source_url": "https://www.youtube.com/user/CommerceCommission"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T03:35:31+00:00",
+      "source_account": "UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_key": "youtube:UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:0ef12ba7aa326a560688f15f",
+      "source_url": "https://www.youtube.com/user/CommerceCommission"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2026-07-09T04:06:22Z",
       "source_account": "em4mkapmjakoh5o@upload.pipedream.net",
       "source_key": "email:em4mkapmjakoh5o@upload.pipedream.net",
       "source_platform": "email",
       "source_record_id": "email:cm.1406220488026.wniuty.hjhddyjkih.d-cmail19.com",
       "source_url": "http://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T04:44:33+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:d8de71598d444c11029ba90c",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
     },
     {
       "mirror_targets": [
@@ -116095,6 +116320,42 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mq7hm62pa22k",
       "source_url": "https://bsky.app/profile/ponekeben.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T11:26:54+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:7ec75a2f338beb2f9fee8961",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T13:48:36+00:00",
+      "source_account": "UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_key": "youtube:UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:7aafa74390f0c4e879ca267c",
+      "source_url": "https://youtube.com/nelsoncouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T14:08:45+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:6044a306519756c42d29bdc7",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-09T19:00:05+00:00",
+      "source_account": "AUTUni",
+      "source_key": "youtube:AUTUni",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:816d796cdfdc88364aac0a05",
+      "source_url": "https://www.youtube.com/@AUTUni"
     },
     {
       "mirror_targets": [
@@ -116203,21 +116464,21 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-10T03:09:25+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:5c2dbb467bae4798450eb6e7",
-      "source_url": "https://www.eit.ac.nz/rss"
+      "original_timestamp": "2026-07-10T00:00:32+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:b25d9e1f1fe3f36b847a48f5",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-10T03:09:25+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:adecb972f04de2b4320685bf",
-      "source_url": "https://www.eit.ac.nz/feed"
+      "original_timestamp": "2026-07-10T05:30:18+00:00",
+      "source_account": "AUTUni",
+      "source_key": "youtube:AUTUni",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:a7750a9a9cf5e91c05d77bbb",
+      "source_url": "https://www.youtube.com/@AUTUni"
     },
     {
       "mirror_targets": [
@@ -116608,24 +116869,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqid5haxp227",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-12T23:27:33+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:5ff504fa5d1450130221b046",
-      "source_url": "https://www.eit.ac.nz/feed"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-12T23:27:33+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:e504ebb75f5cddc0693eceb9",
-      "source_url": "https://www.eit.ac.nz/rss"
     },
     {
       "mirror_targets": [
@@ -117435,6 +117678,15 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-13T21:40:26+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:dcc919c676432386a9e1465f",
+      "source_url": "https://www.youtube.com/user/NZDefenceForce"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -117480,6 +117732,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-14T00:00:25+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:acb71ec37c330d20d1ff7b22",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -117523,6 +117784,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mql3ugwefc26",
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-14T02:04:57+00:00",
+      "source_account": "UC7eKsSpTrEORjID6OtEZyTw",
+      "source_key": "youtube:UC7eKsSpTrEORjID6OtEZyTw",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:7e8cb1f28120704ee7d526ba",
+      "source_url": "https://www.youtube.com/invercargillcitycouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-14T02:14:17+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:58ecac32d868511cfdb3b43d",
+      "source_url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
       "mirror_targets": [
@@ -117720,6 +117999,15 @@
       "source_url": "https://bsky.app/profile/rebeccamatthews.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-14T04:16:28+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:047cf80159db6f85ebec0a53",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -117900,6 +118188,15 @@
       "source_url": "https://bsky.app/profile/lanpham.greens.org.nz"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-14T08:02:34+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:2cdb0bf389ace438b8cbd40a",
+      "source_url": "https://www.youtube.com/user/NZDefenceForce"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -117958,6 +118255,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqn226q72k2f",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-14T20:28:01+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:997eeff5e37d811011818bd7",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
     },
     {
       "mirror_targets": [
@@ -118230,6 +118536,15 @@
       "source_url": "https://bsky.app/profile/metservice.com"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T00:06:04+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:11d3ed457d6b53b0da062c8a",
+      "source_url": "https://www.youtube.com/user/NZDefenceForce"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -118455,6 +118770,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T02:21:55+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:affa0c591011b4574598a6c0",
+      "source_url": "https://www.youtube.com/channel/UCbYaweDogoFXeZuU7necLaw"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -118468,6 +118792,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqnpfcmpes2x",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T02:53:32+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:1bd11f97055b4e56de6c620b",
+      "source_url": "https://www.youtube.com/user/HamiltonCityCouncil"
     },
     {
       "mirror_targets": [
@@ -118485,6 +118818,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T03:58:48+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:6be6af3a2d134761e8f1c0c2",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -118498,6 +118840,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqnvcqq24q2v",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T04:34:36+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:980d913be63ad47481d15fa5",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
     },
     {
       "mirror_targets": [
@@ -118633,6 +118984,33 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqo7gcv4ck2l",
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T12:47:07+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:b8dbe85de8339f1186bc479c",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T13:50:13+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:f69d8651976eb5e62514fe88",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T14:00:35+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:473679ef1d75a7e6f257745e",
+      "source_url": "https://www.youtube.com/channel/UCbYaweDogoFXeZuU7necLaw"
     },
     {
       "mirror_targets": [
@@ -118830,6 +119208,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T22:10:37+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:73409e4cfa9c45afec7297e5",
+      "source_url": "https://www.youtube.com/user/NZDefenceForce"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -118965,6 +119352,15 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T23:38:36+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:7d38e47022006a6610e67caf",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -118995,6 +119391,15 @@
       "source_url": "https://bsky.app/profile/healthnz.govt.nz"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T00:00:13+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:baf6b02f283c4b52bf82895c",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -119008,6 +119413,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqpxpwafns2x",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T00:30:37+00:00",
+      "source_account": "manatutaonga",
+      "source_key": "youtube:manatutaonga",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:71192c8909cb757a2a8780c4",
+      "source_url": "https://www.youtube.com/@manatutaonga"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T00:30:37+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:91e2481192a22a662b247caf",
+      "source_url": "https://www.youtube.com/user/ManatuTaonga"
     },
     {
       "mirror_targets": [
@@ -119131,6 +119554,15 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-16T02:25:00+00:00",
+      "source_account": "Go to NorthTec YouTube",
+      "source_key": "youtube:Go to NorthTec YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:aab3a71d2ffd3f0c0ef21d9c",
+      "source_url": "https://www.youtube.com/user/northteconline"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2026-07-16T02:45:43Z",
       "source_account": "em4mkapmjakoh5o@upload.pipedream.net",
       "source_key": "email:em4mkapmjakoh5o@upload.pipedream.net",
@@ -119152,6 +119584,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqq7syrnes27",
       "source_url": "https://bsky.app/profile/courtsofnz.bsky.social/post/3mqq7syrnes27"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T03:13:07+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:8b80bd1de75f3d3d89dafb88",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
     },
     {
       "mirror_targets": [
@@ -119304,6 +119745,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T07:52:46+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:bf45bed1bf1aa261ba288fbb",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -119409,6 +119859,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T10:34:27+00:00",
+      "source_account": "UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_key": "youtube:UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:cf666b352c662d3d24da2475",
+      "source_url": "https://www.youtube.com/channel/UCNkfD16wB1X6MnFFWpfNQTQ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -119467,6 +119926,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqsbri5lzs23",
       "source_url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T22:27:58+00:00",
+      "source_account": "UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_key": "youtube:UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:5c91069e579c8d51ce5c818c",
+      "source_url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
     },
     {
       "mirror_targets": [
@@ -119844,6 +120312,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-17T06:35:19+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:75321d94419c23720eb85830",
+      "source_url": "https://www.youtube.com/c/KiwiRailOfficial"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -120067,6 +120544,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqvi6x2bc22l",
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-18T06:18:31+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3996813ca58c60ffabefacea",
+      "source_url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
       "mirror_targets": [
@@ -123246,6 +123732,15 @@
       "source_url": "https://bsky.app/profile/healthnz.govt.nz"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T22:00:27+00:00",
+      "source_account": "UCIZ9FDvbd-WhYG0RnSI3vQA",
+      "source_key": "youtube:UCIZ9FDvbd-WhYG0RnSI3vQA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:8ce454c7ef8639a778309a20",
+      "source_url": "https://www.youtube.com/@healthnewzealand"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -123666,6 +124161,24 @@
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T02:20:35+00:00",
+      "source_account": "UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_key": "youtube:UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e4cc3ba0edb16692d4ead44f",
+      "source_url": "https://www.youtube.com/channel/UCNkfD16wB1X6MnFFWpfNQTQ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T02:23:07+00:00",
+      "source_account": "AUTUni",
+      "source_key": "youtube:AUTUni",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:82eac050e84751033ef95dea",
+      "source_url": "https://www.youtube.com/@AUTUni"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -123705,6 +124218,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T03:56:30+00:00",
+      "source_account": "UCXGMdOiQx2s39mkx2hUj1WA",
+      "source_key": "youtube:UCXGMdOiQx2s39mkx2hUj1WA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:18dfc3ff51784f6855a0a4c4",
+      "source_url": "https://www.youtube.com/user/ElectricityNZ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -123733,6 +124255,78 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mr2gwg26lk2k",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T04:32:13+00:00",
+      "source_account": "UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_key": "youtube:UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:363bc26d59c72762e4d2157c",
+      "source_url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T04:34:59+00:00",
+      "source_account": "UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_key": "youtube:UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:f246ce08db6b5ac178212241",
+      "source_url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T04:36:05+00:00",
+      "source_account": "UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_key": "youtube:UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:1b5bdcb850f265892330b309",
+      "source_url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T04:36:33+00:00",
+      "source_account": "UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_key": "youtube:UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e1388e73e5ace54fe6c0cb32",
+      "source_url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T04:37:13+00:00",
+      "source_account": "UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_key": "youtube:UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:13a21436680c16d0ec5d325d",
+      "source_url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T04:38:20+00:00",
+      "source_account": "UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_key": "youtube:UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:0eccd67d27e7749ca3971e49",
+      "source_url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T04:39:00+00:00",
+      "source_account": "UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_key": "youtube:UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:613de3c095144acaaa77bcb3",
+      "source_url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T04:39:45+00:00",
+      "source_account": "UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_key": "youtube:UC5L5Py1GbMHNs11f8CCdCSA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:b8ff202586457fd674f003e9",
+      "source_url": "https://www.youtube.com/c/EthnicCommunitiesgovtnz"
     },
     {
       "mirror_targets": [
@@ -124318,6 +124912,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mr4hu6gep52z",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-21T00:00:26+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:5667e2dd992363574e9fe3a1",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
     },
     {
       "mirror_targets": [
@@ -125023,24 +125626,6 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mr4yqkf4vw2r",
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-21T04:46:34+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:1cbb8073c37b5b67fdd2015e",
-      "source_url": "https://www.eit.ac.nz/feed"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-21T04:46:34+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:b036b4c9ae89eb78f269e866",
-      "source_url": "https://www.eit.ac.nz/rss"
     },
     {
       "mirror_targets": [
@@ -125775,6 +126360,15 @@
       "source_url": "https://bsky.app/profile/metservice.com"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T01:16:04+00:00",
+      "source_account": "UC9cFSwSgwv9hrw0naL2j4HA",
+      "source_key": "youtube:UC9cFSwSgwv9hrw0naL2j4HA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:c1fd9cec9b80ab36b01b7b9f",
+      "source_url": "https://www.youtube.com/channel/UC9cFSwSgwv9hrw0naL2j4HA"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -125940,6 +126534,15 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T03:46:08+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:057d3c8b4a013cf44eab6169",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -125983,6 +126586,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mr7gki4f3k2i",
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T03:59:20+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e263ca6de21a9273c2d3450b",
+      "source_url": "http://www.youtube.com/centralotagodc"
     },
     {
       "mirror_targets": [
@@ -126090,6 +126702,24 @@
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T07:06:24+00:00",
+      "source_account": "YouTube.",
+      "source_key": "youtube:YouTube.",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:045129ef5ceb323664944da0",
+      "source_url": "https://www.youtube.com/CityRailLinkAuckland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T07:06:33+00:00",
+      "source_account": "YouTube.",
+      "source_key": "youtube:YouTube.",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3327f91322b90ba8797950ed",
+      "source_url": "https://www.youtube.com/CityRailLinkAuckland"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -126120,6 +126750,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T12:55:03+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:1373dbc398a1c079e7faf4d6",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -126135,6 +126774,24 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T13:42:06+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:50caa96cff7d60df13e7684a",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T14:07:34+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:d42f3679ce0363c3fc646713",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -126148,6 +126805,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mramabwxoz2z",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T15:56:47+00:00",
+      "source_account": "UCZUrurBDoKCUqr58IoCrlsA",
+      "source_key": "youtube:UCZUrurBDoKCUqr58IoCrlsA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:de4f6730442ae332896890f4",
+      "source_url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
     },
     {
       "mirror_targets": [
@@ -126178,6 +126844,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrb5vhahhk2j",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T20:46:31+00:00",
+      "source_account": "UCq5hXvb8XFkwNrEXsw9MC8Q",
+      "source_key": "youtube:UCq5hXvb8XFkwNrEXsw9MC8Q",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:73194f12bb29463dadb33869",
+      "source_url": "https://www.youtube.com/channel/UCq5hXvb8XFkwNrEXsw9MC8Q"
     },
     {
       "mirror_targets": [
@@ -126225,6 +126900,42 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T22:04:21+00:00",
+      "source_account": "ACC New Zealand on YouTube",
+      "source_key": "youtube:ACC New Zealand on YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:4b7819977fd708b535a73680",
+      "source_url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T22:04:21+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:d8d274e52b19132c44ceb471",
+      "source_url": "https://www.youtube.com/@accnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T22:04:25+00:00",
+      "source_account": "ACC New Zealand on YouTube",
+      "source_key": "youtube:ACC New Zealand on YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:5be25f9a27728b5fff9a72f8",
+      "source_url": "https://www.youtube.com/channel/UCsA6EAhqJAb4-WCwOFMj4gg"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T22:04:25+00:00",
+      "source_account": "ACC New Zealand",
+      "source_key": "youtube:ACC New Zealand",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:fb1d90895cc0a9b5b63db622",
+      "source_url": "https://www.youtube.com/@accnz"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -126253,6 +126964,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrbf7yj4wc2z",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T22:45:10+00:00",
+      "source_account": "UCXGMdOiQx2s39mkx2hUj1WA",
+      "source_key": "youtube:UCXGMdOiQx2s39mkx2hUj1WA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e7f3bc40c49e39e142688016",
+      "source_url": "https://www.youtube.com/user/ElectricityNZ"
     },
     {
       "mirror_targets": [
@@ -126285,6 +127005,51 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T23:41:29+00:00",
+      "source_account": "UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_key": "youtube:UCv7nRa7kGw8H8reAIgzKGMA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:8ac962700857c0c6b557c00b",
+      "source_url": "https://www.youtube.com/user/CommerceCommission"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-22T23:41:50+00:00",
+      "source_account": "UCZUrurBDoKCUqr58IoCrlsA",
+      "source_key": "youtube:UCZUrurBDoKCUqr58IoCrlsA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:eebcf93d95ed5536acc03340",
+      "source_url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T00:00:12+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:881e02d940177281420c7307",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T00:00:31+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:6b6be0e57065b9872f83679f",
+      "source_url": "https://www.youtube.com/user/ManatuTaonga"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T00:00:31+00:00",
+      "source_account": "manatutaonga",
+      "source_key": "youtube:manatutaonga",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:88cee29cdd07a9c7f135b85d",
+      "source_url": "https://www.youtube.com/@manatutaonga"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -126300,6 +127065,15 @@
       "source_url": "https://bsky.app/profile/metservice.com"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T00:45:07+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e94828ecabf32b8faa6f0d16",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -126313,6 +127087,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrbndfmotu2z",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T02:27:48+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:504155593c1a1ec9e3a4fbf2",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T02:30:30+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:97264265883fc6a0db81bff0",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
     },
     {
       "mirror_targets": [
@@ -126343,6 +127135,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrbtvgh7ps2h",
       "source_url": "https://bsky.app/profile/herengaanuku.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T03:21:46+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:03850a644c67355ff2b022aa",
+      "source_url": "http://www.youtube.com/user/CreativeNewZealand"
     },
     {
       "mirror_targets": [
@@ -126388,6 +127189,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrbza2hsfn2z",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T04:41:30+00:00",
+      "source_account": "UCZUrurBDoKCUqr58IoCrlsA",
+      "source_key": "youtube:UCZUrurBDoKCUqr58IoCrlsA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:6e667bd2d221353f3e995201",
+      "source_url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
     },
     {
       "mirror_targets": [
@@ -126525,6 +127335,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T10:41:04+00:00",
+      "source_account": "UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_key": "youtube:UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:b8f37eadc52f490c3e5fdd28",
+      "source_url": "https://youtube.com/nelsoncouncil"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -126540,6 +127359,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T12:11:42+00:00",
+      "source_account": "UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_key": "youtube:UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:31160c5f6e2a7f0f8003bdbc",
+      "source_url": "https://youtube.com/nelsoncouncil"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -126553,6 +127381,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrd26nzxae26",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T15:01:42+00:00",
+      "source_account": "UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_key": "youtube:UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:4653d4ca89b6c272e5d894cd",
+      "source_url": "https://youtube.com/nelsoncouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T15:04:35+00:00",
+      "source_account": "UC7eKsSpTrEORjID6OtEZyTw",
+      "source_key": "youtube:UC7eKsSpTrEORjID6OtEZyTw",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:ad577aa0ed237612eb9ec757",
+      "source_url": "https://www.youtube.com/invercargillcitycouncil"
     },
     {
       "mirror_targets": [
@@ -126571,12 +127417,30 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-23T17:43:48+00:00",
+      "source_account": "UCZUrurBDoKCUqr58IoCrlsA",
+      "source_key": "youtube:UCZUrurBDoKCUqr58IoCrlsA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:383ced07e1799aa10c9dc871",
+      "source_url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2026-07-23T18:41:54+00:00",
       "source_account": "sport-new-zealand",
       "source_key": "linkedin:sport-new-zealand",
       "source_platform": "linkedin",
       "source_record_id": "linkedin_public_snapshot:65a130047b6a4eca268e5d9d",
       "source_url": "https://www.linkedin.com/company/sport-new-zealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-23T19:00:18+00:00",
+      "source_account": "AUTUni",
+      "source_key": "youtube:AUTUni",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:82b920d0c5b21bb508b7f70e",
+      "source_url": "https://www.youtube.com/@AUTUni"
     },
     {
       "mirror_targets": [
@@ -126892,6 +127756,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mredka2zes2k",
       "source_url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-24T02:54:15+00:00",
+      "source_account": "YouTube.",
+      "source_key": "youtube:YouTube.",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:5dad7373136894090b1e1d2c",
+      "source_url": "https://www.youtube.com/CityRailLinkAuckland"
     },
     {
       "mirror_targets": [
@@ -127323,6 +128196,15 @@
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-24T07:45:32+00:00",
+      "source_account": "AUTUni",
+      "source_key": "youtube:AUTUni",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:da427acf120b842c03d30a7d",
+      "source_url": "https://www.youtube.com/@AUTUni"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -127381,6 +128263,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrf47fin6s2x",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-24T10:17:58+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:680a932fa0b4b8f4fcc4d510",
+      "source_url": "https://www.youtube.com/channel/UCbYaweDogoFXeZuU7necLaw"
     },
     {
       "mirror_targets": [
@@ -128302,21 +129193,12 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-07-26T03:24:53+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:6f2d2c057c7b6fd76bacf204",
-      "source_url": "https://www.eit.ac.nz/rss"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-26T03:24:53+00:00",
-      "source_account": "https://www.eit.ac.nz",
-      "source_key": "rss:https://www.eit.ac.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:af7d3856ba79384b18b15d94",
-      "source_url": "https://www.eit.ac.nz/feed"
+      "original_timestamp": "2026-07-26T05:10:19+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:f913dbd737b3f38aed0cd0aa",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
     },
     {
       "mirror_targets": [
@@ -128388,6 +129270,15 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-26T21:07:43+00:00",
+      "source_account": "UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_key": "youtube:UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e99c6ace4959dee8535f727f",
+      "source_url": "https://www.youtube.com/channel/UCNkfD16wB1X6MnFFWpfNQTQ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -128416,6 +129307,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrldqszpbk2e",
       "source_url": "https://bsky.app/profile/ponekeben.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-26T21:54:07+00:00",
+      "source_account": "LincolnUniversityNZ",
+      "source_key": "youtube:LincolnUniversityNZ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:8578e50a87789524321a231a",
+      "source_url": "https://www.youtube.com/@LincolnUniversityNZ"
     },
     {
       "mirror_targets": [
@@ -128493,6 +129393,15 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-26T23:15:55+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:5ca67dd75434e6593443a498",
+      "source_url": "https://www.youtube.com/user/NZDefenceForce"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -128506,6 +129415,33 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrljaj7oyw26",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-27T00:01:15+00:00",
+      "source_account": "UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_key": "youtube:UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:381f1d0b113f59d8101f42a5",
+      "source_url": "https://youtube.com/nelsoncouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-27T00:03:24+00:00",
+      "source_account": "AUTUni",
+      "source_key": "youtube:AUTUni",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:82e4d3fea8f7ce4d5420d0aa",
+      "source_url": "https://www.youtube.com/@AUTUni"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-27T00:34:46+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:2dd922fa26180624af6650c6",
+      "source_url": "http://www.youtube.com/c/EECAnz"
     },
     {
       "mirror_targets": [
@@ -128568,6 +129504,15 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-27T03:55:52+00:00",
+      "source_account": "UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_key": "youtube:UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:de0732117ab02934f7909deb",
+      "source_url": "https://www.youtube.com/channel/UCNkfD16wB1X6MnFFWpfNQTQ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -128626,6 +129571,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrm4xc633k2c",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-27T05:34:43+00:00",
+      "source_account": "UCvAJ21jjC9ynnMJ5rq0ZxVQ",
+      "source_key": "youtube:UCvAJ21jjC9ynnMJ5rq0ZxVQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:134e125a4a03b8c4a4b438c9",
+      "source_url": "https://www.youtube.com/channel/UCvAJ21jjC9ynnMJ5rq0ZxVQ"
     },
     {
       "mirror_targets": [
@@ -128823,6 +129777,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-27T16:06:19+00:00",
+      "source_account": "UC7eKsSpTrEORjID6OtEZyTw",
+      "source_key": "youtube:UC7eKsSpTrEORjID6OtEZyTw",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:53e03df03d25ed1a63c4fcd1",
+      "source_url": "https://www.youtube.com/invercargillcitycouncil"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -128905,6 +129868,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrnpsqexuc2t",
       "source_url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-27T21:15:35+00:00",
+      "source_account": "UCXGMdOiQx2s39mkx2hUj1WA",
+      "source_key": "youtube:UCXGMdOiQx2s39mkx2hUj1WA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:973587ffa86f88062f9052e4",
+      "source_url": "https://www.youtube.com/user/ElectricityNZ"
     },
     {
       "mirror_targets": [
@@ -128995,6 +129967,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mro3fmtkhm2l",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T00:00:07+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:8978e4ad860e067b5e69c000",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
     },
     {
       "mirror_targets": [
@@ -129162,6 +130143,15 @@
       "source_url": "https://bsky.app/profile/richardhills.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T04:00:16+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:5e57f9e21918e7641386eccb",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -129237,6 +130227,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T11:01:52+00:00",
+      "source_account": "Watch our YouTube Channel",
+      "source_key": "youtube:Watch our YouTube Channel",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3b5e8699fc502f99922f1d53",
+      "source_url": "https://www.youtube.com/channel/UC_WCKYirkzkNaLWzf3BnmVQ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -129250,6 +130249,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrpb7ezwqm2h",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T11:18:01+00:00",
+      "source_account": "UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_key": "youtube:UCNkfD16wB1X6MnFFWpfNQTQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:5adc12f6d85a1e6c086f0e38",
+      "source_url": "https://www.youtube.com/channel/UCNkfD16wB1X6MnFFWpfNQTQ"
     },
     {
       "mirror_targets": [
@@ -129298,12 +130306,39 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-28T17:31:34+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:bdf266f9a7da45bb098e1fa5",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2026-07-28T18:53:49+00:00",
       "source_account": "statistics-new-zealand",
       "source_key": "linkedin:statistics-new-zealand",
       "source_platform": "linkedin",
       "source_record_id": "linkedin_public_snapshot:bf5b8b3d6d2a91cf9682d344",
       "source_url": "https://www.linkedin.com/company/statistics-new-zealand/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T19:42:58+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:cbac76de9e10598c24122a98",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T19:43:37+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:b2bb311afc3229b36ec921e2",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
     },
     {
       "mirror_targets": [
@@ -129334,6 +130369,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrq7pyw5gs2b",
       "source_url": "https://bsky.app/profile/metservice.com"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T21:21:47+00:00",
+      "source_account": "AUTUni",
+      "source_key": "youtube:AUTUni",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:02bb8b36e17ba336d19c2c79",
+      "source_url": "https://www.youtube.com/@AUTUni"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T21:24:00+00:00",
+      "source_account": "AUTUni",
+      "source_key": "youtube:AUTUni",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3aea739ad84688b541e8acdb",
+      "source_url": "https://www.youtube.com/@AUTUni"
     },
     {
       "mirror_targets": [
@@ -129396,6 +130449,24 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T22:11:30+00:00",
+      "source_account": "Follow us on YouTube",
+      "source_key": "youtube:Follow us on YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:93f4e4006669b5f11f2170ec",
+      "source_url": "https://www.youtube.com/user/HBRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T22:22:48+00:00",
+      "source_account": "Follow us on YouTube",
+      "source_key": "youtube:Follow us on YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:a60d19b144dc1cacf7290679",
+      "source_url": "https://www.youtube.com/user/HBRegionalCouncil"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -129424,6 +130495,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrqicgztuo2z",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T23:07:40+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:10263d12b97c84f4b60900b1",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-28T23:12:02+00:00",
+      "source_account": "UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_key": "youtube:UCQqO5Eor3jyJ9ir8ZHONZNQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:b6b51a3d0f65af4cd3de550a",
+      "source_url": "https://www.youtube.com/user/environmentsouthland"
     },
     {
       "mirror_targets": [
@@ -129546,6 +130635,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T02:42:02+00:00",
+      "source_account": "Watch our YouTube Channel",
+      "source_key": "youtube:Watch our YouTube Channel",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:85b344f73bbfebf565d3a295",
+      "source_url": "https://www.youtube.com/channel/UC_WCKYirkzkNaLWzf3BnmVQ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -129574,6 +130672,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrqwys3ki22d",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T03:54:54+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:bfe46e9a12b064dde03cf4c2",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
     },
     {
       "mirror_targets": [
@@ -129786,6 +130893,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T11:13:31+00:00",
+      "source_account": "Watch our YouTube Channel",
+      "source_key": "youtube:Watch our YouTube Channel",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:cefe289d0c8cf799f8dae2c4",
+      "source_url": "https://www.youtube.com/channel/UC_WCKYirkzkNaLWzf3BnmVQ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -129799,6 +130915,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrrwjxcam72g",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T12:32:24+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3f41e12d691dc0aa0c7703c5",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T13:56:06+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:edc556aa53630ad3963ac4f8",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
     },
     {
       "mirror_targets": [
@@ -129816,6 +130950,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T16:19:59+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:351d1dbf6100445586fb019b",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -129831,6 +130974,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T17:47:13+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3bb89e862296058bdea46d35",
+      "source_url": "https://www.youtube.com/channel/UCbYaweDogoFXeZuU7necLaw"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -129844,6 +130996,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrsienfot22z",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T18:10:51+00:00",
+      "source_account": "Youtube",
+      "source_key": "youtube:Youtube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:8ab745f8f9b6e81ab8ccb3aa",
+      "source_url": "https://www.youtube.com/channel/UCbYaweDogoFXeZuU7necLaw"
     },
     {
       "mirror_targets": [],
@@ -129960,6 +131121,24 @@
       "source_url": "https://bsky.app/profile/healthnz.govt.nz"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T23:05:49+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:03984ab8c756ed24ef0809f0",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-29T23:09:17+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:fc5091d15d59b491250db12f",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130020,6 +131199,15 @@
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T00:00:08+00:00",
+      "source_account": "UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_key": "youtube:UCwbh0IhGp3tk2YoFFAoJ5ag",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e6ba3653b88a1efe07229b24",
+      "source_url": "https://www.youtube.com/user/EIThawkesbay"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130033,6 +131221,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrt6y6dlis2o",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T00:44:06+00:00",
+      "source_account": "UCZUrurBDoKCUqr58IoCrlsA",
+      "source_key": "youtube:UCZUrurBDoKCUqr58IoCrlsA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:85f88c68e1c7e1aeea102035",
+      "source_url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
     },
     {
       "mirror_targets": [
@@ -130080,6 +131277,24 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T02:00:06+00:00",
+      "source_account": "UCZVLsxQO3TiswnSDGK9QZ_A",
+      "source_key": "youtube:UCZVLsxQO3TiswnSDGK9QZ_A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:9300e19508a1eb7ad2594def",
+      "source_url": "https://www.youtube.com/channel/UCZVLsxQO3TiswnSDGK9QZ_A/featured"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T02:06:58+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:9bb601ccf509018acf7a6fb4",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130093,6 +131308,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrtebyqbrc2k",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T02:21:20+00:00",
+      "source_account": "UCZVLsxQO3TiswnSDGK9QZ_A",
+      "source_key": "youtube:UCZVLsxQO3TiswnSDGK9QZ_A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:df11e2a22067444ed10fb34f",
+      "source_url": "https://www.youtube.com/channel/UCZVLsxQO3TiswnSDGK9QZ_A/featured"
     },
     {
       "mirror_targets": [
@@ -130140,6 +131364,24 @@
       "source_url": "https://bsky.app/profile/metservice.com"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T02:34:48+00:00",
+      "source_account": "LincolnUniversityNZ",
+      "source_key": "youtube:LincolnUniversityNZ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:fdcc3631ca18de1c9d7ed38d",
+      "source_url": "https://www.youtube.com/@LincolnUniversityNZ"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T02:47:04+00:00",
+      "source_account": "UCZVLsxQO3TiswnSDGK9QZ_A",
+      "source_key": "youtube:UCZVLsxQO3TiswnSDGK9QZ_A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:4ca1ccb5d027e49b9eec96ed",
+      "source_url": "https://www.youtube.com/channel/UCZVLsxQO3TiswnSDGK9QZ_A/featured"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130170,6 +131412,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T04:22:22+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:f4f8a840b511845dd1c3e7b4",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130185,6 +131436,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T04:30:35+00:00",
+      "source_account": "UC7eKsSpTrEORjID6OtEZyTw",
+      "source_key": "youtube:UC7eKsSpTrEORjID6OtEZyTw",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:c56d9c3adb18cfbbced0b7d2",
+      "source_url": "https://www.youtube.com/invercargillcitycouncil"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130198,6 +131458,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrtmfpblvs2t",
       "source_url": "https://bsky.app/profile/christchurchlib.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T04:39:59+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e6e3ed2d42b5273df3e024a8",
+      "source_url": "https://www.youtube.com/channel/UC4C3z6imFiAfEZeIk8Qam4g"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T04:41:34+00:00",
+      "source_account": "UCZUrurBDoKCUqr58IoCrlsA",
+      "source_key": "youtube:UCZUrurBDoKCUqr58IoCrlsA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:826c1374cc0a7a9195f56784",
+      "source_url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
     },
     {
       "mirror_targets": [
@@ -130380,6 +131658,15 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T17:24:54+00:00",
+      "source_account": "UCZUrurBDoKCUqr58IoCrlsA",
+      "source_key": "youtube:UCZUrurBDoKCUqr58IoCrlsA",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:320827fa4e099708aec34c4a",
+      "source_url": "https://www.youtube.com/channel/UCZUrurBDoKCUqr58IoCrlsA"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130453,6 +131740,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrvc25lxl22p",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T20:40:25+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:6e7afb69f6cbc58804dd07b3",
+      "source_url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
       "mirror_targets": [
@@ -130590,6 +131886,24 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T21:54:19+00:00",
+      "source_account": "UCZVLsxQO3TiswnSDGK9QZ_A",
+      "source_key": "youtube:UCZVLsxQO3TiswnSDGK9QZ_A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:4f9b5b620811e2d9e90760ba",
+      "source_url": "https://www.youtube.com/channel/UCZVLsxQO3TiswnSDGK9QZ_A/featured"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T21:56:13+00:00",
+      "source_account": "UCwTtYIU8UvQn5pxfz_i294A",
+      "source_key": "youtube:UCwTtYIU8UvQn5pxfz_i294A",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:8e7344bed3a06790fbd0069e",
+      "source_url": "http://www.youtube.com/centralotagodc"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130603,6 +131917,33 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrvgt6cvus2g",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T22:15:38+00:00",
+      "source_account": "Follow us on YouTube",
+      "source_key": "youtube:Follow us on YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e309427311d5de3d6573dc39",
+      "source_url": "https://www.youtube.com/user/HBRegionalCouncil"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T22:19:33+00:00",
+      "source_account": "manatutaonga",
+      "source_key": "youtube:manatutaonga",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:1b58771d25dee882ca5465c0",
+      "source_url": "https://www.youtube.com/@manatutaonga"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T22:19:33+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:8996e1e1cd4829a7f0c429fa",
+      "source_url": "https://www.youtube.com/user/ManatuTaonga"
     },
     {
       "mirror_targets": [],
@@ -130642,6 +131983,24 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrviiv7idk25",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T22:34:51+00:00",
+      "source_account": "manatutaonga",
+      "source_key": "youtube:manatutaonga",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:e4095b81bbcf92ed2435074c",
+      "source_url": "https://www.youtube.com/@manatutaonga"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-30T22:34:51+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:f44534522a45ca0e5264dda2",
+      "source_url": "https://www.youtube.com/user/ManatuTaonga"
     },
     {
       "mirror_targets": [
@@ -130779,6 +132138,24 @@
       "source_url": "https://bsky.app/profile/courtsofnz.bsky.social/post/3mrvsj3wuok2y"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-31T01:29:27+00:00",
+      "source_account": "manatutaonga",
+      "source_key": "youtube:manatutaonga",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:824d81ff73c9dde4b345d0ae",
+      "source_url": "https://www.youtube.com/@manatutaonga"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-31T01:29:27+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:b1be90f239ca22258268cc60",
+      "source_url": "https://www.youtube.com/user/ManatuTaonga"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130908,6 +132285,15 @@
       "source_url": "https://bsky.app/profile/courtsofnz.bsky.social/post/3mrw6erwx7s2v"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-31T05:09:52+00:00",
+      "source_account": "UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_key": "youtube:UCl2tDcl2hHFL_cx2f-Q-eQQ",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:3c3294323e7ded40175a03a4",
+      "source_url": "https://youtube.com/nelsoncouncil"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -130921,6 +132307,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mrwecjgy5v2b",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-31T07:00:04+00:00",
+      "source_account": "YouTube",
+      "source_key": "youtube:YouTube",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:cd0c352c31df9d8bb9ef3d0f",
+      "source_url": "https://www.youtube.com/user/NZDefenceForce"
     },
     {
       "mirror_targets": [
@@ -131166,6 +132561,15 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-01T04:27:22+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:d09596be78dcd1218e998d3e",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -131209,6 +132613,15 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mryupuhetk2y",
       "source_url": "https://bsky.app/profile/rebeccamatthews.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-01T13:33:00+00:00",
+      "source_account": "Youtube Link",
+      "source_key": "youtube:Youtube Link",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:9ca29aaf963d957c127528c7",
+      "source_url": "https://www.youtube.com/channel/UCMsavYQ4rBvl2kfTkzp_YuQ"
     },
     {
       "mirror_targets": [],
@@ -131371,6 +132784,24 @@
       "source_platform": "youtube",
       "source_record_id": "youtube_public_snapshot:3eb47e1d9b0a71a3d9ed89eb",
       "source_url": "http://www.youtube.com/watch/y8LO17UlKng"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:13+00:00",
+      "source_account": "Kawerau District Council",
+      "source_key": "youtube:Kawerau District Council",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:c39f0ab62c94fb2391c44798",
+      "source_url": "https://youtu.be/nUeCYuu6iWY?si=J9LUAmG0RNg6yTkj"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:14+00:00",
+      "source_account": "KiwiRail",
+      "source_key": "youtube:KiwiRail",
+      "source_platform": "youtube",
+      "source_record_id": "youtube:4ff2e4770298406a288d2578",
+      "source_url": "https://youtu.be/BxCZ35apffI"
     },
     {
       "mirror_targets": [],
@@ -131575,10 +133006,10 @@
     "facebook": 323,
     "json_feed": 16,
     "linkedin": 61,
-    "rss": 3953,
+    "rss": 3930,
     "website_page": 1827,
     "x": 769,
-    "youtube": 2741
+    "youtube": 2923
   },
   "source_date_ranges": {
     "api": {
@@ -131622,7 +133053,7 @@
       "min_original_created_at": "1971-01-01T00:00:00+00:00"
     },
     "youtube": {
-      "max_original_created_at": "2026-08-02T05:37:41+00:00",
+      "max_original_created_at": "2026-08-02T06:15:14+00:00",
       "min_original_created_at": "2007-01-12T17:59:35+00:00"
     }
   },

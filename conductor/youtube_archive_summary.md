@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-13T12:42:12+00:00
+Generated: 2026-08-02T06:15:30+00:00
 
 ## Summary
 
@@ -14,17 +14,17 @@ Generated: 2026-07-13T12:42:12+00:00
 
 ## Status counts
 
-- `already_captured`: 1015
-- `captured`: 38
+- `already_captured`: 765
+- `captured`: 182
 - `no_records`: 2
-- `public_snapshot_captured`: 7
+- `public_snapshot_already_captured`: 15
 - `source_url_not_channel`: 1
 - `youtube_channel_not_found`: 6
 - `youtube_video_not_found`: 2
 
 ## Status by platform
 
-- `youtube`: {'already_captured': 1015, 'captured': 38, 'no_records': 2, 'public_snapshot_captured': 7, 'source_url_not_channel': 1, 'youtube_channel_not_found': 6, 'youtube_video_not_found': 2}
+- `youtube`: {'already_captured': 765, 'captured': 182, 'no_records': 2, 'public_snapshot_already_captured': 15, 'source_url_not_channel': 1, 'youtube_channel_not_found': 6, 'youtube_video_not_found': 2}
 
 ## Notes
 
