@@ -1,247 +1,169 @@
 {
   "gaps": [
     {
-      "agency_id": "taupo-district-council",
+      "agency_id": "government-house",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "2582361c5e0ac21e",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://gg.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "government-house",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "a650f450cea595e8",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://gg.govt.nz/publications"
+    },
+    {
+      "agency_id": "government-house",
+      "platform": "website_page",
+      "priority": "p4_larger_browser_or_access_project",
+      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "5fdfc2272cf52543",
+      "status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
+      "url": "https://gg.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "grey-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "3bfdf56b29c41fd8",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "c9f245a4b9a22cdd",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.taupodc.govt.nz/api"
+      "url": "https://www.greydc.govt.nz"
     },
     {
-      "agency_id": "taupo-district-council",
+      "agency_id": "grey-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "6cd28ddcf94755d7",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "a00f051c6f21aa99",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.taupodc.govt.nz/media"
+      "url": "https://www.greydc.govt.nz/api"
     },
     {
-      "agency_id": "taupo-district-council",
+      "agency_id": "grey-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "9c3128f70a26a462",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "1d36f40c72edefca",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.taupodc.govt.nz/media-releases"
+      "url": "https://www.greydc.govt.nz/media"
     },
     {
-      "agency_id": "taupo-district-council",
+      "agency_id": "grey-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "1d499b3a1dd7ea13",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "c1122577e1e1fd57",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.taupodc.govt.nz/news"
+      "url": "https://www.greydc.govt.nz/media-releases"
     },
     {
-      "agency_id": "taupo-district-council",
+      "agency_id": "grey-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "326eb4e83676e316",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "c01f5a1c658a752f",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.taupodc.govt.nz/news-and-events"
+      "url": "https://www.greydc.govt.nz/news"
     },
     {
-      "agency_id": "taupo-district-council",
+      "agency_id": "grey-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "8677aa189163c3c7",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "d5ca46fb432d11e3",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.taupodc.govt.nz/newsletter"
+      "url": "https://www.greydc.govt.nz/news-and-events"
     },
     {
-      "agency_id": "taupo-district-council",
+      "agency_id": "grey-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "26eba0266e629268",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "6bfd1abbdbceb944",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.taupodc.govt.nz/publications"
+      "url": "https://www.greydc.govt.nz/newsletter"
     },
     {
-      "agency_id": "taupo-district-council",
+      "agency_id": "grey-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
       "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "edff26b2da29b018",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "e2bb70b46bc01362",
       "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.taupodc.govt.nz/subscribe"
+      "url": "https://www.greydc.govt.nz/publications"
     },
     {
-      "agency_id": "te-mangai-paho",
+      "agency_id": "grey-district-council",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "074324cf36b9cbe0",
-      "status": "dns_failed",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "report": "conductor/website_page_archive_offset_400_report.json",
+      "source_id": "9a614911dd7953f0",
+      "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "b8bc0cdce250007a",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/api"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "60b5cc493154608a",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/media"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "debaf37a55dde1a0",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/media-releases"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "2fb4e37a2d9d0551",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/news"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "f4d8fe95d6e773b4",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/news-and-events"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "743298f0a7fa4e8d",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "90c9ddd4cf6de8cc",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/publications"
-    },
-    {
-      "agency_id": "te-mangai-paho",
-      "platform": "website_page",
-      "priority": "p1_existing_resources",
-      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -2] Name or service not known",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "52524d2842b1897f",
-      "status": "dns_failed",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.temangai.govt.nz/subscribe"
-    },
-    {
-      "agency_id": "tertiary-education-commission",
-      "platform": "website_page",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "HTTP 301: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Permanently",
-      "report": "conductor/website_page_archive_offset_1400_report.json",
-      "source_id": "65edb5c7c9590664",
-      "status": "http_error",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.tec.govt.nz/newsletter"
+      "url": "https://www.greydc.govt.nz/subscribe"
     }
   ],
   "inputs": {
     "reports": [
-      "conductor/website_page_archive_offset_1400_report.json"
+      "conductor/website_page_archive_offset_400_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/website_page_archive_offset_1400_report.json": {
+    "conductor/website_page_archive_offset_400_report.json": {
       "platform_counts": {
         "website_page": 100
       },
@@ -249,46 +171,42 @@
       "status_by_platform": {
         "website_page": {
           "browser_captcha_or_challenge": 1,
-          "captured": 81,
-          "dns_failed": 9,
-          "http_error": 1,
-          "method_not_allowed": 8
+          "capture_blocked": 3,
+          "captured": 87,
+          "method_not_allowed": 9
         }
       },
       "status_by_provider": {},
       "status_counts": {
         "browser_captcha_or_challenge": 1,
-        "captured": 81,
-        "dns_failed": 9,
-        "http_error": 1,
-        "method_not_allowed": 8
+        "capture_blocked": 3,
+        "captured": 87,
+        "method_not_allowed": 9
       }
     }
   },
   "summary": {
-    "gap_count": 18,
+    "gap_count": 12,
     "input_status_counts": {
       "browser_captcha_or_challenge": 1,
-      "captured": 81,
-      "dns_failed": 9,
-      "http_error": 1,
-      "method_not_allowed": 8
+      "capture_blocked": 3,
+      "captured": 87,
+      "method_not_allowed": 9
     },
     "platform_counts": {
       "website_page": 100
     },
     "priority_counts": {
-      "archived_or_already_archived": 81,
+      "archived_or_already_archived": 87,
       "monitor_report_only": 1,
-      "p1_existing_resources": 17,
-      "review": 1
+      "p1_existing_resources": 9,
+      "p4_larger_browser_or_access_project": 3
     },
     "status_counts": {
       "browser_captcha_or_challenge": 1,
-      "captured": 81,
-      "dns_failed": 9,
-      "http_error": 1,
-      "method_not_allowed": 8
+      "capture_blocked": 3,
+      "captured": 87,
+      "method_not_allowed": 9
     },
     "superseded_source_count": 0
   }
