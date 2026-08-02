@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T06:51:16+00:00",
+  "generated_at": "2026-08-02T06:12:35+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 300,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "newsletter",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -27,6 +31,325 @@
     "x_feed_timeout": 30
   },
   "results": [
+    {
+      "agency_id": "taranaki-regional-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "taranaki-regional-council-newsletter-ee494531",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://mailchi.mp/trc.govt.nz/gardens-newsletter"
+    },
+    {
+      "agency_id": "taranaki-regional-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "taranaki-regional-council-newsletter-23764896",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.trc.govt.nz/council/news-and-events/talking-taranaki-newsletter"
+    },
+    {
+      "agency_id": "taranaki-regional-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "taranaki-regional-council-newsletter-107ff794",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.trc.govt.nz/environment/farmhub/biosecurity-biodiversity/newsletter"
+    },
+    {
+      "agency_id": "taranaki-regional-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "taranaki-regional-council-newsletter-b31176d8",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.trc.govt.nz/environment/working-together/environmental-education/enviroschools-taranaki/enviroschools-taranaki-newsletters"
+    },
+    {
+      "agency_id": "taranaki-regional-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "taranaki-regional-council-newsletter-decbc81f",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.trc.govt.nz/environment/working-together/towards-predator-free-taranaki/newsletter"
+    },
+    {
+      "agency_id": "tasman-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "tasman-district-council-newsletter-e6800ba3",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.tasman.govt.nz/do-it-online/contact-us/learn-more-about-the-antenno-app"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "taumata-arowai-newsletter-98aa0524",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.taumataarowai.govt.nz/home/articles/newsletters"
+    },
+    {
+      "agency_id": "taupo-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "taupo-district-council-newsletter-2a001294",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.taupodc.govt.nz/community/alerts"
+    },
+    {
+      "agency_id": "taupo-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "taupo-district-council-newsletter-dd63c7bd",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.taupodc.govt.nz/community/alerts?category=road-works"
+    },
+    {
+      "agency_id": "taupo-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "taupo-district-council-newsletter-e747107e",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.taupodc.govt.nz/community/alerts?item=id%3A2x6xrr5lv1cxbynjdrvo"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "tauranga-city-council-newsletter-746eb1f9",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.tauranga.govt.nz/News-and-events/Newsletters"
+    },
+    {
+      "agency_id": "te-ara-ahunga-ora",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "te-ara-ahunga-ora-newsletter-1236ccf4",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.retirement.govt.nz/news/newsletter/april-2026-quarterly-stakeholder-newsletter"
+    },
+    {
+      "agency_id": "te-hiringa-mahara",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "te-hiringa-mahara-newsletter-4f11e74a",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.mhwc.govt.nz/contact-us/sign-up-to-our-mailing-list/"
+    },
+    {
+      "agency_id": "te-papa",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "te-papa-newsletter-38d3190f",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.tepapa.govt.nz/about/contact-us/newsletters"
+    },
+    {
+      "agency_id": "tertiary-education-commission",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "tertiary-education-commission-newsletter-ac936eba",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.tec.govt.nz/alerts"
+    },
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "thames-coromandel-district-council-newsletter-bca0390c",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.tcdc.govt.nz/Our-Community/Economic-Development/Latest-Economic-Development-News/ED-newsletter-June-2026"
+    },
+    {
+      "agency_id": "thames-coromandel-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "thames-coromandel-district-council-newsletter-6cd46bd6",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.tcdc.govt.nz/Our-Council/News-Media-and-Public-Notices/Sign-up-to-our-E-Newsletter"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "the-treasury-newsletter-1c8fe5e5",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.treasury.govt.nz/publications/research-and-commentary/email-alerts-new-research-papers"
+    },
+    {
+      "agency_id": "transport-accident-investigation-commission",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "transport-accident-investigation-commission-newsletter-d6a83948",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.taic.org.nz/newsletter-sign-up"
+    },
+    {
+      "agency_id": "transpower",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "transpower-newsletter-608ecc36",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.transpower.co.nz/subscribe"
+    },
+    {
+      "agency_id": "upper-hutt-city-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "upper-hutt-city-council-newsletter-3ef0bc13",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://mailchi.mp/uhcc/local-korero-promo"
+    },
+    {
+      "agency_id": "upper-hutt-city-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "upper-hutt-city-council-newsletter-c276a3ad",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.upperhutt.govt.nz/contact-us/newsletters"
+    },
+    {
+      "agency_id": "upper-hutt-city-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "upper-hutt-city-council-newsletter-7a1d5792",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.upperhutt.govt.nz/services/roads-and-parking/Road-alerts-and-warnings"
+    },
+    {
+      "agency_id": "upper-hutt-city-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "upper-hutt-city-council-newsletter-3c346dec",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.upperhuttlibrary.co.nz/news/fanmail-july-2026"
+    },
+    {
+      "agency_id": "waikato-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "waikato-district-council-newsletter-25a113ab",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.waikatodistrict.govt.nz/subscribe-to-waikato-district-news"
+    },
+    {
+      "agency_id": "waimakariri-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "waimakariri-district-council-newsletter-a2edfe44",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.waimakariri.govt.nz/newsletter-subscribe"
+    },
+    {
+      "agency_id": "waimate-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "waimate-district-council-newsletter-9e14f0dd",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.waimatedc.govt.nz/council/alerts"
+    },
+    {
+      "agency_id": "waimate-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "waimate-district-council-newsletter-63610ba3",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.waimatedc.govt.nz/council/alerts?category=roading"
+    },
+    {
+      "agency_id": "waimate-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "waimate-district-council-newsletter-65d4b9d0",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.waimatedc.govt.nz/council/alerts?category=water"
+    },
     {
       "agency_id": "waimate-district-council",
       "archive_status": "candidate",
@@ -369,6 +692,28 @@
       "url": "https://www.waitomo.govt.nz/council/news-summary/waitomo-way-newsletter/"
     },
     {
+      "agency_id": "wellington-city-libraries",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "wellington-city-libraries-newsletter-b9065faa",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
+    },
+    {
+      "agency_id": "wellington-city-libraries",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "wellington-city-libraries-newsletter-4059e65c",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
+    },
+    {
       "agency_id": "west-coast-regional-council",
       "archive_status": "candidate",
       "feasibility": "medium",
@@ -600,6 +945,17 @@
       "url": "https://westlandmatters.buzzit.co.nz/"
     },
     {
+      "agency_id": "westland-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "westland-district-council-newsletter-a001be00",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.westlanddc.govt.nz/do-it-online/subscribe/"
+    },
+    {
       "agency_id": "whakatane-district-council",
       "archive_status": "candidate",
       "feasibility": "medium",
@@ -690,17 +1046,17 @@
   ],
   "summary": {
     "platform_counts": {
-      "newsletter": 60
+      "newsletter": 92
     },
-    "selected_sources": 60,
+    "selected_sources": 92,
     "status_by_platform": {
       "newsletter": {
-        "manual_seed_missing": 60
+        "manual_seed_missing": 92
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "manual_seed_missing": 60
+      "manual_seed_missing": 92
     }
   }
 }
