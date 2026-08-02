@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-13T12:50:53+00:00",
+  "generated_at": "2026-08-02T06:24:59+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 800,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -32,10 +36,54 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.women.govt.nz/",
+      "source_id": "38cf3ae60e24cf7b",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.women.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "ministry-for-women",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "ab75e90fd6d0493d",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.women.govt.nz/news"
+    },
+    {
+      "agency_id": "ministry-for-women",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.women.govt.nz/",
+      "source_id": "1e35644e93206b3d",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.women.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "ministry-for-women",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.women.govt.nz/",
+      "source_id": "5f2fc735298c2b74",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.women.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "ministry-for-women",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.women.govt.nz/",
       "source_id": "cc2b80daec32140d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.women.govt.nz/publications"
     },
     {
@@ -43,10 +91,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.women.govt.nz/",
       "source_id": "eabc267eca338ee5",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.women.govt.nz/subscribe"
     },
     {
@@ -54,10 +102,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "527b5ebb04d5c5e9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.defence.govt.nz"
     },
     {
@@ -65,10 +113,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.defence.govt.nz/",
       "source_id": "9b7e37208a660f41",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.defence.govt.nz/api"
     },
     {
@@ -76,10 +124,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.defence.govt.nz/",
       "source_id": "9e85631d6fcc79fc",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.defence.govt.nz/media"
     },
     {
@@ -87,10 +135,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.defence.govt.nz/",
       "source_id": "cec8a9e7d422d5d0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.defence.govt.nz/media-releases"
     },
     {
@@ -98,10 +146,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "8df83912cdf9b3f3",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.defence.govt.nz/news"
     },
     {
@@ -109,10 +157,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.defence.govt.nz/",
       "source_id": "d32019b002d573fb",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.defence.govt.nz/news-and-events"
     },
     {
@@ -120,10 +168,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.defence.govt.nz/",
       "source_id": "a55658bf2bdc5e4b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.defence.govt.nz/newsletter"
     },
     {
@@ -131,10 +179,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "991f7f17529f47ed",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.defence.govt.nz/publications"
     },
     {
@@ -142,10 +190,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.defence.govt.nz/",
       "source_id": "ef455b1a56abd641",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.defence.govt.nz/subscribe"
     },
     {
@@ -153,10 +201,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "034c5a72240b9790",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz"
     },
     {
@@ -164,10 +212,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.education.govt.nz/",
       "source_id": "2183b4ac8819315b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz/api"
     },
     {
@@ -175,10 +223,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "0bd64998dc6ccffc",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz/bulletins"
     },
     {
@@ -186,10 +234,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.education.govt.nz/",
       "source_id": "f9886d5a827296c4",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz/media"
     },
     {
@@ -197,10 +245,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.education.govt.nz/",
       "source_id": "8d5a39c8eebd2c44",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz/media-releases"
     },
     {
@@ -208,10 +256,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "b42afcc58d0fe3ef",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz/news"
     },
     {
@@ -219,10 +267,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.education.govt.nz/",
       "source_id": "378dd769a95fa73b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz/news-and-events"
     },
     {
@@ -230,10 +278,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "ministry-of-education-website_page-e686fdc8",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-16-out-now"
     },
     {
@@ -241,10 +289,32 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
+      "source_id": "9aca81e5206c0003",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-17-out-now"
+    },
+    {
+      "agency_id": "ministry-of-education",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "d0ac18da2be72bca",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.education.govt.nz/news/kia-manawaroa-matariki-special"
+    },
+    {
+      "agency_id": "ministry-of-education",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.education.govt.nz/",
       "source_id": "e9438441bde3eca2",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz/newsletter"
     },
     {
@@ -263,10 +333,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.education.govt.nz/",
       "source_id": "fb41ade8dbd70536",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.education.govt.nz/subscribe"
     },
     {
@@ -274,10 +344,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "757fca608fb044fe",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.health.govt.nz"
     },
     {
@@ -307,10 +377,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.health.govt.nz/",
       "source_id": "2c44e2198ca2de65",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.health.govt.nz/media-releases"
     },
     {
@@ -318,10 +388,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "6b66283942b32b77",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.health.govt.nz/news"
     },
     {
@@ -329,10 +399,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.health.govt.nz/",
       "source_id": "23e778f77c3e484f",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.health.govt.nz/news-and-events"
     },
     {
@@ -351,10 +421,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "2dde4c0c8de66b3b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.health.govt.nz/publications"
     },
     {
@@ -373,10 +443,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "46247a48d92bac77",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.hud.govt.nz"
     },
     {
@@ -384,10 +454,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.hud.govt.nz/",
       "source_id": "ac70fde8b766b52e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.hud.govt.nz/api"
     },
     {
@@ -395,10 +465,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.hud.govt.nz/",
       "source_id": "e3b512584b111413",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.hud.govt.nz/media"
     },
     {
@@ -406,10 +476,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.hud.govt.nz/",
       "source_id": "f774323342992145",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.hud.govt.nz/media-releases"
     },
     {
@@ -417,10 +487,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "7ac4fed4061cdbdd",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.hud.govt.nz/news"
     },
     {
@@ -428,10 +498,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.hud.govt.nz/",
       "source_id": "d3de0b85e4cb3c90",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.hud.govt.nz/news-and-events"
     },
     {
@@ -439,10 +509,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.hud.govt.nz/",
       "source_id": "630c88a1436801af",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.hud.govt.nz/newsletter"
     },
     {
@@ -450,10 +520,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.hud.govt.nz/",
       "source_id": "b1f93dadccb60ecc",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.hud.govt.nz/publications"
     },
     {
@@ -461,10 +531,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.hud.govt.nz/",
       "source_id": "fcbc442cb2c45082",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.hud.govt.nz/subscribe"
     },
     {
@@ -472,10 +542,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "3c9a7a86a15c3dfc",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.justice.govt.nz"
     },
     {
@@ -483,10 +553,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.justice.govt.nz/",
       "source_id": "21ab5d550f56ae33",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.justice.govt.nz/api"
     },
     {
@@ -494,10 +564,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "c576a44a292e28ab",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.justice.govt.nz/media"
     },
     {
@@ -505,10 +575,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "db06e48c02417a40",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.justice.govt.nz/media-releases"
     },
     {
@@ -516,10 +586,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "72603ed5056a39fe",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.justice.govt.nz/news"
     },
     {
@@ -527,10 +597,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.justice.govt.nz/",
       "source_id": "6302d43e89efe329",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.justice.govt.nz/news-and-events"
     },
     {
@@ -538,10 +608,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.justice.govt.nz/",
       "source_id": "57c4f8806483d7a5",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.justice.govt.nz/newsletter"
     },
     {
@@ -549,10 +619,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.justice.govt.nz/",
       "source_id": "7b08fef29392b930",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.justice.govt.nz/publications"
     },
     {
@@ -560,10 +630,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.justice.govt.nz/",
       "source_id": "04b5ec4a34e814df",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.justice.govt.nz/subscribe"
     },
     {
@@ -571,10 +641,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "7a7527d25fa7a1b9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.msd.govt.nz"
     },
     {
@@ -582,10 +652,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.msd.govt.nz/",
       "source_id": "1f765dd57ae89a67",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.msd.govt.nz/api"
     },
     {
@@ -593,10 +663,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.msd.govt.nz/",
       "source_id": "8927fac383ee186b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.msd.govt.nz/media"
     },
     {
@@ -604,10 +674,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.msd.govt.nz/",
       "source_id": "7c55d81d70edb801",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.msd.govt.nz/media-releases"
     },
     {
@@ -615,10 +685,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.msd.govt.nz/",
       "source_id": "263295eb9267e951",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.msd.govt.nz/news"
     },
     {
@@ -626,10 +696,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.msd.govt.nz/",
       "source_id": "3e3cc8f05ea0f8e4",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.msd.govt.nz/news-and-events"
     },
     {
@@ -637,10 +707,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.msd.govt.nz/",
       "source_id": "0bdd8db796850110",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.msd.govt.nz/newsletter"
     },
     {
@@ -648,10 +718,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.msd.govt.nz/",
       "source_id": "b2305e8587d9f56a",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.msd.govt.nz/publications"
     },
     {
@@ -659,10 +729,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.msd.govt.nz/",
       "source_id": "11439db6fdee40b2",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.msd.govt.nz/subscribe"
     },
     {
@@ -670,10 +740,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "bfc49bba9caa113e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transport.govt.nz"
     },
     {
@@ -681,10 +751,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.transport.govt.nz/",
       "source_id": "7fd6790051bf6bdd",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transport.govt.nz/api"
     },
     {
@@ -692,10 +762,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.transport.govt.nz/",
       "source_id": "93d63ae94381dcde",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transport.govt.nz/media"
     },
     {
@@ -703,10 +773,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.transport.govt.nz/",
       "source_id": "a44747a92a705fc6",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transport.govt.nz/media-releases"
     },
     {
@@ -714,10 +784,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "6a9960da05abdd98",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transport.govt.nz/news"
     },
     {
@@ -725,10 +795,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.transport.govt.nz/",
       "source_id": "627ae89c767a3def",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transport.govt.nz/news-and-events"
     },
     {
@@ -736,10 +806,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.transport.govt.nz/",
       "source_id": "f9cf33d170f5be8d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transport.govt.nz/newsletter"
     },
     {
@@ -747,10 +817,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.transport.govt.nz/",
       "source_id": "bb8f7e31560cd47f",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transport.govt.nz/publications"
     },
     {
@@ -758,10 +828,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.transport.govt.nz/",
       "source_id": "988a2db87bc66c3b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transport.govt.nz/subscribe"
     },
     {
@@ -769,10 +839,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "42ba5a160d502214",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz"
     },
     {
@@ -780,10 +850,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.napier.govt.nz/",
       "source_id": "92982ca221f10bfc",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/api"
     },
     {
@@ -791,10 +861,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.napier.govt.nz/",
       "source_id": "52ed40d5b71da416",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/media"
     },
     {
@@ -802,10 +872,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.napier.govt.nz/",
       "source_id": "cf77c94055605700",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/media-releases"
     },
     {
@@ -813,10 +883,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "b21aee2e4ea1d65d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/napier/community-development/community-connect-enewsletter/"
     },
     {
@@ -824,10 +894,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "ab37dd066068723e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/news"
     },
     {
@@ -835,10 +905,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.napier.govt.nz/",
       "source_id": "da216d483898e1df",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/news-and-events"
     },
     {
@@ -846,10 +916,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.napier.govt.nz/",
       "source_id": "ec9a404b7ff7b70b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/newsletter"
     },
     {
@@ -857,10 +927,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "47fdd3667291f812",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/our-council/news/e-newsletters/"
     },
     {
@@ -868,10 +938,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "4a8bc24753f1ed39",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/publications"
     },
     {
@@ -879,10 +949,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.napier.govt.nz/",
       "source_id": "6bd950deb9e41c56",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.napier.govt.nz/subscribe"
     },
     {
@@ -890,10 +960,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "582b089b0ed55791",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.naturalhazards.govt.nz"
     },
     {
@@ -901,10 +971,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.naturalhazards.govt.nz/",
       "source_id": "61fcac0fbd42537e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.naturalhazards.govt.nz/api"
     },
     {
@@ -912,10 +982,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.naturalhazards.govt.nz/",
       "source_id": "7b840780d496da3c",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.naturalhazards.govt.nz/media"
     },
     {
@@ -923,10 +993,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.naturalhazards.govt.nz/",
       "source_id": "dd78d4b3a2663f80",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.naturalhazards.govt.nz/media-releases"
     },
     {
@@ -934,10 +1004,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "afe623fe26daa246",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.naturalhazards.govt.nz/news"
     },
     {
@@ -945,10 +1015,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.naturalhazards.govt.nz/",
       "source_id": "0062aa42d422f012",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.naturalhazards.govt.nz/news-and-events"
     },
     {
@@ -956,10 +1026,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.naturalhazards.govt.nz/",
       "source_id": "2fc4eeab9491d15b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.naturalhazards.govt.nz/newsletter"
     },
     {
@@ -967,10 +1037,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.naturalhazards.govt.nz/",
       "source_id": "63c5ea114ec31fd9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.naturalhazards.govt.nz/publications"
     },
     {
@@ -978,21 +1048,23 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.naturalhazards.govt.nz/",
       "source_id": "bdc75fdc1642a9bb",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.naturalhazards.govt.nz/subscribe"
     },
     {
       "agency_id": "nelson-city-council",
       "archive_status": "ready",
+      "candidate_id": "36d9562d35593fe3",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "raw_path": "historical_archive_raw/website_browser/2026-08/c984555815d2b9dffbb4b325.json",
+      "reason": "public browser fallback stopped at access marker: captcha",
       "source_id": "36d9562d35593fe3",
       "source_type": "website_page",
-      "status": "method_not_allowed",
+      "status": "browser_captcha_or_challenge",
       "url": "https://www.nelson.govt.nz"
     },
     {
@@ -1000,7 +1072,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "64b34bbadaa08550",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -1011,7 +1083,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "d59dedfef3d3872c",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -1022,7 +1094,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "765ca86f73ccfc21",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -1033,7 +1105,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "a873a4ab07c825be",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -1044,7 +1116,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "8afa2ca9bf433c4c",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -1055,77 +1127,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "43b5db01b146dda4",
       "source_type": "website_page",
       "status": "method_not_allowed",
       "url": "https://www.nelson.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "nelson-city-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "source_id": "0570691c1768d08e",
-      "source_type": "website_page",
-      "status": "method_not_allowed",
-      "url": "https://www.nelson.govt.nz/publications"
-    },
-    {
-      "agency_id": "nelson-city-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "source_id": "c61223404041643e",
-      "source_type": "website_page",
-      "status": "method_not_allowed",
-      "url": "https://www.nelson.govt.nz/subscribe"
-    },
-    {
-      "agency_id": "nema",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "172ebd9b17957932",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nema.govt.nz"
-    },
-    {
-      "agency_id": "nema",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "dbc7ce5e41cf1d43",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nema.govt.nz/api"
-    },
-    {
-      "agency_id": "nema",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "b34243098e337c9a",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nema.govt.nz/media"
-    },
-    {
-      "agency_id": "nema",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "c021ee456ca30b0d",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nema.govt.nz/media-releases"
     }
   ],
   "summary": {
@@ -1135,18 +1141,18 @@
     "selected_sources": 100,
     "status_by_platform": {
       "website_page": {
-        "already_captured": 86,
-        "captured": 4,
+        "browser_captcha_or_challenge": 1,
+        "captured": 92,
         "http_error": 1,
-        "method_not_allowed": 9
+        "method_not_allowed": 6
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 86,
-      "captured": 4,
+      "browser_captcha_or_challenge": 1,
+      "captured": 92,
       "http_error": 1,
-      "method_not_allowed": 9
+      "method_not_allowed": 6
     }
   }
 }
