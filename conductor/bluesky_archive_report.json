@@ -1,19 +1,19 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-02T06:12:54+00:00",
+  "generated_at": "2026-08-02T08:36:05+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
-    "include_blocked": true,
-    "limit_sources": 100,
+    "include_blocked": false,
+    "limit_sources": 0,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "max_scrolls": 25,
     "max_x_posts": 25,
-    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "nitter_base_urls": "",
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
     "per_account_timeout": 120,
@@ -22,7 +22,7 @@
     "retry_attempts": 1,
     "retry_backoff": 0.0,
     "retry_failed_from": "",
-    "rsshub_base_urls": "https://rsshub.app",
+    "rsshub_base_urls": "",
     "source_ids": [],
     "source_type": "bluesky",
     "x_auth_scrape_enabled": false,
@@ -13764,6 +13764,17 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3ms3kpib7mk2r",
+      "source_id": "person-lan-pham-bluesky-db0e6732",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/lanpham.greens.org.nz"
+    },
+    {
+      "agency_id": "person-lan-pham",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
       "reason": "bluesky record already present",
       "source_id": "person-lan-pham-bluesky-db0e6732",
       "source_type": "social_profile",
@@ -17838,13 +17849,13 @@
     "status_by_platform": {
       "bluesky": {
         "already_captured": 1609,
-        "captured": 9
+        "captured": 10
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "already_captured": 1609,
-      "captured": 9
+      "captured": 10
     }
   }
 }
