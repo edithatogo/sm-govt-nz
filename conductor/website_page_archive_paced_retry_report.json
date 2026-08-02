@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-01T18:17:26+00:00",
+  "generated_at": "2026-08-02T18:18:12+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "28fde064d265c25f",
-      "45019736c545c4fc",
-      "b6eef4a659033728",
-      "c3670697db69f415"
+      "0061ef17b65e9518",
+      "3d96533a759ca232",
+      "63d3fdf169c4900a",
+      "b3f7b5b9e22072f8",
+      "bf4698bd981103f3"
     ],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
@@ -39,26 +40,15 @@
     {
       "agency_id": "education-review-office",
       "archive_status": "ready",
-      "candidate_id": "45019736c545c4fc",
+      "candidate_id": "0061ef17b65e9518",
       "feasibility": "high",
       "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-08/1b59cc244d009a9a981ad1ee.json",
+      "raw_path": "historical_archive_raw/website_browser/2026-08/7c3c1e49383db460e61a9a88.json",
       "reason": "public browser fallback stopped at access marker: cloudflare",
-      "source_id": "45019736c545c4fc",
+      "source_id": "0061ef17b65e9518",
       "source_type": "website_page",
       "status": "browser_captcha_or_challenge",
-      "url": "https://www.ero.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "education-review-office",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "c3670697db69f415",
-      "source_type": "website_page",
-      "status": "capture_blocked",
-      "url": "https://www.ero.govt.nz/subscribe"
+      "url": "https://www.ero.govt.nz/news-and-events"
     },
     {
       "agency_id": "government-house",
@@ -66,38 +56,64 @@
       "feasibility": "high",
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "28fde064d265c25f",
+      "source_id": "bf4698bd981103f3",
       "source_type": "website_page",
       "status": "capture_blocked",
-      "url": "https://gg.govt.nz/news"
+      "url": "https://gg.govt.nz/api"
     },
     {
-      "agency_id": "selwyn-district-council",
+      "agency_id": "ministry-of-education",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "b6eef4a659033728",
+      "reason": "HTTP 500: Internal Server Error",
+      "source_id": "3d96533a759ca232",
       "source_type": "website_page",
-      "status": "capture_blocked",
-      "url": "https://www.selwyn.govt.nz/news"
+      "status": "http_error",
+      "url": "https://www.education.govt.nz/publications"
+    },
+    {
+      "agency_id": "porirua-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "URL error: [Errno -5] No address associated with hostname; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "source_id": "b3f7b5b9e22072f8",
+      "source_type": "website_page",
+      "status": "network_error",
+      "url": "https://www.pcc.govt.nz"
+    },
+    {
+      "agency_id": "predator-free-2050",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "URL error: [Errno -5] No address associated with hostname; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "source_id": "63d3fdf169c4900a",
+      "source_type": "website_page",
+      "status": "network_error",
+      "url": "https://www.predatorfree2050.co.nz"
     }
   ],
   "summary": {
     "platform_counts": {
-      "website_page": 4
+      "website_page": 5
     },
-    "selected_sources": 4,
+    "selected_sources": 5,
     "status_by_platform": {
       "website_page": {
         "browser_captcha_or_challenge": 1,
-        "capture_blocked": 3
+        "capture_blocked": 1,
+        "http_error": 1,
+        "network_error": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "browser_captcha_or_challenge": 1,
-      "capture_blocked": 3
+      "capture_blocked": 1,
+      "http_error": 1,
+      "network_error": 2
     }
   }
 }
