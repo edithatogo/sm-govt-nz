@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-14T10:09:31+00:00",
+  "generated_at": "2026-08-02T06:30:51+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "api",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -32,10 +36,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "9635209a748b4790",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.acc.co.nz/.well-known/webfinger"
     },
     {
@@ -43,10 +47,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "cec34ffc95773934",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.acc.co.nz/openapi.json"
     },
     {
@@ -54,10 +58,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 400: candidate API endpoint is unavailable",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "09ac8da8255b089e",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "http_error",
       "url": "https://www.accreditation.co.nz/.well-known/webfinger"
     },
     {
@@ -65,10 +69,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 400: candidate API endpoint is unavailable",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "425ebd857705b53b",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "http_error",
       "url": "https://www.accreditation.co.nz/openapi.json"
     },
     {
@@ -76,10 +80,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "c5a5ba0f2acc6aa5",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
+      "status": "captured",
       "url": "https://www.airways.co.nz/.well-known/webfinger"
     },
     {
@@ -87,10 +91,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "e435af5750cfb7e4",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.airways.co.nz/openapi.json"
     },
     {
@@ -230,10 +234,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "cf7b90e44f17a3ac",
       "source_type": "api_endpoint",
-      "status": "dns_failed",
+      "status": "network_error",
       "url": "https://www.aucklandlightrail.co.nz/.well-known/webfinger"
     },
     {
@@ -241,10 +245,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "e0968bbdfef1f4a6",
       "source_type": "api_endpoint",
-      "status": "dns_failed",
+      "status": "network_error",
       "url": "https://www.aucklandlightrail.co.nz/openapi.json"
     },
     {
@@ -274,10 +278,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)",
+      "reason": "URL error: timed out",
       "source_id": "2ca609997afd955f",
       "source_type": "api_endpoint",
-      "status": "tls_failed",
+      "status": "network_timeout",
       "url": "https://www.boprc.govt.nz/.well-known/webfinger"
     },
     {
@@ -285,10 +289,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)",
+      "reason": "URL error: timed out",
       "source_id": "1992013bcbae6ac9",
       "source_type": "api_endpoint",
-      "status": "tls_failed",
+      "status": "network_timeout",
       "url": "https://www.boprc.govt.nz/openapi.json"
     },
     {
@@ -362,10 +366,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "b9412e9d1ecf208b",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.callaghaninnovation.govt.nz/.well-known/webfinger"
     },
     {
@@ -373,10 +377,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "c4b7f4fe7224ba01",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.callaghaninnovation.govt.nz/openapi.json"
     },
     {
@@ -461,10 +465,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "b91fab6497718087",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.codc.govt.nz/openapi.json"
     },
     {
@@ -560,10 +564,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "e704e30b27b66005",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://my.christchurchcitylibraries.com/.well-known/webfinger"
     },
     {
@@ -571,10 +575,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "4817b55ce4d40841",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://my.christchurchcitylibraries.com/openapi.json"
     },
     {
@@ -659,10 +663,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "f5aa4619b04ad877",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.cluthadc.govt.nz/openapi.json"
     },
     {
@@ -1066,10 +1070,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 400: candidate API endpoint is unavailable",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "59a6db21ec5ebecd",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "http_error",
       "url": "https://www.ecnz.co.nz/.well-known/webfinger"
     },
     {
@@ -1077,10 +1081,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 400: candidate API endpoint is unavailable",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "b8efb8515afc8597",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "http_error",
       "url": "https://www.ecnz.co.nz/openapi.json"
     },
     {
@@ -1121,10 +1125,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "e2cdf29cf41991f4",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.es.govt.nz/openapi.json"
     }
   ],
@@ -1135,22 +1139,28 @@
     "selected_sources": 100,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 16,
-        "captured": 6,
-        "dns_failed": 6,
-        "invalid": 68,
-        "not_acceptable": 2,
-        "tls_failed": 2
+        "capture_blocked": 15,
+        "captured": 9,
+        "dns_failed": 4,
+        "http_error": 4,
+        "invalid": 57,
+        "method_not_allowed": 3,
+        "network_error": 4,
+        "network_timeout": 2,
+        "not_acceptable": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 16,
-      "captured": 6,
-      "dns_failed": 6,
-      "invalid": 68,
-      "not_acceptable": 2,
-      "tls_failed": 2
+      "capture_blocked": 15,
+      "captured": 9,
+      "dns_failed": 4,
+      "http_error": 4,
+      "invalid": 57,
+      "method_not_allowed": 3,
+      "network_error": 4,
+      "network_timeout": 2,
+      "not_acceptable": 2
     }
   }
 }

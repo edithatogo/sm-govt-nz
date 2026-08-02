@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "dc97b47fcd92ab40b934e71e9963b1dac80890ce485aeb1222feaad6e5ff8039"
+      "sha256": "bf776ad3c8352133b9f87c5d93af62a7b0b2b428604f360ea84916778a4b9a70"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24949584,
+      "bytes": 24797064,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "0c8323174118b4a108e87142b4c40c67be8ae48f362e2a54f4ba4c84be8f4ef7"
+      "sha256": "74c84fd7522787e7051f2925c059c9543f6e6f921957e9511fd5cc6df4397967"
     },
     "normalized_archive.parquet": {
-      "bytes": 39412118,
+      "bytes": 39180895,
       "path": "normalized_archive.parquet",
-      "sha256": "5057f6c286a9e9d6b679aab7f1630b252d3345a55c0f6710ddfc3c7278220d52"
+      "sha256": "bddcafd3e332b3064823b5cb3a1314f0be830b693b545a56ff77d70943221837"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12354,
+  "normalized_record_count": 12343,
   "normalized_shard_count": 522,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 16267,
+  "raw_file_count": 16256,
   "record_index": [
     {
       "mirror_targets": [
@@ -131167,183 +131167,84 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:13:13+00:00",
-      "source_account": "https://www.mpdc.govt.nz",
-      "source_key": "api:https://www.mpdc.govt.nz",
+      "original_timestamp": "2026-08-02T06:12:37+00:00",
+      "source_account": "https://www.acc.co.nz",
+      "source_key": "api:https://www.acc.co.nz",
       "source_platform": "api",
-      "source_record_id": "api:1d9a91f093e2e0f783a5b8ae",
-      "source_url": "https://www.mpdc.govt.nz/.well-known/webfinger"
+      "source_record_id": "api:cda07dfbbbcd79fa5bcd125e",
+      "source_url": "https://www.acc.co.nz/.well-known/webfinger"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:13:14+00:00",
-      "source_account": "https://www.mpdc.govt.nz",
-      "source_key": "api:https://www.mpdc.govt.nz",
+      "original_timestamp": "2026-08-02T06:12:43+00:00",
+      "source_account": "https://www.acc.co.nz",
+      "source_key": "api:https://www.acc.co.nz",
       "source_platform": "api",
-      "source_record_id": "api:8211d032bda934e3ac148de6",
-      "source_url": "https://www.mpdc.govt.nz/openapi.json"
+      "source_record_id": "api:f127fe5c3f02439e24adc9d0",
+      "source_url": "https://www.acc.co.nz/openapi.json"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:13:36+00:00",
-      "source_account": "https://www.metservice.com",
-      "source_key": "api:https://www.metservice.com",
+      "original_timestamp": "2026-08-02T06:12:47+00:00",
+      "source_account": "https://www.airways.co.nz",
+      "source_key": "api:https://www.airways.co.nz",
       "source_platform": "api",
-      "source_record_id": "api:80b3ee49b3f016eec39a0bf0",
-      "source_url": "https://www.metservice.com/.well-known/webfinger"
+      "source_record_id": "api:5bf04b10b55a7ae85af2b70d",
+      "source_url": "https://www.airways.co.nz/.well-known/webfinger"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:23:25+00:00",
-      "source_account": "https://www.nema.govt.nz",
-      "source_key": "api:https://www.nema.govt.nz",
+      "original_timestamp": "2026-08-02T06:12:50+00:00",
+      "source_account": "https://www.airways.co.nz",
+      "source_key": "api:https://www.airways.co.nz",
       "source_platform": "api",
-      "source_record_id": "api:976d496d5f0f46a47cb48e9c",
-      "source_url": "https://www.nema.govt.nz/.well-known/webfinger"
+      "source_record_id": "api:89f3f2a51d71ab555b8fb4a2",
+      "source_url": "https://www.airways.co.nz/openapi.json"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:23:28+00:00",
-      "source_account": "https://www.nema.govt.nz",
-      "source_key": "api:https://www.nema.govt.nz",
+      "original_timestamp": "2026-08-02T06:21:03+00:00",
+      "source_account": "https://www.callaghaninnovation.govt.nz",
+      "source_key": "api:https://www.callaghaninnovation.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:10765274ece1ff058809d712",
-      "source_url": "https://www.nema.govt.nz/openapi.json"
+      "source_record_id": "api:3b5562f295e0f7f991339759",
+      "source_url": "https://www.callaghaninnovation.govt.nz/.well-known/webfinger"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:24:36+00:00",
-      "source_account": "https://www.army.mil.nz",
-      "source_key": "api:https://www.army.mil.nz",
+      "original_timestamp": "2026-08-02T06:21:06+00:00",
+      "source_account": "https://www.callaghaninnovation.govt.nz",
+      "source_key": "api:https://www.callaghaninnovation.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:b8905d13e9e287a214d2f1d6",
-      "source_url": "https://www.army.mil.nz/.well-known/webfinger"
+      "source_record_id": "api:524c5484b5e2013e4cdc4f6b",
+      "source_url": "https://www.callaghaninnovation.govt.nz/openapi.json"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:24:39+00:00",
-      "source_account": "https://www.army.mil.nz",
-      "source_key": "api:https://www.army.mil.nz",
+      "original_timestamp": "2026-08-02T06:22:27+00:00",
+      "source_account": "https://www.ccc.govt.nz",
+      "source_key": "api:https://www.ccc.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:ad0922dccaa2a62d4e02941a",
-      "source_url": "https://www.army.mil.nz/openapi.json"
+      "source_record_id": "api:10cbe7f1113ed65d2e60762b",
+      "source_url": "https://www.ccc.govt.nz/.well-known/webfinger"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:26:41+00:00",
-      "source_account": "https://www.parliament.nz",
-      "source_key": "api:https://www.parliament.nz",
+      "original_timestamp": "2026-08-02T06:22:27+00:00",
+      "source_account": "https://www.ccc.govt.nz",
+      "source_key": "api:https://www.ccc.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:0783a7ef29f9c8d238ee6b00",
-      "source_url": "https://www.parliament.nz/.well-known/webfinger"
+      "source_record_id": "api:262386badf7f1eea20544eb6",
+      "source_url": "https://www.ccc.govt.nz/openapi.json"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:26:43+00:00",
-      "source_account": "https://www.parliament.nz",
-      "source_key": "api:https://www.parliament.nz",
+      "original_timestamp": "2026-08-02T06:24:04+00:00",
+      "source_account": "https://www.creativenz.govt.nz",
+      "source_key": "api:https://www.creativenz.govt.nz",
       "source_platform": "api",
-      "source_record_id": "api:f532731d11501ca1073f10e8",
-      "source_url": "https://www.parliament.nz/openapi.json"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:12+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "api:https://www.nzpost.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:b562048682b8794d762a3ef5",
-      "source_url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/locator-api"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:12+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "api:https://www.nzpost.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:eed1dddf7fa250aed3687482",
-      "source_url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/label-api"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:13+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "api:https://www.nzpost.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:0218fe6bdc03dd3d3a76b32c",
-      "source_url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/rate-finder-api"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:14+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "api:https://www.nzpost.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:3e2e69d836d696a0ad3749c3",
-      "source_url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/tracking-api"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:15+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "api:https://www.nzpost.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:08c9ad2f1b96adeff19b0322",
-      "source_url": "https://www.nzpost.co.nz/business/developer-centre/nz-post-legacy-apis/tracking-notification-api"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:16+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "api:https://www.nzpost.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:8342ef39a37b7cca96f793f9",
-      "source_url": "https://www.nzpost.co.nz/business/terms-and-conditions/addressing-api"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:17+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "api:https://www.nzpost.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:4c1ab63542582f334d85f019",
-      "source_url": "https://www.nzpost.co.nz/business/terms-and-conditions/shipping-api"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:17+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "api:https://www.nzpost.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:a694709fb983128fe3e3f9be",
-      "source_url": "https://www.nzpost.co.nz/business/terms-and-conditions/developer-centre-api-terms-conditions"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:18+00:00",
-      "source_account": "https://www.nzpost.co.nz",
-      "source_key": "api:https://www.nzpost.co.nz",
-      "source_platform": "api",
-      "source_record_id": "api:23f6777e410eb22003cf9210",
-      "source_url": "https://www.nzpost.co.nz/business/terms-and-conditions/terms-and-conditions-for-api-use"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:27:26+00:00",
-      "source_account": "https://www.nzqa.govt.nz",
-      "source_key": "api:https://www.nzqa.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:4c46092014236d2684d4ae09",
-      "source_url": "https://www.nzqa.govt.nz/.well-known/webfinger"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:28:07+00:00",
-      "source_account": "https://www.nzqa.govt.nz",
-      "source_key": "api:https://www.nzqa.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:1104454f372af75d37886f7f",
-      "source_url": "https://www.nzqa.govt.nz/openapi.json"
+      "source_record_id": "api:4915f98708499818f68586dc",
+      "source_url": "https://www.creativenz.govt.nz/.well-known/webfinger"
     },
     {
       "mirror_targets": [],
@@ -131541,7 +131442,7 @@
     "nz-government-social-media"
   ],
   "source_counts": {
-    "api": 34,
+    "api": 23,
     "bluesky": 2617,
     "courtsofnz.govt.nz": 11,
     "email": 25,
@@ -131555,7 +131456,7 @@
   },
   "source_date_ranges": {
     "api": {
-      "max_original_created_at": "2026-08-02T06:28:07+00:00",
+      "max_original_created_at": "2026-08-02T06:24:04+00:00",
       "min_original_created_at": "2026-07-01T10:07:40+00:00"
     },
     "bluesky": {
