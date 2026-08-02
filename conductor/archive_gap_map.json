@@ -1,68 +1,41 @@
 {
-  "gaps": [
-    {
-      "agency_id": "worksafe-nz",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_200_report.json",
-      "source_id": "9d1a12f4f73083bc",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@WorkSafeNZ"
-    }
-  ],
+  "gaps": [],
   "inputs": {
     "reports": [
-      "conductor/youtube_archive_offset_200_report.json"
+      "conductor/threads_archive_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/youtube_archive_offset_200_report.json": {
+    "conductor/threads_archive_report.json": {
       "platform_counts": {
-        "youtube": 3
+        "threads": 3
       },
       "selected_sources": 3,
       "status_by_platform": {
-        "youtube": {
-          "already_captured": 13,
-          "captured": 2,
-          "no_records": 1,
-          "youtube_channel_not_found": 1
+        "threads": {
+          "public_snapshot_captured": 3
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "already_captured": 13,
-        "captured": 2,
-        "no_records": 1,
-        "youtube_channel_not_found": 1
+        "public_snapshot_captured": 3
       }
     }
   },
   "summary": {
-    "gap_count": 1,
+    "gap_count": 0,
     "input_status_counts": {
-      "already_captured": 13,
-      "captured": 2,
-      "no_records": 1,
-      "youtube_channel_not_found": 1
+      "public_snapshot_captured": 3
     },
     "platform_counts": {
-      "youtube": 3
+      "threads": 3
     },
     "priority_counts": {
-      "archived_or_already_archived": 1,
-      "monitor_report_only": 1,
-      "review": 1
+      "archived_or_already_archived": 3
     },
     "status_counts": {
-      "already_captured": 1,
-      "no_records": 1,
-      "youtube_channel_not_found": 1
+      "public_snapshot_captured": 3
     },
-    "superseded_source_count": 1
+    "superseded_source_count": 0
   }
 }

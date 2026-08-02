@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-02T06:51:15+00:00
+Generated: 2026-08-02T06:12:43+00:00
 
 ## Summary
 
@@ -14,11 +14,11 @@ Generated: 2026-07-02T06:51:15+00:00
 
 ## Status counts
 
-- `manual_seed_missing`: 3
+- `public_snapshot_captured`: 3
 
 ## Status by platform
 
-- `threads`: {'manual_seed_missing': 3}
+- `threads`: {'public_snapshot_captured': 3}
 
 ## Notes
 

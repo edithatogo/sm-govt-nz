@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "3e45c6a86a570705de3f8f7a1361ef046778781f16d2c036995f4f0dd809b022"
+      "sha256": "5ea7395ef32b44c1d95e17dc740eb84cea83d5c3fcc1c43ce6beeca0e195be20"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24780126,
+      "bytes": 24780688,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "e68060b47905682a0d110bbf3e70e56dd163a094442cded55c13050798464951"
+      "sha256": "c882c0fce9c36b4f131397040f738bdb62a345188a61a7649a85b327024d49d8"
     },
     "normalized_archive.parquet": {
-      "bytes": 39129976,
+      "bytes": 39124255,
       "path": "normalized_archive.parquet",
-      "sha256": "6340477a8744d2a8e8111992485ba09eed72d8721ff308e71f303f552ca612e0"
+      "sha256": "f37b5e581e88cd747c75aaa8fa7d03faff2851c07b53b6a9536316273623aa7c"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12336,
-  "normalized_shard_count": 521,
+  "normalized_record_count": 12337,
+  "normalized_shard_count": 522,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 16249,
+  "raw_file_count": 16250,
   "record_index": [
     {
       "mirror_targets": [
@@ -126051,24 +126051,6 @@
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-22T22:24:28+00:00",
-      "source_account": "Visit WorkSafe on youtube",
-      "source_key": "youtube:Visit WorkSafe on youtube",
-      "source_platform": "youtube",
-      "source_record_id": "youtube:3a4f62bba491cda89c6a45d9",
-      "source_url": "https://www.youtube.com/channel/UC6ACAsaw2_ENg6Rw2mCIYHw/feed"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-22T22:24:32+00:00",
-      "source_account": "Visit WorkSafe on youtube",
-      "source_key": "youtube:Visit WorkSafe on youtube",
-      "source_platform": "youtube",
-      "source_record_id": "youtube:4b2db385bdc0fe1972c8d755",
-      "source_url": "https://www.youtube.com/channel/UC6ACAsaw2_ENg6Rw2mCIYHw/feed"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -131185,6 +131167,33 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:12:40+00:00",
+      "source_account": "newzealandpolice",
+      "source_key": "threads:newzealandpolice",
+      "source_platform": "threads",
+      "source_record_id": "threads_public_snapshot:1761358b68bb558e1636387e",
+      "source_url": "https://www.threads.net/@newzealandpolice"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:12:41+00:00",
+      "source_account": "nzte",
+      "source_key": "threads:nzte",
+      "source_platform": "threads",
+      "source_record_id": "threads_public_snapshot:6109e9f1a27fb37183b77d2a",
+      "source_url": "https://www.threads.net/@nzte"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:12:42+00:00",
+      "source_account": "wcl_library",
+      "source_key": "threads:wcl_library",
+      "source_platform": "threads",
+      "source_record_id": "threads_public_snapshot:74c9bbf95f21cb95b5a1ead0",
+      "source_url": "https://www.threads.net/@wcl_library"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -131387,9 +131396,10 @@
     "json_feed": 16,
     "linkedin": 61,
     "rss": 3930,
+    "threads": 3,
     "website_page": 1827,
     "x": 769,
-    "youtube": 2743
+    "youtube": 2741
   },
   "source_date_ranges": {
     "api": {
@@ -131423,6 +131433,10 @@
     "rss": {
       "max_original_created_at": "Wednesday, 25 March 2026 - 12:01pm",
       "min_original_created_at": "2004-05-05T12:00:00+00:00"
+    },
+    "threads": {
+      "max_original_created_at": "2026-08-02T06:12:42+00:00",
+      "min_original_created_at": "2026-08-02T06:12:40+00:00"
     },
     "website_page": {
       "max_original_created_at": "2026-07-07T16:05:13+00:00",

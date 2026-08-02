@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T06:12:42+00:00",
+  "generated_at": "2026-08-02T06:12:48+00:00",
   "normalized": [
     {
       "bytes": 1232184,
@@ -2338,6 +2338,14 @@
       "source": "rss"
     },
     {
+      "bytes": 3480,
+      "month": "2026-08",
+      "path": "dist/hydrated_archive_normalized/threads/2026-08.jsonl",
+      "record_count": 3,
+      "sha256": "48599c3e74b20ad4bd8555efb76ccaad90e368c5805dc5e60d1cc07504c1416a",
+      "source": "threads"
+    },
+    {
       "bytes": 5098,
       "month": "2023-11",
       "path": "dist/hydrated_archive_normalized/website/2023-11.jsonl",
@@ -4138,11 +4146,11 @@
       "source": "youtube"
     },
     {
-      "bytes": 198550,
+      "bytes": 196255,
       "month": "2026-07",
       "path": "dist/hydrated_archive_normalized/youtube/2026-07.jsonl",
-      "record_count": 136,
-      "sha256": "601478749b6b10824555c0a265faa06c72f66ca553c333471f21738f5adea3f5",
+      "record_count": 134,
+      "sha256": "a664aacf0d287c6d158aff3ea6205463c06b03be4dc5cb6a4b1cc58ab77a49c5",
       "source": "youtube"
     },
     {
@@ -6808,6 +6816,15 @@
       "source": "rss"
     },
     {
+      "bytes": 2562193,
+      "digest_mode": "path_size_inventory",
+      "file_count": 3,
+      "month": "2026-08",
+      "path": "historical_archive_raw/threads_public_snapshot/2026-08",
+      "sha256": "efbef62bd0311a22f95f0e7ea840af3d6ed52a1dd0d1f62772762db897dc34c7",
+      "source": "threads_public_snapshot"
+    },
+    {
       "bytes": 83445,
       "digest_mode": "path_size_inventory",
       "file_count": 1,
@@ -8860,12 +8877,12 @@
       "source": "youtube"
     },
     {
-      "bytes": 1150508,
+      "bytes": 1143500,
       "digest_mode": "path_size_inventory",
-      "file_count": 290,
+      "file_count": 288,
       "month": "2026-07",
       "path": "historical_archive_raw/youtube/2026-07",
-      "sha256": "fd642e883e126dacd5c3efaee20db895017506a65f6e7cd2c41394c5509f5e95",
+      "sha256": "0e8b8af7692530a30e1bb20c154ce905b16a730395354d0c688221f17d46d212",
       "source": "youtube"
     },
     {
@@ -8888,11 +8905,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 154343915,
-    "normalized_record_count": 12334,
-    "normalized_shard_count": 519,
-    "raw_bytes": 715871422,
-    "raw_file_count": 16240,
-    "raw_shard_count": 525
+    "normalized_bytes": 154345100,
+    "normalized_record_count": 12335,
+    "normalized_shard_count": 520,
+    "raw_bytes": 718426607,
+    "raw_file_count": 16241,
+    "raw_shard_count": 526
   }
 }
