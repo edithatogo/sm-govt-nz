@@ -1,0 +1,30 @@
+{
+  "captured_at": "2026-08-02T06:32:11+00:00",
+  "feed_url": "https://swrb.govt.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswrb.govt.nz%2F",
+  "item": {
+    "height": 338,
+    "html": "<blockquote class=\"wp-embedded-content\" data-secret=\"9WL7ZfNHbp\"><a href=\"https://swrb.govt.nz/\">Mandatory registration</a></blockquote><iframe sandbox=\"allow-scripts\" security=\"restricted\" src=\"https://swrb.govt.nz/embed/#?secret=9WL7ZfNHbp\" width=\"600\" height=\"338\" title=\"&#8220;Mandatory registration&#8221; &#8212; Social Workers Registration Board\" data-secret=\"9WL7ZfNHbp\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" class=\"wp-embedded-content\"></iframe><script type=\"text/javascript\">\n/* <![CDATA[ */\n/*! This file is auto-generated */\n!function(d,l){\"use strict\";l.querySelector&&d.addEventListener&&\"undefined\"!=typeof URL&&(d.wp=d.wp||{},d.wp.receiveEmbedMessage||(d.wp.receiveEmbedMessage=function(e){var t=e.data;if((t||t.secret||t.message||t.value)&&!/[^a-zA-Z0-9]/.test(t.secret)){for(var s,r,n,a=l.querySelectorAll('iframe[data-secret=\"'+t.secret+'\"]'),o=l.querySelectorAll('blockquote[data-secret=\"'+t.secret+'\"]'),c=new RegExp(\"^https?:$\",\"i\"),i=0;i<o.length;i++)o[i].style.display=\"none\";for(i=0;i<a.length;i++)s=a[i],e.source===s.contentWindow&&(s.removeAttribute(\"style\"),\"height\"===t.message?(1e3<(r=parseInt(t.value,10))?r=1e3:~~r<200&&(r=200),s.height=r):\"link\"===t.message&&(r=new URL(s.getAttribute(\"src\")),n=new URL(t.value),c.test(n.protocol))&&n.host===r.host&&l.activeElement===s&&(d.top.location.href=t.value))}},d.addEventListener(\"message\",d.wp.receiveEmbedMessage,!1),l.addEventListener(\"DOMContentLoaded\",function(){for(var e,t,s=l.querySelectorAll(\"iframe.wp-embedded-content\"),r=0;r<s.length;r++)(t=(e=s[r]).getAttribute(\"data-secret\"))||(t=Math.random().toString(36).substring(2,12),e.src+=\"#?secret=\"+t,e.setAttribute(\"data-secret\",t)),e.contentWindow.postMessage({message:\"ready\",secret:t},\"*\")},!1)))}(window,document);\n/* ]]> */\n</script>\n",
+    "provider_name": "Social Workers Registration Board",
+    "provider_url": "https://swrb.govt.nz",
+    "title": "Mandatory registration",
+    "type": "rich",
+    "version": "1.0",
+    "width": 600
+  },
+  "source": {
+    "access_method": "public_json_feed",
+    "account": "https://www.swrb.govt.nz",
+    "agency_id": "social-workers-registration-board",
+    "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
+    "archive_status": "ready",
+    "auth": "none",
+    "candidate_id": "8a13deb15f0d12a4",
+    "feasibility": "high",
+    "notes": "JSON Feed is a first-class feed source when advertised by link rel=alternate or common feed paths.",
+    "origin": "homepage.link_alternate",
+    "platform": "json_feed",
+    "source_id": "social-workers-registration-board-json_feed-56ff017e",
+    "source_type": "json_feed",
+    "url": "https://swrb.govt.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswrb.govt.nz%2F"
+  }
+}
