@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-13T11:54:21+00:00
+Generated: 2026-08-02T06:28:35+00:00
 
 ## Summary
 
@@ -14,16 +14,16 @@ Generated: 2026-07-13T11:54:21+00:00
 
 ## Status counts
 
-- `already_captured`: 1
-- `capture_blocked`: 14
-- `captured`: 12
-- `dns_failed`: 6
-- `invalid`: 62
+- `capture_blocked`: 13
+- `captured`: 17
+- `dns_failed`: 2
+- `invalid`: 55
 - `method_not_allowed`: 5
+- `network_error`: 8
 
 ## Status by platform
 
-- `api`: {'already_captured': 1, 'capture_blocked': 14, 'captured': 12, 'dns_failed': 6, 'invalid': 62, 'method_not_allowed': 5}
+- `api`: {'capture_blocked': 13, 'captured': 17, 'dns_failed': 2, 'invalid': 55, 'method_not_allowed': 5, 'network_error': 8}
 
 ## Notes
 

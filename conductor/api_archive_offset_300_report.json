@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-13T11:54:21+00:00",
+  "generated_at": "2026-08-02T06:28:35+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 300,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "api",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -32,10 +36,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "acb01cd65d6b27fb",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.nzte.govt.nz/.well-known/webfinger"
     },
     {
@@ -164,10 +168,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "ad052cad98eb166c",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://www.govt.nz/organisations/office-of-treaty-settlements/.well-known/webfinger"
     },
     {
@@ -175,10 +179,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "3e08ae4de5df9690",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://www.govt.nz/organisations/office-of-treaty-settlements/openapi.json"
     },
     {
@@ -428,10 +432,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: [Errno 111] Connection refused",
       "source_id": "4e44d1d7a708ea98",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://www.pharmac.govt.nz/.well-known/webfinger"
     },
     {
@@ -439,10 +443,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: [Errno 111] Connection refused",
       "source_id": "8d6300d15b1e7040",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_error",
       "url": "https://www.pharmac.govt.nz/openapi.json"
     },
     {
@@ -450,10 +454,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "3b35412b498d6dbe",
       "source_type": "api_endpoint",
-      "status": "dns_failed",
+      "status": "network_error",
       "url": "https://www.pcc.govt.nz/.well-known/webfinger"
     },
     {
@@ -461,10 +465,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "51d8ca5ed2e83bd8",
       "source_type": "api_endpoint",
-      "status": "dns_failed",
+      "status": "network_error",
       "url": "https://www.pcc.govt.nz/openapi.json"
     },
     {
@@ -472,10 +476,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "dabfa378b29adecd",
       "source_type": "api_endpoint",
-      "status": "dns_failed",
+      "status": "network_error",
       "url": "https://www.predatorfree2050.co.nz/.well-known/webfinger"
     },
     {
@@ -483,10 +487,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [Errno -2] Name or service not known",
+      "reason": "URL error: [Errno -5] No address associated with hostname",
       "source_id": "f42732fe9204314e",
       "source_type": "api_endpoint",
-      "status": "dns_failed",
+      "status": "network_error",
       "url": "https://www.predatorfree2050.co.nz/openapi.json"
     },
     {
@@ -560,10 +564,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "e76cbc20b09d94b3",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.qldc.govt.nz/.well-known/webfinger"
     },
     {
@@ -571,10 +575,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "6e37bce274d0c4d6",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.qldc.govt.nz/openapi.json"
     },
     {
@@ -670,10 +674,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "reannz-api-edd3a7f8",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.reannz.co.nz/products-and-services/data-services"
     },
     {
@@ -791,10 +795,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "38d4918b091c22a2",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
+      "status": "captured",
       "url": "https://www.ruapehudc.govt.nz/.well-known/webfinger"
     },
     {
@@ -1135,22 +1139,22 @@
     "selected_sources": 100,
     "status_by_platform": {
       "api": {
-        "already_captured": 1,
-        "capture_blocked": 14,
-        "captured": 12,
-        "dns_failed": 6,
-        "invalid": 62,
-        "method_not_allowed": 5
+        "capture_blocked": 13,
+        "captured": 17,
+        "dns_failed": 2,
+        "invalid": 55,
+        "method_not_allowed": 5,
+        "network_error": 8
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1,
-      "capture_blocked": 14,
-      "captured": 12,
-      "dns_failed": 6,
-      "invalid": 62,
-      "method_not_allowed": 5
+      "capture_blocked": 13,
+      "captured": 17,
+      "dns_failed": 2,
+      "invalid": 55,
+      "method_not_allowed": 5,
+      "network_error": 8
     }
   }
 }
