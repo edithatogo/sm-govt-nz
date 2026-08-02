@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "d96e21362fc23cebe6266516cc12311989bf548b313ff17ed1b0392b20030b1e"
+      "sha256": "3e64af4d0cd82c2dc3379744111e95d8305cf09f76c19fac99c653b6def1e2d9"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24916881,
+      "bytes": 24793945,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "b6ddd99033977bbc18fe42767a4e87f83144e0f797d317179b6da0acb04db66f"
+      "sha256": "be2d1b3e63a3e49238c1beaea8119471d13aa0f47de779f2e66a1bf96937277d"
     },
     "normalized_archive.parquet": {
-      "bytes": 39365358,
+      "bytes": 39131061,
       "path": "normalized_archive.parquet",
-      "sha256": "35845f18df3d51e270257fc69230e41f60a3329e840707ae96ff4754acafef72"
+      "sha256": "dec8e7f673fcff0414ececd7b8ae4669e376dcbaf5679040aa5ef19f8c2bae14"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12345,
+  "normalized_record_count": 12382,
   "normalized_shard_count": 522,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 16258,
+  "raw_file_count": 16295,
   "record_index": [
     {
       "mirror_targets": [
@@ -131167,102 +131167,435 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:16:26+00:00",
-      "source_account": "https://www.witt.ac.nz",
-      "source_key": "website_page:https://www.witt.ac.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:33e0419fbda0f40f531badf2",
-      "source_url": "https://www.witt.ac.nz/about-us/witt-publications/newsletters"
+      "original_timestamp": "2026-08-02T06:17:22+00:00",
+      "source_account": "acc-new-zealand",
+      "source_key": "linkedin:acc-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:4c8a428151bcc0cc39960248",
+      "source_url": "https://www.linkedin.com/company/acc-new-zealand/"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:16:28+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:6a6ba71866b43316312b97df",
-      "source_url": "https://www.worksafe.govt.nz"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:16:30+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:dfa1863b293f8246ffe6644b",
-      "source_url": "https://www.worksafe.govt.nz/about-us/news-and-media/high-hazards-newsletter-june-2026/"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:16:33+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:58968a41749c218466ebecb2",
-      "source_url": "https://www.worksafe.govt.nz/api"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:16:41+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:19db40335c1fd20563e74201",
-      "source_url": "https://www.worksafe.govt.nz/media"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:16:49+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:85ff118acd2bbba6d13f1d85",
-      "source_url": "https://www.worksafe.govt.nz/media-releases"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:16:58+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:73d2d3050b0b9af9ea81c000",
-      "source_url": "https://www.worksafe.govt.nz/news"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:17:07+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:ef4a000954b66e29a567d9a8",
-      "source_url": "https://www.worksafe.govt.nz/news-and-events"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:17:15+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:cf26230fb498a01fab6dd051",
-      "source_url": "https://www.worksafe.govt.nz/newsletter"
+      "original_timestamp": "2026-08-02T06:17:22+00:00",
+      "source_account": "acc-new-zealand",
+      "source_key": "linkedin:acc-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:df54bebf2031c6f5f6ebbbca",
+      "source_url": "https://www.linkedin.com/company/acc-new-zealand"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-08-02T06:17:23+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:bead8f7485198bb625142c1c",
-      "source_url": "https://www.worksafe.govt.nz/publications"
+      "source_account": "airways-new-zealand",
+      "source_key": "linkedin:airways-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:40be06058571057e5945a50f",
+      "source_url": "https://www.linkedin.com/company/airways-new-zealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:23+00:00",
+      "source_account": "airways-new-zealand",
+      "source_key": "linkedin:airways-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:a2b684add7ba1651643f7bce",
+      "source_url": "https://www.linkedin.com/company/airways-new-zealand/?originalSubdomain=nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:24+00:00",
+      "source_account": "antarctica-new-zealand",
+      "source_key": "linkedin:antarctica-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:6e6bfb50d20dd70615b6bb67",
+      "source_url": "https://www.linkedin.com/company/antarctica-new-zealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:25+00:00",
+      "source_account": "AsureQuality",
+      "source_key": "linkedin:AsureQuality",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:a66f6ddf0c749eac6bcb32b8",
+      "source_url": "https://www.linkedin.com/company/asurequality"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:26+00:00",
+      "source_account": "auckland-council",
+      "source_key": "linkedin:auckland-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:ad4a873dd68005439eaa6c8b",
+      "source_url": "https://www.linkedin.com/company/auckland-council"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:27+00:00",
+      "source_account": "LinkedIn",
+      "source_key": "linkedin:LinkedIn",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:ef1a7d87b05aa0247fcebfd4",
+      "source_url": "https://www.linkedin.com/company/buller-district-council"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:28+00:00",
+      "source_account": "callaghan-innovation",
+      "source_key": "linkedin:callaghan-innovation",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:3b5771de9965363539209a0f",
+      "source_url": "https://www.linkedin.com/company/callaghan-innovation/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:28+00:00",
+      "source_account": "callaghan-innovation",
+      "source_key": "linkedin:callaghan-innovation",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:b76c0dd62a27e9d5c186f71a",
+      "source_url": "https://www.linkedin.com/company/callaghan-innovation"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-08-02T06:17:29+00:00",
-      "source_account": "https://www.worksafe.govt.nz",
-      "source_key": "website_page:https://www.worksafe.govt.nz",
-      "source_platform": "website_page",
-      "source_record_id": "website:2bef3969f2aacad2bf00f7f1",
-      "source_url": "https://www.worksafe.govt.nz/subscribe"
+      "source_account": "central-hawkes-bay-district-council",
+      "source_key": "linkedin:central-hawkes-bay-district-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:2797dc95e63c13a269a6783b",
+      "source_url": "https://nz.linkedin.com/company/central-hawkes-bay-district-council"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:29+00:00",
+      "source_account": "3817133",
+      "source_key": "linkedin:3817133",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:60e63bb6fbad8789b78bdeea",
+      "source_url": "https://www.linkedin.com/company/3817133/admin/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:30+00:00",
+      "source_account": "christchurch-city-council",
+      "source_key": "linkedin:christchurch-city-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:223c408bda6ac3e7576072cd",
+      "source_url": "https://www.linkedin.com/company/christchurch-city-council"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:30+00:00",
+      "source_account": "mana-mokopuna-children-and-young-people-s-commission",
+      "source_key": "linkedin:mana-mokopuna-children-and-young-people-s-commission",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:d0f6086ab984f8f84e13d804",
+      "source_url": "https://www.linkedin.com/company/mana-mokopuna-children-and-young-people-s-commission/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:31+00:00",
+      "source_account": "city-rail-link-ltd",
+      "source_key": "linkedin:city-rail-link-ltd",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:8593a8ddb5e057d073f78119",
+      "source_url": "https://www.linkedin.com/company/city-rail-link-ltd"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:32+00:00",
+      "source_account": "city-rail-link-ltd",
+      "source_key": "linkedin:city-rail-link-ltd",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:696fb9c67cc9e56ce49d0b94",
+      "source_url": "https://www.linkedin.com/company/city-rail-link-ltd/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:32+00:00",
+      "source_account": "civil-aviation-authority-of-new-zealand",
+      "source_key": "linkedin:civil-aviation-authority-of-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:f546c52e5e28f51f2816aa9f",
+      "source_url": "https://www.linkedin.com/company/civil-aviation-authority-of-new-zealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:33+00:00",
+      "source_account": "Linkedin",
+      "source_key": "linkedin:Linkedin",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:519550019428c4e1fb2a064e",
+      "source_url": "https://www.linkedin.com/company/civil-aviation-authority-of-new-zealand/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:34+00:00",
+      "source_account": "clutha-district-council",
+      "source_key": "linkedin:clutha-district-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:b4c8cf159d736269f9236930",
+      "source_url": "https://www.linkedin.com/company/clutha-district-council/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:34+00:00",
+      "source_account": "climate-change-commission",
+      "source_key": "linkedin:climate-change-commission",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:cab90ddf9dca7a230e8c1178",
+      "source_url": "https://www.linkedin.com/company/climate-change-commission/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:35+00:00",
+      "source_account": "commerce-commission",
+      "source_key": "linkedin:commerce-commission",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:510dff03fadb1ef4ae8d7102",
+      "source_url": "https://nz.linkedin.com/company/commerce-commission"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:36+00:00",
+      "source_account": "commerce-commission",
+      "source_key": "linkedin:commerce-commission",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:504452e4dbd146f0b8369430",
+      "source_url": "https://www.linkedin.com/company/commerce-commission"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:36+00:00",
+      "source_account": "courts-of-new-zealand",
+      "source_key": "linkedin:courts-of-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:85872df7cf9f4430491ee0eb",
+      "source_url": "https://www.linkedin.com/company/courts-of-new-zealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:37+00:00",
+      "source_account": "LinkedIn",
+      "source_key": "linkedin:LinkedIn",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:4f5bde5a771b3bc41739ae65",
+      "source_url": "https://nz.linkedin.com/company/creative-new-zealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:37+00:00",
+      "source_account": "courts-of-new-zealand",
+      "source_key": "linkedin:courts-of-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:556508528e1d62933bf046ff",
+      "source_url": "https://www.linkedin.com/company/courts-of-new-zealand/posts/?feedView=all"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:38+00:00",
+      "source_account": "dunedin-city-council",
+      "source_key": "linkedin:dunedin-city-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:30e1f5c92b834355b1e6d0d4",
+      "source_url": "https://www.linkedin.com/company/dunedin-city-council"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:38+00:00",
+      "source_account": "creative-new-zealand",
+      "source_key": "linkedin:creative-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:846ccbe2b3a8c9d260a0f4fe",
+      "source_url": "https://www.linkedin.com/company/creative-new-zealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:39+00:00",
+      "source_account": "education-new-zealand",
+      "source_key": "linkedin:education-new-zealand",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:e14e6f6e1c920b41e7af1051",
+      "source_url": "https://www.linkedin.com/company/education-new-zealand"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:40+00:00",
+      "source_account": "EECA",
+      "source_key": "linkedin:EECA",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:60f04df7055fb9e3b6a9bdb0",
+      "source_url": "https://www.linkedin.com/company/eeca"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:40+00:00",
+      "source_account": "education-review-office",
+      "source_key": "linkedin:education-review-office",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:c5e63e386cfb96487d0fbea1",
+      "source_url": "https://www.linkedin.com/company/education-review-office"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:41+00:00",
+      "source_account": "LinkedIn",
+      "source_key": "linkedin:LinkedIn",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:8c037772ec88c02f9d8be980",
+      "source_url": "https://www.linkedin.com/company/energy-efficiency-and-conservation-authority"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:41+00:00",
+      "source_account": "286999",
+      "source_key": "linkedin:286999",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:dbbc509c49d7c018b8551c01",
+      "source_url": "http://www.linkedin.com/company/286999"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:42+00:00",
+      "source_account": "1451242",
+      "source_key": "linkedin:1451242",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:2043e7d89c06ef0c90dcf9bc",
+      "source_url": "https://www.linkedin.com/company/1451242"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:42+00:00",
+      "source_account": "EIT",
+      "source_key": "linkedin:EIT",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:204949d09104cacd386023d0",
+      "source_url": "https://www.linkedin.com/company/eit"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:42+00:00",
+      "source_account": "EIT",
+      "source_key": "linkedin:EIT",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:c800242c34955869d266d3af",
+      "source_url": "https://www.linkedin.com/company/286999"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:43+00:00",
+      "source_account": "LinkedIn",
+      "source_key": "linkedin:LinkedIn",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:0ec8934286b9c413ab8695f3",
+      "source_url": "https://www.linkedin.com/company/environment-canterbury"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:43+00:00",
+      "source_account": "ecnz",
+      "source_key": "linkedin:ecnz",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:2700bec0e7bca2a1d6aa856b",
+      "source_url": "https://www.linkedin.com/company/ecnz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:44+00:00",
+      "source_account": "environment-southland",
+      "source_key": "linkedin:environment-southland",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:1996280cdea9bb9ef371e5ba",
+      "source_url": "https://www.linkedin.com/company/environment-southland"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:44+00:00",
+      "source_account": "2139834",
+      "source_key": "linkedin:2139834",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:39d870831d99dd9888d2d46d",
+      "source_url": "https://www.linkedin.com/company/2139834/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:45+00:00",
+      "source_account": "external-reporting-board",
+      "source_key": "linkedin:external-reporting-board",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:a6704b94c5e7093e7afbca9d",
+      "source_url": "https://www.linkedin.com/company/external-reporting-board"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:46+00:00",
+      "source_account": "gore-district-council",
+      "source_key": "linkedin:gore-district-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:2c7d480776021b1be1eae6fd",
+      "source_url": "https://www.linkedin.com/company/gore-district-council"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:46+00:00",
+      "source_account": "962042",
+      "source_key": "linkedin:962042",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:f72c2c640666db47c174b33c",
+      "source_url": "https://www.linkedin.com/company/962042/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:47+00:00",
+      "source_account": "nz-super-fund",
+      "source_key": "linkedin:nz-super-fund",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:7beb070e50f68b579721027c",
+      "source_url": "https://www.linkedin.com/company/nz-super-fund"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:47+00:00",
+      "source_account": "Linkedin",
+      "source_key": "linkedin:Linkedin",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:d5829428f97c204af370ceaf",
+      "source_url": "https://www.linkedin.com/company/2758203"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:48+00:00",
+      "source_account": "hamilton-city-council",
+      "source_key": "linkedin:hamilton-city-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:6d572e8d7c0d45cb858c6991",
+      "source_url": "https://www.linkedin.com/company/hamilton-city-council"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:48+00:00",
+      "source_account": "hastings-district-council",
+      "source_key": "linkedin:hastings-district-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:cb74e7c0c29c01ce031c1e39",
+      "source_url": "https://www.linkedin.com/company/hastings-district-council/?originalSubdomain=nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:49+00:00",
+      "source_account": "hawkes-bay-regional-council",
+      "source_key": "linkedin:hawkes-bay-regional-council",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:1dd4297e0e406d1870d5ea2b",
+      "source_url": "https://www.linkedin.com/company/hawkes-bay-regional-council"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:17:49+00:00",
+      "source_account": "health-and-disability-commissioner",
+      "source_key": "linkedin:health-and-disability-commissioner",
+      "source_platform": "linkedin",
+      "source_record_id": "linkedin_public_snapshot:8556ffdec14fe617da77338e",
+      "source_url": "https://www.linkedin.com/company/health-and-disability-commissioner"
     },
     {
       "mirror_targets": [],
@@ -131466,9 +131799,9 @@
     "email": 25,
     "facebook": 323,
     "json_feed": 16,
-    "linkedin": 61,
+    "linkedin": 109,
     "rss": 3930,
-    "website_page": 1838,
+    "website_page": 1827,
     "x": 769,
     "youtube": 2741
   },
@@ -131498,7 +131831,7 @@
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
-      "max_original_created_at": "2026-07-31T18:49:21+00:00",
+      "max_original_created_at": "2026-08-02T06:17:49+00:00",
       "min_original_created_at": "2026-06-09T00:00:00+12:00"
     },
     "rss": {
@@ -131506,7 +131839,7 @@
       "min_original_created_at": "2004-05-05T12:00:00+00:00"
     },
     "website_page": {
-      "max_original_created_at": "2026-08-02T06:17:29+00:00",
+      "max_original_created_at": "2026-07-07T16:05:13+00:00",
       "min_original_created_at": "2026-06-25T03:44:00+00:00"
     },
     "x": {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T06:17:36+00:00",
+  "generated_at": "2026-08-02T06:17:57+00:00",
   "normalized": [
     {
       "bytes": 1232184,
@@ -295,6 +295,14 @@
       "path": "dist/hydrated_archive_normalized/linkedin/2026-07.jsonl",
       "record_count": 59,
       "sha256": "0976948a511bd478e2f2ff9be9b2a017631e2be252f24ccfc073fee88f7550ce",
+      "source": "linkedin"
+    },
+    {
+      "bytes": 70030,
+      "month": "2026-08",
+      "path": "dist/hydrated_archive_normalized/linkedin/2026-08.jsonl",
+      "record_count": 48,
+      "sha256": "7230e36ad867fab8de3488815bbbed1a0311ec128df5b2ccb40bbbf84332dd6e",
       "source": "linkedin"
     },
     {
@@ -2402,14 +2410,6 @@
       "source": "website"
     },
     {
-      "bytes": 1132038,
-      "month": "2026-08",
-      "path": "dist/hydrated_archive_normalized/website/2026-08.jsonl",
-      "record_count": 11,
-      "sha256": "60e510713024d43026b449e0835e32431b188e73622b58da3fae178bcac4d31f",
-      "source": "website"
-    },
-    {
       "bytes": 1352,
       "month": "1971-01",
       "path": "dist/hydrated_archive_normalized/x/1971-01.jsonl",
@@ -4500,6 +4500,15 @@
       "month": "2026-07",
       "path": "historical_archive_raw/linkedin_public_snapshot/2026-07",
       "sha256": "dff9105c00e81597c47ca8029fa0e42fa8071d4b236780a8e1644510e7540937",
+      "source": "linkedin_public_snapshot"
+    },
+    {
+      "bytes": 18171147,
+      "digest_mode": "path_size_inventory",
+      "file_count": 48,
+      "month": "2026-08",
+      "path": "historical_archive_raw/linkedin_public_snapshot/2026-08",
+      "sha256": "de91e1af29b9f77d9d6e5753a020261397dedf316babf121830df6dd6d779fe3",
       "source": "linkedin_public_snapshot"
     },
     {
@@ -6888,15 +6897,6 @@
       "source": "website"
     },
     {
-      "bytes": 4161532,
-      "digest_mode": "path_size_inventory",
-      "file_count": 11,
-      "month": "2026-08",
-      "path": "historical_archive_raw/website/2026-08",
-      "sha256": "c37d4cbafef252f5fffa18b05074b985c4c51f7327258ab44f8b76aae58aa7a1",
-      "source": "website"
-    },
-    {
       "bytes": 28314897,
       "digest_mode": "path_size_inventory",
       "file_count": 75,
@@ -8905,11 +8905,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 155473658,
-    "normalized_record_count": 12343,
+    "normalized_bytes": 154411650,
+    "normalized_record_count": 12380,
     "normalized_shard_count": 520,
-    "raw_bytes": 720025946,
-    "raw_file_count": 16249,
+    "raw_bytes": 734035561,
+    "raw_file_count": 16286,
     "raw_shard_count": 526
   }
 }
