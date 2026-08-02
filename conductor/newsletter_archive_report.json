@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-02T06:51:13+00:00",
+  "generated_at": "2026-08-02T06:12:49+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "newsletter",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -48,6 +52,17 @@
       "source_type": "newsletter",
       "status": "manual_seed_missing",
       "url": "http://bullerdc.govt.nz/do-it-online/newsletter-sign-up/"
+    },
+    {
+      "agency_id": "buller-district-council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "buller-district-council-newsletter-0ccf7aef",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.bullerdc.govt.nz/media/dlugmyu2/connect-newsletter-145-july-final-web.pdf"
     },
     {
       "agency_id": "cancer-control-agency",
@@ -660,10 +675,43 @@
       "feasibility": "medium",
       "platform": "newsletter",
       "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "environmental-protection-authority-newsletter-37f96551",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/delivering-progress-for-hazardous-substances/"
+    },
+    {
+      "agency_id": "environmental-protection-authority",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
       "source_id": "environmental-protection-authority-newsletter-90540a54",
       "source_type": "newsletter",
       "status": "manual_seed_missing",
       "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-processing-of-hazardous-substances-on-the-up/"
+    },
+    {
+      "agency_id": "environmental-protection-authority",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "environmental-protection-authority-newsletter-055f387e",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-proposes-to-amend-group-standard-for-art-materials/"
+    },
+    {
+      "agency_id": "environmental-protection-authority",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "environmental-protection-authority-newsletter-dd2c8e3a",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-seeks-feedback-on-proposal-to-ban-two-insecticides/"
     },
     {
       "agency_id": "environmental-protection-authority",
@@ -807,6 +855,17 @@
       "source_type": "newsletter",
       "status": "manual_seed_missing",
       "url": "https://www.fireandemergency.nz/incidents-and-news/emergency-mobile-alerts/"
+    },
+    {
+      "agency_id": "fire-and-emergency-nz",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
+      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
+      "source_id": "fire-and-emergency-nz-newsletter-c7b71c3a",
+      "source_type": "newsletter",
+      "status": "manual_seed_missing",
+      "url": "https://www.fireandemergency.nz/mi_NZ/incidents-and-news/emergency-mobile-alerts/"
     },
     {
       "agency_id": "gore-district-council",
@@ -1071,61 +1130,6 @@
       "source_type": "newsletter",
       "status": "manual_seed_missing",
       "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/aquatics-hastings-enewsletter/"
-    },
-    {
-      "agency_id": "hastings-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "newsletter",
-      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
-      "source_id": "hastings-district-council-newsletter-af773d42",
-      "source_type": "newsletter",
-      "status": "manual_seed_missing",
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-city-art-gallery/"
-    },
-    {
-      "agency_id": "hastings-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "newsletter",
-      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
-      "source_id": "hastings-district-council-newsletter-319af405",
-      "source_type": "newsletter",
-      "status": "manual_seed_missing",
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/hastings-district-libraries-newsblast/"
-    },
-    {
-      "agency_id": "hastings-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "newsletter",
-      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
-      "source_id": "hastings-district-council-newsletter-72dcfe49",
-      "source_type": "newsletter",
-      "status": "manual_seed_missing",
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/iway-e/"
-    },
-    {
-      "agency_id": "hastings-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "newsletter",
-      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
-      "source_id": "hastings-district-council-newsletter-382ebc73",
-      "source_type": "newsletter",
-      "status": "manual_seed_missing",
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/my-hastings/"
-    },
-    {
-      "agency_id": "hastings-district-council",
-      "archive_status": "candidate",
-      "feasibility": "medium",
-      "platform": "newsletter",
-      "reason": "newsletter capture requires an operator-authorized seed JSON under manual_archive_seeds/newsletter/",
-      "source_id": "hastings-district-council-newsletter-15694e58",
-      "source_type": "newsletter",
-      "status": "manual_seed_missing",
-      "url": "https://www.hastingsdc.govt.nz/our-council/news/e-newsletters/neighbourhood-support/"
     }
   ],
   "summary": {
