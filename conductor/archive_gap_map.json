@@ -2,45 +2,40 @@
   "gaps": [],
   "inputs": {
     "reports": [
-      "conductor/rss_archive_offset_100_report.json"
+      "conductor/rss_archive_offset_1300_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/rss_archive_offset_100_report.json": {
+    "conductor/rss_archive_offset_1300_report.json": {
       "platform_counts": {
         "rss": 100
       },
       "selected_sources": 100,
       "status_by_platform": {
         "rss": {
-          "captured": 70,
-          "no_records": 95
+          "no_records": 100
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "captured": 70,
-        "no_records": 95
+        "no_records": 100
       }
     }
   },
   "summary": {
     "gap_count": 0,
     "input_status_counts": {
-      "captured": 70,
-      "no_records": 95
+      "no_records": 100
     },
     "platform_counts": {
       "rss": 100
     },
     "priority_counts": {
-      "archived_or_already_archived": 5,
-      "monitor_report_only": 95
+      "monitor_report_only": 100
     },
     "status_counts": {
-      "captured": 5,
-      "no_records": 95
+      "no_records": 100
     },
-    "superseded_source_count": 5
+    "superseded_source_count": 0
   }
 }
