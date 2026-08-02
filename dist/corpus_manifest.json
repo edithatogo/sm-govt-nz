@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "688e9fbe322f534e67cb72f0b78846fbb0f8c61a4f2fb156e128e52ae630d4dd"
+      "sha256": "5628f2b2cb47c790b9f6abbeac64b27d0688b87459d51d79a61e3ba2d3cc5a89"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24855085,
+      "bytes": 25502886,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "7e8db4b238531636154828829113ea1a3fd9c3832bbe06a2c63aea3efc2cb1ff"
+      "sha256": "6361c3ddf72b3b942a427404a70f225ef981c4adcce14b97c30451e3afdb8061"
     },
     "normalized_archive.parquet": {
-      "bytes": 39212252,
+      "bytes": 40298481,
       "path": "normalized_archive.parquet",
-      "sha256": "a6af3c291c67fd38eb2c7f428a9f7448bd7897fbb4634e7564b8d355ede8fa31"
+      "sha256": "76456abcf03fd0719ab24b3a6bf4fe81e3ea327cfb9126db1375e75dbc82c0b9"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12347,
+  "normalized_record_count": 12405,
   "normalized_shard_count": 522,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 16260,
+  "raw_file_count": 16319,
   "record_index": [
     {
       "mirror_targets": [
@@ -131167,120 +131167,642 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:23:10+00:00",
-      "source_account": "https://www.goredc.govt.nz",
-      "source_key": "api:https://www.goredc.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:7e0efa8600bfd3173de41e0f",
-      "source_url": "https://www.goredc.govt.nz/.well-known/webfinger"
+      "original_timestamp": "2026-08-02T06:15:06+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4d35d5996322c30b20e4fdbd",
+      "source_url": "https://www.swrb.govt.nz/about-us/news-and-publications/newsletters/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:08+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:892344018b1cf19a2b7801ea",
+      "source_url": "https://www.swrb.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:17+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:693e6b42a748ad6ebfb0ac90",
+      "source_url": "https://www.swrb.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:19+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:69c132881c0a886925c303a4",
+      "source_url": "https://www.swrb.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:26+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a2707346dbbb3290d33643fd",
+      "source_url": "https://www.swrb.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:27+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:12003060da8cb0dd7560165c",
+      "source_url": "https://www.swrb.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:33+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c891be2aea1528b075b4f0c0",
+      "source_url": "https://www.swrb.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:34+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:da66c3127bbca21c6683940c",
+      "source_url": "https://www.swrb.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:15:36+00:00",
+      "source_account": "https://www.swrb.govt.nz",
+      "source_key": "website_page:https://www.swrb.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:f97c3ec053b5bf39425c0709",
+      "source_url": "https://www.swrb.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:54+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:39d86178896e05fd3fbbe091",
+      "source_url": "https://swdc.govt.nz/community/quarterly-community-newsletter/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:55+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e7cee3e90b21d1887e7d9161",
+      "source_url": "https://www.swdc.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:57+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5ba01279c5fba61bdb2d7467",
+      "source_url": "https://www.swdc.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:10+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:64a1ea4a99c16c9e795b3e41",
+      "source_url": "https://www.swdc.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:23+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5931852f3f26de2c33383a7f",
+      "source_url": "https://www.swdc.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:27+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:600f2c5d977cf39d0ca234b7",
+      "source_url": "https://www.swdc.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:30+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d0f83e49dbe6537e2ebdce0d",
+      "source_url": "https://www.swdc.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:41+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:eb80f06b0ae451c2df9cce8e",
+      "source_url": "https://www.swdc.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:51+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a678a8c1acecc0e2659302e9",
+      "source_url": "https://www.swdc.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:01+00:00",
+      "source_account": "https://www.swdc.govt.nz",
+      "source_key": "website_page:https://www.swdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b0164281bc92fb7cdf829a4b",
+      "source_url": "https://www.swdc.govt.nz/subscribe"
     },
     {
       "mirror_targets": [],
       "original_timestamp": "2026-08-02T06:23:11+00:00",
-      "source_account": "https://www.goredc.govt.nz",
-      "source_key": "api:https://www.goredc.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:b2efed3f991f59279e7143ed",
-      "source_url": "https://www.goredc.govt.nz/openapi.json"
+      "source_account": "https://www.southernresponse.co.nz",
+      "source_key": "website_page:https://www.southernresponse.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:1620f69ece2ac0b74670b649",
+      "source_url": "https://www.southernresponse.co.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:23:15+00:00",
-      "source_account": "https://www.gsfa.govt.nz",
-      "source_key": "api:https://www.gsfa.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:b8442f1223423adedfe2f73d",
-      "source_url": "https://www.gsfa.govt.nz/.well-known/webfinger"
+      "original_timestamp": "2026-08-02T06:23:12+00:00",
+      "source_account": "https://www.southlanddc.govt.nz",
+      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0b8af23941d7cad61b670d06",
+      "source_url": "https://www.southlanddc.govt.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:23:16+00:00",
-      "source_account": "https://www.gsfa.govt.nz",
-      "source_key": "api:https://www.gsfa.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:c94d778fafe7108633b7f881",
-      "source_url": "https://www.gsfa.govt.nz/openapi.json"
+      "original_timestamp": "2026-08-02T06:23:14+00:00",
+      "source_account": "https://www.southlanddc.govt.nz",
+      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2b97321a1e8ef4fd574e45ee",
+      "source_url": "https://www.southlanddc.govt.nz/api"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:28:23+00:00",
-      "source_account": "https://www.nzsuperfund.nz",
-      "source_key": "api:https://www.nzsuperfund.nz",
-      "source_platform": "api",
-      "source_record_id": "api:3b7af3cc6e2c6ff54354c044",
-      "source_url": "https://www.nzsuperfund.nz/.well-known/webfinger"
+      "original_timestamp": "2026-08-02T06:23:31+00:00",
+      "source_account": "https://www.southlanddc.govt.nz",
+      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:fc86ac20242ca5f3c5ad151d",
+      "source_url": "https://www.southlanddc.govt.nz/media"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:28:26+00:00",
-      "source_account": "https://www.nzsuperfund.nz",
-      "source_key": "api:https://www.nzsuperfund.nz",
-      "source_platform": "api",
-      "source_record_id": "api:2f3a7eb8afe025bd8c8a8094",
-      "source_url": "https://www.nzsuperfund.nz/openapi.json"
+      "original_timestamp": "2026-08-02T06:23:47+00:00",
+      "source_account": "https://www.southlanddc.govt.nz",
+      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:dc5c208aa47d735735dea4a2",
+      "source_url": "https://www.southlanddc.govt.nz/media-releases"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:29:25+00:00",
-      "source_account": "https://www.tewhatuora.govt.nz",
-      "source_key": "api:https://www.tewhatuora.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:7697212f1ec61600ac555087",
-      "source_url": "https://www.tewhatuora.govt.nz/.well-known/webfinger"
+      "original_timestamp": "2026-08-02T06:24:08+00:00",
+      "source_account": "https://www.southlanddc.govt.nz",
+      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e9df0b163abb7e8c3844bae7",
+      "source_url": "https://www.southlanddc.govt.nz/news"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:29:28+00:00",
-      "source_account": "https://www.tewhatuora.govt.nz",
-      "source_key": "api:https://www.tewhatuora.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:3b497321ad7b191c7ab7ab64",
-      "source_url": "https://www.tewhatuora.govt.nz/openapi.json"
+      "original_timestamp": "2026-08-02T06:24:11+00:00",
+      "source_account": "https://www.southlanddc.govt.nz",
+      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d12bafec35a3536b422b3a13",
+      "source_url": "https://www.southlanddc.govt.nz/news-and-events"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:37:11+00:00",
-      "source_account": "https://www.heritage.org.nz",
-      "source_key": "api:https://www.heritage.org.nz",
-      "source_platform": "api",
-      "source_record_id": "api:658539751d3e4323e85f6144",
-      "source_url": "https://www.heritage.org.nz/.well-known/webfinger"
+      "original_timestamp": "2026-08-02T06:24:27+00:00",
+      "source_account": "https://www.southlanddc.govt.nz",
+      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:536e08d331f607d150d19d64",
+      "source_url": "https://www.southlanddc.govt.nz/newsletter"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:37:13+00:00",
-      "source_account": "https://www.heritage.org.nz",
-      "source_key": "api:https://www.heritage.org.nz",
-      "source_platform": "api",
-      "source_record_id": "api:8280eedff2cd8016dfa9fb0d",
-      "source_url": "https://www.heritage.org.nz/openapi.json"
+      "original_timestamp": "2026-08-02T06:24:42+00:00",
+      "source_account": "https://www.southlanddc.govt.nz",
+      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a4961eb74bc2f5d8c398414d",
+      "source_url": "https://www.southlanddc.govt.nz/publications"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:41:30+00:00",
-      "source_account": "https://www.linz.govt.nz",
-      "source_key": "api:https://www.linz.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:2c21e8fc9cfc20e389ac7db8",
-      "source_url": "https://data.linz.govt.nz/x/NfksV2"
+      "original_timestamp": "2026-08-02T06:24:57+00:00",
+      "source_account": "https://www.southlanddc.govt.nz",
+      "source_key": "website_page:https://www.southlanddc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5a3a4c5361e2041dadfff943",
+      "source_url": "https://www.southlanddc.govt.nz/subscribe"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:41:41+00:00",
-      "source_account": "https://www.linz.govt.nz",
-      "source_key": "api:https://www.linz.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:e01d60f3427a045bbeb0ee88",
-      "source_url": "https://www.linz.govt.nz/guidance/data-service"
+      "original_timestamp": "2026-08-02T06:25:12+00:00",
+      "source_account": "https://www.sportnz.org.nz",
+      "source_key": "website_page:https://www.sportnz.org.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:13de7e3e8706b66bccf47ece",
+      "source_url": "https://www.sportnz.org.nz"
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:41:46+00:00",
-      "source_account": "https://www.linz.govt.nz",
-      "source_key": "api:https://www.linz.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:193d19e904bce47cb55abc8b",
-      "source_url": "https://www.linz.govt.nz/products-services/data/linz-data-service"
+      "original_timestamp": "2026-08-02T06:25:15+00:00",
+      "source_account": "https://www.stats.govt.nz",
+      "source_key": "website_page:https://www.stats.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:3733650702a0ee1b03877bc7",
+      "source_url": "https://www.stats.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:25:17+00:00",
+      "source_account": "https://www.stats.govt.nz",
+      "source_key": "website_page:https://www.stats.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2ab50660f4175bdfdab64d1d",
+      "source_url": "https://www.stats.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:25:22+00:00",
+      "source_account": "https://www.stats.govt.nz",
+      "source_key": "website_page:https://www.stats.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:fb8ebe44a3e9c17adc130bee",
+      "source_url": "https://www.stats.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:25:28+00:00",
+      "source_account": "https://www.stats.govt.nz",
+      "source_key": "website_page:https://www.stats.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e48faec5df66fcb757e55cc3",
+      "source_url": "https://www.stats.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:25:34+00:00",
+      "source_account": "https://www.stats.govt.nz",
+      "source_key": "website_page:https://www.stats.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:8b22113cb123837b3e070eee",
+      "source_url": "https://www.stats.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:25:36+00:00",
+      "source_account": "https://www.stats.govt.nz",
+      "source_key": "website_page:https://www.stats.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:04f460d55bdb0481ec9d15d1",
+      "source_url": "https://www.stats.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:25:42+00:00",
+      "source_account": "https://www.stats.govt.nz",
+      "source_key": "website_page:https://www.stats.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e1b07d5359714bb39f285d92",
+      "source_url": "https://www.stats.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:25:48+00:00",
+      "source_account": "https://www.stats.govt.nz",
+      "source_key": "website_page:https://www.stats.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c43bcd593aa461cc4190e255",
+      "source_url": "https://www.stats.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:25:50+00:00",
+      "source_account": "https://www.stats.govt.nz",
+      "source_key": "website_page:https://www.stats.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:f6ccc576527a270c21e8b1bd",
+      "source_url": "https://www.stats.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:32:23+00:00",
+      "source_account": "https://www.tpp.ac.nz",
+      "source_key": "website_page:https://www.tpp.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:7a80c1187b92d2b780848036",
+      "source_url": "https://www.tpp.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:32:26+00:00",
+      "source_account": "https://www.takeovers.govt.nz",
+      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0836d6f1356d06ec3549c542",
+      "source_url": "https://www.takeovers.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:32:27+00:00",
+      "source_account": "https://www.takeovers.govt.nz",
+      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2affd9694a851562326a5b2d",
+      "source_url": "https://www.takeovers.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:32:34+00:00",
+      "source_account": "https://www.takeovers.govt.nz",
+      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a6652ea80fa80989912d7a08",
+      "source_url": "https://www.takeovers.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:32:39+00:00",
+      "source_account": "https://www.takeovers.govt.nz",
+      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2223da8459ab9eac77d06a9e",
+      "source_url": "https://www.takeovers.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:32:44+00:00",
+      "source_account": "https://www.takeovers.govt.nz",
+      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:279b22fb80916454bf04a90f",
+      "source_url": "https://www.takeovers.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:32:45+00:00",
+      "source_account": "https://www.takeovers.govt.nz",
+      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b6a13786559c38dd46d53a7b",
+      "source_url": "https://www.takeovers.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:32:51+00:00",
+      "source_account": "https://www.takeovers.govt.nz",
+      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:1471bda7103bf0fdca12d492",
+      "source_url": "https://www.takeovers.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:32:56+00:00",
+      "source_account": "https://www.takeovers.govt.nz",
+      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c3e978d0e7c049390f360b6a",
+      "source_url": "https://www.takeovers.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:01+00:00",
+      "source_account": "https://www.takeovers.govt.nz",
+      "source_key": "website_page:https://www.takeovers.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:cf5e13cc9e7ffbfe3fd03968",
+      "source_url": "https://www.takeovers.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:06+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:66b9f43e240f58a952fa36bf",
+      "source_url": "https://www.trc.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:08+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0ee220c92ede18d19cd08245",
+      "source_url": "https://www.trc.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:12+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0218a646d5f9b5ded3e34211",
+      "source_url": "https://www.trc.govt.nz/council/news-and-events/talking-taranaki-newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:15+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:75527c284de1ec40924a0b32",
+      "source_url": "https://www.trc.govt.nz/environment/farmhub/biosecurity-biodiversity/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:18+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b77501769752dc5881b44401",
+      "source_url": "https://www.trc.govt.nz/environment/working-together/environmental-education/enviroschools-taranaki/enviroschools-taranaki-newsletters"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:23+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:29b9e53da40a6e130bf67cb2",
+      "source_url": "https://www.trc.govt.nz/environment/working-together/towards-predator-free-taranaki/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:24+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d77f006903d6833a926f1e31",
+      "source_url": "https://www.trc.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:28+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:8fb0c267b2bbe8cf68575dc7",
+      "source_url": "https://www.trc.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:32+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b062742f310dae240c68685f",
+      "source_url": "https://www.trc.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:35+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:bbfd1ed705af9083d591b46e",
+      "source_url": "https://www.trc.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:38+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:34faefde45cc891e264e9c0b",
+      "source_url": "https://www.trc.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:42+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a71394c4afd475b310985567",
+      "source_url": "https://www.trc.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:33:45+00:00",
+      "source_account": "https://www.trc.govt.nz",
+      "source_key": "website_page:https://www.trc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a26354d756fd4eac3682b50e",
+      "source_url": "https://www.trc.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:38+00:00",
+      "source_account": "https://www.tasman.govt.nz",
+      "source_key": "website_page:https://www.tasman.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:3e7f2c36acac2ba0f7bf2dd2",
+      "source_url": "https://www.tasman.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:39+00:00",
+      "source_account": "https://www.tasman.govt.nz",
+      "source_key": "website_page:https://www.tasman.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5a09e646468089c6dd23cc0b",
+      "source_url": "https://www.tasman.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:43+00:00",
+      "source_account": "https://www.tasman.govt.nz",
+      "source_key": "website_page:https://www.tasman.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:03f6973eb4da7d70d092f1f4",
+      "source_url": "https://www.tasman.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:47+00:00",
+      "source_account": "https://www.tasman.govt.nz",
+      "source_key": "website_page:https://www.tasman.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:9637b1a03956ffba51ee6a56",
+      "source_url": "https://www.tasman.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:51+00:00",
+      "source_account": "https://www.tasman.govt.nz",
+      "source_key": "website_page:https://www.tasman.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:65dee5f953fbb9a365de379a",
+      "source_url": "https://www.tasman.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:55+00:00",
+      "source_account": "https://www.tasman.govt.nz",
+      "source_key": "website_page:https://www.tasman.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:7def2afc421ee13020d2700d",
+      "source_url": "https://www.tasman.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:59+00:00",
+      "source_account": "https://www.tasman.govt.nz",
+      "source_key": "website_page:https://www.tasman.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:62b47d059cc408c08598957d",
+      "source_url": "https://www.tasman.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:44:03+00:00",
+      "source_account": "https://www.tasman.govt.nz",
+      "source_key": "website_page:https://www.tasman.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:9ca1a63f6c65c4cb4492d2c2",
+      "source_url": "https://www.tasman.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:44:06+00:00",
+      "source_account": "https://www.tasman.govt.nz",
+      "source_key": "website_page:https://www.tasman.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4240c10eaad53ab0b9550b5b",
+      "source_url": "https://www.tasman.govt.nz/subscribe"
     },
     {
       "mirror_targets": [],
@@ -131478,7 +132000,7 @@
     "nz-government-social-media"
   ],
   "source_counts": {
-    "api": 27,
+    "api": 14,
     "bluesky": 2617,
     "courtsofnz.govt.nz": 11,
     "email": 25,
@@ -131486,13 +132008,13 @@
     "json_feed": 16,
     "linkedin": 61,
     "rss": 3930,
-    "website_page": 1827,
+    "website_page": 1898,
     "x": 769,
     "youtube": 2741
   },
   "source_date_ranges": {
     "api": {
-      "max_original_created_at": "2026-08-02T06:41:46+00:00",
+      "max_original_created_at": "2026-07-31T18:49:09+00:00",
       "min_original_created_at": "2026-07-01T10:07:40+00:00"
     },
     "bluesky": {
@@ -131524,7 +132046,7 @@
       "min_original_created_at": "2004-05-05T12:00:00+00:00"
     },
     "website_page": {
-      "max_original_created_at": "2026-07-07T16:05:13+00:00",
+      "max_original_created_at": "2026-08-02T06:44:06+00:00",
       "min_original_created_at": "2026-06-25T03:44:00+00:00"
     },
     "x": {
