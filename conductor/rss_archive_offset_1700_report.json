@@ -1,0 +1,435 @@
+{
+  "courts_current_sources_report": null,
+  "dry_run": false,
+  "generated_at": "2026-08-02T06:13:35+00:00",
+  "inputs": {
+    "agency_id": "",
+    "capture_backend": "default",
+    "fetch_timeout": 30,
+    "idle_rounds": 3,
+    "include_blocked": true,
+    "limit_sources": 100,
+    "manifest": "conductor/govt_archive_source_manifest.json",
+    "manual_seed_root": "manual_archive_seeds",
+    "max_scrolls": 25,
+    "max_x_posts": 25,
+    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "normalized_root": "historical_archive_normalized",
+    "offset_sources": 1700,
+    "per_account_timeout": 120,
+    "per_source_delay": 0.0,
+    "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
+    "retry_failed_from": "",
+    "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
+    "source_type": "rss",
+    "x_auth_scrape_enabled": false,
+    "x_feed_max_items": 25,
+    "x_feed_providers": "rsshub,nitter",
+    "x_feed_timeout": 30
+  },
+  "results": [
+    {
+      "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "05417553d93b02f5",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.whitireia.ac.nz/news-and-events"
+    },
+    {
+      "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "cdeb7db87baeac0c",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.whitireia.ac.nz/newsletter"
+    },
+    {
+      "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "a505a116708d452b",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.whitireia.ac.nz/publications"
+    },
+    {
+      "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "e9c698eb75877171",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.whitireia.ac.nz/rss"
+    },
+    {
+      "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "b735fe3c5cfcfdc2",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.whitireia.ac.nz/rss.xml"
+    },
+    {
+      "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "9ae79058c8bc7093",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.whitireia.ac.nz/subscribe"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "966116ad97603eae",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/api"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "c1a9d2bf3ce3477d",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/atom.xml"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "020965946b8231c5",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/feed"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "a543b8dbec5d2bf7",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/media"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "f052f7cf14f46b41",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/media-releases"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "146eb06b689cf67a",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/news"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "2541f67e037e87de",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/news-and-events"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "367722729c60e23b",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/newsletter"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "c57e730b520ec738",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/publications"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "6944554ab12ac25f",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/rss"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "8df1bb7194f81fad",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/rss.xml"
+    },
+    {
+      "agency_id": "wintec",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "a709220b7182dd38",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.wintec.ac.nz/subscribe"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "e4541da98185e661",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/api"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "a31e9a9505b9129c",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/atom.xml"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "4a0be37d549a87d2",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/feed"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "aa2c3de485d48e03",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/media"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "3f658d8bad3462ec",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/media-releases"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "6bc1eb9f3a180dcb",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/news"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "70c9df3cb81d17ef",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/news-and-events"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "143ea469e5108f13",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/newsletter"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "23693ac1a8942456",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/publications"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "6fdf0a00709a4132",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/rss"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "b90de956e9da2cf7",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/rss.xml"
+    },
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "195f1407968d275b",
+      "source_type": "search_seed",
+      "status": "no_records",
+      "url": "https://www.witt.ac.nz/subscribe"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "4de3fbd49afc4f3f",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.worksafe.govt.nz/atom.xml"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "c5f6b41012dd176a",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.worksafe.govt.nz/feed"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "d97fbe28c72e1184",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.worksafe.govt.nz/rss"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "d4197c05308effaa",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.worksafe.govt.nz/rss.xml"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "rss",
+      "reason": "feed parsed but returned no entries",
+      "source_id": "worksafe-nz-rss-c9ff43d2",
+      "source_type": "rss_feed",
+      "status": "no_records",
+      "url": "https://www.youtube.com/channel/UC6ACAsaw2_ENg6Rw2mCIYHw/feed"
+    }
+  ],
+  "summary": {
+    "platform_counts": {
+      "rss": 35
+    },
+    "selected_sources": 35,
+    "status_by_platform": {
+      "rss": {
+        "no_records": 35
+      }
+    },
+    "status_by_provider": {},
+    "status_counts": {
+      "no_records": 35
+    }
+  }
+}

@@ -45,7 +45,7 @@ This dataset package contains normalized New Zealand government social media rec
 - rss: 3930 records
 - website_page: 1827 records
 - x: 769 records
-- youtube: 3093 records
+- youtube: 2741 records
 
 ## Provenance
 

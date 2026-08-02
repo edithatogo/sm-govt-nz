@@ -1,199 +1,41 @@
 {
-  "gaps": [
-    {
-      "agency_id": "oranga-tamariki",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "13a8c9315e1b2ba7",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@OrangaTamariki"
-    },
-    {
-      "agency_id": "pamu",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "35f6eb671209cf6c",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@PamuNZ"
-    },
-    {
-      "agency_id": "parliamentary-commissioner-for-environment",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "034a927b164db589",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@ParliamentaryCommissionerEnvironment"
-    },
-    {
-      "agency_id": "royal-nz-air-force",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "20280eb00aeaf67f",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@royalnzairforce"
-    },
-    {
-      "agency_id": "sit",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "7566c282c88b94df",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@sitnz"
-    },
-    {
-      "agency_id": "tai-poutini-polytechnic",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "cc2140922bef97b7",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@TaiPoutiniPoly"
-    },
-    {
-      "agency_id": "te-whare-wananga-o-awanuiarangi",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "53720ce74c617ee2",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@TeWhareWananga"
-    },
-    {
-      "agency_id": "ucol",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "4c090c20defa498f",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@UCOLNZ"
-    },
-    {
-      "agency_id": "university-of-waikato",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "465cc3424e43324c",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@universityofwaikato"
-    },
-    {
-      "agency_id": "weltec",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "45f0d7ff28b85b3a",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@WelTecNZ"
-    },
-    {
-      "agency_id": "wintec",
-      "platform": "youtube",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "YouTube channel resolver failed: HTTP 404: YouTube channel page not found",
-      "report": "conductor/youtube_archive_offset_100_report.json",
-      "source_id": "8e8d51e84001ab6f",
-      "status": "youtube_channel_not_found",
-      "supersedes_report": "",
-      "supersedes_status": "",
-      "url": "https://www.youtube.com/@WintecNZ"
-    }
-  ],
+  "gaps": [],
   "inputs": {
     "reports": [
-      "conductor/youtube_archive_offset_100_report.json"
+      "conductor/rss_archive_offset_1700_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/youtube_archive_offset_100_report.json": {
+    "conductor/rss_archive_offset_1700_report.json": {
       "platform_counts": {
-        "youtube": 100
+        "rss": 35
       },
-      "selected_sources": 100,
+      "selected_sources": 35,
       "status_by_platform": {
-        "youtube": {
-          "already_captured": 789,
-          "captured": 352,
-          "no_records": 6,
-          "youtube_channel_not_found": 11
+        "rss": {
+          "no_records": 35
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "already_captured": 789,
-        "captured": 352,
-        "no_records": 6,
-        "youtube_channel_not_found": 11
+        "no_records": 35
       }
     }
   },
   "summary": {
-    "gap_count": 11,
+    "gap_count": 0,
     "input_status_counts": {
-      "already_captured": 789,
-      "captured": 352,
-      "no_records": 6,
-      "youtube_channel_not_found": 11
+      "no_records": 35
     },
     "platform_counts": {
-      "youtube": 100
+      "rss": 35
     },
     "priority_counts": {
-      "archived_or_already_archived": 83,
-      "monitor_report_only": 6,
-      "review": 11
+      "monitor_report_only": 35
     },
     "status_counts": {
-      "already_captured": 70,
-      "captured": 13,
-      "no_records": 6,
-      "youtube_channel_not_found": 11
+      "no_records": 35
     },
-    "superseded_source_count": 77
+    "superseded_source_count": 0
   }
 }
