@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-13T12:05:16+00:00",
+  "generated_at": "2026-08-02T06:43:45+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 100,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "api",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -186,10 +190,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "425efd13f8fa5e86",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
+      "status": "captured",
       "url": "https://www.goredc.govt.nz/.well-known/webfinger"
     },
     {
@@ -285,10 +289,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "2ab81fe3c8250d44",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.greydc.govt.nz/openapi.json"
     },
     {
@@ -296,10 +300,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "319ca42f57c99b5b",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.nzsuperfund.nz/.well-known/webfinger"
     },
     {
@@ -307,10 +311,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "0229e06c9fb6757d",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.nzsuperfund.nz/openapi.json"
     },
     {
@@ -439,10 +443,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: timed out",
       "source_id": "1157e5257a2eedfd",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_timeout",
       "url": "https://www.hqsc.govt.nz/openapi.json"
     },
     {
@@ -516,10 +520,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "HTTP 403: Forbidden",
       "source_id": "3c22eb972561e5f9",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "capture_blocked",
       "url": "https://www.horizons.govt.nz/.well-known/webfinger"
     },
     {
@@ -593,10 +597,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "0815483b4346209a",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.hurunui.govt.nz/openapi.json"
     },
     {
@@ -725,10 +729,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "32b4ef24710c63df",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.icc.govt.nz/openapi.json"
     },
     {
@@ -747,10 +751,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "captured keyless public API/source documentation snapshot",
+      "reason": "HTTP 405: Not Allowed",
       "source_id": "e476bf25f9853233",
       "source_type": "api_endpoint",
-      "status": "captured",
+      "status": "method_not_allowed",
       "url": "https://www.kaikoura.govt.nz/openapi.json"
     },
     {
@@ -956,10 +960,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "linz-api-90193158",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://data.linz.govt.nz/x/NfksV2"
     },
     {
@@ -978,10 +982,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "linz-api-f4c2e787",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/guidance/data-service"
     },
     {
@@ -1000,10 +1004,10 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "api",
-      "reason": "api snapshot already present",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "linz-api-9bc3c337",
       "source_type": "api_endpoint",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/products-services/data/linz-data-service"
     },
     {
@@ -1011,10 +1015,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lotto.co.nz'. (_ssl.c:1082)",
+      "reason": "HTTP 404: candidate API endpoint is unavailable",
       "source_id": "cf17ceefcb7efbc5",
       "source_type": "api_endpoint",
-      "status": "tls_failed",
+      "status": "invalid",
       "url": "https://www.lotto.co.nz/.well-known/webfinger"
     },
     {
@@ -1022,10 +1026,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lotto.co.nz'. (_ssl.c:1082)",
+      "reason": "HTTP 404: candidate API endpoint is unavailable",
       "source_id": "59835e259cb2be75",
       "source_type": "api_endpoint",
-      "status": "tls_failed",
+      "status": "invalid",
       "url": "https://www.lotto.co.nz/openapi.json"
     },
     {
@@ -1077,10 +1081,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: timed out",
       "source_id": "b9c9f111dfaef531",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_timeout",
       "url": "https://www.manukau.ac.nz/.well-known/webfinger"
     },
     {
@@ -1088,10 +1092,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: timed out",
       "source_id": "33820161e317222a",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_timeout",
       "url": "https://www.manukau.ac.nz/openapi.json"
     },
     {
@@ -1135,22 +1139,22 @@
     "selected_sources": 100,
     "status_by_platform": {
       "api": {
-        "already_captured": 3,
         "capture_blocked": 19,
-        "captured": 11,
+        "captured": 13,
         "dns_failed": 6,
-        "invalid": 59,
-        "tls_failed": 2
+        "invalid": 55,
+        "method_not_allowed": 4,
+        "network_timeout": 3
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 3,
       "capture_blocked": 19,
-      "captured": 11,
+      "captured": 13,
       "dns_failed": 6,
-      "invalid": 59,
-      "tls_failed": 2
+      "invalid": 55,
+      "method_not_allowed": 4,
+      "network_timeout": 3
     }
   }
 }

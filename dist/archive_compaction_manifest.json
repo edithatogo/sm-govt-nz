@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T06:43:18+00:00",
+  "generated_at": "2026-08-02T06:43:51+00:00",
   "normalized": [
     {
       "bytes": 1232184,
@@ -7,6 +7,14 @@
       "path": "dist/hydrated_archive_normalized/api/2026-07.jsonl",
       "record_count": 14,
       "sha256": "e628b556ca3f2f6e30b2dea324a453bd78088956d787bfe82371c24a15a90ad7",
+      "source": "api"
+    },
+    {
+      "bytes": 522584,
+      "month": "2026-08",
+      "path": "dist/hydrated_archive_normalized/api/2026-08.jsonl",
+      "record_count": 13,
+      "sha256": "0e7bfac24b63ef8a6f80853f9661c51600d6cad9c76e157a7134871aa3d1460f",
       "source": "api"
     },
     {
@@ -2402,14 +2410,6 @@
       "source": "website"
     },
     {
-      "bytes": 6547435,
-      "month": "2026-08",
-      "path": "dist/hydrated_archive_normalized/website/2026-08.jsonl",
-      "record_count": 70,
-      "sha256": "719950365b9be28a993b9b4a08fcc56fbc25139f1312a1d54b0abae596dc3b82",
-      "source": "website"
-    },
-    {
       "bytes": 1352,
       "month": "1971-01",
       "path": "dist/hydrated_archive_normalized/x/1971-01.jsonl",
@@ -4176,6 +4176,15 @@
       "month": "2026-07",
       "path": "historical_archive_raw/api/2026-07",
       "sha256": "bc9cd9e0b129f15decfadf1e4bf8b21d5eb5c2cb1e2365e0717f1dee1a22c4d2",
+      "source": "api"
+    },
+    {
+      "bytes": 1613681,
+      "digest_mode": "path_size_inventory",
+      "file_count": 13,
+      "month": "2026-08",
+      "path": "historical_archive_raw/api/2026-08",
+      "sha256": "51601f453f9ff5f3208b3f9e9fb6bcab988507fa1789bf7f8680baeb7805e202",
       "source": "api"
     },
     {
@@ -6888,15 +6897,6 @@
       "source": "website"
     },
     {
-      "bytes": 15477132,
-      "digest_mode": "path_size_inventory",
-      "file_count": 70,
-      "month": "2026-08",
-      "path": "historical_archive_raw/website/2026-08",
-      "sha256": "f052fff44160b26992c41519785738b23671ef5f28e45ec1e1fa559380be36d7",
-      "source": "website"
-    },
-    {
       "bytes": 28314897,
       "digest_mode": "path_size_inventory",
       "file_count": 75,
@@ -6906,12 +6906,12 @@
       "source": "website_browser"
     },
     {
-      "bytes": 96427,
+      "bytes": 7475,
       "digest_mode": "path_size_inventory",
-      "file_count": 2,
+      "file_count": 1,
       "month": "2026-08",
       "path": "historical_archive_raw/website_browser/2026-08",
-      "sha256": "d52c03232c4172f90968abef40bd7a758c5941177d516d9bb68e257c1d7e3be1",
+      "sha256": "f03264ef366051f8895c81f1d3efe4738c16c46f4c6a6c892bc269b353503b1e",
       "source": "website_browser"
     },
     {
@@ -8905,11 +8905,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 160889055,
-    "normalized_record_count": 12402,
+    "normalized_bytes": 154864204,
+    "normalized_record_count": 12345,
     "normalized_shard_count": 520,
-    "raw_bytes": 731430498,
-    "raw_file_count": 16309,
+    "raw_bytes": 717478095,
+    "raw_file_count": 16251,
     "raw_shard_count": 526
   }
 }
