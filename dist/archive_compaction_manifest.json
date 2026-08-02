@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T06:32:42+00:00",
+  "generated_at": "2026-08-02T06:33:03+00:00",
   "normalized": [
     {
       "bytes": 1232184,
@@ -279,14 +279,6 @@
       "path": "dist/hydrated_archive_normalized/json_feed/2026-07.jsonl",
       "record_count": 8,
       "sha256": "8b04f197a3728cf440db5d6484abfb004abfabd1fee94fe96878d79e9912c630",
-      "source": "json_feed"
-    },
-    {
-      "bytes": 3527,
-      "month": "2026-08",
-      "path": "dist/hydrated_archive_normalized/json_feed/2026-08.jsonl",
-      "record_count": 4,
-      "sha256": "74f65de6a4fc11a2b49788afd98f1fcdbf65583f88f076c9758b47b68c1358df",
       "source": "json_feed"
     },
     {
@@ -2410,6 +2402,14 @@
       "source": "website"
     },
     {
+      "bytes": 6416144,
+      "month": "2026-08",
+      "path": "dist/hydrated_archive_normalized/website/2026-08.jsonl",
+      "record_count": 81,
+      "sha256": "53fcaa57659b2f634558752e8706ced9e328433377c791cb03895d9baa6edb56",
+      "source": "website"
+    },
+    {
       "bytes": 1352,
       "month": "1971-01",
       "path": "dist/hydrated_archive_normalized/x/1971-01.jsonl",
@@ -4482,15 +4482,6 @@
       "month": "2026-07",
       "path": "historical_archive_raw/json_feed/2026-07",
       "sha256": "c752f12581bc7e86f82425610987542571bac685a13c7a656a100d7133c67463",
-      "source": "json_feed"
-    },
-    {
-      "bytes": 12965,
-      "digest_mode": "path_size_inventory",
-      "file_count": 4,
-      "month": "2026-08",
-      "path": "historical_archive_raw/json_feed/2026-08",
-      "sha256": "d7c0aed0daeacff9170c009c22c1ced5494d85905ea604258221f84297e8b52b",
       "source": "json_feed"
     },
     {
@@ -6897,6 +6888,15 @@
       "source": "website"
     },
     {
+      "bytes": 9425382,
+      "digest_mode": "path_size_inventory",
+      "file_count": 81,
+      "month": "2026-08",
+      "path": "historical_archive_raw/website/2026-08",
+      "sha256": "394439457467bd015af2ea11c837e33ba11fca73bb50f5beb3d2995bdca4ffa3",
+      "source": "website"
+    },
+    {
       "bytes": 28314897,
       "digest_mode": "path_size_inventory",
       "file_count": 75,
@@ -6906,12 +6906,12 @@
       "source": "website_browser"
     },
     {
-      "bytes": 7475,
+      "bytes": 19457,
       "digest_mode": "path_size_inventory",
-      "file_count": 1,
+      "file_count": 2,
       "month": "2026-08",
       "path": "historical_archive_raw/website_browser/2026-08",
-      "sha256": "f03264ef366051f8895c81f1d3efe4738c16c46f4c6a6c892bc269b353503b1e",
+      "sha256": "1f7ee97e03ed0bf6c045b86954d75d7fab802074c0dd5d788fc3c6629154c808",
       "source": "website_browser"
     },
     {
@@ -8905,11 +8905,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 154345147,
-    "normalized_record_count": 12336,
+    "normalized_bytes": 160757764,
+    "normalized_record_count": 12413,
     "normalized_shard_count": 520,
-    "raw_bytes": 715877379,
-    "raw_file_count": 16242,
+    "raw_bytes": 725301778,
+    "raw_file_count": 16320,
     "raw_shard_count": 526
   }
 }
