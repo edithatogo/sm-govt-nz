@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-13T12:41:42+00:00",
+  "generated_at": "2026-08-02T06:17:32+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,21 +17,155 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 1700,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
     "x_feed_providers": "rsshub,nitter",
     "x_feed_timeout": 30
   },
-  "results": [],
+  "results": [
+    {
+      "agency_id": "witt",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "333da201d14a7b97",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.witt.ac.nz/about-us/witt-publications/newsletters"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "14218b6ada6ba99a",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "0acd2e2e90dd5a0a",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz/about-us/news-and-media/high-hazards-newsletter-june-2026/"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.worksafe.govt.nz/",
+      "source_id": "fc3306c8c16ab4fe",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz/api"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.worksafe.govt.nz/",
+      "source_id": "f7625d677b7838da",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz/media"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.worksafe.govt.nz/",
+      "source_id": "cc712f88b1bd3fb6",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.worksafe.govt.nz/",
+      "source_id": "d3235c42e1a0684d",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz/news"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.worksafe.govt.nz/",
+      "source_id": "b6735b5673eb271c",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.worksafe.govt.nz/",
+      "source_id": "c994d515555353b0",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "a69695ad4b1cd1b7",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz/publications"
+    },
+    {
+      "agency_id": "worksafe-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "dc056c639de1a2ef",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.worksafe.govt.nz/subscribe"
+    }
+  ],
   "summary": {
-    "platform_counts": {},
-    "selected_sources": 0,
-    "status_by_platform": {},
+    "platform_counts": {
+      "website_page": 11
+    },
+    "selected_sources": 11,
+    "status_by_platform": {
+      "website_page": {
+        "captured": 11
+      }
+    },
     "status_by_provider": {},
-    "status_counts": {}
+    "status_counts": {
+      "captured": 11
+    }
   }
 }
