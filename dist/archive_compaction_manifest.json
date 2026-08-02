@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T06:15:09+00:00",
+  "generated_at": "2026-08-02T06:15:17+00:00",
   "normalized": [
     {
       "bytes": 1232184,
@@ -295,6 +295,14 @@
       "path": "dist/hydrated_archive_normalized/linkedin/2026-07.jsonl",
       "record_count": 59,
       "sha256": "0976948a511bd478e2f2ff9be9b2a017631e2be252f24ccfc073fee88f7550ce",
+      "source": "linkedin"
+    },
+    {
+      "bytes": 72153,
+      "month": "2026-08",
+      "path": "dist/hydrated_archive_normalized/linkedin/2026-08.jsonl",
+      "record_count": 46,
+      "sha256": "579a797c133a5955e9a6153a37746525682d9f32ce65b1343e4382bfe7eaff2d",
       "source": "linkedin"
     },
     {
@@ -1930,11 +1938,11 @@
       "source": "rss"
     },
     {
-      "bytes": 24729,
+      "bytes": 23902,
       "month": "2022-05",
       "path": "dist/hydrated_archive_normalized/rss/2022-05.jsonl",
-      "record_count": 28,
-      "sha256": "2f5882ee0d74bdf6c8cf028f66d0baf17f4dd01d21aac7dc151cdcbf2c5c2970",
+      "record_count": 27,
+      "sha256": "5792184d364ae17fcf6bde6d1889164b7cb26e5fa44ac2cbd385485d83c23fdf",
       "source": "rss"
     },
     {
@@ -2322,27 +2330,19 @@
       "source": "rss"
     },
     {
-      "bytes": 125614,
+      "bytes": 122676,
       "month": "2026-06",
       "path": "dist/hydrated_archive_normalized/rss/2026-06.jsonl",
-      "record_count": 115,
-      "sha256": "f24e5f6cf6d30e4dfedf1ff1c35201f0bdd0bb327b702bd441cdcf180821d8f0",
+      "record_count": 112,
+      "sha256": "7bb28854f1257e1e1d18f4f484e0f04042dbabdc00d10b38dcf0ff9910dd6d2e",
       "source": "rss"
     },
     {
-      "bytes": 51422,
+      "bytes": 42714,
       "month": "2026-07",
       "path": "dist/hydrated_archive_normalized/rss/2026-07.jsonl",
-      "record_count": 52,
-      "sha256": "afa2e5f565b096c3d83171c647bef5a34ad4f3016118219a8871748df25dbae8",
-      "source": "rss"
-    },
-    {
-      "bytes": 26478,
-      "month": "2026-08",
-      "path": "dist/hydrated_archive_normalized/rss/2026-08.jsonl",
-      "record_count": 28,
-      "sha256": "4c1912d388d2144bebd3c881d1d128452ed9d225823c6c05c5fd97567c9d680f",
+      "record_count": 43,
+      "sha256": "36261dec037415d92eade3fc8de0c8f18d4b1ff45bb7f8d65b11294f3edd6ec6",
       "source": "rss"
     },
     {
@@ -4500,6 +4500,15 @@
       "month": "2026-07",
       "path": "historical_archive_raw/linkedin_public_snapshot/2026-07",
       "sha256": "dff9105c00e81597c47ca8029fa0e42fa8071d4b236780a8e1644510e7540937",
+      "source": "linkedin_public_snapshot"
+    },
+    {
+      "bytes": 15186076,
+      "digest_mode": "path_size_inventory",
+      "file_count": 46,
+      "month": "2026-08",
+      "path": "historical_archive_raw/linkedin_public_snapshot/2026-08",
+      "sha256": "132f0f47b742080a528d0f52a79ea99bb47b9f1234bb4bd41f8ca4b187adab3e",
       "source": "linkedin_public_snapshot"
     },
     {
@@ -6807,21 +6816,12 @@
       "source": "rss"
     },
     {
-      "bytes": 2326822,
+      "bytes": 2318182,
       "digest_mode": "path_size_inventory",
-      "file_count": 423,
+      "file_count": 419,
       "month": "2026-07",
       "path": "historical_archive_raw/rss/2026-07",
-      "sha256": "3b4539c0bf07ffb75888a6d756358931f20637abda101b2929f8537db7b01a13",
-      "source": "rss"
-    },
-    {
-      "bytes": 61223,
-      "digest_mode": "path_size_inventory",
-      "file_count": 28,
-      "month": "2026-08",
-      "path": "historical_archive_raw/rss/2026-08",
-      "sha256": "ef52a415c5337afc9d1f473dddafd3f47a916ecb1a7944fd7e31f5f8d0f23937",
+      "sha256": "f687406d185839730f1f841fc4806ddf4903c138cd11e38fad35910e6d7d999a",
       "source": "rss"
     },
     {
@@ -8905,11 +8905,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 154380571,
-    "normalized_record_count": 12373,
+    "normalized_bytes": 154413773,
+    "normalized_record_count": 12378,
     "normalized_shard_count": 520,
-    "raw_bytes": 715934277,
-    "raw_file_count": 16270,
+    "raw_bytes": 731050490,
+    "raw_file_count": 16284,
     "raw_shard_count": 526
   }
 }
