@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "2c08299797bde9439d15e15ffe20e2ce08859103ace9d10dd0a8d50ea0d89a22"
+      "sha256": "cd7ca73754017e94c4421eb8ad1d547154728c42e96c0de3dcc57e4e4aaa9e6f"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24783227,
+      "bytes": 24798096,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "236b2576258bc750a0ea59b17346f084182925d436f6989a2c9b9c2ec1adbedb"
+      "sha256": "76cf84889f4df7626074e25852aa0d087728a89018ba5734946ed6a73c9b2706"
     },
     "normalized_archive.parquet": {
-      "bytes": 39139077,
+      "bytes": 39185693,
       "path": "normalized_archive.parquet",
-      "sha256": "a77cd4dba8d9d87f5209ba673d89a0e525de7ccdf1fda67206e9707d0c1fa434"
+      "sha256": "059c97ffc6d7b834734358cb47141eab1c7b90933d348c65613df217ebeefb8b"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12342,
+  "normalized_record_count": 12394,
   "normalized_shard_count": 521,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 16249,
+  "raw_file_count": 16267,
   "record_index": [
     {
       "mirror_targets": [
@@ -18967,11 +18967,29 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2018-02-24T07:38:58+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:e7ef83889cd63ba6f9a0e69f",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2018-02-26T21:08:48+00:00",
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
       "source_record_id": "rss:1e0466ab69ef0699520bea4d",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2018-02-26T21:08:48+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:7fbbb71799098d20662b368d",
       "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
@@ -19280,6 +19298,15 @@
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
+      "source_record_id": "rss:1ed3a133d473084a21798bb7",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2018-05-19T22:47:03+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
       "source_record_id": "rss:742a8648df1b5bf57eaa4068",
       "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
@@ -19406,6 +19433,15 @@
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
+      "source_record_id": "rss:13b6bda3ae2bdb6e8b3180ac",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2018-06-27T02:00:50+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
       "source_record_id": "rss:d9c2d6b3317af1596cc6675f",
       "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
@@ -19417,6 +19453,15 @@
       "source_platform": "rss",
       "source_record_id": "rss:27f8884b2fcb6a879eb73b82",
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2018-07-03T22:02:04+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:aacf73f82fea28d93442c50b",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
       "mirror_targets": [],
@@ -19441,6 +19486,15 @@
       "source_platform": "x",
       "source_record_id": "x:1014656449903902725",
       "source_url": "https://x.com/CourtsofNZ/status/1014656449903902725"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2018-07-05T07:38:57+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:3211bc6ffe499a9219380831",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
       "mirror_targets": [],
@@ -19516,6 +19570,15 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2018-08-02T22:10:18+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:d896dfac225fb039a9adb0eb",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2018-08-05T12:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
       "source_key": "rss:courtsofnz.govt.nz",
@@ -19558,6 +19621,15 @@
       "source_platform": "rss",
       "source_record_id": "rss:e4a217f6f9f235a0ec377870",
       "source_url": "https://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme/RSS"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2018-08-09T05:17:10+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:ab956c70c489f54180815277",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
       "mirror_targets": [],
@@ -20546,7 +20618,25 @@
       "source_account": "https://www.n4l.co.nz",
       "source_key": "rss:https://www.n4l.co.nz",
       "source_platform": "rss",
+      "source_record_id": "rss:2420d43837a8c524494ea68c",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2019-04-02T22:18:20+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
       "source_record_id": "rss:37b6b6e733e420516779ec16",
+      "source_url": "https://www.n4l.co.nz/comments/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2019-04-02T23:21:44+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:3a050fdf32f86aa57bd454d9",
       "source_url": "https://www.n4l.co.nz/comments/feed/"
     },
     {
@@ -26545,6 +26635,15 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2020-08-27T03:10:51+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:46e5603f855e37e966ff98a2",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2020-08-27T12:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
       "source_key": "rss:courtsofnz.govt.nz",
@@ -26647,6 +26746,15 @@
       "source_platform": "x",
       "source_record_id": "x:1301388565897572352",
       "source_url": "https://x.com/CourtsofNZ/status/1301388565897572352"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2020-09-04T00:42:03+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:ab7a899045204f4dda5829f6",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
     },
     {
       "mirror_targets": [
@@ -27124,6 +27232,15 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2020-09-29T02:08:03+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:893133f0b6057091b406ec3d",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2020-09-29T11:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
       "source_key": "rss:courtsofnz.govt.nz",
@@ -27189,6 +27306,15 @@
       "source_url": "https://x.com/CourtsofNZ/status/1311866018386460673"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2020-10-05T20:10:01+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:8f428680715e6a2651f20fa2",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "https://bsky.app/profile/did:plc:t3qwfrzz4lvxcmuo4sh2g4uw/post/3moixakzdew25",
@@ -27250,6 +27376,24 @@
       "source_platform": "x",
       "source_record_id": "x:1313689829301866497",
       "source_url": "https://x.com/CourtsofNZ/status/1313689829301866497"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2020-10-07T04:03:18+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:001ccab4812bfb595a1ffc65",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2020-10-07T04:06:30+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:87738bf7197ea5f22525f366",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
     },
     {
       "mirror_targets": [],
@@ -29068,6 +29212,15 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2021-02-03T21:07:20+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:3762057d7930722d6ec01d45",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2021-02-03T22:56:02+00:00",
       "source_account": "YouTube",
       "source_key": "youtube:YouTube",
@@ -29089,6 +29242,15 @@
       "source_platform": "x",
       "source_record_id": "x:1357170556135567361",
       "source_url": "https://x.com/CourtsofNZ/status/1357170556135567361"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2021-02-04T02:33:18+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:92cd894a61b2079064b676a3",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
     },
     {
       "mirror_targets": [
@@ -29701,6 +29863,15 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2021-03-18T03:26:33+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:dc591f236cbd6dd825e78b9a",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2021-03-18T11:00:00+00:00",
       "source_account": "courtsofnz.govt.nz",
       "source_key": "rss:courtsofnz.govt.nz",
@@ -30067,6 +30238,15 @@
       "source_platform": "x",
       "source_record_id": "x:1390573226070200320",
       "source_url": "https://x.com/CourtsofNZ/status/1390573226070200320"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2021-05-07T00:48:02+00:00",
+      "source_account": "New Zealand Defence Force",
+      "source_key": "rss:New Zealand Defence Force",
+      "source_platform": "rss",
+      "source_record_id": "rss:fb6ceb452d5766dd0ec37e07",
+      "source_url": "https://nzdefenceforce.medium.com/feed"
     },
     {
       "mirror_targets": [
@@ -54672,15 +54852,6 @@
       "source_url": "https://bsky.app/profile/greens.org.nz"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2025-10-06T00:24:41+00:00",
-      "source_account": "https://www.transpower.co.nz",
-      "source_key": "rss:https://www.transpower.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:b65a2fb516e79adbbf730717",
-      "source_url": "https://www.transpower.co.nz/rss.xml"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -60384,6 +60555,15 @@
       "source_url": "https://bsky.app/profile/health.govt.nz"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-01-23T01:00:01+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:eb9dac6f2932a2aab8f9b9b0",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -63133,15 +63313,6 @@
       "source_platform": "youtube",
       "source_record_id": "youtube:b55b018e1492c828533f12dc",
       "source_url": "https://www.youtube.com/@tepapa"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-03-01T20:55:59+00:00",
-      "source_account": "https://www.transpower.co.nz",
-      "source_key": "rss:https://www.transpower.co.nz",
-      "source_platform": "rss",
-      "source_record_id": "rss:39d75a5f13f10334771b5c25",
-      "source_url": "https://www.transpower.co.nz/rss.xml"
     },
     {
       "mirror_targets": [],
@@ -76279,24 +76450,6 @@
       "source_platform": "rss",
       "source_record_id": "rss:df248b9d0e974e55893fe5bb",
       "source_url": "https://www.wananga.com/feed/rss2"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-02T02:43:53+00:00",
-      "source_account": "https://www.wananga.com",
-      "source_key": "rss:https://www.wananga.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:e4d05314606c79226c19fb4a",
-      "source_url": "https://www.wananga.com/feed/rss2"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-06-02T02:43:53Z",
-      "source_account": "https://www.wananga.com",
-      "source_key": "rss:https://www.wananga.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:0993e1be8482a670bbbbf382",
-      "source_url": "https://www.wananga.com/feed/atom"
     },
     {
       "mirror_targets": [],
@@ -93627,6 +93780,15 @@
       "source_url": "https://www.youtube.com/@healthnewzealand"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-06-26T03:01:45+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:cc0cba56d57ffceae7165886",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -98206,6 +98368,15 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-07-02T03:38:22+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:c0fed1a486c22bef16272a32",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "2026-07-02T03:44:00+00:00",
       "source_account": "UC7eKsSpTrEORjID6OtEZyTw",
       "source_key": "youtube:UC7eKsSpTrEORjID6OtEZyTw",
@@ -98640,6 +98811,33 @@
       "source_url": "https://bsky.app/profile/metservice.com"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-02T21:52:23+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:2acc4386fa84bcea393fae58",
+      "source_url": "https://www.n4l.co.nz/rss"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-02T21:52:23+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:6fd8396e507e40368fd0fb30",
+      "source_url": "https://www.n4l.co.nz/feed"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-02T21:52:23+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:8a5239a098833c1b862b0f07",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -98653,6 +98851,42 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mpp4bibgyk2w",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-02T22:46:28+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:51aaac5ea675b1edd4e3855f",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-02T22:46:28+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:83d90a786c850f30a2d3bad9",
+      "source_url": "https://www.n4l.co.nz/feed"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-02T22:46:28+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:9ccb109848f6431a2eea3029",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-02T22:46:28+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:e523ff87b2e0f6bf3d93e662",
+      "source_url": "https://www.n4l.co.nz/rss"
     },
     {
       "mirror_targets": [],
@@ -98902,6 +99136,42 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mpplfueiwj2e",
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-03T03:19:09+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:00431204b83b922b7d2bffba",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-03T03:19:09+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:031203943391bc8c0a81315c",
+      "source_url": "https://www.n4l.co.nz/feed"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-03T03:19:09+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:485dc85b19b28aac7915ff99",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-03T03:19:09+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:54988b05842bf2417e633be5",
+      "source_url": "https://www.n4l.co.nz/rss"
     },
     {
       "mirror_targets": [
@@ -116103,24 +116373,6 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-09T22:28:20+00:00",
-      "source_account": "https://www.wananga.com",
-      "source_key": "rss:https://www.wananga.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:e40d8fac2b07512ccc2c36f9",
-      "source_url": "https://www.wananga.com/feed/rss2"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-09T22:28:20Z",
-      "source_account": "https://www.wananga.com",
-      "source_key": "rss:https://www.wananga.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:9b9cfb9848a478a0228f1337",
-      "source_url": "https://www.wananga.com/feed/atom"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -116419,6 +116671,33 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqhwr3mbyc2a",
       "source_url": "https://bsky.app/profile/ponekeben.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-12T20:20:10+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:1e7729bd467877e0d6d98cd1",
+      "source_url": "https://www.n4l.co.nz/rss"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-12T20:20:10+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:1f2ba55f33b7f7f18c012884",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-12T20:20:10+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:6544881ebf13bcdb4e13cd65",
+      "source_url": "https://www.n4l.co.nz/feed"
     },
     {
       "mirror_targets": [
@@ -118323,6 +118602,42 @@
       "source_url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T01:35:57+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:29026f95e0f38f9856d53c2c",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T01:35:57+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:409d5641218703dd2263d229",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T01:35:57+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:db7bbd5df45f5213c32538af",
+      "source_url": "https://www.n4l.co.nz/rss"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-15T01:35:57+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:dd0f765c3be99058d2d04bab",
+      "source_url": "https://www.n4l.co.nz/feed"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -119035,6 +119350,42 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mqq7syrnes27",
       "source_url": "https://bsky.app/profile/courtsofnz.bsky.social/post/3mqq7syrnes27"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T02:59:43+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:2258da3ad248d00692d73154",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T02:59:43+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:a01a5d9823d7ce36cb772b25",
+      "source_url": "https://www.n4l.co.nz/rss"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T02:59:43+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:c27e5e842a89bd5053825d6a",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-16T02:59:43+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:dcad86f82390a4ff04bf437a",
+      "source_url": "https://www.n4l.co.nz/feed"
     },
     {
       "mirror_targets": [
@@ -123114,6 +123465,33 @@
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T20:53:41+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:5b60add8714c6d76afd1c5d0",
+      "source_url": "https://www.n4l.co.nz/feed"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T20:53:41+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:832cab998713242fbfce157f",
+      "source_url": "https://www.n4l.co.nz/rss"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-19T20:53:41+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:9810c3e890a14766b0855c2b",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -123573,24 +123951,6 @@
       "source_url": "http://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme"
     },
     {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-20T03:40:00+00:00",
-      "source_account": "https://www.wananga.com",
-      "source_key": "rss:https://www.wananga.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:765eaefa33d3910a6700f203",
-      "source_url": "https://www.wananga.com/feed/rss2"
-    },
-    {
-      "mirror_targets": [],
-      "original_timestamp": "2026-07-20T03:40:00Z",
-      "source_account": "https://www.wananga.com",
-      "source_key": "rss:https://www.wananga.com",
-      "source_platform": "rss",
-      "source_record_id": "rss:147693ab77b5c61c7f9b7b86",
-      "source_url": "https://www.wananga.com/feed/atom"
-    },
-    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -123694,6 +124054,42 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mr2jbl5xfs2l",
       "source_url": "https://bsky.app/profile/greens.org.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T05:07:13+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:30ad79a67480ee8a8a51f5fd",
+      "source_url": "https://www.n4l.co.nz/feed"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T05:07:13+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:31a69d7d462bc645c9edaa5b",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T05:07:13+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:8ae560d5bd73dd34285a9330",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-20T05:07:13+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:8f987b4d342f12888594830e",
+      "source_url": "https://www.n4l.co.nz/rss"
     },
     {
       "mirror_targets": [
@@ -125196,6 +125592,42 @@
       "source_url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-21T05:43:34+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:29ee3a6d94ecb336fd21b717",
+      "source_url": "https://www.n4l.co.nz/rss"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-21T05:43:34+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:3b34c6409353fae4198804fd",
+      "source_url": "https://www.n4l.co.nz/feed"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-21T05:43:34+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:9e24ccf13bba5f9e01c9add0",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-21T05:43:34+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:f5ac743e206efd99de5e1af1",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -125566,6 +125998,42 @@
       "source_platform": "bluesky",
       "source_record_id": "bluesky:3mr6pbluaov2t",
       "source_url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-21T22:43:36+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:b544c08ad25bb2bc12f917c7",
+      "source_url": "https://www.n4l.co.nz/rss"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-21T22:43:36+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:bc148dc1210d030613bc5a66",
+      "source_url": "https://www.n4l.co.nz/feed"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-21T22:43:36+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:de38d4361c1371dbbfa2f0cf",
+      "source_url": "https://www.n4l.co.nz/feed/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-21T22:43:36+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "rss:https://www.n4l.co.nz",
+      "source_platform": "rss",
+      "source_record_id": "rss:f25741ec1997689017564f62",
+      "source_url": "https://www.n4l.co.nz/category/alerts/feed/"
     },
     {
       "mirror_targets": [
@@ -131440,7 +131908,7 @@
     "facebook": 323,
     "json_feed": 16,
     "linkedin": 61,
-    "rss": 3938,
+    "rss": 3990,
     "website_page": 1827,
     "x": 769,
     "youtube": 2741

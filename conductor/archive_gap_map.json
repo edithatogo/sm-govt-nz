@@ -2,49 +2,45 @@
   "gaps": [],
   "inputs": {
     "reports": [
-      "conductor/rss_archive_offset_1400_report.json"
+      "conductor/rss_archive_offset_800_report.json"
     ]
   },
   "report_summaries": {
-    "conductor/rss_archive_offset_1400_report.json": {
+    "conductor/rss_archive_offset_800_report.json": {
       "platform_counts": {
         "rss": 100
       },
       "selected_sources": 100,
       "status_by_platform": {
         "rss": {
-          "already_captured": 300,
-          "captured": 8,
-          "no_records": 97
+          "captured": 60,
+          "no_records": 94
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "already_captured": 300,
-        "captured": 8,
-        "no_records": 97
+        "captured": 60,
+        "no_records": 94
       }
     }
   },
   "summary": {
     "gap_count": 0,
     "input_status_counts": {
-      "already_captured": 300,
-      "captured": 8,
-      "no_records": 97
+      "captured": 60,
+      "no_records": 94
     },
     "platform_counts": {
       "rss": 100
     },
     "priority_counts": {
-      "archived_or_already_archived": 3,
-      "monitor_report_only": 97
+      "archived_or_already_archived": 6,
+      "monitor_report_only": 94
     },
     "status_counts": {
-      "already_captured": 2,
-      "captured": 1,
-      "no_records": 97
+      "captured": 6,
+      "no_records": 94
     },
-    "superseded_source_count": 3
+    "superseded_source_count": 6
   }
 }
