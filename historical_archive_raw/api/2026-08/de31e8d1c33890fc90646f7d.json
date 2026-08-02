@@ -1,0 +1,21 @@
+{
+  "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title></title>\n    <style>\n        body {\n            font-family: \"Arial\";\n        }\n    </style>\n    <script type=\"text/javascript\">\n    window.awsWafCookieDomainList = [];\n    window.gokuProps = {\n\"key\":\"AQIDAHjcYu/GjX+QlghicBgQ/7bFaQZ+m5FKCMDnO+vTbNg96AF2uF4h9YzBDHrRLo1lmA4sAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM9n9OOmQE6o1EnodVAgEQgDs4JIAQgmKjDYoewzWO15mo/Tk7mKGQmat4EU6KVPFpUtqOitnTxnpXP9V0R7bJ2Gj5/6WiNXjY7ATGFw==\",\n          \"iv\":\"CgAFdhK0uQAAAhlM\",\n          \"context\":\"fXKc/XYLH4lpET0ugMbm4zS4Yo7js74qc8++pP7e3YbPooU7E27E1P51k2YL4fFS8SIutPfIbdDwMBy3josU0cjE0oAJBjSPwwllEnOBXvqR6x0MEQ0fjwrGqJU5/YYiM7iKWZQ9Pii0IeAPbfJ9C0oSnys4nSDzdi3cmpjw0sxAn/TCFJm0UWJg+FM7vPXC3Y2GTEyvqjez5xEtnZgDrGaTYHpMdlER8ydDL5uWnj0E2s0ODmVN2nGVxz/s174rfepHFApp/Q/Aj7hGsrfEpAYm07Akgxkgtkl5YS2Cpcru0U1mvNkJzcgLWeBQSmuXi93WJrxR1/I8YLhGGuYCMqKhS6WWn5aNLbf4MeEWo0NkuYhVu68CCDPRVetLDeQa\"\n};\n    </script>\n    <script src=\"https://5778173872a2.3e429ef6.ap-southeast-2.token.awswaf.com/5778173872a2/d16a8485b8d7/35a33804077a/challenge.js\"></script>\n</head>\n<body>\n    <div id=\"challenge-container\"></div>\n    <script type=\"text/javascript\">\n        AwsWafIntegration.saveReferrer();\n        AwsWafIntegration.checkForceRefresh().then((forceRefresh) => {\n            if (forceRefresh) {\n                AwsWafIntegration.forceRefreshToken().then(() => {\n                    window.location.reload(true);\n                });\n            } else {\n                AwsWafIntegration.getToken().then(() => {\n                    window.location.reload(true);\n                });\n            }\n        });\n    </script>\n    <noscript>\n        <h1>JavaScript is disabled</h1>\n        In order to continue, we need to verify that you're not a robot.\n        This requires JavaScript. Enable JavaScript and then reload the page.\n    </noscript>\n<script type=\"module\" src=\"https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496\" integrity=\"sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==\" data-cf-beacon='{\"version\":\"2024.11.0\",\"token\":\"aa69dc54448e4ec5ae40b6ca752c52ba\",\"r\":1}' crossorigin=\"anonymous\"></script>\n</body>\n</html>",
+  "captured_at": "2026-08-02T06:23:32+00:00",
+  "source": {
+    "access_method": "public_api_or_openapi",
+    "account": "https://www.ruapehudc.govt.nz",
+    "agency_id": "ruapehu-district-council",
+    "agency_name": "Ruapehu District Council",
+    "archive_status": "ready",
+    "auth": "none",
+    "created_at": "2026-07-03T06:26:03+00:00",
+    "feasibility": "high",
+    "notes": "Promoted from search_seed using public endpoint heuristics; original_source_type=search_seed",
+    "origin": "configured_common_path",
+    "platform": "api",
+    "source_id": "54d41628784e39d9",
+    "source_type": "api_endpoint",
+    "url": "https://www.ruapehudc.govt.nz/openapi.json"
+  },
+  "url": "https://www.ruapehudc.govt.nz/openapi.json"
+}
