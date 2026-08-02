@@ -1,12 +1,12 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-13T12:50:52+00:00
+Generated: 2026-08-02T06:34:36+00:00
 
 ## Summary
 
 - `selected_sources`: 100
 - `platform_count`: 1
-- `status_count`: 2
+- `status_count`: 3
 
 ## Platform counts
 
@@ -14,12 +14,13 @@ Generated: 2026-07-13T12:50:52+00:00
 
 ## Status counts
 
-- `already_captured`: 82
-- `method_not_allowed`: 18
+- `browser_captcha_or_challenge`: 1
+- `captured`: 82
+- `method_not_allowed`: 17
 
 ## Status by platform
 
-- `website_page`: {'already_captured': 82, 'method_not_allowed': 18}
+- `website_page`: {'browser_captcha_or_challenge': 1, 'captured': 82, 'method_not_allowed': 17}
 
 ## Notes
 
