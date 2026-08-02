@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-13T12:47:20+00:00",
+  "generated_at": "2026-08-02T06:43:04+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 1500,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -28,11 +32,134 @@
   },
   "results": [
     {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.treasury.govt.nz/",
+      "source_id": "0069a59661012907",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.treasury.govt.nz/api"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.treasury.govt.nz/",
+      "source_id": "9c1d280bed458f86",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.treasury.govt.nz/media"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.treasury.govt.nz/",
+      "source_id": "98fb9e0ffe4ed561",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.treasury.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.treasury.govt.nz/",
+      "source_id": "083d51a647e91d46",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.treasury.govt.nz/news"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.treasury.govt.nz/",
+      "source_id": "f664ab5da6ad1928",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.treasury.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.treasury.govt.nz/",
+      "source_id": "3dfea315769efa53",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.treasury.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.treasury.govt.nz/",
+      "source_id": "ea6e8a43535536da",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.treasury.govt.nz/publications"
+    },
+    {
+      "agency_id": "the-treasury",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.treasury.govt.nz/",
+      "source_id": "0dad40bf44039668",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.treasury.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "timaru-district-council",
+      "archive_status": "ready",
+      "candidate_id": "350b4a5d6cf98f85",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-08/2ed6a40b1c3f947a8ab61a2a.json",
+      "reason": "public browser fallback stopped at access marker: Sign in",
+      "source_id": "350b4a5d6cf98f85",
+      "source_type": "website_page",
+      "status": "browser_login_required",
+      "url": "https://www.timaru.govt.nz"
+    },
+    {
       "agency_id": "timaru-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "source_id": "96240ac4f68ba3a4",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.timaru.govt.nz/api"
+    },
+    {
+      "agency_id": "timaru-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "source_id": "09f798e8032c0b14",
+      "source_type": "website_page",
+      "status": "capture_blocked",
+      "url": "https://www.timaru.govt.nz/media"
+    },
+    {
+      "agency_id": "timaru-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "9f5d24d254ee4f7d",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -43,7 +170,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "0f37d4a81b31df15",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -54,7 +181,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "6c2a43ace1b8b7ba",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -65,7 +192,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "6a9224736db75382",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -76,7 +203,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "1b0784decd906a55",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -87,7 +214,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "2e17f657ee663632",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -98,7 +225,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "2c939621b62c70f9",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -109,7 +236,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "c0935e556b4fd982",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -120,10 +247,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "3bacd7ab525fc667",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.taic.org.nz"
     },
     {
@@ -131,10 +258,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "9a3132d0d53b96b8",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.transpower.co.nz"
     },
     {
@@ -142,10 +269,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "40503a67dfafabde",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tvnz.co.nz"
     },
     {
@@ -153,10 +280,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "1b7dee4c4e040833",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.ucol.ac.nz"
     },
     {
@@ -164,10 +291,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "a147de03fcb7d367",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.unitec.ac.nz"
     },
     {
@@ -175,10 +302,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "8270942f37e7d5c6",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.auckland.ac.nz"
     },
     {
@@ -186,10 +313,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "f61ad79cf7d527b8",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.canterbury.ac.nz"
     },
     {
@@ -197,7 +324,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "9bd01a21e1f624b1",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -208,10 +335,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "4365515ea02ed9f3",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikato.ac.nz"
     },
     {
@@ -219,10 +346,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "30f0a3f27bfccdd2",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.upperhuttcity.com"
     },
     {
@@ -241,10 +368,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "e9730f4dbe51c337",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wgtn.ac.nz"
     },
     {
@@ -252,10 +379,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "5d1a938a65a47f82",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatodistrict.govt.nz"
     },
     {
@@ -263,10 +390,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatodistrict.govt.nz/",
       "source_id": "ec1998ca5cebd010",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatodistrict.govt.nz/api"
     },
     {
@@ -274,10 +401,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatodistrict.govt.nz/",
       "source_id": "d9f4917d0193d55a",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatodistrict.govt.nz/media"
     },
     {
@@ -285,10 +412,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatodistrict.govt.nz/",
       "source_id": "4f6501a029cc4447",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatodistrict.govt.nz/media-releases"
     },
     {
@@ -296,10 +423,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "ac3277f5c2cebcf4",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatodistrict.govt.nz/news"
     },
     {
@@ -307,10 +434,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatodistrict.govt.nz/",
       "source_id": "7523df8570531790",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatodistrict.govt.nz/news-and-events"
     },
     {
@@ -318,10 +445,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "fb3f5f79a135a72f",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatodistrict.govt.nz/newsletter"
     },
     {
@@ -329,10 +456,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatodistrict.govt.nz/",
       "source_id": "83b11f7c18e39f26",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatodistrict.govt.nz/publications"
     },
     {
@@ -340,10 +467,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "2f687b29f1bf2eed",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatodistrict.govt.nz/subscribe"
     },
     {
@@ -351,10 +478,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "1e6d9d5c2fdc41e9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatoregion.govt.nz"
     },
     {
@@ -362,10 +489,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatoregion.govt.nz/",
       "source_id": "7c45829ef13f00d8",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatoregion.govt.nz/api"
     },
     {
@@ -373,10 +500,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatoregion.govt.nz/",
       "source_id": "1b8d612ab0951305",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatoregion.govt.nz/media"
     },
     {
@@ -384,10 +511,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "6aa14fe9029f3a7d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatoregion.govt.nz/media-releases"
     },
     {
@@ -395,10 +522,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "83e1ff8b8e0a2b41",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatoregion.govt.nz/news"
     },
     {
@@ -406,10 +533,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatoregion.govt.nz/",
       "source_id": "8fbbf56dd48cce1c",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatoregion.govt.nz/news-and-events"
     },
     {
@@ -417,10 +544,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatoregion.govt.nz/",
       "source_id": "ff438b22ea055594",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatoregion.govt.nz/newsletter"
     },
     {
@@ -428,10 +555,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "6e3e98b2d6a253dc",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatoregion.govt.nz/publications"
     },
     {
@@ -439,10 +566,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waikatoregion.govt.nz/",
       "source_id": "c9f6cffcf10a7fc4",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waikatoregion.govt.nz/subscribe"
     },
     {
@@ -450,10 +577,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "2bd88d8cb70011cd",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waimakariri.govt.nz"
     },
     {
@@ -461,10 +588,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waimakariri.govt.nz/",
       "source_id": "860c7ea1c0cd52e1",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waimakariri.govt.nz/api"
     },
     {
@@ -472,10 +599,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waimakariri.govt.nz/",
       "source_id": "7bcce0f09045d095",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waimakariri.govt.nz/media"
     },
     {
@@ -483,10 +610,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waimakariri.govt.nz/",
       "source_id": "47be63252ed09ff2",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waimakariri.govt.nz/media-releases"
     },
     {
@@ -494,10 +621,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "2531040a3630dfd1",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waimakariri.govt.nz/news"
     },
     {
@@ -505,10 +632,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waimakariri.govt.nz/",
       "source_id": "cbad37bc64b685a9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waimakariri.govt.nz/news-and-events"
     },
     {
@@ -516,10 +643,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waimakariri.govt.nz/",
       "source_id": "31d00fe60a7b736e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waimakariri.govt.nz/newsletter"
     },
     {
@@ -527,10 +654,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waimakariri.govt.nz/",
       "source_id": "d52192f9dd9d1b26",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waimakariri.govt.nz/publications"
     },
     {
@@ -538,10 +665,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "f0822767f8bf539d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waimakariri.govt.nz/subscribe"
     },
     {
@@ -549,10 +676,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "942dacd4807e5d24",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz"
     },
     {
@@ -560,10 +687,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "a7510de74324eb29",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz/api"
     },
     {
@@ -571,10 +698,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "3b887cfa581912c0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz/media"
     },
     {
@@ -582,10 +709,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "10f8f584d1ce99dc",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz/media-releases"
     },
     {
@@ -593,10 +720,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "ce8d375a88b8c27e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz/news"
     },
     {
@@ -604,10 +731,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "9b623f1c28c6f527",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz/news-and-events"
     },
     {
@@ -615,10 +742,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "1c06f1a957404995",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz/newsletter"
     },
     {
@@ -626,10 +753,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "2fbabfe02af8f087",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz/publications"
     },
     {
@@ -637,10 +764,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "01991e198e5c7d9f",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waimatedc.govt.nz/subscribe"
     },
     {
@@ -648,10 +775,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "fadabbb12076bbba",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz"
     },
     {
@@ -659,10 +786,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "bfdf67dea7c9e14d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz/api"
     },
     {
@@ -670,10 +797,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "780d0b320c993229",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz/media"
     },
     {
@@ -681,10 +808,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "45dd63380f5024a0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz/media-releases"
     },
     {
@@ -692,10 +819,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "623101f696ef7dee",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz/news"
     },
     {
@@ -703,10 +830,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "ae3022b11f53a6c7",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz/news-and-events"
     },
     {
@@ -714,10 +841,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "fc282f6e28976284",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz/newsletter"
     },
     {
@@ -725,10 +852,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "69f5b8a7f23bbee2",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz/publications"
     },
     {
@@ -736,10 +863,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "46213dd870edbca5",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "method_not_allowed",
       "url": "https://www.waipadc.govt.nz/subscribe"
     },
     {
@@ -747,10 +874,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "6cf2538bd67661cf",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wairoadc.govt.nz"
     },
     {
@@ -758,10 +885,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.wairoadc.govt.nz/",
       "source_id": "a4340dc3c9efd67f",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wairoadc.govt.nz/api"
     },
     {
@@ -769,10 +896,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.wairoadc.govt.nz/",
       "source_id": "f77a31337d9071e7",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wairoadc.govt.nz/media"
     },
     {
@@ -780,10 +907,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.wairoadc.govt.nz/",
       "source_id": "4c92d75b68679ca6",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wairoadc.govt.nz/media-releases"
     },
     {
@@ -791,10 +918,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "6e7699b388adeffe",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wairoadc.govt.nz/news"
     },
     {
@@ -802,10 +929,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.wairoadc.govt.nz/",
       "source_id": "312648beb932151a",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wairoadc.govt.nz/news-and-events"
     },
     {
@@ -813,10 +940,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.wairoadc.govt.nz/",
       "source_id": "ac24c681754ed3df",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wairoadc.govt.nz/newsletter"
     },
     {
@@ -824,10 +951,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.wairoadc.govt.nz/",
       "source_id": "24dda4f9519d8db2",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wairoadc.govt.nz/publications"
     },
     {
@@ -835,10 +962,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.wairoadc.govt.nz/",
       "source_id": "c0e834db0a719eb8",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wairoadc.govt.nz/subscribe"
     },
     {
@@ -846,10 +973,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "e30646556d50a86d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz"
     },
     {
@@ -857,10 +984,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "050140db5ee80e2a",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz/Council/News-Events-and-Public-Notices/Newsletters"
     },
     {
@@ -868,10 +995,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waitaki.govt.nz/",
       "source_id": "c694e3d8b657f2ad",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz/api"
     },
     {
@@ -879,10 +1006,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waitaki.govt.nz/",
       "source_id": "3ad382c5a24b1b4a",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz/media"
     },
     {
@@ -890,10 +1017,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waitaki.govt.nz/",
       "source_id": "86ee89fa12ba7b2a",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz/media-releases"
     },
     {
@@ -901,10 +1028,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "58137bcd7eef9faa",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz/news"
     },
     {
@@ -912,10 +1039,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waitaki.govt.nz/",
       "source_id": "bdf2f68b03dd6181",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz/news-and-events"
     },
     {
@@ -923,10 +1050,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waitaki.govt.nz/",
       "source_id": "e78f2c80210b15c0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz/newsletter"
     },
     {
@@ -934,10 +1061,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.waitaki.govt.nz/",
       "source_id": "c078a18cc7da9af0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz/publications"
     },
     {
@@ -945,10 +1072,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "f7c89023486ad306",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitaki.govt.nz/subscribe"
     },
     {
@@ -956,10 +1083,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "1d240fd29fdd8f81",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitomo.govt.nz"
     },
     {
@@ -967,10 +1094,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://waitomo.govt.nz/api",
       "source_id": "4a6223ff18bf0fe4",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitomo.govt.nz/api"
     },
     {
@@ -978,10 +1105,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "d03113f13c20dd38",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitomo.govt.nz/council/news-summary/waitomo-way-newsletter/"
     },
     {
@@ -989,10 +1116,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://waitomo.govt.nz/media",
       "source_id": "0ede8eafc574706b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitomo.govt.nz/media"
     },
     {
@@ -1000,132 +1127,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://waitomo.govt.nz/media-releases",
       "source_id": "26e8dad917192cb3",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.waitomo.govt.nz/media-releases"
-    },
-    {
-      "agency_id": "waitomo-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "9c60fd0555692320",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.waitomo.govt.nz/news"
-    },
-    {
-      "agency_id": "waitomo-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "2ff4e920650e7b06",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.waitomo.govt.nz/news-and-events"
-    },
-    {
-      "agency_id": "waitomo-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "60fd9e0bc5d116d3",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.waitomo.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "waitomo-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "7e569447ced27532",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.waitomo.govt.nz/publications"
-    },
-    {
-      "agency_id": "waitomo-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "93ad3d9f94a915d6",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.waitomo.govt.nz/subscribe"
-    },
-    {
-      "agency_id": "waka-kotahi",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "01e0b651510ccddb",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nzta.govt.nz"
-    },
-    {
-      "agency_id": "waka-kotahi",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "56d21ea4935c5ea3",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nzta.govt.nz/api"
-    },
-    {
-      "agency_id": "waka-kotahi",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "00a0f2e793aa5a3f",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nzta.govt.nz/media"
-    },
-    {
-      "agency_id": "waka-kotahi",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "08f3174c23680122",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nzta.govt.nz/media-releases"
-    },
-    {
-      "agency_id": "waka-kotahi",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "09f03a2e3a2a8b5d",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nzta.govt.nz/news"
-    },
-    {
-      "agency_id": "waka-kotahi",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "54ad2f07ea7309a4",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.nzta.govt.nz/news-and-events"
     }
   ],
   "summary": {
@@ -1135,16 +1141,18 @@
     "selected_sources": 100,
     "status_by_platform": {
       "website_page": {
-        "already_captured": 90,
-        "capture_blocked": 9,
-        "captured": 1
+        "browser_login_required": 1,
+        "capture_blocked": 11,
+        "captured": 70,
+        "method_not_allowed": 18
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 90,
-      "capture_blocked": 9,
-      "captured": 1
+      "browser_login_required": 1,
+      "capture_blocked": 11,
+      "captured": 70,
+      "method_not_allowed": 18
     }
   }
 }

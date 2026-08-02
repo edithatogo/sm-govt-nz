@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "07ecec9840e3b85769c40873abb0acd617d5a1c7a8da57faa57419dda8fb9907"
+      "sha256": "31c94cbed6d29806e7203237a1196aac623f80dc4254cadaf5ee334737ec18ee"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24789508,
+      "bytes": 25782263,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "ac11175e9f57adb79506a8c452417bb77689891c2f53793db326032da9e243f7"
+      "sha256": "3225c3944a0d3a2b9a24c98f91582d9e6450c3b1914cd1376bf827e80062e468"
     },
     "normalized_archive.parquet": {
-      "bytes": 39130428,
+      "bytes": 40669764,
       "path": "normalized_archive.parquet",
-      "sha256": "a74128eb7c2d27945dc5e30d99f05a3510902faa22629c33a3f1fbc2d3746bd4"
+      "sha256": "b6f3bb9b1f251c1d5e9d6b92dd171625df7d2dd68dd35ac636d5c50b5b411cc5"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12335,
+  "normalized_record_count": 12404,
   "normalized_shard_count": 522,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 16248,
+  "raw_file_count": 16318,
   "record_index": [
     {
       "mirror_targets": [
@@ -131167,12 +131167,633 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:35:30+00:00",
+      "original_timestamp": "2026-08-02T06:14:42+00:00",
+      "source_account": "https://www.treasury.govt.nz",
+      "source_key": "website_page:https://www.treasury.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:621689561750d4fe0063bcb0",
+      "source_url": "https://www.treasury.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:45+00:00",
+      "source_account": "https://www.treasury.govt.nz",
+      "source_key": "website_page:https://www.treasury.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d18ab077901991a8812a9628",
+      "source_url": "https://www.treasury.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:47+00:00",
+      "source_account": "https://www.treasury.govt.nz",
+      "source_key": "website_page:https://www.treasury.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:3844df5e796e371dcfc2c203",
+      "source_url": "https://www.treasury.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:49+00:00",
+      "source_account": "https://www.treasury.govt.nz",
+      "source_key": "website_page:https://www.treasury.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:03dae96da1a125e4f122c25c",
+      "source_url": "https://www.treasury.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:51+00:00",
+      "source_account": "https://www.treasury.govt.nz",
+      "source_key": "website_page:https://www.treasury.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4c54cfc09fdbb7f58203d269",
+      "source_url": "https://www.treasury.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:53+00:00",
+      "source_account": "https://www.treasury.govt.nz",
+      "source_key": "website_page:https://www.treasury.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:63d8939631e7cb77277f9dff",
+      "source_url": "https://www.treasury.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:55+00:00",
+      "source_account": "https://www.treasury.govt.nz",
+      "source_key": "website_page:https://www.treasury.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4995fbe7359764c26b49bc2d",
+      "source_url": "https://www.treasury.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:57+00:00",
+      "source_account": "https://www.treasury.govt.nz",
+      "source_key": "website_page:https://www.treasury.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:722e439a23ef4e65055b85df",
+      "source_url": "https://www.treasury.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:08+00:00",
+      "source_account": "https://www.taic.org.nz",
+      "source_key": "website_page:https://www.taic.org.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:771477235e28617feb0016fb",
+      "source_url": "https://www.taic.org.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:10+00:00",
+      "source_account": "https://www.transpower.co.nz",
+      "source_key": "website_page:https://www.transpower.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d980b7d8ffe7fe317561fa36",
+      "source_url": "https://www.transpower.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:11+00:00",
+      "source_account": "https://www.tvnz.co.nz",
+      "source_key": "website_page:https://www.tvnz.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:bbfcfc922bbf6e308c440ea8",
+      "source_url": "https://www.tvnz.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:11+00:00",
+      "source_account": "https://www.ucol.ac.nz",
+      "source_key": "website_page:https://www.ucol.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d7266a9a50836ccc7fc25c51",
+      "source_url": "https://www.ucol.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:12+00:00",
+      "source_account": "https://www.unitec.ac.nz",
+      "source_key": "website_page:https://www.unitec.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:110e7cf6640ec302eee3e47c",
+      "source_url": "https://www.unitec.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:13+00:00",
+      "source_account": "https://www.auckland.ac.nz",
+      "source_key": "website_page:https://www.auckland.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0eea9fad088dbaf7a3d120ab",
+      "source_url": "https://www.auckland.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:15+00:00",
+      "source_account": "https://www.canterbury.ac.nz",
+      "source_key": "website_page:https://www.canterbury.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:678b1d9eaa77eee10a9165d0",
+      "source_url": "https://www.canterbury.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:52+00:00",
+      "source_account": "https://www.waikato.ac.nz",
+      "source_key": "website_page:https://www.waikato.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:9e12693b22cc033cf6114b96",
+      "source_url": "https://www.waikato.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:52+00:00",
+      "source_account": "https://www.upperhuttcity.com",
+      "source_key": "website_page:https://www.upperhuttcity.com",
+      "source_platform": "website_page",
+      "source_record_id": "website:bd75191e889be5a356e438db",
+      "source_url": "https://www.upperhuttcity.com"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:56+00:00",
+      "source_account": "https://www.upperhuttcity.com",
+      "source_key": "website_page:https://www.upperhuttcity.com",
+      "source_platform": "website_page",
+      "source_record_id": "website:c77221ad9f97fd8a84b0e85f",
+      "source_url": "https://www.upperhuttlibrary.co.nz/news/fanmail-july-2026"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:57+00:00",
+      "source_account": "https://www.waikatodistrict.govt.nz",
+      "source_key": "website_page:https://www.waikatodistrict.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2d1e3e3cabb5379fab4aa119",
+      "source_url": "https://www.waikatodistrict.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:57+00:00",
+      "source_account": "https://www.wgtn.ac.nz",
+      "source_key": "website_page:https://www.wgtn.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:551d621d2ae078d6d273b56e",
+      "source_url": "https://www.wgtn.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:59+00:00",
+      "source_account": "https://www.waikatodistrict.govt.nz",
+      "source_key": "website_page:https://www.waikatodistrict.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:736b59f5574acf7cdcbba3a3",
+      "source_url": "https://www.waikatodistrict.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:06+00:00",
+      "source_account": "https://www.waikatodistrict.govt.nz",
+      "source_key": "website_page:https://www.waikatodistrict.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5fefe08a844fbbc951b243aa",
+      "source_url": "https://www.waikatodistrict.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:14+00:00",
+      "source_account": "https://www.waikatodistrict.govt.nz",
+      "source_key": "website_page:https://www.waikatodistrict.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:f6f1f3fc9247fa4fb1f96408",
+      "source_url": "https://www.waikatodistrict.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:20+00:00",
+      "source_account": "https://www.waikatodistrict.govt.nz",
+      "source_key": "website_page:https://www.waikatodistrict.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e5d2995c61b88cf1f43bf1db",
+      "source_url": "https://www.waikatodistrict.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:21+00:00",
+      "source_account": "https://www.waikatodistrict.govt.nz",
+      "source_key": "website_page:https://www.waikatodistrict.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:340e637eccbba18afc080ce4",
+      "source_url": "https://www.waikatodistrict.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:27+00:00",
+      "source_account": "https://www.waikatodistrict.govt.nz",
+      "source_key": "website_page:https://www.waikatodistrict.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0479ab98a974fa6268e2da2a",
+      "source_url": "https://www.waikatodistrict.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:29+00:00",
+      "source_account": "https://www.waikatodistrict.govt.nz",
+      "source_key": "website_page:https://www.waikatodistrict.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b474cc3587541216d087da29",
+      "source_url": "https://www.waikatodistrict.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:36+00:00",
+      "source_account": "https://www.waikatodistrict.govt.nz",
+      "source_key": "website_page:https://www.waikatodistrict.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:3a29b35325e4fa5b2a299594",
+      "source_url": "https://www.waikatodistrict.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:37+00:00",
+      "source_account": "https://www.waikatoregion.govt.nz",
+      "source_key": "website_page:https://www.waikatoregion.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0164641c98867d8fa5749385",
+      "source_url": "https://www.waikatoregion.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:39+00:00",
+      "source_account": "https://www.waikatoregion.govt.nz",
+      "source_key": "website_page:https://www.waikatoregion.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:6d59641e45a3713fd6f80180",
+      "source_url": "https://www.waikatoregion.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:42+00:00",
+      "source_account": "https://www.waikatoregion.govt.nz",
+      "source_key": "website_page:https://www.waikatoregion.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:eb2d6d0b20738efd3069eda6",
+      "source_url": "https://www.waikatoregion.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:46+00:00",
+      "source_account": "https://www.waikatoregion.govt.nz",
+      "source_key": "website_page:https://www.waikatoregion.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e74c7483cd1035a78f4846dd",
+      "source_url": "https://www.waikatoregion.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:51+00:00",
+      "source_account": "https://www.waikatoregion.govt.nz",
+      "source_key": "website_page:https://www.waikatoregion.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b7363134c03ec7e103be1674",
+      "source_url": "https://www.waikatoregion.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:53+00:00",
+      "source_account": "https://www.waikatoregion.govt.nz",
+      "source_key": "website_page:https://www.waikatoregion.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:41c057e0b5ceb256822c3e34",
+      "source_url": "https://www.waikatoregion.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:58+00:00",
+      "source_account": "https://www.waikatoregion.govt.nz",
+      "source_key": "website_page:https://www.waikatoregion.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:12e84efa5189b308de696939",
+      "source_url": "https://www.waikatoregion.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:01+00:00",
+      "source_account": "https://www.waikatoregion.govt.nz",
+      "source_key": "website_page:https://www.waikatoregion.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:f54a7b00171014a1f5552773",
+      "source_url": "https://www.waikatoregion.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:29+00:00",
+      "source_account": "https://www.waikatoregion.govt.nz",
+      "source_key": "website_page:https://www.waikatoregion.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:df1b37f464abbe1df11eeacd",
+      "source_url": "https://www.waikatoregion.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:33+00:00",
+      "source_account": "https://www.waimakariri.govt.nz",
+      "source_key": "website_page:https://www.waimakariri.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:153ad9d73803a23042903f24",
+      "source_url": "https://www.waimakariri.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:34+00:00",
+      "source_account": "https://www.waimakariri.govt.nz",
+      "source_key": "website_page:https://www.waimakariri.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5889625b1c4e4046ddab42d9",
+      "source_url": "https://www.waimakariri.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:41+00:00",
+      "source_account": "https://www.waimakariri.govt.nz",
+      "source_key": "website_page:https://www.waimakariri.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b7383cf5931b313cd081bc11",
+      "source_url": "https://www.waimakariri.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:45+00:00",
+      "source_account": "https://www.waimakariri.govt.nz",
+      "source_key": "website_page:https://www.waimakariri.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c6d4cb649afb8489b653acd2",
+      "source_url": "https://www.waimakariri.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:48+00:00",
+      "source_account": "https://www.waimakariri.govt.nz",
+      "source_key": "website_page:https://www.waimakariri.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:3b6f0c98b9bd565685139bf0",
+      "source_url": "https://www.waimakariri.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:52+00:00",
+      "source_account": "https://www.waimakariri.govt.nz",
+      "source_key": "website_page:https://www.waimakariri.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:7ef4779f30feca8b802a3bc2",
+      "source_url": "https://www.waimakariri.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:55+00:00",
+      "source_account": "https://www.waimakariri.govt.nz",
+      "source_key": "website_page:https://www.waimakariri.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:089470c35934c3559a8be7e6",
+      "source_url": "https://www.waimakariri.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:57+00:00",
+      "source_account": "https://www.waimakariri.govt.nz",
+      "source_key": "website_page:https://www.waimakariri.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:928b003d560b867e1709b597",
+      "source_url": "https://www.waimakariri.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:24:00+00:00",
+      "source_account": "https://www.waimakariri.govt.nz",
+      "source_key": "website_page:https://www.waimakariri.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a6ae578c469f294af4b2db6e",
+      "source_url": "https://www.waimakariri.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:41:46+00:00",
+      "source_account": "https://www.wairoadc.govt.nz",
+      "source_key": "website_page:https://www.wairoadc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c93cd44d9af7f01b3dae3cab",
+      "source_url": "https://www.wairoadc.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:41:48+00:00",
+      "source_account": "https://www.wairoadc.govt.nz",
+      "source_key": "website_page:https://www.wairoadc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:beb763be26fa8b342509ea8c",
+      "source_url": "https://www.wairoadc.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:41:55+00:00",
+      "source_account": "https://www.wairoadc.govt.nz",
+      "source_key": "website_page:https://www.wairoadc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2c2626a5b036381106699afc",
+      "source_url": "https://www.wairoadc.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:02+00:00",
+      "source_account": "https://www.wairoadc.govt.nz",
+      "source_key": "website_page:https://www.wairoadc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:90191622260aac367ae4494c",
+      "source_url": "https://www.wairoadc.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:08+00:00",
+      "source_account": "https://www.wairoadc.govt.nz",
+      "source_key": "website_page:https://www.wairoadc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:35983d5047070f64263b0109",
+      "source_url": "https://www.wairoadc.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:10+00:00",
+      "source_account": "https://www.wairoadc.govt.nz",
+      "source_key": "website_page:https://www.wairoadc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:65f32ab7dba8ff3a0b6c7eba",
+      "source_url": "https://www.wairoadc.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:17+00:00",
+      "source_account": "https://www.wairoadc.govt.nz",
+      "source_key": "website_page:https://www.wairoadc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:1e1ceb05cd653279b1ae9665",
+      "source_url": "https://www.wairoadc.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:23+00:00",
+      "source_account": "https://www.wairoadc.govt.nz",
+      "source_key": "website_page:https://www.wairoadc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2672b8864c5d0d670653ce29",
+      "source_url": "https://www.wairoadc.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:29+00:00",
+      "source_account": "https://www.wairoadc.govt.nz",
+      "source_key": "website_page:https://www.wairoadc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:eb9fe8d2c79424dbd7ccc6b4",
+      "source_url": "https://www.wairoadc.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:35+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d7c88b257f46cf929f4a2e85",
+      "source_url": "https://www.waitaki.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:38+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:6e049dfe477eaccafe5f7537",
+      "source_url": "https://www.waitaki.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:38+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:f5d4580555240b037eb46c54",
+      "source_url": "https://www.waitaki.govt.nz/Council/News-Events-and-Public-Notices/Newsletters"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:42+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:956b24f0b81077c0cc71ca7f",
+      "source_url": "https://www.waitaki.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:46+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d958aff2d045956608991406",
+      "source_url": "https://www.waitaki.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:49+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4f5d7be1327ff25fc1357ae0",
+      "source_url": "https://www.waitaki.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:50+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:3eb397dc93cb213e8efebbc3",
+      "source_url": "https://www.waitaki.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:52+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:51f4be46fff5692d6e9002d0",
+      "source_url": "https://www.waitaki.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:55+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:ae8fcb3583f8d347a1887dbf",
+      "source_url": "https://www.waitaki.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:58+00:00",
       "source_account": "https://www.waitomo.govt.nz",
-      "source_key": "api:https://www.waitomo.govt.nz",
-      "source_platform": "api",
-      "source_record_id": "api:26778b977141bd3aec353857",
-      "source_url": "https://www.waitomo.govt.nz/openapi.json"
+      "source_key": "website_page:https://www.waitomo.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4425a34cbcdc5e526a451a84",
+      "source_url": "https://www.waitomo.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:58+00:00",
+      "source_account": "https://www.waitaki.govt.nz",
+      "source_key": "website_page:https://www.waitaki.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:97796b59b8b2c46c4fc1efc8",
+      "source_url": "https://www.waitaki.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:42:59+00:00",
+      "source_account": "https://www.waitomo.govt.nz",
+      "source_key": "website_page:https://www.waitomo.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:6cb9f373c05dc9330d65cbcc",
+      "source_url": "https://www.waitomo.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:00+00:00",
+      "source_account": "https://www.waitomo.govt.nz",
+      "source_key": "website_page:https://www.waitomo.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5296ca7c4cee6195b144702f",
+      "source_url": "https://www.waitomo.govt.nz/council/news-summary/waitomo-way-newsletter/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:01+00:00",
+      "source_account": "https://www.waitomo.govt.nz",
+      "source_key": "website_page:https://www.waitomo.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:1613d41efa9cf4e0734184f8",
+      "source_url": "https://www.waitomo.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:43:02+00:00",
+      "source_account": "https://www.waitomo.govt.nz",
+      "source_key": "website_page:https://www.waitomo.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b592825bb0c5fbfef2b90b24",
+      "source_url": "https://www.waitomo.govt.nz/media-releases"
     },
     {
       "mirror_targets": [],
@@ -131370,7 +131991,7 @@
     "nz-government-social-media"
   ],
   "source_counts": {
-    "api": 15,
+    "api": 14,
     "bluesky": 2617,
     "courtsofnz.govt.nz": 11,
     "email": 25,
@@ -131378,13 +131999,13 @@
     "json_feed": 16,
     "linkedin": 61,
     "rss": 3930,
-    "website_page": 1827,
+    "website_page": 1897,
     "x": 769,
     "youtube": 2741
   },
   "source_date_ranges": {
     "api": {
-      "max_original_created_at": "2026-08-02T06:35:30+00:00",
+      "max_original_created_at": "2026-07-31T18:49:09+00:00",
       "min_original_created_at": "2026-07-01T10:07:40+00:00"
     },
     "bluesky": {
@@ -131416,7 +132037,7 @@
       "min_original_created_at": "2004-05-05T12:00:00+00:00"
     },
     "website_page": {
-      "max_original_created_at": "2026-07-07T16:05:13+00:00",
+      "max_original_created_at": "2026-08-02T06:43:02+00:00",
       "min_original_created_at": "2026-06-25T03:44:00+00:00"
     },
     "x": {
