@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-15T11:39:50+00:00",
+  "generated_at": "2026-08-02T06:38:22+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 400,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "api",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -175,10 +179,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: timed out",
       "source_id": "a45e05782ce42b9b",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_timeout",
       "url": "https://www.tauranga.govt.nz/.well-known/webfinger"
     },
     {
@@ -186,10 +190,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "URL error: timed out",
       "source_id": "1ce0dd6aab11a31c",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "network_timeout",
       "url": "https://www.tauranga.govt.nz/openapi.json"
     },
     {
@@ -747,10 +751,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "The read operation timed out",
+      "reason": "HTTP 421: Misdirected Request",
       "source_id": "b21a114650cf7c1f",
       "source_type": "api_endpoint",
-      "status": "network_timeout",
+      "status": "http_error",
       "url": "https://www.wgtn.ac.nz/.well-known/webfinger"
     },
     {
@@ -934,10 +938,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
+      "reason": "captured keyless public API/source documentation snapshot",
       "source_id": "b979e42276cfd55d",
       "source_type": "api_endpoint",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.waitomo.govt.nz/openapi.json"
     },
     {
@@ -1136,19 +1140,23 @@
     "status_by_platform": {
       "api": {
         "capture_blocked": 18,
+        "captured": 1,
         "dns_failed": 4,
-        "invalid": 72,
+        "http_error": 1,
+        "invalid": 69,
         "method_not_allowed": 5,
-        "network_timeout": 1
+        "network_timeout": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "capture_blocked": 18,
+      "captured": 1,
       "dns_failed": 4,
-      "invalid": 72,
+      "http_error": 1,
+      "invalid": 69,
       "method_not_allowed": 5,
-      "network_timeout": 1
+      "network_timeout": 2
     }
   }
 }
