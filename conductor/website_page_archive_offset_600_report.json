@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-13T12:44:56+00:00",
+  "generated_at": "2026-08-02T06:35:59+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 600,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -28,14 +32,47 @@
   },
   "results": [
     {
+      "agency_id": "kainga-ora",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.kaingaora.govt.nz/",
+      "source_id": "395e26ba172b5f3c",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.kaingaora.govt.nz/subscribe"
+    },
+    {
       "agency_id": "kaipara-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
+      "source_id": "25202f4500a1df5a",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.kaipara.govt.nz"
+    },
+    {
+      "agency_id": "kaipara-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.kaipara.govt.nz/",
+      "source_id": "68853f2d5aef70dc",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.kaipara.govt.nz/api"
+    },
+    {
+      "agency_id": "kaipara-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.kaipara.govt.nz/",
       "source_id": "05fb83f93a082df1",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaipara.govt.nz/media"
     },
     {
@@ -43,10 +80,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "c049e8abe2076fb5",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaipara.govt.nz/media-releases"
     },
     {
@@ -54,10 +91,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "0e6180bcc4d23154",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaipara.govt.nz/news"
     },
     {
@@ -65,10 +102,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "cbc005db1b960fbc",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaipara.govt.nz/news-and-events"
     },
     {
@@ -76,10 +113,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "0529d7ea2fd71335",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaipara.govt.nz/newsletter"
     },
     {
@@ -87,10 +124,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kaipara.govt.nz/",
       "source_id": "4a4804e165d77e53",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaipara.govt.nz/publications"
     },
     {
@@ -98,10 +135,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kaipara.govt.nz/",
       "source_id": "16ed6c2221be3142",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaipara.govt.nz/subscribe"
     },
     {
@@ -109,10 +146,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "fc69339615c9bb4d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kapiticoast.govt.nz"
     },
     {
@@ -120,10 +157,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kapiticoast.govt.nz/",
       "source_id": "d7af6f68aa7ecfa1",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kapiticoast.govt.nz/api"
     },
     {
@@ -131,10 +168,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kapiticoast.govt.nz/",
       "source_id": "6778458d67356265",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kapiticoast.govt.nz/media"
     },
     {
@@ -142,10 +179,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kapiticoast.govt.nz/",
       "source_id": "604275302a60a572",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kapiticoast.govt.nz/media-releases"
     },
     {
@@ -153,10 +190,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "19b50b5c6c25703b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kapiticoast.govt.nz/news"
     },
     {
@@ -164,10 +201,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kapiticoast.govt.nz/",
       "source_id": "d63e46465ea074c6",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kapiticoast.govt.nz/news-and-events"
     },
     {
@@ -175,10 +212,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kapiticoast.govt.nz/",
       "source_id": "2f301381d530d8b1",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kapiticoast.govt.nz/newsletter"
     },
     {
@@ -186,10 +223,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kapiticoast.govt.nz/",
       "source_id": "db2517f79bb0974e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kapiticoast.govt.nz/publications"
     },
     {
@@ -197,10 +234,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "77fae8df21c366d9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kapiticoast.govt.nz/subscribe"
     },
     {
@@ -208,10 +245,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "9392e5ba72a1cbd0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz"
     },
     {
@@ -219,10 +256,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kaweraudc.govt.nz/",
       "source_id": "9f0bcdc5fb26726b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz/api"
     },
     {
@@ -230,10 +267,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "d9143929af9c93fd",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz/community-newsletters"
     },
     {
@@ -241,10 +278,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kaweraudc.govt.nz/",
       "source_id": "7fcfa77db344b295",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz/media"
     },
     {
@@ -252,10 +289,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kaweraudc.govt.nz/",
       "source_id": "a4a736714762193c",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz/media-releases"
     },
     {
@@ -263,10 +300,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "63562c994a1f3d56",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz/news"
     },
     {
@@ -274,10 +311,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kaweraudc.govt.nz/",
       "source_id": "bdf0ecb46804dc14",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz/news-and-events"
     },
     {
@@ -285,10 +322,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kaweraudc.govt.nz/",
       "source_id": "0acf2a3bb82797ef",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz/newsletter"
     },
     {
@@ -296,10 +333,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kaweraudc.govt.nz/",
       "source_id": "dd3d4f2312d4bb89",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz/publications"
     },
     {
@@ -307,10 +344,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.kaweraudc.govt.nz/",
       "source_id": "17a92e2bc86636aa",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kaweraudc.govt.nz/subscribe"
     },
     {
@@ -318,10 +355,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "0c776d25c391cc5b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kiwibank.co.nz"
     },
     {
@@ -329,10 +366,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "f3a014ed03eb0021",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kiwirail.co.nz"
     },
     {
@@ -340,10 +377,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "3f89b34a955ad847",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.kordia.co.nz"
     },
     {
@@ -351,10 +388,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "ce6e8324341ab6b5",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz"
     },
     {
@@ -362,10 +399,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "1997c397fb781efe",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/about-us/news-and-media/newsletter-te-aka-korero-no-32"
     },
     {
@@ -373,10 +410,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "7edde16986b1d957",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/about-us/news-and-media/newsletter-te-aka-korero-no-33"
     },
     {
@@ -384,10 +421,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.lawcom.govt.nz/",
       "source_id": "a784ac6160149163",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/api"
     },
     {
@@ -395,10 +432,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.lawcom.govt.nz/",
       "source_id": "82ef21a6adc10a72",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/media"
     },
     {
@@ -406,10 +443,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.lawcom.govt.nz/",
       "source_id": "1b9933425cc452ce",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/media-releases"
     },
     {
@@ -417,10 +454,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "87310ff4a16f1914",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/news"
     },
     {
@@ -428,10 +465,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "028603d26cecbc80",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/news-and-events"
     },
     {
@@ -439,10 +476,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "0519f966ab5e9b34",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/newsletter"
     },
     {
@@ -450,10 +487,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "85c6f5b2b6b19f9d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/publications"
     },
     {
@@ -461,21 +498,23 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "feeb21d0156b1f54",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lawcom.govt.nz/subscribe"
     },
     {
       "agency_id": "lincoln-university",
       "archive_status": "ready",
+      "candidate_id": "c2c3c88767c31a68",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "raw_path": "historical_archive_raw/website_browser/2026-08/1ec7d1d5d0efde9e8920f0b2.json",
+      "reason": "captured public rendered website content",
       "source_id": "c2c3c88767c31a68",
       "source_type": "website_page",
-      "status": "capture_blocked",
+      "status": "browser_captured",
       "url": "https://www.lincoln.ac.nz"
     },
     {
@@ -483,10 +522,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "5fd3459a5c44f90d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz"
     },
     {
@@ -494,10 +533,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.linz.govt.nz/",
       "source_id": "f93a3b572f78116c",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/api"
     },
     {
@@ -505,10 +544,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.linz.govt.nz/",
       "source_id": "1a11380e0853e4f4",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/media"
     },
     {
@@ -516,10 +555,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.linz.govt.nz/",
       "source_id": "5209b42f76aa7f4c",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/media-releases"
     },
     {
@@ -527,10 +566,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "c6b5440a0e833837",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/news"
     },
     {
@@ -538,10 +577,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "22bf29d397fa70e6",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/news-and-events"
     },
     {
@@ -549,10 +588,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "cf4c5acb4c85a5b2",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/newsletter"
     },
     {
@@ -560,10 +599,21 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
+      "source_id": "ccb162a501a5be3a",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.linz.govt.nz/our-work/maori-and-iwi-development/te-pokapu-maori-and-iwi-development-newsletter"
+    },
+    {
+      "agency_id": "linz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.linz.govt.nz/",
       "source_id": "f0a115cfb511cee9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/publications"
     },
     {
@@ -571,10 +621,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.linz.govt.nz/",
       "source_id": "f5a02d518fdb6855",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.linz.govt.nz/subscribe"
     },
     {
@@ -582,10 +632,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback http://www.lotto.co.nz",
       "source_id": "fefb47711f6418d0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.lotto.co.nz"
     },
     {
@@ -593,7 +643,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "5240aa2407baf966",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -604,7 +654,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "c16ae68ca7b5722e",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -615,7 +665,7 @@
       "archive_status": "degraded",
       "feasibility": "low",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "mackenzie-district-council-website_page-2dd5544b",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -626,7 +676,7 @@
       "archive_status": "degraded",
       "feasibility": "low",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "mackenzie-district-council-website_page-e49e8b80",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -637,7 +687,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "cb1c9ebac83c91f4",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -648,7 +698,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "0593fba06a6aa9b3",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -659,7 +709,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "b41bc8f37e478099",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -670,7 +720,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "07a5d43efb3f2fc3",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -681,7 +731,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "3958b6ee10ffcfa4",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -692,7 +742,7 @@
       "archive_status": "degraded",
       "feasibility": "low",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "mackenzie-district-council-website_page-fa4cbc45",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -703,7 +753,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "17966ab41c4992d4",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -714,7 +764,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "653d3d4aa75278cb",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -725,7 +775,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "33a876e15e2d677e",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -736,7 +786,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "517d1f181f44df24",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -747,7 +797,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "7b8f2ae88d28d34c",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -758,7 +808,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "855c314f1a73a17f",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -769,7 +819,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "8f38b5768073c358",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -780,7 +830,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "d2aea7bfa96920ab",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -791,7 +841,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "cfd0b5f6e95eb973",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -802,7 +852,7 @@
       "archive_status": "degraded",
       "feasibility": "low",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "manawatu-district-council-website_page-f27f8356",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -813,7 +863,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "a0e5979ecf75e3c0",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -824,7 +874,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "b8ae2140972ba07e",
       "source_type": "website_page",
       "status": "capture_blocked",
@@ -835,10 +885,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "7943416dcbcfb6ad",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.manukau.ac.nz"
     },
     {
@@ -945,10 +995,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "8b3487fbd3c5930c",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.maritimenz.govt.nz"
     },
     {
@@ -956,10 +1006,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.maritimenz.govt.nz/",
       "source_id": "1e9270b52b144269",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.maritimenz.govt.nz/api"
     },
     {
@@ -967,10 +1017,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.maritimenz.govt.nz/",
       "source_id": "ca45512f663c046b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.maritimenz.govt.nz/media"
     },
     {
@@ -978,10 +1028,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.maritimenz.govt.nz/",
       "source_id": "41520d3540c4db41",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.maritimenz.govt.nz/media-releases"
     },
     {
@@ -989,10 +1039,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "40aca99e872998ca",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.maritimenz.govt.nz/news"
     },
     {
@@ -1000,10 +1050,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.maritimenz.govt.nz/",
       "source_id": "7f31bbe7c0f22319",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.maritimenz.govt.nz/news-and-events"
     },
     {
@@ -1011,10 +1061,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.maritimenz.govt.nz/",
       "source_id": "a686768361980628",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.maritimenz.govt.nz/newsletter"
     },
     {
@@ -1022,10 +1072,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.maritimenz.govt.nz/",
       "source_id": "885655819824d10e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.maritimenz.govt.nz/publications"
     },
     {
@@ -1033,10 +1083,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.maritimenz.govt.nz/",
       "source_id": "6e01b87a7c8a8be9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.maritimenz.govt.nz/subscribe"
     },
     {
@@ -1044,7 +1094,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "23676d26d3609961",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -1055,7 +1105,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "0adf20d41b0c9741",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -1066,7 +1116,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "639337475b4f7beb",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -1077,55 +1127,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "source_id": "9b9f53390553d435",
       "source_type": "website_page",
       "status": "method_not_allowed",
       "url": "https://www.marlborough.govt.nz/media-releases"
-    },
-    {
-      "agency_id": "marlborough-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "source_id": "bd817f0bf01b42f8",
-      "source_type": "website_page",
-      "status": "method_not_allowed",
-      "url": "https://www.marlborough.govt.nz/news"
-    },
-    {
-      "agency_id": "marlborough-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "source_id": "1c58de0cf4b16d5b",
-      "source_type": "website_page",
-      "status": "method_not_allowed",
-      "url": "https://www.marlborough.govt.nz/news-and-events"
-    },
-    {
-      "agency_id": "marlborough-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "source_id": "c251ead37d976102",
-      "source_type": "website_page",
-      "status": "method_not_allowed",
-      "url": "https://www.marlborough.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "marlborough-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "source_id": "5a22f1c631ac558b",
-      "source_type": "website_page",
-      "status": "method_not_allowed",
-      "url": "https://www.marlborough.govt.nz/publications"
     }
   ],
   "summary": {
@@ -1135,18 +1141,20 @@
     "selected_sources": 100,
     "status_by_platform": {
       "website_page": {
-        "already_captured": 60,
-        "capture_blocked": 23,
+        "browser_captured": 1,
+        "capture_blocked": 22,
+        "captured": 64,
         "dns_failed": 9,
-        "method_not_allowed": 8
+        "method_not_allowed": 4
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 60,
-      "capture_blocked": 23,
+      "browser_captured": 1,
+      "capture_blocked": 22,
+      "captured": 64,
       "dns_failed": 9,
-      "method_not_allowed": 8
+      "method_not_allowed": 4
     }
   }
 }
