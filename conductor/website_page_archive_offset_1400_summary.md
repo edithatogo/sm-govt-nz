@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-07-15T12:16:52+00:00
+Generated: 2026-08-02T06:44:25+00:00
 
 ## Summary
 
@@ -14,15 +14,15 @@ Generated: 2026-07-15T12:16:52+00:00
 
 ## Status counts
 
-- `already_captured`: 79
-- `capture_blocked`: 2
+- `browser_captcha_or_challenge`: 1
+- `captured`: 81
 - `dns_failed`: 9
 - `http_error`: 1
-- `method_not_allowed`: 9
+- `method_not_allowed`: 8
 
 ## Status by platform
 
-- `website_page`: {'already_captured': 79, 'capture_blocked': 2, 'dns_failed': 9, 'http_error': 1, 'method_not_allowed': 9}
+- `website_page`: {'browser_captcha_or_challenge': 1, 'captured': 81, 'dns_failed': 9, 'http_error': 1, 'method_not_allowed': 8}
 
 ## Notes
 

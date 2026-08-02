@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-07-15T12:16:52+00:00",
+  "generated_at": "2026-08-02T06:44:25+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -17,9 +17,13 @@
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 1400,
     "per_account_timeout": 120,
+    "per_source_delay": 0.0,
     "raw_root": "historical_archive_raw",
+    "retry_attempts": 1,
+    "retry_backoff": 0.0,
     "retry_failed_from": "",
     "rsshub_base_urls": "https://rsshub.app",
+    "source_ids": [],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
     "x_feed_max_items": 25,
@@ -28,14 +32,126 @@
   },
   "results": [
     {
-      "agency_id": "taupo-district-council",
+      "agency_id": "taumata-arowai",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "captured generic website page",
+      "source_id": "4e6aff18aabae7db",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.taumataarowai.govt.nz/",
+      "source_id": "65f8dbb7770a9938",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz/api"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "6b4fc3f2e0ea3bec",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz/home/articles/newsletters"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.taumataarowai.govt.nz/",
+      "source_id": "ce63b3ab406a364d",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz/media"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.taumataarowai.govt.nz/",
+      "source_id": "ee95d65537c932de",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page",
+      "source_id": "997e7b3f1921cb26",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz/news"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.taumataarowai.govt.nz/",
+      "source_id": "300ce3c15fcd101e",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.taumataarowai.govt.nz/",
+      "source_id": "3328f8f392ed590f",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.taumataarowai.govt.nz/",
+      "source_id": "c2dcc8f04b97d5bf",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz/publications"
+    },
+    {
+      "agency_id": "taumata-arowai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "website_page",
+      "reason": "captured generic website page via fallback https://www.taumataarowai.govt.nz/",
+      "source_id": "9635eb9fc9d55c51",
+      "source_type": "website_page",
+      "status": "captured",
+      "url": "https://www.taumataarowai.govt.nz/subscribe"
+    },
+    {
+      "agency_id": "taupo-district-council",
+      "archive_status": "ready",
+      "candidate_id": "6592d59571cea393",
+      "feasibility": "high",
+      "platform": "website_page",
+      "raw_path": "historical_archive_raw/website_browser/2026-08/b772fff646bd780898d6c2fe.json",
+      "reason": "public browser fallback stopped at access marker: captcha",
       "source_id": "6592d59571cea393",
       "source_type": "website_page",
-      "status": "method_not_allowed",
+      "status": "browser_captcha_or_challenge",
       "url": "https://www.taupodc.govt.nz"
     },
     {
@@ -43,7 +159,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "3bfdf56b29c41fd8",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -54,7 +170,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "6cd28ddcf94755d7",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -65,7 +181,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "9c3128f70a26a462",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -76,7 +192,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "1d499b3a1dd7ea13",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -87,7 +203,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "326eb4e83676e316",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -98,7 +214,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "8677aa189163c3c7",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -109,7 +225,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "26eba0266e629268",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -120,7 +236,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "HTTP 405: Not Allowed; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
+      "reason": "HTTP 405: Not Allowed; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
       "source_id": "edff26b2da29b018",
       "source_type": "website_page",
       "status": "method_not_allowed",
@@ -131,10 +247,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "c82c7328bf368343",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz"
     },
     {
@@ -142,10 +258,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "2e6a5e6cd9af15c3",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz/News-and-events/Newsletters"
     },
     {
@@ -153,10 +269,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tauranga.govt.nz/",
       "source_id": "568075b97a172175",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz/api"
     },
     {
@@ -164,10 +280,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tauranga.govt.nz/",
       "source_id": "649f1cb0c42685df",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz/media"
     },
     {
@@ -175,10 +291,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tauranga.govt.nz/",
       "source_id": "333dd85ed55dd6fd",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz/media-releases"
     },
     {
@@ -186,10 +302,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tauranga.govt.nz/",
       "source_id": "7bda8896965b518d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz/news"
     },
     {
@@ -197,10 +313,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "e8087533ce67c7ad",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz/news-and-events"
     },
     {
@@ -208,10 +324,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tauranga.govt.nz/",
       "source_id": "5d05794edfe45d37",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz/newsletter"
     },
     {
@@ -219,10 +335,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tauranga.govt.nz/",
       "source_id": "09cab76a7c58972b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz/publications"
     },
     {
@@ -230,10 +346,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tauranga.govt.nz/",
       "source_id": "1cfd104b85114dfa",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tauranga.govt.nz/subscribe"
     },
     {
@@ -241,10 +357,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "6d03673275d7d7d0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz"
     },
     {
@@ -252,10 +368,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.retirement.govt.nz/",
       "source_id": "40e8de65471ef9ba",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz/api"
     },
     {
@@ -263,10 +379,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.retirement.govt.nz/",
       "source_id": "3e04cd7b68533431",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz/media"
     },
     {
@@ -274,10 +390,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.retirement.govt.nz/",
       "source_id": "d5f332d687991bbe",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz/media-releases"
     },
     {
@@ -285,10 +401,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "4a5e27da7728e37e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz/news"
     },
     {
@@ -296,10 +412,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.retirement.govt.nz/",
       "source_id": "4cf574c16d6cc215",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz/news-and-events"
     },
     {
@@ -307,10 +423,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "8ab8d2b0967d9aab",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz/news/newsletter/april-2026-quarterly-stakeholder-newsletter"
     },
     {
@@ -318,10 +434,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "5e4df51493b33049",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz/newsletter"
     },
     {
@@ -329,10 +445,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.retirement.govt.nz/",
       "source_id": "f89b608c6d009eb4",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz/publications"
     },
     {
@@ -340,10 +456,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.retirement.govt.nz/",
       "source_id": "b6c520a4f5365e28",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.retirement.govt.nz/subscribe"
     },
     {
@@ -351,10 +467,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "f8b727a7af09c98a",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.mhwc.govt.nz"
     },
     {
@@ -362,10 +478,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.mhwc.govt.nz/",
       "source_id": "737d5e185d543b0e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.mhwc.govt.nz/api"
     },
     {
@@ -373,10 +489,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.mhwc.govt.nz/",
       "source_id": "207aa0b1f611bb07",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.mhwc.govt.nz/media"
     },
     {
@@ -384,10 +500,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.mhwc.govt.nz/",
       "source_id": "bcadc18b8c45bb0d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.mhwc.govt.nz/media-releases"
     },
     {
@@ -395,10 +511,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.mhwc.govt.nz/",
       "source_id": "2bf3c9780fea2caa",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.mhwc.govt.nz/news"
     },
     {
@@ -406,10 +522,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.mhwc.govt.nz/",
       "source_id": "ccf308866cb0b57c",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.mhwc.govt.nz/news-and-events"
     },
     {
@@ -417,10 +533,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.mhwc.govt.nz/",
       "source_id": "68c13c8a7f4f10e0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.mhwc.govt.nz/newsletter"
     },
     {
@@ -428,10 +544,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.mhwc.govt.nz/",
       "source_id": "cf69a4e0db42475e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.mhwc.govt.nz/publications"
     },
     {
@@ -439,10 +555,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.mhwc.govt.nz/",
       "source_id": "799b9900a93bb47f",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.mhwc.govt.nz/subscribe"
     },
     {
@@ -549,10 +665,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "a36d60ffc0370048",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz"
     },
     {
@@ -560,10 +676,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "d6858f4e3e112867",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz/about/contact-us/newsletters"
     },
     {
@@ -571,10 +687,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tepapa.govt.nz/",
       "source_id": "907de04e177c6266",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz/api"
     },
     {
@@ -582,10 +698,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tepapa.govt.nz/",
       "source_id": "70bdeff00bf9cbaf",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz/media"
     },
     {
@@ -593,10 +709,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tepapa.govt.nz/",
       "source_id": "c2cfc631ce275f2b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz/media-releases"
     },
     {
@@ -604,10 +720,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tepapa.govt.nz/",
       "source_id": "684f554cbfaceda3",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz/news"
     },
     {
@@ -615,10 +731,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tepapa.govt.nz/",
       "source_id": "04df96fd24c79cb4",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz/news-and-events"
     },
     {
@@ -626,10 +742,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tepapa.govt.nz/",
       "source_id": "1a87211fe75e4af1",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz/newsletter"
     },
     {
@@ -637,10 +753,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tepapa.govt.nz/",
       "source_id": "f2e343154d30bbaf",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz/publications"
     },
     {
@@ -648,10 +764,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tepapa.govt.nz/",
       "source_id": "cc3c2095ecef75a3",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tepapa.govt.nz/subscribe"
     },
     {
@@ -659,10 +775,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "357fd22a3f22aeeb",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tpk.govt.nz"
     },
     {
@@ -670,10 +786,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tpk.govt.nz/",
       "source_id": "95b9fc561f11dced",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tpk.govt.nz/api"
     },
     {
@@ -681,10 +797,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tpk.govt.nz/",
       "source_id": "da8e296e7e503e5b",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tpk.govt.nz/media"
     },
     {
@@ -692,10 +808,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tpk.govt.nz/",
       "source_id": "40377b7b99a77e3d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tpk.govt.nz/media-releases"
     },
     {
@@ -703,10 +819,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tpk.govt.nz/",
       "source_id": "e0bc009b2991dee0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tpk.govt.nz/news"
     },
     {
@@ -714,10 +830,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tpk.govt.nz/",
       "source_id": "3500ce878019f857",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tpk.govt.nz/news-and-events"
     },
     {
@@ -725,10 +841,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tpk.govt.nz/",
       "source_id": "a858cdfb7305737e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tpk.govt.nz/newsletter"
     },
     {
@@ -736,10 +852,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tpk.govt.nz/",
       "source_id": "06f8d21ae95fdaa9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tpk.govt.nz/publications"
     },
     {
@@ -747,10 +863,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tpk.govt.nz/",
       "source_id": "050cf69ccfa10f4e",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tpk.govt.nz/subscribe"
     },
     {
@@ -758,10 +874,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "b472ff14c130c6de",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tetumupaeroa.co.nz"
     },
     {
@@ -769,10 +885,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "9a396ae92ed925f0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.twoa.ac.nz"
     },
     {
@@ -780,10 +896,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "515a8b98ad928b1c",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wananga.com"
     },
     {
@@ -791,10 +907,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "7cad92e3da43e294",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.wananga.ac.nz"
     },
     {
@@ -802,10 +918,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "d768a1d8c19987f9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tec.govt.nz"
     },
     {
@@ -813,10 +929,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tec.govt.nz/",
       "source_id": "9ba406b76912981a",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tec.govt.nz/api"
     },
     {
@@ -824,10 +940,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tec.govt.nz/",
       "source_id": "8a66139635755d7f",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tec.govt.nz/media"
     },
     {
@@ -835,10 +951,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tec.govt.nz/",
       "source_id": "95846cc2bbea64ee",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tec.govt.nz/media-releases"
     },
     {
@@ -846,10 +962,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "be558375607c5ad4",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tec.govt.nz/news"
     },
     {
@@ -857,10 +973,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tec.govt.nz/",
       "source_id": "67877ff4817840e8",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tec.govt.nz/news-and-events"
     },
     {
@@ -879,10 +995,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tec.govt.nz/",
       "source_id": "5f471120645c8fba",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tec.govt.nz/publications"
     },
     {
@@ -890,10 +1006,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tec.govt.nz/",
       "source_id": "f5c725f11464a442",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tec.govt.nz/subscribe"
     },
     {
@@ -901,10 +1017,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "b967b45a5be20723",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz"
     },
     {
@@ -912,10 +1028,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "99186dac8fe395c7",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz/Our-Community/Economic-Development/Latest-Economic-Development-News/ED-newsletter-June-2026"
     },
     {
@@ -923,10 +1039,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tcdc.govt.nz/",
       "source_id": "5e5d1cebf00f23f9",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz/api"
     },
     {
@@ -934,10 +1050,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tcdc.govt.nz/",
       "source_id": "0b5795e4f2e13795",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz/media"
     },
     {
@@ -945,10 +1061,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tcdc.govt.nz/",
       "source_id": "8d9f53804fa3bbef",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz/media-releases"
     },
     {
@@ -956,10 +1072,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "5545202ed6e3a957",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz/news"
     },
     {
@@ -967,10 +1083,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tcdc.govt.nz/",
       "source_id": "cd19bd43ed4a3392",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz/news-and-events"
     },
     {
@@ -978,10 +1094,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tcdc.govt.nz/",
       "source_id": "9ab86a892048d39d",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz/newsletter"
     },
     {
@@ -989,10 +1105,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page via fallback https://www.tcdc.govt.nz/",
       "source_id": "57fa4ffdf7887b65",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz/publications"
     },
     {
@@ -1000,10 +1116,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "b5b4e797211d91d0",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.tcdc.govt.nz/subscribe"
     },
     {
@@ -1011,121 +1127,11 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
-      "reason": "website record already present",
+      "reason": "captured generic website page",
       "source_id": "893f256679f209ae",
       "source_type": "website_page",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://www.treasury.govt.nz"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "0069a59661012907",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.treasury.govt.nz/api"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "9c1d280bed458f86",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.treasury.govt.nz/media"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "98fb9e0ffe4ed561",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.treasury.govt.nz/media-releases"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "083d51a647e91d46",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.treasury.govt.nz/news"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "f664ab5da6ad1928",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.treasury.govt.nz/news-and-events"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "3dfea315769efa53",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.treasury.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "ea6e8a43535536da",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.treasury.govt.nz/publications"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "website record already present",
-      "source_id": "0dad40bf44039668",
-      "source_type": "website_page",
-      "status": "already_captured",
-      "url": "https://www.treasury.govt.nz/subscribe"
-    },
-    {
-      "agency_id": "timaru-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "source_id": "350b4a5d6cf98f85",
-      "source_type": "website_page",
-      "status": "capture_blocked",
-      "url": "https://www.timaru.govt.nz"
-    },
-    {
-      "agency_id": "timaru-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: BrowserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.     ",
-      "source_id": "96240ac4f68ba3a4",
-      "source_type": "website_page",
-      "status": "capture_blocked",
-      "url": "https://www.timaru.govt.nz/api"
     }
   ],
   "summary": {
@@ -1135,20 +1141,20 @@
     "selected_sources": 100,
     "status_by_platform": {
       "website_page": {
-        "already_captured": 79,
-        "capture_blocked": 2,
+        "browser_captcha_or_challenge": 1,
+        "captured": 81,
         "dns_failed": 9,
         "http_error": 1,
-        "method_not_allowed": 9
+        "method_not_allowed": 8
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 79,
-      "capture_blocked": 2,
+      "browser_captcha_or_challenge": 1,
+      "captured": 81,
       "dns_failed": 9,
       "http_error": 1,
-      "method_not_allowed": 9
+      "method_not_allowed": 8
     }
   }
 }
