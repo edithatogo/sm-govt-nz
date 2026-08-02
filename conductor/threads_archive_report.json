@@ -1,19 +1,19 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-02T06:12:43+00:00",
+  "generated_at": "2026-08-02T06:19:01+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
     "fetch_timeout": 30,
     "idle_rounds": 3,
-    "include_blocked": true,
-    "limit_sources": 100,
+    "include_blocked": false,
+    "limit_sources": 0,
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
     "max_scrolls": 25,
     "max_x_posts": 25,
-    "nitter_base_urls": "https://xcancel.com,https://nitter.poast.org,https://nitter.privacyredirect.com,https://lightbrd.com,https://nitter.space,https://nitter.tiekoetter.com,https://nuku.trabun.org,https://nitter.catsarch.com,https://nitter.kareem.one,https://nt.vern.cc",
+    "nitter_base_urls": "",
     "normalized_root": "historical_archive_normalized",
     "offset_sources": 0,
     "per_account_timeout": 120,
@@ -22,7 +22,7 @@
     "retry_attempts": 1,
     "retry_backoff": 0.0,
     "retry_failed_from": "",
-    "rsshub_base_urls": "https://rsshub.app",
+    "rsshub_base_urls": "",
     "source_ids": [],
     "source_type": "threads",
     "x_auth_scrape_enabled": false,
@@ -36,10 +36,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "captured public Threads profile snapshot threads_public_snapshot:1761358b68bb558e1636387e",
+      "reason": "Threads public snapshot already present",
       "source_id": "nz-police-threads-newzealandpolice",
       "source_type": "threads",
-      "status": "public_snapshot_captured",
+      "status": "already_captured",
       "url": "https://www.threads.net/@newzealandpolice"
     },
     {
@@ -47,10 +47,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "captured public Threads profile snapshot threads_public_snapshot:6109e9f1a27fb37183b77d2a",
+      "reason": "Threads public snapshot already present",
       "source_id": "nzte-threads-nzte",
       "source_type": "threads",
-      "status": "public_snapshot_captured",
+      "status": "already_captured",
       "url": "https://www.threads.net/@nzte"
     },
     {
@@ -58,10 +58,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "captured public Threads profile snapshot threads_public_snapshot:74c9bbf95f21cb95b5a1ead0",
+      "reason": "Threads public snapshot already present",
       "source_id": "wellington-city-libraries-threads-wcl-library",
       "source_type": "threads",
-      "status": "public_snapshot_captured",
+      "status": "already_captured",
       "url": "https://www.threads.net/@wcl_library"
     }
   ],
@@ -72,12 +72,12 @@
     "selected_sources": 3,
     "status_by_platform": {
       "threads": {
-        "public_snapshot_captured": 3
+        "already_captured": 3
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "public_snapshot_captured": 3
+      "already_captured": 3
     }
   }
 }
