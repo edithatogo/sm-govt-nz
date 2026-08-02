@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T06:20:43+00:00",
+  "generated_at": "2026-08-02T06:23:59+00:00",
   "normalized": [
     {
       "bytes": 1232184,
@@ -279,14 +279,6 @@
       "path": "dist/hydrated_archive_normalized/json_feed/2026-07.jsonl",
       "record_count": 8,
       "sha256": "8b04f197a3728cf440db5d6484abfb004abfabd1fee94fe96878d79e9912c630",
-      "source": "json_feed"
-    },
-    {
-      "bytes": 819,
-      "month": "2026-08",
-      "path": "dist/hydrated_archive_normalized/json_feed/2026-08.jsonl",
-      "record_count": 1,
-      "sha256": "85a1a5f427acb7dff1b2fd447f5962de66dff267bed26a45d936b2553a1d5263",
       "source": "json_feed"
     },
     {
@@ -2410,6 +2402,14 @@
       "source": "website"
     },
     {
+      "bytes": 7317500,
+      "month": "2026-08",
+      "path": "dist/hydrated_archive_normalized/website/2026-08.jsonl",
+      "record_count": 89,
+      "sha256": "bb95db5f6c1ebf2ba1302bcb6fdfc8fa64bf26b6557c8d6dabae5ebefe5d230d",
+      "source": "website"
+    },
+    {
       "bytes": 1352,
       "month": "1971-01",
       "path": "dist/hydrated_archive_normalized/x/1971-01.jsonl",
@@ -4482,15 +4482,6 @@
       "month": "2026-07",
       "path": "historical_archive_raw/json_feed/2026-07",
       "sha256": "c752f12581bc7e86f82425610987542571bac685a13c7a656a100d7133c67463",
-      "source": "json_feed"
-    },
-    {
-      "bytes": 3155,
-      "digest_mode": "path_size_inventory",
-      "file_count": 1,
-      "month": "2026-08",
-      "path": "historical_archive_raw/json_feed/2026-08",
-      "sha256": "498586cf102578476bf02564f539878036d3be18e40831b6ecb31ddc76559a76",
       "source": "json_feed"
     },
     {
@@ -6897,6 +6888,15 @@
       "source": "website"
     },
     {
+      "bytes": 17674387,
+      "digest_mode": "path_size_inventory",
+      "file_count": 89,
+      "month": "2026-08",
+      "path": "historical_archive_raw/website/2026-08",
+      "sha256": "fcbdd9bed971bdd1ef2ff385729bd34be4c51184b0507e89a5b68a55d9325b73",
+      "source": "website"
+    },
+    {
       "bytes": 28314897,
       "digest_mode": "path_size_inventory",
       "file_count": 75,
@@ -6906,12 +6906,12 @@
       "source": "website_browser"
     },
     {
-      "bytes": 7475,
+      "bytes": 19345,
       "digest_mode": "path_size_inventory",
-      "file_count": 1,
+      "file_count": 2,
       "month": "2026-08",
       "path": "historical_archive_raw/website_browser/2026-08",
-      "sha256": "f03264ef366051f8895c81f1d3efe4738c16c46f4c6a6c892bc269b353503b1e",
+      "sha256": "6582ae7f5830d505a7a6cc2674c7b508f0e6308f9bc8f5df9999cda12ad98cab",
       "source": "website_browser"
     },
     {
@@ -8905,11 +8905,11 @@
     }
   ],
   "totals": {
-    "normalized_bytes": 154342439,
-    "normalized_record_count": 12333,
+    "normalized_bytes": 161659120,
+    "normalized_record_count": 12421,
     "normalized_shard_count": 520,
-    "raw_bytes": 715867569,
-    "raw_file_count": 16239,
+    "raw_bytes": 733550671,
+    "raw_file_count": 16328,
     "raw_shard_count": 526
   }
 }

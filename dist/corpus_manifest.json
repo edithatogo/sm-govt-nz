@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "9747b69c644c0a6af4dcd9e20d054492f44335c76392ed61473b5d3fa12c1227"
+      "sha256": "166f8949bc7afd13241566414a3415183c67c1deb57e98551ae2ebedad886f32"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 24779707,
+      "bytes": 25806266,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "541320464943dae51267c9e7d8066dda553ee30f301d1f8cf71cfe986048e2eb"
+      "sha256": "76eec97691f814f90e636c0c5e5084d7c47aca2fb5d342bb02e6d49c8e91728f"
     },
     "normalized_archive.parquet": {
-      "bytes": 39114529,
+      "bytes": 40787109,
       "path": "normalized_archive.parquet",
-      "sha256": "14cebb9a867c03d551f0c6acedd406d715790661787d3ff2548397ca3a1bfc68"
+      "sha256": "36d9f31a3da0fdcffe17f69d3f3939e4cbc40ea461cf4d0e94f77a0e5502076e"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12335,
+  "normalized_record_count": 12423,
   "normalized_shard_count": 522,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 16248,
+  "raw_file_count": 16337,
   "record_index": [
     {
       "mirror_targets": [
@@ -131167,12 +131167,804 @@
     },
     {
       "mirror_targets": [],
-      "original_timestamp": "2026-08-02T06:17:28+00:00",
-      "source_account": "https://www.unitec.ac.nz",
-      "source_key": "json_feed:https://www.unitec.ac.nz",
-      "source_platform": "json_feed",
-      "source_record_id": "json_feed:fb7b4685a49600f873e7a152",
-      "source_url": "https://www.unitec.ac.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.unitec.ac.nz%2F"
+      "original_timestamp": "2026-08-02T06:13:36+00:00",
+      "source_account": "https://www.nema.govt.nz",
+      "source_key": "website_page:https://www.nema.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4f322a1b28db89737d689758",
+      "source_url": "https://www.nema.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:37+00:00",
+      "source_account": "https://www.nema.govt.nz",
+      "source_key": "website_page:https://www.nema.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d1de12eefcd39fceb995652e",
+      "source_url": "https://www.nema.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:38+00:00",
+      "source_account": "https://www.nema.govt.nz",
+      "source_key": "website_page:https://www.nema.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e352175e87c5ac71bb97ff09",
+      "source_url": "https://www.nema.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:38+00:00",
+      "source_account": "https://www.nema.govt.nz",
+      "source_key": "website_page:https://www.nema.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:ea60216afc6fd563f6ca22e6",
+      "source_url": "https://www.nema.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:39+00:00",
+      "source_account": "https://www.nema.govt.nz",
+      "source_key": "website_page:https://www.nema.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:55bb7d66155d8199009cd59e",
+      "source_url": "https://www.nema.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:40+00:00",
+      "source_account": "https://www.nema.govt.nz",
+      "source_key": "website_page:https://www.nema.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:02eca11460b0921eb590cd3a",
+      "source_url": "https://www.nema.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:40+00:00",
+      "source_account": "https://www.nema.govt.nz",
+      "source_key": "website_page:https://www.nema.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:35bd15d480250832b80c4067",
+      "source_url": "https://www.nema.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:41+00:00",
+      "source_account": "https://www.nema.govt.nz",
+      "source_key": "website_page:https://www.nema.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2bac22fce64aea65ee8f7c7e",
+      "source_url": "https://www.nema.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:41+00:00",
+      "source_account": "https://www.nema.govt.nz",
+      "source_key": "website_page:https://www.nema.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5871f182e9129e1367e2718e",
+      "source_url": "https://www.nema.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:42+00:00",
+      "source_account": "https://www.n4l.co.nz",
+      "source_key": "website_page:https://www.n4l.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5283073d4fd6dddfe263565a",
+      "source_url": "https://www.n4l.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:43+00:00",
+      "source_account": "https://www.npdc.govt.nz",
+      "source_key": "website_page:https://www.npdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0d54197e75462fd8e284341d",
+      "source_url": "https://www.npdc.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:45+00:00",
+      "source_account": "https://www.npdc.govt.nz",
+      "source_key": "website_page:https://www.npdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:277ba437b0e219ad8f0f3e70",
+      "source_url": "https://www.npdc.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:13:53+00:00",
+      "source_account": "https://www.npdc.govt.nz",
+      "source_key": "website_page:https://www.npdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2f9349bd94408308c151c86f",
+      "source_url": "https://www.npdc.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:00+00:00",
+      "source_account": "https://www.npdc.govt.nz",
+      "source_key": "website_page:https://www.npdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:eef44b0a745b435e35394e10",
+      "source_url": "https://www.npdc.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:07+00:00",
+      "source_account": "https://www.npdc.govt.nz",
+      "source_key": "website_page:https://www.npdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:afacb59c166d765f686f925f",
+      "source_url": "https://www.npdc.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:14+00:00",
+      "source_account": "https://www.npdc.govt.nz",
+      "source_key": "website_page:https://www.npdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:28eaac708e8f3c41b883e65f",
+      "source_url": "https://www.npdc.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:21+00:00",
+      "source_account": "https://www.npdc.govt.nz",
+      "source_key": "website_page:https://www.npdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:97ec4b85d1791852b5f87659",
+      "source_url": "https://www.npdc.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:28+00:00",
+      "source_account": "https://www.npdc.govt.nz",
+      "source_key": "website_page:https://www.npdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:bcb1f9fb07f27716141a5aff",
+      "source_url": "https://www.npdc.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:34+00:00",
+      "source_account": "https://www.npdc.govt.nz",
+      "source_key": "website_page:https://www.npdc.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c650309a366cdb796c050c87",
+      "source_url": "https://www.npdc.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:14:40+00:00",
+      "source_account": "https://www.nmit.ac.nz",
+      "source_key": "website_page:https://www.nmit.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0b28f5b57bd83c737a53a615",
+      "source_url": "https://www.nmit.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:15+00:00",
+      "source_account": "https://www.northtec.ac.nz",
+      "source_key": "website_page:https://www.northtec.ac.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:581dad1bb23896b408f6e3e1",
+      "source_url": "https://www.northtec.ac.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:15+00:00",
+      "source_account": "https://www.army.mil.nz",
+      "source_key": "website_page:https://www.army.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:dcc2dbc75f7bd20e93ecf32f",
+      "source_url": "https://www.army.mil.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:18+00:00",
+      "source_account": "https://www.army.mil.nz",
+      "source_key": "website_page:https://www.army.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c7162f375d8a0fce83e0b0ce",
+      "source_url": "https://www.army.mil.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:21+00:00",
+      "source_account": "https://www.army.mil.nz",
+      "source_key": "website_page:https://www.army.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:cb5c95fb1b395dc55d946631",
+      "source_url": "https://www.army.mil.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:22+00:00",
+      "source_account": "https://www.army.mil.nz",
+      "source_key": "website_page:https://www.army.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:52b5e3d1dc45acee421d8779",
+      "source_url": "https://www.army.mil.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:25+00:00",
+      "source_account": "https://www.army.mil.nz",
+      "source_key": "website_page:https://www.army.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:67fc3a5c67c2a71971a3a3cf",
+      "source_url": "https://www.army.mil.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:26+00:00",
+      "source_account": "https://www.army.mil.nz",
+      "source_key": "website_page:https://www.army.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:53faa5a3103d61f5a83e150c",
+      "source_url": "https://www.army.mil.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:28+00:00",
+      "source_account": "https://www.army.mil.nz",
+      "source_key": "website_page:https://www.army.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:1fe000be485fd43f74b5757d",
+      "source_url": "https://www.army.mil.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:29+00:00",
+      "source_account": "https://www.army.mil.nz",
+      "source_key": "website_page:https://www.army.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:86005e2e2738b86338e41d12",
+      "source_url": "https://www.army.mil.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:30+00:00",
+      "source_account": "https://www.army.mil.nz",
+      "source_key": "website_page:https://www.army.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:201577b8c0db7dfbb8af6c0d",
+      "source_url": "https://www.army.mil.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:31+00:00",
+      "source_account": "https://www.nzals.co.nz",
+      "source_key": "website_page:https://www.nzals.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a83906c73857f033b6b80303",
+      "source_url": "https://www.nzals.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:34+00:00",
+      "source_account": "https://www.nzblood.co.nz",
+      "source_key": "website_page:https://www.nzblood.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:4af63b061fa84acbd4f03170",
+      "source_url": "https://www.nzblood.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:35+00:00",
+      "source_account": "https://www.nzblood.co.nz",
+      "source_key": "website_page:https://www.nzblood.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:0327591b8f3b46a38d3b309c",
+      "source_url": "https://www.nzblood.co.nz/healthcare-professionals/transfusion-medicine/clinical-newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:37+00:00",
+      "source_account": "https://www.customs.govt.nz",
+      "source_key": "website_page:https://www.customs.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:e5aa2c27ccc05d2a15a5bacd",
+      "source_url": "https://www.customs.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:38+00:00",
+      "source_account": "https://www.customs.govt.nz",
+      "source_key": "website_page:https://www.customs.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:18176d6954363401be2cc28e",
+      "source_url": "https://www.customs.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:44+00:00",
+      "source_account": "https://www.customs.govt.nz",
+      "source_key": "website_page:https://www.customs.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:baade02ef12a34525bbac1fa",
+      "source_url": "https://www.customs.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:50+00:00",
+      "source_account": "https://www.customs.govt.nz",
+      "source_key": "website_page:https://www.customs.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b909f4c59296217d24b16143",
+      "source_url": "https://www.customs.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:20:56+00:00",
+      "source_account": "https://www.customs.govt.nz",
+      "source_key": "website_page:https://www.customs.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:af1fb06cab22052f1993ad3d",
+      "source_url": "https://www.customs.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:02+00:00",
+      "source_account": "https://www.customs.govt.nz",
+      "source_key": "website_page:https://www.customs.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:03dce6933d7a7ff1b6fed050",
+      "source_url": "https://www.customs.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:07+00:00",
+      "source_account": "https://www.customs.govt.nz",
+      "source_key": "website_page:https://www.customs.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:8d1111ea6fd57569260fba12",
+      "source_url": "https://www.customs.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:13+00:00",
+      "source_account": "https://www.customs.govt.nz",
+      "source_key": "website_page:https://www.customs.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:50181abd63296bbacae78ac1",
+      "source_url": "https://www.customs.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:19+00:00",
+      "source_account": "https://www.customs.govt.nz",
+      "source_key": "website_page:https://www.customs.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:1f0da7329586b7b9cf523513",
+      "source_url": "https://www.customs.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:25+00:00",
+      "source_account": "https://www.nzdf.mil.nz",
+      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:c31ebcfe87f1d0607ac0f4d7",
+      "source_url": "https://www.nzdf.mil.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:27+00:00",
+      "source_account": "https://www.nzdf.mil.nz",
+      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:95354b70f663cfe016b56a63",
+      "source_url": "https://www.nzdf.mil.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:37+00:00",
+      "source_account": "https://www.nzdf.mil.nz",
+      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:aac93b90ff17dc3f929ffb1d",
+      "source_url": "https://www.nzdf.mil.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:39+00:00",
+      "source_account": "https://www.nzdf.mil.nz",
+      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:35300243035a228288c4cef1",
+      "source_url": "https://www.nzdf.mil.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:47+00:00",
+      "source_account": "https://www.nzdf.mil.nz",
+      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:7486242ff78b85a846fba333",
+      "source_url": "https://www.nzdf.mil.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:49+00:00",
+      "source_account": "https://www.nzdf.mil.nz",
+      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2e60bd58d8435e80cfa5a4df",
+      "source_url": "https://www.nzdf.mil.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:21:56+00:00",
+      "source_account": "https://www.nzdf.mil.nz",
+      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:13c63883501ca2813255a44c",
+      "source_url": "https://www.nzdf.mil.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:03+00:00",
+      "source_account": "https://www.nzdf.mil.nz",
+      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:81aa2aec09e711b9a92d4507",
+      "source_url": "https://www.nzdf.mil.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:10+00:00",
+      "source_account": "https://www.nzdf.mil.nz",
+      "source_key": "website_page:https://www.nzdf.mil.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:7755dc324093c440f5955a5d",
+      "source_url": "https://www.nzdf.mil.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:15+00:00",
+      "source_account": "https://www.nzfilm.co.nz",
+      "source_key": "website_page:https://www.nzfilm.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:67997e424cf24d51d7cd3a5a",
+      "source_url": "https://www.nzfilm.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:15+00:00",
+      "source_account": "https://www.nzgcp.co.nz",
+      "source_key": "website_page:https://www.nzgcp.co.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b97d0cc02f49a00a1834259f",
+      "source_url": "https://www.nzgcp.co.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:16+00:00",
+      "source_account": "https://www.tewaihanga.govt.nz",
+      "source_key": "website_page:https://www.tewaihanga.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2e5a2e02700e22d347a3762a",
+      "source_url": "https://www.tewaihanga.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:17+00:00",
+      "source_account": "https://www.tewaihanga.govt.nz",
+      "source_key": "website_page:https://www.tewaihanga.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:1994be17c4988130b3079179",
+      "source_url": "https://www.tewaihanga.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:20+00:00",
+      "source_account": "https://www.tewaihanga.govt.nz",
+      "source_key": "website_page:https://www.tewaihanga.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:bc97999475e93d6eb1900ba7",
+      "source_url": "https://www.tewaihanga.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:22+00:00",
+      "source_account": "https://www.tewaihanga.govt.nz",
+      "source_key": "website_page:https://www.tewaihanga.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:09b6aa2c70de8f10880d6565",
+      "source_url": "https://www.tewaihanga.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:24+00:00",
+      "source_account": "https://www.tewaihanga.govt.nz",
+      "source_key": "website_page:https://www.tewaihanga.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:60c4b222870f1d3f40540481",
+      "source_url": "https://www.tewaihanga.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:25+00:00",
+      "source_account": "https://www.tewaihanga.govt.nz",
+      "source_key": "website_page:https://www.tewaihanga.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:15b27a0ec4545608e19e456a",
+      "source_url": "https://www.tewaihanga.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:28+00:00",
+      "source_account": "https://www.tewaihanga.govt.nz",
+      "source_key": "website_page:https://www.tewaihanga.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:64689261967b5b37bab18d61",
+      "source_url": "https://www.tewaihanga.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:29+00:00",
+      "source_account": "https://www.tewaihanga.govt.nz",
+      "source_key": "website_page:https://www.tewaihanga.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:464b80b55e5d270922834905",
+      "source_url": "https://www.tewaihanga.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:29+00:00",
+      "source_account": "https://www.tewaihanga.govt.nz",
+      "source_key": "website_page:https://www.tewaihanga.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:6d9a6b88de703ed026efdbd4",
+      "source_url": "https://www.tewaihanga.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:33+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:759eac326eed6d07d37d7e83",
+      "source_url": "https://www.nzonair.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:34+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:73af0b1e63a4b40315885f86",
+      "source_url": "https://www.nzonair.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:39+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:44f54601ece7409bc736d876",
+      "source_url": "https://www.nzonair.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:44+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:d438efd1a25806630a106319",
+      "source_url": "https://www.nzonair.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:49+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:42241abd15f53180e049ac7d",
+      "source_url": "https://www.nzonair.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:50+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:86551a62824d0c801fb322d5",
+      "source_url": "https://www.nzonair.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:55+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:562e48f6287517c9eef9de0e",
+      "source_url": "https://www.nzonair.govt.nz/news/shorts-newsletter-1-july-2026/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:56+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a01bb8066f1042fd024c0380",
+      "source_url": "https://www.nzonair.govt.nz/news/shorts-newsletter-4-june-2026/"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:22:57+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:f38d7303947a7d898f5e8f7b",
+      "source_url": "https://www.nzonair.govt.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:02+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:22b697768eab58930a2cb1a0",
+      "source_url": "https://www.nzonair.govt.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:07+00:00",
+      "source_account": "https://www.nzonair.govt.nz",
+      "source_key": "website_page:https://www.nzonair.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a1df3c367e7552b9e5ec2d69",
+      "source_url": "https://www.nzonair.govt.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:12+00:00",
+      "source_account": "https://www.parliament.nz",
+      "source_key": "website_page:https://www.parliament.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5bf42a56454029801443fb9a",
+      "source_url": "https://www.parliament.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:13+00:00",
+      "source_account": "https://www.parliament.nz",
+      "source_key": "website_page:https://www.parliament.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a435284e840c99ab3b06546b",
+      "source_url": "https://www.parliament.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:14+00:00",
+      "source_account": "https://www.parliament.nz",
+      "source_key": "website_page:https://www.parliament.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:95eb5ae72e07a23c1b833baf",
+      "source_url": "https://www.parliament.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:15+00:00",
+      "source_account": "https://www.parliament.nz",
+      "source_key": "website_page:https://www.parliament.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:8ab87e13e63ccd2f0206cd9d",
+      "source_url": "https://www.parliament.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:16+00:00",
+      "source_account": "https://www.parliament.nz",
+      "source_key": "website_page:https://www.parliament.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:a633c7437e10f28cc1f560d8",
+      "source_url": "https://www.parliament.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:17+00:00",
+      "source_account": "https://www.parliament.nz",
+      "source_key": "website_page:https://www.parliament.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:75e885566028d2233c29812e",
+      "source_url": "https://www.parliament.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:18+00:00",
+      "source_account": "https://www.parliament.nz",
+      "source_key": "website_page:https://www.parliament.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:04944425737afa6ca160258e",
+      "source_url": "https://www.parliament.nz/newsletter"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:19+00:00",
+      "source_account": "https://www.parliament.nz",
+      "source_key": "website_page:https://www.parliament.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:81fa8b6dd572d88e63a71911",
+      "source_url": "https://www.parliament.nz/publications"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:20+00:00",
+      "source_account": "https://www.parliament.nz",
+      "source_key": "website_page:https://www.parliament.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:7cc34c27a8a1b8e9e94f725f",
+      "source_url": "https://www.parliament.nz/subscribe"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:21+00:00",
+      "source_account": "https://www.police.govt.nz",
+      "source_key": "website_page:https://www.police.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:3c3e870a7769d3799a29dd85",
+      "source_url": "https://www.police.govt.nz"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:22+00:00",
+      "source_account": "https://www.police.govt.nz",
+      "source_key": "website_page:https://www.police.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:5d7513438fdef4d38fa56f43",
+      "source_url": "https://www.police.govt.nz/api"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:27+00:00",
+      "source_account": "https://www.police.govt.nz",
+      "source_key": "website_page:https://www.police.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:ca17b697783a068a40395d6a",
+      "source_url": "https://www.police.govt.nz/media"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:32+00:00",
+      "source_account": "https://www.police.govt.nz",
+      "source_key": "website_page:https://www.police.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b908f4d65c8a443aa07158d3",
+      "source_url": "https://www.police.govt.nz/media-releases"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:38+00:00",
+      "source_account": "https://www.police.govt.nz",
+      "source_key": "website_page:https://www.police.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:2f76fb77e42ef1f938d81d10",
+      "source_url": "https://www.police.govt.nz/news-and-events"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:38+00:00",
+      "source_account": "https://www.police.govt.nz",
+      "source_key": "website_page:https://www.police.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:b6959548eb872ef13d332301",
+      "source_url": "https://www.police.govt.nz/news"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-02T06:23:43+00:00",
+      "source_account": "https://www.police.govt.nz",
+      "source_key": "website_page:https://www.police.govt.nz",
+      "source_platform": "website_page",
+      "source_record_id": "website:7bed3696309ed7f977aa1d3c",
+      "source_url": "https://www.police.govt.nz/newsletter"
     },
     {
       "mirror_targets": [],
@@ -131375,10 +132167,10 @@
     "courtsofnz.govt.nz": 11,
     "email": 25,
     "facebook": 323,
-    "json_feed": 17,
+    "json_feed": 16,
     "linkedin": 61,
     "rss": 3930,
-    "website_page": 1827,
+    "website_page": 1916,
     "x": 769,
     "youtube": 2741
   },
@@ -131404,7 +132196,7 @@
       "min_original_created_at": "2026-07-19T03:52:46+00:00"
     },
     "json_feed": {
-      "max_original_created_at": "2026-08-02T06:17:28+00:00",
+      "max_original_created_at": "2026-07-01T10:07:59+00:00",
       "min_original_created_at": "2010-10-21T10:20:01+00:00"
     },
     "linkedin": {
@@ -131416,7 +132208,7 @@
       "min_original_created_at": "2004-05-05T12:00:00+00:00"
     },
     "website_page": {
-      "max_original_created_at": "2026-07-07T16:05:13+00:00",
+      "max_original_created_at": "2026-08-02T06:23:43+00:00",
       "min_original_created_at": "2026-06-25T03:44:00+00:00"
     },
     "x": {
