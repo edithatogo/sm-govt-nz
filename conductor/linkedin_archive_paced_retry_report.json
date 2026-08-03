@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-02T18:18:29+00:00",
+  "generated_at": "2026-08-03T19:00:22+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,7 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "0ffdbd4d6955bde5",
-      "7d96b8a8a574656a",
-      "de73ab2fd0512c88",
-      "f4467f7241f48684"
+      "7a8ca2aa88f89e6d"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -37,54 +34,30 @@
   },
   "results": [
     {
-      "agency_id": "ministry-for-culture-and-heritage",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
-      "source_id": "0ffdbd4d6955bde5",
-      "source_type": "social_profile",
-      "status": "not_found",
-      "url": "https://www.linkedin.com/company/ministry-for-culture-and-heritage/"
-    },
-    {
-      "agency_id": "university-of-auckland",
+      "agency_id": "witt",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "f4467f7241f48684",
+      "source_id": "7a8ca2aa88f89e6d",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/university-of-auckland"
-    },
-    {
-      "agency_id": "university-of-otago",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "7d96b8a8a574656a",
-      "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/university-of-otago"
+      "url": "https://www.linkedin.com/school/witt"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 3
+      "linkedin": 1
     },
-    "selected_sources": 3,
+    "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 2,
-        "not_found": 1
+        "http_error": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 2,
-      "not_found": 1
+      "http_error": 1
     }
   }
 }

@@ -42892,6 +42892,56 @@
       "url": "https://www.huttcity.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.aroturuki.govt.nz",
+      "agency_id": "independent-childrens-monitor",
+      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "93e10dfa4a062a60",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "link_text": "Subscribe now",
+      "official_website": "https://www.aroturuki.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Children",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://confirmsubscription.com/h/y/8347D949BFAB5740"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.aroturuki.govt.nz",
+      "agency_id": "independent-childrens-monitor",
+      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "d8733c896e8a0325",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "link_text": "Latest Newsletter",
+      "official_website": "https://www.aroturuki.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Children",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://createsend.com/t/y-66C951A93546712D2540EF23F30FEDED"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.aroturuki.govt.nz",
       "agency_id": "independent-childrens-monitor",
@@ -43323,6 +43373,32 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/company/independent-childrens-monitor"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.aroturuki.govt.nz",
+      "agency_id": "independent-childrens-monitor",
+      "agency_name": "Independent Children's Monitor (Aroturuki Tamariki)",
+      "agency_type": "Independent Crown Entity",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "1d0c6cad6d6b8a59",
+      "confidence_score": 0.5,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_text": "Latest Newsletter",
+      "official_website": "https://www.aroturuki.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Children",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://createsend.com/t/y-66C951A93546712D2540EF23F30FEDED"
     },
     {
       "access_method": "bounded_public_html",
@@ -46507,6 +46583,31 @@
       "url": "https://www.kaingaora.govt.nz/en_NZ/tenant-information/our-tenants/close-to-home-tenant-newsletter/"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.kaipara.govt.nz",
+      "agency_id": "kaipara-district-council",
+      "agency_name": "Kaipara District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "1035e5c2d4718bde",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "link_text": "Sign up for our e-newsletter",
+      "official_website": "https://www.kaipara.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://govt.us2.list-manage.com/subscribe?u=86b5c35f2933513c7b2574131&id=e362bed676"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.kaipara.govt.nz",
       "agency_id": "kaipara-district-council",
@@ -46938,6 +47039,30 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/KaiparaDistrictCouncil"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "kaipara-district-council",
+      "agency_name": "Kaipara District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "441d6388936ce27c",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.kaipara.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/KaiparaDistrictCouncil/"
     },
     {
       "access_method": "bounded_public_html",
@@ -140445,7 +140570,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-03T18:15:19+00:00",
+  "generated_at": "2026-08-03T18:59:53+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155822,8 +155947,9 @@
     },
     {
       "agency_id": "independent-childrens-monitor",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 71,
+      "status": "ok",
       "url": "https://www.aroturuki.govt.nz/"
     },
     {
@@ -155867,8 +155993,9 @@
     },
     {
       "agency_id": "kaipara-district-council",
-      "error": "HTTP Error 403: Forbidden",
-      "status": "failed",
+      "alternates": 0,
+      "links": 209,
+      "status": "ok",
       "url": "https://www.kaipara.govt.nz/"
     },
     {
@@ -156037,8 +156164,9 @@
     },
     {
       "agency_id": "ministry-for-the-environment",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 100,
+      "status": "ok",
       "url": "https://www.mfe.govt.nz/"
     },
     {
@@ -156475,7 +156603,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 402,
+      "links": 403,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156991,33 +157119,33 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5247,
+    "candidate_count": 5252,
     "feasibility_counts": {
-      "high": 4156,
+      "high": 4157,
       "low": 309,
-      "medium": 782
+      "medium": 786
     },
     "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 291,
+      "facebook": 292,
       "instagram": 163,
       "linkedin": 236,
       "medium": 2,
-      "newsletter": 154,
+      "newsletter": 157,
       "rss": 3829,
-      "website_page": 309,
+      "website_page": 310,
       "x": 73,
       "youtube": 159
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 154,
+      "newsletter": 157,
       "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 942,
-      "website_page": 309
+      "social_profile": 943,
+      "website_page": 310
     }
   }
 }
