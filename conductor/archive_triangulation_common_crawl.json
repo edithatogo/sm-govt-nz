@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-27T08:58:35+00:00",
-  "run_id": "30251891557",
-  "matrix_revision": "8380c9e92e4b3fe517a655a5b71741f4964848d7",
+  "generated_at": "2026-08-03T08:56:05+00:00",
+  "run_id": "30798864149",
+  "matrix_revision": "81f6b40a83600d4346d28cd5382c28ac4bebe10b",
   "provider": "common_crawl_index",
   "purpose": "independent historical corroboration metadata; not canonical capture",
   "snapshot_downloaded": false,
-  "index_url": "https://index.commoncrawl.org/CC-MAIN-2026-25-index",
+  "index_url": "https://index.commoncrawl.org/CC-MAIN-2026-30-index",
   "source_limit": 100,
   "batch": {
     "offset": 0,
@@ -16,9 +16,9 @@
   },
   "summary": {
     "sources_checked": 100,
-    "capture_metadata_sources": 0,
-    "no_capture_sources": 100,
-    "provider_errors": 0,
+    "capture_metadata_sources": 4,
+    "no_capture_sources": 95,
+    "provider_errors": 1,
     "cumulative_sources": 462
   },
   "sources": [
@@ -26,9 +26,10 @@
       "source_id": "9635209a748b4790",
       "platform": "api",
       "url": "https://www.acc.co.nz/.well-known/webfinger",
-      "common_crawl_status": "no_capture_found",
+      "common_crawl_status": "provider_error",
       "capture_count": 0,
-      "captures": []
+      "captures": [],
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out"
     },
     {
       "source_id": "cec34ffc95773934",
@@ -90,9 +91,25 @@
       "source_id": "accident-compensation-corporation-newsletter-a2c2ad5b",
       "platform": "newsletter",
       "url": "https://www.acc.co.nz/for-business/get-to-know-us/working-with-business",
-      "common_crawl_status": "no_capture_found",
-      "capture_count": 0,
-      "captures": []
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 1,
+      "captures": [
+        {
+          "urlkey": "nz,co,acc)/for-business/get-to-know-us/working-with-business",
+          "timestamp": "20260718233223",
+          "url": "https://www.acc.co.nz/for-business/get-to-know-us/working-with-business",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "EQJKS563RFQZXRNCOPVJ4E4X6RG3FYIW",
+          "length": "17377",
+          "offset": "507134229",
+          "filename": "crawl-data/CC-MAIN-2026-30/segments/1783663952041.26/warc/CC-MAIN-20260718232558-20260719022558-00119.warc.gz",
+          "languages": "eng",
+          "recordid": "019f7792-e3cc-7432-ae09-9aa88c4e4aac",
+          "encoding": "UTF-8"
+        }
+      ]
     },
     {
       "source_id": "1131fcf3fe0cf49f",
@@ -338,9 +355,25 @@
       "source_id": "accreditation-council-website_page-5d885a8f",
       "platform": "website_page",
       "url": "https://www.accreditation.co.nz",
-      "common_crawl_status": "no_capture_found",
-      "capture_count": 0,
-      "captures": []
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 1,
+      "captures": [
+        {
+          "urlkey": "nz,co,accreditation)/",
+          "timestamp": "20260710175045",
+          "url": "https://www.accreditation.co.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "2HJI5QFKODPA7ARFUFPZT7NFG4NI7Q6K",
+          "length": "89270",
+          "offset": "499554656",
+          "filename": "crawl-data/CC-MAIN-2026-30/segments/1783663951385.13/warc/CC-MAIN-20260710161448-20260710191448-00452.warc.gz",
+          "languages": "eng",
+          "recordid": "019f4d27-3e64-7a0a-890a-5adcc6d20606",
+          "encoding": "UTF-8"
+        }
+      ]
     },
     {
       "source_id": "c5a5ba0f2acc6aa5",
@@ -674,9 +707,40 @@
       "source_id": "animal-control-products-website_page-15dfd90e",
       "platform": "website_page",
       "url": "https://www.pestoff.co.nz",
-      "common_crawl_status": "no_capture_found",
-      "capture_count": 0,
-      "captures": []
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 2,
+      "captures": [
+        {
+          "urlkey": "nz,co,pestoff)/",
+          "timestamp": "20260716023814",
+          "url": "https://pestoff.co.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "XMV75SQAVKWXNL5B7YGEZ76PJAGJCU3N",
+          "length": "52076",
+          "offset": "359111615",
+          "filename": "crawl-data/CC-MAIN-2026-30/segments/1783663951777.60/warc/CC-MAIN-20260716005118-20260716035118-00726.warc.gz",
+          "languages": "eng",
+          "recordid": "019f68c9-f5fb-70bb-a187-4ac6e0cd3713",
+          "encoding": "UTF-8"
+        },
+        {
+          "urlkey": "nz,co,pestoff)/",
+          "timestamp": "20260719153412",
+          "url": "https://pestoff.co.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "NZI5KNC6PPGCQSKETJAGRZMM27W274L2",
+          "length": "52113",
+          "offset": "379131360",
+          "filename": "crawl-data/CC-MAIN-2026-30/segments/1783663952094.25/warc/CC-MAIN-20260719144708-20260719174708-00726.warc.gz",
+          "languages": "eng",
+          "recordid": "019f7b03-77d3-76ad-b10c-84ff8ccee60b",
+          "encoding": "UTF-8"
+        }
+      ]
     },
     {
       "source_id": "4bdccc3719c4c083",
@@ -778,9 +842,55 @@
       "source_id": "antarctica-nz-website_page-1cd1a2ba",
       "platform": "website_page",
       "url": "https://www.antarcticanz.govt.nz",
-      "common_crawl_status": "no_capture_found",
-      "capture_count": 0,
-      "captures": []
+      "common_crawl_status": "capture_metadata_found",
+      "capture_count": 3,
+      "captures": [
+        {
+          "urlkey": "nz,govt,antarcticanz)/",
+          "timestamp": "20260711082208",
+          "url": "https://www.antarcticanz.govt.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "FD2A5EA7GFLXVOREW647IEIH33ZHUZLK",
+          "length": "9317",
+          "offset": "553541182",
+          "filename": "crawl-data/CC-MAIN-2026-30/segments/1783663951474.19/warc/CC-MAIN-20260711073606-20260711103606-00656.warc.gz",
+          "languages": "eng",
+          "recordid": "019f5045-058f-700f-bc8c-cbf5b6395736",
+          "encoding": "UTF-8"
+        },
+        {
+          "urlkey": "nz,govt,antarcticanz)/",
+          "timestamp": "20260712091930",
+          "url": "https://www.antarcticanz.govt.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "FD2A5EA7GFLXVOREW647IEIH33ZHUZLK",
+          "length": "9312",
+          "offset": "507091619",
+          "filename": "crawl-data/CC-MAIN-2026-30/segments/1783663951589.47/warc/CC-MAIN-20260712080722-20260712110722-00656.warc.gz",
+          "languages": "eng",
+          "recordid": "019f559f-e7e5-7f26-891c-1d89a079af2e",
+          "encoding": "UTF-8"
+        },
+        {
+          "urlkey": "nz,govt,antarcticanz)/",
+          "timestamp": "20260713151959",
+          "url": "https://www.antarcticanz.govt.nz/",
+          "mime": "text/html",
+          "mime-detected": "text/html",
+          "status": "200",
+          "digest": "43ILVPVA6KES6MN2A4ILF5DRYPK3JYJK",
+          "length": "9318",
+          "offset": "529353181",
+          "filename": "crawl-data/CC-MAIN-2026-30/segments/1783663951655.23/warc/CC-MAIN-20260713144829-20260713174829-00656.warc.gz",
+          "languages": "eng",
+          "recordid": "019f5c10-4986-7863-8ae9-0e719373a4f1",
+          "encoding": "UTF-8"
+        }
+      ]
     },
     {
       "source_id": "848ae72b5ddd2f0c",
