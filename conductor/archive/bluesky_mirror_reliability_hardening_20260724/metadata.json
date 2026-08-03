@@ -2,22 +2,20 @@
   "id": "bluesky_mirror_reliability_hardening_20260724",
   "title": "Bluesky Mirror Reliability Hardening",
   "type": "programme",
-  "status": "observation_in_progress",
+  "status": "completed",
   "created_at": "2026-07-24",
   "parent_track": "bluesky_government_mirror_programme_20260721",
   "github_parent_issue": 19,
   "github_issue": 36,
   "github_issue_url": "https://github.com/edithatogo/sm-govt-nz/issues/36",
-  "github_issue_status": "published",
-  "last_reconciled_at": "2026-07-27",
+  "github_issue_status": "closed",
+  "last_reconciled_at": "2026-08-03",
   "completion_summary": {
     "completed_children": 11,
     "pending_children": [],
     "external_action_children": [],
     "external_actions": [],
-    "pending_actions": [
-      "Collect healthy daily ACC and Courts observations for every UTC date from 2026-07-28 through 2026-08-03."
-    ]
+    "pending_actions": []
   },
   "child_tracks": [
     "bluesky_mirror_source_eligibility_20260724",
@@ -39,5 +37,30 @@
   "credential_rotation_verified": true,
   "cleanup_findings_valid": true,
   "observation_start": "2026-07-28",
-  "observation_not_before": "2026-08-03"
+  "observation_not_before": "2026-08-03",
+  "completed_at": "2026-08-03",
+  "observation_completion": {
+    "deadline_at": "2026-08-03T09:15:55+00:00",
+    "evaluated_at": "2026-08-03T13:31:32Z",
+    "required_dates": [
+      "2026-07-28",
+      "2026-07-29",
+      "2026-07-30",
+      "2026-07-31",
+      "2026-08-01",
+      "2026-08-02",
+      "2026-08-03"
+    ],
+    "accepted_run_ids": [
+      30358765413,
+      30452047025,
+      30541732494,
+      30630884842,
+      30698321724,
+      30746349347,
+      30818145295
+    ],
+    "secret_values_recorded": false,
+    "posting_performed": false
+  }
 }

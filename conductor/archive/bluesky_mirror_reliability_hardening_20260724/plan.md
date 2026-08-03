@@ -23,13 +23,13 @@
 - [x] Task: Delete the three still-visible ACC cleanup URIs and regenerate a
   valid reconciliation report; apply run 30251127441 and verification run
   30252454725 completed without remaining candidates.
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
 ## Phase 4: Programme closeout
 - [x] Task: Run Conductor review for every child track.
-- [ ] Task: Reconcile GitHub issue/subissue evidence.
+- [x] Task: Reconcile GitHub issue/subissue evidence.
 - [x] Task: Archive completed child tracks and update parent programme evidence.
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md).
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md).
 
 ## Reconciliation snapshot
 

@@ -1,0 +1,42 @@
+{
+  "accepted_run_ids": [
+    30358765413,
+    30452047025,
+    30541732494,
+    30630884842,
+    30698321724,
+    30746349347,
+    30818145295
+  ],
+  "deadline_at": "2026-08-03T09:15:55+00:00",
+  "evaluated_at": "2026-08-03T13:31:32Z",
+  "invariants": {
+    "all_dates_accepted": true,
+    "complete": true,
+    "dates_match_policy": true,
+    "deadline_matches": true,
+    "evaluated_after_deadline": true,
+    "expected_mirrors_match": true,
+    "no_missing_dates": true,
+    "no_rejected_receipts": true,
+    "no_secret_values": true,
+    "positive_run_ids": true,
+    "run_ids_unique": true,
+    "status_completed": true,
+    "window_elapsed": true
+  },
+  "posting_performed": false,
+  "ready": true,
+  "required_dates": [
+    "2026-07-28",
+    "2026-07-29",
+    "2026-07-30",
+    "2026-07-31",
+    "2026-08-01",
+    "2026-08-02",
+    "2026-08-03"
+  ],
+  "schema_version": 1,
+  "secret_values_recorded": false,
+  "track_id": "bluesky_mirror_reliability_hardening_20260724"
+}
