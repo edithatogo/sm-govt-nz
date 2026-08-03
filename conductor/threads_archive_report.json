@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-02T06:19:01+00:00",
+  "generated_at": "2026-08-03T06:00:04+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -36,10 +36,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "Threads public snapshot already present",
+      "reason": "captured public Threads profile snapshot threads_public_snapshot:353b9024d5c765fc98f1cdc4",
       "source_id": "nz-police-threads-newzealandpolice",
       "source_type": "threads",
-      "status": "already_captured",
+      "status": "public_snapshot_captured",
       "url": "https://www.threads.net/@newzealandpolice"
     },
     {
@@ -47,10 +47,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "Threads public snapshot already present",
+      "reason": "captured public Threads profile snapshot threads_public_snapshot:34687d9a83e89195d5405df5",
       "source_id": "nzte-threads-nzte",
       "source_type": "threads",
-      "status": "already_captured",
+      "status": "public_snapshot_captured",
       "url": "https://www.threads.net/@nzte"
     },
     {
@@ -58,10 +58,10 @@
       "archive_status": "candidate",
       "feasibility": "api_or_export_required",
       "platform": "threads",
-      "reason": "Threads public snapshot already present",
+      "reason": "captured public Threads profile snapshot threads_public_snapshot:885c28d969b8be29ca30f5f4",
       "source_id": "wellington-city-libraries-threads-wcl-library",
       "source_type": "threads",
-      "status": "already_captured",
+      "status": "public_snapshot_captured",
       "url": "https://www.threads.net/@wcl_library"
     }
   ],
@@ -72,12 +72,12 @@
     "selected_sources": 3,
     "status_by_platform": {
       "threads": {
-        "already_captured": 3
+        "public_snapshot_captured": 3
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 3
+      "public_snapshot_captured": 3
     }
   }
 }
