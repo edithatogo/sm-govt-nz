@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-03T19:00:16+00:00",
+  "generated_at": "2026-08-04T18:58:31+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "7a29373c717c3ce5",
-      "a9fcdafb4715d5c3",
-      "d55ec3230287efc1"
+      "3c22eb972561e5f9",
+      "62a2fceb8e5567e6",
+      "694af1a34b799449",
+      "79b72532b158f5d3",
+      "932f786c17158147"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -36,52 +38,78 @@
   },
   "results": [
     {
-      "agency_id": "dunedin-city-council",
+      "agency_id": "auckland-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "7a29373c717c3ce5",
+      "reason": "HTTP 406: Not Acceptable",
+      "source_id": "79b72532b158f5d3",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.dunedin.govt.nz/.well-known/webfinger"
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/openapi.json"
     },
     {
-      "agency_id": "new-plymouth-district-council",
+      "agency_id": "horizons-regional-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "a9fcdafb4715d5c3",
+      "source_id": "3c22eb972561e5f9",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.npdc.govt.nz/.well-known/webfinger"
+      "url": "https://www.horizons.govt.nz/.well-known/webfinger"
+    },
+    {
+      "agency_id": "northland-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "694af1a34b799449",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.nrc.govt.nz/openapi.json"
     },
     {
       "agency_id": "opotiki-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
+      "reason": "HTTP 405: Not Allowed",
+      "source_id": "932f786c17158147",
+      "source_type": "api_endpoint",
+      "status": "method_not_allowed",
+      "url": "https://www.odc.govt.nz/openapi.json"
+    },
+    {
+      "agency_id": "toi-ohomai",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "d55ec3230287efc1",
+      "source_id": "62a2fceb8e5567e6",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.odc.govt.nz/.well-known/webfinger"
+      "url": "https://www.toiohomai.ac.nz/openapi.json"
     }
   ],
   "summary": {
     "platform_counts": {
-      "api": 3
+      "api": 5
     },
-    "selected_sources": 3,
+    "selected_sources": 5,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 3
+        "capture_blocked": 3,
+        "method_not_allowed": 1,
+        "not_acceptable": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 3
+      "capture_blocked": 3,
+      "method_not_allowed": 1,
+      "not_acceptable": 1
     }
   }
 }

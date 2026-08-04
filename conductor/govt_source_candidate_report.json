@@ -30022,56 +30022,6 @@
       "url": "https://www.fma.govt.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.fireandemergency.nz",
-      "agency_id": "fire-and-emergency-nz",
-      "agency_name": "Fire and Emergency New Zealand (Whakaratonga Iwi)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "a21abb13cad8f0d9",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "link_text": "Emergency Alerts",
-      "official_website": "https://www.fireandemergency.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Emergency Management",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.fireandemergency.nz/alerts/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.fireandemergency.nz",
-      "agency_id": "fire-and-emergency-nz",
-      "agency_name": "Fire and Emergency New Zealand (Whakaratonga Iwi)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "c10439f6bc359f92",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "link_text": "Emergency Mobile  Alerts",
-      "official_website": "https://www.fireandemergency.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Emergency Management",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.fireandemergency.nz/incidents-and-news/emergency-mobile-alerts/"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.fireandemergency.nz",
       "agency_id": "fire-and-emergency-nz",
@@ -30476,7 +30426,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.fireandemergency.nz",
-      "origin": "homepage.link,registry.social_profiles",
+      "origin": "registry.social_profiles",
       "platform": "facebook",
       "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
       "portfolio": "Emergency Management",
@@ -30516,54 +30466,6 @@
         "official_term:new zealand"
       ],
       "url": "https://www.instagram.com/fireandemergencynz"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "FENZ Instagram",
-      "agency_id": "fire-and-emergency-nz",
-      "agency_name": "Fire and Emergency New Zealand (Whakaratonga Iwi)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "93b3db95b94216b6",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.fireandemergency.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Emergency Management",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.instagram.com/fireandemergencynz/"
-    },
-    {
-      "access_method": "public_archive_or_lawful_export",
-      "account": "FENZ Twitter",
-      "agency_id": "fire-and-emergency-nz",
-      "agency_name": "Fire and Emergency New Zealand (Whakaratonga Iwi)",
-      "agency_type": "Crown Agent",
-      "archive_status": "degraded",
-      "auth": "operator_authorized_if_browser_capture",
-      "candidate_id": "4a4fa02e9bc6142a",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.fireandemergency.nz",
-      "origin": "homepage.link",
-      "platform": "x",
-      "policy_notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
-      "portfolio": "Emergency Management",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://twitter.com/fireemergencynz"
     },
     {
       "access_method": "public_archive_or_lawful_export",
@@ -30620,30 +30522,6 @@
         "official_term:new zealand"
       ],
       "url": "https://www.youtube.com/@FireandEmergencyNZ"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "FENZ YouTube",
-      "agency_id": "fire-and-emergency-nz",
-      "agency_name": "Fire and Emergency New Zealand (Whakaratonga Iwi)",
-      "agency_type": "Crown Agent",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "9e65c2ae2ae6469e",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.fireandemergency.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Emergency Management",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:new zealand"
-      ],
-      "url": "https://www.youtube.com/channel/UCQu-E5AwQWpXspT446EvbNw"
     },
     {
       "access_method": "bounded_public_html",
@@ -86407,30 +86285,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "92f7f85f4fcd06be",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/OtagoPoly"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "OtagoPolytechnic",
       "account_classification": "official",
       "agency_id": "otago-polytechnic",
@@ -86486,54 +86340,6 @@
       "url": "https://www.instagram.com/otagopolytechnic"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "d32669ba1a66538a",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/otagopolytechnic/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "894173a6864da511",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/213448"
-    },
-    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Otago Polytechnic",
       "account_classification": "official",
@@ -86560,30 +86366,6 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/school/otago-polytechnic"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
-      "agency_id": "otago-polytechnic",
-      "agency_name": "Otago Polytechnic",
-      "agency_type": "ITP/Polytechnic",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "f8add89960419679",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.op.ac.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "http://www.youtube.com/user/OtagoPolytech"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -116738,6 +116520,58 @@
       "agency_type": "W\u0101nanga",
       "archive_status": "ready",
       "auth": "none",
+      "candidate_id": "11a78d2214034ae6",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_title": "",
+      "mime_type": "application/atom+xml",
+      "official_website": "https://www.wananga.com",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Education",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform"
+      ],
+      "url": "https://www.wananga.com/feed/atom"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wananga.com",
+      "agency_id": "te-wananga-o-raukawa",
+      "agency_name": "Te W\u0101nanga o Raukawa",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "ae1cd3f5189a989d",
+      "confidence_score": 0.45,
+      "domain_trust": "unknown",
+      "feasibility": "high",
+      "link_title": "",
+      "mime_type": "application/rss+xml",
+      "official_website": "https://www.wananga.com",
+      "origin": "homepage.link_alternate",
+      "platform": "rss",
+      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
+      "portfolio": "Education",
+      "source_type": "rss_feed",
+      "status": "discovered",
+      "trust_signals": [
+        "archive_friendly_platform"
+      ],
+      "url": "https://www.wananga.com/feed/rss2"
+    },
+    {
+      "access_method": "public_rss",
+      "account": "https://www.wananga.com",
+      "agency_id": "te-wananga-o-raukawa",
+      "agency_name": "Te W\u0101nanga o Raukawa",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "ready",
+      "auth": "none",
       "candidate_id": "9c6884ca830444a8",
       "confidence_score": 0.45,
       "domain_trust": "unknown",
@@ -117108,6 +116942,28 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "te-wananga-o-raukawa",
+      "agency_name": "Te W\u0101nanga o Raukawa",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "dd8f820f7c81a585",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wananga.com",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://www.facebook.com/TeWanangaoRaukawa"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "tewanangao raukawa",
       "account_classification": "official",
       "agency_id": "te-wananga-o-raukawa",
@@ -117132,6 +116988,50 @@
         "registry_known"
       ],
       "url": "https://www.facebook.com/tewanangao raukawa"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "te-wananga-o-raukawa",
+      "agency_name": "Te W\u0101nanga o Raukawa",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "43eb98f68414e897",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wananga.com",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://www.instagram.com/wanangaoraukawa/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "te-wananga-o-raukawa",
+      "agency_name": "Te W\u0101nanga o Raukawa",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "dd43d68a82131b33",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.wananga.com",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://www.linkedin.com/school/te-w%C4%81nanga-o-raukawa/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -117161,6 +117061,28 @@
       "url": "https://www.linkedin.com/school/te-wananga-o-raukawa"
     },
     {
+      "access_method": "public_archive_or_lawful_export",
+      "account": "",
+      "agency_id": "te-wananga-o-raukawa",
+      "agency_name": "Te W\u0101nanga o Raukawa",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "degraded",
+      "auth": "operator_authorized_if_browser_capture",
+      "candidate_id": "c54d2b6d96952ff1",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.wananga.com",
+      "origin": "homepage.link",
+      "platform": "x",
+      "policy_notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://twitter.com/wanangaoraukawa?lang=en"
+    },
+    {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
       "account": "tewanangao raukawa",
       "account_classification": "official",
@@ -117186,6 +117108,28 @@
         "registry_known"
       ],
       "url": "https://www.youtube.com/@tewanangao raukawa"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "te-wananga-o-raukawa",
+      "agency_name": "Te W\u0101nanga o Raukawa",
+      "agency_type": "W\u0101nanga",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "96fb660731bc28b4",
+      "confidence_score": 0.35,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wananga.com",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [],
+      "url": "https://www.youtube.com/channel/UCLYAv6bf5CCnH2QS0F9he1A"
     },
     {
       "access_method": "bounded_public_html",
@@ -140514,7 +140458,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-04T18:10:42+00:00",
+  "generated_at": "2026-08-04T18:58:01+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155738,9 +155682,8 @@
     },
     {
       "agency_id": "fire-and-emergency-nz",
-      "alternates": 0,
-      "links": 132,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.fireandemergency.nz/"
     },
     {
@@ -155872,8 +155815,9 @@
     },
     {
       "agency_id": "human-rights-commission",
-      "error": "<urlopen error [Errno 101] Network is unreachable>",
-      "status": "failed",
+      "alternates": 0,
+      "links": 1,
+      "status": "ok",
       "url": "https://www.hrc.co.nz/"
     },
     {
@@ -156409,9 +156353,8 @@
     },
     {
       "agency_id": "otago-polytechnic",
-      "alternates": 0,
-      "links": 323,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.op.ac.nz/"
     },
     {
@@ -156546,7 +156489,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 402,
+      "links": 405,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156771,8 +156714,9 @@
     },
     {
       "agency_id": "te-wananga-o-raukawa",
-      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>",
-      "status": "failed",
+      "alternates": 2,
+      "links": 129,
+      "status": "ok",
       "url": "https://www.wananga.com/"
     },
     {
@@ -157061,32 +157005,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5249,
+    "candidate_count": 5247,
     "feasibility_counts": {
-      "high": 4157,
+      "high": 4159,
       "low": 307,
-      "medium": 785
+      "medium": 781
     },
-    "known_registry_social_profiles": 445,
+    "known_registry_social_profiles": 446,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
       "facebook": 291,
-      "instagram": 162,
+      "instagram": 161,
       "linkedin": 235,
       "medium": 2,
-      "newsletter": 159,
-      "rss": 3827,
+      "newsletter": 157,
+      "rss": 3829,
       "website_page": 312,
       "x": 72,
-      "youtube": 158
+      "youtube": 157
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 159,
-      "rss_feed": 62,
+      "newsletter": 157,
+      "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 938,
+      "social_profile": 936,
       "website_page": 312
     }
   }
