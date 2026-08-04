@@ -1,6 +1,6 @@
 # NZ Government Archive Completion Matrix
 
-Generated: 2026-08-03T19:00:23+00:00
+Generated: 2026-08-04T07:23:16+00:00
 
 ## Completion
 
