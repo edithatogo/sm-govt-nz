@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-04T18:58:45+00:00",
+  "generated_at": "2026-08-05T18:58:59+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,10 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "5b070f37d132d016",
-      "7dc310b6b6677c32",
-      "7e4539466d8864dc"
+      "02df47eecf3364f5",
+      "167bcd37783e8776",
+      "1a281fa346c6f207",
+      "d41f6c9509163c76"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -36,30 +37,41 @@
   },
   "results": [
     {
-      "agency_id": "lincoln-university",
+      "agency_id": "royal-nz-navy",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "5b070f37d132d016",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:e9616a4e050c59472a4a2a65",
+      "source_id": "d41f6c9509163c76",
       "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/lincoln-university-new-zealand"
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/royal-new-zealand-navy"
+    },
+    {
+      "agency_id": "tauranga-city-council",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:a4349b90a690f78665f5d305",
+      "source_id": "1a281fa346c6f207",
+      "source_type": "social_profile",
+      "status": "public_snapshot_captured",
+      "url": "https://www.linkedin.com/company/tauranga-city-council"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1
+        "public_snapshot_captured": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1
+      "public_snapshot_captured": 2
     }
   }
 }

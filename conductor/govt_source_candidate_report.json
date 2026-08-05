@@ -27077,6 +27077,30 @@
       "agency_type": "Regional Council",
       "archive_status": "candidate",
       "auth": "none",
+      "candidate_id": "4538deb5aa31a7b9",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.ecan.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "http://www.youtube.com/watch/2dnhOpRj-M8"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "30 July 2026 (Briefings/Workshops \u2013 Morning)",
+      "agency_id": "environment-canterbury",
+      "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
+      "agency_type": "Regional Council",
+      "archive_status": "candidate",
+      "auth": "none",
       "candidate_id": "7aecd07b24049f0f",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
@@ -27164,30 +27188,6 @@
         "official_term:nz"
       ],
       "url": "http://www.youtube.com/watch/OkOkpc5dFZE"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "29 July 2026 (Briefings/Workshops \u2013 Morning)",
-      "agency_id": "environment-canterbury",
-      "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
-      "agency_type": "Regional Council",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "adb52b1ae7bce7ee",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.ecan.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "http://www.youtube.com/watch/oszu4xiabak"
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
@@ -115887,6 +115887,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "te-tumu-paeroa",
+      "agency_name": "Te Tumu Paeroa (Office of the M\u0101ori Trustee)",
+      "agency_type": "Department",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "541fcf47a4bd44ff",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.tetumupaeroa.co.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "M\u0101ori Development",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/TeTumuPaeroa/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "tetumupaeroa",
       "account_classification": "official",
       "agency_id": "te-tumu-paeroa",
@@ -115900,7 +115924,7 @@
       "domain_trust": "unknown",
       "feasibility": "medium",
       "official_website": "https://www.tetumupaeroa.co.nz",
-      "origin": "registry.social_profiles",
+      "origin": "homepage.link,registry.social_profiles",
       "platform": "instagram",
       "policy_notes": "Archive capture depends on Meta access and account eligibility.",
       "portfolio": "M\u0101ori Development",
@@ -115912,6 +115936,30 @@
         "official_term:nz"
       ],
       "url": "https://www.instagram.com/tetumupaeroa/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "LinkedIn",
+      "agency_id": "te-tumu-paeroa",
+      "agency_name": "Te Tumu Paeroa (Office of the M\u0101ori Trustee)",
+      "agency_type": "Department",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "c0aa4e7a27c5a135",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.tetumupaeroa.co.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "M\u0101ori Development",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/maori-trustee/"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -140655,7 +140703,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-05T18:01:42+00:00",
+  "generated_at": "2026-08-05T18:57:46+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155525,7 +155573,7 @@
     {
       "agency_id": "accreditation-council",
       "alternates": 0,
-      "links": 17,
+      "links": 13,
       "status": "ok",
       "url": "https://www.accreditation.co.nz/"
     },
@@ -155598,7 +155646,7 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 69,
+      "links": 71,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
@@ -155834,7 +155882,7 @@
     {
       "agency_id": "electricity-corporation-of-nz",
       "alternates": 0,
-      "links": 16,
+      "links": 20,
       "status": "ok",
       "url": "https://www.ecnz.co.nz/"
     },
@@ -156688,7 +156736,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 399,
+      "links": 405,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156899,8 +156947,9 @@
     },
     {
       "agency_id": "te-tumu-paeroa",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 97,
+      "status": "ok",
       "url": "https://www.tetumupaeroa.co.nz/"
     },
     {
@@ -157203,19 +157252,19 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5255,
+    "candidate_count": 5257,
     "feasibility_counts": {
       "high": 4160,
-      "low": 308,
-      "medium": 787
+      "low": 309,
+      "medium": 788
     },
-    "known_registry_social_profiles": 446,
+    "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 291,
+      "facebook": 292,
       "instagram": 163,
-      "linkedin": 235,
+      "linkedin": 236,
       "medium": 2,
       "newsletter": 159,
       "rss": 3830,
@@ -157228,7 +157277,7 @@
       "newsletter": 159,
       "rss_feed": 65,
       "search_seed": 3765,
-      "social_profile": 941,
+      "social_profile": 943,
       "website_page": 312
     }
   }

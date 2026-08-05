@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-04T18:58:40+00:00",
+  "generated_at": "2026-08-05T18:58:51+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,8 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "902abb90b1a31084",
-      "f11a82f28bcea2f7"
+      "d20c57d5d701a26c",
+      "fa9ca40c642c2ece"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -35,26 +35,26 @@
   },
   "results": [
     {
-      "agency_id": "dunedin-city-council",
+      "agency_id": "parliamentary-counsel-office",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "f11a82f28bcea2f7",
+      "source_id": "d20c57d5d701a26c",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.dunedin.govt.nz/feed.json"
+      "url": "https://www.pco.govt.nz/feed.json"
     },
     {
-      "agency_id": "far-north-district-council",
+      "agency_id": "tourism-nz",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "902abb90b1a31084",
+      "source_id": "fa9ca40c642c2ece",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.fndc.govt.nz/feed.json"
+      "url": "https://www.tourismnewzealand.com/feed.json"
     }
   ],
   "summary": {
