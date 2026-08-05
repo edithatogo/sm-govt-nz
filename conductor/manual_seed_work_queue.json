@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-08-04T17:16:19+00:00",
+  "generated_at": "2026-08-05T17:07:31+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -4562,6 +4562,27 @@
       "agency_name": "NZ On Air (Irirangi Te Motu)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/nz-on-air-newsletter-6161646a.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/nz-on-air-newsletter-6161646a.json",
+        "manual_archive_seeds/newsletter/nz-on-air.json"
+      ],
+      "source_id": "nz-on-air-newsletter-6161646a",
+      "url": "https://www.nzonair.govt.nz/news/newsletter-august-2026/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.nzonair.govt.nz",
+      "agency_id": "nz-on-air",
+      "agency_name": "NZ On Air (Irirangi Te Motu)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/nz-on-air-newsletter-9835f40e.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
@@ -5234,6 +5255,27 @@
       "agency_name": "Otago Regional Council",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/otago-regional-council-newsletter-3c0e5c8a.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/otago-regional-council-newsletter-3c0e5c8a.json",
+        "manual_archive_seeds/newsletter/otago-regional-council.json"
+      ],
+      "source_id": "otago-regional-council-newsletter-3c0e5c8a",
+      "url": "https://www.orc.govt.nz/consents-and-compliance/the-farmers-guide/freshwater-farm-plans/freshwater-farm-plans-newsletter"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.orc.govt.nz",
+      "agency_id": "otago-regional-council",
+      "agency_name": "Otago Regional Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/otago-regional-council-newsletter-832ed022.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
@@ -5276,6 +5318,69 @@
       "agency_name": "Otago Regional Council",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/otago-regional-council-newsletter-96971b7a.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/otago-regional-council-newsletter-96971b7a.json",
+        "manual_archive_seeds/newsletter/otago-regional-council.json"
+      ],
+      "source_id": "otago-regional-council-newsletter-96971b7a",
+      "url": "https://www.orc.govt.nz/your-council/latest-news/regulatory-newsletter"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.orc.govt.nz",
+      "agency_id": "otago-regional-council",
+      "agency_name": "Otago Regional Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/otago-regional-council-newsletter-b0b8ef9c.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/otago-regional-council-newsletter-b0b8ef9c.json",
+        "manual_archive_seeds/newsletter/otago-regional-council.json"
+      ],
+      "source_id": "otago-regional-council-newsletter-b0b8ef9c",
+      "url": "https://www.orc.govt.nz/get-involved/projects-in-your-area/toitu-te-hakapupu-the-pleasant-river-catchment-project/toitu-te-hakapupu-newsletter"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.orc.govt.nz",
+      "agency_id": "otago-regional-council",
+      "agency_name": "Otago Regional Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/otago-regional-council-newsletter-b32e2fe1.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/otago-regional-council-newsletter-b32e2fe1.json",
+        "manual_archive_seeds/newsletter/otago-regional-council.json"
+      ],
+      "source_id": "otago-regional-council-newsletter-b32e2fe1",
+      "url": "https://www.orc.govt.nz/your-council/latest-news/on-stream-newsletter"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.orc.govt.nz",
+      "agency_id": "otago-regional-council",
+      "agency_name": "Otago Regional Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/otago-regional-council-newsletter-b9a89a0b.json",
       "priority_rank": 20,
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
@@ -5285,6 +5390,27 @@
       ],
       "source_id": "otago-regional-council-newsletter-b9a89a0b",
       "url": "https://www.orc.govt.nz/your-council/latest-news/on-stream-newsletter/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.orc.govt.nz",
+      "agency_id": "otago-regional-council",
+      "agency_name": "Otago Regional Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/otago-regional-council-newsletter-bbfbb2e2.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/otago-regional-council-newsletter-bbfbb2e2.json",
+        "manual_archive_seeds/newsletter/otago-regional-council.json"
+      ],
+      "source_id": "otago-regional-council-newsletter-bbfbb2e2",
+      "url": "https://www.orc.govt.nz/get-involved/projects-in-your-area/head-of-lake-whakatipu/get-involved"
     },
     {
       "acceptable_access_methods": [
@@ -5327,6 +5453,48 @@
       ],
       "source_id": "otago-regional-council-newsletter-c83641aa",
       "url": "https://www.linz.govt.nz/sea/maritime-safety/notices-mariners"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.orc.govt.nz",
+      "agency_id": "otago-regional-council",
+      "agency_name": "Otago Regional Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/otago-regional-council-newsletter-d270ab69.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/otago-regional-council-newsletter-d270ab69.json",
+        "manual_archive_seeds/newsletter/otago-regional-council.json"
+      ],
+      "source_id": "otago-regional-council-newsletter-d270ab69",
+      "url": "https://www.orc.govt.nz/orbus/travel-with-us/about-orbus/on-board-with-orbus-newsletter"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.orc.govt.nz",
+      "agency_id": "otago-regional-council",
+      "agency_name": "Otago Regional Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/otago-regional-council-newsletter-e1107417.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/otago-regional-council-newsletter-e1107417.json",
+        "manual_archive_seeds/newsletter/otago-regional-council.json"
+      ],
+      "source_id": "otago-regional-council-newsletter-e1107417",
+      "url": "https://www.orc.govt.nz/your-council/latest-news/enviroschools-otago-newsletter"
     },
     {
       "acceptable_access_methods": [
@@ -12978,7 +13146,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 4 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 5 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -19004,7 +19172,7 @@
     "platform_counts": {
       "facebook": 326,
       "instagram": 183,
-      "newsletter": 392,
+      "newsletter": 400,
       "threads": 3
     },
     "priority_order": [
@@ -19013,6 +19181,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 904
+    "queue_count": 912
   }
 }
