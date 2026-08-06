@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-05T06:05:39+00:00",
+  "generated_at": "2026-08-06T06:07:24+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -861,10 +861,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "timed out",
       "source_id": "6fc9836aa517be31",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "network_timeout",
       "url": "https://www.hrc.govt.nz/feed.json"
     },
     {
@@ -1422,7 +1422,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 400: candidate JSON Feed endpoint is unavailable",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "0619070ff35add9f",
       "source_type": "json_feed",
       "status": "invalid",
@@ -1488,7 +1488,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "3506b4e343e5afb9",
       "source_type": "json_feed",
       "status": "invalid",
@@ -2489,10 +2489,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "The read operation timed out",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "3fe0848d47415cd6",
       "source_type": "json_feed",
-      "status": "network_timeout",
+      "status": "invalid",
       "url": "https://www.wananga.ac.nz/feed.json"
     },
     {
