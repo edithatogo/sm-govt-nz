@@ -38,7 +38,7 @@ This dataset package contains normalized New Zealand government social media rec
 - api: 31 records
 - bluesky: 2798 records
 - courtsofnz.govt.nz: 11 records
-- email: 26 records
+- email: 28 records
 - facebook: 323 records
 - json_feed: 17 records
 - linkedin: 109 records

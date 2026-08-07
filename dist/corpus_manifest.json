@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "413ac801ab0dd769250465fa640cde0f480a2f5256d7f9cab0273ebd8c99f484"
+      "sha256": "a7701d29a694a7bacad367c2fc190a77a9337387ed7bb8dc994a2ab12d115bc7"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 25167679,
+      "bytes": 25168092,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "9420057c4156c6c93bb6aab0bbcff1d901135d2277734650aa76a845795dc7e5"
+      "sha256": "17eb5f34336f9acca85c00bf96bb179ba4e6e69ea8d4f6d71875b34e4893232b"
     },
     "normalized_archive.parquet": {
-      "bytes": 39768326,
+      "bytes": 39730011,
       "path": "normalized_archive.parquet",
-      "sha256": "68d9072511456462a34e261e9d321baaa0fd008fb485b3fc51e0bf7df93cf2e0"
+      "sha256": "4aeaa7f49ba81e09a268720acd88456df91eb28b560a05c4f01034e6550d6b33"
     }
   },
   "jurisdiction": "nz",
@@ -27,10 +27,10 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12670,
+  "normalized_record_count": 12672,
   "normalized_shard_count": 528,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
-  "raw_file_count": 18434,
+  "raw_file_count": 18501,
   "record_index": [
     {
       "mirror_targets": [
@@ -135571,6 +135571,24 @@
     },
     {
       "mirror_targets": [],
+      "original_timestamp": "2026-08-07T03:00:29Z",
+      "source_account": "em4mkapmjakoh5o@upload.pipedream.net",
+      "source_key": "email:em4mkapmjakoh5o@upload.pipedream.net",
+      "source_platform": "email",
+      "source_record_id": "email:cm.1300293471588.wvlhld.hjhddyjkih.d-cmail19.com",
+      "source_url": "http://www.courtsofnz.govt.nz/the-courts/supreme-court/judgments-supreme"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-08-07T04:01:11Z",
+      "source_account": "em4mkapmjakoh5o@upload.pipedream.net",
+      "source_key": "email:em4mkapmjakoh5o@upload.pipedream.net",
+      "source_platform": "email",
+      "source_record_id": "email:cm.1401113220567.wvlhc.hjhddyjkid.d-cmail19.com",
+      "source_url": "http://www.courtsofnz.govt.nz/judgments/high-court]"
+    },
+    {
+      "mirror_targets": [],
       "original_timestamp": "Friday, 17 April 2026 - 9:02am",
       "source_account": "https://www.kaweraudc.govt.nz",
       "source_key": "rss:https://www.kaweraudc.govt.nz",
@@ -135858,7 +135876,7 @@
     "api": 31,
     "bluesky": 2798,
     "courtsofnz.govt.nz": 11,
-    "email": 26,
+    "email": 28,
     "facebook": 323,
     "json_feed": 17,
     "linkedin": 109,
@@ -135882,7 +135900,7 @@
       "min_original_created_at": "2023-11-07T19:33:14+00:00"
     },
     "email": {
-      "max_original_created_at": "2026-08-03T03:00:25Z",
+      "max_original_created_at": "2026-08-07T04:01:11Z",
       "min_original_created_at": "2026-06-14T06:34:00Z"
     },
     "facebook": {
