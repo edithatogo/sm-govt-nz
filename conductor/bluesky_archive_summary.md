@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-08-07T00:12:45+00:00
+Generated: 2026-08-07T07:38:34+00:00
 
 ## Summary
 
@@ -14,12 +14,12 @@ Generated: 2026-08-07T00:12:45+00:00
 
 ## Status counts
 
-- `already_captured`: 1572
-- `captured`: 54
+- `already_captured`: 1553
+- `captured`: 74
 
 ## Status by platform
 
-- `bluesky`: {'already_captured': 1572, 'captured': 54}
+- `bluesky`: {'already_captured': 1553, 'captured': 74}
 
 ## Notes
 
