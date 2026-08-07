@@ -1,32 +1,32 @@
 # Government Source Discovery Summary
 
-Generated: 2026-08-07T17:15:05+00:00
+Generated: 2026-08-07T18:06:58+00:00
 
 ## Coverage
 
 - Agencies: 256
 - Agencies without known social profiles: 33
-- Known registry social profiles: 446
-- Candidate records: 5254
-- Archive manifest sources: 5708
+- Known registry social profiles: 450
+- Candidate records: 5198
+- Archive manifest sources: 5707
 
 ## Candidates by Platform
 
-- api: 13
+- api: 12
 - bluesky: 18
-- facebook: 292
-- instagram: 163
-- linkedin: 236
+- facebook: 285
+- instagram: 160
+- linkedin: 229
 - medium: 2
-- newsletter: 158
-- rss: 3830
-- website_page: 311
-- x: 73
-- youtube: 158
+- newsletter: 139
+- rss: 3827
+- website_page: 298
+- x: 72
+- youtube: 156
 
 ## Candidates by Archive Status
 
-- candidate: 1132
+- candidate: 1131
 - degraded: 83
 - manual_seed: 258
 - ready: 4235

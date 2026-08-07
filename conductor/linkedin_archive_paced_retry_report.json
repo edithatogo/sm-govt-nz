@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-05T18:58:59+00:00",
+  "generated_at": "2026-08-07T18:07:53+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,9 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "02df47eecf3364f5",
-      "167bcd37783e8776",
-      "1a281fa346c6f207",
-      "d41f6c9509163c76"
+      "09b952f7ef4b6fe3",
+      "33154c4cfc035f97",
+      "d13defcbff6b5f65"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -37,26 +36,26 @@
   },
   "results": [
     {
-      "agency_id": "royal-nz-navy",
+      "agency_id": "open-polytechnic",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:e9616a4e050c59472a4a2a65",
-      "source_id": "d41f6c9509163c76",
+      "reason": "HTTP 999: <none>",
+      "source_id": "d13defcbff6b5f65",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/royal-new-zealand-navy"
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/open-polytechnic"
     },
     {
-      "agency_id": "tauranga-city-council",
+      "agency_id": "otago-polytechnic",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
-      "reason": "captured public Linkedin profile snapshot linkedin_public_snapshot:a4349b90a690f78665f5d305",
-      "source_id": "1a281fa346c6f207",
+      "reason": "HTTP 999: <none>",
+      "source_id": "33154c4cfc035f97",
       "source_type": "social_profile",
-      "status": "public_snapshot_captured",
-      "url": "https://www.linkedin.com/company/tauranga-city-council"
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/otago-polytechnic"
     }
   ],
   "summary": {
@@ -66,12 +65,12 @@
     "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "public_snapshot_captured": 2
+        "http_error": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "public_snapshot_captured": 2
+      "http_error": 2
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-05T18:58:44+00:00",
+  "generated_at": "2026-08-07T18:07:38+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "2f118fa98474f7c3",
-      "6c2d3c32e42b56f3",
-      "b21a114650cf7c1f",
-      "d479b2ebb2271f9b",
-      "eba473ca54354f65"
+      "270b12f28776608f",
+      "b8e488ee9490ed5a",
+      "c5d8bc4b61a1d9a8",
+      "e690cf595a5feab6",
+      "f442cbf1f33efeeb"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -38,59 +38,59 @@
   },
   "results": [
     {
-      "agency_id": "hurunui-district-council",
+      "agency_id": "gisborne-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "2f118fa98474f7c3",
+      "source_id": "e690cf595a5feab6",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.hurunui.govt.nz/.well-known/webfinger"
+      "url": "https://www.gdc.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "masterton-district-council",
+      "agency_id": "nelson-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 405: Not Allowed",
+      "source_id": "f442cbf1f33efeeb",
+      "source_type": "api_endpoint",
+      "status": "method_not_allowed",
+      "url": "https://www.nelson.govt.nz/openapi.json"
+    },
+    {
+      "agency_id": "south-waikato-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 405: Not Allowed",
+      "source_id": "c5d8bc4b61a1d9a8",
+      "source_type": "api_endpoint",
+      "status": "method_not_allowed",
+      "url": "https://www.southwaikato.govt.nz/openapi.json"
+    },
+    {
+      "agency_id": "tararua-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "eba473ca54354f65",
+      "source_id": "270b12f28776608f",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.mstn.govt.nz/.well-known/webfinger"
+      "url": "https://www.tararuadc.govt.nz/openapi.json"
     },
     {
-      "agency_id": "tasman-district-council",
+      "agency_id": "west-coast-regional-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "6c2d3c32e42b56f3",
+      "source_id": "b8e488ee9490ed5a",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.tasman.govt.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "d479b2ebb2271f9b",
-      "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.treasury.govt.nz/openapi.json"
-    },
-    {
-      "agency_id": "victoria-university-of-wellington",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 421: Misdirected Request",
-      "source_id": "b21a114650cf7c1f",
-      "source_type": "api_endpoint",
-      "status": "http_error",
-      "url": "https://www.wgtn.ac.nz/.well-known/webfinger"
+      "url": "https://www.wcrc.govt.nz/.well-known/webfinger"
     }
   ],
   "summary": {
@@ -100,14 +100,14 @@
     "selected_sources": 5,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 4,
-        "http_error": 1
+        "capture_blocked": 3,
+        "method_not_allowed": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 4,
-      "http_error": 1
+      "capture_blocked": 3,
+      "method_not_allowed": 2
     }
   }
 }

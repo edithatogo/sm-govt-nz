@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-08-05T18:58:44+00:00
+Generated: 2026-08-07T18:07:38+00:00
 
 ## Summary
 
@@ -14,12 +14,12 @@ Generated: 2026-08-05T18:58:44+00:00
 
 ## Status counts
 
-- `capture_blocked`: 4
-- `http_error`: 1
+- `capture_blocked`: 3
+- `method_not_allowed`: 2
 
 ## Status by platform
 
-- `api`: {'capture_blocked': 4, 'http_error': 1}
+- `api`: {'capture_blocked': 3, 'method_not_allowed': 2}
 
 ## Notes
 
