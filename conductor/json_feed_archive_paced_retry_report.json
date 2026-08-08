@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-07T18:07:42+00:00",
+  "generated_at": "2026-08-08T17:51:57+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,7 +24,7 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "b682a7ddf832e089"
+      "75291458e1733fa0"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -34,15 +34,15 @@
   },
   "results": [
     {
-      "agency_id": "auckland-council",
+      "agency_id": "northland-regional-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 406: Not Acceptable",
-      "source_id": "b682a7ddf832e089",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "75291458e1733fa0",
       "source_type": "json_feed",
-      "status": "not_acceptable",
-      "url": "https://www.aucklandcouncil.govt.nz/feed.json"
+      "status": "capture_blocked",
+      "url": "https://www.nrc.govt.nz/feed.json"
     }
   ],
   "summary": {
@@ -52,12 +52,12 @@
     "selected_sources": 1,
     "status_by_platform": {
       "json_feed": {
-        "not_acceptable": 1
+        "capture_blocked": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "not_acceptable": 1
+      "capture_blocked": 1
     }
   }
 }
