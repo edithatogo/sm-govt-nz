@@ -1,5 +1,6 @@
 import argparse
 import json
+from datetime import UTC, datetime
 from pathlib import Path
 
 from scripts.archive_x_browser import (
@@ -9,6 +10,9 @@ from scripts.archive_x_browser import (
     extract_posts_from_html,
     normalize_x_handle,
 )
+
+
+CURRENT_MONTH = datetime.now(UTC).strftime("%Y-%m")
 
 
 def test_normalize_x_handle_supports_x_and_twitter_urls():
@@ -54,7 +58,9 @@ def test_extract_posts_from_html_finds_status_urls():
 
 
 def test_extract_posts_from_html_includes_empty_card_metadata() -> None:
-    posts = extract_posts_from_html('<a href="https://x.com/agency/status/3333333333333333333">post</a>', handle="agency")
+    posts = extract_posts_from_html(
+        '<a href="https://x.com/agency/status/3333333333333333333">post</a>', handle="agency"
+    )
 
     assert posts[0]["external_links"] == []
     assert posts[0]["card_links"] == []
@@ -83,7 +89,9 @@ def test_archive_x_browser_sources_fixture_writes_raw_normalized_and_report(tmp_
 
     assert results[0]["status"] == "browser_posts_captured"
     assert list((tmp_path / "raw" / "x_browser").glob("*/*.json"))
-    normalized = (tmp_path / "normalized" / "x" / "2026-07.jsonl").read_text(encoding="utf-8")
+    normalized = (tmp_path / "normalized" / "x" / f"{CURRENT_MONTH}.jsonl").read_text(
+        encoding="utf-8"
+    )
     records = [json.loads(line) for line in normalized.splitlines()]
     assert {record["record_id"] for record in records} == {
         "x_browser:1111111111111111111",

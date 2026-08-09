@@ -1,6 +1,7 @@
 import argparse
 import json
 import socket
+from datetime import UTC, datetime
 from urllib.error import HTTPError, URLError
 
 import scripts.archive_registered_sources as archive_registered_sources
@@ -18,6 +19,9 @@ from scripts.archive_registered_sources import (
     build_report,
     fetch_website_with_alternates,
 )
+
+
+CURRENT_MONTH = datetime.now(UTC).strftime("%Y-%m")
 
 
 class FakeFeed:
@@ -53,6 +57,7 @@ class FakeYouTubeParser:
     def parse(self, url):
         self.url = url
         return FakeYouTubeFeed()
+
 
 def test_archive_registered_sources_reports_supported_and_pending_sources(tmp_path):
     manifest = tmp_path / "manifest.json"
@@ -244,7 +249,6 @@ def test_archive_bluesky_source_writes_raw_and_normalized_records(tmp_path):
     assert "Public Bluesky update" in normalized
 
 
-
 def test_archive_bluesky_source_rejects_intent_share_url(tmp_path):
     source = {
         "source_id": "agency-bluesky-share",
@@ -265,8 +269,6 @@ def test_archive_bluesky_source_rejects_intent_share_url(tmp_path):
 
     assert results[0]["status"] == "capture_failed"
     assert results[0]["reason"] == "missing Bluesky handle"
-
-
 
 
 def test_archive_youtube_source_resolves_channel_and_writes_records(tmp_path):
@@ -291,7 +293,9 @@ def test_archive_youtube_source_resolves_channel_and_writes_records(tmp_path):
     )
 
     assert results[0]["status"] == "captured"
-    assert parser.url == "https://www.youtube.com/feeds/videos.xml?channel_id=UC1234567890abcdefghiJKL"
+    assert (
+        parser.url == "https://www.youtube.com/feeds/videos.xml?channel_id=UC1234567890abcdefghiJKL"
+    )
     assert list((tmp_path / "raw" / "youtube" / "2026-06").glob("*.json"))
     normalized = (tmp_path / "normalized" / "youtube" / "2026-06.jsonl").read_text(encoding="utf-8")
     assert "youtube:" in normalized
@@ -401,7 +405,9 @@ def test_archive_youtube_video_source_writes_oembed_metadata(tmp_path):
     assert results[0]["status"] == "captured"
     raw_files = list((tmp_path / "raw" / "youtube").glob("*/*.json"))
     assert raw_files
-    normalized = list((tmp_path / "normalized" / "youtube").glob("*.jsonl"))[0].read_text(encoding="utf-8")
+    normalized = list((tmp_path / "normalized" / "youtube").glob("*.jsonl"))[0].read_text(
+        encoding="utf-8"
+    )
     assert "Council meeting" in normalized
     assert "generic_registered_youtube_video_oembed" in normalized
 
@@ -460,10 +466,14 @@ def test_archive_json_feed_source_archives_single_json_object(tmp_path, monkeypa
         ),
     )
 
-    results = archive_json_feed_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+    results = archive_json_feed_source(
+        source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized"
+    )
 
     assert results[0]["status"] == "captured"
-    normalized = (tmp_path / "normalized" / "json_feed" / "2026-06.jsonl").read_text(encoding="utf-8")
+    normalized = (tmp_path / "normalized" / "json_feed" / "2026-06.jsonl").read_text(
+        encoding="utf-8"
+    )
     assert "Agency page" in normalized
     assert "Public API-backed page body" in normalized
 
@@ -486,7 +496,9 @@ def test_archive_json_feed_source_tries_public_endpoint_variants(tmp_path, monke
         raise HTTPError(url, 404, "Not Found", {}, None)
 
     monkeypatch.setattr(archive_registered_sources, "fetch_text", fetch)
-    results = archive_json_feed_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+    results = archive_json_feed_source(
+        source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized"
+    )
 
     assert results[0]["status"] == "captured"
     assert "https://agency.example/feed.json" in seen
@@ -505,13 +517,19 @@ def test_archive_api_source_archives_keyless_public_snapshot(tmp_path, monkeypat
         "auth": "none",
         "feasibility": "medium",
     }
-    monkeypatch.setattr(archive_registered_sources, "fetch_text", lambda url, timeout=30: '{"openapi":"3.1.0"}')
+    monkeypatch.setattr(
+        archive_registered_sources, "fetch_text", lambda url, timeout=30: '{"openapi":"3.1.0"}'
+    )
 
-    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+    results = archive_api_source(
+        source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized"
+    )
 
     assert results[0]["status"] == "captured"
-    assert list((tmp_path / "raw" / "api" / "2026-07").glob("*.json"))
-    normalized = (tmp_path / "normalized" / "api" / "2026-07.jsonl").read_text(encoding="utf-8")
+    assert list((tmp_path / "raw" / "api" / CURRENT_MONTH).glob("*.json"))
+    normalized = (tmp_path / "normalized" / "api" / f"{CURRENT_MONTH}.jsonl").read_text(
+        encoding="utf-8"
+    )
     assert "api:" in normalized
     assert "generic_keyless_api_snapshot" in normalized
 
@@ -535,7 +553,9 @@ def test_archive_api_source_tries_openapi_variants(tmp_path, monkeypatch):
         raise HTTPError(url, 404, "Not Found", {}, None)
 
     monkeypatch.setattr(archive_registered_sources, "fetch_text", fetch)
-    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+    results = archive_api_source(
+        source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized"
+    )
 
     assert results[0]["status"] == "captured"
     assert "https://agency.example/openapi.json" in seen
@@ -553,7 +573,9 @@ def test_archive_api_source_reports_auth_required_for_non_keyless_source(tmp_pat
         "auth": "api_key_required",
     }
 
-    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+    results = archive_api_source(
+        source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized"
+    )
 
     assert results[0]["status"] == "auth_required"
 
@@ -573,7 +595,9 @@ def test_archive_api_source_classifies_missing_heuristic_endpoint_as_invalid(mon
         raise HTTPError(url, 404, "Not Found", {}, None)
 
     monkeypatch.setattr(archive_registered_sources, "fetch_text", missing)
-    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+    results = archive_api_source(
+        source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized"
+    )
 
     assert results[0]["status"] == "invalid"
     assert "candidate API endpoint is unavailable" in results[0]["reason"]
@@ -594,7 +618,9 @@ def test_archive_api_source_preserves_actionable_block(monkeypatch, tmp_path):
         raise HTTPError(url, 403, "Forbidden", {}, None)
 
     monkeypatch.setattr(archive_registered_sources, "fetch_text", blocked)
-    results = archive_api_source(source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized")
+    results = archive_api_source(
+        source, raw_root=tmp_path / "raw", normalized_root=tmp_path / "normalized"
+    )
 
     assert results[0]["status"] == "capture_blocked"
 
@@ -613,11 +639,15 @@ def test_archive_rss_source_does_not_rewrite_existing_raw_record(tmp_path):
     raw_root = tmp_path / "raw"
     normalized_root = tmp_path / "normalized"
 
-    archive_rss_source(source, raw_root=raw_root, normalized_root=normalized_root, parser=FakeParser())
+    archive_rss_source(
+        source, raw_root=raw_root, normalized_root=normalized_root, parser=FakeParser()
+    )
     raw_file = next((raw_root / "rss" / "2026-06").glob("*.json"))
     original_raw = raw_file.read_text(encoding="utf-8")
 
-    results = archive_rss_source(source, raw_root=raw_root, normalized_root=normalized_root, parser=FakeParser())
+    results = archive_rss_source(
+        source, raw_root=raw_root, normalized_root=normalized_root, parser=FakeParser()
+    )
 
     assert results[0]["status"] == "already_captured"
     assert raw_file.read_text(encoding="utf-8") == original_raw
@@ -666,7 +696,9 @@ def test_fetch_website_with_alternates_uses_www_after_403():
             raise HTTPError(url, 403, "Forbidden", hdrs=None, fp=None)
         return "<html>fallback</html>"
 
-    fetched_url, html = fetch_website_with_alternates("https://agency.example", fetcher, 5, allow_alternates=True)
+    fetched_url, html = fetch_website_with_alternates(
+        "https://agency.example", fetcher, 5, allow_alternates=True
+    )
 
     assert fetched_url == "https://www.agency.example"
     assert html == "<html>fallback</html>"
@@ -679,7 +711,9 @@ def test_fetch_website_with_alternates_uses_www_after_406():
             raise HTTPError(url, 406, "Not Acceptable", hdrs=None, fp=None)
         return "<html>fallback</html>"
 
-    fetched_url, html = fetch_website_with_alternates("https://agency.example", fetcher, 5, allow_alternates=True)
+    fetched_url, html = fetch_website_with_alternates(
+        "https://agency.example", fetcher, 5, allow_alternates=True
+    )
 
     assert fetched_url == "https://www.agency.example"
     assert html == "<html>fallback</html>"
@@ -691,11 +725,12 @@ def test_fetch_website_with_alternates_uses_www_after_405():
             raise HTTPError(url, 405, "Method Not Allowed", hdrs=None, fp=None)
         return "<html>fallback</html>"
 
-    fetched_url, html = fetch_website_with_alternates("https://agency.example", fetcher, 5, allow_alternates=True)
+    fetched_url, html = fetch_website_with_alternates(
+        "https://agency.example", fetcher, 5, allow_alternates=True
+    )
 
     assert fetched_url == "https://www.agency.example"
     assert html == "<html>fallback</html>"
-
 
 
 def test_fetch_website_with_alternates_tries_http_www_combination_after_405():
@@ -707,7 +742,9 @@ def test_fetch_website_with_alternates_tries_http_www_combination_after_405():
             raise HTTPError(url, 405, "Method Not Allowed", hdrs=None, fp=None)
         return "<html>fallback</html>"
 
-    fetched_url, html = fetch_website_with_alternates("https://agency.example", fetcher, 5, allow_alternates=True)
+    fetched_url, html = fetch_website_with_alternates(
+        "https://agency.example", fetcher, 5, allow_alternates=True
+    )
 
     assert fetched_url == "http://www.agency.example"
     assert html == "<html>fallback</html>"
@@ -730,7 +767,9 @@ def test_fetch_website_with_alternates_uses_root_after_404_on_section_path():
             return "<html>fallback</html>"
         raise HTTPError(url, 404, "Not Found", hdrs=None, fp=None)
 
-    fetched_url, html = fetch_website_with_alternates("https://www.agency.example/news", fetcher, 5, allow_alternates=True)
+    fetched_url, html = fetch_website_with_alternates(
+        "https://www.agency.example/news", fetcher, 5, allow_alternates=True
+    )
 
     assert fetched_url == "https://www.agency.example/"
     assert html == "<html>fallback</html>"
@@ -756,7 +795,9 @@ def test_archive_website_source_uses_browser_fallback_after_403(tmp_path, monkey
             "reason": "captured public rendered website content",
         }
 
-    monkeypatch.setattr(archive_registered_sources, "archive_website_browser_source", browser_fallback)
+    monkeypatch.setattr(
+        archive_registered_sources, "archive_website_browser_source", browser_fallback
+    )
 
     result = archive_website_source(
         {
@@ -770,7 +811,9 @@ def test_archive_website_source_uses_browser_fallback_after_403(tmp_path, monkey
         },
         raw_root=tmp_path / "raw",
         normalized_root=tmp_path / "normalized",
-        website_fetcher=lambda url: (_ for _ in ()).throw(HTTPError(url, 403, "Forbidden", hdrs=None, fp=None)),
+        website_fetcher=lambda url: (_ for _ in ()).throw(
+            HTTPError(url, 403, "Forbidden", hdrs=None, fp=None)
+        ),
     )
 
     assert result["status"] == "browser_captured"
@@ -796,7 +839,9 @@ def test_archive_website_source_uses_browser_fallback_after_404(tmp_path, monkey
             "reason": "captured public rendered website content",
         }
 
-    monkeypatch.setattr(archive_registered_sources, "archive_website_browser_source", browser_fallback)
+    monkeypatch.setattr(
+        archive_registered_sources, "archive_website_browser_source", browser_fallback
+    )
 
     result = archive_website_source(
         {
@@ -810,7 +855,9 @@ def test_archive_website_source_uses_browser_fallback_after_404(tmp_path, monkey
         },
         raw_root=tmp_path / "raw",
         normalized_root=tmp_path / "normalized",
-        website_fetcher=lambda url: (_ for _ in ()).throw(HTTPError(url, 404, "Not Found", hdrs=None, fp=None)),
+        website_fetcher=lambda url: (_ for _ in ()).throw(
+            HTTPError(url, 404, "Not Found", hdrs=None, fp=None)
+        ),
     )
 
     assert result["status"] == "browser_captured"
@@ -835,11 +882,18 @@ def test_archive_youtube_source_reports_missing_handle_as_channel_not_found(tmp_
         raw_root=tmp_path / "raw",
         normalized_root=tmp_path / "normalized",
         parser=FakeYouTubeParser(),
-        page_fetcher=lambda url: (_ for _ in ()).throw(HTTPError(url, 404, "Not Found", hdrs=None, fp=None)),
+        page_fetcher=lambda url: (_ for _ in ()).throw(
+            HTTPError(url, 404, "Not Found", hdrs=None, fp=None)
+        ),
     )
 
     assert results[0]["status"] == "youtube_channel_not_found"
-    assert results[0]["reason"] == "YouTube channel resolver failed: HTTP 404: YouTube channel page not found"
+    assert (
+        results[0]["reason"]
+        == "YouTube channel resolver failed: HTTP 404: YouTube channel page not found"
+    )
+
+
 def test_archive_website_source_reports_dns_failure(tmp_path):
     result = archive_website_source(
         {
@@ -1020,8 +1074,6 @@ def test_archive_manual_seed_writes_registered_source_records(tmp_path):
     assert record["cross_source_ids"]["source_id"] == "agency-linkedin"
 
 
-
-
 def test_archive_manual_seed_reports_empty_seed(tmp_path):
     source = {
         "source_id": "agency-newsletter",
@@ -1061,7 +1113,9 @@ def test_archive_manual_seed_reports_invalid_seed(tmp_path):
     }
     seed_dir = tmp_path / "manual_archive_seeds" / "threads"
     seed_dir.mkdir(parents=True)
-    (seed_dir / "agency-threads.json").write_text(json.dumps({"posts": [{"text": "missing url and date"}]}), encoding="utf-8")
+    (seed_dir / "agency-threads.json").write_text(
+        json.dumps({"posts": [{"text": "missing url and date"}]}), encoding="utf-8"
+    )
 
     results = archive_manual_seed_source(
         source,
@@ -1072,6 +1126,8 @@ def test_archive_manual_seed_reports_invalid_seed(tmp_path):
 
     assert results[0]["status"] == "seed_invalid"
     assert "missing url" in results[0]["reason"]
+
+
 def test_archive_registered_sources_dry_run_reports_linkedin_public_snapshot(tmp_path):
     manifest = tmp_path / "manifest.json"
     manifest.write_text(
@@ -1159,8 +1215,12 @@ def test_archive_linkedin_api_disabled_uses_public_snapshot_when_no_seed(tmp_pat
     )
 
     assert report["summary"]["status_counts"] == {"public_snapshot_captured": 1}
-    raw_path = next((tmp_path / "raw" / "linkedin_public_snapshot" / "2026-07").glob("*.json"))
-    record = json.loads((tmp_path / "normalized" / "linkedin" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    raw_path = next((tmp_path / "raw" / "linkedin_public_snapshot" / CURRENT_MONTH).glob("*.json"))
+    record = json.loads(
+        (tmp_path / "normalized" / "linkedin" / f"{CURRENT_MONTH}.jsonl").read_text(
+            encoding="utf-8"
+        )
+    )
     assert raw_path.exists()
     assert record["source_platform"] == "linkedin"
     assert record["source_kind"] == "public_profile_snapshot"
@@ -1236,7 +1296,9 @@ def test_archive_x_api_disabled_uses_public_snapshot_when_no_seed(tmp_path, monk
     monkeypatch.setattr(
         archive_registered_sources,
         "fetch_text",
-        lambda url, timeout=30: "<html><head><title>Agency / X</title><meta property='og:description' content='Official agency updates on X'></head></html>",
+        lambda url, timeout=30: (
+            "<html><head><title>Agency / X</title><meta property='og:description' content='Official agency updates on X'></head></html>"
+        ),
     )
     manifest = tmp_path / "manifest.json"
     manifest.write_text(json.dumps({"sources": [x_source()]}), encoding="utf-8")
@@ -1258,7 +1320,7 @@ def test_archive_x_api_disabled_uses_public_snapshot_when_no_seed(tmp_path, monk
 
     assert report["summary"]["status_counts"] == {"public_snapshot_captured": 1}
     assert report["results"][0]["status"] == "public_snapshot_captured"
-    assert list((tmp_path / "raw" / "x_public_snapshot" / "2026-07").glob("*.json"))
+    assert list((tmp_path / "raw" / "x_public_snapshot" / CURRENT_MONTH).glob("*.json"))
 
 
 def test_archive_x_api_disabled_archives_authorized_seed(tmp_path, monkeypatch):
@@ -1299,7 +1361,9 @@ def test_archive_x_api_disabled_archives_authorized_seed(tmp_path, monkeypatch):
     )
 
     assert report["summary"]["status_counts"] == {"manual_seed_captured": 1}
-    record = json.loads((tmp_path / "normalized" / "x" / "2026-06.jsonl").read_text(encoding="utf-8"))
+    record = json.loads(
+        (tmp_path / "normalized" / "x" / "2026-06.jsonl").read_text(encoding="utf-8")
+    )
     assert record["source_platform"] == "x"
     assert record["content"] == "Authorized X seed"
     assert record["cross_source_ids"]["source_id"] == "agency-x"
@@ -1318,8 +1382,8 @@ def test_archive_x_public_snapshot_source_writes_profile_snapshot(tmp_path):
     )
 
     assert result["status"] == "public_snapshot_captured"
-    assert list((tmp_path / "raw" / "x_public_snapshot" / "2026-07").glob("*.json"))
-    normalized_path = tmp_path / "normalized" / "x" / "2026-07.jsonl"
+    assert list((tmp_path / "raw" / "x_public_snapshot" / CURRENT_MONTH).glob("*.json"))
+    normalized_path = tmp_path / "normalized" / "x" / f"{CURRENT_MONTH}.jsonl"
     record = json.loads(normalized_path.read_text(encoding="utf-8"))
     assert record["source_platform"] == "x"
     assert record["source_kind"] == "public_profile_snapshot"
@@ -1369,12 +1433,18 @@ def test_archive_public_profile_snapshot_source_supports_facebook(tmp_path, monk
         "facebook",
         raw_root=tmp_path / "raw",
         normalized_root=tmp_path / "normalized",
-        fetcher=lambda url, timeout=30: "<html><head><title>Agency / Facebook</title><meta property='og:description' content='Official updates on Facebook'></head></html>",
+        fetcher=lambda url, timeout=30: (
+            "<html><head><title>Agency / Facebook</title><meta property='og:description' content='Official updates on Facebook'></head></html>"
+        ),
     )
 
     assert result["status"] == "public_snapshot_captured"
-    assert list((tmp_path / "raw" / "facebook_public_snapshot" / "2026-07").glob("*.json"))
-    record = json.loads((tmp_path / "normalized" / "facebook" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    assert list((tmp_path / "raw" / "facebook_public_snapshot" / CURRENT_MONTH).glob("*.json"))
+    record = json.loads(
+        (tmp_path / "normalized" / "facebook" / f"{CURRENT_MONTH}.jsonl").read_text(
+            encoding="utf-8"
+        )
+    )
     assert record["source_platform"] == "facebook"
     assert record["source_kind"] == "public_profile_snapshot"
     assert record["extraction_method"] == "facebook_public_web_snapshot"
@@ -1393,12 +1463,18 @@ def test_archive_public_profile_snapshot_source_supports_instagram(tmp_path):
         "instagram",
         raw_root=tmp_path / "raw",
         normalized_root=tmp_path / "normalized",
-        fetcher=lambda url, timeout=30: "<html><head><title>Agency / Instagram</title><meta property='og:site_name' content='Instagram'></head></html>",
+        fetcher=lambda url, timeout=30: (
+            "<html><head><title>Agency / Instagram</title><meta property='og:site_name' content='Instagram'></head></html>"
+        ),
     )
 
     assert result["status"] == "public_snapshot_captured"
-    assert list((tmp_path / "raw" / "instagram_public_snapshot" / "2026-07").glob("*.json"))
-    record = json.loads((tmp_path / "normalized" / "instagram" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    assert list((tmp_path / "raw" / "instagram_public_snapshot" / CURRENT_MONTH).glob("*.json"))
+    record = json.loads(
+        (tmp_path / "normalized" / "instagram" / f"{CURRENT_MONTH}.jsonl").read_text(
+            encoding="utf-8"
+        )
+    )
     assert record["source_platform"] == "instagram"
     assert record["source_kind"] == "public_profile_snapshot"
     assert record["extraction_method"] == "instagram_public_web_snapshot"
@@ -1443,7 +1519,9 @@ def test_archive_threads_api_disabled_uses_public_snapshot_when_no_seed(tmp_path
     monkeypatch.setattr(
         archive_registered_sources,
         "fetch_text",
-        lambda url, timeout=30: "<html><head><title>Threads / Agency</title><meta property='og:description' content='Public Threads snapshot'></head></html>",
+        lambda url, timeout=30: (
+            "<html><head><title>Threads / Agency</title><meta property='og:description' content='Public Threads snapshot'></head></html>"
+        ),
     )
     manifest = write_threads_manifest(tmp_path)
 
@@ -1452,8 +1530,10 @@ def test_archive_threads_api_disabled_uses_public_snapshot_when_no_seed(tmp_path
     assert report["summary"]["status_counts"] == {"public_snapshot_captured": 1}
     result = report["results"][0]
     assert result["status"] == "public_snapshot_captured"
-    assert list((tmp_path / "raw" / "threads_public_snapshot" / "2026-07").glob("*.json"))
-    record = json.loads((tmp_path / "normalized" / "threads" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    assert list((tmp_path / "raw" / "threads_public_snapshot" / CURRENT_MONTH).glob("*.json"))
+    record = json.loads(
+        (tmp_path / "normalized" / "threads" / f"{CURRENT_MONTH}.jsonl").read_text(encoding="utf-8")
+    )
     assert record["source_platform"] == "threads"
     assert record["source_kind"] == "public_profile_snapshot"
     assert record["extraction_method"] == "threads_public_web_snapshot"
@@ -1532,6 +1612,7 @@ def test_archive_threads_api_disabled_never_reports_api_blocker_status(tmp_path,
     assert report["results"][0]["status"] == "public_snapshot_captured"
     assert report["results"][0]["status"] not in {"threads_permission_error", "threads_api_error"}
 
+
 def test_archive_youtube_video_source_reports_blocked_metadata(tmp_path, monkeypatch):
     def blocked(_url):
         raise HTTPError("https://www.youtube.com/oembed", 401, "Unauthorized", hdrs=None, fp=None)
@@ -1556,7 +1637,9 @@ def test_archive_youtube_video_source_reports_blocked_metadata(tmp_path, monkeyp
 
     assert results[0]["status"] == "public_snapshot_captured"
     assert list((tmp_path / "raw" / "youtube_public_snapshot").glob("*/*.json"))
-    record = json.loads((tmp_path / "normalized" / "youtube" / "2026-07.jsonl").read_text(encoding="utf-8"))
+    record = json.loads(
+        (tmp_path / "normalized" / "youtube" / f"{CURRENT_MONTH}.jsonl").read_text(encoding="utf-8")
+    )
     assert record["source_kind"] == "public_video_snapshot"
     assert "Public video page" in record["content"]
 
@@ -1645,4 +1728,3 @@ def test_build_report_retries_only_p1_sources_from_gap_map(tmp_path):
 
     assert report["summary"]["selected_sources"] == 1
     assert [row["source_id"] for row in report["results"]] == ["website-p1"]
-

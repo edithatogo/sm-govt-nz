@@ -1,0 +1,35 @@
+{
+  "access_method": "playwright_public_browser_no_login",
+  "captured_at": "2026-07-07T15:23:38+00:00",
+  "diagnostics": {
+    "elapsed_seconds": 1.78,
+    "visible_text_length": 300
+  },
+  "final_url": "https://www.timaru.govt.nz/api",
+  "guardrails": {
+    "captcha_solving": false,
+    "credential_bypass": false,
+    "login": false,
+    "proxies": false
+  },
+  "html": "<!DOCTYPE html><html><head>\n    <meta charset=\"utf-8\">\n    <title>Login - Squiz Matrix</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"icon\" href=\"/__lib/web/images/icons/favicon.png\">\n    <!--[if IE]><link rel=\"shortcut icon\" href=\"/__lib/web/images/icons/favicon.png\" /><![endif]-->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"https://www.timaru.govt.nz/?a=29054\">\n  \n<!--\n  Running Squiz Matrix\n  Developed by Squiz - http://www.squiz.net\n  Squiz, Squiz Matrix, MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd\n  Page generated: 08 July 2026 03:23:39\n-->\n\n\n</head>\n\n  <body class=\"sq-login-design\" style=\"background-image: url(https://www.timaru.govt.nz/?a=29053);\">\n\n    \t\t\t\t\t\n\n        \n\n        \n\t\t\t\t\t\t<form action=\"?SQ_ACTION=login&amp;\" id=\"login_form_login_prompt\" method=\"post\">\n\t\t\t\t\t\n        <div class=\"sq-login-logo\"><img src=\"https://www.timaru.govt.nz/?a=261696\" alt=\"Timaru District Council Logo\"></div>\n        \n        <p class=\"sq-login-message\">You don't have permission to access this URL.</p>\n\n        <p class=\"sq-login-message\" id=\"sq-current-user\" style=\"display: none;\">Currently logged in as: <strong id=\"sq-current-user-name\">[Not logged in]</strong></p>\n\n        <div id=\"sq-message\" class=\"sq-message\" style=\"display: none;\">\n                  </div>\n\n        <script>\n        <!-- //<![CDATA[\n          var msgsDiv = document.getElementById('sq-message');\n          if (msgsDiv.innerHTML.replace( /\\s/g, '') == '') {\n            msgsDiv.style.display = 'none';\n          }\n          var currentName = document.getElementById('sq-current-user-name');\n          if (currentName.innerHTML == '[Not logged in]') {\n            document.getElementById('sq-current-user').style.display = 'none';\n          }\n        //]]> -->\n        </script>\n        \n        <div class=\"sso-section\">\n            <p class=\"sq-login-message\">All TDC users (including Councillors, SLT etc) <strong>must</strong> sign in using the SSO button directly below.</p>\n            <div class=\"sq-commit-section\">\n                <script>\n                document.write('<input type=\"button\" name=\"tdc_sso_button\" onclick=\"location.href=\\'https://www.timaru.govt.nz/_saml/saml-account-manager?page-ref=' + window.location.href + '\\'\" value=\"TDC User Login (SSO)\" class=\"sq-data\">');\n                </script><input type=\"button\" name=\"tdc_sso_button\" onclick=\"location.href='https://www.timaru.govt.nz/_saml/saml-account-manager?page-ref=https://www.timaru.govt.nz/api'\" value=\"TDC User Login (SSO)\" class=\"sq-data\">\n            </div>\n        </div>\n        \n        <br>\n        <hr>\n\n        <div class=\"sq-credentials-section\">\n          <p class=\"sq-login-message\">All <strong>other (non-TDC)</strong> parties should use the username and password fields below.</p>\n          <div class=\"sq-field-wrapper\">\n            <label for=\"SQ_LOGIN_USERNAME\">Username</label> \n            <input type=\"hidden\" name=\"SQ_LOGIN_KEY\" value=\"tpdnrlcpstfrkyhgpzlr\">\n\t\t\t\t\t  <input type=\"hidden\" name=\"SQ_LOGIN_REFERER\" value=\"\"><input type=\"text\" name=\"SQ_LOGIN_USERNAME\" value=\"\" size=\"10\" class=\"sq-data\" required=\"required\" autofocus=\"autofocus\" id=\"SQ_LOGIN_USERNAME\">\n          </div>\n          <div class=\"sq-field-wrapper\">\n            <label for=\"SQ_LOGIN_PASSWORD\">Password</label> \n            <input type=\"password\" name=\"SQ_LOGIN_PASSWORD\" value=\"\" size=\"10\" class=\"sq-data\" required=\"required\" autocomplete=\"off\" id=\"SQ_LOGIN_PASSWORD\">\n          </div>\n          <script>\n            //document.write('<a href=\"https://www.timaru.govt.nz/_saml/saml-account-manager?page-ref=' + window.location.href + '\" style=\"color:white;text-align:center;display:block;\">Login using SSO</a>');\n          </script>\n          <!-- -->\n        </div>\n\n        <div class=\"sq-commit-section\">\n          <input type=\"submit\" name=\"log_in_out_button\" value=\"Login (Non-TDC)\" class=\"sq-data\" id=\"log_in_out_button\">\n        </div>\n\n        </form>\n\n      \n\t\t\t\t\t  \n\n\n\n\n</body></html>",
+  "screenshot_path": "",
+  "source": {
+    "access_method": "public_website",
+    "account": "https://www.timaru.govt.nz",
+    "agency_id": "timaru-district-council",
+    "agency_name": "Timaru District Council",
+    "archive_status": "ready",
+    "auth": "none",
+    "created_at": "2026-07-03T06:26:03+00:00",
+    "feasibility": "high",
+    "notes": "Promoted from search_seed using public endpoint heuristics; original_source_type=search_seed",
+    "origin": "configured_common_path",
+    "platform": "website_page",
+    "source_id": "96240ac4f68ba3a4",
+    "source_type": "website_page",
+    "url": "https://www.timaru.govt.nz/api"
+  },
+  "url": "https://www.timaru.govt.nz/api",
+  "visible_text": "Login - Squiz Matrix You don't have permission to access this URL. Currently logged in as: [Not logged in] All TDC users (including Councillors, SLT etc) must sign in using the SSO button directly below. All other (non-TDC) parties should use the username and password fields below. Username Password"
+}
