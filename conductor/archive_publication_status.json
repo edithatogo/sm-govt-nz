@@ -1,15 +1,15 @@
 {
   "artifact": {
     "bundle_path": "dist/historical_archive.tar.gz",
-    "file_count": 19776,
-    "normalized_record_count": 12706,
+    "file_count": 19777,
+    "normalized_record_count": 12709,
     "raw_file_count": 19182,
-    "sha256": "5673c0aad1e3fcd4fc953876b0e9bfc6c6655e72e7e7b1fdd6d7baf219cd7bc3"
+    "sha256": "82952a209c2fc16cd3a21ad79f6a997b78b6fcd4a9b159b2574c8bc4b692aa61"
   },
   "hugging_face": {
     "result": {
-      "file_count": 19776,
-      "normalized_record_count": 12706,
+      "file_count": 19777,
+      "normalized_record_count": 12709,
       "paths_in_repo": [
         "README.md",
         "metadata/corpus_manifest.json",
@@ -17,9 +17,9 @@
         "data/normalized_archive.parquet",
         "bundles/historical_archive.tar.gz"
       ],
-      "release_version": "2026-08-reconcile",
+      "release_version": "2026-08-reconcile-normalized",
       "repo_id": "edithatogo/corpus-social-media-government-nz",
-      "sha256": "5673c0aad1e3fcd4fc953876b0e9bfc6c6655e72e7e7b1fdd6d7baf219cd7bc3"
+      "sha256": "82952a209c2fc16cd3a21ad79f6a997b78b6fcd4a9b159b2574c8bc4b692aa61"
     },
     "status": "published",
     "target": "edithatogo/corpus-social-media-government-nz"
@@ -29,14 +29,14 @@
     "status": "not_requested_or_not_configured",
     "target": ""
   },
-  "release_version": "2026-08-reconcile",
+  "release_version": "2026-08-reconcile-normalized",
   "requested_targets": [
     "huggingface"
   ],
   "source_git": {
     "freshness_status": "fresh_at_source_head",
-    "head_sha": "fe16b2ee879321c76086ffa7a926e60788a431f7",
-    "latest_archive_commit_sha": "fe16b2ee879321c76086ffa7a926e60788a431f7"
+    "head_sha": "b2553726ba273bb437f3a5bc0756bc48f643a7dd",
+    "latest_archive_commit_sha": "b2553726ba273bb437f3a5bc0756bc48f643a7dd"
   },
   "zenodo": {
     "status": "not_requested_or_not_configured",

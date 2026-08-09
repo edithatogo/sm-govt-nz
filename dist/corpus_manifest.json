@@ -6,17 +6,17 @@
     "historical_archive.jsonl.gz": {
       "bytes": 16205,
       "path": "historical_archive.jsonl.gz",
-      "sha256": "79e8f4c556006efb5bb83f908dd1bb40a43d4bb186af6fac3c69e3e422183802"
+      "sha256": "e1e5f3cfaa855b83329e1385433e7d845636e88254966f198ddaff3bd334cbcf"
     },
     "normalized_archive.jsonl.gz": {
-      "bytes": 25183788,
+      "bytes": 25184140,
       "path": "normalized_archive.jsonl.gz",
-      "sha256": "8b47c70e187564ad41299a6c4d0e9480e198597e83e7b424b28a3677d4ebdf29"
+      "sha256": "11734de22bcd770c182d78f585345c1f39352651c09297d7459023bfa16097e6"
     },
     "normalized_archive.parquet": {
-      "bytes": 39736426,
+      "bytes": 39729282,
       "path": "normalized_archive.parquet",
-      "sha256": "336087af8620b0ae9820b7f4caa25bef71a77ee103e7598bb620499214602afa"
+      "sha256": "c4c631addd33b3729e67023f527b69875b2d321a76a4b158d8f777953a423f25"
     }
   },
   "jurisdiction": "nz",
@@ -27,8 +27,8 @@
   ],
   "legacy_json_file_count": 66,
   "license": "Public source records; verify source-specific terms before redistribution.",
-  "normalized_record_count": 12706,
-  "normalized_shard_count": 528,
+  "normalized_record_count": 12709,
+  "normalized_shard_count": 529,
   "provenance": "Records are derived from New Zealand government social media and adjacent public source surfaces and preserve source platform, source account, source URL, capture timestamp, original timestamp, content hash, media references, raw path, and extraction method where available.",
   "raw_file_count": 19182,
   "record_index": [
@@ -99321,6 +99321,33 @@
       "source_url": "https://bsky.app/profile/metservice.com"
     },
     {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-04T11:42:59+00:00",
+      "source_account": "newzealandpolice",
+      "source_key": "threads:newzealandpolice",
+      "source_platform": "threads",
+      "source_record_id": "threads_public_snapshot:501ec905c6fe63230ad02dcd",
+      "source_url": "https://www.threads.net/@newzealandpolice"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-04T11:43:01+00:00",
+      "source_account": "nzte",
+      "source_key": "threads:nzte",
+      "source_platform": "threads",
+      "source_record_id": "threads_public_snapshot:2664832fc28e81672910e3b9",
+      "source_url": "https://www.threads.net/@nzte"
+    },
+    {
+      "mirror_targets": [],
+      "original_timestamp": "2026-07-04T11:43:04+00:00",
+      "source_account": "wcl_library",
+      "source_key": "threads:wcl_library",
+      "source_platform": "threads",
+      "source_record_id": "threads_public_snapshot:834c376c7310143020834905",
+      "source_url": "https://www.threads.net/@wcl_library"
+    },
+    {
       "mirror_targets": [
         {
           "mirror_url": "",
@@ -136391,7 +136418,7 @@
     "json_feed": 17,
     "linkedin": 109,
     "rss": 3940,
-    "threads": 3,
+    "threads": 6,
     "website_page": 1838,
     "x": 769,
     "youtube": 2741
@@ -136431,7 +136458,7 @@
     },
     "threads": {
       "max_original_created_at": "2026-08-02T06:12:42+00:00",
-      "min_original_created_at": "2026-08-02T06:12:40+00:00"
+      "min_original_created_at": "2026-07-04T11:42:59+00:00"
     },
     "website_page": {
       "max_original_created_at": "2026-08-02T06:17:29+00:00",

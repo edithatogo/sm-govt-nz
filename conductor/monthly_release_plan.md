@@ -1,13 +1,13 @@
 # Monthly Release Plan
 
-Generated: 2026-08-09T10:07:17+00:00
+Generated: 2026-08-09T10:15:40+00:00
 
 Each monthly release is cumulative: it bundles all archived accounts and source types present in the repository at release time.
 
 ## Summary
 
 - `months_with_records`: 263
-- `total_records`: 12704
+- `total_records`: 12707
 - `published_months`: 6
 - `candidate_months`: 257
 
@@ -275,6 +275,6 @@ Each monthly release is cumulative: it bundles all archived accounts and source 
 | 2026-04 | candidate | 302 | 47 | bluesky: 126, courtsofnz.govt.nz: 3, rss: 35, x: 1, youtube: 137 |
 | 2026-05 | candidate | 617 | 77 | bluesky: 188, rss: 54, x: 9, youtube: 366 |
 | 2026-06 | published | 1738 | 313 | bluesky: 698, courtsofnz.govt.nz: 1, email: 12, linkedin: 2, rss: 102, website_page: 219, x: 3, youtube: 701 |
-| 2026-07 | published | 3208 | 598 | api: 14, bluesky: 1015, email: 13, facebook: 323, json_feed: 8, linkedin: 59, rss: 33, website_page: 1608, x: 1, youtube: 134 |
+| 2026-07 | published | 3211 | 601 | api: 14, bluesky: 1015, email: 13, facebook: 323, json_feed: 8, linkedin: 59, rss: 33, threads: 3, website_page: 1608, x: 1, youtube: 134 |
 | 2026-08 | published | 388 | 82 | api: 17, bluesky: 287, email: 3, json_feed: 1, linkedin: 48, threads: 3, website_page: 11, youtube: 18 |
 | unknown | candidate | 30 | 1 | rss: 30 |
