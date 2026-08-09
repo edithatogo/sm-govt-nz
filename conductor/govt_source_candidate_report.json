@@ -128669,30 +128669,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "waikato-regional-council",
-      "agency_name": "Waikato Regional Council",
-      "agency_type": "Regional Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "60e722f6aae26807",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.waikatoregion.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/WaikatoRegion"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "WaikatoRegionalCouncil",
       "account_classification": "official",
       "agency_id": "waikato-regional-council",
@@ -128718,78 +128694,6 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/WaikatoRegionalCouncil"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "waikato-regional-council",
-      "agency_name": "Waikato Regional Council",
-      "agency_type": "Regional Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "432a89b710835ddd",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.waikatoregion.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/ourwaikato/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "waikato-regional-council",
-      "agency_name": "Waikato Regional Council",
-      "agency_type": "Regional Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "24765533ce211c00",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.waikatoregion.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/company/waikatoregionalcouncil/"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "",
-      "agency_id": "waikato-regional-council",
-      "agency_name": "Waikato Regional Council",
-      "agency_type": "Regional Council",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "93159cc6d5d97b61",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.waikatoregion.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/user/webmasterEW"
     },
     {
       "access_method": "bounded_public_html",
@@ -140626,7 +140530,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-08T17:50:40+00:00",
+  "generated_at": "2026-08-09T17:04:07+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155610,7 +155514,7 @@
     {
       "agency_id": "central-hawkes-bay-district-council",
       "alternates": 0,
-      "links": 501,
+      "links": 500,
       "status": "ok",
       "url": "https://www.chbdc.govt.nz/"
     },
@@ -156501,7 +156405,7 @@
     {
       "agency_id": "open-polytechnic",
       "alternates": 0,
-      "links": 375,
+      "links": 376,
       "status": "ok",
       "url": "https://www.openpolytechnic.ac.nz/"
     },
@@ -156656,7 +156560,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 403,
+      "links": 406,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -157016,9 +156920,8 @@
     },
     {
       "agency_id": "waikato-regional-council",
-      "alternates": 0,
-      "links": 674,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.waikatoregion.govt.nz/"
     },
     {
@@ -157043,7 +156946,7 @@
     {
       "agency_id": "wairoa-district-council",
       "alternates": 0,
-      "links": 342,
+      "links": 341,
       "status": "ok",
       "url": "https://www.wairoadc.govt.nz/"
     },
@@ -157129,7 +157032,7 @@
     {
       "agency_id": "whangarei-district-council",
       "alternates": 0,
-      "links": 352,
+      "links": 332,
       "status": "ok",
       "url": "https://www.wdc.govt.nz/"
     },
@@ -157172,32 +157075,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5254,
+    "candidate_count": 5250,
     "feasibility_counts": {
       "high": 4159,
-      "low": 309,
-      "medium": 786
+      "low": 308,
+      "medium": 783
     },
     "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 292,
-      "instagram": 163,
-      "linkedin": 236,
+      "facebook": 291,
+      "instagram": 162,
+      "linkedin": 235,
       "medium": 2,
       "newsletter": 158,
       "rss": 3830,
       "website_page": 311,
       "x": 73,
-      "youtube": 158
+      "youtube": 157
     },
     "source_type_counts": {
       "api_endpoint": 13,
       "newsletter": 158,
       "rss_feed": 65,
       "search_seed": 3765,
-      "social_profile": 942,
+      "social_profile": 938,
       "website_page": 311
     }
   }
