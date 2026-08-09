@@ -1,6 +1,6 @@
 {
   "description": "Cumulative monthly release plan. Each release bundles all archived accounts and sources present in the repository at release time.",
-  "generated_at": "2026-08-01T17:38:25+00:00",
+  "generated_at": "2026-08-09T10:07:17+00:00",
   "months": [
     {
       "account_count": 1,
@@ -3114,11 +3114,11 @@
       "account_count": 598,
       "month": "2026-07",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-07 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 3207,
+      "record_count": 3208,
       "release_version": "2026-07",
       "source_counts": {
         "api": 14,
-        "bluesky": 1014,
+        "bluesky": 1015,
         "email": 13,
         "facebook": 323,
         "json_feed": 8,
@@ -3131,24 +3131,31 @@
       "status": "published"
     },
     {
-      "account_count": 5,
+      "account_count": 82,
       "month": "2026-08",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-08 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 9,
+      "record_count": 388,
       "release_version": "2026-08",
       "source_counts": {
-        "bluesky": 9
+        "api": 17,
+        "bluesky": 287,
+        "email": 3,
+        "json_feed": 1,
+        "linkedin": 48,
+        "threads": 3,
+        "website_page": 11,
+        "youtube": 18
       },
-      "status": "candidate"
+      "status": "published"
     },
     {
       "account_count": 1,
       "month": "unknown",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=unknown -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 20,
+      "record_count": 30,
       "release_version": "unknown",
       "source_counts": {
-        "rss": 20
+        "rss": 30
       },
       "status": "candidate"
     }
@@ -3158,12 +3165,13 @@
     "2004-05",
     "2004-06",
     "2026-06",
-    "2026-07"
+    "2026-07",
+    "2026-08"
   ],
   "summary": {
-    "candidate_months": 258,
+    "candidate_months": 257,
     "months_with_records": 263,
-    "published_months": 5,
-    "total_records": 12314
+    "published_months": 6,
+    "total_records": 12704
   }
 }

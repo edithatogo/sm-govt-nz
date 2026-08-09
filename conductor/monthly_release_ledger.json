@@ -1,6 +1,6 @@
 {
   "description": "Machine-maintained ledger of monthly cumulative corpus releases published externally.",
-  "generated_at": "2026-08-01T17:40:02+00:00",
+  "generated_at": "2026-08-09T10:08:22+00:00",
   "releases": [
     {
       "artifact_sha256": "d76787876c21105d1ee1606d88b94a73ffa7cb267db4b2085ad7077136e859e1",
@@ -79,6 +79,18 @@
         "zenodo"
       ],
       "zenodo": "published"
+    },
+    {
+      "artifact_sha256": "5673c0aad1e3fcd4fc953876b0e9bfc6c6655e72e7e7b1fdd6d7baf219cd7bc3",
+      "hugging_face": "published",
+      "mode": "published",
+      "normalized_record_count": 12706,
+      "recorded_at": "2026-08-09T10:08:22+00:00",
+      "release_version": "2026-08-reconcile",
+      "requested_targets": [
+        "huggingface"
+      ],
+      "zenodo": "not_requested_or_not_configured"
     }
   ]
 }
