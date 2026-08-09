@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-08T04:17:24+00:00",
+  "generated_at": "2026-08-09T04:31:49+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -47,10 +47,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 400: candidate JSON Feed endpoint is unavailable",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "3caae6ccb89ff631",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "http_error",
       "url": "https://www.accreditation.co.nz/feed.json"
     },
     {
@@ -619,10 +619,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 400: candidate JSON Feed endpoint is unavailable",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "51d86fb0b7190b2b",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "http_error",
       "url": "https://www.ecnz.co.nz/feed.json"
     },
     {
@@ -1994,7 +1994,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
       "source_id": "9289dcb60410c333",
       "source_type": "json_feed",
       "status": "invalid",
@@ -2969,7 +2969,8 @@
         "capture_blocked": 26,
         "captured": 7,
         "dns_failed": 8,
-        "invalid": 204,
+        "http_error": 2,
+        "invalid": 202,
         "network_error": 9,
         "network_timeout": 2,
         "not_acceptable": 1
@@ -2981,7 +2982,8 @@
       "capture_blocked": 26,
       "captured": 7,
       "dns_failed": 8,
-      "invalid": 204,
+      "http_error": 2,
+      "invalid": 202,
       "network_error": 9,
       "network_timeout": 2,
       "not_acceptable": 1
