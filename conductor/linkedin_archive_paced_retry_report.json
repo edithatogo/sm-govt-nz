@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-08T17:52:16+00:00",
+  "generated_at": "2026-08-09T17:52:54+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "2bf194805365b358",
-      "5c870226ca582324",
-      "d99b572191966e5b"
+      "7d53ef0e51f046a1",
+      "ee88e93d8e0fd60c"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -36,52 +35,30 @@
   },
   "results": [
     {
-      "agency_id": "massey-university",
+      "agency_id": "nmit",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "5c870226ca582324",
+      "source_id": "7d53ef0e51f046a1",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/massey-university"
-    },
-    {
-      "agency_id": "university-of-canterbury",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "HTTP 999: unknown",
-      "source_id": "2bf194805365b358",
-      "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/university-of-canterbury"
-    },
-    {
-      "agency_id": "wintec",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "HTTP 999: unknown",
-      "source_id": "d99b572191966e5b",
-      "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/wintec"
+      "url": "https://www.linkedin.com/school/nelson-marlborough-institute-of-technology"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 3
+      "linkedin": 1
     },
-    "selected_sources": 3,
+    "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 3
+        "http_error": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 3
+      "http_error": 1
     }
   }
 }

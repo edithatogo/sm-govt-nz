@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-08T17:51:57+00:00",
+  "generated_at": "2026-08-09T17:51:56+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,7 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "75291458e1733fa0"
+      "22eb3a1030dbe1f8",
+      "32232210935e6871",
+      "7d37d030d34858b9",
+      "8bb4a710fd72c54e",
+      "c9fde77e9f534366"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -34,30 +38,74 @@
   },
   "results": [
     {
-      "agency_id": "northland-regional-council",
+      "agency_id": "lincoln-university",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "75291458e1733fa0",
+      "source_id": "32232210935e6871",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.nrc.govt.nz/feed.json"
+      "url": "https://www.lincoln.ac.nz/feed.json"
+    },
+    {
+      "agency_id": "manawatu-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "json_feed",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "22eb3a1030dbe1f8",
+      "source_type": "json_feed",
+      "status": "capture_blocked",
+      "url": "https://www.mdc.govt.nz/feed.json"
+    },
+    {
+      "agency_id": "reserve-bank-of-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "json_feed",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "c9fde77e9f534366",
+      "source_type": "json_feed",
+      "status": "capture_blocked",
+      "url": "https://www.rbnz.govt.nz/feed.json"
+    },
+    {
+      "agency_id": "selwyn-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "json_feed",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "8bb4a710fd72c54e",
+      "source_type": "json_feed",
+      "status": "capture_blocked",
+      "url": "https://www.selwyn.govt.nz/feed.json"
+    },
+    {
+      "agency_id": "tararua-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "json_feed",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "7d37d030d34858b9",
+      "source_type": "json_feed",
+      "status": "capture_blocked",
+      "url": "https://www.tararuadc.govt.nz/feed.json"
     }
   ],
   "summary": {
     "platform_counts": {
-      "json_feed": 1
+      "json_feed": 5
     },
-    "selected_sources": 1,
+    "selected_sources": 5,
     "status_by_platform": {
       "json_feed": {
-        "capture_blocked": 1
+        "capture_blocked": 5
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 1
+      "capture_blocked": 5
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-02T18:18:12+00:00",
+  "generated_at": "2026-08-09T17:52:48+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "0061ef17b65e9518",
-      "3d96533a759ca232",
-      "63d3fdf169c4900a",
-      "b3f7b5b9e22072f8",
-      "bf4698bd981103f3"
+      "4d1f56f9c5deaef7",
+      "97c47f7e3f99bdc5"
     ],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
@@ -40,80 +37,43 @@
     {
       "agency_id": "education-review-office",
       "archive_status": "ready",
-      "candidate_id": "0061ef17b65e9518",
+      "candidate_id": "4d1f56f9c5deaef7",
       "feasibility": "high",
       "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-08/7c3c1e49383db460e61a9a88.json",
-      "reason": "public browser fallback stopped at access marker: cloudflare",
-      "source_id": "0061ef17b65e9518",
+      "raw_path": "historical_archive_raw/website_browser/2026-08/b94e33b3a3a1c8707753fa61.json",
+      "reason": "public browser fallback stopped at access marker: Cloudflare",
+      "source_id": "4d1f56f9c5deaef7",
       "source_type": "website_page",
       "status": "browser_captcha_or_challenge",
-      "url": "https://www.ero.govt.nz/news-and-events"
+      "url": "https://www.ero.govt.nz/news"
     },
     {
-      "agency_id": "government-house",
+      "agency_id": "selwyn-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "bf4698bd981103f3",
+      "source_id": "97c47f7e3f99bdc5",
       "source_type": "website_page",
       "status": "capture_blocked",
-      "url": "https://gg.govt.nz/api"
-    },
-    {
-      "agency_id": "ministry-of-education",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 500: Internal Server Error",
-      "source_id": "3d96533a759ca232",
-      "source_type": "website_page",
-      "status": "http_error",
-      "url": "https://www.education.govt.nz/publications"
-    },
-    {
-      "agency_id": "porirua-city-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "URL error: [Errno -5] No address associated with hostname; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "b3f7b5b9e22072f8",
-      "source_type": "website_page",
-      "status": "network_error",
-      "url": "https://www.pcc.govt.nz"
-    },
-    {
-      "agency_id": "predator-free-2050",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "URL error: [Errno -5] No address associated with hostname; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "63d3fdf169c4900a",
-      "source_type": "website_page",
-      "status": "network_error",
-      "url": "https://www.predatorfree2050.co.nz"
+      "url": "https://www.selwyn.govt.nz/newsletter"
     }
   ],
   "summary": {
     "platform_counts": {
-      "website_page": 5
+      "website_page": 2
     },
-    "selected_sources": 5,
+    "selected_sources": 2,
     "status_by_platform": {
       "website_page": {
         "browser_captcha_or_challenge": 1,
-        "capture_blocked": 1,
-        "http_error": 1,
-        "network_error": 2
+        "capture_blocked": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "browser_captcha_or_challenge": 1,
-      "capture_blocked": 1,
-      "http_error": 1,
-      "network_error": 2
+      "capture_blocked": 1
     }
   }
 }
