@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-09T17:52:48+00:00",
+  "generated_at": "2026-08-10T18:09:18+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,8 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "4d1f56f9c5deaef7",
-      "97c47f7e3f99bdc5"
+      "11762b7b4f56b2e7",
+      "e4b1258b8425d248"
     ],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
@@ -35,17 +35,17 @@
   },
   "results": [
     {
-      "agency_id": "education-review-office",
+      "agency_id": "dpmc",
       "archive_status": "ready",
-      "candidate_id": "4d1f56f9c5deaef7",
+      "candidate_id": "e4b1258b8425d248",
       "feasibility": "high",
       "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-08/b94e33b3a3a1c8707753fa61.json",
-      "reason": "public browser fallback stopped at access marker: Cloudflare",
-      "source_id": "4d1f56f9c5deaef7",
+      "raw_path": "historical_archive_raw/website_browser/2026-08/1887008385c9e4e91cd39470.json",
+      "reason": "public browser fallback stopped at access marker: cloudflare",
+      "source_id": "e4b1258b8425d248",
       "source_type": "website_page",
       "status": "browser_captcha_or_challenge",
-      "url": "https://www.ero.govt.nz/news"
+      "url": "https://www.dpmc.govt.nz/news-and-events"
     },
     {
       "agency_id": "selwyn-district-council",
@@ -53,10 +53,10 @@
       "feasibility": "high",
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "97c47f7e3f99bdc5",
+      "source_id": "11762b7b4f56b2e7",
       "source_type": "website_page",
       "status": "capture_blocked",
-      "url": "https://www.selwyn.govt.nz/newsletter"
+      "url": "https://www.selwyn.govt.nz/media"
     }
   ],
   "summary": {

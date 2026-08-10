@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-09T17:51:37+00:00",
+  "generated_at": "2026-08-10T18:08:17+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "2bf8ae08db376193",
-      "413d054a39b70324",
-      "5881803134ae031c",
-      "61ff31ee6d113093"
+      "2ca609997afd955f",
+      "91022b1c8a099820",
+      "9563fb75ba9a85d7",
+      "c35ab613bb727735",
+      "da7713eaa960ff5c"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -37,63 +38,76 @@
   },
   "results": [
     {
-      "agency_id": "mackenzie-district-council",
+      "agency_id": "bay-of-plenty-regional-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "2bf8ae08db376193",
+      "reason": "URL error: timed out",
+      "source_id": "2ca609997afd955f",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.mackenzie.govt.nz/openapi.json"
+      "status": "network_timeout",
+      "url": "https://www.boprc.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "selwyn-district-council",
+      "agency_id": "kaikoura-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "5881803134ae031c",
+      "source_id": "9563fb75ba9a85d7",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.selwyn.govt.nz/.well-known/webfinger"
+      "url": "https://www.kaikoura.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "south-waikato-district-council",
+      "agency_id": "rotorua-lakes-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "61ff31ee6d113093",
+      "source_id": "91022b1c8a099820",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.southwaikato.govt.nz/.well-known/webfinger"
+      "url": "https://www.rotorualakescouncil.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "timaru-district-council",
+      "agency_id": "the-treasury",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "413d054a39b70324",
+      "source_id": "da7713eaa960ff5c",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.timaru.govt.nz/.well-known/webfinger"
+      "url": "https://www.treasury.govt.nz/.well-known/webfinger"
+    },
+    {
+      "agency_id": "tourism-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "c35ab613bb727735",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.tourismnewzealand.com/openapi.json"
     }
   ],
   "summary": {
     "platform_counts": {
-      "api": 4
+      "api": 5
     },
-    "selected_sources": 4,
+    "selected_sources": 5,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 4
+        "capture_blocked": 4,
+        "network_timeout": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 4
+      "capture_blocked": 4,
+      "network_timeout": 1
     }
   }
 }
