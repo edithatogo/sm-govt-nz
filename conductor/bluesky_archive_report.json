@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-11T02:23:49+00:00",
+  "generated_at": "2026-08-11T07:24:57+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -31,6 +31,17 @@
     "x_feed_timeout": 30
   },
   "results": [
+    {
+      "agency_id": "beehive-nz",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrsn7zgx72a",
+      "source_id": "dc2d30e0772e3af0",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/beehivenz.bsky.social"
+    },
     {
       "agency_id": "beehive-nz",
       "archive_status": "ready",
@@ -1121,22 +1132,11 @@
       "url": "https://bsky.app/profile/beehivenz.bsky.social"
     },
     {
-      "agency_id": "beehive-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "dc2d30e0772e3af0",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/beehivenz.bsky.social"
-    },
-    {
       "agency_id": "christchurch-city-libraries",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "captured bluesky post bluesky:3msrcbrlcac2f",
+      "reason": "captured bluesky post bluesky:3msrnhaf35k2h",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
       "status": "captured",
@@ -1147,10 +1147,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3msrmm26ywk27",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -1158,10 +1158,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3msrcbrlcac2f",
       "source_id": "839911d3595b0654",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/christchurchlib.bsky.social"
     },
     {
@@ -3105,10 +3105,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3msrmewcdp22x",
       "source_id": "600f7ea8eaf290ee",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/healthnz.govt.nz"
     },
     {
@@ -8341,6 +8341,28 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrnv6mmhk2s",
+      "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "agency_id": "person-aaron-hawkins",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrlb45hk22s",
+      "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "agency_id": "person-aaron-hawkins",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
       "reason": "captured bluesky post bluesky:3msrimbfo3c2y",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
@@ -9415,28 +9437,6 @@
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
-      "agency_id": "person-aaron-hawkins",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/ahawkins.bsky.social"
-    },
-    {
-      "agency_id": "person-aaron-hawkins",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/ahawkins.bsky.social"
-    },
-    {
       "agency_id": "person-andrew-little",
       "archive_status": "ready",
       "feasibility": "high",
@@ -12713,6 +12713,479 @@
       "source_type": "social_profile",
       "status": "already_captured",
       "url": "https://bsky.app/profile/geordierogers.co.nz"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msryv7jzsv2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msryc5tvlv2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msryc4nlz52p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrxozthgs2f",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrxgdy3z52p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrwwaxxqv2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrwtqkaev2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrwtqkaeu2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrwtppc342p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrw6c54lm2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrw6c54ll2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrw6c54lk2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrw6c53mc2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrw6c53mb2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrw6c53ma2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrw6c53m72p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrw6awrzh2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrv3fa4o72p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrutuz5bh2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrutuz5bg2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msruttsosg2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrugm5hqo2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrugm5hqn2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrugm5hqm2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrugldufu2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrtuzwfuu2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrtgjhjl42p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrtgioskm2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrt2l3zgu2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrt2l3zgt2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrt2jx5qt2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrsk2l3l222",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrsemh7rd2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrselkyh32p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrs7blvo32p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrpbfblv32p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrnzkvupl2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrnoeyjut2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrngegm432p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrmepu34d2p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrlpcp4i32p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrlkn4mj32p",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msrkpmqgjs2c",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
       "agency_id": "person-julie-fairey",
@@ -13119,479 +13592,6 @@
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
       "status": "captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -17947,14 +17947,14 @@
     "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
-        "already_captured": 1573,
-        "captured": 55
+        "already_captured": 1524,
+        "captured": 104
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1573,
-      "captured": 55
+      "already_captured": 1524,
+      "captured": 104
     }
   }
 }
