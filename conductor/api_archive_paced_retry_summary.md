@@ -1,6 +1,6 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-08-10T18:08:17+00:00
+Generated: 2026-08-11T18:10:44+00:00
 
 ## Summary
 
@@ -15,11 +15,11 @@ Generated: 2026-08-10T18:08:17+00:00
 ## Status counts
 
 - `capture_blocked`: 4
-- `network_timeout`: 1
+- `method_not_allowed`: 1
 
 ## Status by platform
 
-- `api`: {'capture_blocked': 4, 'network_timeout': 1}
+- `api`: {'capture_blocked': 4, 'method_not_allowed': 1}
 
 ## Notes
 

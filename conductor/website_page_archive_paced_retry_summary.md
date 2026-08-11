@@ -1,25 +1,25 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-08-10T18:09:18+00:00
+Generated: 2026-08-11T18:13:57+00:00
 
 ## Summary
 
-- `selected_sources`: 2
+- `selected_sources`: 4
 - `platform_count`: 1
 - `status_count`: 2
 
 ## Platform counts
 
-- `website_page`: 2
+- `website_page`: 4
 
 ## Status counts
 
 - `browser_captcha_or_challenge`: 1
-- `capture_blocked`: 1
+- `capture_blocked`: 3
 
 ## Status by platform
 
-- `website_page`: {'browser_captcha_or_challenge': 1, 'capture_blocked': 1}
+- `website_page`: {'browser_captcha_or_challenge': 1, 'capture_blocked': 3}
 
 ## Notes
 

@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-10T18:08:17+00:00",
+  "generated_at": "2026-08-11T18:10:44+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "2ca609997afd955f",
-      "91022b1c8a099820",
-      "9563fb75ba9a85d7",
-      "c35ab613bb727735",
-      "da7713eaa960ff5c"
+      "490090e90edba38d",
+      "7a288baf36de6242",
+      "80834bff790603eb",
+      "e031bb3f5b0109dc",
+      "e2e9f640838a5a3e"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -38,59 +38,59 @@
   },
   "results": [
     {
-      "agency_id": "bay-of-plenty-regional-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "URL error: timed out",
-      "source_id": "2ca609997afd955f",
-      "source_type": "api_endpoint",
-      "status": "network_timeout",
-      "url": "https://www.boprc.govt.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "kaikoura-district-council",
+      "agency_id": "ashburton-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "9563fb75ba9a85d7",
+      "source_id": "e2e9f640838a5a3e",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.kaikoura.govt.nz/.well-known/webfinger"
+      "url": "https://www.ashburtondc.govt.nz/openapi.json"
+    },
+    {
+      "agency_id": "dunedin-city-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "80834bff790603eb",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.dunedin.govt.nz/openapi.json"
+    },
+    {
+      "agency_id": "manawatu-district-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "490090e90edba38d",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.mdc.govt.nz/.well-known/webfinger"
+    },
+    {
+      "agency_id": "northland-regional-council",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "e031bb3f5b0109dc",
+      "source_type": "api_endpoint",
+      "status": "capture_blocked",
+      "url": "https://www.nrc.govt.nz/.well-known/webfinger"
     },
     {
       "agency_id": "rotorua-lakes-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "91022b1c8a099820",
+      "reason": "HTTP 405: Not Allowed",
+      "source_id": "7a288baf36de6242",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.rotorualakescouncil.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "the-treasury",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "da7713eaa960ff5c",
-      "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.treasury.govt.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "tourism-nz",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "c35ab613bb727735",
-      "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.tourismnewzealand.com/openapi.json"
+      "status": "method_not_allowed",
+      "url": "https://www.rotorualakescouncil.nz/openapi.json"
     }
   ],
   "summary": {
@@ -101,13 +101,13 @@
     "status_by_platform": {
       "api": {
         "capture_blocked": 4,
-        "network_timeout": 1
+        "method_not_allowed": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "capture_blocked": 4,
-      "network_timeout": 1
+      "method_not_allowed": 1
     }
   }
 }
