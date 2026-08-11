@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-08-10T16:27:26+00:00",
+  "generated_at": "2026-08-11T17:19:54+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -5831,6 +5831,27 @@
       ],
       "source_id": "queenstown-lakes-district-council-newsletter-f410d49d",
       "url": "https://www.qldc.govt.nz/do-it-online/newsletter-sign-up/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.qldc.govt.nz",
+      "agency_id": "queenstown-lakes-district-council",
+      "agency_name": "Queenstown-Lakes District Council",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/queenstown-lakes-district-council-newsletter-f528cae4.json",
+      "priority_rank": 20,
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/queenstown-lakes-district-council-newsletter-f528cae4.json",
+        "manual_archive_seeds/newsletter/queenstown-lakes-district-council.json"
+      ],
+      "source_id": "queenstown-lakes-district-council-newsletter-f528cae4",
+      "url": "https://www.youtube.com/@qldcinfo"
     },
     {
       "acceptable_access_methods": [
@@ -13146,7 +13167,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 week ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 weeks ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -19172,7 +19193,7 @@
     "platform_counts": {
       "facebook": 326,
       "instagram": 183,
-      "newsletter": 400,
+      "newsletter": 401,
       "threads": 3
     },
     "priority_order": [
@@ -19181,6 +19202,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 912
+    "queue_count": 913
   }
 }
