@@ -1,26 +1,26 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-08-11T04:26:21+00:00
+Generated: 2026-08-12T04:51:23+00:00
 
 ## Summary
 
-- `selected_sources`: 1735
+- `selected_sources`: 1740
 - `platform_count`: 1
 - `status_count`: 3
 
 ## Platform counts
 
-- `rss`: 1735
+- `rss`: 1740
 
 ## Status counts
 
-- `already_captured`: 317
-- `captured`: 830
-- `no_records`: 1691
+- `already_captured`: 312
+- `captured`: 835
+- `no_records`: 1694
 
 ## Status by platform
 
-- `rss`: {'already_captured': 317, 'captured': 830, 'no_records': 1691}
+- `rss`: {'already_captured': 312, 'captured': 835, 'no_records': 1694}
 
 ## Notes
 
