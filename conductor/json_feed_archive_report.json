@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-11T04:29:51+00:00",
+  "generated_at": "2026-08-12T04:49:29+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -1499,10 +1499,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "captured json feed item json_feed:e9362a3fa4b1b72186c4e53a",
       "source_id": "network-for-learning-json_feed-8b6deef2",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "captured",
       "url": "https://www.n4l.co.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.n4l.co.nz%2F"
     },
     {
@@ -1510,7 +1510,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "captured json feed item json_feed:5de4ec4557a1792c66e41d4b",
+      "reason": "captured json feed item json_feed:a17810bd46c4abd8af7cd739",
       "source_id": "network-for-learning-json_feed-53bcdbda",
       "source_type": "json_feed",
       "status": "captured",
@@ -2412,10 +2412,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: timed out",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5141d9615e81de91",
       "source_type": "json_feed",
-      "status": "network_timeout",
+      "status": "invalid",
       "url": "https://www.mhwc.govt.nz/feed.json"
     },
     {
@@ -2967,11 +2967,11 @@
       "json_feed": {
         "already_captured": 8,
         "capture_blocked": 26,
-        "captured": 7,
+        "captured": 8,
         "dns_failed": 8,
         "invalid": 204,
         "network_error": 9,
-        "network_timeout": 3,
+        "network_timeout": 2,
         "not_acceptable": 1
       }
     },
@@ -2979,11 +2979,11 @@
     "status_counts": {
       "already_captured": 8,
       "capture_blocked": 26,
-      "captured": 7,
+      "captured": 8,
       "dns_failed": 8,
       "invalid": 204,
       "network_error": 9,
-      "network_timeout": 3,
+      "network_timeout": 2,
       "not_acceptable": 1
     }
   }
