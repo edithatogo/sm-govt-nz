@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-11T18:13:57+00:00",
+  "generated_at": "2026-08-12T18:12:24+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "2582361c5e0ac21e",
-      "422a2a742d1f9988",
-      "96240ac4f68ba3a4",
-      "a0c3f4eaf2d85b6e"
+      "1e88fd192c0af855",
+      "830368347004813f"
     ],
     "source_type": "website_page",
     "x_auth_scrape_enabled": false,
@@ -39,15 +37,15 @@
     {
       "agency_id": "dpmc",
       "archive_status": "ready",
-      "candidate_id": "a0c3f4eaf2d85b6e",
+      "candidate_id": "830368347004813f",
       "feasibility": "high",
       "platform": "website_page",
-      "raw_path": "historical_archive_raw/website_browser/2026-08/de9d566606b97e7db6010e0e.json",
+      "raw_path": "historical_archive_raw/website_browser/2026-08/645c545d39de63a238367b0b.json",
       "reason": "public browser fallback stopped at access marker: cloudflare",
-      "source_id": "a0c3f4eaf2d85b6e",
+      "source_id": "830368347004813f",
       "source_type": "website_page",
       "status": "browser_captcha_or_challenge",
-      "url": "https://www.dpmc.govt.nz/newsletter"
+      "url": "https://www.dpmc.govt.nz/api"
     },
     {
       "agency_id": "government-house",
@@ -55,49 +53,27 @@
       "feasibility": "high",
       "platform": "website_page",
       "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "2582361c5e0ac21e",
+      "source_id": "1e88fd192c0af855",
       "source_type": "website_page",
       "status": "capture_blocked",
-      "url": "https://gg.govt.nz/newsletter"
-    },
-    {
-      "agency_id": "selwyn-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "422a2a742d1f9988",
-      "source_type": "website_page",
-      "status": "capture_blocked",
-      "url": "https://www.selwyn.govt.nz"
-    },
-    {
-      "agency_id": "timaru-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "website_page",
-      "reason": "HTTP 403: Forbidden; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
-      "source_id": "96240ac4f68ba3a4",
-      "source_type": "website_page",
-      "status": "capture_blocked",
-      "url": "https://www.timaru.govt.nz/api"
+      "url": "https://gg.govt.nz/media"
     }
   ],
   "summary": {
     "platform_counts": {
-      "website_page": 4
+      "website_page": 2
     },
-    "selected_sources": 4,
+    "selected_sources": 2,
     "status_by_platform": {
       "website_page": {
         "browser_captcha_or_challenge": 1,
-        "capture_blocked": 3
+        "capture_blocked": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
       "browser_captcha_or_challenge": 1,
-      "capture_blocked": 3
+      "capture_blocked": 1
     }
   }
 }

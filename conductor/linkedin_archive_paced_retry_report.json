@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-11T18:14:04+00:00",
+  "generated_at": "2026-08-12T18:12:37+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,9 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "48c45819377b49a1",
-      "e2b5857226df92d7",
-      "fef4dc99e8ec0126"
+      "0576ebdf8faec985",
+      "b26fc4367206aae5",
+      "f77d729a901b0464"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -36,30 +36,41 @@
   },
   "results": [
     {
-      "agency_id": "university-of-waikato",
+      "agency_id": "manukau-institute-of-technology",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "48c45819377b49a1",
+      "source_id": "f77d729a901b0464",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/university-of-waikato"
+      "url": "https://www.linkedin.com/school/manukau-institute-of-technology"
+    },
+    {
+      "agency_id": "whitireia",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 999: <none>",
+      "source_id": "0576ebdf8faec985",
+      "source_type": "social_profile",
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/whitireia"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1
+        "http_error": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1
+      "http_error": 2
     }
   }
 }
