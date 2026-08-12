@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-12T07:47:45+00:00",
+  "generated_at": "2026-08-12T13:40:15+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -12741,6 +12741,28 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msurazpoac2g",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msuoynuikc2g",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
       "reason": "captured bluesky post bluesky:3mstzp7g6s227",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
@@ -12767,28 +12789,6 @@
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
       "status": "captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -17969,14 +17969,14 @@
     "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
-        "already_captured": 1598,
-        "captured": 32
+        "already_captured": 1596,
+        "captured": 34
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1598,
-      "captured": 32
+      "already_captured": 1596,
+      "captured": 34
     }
   }
 }
