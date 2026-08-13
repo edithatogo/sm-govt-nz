@@ -1,6 +1,6 @@
 {
   "description": "Explicit onboarding queue for Meta, LinkedIn, and X sources requiring authorized seeds, owner exports, approved APIs, or lawful public archive inputs.",
-  "generated_at": "2026-08-12T16:31:10+00:00",
+  "generated_at": "2026-08-13T16:30:40+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -2464,6 +2464,31 @@
       "source_id": "0d0c328df95ef9e9",
       "source_type": "social_profile",
       "url": "https://www.facebook.com/KawerauDistrictCouncil"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.geonet.org.nz/earthquake",
+      "agency_id": "kawerau-district-council",
+      "agency_name": "Kawerau District Council",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not scrape unauthenticated public pages. Use Graph API, owner export, or explicit operator seed JSON only.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
+      "preferred_seed_path": "manual_archive_seeds/facebook/kawerau-district-council-facebook-339dd250.json",
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/kawerau-district-council-facebook-339dd250.json",
+        "manual_archive_seeds/facebook/kawerau-district-council.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "kawerau-district-council-facebook-339dd250",
+      "source_type": "social_profile",
+      "url": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.geonet.org.nz%2Fearthquake%3Ffbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETFCV0VWZ3dTSDlkSEpRYjlEc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmo12PJr8cmNy49NktsTB5qD2N2h-TzgXzsJUEgJE1B5zokODN893RLoPPAk_aem_UJjUssD79xDnOtFIdBwtug&h=AUAYSBsTC81yLrHGlaB85P2zc4Xn2L_jSLa6Sravn-Pmad1EzMgJsnTt2C6AzWw816tSrVnJBE2-cO-_gD5IZUvnnLRM7SjZMV_9QAfimgeTCadOyQTaxMLE4ztm1RKLDqD_42qoxI35b9P-&__tn__=-UK-R&c[0]=AUBiOd-7shztAuw7DZR0RA9y3UTMf7TYynDlw1Ork_RC4GxHyBcLXx1NJOiujcdBX1msk9IpkUpOsb4ZFrl2xaBa1b5fUx69ucrVThKm_8Oa-ciZiCgExJsk7SkQgoq1BNLqjDZqUeU8eKc4osRBZznLMAmu8XZ3PT_0FjPiTSoB5ipkUKvma6Z-ORE3DaHRj-PLG-VITuysG_KRfd8yB1ON9Q"
     },
     {
       "acceptable_access_methods": [
@@ -19204,6 +19229,31 @@
       "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/accident-compensation-corporation-newsletter-615b7031.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/accident-compensation-corporation-newsletter-615b7031.json",
+        "manual_archive_seeds/newsletter/accident-compensation-corporation.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "accident-compensation-corporation-newsletter-615b7031",
+      "source_type": "newsletter",
+      "url": "https://www.acc.co.nz/for-providers/provider-news-and-events/subscribe-to-our-provider-email-updates"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.acc.co.nz",
+      "agency_id": "accident-compensation-corporation",
+      "agency_name": "Accident Compensation Corporation (Te Kaporeihana \u0100whina Hunga Whara)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
       "preferred_seed_path": "manual_archive_seeds/newsletter/accident-compensation-corporation-newsletter-a2c2ad5b.json",
       "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
       "seed_candidates": [
@@ -20614,6 +20664,31 @@
       "source_id": "environmental-protection-authority-newsletter-1efab03b",
       "source_type": "newsletter",
       "url": "https://www.epa.govt.nz/news-and-alerts/newsletters/te-putara/"
+    },
+    {
+      "acceptable_access_methods": [
+        "public_newsletter_archive",
+        "email_ingress",
+        "operator_authorized_seed"
+      ],
+      "account": "https://www.epa.govt.nz",
+      "agency_id": "environmental-protection-authority",
+      "agency_name": "Environmental Protection Authority (Te Mana Rauh\u012b Taiao)",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "live_capture_policy": "Do not submit subscription forms or automate private inbox access. Use public newsletter archives, configured email ingress, or explicit operator seed JSON.",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "newsletter",
+      "preferred_seed_path": "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-1f4717a7.json",
+      "required_authorization": "public_archive_or_subscribed_mailbox_or_operator_authorized_capture",
+      "seed_candidates": [
+        "manual_archive_seeds/newsletter/environmental-protection-authority-newsletter-1f4717a7.json",
+        "manual_archive_seeds/newsletter/environmental-protection-authority.json"
+      ],
+      "seed_schema": "posts[] with post_id, url, created_at, text, optional media/account/canonical_url",
+      "source_id": "environmental-protection-authority-newsletter-1f4717a7",
+      "source_type": "newsletter",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-welcomes-fine-for-illegal-clearance-of-wetland-vegetation-in-northland/"
     },
     {
       "acceptable_access_methods": [
@@ -31422,25 +31497,25 @@
   },
   "summary": {
     "platform_counts": {
-      "facebook": 326,
+      "facebook": 327,
       "instagram": 183,
       "linkedin": 258,
-      "newsletter": 401,
+      "newsletter": 403,
       "threads": 3,
       "x": 79
     },
     "remaining_group_count": 4,
     "remaining_groups": {
-      "facebook": 326,
+      "facebook": 327,
       "instagram": 183,
-      "newsletter": 401,
+      "newsletter": 403,
       "threads": 3
     },
-    "remaining_source_count": 913,
-    "selected_sources": 1250,
+    "remaining_source_count": 916,
+    "selected_sources": 1253,
     "status_by_platform": {
       "facebook": {
-        "needs_authorized_seed_or_api": 326
+        "needs_authorized_seed_or_api": 327
       },
       "instagram": {
         "needs_authorized_seed_or_api": 183
@@ -31449,7 +31524,7 @@
         "public_fallback_available": 258
       },
       "newsletter": {
-        "needs_authorized_seed_or_api": 401
+        "needs_authorized_seed_or_api": 403
       },
       "threads": {
         "needs_authorized_seed_or_api": 3
@@ -31459,7 +31534,7 @@
       }
     },
     "status_counts": {
-      "needs_authorized_seed_or_api": 913,
+      "needs_authorized_seed_or_api": 916,
       "public_fallback_available": 258,
       "seed_present": 79
     }

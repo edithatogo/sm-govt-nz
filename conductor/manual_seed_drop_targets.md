@@ -3,7 +3,7 @@
 Use these paths to place operator-authorized seed JSON files for the next deterministic batch.
 The templates below are derived from `conductor/manual_seed_next_batch_templates.json` and do not create live seed files by themselves.
 
-Generated: 2026-08-12T16:31:10+00:00
+Generated: 2026-08-13T16:30:40+00:00
 
 ## Summary
 
@@ -15,6 +15,7 @@ Generated: 2026-08-12T16:31:10+00:00
 | `threads` | `nz-police-threads-newzealandpolice` | `manual_archive_seeds/threads/nz-police-threads-newzealandpolice.json` |
 | `threads` | `nzte-threads-nzte` | `manual_archive_seeds/threads/nzte-threads-nzte.json` |
 | `threads` | `wellington-city-libraries-threads-wcl-library` | `manual_archive_seeds/threads/wellington-city-libraries-threads-wcl-library.json` |
+| `newsletter` | `accident-compensation-corporation-newsletter-615b7031` | `manual_archive_seeds/newsletter/accident-compensation-corporation-newsletter-615b7031.json` |
 | `newsletter` | `accident-compensation-corporation-newsletter-a2c2ad5b` | `manual_archive_seeds/newsletter/accident-compensation-corporation-newsletter-a2c2ad5b.json` |
 | `newsletter` | `creative-nz-newsletter-7844e992` | `manual_archive_seeds/newsletter/creative-nz-newsletter-7844e992.json` |
 | `newsletter` | `buller-district-council-newsletter-0ccf7aef` | `manual_archive_seeds/newsletter/buller-district-council-newsletter-0ccf7aef.json` |
@@ -36,7 +37,6 @@ Generated: 2026-08-12T16:31:10+00:00
 | `newsletter` | `central-otago-district-council-newsletter-bf4edb9f` | `manual_archive_seeds/newsletter/central-otago-district-council-newsletter-bf4edb9f.json` |
 | `newsletter` | `central-otago-district-council-newsletter-d8acb969` | `manual_archive_seeds/newsletter/central-otago-district-council-newsletter-d8acb969.json` |
 | `newsletter` | `central-otago-district-council-newsletter-de23a81e` | `manual_archive_seeds/newsletter/central-otago-district-council-newsletter-de23a81e.json` |
-| `newsletter` | `chatham-islands-council-newsletter-1e57736f` | `manual_archive_seeds/newsletter/chatham-islands-council-newsletter-1e57736f.json` |
 
 ## Shape
 

@@ -1,27 +1,27 @@
 # Manual/API Source Onboarding
 
-Generated: 2026-08-12T16:31:10+00:00
+Generated: 2026-08-13T16:30:40+00:00
 Next batch limit: 25
 
 ## Summary
 
-- `selected_sources`: 1250
+- `selected_sources`: 1253
 - `remaining_group_count`: 4
-- `remaining_source_count`: 913
+- `remaining_source_count`: 916
 
 ## Remaining groups
 
-- `facebook`: 326
+- `facebook`: 327
 - `instagram`: 183
-- `newsletter`: 401
+- `newsletter`: 403
 - `threads`: 3
 
 ## Platform status
 
-- `facebook`: {'needs_authorized_seed_or_api': 326}
+- `facebook`: {'needs_authorized_seed_or_api': 327}
 - `instagram`: {'needs_authorized_seed_or_api': 183}
 - `linkedin`: {'public_fallback_available': 258}
-- `newsletter`: {'needs_authorized_seed_or_api': 401}
+- `newsletter`: {'needs_authorized_seed_or_api': 403}
 - `threads`: {'needs_authorized_seed_or_api': 3}
 - `x`: {'seed_present': 79}
 
@@ -32,6 +32,7 @@ Next batch limit: 25
 | `threads` | `nz-police-threads-newzealandpolice` | New Zealand Police (Ngā Pirihimana o Aotearoa) | `manual_archive_seeds/threads/nz-police-threads-newzealandpolice.json` |
 | `threads` | `nzte-threads-nzte` | New Zealand Trade and Enterprise (Te Taurapa Tūhono) | `manual_archive_seeds/threads/nzte-threads-nzte.json` |
 | `threads` | `wellington-city-libraries-threads-wcl-library` | Wellington City Libraries | `manual_archive_seeds/threads/wellington-city-libraries-threads-wcl-library.json` |
+| `newsletter` | `accident-compensation-corporation-newsletter-615b7031` | Accident Compensation Corporation (Te Kaporeihana Āwhina Hunga Whara) | `manual_archive_seeds/newsletter/accident-compensation-corporation-newsletter-615b7031.json` |
 | `newsletter` | `accident-compensation-corporation-newsletter-a2c2ad5b` | Accident Compensation Corporation (Te Kaporeihana Āwhina Hunga Whara) | `manual_archive_seeds/newsletter/accident-compensation-corporation-newsletter-a2c2ad5b.json` |
 | `newsletter` | `creative-nz-newsletter-7844e992` | Arts Council of New Zealand (Creative New Zealand) | `manual_archive_seeds/newsletter/creative-nz-newsletter-7844e992.json` |
 | `newsletter` | `buller-district-council-newsletter-0ccf7aef` | Buller District Council | `manual_archive_seeds/newsletter/buller-district-council-newsletter-0ccf7aef.json` |
@@ -53,7 +54,6 @@ Next batch limit: 25
 | `newsletter` | `central-otago-district-council-newsletter-bf4edb9f` | Central Otago District Council | `manual_archive_seeds/newsletter/central-otago-district-council-newsletter-bf4edb9f.json` |
 | `newsletter` | `central-otago-district-council-newsletter-d8acb969` | Central Otago District Council | `manual_archive_seeds/newsletter/central-otago-district-council-newsletter-d8acb969.json` |
 | `newsletter` | `central-otago-district-council-newsletter-de23a81e` | Central Otago District Council | `manual_archive_seeds/newsletter/central-otago-district-council-newsletter-de23a81e.json` |
-| `newsletter` | `chatham-islands-council-newsletter-1e57736f` | Chatham Islands Council (Te Kaunihera o Wharekauri) | `manual_archive_seeds/newsletter/chatham-islands-council-newsletter-1e57736f.json` |
 
 ## Notes
 

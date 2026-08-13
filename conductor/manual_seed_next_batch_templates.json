@@ -1,6 +1,6 @@
 {
   "description": "Source-specific starter templates for the next deterministic manual seed batch. These are not seed files and do not mark sources as seed_present.",
-  "generated_at": "2026-08-12T16:31:10+00:00",
+  "generated_at": "2026-08-13T16:30:40+00:00",
   "summary": {
     "limit": 25,
     "platform_counts": {
@@ -84,6 +84,31 @@
       "source_id": "wellington-city-libraries-threads-wcl-library",
       "source_url": "https://www.threads.net/@wcl_library",
       "target_path": "manual_archive_seeds/threads/wellington-city-libraries-threads-wcl-library.json"
+    },
+    {
+      "account": "https://www.acc.co.nz",
+      "agency_id": "accident-compensation-corporation",
+      "agency_name": "Accident Compensation Corporation (Te Kaporeihana \u0100whina Hunga Whara)",
+      "authorization_note": "Replace this template with operator-authorized export data before placing it under manual_archive_seeds/.",
+      "platform": "newsletter",
+      "posts": [
+        {
+          "created_at": "2026-07-01T00:00:00Z",
+          "media": [
+            {
+              "alt_text": "Optional description",
+              "media_type": "image",
+              "url": "https://example.govt.nz/media.jpg"
+            }
+          ],
+          "post_id": "stable-platform-id-or-operator-id",
+          "text": "Archived public or operator-authorized content.",
+          "url": "https://example.govt.nz/or/platform/post"
+        }
+      ],
+      "source_id": "accident-compensation-corporation-newsletter-615b7031",
+      "source_url": "https://www.acc.co.nz/for-providers/provider-news-and-events/subscribe-to-our-provider-email-updates",
+      "target_path": "manual_archive_seeds/newsletter/accident-compensation-corporation-newsletter-615b7031.json"
     },
     {
       "account": "https://www.acc.co.nz",
@@ -609,31 +634,6 @@
       "source_id": "central-otago-district-council-newsletter-de23a81e",
       "source_url": "https://www.codc.govt.nz/your-council/alerts?item=id%3A2ylt2zclj1cxbytuj03k",
       "target_path": "manual_archive_seeds/newsletter/central-otago-district-council-newsletter-de23a81e.json"
-    },
-    {
-      "account": "https://www.cic.govt.nz",
-      "agency_id": "chatham-islands-council",
-      "agency_name": "Chatham Islands Council (Te Kaunihera o Wharekauri)",
-      "authorization_note": "Replace this template with operator-authorized export data before placing it under manual_archive_seeds/.",
-      "platform": "newsletter",
-      "posts": [
-        {
-          "created_at": "2026-07-01T00:00:00Z",
-          "media": [
-            {
-              "alt_text": "Optional description",
-              "media_type": "image",
-              "url": "https://example.govt.nz/media.jpg"
-            }
-          ],
-          "post_id": "stable-platform-id-or-operator-id",
-          "text": "Archived public or operator-authorized content.",
-          "url": "https://example.govt.nz/or/platform/post"
-        }
-      ],
-      "source_id": "chatham-islands-council-newsletter-1e57736f",
-      "source_url": "http://eepurl.com/hcVHxj",
-      "target_path": "manual_archive_seeds/newsletter/chatham-islands-council-newsletter-1e57736f.json"
     }
   ]
 }
