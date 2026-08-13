@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-12T18:11:14+00:00",
+  "generated_at": "2026-08-13T18:11:44+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,10 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "23caba327aa0fb50",
-      "345575d07426e540",
-      "5b3439c0ada32ffa",
-      "9cab33d0d75f5d6e",
-      "a51d2622f8cee24f"
+      "1ef1dce81ad8db2e",
+      "80b6358c07dca06b",
+      "8550bc4bca878237",
+      "e68d464915781350"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -38,74 +37,65 @@
   },
   "results": [
     {
-      "agency_id": "gisborne-district-council",
+      "agency_id": "far-north-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "23caba327aa0fb50",
+      "source_id": "8550bc4bca878237",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.gdc.govt.nz/openapi.json"
+      "url": "https://www.fndc.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "lincoln-university",
+      "agency_id": "government-house",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "345575d07426e540",
+      "source_id": "80b6358c07dca06b",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.lincoln.ac.nz/openapi.json"
+      "url": "https://gg.govt.nz/openapi.json"
     },
     {
-      "agency_id": "manawatu-district-council",
+      "agency_id": "office-of-the-ombudsman",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "5b3439c0ada32ffa",
+      "source_id": "e68d464915781350",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.mdc.govt.nz/openapi.json"
+      "url": "https://www.ombudsman.parliament.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "ministry-for-ethnic-communities",
+      "agency_id": "south-taranaki-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "a51d2622f8cee24f",
+      "reason": "HTTP 405: Not Allowed",
+      "source_id": "1ef1dce81ad8db2e",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.ethniccommunities.govt.nz/openapi.json"
-    },
-    {
-      "agency_id": "stratford-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "9cab33d0d75f5d6e",
-      "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.stratford.govt.nz/.well-known/webfinger"
+      "status": "method_not_allowed",
+      "url": "https://www.southtaranaki.com/openapi.json"
     }
   ],
   "summary": {
     "platform_counts": {
-      "api": 5
+      "api": 4
     },
-    "selected_sources": 5,
+    "selected_sources": 4,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 5
+        "capture_blocked": 3,
+        "method_not_allowed": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 5
+      "capture_blocked": 3,
+      "method_not_allowed": 1
     }
   }
 }

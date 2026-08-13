@@ -48672,30 +48672,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "kiwi-group-capital",
-      "agency_name": "Kiwi Group Capital Limited (Kiwibank)",
-      "agency_type": "Schedule 4a Company",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "b018c59dd81ab332",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.kiwibank.co.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Finance",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/KiwibankNZ"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "kiwibank",
       "account_classification": "official",
       "agency_id": "kiwi-group-capital",
@@ -48721,54 +48697,6 @@
         "official_term:nz"
       ],
       "url": "https://www.instagram.com/kiwibank"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "",
-      "agency_id": "kiwi-group-capital",
-      "agency_name": "Kiwi Group Capital Limited (Kiwibank)",
-      "agency_type": "Schedule 4a Company",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "1a088c441b21620d",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.kiwibank.co.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Finance",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/kiwibanknz/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "",
-      "agency_id": "kiwi-group-capital",
-      "agency_name": "Kiwi Group Capital Limited (Kiwibank)",
-      "agency_type": "Schedule 4a Company",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "abf488568d0f5077",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.kiwibank.co.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
-      "portfolio": "Finance",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://nz.linkedin.com/company/kiwibank"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -132976,6 +132904,57 @@
       "url": "https://www.wellington.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "e992daa0fdf06fca",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "a159b229e9fd0a47",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "link_text": "Subscribe on Youtube",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133410,6 +133389,78 @@
       "url": "https://bsky.app/profile/wcllibrary.bsky.social"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Like us on Facebook",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "4c3f179a8402f5aa",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/wellingtoncitylibraries"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Follow us on Instagram",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "f61ccf07bd59e4c0",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://instagram.com/wcl_library"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "Subscribe on Youtube",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "98aaf6b9e2d42b19",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133435,6 +133486,33 @@
         "official_term:nz"
       ],
       "url": "https://www.wcl.govt.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.wcl.govt.nz",
+      "agency_id": "wellington-city-libraries",
+      "agency_name": "Wellington City Libraries",
+      "agency_type": "Library Service",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "d3a11038ecc7a113",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
+      "official_website": "https://www.wcl.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
     },
     {
       "access_method": "public_rss",
@@ -140541,7 +140619,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-13T17:27:32+00:00",
+  "generated_at": "2026-08-13T18:11:26+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155411,7 +155489,7 @@
     {
       "agency_id": "accreditation-council",
       "alternates": 0,
-      "links": 13,
+      "links": 17,
       "status": "ok",
       "url": "https://www.accreditation.co.nz/"
     },
@@ -155720,7 +155798,7 @@
     {
       "agency_id": "electricity-corporation-of-nz",
       "alternates": 0,
-      "links": 20,
+      "links": 16,
       "status": "ok",
       "url": "https://www.ecnz.co.nz/"
     },
@@ -155985,9 +156063,8 @@
     },
     {
       "agency_id": "kiwi-group-capital",
-      "alternates": 0,
-      "links": 237,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.kiwibank.co.nz/"
     },
     {
@@ -156266,7 +156343,7 @@
     {
       "agency_id": "nz-army",
       "alternates": 0,
-      "links": 78,
+      "links": 77,
       "status": "ok",
       "url": "https://www.army.mil.nz/"
     },
@@ -156294,7 +156371,7 @@
     {
       "agency_id": "nz-defence-force",
       "alternates": 0,
-      "links": 46,
+      "links": 45,
       "status": "ok",
       "url": "https://www.nzdf.mil.nz/"
     },
@@ -156573,7 +156650,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 402,
+      "links": 404,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156586,14 +156663,14 @@
     {
       "agency_id": "royal-nz-air-force",
       "alternates": 0,
-      "links": 77,
+      "links": 76,
       "status": "ok",
       "url": "https://www.airforce.mil.nz/"
     },
     {
       "agency_id": "royal-nz-navy",
       "alternates": 0,
-      "links": 78,
+      "links": 77,
       "status": "ok",
       "url": "https://www.navy.mil.nz/"
     },
@@ -156991,8 +157068,9 @@
     },
     {
       "agency_id": "wellington-city-libraries",
-      "error": "HTTP Error 403: Forbidden",
-      "status": "failed",
+      "alternates": 0,
+      "links": 94,
+      "status": "ok",
       "url": "https://www.wcl.govt.nz/"
     },
     {
@@ -157088,11 +157166,11 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5251,
+    "candidate_count": 5254,
     "feasibility_counts": {
-      "high": 4157,
-      "low": 308,
-      "medium": 786
+      "high": 4158,
+      "low": 307,
+      "medium": 789
     },
     "known_registry_social_profiles": 445,
     "platform_counts": {
@@ -157100,21 +157178,21 @@
       "bluesky": 18,
       "facebook": 293,
       "instagram": 163,
-      "linkedin": 235,
+      "linkedin": 234,
       "medium": 2,
-      "newsletter": 156,
+      "newsletter": 158,
       "rss": 3830,
-      "website_page": 309,
+      "website_page": 310,
       "x": 73,
-      "youtube": 159
+      "youtube": 160
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 156,
+      "newsletter": 158,
       "rss_feed": 65,
       "search_seed": 3765,
       "social_profile": 943,
-      "website_page": 309
+      "website_page": 310
     }
   }
 }
