@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-13T04:59:43+00:00",
+  "generated_at": "2026-08-14T04:55:33+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -861,10 +861,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
+      "reason": "HTTP 429: Too Many Requests",
       "source_id": "6fc9836aa517be31",
       "source_type": "json_feed",
-      "status": "invalid",
+      "status": "http_error",
       "url": "https://www.hrc.govt.nz/feed.json"
     },
     {
@@ -1994,7 +1994,7 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "candidate endpoint did not return JSON Feed data: Expecting value",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "9289dcb60410c333",
       "source_type": "json_feed",
       "status": "invalid",
@@ -2969,8 +2969,8 @@
         "capture_blocked": 26,
         "captured": 8,
         "dns_failed": 8,
-        "http_error": 2,
-        "invalid": 202,
+        "http_error": 3,
+        "invalid": 201,
         "network_error": 9,
         "network_timeout": 2,
         "not_acceptable": 1
@@ -2982,8 +2982,8 @@
       "capture_blocked": 26,
       "captured": 8,
       "dns_failed": 8,
-      "http_error": 2,
-      "invalid": 202,
+      "http_error": 3,
+      "invalid": 201,
       "network_error": 9,
       "network_timeout": 2,
       "not_acceptable": 1
