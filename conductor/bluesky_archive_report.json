@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-14T07:47:00+00:00",
+  "generated_at": "2026-08-14T13:36:14+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -12785,6 +12785,17 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3msztsgpznc2j",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
       "reason": "captured bluesky post bluesky:3mszkge6ksk23",
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
@@ -12811,17 +12822,6 @@
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
       "status": "captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -16910,10 +16910,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
-      "reason": "bluesky record already present",
+      "reason": "captured bluesky post bluesky:3msztwp36qc26",
       "source_id": "person-richard-hills-auckland-bluesky-48008163",
       "source_type": "social_profile",
-      "status": "already_captured",
+      "status": "captured",
       "url": "https://bsky.app/profile/richardhills.bsky.social"
     },
     {
@@ -18035,14 +18035,14 @@
     "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
-        "already_captured": 1605,
-        "captured": 31
+        "already_captured": 1603,
+        "captured": 33
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1605,
-      "captured": 31
+      "already_captured": 1603,
+      "captured": 33
     }
   }
 }
