@@ -672,6 +672,17 @@
       "archive_status": "candidate",
       "feasibility": "medium",
       "platform": "newsletter",
+      "reason": "no newsletter payload matched environmental-protection-authority-newsletter-6315db34",
+      "source_id": "environmental-protection-authority-newsletter-6315db34",
+      "source_type": "newsletter",
+      "status": "missing_payload",
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-accelerates-progress-on-hazardous-substances-assessments/"
+    },
+    {
+      "agency_id": "environmental-protection-authority",
+      "archive_status": "candidate",
+      "feasibility": "medium",
+      "platform": "newsletter",
       "reason": "no newsletter payload matched environmental-protection-authority-newsletter-90540a54",
       "source_id": "environmental-protection-authority-newsletter-90540a54",
       "source_type": "newsletter",
@@ -4444,16 +4455,16 @@
   "summary": {
     "payload_count": 0,
     "platform_counts": {
-      "newsletter": 403
+      "newsletter": 404
     },
-    "selected_sources": 403,
+    "selected_sources": 404,
     "status_by_platform": {
       "newsletter": {
-        "missing_payload": 403
+        "missing_payload": 404
       }
     },
     "status_counts": {
-      "missing_payload": 403
+      "missing_payload": 404
     }
   }
 }
