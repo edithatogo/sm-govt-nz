@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-13T18:11:44+00:00",
+  "generated_at": "2026-08-14T18:11:26+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,10 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "1ef1dce81ad8db2e",
-      "80b6358c07dca06b",
-      "8550bc4bca878237",
-      "e68d464915781350"
+      "1157e5257a2eedfd",
+      "4dbb37456a3d189e",
+      "551acb47a8e68099",
+      "5d431e59a5abb03c",
+      "78601ad92d09182a"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -37,65 +38,76 @@
   },
   "results": [
     {
-      "agency_id": "far-north-district-council",
+      "agency_id": "education-review-office",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "8550bc4bca878237",
+      "source_id": "4dbb37456a3d189e",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.fndc.govt.nz/.well-known/webfinger"
+      "url": "https://www.ero.govt.nz/openapi.json"
     },
     {
-      "agency_id": "government-house",
+      "agency_id": "health-quality-and-safety-commission",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "api",
+      "reason": "URL error: timed out",
+      "source_id": "1157e5257a2eedfd",
+      "source_type": "api_endpoint",
+      "status": "network_timeout",
+      "url": "https://www.hqsc.govt.nz/openapi.json"
+    },
+    {
+      "agency_id": "mackenzie-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "80b6358c07dca06b",
+      "source_id": "551acb47a8e68099",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://gg.govt.nz/openapi.json"
+      "url": "https://www.mackenzie.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "office-of-the-ombudsman",
+      "agency_id": "nz-customs-service",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "e68d464915781350",
+      "source_id": "5d431e59a5abb03c",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.ombudsman.parliament.nz/.well-known/webfinger"
+      "url": "https://www.customs.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "south-taranaki-district-council",
+      "agency_id": "parliamentary-counsel-office",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 405: Not Allowed",
-      "source_id": "1ef1dce81ad8db2e",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "78601ad92d09182a",
       "source_type": "api_endpoint",
-      "status": "method_not_allowed",
-      "url": "https://www.southtaranaki.com/openapi.json"
+      "status": "capture_blocked",
+      "url": "https://www.pco.govt.nz/openapi.json"
     }
   ],
   "summary": {
     "platform_counts": {
-      "api": 4
+      "api": 5
     },
-    "selected_sources": 4,
+    "selected_sources": 5,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 3,
-        "method_not_allowed": 1
+        "capture_blocked": 4,
+        "network_timeout": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 3,
-      "method_not_allowed": 1
+      "capture_blocked": 4,
+      "network_timeout": 1
     }
   }
 }
