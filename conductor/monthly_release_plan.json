@@ -1,6 +1,6 @@
 {
   "description": "Cumulative monthly release plan. Each release bundles all archived accounts and sources present in the repository at release time.",
-  "generated_at": "2026-08-09T10:15:40+00:00",
+  "generated_at": "2026-08-15T17:42:45+00:00",
   "months": [
     {
       "account_count": 1,
@@ -44,7 +44,7 @@
       "source_counts": {
         "rss": 4
       },
-      "status": "candidate"
+      "status": "published"
     },
     {
       "account_count": 1,
@@ -3132,15 +3132,15 @@
       "status": "published"
     },
     {
-      "account_count": 82,
+      "account_count": 83,
       "month": "2026-08",
       "publish_command": "gh workflow run \"Publish Archives\" --ref master -f publish=true -f publication_target=all -f archive_release_version=2026-08 -f hf_dataset_name=corpus-social-media-government-nz -f zenodo_deposit_api_url=https://zenodo.org/api/deposit/depositions",
-      "record_count": 388,
+      "record_count": 663,
       "release_version": "2026-08",
       "source_counts": {
         "api": 17,
-        "bluesky": 287,
-        "email": 3,
+        "bluesky": 550,
+        "email": 15,
         "json_feed": 1,
         "linkedin": 48,
         "threads": 3,
@@ -3165,15 +3165,17 @@
     "1971-01",
     "2004-05",
     "2004-06",
+    "2004-07",
     "2026-06",
     "2026-07",
     "2026-08",
-    "2026-08-reconcile"
+    "2026-08-reconcile",
+    "2026-08-reconcile-normalized"
   ],
   "summary": {
-    "candidate_months": 257,
+    "candidate_months": 256,
     "months_with_records": 263,
-    "published_months": 6,
-    "total_records": 12707
+    "published_months": 7,
+    "total_records": 12982
   }
 }
