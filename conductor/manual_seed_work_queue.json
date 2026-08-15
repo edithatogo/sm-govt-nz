@@ -1,6 +1,6 @@
 {
   "description": "Deterministic work queue for non-live-capturable sources that need authorized seeds, exports, or approved API access.",
-  "generated_at": "2026-08-14T16:28:25+00:00",
+  "generated_at": "2026-08-15T15:53:04+00:00",
   "inputs": {
     "manifest": "conductor/govt_archive_source_manifest.json",
     "manual_seed_root": "manual_archive_seeds",
@@ -13235,6 +13235,27 @@
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
       "platform": "facebook",
+      "preferred_seed_path": "manual_archive_seeds/facebook/social-workers-registration-board-facebook-30c0afc0.json",
+      "priority_rank": 40,
+      "required_authorization": "page_owner_or_approved_app",
+      "seed_candidates": [
+        "manual_archive_seeds/facebook/social-workers-registration-board-facebook-30c0afc0.json",
+        "manual_archive_seeds/facebook/social-workers-registration-board.json"
+      ],
+      "source_id": "social-workers-registration-board-facebook-30c0afc0",
+      "url": "https://www.facebook.com/102062118004656_1389428403300755"
+    },
+    {
+      "acceptable_access_methods": [
+        "meta_graph_api",
+        "page_owner_export",
+        "operator_authorized_seed"
+      ],
+      "account": "View on Facebook",
+      "agency_id": "social-workers-registration-board",
+      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
+      "onboarding_status": "needs_authorized_seed_or_api",
+      "platform": "facebook",
       "preferred_seed_path": "manual_archive_seeds/facebook/social-workers-registration-board-facebook-57adcfbe.json",
       "priority_rank": 40,
       "required_authorization": "page_owner_or_approved_app",
@@ -13251,7 +13272,7 @@
         "page_owner_export",
         "operator_authorized_seed"
       ],
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 weeks ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 6 minutes ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "onboarding_status": "needs_authorized_seed_or_api",
@@ -19275,7 +19296,7 @@
   ],
   "summary": {
     "platform_counts": {
-      "facebook": 327,
+      "facebook": 328,
       "instagram": 183,
       "newsletter": 404,
       "threads": 3
@@ -19286,6 +19307,6 @@
       "facebook",
       "instagram"
     ],
-    "queue_count": 917
+    "queue_count": 918
   }
 }
