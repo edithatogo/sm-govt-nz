@@ -34963,6 +34963,78 @@
       "url": "https://www.facebook.com/HamiltonCityCouncil"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Facebook",
+      "agency_id": "hamilton-city-council",
+      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
+      "agency_type": "City Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "bb181e559f4e3ff9",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.hamilton.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/hamiltoncitycouncil/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Instagram",
+      "agency_id": "hamilton-city-council",
+      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
+      "agency_type": "City Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "59dd87336790dee4",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.hamilton.govt.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/hamilton_city_nz/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "Linkedin",
+      "agency_id": "hamilton-city-council",
+      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
+      "agency_type": "City Council",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "107457abf6530fc6",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.hamilton.govt.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/2758203"
+    },
+    {
       "access_method": "approved_api_or_user_authorized_capture",
       "account": "Hamilton City Council",
       "account_classification": "official",
@@ -34989,6 +35061,30 @@
         "official_term:nz"
       ],
       "url": "https://www.linkedin.com/company/hamilton-city-council"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "YouTube",
+      "agency_id": "hamilton-city-council",
+      "agency_name": "Hamilton City Council (Te Kaunihera o Kirikiriroa)",
+      "agency_type": "City Council",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "be829f7ab524a73e",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.hamilton.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/user/HamiltonCityCouncil"
     },
     {
       "access_method": "bounded_public_html",
@@ -72485,6 +72581,32 @@
       "url": "https://www.nzals.co.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.nzblood.co.nz",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "44a047d4d3996ce3",
+      "confidence_score": 0.5,
+      "domain_trust": "medium",
+      "feasibility": "medium",
+      "link_text": "Clinical Newsletter",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Health",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "trusted_domain_suffix",
+        "official_term:new zealand"
+      ],
+      "url": "https://www.nzblood.co.nz/healthcare-professionals/transfusion-medicine/clinical-newsletter"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.nzblood.co.nz",
       "agency_id": "nz-blood-service",
@@ -72890,6 +73012,102 @@
       "url": "https://www.nzblood.co.nz/subscribe"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "6a614cc59697a5e0",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.facebook.com/NewZealandBloodService  "
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "e20ee523619f521c",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.instagram.com/nzbloodservice/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "c0a496da3b6f97d3",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.linkedin.com/company/new-zealand-blood-service/"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "7b3ee8c0091a8ef7",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.youtube.com/user/savelivesgiveblood "
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.nzblood.co.nz",
       "agency_id": "nz-blood-service",
@@ -72915,6 +73133,33 @@
         "official_term:new zealand"
       ],
       "url": "https://www.nzblood.co.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.nzblood.co.nz",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "3ce7e987a8fc9751",
+      "confidence_score": 0.6,
+      "domain_trust": "medium",
+      "feasibility": "high",
+      "link_text": "Clinical Newsletter",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Health",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "trusted_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:new zealand"
+      ],
+      "url": "https://www.nzblood.co.nz/healthcare-professionals/transfusion-medicine/clinical-newsletter"
     },
     {
       "access_method": "public_rss",
@@ -103263,7 +103508,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 6 minutes ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 day ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -132731,57 +132976,6 @@
       "url": "https://www.wellington.govt.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.wcl.govt.nz",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "e992daa0fdf06fca",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.wcl.govt.nz",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "a159b229e9fd0a47",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "link_text": "Subscribe on Youtube",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133216,78 +133410,6 @@
       "url": "https://bsky.app/profile/wcllibrary.bsky.social"
     },
     {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Like us on Facebook",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "4c3f179a8402f5aa",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/wellingtoncitylibraries"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Follow us on Instagram",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "f61ccf07bd59e4c0",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://instagram.com/wcl_library"
-    },
-    {
-      "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Subscribe on Youtube",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "candidate",
-      "auth": "none",
-      "candidate_id": "98aaf6b9e2d42b19",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.link",
-      "platform": "youtube",
-      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.youtube.com/channel/UCdeUV5hstgKgO4zYk3-xDJQ"
-    },
-    {
       "access_method": "bounded_public_html",
       "account": "https://www.wcl.govt.nz",
       "agency_id": "wellington-city-libraries",
@@ -133313,33 +133435,6 @@
         "official_term:nz"
       ],
       "url": "https://www.wcl.govt.nz"
-    },
-    {
-      "access_method": "bounded_public_html",
-      "account": "https://www.wcl.govt.nz",
-      "agency_id": "wellington-city-libraries",
-      "agency_name": "Wellington City Libraries",
-      "agency_type": "Library Service",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "d3a11038ecc7a113",
-      "confidence_score": 0.7,
-      "domain_trust": "high",
-      "feasibility": "high",
-      "link_text": "Kawerongo\n                             \n                             \u2013 \n                             \n                                Newsletters",
-      "official_website": "https://www.wcl.govt.nz",
-      "origin": "homepage.newsletter_archive_link",
-      "platform": "website_page",
-      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
-      "portfolio": "Local Government",
-      "source_type": "website_page",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "archive_friendly_platform",
-        "official_term:nz"
-      ],
-      "url": "https://www.wcl.govt.nz/news-home/newsletters/"
     },
     {
       "access_method": "public_rss",
@@ -140446,7 +140541,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-14T18:09:41+00:00",
+  "generated_at": "2026-08-15T16:48:53+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155471,7 +155566,7 @@
     {
       "agency_id": "christchurch-city-libraries",
       "alternates": 6,
-      "links": 326,
+      "links": 325,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
@@ -155728,8 +155823,9 @@
     },
     {
       "agency_id": "hamilton-city-council",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 166,
+      "status": "ok",
       "url": "https://www.hamilton.govt.nz/"
     },
     {
@@ -156183,8 +156279,9 @@
     },
     {
       "agency_id": "nz-blood-service",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 667,
+      "status": "ok",
       "url": "https://www.nzblood.co.nz/"
     },
     {
@@ -156301,9 +156398,8 @@
     },
     {
       "agency_id": "office-of-the-clerk",
-      "alternates": 0,
-      "links": 0,
-      "status": "ok",
+      "error": "HTTP Error 404: Not Found",
+      "status": "failed",
       "url": "https://www.parliament.nz/en/about-parliament/office-of-the-clerk/"
     },
     {
@@ -156321,7 +156417,7 @@
     {
       "agency_id": "open-polytechnic",
       "alternates": 0,
-      "links": 376,
+      "links": 377,
       "status": "ok",
       "url": "https://www.openpolytechnic.ac.nz/"
     },
@@ -156477,7 +156573,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 410,
+      "links": 407,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156895,9 +156991,8 @@
     },
     {
       "agency_id": "wellington-city-libraries",
-      "alternates": 0,
-      "links": 94,
-      "status": "ok",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
       "url": "https://www.wcl.govt.nz/"
     },
     {
@@ -156993,32 +157088,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5247,
+    "candidate_count": 5251,
     "feasibility_counts": {
       "high": 4157,
-      "low": 306,
-      "medium": 784
+      "low": 308,
+      "medium": 786
     },
     "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 292,
-      "instagram": 162,
-      "linkedin": 233,
+      "facebook": 293,
+      "instagram": 163,
+      "linkedin": 235,
       "medium": 2,
-      "newsletter": 157,
+      "newsletter": 156,
       "rss": 3830,
       "website_page": 309,
       "x": 73,
-      "youtube": 158
+      "youtube": 159
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 157,
+      "newsletter": 156,
       "rss_feed": 65,
       "search_seed": 3765,
-      "social_profile": 938,
+      "social_profile": 943,
       "website_page": 309
     }
   }
