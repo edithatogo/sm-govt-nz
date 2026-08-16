@@ -1,25 +1,24 @@
 # Registered Sources Archive Summary
 
-Generated: 2026-08-14T18:11:26+00:00
+Generated: 2026-08-16T17:38:38+00:00
 
 ## Summary
 
-- `selected_sources`: 5
+- `selected_sources`: 3
 - `platform_count`: 1
-- `status_count`: 2
+- `status_count`: 1
 
 ## Platform counts
 
-- `api`: 5
+- `api`: 3
 
 ## Status counts
 
-- `capture_blocked`: 4
-- `network_timeout`: 1
+- `capture_blocked`: 3
 
 ## Status by platform
 
-- `api`: {'capture_blocked': 4, 'network_timeout': 1}
+- `api`: {'capture_blocked': 3}
 
 ## Notes
 

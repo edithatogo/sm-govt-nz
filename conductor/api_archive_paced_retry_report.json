@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-14T18:11:26+00:00",
+  "generated_at": "2026-08-16T17:38:38+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,9 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "1157e5257a2eedfd",
-      "4dbb37456a3d189e",
-      "551acb47a8e68099",
-      "5d431e59a5abb03c",
-      "78601ad92d09182a"
+      "628f40276130d1e0",
+      "ee6276caf0fcc06b",
+      "f76dceddb0f4e587"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -38,76 +36,52 @@
   },
   "results": [
     {
-      "agency_id": "education-review-office",
+      "agency_id": "dpmc",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "4dbb37456a3d189e",
+      "source_id": "f76dceddb0f4e587",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.ero.govt.nz/openapi.json"
+      "url": "https://www.dpmc.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "health-quality-and-safety-commission",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "URL error: timed out",
-      "source_id": "1157e5257a2eedfd",
-      "source_type": "api_endpoint",
-      "status": "network_timeout",
-      "url": "https://www.hqsc.govt.nz/openapi.json"
-    },
-    {
-      "agency_id": "mackenzie-district-council",
+      "agency_id": "ministry-for-culture-and-heritage",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "551acb47a8e68099",
+      "source_id": "ee6276caf0fcc06b",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.mackenzie.govt.nz/.well-known/webfinger"
+      "url": "https://www.mch.govt.nz/openapi.json"
     },
     {
-      "agency_id": "nz-customs-service",
+      "agency_id": "tararua-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "5d431e59a5abb03c",
+      "source_id": "628f40276130d1e0",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.customs.govt.nz/.well-known/webfinger"
-    },
-    {
-      "agency_id": "parliamentary-counsel-office",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "78601ad92d09182a",
-      "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.pco.govt.nz/openapi.json"
+      "url": "https://www.tararuadc.govt.nz/.well-known/webfinger"
     }
   ],
   "summary": {
     "platform_counts": {
-      "api": 5
+      "api": 3
     },
-    "selected_sources": 5,
+    "selected_sources": 3,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 4,
-        "network_timeout": 1
+        "capture_blocked": 3
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 4,
-      "network_timeout": 1
+      "capture_blocked": 3
     }
   }
 }

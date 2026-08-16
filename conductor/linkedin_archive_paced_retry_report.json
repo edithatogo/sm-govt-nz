@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-14T18:12:12+00:00",
+  "generated_at": "2026-08-16T17:38:48+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "288cf6d2b2a2bb99",
-      "2b4b7857ce9bf44a",
-      "31280e3dfdd0e9da",
-      "d2fa5609d8481c28",
-      "fe550d4e1897ba07"
+      "2f4321feb9c7f4dc",
+      "eee6017886d87b59"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -38,54 +35,30 @@
   },
   "results": [
     {
-      "agency_id": "royal-nz-air-force",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "HTTP 404: Not Found",
-      "source_id": "fe550d4e1897ba07",
-      "source_type": "social_profile",
-      "status": "not_found",
-      "url": "https://www.linkedin.com/company/royal-new-zealand-air-force"
-    },
-    {
-      "agency_id": "sit",
+      "agency_id": "te-whare-wananga-o-awanuiarangi",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "2b4b7857ce9bf44a",
+      "source_id": "2f4321feb9c7f4dc",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/southern-institute-of-technology"
-    },
-    {
-      "agency_id": "unitec",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "31280e3dfdd0e9da",
-      "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/unitec"
+      "url": "https://www.linkedin.com/school/te-whare-wananga-o-awanuiarangi"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 3
+      "linkedin": 1
     },
-    "selected_sources": 3,
+    "selected_sources": 1,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 2,
-        "not_found": 1
+        "http_error": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 2,
-      "not_found": 1
+      "http_error": 1
     }
   }
 }
