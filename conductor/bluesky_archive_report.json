@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-16T01:54:58+00:00",
+  "generated_at": "2026-08-16T06:56:18+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -8385,6 +8385,17 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mt65hnk65k2z",
+      "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/ahawkins.bsky.social"
+    },
+    {
+      "agency_id": "person-aaron-hawkins",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
       "reason": "captured bluesky post bluesky:3mt5ukqwmxs2z",
       "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
       "source_type": "social_profile",
@@ -9470,17 +9481,6 @@
       "url": "https://bsky.app/profile/ahawkins.bsky.social"
     },
     {
-      "agency_id": "person-aaron-hawkins",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-aaron-hawkins-bluesky-4e3b9bc1",
-      "source_type": "social_profile",
-      "status": "already_captured",
-      "url": "https://bsky.app/profile/ahawkins.bsky.social"
-    },
-    {
       "agency_id": "person-andrew-little",
       "archive_status": "ready",
       "feasibility": "high",
@@ -12779,6 +12779,17 @@
       "source_type": "social_profile",
       "status": "already_captured",
       "url": "https://bsky.app/profile/geordierogers.co.nz"
+    },
+    {
+      "agency_id": "person-julie-fairey",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "bluesky",
+      "reason": "captured bluesky post bluesky:3mt6lbbobxc2l",
+      "source_id": "person-julie-fairey-bluesky-f184e87a",
+      "source_type": "social_profile",
+      "status": "captured",
+      "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
       "agency_id": "person-julie-fairey",
@@ -12833,17 +12844,6 @@
       "source_id": "person-julie-fairey-bluesky-f184e87a",
       "source_type": "social_profile",
       "status": "captured",
-      "url": "https://bsky.app/profile/juliefairey.bsky.social"
-    },
-    {
-      "agency_id": "person-julie-fairey",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "bluesky",
-      "reason": "bluesky record already present",
-      "source_id": "person-julie-fairey-bluesky-f184e87a",
-      "source_type": "social_profile",
-      "status": "already_captured",
       "url": "https://bsky.app/profile/juliefairey.bsky.social"
     },
     {
@@ -18035,14 +18035,14 @@
     "selected_sources": 18,
     "status_by_platform": {
       "bluesky": {
-        "already_captured": 1627,
-        "captured": 9
+        "already_captured": 1625,
+        "captured": 11
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "already_captured": 1627,
-      "captured": 9
+      "already_captured": 1625,
+      "captured": 11
     }
   }
 }
