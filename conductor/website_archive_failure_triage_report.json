@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T04:07:11+00:00",
+  "generated_at": "2026-08-16T03:34:01+00:00",
   "inputs": {
     "reports": [
       "conductor/website_archive_report.json"
@@ -12,11 +12,11 @@
       "platform": "website_page",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "public browser fallback stopped at access marker: cloudflare",
+      "reason": "captured public rendered website content",
       "recommended_action": "review",
       "report": "conductor/website_archive_report.json",
       "source_id": "f33df640b05e8598",
-      "status": "browser_captcha_or_challenge",
+      "status": "browser_captured",
       "url": "https://www.ashburtondc.govt.nz"
     },
     {
@@ -137,12 +137,116 @@
       "url": "https://www.aucklandcouncil.govt.nz"
     },
     {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "53772773a9f9b5a7",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/api"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "23032184b0314e7c",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/media"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "e1edd6a1177114cc",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/media-releases"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "4977b1b2e4a3222a",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/news"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "0b733fec8a3a8ebd",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/news-and-events"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "d3076d1b5e6e58ae",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/newsletter"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "4f6a6ad650674936",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/publications"
+    },
+    {
+      "agency_id": "auckland-council",
+      "fixability_class": "retry_or_url_canonicalization",
+      "platform": "website_page",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 406: Not Acceptable; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
+      "recommended_action": "retry_with_browser_headers_or_alternate_url",
+      "report": "conductor/website_archive_report.json",
+      "source_id": "65f64039aabf225c",
+      "status": "not_acceptable",
+      "url": "https://www.aucklandcouncil.govt.nz/subscribe"
+    },
+    {
       "agency_id": "auckland-light-rail",
       "fixability_class": "retry_or_url_canonicalization",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [Errno -5] No address associated with hostname; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "reason": "URL error: [Errno -5] No address associated with hostname; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "recommended_action": "retry_later",
       "report": "conductor/website_archive_report.json",
       "source_id": "ea7740e611200bed",
@@ -150,25 +254,12 @@
       "url": "https://www.aucklandlightrail.co.nz"
     },
     {
-      "agency_id": "auckland-light-rail",
-      "fixability_class": "review",
-      "platform": "website_page",
-      "priority": "review",
-      "priority_description": "Needs review.",
-      "reason": "HTTP 500: Internal Server Error",
-      "recommended_action": "review",
-      "report": "conductor/website_archive_report.json",
-      "source_id": "ea7740e611200bed",
-      "status": "http_error",
-      "url": "https://www.lightrail.co.nz/"
-    },
-    {
       "agency_id": "bay-of-plenty-regional-council",
       "fixability_class": "retry_or_url_canonicalization",
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: timed out; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "reason": "URL error: timed out; browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "recommended_action": "review",
       "report": "conductor/website_archive_report.json",
       "source_id": "01a73b769530cc60",
@@ -181,7 +272,7 @@
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "recommended_action": "review_tls_or_alternate_url",
       "report": "conductor/website_archive_report.json",
       "source_id": "18b01bf83376dfb6",
@@ -194,7 +285,7 @@
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "recommended_action": "review_tls_or_alternate_url",
       "report": "conductor/website_archive_report.json",
       "source_id": "74033a24e08026ce",
@@ -207,7 +298,7 @@
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "recommended_action": "review_tls_or_alternate_url",
       "report": "conductor/website_archive_report.json",
       "source_id": "ebf964e9f9d977da",
@@ -220,7 +311,7 @@
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "recommended_action": "review_tls_or_alternate_url",
       "report": "conductor/website_archive_report.json",
       "source_id": "4bf073d8da463117",
@@ -233,7 +324,7 @@
       "platform": "website_page",
       "priority": "p1_existing_resources",
       "priority_description": "Can be improved with existing repo resources and keyless public retries.",
-      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: Timeout should be used inside a task",
+      "reason": "URL error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082); browser fallback failed: Failed to start SeleniumBase CDP browser after retries: \n                --------------------------------\n                Failed to connect to the browser\n                --------------------------------\n                ",
       "recommended_action": "review_tls_or_alternate_url",
       "report": "conductor/website_archive_report.json",
       "source_id": "a2c0466ad7d6b0e7",
@@ -284,7 +375,7 @@
   "report_summaries": {
     "conductor/website_archive_report.json": {
       "dry_run": false,
-      "generated_at": "2026-08-09T04:06:59+00:00",
+      "generated_at": "2026-08-16T03:33:51+00:00",
       "summary": {
         "platform_counts": {
           "website_page": 50
@@ -292,51 +383,48 @@
         "selected_sources": 50,
         "status_by_platform": {
           "website_page": {
-            "browser_captcha_or_challenge": 1,
+            "browser_captured": 1,
             "capture_blocked": 8,
-            "captured": 29,
-            "http_error": 1,
+            "captured": 22,
             "network_error": 1,
             "network_timeout": 1,
-            "not_acceptable": 1,
+            "not_acceptable": 9,
             "tls_failed": 8
           }
         },
         "status_by_provider": {},
         "status_counts": {
-          "browser_captcha_or_challenge": 1,
+          "browser_captured": 1,
           "capture_blocked": 8,
-          "captured": 29,
-          "http_error": 1,
+          "captured": 22,
           "network_error": 1,
           "network_timeout": 1,
-          "not_acceptable": 1,
+          "not_acceptable": 9,
           "tls_failed": 8
         }
       }
     }
   },
   "summary": {
-    "failure_count": 21,
+    "failure_count": 28,
     "platform_counts": {
-      "website_page": 21
+      "website_page": 28
     },
     "priority_counts": {
-      "p1_existing_resources": 11,
+      "p1_existing_resources": 19,
       "p4_larger_browser_or_access_project": 8,
-      "review": 2
+      "review": 1
     },
     "report_only_count": 0,
     "report_only_platform_counts": {},
     "report_only_priority_counts": {},
     "report_only_status_counts": {},
     "status_counts": {
-      "browser_captcha_or_challenge": 1,
+      "browser_captured": 1,
       "capture_blocked": 8,
-      "http_error": 1,
       "network_error": 1,
       "network_timeout": 1,
-      "not_acceptable": 1,
+      "not_acceptable": 9,
       "tls_failed": 8
     }
   }
