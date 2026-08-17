@@ -48109,30 +48109,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "https://www.geonet.org.nz/earthquake",
-      "agency_id": "kawerau-district-council",
-      "agency_name": "Kawerau District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "02cc1728268aab36",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.kaweraudc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.geonet.org.nz%2Fearthquake%3Ffbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETFCV0VWZ3dTSDlkSEpRYjlEc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmo12PJr8cmNy49NktsTB5qD2N2h-TzgXzsJUEgJE1B5zokODN893RLoPPAk_aem_UJjUssD79xDnOtFIdBwtug&h=AUAYSBsTC81yLrHGlaB85P2zc4Xn2L_jSLa6Sravn-Pmad1EzMgJsnTt2C6AzWw816tSrVnJBE2-cO-_gD5IZUvnnLRM7SjZMV_9QAfimgeTCadOyQTaxMLE4ztm1RKLDqD_42qoxI35b9P-&__tn__=-UK-R&c[0]=AUBiOd-7shztAuw7DZR0RA9y3UTMf7TYynDlw1Ork_RC4GxHyBcLXx1NJOiujcdBX1msk9IpkUpOsb4ZFrl2xaBa1b5fUx69ucrVThKm_8Oa-ciZiCgExJsk7SkQgoq1BNLqjDZqUeU8eKc4osRBZznLMAmu8XZ3PT_0FjPiTSoB5ipkUKvma6Z-ORE3DaHRj-PLG-VITuysG_KRfd8yB1ON9Q"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "KawerauDistrictCouncil",
       "account_classification": "official",
       "agency_id": "kawerau-district-council",
@@ -100275,6 +100251,32 @@
       "url": "https://www.navy.mil.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.ruapehudc.govt.nz",
+      "agency_id": "ruapehu-district-council",
+      "agency_name": "Ruapehu District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "e6edfa89f02452f5",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Alerts",
+      "official_website": "https://www.ruapehudc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.ruapehudc.govt.nz/our-council/alerts"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.ruapehudc.govt.nz",
       "agency_id": "ruapehu-district-council",
@@ -100706,6 +100708,54 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/RuapehuDistrictCouncil"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "ruapehu-district-council",
+      "agency_name": "Ruapehu District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "b17f3635ddcc6ed4",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.ruapehudc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/ruapehudc"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "ruapehu-district-council",
+      "agency_name": "Ruapehu District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "b5869139d245b71f",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.ruapehudc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/channel/UCpmTz-YRTGAK3aXcS4ueFmA"
     },
     {
       "access_method": "bounded_public_html",
@@ -103508,7 +103558,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 3 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -131459,6 +131509,32 @@
       "url": "https://www.waitaki.govt.nz/Council/News-Events-and-Public-Notices/Newsletters"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.waitomo.govt.nz",
+      "agency_id": "waitomo-district-council",
+      "agency_name": "Waitomo District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "e1cb5f064be3df90",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Waitomo Way Newsletter - August 2026\r\n                                                 \r\n                                                 \r\n                                                    Check out our latest newsletter",
+      "official_website": "https://www.waitomo.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.waitomo.govt.nz/council/news-summary/waitomo-way-newsletter/"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.waitomo.govt.nz",
       "agency_id": "waitomo-district-council",
@@ -131941,6 +132017,33 @@
         "official_term:nz"
       ],
       "url": "https://www.waitomo.govt.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.waitomo.govt.nz",
+      "agency_id": "waitomo-district-council",
+      "agency_name": "Waitomo District Council",
+      "agency_type": "District Council",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "d03113f13c20dd38",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Waitomo Way Newsletter - August 2026\r\n                                                 \r\n                                                 \r\n                                                    Check out our latest newsletter",
+      "official_website": "https://www.waitomo.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.waitomo.govt.nz/council/news-summary/waitomo-way-newsletter/"
     },
     {
       "access_method": "public_rss",
@@ -140568,7 +140671,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-16T17:38:18+00:00",
+  "generated_at": "2026-08-17T16:54:05+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155593,7 +155696,7 @@
     {
       "agency_id": "christchurch-city-libraries",
       "alternates": 6,
-      "links": 325,
+      "links": 323,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
@@ -155720,7 +155823,7 @@
     {
       "agency_id": "eeca",
       "alternates": 0,
-      "links": 195,
+      "links": 196,
       "status": "ok",
       "url": "https://www.eeca.govt.nz/"
     },
@@ -155793,7 +155896,7 @@
     {
       "agency_id": "fire-and-emergency-nz",
       "alternates": 0,
-      "links": 131,
+      "links": 132,
       "status": "ok",
       "url": "https://www.fireandemergency.nz/"
     },
@@ -155858,7 +155961,7 @@
     {
       "agency_id": "hastings-district-council",
       "alternates": 0,
-      "links": 761,
+      "links": 762,
       "status": "ok",
       "url": "https://www.hastingsdc.govt.nz/"
     },
@@ -155920,7 +156023,7 @@
     {
       "agency_id": "horowhenua-district-council",
       "alternates": 0,
-      "links": 236,
+      "links": 237,
       "status": "ok",
       "url": "https://www.horowhenua.govt.nz/"
     },
@@ -155946,7 +156049,7 @@
     {
       "agency_id": "independent-childrens-monitor",
       "alternates": 0,
-      "links": 71,
+      "links": 72,
       "status": "ok",
       "url": "https://www.aroturuki.govt.nz/"
     },
@@ -156006,7 +156109,7 @@
     {
       "agency_id": "kawerau-district-council",
       "alternates": 0,
-      "links": 799,
+      "links": 793,
       "status": "ok",
       "url": "https://www.kaweraudc.govt.nz/"
     },
@@ -156370,7 +156473,7 @@
     {
       "agency_id": "nz-post",
       "alternates": 0,
-      "links": 232,
+      "links": 233,
       "status": "ok",
       "url": "https://www.nzpost.co.nz/"
     },
@@ -156574,7 +156677,7 @@
     {
       "agency_id": "rangitikei-district-council",
       "alternates": 0,
-      "links": 137,
+      "links": 138,
       "status": "ok",
       "url": "https://www.rangitikei.govt.nz/"
     },
@@ -156601,7 +156704,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 408,
+      "links": 402,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156627,8 +156730,9 @@
     },
     {
       "agency_id": "ruapehu-district-council",
-      "error": "non-html response",
-      "status": "skipped",
+      "alternates": 0,
+      "links": 208,
+      "status": "ok",
       "url": "https://www.ruapehudc.govt.nz/"
     },
     {
@@ -156640,7 +156744,7 @@
     {
       "agency_id": "serious-fraud-office",
       "alternates": 0,
-      "links": 122,
+      "links": 121,
       "status": "ok",
       "url": "https://www.sfo.govt.nz/"
     },
@@ -156759,7 +156863,7 @@
     {
       "agency_id": "taumata-arowai",
       "alternates": 0,
-      "links": 41,
+      "links": 40,
       "status": "ok",
       "url": "https://www.taumataarowai.govt.nz/"
     },
@@ -156786,7 +156890,7 @@
     {
       "agency_id": "te-hiringa-mahara",
       "alternates": 0,
-      "links": 48,
+      "links": 47,
       "status": "ok",
       "url": "https://www.mhwc.govt.nz/"
     },
@@ -156848,7 +156952,7 @@
     {
       "agency_id": "thames-coromandel-district-council",
       "alternates": 0,
-      "links": 273,
+      "links": 274,
       "status": "ok",
       "url": "https://www.tcdc.govt.nz/"
     },
@@ -156914,7 +157018,7 @@
     {
       "agency_id": "university-of-auckland",
       "alternates": 0,
-      "links": 375,
+      "links": 376,
       "status": "ok",
       "url": "https://www.auckland.ac.nz/"
     },
@@ -156941,7 +157045,7 @@
     {
       "agency_id": "upper-hutt-city-council",
       "alternates": 0,
-      "links": 314,
+      "links": 313,
       "status": "ok",
       "url": "https://www.upperhuttcity.com/"
     },
@@ -156954,7 +157058,7 @@
     {
       "agency_id": "waikato-district-council",
       "alternates": 0,
-      "links": 78,
+      "links": 77,
       "status": "ok",
       "url": "https://www.waikatodistrict.govt.nz/"
     },
@@ -157001,7 +157105,7 @@
     {
       "agency_id": "waitomo-district-council",
       "alternates": 0,
-      "links": 108,
+      "links": 112,
       "status": "ok",
       "url": "https://www.waitomo.govt.nz/"
     },
@@ -157116,11 +157220,11 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5252,
+    "candidate_count": 5256,
     "feasibility_counts": {
-      "high": 4158,
+      "high": 4159,
       "low": 308,
-      "medium": 786
+      "medium": 789
     },
     "known_registry_social_profiles": 445,
     "platform_counts": {
@@ -157130,19 +157234,19 @@
       "instagram": 163,
       "linkedin": 235,
       "medium": 2,
-      "newsletter": 156,
+      "newsletter": 158,
       "rss": 3831,
-      "website_page": 309,
+      "website_page": 310,
       "x": 73,
-      "youtube": 159
+      "youtube": 160
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 156,
+      "newsletter": 158,
       "rss_feed": 66,
       "search_seed": 3765,
-      "social_profile": 943,
-      "website_page": 309
+      "social_profile": 944,
+      "website_page": 310
     }
   }
 }
