@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-16T03:55:03+00:00",
+  "generated_at": "2026-08-17T03:54:18+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -2412,10 +2412,10 @@
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
-      "reason": "URL error: timed out",
+      "reason": "HTTP 404: candidate JSON Feed endpoint is unavailable",
       "source_id": "5141d9615e81de91",
       "source_type": "json_feed",
-      "status": "network_timeout",
+      "status": "invalid",
       "url": "https://www.mhwc.govt.nz/feed.json"
     },
     {
@@ -2970,9 +2970,9 @@
         "captured": 8,
         "dns_failed": 8,
         "http_error": 2,
-        "invalid": 201,
+        "invalid": 202,
         "network_error": 9,
-        "network_timeout": 3,
+        "network_timeout": 2,
         "not_acceptable": 1
       }
     },
@@ -2983,9 +2983,9 @@
       "captured": 8,
       "dns_failed": 8,
       "http_error": 2,
-      "invalid": 201,
+      "invalid": 202,
       "network_error": 9,
-      "network_timeout": 3,
+      "network_timeout": 2,
       "not_acceptable": 1
     }
   }
