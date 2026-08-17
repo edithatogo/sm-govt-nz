@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-16T17:38:48+00:00",
+  "generated_at": "2026-08-17T17:51:45+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,8 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "2f4321feb9c7f4dc",
-      "eee6017886d87b59"
+      "781f1e14a449eaae",
+      "893a0d7d62da39d2",
+      "ae12096632e4862d",
+      "ae636c9e32173c92",
+      "becb40088d4e905d"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -35,30 +38,41 @@
   },
   "results": [
     {
-      "agency_id": "te-whare-wananga-o-awanuiarangi",
+      "agency_id": "ucol",
       "archive_status": "ready",
       "feasibility": "low",
       "platform": "linkedin",
       "reason": "HTTP 999: <none>",
-      "source_id": "2f4321feb9c7f4dc",
+      "source_id": "893a0d7d62da39d2",
       "source_type": "social_profile",
       "status": "http_error",
-      "url": "https://www.linkedin.com/school/te-whare-wananga-o-awanuiarangi"
+      "url": "https://www.linkedin.com/school/ucol"
+    },
+    {
+      "agency_id": "weltec",
+      "archive_status": "ready",
+      "feasibility": "low",
+      "platform": "linkedin",
+      "reason": "HTTP 999: <none>",
+      "source_id": "ae12096632e4862d",
+      "source_type": "social_profile",
+      "status": "http_error",
+      "url": "https://www.linkedin.com/school/weltec"
     }
   ],
   "summary": {
     "platform_counts": {
-      "linkedin": 1
+      "linkedin": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "linkedin": {
-        "http_error": 1
+        "http_error": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "http_error": 1
+      "http_error": 2
     }
   }
 }

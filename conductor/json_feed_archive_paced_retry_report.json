@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-16T17:38:41+00:00",
+  "generated_at": "2026-08-17T17:49:25+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,7 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "d4631b140a351a94"
+      "69877f5858c12936",
+      "7c08c1e727cd811e"
     ],
     "source_type": "json_feed",
     "x_auth_scrape_enabled": false,
@@ -34,30 +35,41 @@
   },
   "results": [
     {
-      "agency_id": "office-of-the-ombudsman",
+      "agency_id": "education-review-office",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "json_feed",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "d4631b140a351a94",
+      "source_id": "7c08c1e727cd811e",
       "source_type": "json_feed",
       "status": "capture_blocked",
-      "url": "https://www.ombudsman.parliament.nz/feed.json"
+      "url": "https://www.ero.govt.nz/feed.json"
+    },
+    {
+      "agency_id": "government-house",
+      "archive_status": "ready",
+      "feasibility": "high",
+      "platform": "json_feed",
+      "reason": "HTTP 403: Forbidden",
+      "source_id": "69877f5858c12936",
+      "source_type": "json_feed",
+      "status": "capture_blocked",
+      "url": "https://gg.govt.nz/feed.json"
     }
   ],
   "summary": {
     "platform_counts": {
-      "json_feed": 1
+      "json_feed": 2
     },
-    "selected_sources": 1,
+    "selected_sources": 2,
     "status_by_platform": {
       "json_feed": {
-        "capture_blocked": 1
+        "capture_blocked": 2
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 1
+      "capture_blocked": 2
     }
   }
 }
