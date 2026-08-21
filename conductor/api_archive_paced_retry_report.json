@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-17T17:49:17+00:00",
+  "generated_at": "2026-08-21T17:51:17+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,9 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "0e5dd8ec97be1abb",
-      "1ce0dd6aab11a31c",
-      "72a4867da2c489d4",
-      "cab79c7e566f9f33",
-      "dbc29e9a6a5edfd0"
+      "7a29373c717c3ce5",
+      "a9fcdafb4715d5c3",
+      "d55ec3230287efc1"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -38,78 +36,52 @@
   },
   "results": [
     {
-      "agency_id": "masterton-district-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 405: Not Allowed",
-      "source_id": "cab79c7e566f9f33",
-      "source_type": "api_endpoint",
-      "status": "method_not_allowed",
-      "url": "https://www.mstn.govt.nz/openapi.json"
-    },
-    {
-      "agency_id": "napier-city-council",
+      "agency_id": "dunedin-city-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "72a4867da2c489d4",
+      "source_id": "7a29373c717c3ce5",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.napier.govt.nz/.well-known/webfinger"
+      "url": "https://www.dunedin.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "parliamentary-counsel-office",
+      "agency_id": "new-plymouth-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "0e5dd8ec97be1abb",
+      "source_id": "a9fcdafb4715d5c3",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.pco.govt.nz/.well-known/webfinger"
+      "url": "https://www.npdc.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "reserve-bank-of-nz",
+      "agency_id": "opotiki-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "dbc29e9a6a5edfd0",
+      "source_id": "d55ec3230287efc1",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.rbnz.govt.nz/openapi.json"
-    },
-    {
-      "agency_id": "tauranga-city-council",
-      "archive_status": "ready",
-      "feasibility": "high",
-      "platform": "api",
-      "reason": "HTTP 404: candidate API endpoint is unavailable",
-      "source_id": "1ce0dd6aab11a31c",
-      "source_type": "api_endpoint",
-      "status": "invalid",
-      "url": "https://www.tauranga.govt.nz/openapi.json"
+      "url": "https://www.odc.govt.nz/.well-known/webfinger"
     }
   ],
   "summary": {
     "platform_counts": {
-      "api": 5
+      "api": 3
     },
-    "selected_sources": 5,
+    "selected_sources": 3,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 3,
-        "invalid": 1,
-        "method_not_allowed": 1
+        "capture_blocked": 3
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 3,
-      "invalid": 1,
-      "method_not_allowed": 1
+      "capture_blocked": 3
     }
   }
 }

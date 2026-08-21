@@ -5834,30 +5834,6 @@
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
-      "account": "LinkedIn",
-      "agency_id": "aut-university",
-      "agency_name": "AUT University (Te W\u0101nanga Aronui o T\u0101maki Makau Rau)",
-      "agency_type": "University",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "b26fc4367206aae5",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.aut.ac.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
-      "portfolio": "Education",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.linkedin.com/edu/school?id=15502"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
       "account": "Auckland University of Technology",
       "account_classification": "official",
       "agency_id": "aut-university",
@@ -7295,7 +7271,7 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Community Guidelines",
+      "account": "Community Guidelines open_in_new",
       "agency_id": "broadcasting-standards-authority",
       "agency_name": "Broadcasting Standards Authority (Te Mana Whanonga Kaip\u0101ho)",
       "agency_type": "Independent Crown Entity",
@@ -9461,32 +9437,6 @@
       "url": "https://www.cartertondc.govt.nz"
     },
     {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.chbdc.govt.nz",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "96634310215de3e2",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Civil Defence Alerts No Emergency",
-      "official_website": "https://www.chbdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.hbemergency.govt.nz/"
-    },
-    {
       "access_method": "public_rss",
       "account": "https://www.chbdc.govt.nz",
       "agency_id": "central-hawkes-bay-district-council",
@@ -9893,30 +9843,6 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Follow us on Facebook",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "1dcceb309330ea98",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.chbdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/CHBDistrictCouncil/"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
       "account": "CentralHawkesBayDistrictCouncil",
       "account_classification": "official",
       "agency_id": "central-hawkes-bay-district-council",
@@ -9942,102 +9868,6 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/CentralHawkesBayDistrictCouncil"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Share on Facebook",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "73812a4e556f87cf",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.chbdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "facebook",
-      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.facebook.com/sharer.php?u=https://www.chbdc.govt.nz/"
-    },
-    {
-      "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Follow us on Instagram",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "operator_or_app_authorized",
-      "candidate_id": "ce3392628381b4ec",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "medium",
-      "official_website": "https://www.chbdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "instagram",
-      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://www.instagram.com/chbdistrictcouncil/"
-    },
-    {
-      "access_method": "approved_api_or_user_authorized_capture",
-      "account": "View our profile on LinkedIn",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "agency_type": "District Council",
-      "archive_status": "manual_seed",
-      "auth": "operator_authorized",
-      "candidate_id": "af25287b377346c9",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.chbdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "linkedin",
-      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://nz.linkedin.com/company/central-hawkes-bay-district-council"
-    },
-    {
-      "access_method": "public_archive_or_lawful_export",
-      "account": "Follow us on Twitter",
-      "agency_id": "central-hawkes-bay-district-council",
-      "agency_name": "Central Hawke's Bay District Council",
-      "agency_type": "District Council",
-      "archive_status": "degraded",
-      "auth": "operator_authorized_if_browser_capture",
-      "candidate_id": "52ac16d700387647",
-      "confidence_score": 0.4,
-      "domain_trust": "unknown",
-      "feasibility": "low",
-      "official_website": "https://www.chbdc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "x",
-      "policy_notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
-      "portfolio": "Local Government",
-      "source_type": "social_profile",
-      "status": "discovered",
-      "trust_signals": [
-        "official_term:nz"
-      ],
-      "url": "https://twitter.com/chbcouncil"
     },
     {
       "access_method": "bounded_public_html",
@@ -12649,11 +12479,11 @@
       "agency_type": "Library Service",
       "archive_status": "ready",
       "auth": "none",
-      "candidate_id": "9143a4e9c579ff70",
+      "candidate_id": "dea8c66b71caf768",
       "confidence_score": 0.45,
       "domain_trust": "unknown",
       "feasibility": "high",
-      "link_title": "Christchurch City Libraries Ng\u0101 Kete W\u0101nanga o \u014ctautahi \u00bb Comments Feed",
+      "link_title": "Christchurch City Libraries Ng\u0101 Kete W\u0101nanga o \u014ctautahi \u00bb News Feed",
       "mime_type": "application/rss+xml",
       "official_website": "https://my.christchurchcitylibraries.com",
       "origin": "homepage.link_alternate",
@@ -12665,59 +12495,7 @@
       "trust_signals": [
         "archive_friendly_platform"
       ],
-      "url": "https://my.christchurchcitylibraries.com/comments/feed/"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://my.christchurchcitylibraries.com",
-      "agency_id": "christchurch-city-libraries",
-      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
-      "agency_type": "Library Service",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "3039bdd0f07301aa",
-      "confidence_score": 0.45,
-      "domain_trust": "unknown",
-      "feasibility": "high",
-      "link_title": "Christchurch City Libraries Ng\u0101 Kete W\u0101nanga o \u014ctautahi \u00bb Feed",
-      "mime_type": "application/rss+xml",
-      "official_website": "https://my.christchurchcitylibraries.com",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Local Government",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "archive_friendly_platform"
-      ],
-      "url": "https://my.christchurchcitylibraries.com/feed/"
-    },
-    {
-      "access_method": "public_rss",
-      "account": "https://my.christchurchcitylibraries.com",
-      "agency_id": "christchurch-city-libraries",
-      "agency_name": "Christchurch City Libraries (Ng\u0101 Kete W\u0101nanga o \u014ctautahi)",
-      "agency_type": "Library Service",
-      "archive_status": "ready",
-      "auth": "none",
-      "candidate_id": "429748fce472bf23",
-      "confidence_score": 0.45,
-      "domain_trust": "unknown",
-      "feasibility": "high",
-      "link_title": "Christchurch City Libraries Ng\u0101 Kete W\u0101nanga o \u014ctautahi \u00bb Homepage Comments Feed",
-      "mime_type": "application/rss+xml",
-      "official_website": "https://my.christchurchcitylibraries.com",
-      "origin": "homepage.link_alternate",
-      "platform": "rss",
-      "policy_notes": "RSS/Atom feeds are the easiest repeatable archive source and should be prioritized.",
-      "portfolio": "Local Government",
-      "source_type": "rss_feed",
-      "status": "discovered",
-      "trust_signals": [
-        "archive_friendly_platform"
-      ],
-      "url": "https://my.christchurchcitylibraries.com/homepage-2/feed/"
+      "url": "https://my.christchurchcitylibraries.com/news/feed/"
     },
     {
       "access_method": "public_rss",
@@ -27121,7 +26899,7 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Environment Canterbury Livestream",
+      "account": "13 August 2026 (Briefings/Workshops \u2013 Morning)",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
       "agency_type": "Regional Council",
@@ -27169,7 +26947,7 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Environment Canterbury Livestream",
+      "account": "Regional Delivery Committee 12 August 2026",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
       "agency_type": "Regional Council",
@@ -27193,7 +26971,7 @@
     },
     {
       "access_method": "public_channel_rss_or_yt_dlp_metadata",
-      "account": "Environment Canterbury Livestream",
+      "account": "12 August 2026 (Briefings/Workshops \u2013 Afternoon)",
       "agency_id": "environment-canterbury",
       "agency_name": "Environment Canterbury (ECan \u2013 Canterbury Regional Council)",
       "agency_type": "Regional Council",
@@ -27914,11 +27692,11 @@
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
-      "candidate_id": "aac661c6d095f7ac",
+      "candidate_id": "4761a7b4fa2a758f",
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
-      "link_text": "EPA seeks feedback on proposal to ban two insecticides",
+      "link_text": "EPA seeks feedback about treated seed",
       "official_website": "https://www.epa.govt.nz",
       "origin": "homepage.link",
       "platform": "newsletter",
@@ -27930,7 +27708,7 @@
         "high_trust_domain_suffix",
         "official_term:nz"
       ],
-      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-seeks-feedback-on-proposal-to-ban-two-insecticides/"
+      "url": "https://www.epa.govt.nz/news-and-alerts/latest-news/epa-seeks-feedback-about-treated-seed/"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -28553,7 +28331,7 @@
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
-      "link_text": "Accounting Alert",
+      "link_text": "Accounting standards Alert",
       "official_website": "https://www.xrb.govt.nz",
       "origin": "homepage.link",
       "platform": "newsletter",
@@ -62397,6 +62175,32 @@
       "url": "https://www.education.govt.nz/bulletins"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.education.govt.nz",
+      "agency_id": "ministry-of-education",
+      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
+      "agency_type": "Department",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "c26f6b6e32550d8d",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Kia Manawaroa issue 18 out now 21 August 2026 Welcome to Issue 18 of Kia Manawaroa, our monthly newsletter for wh\u0101nau M\u0101ori. Find out more",
+      "official_website": "https://www.education.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Education",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-18-out-now"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.education.govt.nz",
       "agency_id": "ministry-of-education",
@@ -63062,6 +62866,33 @@
         "official_term:nz"
       ],
       "url": "https://www.education.govt.nz/bulletins"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.education.govt.nz",
+      "agency_id": "ministry-of-education",
+      "agency_name": "Ministry of Education (Te T\u0101huhu o te M\u0101tauranga)",
+      "agency_type": "Department",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "b8ed4c493b1e2c3f",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Kia Manawaroa issue 18 out now 21 August 2026 Welcome to Issue 18 of Kia Manawaroa, our monthly newsletter for wh\u0101nau M\u0101ori. Find out more",
+      "official_website": "https://www.education.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Education",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.education.govt.nz/news/kia-manawaroa-issue-18-out-now"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -72557,6 +72388,32 @@
       "url": "https://www.nzals.co.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.nzblood.co.nz",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "44a047d4d3996ce3",
+      "confidence_score": 0.5,
+      "domain_trust": "medium",
+      "feasibility": "medium",
+      "link_text": "Clinical Newsletter",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Health",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "trusted_domain_suffix",
+        "official_term:new zealand"
+      ],
+      "url": "https://www.nzblood.co.nz/healthcare-professionals/transfusion-medicine/clinical-newsletter"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.nzblood.co.nz",
       "agency_id": "nz-blood-service",
@@ -72962,6 +72819,102 @@
       "url": "https://www.nzblood.co.nz/subscribe"
     },
     {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "6a614cc59697a5e0",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.facebook.com/NewZealandBloodService  "
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "e20ee523619f521c",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.instagram.com/nzbloodservice/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "c0a496da3b6f97d3",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.linkedin.com/company/new-zealand-blood-service/"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "7b3ee8c0091a8ef7",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Health",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:new zealand"
+      ],
+      "url": "https://www.youtube.com/user/savelivesgiveblood "
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.nzblood.co.nz",
       "agency_id": "nz-blood-service",
@@ -72987,6 +72940,33 @@
         "official_term:new zealand"
       ],
       "url": "https://www.nzblood.co.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.nzblood.co.nz",
+      "agency_id": "nz-blood-service",
+      "agency_name": "New Zealand Blood Service (Te Ratonga Toto o Aotearoa)",
+      "agency_type": "Crown Agent",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "3ce7e987a8fc9751",
+      "confidence_score": 0.6,
+      "domain_trust": "medium",
+      "feasibility": "high",
+      "link_text": "Clinical Newsletter",
+      "official_website": "https://www.nzblood.co.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Health",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "trusted_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:new zealand"
+      ],
+      "url": "https://www.nzblood.co.nz/healthcare-professionals/transfusion-medicine/clinical-newsletter"
     },
     {
       "access_method": "public_rss",
@@ -87908,6 +87888,32 @@
       "agency_type": "City Council",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
+      "candidate_id": "3b23526bea468462",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Stay up to date with Palmy\u2019s hospitality sector \n\t\t Published on 17 August 2026 \n\t\t Palmy Hospo is an email newsletter making it easy for local hospitality and food businesses to keep up with what's happening in the industry.",
+      "official_website": "https://www.pncc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.pncc.govt.nz/News-Events/News/Stay-up-to-date-with-Palmy\u2019s-hospitality-sector"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.pncc.govt.nz",
+      "agency_id": "palmerston-north-city-council",
+      "agency_name": "Palmerston North City Council (Te Kaunihera o Papaioea)",
+      "agency_type": "City Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
       "candidate_id": "b961189d1ab6e918",
       "confidence_score": 0.6,
       "domain_trust": "high",
@@ -88485,6 +88491,33 @@
         "official_term:nz"
       ],
       "url": "https://www.pncc.govt.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.pncc.govt.nz",
+      "agency_id": "palmerston-north-city-council",
+      "agency_name": "Palmerston North City Council (Te Kaunihera o Papaioea)",
+      "agency_type": "City Council",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "9884ddf3d9bb0d95",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Stay up to date with Palmy\u2019s hospitality sector \n\t\t Published on 17 August 2026 \n\t\t Palmy Hospo is an email newsletter making it easy for local hospitality and food businesses to keep up with what's happening in the industry.",
+      "official_website": "https://www.pncc.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.pncc.govt.nz/News-Events/News/Stay-up-to-date-with-Palmy\u2019s-hospitality-sector"
     },
     {
       "access_method": "public_rss",
@@ -103335,7 +103368,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 3 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 3 hours ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -103359,13 +103392,13 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "View on Facebook",
+      "account": "Play",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
       "archive_status": "candidate",
       "auth": "operator_or_app_authorized",
-      "candidate_id": "ca1f90a9de9473a1",
+      "candidate_id": "f737f60ba3161cac",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -103379,7 +103412,31 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "https://www.facebook.com/102062118004656_1389428403300755"
+      "url": "https://facebook.com/1395370689373193"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "View on Facebook",
+      "agency_id": "social-workers-registration-board",
+      "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
+      "agency_type": "Crown Agent",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "a38a08d6f77d8cae",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.swrb.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Social Development",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/1395370689373193"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -104459,7 +104516,7 @@
       "confidence_score": 0.6,
       "domain_trust": "high",
       "feasibility": "medium",
-      "link_text": "Road alerts and closures",
+      "link_text": "Road closures",
       "official_website": "https://www.swdc.govt.nz",
       "origin": "homepage.link",
       "platform": "newsletter",
@@ -134887,6 +134944,32 @@
       "agency_type": "District Council",
       "archive_status": "candidate",
       "auth": "inbox_or_dispatch_token",
+      "candidate_id": "d66247a4eba6e714",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Subscribe \r\n\r\n                             \r\n                                 Subscribe to our text alerts, our newsletter and more. \r\n                             \r\n\r\n                             \r\n                                 \r\n                                     \r\n                                    Subscribe",
+      "official_website": "https://www.westlanddc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "http://www.westlanddc.govt.nz/do-it-online/subscribe/"
+    },
+    {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.westlanddc.govt.nz",
+      "agency_id": "westland-district-council",
+      "agency_name": "Westland District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
       "candidate_id": "51615684f68cdda2",
       "confidence_score": 0.5,
       "domain_trust": "medium",
@@ -134904,32 +134987,6 @@
         "official_term:nz"
       ],
       "url": "https://westlandmatters.buzzit.co.nz/"
-    },
-    {
-      "access_method": "email_ingress_or_public_archive",
-      "account": "https://www.westlanddc.govt.nz",
-      "agency_id": "westland-district-council",
-      "agency_name": "Westland District Council",
-      "agency_type": "District Council",
-      "archive_status": "candidate",
-      "auth": "inbox_or_dispatch_token",
-      "candidate_id": "18e734958d624e21",
-      "confidence_score": 0.6,
-      "domain_trust": "high",
-      "feasibility": "medium",
-      "link_text": "Subscribe \r\n\r\n                             \r\n                                 Subscribe to our text alerts, our newsletter and more. \r\n                             \r\n\r\n                             \r\n                                 \r\n                                     \r\n                                    Subscribe",
-      "official_website": "https://www.westlanddc.govt.nz",
-      "origin": "homepage.link",
-      "platform": "newsletter",
-      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
-      "portfolio": "Local Government",
-      "source_type": "newsletter",
-      "status": "discovered",
-      "trust_signals": [
-        "high_trust_domain_suffix",
-        "official_term:nz"
-      ],
-      "url": "https://www.westlanddc.govt.nz/do-it-online/subscribe/"
     },
     {
       "access_method": "public_rss",
@@ -136056,6 +136113,32 @@
       "url": "https://www.whaikaha.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.whakatane.govt.nz",
+      "agency_id": "whakatane-district-council",
+      "agency_name": "Whakat\u0101ne District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "7309048cf7bd1e6f",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Hapori Highlights",
+      "official_website": "https://www.whakatane.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.whakatane.govt.nz/about-council/news/newsletters/hapori-highlights"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.whakatane.govt.nz",
       "agency_id": "whakatane-district-council",
@@ -136610,6 +136693,33 @@
         "official_term:nz"
       ],
       "url": "https://www.whakatane.govt.nz"
+    },
+    {
+      "access_method": "bounded_public_html",
+      "account": "https://www.whakatane.govt.nz",
+      "agency_id": "whakatane-district-council",
+      "agency_name": "Whakat\u0101ne District Council",
+      "agency_type": "District Council",
+      "archive_status": "ready",
+      "auth": "none",
+      "candidate_id": "ce1195378a51b172",
+      "confidence_score": 0.7,
+      "domain_trust": "high",
+      "feasibility": "high",
+      "link_text": "Hapori Highlights",
+      "official_website": "https://www.whakatane.govt.nz",
+      "origin": "homepage.newsletter_archive_link",
+      "platform": "website_page",
+      "policy_notes": "Capture only bounded public pages discovered from feeds or explicit source manifests.",
+      "portfolio": "Local Government",
+      "source_type": "website_page",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "archive_friendly_platform",
+        "official_term:nz"
+      ],
+      "url": "https://www.whakatane.govt.nz/about-council/news/newsletters/hapori-highlights"
     },
     {
       "access_method": "email_ingress_or_public_archive",
@@ -139674,6 +139784,30 @@
       "url": "https://www.youtube.com/@WITTNZ"
     },
     {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "Watch Now!",
+      "agency_id": "witt",
+      "agency_name": "Western Institute of Technology at Taranaki (WITT)",
+      "agency_type": "ITP/Polytechnic",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "a23f27d4fddb3dbf",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.witt.ac.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Education",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://youtu.be/Br-4Q_Riybo?si=kJBtKlsiQ-yyGjn3"
+    },
+    {
       "access_method": "bounded_public_html",
       "account": "https://www.witt.ac.nz",
       "agency_id": "witt",
@@ -140448,7 +140582,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-17T17:48:38+00:00",
+  "generated_at": "2026-08-21T17:50:51+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155346,7 +155480,7 @@
     {
       "agency_id": "ara-institute-of-canterbury",
       "alternates": 0,
-      "links": 90,
+      "links": 91,
       "status": "ok",
       "url": "https://www.ara.ac.nz/"
     },
@@ -155377,9 +155511,8 @@
     },
     {
       "agency_id": "aut-university",
-      "alternates": 0,
-      "links": 188,
-      "status": "ok",
+      "error": "HTTP Error 403: Forbidden",
+      "status": "failed",
       "url": "https://www.aut.ac.nz/"
     },
     {
@@ -155391,14 +155524,14 @@
     {
       "agency_id": "beehive-nz",
       "alternates": 0,
-      "links": 76,
+      "links": 71,
       "status": "ok",
       "url": "https://www.beehive.govt.nz/"
     },
     {
       "agency_id": "broadcasting-standards-authority",
       "alternates": 0,
-      "links": 152,
+      "links": 105,
       "status": "ok",
       "url": "https://www.bsa.govt.nz/"
     },
@@ -155412,14 +155545,14 @@
     {
       "agency_id": "callaghan-innovation",
       "alternates": 0,
-      "links": 108,
+      "links": 106,
       "status": "ok",
       "url": "https://www.callaghaninnovation.govt.nz/"
     },
     {
       "agency_id": "cancer-control-agency",
       "alternates": 0,
-      "links": 177,
+      "links": 176,
       "status": "ok",
       "url": "https://www.teaho.govt.nz/"
     },
@@ -155431,9 +155564,8 @@
     },
     {
       "agency_id": "central-hawkes-bay-district-council",
-      "alternates": 0,
-      "links": 501,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.chbdc.govt.nz/"
     },
     {
@@ -155472,15 +155604,15 @@
     },
     {
       "agency_id": "christchurch-city-libraries",
-      "alternates": 6,
-      "links": 323,
+      "alternates": 4,
+      "links": 322,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
     {
       "agency_id": "city-rail-link",
       "alternates": 0,
-      "links": 88,
+      "links": 85,
       "status": "ok",
       "url": "https://www.cityraillink.co.nz/"
     },
@@ -155600,14 +155732,14 @@
     {
       "agency_id": "eeca",
       "alternates": 0,
-      "links": 196,
+      "links": 207,
       "status": "ok",
       "url": "https://www.eeca.govt.nz/"
     },
     {
       "agency_id": "eit",
       "alternates": 3,
-      "links": 561,
+      "links": 563,
       "status": "ok",
       "url": "https://www.eit.ac.nz/"
     },
@@ -155634,7 +155766,7 @@
     {
       "agency_id": "environment-canterbury",
       "alternates": 0,
-      "links": 138,
+      "links": 137,
       "status": "ok",
       "url": "https://www.ecan.govt.nz/"
     },
@@ -155673,7 +155805,7 @@
     {
       "agency_id": "fire-and-emergency-nz",
       "alternates": 0,
-      "links": 132,
+      "links": 131,
       "status": "ok",
       "url": "https://www.fireandemergency.nz/"
     },
@@ -155738,14 +155870,14 @@
     {
       "agency_id": "hastings-district-council",
       "alternates": 0,
-      "links": 762,
+      "links": 763,
       "status": "ok",
       "url": "https://www.hastingsdc.govt.nz/"
     },
     {
       "agency_id": "hawkes-bay-regional-council",
       "alternates": 0,
-      "links": 466,
+      "links": 468,
       "status": "ok",
       "url": "https://www.hbrc.govt.nz/"
     },
@@ -155773,7 +155905,7 @@
     {
       "agency_id": "health-research-council",
       "alternates": 0,
-      "links": 99,
+      "links": 108,
       "status": "ok",
       "url": "https://www.hrc.govt.nz/"
     },
@@ -155800,7 +155932,7 @@
     {
       "agency_id": "horowhenua-district-council",
       "alternates": 0,
-      "links": 237,
+      "links": 236,
       "status": "ok",
       "url": "https://www.horowhenua.govt.nz/"
     },
@@ -155879,14 +156011,14 @@
     {
       "agency_id": "kapiti-coast-district-council",
       "alternates": 0,
-      "links": 105,
+      "links": 104,
       "status": "ok",
       "url": "https://www.kapiticoast.govt.nz/"
     },
     {
       "agency_id": "kawerau-district-council",
       "alternates": 0,
-      "links": 793,
+      "links": 800,
       "status": "ok",
       "url": "https://www.kaweraudc.govt.nz/"
     },
@@ -155914,7 +156046,7 @@
     {
       "agency_id": "law-commission",
       "alternates": 0,
-      "links": 52,
+      "links": 49,
       "status": "ok",
       "url": "https://www.lawcom.govt.nz/"
     },
@@ -156003,7 +156135,7 @@
     {
       "agency_id": "mfat",
       "alternates": 0,
-      "links": 141,
+      "links": 136,
       "status": "ok",
       "url": "https://www.mfat.govt.nz/"
     },
@@ -156146,14 +156278,14 @@
     {
       "agency_id": "new-plymouth-district-council",
       "alternates": 0,
-      "links": 1561,
+      "links": 1562,
       "status": "ok",
       "url": "https://www.npdc.govt.nz/"
     },
     {
       "agency_id": "nmit",
       "alternates": 0,
-      "links": 170,
+      "links": 171,
       "status": "ok",
       "url": "https://www.nmit.ac.nz/"
     },
@@ -156186,8 +156318,9 @@
     },
     {
       "agency_id": "nz-blood-service",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 667,
+      "status": "ok",
       "url": "https://www.nzblood.co.nz/"
     },
     {
@@ -156213,9 +156346,8 @@
     },
     {
       "agency_id": "nz-growth-capital-partners",
-      "alternates": 0,
-      "links": 49,
-      "status": "ok",
+      "error": "The read operation timed out",
+      "status": "failed",
       "url": "https://www.nzgcp.co.nz/"
     },
     {
@@ -156249,7 +156381,7 @@
     {
       "agency_id": "nz-post",
       "alternates": 0,
-      "links": 233,
+      "links": 234,
       "status": "ok",
       "url": "https://www.nzpost.co.nz/"
     },
@@ -156344,28 +156476,28 @@
     {
       "agency_id": "otago-polytechnic",
       "alternates": 0,
-      "links": 324,
+      "links": 325,
       "status": "ok",
       "url": "https://www.op.ac.nz/"
     },
     {
       "agency_id": "otago-regional-council",
       "alternates": 0,
-      "links": 657,
+      "links": 659,
       "status": "ok",
       "url": "https://www.orc.govt.nz/"
     },
     {
       "agency_id": "otorohanga-district-council",
       "alternates": 0,
-      "links": 319,
+      "links": 318,
       "status": "ok",
       "url": "https://www.otodc.govt.nz/"
     },
     {
       "agency_id": "palmerston-north-city-council",
       "alternates": 0,
-      "links": 525,
+      "links": 526,
       "status": "ok",
       "url": "https://www.pncc.govt.nz/"
     },
@@ -156453,7 +156585,7 @@
     {
       "agency_id": "rangitikei-district-council",
       "alternates": 0,
-      "links": 138,
+      "links": 137,
       "status": "ok",
       "url": "https://www.rangitikei.govt.nz/"
     },
@@ -156480,7 +156612,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 404,
+      "links": 398,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156558,7 +156690,7 @@
     {
       "agency_id": "south-wairarapa-district-council",
       "alternates": 3,
-      "links": 249,
+      "links": 244,
       "status": "ok",
       "url": "https://www.swdc.govt.nz/"
     },
@@ -156618,7 +156750,7 @@
     {
       "agency_id": "taranaki-regional-council",
       "alternates": 0,
-      "links": 1408,
+      "links": 1411,
       "status": "ok",
       "url": "https://www.trc.govt.nz/"
     },
@@ -156665,7 +156797,7 @@
     {
       "agency_id": "te-hiringa-mahara",
       "alternates": 0,
-      "links": 47,
+      "links": 48,
       "status": "ok",
       "url": "https://www.mhwc.govt.nz/"
     },
@@ -156699,7 +156831,7 @@
     {
       "agency_id": "te-wananga-o-aotearoa",
       "alternates": 0,
-      "links": 339,
+      "links": 338,
       "status": "ok",
       "url": "https://www.twoa.ac.nz/"
     },
@@ -156713,21 +156845,21 @@
     {
       "agency_id": "te-whare-wananga-o-awanuiarangi",
       "alternates": 0,
-      "links": 134,
+      "links": 136,
       "status": "ok",
       "url": "https://www.wananga.ac.nz/"
     },
     {
       "agency_id": "tertiary-education-commission",
       "alternates": 0,
-      "links": 379,
+      "links": 377,
       "status": "ok",
       "url": "https://www.tec.govt.nz/"
     },
     {
       "agency_id": "thames-coromandel-district-council",
       "alternates": 0,
-      "links": 274,
+      "links": 275,
       "status": "ok",
       "url": "https://www.tcdc.govt.nz/"
     },
@@ -156833,7 +156965,7 @@
     {
       "agency_id": "waikato-district-council",
       "alternates": 0,
-      "links": 77,
+      "links": 78,
       "status": "ok",
       "url": "https://www.waikatodistrict.govt.nz/"
     },
@@ -156847,7 +156979,7 @@
     {
       "agency_id": "waimakariri-district-council",
       "alternates": 0,
-      "links": 312,
+      "links": 313,
       "status": "ok",
       "url": "https://www.waimakariri.govt.nz/"
     },
@@ -156873,14 +157005,14 @@
     {
       "agency_id": "waitaki-district-council",
       "alternates": 0,
-      "links": 353,
+      "links": 352,
       "status": "ok",
       "url": "https://www.waitaki.govt.nz/"
     },
     {
       "agency_id": "waitomo-district-council",
       "alternates": 0,
-      "links": 112,
+      "links": 110,
       "status": "ok",
       "url": "https://www.waitomo.govt.nz/"
     },
@@ -156938,7 +157070,7 @@
     {
       "agency_id": "whakatane-district-council",
       "alternates": 0,
-      "links": 586,
+      "links": 588,
       "status": "ok",
       "url": "https://www.whakatane.govt.nz/"
     },
@@ -156952,7 +157084,7 @@
     {
       "agency_id": "whangarei-district-council",
       "alternates": 0,
-      "links": 331,
+      "links": 355,
       "status": "ok",
       "url": "https://www.wdc.govt.nz/"
     },
@@ -156973,7 +157105,7 @@
     {
       "agency_id": "witt",
       "alternates": 0,
-      "links": 204,
+      "links": 206,
       "status": "ok",
       "url": "https://www.witt.ac.nz/"
     },
@@ -156995,11 +157127,11 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5247,
+    "candidate_count": 5252,
     "feasibility_counts": {
-      "high": 4158,
-      "low": 307,
-      "medium": 782
+      "high": 4160,
+      "low": 305,
+      "medium": 787
     },
     "known_registry_social_profiles": 445,
     "platform_counts": {
@@ -157007,21 +157139,21 @@
       "bluesky": 18,
       "facebook": 291,
       "instagram": 162,
-      "linkedin": 234,
+      "linkedin": 233,
       "medium": 2,
-      "newsletter": 156,
-      "rss": 3831,
-      "website_page": 309,
-      "x": 73,
-      "youtube": 158
+      "newsletter": 159,
+      "rss": 3829,
+      "website_page": 313,
+      "x": 72,
+      "youtube": 160
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 156,
-      "rss_feed": 66,
+      "newsletter": 159,
+      "rss_feed": 64,
       "search_seed": 3765,
       "social_profile": 938,
-      "website_page": 309
+      "website_page": 313
     }
   }
 }
