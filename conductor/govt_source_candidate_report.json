@@ -9437,6 +9437,32 @@
       "url": "https://www.cartertondc.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.chbdc.govt.nz",
+      "agency_id": "central-hawkes-bay-district-council",
+      "agency_name": "Central Hawke's Bay District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "96634310215de3e2",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Civil Defence Alerts No Emergency",
+      "official_website": "https://www.chbdc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Local Government",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.hbemergency.govt.nz/"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.chbdc.govt.nz",
       "agency_id": "central-hawkes-bay-district-council",
@@ -9843,6 +9869,30 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Follow us on Facebook",
+      "agency_id": "central-hawkes-bay-district-council",
+      "agency_name": "Central Hawke's Bay District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "1dcceb309330ea98",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.chbdc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/CHBDistrictCouncil/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
       "account": "CentralHawkesBayDistrictCouncil",
       "account_classification": "official",
       "agency_id": "central-hawkes-bay-district-council",
@@ -9868,6 +9918,102 @@
         "official_term:nz"
       ],
       "url": "https://www.facebook.com/CentralHawkesBayDistrictCouncil"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Share on Facebook",
+      "agency_id": "central-hawkes-bay-district-council",
+      "agency_name": "Central Hawke's Bay District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "73812a4e556f87cf",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.chbdc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "facebook",
+      "policy_notes": "Official API or authorized export is preferred. Avoid brittle unauthenticated scraping.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.facebook.com/sharer.php?u=https://www.chbdc.govt.nz/"
+    },
+    {
+      "access_method": "meta_graph_api_or_authorized_export",
+      "account": "Follow us on Instagram",
+      "agency_id": "central-hawkes-bay-district-council",
+      "agency_name": "Central Hawke's Bay District Council",
+      "agency_type": "District Council",
+      "archive_status": "candidate",
+      "auth": "operator_or_app_authorized",
+      "candidate_id": "ce3392628381b4ec",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.chbdc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "instagram",
+      "policy_notes": "Archive capture depends on Meta access and account eligibility.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.instagram.com/chbdistrictcouncil/"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
+      "account": "View our profile on LinkedIn",
+      "agency_id": "central-hawkes-bay-district-council",
+      "agency_name": "Central Hawke's Bay District Council",
+      "agency_type": "District Council",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "af25287b377346c9",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.chbdc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://nz.linkedin.com/company/central-hawkes-bay-district-council"
+    },
+    {
+      "access_method": "public_archive_or_lawful_export",
+      "account": "Follow us on Twitter",
+      "agency_id": "central-hawkes-bay-district-council",
+      "agency_name": "Central Hawke's Bay District Council",
+      "agency_type": "District Council",
+      "archive_status": "degraded",
+      "auth": "operator_authorized_if_browser_capture",
+      "candidate_id": "52ac16d700387647",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.chbdc.govt.nz",
+      "origin": "homepage.link",
+      "platform": "x",
+      "policy_notes": "Prefer account owner export or public archive sources. Treat live web access as degraded.",
+      "portfolio": "Local Government",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://twitter.com/chbcouncil"
     },
     {
       "access_method": "bounded_public_html",
@@ -103368,7 +103514,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 3 hours ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 1 day ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -140582,7 +140728,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-21T17:50:51+00:00",
+  "generated_at": "2026-08-22T17:41:52+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155564,8 +155710,9 @@
     },
     {
       "agency_id": "central-hawkes-bay-district-council",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 488,
+      "status": "ok",
       "url": "https://www.chbdc.govt.nz/"
     },
     {
@@ -156110,7 +156257,7 @@
     {
       "agency_id": "massey-university",
       "alternates": 0,
-      "links": 87,
+      "links": 88,
       "status": "ok",
       "url": "https://www.massey.ac.nz/"
     },
@@ -156346,8 +156493,9 @@
     },
     {
       "agency_id": "nz-growth-capital-partners",
-      "error": "The read operation timed out",
-      "status": "failed",
+      "alternates": 0,
+      "links": 49,
+      "status": "ok",
       "url": "https://www.nzgcp.co.nz/"
     },
     {
@@ -156456,7 +156604,7 @@
     {
       "agency_id": "open-polytechnic",
       "alternates": 0,
-      "links": 377,
+      "links": 376,
       "status": "ok",
       "url": "https://www.openpolytechnic.ac.nz/"
     },
@@ -156612,7 +156760,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 398,
+      "links": 405,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -157127,32 +157275,32 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5252,
+    "candidate_count": 5258,
     "feasibility_counts": {
       "high": 4160,
-      "low": 305,
-      "medium": 787
+      "low": 307,
+      "medium": 791
     },
     "known_registry_social_profiles": 445,
     "platform_counts": {
       "api": 13,
       "bluesky": 18,
-      "facebook": 291,
-      "instagram": 162,
-      "linkedin": 233,
+      "facebook": 293,
+      "instagram": 163,
+      "linkedin": 234,
       "medium": 2,
-      "newsletter": 159,
+      "newsletter": 160,
       "rss": 3829,
       "website_page": 313,
-      "x": 72,
+      "x": 73,
       "youtube": 160
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 159,
+      "newsletter": 160,
       "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 938,
+      "social_profile": 943,
       "website_page": 313
     }
   }
