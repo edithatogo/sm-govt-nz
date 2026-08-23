@@ -513,11 +513,11 @@
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
-      "report": "conductor/json_feed_archive_paced_retry_report.json",
+      "report": "conductor/json_feed_archive_report.json",
       "source_id": "f11a82f28bcea2f7",
       "status": "capture_blocked",
-      "supersedes_report": "conductor/json_feed_archive_report.json",
-      "supersedes_status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
       "url": "https://www.dunedin.govt.nz/feed.json"
     },
     {
@@ -682,11 +682,11 @@
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
-      "report": "conductor/json_feed_archive_paced_retry_report.json",
+      "report": "conductor/json_feed_archive_report.json",
       "source_id": "902abb90b1a31084",
       "status": "capture_blocked",
-      "supersedes_report": "conductor/json_feed_archive_report.json",
-      "supersedes_status": "capture_blocked",
+      "supersedes_report": "",
+      "supersedes_status": "",
       "url": "https://www.fndc.govt.nz/feed.json"
     },
     {
@@ -2086,11 +2086,11 @@
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
-      "report": "conductor/json_feed_archive_report.json",
+      "report": "conductor/json_feed_archive_paced_retry_report.json",
       "source_id": "d20c57d5d701a26c",
       "status": "capture_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
+      "supersedes_report": "conductor/json_feed_archive_report.json",
+      "supersedes_status": "capture_blocked",
       "url": "https://www.pco.govt.nz/feed.json"
     },
     {
@@ -2801,11 +2801,11 @@
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
-      "report": "conductor/json_feed_archive_report.json",
+      "report": "conductor/json_feed_archive_paced_retry_report.json",
       "source_id": "fa9ca40c642c2ece",
       "status": "capture_blocked",
-      "supersedes_report": "",
-      "supersedes_status": "",
+      "supersedes_report": "conductor/json_feed_archive_report.json",
+      "supersedes_status": "capture_blocked",
       "url": "https://www.tourismnewzealand.com/feed.json"
     },
     {
@@ -4880,12 +4880,12 @@
       "platform": "linkedin",
       "priority": "review",
       "priority_description": "Needs review.",
-      "reason": "HTTP 999: <none>",
-      "report": "conductor/linkedin_archive_paced_retry_report.json",
+      "reason": "",
+      "report": "conductor/manual_seed_onboarding_report.json",
       "source_id": "5b070f37d132d016",
-      "status": "http_error",
-      "supersedes_report": "conductor/manual_seed_onboarding_report.json",
-      "supersedes_status": "public_fallback_available",
+      "status": "public_fallback_available",
+      "supersedes_report": "conductor/linkedin_archive_report.json",
+      "supersedes_status": "http_error",
       "url": "https://www.linkedin.com/school/lincoln-university-new-zealand"
     },
     {
@@ -19098,69 +19098,69 @@
       "url": "https://www.worksafe.govt.nz/about-us/news-and-media/high-hazards-newsletter-june-2026/"
     },
     {
-      "agency_id": "hutt-city-council",
+      "agency_id": "hurunui-district-council",
       "platform": "api",
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
       "report": "conductor/api_archive_paced_retry_report.json",
-      "source_id": "a192a2044b127ff4",
+      "source_id": "2f118fa98474f7c3",
       "status": "capture_blocked",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.huttcity.govt.nz/.well-known/webfinger"
+      "url": "https://www.hurunui.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "office-of-the-ombudsman",
+      "agency_id": "masterton-district-council",
       "platform": "api",
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
       "report": "conductor/api_archive_paced_retry_report.json",
-      "source_id": "002e3f3a6d3df965",
+      "source_id": "eba473ca54354f65",
       "status": "capture_blocked",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.ombudsman.parliament.nz/openapi.json"
+      "url": "https://www.mstn.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "selwyn-district-council",
+      "agency_id": "stratford-district-council",
       "platform": "api",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
+      "priority": "p1_existing_resources",
+      "priority_description": "Can be improved with existing repo resources and keyless public retries.",
+      "reason": "HTTP 405: Not Allowed",
       "report": "conductor/api_archive_paced_retry_report.json",
-      "source_id": "26cae7ebb461d4d2",
-      "status": "capture_blocked",
+      "source_id": "e404e4b7ad153142",
+      "status": "method_not_allowed",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.selwyn.govt.nz/openapi.json"
+      "url": "https://www.stratford.govt.nz/openapi.json"
     },
     {
-      "agency_id": "waimate-district-council",
+      "agency_id": "tasman-district-council",
       "platform": "api",
       "priority": "p4_larger_browser_or_access_project",
       "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
       "reason": "HTTP 403: Forbidden",
       "report": "conductor/api_archive_paced_retry_report.json",
-      "source_id": "e22e635a350c53dc",
+      "source_id": "6c2d3c32e42b56f3",
       "status": "capture_blocked",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.waimatedc.govt.nz/.well-known/webfinger"
+      "url": "https://www.tasman.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "waipa-district-council",
+      "agency_id": "victoria-university-of-wellington",
       "platform": "api",
-      "priority": "p4_larger_browser_or_access_project",
-      "priority_description": "Requires a larger browser/API/access project and careful policy boundaries.",
-      "reason": "HTTP 403: Forbidden",
+      "priority": "review",
+      "priority_description": "Needs review.",
+      "reason": "HTTP 421: Misdirected Request",
       "report": "conductor/api_archive_paced_retry_report.json",
-      "source_id": "2632230e199654e1",
-      "status": "capture_blocked",
+      "source_id": "b21a114650cf7c1f",
+      "status": "http_error",
       "supersedes_report": "",
       "supersedes_status": "",
-      "url": "https://www.waipadc.govt.nz/.well-known/webfinger"
+      "url": "https://www.wgtn.ac.nz/.well-known/webfinger"
     },
     {
       "agency_id": "education-review-office",
@@ -19231,12 +19231,16 @@
       "selected_sources": 5,
       "status_by_platform": {
         "api": {
-          "capture_blocked": 5
+          "capture_blocked": 3,
+          "http_error": 1,
+          "method_not_allowed": 1
         }
       },
       "status_by_provider": {},
       "status_counts": {
-        "capture_blocked": 5
+        "capture_blocked": 3,
+        "http_error": 1,
+        "method_not_allowed": 1
       }
     },
     "conductor/api_archive_report.json": {
@@ -19334,19 +19338,11 @@
       }
     },
     "conductor/linkedin_archive_paced_retry_report.json": {
-      "platform_counts": {
-        "linkedin": 1
-      },
-      "selected_sources": 1,
-      "status_by_platform": {
-        "linkedin": {
-          "http_error": 1
-        }
-      },
+      "platform_counts": {},
+      "selected_sources": 0,
+      "status_by_platform": {},
       "status_by_provider": {},
-      "status_counts": {
-        "http_error": 1
-      }
+      "status_counts": {}
     },
     "conductor/linkedin_archive_report.json": {
       "platform_counts": {
@@ -19594,7 +19590,7 @@
       "browser_captcha_or_challenge": 9,
       "browser_captured": 21,
       "browser_no_visible_posts": 10,
-      "capture_blocked": 59,
+      "capture_blocked": 57,
       "captured": 1016,
       "dns_failed": 12,
       "feed_already_captured": 2,
@@ -19603,7 +19599,7 @@
       "http_error": 52,
       "invalid": 259,
       "manual_seed_missing": 100,
-      "method_not_allowed": 3,
+      "method_not_allowed": 4,
       "needs_authorized_seed_or_api": 918,
       "network_error": 14,
       "network_timeout": 5,
@@ -19635,27 +19631,27 @@
     "priority_counts": {
       "archived_or_already_archived": 306,
       "monitor_report_only": 1704,
-      "p1_existing_resources": 36,
+      "p1_existing_resources": 37,
       "p2_existing_system_needs_seed_input": 915,
-      "p4_larger_browser_or_access_project": 49,
-      "review": 477
+      "p4_larger_browser_or_access_project": 47,
+      "review": 478
     },
     "status_counts": {
       "already_captured": 53,
       "browser_captcha_or_challenge": 9,
       "browser_captured": 20,
-      "capture_blocked": 49,
+      "capture_blocked": 47,
       "captured": 84,
       "dns_failed": 12,
       "http_error": 7,
       "invalid": 259,
-      "method_not_allowed": 3,
+      "method_not_allowed": 4,
       "needs_authorized_seed_or_api": 915,
       "network_error": 13,
       "network_timeout": 4,
       "no_records": 1695,
       "not_acceptable": 3,
-      "public_fallback_available": 209,
+      "public_fallback_available": 210,
       "public_snapshot_captured": 70,
       "seed_present": 79,
       "source_url_not_channel": 1,

@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-22T17:42:21+00:00",
+  "generated_at": "2026-08-23T17:41:33+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,11 +24,11 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "002e3f3a6d3df965",
-      "2632230e199654e1",
-      "26cae7ebb461d4d2",
-      "a192a2044b127ff4",
-      "e22e635a350c53dc"
+      "2f118fa98474f7c3",
+      "6c2d3c32e42b56f3",
+      "b21a114650cf7c1f",
+      "e404e4b7ad153142",
+      "eba473ca54354f65"
     ],
     "source_type": "api_endpoint",
     "x_auth_scrape_enabled": false,
@@ -38,59 +38,59 @@
   },
   "results": [
     {
-      "agency_id": "hutt-city-council",
+      "agency_id": "hurunui-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "a192a2044b127ff4",
+      "source_id": "2f118fa98474f7c3",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.huttcity.govt.nz/.well-known/webfinger"
+      "url": "https://www.hurunui.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "office-of-the-ombudsman",
+      "agency_id": "masterton-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "002e3f3a6d3df965",
+      "source_id": "eba473ca54354f65",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.ombudsman.parliament.nz/openapi.json"
+      "url": "https://www.mstn.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "selwyn-district-council",
+      "agency_id": "stratford-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "26cae7ebb461d4d2",
+      "reason": "HTTP 405: Not Allowed",
+      "source_id": "e404e4b7ad153142",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.selwyn.govt.nz/openapi.json"
+      "status": "method_not_allowed",
+      "url": "https://www.stratford.govt.nz/openapi.json"
     },
     {
-      "agency_id": "waimate-district-council",
+      "agency_id": "tasman-district-council",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
       "reason": "HTTP 403: Forbidden",
-      "source_id": "e22e635a350c53dc",
+      "source_id": "6c2d3c32e42b56f3",
       "source_type": "api_endpoint",
       "status": "capture_blocked",
-      "url": "https://www.waimatedc.govt.nz/.well-known/webfinger"
+      "url": "https://www.tasman.govt.nz/.well-known/webfinger"
     },
     {
-      "agency_id": "waipa-district-council",
+      "agency_id": "victoria-university-of-wellington",
       "archive_status": "ready",
       "feasibility": "high",
       "platform": "api",
-      "reason": "HTTP 403: Forbidden",
-      "source_id": "2632230e199654e1",
+      "reason": "HTTP 421: Misdirected Request",
+      "source_id": "b21a114650cf7c1f",
       "source_type": "api_endpoint",
-      "status": "capture_blocked",
-      "url": "https://www.waipadc.govt.nz/.well-known/webfinger"
+      "status": "http_error",
+      "url": "https://www.wgtn.ac.nz/.well-known/webfinger"
     }
   ],
   "summary": {
@@ -100,12 +100,16 @@
     "selected_sources": 5,
     "status_by_platform": {
       "api": {
-        "capture_blocked": 5
+        "capture_blocked": 3,
+        "http_error": 1,
+        "method_not_allowed": 1
       }
     },
     "status_by_provider": {},
     "status_counts": {
-      "capture_blocked": 5
+      "capture_blocked": 3,
+      "http_error": 1,
+      "method_not_allowed": 1
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "courts_current_sources_report": null,
   "dry_run": false,
-  "generated_at": "2026-08-22T17:42:34+00:00",
+  "generated_at": "2026-08-23T17:41:40+00:00",
   "inputs": {
     "agency_id": "",
     "capture_backend": "default",
@@ -24,9 +24,8 @@
     "retry_failed_from": "",
     "rsshub_base_urls": "",
     "source_ids": [
-      "5b070f37d132d016",
-      "7dc310b6b6677c32",
-      "7e4539466d8864dc"
+      "02df47eecf3364f5",
+      "167bcd37783e8776"
     ],
     "source_type": "linkedin",
     "x_auth_scrape_enabled": false,
@@ -34,32 +33,12 @@
     "x_feed_providers": "rsshub,nitter",
     "x_feed_timeout": 30
   },
-  "results": [
-    {
-      "agency_id": "lincoln-university",
-      "archive_status": "ready",
-      "feasibility": "low",
-      "platform": "linkedin",
-      "reason": "HTTP 999: <none>",
-      "source_id": "5b070f37d132d016",
-      "source_type": "social_profile",
-      "status": "http_error",
-      "url": "https://www.linkedin.com/school/lincoln-university-new-zealand"
-    }
-  ],
+  "results": [],
   "summary": {
-    "platform_counts": {
-      "linkedin": 1
-    },
-    "selected_sources": 1,
-    "status_by_platform": {
-      "linkedin": {
-        "http_error": 1
-      }
-    },
+    "platform_counts": {},
+    "selected_sources": 0,
+    "status_by_platform": {},
     "status_by_provider": {},
-    "status_counts": {
-      "http_error": 1
-    }
+    "status_counts": {}
   }
 }
