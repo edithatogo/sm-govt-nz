@@ -65502,7 +65502,7 @@
       "agency_type": "Department",
       "archive_status": "candidate",
       "auth": "operator_or_app_authorized",
-      "candidate_id": "4ebafde1183977c1",
+      "candidate_id": "a3074861685a6712",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "medium",
@@ -65516,7 +65516,7 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "https://www.facebook.com/Ministryoftransportnz"
+      "url": "https://www.facebook.com/MCERTNZ/"
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
@@ -65554,7 +65554,7 @@
       "agency_type": "Department",
       "archive_status": "manual_seed",
       "auth": "operator_authorized",
-      "candidate_id": "c7fb7509cc76954e",
+      "candidate_id": "d61327ccb8c5ec80",
       "confidence_score": 0.4,
       "domain_trust": "unknown",
       "feasibility": "low",
@@ -65568,7 +65568,7 @@
       "trust_signals": [
         "official_term:nz"
       ],
-      "url": "https://www.linkedin.com/company/ministry-of-transport-new-zealand"
+      "url": "https://www.linkedin.com/company/mcertnz"
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
@@ -103124,7 +103124,7 @@
     },
     {
       "access_method": "meta_graph_api_or_authorized_export",
-      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 2 days ago",
+      "account": "Social Workers Registration Board\t\t\t\t\t   \n\t\t\t\t \n\t\t\t\t\n \n\t 3 days ago",
       "agency_id": "social-workers-registration-board",
       "agency_name": "Social Workers Registration Board (K\u0101hui Whakamana Tauwhiro)",
       "agency_type": "Crown Agent",
@@ -118667,6 +118667,32 @@
       "url": "https://www.tcdc.govt.nz"
     },
     {
+      "access_method": "email_ingress_or_public_archive",
+      "account": "https://www.treasury.govt.nz",
+      "agency_id": "the-treasury",
+      "agency_name": "The Treasury (Te Tai \u014changa)",
+      "agency_type": "Department",
+      "archive_status": "candidate",
+      "auth": "inbox_or_dispatch_token",
+      "candidate_id": "e71f9808e87c0e84",
+      "confidence_score": 0.6,
+      "domain_trust": "high",
+      "feasibility": "medium",
+      "link_text": "Email alerts for new research papers",
+      "official_website": "https://www.treasury.govt.nz",
+      "origin": "homepage.link",
+      "platform": "newsletter",
+      "policy_notes": "Needs explicit subscription and ingress routing before it becomes an automated archive source.",
+      "portfolio": "Finance",
+      "source_type": "newsletter",
+      "status": "discovered",
+      "trust_signals": [
+        "high_trust_domain_suffix",
+        "official_term:nz"
+      ],
+      "url": "https://www.treasury.govt.nz/publications/research-and-commentary/email-alerts-new-research-papers"
+    },
+    {
       "access_method": "public_rss",
       "account": "https://www.treasury.govt.nz",
       "agency_id": "the-treasury",
@@ -119073,6 +119099,30 @@
     },
     {
       "access_method": "approved_api_or_user_authorized_capture",
+      "account": "Linkedin",
+      "agency_id": "the-treasury",
+      "agency_name": "The Treasury (Te Tai \u014changa)",
+      "agency_type": "Department",
+      "archive_status": "manual_seed",
+      "auth": "operator_authorized",
+      "candidate_id": "3f7dff21fa7b9f2b",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "low",
+      "official_website": "https://www.treasury.govt.nz",
+      "origin": "homepage.link",
+      "platform": "linkedin",
+      "policy_notes": "LinkedIn archiving may use bounded public capture where available, as well as approved API access, owner export, or operator-authorized seed capture.",
+      "portfolio": "Finance",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.linkedin.com/company/new-zealand-treasury"
+    },
+    {
+      "access_method": "approved_api_or_user_authorized_capture",
       "account": "The Treasury - New Zealand",
       "account_classification": "official",
       "agency_id": "the-treasury",
@@ -119098,6 +119148,30 @@
         "official_term:new zealand"
       ],
       "url": "https://www.linkedin.com/company/new-zealand-treasury/"
+    },
+    {
+      "access_method": "public_channel_rss_or_yt_dlp_metadata",
+      "account": "YouTube",
+      "agency_id": "the-treasury",
+      "agency_name": "The Treasury (Te Tai \u014changa)",
+      "agency_type": "Department",
+      "archive_status": "candidate",
+      "auth": "none",
+      "candidate_id": "6a85fcdf546d2669",
+      "confidence_score": 0.4,
+      "domain_trust": "unknown",
+      "feasibility": "medium",
+      "official_website": "https://www.treasury.govt.nz",
+      "origin": "homepage.link",
+      "platform": "youtube",
+      "policy_notes": "Channel URLs are known, but many handles still need channel-id resolution before RSS archiving is fully automatic.",
+      "portfolio": "Finance",
+      "source_type": "social_profile",
+      "status": "discovered",
+      "trust_signals": [
+        "official_term:nz"
+      ],
+      "url": "https://www.youtube.com/user/nztreasury"
     },
     {
       "access_method": "bounded_public_html",
@@ -140338,7 +140412,7 @@
       "url": "https://www.worksafe.govt.nz"
     }
   ],
-  "generated_at": "2026-08-23T17:40:33+00:00",
+  "generated_at": "2026-08-24T17:51:55+00:00",
   "inputs": {
     "config": "config/govt_source_discovery.json",
     "max_agencies": 0,
@@ -155301,7 +155375,7 @@
     {
       "agency_id": "callaghan-innovation",
       "alternates": 0,
-      "links": 106,
+      "links": 105,
       "status": "ok",
       "url": "https://www.callaghaninnovation.govt.nz/"
     },
@@ -155321,7 +155395,7 @@
     {
       "agency_id": "central-hawkes-bay-district-council",
       "alternates": 0,
-      "links": 488,
+      "links": 478,
       "status": "ok",
       "url": "https://www.chbdc.govt.nz/"
     },
@@ -155362,7 +155436,7 @@
     {
       "agency_id": "christchurch-city-libraries",
       "alternates": 4,
-      "links": 322,
+      "links": 319,
       "status": "ok",
       "url": "https://my.christchurchcitylibraries.com/"
     },
@@ -155403,7 +155477,7 @@
     {
       "agency_id": "courts-of-nz",
       "alternates": 1,
-      "links": 164,
+      "links": 163,
       "status": "ok",
       "url": "https://www.courtsofnz.govt.nz/"
     },
@@ -155562,7 +155636,7 @@
     {
       "agency_id": "fire-and-emergency-nz",
       "alternates": 0,
-      "links": 131,
+      "links": 132,
       "status": "ok",
       "url": "https://www.fireandemergency.nz/"
     },
@@ -155634,7 +155708,7 @@
     {
       "agency_id": "hawkes-bay-regional-council",
       "alternates": 0,
-      "links": 468,
+      "links": 467,
       "status": "ok",
       "url": "https://www.hbrc.govt.nz/"
     },
@@ -155782,7 +155856,7 @@
     {
       "agency_id": "kiwi-group-capital",
       "alternates": 0,
-      "links": 237,
+      "links": 239,
       "status": "ok",
       "url": "https://www.kiwibank.co.nz/"
     },
@@ -155867,7 +155941,7 @@
     {
       "agency_id": "massey-university",
       "alternates": 0,
-      "links": 88,
+      "links": 87,
       "status": "ok",
       "url": "https://www.massey.ac.nz/"
     },
@@ -156035,14 +156109,14 @@
     {
       "agency_id": "new-plymouth-district-council",
       "alternates": 0,
-      "links": 1562,
+      "links": 1563,
       "status": "ok",
       "url": "https://www.npdc.govt.nz/"
     },
     {
       "agency_id": "nmit",
       "alternates": 0,
-      "links": 171,
+      "links": 180,
       "status": "ok",
       "url": "https://www.nmit.ac.nz/"
     },
@@ -156167,7 +156241,7 @@
     {
       "agency_id": "nz-trade-and-enterprise",
       "alternates": 0,
-      "links": 27,
+      "links": 28,
       "status": "ok",
       "url": "https://www.nzte.govt.nz/"
     },
@@ -156255,7 +156329,7 @@
     {
       "agency_id": "palmerston-north-city-council",
       "alternates": 0,
-      "links": 526,
+      "links": 527,
       "status": "ok",
       "url": "https://www.pncc.govt.nz/"
     },
@@ -156370,7 +156444,7 @@
     {
       "agency_id": "rnz",
       "alternates": 0,
-      "links": 404,
+      "links": 402,
       "status": "ok",
       "url": "https://www.rnz.co.nz/"
     },
@@ -156528,7 +156602,7 @@
     {
       "agency_id": "taumata-arowai",
       "alternates": 0,
-      "links": 40,
+      "links": 41,
       "status": "ok",
       "url": "https://www.taumataarowai.govt.nz/"
     },
@@ -156617,14 +156691,15 @@
     {
       "agency_id": "thames-coromandel-district-council",
       "alternates": 0,
-      "links": 274,
+      "links": 275,
       "status": "ok",
       "url": "https://www.tcdc.govt.nz/"
     },
     {
       "agency_id": "the-treasury",
-      "error": "HTTP Error 403: Forbidden",
-      "status": "failed",
+      "alternates": 0,
+      "links": 721,
+      "status": "ok",
       "url": "https://www.treasury.govt.nz/"
     },
     {
@@ -156710,7 +156785,7 @@
     {
       "agency_id": "upper-hutt-city-council",
       "alternates": 0,
-      "links": 313,
+      "links": 312,
       "status": "ok",
       "url": "https://www.upperhuttcity.com/"
     },
@@ -156828,14 +156903,14 @@
     {
       "agency_id": "whakatane-district-council",
       "alternates": 0,
-      "links": 588,
+      "links": 587,
       "status": "ok",
       "url": "https://www.whakatane.govt.nz/"
     },
     {
       "agency_id": "whanganui-district-council",
       "alternates": 0,
-      "links": 319,
+      "links": 320,
       "status": "ok",
       "url": "https://www.whanganui.govt.nz/"
     },
@@ -156885,11 +156960,11 @@
   "summary": {
     "agencies_without_social_profiles": 33,
     "agency_count": 256,
-    "candidate_count": 5242,
+    "candidate_count": 5245,
     "feasibility_counts": {
       "high": 4159,
-      "low": 306,
-      "medium": 777
+      "low": 307,
+      "medium": 779
     },
     "known_registry_social_profiles": 446,
     "platform_counts": {
@@ -156897,20 +156972,20 @@
       "bluesky": 18,
       "facebook": 290,
       "instagram": 162,
-      "linkedin": 233,
+      "linkedin": 234,
       "medium": 2,
-      "newsletter": 157,
+      "newsletter": 158,
       "rss": 3829,
       "website_page": 312,
       "x": 73,
-      "youtube": 153
+      "youtube": 154
     },
     "source_type_counts": {
       "api_endpoint": 13,
-      "newsletter": 157,
+      "newsletter": 158,
       "rss_feed": 64,
       "search_seed": 3765,
-      "social_profile": 931,
+      "social_profile": 933,
       "website_page": 312
     }
   }
